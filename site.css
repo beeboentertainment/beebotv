@@ -147,6 +147,15 @@ p{margin:0 0 1em}
 .browser .bpage{background:#fff;padding:24px 16px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
 .browser .globe{font-size:2rem}
 .browser .search{width:90%;max-width:240px;border:1px solid #e3e3e3;border-radius:999px;padding:9px 15px;color:#9a9a9a;font-size:.78rem;display:flex;align-items:center;gap:9px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.car-screen .carshot{width:100%;border-radius:9px;display:block;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+/* phone-framed app screenshots */
+.appshots{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px;justify-items:center}
+.pcard{display:flex;flex-direction:column;align-items:center;gap:13px;max-width:250px}
+.phone{width:224px;max-width:100%;background:#17130d;border:1px solid var(--border-strong);border-radius:30px;padding:9px;box-shadow:var(--shadow-lg)}
+.phone img{width:100%;border-radius:22px;display:block}
+.pcap{text-align:center;color:var(--muted);font-size:.92rem;margin:0;line-height:1.45}
+.pcap b{color:var(--ink);font-weight:700}
+@media (max-width:820px){.appshots{grid-template-columns:1fr}}
 .spot-safety{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:4px solid var(--accent);border-radius:12px;padding:14px 16px;margin:18px 0 22px}
 .spot-safety .s-em{font-size:1.3rem;line-height:1.25}
 .spot-safety p{margin:0;color:var(--spot-ink);font-size:.97rem}
