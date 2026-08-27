@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beebo Mirror — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1c1e;
+    --muted: #5a5f66;
+    --card: #f5f6f8;
+    --border: #e2e5ea;
+    --accent: #2c5cc5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181c;
+      --fg: #e6e8eb;
+      --muted: #a2a8b0;
+      --card: #21242a;
+      --border: #33373e;
+      --accent: #7ea2ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 22px 72px;
+  }
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin: 0 0 6px;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin: 34px 0 10px;
+  }
+  .eff {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0 0 26px;
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin: 0 0 7px; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 18px 0;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 14px;
+    font-size: 0.95rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { color: var(--muted); font-weight: 600; }
+  footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  code {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Beebo Mirror — Privacy Policy</h1>
+  <p class="eff">Effective date: 25 August 2026</p>
+
+  <p>Beebo Mirror (<code>com.beeboentertainment.mirror</code>) is a personal utility that mirrors your Android phone's screen onto your car's Android Auto head-unit. This policy explains, honestly and completely, what the app does and does not do with your information.</p>
+
+  <div class="card">
+    <p><strong>In short:</strong> the app collects no personal data. It captures your screen only while you personally start a mirroring session, sends those frames only to the connected car display, and never records, stores, or transmits them anywhere. There are no accounts, no analytics, no ads, and no third-party SDKs.</p>
+  </div>
+
+  <h2>What the app does</h2>
+  <p>Android Auto allows media apps to play audio but blocks video from media apps. Beebo Mirror instead captures your entire phone screen using Android's MediaProjection and draws those frames onto the car's navigation surface through the Car App Library. Whatever is shown on your phone appears on the car screen.</p>
+
+  <h2>Data we collect</h2>
+  <p>None. The app does not collect, request, or generate any personal data. It has no user accounts, no login, no profiles, and no identifiers.</p>
+
+  <h2>Screen capture</h2>
+  <ul>
+    <li>Screen capture happens <strong>only</strong> during an active session that you start yourself, after you approve Android's on-screen capture prompt.</li>
+    <li>Captured frames are held in memory only long enough to be drawn to the connected car display, and are then discarded.</li>
+    <li>Frames are sent <strong>only</strong> to the connected Android Auto screen. They are <strong>never</strong> recorded, saved to storage, uploaded, or transmitted off the device.</li>
+    <li>When you stop mirroring (or disconnect the car), capture ends immediately.</li>
+  </ul>
+
+  <h2>Analytics, ads, and third parties</h2>
+  <p>The app contains no analytics, no advertising, and no third-party SDKs or trackers. Nothing about your use of the app is measured or reported to anyone.</p>
+
+  <h2>Permissions and why they are used</h2>
+  <table>
+    <thead>
+      <tr><th>Permission</th><th>Why it is needed</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PROJECTION</td><td>To run the screen-capture session in the foreground while you are actively mirroring.</td></tr>
+      <tr><td>POST_NOTIFICATIONS</td><td>To display the ongoing notification that a foreground service is required to show.</td></tr>
+      <tr><td>WAKE_LOCK</td><td>To keep the mirroring session active while it is running.</td></tr>
+      <tr><td>Car App Library surface / navigation</td><td>To draw the mirrored frames onto the Android Auto display.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Children</h2>
+  <p>This is a general-purpose personal utility and is not directed at children. It collects no data from anyone, including children.</p>
+
+  <h2>Data retention and deletion</h2>
+  <p>Because the app stores no data, there is nothing to retain and nothing to delete. Uninstalling the app removes it completely from your device.</p>
+
+  <h2>Provided as-is</h2>
+  <p>Beebo Mirror is provided for personal use, as-is, without warranty of any kind. It is distributed to a small internal-testing group.</p>
+
+  <h2>Not affiliated</h2>
+  <p>Beebo Mirror is an independent personal project. It is not affiliated with, endorsed by, or sponsored by Google, Android Auto, Audi, or any other app maker or carmaker. All trademarks belong to their respective owners.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be published at the same address with a new effective date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:nicholaswill86@gmail.com">nicholaswill86@gmail.com</a></p>
+
+  <footer>
+    <p>Beebo Mirror · <code>com.beeboentertainment.mirror</code> · Effective 25 August 2026</p>
+  </footer>
+</div>
+</body>
+</html>

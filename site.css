@@ -1,0 +1,32 @@
+:root {
+  --bg:#0f1115; --panel:#171a21; --panel2:#1c2029; --text:#e8e8e8;
+  --muted:#9aa0aa; --accent:#4f9dff; --warm:#ffb454; --border:#242a34;
+}
+* { box-sizing: border-box; }
+body {
+  margin:0; background:var(--bg); color:var(--text); line-height:1.65;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.wrap { max-width:760px; margin:0 auto; padding:28px 22px 72px; }
+.back { display:inline-block; color:var(--muted); text-decoration:none; font-size:0.9rem; margin-bottom:26px; }
+.back:hover { color:var(--accent); }
+.hero { text-align:center; padding:16px 0 8px; }
+.hero .em { font-size:3rem; line-height:1; }
+.hero h1 { font-size:2rem; margin:14px 0 10px; text-wrap:balance; }
+.hero .lead { color:var(--muted); font-size:1.12rem; max-width:600px; margin:0 auto; }
+h2 { font-size:1.3rem; margin:40px 0 12px; border-left:4px solid var(--accent); padding-left:12px; }
+p { margin:0 0 14px; }
+.feature { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin:16px 0; }
+.feature h3 { margin:0 0 6px; font-size:1.08rem; display:flex; align-items:center; gap:10px; }
+.feature p { color:var(--muted); margin:0; }
+.feature .tag { margin-left:auto; font-size:0.72rem; color:var(--warm); border:1px solid var(--border); border-radius:999px; padding:2px 9px; white-space:nowrap; }
+.callout { background:linear-gradient(180deg,var(--panel2),var(--panel)); border:1px solid var(--border); border-left:4px solid var(--warm); border-radius:12px; padding:18px 22px; margin:22px 0; }
+.callout p { margin:0; color:var(--text); }
+.apps { display:grid; grid-template-columns:1fr; gap:12px; margin:14px 0; }
+.app { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:16px 20px; }
+.app h3 { margin:0 0 4px; font-size:1.05rem; }
+.app p { margin:0; color:var(--muted); font-size:0.95rem; }
+.cta { text-align:center; margin:38px 0 0; }
+a.button { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:11px 22px; border-radius:8px; font-weight:600; }
+footer { text-align:center; color:var(--muted); font-size:0.85rem; padding:34px 22px 0; margin-top:40px; border-top:1px solid var(--border); }
+footer a { color:var(--accent); }

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beebo Entertainment</title>
+<meta name="description" content="A personal media hub for your own collection, plus companion apps for the car." />
+<style>
+  :root { --bg:#0f1115; --panel:#171a21; --text:#e8e8e8; --muted:#9aa0aa; --accent:#4f9dff; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  header { padding:80px 24px 56px; text-align:center; background:radial-gradient(circle at top,#1c2230,var(--bg)); }
+  header h1 { font-size:2.6rem; margin:0 0 8px; }
+  header p { color:var(--muted); font-size:1.1rem; max-width:580px; margin:0 auto; }
+  .badges { margin-top:20px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .badge { background:var(--panel); border:1px solid #2a2f3a; padding:6px 14px; border-radius:999px; font-size:0.85rem; color:var(--muted); text-decoration:none; display:inline-block; transition:border-color .15s,color .15s; }
+  a.badge:hover { border-color:var(--accent); color:var(--text); }
+  main { max-width:860px; margin:0 auto; padding:36px 24px 72px; }
+  section { margin-bottom:52px; }
+  h2 { font-size:1.5rem; border-left:4px solid var(--accent); padding-left:12px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:20px; }
+  .card { background:var(--panel); border:1px solid #22262f; border-radius:10px; padding:20px; }
+  .card h3 { margin-top:0; font-size:1.05rem; }
+  .card p { color:var(--muted); font-size:0.92rem; margin-bottom:0; }
+  a.button { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:10px 20px; border-radius:8px; font-weight:600; margin:16px 6px 0; }
+  footer { text-align:center; color:var(--muted); font-size:0.85rem; padding:30px 24px; border-top:1px solid #22262f; }
+  footer a { color:var(--accent); }
+</style>
+</head>
+<body>
+  <header>
+    <h1>🎬 Beebo Entertainment</h1>
+    <p>Your own media, your way — a personal hub that catalogs your movies and shows with posters and details, streams them to your devices, and brings along companion apps for the car.</p>
+    <div class="badges">
+      <a class="badge" href="media-hub.html">Personal media hub</a>
+      <a class="badge" href="stream-anywhere.html">Stream anywhere</a>
+      <a class="badge" href="car-companion.html">Car companion apps</a>
+      <a class="badge" href="local-first.html">Local-first</a>
+      <a class="badge" href="driving-safety.html">Driving safety</a>
+    </div>
+    <div>
+      <a class="button" href="https://jenkinsmovies.duckdns.org:47811/login" style="background:#2fbf71;">▶ Watch Now</a>
+      <a class="button" href="privacy.html" style="background:var(--panel); border:1px solid #2a2f3a; color:var(--text);">Privacy Policy</a>
+      <a class="button" href="terms.html" style="background:var(--panel); border:1px solid #2a2f3a; color:var(--text);">Terms</a>
+    </div>
+    <p style="color:var(--muted); font-size:0.8rem; margin-top:14px;">
+      "Watch Now" streams directly from Nick's home PC and needs a personal access code — it only works while that PC is on.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>What it does</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Your library</h3>
+          <p>Catalogs your own movies and shows into a browsable, searchable library with posters and details.</p>
+        </div>
+        <div class="card">
+          <h3>Stream to your devices</h3>
+          <p>Watch on your phone or in a browser, with your own access code — your files stay on your PC.</p>
+        </div>
+        <div class="card">
+          <h3>Car companion apps</h3>
+          <p>Android Auto apps that bring your audio and screen along for the drive, with watch-together and passenger extras.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Privacy</h2>
+      <p style="color:var(--muted);">
+        The car apps collect no personal data — no accounts, analytics, ads, or trackers. Full details in the
+        <a href="privacy.html" style="color:var(--accent);">Privacy Policy</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Beebo Entertainment · a personal project by SWGfan<br>
+    <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="driving-safety.html">Driving safety</a>
+  </footer>
+</body>
+</html>
