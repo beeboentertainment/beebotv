@@ -3,82 +3,245 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Beebo Entertainment</title>
-<meta name="description" content="A personal media hub for your own collection, plus companion apps for the car." />
-<style>
-  :root { --bg:#0f1115; --panel:#171a21; --text:#e8e8e8; --muted:#9aa0aa; --accent:#4f9dff; }
-  * { box-sizing: border-box; }
-  body { margin:0; font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
-  header { padding:80px 24px 56px; text-align:center; background:radial-gradient(circle at top,#1c2230,var(--bg)); }
-  header h1 { font-size:2.6rem; margin:0 0 8px; }
-  header p { color:var(--muted); font-size:1.1rem; max-width:580px; margin:0 auto; }
-  .badges { margin-top:20px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
-  .badge { background:var(--panel); border:1px solid #2a2f3a; padding:6px 14px; border-radius:999px; font-size:0.85rem; color:var(--muted); text-decoration:none; display:inline-block; transition:border-color .15s,color .15s; }
-  a.badge:hover { border-color:var(--accent); color:var(--text); }
-  main { max-width:860px; margin:0 auto; padding:36px 24px 72px; }
-  section { margin-bottom:52px; }
-  h2 { font-size:1.5rem; border-left:4px solid var(--accent); padding-left:12px; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:20px; }
-  .card { background:var(--panel); border:1px solid #22262f; border-radius:10px; padding:20px; }
-  .card h3 { margin-top:0; font-size:1.05rem; }
-  .card p { color:var(--muted); font-size:0.92rem; margin-bottom:0; }
-  a.button { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:10px 20px; border-radius:8px; font-weight:600; margin:16px 6px 0; }
-  footer { text-align:center; color:var(--muted); font-size:0.85rem; padding:30px 24px; border-top:1px solid #22262f; }
-  footer a { color:var(--accent); }
-</style>
+<title>BeeboTV — Your Home Streaming</title>
+<meta name="description" content="Family-friendly movies, shows and games streamed from your own home server — and the one app that puts real video on your car's Android Auto screen. Meet Beebo." />
+<meta property="og:title" content="BeeboTV — your movies, shows and games, from home" />
+<meta property="og:description" content="A family-friendly home streaming hub with a standout car feature: real video on your car's screen. Say hi to Beebo, our French Lop." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/beebo-badge-512.png" />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
 </head>
 <body>
-  <header>
-    <h1>🎬 Beebo Entertainment</h1>
-    <p>Your own media, your way — a personal hub that catalogs your movies and shows with posters and details, streams them to your devices, and brings along companion apps for the car.</p>
-    <div class="badges">
-      <a class="badge" href="media-hub.html">Personal media hub</a>
-      <a class="badge" href="stream-anywhere.html">Stream anywhere</a>
-      <a class="badge" href="car-companion.html">Car companion apps</a>
-      <a class="badge" href="local-first.html">Local-first</a>
-      <a class="badge" href="driving-safety.html">Driving safety</a>
-    </div>
-    <div>
-      <a class="button" href="https://jenkinsmovies.duckdns.org:47811/login" style="background:#2fbf71;">▶ Watch Now</a>
-      <a class="button" href="privacy.html" style="background:var(--panel); border:1px solid #2a2f3a; color:var(--text);">Privacy Policy</a>
-      <a class="button" href="terms.html" style="background:var(--panel); border:1px solid #2a2f3a; color:var(--text);">Terms</a>
-    </div>
-    <p style="color:var(--muted); font-size:0.8rem; margin-top:14px;">
-      "Watch Now" streams directly from Nick's home PC and needs a personal access code — it only works while that PC is on.
-    </p>
-  </header>
 
-  <main>
-    <section>
-      <h2>What it does</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Your library</h3>
-          <p>Catalogs your own movies and shows into a browsable, searchable library with posters and details.</p>
-        </div>
-        <div class="card">
-          <h3>Stream to your devices</h3>
-          <p>Watch on your phone or in a browser, with your own access code — your files stay on your PC.</p>
-        </div>
-        <div class="card">
-          <h3>Car companion apps</h3>
-          <p>Android Auto apps that bring your audio and screen along for the drive, with watch-together and passenger extras.</p>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo, the BeeboTV mascot" />Beebo<b>TV</b></a>
+    <nav class="nav-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a class="btn btn-primary nav-cta" href="https://jenkinsmovies.duckdns.org:47811/login">▶ Watch Now</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow">🐰 Hi, I’m Beebo — your home cinema’s mascot</span>
+      <h1>Your movies, shows &amp; games — streamed from <span class="hl">your own home</span>.</h1>
+      <p class="lead">BeeboTV turns the media on your home computer into a family-friendly streaming service for every screen in the house — and the one that comes along for the car ride.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="https://jenkinsmovies.duckdns.org:47811/login">▶ Watch Now</a>
+        <a class="btn btn-ghost btn-lg" href="#features">See what’s inside</a>
+      </div>
+      <p class="hero-note">“Watch Now” streams straight from Nick’s home PC and needs a personal access code — it works while that computer is on.</p>
+    </div>
+    <div class="hero-art">
+      <img src="assets/beebo-mascot.png" alt="Beebo, a friendly black-and-white French Lop rabbit" />
+      <div class="disc"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee feature: the car screen -->
+<section class="spotlight">
+  <div class="spot-in">
+    <div class="spot-copy">
+      <span class="spot-badge">★ The feature nobody else has</span>
+      <h2>Real video, right on your car’s screen.</h2>
+      <p>Android Auto normally only lets apps play <em>sound</em>. Beebo Mirror puts the actual picture up on the car’s display — so on a long drive the kids can <em>watch</em> their movies and shows, not just listen to them.</p>
+      <div class="spot-safety">
+        <span class="s-em">🛡️</span>
+        <p><strong>Safety first.</strong> The picture appears on the car screen <em>only at start-up, after a built-in 2-minute wait</em> — and that’s your one window for the trip. If the car moves or leaves Park, mirroring stops, and to bring it back you have to <strong>restart the car and wait the two minutes again</strong>. That restart-and-wait is the whole point: it’s what stops anyone from trying to flip the screen on at a stop light.</p>
+      </div>
+      <p>Meanwhile nobody misses a thing: sound keeps coming through the car speakers, and passengers follow along on their own <strong>phones, tablets and laptops</strong> — every screen playing the same moment, together.</p>
+      <p>A <strong>customizable audio-sync buffer</strong> keeps every screen and the speakers lined up, so the picture never looks dubbed or a beat behind. Nudge it for Bluetooth speakers or headphones and the whole car stays perfectly in step.</p>
+      <a class="btn btn-onspot btn-lg" href="car-companion.html">How the car apps work →</a>
+    </div>
+    <div class="spot-visual">
+      <div class="spot-panel">
+        <div class="sp-head"><span style="font-size:1.3rem">🎬</span> Playing everywhere, in sync</div>
+        <ul class="spot-list">
+          <li><span class="k">✓</span> On the car display <span class="r">video</span></li>
+          <li><span class="k">✓</span> Phones · tablets · laptops <span class="r">in sync</span></li>
+          <li><span class="k">✓</span> Car speakers <span class="r">sound</span></li>
+        </ul>
+        <div class="sync-mock">
+          <div class="row"><span>🎚️ Audio-sync buffer</span><span style="color:var(--accent);font-weight:700">+40&nbsp;ms</span></div>
+          <div class="track"><div class="fill"></div><div class="knob"></div></div>
+          <div class="scale"><span>−250</span><span>0</span><span>+250&nbsp;ms</span></div>
         </div>
       </div>
-    </section>
+      <div class="guest-card">
+        <div class="qr"><img src="assets/guest-qr.png" alt="QR code passengers scan to join" /></div>
+        <div class="gtxt">
+          <strong>Guests just scan a code</strong>
+          <p>Passengers join in seconds — scan the QR and the watch party opens right in their browser. No app to install, no account. Straight to the web.</p>
+        </div>
+      </div>
+      <p class="cap">Beebo Mirror · Beebo Auto · Beebo Entertainment</p>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2>Privacy</h2>
-      <p style="color:var(--muted);">
-        The car apps collect no personal data — no accounts, analytics, ads, or trackers. Full details in the
-        <a href="privacy.html" style="color:var(--accent);">Privacy Policy</a>.
-      </p>
-    </section>
-  </main>
+<!-- What the car screen shows -->
+<section class="section" id="carscreens">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">On the car screen</div>
+      <h2>What you’ll see on the display</h2>
+      <p>Three simple states, so everyone in the car knows exactly what to expect.</p>
+    </div>
+    <div class="screens-grid">
+      <div class="cscard">
+        <div class="car-screen mirroring" style="padding:14px">
+          <div class="browser">
+            <div class="bbar"><i></i><i></i><i></i><span class="u">search or type a web address</span></div>
+            <div class="bpage"><div class="globe">🌐</div><div class="search">🔍 Search the web</div></div>
+          </div>
+        </div>
+        <p class="screen-cap"><b>Parked &amp; set up.</b> Your whole phone screen, mirrored — a browser, an app, a movie, anything.</p>
+      </div>
+      <div class="cscard">
+        <div class="car-screen">
+          <div class="cs-top">● Car display</div>
+          <div class="cs-icon">⏳</div>
+          <div class="cs-msg">Available in 2:00</div>
+          <div class="cs-sub">Sorry for the wait! Keep the car in Park and don’t shift gears — the screen starts as soon as the countdown ends.</div>
+        </div>
+        <p class="screen-cap"><b>The start-up countdown.</b> Two minutes in Park, every time you start the car.</p>
+      </div>
+      <div class="cscard">
+        <div class="car-screen warn">
+          <div class="cs-top">● Car display</div>
+          <div class="cs-icon">⚠️</div>
+          <div class="cs-msg">Mirroring paused for safety</div>
+          <div class="cs-sub">The car left Park, so mirroring’s off for the rest of the trip. Turn the car off and back on, keep it in Park, and wait the 2 minutes to start again.</div>
+        </div>
+        <p class="screen-cap"><b>If the car leaves Park.</b> Mirroring locks until a fresh restart.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    Beebo Entertainment · a personal project by SWGfan<br>
-    <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="driving-safety.html">Driving safety</a>
-  </footer>
+<!-- Feature grid -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">What BeeboTV does</div>
+      <h2>One home server. Everything the family wants to watch and play.</h2>
+      <p>Your own collection, organized beautifully and streamed to every device — with extras built for the back seat.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="media-hub.html">
+        <div class="ico">🎬</div>
+        <h3>Your movie &amp; show library</h3>
+        <p>Point it at your folders and it builds a browsable library with posters, cast and details — like the streaming apps you know, but it’s all yours.</p>
+        <span class="more">Explore the library →</span>
+      </a>
+      <a class="card" href="car-companion.html">
+        <div class="ico">🎮</div>
+        <h3>Games for the ride</h3>
+        <p>When the movie ends and they get restless, the kids play together — or against Cruisin’ Carl, a friendly built-in opponent, so there’s always someone to play with.</p>
+        <span class="more">See the car apps →</span>
+      </a>
+      <a class="card" href="stream-anywhere.html">
+        <div class="ico">📶</div>
+        <h3>Stream anywhere</h3>
+        <p>Watch on a phone, a laptop, or in the car — at home or out on the road — each person signing in with their own access code you control.</p>
+        <span class="more">How streaming works →</span>
+      </a>
+      <a class="card" href="local-first.html">
+        <div class="ico">🔒</div>
+        <h3>Private &amp; local-first</h3>
+        <p>Your files stay on your own machine. No cloud lock-in, no monthly fee to watch films you already own, and the car apps run no ads or trackers.</p>
+        <span class="more">Why local-first →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- The three apps -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">The apps</div>
+      <h2>Three apps, one Beebo family</h2>
+      <p>Install what you need — they all talk to the same home server.</p>
+    </div>
+    <div class="apps">
+      <div class="app">
+        <span class="pill">On Google Play</span>
+        <h3>Beebo Entertainment</h3>
+        <p>Your library and player, with Watch Together, Picture-in-Picture and Stream-from-PC built in.</p>
+      </div>
+      <div class="app">
+        <span class="pill">On Google Play</span>
+        <h3>Beebo Mirror</h3>
+        <p>Puts your phone’s whole screen on the car display, so films play as real video on Android Auto.</p>
+      </div>
+      <div class="app">
+        <span class="pill">On Google Play</span>
+        <h3>Beebo Auto</h3>
+        <p>The audio companion — plays your library through the car speakers, with passenger games and your saved links.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Coming soon -->
+<section class="soon-band">
+  <div class="soon-in">
+    <div class="section-head">
+      <div class="kicker">Coming soon</div>
+      <h2>Give your phone its space back.</h2>
+    </div>
+    <a class="soon-card" href="beebo-space-saver.html" style="text-decoration:none;color:inherit">
+      <div class="big">📥</div>
+      <div>
+        <h3>Beebo Space Saver <small>COMING SOON</small></h3>
+        <p>A phone-storage rescue that quietly sends your photos, videos and files to the home computer running your BeeboTV server — so your camera roll stops eating your phone, and everything lands safely on a drive you own. <span style="color:var(--accent-ink);font-weight:700">Learn more →</span></p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="section">
+  <div class="container" style="text-align:center">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.1rem)">Ready when your home PC is.</h2>
+    <p style="color:var(--muted);max-width:52ch;margin:10px auto 22px">BeeboTV runs on your own computer and streams to the family — sign in with your access code to start watching.</p>
+    <a class="btn btn-primary btn-lg" href="https://jenkinsmovies.duckdns.org:47811/login">▶ Watch Now</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <a class="foot-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<span style="color:var(--accent-ink)">TV</span></a>
+    <nav class="foot-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="local-first.html">Local-first</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a href="driving-safety.html">Driving safety</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="foot-fine">
+    BeeboTV · a personal, family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot. The car apps collect no personal data — no accounts, analytics, ads, or trackers.
+  </div>
+</footer>
+
 </body>
 </html>

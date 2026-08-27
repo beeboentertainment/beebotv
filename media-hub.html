@@ -3,17 +3,38 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Personal media hub — Beebo Entertainment</title>
-<meta name="description" content="Catalog your own movies and shows into a browsable, searchable library with posters and details." />
+<title>Your Library — BeeboTV</title>
+<meta name="description" content="Catalog your own movies, shows and games into a browsable, searchable library with posters and details — all from your home BeeboTV server." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
 <link rel="stylesheet" href="site.css" />
 </head>
 <body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<b>TV</b></a>
+    <nav class="nav-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a class="btn btn-primary nav-cta" href="https://jenkinsmovies.duckdns.org:47811/login">▶ Watch Now</a>
+    </nav>
+  </div>
+</header>
+
 <div class="wrap">
-  <a class="back" href="index.html">← Back to Beebo Entertainment</a>
-  <div class="hero">
+  <a class="back" href="index.html">← Back to BeeboTV</a>
+  <div class="page-hero">
     <div class="em">🎬</div>
-    <h1>Personal media hub</h1>
-    <p class="lead">Your own movies and shows, organized into a library that looks and feels like the streaming apps you already know — except everything in it is yours.</p>
+    <h1>Your own media hub</h1>
+    <p class="lead">Your movies and shows, organized into a library that looks and feels like the streaming apps you already know — except everything in it is yours.</p>
   </div>
 
   <h2>What it does</h2>
@@ -23,19 +44,42 @@
   </div>
   <div class="feature">
     <h3>🖼️ Posters &amp; details</h3>
-    <p>Each title gets its poster, cast, description, and year pulled in automatically, so your collection looks the part.</p>
+    <p>Each title gets its poster, cast, description and year pulled in automatically, so your collection looks the part.</p>
   </div>
   <div class="feature">
     <h3>🔎 Search &amp; browse</h3>
-    <p>Find anything fast by title, actor, or release date — and see at a glance what’s new or what’s missing from a series.</p>
+    <p>Find anything fast by title, actor or release date — and see at a glance what’s new or what’s missing from a series.</p>
   </div>
   <div class="feature">
     <h3>🕹️ Emulator launcher</h3>
-    <p>Point it at your emulators and your own legally-owned games and launch them from the same place.</p>
+    <p>Point it at your emulators and your own legally-owned games and launch them from the same place — movies, shows and games, all under one roof.</p>
   </div>
 
-  <div class="cta"><a class="button" href="index.html">← Back to overview</a></div>
-  <footer>Beebo Entertainment · a personal project · <a href="privacy.html">Privacy</a></footer>
+  <div class="callout">
+    <p><strong>It’s all yours.</strong> BeeboTV ships with no media of its own — it simply organizes and plays the collection you already have on your home computer.</p>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="index.html">← Back to overview</a></div>
 </div>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <a class="foot-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<span style="color:var(--accent-ink)">TV</span></a>
+    <nav class="foot-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="local-first.html">Local-first</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a href="driving-safety.html">Driving safety</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="foot-fine">
+    BeeboTV · a personal, family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot. The car apps collect no personal data — no accounts, analytics, ads, or trackers.
+  </div>
+</footer>
+
 </body>
 </html>

@@ -1,104 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Beebo Mirror — Privacy Policy</title>
-<style>
-  :root {
-    --bg: #ffffff;
-    --fg: #1a1c1e;
-    --muted: #5a5f66;
-    --card: #f5f6f8;
-    --border: #e2e5ea;
-    --accent: #2c5cc5;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #16181c;
-      --fg: #e6e8eb;
-      --muted: #a2a8b0;
-      --card: #21242a;
-      --border: #33373e;
-      --accent: #7ea2ff;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  .wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 40px 22px 72px;
-  }
-  h1 {
-    font-size: 1.75rem;
-    line-height: 1.25;
-    margin: 0 0 6px;
-  }
-  h2 {
-    font-size: 1.2rem;
-    margin: 34px 0 10px;
-  }
-  .eff {
-    color: var(--muted);
-    font-size: 0.92rem;
-    margin: 0 0 26px;
-  }
-  p { margin: 0 0 14px; }
-  ul { margin: 0 0 14px; padding-left: 22px; }
-  li { margin: 0 0 7px; }
-  a { color: var(--accent); }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 20px;
-    margin: 18px 0;
-  }
-  .card p:last-child { margin-bottom: 0; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 8px 0 14px;
-    font-size: 0.95rem;
-  }
-  th, td {
-    text-align: left;
-    padding: 9px 10px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-  th { color: var(--muted); font-weight: 600; }
-  footer {
-    margin-top: 40px;
-    padding-top: 18px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.9rem;
-  }
-  code {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1px 5px;
-    font-size: 0.9em;
-  }
-</style>
+<meta name="description" content="Beebo Mirror privacy policy: the app collects no personal data, has no accounts, analytics, ads, or third-party SDKs." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
 </head>
 <body>
-<div class="wrap">
-  <h1>Beebo Mirror — Privacy Policy</h1>
-  <p class="eff">Effective date: 25 August 2026</p>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<b>TV</b></a>
+    <nav class="nav-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a class="btn btn-primary nav-cta" href="https://jenkinsmovies.duckdns.org:47811/login">▶ Watch Now</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <a class="back" href="index.html">← Back to BeeboTV</a>
+  <div class="page-hero">
+    <div class="em">🔐</div>
+    <h1>Beebo Mirror — Privacy Policy</h1>
+  </div>
+  <p class="muted" style="text-align:center">Effective date: 25 August 2026</p>
 
   <p>Beebo Mirror (<code>com.beeboentertainment.mirror</code>) is a personal utility that mirrors your Android phone's screen onto your car's Android Auto head-unit. This policy explains, honestly and completely, what the app does and does not do with your information.</p>
 
-  <div class="card">
+  <div class="callout">
     <p><strong>In short:</strong> the app collects no personal data. It captures your screen only while you personally start a mirroring session, sends those frames only to the connected car display, and never records, stores, or transmits them anywhere. There are no accounts, no analytics, no ads, and no third-party SDKs.</p>
   </div>
 
@@ -120,6 +61,7 @@
   <p>The app contains no analytics, no advertising, and no third-party SDKs or trackers. Nothing about your use of the app is measured or reported to anyone.</p>
 
   <h2>Permissions and why they are used</h2>
+  <div class="table-scroll">
   <table>
     <thead>
       <tr><th>Permission</th><th>Why it is needed</th></tr>
@@ -131,6 +73,7 @@
       <tr><td>Car App Library surface / navigation</td><td>To draw the mirrored frames onto the Android Auto display.</td></tr>
     </tbody>
   </table>
+  </div>
 
   <h2>Children</h2>
   <p>This is a general-purpose personal utility and is not directed at children. It collects no data from anyone, including children.</p>
@@ -150,9 +93,27 @@
   <h2>Contact</h2>
   <p>Questions about this policy: <a href="mailto:nicholaswill86@gmail.com">nicholaswill86@gmail.com</a></p>
 
-  <footer>
-    <p>Beebo Mirror · <code>com.beeboentertainment.mirror</code> · Effective 25 August 2026</p>
-  </footer>
+  <p class="muted" style="margin-top:30px">Beebo Mirror · <code>com.beeboentertainment.mirror</code> · Effective 25 August 2026</p>
 </div>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <a class="foot-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<span style="color:var(--accent-ink)">TV</span></a>
+    <nav class="foot-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="local-first.html">Local-first</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a href="driving-safety.html">Driving safety</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="foot-fine">
+    BeeboTV · a personal, family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot. The car apps collect no personal data — no accounts, analytics, ads, or trackers.
+  </div>
+</footer>
+
 </body>
 </html>

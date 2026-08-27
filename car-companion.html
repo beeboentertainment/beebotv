@@ -3,78 +3,168 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Car companion apps — Beebo Entertainment</title>
-<meta name="description" content="Turn the back seat into a movie theater and a game room: real video on the car screen, synced screens, and passenger games to keep kids happy on road trips." />
+<title>In the Car — BeeboTV</title>
+<meta name="description" content="Real video on your car's Android Auto screen, watch-together in sync across every device, a customizable audio-sync buffer, and passenger games — with safety built in." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
 <link rel="stylesheet" href="site.css" />
 </head>
 <body>
-<div class="wrap">
-  <a class="back" href="index.html">← Back to Beebo Entertainment</a>
 
-  <div class="hero">
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<b>TV</b></a>
+    <nav class="nav-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a class="btn btn-primary nav-cta" href="https://jenkinsmovies.duckdns.org:47811/login">▶ Watch Now</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back" href="index.html">← Back to BeeboTV</a>
+  <div class="page-hero">
     <div class="em">🚗</div>
-    <h1>Car companion apps</h1>
-    <p class="lead">Turn the back seat into a movie theater and a game room. Beebo Entertainment brings your <em>own</em> library along for the drive — so a long road trip with the kids flies by.</p>
+    <h1>Made for the drive</h1>
+    <p class="lead">Turn the back seat into a movie theatre and a game room. BeeboTV brings your own library along for the ride — so a long road trip with the kids flies by, safely.</p>
   </div>
 
   <div class="callout">
-    <p><strong>Made for road trips with kids.</strong> Everyone watches the same film in sync, the sound comes through the car, and when they get restless there are games to play. Or <strong>pre-load your phone with your videos before you leave</strong> and watch with no signal and no data used — no data-hungry streaming service, and no “are we there yet?” meltdown.</p>
+    <p><strong>Built for road trips with kids.</strong> Everyone watches the same film in sync, the sound comes through the car, and when they get restless there are games to play. Pre-load your phone before you leave and it plays with no signal and no data used — no data-hungry streaming, and no “are we there yet?” meltdown.</p>
   </div>
 
-  <h2>What it does in the car</h2>
-
+  <h2>Real video on the car screen</h2>
   <div class="feature">
-    <h3>🎬 Real video on the car screen <span class="tag">Beebo Mirror</span></h3>
-    <p>Android Auto normally only lets apps play <em>sound</em> in the car. Beebo Mirror puts the actual picture up on the car display, so the kids can <em>watch</em> their movies and shows — not just listen to them.</p>
+    <h3>🎬 The actual picture, not just sound <span class="tag">Beebo Mirror</span></h3>
+    <p>Android Auto normally only lets apps play <em>sound</em> in the car. Beebo Mirror puts your phone’s whole screen up on the car display — so the kids can <em>watch</em> their movies and shows, not just listen to them.</p>
   </div>
 
+  <div class="callout safe">
+    <p><strong>🛡️ Safety first — how the screen is gated.</strong> Video appears on the car screen only at start-up, after a built-in <strong>2-minute countdown</strong>, and only while the car has stayed in Park since you turned it on. If the car moves or leaves Park, mirroring stops for the rest of the trip — to use it again you <strong>turn the car off and back on and wait the two minutes again</strong>. That restart-and-wait is the whole point: it makes the screen something you set up before you pull away, never something you switch on at a stop light. There is no way to mirror video while moving.</p>
+  </div>
+</div>
+
+<!-- What the car screen shows -->
+<section class="section alt" id="carscreens">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">On the car screen</div>
+      <h2>What you’ll see on the display</h2>
+      <p>Three simple states, so everyone in the car knows exactly what to expect.</p>
+    </div>
+    <div class="screens-grid">
+      <div class="cscard">
+        <div class="car-screen mirroring" style="padding:14px">
+          <div class="browser">
+            <div class="bbar"><i></i><i></i><i></i><span class="u">search or type a web address</span></div>
+            <div class="bpage"><div class="globe">🌐</div><div class="search">🔍 Search the web</div></div>
+          </div>
+        </div>
+        <p class="screen-cap"><b>Parked &amp; set up.</b> Your whole phone screen, mirrored — a browser, an app, a movie, anything.</p>
+      </div>
+      <div class="cscard">
+        <div class="car-screen">
+          <div class="cs-top">● Car display</div>
+          <div class="cs-icon">⏳</div>
+          <div class="cs-msg">Available in 2:00</div>
+          <div class="cs-sub">Sorry for the wait! Keep the car in Park and don’t shift gears — the screen starts as soon as the countdown ends.</div>
+        </div>
+        <p class="screen-cap"><b>The start-up countdown.</b> Two minutes in Park, every time you start the car.</p>
+      </div>
+      <div class="cscard">
+        <div class="car-screen warn">
+          <div class="cs-top">● Car display</div>
+          <div class="cs-icon">⚠️</div>
+          <div class="cs-msg">Mirroring paused for safety</div>
+          <div class="cs-sub">The car left Park, so mirroring’s off for the rest of the trip. Turn the car off and back on, keep it in Park, and wait the 2 minutes to start again.</div>
+        </div>
+        <p class="screen-cap"><b>If the car leaves Park.</b> Mirroring locks until a fresh restart.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <h2>Everyone in sync</h2>
   <div class="feature">
-    <h3>👨‍👩‍👧‍👦 Everyone watches together, in sync <span class="tag">Watch Together</span></h3>
-    <p>Have more than one screen in the car? They all play the same movie in step. A built-in audio-delay slider nudges the sound so Bluetooth speakers and headphones stay perfectly lip-synced. You can shrink a screen, move it, or switch one off entirely.</p>
+    <h3>👨‍👩‍👧‍👦 Watch together, in step <span class="tag">Watch Together</span></h3>
+    <p>Got more than one screen in the car? They all play the same movie at the same moment. Passengers can follow along on their own phones, tablets and laptops, while the car speakers carry the sound — nobody misses a thing.</p>
+  </div>
+  <div class="feature">
+    <h3>🎚️ A sound buffer you can tune <span class="tag">Audio-sync</span></h3>
+    <p>A customizable audio-sync buffer keeps every screen and the car speakers lined up, so the picture never looks dubbed or a beat behind. Nudge it a touch for Bluetooth speakers or headphones and the whole car stays perfectly in step.</p>
+  </div>
+  <div class="feature">
+    <h3>📷 Guests join by QR — no app needed <span class="tag">Watch Party</span></h3>
+    <p>A passenger with no app can join in seconds: scan the QR code and the watch party opens right in their phone’s browser. No install, no account — straight to the web, fast and simple.</p>
   </div>
 
+  <h2>When the movie’s over</h2>
   <div class="feature">
     <h3>🎮 Passenger games <span class="tag">Roadside Rumble</span></h3>
-    <p>When the movie’s over and they’re getting antsy, the kids can play games together — or, if a child is riding solo, against <strong>Cruisin’ Carl</strong>, a friendly built-in opponent, so there’s always someone to play with.</p>
+    <p>When they get antsy, the kids can play games together — or, if a child is riding solo, against <strong>Cruisin’ Carl</strong>, a friendly built-in opponent, so there’s always someone to play with.</p>
   </div>
-
   <div class="feature">
     <h3>🔊 Sound through the car speakers <span class="tag">Beebo Auto</span></h3>
     <p>Your library’s audio plays right through the car’s speakers over Android Auto — the same simple, hands-free experience as any car media app.</p>
   </div>
-
   <div class="feature">
     <h3>🔗 Bring your own stuff</h3>
-    <p>Paste a web link to pull up your own online files, or stream a movie straight from your home PC over the internet. Their favorites, wherever you are.</p>
+    <p>Paste a web link to pull up your own online files, or stream a movie straight from your home PC over the internet. Their favourites, wherever you are.</p>
   </div>
 
   <h2>The three apps</h2>
   <div class="apps">
     <div class="app">
+      <span class="pill">On Google Play</span>
       <h3>Beebo Auto</h3>
       <p>The audio companion — plays your library through the car speakers, with passenger games and your own saved links.</p>
     </div>
     <div class="app">
+      <span class="pill">On Google Play</span>
       <h3>Beebo Mirror</h3>
-      <p>Puts your phone’s whole screen on the car display, so films play as real video. Installed from Google Play.</p>
+      <p>Puts your phone’s whole screen on the car display, so films play as real video (with the safety gating above).</p>
     </div>
     <div class="app">
-      <h3>Beebo Entertainment (movie app)</h3>
-      <p>Your library and player, with Watch Together, Picture-in-Picture, and Stream-from-PC built in.</p>
+      <span class="pill">On Google Play</span>
+      <h3>Beebo Entertainment</h3>
+      <p>Your library and player, with Watch Together, Picture-in-Picture and Stream-from-PC built in.</p>
     </div>
   </div>
 
   <div class="callout">
-    <p><strong>A note for parents:</strong> the driver’s controls stay simple and hands-free — the movies, screens, and games all live in the back seat where the kids are.</p>
+    <p><strong>A note for parents:</strong> the driver’s controls stay simple and hands-free — the movies, screens and games all live in the back seat where the kids are. See the <a href="driving-safety.html">driving-safety page</a> for the full details.</p>
   </div>
 
-  <div class="cta">
-    <a class="button" href="index.html">← Back to overview</a>
-  </div>
-
-  <footer>
-    Beebo Entertainment · a personal project · <a href="privacy.html">Privacy</a>
-  </footer>
+  <div class="cta"><a class="btn btn-primary btn-lg" href="index.html">← Back to overview</a></div>
 </div>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <a class="foot-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<span style="color:var(--accent-ink)">TV</span></a>
+    <nav class="foot-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="local-first.html">Local-first</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a href="driving-safety.html">Driving safety</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="foot-fine">
+    BeeboTV · a personal, family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot. The car apps collect no personal data — no accounts, analytics, ads, or trackers.
+  </div>
+</footer>
+
 </body>
 </html>
