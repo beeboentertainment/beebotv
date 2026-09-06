@@ -266,3 +266,18 @@ a.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color
   .nav-links a:not(.nav-cta){display:none}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+
+/* --- Header fit on phones: keep the "Beebo Entertainment" brand and the
+   Watch Now button from overlapping on narrow screens (the brand could not
+   shrink before, so it slid under the button). --- */
+@media (max-width:820px){
+  .nav-in{padding:10px 14px;gap:10px}
+  .brand{font-size:1.05rem;gap:8px;min-width:0;overflow:hidden;white-space:nowrap}
+  .brand img{width:30px;height:30px;flex:none}
+  .nav-links{margin-left:auto;flex-wrap:nowrap}
+  .nav-cta{flex:none;white-space:nowrap;padding:7px 12px;font-size:.9rem}
+}
+@media (max-width:430px){
+  .brand{font-size:.98rem}
+  .nav-cta{padding:6px 10px;font-size:.85rem}
+}
