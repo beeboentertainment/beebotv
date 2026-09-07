@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your license key — Beebo Entertainment</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .key-card { max-width: 520px; margin: 8px auto 0; background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:18px; padding:28px; box-shadow:0 12px 30px rgba(0,0,0,.06); text-align:center; }
+  .keybox { display:flex; gap:8px; margin:18px 0 6px; }
+  .keybox input { flex:1; font-family:'Figtree',monospace; font-size:19px; letter-spacing:1px; text-align:center; padding:14px 10px; border:2px dashed #cdd3db; border-radius:12px; background:#fbfcfd; color:#2b2b30; }
+  .copybtn { white-space:nowrap; }
+  .muted { color:#8a8f98; font-size:13px; }
+  .steps { text-align:left; margin:22px 0 0; line-height:1.6; }
+  .steps ol { padding-left:20px; }
+  .spinner { display:inline-block; width:26px; height:26px; border:3px solid #e6e8ec; border-top-color:#f5a524; border-radius:50%; animation:spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg) } }
+  .err { color:#b4232a; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<b> Entertainment</b></a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="page-hero">
+    <div class="em">🎉</div>
+    <h1>You're subscribed — thank you!</h1>
+    <p class="lead">Here's your Beebo license key. Paste it into Beebo on your server computer to activate.</p>
+  </div>
+
+  <div class="key-card">
+    <div id="loading">
+      <div class="spinner"></div>
+      <p class="muted">Getting your license key…</p>
+    </div>
+
+    <div id="result" hidden>
+      <div class="keybox">
+        <input id="key" type="text" readonly value="" />
+        <button class="btn btn-primary copybtn" id="copyBtn">Copy</button>
+      </div>
+      <p class="muted" id="emailLine"></p>
+      <div class="steps">
+        <b>Activate Beebo:</b>
+        <ol>
+          <li>Open <b>Beebo</b> on the computer that runs your server.</li>
+          <li>Go to <b>Settings → Subscription &amp; license</b>.</li>
+          <li>Paste the key above into the box and click <b>Activate</b>.</li>
+        </ol>
+        <p class="muted">Keep this key somewhere safe — we've also tied it to your subscription, so you can always find it again by contacting support with your email.</p>
+      </div>
+    </div>
+
+    <div id="error" hidden>
+      <p class="err" id="errMsg">We couldn't load your key automatically.</p>
+      <p class="muted">Your subscription is active. If your key doesn't appear, please contact support and we'll send it right over. You can also try refreshing this page.</p>
+    </div>
+  </div>
+
+  <p style="text-align:center;margin-top:22px"><a class="back" href="index.html">← Back to Beebo Entertainment</a></p>
+</div>
+
+<script>
+  // The licensing backend. Update if the Worker is served on a different host.
+  var BACKEND = 'https://license.beebotv.com';
+
+  function show(id) { document.getElementById(id).hidden = false; }
+  function hide(id) { document.getElementById(id).hidden = true; }
+
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
+  }
+
+  async function loadKey() {
+    var sessionId = getParam('session_id');
+    if (!sessionId) { hide('loading'); document.getElementById('errMsg').textContent = 'No checkout session was found in the link.'; show('error'); return; }
+    try {
+      var res = await fetch(BACKEND.replace(/\/$/, '') + '/checkout/session?session_id=' + encodeURIComponent(sessionId));
+      var data = await res.json();
+      if (res.ok && data && data.licenseKey) {
+        document.getElementById('key').value = data.licenseKey;
+        if (data.email) document.getElementById('emailLine').textContent = 'Sent to ' + data.email;
+        hide('loading'); show('result');
+      } else {
+        throw new Error((data && data.error) || 'no_key');
+      }
+    } catch (e) {
+      hide('loading'); show('error');
+    }
+  }
+
+  document.getElementById('copyBtn').addEventListener('click', function () {
+    var input = document.getElementById('key');
+    input.select();
+    try { navigator.clipboard.writeText(input.value); } catch (e) { document.execCommand('copy'); }
+    this.textContent = 'Copied!';
+    var self = this; setTimeout(function () { self.textContent = 'Copy'; }, 1600);
+  });
+
+  loadKey();
+</script>
+</body>
+</html>

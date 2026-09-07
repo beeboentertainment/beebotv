@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Subscribe — Beebo Entertainment</title>
+<meta name="description" content="Keep your Beebo Entertainment home server running — $0.99/month after a free 30-day trial." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .price-card { max-width: 460px; margin: 8px auto 0; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 28px; box-shadow: 0 12px 30px rgba(0,0,0,.06); text-align: center; }
+  .price-card .amount { font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #2b2b30; }
+  .price-card .amount span { font-size: 17px; font-weight: 600; color: #7a7f88; }
+  .price-card .trial { display:inline-block; margin: 10px 0 2px; background:#eaf7ee; color:#1f8a45; font-weight:600; font-size:13px; padding:5px 12px; border-radius:999px; }
+  .price-card ul { list-style: none; padding: 0; margin: 18px 0 22px; text-align: left; }
+  .price-card li { padding: 7px 0 7px 28px; position: relative; color:#3a3f48; }
+  .price-card li::before { content: "✓"; position:absolute; left:2px; color:#1f8a45; font-weight:700; }
+  .subscribe-btn { display:block; width:100%; box-sizing:border-box; text-align:center; font-size:17px; padding:14px 18px; }
+  .fine { color:#8a8f98; font-size:12.5px; margin-top:12px; }
+  .how { max-width: 640px; margin: 30px auto 0; }
+  .how ol { padding-left: 20px; line-height: 1.6; }
+  .how li { margin: 6px 0; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<b> Entertainment</b></a>
+    <nav class="nav-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a class="btn btn-primary nav-cta" href="https://watch.beebotv.com/">▶ Watch Now</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back" href="index.html">← Back to Beebo Entertainment</a>
+  <div class="page-hero">
+    <div class="em">🐰</div>
+    <h1>Keep your Beebo running</h1>
+    <p class="lead">Your Beebo server is free to try for a full month. After that, a small subscription keeps it running — so your whole household keeps watching your own library, anywhere.</p>
+  </div>
+
+  <div class="price-card">
+    <div class="amount">$0.99<span> / month</span></div>
+    <div class="trial">30-day free trial — no card needed</div>
+    <ul>
+      <li>Stream your movies &amp; shows to every phone, tablet and TV in the house</li>
+      <li>Watch on the road, cast to the big screen, download for offline</li>
+      <li>New features and updates, delivered automatically</li>
+      <li>Cancel anytime</li>
+    </ul>
+    <a class="btn btn-primary subscribe-btn" id="subscribeBtn" href="#">Subscribe — $0.99/month</a>
+    <p class="fine">Secure checkout by Stripe. You can start your free trial right inside Beebo first — no payment until you subscribe.</p>
+  </div>
+
+  <div class="how">
+    <h2>How it works</h2>
+    <ol>
+      <li><b>Install Beebo</b> on the computer that holds your movies and start it — you get 30 days free, no card.</li>
+      <li>When you're ready to keep it, click <b>Subscribe</b> above and check out with Stripe.</li>
+      <li>You'll get a <b>license key</b> on the next screen. Open Beebo → <b>Settings → Subscription &amp; license</b>, paste the key, and click <b>Activate</b>. That's it.</li>
+    </ol>
+  </div>
+</div>
+
+<script>
+  // The Stripe payment link. TEST link for now — swap to the LIVE link at launch.
+  var PAYMENT_LINK = 'https://buy.stripe.com/test_aFa14odbE7Yhcom9HTd3i00';
+  document.getElementById('subscribeBtn').setAttribute('href', PAYMENT_LINK);
+</script>
+</body>
+</html>
