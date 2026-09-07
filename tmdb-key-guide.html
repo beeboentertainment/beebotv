@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get your TMDB key — Beebo Entertainment</title>
+<meta name="description" content="A simple, illustrated walkthrough: create a free TMDB account and copy your API key so Beebo can show posters, cast, and descriptions. About three minutes." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- TMDB guide: components layered on top of site.css tokens ---- */
+  .tg-chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px}
+  .tg-chip{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--surface);border:1px solid var(--border);border-radius:999px;
+    padding:7px 14px;font-size:.86rem;font-weight:600;color:var(--ink);box-shadow:var(--shadow);
+  }
+  .tg-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 6px}
+  .tg-cta{
+    display:inline-flex;align-items:center;gap:9px;cursor:pointer;text-decoration:none;
+    font-family:var(--font-body);font-weight:600;font-size:1rem;padding:12px 18px;border-radius:12px;
+    border:1px solid transparent;transition:transform .08s ease, background .12s ease, border-color .12s ease;
+  }
+  .tg-cta:active{transform:translateY(1px)}
+  .tg-cta-primary{background:var(--accent);color:#2a1c07;box-shadow:var(--shadow)}
+  .tg-cta-primary:hover{background:var(--accent-ink);color:#fff}
+  .tg-cta-ghost{background:var(--surface);color:var(--ink);border-color:var(--border-strong)}
+  .tg-cta-ghost:hover{border-color:var(--accent)}
+  .tg-cta:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+  .tg-steps{display:flex;flex-direction:column;gap:18px;margin-top:30px}
+  .tg-step{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;display:grid;grid-template-columns:1fr 296px;
+  }
+  .tg-body{padding:22px 24px 24px}
+  .tg-head{display:flex;align-items:center;gap:13px;margin-bottom:10px}
+  .tg-num{
+    flex:0 0 auto;width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--accent-ink);
+    font-family:var(--font-display);font-weight:800;font-size:1.25rem;display:grid;place-items:center;
+  }
+  .tg-step h2{font-family:var(--font-display);font-weight:700;font-size:1.3rem;margin:0;line-height:1.15;border:0;padding:0}
+  .tg-step p{margin:0;color:var(--muted);font-size:1rem;line-height:1.6}
+  .tg-step p + p{margin-top:9px}
+  .tg-step a{color:var(--accent-ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--accent-soft)}
+  .tg-step a:hover{border-bottom-color:var(--accent)}
+  .tg-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;white-space:nowrap}
+  .tg-illus{background:var(--bg-2);border-left:1px solid var(--border);display:grid;place-items:center;padding:20px}
+  .tg-illus svg{width:100%;height:auto;max-width:256px;display:block}
+
+  .tg-example{margin-top:14px;background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:13px 15px;font-size:.92rem}
+  .tg-example .lbl{font-family:var(--font-display);font-weight:700;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+  .tg-kv{display:flex;gap:8px;padding:3px 0;flex-wrap:wrap}
+  .tg-kv span:first-child{color:var(--muted);min-width:120px}
+  .tg-kv span:last-child{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86rem;color:var(--ink)}
+
+  .tg-finish{display:flex;gap:13px;align-items:flex-start;background:var(--accent-soft);border:1px solid var(--border-strong);border-radius:14px;padding:17px 19px;margin-top:26px}
+  .tg-finish svg{flex:0 0 auto;margin-top:2px}
+  .tg-finish p{margin:0;font-size:1rem;color:var(--ink)}
+
+  .tg-fine{margin-top:26px;color:var(--muted);font-size:.85rem;line-height:1.55}
+  .tg-fine a{color:var(--muted)}
+
+  @media (max-width:640px){
+    .tg-step{grid-template-columns:1fr}
+    .tg-illus{border-left:0;border-top:1px solid var(--border);order:-1}
+    .tg-illus svg{max-width:220px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<b> Entertainment</b></a>
+    <nav class="nav-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a class="btn btn-primary nav-cta" href="https://watch.beebotv.com/">▶ Watch Now</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back" href="server-setup.html">← Back to setup</a>
+  <div class="page-hero">
+    <div class="em">🔑</div>
+    <h1>Get your free TMDB key</h1>
+    <p class="lead">Beebo uses <strong>TMDB</strong> — a free movie database — to fill in your posters, cast photos, and descriptions. You just add your own free key. It takes about three minutes, and you only do it once.</p>
+  </div>
+
+  <div class="tg-chips">
+    <span class="tg-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="var(--good)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>100% free</span>
+    <span class="tg-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--accent-ink)" stroke-width="2"/><path d="M12 7.5V12l3 2" stroke="var(--accent-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>~3 minutes</span>
+    <span class="tg-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.3 5.9.9-4.25 4.15 1 5.85L12 16.9 6.75 19.1l1-5.85L3.5 9.2l5.9-.9L12 3z" stroke="var(--accent-ink)" stroke-width="1.7" stroke-linejoin="round"/></svg>Done once</span>
+  </div>
+
+  <div class="tg-ctas">
+    <a class="tg-cta tg-cta-primary" href="https://www.themoviedb.org/signup" target="_blank" rel="noopener noreferrer">Open TMDB sign-up
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="tg-cta tg-cta-ghost" href="https://www.themoviedb.org/settings/api" target="_blank" rel="noopener noreferrer">Open your API page
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+
+  <div class="tg-steps">
+
+    <section class="tg-step">
+      <div class="tg-body">
+        <div class="tg-head"><span class="tg-num">1</span><h2>Make a free account</h2></div>
+        <p>Go to <a href="https://www.themoviedb.org/signup" target="_blank" rel="noopener noreferrer">themoviedb.org/signup</a> and fill in a username, your email, and a password. Then click <strong>Sign Up</strong>.</p>
+      </div>
+      <div class="tg-illus">
+        <svg viewBox="0 0 260 172" role="img" aria-label="A sign-up form with a highlighted Sign Up button">
+          <rect x="1" y="1" width="258" height="170" rx="12" fill="var(--surface)" stroke="var(--border)"/>
+          <path d="M1 13a12 12 0 0 1 12-12h234a12 12 0 0 1 12 12v10H1z" fill="var(--bg-2)"/>
+          <circle cx="15" cy="12" r="3" fill="#E5734B"/><circle cx="25" cy="12" r="3" fill="#E7B24A"/><circle cx="35" cy="12" r="3" fill="#4FB477"/>
+          <rect x="30" y="42" width="200" height="20" rx="6" fill="var(--bg-2)" stroke="var(--border)"/>
+          <rect x="30" y="70" width="200" height="20" rx="6" fill="var(--bg-2)" stroke="var(--border)"/>
+          <rect x="30" y="98" width="200" height="20" rx="6" fill="var(--bg-2)" stroke="var(--border)"/>
+          <rect x="30" y="132" width="120" height="26" rx="8" fill="var(--accent)"/>
+          <rect x="26" y="128" width="128" height="34" rx="10" fill="none" stroke="var(--accent-ink)" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="90" y="149" text-anchor="middle" font-family="Figtree,sans-serif" font-size="12" font-weight="700" fill="#2a1c07">Sign Up</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tg-step">
+      <div class="tg-body">
+        <div class="tg-head"><span class="tg-num">2</span><h2>Confirm your email</h2></div>
+        <p>TMDB sends you an email. Open it and click the verification link inside — that switches your account on.</p>
+        <p>No email after a minute? Check your spam folder.</p>
+      </div>
+      <div class="tg-illus">
+        <svg viewBox="0 0 260 172" role="img" aria-label="An email with a highlighted verify button">
+          <rect x="1" y="1" width="258" height="170" rx="12" fill="var(--surface)" stroke="var(--border)"/>
+          <rect x="30" y="26" width="200" height="120" rx="10" fill="var(--bg-2)" stroke="var(--border)"/>
+          <path d="M40 44l90 52 90-52" fill="none" stroke="var(--muted)" stroke-width="2"/>
+          <rect x="40" y="44" width="180" height="88" rx="6" fill="none" stroke="var(--border)"/>
+          <rect x="86" y="150" width="88" height="8" rx="4" fill="var(--border)"/>
+          <rect x="95" y="86" width="70" height="26" rx="8" fill="var(--accent)"/>
+          <rect x="91" y="82" width="78" height="34" rx="10" fill="none" stroke="var(--accent-ink)" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="130" y="103" text-anchor="middle" font-family="Figtree,sans-serif" font-size="11" font-weight="700" fill="#2a1c07">Verify</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tg-step">
+      <div class="tg-body">
+        <div class="tg-head"><span class="tg-num">3</span><h2>Open your API settings</h2></div>
+        <p>Sign in, then go to <a href="https://www.themoviedb.org/settings/api" target="_blank" rel="noopener noreferrer">your API page</a>. (You can also reach it from your picture in the top-right → <strong>Settings</strong> → <strong>API</strong>.)</p>
+      </div>
+      <div class="tg-illus">
+        <svg viewBox="0 0 260 172" role="img" aria-label="Account menu with the API item highlighted">
+          <rect x="1" y="1" width="258" height="170" rx="12" fill="var(--surface)" stroke="var(--border)"/>
+          <path d="M1 13a12 12 0 0 1 12-12h234a12 12 0 0 1 12 12v10H1z" fill="var(--bg-2)"/>
+          <circle cx="238" cy="12" r="6" fill="var(--accent)"/>
+          <rect x="150" y="34" width="96" height="122" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+          <rect x="164" y="48" width="60" height="8" rx="4" fill="var(--border)"/>
+          <rect x="164" y="70" width="68" height="8" rx="4" fill="var(--border)"/>
+          <rect x="164" y="92" width="52" height="8" rx="4" fill="var(--border)"/>
+          <rect x="156" y="110" width="84" height="24" rx="7" fill="var(--accent-soft)"/>
+          <rect x="153" y="107" width="90" height="30" rx="9" fill="none" stroke="var(--accent-ink)" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="170" y="126" font-family="Figtree,sans-serif" font-size="12" font-weight="700" fill="var(--accent-ink)">API</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tg-step">
+      <div class="tg-body">
+        <div class="tg-head"><span class="tg-num">4</span><h2>Request a Developer key</h2></div>
+        <p>Click <strong>Create</strong> (it may say “Request an API Key”), then choose <strong>Developer</strong>. That option is free — it’s the right one for a home server.</p>
+      </div>
+      <div class="tg-illus">
+        <svg viewBox="0 0 260 172" role="img" aria-label="Developer and Professional choices, Developer highlighted">
+          <rect x="1" y="1" width="258" height="170" rx="12" fill="var(--surface)" stroke="var(--border)"/>
+          <text x="30" y="36" font-family="Baloo 2,sans-serif" font-size="13" font-weight="700" fill="var(--ink)">Choose a type</text>
+          <rect x="30" y="50" width="94" height="96" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="77" y="86" text-anchor="middle" font-family="Baloo 2,sans-serif" font-size="14" font-weight="800" fill="var(--accent-ink)">Developer</text>
+          <text x="77" y="108" text-anchor="middle" font-family="Figtree,sans-serif" font-size="11" font-weight="700" fill="var(--good)">Free</text>
+          <path d="M64 122 71 129 92 108" fill="none" stroke="var(--good)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="136" y="50" width="94" height="96" rx="10" fill="var(--bg-2)" stroke="var(--border)"/>
+          <text x="183" y="92" text-anchor="middle" font-family="Baloo 2,sans-serif" font-size="12" font-weight="700" fill="var(--muted)">Professional</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tg-step">
+      <div class="tg-body">
+        <div class="tg-head"><span class="tg-num">5</span><h2>Fill the short form</h2></div>
+        <p>Accept the terms, then fill the little form. Anything sensible works — you can copy these:</p>
+        <div class="tg-example">
+          <p class="lbl">Example answers</p>
+          <div class="tg-kv"><span>Application name</span><span>Beebo</span></div>
+          <div class="tg-kv"><span>Application URL</span><span>http://localhost</span></div>
+          <div class="tg-kv"><span>Summary</span><span>Personal home media server</span></div>
+        </div>
+      </div>
+      <div class="tg-illus">
+        <svg viewBox="0 0 260 172" role="img" aria-label="A short form with example values and a Submit button">
+          <rect x="1" y="1" width="258" height="170" rx="12" fill="var(--surface)" stroke="var(--border)"/>
+          <rect x="30" y="24" width="200" height="18" rx="6" fill="var(--bg-2)" stroke="var(--border)"/>
+          <text x="38" y="37" font-family="monospace" font-size="10" fill="var(--muted)">Beebo</text>
+          <rect x="30" y="50" width="200" height="18" rx="6" fill="var(--bg-2)" stroke="var(--border)"/>
+          <text x="38" y="63" font-family="monospace" font-size="10" fill="var(--muted)">http://localhost</text>
+          <rect x="30" y="76" width="200" height="34" rx="6" fill="var(--bg-2)" stroke="var(--border)"/>
+          <text x="38" y="90" font-family="monospace" font-size="10" fill="var(--muted)">Personal home</text>
+          <text x="38" y="103" font-family="monospace" font-size="10" fill="var(--muted)">media server</text>
+          <rect x="30" y="126" width="96" height="26" rx="8" fill="var(--accent)"/>
+          <text x="78" y="143" text-anchor="middle" font-family="Figtree,sans-serif" font-size="12" font-weight="700" fill="#2a1c07">Submit</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tg-step">
+      <div class="tg-body">
+        <div class="tg-head"><span class="tg-num">6</span><h2>Copy your key</h2></div>
+        <p>Your key appears right away, labelled <strong>API Key (v3 auth)</strong> — a long line of letters and numbers. Copy that whole string.</p>
+      </div>
+      <div class="tg-illus">
+        <svg viewBox="0 0 260 172" role="img" aria-label="The API Key value with a highlighted Copy button">
+          <rect x="1" y="1" width="258" height="170" rx="12" fill="var(--surface)" stroke="var(--border)"/>
+          <text x="30" y="52" font-family="Baloo 2,sans-serif" font-size="12" font-weight="700" fill="var(--ink)">API Key (v3 auth)</text>
+          <rect x="30" y="64" width="200" height="30" rx="8" fill="var(--bg-2)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="40" y="83" font-family="monospace" font-size="11" fill="var(--ink)">a1b2c3d4e5f6•••7890</text>
+          <rect x="150" y="106" width="80" height="26" rx="8" fill="var(--accent)"/>
+          <rect x="146" y="102" width="88" height="34" rx="10" fill="none" stroke="var(--accent-ink)" stroke-width="2" stroke-dasharray="5 4"/>
+          <path d="M166 119h6v6h-6z" fill="none" stroke="#2a1c07" stroke-width="1.6"/>
+          <path d="M169 116h6v6" fill="none" stroke="#2a1c07" stroke-width="1.6"/>
+          <text x="197" y="123" text-anchor="middle" font-family="Figtree,sans-serif" font-size="11" font-weight="700" fill="#2a1c07">Copy</text>
+        </svg>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="tg-finish">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <ellipse cx="12" cy="15.5" rx="6.2" ry="5.5" fill="var(--accent-ink)"/>
+      <ellipse cx="8.6" cy="6.2" rx="2" ry="4.4" fill="var(--accent-ink)"/>
+      <ellipse cx="15.4" cy="6.2" rx="2" ry="4.4" fill="var(--accent-ink)"/>
+      <circle cx="10.1" cy="14.8" r=".9" fill="#fff"/><circle cx="13.9" cy="14.8" r=".9" fill="#fff"/>
+    </svg>
+    <p><strong>Last step — back in Beebo:</strong> open <strong>Settings → TMDB API key</strong>, paste your key into the box, and click <strong>Save</strong>. Posters and cast photos start filling in. That’s the whole setup!</p>
+  </div>
+
+  <p class="tg-fine">
+    Getting a key for your own home server is free. If you ever run Beebo commercially, TMDB may require a separate commercial licence — see <a href="https://www.themoviedb.org/api-terms-of-use" target="_blank" rel="noopener noreferrer">TMDB’s API terms</a>. This guide uses TMDB and is not endorsed or certified by TMDB; TMDB and the TMDB logo are trademarks of The Movie Database.
+  </p>
+</div>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <a class="foot-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<span style="color:var(--accent-ink)"> Entertainment</span></a>
+    <nav class="foot-links">
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="local-first.html">Local-first</a>
+      <a href="beebo-space-saver.html">Space Saver</a>
+      <a href="driving-safety.html">Driving safety</a>
+      <a href="movie-privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="foot-fine">
+    Beebo Entertainment · a personal, family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot.
+  </div>
+</footer>
+
+</body>
+</html>
