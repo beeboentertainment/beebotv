@@ -75,7 +75,8 @@
   /* Slow breathing fade on the nav “Get Beebo” button */
   .nav-in { padding-top: 24px; }
   .nav-cta { position: relative; overflow: visible; animation: navCtaFade 2.8s ease-in-out infinite; }
-  @keyframes navCtaFade { 0%, 100% { opacity: 1 } 50% { opacity: .58 } }
+  .nav-links a.nav-cta, .nav-links a.nav-cta:hover { color: #000; background: var(--accent); }
+  @keyframes navCtaFade { 0%, 100% { opacity: 1 } 50% { opacity: .78 } }
   .nav-cta .peek { position: absolute; left: 16px; bottom: calc(100% - 13px); width: 42px; height: auto;
     pointer-events: none; filter: drop-shadow(0 3px 4px rgba(0,0,0,.28));
     animation: beeboPeek 3s ease-in-out infinite; transform-origin: bottom center; }
