@@ -381,7 +381,7 @@
         <h3>Install the server (Windows&nbsp;PC)</h3>
         <p>On the computer that holds your movies, download and run the installer — it sets up your personal Beebo server.</p>
         <p style="margin-top:12px"><a class="btn btn-primary" href="https://github.com/SWGfan/beebotv/releases/latest/download/BeeboEntertainmentSetup.exe" download>⬇ Download for Windows</a></p>
-        <p style="color:var(--muted);font-size:.85rem;margin-top:8px">Beebo server <b>v0.1.6</b> · uploaded September 8, 2026, 5:22 AM ET</p>
+        <p style="color:var(--muted);font-size:.85rem;margin-top:8px">Beebo server <b id="ver-inline">v0.1.8</b> · always the latest release</p>
         <p style="color:var(--muted);font-size:.85rem;margin-top:8px">Windows 10/11 · ~225&nbsp;MB. Windows may warn it’s from an unknown publisher — choose “More info → Run anyway”.</p>
       </div>
       <div class="card">
@@ -474,9 +474,21 @@
   </div>
   <div class="foot-fine">
     Beebo Entertainment · a family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot. Your files stay on your own computer — no ads, no trackers, no selling your data.
-    <br /><span style="opacity:.8">Last updated September 8, 2026, 5:22 AM ET · Beebo server v0.1.6</span>
+    <br /><span style="opacity:.8">Beebo server <span id="ver-foot">v0.1.8</span> · always up to date</span>
   </div>
 </footer>
 
+<script>
+  // Keep the shown version in step with the actual latest release (same feed the app uses).
+  fetch('desktop-version.json', { cache: 'no-store' })
+    .then(function (r) { return r.json() })
+    .then(function (d) {
+      if (!d || !d.version) return
+      var v = 'v' + d.version
+      var a = document.getElementById('ver-inline'); if (a) a.textContent = v
+      var b = document.getElementById('ver-foot'); if (b) b.textContent = v
+    })
+    .catch(function () {})
+</script>
 </body>
 </html>
