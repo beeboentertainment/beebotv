@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Your license key — Beebo Entertainment</title>
+<title>Set up your Beebo login — Beebo Entertainment</title>
 <meta name="robots" content="noindex" />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
@@ -15,15 +15,18 @@
 <link rel="stylesheet" href="site.css" />
 <style>
   .key-card { max-width: 520px; margin: 8px auto 0; background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:18px; padding:28px; box-shadow:0 12px 30px rgba(0,0,0,.06); text-align:center; }
-  .keybox { display:flex; gap:8px; margin:18px 0 6px; }
-  .keybox input { flex:1; font-family:'Figtree',monospace; font-size:19px; letter-spacing:1px; text-align:center; padding:14px 10px; border:2px dashed #cdd3db; border-radius:12px; background:#fbfcfd; color:#2b2b30; }
-  .copybtn { white-space:nowrap; }
+  .fieldrow { text-align:left; margin:14px 0; }
+  .fieldrow label { display:block; font-weight:600; font-size:14px; margin-bottom:6px; color:#2b2b30; }
+  .fieldrow input { width:100%; box-sizing:border-box; font-family:'Figtree',sans-serif; font-size:16px; padding:13px 13px; border:2px solid #dfe4ea; border-radius:12px; background:#fbfcfd; color:#2b2b30; }
+  .fieldrow input:focus { outline:none; border-color:#f5a524; }
   .muted { color:#8a8f98; font-size:13px; }
-  .steps { text-align:left; margin:22px 0 0; line-height:1.6; }
+  .steps { text-align:left; margin:20px 0 0; line-height:1.6; }
   .steps ol { padding-left:20px; }
   .spinner { display:inline-block; width:26px; height:26px; border:3px solid #e6e8ec; border-top-color:#f5a524; border-radius:50%; animation:spin 1s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg) } }
-  .err { color:#b4232a; }
+  .err { color:#b4232a; font-size:14px; margin:4px 0 0; }
+  .emailpill { display:inline-block; background:#fff6e6; border:1px solid #f3d79a; color:#8a5a00; border-radius:999px; padding:4px 12px; font-weight:600; font-size:14px; }
+  .fullbtn { width:100%; margin-top:6px; }
 </style>
 </head>
 <body>
@@ -38,35 +41,51 @@
   <div class="page-hero">
     <div class="em">🎉</div>
     <h1>You're subscribed — thank you!</h1>
-    <p class="lead">Here's your Beebo license key. Paste it into Beebo on your server computer to activate.</p>
+    <p class="lead">One quick step: create your password. You'll sign in to Beebo with your email and this password.</p>
   </div>
 
   <div class="key-card">
     <div id="loading">
       <div class="spinner"></div>
-      <p class="muted">Getting your license key…</p>
+      <p class="muted">Confirming your subscription…</p>
     </div>
 
-    <div id="result" hidden>
-      <div class="keybox">
-        <input id="key" type="text" readonly value="" />
-        <button class="btn btn-primary copybtn" id="copyBtn">Copy</button>
-      </div>
-      <p class="muted" id="emailLine"></p>
+    <div id="form" hidden>
+      <p style="margin:0 0 4px">Creating your login for</p>
+      <p><span class="emailpill" id="emailPill">your email</span></p>
+      <form id="pwForm">
+        <div class="fieldrow">
+          <label for="pw">Choose a password</label>
+          <input id="pw" type="password" autocomplete="new-password" placeholder="At least 8 characters" />
+        </div>
+        <div class="fieldrow">
+          <label for="pw2">Confirm password</label>
+          <input id="pw2" type="password" autocomplete="new-password" placeholder="Type it again" />
+        </div>
+        <p class="err" id="formErr" hidden></p>
+        <button class="btn btn-primary fullbtn" id="createBtn" type="submit">Create my account</button>
+      </form>
+      <p class="muted" style="margin-top:14px">This is the password you'll type into Beebo on your server computer to unlock it.</p>
+    </div>
+
+    <div id="done" hidden>
+      <div class="em" style="font-size:40px">✅</div>
+      <h2 style="margin:6px 0">You're all set!</h2>
+      <p>Your Beebo account is ready. Now install Beebo on your server computer and sign in.</p>
       <div class="steps">
-        <b>Activate Beebo:</b>
+        <b>Finish setup:</b>
         <ol>
-          <li>Open <b>Beebo</b> on the computer that runs your server.</li>
-          <li>Go to <b>Settings → Subscription &amp; license</b>.</li>
-          <li>Paste the key above into the box and click <b>Activate</b>.</li>
+          <li><a href="https://beebo-licensing.nicholaswill86.workers.dev/download/windows-server" download><b>Download Beebo for Windows</b></a> and run the installer on the computer that holds your movies.</li>
+          <li>When Beebo opens, sign in with <b id="doneEmail">your email</b> and the password you just created.</li>
+          <li>Point Beebo at your movie folders — then watch on every phone in the house. <a href="server-setup.html">Full setup guide →</a></li>
         </ol>
-        <p class="muted">Keep this key somewhere safe — we've also tied it to your subscription, so you can always find it again by contacting support with your email.</p>
       </div>
+      <p style="margin-top:16px"><a class="btn btn-primary fullbtn" href="https://beebo-licensing.nicholaswill86.workers.dev/download/windows-server" download>⬇ Download Beebo for Windows</a></p>
     </div>
 
     <div id="error" hidden>
-      <p class="err" id="errMsg">We couldn't load your key automatically.</p>
-      <p class="muted">Your subscription is active. If your key doesn't appear, please contact support and we'll send it right over. You can also try refreshing this page.</p>
+      <p class="err" id="errMsg">We couldn't confirm your subscription automatically.</p>
+      <p class="muted">Your payment went through. If this page can't set up your account, please contact support with the email you subscribed with and we'll get you sorted.</p>
     </div>
   </div>
 
@@ -76,41 +95,59 @@
 <script>
   // The licensing backend. Update if the Worker is served on a different host.
   var BACKEND = 'https://beebo-licensing.nicholaswill86.workers.dev';
+  var SESSION_ID = new URLSearchParams(window.location.search).get('session_id');
 
   function show(id) { document.getElementById(id).hidden = false; }
   function hide(id) { document.getElementById(id).hidden = true; }
 
-  function getParam(name) {
-    return new URLSearchParams(window.location.search).get(name);
-  }
-
-  async function loadKey() {
-    var sessionId = getParam('session_id');
-    if (!sessionId) { hide('loading'); document.getElementById('errMsg').textContent = 'No checkout session was found in the link.'; show('error'); return; }
+  async function init() {
+    if (!SESSION_ID) { hide('loading'); document.getElementById('errMsg').textContent = 'No checkout session was found in the link.'; show('error'); return; }
+    // Fetch the email tied to this checkout so we can show who the account is for.
     try {
-      var res = await fetch(BACKEND.replace(/\/$/, '') + '/checkout/session?session_id=' + encodeURIComponent(sessionId));
+      var res = await fetch(BACKEND.replace(/\/$/, '') + '/checkout/session?session_id=' + encodeURIComponent(SESSION_ID));
       var data = await res.json();
-      if (res.ok && data && data.licenseKey) {
-        document.getElementById('key').value = data.licenseKey;
-        if (data.email) document.getElementById('emailLine').textContent = 'Sent to ' + data.email;
-        hide('loading'); show('result');
-      } else {
-        throw new Error((data && data.error) || 'no_key');
-      }
+      var email = (data && data.email) || '';
+      if (email) { document.getElementById('emailPill').textContent = email; document.getElementById('doneEmail').textContent = email; }
+      hide('loading'); show('form');
     } catch (e) {
-      hide('loading'); show('error');
+      // Even if we can't show the email, let them set a password — register verifies the session server-side.
+      hide('loading'); show('form');
     }
   }
 
-  document.getElementById('copyBtn').addEventListener('click', function () {
-    var input = document.getElementById('key');
-    input.select();
-    try { navigator.clipboard.writeText(input.value); } catch (e) { document.execCommand('copy'); }
-    this.textContent = 'Copied!';
-    var self = this; setTimeout(function () { self.textContent = 'Copy'; }, 1600);
+  document.getElementById('pwForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var pw = document.getElementById('pw').value;
+    var pw2 = document.getElementById('pw2').value;
+    var errEl = document.getElementById('formErr');
+    errEl.hidden = true;
+    if (pw.length < 8) { errEl.textContent = 'Please choose a password with at least 8 characters.'; errEl.hidden = false; return; }
+    if (pw !== pw2) { errEl.textContent = 'Those passwords don’t match.'; errEl.hidden = false; return; }
+    var btn = document.getElementById('createBtn');
+    btn.disabled = true; btn.textContent = 'Creating your account…';
+    try {
+      var res = await fetch(BACKEND.replace(/\/$/, '') + '/auth/register', {
+        method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ sessionId: SESSION_ID, password: pw })
+      });
+      var data = await res.json();
+      if (res.ok && data && data.ok) {
+        if (data.email) document.getElementById('doneEmail').textContent = data.email;
+        hide('form'); show('done');
+      } else {
+        var msg = 'Something went wrong. Please try again.';
+        if (data && data.error === 'weak_password') msg = 'Please choose a password with at least 8 characters.';
+        else if (data && data.error === 'invalid_session') msg = 'We couldn’t confirm this checkout. Please contact support.';
+        errEl.textContent = msg; errEl.hidden = false;
+        btn.disabled = false; btn.textContent = 'Create my account';
+      }
+    } catch (e2) {
+      errEl.textContent = 'Couldn’t reach the server — check your connection and try again.'; errEl.hidden = false;
+      btn.disabled = false; btn.textContent = 'Create my account';
+    }
   });
 
-  loadKey();
+  init();
 </script>
 </body>
 </html>
