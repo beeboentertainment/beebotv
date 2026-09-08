@@ -72,6 +72,10 @@
   .reward .btn{margin-left:auto}
   @media (max-width:640px){.reward .btn{margin-left:0}}
   .placeholder-note{font-size:.8rem;color:var(--muted);opacity:.85;text-align:center;margin-top:10px}
+  /* Slow breathing fade on the nav “Get Beebo” button */
+  @keyframes navCtaFade { 0%, 100% { opacity: 1 } 50% { opacity: .45 } }
+  .nav-cta { animation: navCtaFade 2.8s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { .nav-cta { animation: none } }
 </style>
 </head>
 <body>
