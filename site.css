@@ -281,3 +281,15 @@ a.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color
   .brand{font-size:.98rem}
   .nav-cta{padding:6px 10px;font-size:.85rem}
 }
+
+/* ---- nav "Get Beebo" button: Beebo peeks over it, black text, slow fade (shared on every page) ---- */
+.nav-in { padding-top: 24px; }
+.nav-cta { position: relative; overflow: visible; animation: navCtaFade 2.8s ease-in-out infinite; }
+.nav-links a.nav-cta, .nav-links a.nav-cta:hover { color: #000; background: var(--accent); }
+@keyframes navCtaFade { 0%, 100% { opacity: 1 } 50% { opacity: .78 } }
+.nav-cta .peek { position: absolute; left: 16px; bottom: calc(100% - 13px); width: 42px; height: auto;
+  pointer-events: none; filter: drop-shadow(0 3px 4px rgba(0,0,0,.28));
+  animation: beeboPeek 3s ease-in-out infinite; transform-origin: bottom center; }
+@keyframes beeboPeek { 0%, 100% { transform: translateY(2px) rotate(-2deg) } 50% { transform: translateY(-3px) rotate(2deg) } }
+@media (max-width:430px) { .nav-cta .peek { width: 34px; left: 12px } }
+@media (prefers-reduced-motion: reduce) { .nav-cta, .nav-cta .peek { animation: none } }
