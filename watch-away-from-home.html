@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Watch away from home — Beebo Entertainment</title>
+<meta name="description" content="Reach your whole Beebo library from anywhere. Open your yourname.beebo.tv address in any browser, install it as an app, and watch on mobile data or at a friend's place — no router setup." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .addr{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.15rem;background:var(--bg-2);border:1px solid var(--border-strong);border-radius:10px;padding:12px 16px;display:inline-block;color:var(--ink);margin:4px 0}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo, the Beebo Entertainment mascot" />Beebo<b> Entertainment</b></a>
+    <nav class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="index.html#offgrid">Off-grid</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="help.html">Help</a>
+      <a class="btn btn-primary nav-cta" href="index.html#get-app"><img class="peek" src="assets/beebo-mascot.png" alt="" aria-hidden="true" width="42" height="39" />Get Beebo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+  <div class="page-hero">
+    <div class="em">🌍</div>
+    <h1>Watch away from home</h1>
+    <p class="lead">Your movies live on the computer at home — but you don’t have to. On mobile data, at a friend’s house, in a hotel, on the other side of the world: open one web address and your whole library is right there. No router settings, no tech wizardry.</p>
+  </div>
+
+  <h2>Your family’s permanent address</h2>
+  <div class="feature">
+    <h3>🔗 It looks like this</h3>
+    <p>Every Beebo gets its own free web address that <strong>never changes</strong>:</p>
+    <p><span class="addr">yourname.beebo.tv</span></p>
+    <p>The owner sees the exact address on the app’s <strong>🚀 Get Started</strong> screen (under “Watch away from home”), along with a QR code. Share it with your household once, and everyone uses it forever.</p>
+  </div>
+
+  <h2>Watch away — step by step</h2>
+  <ol class="steps">
+    <li><h3>Open your address in a browser</h3><p>On your phone, tablet, or laptop, type your <code>yourname.beebo.tv</code> address into any web browser — or scan the QR code from the owner’s Get Started screen with your phone’s camera.</p></li>
+    <li><h3>Sign in</h3><p>Enter the username and login code (or password) the owner set up for you. Don’t have one? Ask the owner to add you — see <a href="manage-users.html">Add &amp; manage people</a>.</p></li>
+    <li><h3>Press play</h3><p>Your full library loads, just like at home — posters, Continue Watching, everything. It streams over the internet, so it uses your data plan when you’re not on Wi-Fi.</p></li>
+    <li><h3>Install it for one-tap access</h3><p>Tap <strong>Install app</strong> / <strong>Add to Home Screen</strong> so Beebo gets a real icon and you skip typing the address next time. Full steps in <a href="app-on-your-phone.html">Get Beebo on your phone</a>.</p></li>
+  </ol>
+
+  <div class="callout safe">
+    <p>💡 <strong>One install, works everywhere.</strong> Once Beebo is on your phone, it connects through your home Wi-Fi when you’re home and switches to your <code>.beebo.tv</code> address when you’re out — automatically. You don’t change a thing.</p>
+  </div>
+
+  <h2>For the owner: turning it on</h2>
+  <div class="feature">
+    <h3>✅ It’s usually already on</h3>
+    <p>Your permanent <code>.beebo.tv</code> address is free and automatic — it comes online a few seconds after Beebo starts, and you’ll see it (with its QR code) on the <strong>Get Started</strong> screen. Nothing to configure.</p>
+  </div>
+  <div class="feature">
+    <h3>🔁 Backup: temporary remote access</h3>
+    <p>If the permanent address ever won’t connect on a tricky network, Get Started also offers <strong>Turn on remote access</strong> — a temporary web address you can type into the app. Handy as a fallback, though it changes each time you restart Beebo.</p>
+  </div>
+  <div class="feature">
+    <h3>⚙️ Advanced: your own domain</h3>
+    <p>Prefer an address like <code>watch.yourfamily.com</code>? Get Started has an optional, one-time setup (about 15 minutes, needs a domain name) using a free Cloudflare tunnel. Totally optional — the free <code>.beebo.tv</code> address works great on its own.</p>
+  </div>
+
+  <h2>Troubleshooting &amp; FAQ</h2>
+  <div class="faq">
+    <details><summary>The local 192.168… address stopped working when I left home</summary><p>That local address only works on the home Wi-Fi. Away from home, use your <code>yourname.beebo.tv</code> address instead — it’s built for exactly this.</p></details>
+    <details><summary>My beebo.tv address won’t load</summary><p>First, the home computer must be <strong>on and running Beebo</strong> — it’s your server. Give it a few seconds after Beebo starts. If it still won’t connect, the owner can turn on the temporary <strong>remote access</strong> backup in Get Started, or restart Beebo on the home PC.</p></details>
+    <details><summary>Does watching away from home use my data?</summary><p>Yes — off Wi-Fi it streams over your mobile data, like any streaming app. To avoid data use entirely, download movies to your phone while on Wi-Fi first (available in the Android app), then watch them offline.</p></details>
+    <details><summary>Is it safe to open my library to the internet?</summary><p>Yes. Everyone, including you, must sign in with an approved account to see anything — and your video files never leave your computer; they’re streamed on demand. The owner controls exactly who has a login in the Users tab.</p></details>
+    <details><summary>Do I need to forward ports on my router?</summary><p>No. That’s the point of the <code>.beebo.tv</code> address — it connects without any router setup.</p></details>
+    <details><summary>Can several of us watch away from home at once?</summary><p>Yes — different people can stream different things at the same time, each signed into their own account.</p></details>
+  </div>
+
+  <div class="guide-nav">
+    <a href="app-on-your-phone.html">📱 Get Beebo on your phone</a>
+    <a href="cast-to-tv.html">📺 Cast to your TV</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="help.html">← Back to Help &amp; Guides</a></div>
+</div>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <a class="foot-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<span style="color:var(--accent-ink)"> Entertainment</span></a>
+    <nav class="foot-links">
+      <a href="help.html">Help &amp; Guides</a>
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="local-first.html">Local-first</a>
+      <a href="movie-privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="foot-fine">
+    Beebo Entertainment · a personal, family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot.
+  </div>
+</footer>
+
+</body>
+</html>

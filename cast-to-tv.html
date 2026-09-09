@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cast to your TV — Beebo Entertainment</title>
+<meta name="description" content="Send any movie or show from your phone straight to the big screen with Chromecast or Google TV. Tap the Cast button, pick your TV, and your phone becomes the remote." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .cast-icon{display:inline-flex;align-items:center;justify-content:center;width:26px;height:22px;vertical-align:-4px}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo, the Beebo Entertainment mascot" />Beebo<b> Entertainment</b></a>
+    <nav class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="index.html#offgrid">Off-grid</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="help.html">Help</a>
+      <a class="btn btn-primary nav-cta" href="index.html#get-app"><img class="peek" src="assets/beebo-mascot.png" alt="" aria-hidden="true" width="42" height="39" />Get Beebo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+  <div class="page-hero">
+    <div class="em">📺</div>
+    <h1>Cast to your TV</h1>
+    <p class="lead">Watching on your phone is great — but some nights call for the big screen. If you have a Chromecast or a Google TV, Beebo sends any movie or show straight to the television, and your phone turns into the remote. No extra box, no cables.</p>
+  </div>
+
+  <div class="callout">
+    <p><strong>What you need:</strong> a <strong>Chromecast</strong> or <strong>Google TV</strong> (built into many TVs, or a small plug-in dongle), and your phone on the <strong>same Wi-Fi</strong> as that TV. That’s the whole shopping list.</p>
+  </div>
+
+  <h2>Cast in three taps</h2>
+  <ol class="steps">
+    <li><h3>Start playing on your phone</h3><p>Open Beebo, pick a movie or show, and press play as usual.</p></li>
+    <li><h3>Tap the Cast button</h3><p>Look for the little screen-with-waves icon <span class="cast-icon" aria-hidden="true"><svg width="24" height="20" viewBox="0 0 24 20" fill="none"><rect x="2" y="2" width="20" height="14" rx="2" stroke="var(--accent-ink)" stroke-width="1.8"/><path d="M2 13a5 5 0 0 1 5 5M2 16.5A1.5 1.5 0 0 1 3.5 18" stroke="var(--accent-ink)" stroke-width="1.8" stroke-linecap="round"/></svg></span> in the player’s top bar. It appears whenever a Chromecast or Google TV is found on your Wi-Fi.</p></li>
+    <li><h3>Pick your TV</h3><p>Choose your TV or Chromecast from the list. In a moment the film jumps up onto the big screen.</p></li>
+  </ol>
+
+  <div class="callout safe">
+    <p>🍿 <strong>Your phone is now the remote.</strong> Play, pause, skip, jump forward, change subtitles, adjust volume — all from your hand. You can even lock your phone or answer a text; the movie keeps playing on the TV. Tap the Cast button again and choose <strong>Stop casting</strong> when you’re done.</p>
+  </div>
+
+  <h2>Troubleshooting &amp; FAQ</h2>
+  <div class="faq">
+    <details><summary>I don’t see the Cast button</summary><p>The Cast button only shows up when Beebo finds a compatible device. Check that your <strong>phone and your Chromecast/Google TV are on the same Wi-Fi network</strong> (guest networks and 2.4GHz-vs-5GHz splits can hide them from each other), that the TV is switched on, and that you’re in the player screen. Then reopen the movie and look at the top bar again.</p></details>
+    <details><summary>Which devices can I cast to?</summary><p>Any Chromecast or a TV with Google TV / Chromecast built in. (Casting to Apple TV / AirPlay isn’t supported — for those, watch on the phone or use a Google device.)</p></details>
+    <details><summary>The Cast button is there but my TV isn’t in the list</summary><p>Give it a few seconds to appear. If it still doesn’t, restart the Chromecast (unplug for 10 seconds) and make sure it’s on the same Wi-Fi as your phone. Moving closer to the router can help too.</p></details>
+    <details><summary>It says “casting” but the TV is stuck on the loading logo</summary><p>This is almost always fixed on its own: Beebo quietly converts any file the Chromecast can’t play directly in the background, so give it a moment. If a particular older or unusual file won’t start, try another title to confirm casting works, then let Beebo finish preparing that file.</p></details>
+    <details><summary>Can I keep using my phone while casting?</summary><p>Yes! Once it’s on the TV, your phone is just the remote — browse other titles, reply to messages, or lock the screen. The movie plays on from the TV.</p></details>
+    <details><summary>Does casting work away from home?</summary><p>Casting works when your phone and the Chromecast share a Wi-Fi network — so it’s perfect at home or anywhere you and the TV are on the same Wi-Fi (a rental, a relative’s place). It isn’t for casting to a TV in a different location.</p></details>
+  </div>
+
+  <div class="guide-nav">
+    <a href="app-on-your-phone.html">📱 Get Beebo on your phone</a>
+    <a href="watch-away-from-home.html">🌍 Watch away from home</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="help.html">← Back to Help &amp; Guides</a></div>
+</div>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <a class="foot-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<span style="color:var(--accent-ink)"> Entertainment</span></a>
+    <nav class="foot-links">
+      <a href="help.html">Help &amp; Guides</a>
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="local-first.html">Local-first</a>
+      <a href="movie-privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="foot-fine">
+    Beebo Entertainment · a personal, family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot.
+  </div>
+</footer>
+
+</body>
+</html>

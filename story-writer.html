@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Turn on BeeboBook stories — Beebo Entertainment</title>
+<meta name="description" content="BeeboBook lets kids write their own branching storybooks with a private AI that runs free, right on your computer. Here's how to switch on the 'write your own story' button with Ollama." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .cmd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.95rem;background:var(--spot);color:var(--spot-ink);border-radius:10px;padding:12px 16px;display:block;margin:8px 0;overflow-x:auto}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo, the Beebo Entertainment mascot" />Beebo<b> Entertainment</b></a>
+    <nav class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="index.html#offgrid">Off-grid</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="help.html">Help</a>
+      <a class="btn btn-primary nav-cta" href="index.html#get-app"><img class="peek" src="assets/beebo-mascot.png" alt="" aria-hidden="true" width="42" height="39" />Get Beebo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+  <div class="page-hero">
+    <div class="em">📖</div>
+    <h1>Turn on BeeboBook stories</h1>
+    <p class="lead">BeeboBook is Beebo’s bonus bedtime feature: kids can write their <strong>own</strong> branching storybooks, dreamed up by a private AI that runs free, right on your home computer. Nothing is ever sent to the internet. The read-along books work out of the box — this guide switches on the “write your own story” button.</p>
+  </div>
+
+  <div class="callout safe">
+    <p><strong>Already works, no setup:</strong> the built-in read-along storybooks are ready the moment you install Beebo. You only need the steps below if you want kids to <strong>create brand-new stories</strong> of their own.</p>
+  </div>
+
+  <div class="callout">
+    <p><strong>Why the extra step?</strong> Writing new stories uses a small AI “brain” called a language model. Beebo keeps it <strong>100% on your own PC</strong> — free, no API key, no subscription, and nothing leaves your computer. To do that, you add a free helper app called <strong>Ollama</strong>. It’s a one-time setup of a few minutes.</p>
+  </div>
+
+  <h2>Switch it on — step by step</h2>
+  <p style="color:var(--muted)">Do this once, on the computer that runs Beebo.</p>
+  <ol class="steps">
+    <li><h3>Install the free Ollama app</h3><p>Download it from <a href="https://ollama.com/download" target="_blank" rel="noopener noreferrer">ollama.com/download</a> and run the Windows installer (about a minute). It runs quietly in the background — you’ll see its little icon near the clock.</p></li>
+    <li><h3>Add one small story-writing model</h3><p>Open <strong>Command Prompt</strong> (press Start, type <code>cmd</code>, press Enter) and run:</p><code class="cmd">ollama pull llama3.2</code><p>This downloads the story “brain” — about 2&nbsp;GB, one time. (A llama3, qwen, mistral, or phi model works too, if you prefer.)</p></li>
+    <li><h3>That’s it — open BeeboBook</h3><p>Beebo finds Ollama on its own. The <strong>“write your own story”</strong> button turns on the next time you open BeeboBook. Hand it to the kids and let them build a tale starring themselves.</p></li>
+  </ol>
+
+  <div class="callout safe">
+    <p>🌙 <strong>Family-safe and private by design.</strong> The story AI runs entirely on your computer, so stories can be made even with no internet, and nothing your children write ever goes online.</p>
+  </div>
+
+  <h2>Troubleshooting &amp; FAQ</h2>
+  <div class="faq">
+    <details><summary>The “write your own story” button still isn’t showing</summary><p>Make sure Ollama is actually running — look for its icon near the clock (bottom-right of the Windows taskbar). If it’s not there, open Ollama from the Start menu, then reopen BeeboBook. Also confirm the <code>ollama pull llama3.2</code> download finished without errors.</p></details>
+    <details><summary>Is this free? Do I need an internet key or subscription?</summary><p>Completely free. There’s no API key and no subscription — unlike the posters feature, the story writer needs nothing from the internet at all. You only download Ollama and one model once.</p></details>
+    <details><summary>The <code>ollama pull</code> command says it can’t find “ollama”</summary><p>Close and reopen Command Prompt after installing Ollama (it needs a fresh window to notice the new app). If it still doesn’t work, restart the computer once, then try the command again.</p></details>
+    <details><summary>How much space and power does it need?</summary><p>The <code>llama3.2</code> model is about 2&nbsp;GB on disk. It runs comfortably on an ordinary modern PC; a story takes a few moments to write. If it feels slow, that’s just the computer thinking — no internet is involved.</p></details>
+    <details><summary>Can I use a different model?</summary><p>Yes — Beebo works with other small models too. Just <code>ollama pull</code> a llama3, qwen, mistral, or phi model instead, and Beebo will find it.</p></details>
+    <details><summary>Where do I read more about Ollama?</summary><p>Visit <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">ollama.com</a>. Beebo also explains all of this in <strong>Settings → Story writer (BeeboBook AI)</strong>.</p></details>
+  </div>
+
+  <div class="guide-nav">
+    <a href="posters-and-info.html">🖼️ Set up posters &amp; info</a>
+    <a href="manage-users.html">👤 Add &amp; manage people</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="help.html">← Back to Help &amp; Guides</a></div>
+</div>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <a class="foot-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<span style="color:var(--accent-ink)"> Entertainment</span></a>
+    <nav class="foot-links">
+      <a href="help.html">Help &amp; Guides</a>
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="local-first.html">Local-first</a>
+      <a href="movie-privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="foot-fine">
+    Beebo Entertainment · a personal, family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot.
+  </div>
+</footer>
+
+</body>
+</html>

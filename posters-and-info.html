@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Set up posters &amp; info — Beebo Entertainment</title>
+<meta name="description" content="Give your library posters, cast photos, and descriptions by adding a free TMDB key in Beebo's Settings. Where to get the key, where to paste it, and how to save it all for offline use." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo, the Beebo Entertainment mascot" />Beebo<b> Entertainment</b></a>
+    <nav class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="index.html#offgrid">Off-grid</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="help.html">Help</a>
+      <a class="btn btn-primary nav-cta" href="index.html#get-app"><img class="peek" src="assets/beebo-mascot.png" alt="" aria-hidden="true" width="42" height="39" />Get Beebo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+  <div class="page-hero">
+    <div class="em">🖼️</div>
+    <h1>Set up posters &amp; info</h1>
+    <p class="lead">Out of the box, Beebo lists your movies by their file names. Add one free key and your library blooms into proper posters, cast photos, descriptions, release years, and ratings — the polished look you know from the big streaming apps. You do this once, on the computer running Beebo.</p>
+  </div>
+
+  <div class="callout">
+    <p><strong>What is TMDB?</strong> TMDB (The Movie Database) is a free, community-run movie and TV database. Beebo uses <em>your own</em> free key to look up the artwork and details for the films you already own. Your library never leaves your computer — Beebo just fetches the matching poster and description.</p>
+  </div>
+
+  <h2>Step 1 · Get your free TMDB key</h2>
+  <div class="feature">
+    <h3>🔑 A three-minute, one-time sign-up</h3>
+    <p>You’ll create a free TMDB account and copy your personal key. We’ve made a friendly, illustrated walkthrough with pictures for every click:</p>
+    <p style="margin-top:12px"><a class="btn btn-primary" href="tmdb-key-guide.html">Open the illustrated TMDB key guide →</a></p>
+    <p style="color:var(--muted);font-size:.92rem;margin-top:10px">In short: sign up at themoviedb.org, confirm the email they send, open your <strong>API settings</strong>, request a free <strong>Developer</strong> key, and copy the long string labelled <strong>API Key (v3 auth)</strong>.</p>
+  </div>
+
+  <h2>Step 2 · Paste it into Beebo</h2>
+  <ol class="steps">
+    <li><h3>Open Settings in the Beebo app</h3><p>On the computer running Beebo, click the <strong>⚙️ Settings</strong> tab.</p></li>
+    <li><h3>Find the “TMDB API key / token” box</h3><p>Paste your key there. Either the short v3 API key or the long v4 Read Access Token works — either one is fine.</p></li>
+    <li><h3>Click Save</h3><p>The button shows <strong>Saved ✓</strong>. Beebo starts filling in posters and cast photos right away. New films you add later get matched automatically.</p></li>
+  </ol>
+
+  <div class="callout safe">
+    <p>✨ <strong>That’s the whole setup.</strong> Give it a minute and your grid of file names turns into a wall of posters. If a poster is missing at first, it usually appears once Beebo finishes scanning.</p>
+  </div>
+
+  <h2>Optional · Save everything for offline &amp; travel</h2>
+  <div class="feature">
+    <h3>📦 Download all TMDB info</h3>
+    <p>Planning to watch somewhere with no internet — a cabin, a campsite, a long drive? In <strong>Settings</strong>, choose a folder under <strong>TMDB cache folder</strong>, then click <strong>Download all TMDB info for offline use</strong> <em>while you still have internet</em>. Beebo saves every poster, title, year, and cast photo to that folder, so your library stays beautiful even completely off the grid.</p>
+  </div>
+
+  <h2>Troubleshooting &amp; FAQ</h2>
+  <div class="faq">
+    <details><summary>Do I really need a key? Is it free?</summary><p>Posters and details need a key, but getting one is completely free for a home server and takes about three minutes. Without it, Beebo still plays everything — you’ll just see file names instead of artwork.</p></details>
+    <details><summary>A movie shows the wrong poster or no poster</summary><p>Open <strong>Settings</strong> and use the <strong>Re-check all posters</strong> (force refresh) option — it re-matches every title from scratch and fixes mismatches in one pass. Cleaner file names (for example <code>The Matrix (1999).mp4</code>) also help Beebo find the right match.</p></details>
+    <details><summary>Where exactly do I paste the key?</summary><p>In the Beebo desktop app: <strong>Settings → TMDB API key / token</strong>. Paste, then click <strong>Save</strong>. You only do this on the computer running Beebo, not on each phone.</p></details>
+    <details><summary>Is my key or my library shared with anyone?</summary><p>No. Your key stays in your Beebo settings on your own PC, and your video files never leave your computer. Beebo only asks TMDB for public artwork and descriptions.</p></details>
+    <details><summary>What about IMDb?</summary><p>People often say “IMDb” to mean movie posters and info in general. Beebo uses TMDB, a free open database that provides exactly that — posters, cast, and descriptions — with a free key.</p></details>
+  </div>
+
+  <p style="color:var(--muted);font-size:.85rem;margin-top:26px">This guide uses TMDB and is not endorsed or certified by TMDB. TMDB and the TMDB logo are trademarks of The Movie Database.</p>
+
+  <div class="guide-nav">
+    <a href="tmdb-key-guide.html">🔑 Illustrated key guide</a>
+    <a href="manage-users.html">👤 Add &amp; manage people</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="help.html">← Back to Help &amp; Guides</a></div>
+</div>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <a class="foot-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<span style="color:var(--accent-ink)"> Entertainment</span></a>
+    <nav class="foot-links">
+      <a href="help.html">Help &amp; Guides</a>
+      <a href="media-hub.html">Library</a>
+      <a href="car-companion.html">In the car</a>
+      <a href="stream-anywhere.html">Stream anywhere</a>
+      <a href="local-first.html">Local-first</a>
+      <a href="movie-privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="foot-fine">
+    Beebo Entertainment · a personal, family-friendly project by SWGfan. Beebo is our black-and-white French Lop mascot.
+  </div>
+</footer>
+
+</body>
+</html>
