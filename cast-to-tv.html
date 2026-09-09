@@ -109,5 +109,27 @@
   </div>
 </footer>
 
+<!-- Beebo analytics beacon -->
+<script>
+(function(){
+  var BEEBO_TRACK='https://beebo.tv/track';
+  try{
+    var sid;
+    try{ sid=sessionStorage.getItem('beebo_sid'); if(!sid){ sid=(Date.now().toString(36)+Math.random().toString(36).slice(2,10)); sessionStorage.setItem('beebo_sid',sid);} }catch(e){ sid='nostore'; }
+    var code=null;
+    try{ var q=new URLSearchParams(location.search); var qref=q.get('ref'); if(qref){ code=qref.slice(0,64); localStorage.setItem('beebo_ref',code);} else { code=localStorage.getItem('beebo_ref')||null; } }catch(e){}
+    var ref='';
+    try{ if(document.referrer){ var rh=new URL(document.referrer).host; if(rh&&rh.indexOf('beeboentertainment.com')===-1) ref=rh; } }catch(e){}
+    var path=location.pathname||'/';
+    function send(obj){ obj.session_id=sid; obj.path=path; if(code) obj.referral_code=code; try{ fetch(BEEBO_TRACK,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(obj),keepalive:true,mode:'cors'}).catch(function(){}); }catch(e){} }
+    try{ var seenKey='beebo_seen_'+path; if(!sessionStorage.getItem(seenKey)){ sessionStorage.setItem(seenKey,'1'); send({event:'view',ref:ref}); } }catch(e){ send({event:'view',ref:ref}); }
+    var start=Date.now();
+    function flushDwell(){ var body=JSON.stringify({event:'dwell',session_id:sid,path:path,dwell_ms:Date.now()-start}); try{ if(navigator.sendBeacon){ navigator.sendBeacon(BEEBO_TRACK,new Blob([body],{type:'application/json'})); } else { fetch(BEEBO_TRACK,{method:'POST',headers:{'content-type':'application/json'},body:body,keepalive:true}); } }catch(e){} }
+    document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden') flushDwell(); });
+    window.addEventListener('pagehide',flushDwell);
+    document.addEventListener('click',function(ev){ var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null; if(!a) return; var href=(a.getAttribute('href')||'').toLowerCase(); var kind=null; if(href.indexOf('.exe')!==-1||href.indexOf('/download/windows-server')!==-1) kind='windows'; else if(href.indexOf('beeboauto')!==-1) kind='android-auto'; else if(href.indexOf('.apk')!==-1) kind='android'; if(kind) send({event:'download',kind:kind}); },true);
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
