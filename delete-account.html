@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Delete your Beebo account</title>
+<meta name="description" content="Permanently delete your Beebo Entertainment account and all associated data." />
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .del-wrap{max-width:560px;margin:0 auto;padding:48px 22px 80px}
+  .del-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:30px 28px;box-shadow:var(--shadow-lg)}
+  .del-card h1{font-size:clamp(1.5rem,4vw,2rem);margin:0 0 6px}
+  .del-card .sub{color:var(--muted);margin:0 0 22px}
+  .del-list{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:8px}
+  .del-list li{padding-left:26px;position:relative;color:var(--ink);font-size:.96rem}
+  .del-list li::before{content:"–";position:absolute;left:6px;color:var(--muted)}
+  form{display:grid;gap:14px}
+  label{font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:-8px}
+  input[type=email],input[type=password]{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border-strong);background:var(--bg);color:var(--ink);font:inherit;font-size:1rem}
+  input:focus{outline:none;border-color:var(--accent)}
+  .confirm{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--ink);background:var(--bg-2);border-radius:12px;padding:12px 14px}
+  .confirm input{margin-top:3px}
+  .btn-danger{background:#c0392b;color:#fff;border:0;border-radius:12px;padding:13px 16px;font:inherit;font-weight:700;font-size:1rem;cursor:pointer}
+  .btn-danger:disabled{opacity:.5;cursor:default}
+  .btn-danger:hover:not(:disabled){background:#a5321f}
+  #msg{min-height:1.4em;font-size:.95rem;margin-top:4px}
+  #msg.err{color:#c0392b}
+  #msg.ok{color:var(--good)}
+  .back{display:inline-block;margin-top:18px;color:var(--accent-ink);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><img src="assets/beebo-badge-96.png" alt="Beebo" />Beebo<b> Entertainment</b></a>
+  </div>
+</header>
+
+<main class="del-wrap">
+  <div class="del-card">
+    <h1>Delete your Beebo account</h1>
+    <p class="sub">This permanently removes your Beebo Entertainment account and everything tied to it. This cannot be undone.</p>
+    <ul class="del-list">
+      <li>Your account and sign-in are erased</li>
+      <li>Any active subscription is cancelled — you won't be billed again</li>
+      <li>Your remote-access address and its records are removed</li>
+      <li>Your trial, licence, referral and usage records are deleted</li>
+    </ul>
+    <p class="sub" style="margin-bottom:18px">The movies and files on your own computer are <strong>never</strong> touched — Beebo never stores those. You can also do this from inside the Beebo app under Settings.</p>
+
+    <form id="delForm" autocomplete="on">
+      <label for="em">Account email</label>
+      <input id="em" type="email" autocomplete="username" inputmode="email" required placeholder="you@example.com" />
+      <label for="pw">Password</label>
+      <input id="pw" type="password" autocomplete="current-password" required placeholder="Your Beebo password" />
+      <label class="confirm"><input id="cf" type="checkbox" required /> <span>I understand this permanently deletes my account and all of its data, and it can't be undone.</span></label>
+      <button id="go" class="btn-danger" type="submit" disabled>Permanently delete my account</button>
+      <p id="msg"></p>
+    </form>
+    <a class="back" href="index.html">← Back to Beebo</a>
+  </div>
+</main>
+
+<script>
+  var API = 'https://beebo-licensing.nicholaswill86.workers.dev/account/delete';
+  var form = document.getElementById('delForm'), go = document.getElementById('go'), cf = document.getElementById('cf'), msg = document.getElementById('msg');
+  cf.addEventListener('change', function(){ go.disabled = !cf.checked; });
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if (!cf.checked) return;
+    if (!window.confirm('Delete your Beebo account permanently? This cannot be undone.')) return;
+    msg.textContent = ''; msg.className = ''; go.disabled = true; go.textContent = 'Deleting…';
+    var email = document.getElementById('em').value.trim(), password = document.getElementById('pw').value;
+    fetch(API, { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ email: email, password: password }) })
+      .then(function(r){ return r.json().then(function(j){ return { status:r.status, j:j }; }); })
+      .then(function(res){
+        if (res.status === 200 && res.j.ok) {
+          form.style.display = 'none';
+          msg.className = 'ok';
+          msg.innerHTML = '<strong>Your account has been deleted.</strong> Your account, subscription and all associated data have been permanently removed. You can close this page.';
+          return;
+        }
+        go.disabled = false; go.textContent = 'Permanently delete my account';
+        msg.className = 'err';
+        if (res.status === 401) msg.textContent = 'That email and password don’t match an account.';
+        else if (res.status === 400) msg.textContent = 'Please enter your email and password.';
+        else msg.textContent = 'Something went wrong. Please try again in a moment.';
+      })
+      .catch(function(){ go.disabled = false; go.textContent = 'Permanently delete my account'; msg.className = 'err'; msg.textContent = 'Network error — please try again.'; });
+  });
+</script>
+</body>
+</html>
