@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Will Beebo work on my internet? — Beebo Entertainment</title>
+<meta name="description" content="Check in ten seconds whether your home internet will let Beebo stream to you when you're away — before you install anything.">
+<style>
+  :root {
+    --gold: #8a6d0b;
+    --gold-bright: #b8901a;
+    --ink: #241f14;
+    --muted: #6b6353;
+    --bg: #fdf9f3;
+    --card: #ffffff;
+    --line: #e8dfd0;
+    --good: #1b6b3a;
+    --good-bg: #e8f5ec;
+    --warn: #8a5a00;
+    --warn-bg: #fdf3e0;
+    --bad: #9c2c2c;
+    --bad-bg: #fbeceb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --gold: #d9b040; --gold-bright: #ffd700; --ink: #f2ece0; --muted: #a89f8d;
+      --bg: #17140e; --card: #211d15; --line: #3a3428;
+      --good: #6ede9a; --good-bg: #14301f; --warn: #f0c274; --warn-bg: #322610;
+      --bad: #f19b95; --bad-bg: #331815;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 40px 20px 72px; }
+  h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.15; margin: 0 0 10px; color: var(--gold); letter-spacing: -0.02em; }
+  .sub { font-size: 17px; color: var(--muted); margin: 0 0 32px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 0 0 20px; }
+  button {
+    font: inherit; font-weight: 600; cursor: pointer;
+    background: var(--gold); color: #fff; border: 0;
+    border-radius: 10px; padding: 15px 28px; width: 100%;
+    transition: background .15s ease;
+  }
+  button:hover:not(:disabled) { background: var(--gold-bright); }
+  button:disabled { opacity: .55; cursor: default; }
+  .steps { list-style: none; margin: 22px 0 0; padding: 0; }
+  .steps li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 11px 0; border-top: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .steps li:first-child { border-top: 0; }
+  .dot {
+    flex: 0 0 auto; width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--line); margin-top: 2px;
+    display: grid; place-items: center; font-size: 12px; line-height: 1;
+  }
+  .dot.run { border-color: var(--gold); border-right-color: transparent; animation: spin .8s linear infinite; }
+  .dot.yes { border-color: var(--good); background: var(--good); color: #fff; }
+  .dot.no  { border-color: var(--bad);  background: var(--bad);  color: #fff; }
+  .dot.meh { border-color: var(--warn); background: var(--warn); color: #fff; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .step-label { flex: 1; }
+  .step-detail { display: block; color: var(--muted); font-size: 13.5px; margin-top: 1px; }
+  .verdict { border-radius: 14px; padding: 24px; margin: 0 0 20px; border: 1px solid transparent; }
+  .verdict h2 { margin: 0 0 8px; font-size: 21px; }
+  .verdict p { margin: 0 0 10px; font-size: 15.5px; }
+  .verdict p:last-child { margin-bottom: 0; }
+  .verdict.good { background: var(--good-bg); border-color: var(--good); }
+  .verdict.good h2 { color: var(--good); }
+  .verdict.warn { background: var(--warn-bg); border-color: var(--warn); }
+  .verdict.warn h2 { color: var(--warn); }
+  .verdict.bad { background: var(--bad-bg); border-color: var(--bad); }
+  .verdict.bad h2 { color: var(--bad); }
+  .fineprint { font-size: 13.5px; color: var(--muted); }
+  .fineprint strong { color: var(--ink); }
+  details { margin-top: 18px; }
+  summary { cursor: pointer; font-size: 14px; color: var(--muted); font-weight: 600; }
+  pre {
+    background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+    padding: 14px; overflow-x: auto; font-size: 12.5px; line-height: 1.5; margin: 12px 0 0;
+  }
+  .hidden { display: none !important; }
+  footer { margin-top: 36px; font-size: 13.5px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Will Beebo work on my internet?</h1>
+  <p class="sub">
+    Beebo streams your own films from your own computer, straight to your phone — no
+    middleman. That works on almost every home connection, but not quite all of them.
+    This checks yours in about ten seconds. Nothing to install, nothing saved.
+  </p>
+
+  <div class="card">
+    <button id="go">Check my connection</button>
+    <ul class="steps hidden" id="steps">
+      <li><span class="dot" id="d1"></span><span class="step-label">Can this browser make a direct connection?<span class="step-detail" id="s1">waiting</span></span></li>
+      <li><span class="dot" id="d2"></span><span class="step-label">Finding how your router hands out connections<span class="step-detail" id="s2">waiting</span></span></li>
+      <li><span class="dot" id="d3"></span><span class="step-label">Checking a second time, to see if it stays consistent<span class="step-detail" id="s3">waiting</span></span></li>
+      <li><span class="dot" id="d4"></span><span class="step-label">Looking for modern (IPv6) internet<span class="step-detail" id="s4">waiting</span></span></li>
+    </ul>
+  </div>
+
+  <div id="verdict"></div>
+
+  <div class="card" id="explainer">
+    <p class="fineprint">
+      <strong>What this can and can't tell you.</strong>
+      This page tests how your connection behaves from a browser, which is a very good
+      predictor — but it can't see inside your router. Two things are only knowable once
+      Beebo is installed: whether your router will open a door on its own request, and
+      whether traffic actually arrives. Beebo asks your router to open a door
+      automatically when it starts — and if your router says no, watching away from
+      home still works anyway, because Beebo connects your phone straight to your PC
+      without needing that door at all.
+    </p>
+    <p class="fineprint" style="margin-top:12px">
+      Nothing here is sent anywhere or stored. The check runs entirely in your browser
+      and talks only to public address-lookup servers, the same ones video calls use.
+    </p>
+    <details>
+      <summary>Technical detail</summary>
+      <pre id="tech">Run the check to see the raw results.</pre>
+    </details>
+  </div>
+
+  <footer>Beebo Entertainment</footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // Two independent public STUN servers. Asking both is the whole trick: a router
+  // that gives the same public port to both is one Beebo can connect straight
+  // through. A router that gives a different port to each is doing "symmetric"
+  // NAT, and a direct connection will usually fail.
+  var STUN_A = 'stun:stun.cloudflare.com:3478';
+  var STUN_B = 'stun:stun.l.google.com:19302';
+  var GATHER_MS = 5000;
+
+  var $ = function (id) { return document.getElementById(id); };
+  function mark(n, cls, text) {
+    var d = $('d' + n);
+    d.className = 'dot ' + cls;
+    d.textContent = cls === 'yes' ? '✓' : cls === 'no' ? '✕' : cls === 'meh' ? '!' : '';
+    $('s' + n).textContent = text;
+  }
+
+  var PC = window.RTCPeerConnection || window.webkitRTCPeerConnection || window.mozRTCPeerConnection;
+
+  /**
+   * Ask one STUN server what our public address looks like.
+   *
+   * A "srflx" (server-reflexive) candidate is the address the outside world sees.
+   * Host candidates are our own LAN addresses; modern browsers hide those behind
+   * random .local names for privacy, which is fine — we only need the srflx one.
+   */
+  function probe(stunUrl) {
+    return new Promise(function (resolve) {
+      var out = { srflxIp: '', srflxPort: 0, ipv6: false, error: '', candidates: [] };
+      var pc;
+      try {
+        pc = new PC({ iceServers: [{ urls: stunUrl }] });
+      } catch (e) {
+        out.error = 'blocked'; return resolve(out);
+      }
+      var finished = false;
+      var done = function () {
+        if (finished) return;
+        finished = true;
+        try { pc.close(); } catch (e) {}
+        resolve(out);
+      };
+
+      pc.onicecandidate = function (ev) {
+        if (!ev.candidate || !ev.candidate.candidate) return done();
+        var c = ev.candidate.candidate;
+        out.candidates.push(c);
+        // candidate:<foundation> <component> <proto> <priority> <ip> <port> typ <type>
+        var m = /candidate:\S+ \d+ (\S+) \d+ (\S+) (\d+) typ (\S+)/i.exec(c);
+        if (!m) return;
+        var ip = m[2], port = parseInt(m[3], 10), type = m[4];
+        if (ip.indexOf(':') !== -1 && ip.indexOf('.local') === -1) out.ipv6 = true;
+        if (type === 'srflx' && !out.srflxIp) { out.srflxIp = ip; out.srflxPort = port; }
+      };
+      pc.onicegatheringstatechange = function () {
+        if (pc.iceGatheringState === 'complete') done();
+      };
+
+      try {
+        pc.createDataChannel('probe');
+        pc.createOffer()
+          .then(function (o) { return pc.setLocalDescription(o); })
+          .catch(function () { out.error = 'offer-failed'; done(); });
+      } catch (e) { out.error = 'offer-failed'; done(); }
+
+      setTimeout(done, GATHER_MS);
+    });
+  }
+
+  function show(cls, title, paras) {
+    var html = '<div class="verdict ' + cls + '"><h2>' + title + '</h2>';
+    for (var i = 0; i < paras.length; i++) html += '<p>' + paras[i] + '</p>';
+    $('verdict').innerHTML = html + '</div>';
+  }
+
+  $('go').addEventListener('click', function () {
+    var btn = $('go');
+    btn.disabled = true;
+    btn.textContent = 'Checking…';
+    $('steps').classList.remove('hidden');
+    $('verdict').innerHTML = '';
+    ['1', '2', '3', '4'].forEach(function (n) { mark(n, '', 'waiting'); });
+
+    if (!PC) {
+      mark(1, 'no', 'this browser cannot make direct connections');
+      show('warn', 'This browser can’t run the check', [
+        'Your browser doesn’t support the connection type Beebo uses, or an extension is blocking it. That doesn’t mean Beebo won’t work — it means this page can’t tell.',
+        'Try again in Chrome, Edge, Firefox or Safari with extensions paused.'
+      ]);
+      btn.disabled = false; btn.textContent = 'Check my connection';
+      return;
+    }
+    mark(1, 'yes', 'yes');
+
+    mark(2, 'run', 'asking…');
+    probe(STUN_A).then(function (a) {
+      if (!a.srflxIp) mark(2, 'no', 'no answer'); else mark(2, 'yes', 'your connection looks like ' + a.srflxIp);
+      mark(3, 'run', 'asking a second server…');
+      return probe(STUN_B).then(function (b) { return [a, b]; });
+    }).then(function (r) {
+      var a = r[0], b = r[1];
+
+      $('tech').textContent =
+        'server 1 (' + STUN_A + ')\n' +
+        '  public address : ' + (a.srflxIp || '(none)') + ':' + (a.srflxPort || '-') + '\n' +
+        '  candidates     : ' + a.candidates.length + (a.error ? '\n  error          : ' + a.error : '') + '\n\n' +
+        'server 2 (' + STUN_B + ')\n' +
+        '  public address : ' + (b.srflxIp || '(none)') + ':' + (b.srflxPort || '-') + '\n' +
+        '  candidates     : ' + b.candidates.length + (b.error ? '\n  error          : ' + b.error : '') + '\n\n' +
+        'IPv6 seen        : ' + (a.ipv6 || b.ipv6 ? 'yes' : 'no');
+
+      var ipv6 = a.ipv6 || b.ipv6;
+      mark(4, ipv6 ? 'yes' : 'meh', ipv6 ? 'yes — that helps' : 'not detected (not a problem)');
+
+      // Neither server answered: UDP is being blocked outright.
+      if (!a.srflxIp && !b.srflxIp) {
+        mark(3, 'no', 'no answer');
+        show('bad', 'This network blocks the connection Beebo needs', [
+          'Neither address server could be reached. That usually means a firewall is blocking the traffic — common on office, school, hotel and guest Wi-Fi.',
+          'If you’re on a network like that, try again from home. Home broadband almost never blocks this.'
+        ]);
+        btn.disabled = false; btn.textContent = 'Check again';
+        return;
+      }
+
+      if (!b.srflxIp || !a.srflxIp) {
+        mark(3, 'meh', 'only one server answered');
+        show('warn', 'Probably fine, but we couldn’t be certain', [
+          'One of the two address servers didn’t reply, so we can’t compare them. That’s usually a blip rather than a problem.',
+          'Run the check again — and if it keeps happening, Beebo will still tell you for sure when you install it.'
+        ]);
+        btn.disabled = false; btn.textContent = 'Check again';
+        return;
+      }
+
+      var samePort = a.srflxPort === b.srflxPort;
+      var sameIp = a.srflxIp === b.srflxIp;
+      mark(3, samePort ? 'yes' : 'meh', samePort ? 'consistent — good sign' : 'your router changes it each time');
+
+      if (sameIp && samePort) {
+        show('good', 'Yes — Beebo will work here', [
+          'Your router hands out connections in the straightforward way, which means your phone can reach your computer directly when you’re away from home. No settings to change, nothing to forward.',
+          ipv6
+            ? 'You also have modern IPv6 internet, which makes it more reliable still.'
+            : 'Install Beebo on the computer that holds your films, scan the code with your phone, and you’re done.'
+        ]);
+      } else if (sameIp && !samePort) {
+        show('warn', 'Beebo will work — it may just need a helping hand', [
+          'Your router gives out a different port for every connection. That’s called symmetric NAT, and it makes a direct phone-to-computer link harder to establish. It’s common on mobile broadband and some fibre providers.',
+          'Beebo has two other ways in: it will ask your router to open a door on its own, and if that’s not allowed it can fall back to a relay. Most people in your situation are still watching within a minute of installing.'
+        ]);
+      } else {
+        show('warn', 'Unusual setup — worth installing and letting Beebo check properly', [
+          'The two address servers saw you arriving from different addresses (' + a.srflxIp + ' and ' + b.srflxIp + '). That normally means more than one internet connection, or a provider that spreads traffic across several.',
+          'Nothing here says Beebo won’t work — only that this quick check can’t predict it. Beebo asks your router directly when it starts, and falls back to a direct phone-to-PC connection if the router refuses.'
+        ]);
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Check again';
+    });
+  });
+})();
+</script>
+</body>
+</html>
