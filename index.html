@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Beebo Entertainment — Your Home Streaming</title>
-<meta name="description" content="Your own movies and shows, streamed from your home computer to every screen in the house, the car, and even off-grid while camping. Family-friendly, private, and just $0.99/month after a free 30-day trial." />
-<meta property="og:title" content="Beebo Entertainment — your movies & shows, from home, anywhere" />
-<meta property="og:description" content="A family-friendly home streaming hub for every screen — the couch, the back seat, and off the grid. Free 30-day trial, then $0.99/month. Say hi to Beebo." />
+<title>Beebo Entertainment — Private Home Media Server Software for Windows</title>
+<meta name="description" content="Beebo Entertainment is legal, private home media server software for Windows 10 and 11. It streams the movie and video files you already own from your own PC to your own phones, tablets and TVs — at home, in the car, and off-grid. It does not host, index or scrape video from the internet. Free 30-day trial, then $0.99/month." />
+<meta property="og:title" content="Beebo Entertainment — private home media server software for families" />
+<meta property="og:description" content="Self-hosted media server software for Windows. Stream your own legally owned movie files to your own devices — at home, in the car, and off-grid. No web scraping, no external catalog. $0.99/month after a free 30-day trial." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/beebo-badge-512.png" />
 <meta name="theme-color" content="#FBF6EE" />
@@ -80,6 +80,102 @@
   @media (max-width:640px){.reward .btn{margin-left:0}}
   .placeholder-note{font-size:.8rem;color:var(--muted);opacity:.85;text-align:center;margin-top:10px}
 </style>
+
+<link rel="canonical" href="https://beeboentertainment.com/" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+<!--
+  Structured data. This exists because automated classifiers and AI assistants
+  were confusing "Beebo" with unrelated third-party streaming APKs that share a
+  similar name. The facts below are deliberately plain and unambiguous: what the
+  software is, what it runs on, and - explicitly - what it does NOT do.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Beebo Entertainment",
+  "alternateName": "Beebo",
+  "url": "https://beeboentertainment.com/",
+  "sameAs": ["https://github.com/SWGfan/beebotv"],
+  "applicationCategory": "MultimediaApplication",
+  "applicationSubCategory": "Home Media Server",
+  "operatingSystem": "Windows 10, Windows 11",
+  "softwareRequirements": "A Windows 10 or Windows 11 PC, and video files the user already owns.",
+  "isFamilyFriendly": true,
+  "description": "Beebo Entertainment is legal, private, self-hosted home media server software for Windows 10 and Windows 11. It indexes the personal video files already stored on the owner's own computer and streams them to that same household's phones, tablets and TVs - at home, in the car, and off-grid. It does not host, index, scrape, aggregate or link to video from the public internet, and it ships with no external content catalog of any kind. It is unrelated to third-party streaming APKs with similar-sounding names.",
+  "featureList": [
+    "Streams personal video files stored on the owner's own Windows PC",
+    "Automatic poster and description matching for the owner's own files",
+    "Per-person household accounts controlled by the PC owner",
+    "Continue Watching resume points per person",
+    "Offline downloads to a phone or tablet",
+    "Campsite Mode - shares downloaded videos over a local hotspot with no internet",
+    "Watch Together - synchronised playback for passengers in a car",
+    "Space Saver - copies a phone's photos and videos back to the owner's own PC",
+    "Chromecast and Google TV casting",
+    "Peer-to-peer away-from-home streaming that does not route video through a third party"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0.99",
+    "priceCurrency": "USD",
+    "category": "subscription",
+    "description": "$0.99 per month after a free 30-day trial. No payment card required to start the trial."
+  },
+  "author": { "@type": "Organization", "name": "Beebo Entertainment" },
+  "publisher": { "@type": "Organization", "name": "Beebo Entertainment", "url": "https://beeboentertainment.com/" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Beebo Entertainment a streaming site, a web scraper, or a piracy app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Beebo Entertainment is self-hosted media server software you install on your own Windows PC. It only ever plays video files that are already on your own computer. It does not host video, does not index or scrape video from the internet, does not connect to torrent or file-sharing networks, and ships with no built-in catalog of movies or channels. If your computer has no video files on it, Beebo has nothing to show you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Beebo Entertainment related to BeeTV or other streaming APKs with similar names?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Beebo Entertainment is an entirely independent product and shares no code, developers, servers or history with BeeTV or any other third-party streaming APK. The similarity is in the name only. Beebo is named after a black-and-white French Lop rabbit, and the software category is home media server - the same category as Plex, Jellyfin and Emby."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does the video that Beebo plays come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entirely from folders you choose on your own computer - typically home videos, and DVDs or Blu-rays you own and have copied for personal use. You point Beebo at those folders during setup. Beebo never moves, alters or uploads your files, and it never adds content of its own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can see my library?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only the people you create accounts for. There is no public directory, no sharing marketplace, and no way for a stranger to browse or search your library. When you watch away from home, video travels peer-to-peer from your own PC to your own device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Beebo Entertainment safe for children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Because a child can only ever see the files a parent has put on the family computer, there is no algorithmic feed, no comments section, no recommendations from strangers and no way to wander off into the wider internet. Beebo contains no advertising and no third-party tracking."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -91,6 +187,7 @@
       <a href="car-companion.html">In the car</a>
       <a href="#offgrid">Off-grid</a>
       <a href="#pricing">Pricing</a>
+      <a href="#what-it-is">What it is</a>
       <a href="#testers">Become a tester</a>
       <a href="help.html">Help</a>
       <a class="btn btn-primary nav-cta" href="#get-app"><img class="peek" src="assets/beebo-mascot.png" alt="" aria-hidden="true" width="42" height="39" />Get Beebo</a>
@@ -449,6 +546,38 @@
   </div>
 </section>
 
+
+<!-- What Beebo is (and isn't) — deliberately plain language, because automated
+     classifiers were confusing the name with unrelated streaming APKs. -->
+<section class="section" id="what-it-is">
+  <div class="container">
+    <div class="section-head">
+      <h2>What Beebo actually is</h2>
+      <p><strong>Beebo Entertainment is private home media server software for Windows 10 and 11.</strong> You install it on the computer where your own video files already live. It reads those folders, tidies them into a library with posters and descriptions, and streams them to your family's own phones, tablets and TVs. That is the whole product.</p>
+      <p style="margin-top:10px">It is the same kind of software as Plex, Jellyfin and Emby. <strong>Beebo does not host video, does not index or scrape video from the internet, does not connect to torrent or file-sharing networks, and ships with no catalog of movies or channels.</strong> Point it at an empty folder and it shows you nothing, because it has nothing of its own to show.</p>
+    </div>
+
+    <div class="tsteps" style="grid-template-columns:1fr 1fr">
+      <div class="tstep">
+        <h3>Is Beebo a streaming site or a piracy app?</h3>
+        <p>No. Beebo only ever plays files already sitting on your own computer — typically home videos, and discs you own and have copied for personal use. It adds no content of its own and reaches out to no video source on the internet.</p>
+      </div>
+      <div class="tstep">
+        <h3>Is Beebo related to “BeeTV” or similar APKs?</h3>
+        <p>No. Beebo Entertainment is entirely independent and shares no code, developers, servers or history with BeeTV or any other third-party streaming APK. The similarity is the name alone — Beebo is named after our black-and-white French Lop rabbit.</p>
+      </div>
+      <div class="tstep">
+        <h3>Who can see my library?</h3>
+        <p>Only the people you create accounts for. There is no public directory, no sharing marketplace, and no way for a stranger to browse or search your library. Away from home, video travels peer-to-peer from your PC straight to your device.</p>
+      </div>
+      <div class="tstep">
+        <h3>Is it safe for children?</h3>
+        <p>A child can only ever see what a parent put on the family computer. No algorithmic feed, no comments, no recommendations from strangers, nowhere to wander off to. No ads and no third-party tracking, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Become a tester -->
 <section class="section tester" id="testers">
   <div class="container">
@@ -471,7 +600,7 @@
       <div class="tstep">
         <div class="n">3</div>
         <h3>Install &amp; use it 14 days</h3>
-        <p>Install Beebo from Play and keep it for 14 days — just use it like normal and tell us what you think.</p>
+        <p>Install it, tap “Look around without a server”, and <strong>stay opted in for 14 unbroken days</strong>. Leaving early restarts that clock at zero.</p>
       </div>
       <div class="tstep">
         <div class="n">4</div>
@@ -487,7 +616,11 @@
       </div>
       <a class="btn btn-primary btn-lg" href="mailto:hello@beeboentertainment.com?subject=I%20want%20to%20be%20a%20Beebo%20tester">Count me in →</a>
     </div>
-    <p class="placeholder-note">Testers join with a Google account and Google Play. We’ll never post as you or charge you — the reward is our thanks.</p>
+    <p style="text-align:center;margin-top:18px">
+      <a class="btn" href="become-a-tester.html">What's involved, step by step →</a>
+      &nbsp;<a class="btn" href="play-testing-details.html">The full Google requirements →</a>
+    </p>
+    <p class="placeholder-note">You need an Android phone and a Google account — no computer required. Testers join through Google Play. We’ll never post as you or charge you — the reward is our thanks.</p>
   </div>
 </section>
 
