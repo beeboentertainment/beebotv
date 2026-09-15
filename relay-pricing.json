@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "updatedAtEastern": "2026-09-15T10:51:00-04:00",
+  "currency": "USD",
+  "status": "planned",
+  "beeboRelay": {
+    "costPerGB": 0.011,
+    "payAsYouGoMarkupPercent": 20,
+    "prepaidMarkupPercent": 10,
+    "billing": {
+      "payAsYouGo": "Added to your monthly Beebo subscription invoice",
+      "prepaid": "Taken from your prepaid Beebo balance"
+    },
+    "minimumMonthlyCharge": 0,
+    "topUp": {
+      "amounts": [10, 25, 50],
+      "bonusTiers": [
+        { "minAmount": 25, "bonusPercent": 5 },
+        { "minAmount": 50, "bonusPercent": 10 }
+      ]
+    },
+    "lowBalanceWarnPercents": [25, 10],
+    "balancePolicy": "Never expires. Refundable on request."
+  },
+  "cloudflare": {
+    "pricePerGB": 0.05,
+    "freeGBPerMonth": 1000,
+    "switchAtGB": 950,
+    "pricesCheckedOn": "2026-09-15",
+    "source": "https://developers.cloudflare.com/realtime/sfu/pricing/"
+  },
+  "estimates": {
+    "gbPerHour": {
+      "sd": 1,
+      "hd": 3,
+      "hdHigh": 5,
+      "uhd": 7
+    }
+  },
+  "subscriptionMonthly": 0.99,
+  "notes": {
+    "about": "Shared relay pricing for beeboentertainment.com pages and the Beebo desktop app (fetched from https://www.beeboentertainment.com/relay-pricing.json). All money values are in 'currency'. All data values are decimal gigabytes (GB) per calendar month.",
+    "version": "Integer. Bump it only when the SHAPE changes (a field renamed, removed or its meaning changed). Price changes keep the same version and update 'updatedAtEastern'. Adding a new optional field does not need a bump; readers must ignore fields they don't know. v2 (2026-09-15): beeboRelay.markupPercent was replaced by payAsYouGoMarkupPercent and prepaidMarkupPercent; billing became an object; topUp, lowBalanceWarnPercents and balancePolicy were added.",
+    "updatedAtEastern": "ISO 8601 timestamp, US Eastern offset, of the last edit to any value in this file.",
+    "status": "'planned' = Beebo Relay servers do not exist yet and every Beebo Relay figure is an estimate. Later values: 'live' (running and billing) or 'paused' (not accepting new relay sessions).",
+    "beeboRelay.costPerGB": "What one GB relayed through Beebo Relay costs Beebo, with no profit. Based on the DigitalOcean pilot rate of $0.01 per GB of outbound transfer, plus card processing (Stripe 2.9%): 0.01 x 1.029 = 0.01029, rounded up to the next tenth of a cent = 0.011. Stripe's fixed per-charge fee is not included.",
+    "beeboRelay.payAsYouGoMarkupPercent": "Markup for pay as you go, in percent. Pay-as-you-go price per GB = costPerGB x (1 + payAsYouGoMarkupPercent / 100). Billed monthly.",
+    "beeboRelay.prepaidMarkupPercent": "Markup for usage paid from a prepaid balance, in percent. Prepaid price per GB = costPerGB x (1 + prepaidMarkupPercent / 100). This is the lowest rate. Pages and the app must always compute both prices this way from this file, never hard-code them, and show the markup as its own line.",
+    "beeboRelay.billing": "Plain-English description of where each way of paying is charged.",
+    "beeboRelay.minimumMonthlyCharge": "Pay as you go only: if a month has any Beebo Relay usage and the usage charge is below this amount, this amount is charged instead. 0 = no minimum.",
+    "beeboRelay.topUp": "Prepaid balance top-ups. 'amounts' are the top-up choices offered, in currency units. 'bonusTiers': a top-up of at least minAmount gets bonusPercent extra credit; use the highest tier whose minAmount is <= the top-up. No matching tier = no bonus. Bonus credit = top-up x bonusPercent / 100, rounded to cents.",
+    "beeboRelay.lowBalanceWarnPercents": "Warn the customer when the remaining balance falls to each of these percentages of the last top-up's credit (top-up plus bonus). Show the warning as 'about N hours of HD left' at the viewer's current quality (hours = balance / (GB per hour x prepaid price per GB)). When the balance runs out, the customer chooses: top up, pay as you go with Beebo, or Cloudflare only.",
+    "beeboRelay.balancePolicy": "Customer-facing policy text for prepaid balances.",
+    "cloudflare": "The customer's OWN Cloudflare account (Cloudflare Realtime TURN). Beebo never bills these; Cloudflare does. pricePerGB applies to data sent from Cloudflare to the viewer after freeGBPerMonth free GB per account per month. The free allowance is shared with any other Cloudflare Realtime use on the same account.",
+    "cloudflare.switchAtGB": "In 'Cloudflare first, then Beebo', the PC moves relaying to Beebo Relay once this many GB have gone through the customer's Cloudflare account this month. Set below freeGBPerMonth as a safety margin, because Cloudflare also counts packet overhead.",
+    "estimates.gbPerHour": "Rough data use per hour of video, per viewer: sd = standard definition, hd = HD 1080p (streaming-service style), hdHigh = high-quality HD files, uhd = 4K. Estimates only; people's own files vary.",
+    "subscriptionMonthly": "The Beebo subscription price per month, shown so a monthly total can be given. Relay charges are separate from it and only apply to data actually relayed."
+  }
+}

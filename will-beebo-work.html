@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Will Beebo work on your internet? — Beebo Entertainment</title>
+<meta name="description" content="Find out whether Beebo can reach your films when you’re away from home, without opening a port: a quick check on your computer, then a real connection test with your phone." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .probe-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin:14px 0 22px}
+  .probe-card > p:first-child{margin-top:0}
+  .probe-card .btn{max-width:100%;justify-content:center;white-space:normal;text-align:center}
+  .probe-card .btn[disabled]{opacity:.55;cursor:default;transform:none}
+  .checks{list-style:none;margin:18px 0 0;padding:0}
+  .checks li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--border)}
+  .checks li:first-child{border-top:0}
+  .dot{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:2px solid var(--border-strong);margin-top:3px;display:grid;place-items:center;font-size:12px;line-height:1;color:#fff;font-weight:700}
+  .dot.run{border-color:var(--accent);border-right-color:transparent;animation:wbw-spin .8s linear infinite}
+  .dot.yes{background:var(--good);border-color:var(--good)}
+  .dot.no{background:#b4442f;border-color:#b4442f}
+  .dot.meh{background:#c98a12;border-color:#c98a12}
+  @keyframes wbw-spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion: reduce){.dot.run,.status .spin{animation:none}}
+  .check-label{flex:1;min-width:0}
+  .check-detail{display:block;color:var(--muted);font-size:.93rem;margin-top:1px}
+  .verdict{border-radius:var(--radius);padding:20px 22px;margin:18px 0 6px;border:2px solid}
+  .verdict h3{margin:0 0 8px;font-size:1.22rem;line-height:1.3}
+  .verdict p{margin:0 0 10px}
+  .verdict p:last-child{margin-bottom:0}
+  .verdict.good{border-color:#2f8f4e;background:#f1faf3}
+  .verdict.warn{border-color:#c98a12;background:#fdf7ea}
+  .verdict.bad{border-color:#b4442f;background:#fcf1ee}
+  .verdict.info{border-color:var(--border-strong);background:var(--surface-2)}
+  .verdict .kicker-line{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+  .tech{margin-top:14px}
+  .tech summary{cursor:pointer;color:var(--muted);font-weight:600;font-size:.92rem}
+  .tech pre{background:var(--bg-2);border:1px solid var(--border);border-radius:10px;padding:12px;overflow-x:auto;font-size:.8rem;line-height:1.5;margin:10px 0 0;white-space:pre}
+  .pair{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;margin-top:18px}
+  .qr{width:210px;max-width:100%;background:#fff;border:1px solid var(--border-strong);border-radius:12px;padding:8px}
+  .qr svg{display:block;width:100%;height:auto}
+  .mini-steps{margin:0 0 12px;padding-left:1.3em}
+  .mini-steps li{margin:0 0 6px}
+  .code-big{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.5rem;font-weight:700;letter-spacing:.18em;background:var(--bg-2);border:1px solid var(--border-strong);border-radius:10px;padding:4px 12px;display:inline-block;color:var(--ink)}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .status{margin:14px 0 0;color:var(--muted);min-height:1.4em}
+  .status .spin{display:inline-block;width:14px;height:14px;border:2px solid var(--border-strong);border-top-color:var(--accent);border-radius:50%;animation:wbw-spin .8s linear infinite;vertical-align:-2px;margin-right:8px}
+  .field{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
+  .field label{font-weight:600;width:100%}
+  .field input{font:inherit;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.3rem;letter-spacing:.15em;text-transform:uppercase;padding:10px 12px;border-radius:10px;border:1px solid var(--border-strong);background:var(--surface-2);color:var(--ink);width:10ch;max-width:100%}
+  .warnline{background:#fdf7ea;border:1px solid #e3c27a;border-radius:10px;padding:10px 14px;margin:12px 0}
+  .linkish{background:none;border:0;padding:0;font:inherit;color:var(--accent-ink);text-decoration:underline;cursor:pointer;text-align:left}
+  .fineprint{color:var(--muted);font-size:.95rem}
+  .steps-plain{margin:10px 0 0;padding-left:1.3em}
+  .steps-plain li{margin:0 0 8px}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:620px){
+    .probe-card{padding:18px 16px}
+    .pair{grid-template-columns:1fr;justify-items:start}
+    .qr{width:190px}
+    .probe-card .btn{width:100%}
+  }
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/will-beebo-work.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3"></head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<div class="wrap">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+
+  <div class="page-hero">
+    <div class="em">📡</div>
+    <h1>Will Beebo work on your internet?</h1>
+    <p class="lead">Watching your films at home always works. This page checks the other half: whether your phone can reach your computer when you’re out, <strong>without opening a port</strong> or changing a single setting.</p>
+  </div>
+
+  <!-- ============ The phone's half of the test (opened from the QR code) ============ -->
+  <section id="phone-mode" hidden>
+    <div class="probe-card">
+      <h2 style="margin-top:0">You’re the phone half of the test</h2>
+      <ol class="mini-steps">
+        <li><strong>Turn Wi-Fi off</strong> so this phone uses mobile data, just like when you’re out. Over your home Wi-Fi the test proves nothing.</li>
+        <li>Keep the test page open on your computer, then tap <strong>Start</strong>.</li>
+      </ol>
+      <div class="field">
+        <label for="join-code">Code from your computer</label>
+        <input id="join-code" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="6" inputmode="text" />
+        <button id="b-go" class="btn btn-primary btn-lg" type="button">Start</button>
+      </div>
+      <p id="wifi-warn" class="warnline" hidden>This phone still seems to be on Wi-Fi. Turn Wi-Fi off first, then tap Start.</p>
+      <p class="fineprint">The test uses up to about 20 MB of mobile data and takes under a minute.</p>
+      <p class="status" id="b-status" role="status" aria-live="polite"></p>
+      <div id="b-verdict"></div>
+    </div>
+    <p class="fineprint"><button type="button" class="linkish" id="to-computer">Not on your phone? Start the test on your computer instead.</button></p>
+  </section>
+
+  <!-- ============ The computer's half ============ -->
+  <section id="computer-mode">
+    <div class="callout">
+      <p><strong>Open this page on the computer that will run Beebo</strong>, on your usual home internet. If you use a VPN, switch it off for the test. Nothing is installed, and nothing about your films leaves your home.</p>
+    </div>
+
+    <h2>Step 1 · A quick check of this computer</h2>
+    <div class="probe-card">
+      <p>Ten seconds. Your browser asks three address servers, run by three different companies, how your home connection looks from outside.</p>
+      <button id="quick-go" class="btn btn-primary btn-lg" type="button">Check this computer</button>
+      <ul class="checks" id="checks" hidden>
+        <li><span class="dot" id="d1"></span><span class="check-label">Can this computer reach the address servers?<span class="check-detail" id="s1">waiting</span></span></li>
+        <li><span class="dot" id="d2"></span><span class="check-label">Does your router use the same door for everyone?<span class="check-detail" id="s2">waiting</span></span></li>
+        <li><span class="dot" id="d3"></span><span class="check-label">Modern (IPv6) internet<span class="check-detail" id="s3">waiting</span></span></li>
+        <li><span class="dot" id="d4"></span><span class="check-label">Is your internet address shared with other homes?<span class="check-detail" id="s4">waiting</span></span></li>
+      </ul>
+      <div id="quick-verdict" aria-live="polite"></div>
+      <details class="tech" id="quick-tech-box" hidden><summary>Technical detail</summary><pre id="quick-tech"></pre></details>
+    </div>
+
+    <h2>Step 2 · The real proof: test with your phone</h2>
+    <div class="probe-card">
+      <p>A quick check can only predict. This test actually connects your phone to this computer the way Beebo does, directly with nothing in between, then measures how much it can carry.</p>
+      <button id="phone-go" class="btn btn-primary btn-lg" type="button">Start the phone test</button>
+      <div id="pair-box" hidden>
+        <div class="pair">
+          <div class="qr" id="qr" role="img" aria-label="QR code that opens this test on your phone"></div>
+          <div>
+            <ol class="mini-steps">
+              <li><strong>Turn Wi-Fi off on your phone</strong>, so it uses mobile data.</li>
+              <li>Point your phone’s camera at this code and open the link.</li>
+              <li>Tap <strong>Start</strong> on your phone.</li>
+            </ol>
+            <p class="fineprint" style="margin:0">No camera handy? On your phone, go to <code>beeboentertainment.com/will-beebo-work.html</code>, tap “Have a code?” and type <span class="code-big" id="code"></span></p>
+          </div>
+        </div>
+      </div>
+      <p class="status" id="a-status" role="status" aria-live="polite"></p>
+      <p class="fineprint" style="margin-bottom:0"><button type="button" class="linkish" id="have-code">Have a code? This is the phone.</button></p>
+    </div>
+
+    <div id="final-verdict" aria-live="polite"></div>
+
+    <h2>What the answers mean</h2>
+    <div class="feature">
+      <h3>🟢 Works from anywhere, no port to open</h3>
+      <p>Your phone got straight through to this computer. Beebo’s away-from-home address connects the same way, with nothing to set up.</p>
+    </div>
+    <div class="feature">
+      <h3>🟡 Works at home. Away from home needs one port opened</h3>
+      <p>Your router, or your phone’s network, is strict about who can knock. Opening one port on your router gives Beebo a way in. Beebo will try to open it for you automatically; if your router doesn’t allow that, Beebo shows you which port to open and <a href="#open-a-port">you can do it by hand</a>. Can’t open a port? A <a href="own-relay.html">relay</a> works too.</p>
+    </div>
+    <div class="feature">
+      <h3>🔴 Won’t work away from home on this connection</h3>
+      <p>Your internet provider shares one internet address between many homes, so no setting on your own router can let your phone in. Asking your provider for a public IP address usually fixes it. If that isn’t an option, a relay can connect you instead: see <a href="own-relay.html">relay options and what they cost</a>.</p>
+    </div>
+    <p>Whatever the answer, <strong>watching on your home Wi-Fi works regardless.</strong></p>
+
+    <h2 id="cgnat-check">Is your address shared? A two-minute check</h2>
+    <div class="probe-card">
+      <p>A web page can’t see inside your router, so it can’t be completely sure whether your provider shares your address (this is called carrier-grade NAT). You can check in two minutes:</p>
+      <ol class="steps-plain">
+        <li>Open your router’s settings page. The address and password are usually on a sticker on the router; <code>192.168.0.1</code> and <code>192.168.1.1</code> are common.</li>
+        <li>Find its status page and look for the <strong>Internet</strong> or <strong>WAN</strong> IP address.</li>
+        <li>Compare it with how the world sees your home: <strong id="world-ip">run the quick check above to see it</strong>.</li>
+      </ol>
+      <p><strong>They match?</strong> You have your own address, which is what you want.<br />
+      <strong>Router shows 100.64 to 100.127 at the start?</strong> Your provider shares it. Ask them for a public IP address.<br />
+      <strong>Router shows 192.168…, 10… or 172.16 to 172.31?</strong> There are two routers in a row, usually your provider’s modem plus your own. Putting the modem in <em>bridge mode</em> normally fixes it.</p>
+    </div>
+
+    <h2 id="open-a-port">How to open the port by hand</h2>
+    <div class="probe-card">
+      <p>Beebo will try to open the port for you automatically. Many routers allow that; some have it switched off (the setting is usually called <strong>UPnP</strong>). If yours doesn’t allow it, Beebo shows you which port to open, and you can either switch UPnP on in the router’s settings and restart Beebo, or add the rule yourself:</p>
+      <ol class="steps-plain">
+        <li>In Beebo on this computer, note the port number it asks you to open and this computer’s local address (it looks like <code>192.168.1.50</code>).</li>
+        <li>Open your router’s settings page (see the sticker on the router) and find <strong>Port forwarding</strong>. Some routers call it <em>Virtual servers</em>, <em>NAT</em> or <em>Applications &amp; gaming</em>.</li>
+        <li>Add a rule that sends that port, using the protocol Beebo shows, to this computer’s local address. Save.</li>
+        <li>While you’re there, reserve that local address for this computer (often called <em>DHCP reservation</em>), so the rule keeps pointing at the right machine.</li>
+      </ol>
+      <p class="fineprint" style="margin-bottom:0">If your provider shares your address with other homes, opening a port can’t help. Do <a href="#cgnat-check">the two-minute check</a> first.</p>
+    </div>
+
+    <h2>What a web page can’t know</h2>
+    <ul class="steps-plain">
+      <li><strong>Your browser stands in for Beebo.</strong> The phone test uses the same kind of direct connection and the same address server that Beebo uses, so the result carries over. Security software that treats Beebo differently from your browser could still get in the way.</li>
+      <li><strong>It tests the networks you’re on right now.</strong> Mobile data usually behaves the same way wherever you are on the same carrier. Hotel, office, school and café Wi-Fi are often stricter, and a different carrier can give a different answer.</li>
+      <li><strong>The speed is a snapshot.</strong> It depends on your home upload speed and your phone’s signal at that moment. Beebo sends your files as they are, so big high-quality files need more.</li>
+      <li><strong>What passes through our server:</strong> only the short connection note your two devices swap to find each other. It includes their internet addresses, can only be read by the two devices in the test, stops working after ten minutes and is then cleared away. Your films never pass through it, and neither does the speed test.</li>
+    </ul>
+  </section>
+
+  <div class="guide-nav">
+    <a href="watch-away-from-home.html">🌍 Watch away from home</a>
+    <a href="server-setup.html">🏠 Set up your Beebo server</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+</div>
+
+<script src="qrcode-generator.js"></script>
+<script src="will-beebo-work.js"></script>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.32</strong><time data-beebo-release-date="windows" datetime="2026-09-15T09:05:33Z">Released Sep 15, 2026, 5:05:33 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.18 (build 19)</strong><time data-beebo-release-date="android" datetime="2026-09-15T12:58:26Z">Built Sep 15, 2026, 8:58:26 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script></body>
+</html>
