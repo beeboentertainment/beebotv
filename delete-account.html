@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Delete your Beebo account</title>
-<meta name="description" content="Permanently delete your Beebo Entertainment account and all associated data." />
+<title>Delete your Beebo Entertainment account</title>
+<meta name="description" content="Delete a Beebo Entertainment account (Beebo account, hub account, or your account on a home Beebo) and what that removes." />
 <meta name="robots" content="noindex" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,69 +29,128 @@
   .btn-danger:disabled{opacity:.5;cursor:default}
   .btn-danger:hover:not(:disabled){background:#a5321f}
   #msg{min-height:1.4em;font-size:.95rem;margin-top:4px}
-  #msg.err{color:#c0392b}
-  #msg.ok{color:var(--good)}
+  #msg .err{color:#c0392b;margin:4px 0}
+  #msg .ok{color:var(--good);margin:4px 0}
+  .del-h2{font-size:1.05rem;margin:22px 0 8px}
+  .del-which{border:0;padding:0;margin:0;display:grid;gap:8px}
+  .del-which legend{font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:6px}
+  .del-note{font-size:.85rem;color:var(--muted);margin:-4px 0 0}
   .back{display:inline-block;margin-top:18px;color:var(--accent-ink);font-weight:600;text-decoration:none}
 </style>
 <link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/delete-account.html"><link rel="stylesheet" href="polish.css?v=3"></head>
-<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
 
 
 
 <main class="del-wrap">
   <div class="del-card">
-    <h1>Delete your Beebo account</h1>
-    <p class="sub">This permanently removes your Beebo Entertainment account and everything tied to it. This cannot be undone.</p>
+    <h1>Delete your Beebo Entertainment account</h1>
+    <p class="sub">For the <strong>Beebo Entertainment</strong> app and website, by Beebo Entertainment. You don't need the app to use this page. Deleting happens straight away and can't be undone.</p>
+
+    <h2 class="del-h2">Which account do you have?</h2>
     <ul class="del-list">
-      <li>Your account and sign-in are erased</li>
-      <li>Any active subscription is cancelled — you won't be billed again</li>
-      <li>Your remote-access address and its records are removed</li>
-      <li>Your trial, licence, referral and usage records are deleted</li>
+      <li><strong>Beebo account</strong>: the email and password of whoever pays for Beebo (the "Owner sign-in" in the app, and beebo.tv).</li>
+      <li><strong>Hub account</strong>: an email and password used for watch parties at hub.beebotv.com.</li>
+      <li><strong>An account on a home Beebo</strong>: a username a household member uses on the owner's computer. See the last section.</li>
     </ul>
-    <p class="sub" style="margin-bottom:18px">The movies and files on your own computer are <strong>never</strong> touched — Beebo never stores those.</p>
+
+    <h2 class="del-h2">Deleting a Beebo account removes</h2>
+    <ul class="del-list">
+      <li>Your email address and password</li>
+      <li>Your subscription, which is cancelled so you aren't billed again</li>
+      <li>Your home's beebo.tv name and its away-from-home records: household pass, member sign-ins and connection records</li>
+      <li>Trial, licence, referral and usage records</li>
+    </ul>
+    <h2 class="del-h2">Deleting a hub account removes</h2>
+    <ul class="del-list">
+      <li>Your email address and password</li>
+      <li>The computer paired to it and any unused pairing codes</li>
+      <li>Links you saved in the app, Car Pack and trial status, usage totals and waiting messages</li>
+      <li>Any watch party or car party you're hosting (everyone in it is disconnected)</li>
+    </ul>
+    <h2 class="del-h2">What is kept</h2>
+    <ul class="del-list">
+      <li>Payment records stay with our payment processor, Stripe, for as long as tax and accounting law requires.</li>
+      <li>Nothing on anyone's computer is touched. Your movies and shows never leave your computer, so Beebo never had a copy.</li>
+    </ul>
 
     <form id="delForm" autocomplete="on">
       <label for="em">Account email</label>
       <input id="em" type="email" autocomplete="username" inputmode="email" required placeholder="you@example.com" />
       <label for="pw">Password</label>
-      <input id="pw" type="password" autocomplete="current-password" required placeholder="Your Beebo password" />
-      <label class="confirm"><input id="cf" type="checkbox" required /> <span>I understand this permanently deletes my account and all of its data, and it can't be undone.</span></label>
-      <button id="go" class="btn-danger" type="submit" disabled>Permanently delete my account</button>
-      <p id="msg"></p>
+      <input id="pw" type="password" autocomplete="current-password" required placeholder="That account's password" />
+      <fieldset class="del-which">
+        <legend>Delete</legend>
+        <label class="confirm"><input id="wBeebo" type="checkbox" checked /> <span>My Beebo account (beebo.tv)</span></label>
+        <label class="confirm"><input id="wHub" type="checkbox" checked /> <span>My hub account (hub.beebotv.com)</span></label>
+      </fieldset>
+      <p class="del-note">If the two accounts have different passwords, delete them one at a time.</p>
+      <label class="confirm"><input id="cf" type="checkbox" required /> <span>I understand the accounts I ticked, and the data listed above, are deleted permanently.</span></label>
+      <button id="go" class="btn-danger" type="submit" disabled>Permanently delete</button>
+      <div id="msg" role="status"></div>
     </form>
-    <a class="back" href="index.html">← Back to Beebo</a>
+
+    <h2 class="del-h2">An account on someone's home Beebo</h2>
+    <p class="sub">Household members' accounts live on the owner's own computer, not with us, so this page can't reach them. To delete yours: open the Beebo Entertainment app, go to <strong>Settings &gt; Delete my account</strong>, and confirm with your password. That removes your username, password, watch history, watchlist, favourites and away-from-home access from that computer. It doesn't delete the owner's movies and shows or anyone else's account. You can also ask the owner to remove you in the Users tab of Beebo on their computer. Owners delete everything on their computer by uninstalling Beebo there.</p>
+
+    <p class="sub">Questions: <a href="help.html">Help &amp; guides</a>.</p>
+    <a class="back" href="index.html">&larr; Back to Beebo</a>
   </div>
 </main>
 
 <script>
-  var API = 'https://beebo-licensing.nicholaswill86.workers.dev/account/delete';
+  // Two services, each with its own account:
+  //   Beebo account: the Cloudflare Worker, on a beebo.tv host.
+  //   Hub account:   the hub's web route, POST /api/v1/account/delete { email, password }.
+  var TARGETS = [
+    { box: 'wBeebo', name: 'Beebo account', url: 'https://login.beebo.tv/account/delete' },
+    { box: 'wHub', name: 'Hub account', url: 'https://hub.beebotv.com/api/v1/account/delete' }
+  ];
   var form = document.getElementById('delForm'), go = document.getElementById('go'), cf = document.getElementById('cf'), msg = document.getElementById('msg');
-  cf.addEventListener('change', function(){ go.disabled = !cf.checked; });
-  form.addEventListener('submit', function(ev){
+  function anyTicked() { return TARGETS.some(function (t) { return document.getElementById(t.box).checked; }); }
+  function refresh() { go.disabled = !(cf.checked && anyTicked()); }
+  cf.addEventListener('change', refresh);
+  TARGETS.forEach(function (t) { document.getElementById(t.box).addEventListener('change', refresh); });
+
+  function explain(t, status, body) {
+    if (status === 200) return t.name + ': deleted.';
+    if (status === 401) return t.name + ': no account with that email and password (nothing deleted).';
+    if (status === 400) return t.name + ': enter the email and password.';
+    if (status === 429) return t.name + ': too many tries. Wait 15 minutes and try again.';
+    if (body && body.error && status === 502) return t.name + ': ' + body.error;
+    return t.name + ': something went wrong (nothing deleted). Please try again in a moment.';
+  }
+
+  form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    if (!cf.checked) return;
-    if (!window.confirm('Delete your Beebo account permanently? This cannot be undone.')) return;
-    msg.textContent = ''; msg.className = ''; go.disabled = true; go.textContent = 'Deleting…';
+    if (!cf.checked || !anyTicked()) return;
+    if (!window.confirm('Permanently delete the accounts you ticked? This cannot be undone.')) return;
     var email = document.getElementById('em').value.trim(), password = document.getElementById('pw').value;
-    fetch(API, { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ email: email, password: password }) })
-      .then(function(r){ return r.json().then(function(j){ return { status:r.status, j:j }; }); })
-      .then(function(res){
-        if (res.status === 200 && res.j.ok) {
-          form.style.display = 'none';
-          msg.className = 'ok';
-          msg.innerHTML = '<strong>Your account has been deleted.</strong> Your account, subscription and all associated data have been permanently removed. You can close this page.';
-          return;
-        }
-        go.disabled = false; go.textContent = 'Permanently delete my account';
-        msg.className = 'err';
-        if (res.status === 401) msg.textContent = 'That email and password don’t match an account.';
-        else if (res.status === 400) msg.textContent = 'Please enter your email and password.';
-        else msg.textContent = 'Something went wrong. Please try again in a moment.';
-      })
-      .catch(function(){ go.disabled = false; go.textContent = 'Permanently delete my account'; msg.className = 'err'; msg.textContent = 'Network error — please try again.'; });
+    var chosen = TARGETS.filter(function (t) { return document.getElementById(t.box).checked; });
+    msg.className = ''; msg.textContent = ''; go.disabled = true; go.textContent = 'Deleting...';
+    Promise.all(chosen.map(function (t) {
+      return fetch(t.url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: email, password: password }) })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { t: t, status: r.status, j: j }; }); })
+        .catch(function () { return { t: t, status: 0, j: {} }; });
+    })).then(function (results) {
+      var deleted = results.filter(function (r) { return r.status === 200; }).length;
+      msg.innerHTML = '';
+      results.forEach(function (r) {
+        var p = document.createElement('p');
+        p.className = r.status === 200 ? 'ok' : 'err';
+        p.textContent = r.status === 0 ? r.t.name + ': network error (nothing deleted). Please try again.' : explain(r.t, r.status, r.j);
+        msg.appendChild(p);
+      });
+      if (deleted && deleted === results.length) {
+        form.querySelectorAll('input,button').forEach(function (el) { el.disabled = true; });
+        go.textContent = 'Deleted';
+      } else {
+        go.textContent = 'Permanently delete'; refresh();
+      }
+    });
   });
 </script>
 <!-- Beebo analytics beacon -->
 
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script></body>
 </html>
