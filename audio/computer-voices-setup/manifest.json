@@ -1,0 +1,90 @@
+{
+ "page": "computer-voices-setup",
+ "voice": "am_puck",
+ "generated": "2026-09-17 06:58",
+ "sections": [
+  {
+   "id": "computer-voices-setup",
+   "heading": "Computer voices setup",
+   "clips": [
+    {
+     "src": "computer-voices-setup-1.mp3",
+     "duration": 29.1,
+     "bytes": 146220,
+     "hash": "d17107d49f46",
+     "text": [
+      "Computer voices setup.",
+      "The optional computer voice engine for stories is a one-time setup on your Windows PC. No subscription or API key is needed.",
+      "Windows 0.1.27 includes the 17 original story templates and external narration scripts. On first launch it creates a writable story library in the Beebo user data folder. It preserves existing custom templates and generated audio."
+     ]
+    },
+    {
+     "src": "computer-voices-setup-2.mp3",
+     "duration": 22.2,
+     "bytes": 111420,
+     "hash": "c0fc7265cd2f",
+     "text": [
+      "The optional voice engine is installed separately. No subscription or API key is required. Internet is needed for initial package/model/voice downloads. Once the chosen English voices are cached, generation can run offline on the PC. The phone must remain connected to that PC to prepare or stream computer audio. Installed phone voices work without the PC."
+     ]
+    }
+   ],
+   "duration": 51.3
+  },
+  {
+   "id": "setup-on-another-windows-pc",
+   "heading": "Setup on another Windows PC",
+   "clips": [
+    {
+     "src": "setup-on-another-windows-pc.mp3",
+     "duration": 57.7,
+     "bytes": 288906,
+     "hash": "7f43d342e4ec",
+     "text": [
+      "Setup on another Windows PC.",
+      "Install Python 3.12 from https://www.python.org/downloads/ if needed.",
+      "In a terminal run py -3 -m pip install kokoro==0.9.4 soundfile numpy. These packages also install runtime dependencies, including PyTorch.",
+      "For unfamiliar names, install eSpeak-NG separately from its official project: https://github.com/espeak-ng/espeak-ng/releases . This is the optional pronunciation fallback. The English dictionary can work without it, but unsupported words/names may be skipped.",
+      "Install/reopen Windows Beebo. It uses its bundled FFmpeg for MP3 conversion.",
+      "In Android 1.11 open Other → Stories, choose a book, enter names, select Computer voices and tap Start story → Prepare computer voices. Keep internet connected for the first download of the model and each voice."
+     ]
+    }
+   ],
+   "duration": 57.7
+  },
+  {
+   "id": "setup-on-another-windows-pc-part",
+   "heading": "Setup on another Windows PC (part 2)",
+   "clips": [
+    {
+     "src": "setup-on-another-windows-pc-part.mp3",
+     "duration": 52.5,
+     "bytes": 263235,
+     "hash": "050d407f0df5",
+     "text": [
+      "The model is about 330 MB plus the selected voice data; Python dependencies need additional disk space. First preparation may take several minutes on older PCs. American and British voices use matching pronunciation pipelines.",
+      "If Python is not found, create python-cmd.json inside the configured storybook folder with {\"cmd\":\"C:/path/to/python.exe\",\"args\":[]}. Use a Python installation where the voice packages are installed. Do not copy another user's config blindly.",
+      "Generated audio and voice.log are stored under <storybooks>/<book>/audio/<set>/. Failed jobs clear their pending marker so you can retry. Restarting Beebo also allows abandoned jobs to be retried. Never distribute this folder's personalized audio or python-cmd.json as part of a general-purpose installer."
+     ]
+    }
+   ],
+   "duration": 52.5
+  },
+  {
+   "id": "licenses",
+   "heading": "Licenses",
+   "clips": [
+    {
+     "src": "licenses.mp3",
+     "duration": 23.8,
+     "bytes": 119687,
+     "hash": "557569056e4a",
+     "text": [
+      "Licenses.",
+      "Kokoro engine/model are Apache-2.0, which permits commercial use subject to its conditions. Keep license and applicable notices with redistributed copies. Python packages and eSpeak-NG have separate licenses. See the installer’s THIRD_PARTY_LICENSES/KOKORO-NOTICE.txt. This setup does not grant rights to clone another person's voice or use their identity."
+     ]
+    }
+   ],
+   "duration": 23.8
+  }
+ ]
+}
