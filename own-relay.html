@@ -181,7 +181,7 @@
       <li><a href="#when">Do you need it?</a></li>
       <li><a href="#setup">Set it up, step by step</a></li>
       <li><a href="#privacy">What the relay can and can’t see</a></li>
-      <li><a href="#beebo-relay">Beebo Relay (coming soon)</a></li>
+      <li><a href="#beebo-relay">Beebo Relay (free at this time)</a></li>
       <li><a href="#cost">What it costs (calculator)</a></li>
       <li><a href="#tunnel">Why not a Cloudflare Tunnel?</a></li>
       <li><a href="#other">Other relay servers</a></li>
@@ -290,43 +290,23 @@
   <p>Beebo’s connection uses WebRTC, which encrypts everything end to end with <strong>DTLS</strong>. The keys are agreed between your home PC and the viewer’s device, so a relay only ever handles locked packets. Cloudflare says this directly: it can’t access relayed WebRTC media because of DTLS, and it processes connection details such as IP addresses and ports. (<a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">Cloudflare TURN FAQ</a>, <a href="https://developers.cloudflare.com/realtime/turn/analytics/" target="_blank" rel="noopener noreferrer">TURN analytics</a>)</p>
   <p class="fineprint">That metadata is handled under your own agreement with Cloudflare. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare’s privacy policy</a>. Cloudflare’s relay runs on its global network except its China Network. (<a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">source</a>)</p>
 
-  <h2 id="beebo-relay">Beebo Relay <span class="soon-badge">Coming soon</span></h2>
-  <div class="callout">
-    <p><strong>Beebo Relay is planned, not running yet.</strong> We’re building our own relay for people who’d rather not set up Cloudflare, or who go past Cloudflare’s free allowance. Its price starts from <strong>what it costs us</strong> to run the servers and process card payments (about <span data-rl="beeboCost">$0.011</span> per GB), plus a small markup. Any prices for it on this page are estimates until it launches.</p>
+  <h2 id="beebo-relay">Beebo Relay <span class="cheap-badge">Free at this time</span></h2>
+  <div class="callout safe">
+    <p><strong>Beebo Relay is running and free at this time.</strong> It’s Beebo Entertainment’s own relay, on an OVHcloud server in Beauharnois, Canada, for people who’d rather not set up Cloudflare. If fees ever start, you’ll pay only what it costs Beebo to run it (about <span data-rl="beeboCost">$0.011</span> per GB, <strong>0% markup</strong>), and we’ll tell you before anything is charged. <a href="beebo-relay.html">How Beebo Relay works and how to turn it on →</a></p>
   </div>
-  <p>When it’s ready, you’ll choose one of three options in Beebo on your home PC. Whichever you choose, a relay is only used when a direct connection isn’t possible.</p>
+  <p>You choose how relaying works in Beebo on your home PC (Settings › Connection). Whichever you choose, a relay is only used when a direct connection isn’t possible.</p>
   <div class="rl-options">
     <div class="rl-option">
-      <h3><span class="num" aria-hidden="true">1</span>Cloudflare first, then Beebo</h3>
-      <p>Your own Cloudflare account carries relayed video until you’ve used <strong><span data-rl="switch">950</span> GB</strong> that month, inside its free <span data-rl="free">1,000</span> GB. Then your PC switches to Beebo Relay by itself, so you never pay Cloudflare’s higher rate.</p>
+      <h3><span class="num" aria-hidden="true">1</span>Beebo Relay only</h3>
+      <p>No Cloudflare account needed. Relayed video goes through Beebo Relay. Free at this time.</p>
     </div>
     <div class="rl-option">
-      <h3><span class="num" aria-hidden="true">2</span>Beebo only</h3>
-      <p>No Cloudflare account needed. All relayed video goes through Beebo Relay, and you pay only for the GB actually relayed, from a prepaid balance or as you go.</p>
+      <h3><span class="num" aria-hidden="true">2</span>Cloudflare first, then Beebo Relay</h3>
+      <p>Your own Cloudflare account carries relayed video until you’ve used <strong><span data-rl="switch">950</span> GB</strong> that month, inside its free <span data-rl="free">1,000</span> GB. Then your PC switches to Beebo Relay by itself.</p>
     </div>
     <div class="rl-option">
-      <h3><span class="num" aria-hidden="true">3</span>My own Cloudflare only</h3>
-      <p>No Beebo Relay at all. Everything goes through your Cloudflare account, and Cloudflare bills you directly for anything past its free <span data-rl="free">1,000</span> GB.</p>
-    </div>
-  </div>
-  <h3 class="rl-sub">Two ways to pay for Beebo Relay</h3>
-  <div class="rl-two">
-    <div class="feature">
-      <h3>Prepaid balance <span class="cheap-badge">Lowest rate</span></h3>
-      <p>Load up your account with <span data-rl="topUpList">$10, $25 or $50</span> and relayed data comes out of your balance at <strong><span data-rl="prepaidPrice">$0.0121</span> per GB</strong> (our cost plus <span data-rl="prepaidMarkup">10</span>%).</p>
-      <ul>
-        <li data-rl="bonusList">Top up $25 and get 5% extra credit; top up $50 and get 10% extra.</li>
-        <li><span data-rl="balancePolicy">Never expires. Refundable on request.</span></li>
-        <li>We’ll let you know when it’s running low, at <span data-rl="warnList">25% and 10%</span> left, shown as roughly how many hours of watching you have left.</li>
-        <li>If it runs out, you choose: top up, pay as you go with Beebo, or switch to Cloudflare only.</li>
-      </ul>
-    </div>
-    <div class="feature">
-      <h3>Pay as you go</h3>
-      <p>Nothing to load up. Relayed data is billed monthly at <strong><span data-rl="paygPrice">$0.0132</span> per GB</strong> (our cost plus <span data-rl="paygMarkup">20</span>%), <span data-rl="paygBilling">added to your monthly Beebo subscription invoice</span>.</p>
-      <ul>
-        <li>Handy if you only need a relay now and then.</li>
-      </ul>
+      <h3><span class="num" aria-hidden="true">3</span>Cloudflare only</h3>
+      <p>No Beebo Relay at all. Everything goes through your own Cloudflare account, and Cloudflare bills you directly for anything past its free <span data-rl="free">1,000</span> GB.</p>
     </div>
   </div>
 
@@ -467,7 +447,7 @@
       Cloudflare prices checked on <strong data-rl="checked">2026-09-15</strong> from Cloudflare’s <a href="https://developers.cloudflare.com/realtime/sfu/pricing/" target="_blank" rel="noopener noreferrer">Realtime pricing page</a> and <a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">TURN FAQ</a>: <span data-rl="price">$0.05</span> per GB sent from Cloudflare to the viewer, after a free tier of <span data-rl="free">1,000</span> GB (<a href="https://blog.cloudflare.com/introducing-cloudflare-realtime-and-realtimekit/" target="_blank" rel="noopener noreferrer">“each month”</a>). Data going <em>into</em> Cloudflare is free. The free tier is per Cloudflare account and is shared with any other Cloudflare Realtime use on that account. Cloudflare counts packet overhead too, which is one reason Beebo switches over at <span data-rl="switch">950</span> GB rather than right at the limit. Prices can change, so Cloudflare’s page is the final word.
     </p>
     <p class="fineprint calc-note" data-show-for="cfThenBeebo beeboOnly">
-      Beebo Relay isn’t running yet. Its estimated prices start from our expected cost of <span data-rl="beeboCost">$0.011</span> per GB (server data transfer plus card processing). Prepaid adds <span data-rl="prepaidMarkup">10</span>% (<span data-rl="prepaidPrice">$0.0121</span> per GB), taken from your balance. Pay as you go adds <span data-rl="paygMarkup">20</span>% (<span data-rl="paygPrice">$0.0132</span> per GB), <span data-rl="paygBilling">added to your monthly Beebo subscription invoice</span>. “Hours of watching” use the quality you picked above. We’ll confirm the real prices before anyone is charged.
+      Beebo Relay is free at this time. If fees ever start, it would cost only what it costs Beebo to run it: about <span data-rl="beeboCost">$0.011</span> per GB, 0% markup, and we’ll tell you before anything is charged. “Hours of watching” use the quality you picked above.
     </p>
     <p class="fineprint calc-note">
       Quality figures are estimates: Netflix publishes up to 1 GB an hour for SD, 3 GB for HD and 7 GB for 4K (<a href="https://help.netflix.com/en/node/87" target="_blank" rel="noopener noreferrer">Netflix data usage</a>). Files you own are often higher quality. Every 1 Mbps of video is about 0.45 GB an hour, so an 11 Mbps HD file uses about 5 GB an hour.

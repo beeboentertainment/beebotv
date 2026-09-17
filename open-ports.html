@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open ports on your router — Beebo Entertainment</title>
+<meta name="description" content="If Beebo couldn’t open its ports automatically, forward UDP ports 47820–47829 to your home computer by hand. Steps for most routers, plus Rogers, Bell and Telus." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- Connection guides: components layered on top of site.css tokens ---- */
+  .rl-chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px;justify-content:center}
+  .rl-chip{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:7px 14px;font-size:.86rem;font-weight:600;color:var(--ink);box-shadow:var(--shadow)}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .steps>li ul{color:var(--muted);margin:0 0 .55em;padding-left:1.2em}
+  .steps>li ul li{margin:0 0 4px}
+
+  .rl-two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  .rl-two .feature{margin:0}
+  .rl-two .feature p{color:var(--muted);margin:0 0 6px}
+  .rl-two ul{margin:6px 0 0;padding-left:1.2em;color:var(--muted)}
+  .rl-two li{margin:0 0 5px}
+
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 28px 14px 0;list-style:none;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:0;top:12px;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .faq details p + p{margin-top:-4px}
+
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 18px;margin:22px 0 0}
+  .toc p{margin:0 0 6px;font-weight:700}
+  .toc ol{margin:0;padding-left:1.3em;columns:2;column-gap:24px}
+  .toc li{margin:0 0 4px;break-inside:avoid}
+
+  @media (max-width:640px){
+    .rl-two{grid-template-columns:1fr}
+    .steps>li{padding:16px 16px 16px 56px}
+    .steps>li::before{left:12px}
+    .toc ol{columns:1}
+  }
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/open-ports.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3"></head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<div class="wrap">
+  <a class="back" href="watch-away-from-home.html">← Watch away from home</a>
+
+  <div class="page-hero">
+    <div class="em">🚪</div>
+    <h1>Open ports on your router</h1>
+    <p class="lead">Beebo usually opens its ports for you. If it couldn’t, you can forward them by hand in your router’s settings. Then your phone can connect <a href="direct-connection.html">directly</a> to the computer at home, with no relay.</p>
+  </div>
+
+  <div class="rl-chips">
+    <span class="rl-chip">UDP 47820–47829</span>
+    <span class="rl-chip">$0, direct connection</span>
+    <span class="rl-chip">Only if automatic didn’t work</span>
+  </div>
+
+  <div class="callout">
+    <p><strong>Before you start: an open port makes this computer reachable from the internet.</strong> Beebo only answers people who sign in, but any open port is a small risk. Only forward the ports Beebo shows, and only to this computer.</p>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#ports">Which ports</a></li>
+      <li><a href="#safety">Stay safe</a></li>
+      <li><a href="#steps">Forward the ports, step by step</a></li>
+      <li><a href="#providers">Rogers, Bell and Telus</a></li>
+      <li><a href="#two-routers">Two routers in a row</a></li>
+      <li><a href="#wont-work">When it won’t work</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="ports">Which ports</h2>
+  <div class="feature">
+    <h3>UDP ports 47820–47829 by default</h3>
+    <p>Beebo’s away-from-home video uses one port per viewer at a time. Ten ports means up to ten away-from-home viewers at once.</p>
+    <p>The exact ports and this computer’s local IP address are shown in <strong>Settings › Your Beebo address</strong>, and in the wizard’s <strong>Open ports on my router</strong> steps.</p>
+    <p>Beebo tries to open them automatically (NAT-PMP, then UPnP). You only need to forward them by hand if that didn’t work.</p>
+  </div>
+
+  <h2 id="safety">Stay safe</h2>
+  <div class="callout">
+    <p><strong>An open port makes this computer reachable from the internet.</strong> Beebo only answers people who sign in, but any open port is a small risk. Please:</p>
+    <ul>
+      <li>Only forward the <strong>UDP</strong> ports Beebo shows, and only to this computer.</li>
+      <li>Never use <strong>DMZ</strong>.</li>
+      <li>Keep Windows and Beebo up to date.</li>
+      <li>Delete the rule if you stop using Beebo.</li>
+    </ul>
+    <p>Some internet providers block this.</p>
+  </div>
+
+  <h2 id="steps">Forward the ports, step by step</h2>
+  <ol class="steps">
+    <li>
+      <h3>Find the computer’s local IP address</h3>
+      <p>It’s shown in the Beebo app. On Windows you can also go to <strong>Settings › Network &amp; internet ›</strong> your connection <strong>› Properties</strong> and look for <strong>IPv4 address</strong>.</p>
+    </li>
+    <li>
+      <h3>Give the computer a fixed local address</h3>
+      <p>In your router, reserve that address for this computer. It’s often called <strong>DHCP reservation</strong> or <strong>static lease</strong>. This keeps the rule working after a restart.</p>
+    </li>
+    <li>
+      <h3>Open your router’s settings</h3>
+      <p>Open the router or modem settings in a browser. The address and admin password are usually on a sticker on the router.</p>
+    </li>
+    <li>
+      <h3>Find “Port forwarding”</h3>
+      <p>It may be under <strong>Advanced</strong>, <strong>NAT</strong>, <strong>Firewall</strong>, <strong>Gaming</strong> or <strong>Applications</strong>.</p>
+    </li>
+    <li>
+      <h3>Add a rule</h3>
+      <ul>
+        <li>Protocol: <strong>UDP</strong></li>
+        <li>External and internal ports: <code>47820–47829</code> (or the ports Beebo shows)</li>
+        <li>To: the computer’s local IP address</li>
+      </ul>
+      <p>Don’t forward any other ports, and don’t use DMZ.</p>
+    </li>
+    <li>
+      <h3>Save and test</h3>
+      <p>Save the rule. Then in Beebo press <strong>Test again</strong>, or go to <strong>Settings › Connection › Re-run test</strong>.</p>
+    </li>
+  </ol>
+
+  <h2 id="providers">Rogers, Bell and Telus</h2>
+  <p>Menu names change between models. If something looks different, check your provider’s own help page.</p>
+  <div class="faq">
+    <details><summary>Rogers (Ignite WiFi Gateway)</summary>
+      <p>Use the Ignite HomeConnect app, or the gateway page, usually <code>http://10.0.0.1</code>. Older Rogers modems are often at <code>http://192.168.0.1</code>.</p>
+    </details>
+    <details><summary>Bell (Home Hub 3000/4000, Giga Hub)</summary>
+      <p>Go to <code>http://192.168.2.1</code>, then <strong>Advanced tools and settings › Port forwarding</strong>. The admin password is on the hub’s sticker.</p>
+    </details>
+    <details><summary>Telus (Wi-Fi Hub / Boost and older Actiontec models)</summary>
+      <p>Usually <code>http://192.168.1.254</code>. Look under <strong>Advanced settings › Firewall › Port forwarding</strong>. Some newer Telus hubs are managed from the Telus app.</p>
+    </details>
+  </div>
+
+  <h2 id="two-routers">Two routers in a row</h2>
+  <div class="feature">
+    <h3>Your own router behind the provider’s modem</h3>
+    <p>Forward the ports on both. Or put the provider’s modem in <strong>bridge mode</strong>, or turn off the second router’s routing.</p>
+  </div>
+
+  <h2 id="wont-work">When it won’t work</h2>
+  <div class="feature">
+    <h3>Shared internet address (CGNAT)</h3>
+    <p>Some providers share one internet address between many homes. It’s common on some fixed wireless, 5G home internet and some fibre plans. Port forwarding can’t work then.</p>
+    <p>You can ask your provider for a public IP address, or use <a href="beebo-relay.html">Beebo Relay</a> or <a href="own-relay.html">your own Cloudflare relay</a>.</p>
+  </div>
+
+  <div class="guide-nav">
+    <a href="direct-connection.html">Direct connection</a>
+    <a href="beebo-relay.html">Beebo Relay</a>
+    <a href="own-relay.html">Your own Cloudflare relay</a>
+    <a href="help.html">All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="help.html">← Back to Help &amp; Guides</a></div>
+</div>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script></body>
+</html>

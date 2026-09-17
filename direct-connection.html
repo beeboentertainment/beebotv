@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Direct connection — Beebo Entertainment</title>
+<meta name="description" content="How Beebo connects your phone straight to your home computer, what the connection test checks, and what to do if your router didn’t open Beebo’s ports." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- Connection guides: components layered on top of site.css tokens ---- */
+  .rl-chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 4px;justify-content:center}
+  .rl-chip{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:7px 14px;font-size:.86rem;font-weight:600;color:var(--ink);box-shadow:var(--shadow)}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .steps>li ul{color:var(--muted);margin:0 0 .55em;padding-left:1.2em}
+  .steps>li ul li{margin:0 0 4px}
+
+  .rl-two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  .rl-two .feature{margin:0}
+  .rl-two .feature p{color:var(--muted);margin:0 0 6px}
+  .rl-two ul{margin:6px 0 0;padding-left:1.2em;color:var(--muted)}
+  .rl-two li{margin:0 0 5px}
+
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 18px;margin:22px 0 0}
+  .toc p{margin:0 0 6px;font-weight:700}
+  .toc ol{margin:0;padding-left:1.3em;columns:2;column-gap:24px}
+  .toc li{margin:0 0 4px;break-inside:avoid}
+
+  @media (max-width:640px){
+    .rl-two{grid-template-columns:1fr}
+    .steps>li{padding:16px 16px 16px 56px}
+    .steps>li::before{left:12px}
+    .toc ol{columns:1}
+  }
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/direct-connection.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3"></head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<div class="wrap">
+  <a class="back" href="watch-away-from-home.html">← Watch away from home</a>
+
+  <div class="page-hero">
+    <div class="em">🔗</div>
+    <h1>Direct connection</h1>
+    <p class="lead">Beebo always tries a <strong>direct connection</strong> first. Your video goes straight from the computer at home to your phone or browser, encrypted from end to end. For most homes there’s nothing to set up.</p>
+  </div>
+
+  <div class="rl-chips">
+    <span class="rl-chip">No setup for most homes</span>
+    <span class="rl-chip">Encrypted end to end</span>
+    <span class="rl-chip">$0, no relay</span>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#test">What the connection test checks</a></li>
+      <li><a href="#auto">What the computer checks by itself</a></li>
+      <li><a href="#upnp">If the router didn’t open the ports</a></li>
+      <li><a href="#home-only">Home only</a></li>
+      <li><a href="#rerun">Test again anytime</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="how">How it works</h2>
+  <div class="feature">
+    <h3>Straight from home to you</h3>
+    <p>Video goes over <strong>WebRTC</strong>, straight between your home computer and your phone or browser. It’s encrypted from end to end (WebRTC DTLS).</p>
+    <p>Beebo’s service (<code>beebo.tv</code>) only helps your phone find the computer and signs people in. With a direct connection, your video never passes through Beebo’s servers or any relay.</p>
+  </div>
+
+  <h2 id="test">What the connection test checks</h2>
+  <p>The first time you set up Beebo, the <strong>Test your connection</strong> wizard runs two quick tests with your phone.</p>
+  <ol class="steps">
+    <li>
+      <h3>Test 1: Watch at home</h3>
+      <p>Put your phone on the same Wi-Fi as the computer. Open the Beebo app, tap <strong>Scan QR to connect</strong> and scan the code on the computer.</p>
+      <p>The test ticks when a device on your home network reaches the computer. No address is stored.</p>
+    </li>
+    <li>
+      <h3>Test 2: Watch away from home</h3>
+      <p>Turn Wi-Fi off on your phone so it uses mobile data. Open the Beebo app, or scan the code to open <code>yourname.beebo.tv</code>. Sign in and start any video.</p>
+      <p>The test shows live whether it connected <strong>Direct</strong>, through a relay, or couldn’t connect.</p>
+    </li>
+    <li>
+      <h3>Result</h3>
+      <p>You’ll then see your options: Beebo Relay, Cloudflare only, Open ports on my router, or Home only for now.</p>
+    </li>
+  </ol>
+
+  <h2 id="auto">What the computer checks by itself</h2>
+  <p>While you test, the computer also looks at your home internet on its own:</p>
+  <div class="rl-two">
+    <div class="feature">
+      <h3>Did the router open the ports?</h3>
+      <p>Beebo asks your router to open its UDP ports automatically. It tries NAT-PMP first, then UPnP. You can see the result in <strong>Settings › Your Beebo address</strong>.</p>
+    </div>
+    <div class="feature">
+      <h3>Anything in the way?</h3>
+      <ul>
+        <li><strong>Shared internet address (CGNAT):</strong> your provider shares one internet address between many homes. Direct connections from outside probably won’t work.</li>
+        <li><strong>Two routers in a row (double NAT).</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout safe">
+    <p><strong>The automatic check is a hint. The phone test is the proof.</strong> If Test 2 says Direct, you’re all set.</p>
+  </div>
+
+  <h2 id="upnp">If the router didn’t open the ports</h2>
+  <div class="feature">
+    <h3>Switch on UPnP, or forward the ports by hand</h3>
+    <p>Most home routers have UPnP switched on. If the check says your router didn’t open the ports, you have two choices:</p>
+    <ul>
+      <li>Switch on UPnP in your router’s settings. It’s sometimes called <strong>UPnP IGD</strong> or <strong>NAT-PMP</strong>.</li>
+      <li>Forward Beebo’s ports by hand. See <a href="open-ports.html">Open ports on your router</a>.</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <p><strong>A note on security:</strong> UPnP lets any program on your home network ask the router to open ports. That’s a small risk. Forwarding only Beebo’s ports by hand is the tighter option.</p>
+  </div>
+
+  <h2 id="home-only">Home only</h2>
+  <div class="feature">
+    <h3>Watch on the same Wi-Fi as the computer</h3>
+    <p>There’s nothing to set up, and it costs <strong>$0</strong> (no relay). Choose it in the wizard result, or go to <strong>Settings › Connection › Change option › Home only for now</strong>.</p>
+    <p>With Home only, watching away from home may not work. You can change it anytime.</p>
+  </div>
+
+  <h2 id="rerun">Test again anytime</h2>
+  <p>Changed your router or internet provider? Go to <strong>Settings › Connection › Re-run test</strong>. The same screen shows your current status, and <strong>Change option</strong> lets you pick a different way to connect.</p>
+
+  <div class="guide-nav">
+    <a href="open-ports.html">Open ports on your router</a>
+    <a href="beebo-relay.html">Beebo Relay</a>
+    <a href="own-relay.html">Your own Cloudflare relay</a>
+    <a href="help.html">All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="help.html">← Back to Help &amp; Guides</a></div>
+</div>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script></body>
+</html>
