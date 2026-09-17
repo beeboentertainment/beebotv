@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+  <title id="t">How Beebo connects away from home</title>
+  <desc id="d">Your phone opens yourname.beebo.tv. Beebo tries a direct, encrypted connection from your home PC to your phone first. Only if direct is not possible does the video go through a relay, such as Beebo Relay, which is free at this time and cannot see your video.</desc>
+  <style>
+    .lbl{font-family:"DM Sans",Arial,sans-serif;font-size:16px;font-weight:700;fill:#22251F}
+    .sub{font-family:"DM Sans",Arial,sans-serif;font-size:13px;fill:#686B60}
+    .flow{stroke-dasharray:2 14;animation:flow 1.4s linear infinite}
+    @keyframes flow{to{stroke-dashoffset:-32}}
+    @media (prefers-reduced-motion: reduce){.flow{animation:none}}
+  </style>
+  <rect width="640" height="360" rx="18" fill="#FBF6EE"/>
+  <!-- home -->
+  <g transform="translate(40 92)">
+    <path d="M0 60 L70 8 L140 60 V160 H0 Z" fill="#E8EBDF" stroke="#22251F" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="36" y="78" width="68" height="46" rx="5" fill="#22251F"/>
+    <rect x="42" y="84" width="56" height="34" rx="2" fill="#FFC531"/>
+    <rect x="62" y="124" width="16" height="12" fill="#22251F"/>
+    <text x="70" y="192" text-anchor="middle" class="lbl">Your PC at home</text>
+    <text x="70" y="212" text-anchor="middle" class="sub">must be on and running Beebo</text>
+  </g>
+  <!-- phone -->
+  <g transform="translate(508 104)">
+    <rect width="76" height="132" rx="14" fill="#22251F"/>
+    <rect x="8" y="14" width="60" height="98" rx="5" fill="#E8EBDF"/>
+    <text x="38" y="58" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9" font-weight="700" fill="#22251F">yourname</text>
+    <text x="38" y="72" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="9" font-weight="700" fill="#AB6513">.beebo.tv</text>
+    <text x="38" y="166" text-anchor="middle" class="lbl">You, anywhere</text>
+    <text x="38" y="186" text-anchor="middle" class="sub">mobile data or any Wi-Fi</text>
+  </g>
+  <!-- direct -->
+  <path d="M196 150 H500" stroke="#E6E1D3" stroke-width="10" stroke-linecap="round"/>
+  <path class="flow" d="M196 150 H500" stroke="#AB6513" stroke-width="10" stroke-linecap="round"/>
+  <rect x="266" y="100" width="164" height="30" rx="15" fill="#FFC531"/>
+  <text x="348" y="120" text-anchor="middle" class="lbl" font-size="14">1 · Direct first</text>
+  <text x="348" y="176" text-anchor="middle" class="sub">encrypted end to end</text>
+  <!-- relay -->
+  <path d="M196 214 C 260 300, 440 300, 500 214" fill="none" stroke="#C9C4B4" stroke-width="5" stroke-dasharray="10 9" stroke-linecap="round"/>
+  <g transform="translate(284 262)">
+    <rect width="128" height="42" rx="10" fill="#22251F"/>
+    <text x="64" y="27" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#FBF6EE">2 · Relay if needed</text>
+  </g>
+  <text x="348" y="330" text-anchor="middle" class="sub">Beebo Relay (free at this time), your own Cloudflare relay, or open ports</text>
+</svg>

@@ -1,0 +1,92 @@
+/* Bite-size sections: headline + one or two sentences + picture or short clip,
+   with a "Listen" button and a "Show more" drawer. Works on top of example.css
+   (homepage look) and site.css (guide pages). Mobile first. */
+.bites{max-width:1230px;margin:0 auto;padding:40px 20px 10px}
+.bites-intro{max-width:720px;margin:0 auto 26px;text-align:center}
+.bites-intro h2{margin-bottom:12px}
+.bites-intro p{color:var(--muted,#686b60)}
+.bite{
+  display:grid;grid-template-columns:1fr;gap:22px;align-items:center;
+  padding:30px 0;border-top:1px solid var(--line,#deded2);
+}
+.bite:first-of-type{border-top:0}
+.bite-media{margin:0;position:relative;border-radius:14px;overflow:hidden;background:#e8ebdf;aspect-ratio:16/9}
+.bite-media img,.bite-media video{display:block;width:100%;height:100%;object-fit:cover}
+.bite-media.contain img{object-fit:contain;background:#fbf6ee}
+.bite-copy .eyebrow{margin-bottom:10px;color:#8a5a12}
+.bite-copy h2{font-size:clamp(28px,3.2vw,40px);margin:0 0 10px}
+.bite-copy h3{margin:0 0 10px}
+.bite-copy > p{font-size:17px;line-height:1.6;color:var(--ink,#22251f);max-width:520px;margin:0 0 6px}
+.bite-copy .bite-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:14px;font-size:14px;font-weight:700}
+.bite-copy .bite-links a{text-decoration:underline;text-underline-offset:5px}
+.bite-copy .bite-links a:focus-visible{outline:3px solid #ab6513;outline-offset:4px}
+
+/* Show more drawer */
+details.more{margin-top:12px;max-width:560px}
+details.more > summary{
+  display:inline-flex;align-items:center;gap:8px;cursor:pointer;list-style:none;
+  font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;
+  border:1px solid var(--line,#deded2);background:#fff;color:#22251f;min-height:40px;
+}
+details.more > summary::-webkit-details-marker{display:none}
+details.more > summary::after{content:"+";font-size:18px;line-height:1;color:#ab6513}
+details.more[open] > summary::after{content:"\2013"}
+details.more > summary .less{display:none}
+details.more[open] > summary .less{display:inline}
+details.more[open] > summary .show{display:none}
+details.more > summary:focus-visible{outline:3px solid #ab6513;outline-offset:3px}
+details.more .more-body{padding:14px 2px 2px;font-size:15px;color:var(--muted,#686b60)}
+details.more .more-body p{margin:0 0 .7em}
+details.more .more-body ul,details.more .more-body ol{margin:0 0 .7em;padding-left:1.2em}
+details.more .more-body li{margin:.25em 0}
+details.more .more-body strong{color:var(--ink,#22251f)}
+
+/* Quick-jump chips */
+.bite-jump{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 auto 10px;max-width:900px;padding:0 20px}
+.bite-jump a{font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line,#deded2)}
+.bite-jump a:hover{border-color:#ab6513}
+
+/* Price / steps cards inside bites */
+.bite-cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.bite-cards > div{background:#fff;border:1px solid var(--line,#deded2);border-radius:12px;padding:14px 16px}
+.bite-cards b{display:block;font-size:15px;margin-bottom:4px}
+.bite-cards span{font-size:14px;color:var(--muted,#686b60)}
+
+.video-note{font-size:12px;color:var(--muted,#686b60);margin:8px 2px 0}
+
+@media (min-width:760px){
+  .bites{padding:60px 25px 20px}
+  .bite{grid-template-columns:1.05fr 1fr;gap:56px;padding:46px 0}
+  .bite.flip .bite-media{order:2}
+  .bite-cards{grid-template-columns:repeat(3,1fr)}
+}
+/* Guide pages (site.css) */
+.bites.guide{padding-top:10px}
+.bites.guide .bite{padding:26px 0}
+.bites.guide .bite-copy h1{font-size:clamp(2rem,5vw,2.6rem);margin:0 0 10px}
+.bites.guide .bite-copy h2{font-size:clamp(1.5rem,3.6vw,1.9rem)}
+.bites.guide .bite-jump{justify-content:flex-start;padding:0;margin:14px 0 0}
+.bites.guide .bite-media{border-radius:var(--radius,16px)}
+.step-badge{display:grid;place-items:center;background:var(--accent-soft,#FBEAD1);aspect-ratio:auto;min-height:120px}
+.step-badge span{font-family:var(--font-display,"Baloo 2",system-ui,sans-serif);font-weight:800;font-size:64px;line-height:1;color:var(--accent-ink,#B26A12)}
+.addr-card{display:grid;place-items:center;background:var(--surface,#fff);border:1px solid var(--border,#EBE0CF);aspect-ratio:auto;min-height:160px;padding:20px}
+.addr-card > div{display:grid;gap:8px;justify-items:center;text-align:center}
+.addr-card .addr-label{font-size:13px;font-weight:700;color:var(--muted,#6E6456)}
+.addr-card .addr{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(.95rem,3.6vw,1.1rem);max-width:100%;overflow-wrap:anywhere;background:var(--bg-2,#F4EBDC);border:1px solid var(--border-strong,#E0D2BB);border-radius:10px;padding:10px 16px;color:var(--ink,#231E18)}
+.addr-card .addr-note{font-size:13px;color:var(--muted,#6E6456)}
+.bite-button{margin:12px 0 4px}
+.faq-block{padding:26px 0;border-top:1px solid var(--border,#EBE0CF)}
+.faq-block .faq details{background:var(--surface,#fff);border:1px solid var(--border,#EBE0CF);border-radius:12px;padding:0 18px;margin:10px 0}
+.faq-block .faq summary{cursor:pointer;font-weight:700;padding:14px 0}
+.faq-block .faq details p{color:var(--muted,#6E6456);padding:0 0 14px;margin:0}
+.bites.guide .desktop-guide{margin:0}
+@media (min-width:760px){
+  .bites.guide .bite{grid-template-columns:260px 1fr;gap:32px;align-items:start}
+  .bites.guide .bite.guide-hero,.bites.guide .bite.wide-media{grid-template-columns:1fr 1fr;align-items:center}
+  .bites.guide .step-badge{min-height:146px}
+}
+.setup-video{max-width:760px;margin:0 auto 34px}
+
+@media (prefers-reduced-motion: reduce){
+  .bite-media video{display:none}
+}

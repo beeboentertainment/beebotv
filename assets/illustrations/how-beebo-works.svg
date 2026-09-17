@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+  <title id="t">How Beebo works</title>
+  <desc id="d">Your movie and show folders sit on your Windows PC. Beebo on that PC streams them to a phone, a TV and a web browser.</desc>
+  <rect width="640" height="360" rx="18" fill="#FBF6EE"/>
+  <!-- folders -->
+  <g transform="translate(34 118)">
+    <path d="M0 18h44l12 12h74v84H0z" fill="#F4D9A8"/>
+    <path d="M0 40h130v74H0z" fill="#E9B865"/>
+    <text x="65" y="148" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#22251F">Your movies</text>
+    <text x="65" y="170" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">files you already own</text>
+  </g>
+  <!-- PC -->
+  <g transform="translate(234 96)">
+    <rect x="0" y="0" width="172" height="112" rx="10" fill="#22251F"/>
+    <rect x="10" y="10" width="152" height="86" rx="4" fill="#FFC531"/>
+    <circle cx="86" cy="53" r="24" fill="#22251F"/>
+    <path d="M78 41l20 12-20 12z" fill="#FFC531"/>
+    <rect x="66" y="112" width="40" height="18" fill="#22251F"/>
+    <rect x="44" y="130" width="84" height="8" rx="4" fill="#22251F"/>
+    <text x="86" y="170" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#22251F">Beebo on your PC</text>
+    <text x="86" y="192" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">Windows 10 or 11</text>
+  </g>
+  <!-- arrows -->
+  <path d="M172 176h48" stroke="#AB6513" stroke-width="4" stroke-linecap="round"/>
+  <path d="M212 168l10 8-10 8" fill="none" stroke="#AB6513" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#AB6513" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M420 150 C 450 110, 455 80, 478 74"/>
+    <path d="M420 160 H 474"/>
+    <path d="M420 172 C 450 220, 455 256, 478 262"/>
+  </g>
+  <!-- phone -->
+  <g transform="translate(488 40)">
+    <rect width="40" height="70" rx="8" fill="#22251F"/><rect x="5" y="8" width="30" height="50" rx="3" fill="#E8EBDF"/>
+    <text x="54" y="42" font-family="DM Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#22251F">Phone</text>
+  </g>
+  <!-- tv -->
+  <g transform="translate(484 136)">
+    <rect width="64" height="42" rx="5" fill="#22251F"/><rect x="5" y="5" width="54" height="32" rx="2" fill="#E8EBDF"/>
+    <rect x="26" y="42" width="12" height="8" fill="#22251F"/>
+    <text x="72" y="28" font-family="DM Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#22251F">TV</text>
+  </g>
+  <!-- browser -->
+  <g transform="translate(484 236)">
+    <rect width="64" height="48" rx="5" fill="#22251F"/><rect x="5" y="12" width="54" height="31" rx="2" fill="#E8EBDF"/>
+    <circle cx="10" cy="6" r="2" fill="#FFC531"/><circle cx="17" cy="6" r="2" fill="#FFC531"/>
+    <text x="72" y="30" font-family="DM Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#22251F">Browser</text>
+  </g>
+</svg>
