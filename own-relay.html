@@ -154,7 +154,7 @@
     .toc ol{columns:1}
   }
 </style>
-<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/own-relay.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3"></head>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/own-relay.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3"><link rel="stylesheet" href="assets/listen.css?v=1"></head>
 <body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
 
 
@@ -164,7 +164,7 @@
 
   <div class="page-hero">
     <div class="em">🔁</div>
-    <h1>Use your own Cloudflare relay</h1>
+    <h1 data-listen="use-your-own-cloudflare-relay">Use your own Cloudflare relay</h1>
     <p class="lead">Most of the time, Beebo connects your phone straight to the computer at home. On a few networks that simply isn’t possible. A <strong>relay</strong> fixes that: it passes your films along, still locked, between home and wherever you are. You can set one up in your own Cloudflare account in about ten minutes, and for most families it costs nothing. We’re also planning <a href="#beebo-relay">Beebo Relay</a>, for anyone who’d rather not use Cloudflare. <a href="#cost">See what each option would cost you.</a></p>
   </div>
 
@@ -190,7 +190,7 @@
     </ol>
   </nav>
 
-  <h2 id="when">Do you need it?</h2>
+  <h2 data-listen="do-you-need-it" id="when">Do you need it?</h2>
   <div class="feature">
     <h3>Probably not, but it’s worth checking</h3>
     <p>Beebo connects directly on most home and mobile networks. On a small share of them (roughly one in eight, depending on your internet provider and the network you’re visiting), the two ends can’t reach each other without help. That usually happens with some mobile networks, office or hotel Wi-Fi, and internet providers that share one public address between many homes.</p>
@@ -226,17 +226,17 @@
     <figcaption>Beebo only uses the relay when a direct connection fails. Direct connections never touch it and cost nothing.</figcaption>
   </figure>
 
-  <h2 id="setup">Set it up, step by step</h2>
+  <h2 data-listen="set-it-up-step-by-step" id="setup">Set it up, step by step</h2>
   <p>You’ll create a free Cloudflare account, make a <strong>TURN key</strong> (TURN is the technical name for this kind of relay), and paste two values into Beebo. Cloudflare sometimes renames menus. If something looks different, follow <a href="https://developers.cloudflare.com/realtime/turn/generate-credentials/" target="_blank" rel="noopener noreferrer">Cloudflare’s official TURN guide</a>.</p>
 
   <ol class="steps">
     <li>
-      <h3>Create a Cloudflare account</h3>
+      <h3 data-listen="create-a-cloudflare-account">Create a Cloudflare account</h3>
       <p>Go to <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener noreferrer">dash.cloudflare.com/sign-up</a>, enter your email and a password, and select <strong>Create Account</strong>. Cloudflare emails you a link to verify your address, so open it. You don’t need a website or domain name for this. (<a href="https://developers.cloudflare.com/fundamentals/account/create-account/" target="_blank" rel="noopener noreferrer">Cloudflare’s account guide</a>)</p>
       <p>This is <em>your</em> account. Cloudflare bills you directly for anything above the free allowance, and Beebo never sees your Cloudflare login. Depending on your account, Cloudflare may ask you to add a payment method.</p>
     </li>
     <li>
-      <h3>Open Realtime, then TURN Server</h3>
+      <h3 data-listen="open-realtime-then-turn-server">Open Realtime, then TURN Server</h3>
       <p>In the Cloudflare dashboard, find the <strong>Realtime</strong> section (<a href="https://blog.cloudflare.com/introducing-cloudflare-realtime-and-realtimekit/" target="_blank" rel="noopener noreferrer">it used to be called <em>Calls</em></a>) and choose <strong>TURN Server</strong>. Cloudflare’s docs link here, and it should take you to the right place once you’re signed in: <a href="https://dash.cloudflare.com/?to=/:account/calls" target="_blank" rel="noopener noreferrer">open Realtime in the dashboard</a>.</p>
     </li>
     <li>
@@ -244,7 +244,7 @@
       <p>Select <strong>Create</strong> and give the key a name you’ll recognise, such as <code>Beebo</code>. The name is just a label for you. A TURN key is a long-lived secret that lets your Beebo PC make short-lived passes for your viewers. (<a href="https://developers.cloudflare.com/realtime/turn/generate-credentials/" target="_blank" rel="noopener noreferrer">Cloudflare: generate credentials</a>)</p>
     </li>
     <li>
-      <h3>Copy the key ID and the API token</h3>
+      <h3 data-listen="copy-the-key-id-and-the">Copy the key ID and the API token</h3>
       <p>Cloudflare shows two values for the new key. The labels may differ slightly:</p>
       <ul>
         <li><strong>TURN Token ID</strong> (the key ID): a long string of letters and numbers.</li>
@@ -254,12 +254,12 @@
       <p><strong>Treat the token like a password.</strong> Anyone who has it could run up relay usage on your account. Don’t email it or post it anywhere.</p>
     </li>
     <li>
-      <h3>Paste them into Beebo</h3>
+      <h3 data-listen="paste-them-into-beebo">Paste them into Beebo</h3>
       <p>On your home PC, open Beebo and go to <strong>Settings → Away from home → Use my own relay</strong>. Choose Cloudflare, paste the <strong>key ID</strong> and the <strong>API token</strong>, and save.</p>
       <p>Both values stay on your PC. Beebo uses them there to make short-lived relay passes for people who are signed in to your library. Your token is never sent to your viewers’ devices.</p>
     </li>
     <li>
-      <h3>Test it away from home</h3>
+      <h3 data-listen="test-it-away-from-home">Test it away from home</h3>
       <p>Turn off Wi-Fi on your phone so it uses mobile data, then open your <code>yourname.beebo.tv</code> address and play something. Ideally, try from the place that wouldn’t connect before. Remember, Beebo only uses the relay when it has to, so a working direct connection is still the normal result.</p>
     </li>
   </ol>
@@ -268,7 +268,7 @@
     <p><strong>Good habit:</strong> set a spending alert in Cloudflare under <strong>Manage Account → Billing → Billable Usage → Create budget alert</strong>. It emails you if your usage-based spend passes an amount you choose. Alerts only notify you and don’t switch anything off. (<a href="https://developers.cloudflare.com/billing/manage/budget-alerts/" target="_blank" rel="noopener noreferrer">Cloudflare budget alerts</a>)</p>
   </div>
 
-  <h2 id="privacy">What the relay can and can’t see</h2>
+  <h2 data-listen="what-the-relay-can-and-can" id="privacy">What the relay can and can’t see</h2>
   <div class="rl-two">
     <div class="feature">
       <h3>It can’t see</h3>
@@ -279,7 +279,7 @@
       </ul>
     </div>
     <div class="feature">
-      <h3>It can see</h3>
+      <h3 data-listen="it-can-see">It can see</h3>
       <ul>
         <li>The internet (IP) addresses of your home and of the viewer’s device</li>
         <li>When a connection starts and stops</li>
@@ -290,14 +290,14 @@
   <p>Beebo’s connection uses WebRTC, which encrypts everything end to end with <strong>DTLS</strong>. The keys are agreed between your home PC and the viewer’s device, so a relay only ever handles locked packets. Cloudflare says this directly: it can’t access relayed WebRTC media because of DTLS, and it processes connection details such as IP addresses and ports. (<a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">Cloudflare TURN FAQ</a>, <a href="https://developers.cloudflare.com/realtime/turn/analytics/" target="_blank" rel="noopener noreferrer">TURN analytics</a>)</p>
   <p class="fineprint">That metadata is handled under your own agreement with Cloudflare. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare’s privacy policy</a>. Cloudflare’s relay runs on its global network except its China Network. (<a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">source</a>)</p>
 
-  <h2 id="beebo-relay">Beebo Relay <span class="cheap-badge">Free at this time</span></h2>
+  <h2 data-listen="beebo-relay-free-at-this-time" id="beebo-relay">Beebo Relay <span class="cheap-badge">Free at this time</span></h2>
   <div class="callout safe">
     <p><strong>Beebo Relay is running and free at this time.</strong> It’s Beebo Entertainment’s own relay, on an OVHcloud server in Beauharnois, Canada, for people who’d rather not set up Cloudflare. If fees ever start, you’ll pay only what it costs Beebo to run it (about <span data-rl="beeboCost">$0.011</span> per GB, <strong>0% markup</strong>), and we’ll tell you before anything is charged. <a href="beebo-relay.html">How Beebo Relay works and how to turn it on →</a></p>
   </div>
   <p>You choose how relaying works in Beebo on your home PC (Settings › Connection). Whichever you choose, a relay is only used when a direct connection isn’t possible.</p>
   <div class="rl-options">
     <div class="rl-option">
-      <h3><span class="num" aria-hidden="true">1</span>Beebo Relay only</h3>
+      <h3 data-listen="beebo-relay-only"><span class="num" aria-hidden="true">1</span>Beebo Relay only</h3>
       <p>No Cloudflare account needed. Relayed video goes through Beebo Relay. Free at this time.</p>
     </div>
     <div class="rl-option">
@@ -310,7 +310,7 @@
     </div>
   </div>
 
-  <h3 class="rl-sub">What Beebo Relay can and can’t see</h3>
+  <h3 data-listen="what-beebo-relay-can-and-can" class="rl-sub">What Beebo Relay can and can’t see</h3>
   <div class="rl-two">
     <div class="feature">
       <h3>Beebo Relay can’t see</h3>
@@ -330,7 +330,7 @@
   </div>
   <p class="fineprint">That’s the same information any relay handles, including Cloudflare’s. We’ll update our privacy policy with the details before Beebo Relay launches.</p>
 
-  <h2 id="cost">What it costs: the relay calculator</h2>
+  <h2 data-listen="what-it-costs-the-relay-calculator" id="cost">What it costs: the relay calculator</h2>
   <div class="callout safe">
     <p><strong>Most homes pay nothing for relay.</strong> Beebo connects your devices directly whenever it can, and direct connections never touch a relay. A relay is only used when a direct connection isn’t possible (roughly one home in eight), and the price is per GB actually relayed.</p>
   </div>
@@ -425,7 +425,7 @@
     </div>
 
     <div class="calc-result" id="rc-result" aria-live="polite">
-      <h3 id="rc-headline">About $0.99 a month</h3>
+      <h3 data-listen="about-0-99-a-month" id="rc-headline">About $0.99 a month</h3>
       <p class="plain" id="rc-plain"></p>
       <table class="bd">
         <caption class="visually-hidden">Monthly cost breakdown for the option you chose</caption>
@@ -446,7 +446,7 @@
     <p class="fineprint calc-note" data-show-for="cfThenBeebo cloudflareOnly">
       Cloudflare prices checked on <strong data-rl="checked">2026-09-15</strong> from Cloudflare’s <a href="https://developers.cloudflare.com/realtime/sfu/pricing/" target="_blank" rel="noopener noreferrer">Realtime pricing page</a> and <a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">TURN FAQ</a>: <span data-rl="price">$0.05</span> per GB sent from Cloudflare to the viewer, after a free tier of <span data-rl="free">1,000</span> GB (<a href="https://blog.cloudflare.com/introducing-cloudflare-realtime-and-realtimekit/" target="_blank" rel="noopener noreferrer">“each month”</a>). Data going <em>into</em> Cloudflare is free. The free tier is per Cloudflare account and is shared with any other Cloudflare Realtime use on that account. Cloudflare counts packet overhead too, which is one reason Beebo switches over at <span data-rl="switch">950</span> GB rather than right at the limit. Prices can change, so Cloudflare’s page is the final word.
     </p>
-    <p class="fineprint calc-note" data-show-for="cfThenBeebo beeboOnly">
+    <p data-listen="about-0-99-a-month-part" class="fineprint calc-note" data-show-for="cfThenBeebo beeboOnly">
       Beebo Relay is free at this time. If fees ever start, it would cost only what it costs Beebo to run it: about <span data-rl="beeboCost">$0.011</span> per GB, 0% markup, and we’ll tell you before anything is charged. “Hours of watching” use the quality you picked above.
     </p>
     <p class="fineprint calc-note">
@@ -454,17 +454,17 @@
     </p>
   </div>
 
-  <h2 id="tunnel">Why not a Cloudflare Tunnel?</h2>
+  <h2 data-listen="why-not-a-cloudflare-tunnel" id="tunnel">Why not a Cloudflare Tunnel?</h2>
   <div class="feature">
     <h3>A tunnel works differently</h3>
     <p>A Cloudflare Tunnel publishes your PC as a website behind Cloudflare’s proxy. The visitor’s secure connection ends at Cloudflare, and Cloudflare opens a second connection to your PC. Cloudflare’s own docs describe these as two separate connections. (<a href="https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/" target="_blank" rel="noopener noreferrer">Cloudflare encryption modes</a>) So the web traffic, including video, is decrypted inside Cloudflare’s network on its way through. A relay never holds the keys.</p>
   </div>
   <div class="feature">
-    <h3>Video terms are a grey area</h3>
+    <h3 data-listen="video-terms-are-a-grey-area">Video terms are a grey area</h3>
     <p>Cloudflare’s terms for its content delivery network (Free, Pro and Business plans) say that, unless you’re an Enterprise customer, you must use specific paid services such as Stream to serve video and other large files. Cloudflare may limit accounts that don’t. (<a href="https://www.cloudflare.com/service-specific-terms-application-services/" target="_blank" rel="noopener noreferrer">Service-Specific Terms</a>, updated 2 June 2026, checked 2026-09-15.) Cloudflare has said that restriction applies only to its CDN (<a href="https://blog.cloudflare.com/updated-tos/" target="_blank" rel="noopener noreferrer">Cloudflare blog, 2023</a>). But a tunnel’s public web address is served through that same proxy, and Cloudflare doesn’t clearly say whether streaming films through a tunnel is allowed. We couldn’t find a definite answer. The TURN relay is a product built and priced for exactly this kind of traffic, so that’s what we recommend.</p>
   </div>
 
-  <h2 id="other">Other relay servers (for technical users)</h2>
+  <h2 data-listen="other-relay-servers-for-technical-users" id="other">Other relay servers (for technical users)</h2>
   <div class="feature">
     <h3>Any standard TURN server works</h3>
     <p>Beebo’s <strong>Use my own relay</strong> setting also accepts a standard TURN server that uses shared-secret credentials (the “TURN REST API” style). Examples are <a href="https://github.com/coturn/coturn" target="_blank" rel="noopener noreferrer">coturn</a> with <code>use-auth-secret</code> or <a href="https://github.com/processone/eturnal" target="_blank" rel="noopener noreferrer">eturnal</a>. Enter your server’s address (for example <code>turn:relay.example.com:3478</code>, and <code>turns:relay.example.com:443</code> for strict networks) and its shared secret. If you run your own, lock it down so it can’t reach private or internal addresses. <a href="https://www.enablesecurity.com/blog/coturn-security-configuration-guide/" target="_blank" rel="noopener noreferrer">This coturn hardening guide</a> is a good start.</p>
@@ -473,7 +473,7 @@
     <p><strong>Will Beebo run a relay for me?</strong> Not yet. <a href="#beebo-relay">Beebo Relay</a> is planned, so you wouldn’t need your own. There’s no launch date yet. Until then, your own relay is the way to connect from networks that block direct connections.</p>
   </div>
 
-  <h2 id="trouble">Troubleshooting</h2>
+  <h2 data-listen="troubleshooting" id="trouble">Troubleshooting</h2>
   <div class="faq">
     <details><summary>I added my relay but still can’t connect</summary>
       <p>Check that the key ID and API token were pasted in full, with no extra spaces at the start or end. Make sure you used the token for the <strong>TURN key</strong>, not a general Cloudflare account API token. If you’re not sure, create a fresh TURN key in Cloudflare and paste the new pair into Beebo.</p>
@@ -482,7 +482,7 @@
     <details><summary>How do I know the relay is being used?</summary>
       <p>In Cloudflare, open <strong>Realtime → TURN Server</strong> and look for usage on your key, or check <strong>Manage Account → Billing → Billable Usage</strong>. If you only see usage now and then, that’s normal: most sessions connect directly. (<a href="https://developers.cloudflare.com/realtime/turn/analytics/" target="_blank" rel="noopener noreferrer">TURN analytics</a>)</p>
     </details>
-    <details><summary>It works on mobile data but not on hotel or office Wi-Fi</summary>
+    <details data-listen="troubleshooting-part-2"><summary>It works on mobile data but not on hotel or office Wi-Fi</summary>
       <p>Some networks allow almost nothing except ordinary secure web traffic. Cloudflare’s relay also accepts connections over TLS on port 443, the same port websites use, which gets through most of these networks (<a href="https://developers.cloudflare.com/realtime/turn/" target="_blank" rel="noopener noreferrer">Cloudflare TURN ports</a>). Some networks block streaming or peer-to-peer traffic on purpose, and no relay can fix that.</p>
     </details>
     <details><summary>It stopped working after a while</summary>
@@ -491,7 +491,7 @@
     <details><summary>Video is choppier through the relay</summary>
       <p>Relayed video takes a longer route, so it depends on the internet speeds at both ends, especially your home <em>upload</em> speed. Try a lower quality for away-from-home viewing.</p>
     </details>
-    <details><summary>My Cloudflare bill is higher than I expected</summary>
+    <details data-listen="troubleshooting-part-3"><summary>My Cloudflare bill is higher than I expected</summary>
       <p>Check <strong>Manage Account → Billing → Billable Usage</strong> in Cloudflare. If it looks wrong, delete the TURN key (see below). That stops it being used, and you can make a new one later. Then set a budget alert so you hear about it early next time. (<a href="https://developers.cloudflare.com/billing/manage/billable-usage/" target="_blank" rel="noopener noreferrer">Billable usage</a>)</p>
     </details>
     <details><summary>Does this work in mainland China?</summary>
@@ -499,11 +499,11 @@
     </details>
   </div>
 
-  <h2 id="remove">Remove it anytime</h2>
+  <h2 data-listen="remove-it-anytime" id="remove">Remove it anytime</h2>
   <ol class="steps">
     <li><h3>Turn it off in Beebo</h3><p>On your home PC, go to <strong>Settings → Away from home</strong> and turn off <strong>Use my own relay</strong> (or clear the key ID and token). Beebo goes back to direct connections only.</p></li>
     <li><h3>Delete the TURN key in Cloudflare</h3><p>In the dashboard, open <strong>Realtime → TURN Server</strong>, find your key and delete it. After that, the key can no longer be used to create relay passes. (<a href="https://developers.cloudflare.com/api/resources/calls/subresources/turn/methods/delete/" target="_blank" rel="noopener noreferrer">Cloudflare: delete a TURN key</a>)</p></li>
-    <li><h3>Optional: close the Cloudflare account</h3><p>If you don’t use Cloudflare for anything else, you can close the account from Cloudflare’s dashboard. Nothing in Beebo depends on it.</p></li>
+    <li><h3 data-listen="optional-close-the-cloudflare-account">Optional: close the Cloudflare account</h3><p>If you don’t use Cloudflare for anything else, you can close the account from Cloudflare’s dashboard. Nothing in Beebo depends on it.</p></li>
   </ol>
 
   <p class="fineprint">Cloudflare, Cloudflare Realtime and Cloudflare Tunnel are trademarks of Cloudflare, Inc. Beebo isn’t affiliated with or endorsed by Cloudflare. Prices and terms on this page were checked on 2026-09-15 and can change. Always check Cloudflare’s own pages before relying on them.</p>
@@ -945,5 +945,5 @@
 })();
 </script>
 
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script><script src="assets/listen.js?v=1" data-page="own-relay" defer></script></body>
 </html>

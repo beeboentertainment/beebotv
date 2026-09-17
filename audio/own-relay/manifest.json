@@ -1,0 +1,478 @@
+{
+ "page": "own-relay",
+ "voice": "am_puck",
+ "generated": "2026-09-17 07:17",
+ "sections": [
+  {
+   "id": "use-your-own-cloudflare-relay",
+   "heading": "Use your own Cloudflare relay",
+   "clips": [
+    {
+     "src": "use-your-own-cloudflare-relay.mp3",
+     "duration": 29.9,
+     "bytes": 150308,
+     "hash": "6f3611777496",
+     "text": [
+      "Use your own Cloudflare relay.",
+      "Most of the time, Beebo connects your phone straight to the computer at home. On a few networks that simply isn’t possible. A relay fixes that: it passes your films along, still locked, between home and wherever you are. You can set one up in your own Cloudflare account in about ten minutes, and for most families it costs nothing. We’re also planning Beebo Relay, for anyone who’d rather not use Cloudflare. See what each option would cost you.",
+      "~10 minutes 1,000 GB a month free from Cloudflare Your keys stay on your PC Remove it anytime"
+     ]
+    }
+   ],
+   "duration": 29.9
+  },
+  {
+   "id": "do-you-need-it",
+   "heading": "Do you need it?",
+   "clips": [
+    {
+     "src": "do-you-need-it-1.mp3",
+     "duration": 23.7,
+     "bytes": 119334,
+     "hash": "7fbcab126e3e",
+     "text": [
+      "Do you need it?",
+      "Probably not, but it’s worth checking.",
+      "Beebo connects directly on most home and mobile networks. On a small share of them (roughly one in eight, depending on your internet provider and the network you’re visiting), the two ends can’t reach each other without help. That usually happens with some mobile networks, office or hotel Wi-Fi, and internet providers that share one public address between many homes."
+     ]
+    },
+    {
+     "src": "do-you-need-it-2.mp3",
+     "duration": 14.6,
+     "bytes": 73734,
+     "hash": "a0e25a0f58db",
+     "text": [
+      "Find out first: run Will Beebo work on your internet? with your home computer and your phone. If it says you connect directly, you don’t need a relay. If it says a relay is needed, or you sometimes can’t connect from one particular place, carry on below."
+     ]
+    }
+   ],
+   "duration": 38.3
+  },
+  {
+   "id": "set-it-up-step-by-step",
+   "heading": "Set it up, step by step",
+   "clips": [
+    {
+     "src": "set-it-up-step-by-step.mp3",
+     "duration": 17.4,
+     "bytes": 87662,
+     "hash": "6faf47c95fca",
+     "text": [
+      "Set it up, step by step.",
+      "You’ll create a free Cloudflare account, make a TURN key (TURN is the technical name for this kind of relay), and paste two values into Beebo. Cloudflare sometimes renames menus. If something looks different, follow Cloudflare’s official TURN guide."
+     ]
+    }
+   ],
+   "duration": 17.4
+  },
+  {
+   "id": "create-a-cloudflare-account",
+   "heading": "Create a Cloudflare account",
+   "clips": [
+    {
+     "src": "create-a-cloudflare-account.mp3",
+     "duration": 30.5,
+     "bytes": 152946,
+     "hash": "f25d225b1679",
+     "text": [
+      "Create a Cloudflare account.",
+      "Go to dash.cloudflare.com/sign-up, enter your email and a password, and select Create Account. Cloudflare emails you a link to verify your address, so open it. You don’t need a website or domain name for this. (Cloudflare’s account guide)",
+      "This is your account. Cloudflare bills you directly for anything above the free allowance, and Beebo never sees your Cloudflare login. Depending on your account, Cloudflare may ask you to add a payment method."
+     ]
+    }
+   ],
+   "duration": 30.5
+  },
+  {
+   "id": "open-realtime-then-turn-server",
+   "heading": "Open Realtime, then TURN Server",
+   "clips": [
+    {
+     "src": "open-realtime-then-turn-server.mp3",
+     "duration": 34.1,
+     "bytes": 171310,
+     "hash": "c8fa2bcecf40",
+     "text": [
+      "Open Realtime, then TURN Server.",
+      "In the Cloudflare dashboard, find the Realtime section (it used to be called Calls) and choose TURN Server. Cloudflare’s docs link here, and it should take you to the right place once you’re signed in: open Realtime in the dashboard.",
+      "Create a TURN key.",
+      "Select Create and give the key a name you’ll recognise, such as Beebo. The name is just a label for you. A TURN key is a long-lived secret that lets your Beebo PC make short-lived passes for your viewers. (Cloudflare: generate credentials)"
+     ]
+    }
+   ],
+   "duration": 34.1
+  },
+  {
+   "id": "copy-the-key-id-and-the",
+   "heading": "Copy the key ID and the API token",
+   "clips": [
+    {
+     "src": "copy-the-key-id-and-the.mp3",
+     "duration": 39.3,
+     "bytes": 197112,
+     "hash": "d377d6030287",
+     "text": [
+      "Copy the key ID and the API token.",
+      "Cloudflare shows two values for the new key. The labels may differ slightly:",
+      "TURN Token ID (the key ID): a long string of letters and numbers.",
+      "API token: a longer secret.",
+      "Copy both straight away, because the token may not be shown again. If you lose it, just create a new key. This token belongs to the TURN key. It isn’t an account-wide Cloudflare API token, and you don’t need to make one of those.",
+      "Treat the token like a password. Anyone who has it could run up relay usage on your account. Don’t email it or post it anywhere."
+     ]
+    }
+   ],
+   "duration": 39.3
+  },
+  {
+   "id": "paste-them-into-beebo",
+   "heading": "Paste them into Beebo",
+   "clips": [
+    {
+     "src": "paste-them-into-beebo.mp3",
+     "duration": 25.5,
+     "bytes": 127980,
+     "hash": "f940036f5324",
+     "text": [
+      "Paste them into Beebo.",
+      "On your home PC, open Beebo and go to Settings → Away from home → Use my own relay. Choose Cloudflare, paste the key ID and the API token, and save.",
+      "Both values stay on your PC. Beebo uses them there to make short-lived relay passes for people who are signed in to your library. Your token is never sent to your viewers’ devices."
+     ]
+    }
+   ],
+   "duration": 25.5
+  },
+  {
+   "id": "test-it-away-from-home",
+   "heading": "Test it away from home",
+   "clips": [
+    {
+     "src": "test-it-away-from-home.mp3",
+     "duration": 36.9,
+     "bytes": 185221,
+     "hash": "52d2e79d6f3d",
+     "text": [
+      "Test it away from home.",
+      "Turn off Wi-Fi on your phone so it uses mobile data, then open your yourname.beebo.tv address and play something. Ideally, try from the place that wouldn’t connect before. Remember, Beebo only uses the relay when it has to, so a working direct connection is still the normal result.",
+      "Good habit: set a spending alert in Cloudflare under Manage Account → Billing → Billable Usage → Create budget alert. It emails you if your usage-based spend passes an amount you choose. Alerts only notify you and don’t switch anything off. (Cloudflare budget alerts)"
+     ]
+    }
+   ],
+   "duration": 36.9
+  },
+  {
+   "id": "what-the-relay-can-and-can",
+   "heading": "What the relay can and can’t see",
+   "clips": [
+    {
+     "src": "what-the-relay-can-and-can.mp3",
+     "duration": 13.1,
+     "bytes": 66313,
+     "hash": "198c2057a23f",
+     "text": [
+      "What the relay can and can’t see.",
+      "It can’t see.",
+      "Your films, pictures or sound",
+      "What you’re watching (titles, posters, your library)",
+      "Your Beebo sign-ins and household pass"
+     ]
+    }
+   ],
+   "duration": 13.1
+  },
+  {
+   "id": "it-can-see",
+   "heading": "It can see",
+   "clips": [
+    {
+     "src": "it-can-see-1.mp3",
+     "duration": 37.6,
+     "bytes": 188569,
+     "hash": "1af9c0bcb5d6",
+     "text": [
+      "It can see.",
+      "The internet (IP) addresses of your home and of the viewer’s device",
+      "When a connection starts and stops",
+      "How much data passes through, and roughly where from (Cloudflare shows usage by country and city)",
+      "Beebo’s connection uses WebRTC, which encrypts everything end to end with DTLS. The keys are agreed between your home PC and the viewer’s device, so a relay only ever handles locked packets. Cloudflare says this directly: it can’t access relayed WebRTC media because of DTLS, and it processes connection details such as IP addresses and ports. (Cloudflare TURN FAQ, TURN analytics)"
+     ]
+    },
+    {
+     "src": "it-can-see-2.mp3",
+     "duration": 12.5,
+     "bytes": 63049,
+     "hash": "759382e0474e",
+     "text": [
+      "That metadata is handled under your own agreement with Cloudflare. See Cloudflare’s privacy policy. Cloudflare’s relay runs on its global network except its China Network. (source)"
+     ]
+    }
+   ],
+   "duration": 50.1
+  },
+  {
+   "id": "beebo-relay-free-at-this-time",
+   "heading": "Beebo Relay Free at this time",
+   "clips": [
+    {
+     "src": "beebo-relay-free-at-this-time.mp3",
+     "duration": 33.3,
+     "bytes": 167108,
+     "hash": "b3af081bf628",
+     "text": [
+      "Beebo Relay Free at this time.",
+      "Beebo Relay is running and free at this time. It’s Beebo Entertainment’s own relay, on an OVHcloud server in Beauharnois, Canada, for people who’d rather not set up Cloudflare. If fees ever start, you’ll pay only what it costs Beebo to run it (about $0.011 per GB, 0% markup), and we’ll tell you before anything is charged. How Beebo Relay works and how to turn it on →",
+      "You choose how relaying works in Beebo on your home PC (Settings › Connection). Whichever you choose, a relay is only used when a direct connection isn’t possible."
+     ]
+    }
+   ],
+   "duration": 33.3
+  },
+  {
+   "id": "beebo-relay-only",
+   "heading": "Beebo Relay only",
+   "clips": [
+    {
+     "src": "beebo-relay-only.mp3",
+     "duration": 36.5,
+     "bytes": 183295,
+     "hash": "dfcd006efc9e",
+     "text": [
+      "Beebo Relay only.",
+      "No Cloudflare account needed. Relayed video goes through Beebo Relay. Free at this time.",
+      "Cloudflare first, then Beebo Relay.",
+      "Your own Cloudflare account carries relayed video until you’ve used 950 GB that month, inside its free 1,000 GB. Then your PC switches to Beebo Relay by itself.",
+      "Cloudflare only.",
+      "No Beebo Relay at all. Everything goes through your own Cloudflare account, and Cloudflare bills you directly for anything past its free 1,000 GB."
+     ]
+    }
+   ],
+   "duration": 36.5
+  },
+  {
+   "id": "what-beebo-relay-can-and-can",
+   "heading": "What Beebo Relay can and can’t see",
+   "clips": [
+    {
+     "src": "what-beebo-relay-can-and-can.mp3",
+     "duration": 38.7,
+     "bytes": 193995,
+     "hash": "b1f99fec385c",
+     "text": [
+      "What Beebo Relay can and can’t see.",
+      "Beebo Relay can’t see.",
+      "Your films, pictures or sound. They stay encrypted end to end, and the keys never leave your devices.",
+      "What you’re watching, or anything in your library",
+      "Beebo Relay can see.",
+      "The internet (IP) addresses of your home and of the viewer’s device",
+      "When a relayed connection starts and stops",
+      "How much data passes through, which is what you’re billed for",
+      "That’s the same information any relay handles, including Cloudflare’s. We’ll update our privacy policy with the details before Beebo Relay launches."
+     ]
+    }
+   ],
+   "duration": 38.7
+  },
+  {
+   "id": "what-it-costs-the-relay-calculator",
+   "heading": "What it costs: the relay calculator",
+   "clips": [
+    {
+     "src": "what-it-costs-the-relay-calculator.mp3",
+     "duration": 25.0,
+     "bytes": 125714,
+     "hash": "342e3d740bf8",
+     "text": [
+      "What it costs: the relay calculator.",
+      "Most homes pay nothing for relay. Beebo connects your devices directly whenever it can, and direct connections never touch a relay.",
+      "Use the calculator on this page to see what relayed watching would cost in a month. Choose your relay option, how many hours people watch away from home, how many people watch at once, and the video quality."
+     ]
+    }
+   ],
+   "duration": 25.0
+  },
+  {
+   "id": "why-not-a-cloudflare-tunnel",
+   "heading": "Why not a Cloudflare Tunnel?",
+   "clips": [
+    {
+     "src": "why-not-a-cloudflare-tunnel.mp3",
+     "duration": 26.1,
+     "bytes": 131347,
+     "hash": "998d2b8d4079",
+     "text": [
+      "Why not a Cloudflare Tunnel?",
+      "A tunnel works differently.",
+      "A Cloudflare Tunnel publishes your PC as a website behind Cloudflare’s proxy. The visitor’s secure connection ends at Cloudflare, and Cloudflare opens a second connection to your PC. Cloudflare’s own docs describe these as two separate connections. (Cloudflare encryption modes) So the web traffic, including video, is decrypted inside Cloudflare’s network on its way through. A relay never holds the keys."
+     ]
+    }
+   ],
+   "duration": 26.1
+  },
+  {
+   "id": "video-terms-are-a-grey-area",
+   "heading": "Video terms are a grey area",
+   "clips": [
+    {
+     "src": "video-terms-are-a-grey-area-1.mp3",
+     "duration": 2.6,
+     "bytes": 13746,
+     "hash": "16ec1981d767",
+     "text": [
+      "Video terms are a grey area."
+     ]
+    },
+    {
+     "src": "video-terms-are-a-grey-area-2.mp3",
+     "duration": 38.6,
+     "bytes": 193866,
+     "hash": "df799524d998",
+     "text": [
+      "Cloudflare’s terms for its content delivery network (Free, Pro and Business plans) say that, unless you’re an Enterprise customer, you must use specific paid services such as Stream to serve video and other large files. Cloudflare may limit accounts that don’t. (Service-Specific Terms, updated 2 June 2026, checked 2026-09-15.) Cloudflare has said that restriction applies only to its CDN (Cloudflare blog, 2023). But a tunnel’s public web address is served through that same proxy, and Cloudflare doesn’t clearly say whether streaming films through a tunnel is allowed. We couldn’t find a definite answer. The TURN relay is a product built and priced for exactly this kind of traffic, so that’s what we recommend."
+     ]
+    }
+   ],
+   "duration": 41.2
+  },
+  {
+   "id": "other-relay-servers-for-technical-users",
+   "heading": "Other relay servers (for technical users)",
+   "clips": [
+    {
+     "src": "other-relay-servers-for-technical-users-1.mp3",
+     "duration": 31.2,
+     "bytes": 156800,
+     "hash": "8d0aa9992f7c",
+     "text": [
+      "Other relay servers (for technical users)",
+      "Any standard TURN server works.",
+      "Beebo’s Use my own relay setting also accepts a standard TURN server that uses shared-secret credentials (the “TURN REST API” style). Examples are coturn with use-auth-secret or eturnal. Enter your server’s address (for example turn:relay.example.com:3478, and turns:relay.example.com:443 for strict networks) and its shared secret. If you run your own, lock it down so it can’t reach private or internal addresses. This coturn hardening guide is a good start."
+     ]
+    },
+    {
+     "src": "other-relay-servers-for-technical-users-2.mp3",
+     "duration": 13.0,
+     "bytes": 65600,
+     "hash": "daf536725fa2",
+     "text": [
+      "Will Beebo run a relay for me? Not yet. Beebo Relay is planned, so you wouldn’t need your own. There’s no launch date yet. Until then, your own relay is the way to connect from networks that block direct connections."
+     ]
+    }
+   ],
+   "duration": 44.2
+  },
+  {
+   "id": "troubleshooting",
+   "heading": "Troubleshooting",
+   "clips": [
+    {
+     "src": "troubleshooting-1.mp3",
+     "duration": 32.6,
+     "bytes": 163734,
+     "hash": "0be5ff273567",
+     "text": [
+      "Troubleshooting.",
+      "I added my relay but still can’t connect",
+      "Check that the key ID and API token were pasted in full, with no extra spaces at the start or end. Make sure you used the token for the TURN key, not a general Cloudflare account API token. If you’re not sure, create a fresh TURN key in Cloudflare and paste the new pair into Beebo.",
+      "The home PC also needs to be on, running Beebo, and online. A relay can’t reach a PC that’s asleep.",
+      "How do I know the relay is being used?"
+     ]
+    },
+    {
+     "src": "troubleshooting-2.mp3",
+     "duration": 15.3,
+     "bytes": 77334,
+     "hash": "e19662b5106c",
+     "text": [
+      "In Cloudflare, open Realtime → TURN Server and look for usage on your key, or check Manage Account → Billing → Billable Usage. If you only see usage now and then, that’s normal: most sessions connect directly. (TURN analytics)"
+     ]
+    }
+   ],
+   "duration": 47.9
+  },
+  {
+   "id": "troubleshooting-part-2",
+   "heading": "Troubleshooting (part 2)",
+   "clips": [
+    {
+     "src": "troubleshooting-part-2-1.mp3",
+     "duration": 42.8,
+     "bytes": 214503,
+     "hash": "84a1cad9e30a",
+     "text": [
+      "It works on mobile data but not on hotel or office Wi-Fi",
+      "Some networks allow almost nothing except ordinary secure web traffic. Cloudflare’s relay also accepts connections over TLS on port 443, the same port websites use, which gets through most of these networks (Cloudflare TURN ports). Some networks block streaming or peer-to-peer traffic on purpose, and no relay can fix that.",
+      "It stopped working after a while",
+      "If the TURN key was deleted in Cloudflare, or the Cloudflare account was closed or restricted, the relay stops. Create a new key and paste it into Beebo. Also check your email for billing notices from Cloudflare.",
+      "Video is choppier through the relay"
+     ]
+    },
+    {
+     "src": "troubleshooting-part-2-2.mp3",
+     "duration": 11.2,
+     "bytes": 56703,
+     "hash": "1302e644e854",
+     "text": [
+      "Relayed video takes a longer route, so it depends on the internet speeds at both ends, especially your home upload speed. Try a lower quality for away-from-home viewing."
+     ]
+    }
+   ],
+   "duration": 54.0
+  },
+  {
+   "id": "troubleshooting-part-3",
+   "heading": "Troubleshooting (part 3)",
+   "clips": [
+    {
+     "src": "troubleshooting-part-3.mp3",
+     "duration": 29.8,
+     "bytes": 149703,
+     "hash": "6dcfb2dd2323",
+     "text": [
+      "My Cloudflare bill is higher than I expected",
+      "Check Manage Account → Billing → Billable Usage in Cloudflare. If it looks wrong, delete the TURN key (see below). That stops it being used, and you can make a new one later. Then set a budget alert so you hear about it early next time. (Billable usage)",
+      "Does this work in mainland China?",
+      "Cloudflare says its TURN relay runs on its global network but not its China Network, so it may not help there. (source)"
+     ]
+    }
+   ],
+   "duration": 29.8
+  },
+  {
+   "id": "remove-it-anytime",
+   "heading": "Remove it anytime",
+   "clips": [
+    {
+     "src": "remove-it-anytime.mp3",
+     "duration": 30.0,
+     "bytes": 150656,
+     "hash": "3378ef3effa7",
+     "text": [
+      "Remove it anytime.",
+      "Turn it off in Beebo.",
+      "On your home PC, go to Settings → Away from home and turn off Use my own relay (or clear the key ID and token). Beebo goes back to direct connections only.",
+      "Delete the TURN key in Cloudflare.",
+      "In the dashboard, open Realtime → TURN Server, find your key and delete it. After that, the key can no longer be used to create relay passes. (Cloudflare: delete a TURN key)"
+     ]
+    }
+   ],
+   "duration": 30.0
+  },
+  {
+   "id": "optional-close-the-cloudflare-account",
+   "heading": "Optional: close the Cloudflare account",
+   "clips": [
+    {
+     "src": "optional-close-the-cloudflare-account.mp3",
+     "duration": 29.2,
+     "bytes": 146837,
+     "hash": "9a0d2981e06d",
+     "text": [
+      "Optional: close the Cloudflare account.",
+      "If you don’t use Cloudflare for anything else, you can close the account from Cloudflare’s dashboard. Nothing in Beebo depends on it.",
+      "Cloudflare, Cloudflare Realtime and Cloudflare Tunnel are trademarks of Cloudflare, Inc. Beebo isn’t affiliated with or endorsed by Cloudflare. Prices and terms on this page were checked on 2026-09-15 and can change. Always check Cloudflare’s own pages before relying on them."
+     ]
+    }
+   ],
+   "duration": 29.2
+  }
+ ]
+}
