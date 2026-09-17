@@ -1,0 +1,184 @@
+{
+ "page": "will-beebo-work",
+ "voice": "am_puck",
+ "generated": "2026-09-17 06:24",
+ "sections": [
+  {
+   "id": "will-beebo-work-on-your-internet",
+   "heading": "Will Beebo work on your internet?",
+   "clips": [
+    {
+     "src": "will-beebo-work-on-your-internet.mp3",
+     "duration": 26.6,
+     "bytes": 133632,
+     "hash": "9b50125b704b",
+     "text": [
+      "Will Beebo work on your internet?",
+      "Watching your films at home always works. This page checks the other half: whether your phone can reach your computer when you’re out, without opening a port or changing a single setting.",
+      "Open this page on the computer that will run Beebo, on your usual home internet. If you use a VPN, switch it off for the test. Nothing is installed, and nothing about your films leaves your home."
+     ]
+    }
+   ],
+   "duration": 26.6
+  },
+  {
+   "id": "step-1-a-quick-check-of",
+   "heading": "Step 1 · A quick check of this computer",
+   "clips": [
+    {
+     "src": "step-1-a-quick-check-of.mp3",
+     "duration": 11.7,
+     "bytes": 59359,
+     "hash": "23ca0126619f",
+     "text": [
+      "Step 1 · A quick check of this computer.",
+      "Ten seconds. Your browser asks three address servers, run by three different companies, how your home connection looks from outside."
+     ]
+    }
+   ],
+   "duration": 11.7
+  },
+  {
+   "id": "step-2-the-real-proof-test",
+   "heading": "Step 2 · The real proof: test with your phone",
+   "clips": [
+    {
+     "src": "step-2-the-real-proof-test.mp3",
+     "duration": 14.5,
+     "bytes": 73165,
+     "hash": "ead78819478b",
+     "text": [
+      "Step 2 · The real proof: test with your phone.",
+      "A quick check can only predict. This test actually connects your phone to this computer the way Beebo does, directly with nothing in between, then measures how much it can carry."
+     ]
+    }
+   ],
+   "duration": 14.5
+  },
+  {
+   "id": "what-the-answers-mean",
+   "heading": "What the answers mean",
+   "clips": [
+    {
+     "src": "what-the-answers-mean.mp3",
+     "duration": 34.6,
+     "bytes": 173460,
+     "hash": "d2b55b19ab58",
+     "text": [
+      "What the answers mean.",
+      "🟢 Works from anywhere, no port to open.",
+      "Your phone got straight through to this computer. Beebo’s away-from-home address connects the same way, with nothing to set up.",
+      "🟡 Works at home. Away from home needs one port opened.",
+      "Your router, or your phone’s network, is strict about who can knock. Opening one port on your router gives Beebo a way in. Beebo will try to open it for you automatically; if your router doesn’t allow that, Beebo shows you which port to open and you can do it by hand. Can’t open a port? A relay works too."
+     ]
+    }
+   ],
+   "duration": 34.6
+  },
+  {
+   "id": "won-t-work-away-from-home",
+   "heading": "🔴 Won’t work away from home on this connection",
+   "clips": [
+    {
+     "src": "won-t-work-away-from-home.mp3",
+     "duration": 24.8,
+     "bytes": 124890,
+     "hash": "2e9d826de951",
+     "text": [
+      "🔴 Won’t work away from home on this connection.",
+      "Your internet provider shares one internet address between many homes, so no setting on your own router can let your phone in. Asking your provider for a public IP address usually fixes it. If that isn’t an option, a relay can connect you instead: see relay options and what they cost.",
+      "Whatever the answer, watching on your home Wi-Fi works regardless."
+     ]
+    }
+   ],
+   "duration": 24.8
+  },
+  {
+   "id": "is-your-address-shared-a-two",
+   "heading": "Is your address shared? A two-minute check",
+   "clips": [
+    {
+     "src": "is-your-address-shared-a-two-1.mp3",
+     "duration": 39.6,
+     "bytes": 198681,
+     "hash": "61e5a544a9de",
+     "text": [
+      "Is your address shared? A two-minute check.",
+      "A web page can’t see inside your router, so it can’t be completely sure whether your provider shares your address (this is called carrier-grade NAT). You can check in two minutes:",
+      "Open your router’s settings page. The address and password are usually on a sticker on the router; 192.168.0.1 and 192.168.1.1 are common.",
+      "Find its status page and look for the Internet or WAN IP address.",
+      "Compare it with how the world sees your home: run the quick check above to see it."
+     ]
+    },
+    {
+     "src": "is-your-address-shared-a-two-2.mp3",
+     "duration": 20.6,
+     "bytes": 103641,
+     "hash": "8d1fff09012f",
+     "text": [
+      "They match? You have your own address, which is what you want. Router shows 100.64 to 100.127 at the start? Your provider shares it. Ask them for a public IP address. Router shows 192.168…, 10… or 172.16 to 172.31? There are two routers in a row, usually your provider’s modem plus your own. Putting the modem in bridge mode normally fixes it."
+     ]
+    }
+   ],
+   "duration": 60.2
+  },
+  {
+   "id": "how-to-open-the-port-by",
+   "heading": "How to open the port by hand",
+   "clips": [
+    {
+     "src": "how-to-open-the-port-by-1.mp3",
+     "duration": 43.3,
+     "bytes": 217027,
+     "hash": "7d34ba848ee1",
+     "text": [
+      "How to open the port by hand.",
+      "Beebo will try to open the port for you automatically. Many routers allow that; some have it switched off (the setting is usually called UPnP). If yours doesn’t allow it, Beebo shows you which port to open, and you can either switch UPnP on in the router’s settings and restart Beebo, or add the rule yourself:",
+      "In Beebo on this computer, note the port number it asks you to open and this computer’s local address (it looks like 192.168.1.50).",
+      "Open your router’s settings page (see the sticker on the router) and find Port forwarding. Some routers call it Virtual servers, NAT or Applications & gaming."
+     ]
+    },
+    {
+     "src": "how-to-open-the-port-by-2.mp3",
+     "duration": 24.2,
+     "bytes": 121867,
+     "hash": "8168c2e137d1",
+     "text": [
+      "Add a rule that sends that port, using the protocol Beebo shows, to this computer’s local address. Save.",
+      "While you’re there, reserve that local address for this computer (often called DHCP reservation), so the rule keeps pointing at the right machine.",
+      "If your provider shares your address with other homes, opening a port can’t help. Do the two-minute check first."
+     ]
+    }
+   ],
+   "duration": 67.5
+  },
+  {
+   "id": "what-a-web-page-can-t",
+   "heading": "What a web page can’t know",
+   "clips": [
+    {
+     "src": "what-a-web-page-can-t-1.mp3",
+     "duration": 32.3,
+     "bytes": 162187,
+     "hash": "01f4fa3da474",
+     "text": [
+      "What a web page can’t know.",
+      "Your browser stands in for Beebo. The phone test uses the same kind of direct connection and the same address server that Beebo uses, so the result carries over. Security software that treats Beebo differently from your browser could still get in the way.",
+      "It tests the networks you’re on right now. Mobile data usually behaves the same way wherever you are on the same carrier. Hotel, office, school and café Wi-Fi are often stricter, and a different carrier can give a different answer."
+     ]
+    },
+    {
+     "src": "what-a-web-page-can-t-2.mp3",
+     "duration": 29.5,
+     "bytes": 147907,
+     "hash": "5af70009a7a5",
+     "text": [
+      "The speed is a snapshot. It depends on your home upload speed and your phone’s signal at that moment. Beebo sends your files as they are, so big high-quality files need more.",
+      "What passes through our server: only the short connection note your two devices swap to find each other. It includes their internet addresses, can only be read by the two devices in the test, stops working after ten minutes and is then cleared away. Your films never pass through it, and neither does the speed test."
+     ]
+    }
+   ],
+   "duration": 61.8
+  }
+ ]
+}

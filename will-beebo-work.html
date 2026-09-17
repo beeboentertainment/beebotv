@@ -69,7 +69,7 @@
     .probe-card .btn{width:100%}
   }
 </style>
-<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/will-beebo-work.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3"></head>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/will-beebo-work.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3"><link rel="stylesheet" href="assets/listen.css?v=1"></head>
 <body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
 
 <div class="wrap">
@@ -77,7 +77,7 @@
 
   <div class="page-hero">
     <div class="em">📡</div>
-    <h1>Will Beebo work on your internet?</h1>
+    <h1 data-listen="will-beebo-work-on-your-internet">Will Beebo work on your internet?</h1>
     <p class="lead">Watching your films at home always works. This page checks the other half: whether your phone can reach your computer when you’re out, <strong>without opening a port</strong> or changing a single setting.</p>
   </div>
 
@@ -108,7 +108,7 @@
       <p><strong>Open this page on the computer that will run Beebo</strong>, on your usual home internet. If you use a VPN, switch it off for the test. Nothing is installed, and nothing about your films leaves your home.</p>
     </div>
 
-    <h2>Step 1 · A quick check of this computer</h2>
+    <h2 data-listen="step-1-a-quick-check-of">Step 1 · A quick check of this computer</h2>
     <div class="probe-card">
       <p>Ten seconds. Your browser asks three address servers, run by three different companies, how your home connection looks from outside.</p>
       <button id="quick-go" class="btn btn-primary btn-lg" type="button">Check this computer</button>
@@ -122,7 +122,7 @@
       <details class="tech" id="quick-tech-box" hidden><summary>Technical detail</summary><pre id="quick-tech"></pre></details>
     </div>
 
-    <h2>Step 2 · The real proof: test with your phone</h2>
+    <h2 data-listen="step-2-the-real-proof-test">Step 2 · The real proof: test with your phone</h2>
     <div class="probe-card">
       <p>A quick check can only predict. This test actually connects your phone to this computer the way Beebo does, directly with nothing in between, then measures how much it can carry.</p>
       <button id="phone-go" class="btn btn-primary btn-lg" type="button">Start the phone test</button>
@@ -145,7 +145,7 @@
 
     <div id="final-verdict" aria-live="polite"></div>
 
-    <h2>What the answers mean</h2>
+    <h2 data-listen="what-the-answers-mean">What the answers mean</h2>
     <div class="feature">
       <h3>🟢 Works from anywhere, no port to open</h3>
       <p>Your phone got straight through to this computer. Beebo’s away-from-home address connects the same way, with nothing to set up.</p>
@@ -155,12 +155,12 @@
       <p>Your router, or your phone’s network, is strict about who can knock. Opening one port on your router gives Beebo a way in. Beebo will try to open it for you automatically; if your router doesn’t allow that, Beebo shows you which port to open and <a href="#open-a-port">you can do it by hand</a>. Can’t open a port? A <a href="own-relay.html">relay</a> works too.</p>
     </div>
     <div class="feature">
-      <h3>🔴 Won’t work away from home on this connection</h3>
+      <h3 data-listen="won-t-work-away-from-home">🔴 Won’t work away from home on this connection</h3>
       <p>Your internet provider shares one internet address between many homes, so no setting on your own router can let your phone in. Asking your provider for a public IP address usually fixes it. If that isn’t an option, a relay can connect you instead: see <a href="own-relay.html">relay options and what they cost</a>.</p>
     </div>
     <p>Whatever the answer, <strong>watching on your home Wi-Fi works regardless.</strong></p>
 
-    <h2 id="cgnat-check">Is your address shared? A two-minute check</h2>
+    <h2 data-listen="is-your-address-shared-a-two" id="cgnat-check">Is your address shared? A two-minute check</h2>
     <div class="probe-card">
       <p>A web page can’t see inside your router, so it can’t be completely sure whether your provider shares your address (this is called carrier-grade NAT). You can check in two minutes:</p>
       <ol class="steps-plain">
@@ -173,7 +173,7 @@
       <strong>Router shows 192.168…, 10… or 172.16 to 172.31?</strong> There are two routers in a row, usually your provider’s modem plus your own. Putting the modem in <em>bridge mode</em> normally fixes it.</p>
     </div>
 
-    <h2 id="open-a-port">How to open the port by hand</h2>
+    <h2 data-listen="how-to-open-the-port-by" id="open-a-port">How to open the port by hand</h2>
     <div class="probe-card">
       <p>Beebo will try to open the port for you automatically. Many routers allow that; some have it switched off (the setting is usually called <strong>UPnP</strong>). If yours doesn’t allow it, Beebo shows you which port to open, and you can either switch UPnP on in the router’s settings and restart Beebo, or add the rule yourself:</p>
       <ol class="steps-plain">
@@ -185,7 +185,7 @@
       <p class="fineprint" style="margin-bottom:0">If your provider shares your address with other homes, opening a port can’t help. Do <a href="#cgnat-check">the two-minute check</a> first.</p>
     </div>
 
-    <h2>What a web page can’t know</h2>
+    <h2 data-listen="what-a-web-page-can-t">What a web page can’t know</h2>
     <ul class="steps-plain">
       <li><strong>Your browser stands in for Beebo.</strong> The phone test uses the same kind of direct connection and the same address server that Beebo uses, so the result carries over. Security software that treats Beebo differently from your browser could still get in the way.</li>
       <li><strong>It tests the networks you’re on right now.</strong> Mobile data usually behaves the same way wherever you are on the same carrier. Hotel, office, school and café Wi-Fi are often stricter, and a different carrier can give a different answer.</li>
@@ -203,5 +203,5 @@
 
 <script src="qrcode-generator.js"></script>
 <script src="will-beebo-work.js"></script>
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.32</strong><time data-beebo-release-date="windows" datetime="2026-09-15T09:05:33Z">Released Sep 15, 2026, 5:05:33 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.18 (build 19)</strong><time data-beebo-release-date="android" datetime="2026-09-15T12:58:26Z">Built Sep 15, 2026, 8:58:26 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.32</strong><time data-beebo-release-date="windows" datetime="2026-09-15T09:05:33Z">Released Sep 15, 2026, 5:05:33 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.18 (build 19)</strong><time data-beebo-release-date="android" datetime="2026-09-15T12:58:26Z">Built Sep 15, 2026, 8:58:26 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script><script src="assets/listen.js?v=1" data-page="will-beebo-work" defer></script></body>
 </html>
