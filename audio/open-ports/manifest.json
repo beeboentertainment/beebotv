@@ -1,0 +1,174 @@
+{
+ "page": "open-ports",
+ "voice": "am_puck",
+ "generated": "2026-09-17 06:49",
+ "sections": [
+  {
+   "id": "open-ports-on-your-router",
+   "heading": "Open ports on your router",
+   "clips": [
+    {
+     "src": "open-ports-on-your-router.mp3",
+     "duration": 38.6,
+     "bytes": 193744,
+     "hash": "24268916f261",
+     "text": [
+      "Open ports on your router.",
+      "Beebo usually opens its ports for you. If it couldn’t, you can forward them by hand in your router’s settings. Then your phone can connect directly to the computer at home, with no relay.",
+      "UDP 47820–47829 $0, direct connection Only if automatic didn’t work",
+      "Before you start: an open port makes this computer reachable from the internet. Beebo only answers people who sign in, but any open port is a small risk. Only forward the ports Beebo shows, and only to this computer."
+     ]
+    }
+   ],
+   "duration": 38.6
+  },
+  {
+   "id": "which-ports",
+   "heading": "Which ports",
+   "clips": [
+    {
+     "src": "which-ports.mp3",
+     "duration": 37.8,
+     "bytes": 189770,
+     "hash": "80d964b7a33c",
+     "text": [
+      "Which ports.",
+      "UDP ports 47820–47829 by default.",
+      "Beebo’s away-from-home video uses one port per viewer at a time. Ten ports means up to ten away-from-home viewers at once.",
+      "The exact ports and this computer’s local IP address are shown in Settings › Your Beebo address, and in the wizard’s Open ports on my router steps.",
+      "Beebo tries to open them automatically (NAT-PMP, then UPnP). You only need to forward them by hand if that didn’t work."
+     ]
+    }
+   ],
+   "duration": 37.8
+  },
+  {
+   "id": "stay-safe",
+   "heading": "Stay safe",
+   "clips": [
+    {
+     "src": "stay-safe.mp3",
+     "duration": 27.5,
+     "bytes": 138288,
+     "hash": "b28e0891ceef",
+     "text": [
+      "Stay safe.",
+      "An open port makes this computer reachable from the internet. Beebo only answers people who sign in, but any open port is a small risk. Please:",
+      "Only forward the UDP ports Beebo shows, and only to this computer.",
+      "Never use DMZ.",
+      "Keep Windows and Beebo up to date.",
+      "Delete the rule if you stop using Beebo.",
+      "Some internet providers block this."
+     ]
+    }
+   ],
+   "duration": 27.5
+  },
+  {
+   "id": "forward-the-ports-step-by-step",
+   "heading": "Forward the ports, step by step",
+   "clips": [
+    {
+     "src": "forward-the-ports-step-by-step.mp3",
+     "duration": 29.6,
+     "bytes": 148870,
+     "hash": "7971a207bbeb",
+     "text": [
+      "Forward the ports, step by step.",
+      "Find the computer’s local IP address.",
+      "It’s shown in the Beebo app. On Windows you can also go to Settings › Network & internet › your connection › Properties and look for IPv4 address.",
+      "Give the computer a fixed local address.",
+      "In your router, reserve that address for this computer. It’s often called DHCP reservation or static lease. This keeps the rule working after a restart."
+     ]
+    }
+   ],
+   "duration": 29.6
+  },
+  {
+   "id": "open-your-router-s-settings",
+   "heading": "Open your router’s settings",
+   "clips": [
+    {
+     "src": "open-your-router-s-settings.mp3",
+     "duration": 46.5,
+     "bytes": 233108,
+     "hash": "93ba5befe522",
+     "text": [
+      "Open your router’s settings.",
+      "Open the router or modem settings in a browser. The address and admin password are usually on a sticker on the router.",
+      "Find “Port forwarding”",
+      "It may be under Advanced, NAT, Firewall, Gaming or Applications.",
+      "Add a rule.",
+      "Protocol: UDP",
+      "External and internal ports: 47820–47829 (or the ports Beebo shows)",
+      "To: the computer’s local IP address",
+      "Don’t forward any other ports, and don’t use DMZ.",
+      "Save and test.",
+      "Save the rule. Then in Beebo press Test again, or go to Settings › Connection › Re-run test."
+     ]
+    }
+   ],
+   "duration": 46.5
+  },
+  {
+   "id": "rogers-bell-and-telus",
+   "heading": "Rogers, Bell and Telus",
+   "clips": [
+    {
+     "src": "rogers-bell-and-telus.mp3",
+     "duration": 58.7,
+     "bytes": 294301,
+     "hash": "74e31a3b9ac6",
+     "text": [
+      "Rogers, Bell and Telus.",
+      "Menu names change between models. If something looks different, check your provider’s own help page.",
+      "Rogers (Ignite WiFi Gateway)",
+      "Use the Ignite HomeConnect app, or the gateway page, usually http://10.0.0.1. Older Rogers modems are often at http://192.168.0.1.",
+      "Bell (Home Hub 3000/4000, Giga Hub)",
+      "Go to http://192.168.2.1, then Advanced tools and settings › Port forwarding. The admin password is on the hub’s sticker.",
+      "Telus (Wi-Fi Hub / Boost and older Actiontec models)",
+      "Usually http://192.168.1.254. Look under Advanced settings › Firewall › Port forwarding. Some newer Telus hubs are managed from the Telus app."
+     ]
+    }
+   ],
+   "duration": 58.7
+  },
+  {
+   "id": "two-routers-in-a-row",
+   "heading": "Two routers in a row",
+   "clips": [
+    {
+     "src": "two-routers-in-a-row.mp3",
+     "duration": 12.7,
+     "bytes": 64139,
+     "hash": "574417910930",
+     "text": [
+      "Two routers in a row.",
+      "Your own router behind the provider’s modem.",
+      "Forward the ports on both. Or put the provider’s modem in bridge mode, or turn off the second router’s routing."
+     ]
+    }
+   ],
+   "duration": 12.7
+  },
+  {
+   "id": "when-it-won-t-work",
+   "heading": "When it won’t work",
+   "clips": [
+    {
+     "src": "when-it-won-t-work.mp3",
+     "duration": 23.5,
+     "bytes": 118139,
+     "hash": "6f36e260e555",
+     "text": [
+      "When it won’t work.",
+      "Shared internet address (CGNAT)",
+      "Some providers share one internet address between many homes. It’s common on some fixed wireless, 5G home internet and some fibre plans. Port forwarding can’t work then.",
+      "You can ask your provider for a public IP address, or use Beebo Relay or your own Cloudflare relay."
+     ]
+    }
+   ],
+   "duration": 23.5
+  }
+ ]
+}

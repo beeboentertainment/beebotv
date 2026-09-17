@@ -1,0 +1,179 @@
+{
+ "page": "direct-connection",
+ "voice": "am_puck",
+ "generated": "2026-09-17 06:46",
+ "sections": [
+  {
+   "id": "direct-connection",
+   "heading": "Direct connection",
+   "clips": [
+    {
+     "src": "direct-connection.mp3",
+     "duration": 19.1,
+     "bytes": 95936,
+     "hash": "4c85fc2960fc",
+     "text": [
+      "Direct connection.",
+      "Beebo always tries a direct connection first. Your video goes straight from the computer at home to your phone or browser, encrypted from end to end. For most homes there’s nothing to set up.",
+      "No setup for most homes Encrypted end to end $0, no relay"
+     ]
+    }
+   ],
+   "duration": 19.1
+  },
+  {
+   "id": "how-it-works",
+   "heading": "How it works",
+   "clips": [
+    {
+     "src": "how-it-works.mp3",
+     "duration": 26.7,
+     "bytes": 134091,
+     "hash": "75b9558a8e2f",
+     "text": [
+      "How it works.",
+      "Straight from home to you.",
+      "Video goes over WebRTC, straight between your home computer and your phone or browser. It’s encrypted from end to end (WebRTC DTLS).",
+      "Beebo’s service (beebo.tv) only helps your phone find the computer and signs people in. With a direct connection, your video never passes through Beebo’s servers or any relay."
+     ]
+    }
+   ],
+   "duration": 26.7
+  },
+  {
+   "id": "what-the-connection-test-checks",
+   "heading": "What the connection test checks",
+   "clips": [
+    {
+     "src": "what-the-connection-test-checks.mp3",
+     "duration": 26.6,
+     "bytes": 133750,
+     "hash": "8f7dd2972b05",
+     "text": [
+      "What the connection test checks.",
+      "The first time you set up Beebo, the Test your connection wizard runs two quick tests with your phone.",
+      "Test 1: Watch at home.",
+      "Put your phone on the same Wi-Fi as the computer. Open the Beebo app, tap Scan QR to connect and scan the code on the computer.",
+      "The test ticks when a device on your home network reaches the computer. No address is stored."
+     ]
+    }
+   ],
+   "duration": 26.6
+  },
+  {
+   "id": "test-2-watch-away-from-home",
+   "heading": "Test 2: Watch away from home",
+   "clips": [
+    {
+     "src": "test-2-watch-away-from-home.mp3",
+     "duration": 27.9,
+     "bytes": 140347,
+     "hash": "e54e4ba48eab",
+     "text": [
+      "Test 2: Watch away from home.",
+      "Turn Wi-Fi off on your phone so it uses mobile data. Open the Beebo app, or scan the code to open yourname.beebo.tv. Sign in and start any video.",
+      "The test shows live whether it connected Direct, through a relay, or couldn’t connect.",
+      "Result.",
+      "You’ll then see your options: Beebo Relay, Cloudflare only, Open ports on my router, or Home only for now."
+     ]
+    }
+   ],
+   "duration": 27.9
+  },
+  {
+   "id": "what-the-computer-checks-by-itself",
+   "heading": "What the computer checks by itself",
+   "clips": [
+    {
+     "src": "what-the-computer-checks-by-itself.mp3",
+     "duration": 21.9,
+     "bytes": 110113,
+     "hash": "3c54316a1269",
+     "text": [
+      "What the computer checks by itself.",
+      "While you test, the computer also looks at your home internet on its own:",
+      "Did the router open the ports?",
+      "Beebo asks your router to open its UDP ports automatically. It tries NAT-PMP first, then UPnP. You can see the result in Settings › Your Beebo address."
+     ]
+    }
+   ],
+   "duration": 21.9
+  },
+  {
+   "id": "anything-in-the-way",
+   "heading": "Anything in the way?",
+   "clips": [
+    {
+     "src": "anything-in-the-way.mp3",
+     "duration": 22.3,
+     "bytes": 112019,
+     "hash": "53e2e799b461",
+     "text": [
+      "Anything in the way?",
+      "Shared internet address (CGNAT): your provider shares one internet address between many homes. Direct connections from outside probably won’t work.",
+      "Two routers in a row (double NAT).",
+      "The automatic check is a hint. The phone test is the proof. If Test 2 says Direct, you’re all set."
+     ]
+    }
+   ],
+   "duration": 22.3
+  },
+  {
+   "id": "if-the-router-didn-t-open",
+   "heading": "If the router didn’t open the ports",
+   "clips": [
+    {
+     "src": "if-the-router-didn-t-open.mp3",
+     "duration": 40.3,
+     "bytes": 202036,
+     "hash": "c384d8422817",
+     "text": [
+      "If the router didn’t open the ports.",
+      "Switch on UPnP, or forward the ports by hand.",
+      "Most home routers have UPnP switched on. If the check says your router didn’t open the ports, you have two choices:",
+      "Switch on UPnP in your router’s settings. It’s sometimes called UPnP IGD or NAT-PMP.",
+      "Forward Beebo’s ports by hand. See Open ports on your router.",
+      "A note on security: UPnP lets any program on your home network ask the router to open ports. That’s a small risk. Forwarding only Beebo’s ports by hand is the tighter option."
+     ]
+    }
+   ],
+   "duration": 40.3
+  },
+  {
+   "id": "home-only",
+   "heading": "Home only",
+   "clips": [
+    {
+     "src": "home-only.mp3",
+     "duration": 21.5,
+     "bytes": 107928,
+     "hash": "32db050717a2",
+     "text": [
+      "Home only.",
+      "Watch on the same Wi-Fi as the computer.",
+      "There’s nothing to set up, and it costs $0 (no relay). Choose it in the wizard result, or go to Settings › Connection › Change option › Home only for now.",
+      "With Home only, watching away from home may not work. You can change it anytime."
+     ]
+    }
+   ],
+   "duration": 21.5
+  },
+  {
+   "id": "test-again-anytime",
+   "heading": "Test again anytime",
+   "clips": [
+    {
+     "src": "test-again-anytime.mp3",
+     "duration": 14.1,
+     "bytes": 71097,
+     "hash": "5027c73ced6b",
+     "text": [
+      "Test again anytime.",
+      "Changed your router or internet provider? Go to Settings › Connection › Re-run test. The same screen shows your current status, and Change option lets you pick a different way to connect."
+     ]
+    }
+   ],
+   "duration": 14.1
+  }
+ ]
+}
