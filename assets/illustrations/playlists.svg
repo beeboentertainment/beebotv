@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+  <title id="t">Playlists and smart playlists</title>
+  <desc id="d">On the left, a playlist you fill by hand. On the right, a smart playlist with rules that fills itself from your library.</desc>
+  <rect width="640" height="360" rx="18" fill="#FBF6EE"/>
+  <!-- hand-picked -->
+  <g transform="translate(36 54)">
+    <rect width="252" height="256" rx="14" fill="#FFFFFF" stroke="#E0D2BB" stroke-width="2"/>
+    <text x="22" y="40" font-family="DM Sans,Arial,sans-serif" font-size="18" font-weight="700" fill="#22251F">Weekend picks</text>
+    <text x="22" y="62" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">you choose the titles</text>
+    <g>
+      <rect x="22" y="80" width="40" height="30" rx="5" fill="#E9B865"/>
+      <rect x="72" y="88" width="120" height="8" rx="4" fill="#E0D2BB"/>
+      <rect x="72" y="102" width="74" height="7" rx="3.5" fill="#EDE4D5"/>
+      <rect x="22" y="126" width="40" height="30" rx="5" fill="#B9C9A8"/>
+      <rect x="72" y="134" width="140" height="8" rx="4" fill="#E0D2BB"/>
+      <rect x="72" y="148" width="60" height="7" rx="3.5" fill="#EDE4D5"/>
+      <rect x="22" y="172" width="40" height="30" rx="5" fill="#E9B865"/>
+      <rect x="72" y="180" width="100" height="8" rx="4" fill="#E0D2BB"/>
+      <rect x="72" y="194" width="86" height="7" rx="3.5" fill="#EDE4D5"/>
+    </g>
+    <g transform="translate(22 216)">
+      <rect width="72" height="26" rx="13" fill="#FFC531"/>
+      <text x="36" y="18" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="13" font-weight="700" fill="#22251F">Play</text>
+      <rect x="82" y="0" width="82" height="26" rx="13" fill="#F4EBDC"/>
+      <text x="123" y="18" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="13" font-weight="700" fill="#22251F">Shuffle</text>
+    </g>
+  </g>
+  <!-- smart -->
+  <g transform="translate(352 54)">
+    <rect width="252" height="256" rx="14" fill="#FFFFFF" stroke="#E0D2BB" stroke-width="2"/>
+    <text x="22" y="40" font-family="DM Sans,Arial,sans-serif" font-size="18" font-weight="700" fill="#22251F">Smart playlist</text>
+    <text x="22" y="62" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">rules fill it for you</text>
+    <g font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#22251F">
+      <rect x="22" y="78" width="208" height="30" rx="8" fill="#FBEAD1"/>
+      <text x="34" y="98">Type is Film</text>
+      <rect x="22" y="116" width="208" height="30" rx="8" fill="#FBEAD1"/>
+      <text x="34" y="136">Watched is No</text>
+      <rect x="22" y="154" width="208" height="30" rx="8" fill="#FBEAD1"/>
+      <text x="34" y="174">Added in the last 30 days</text>
+    </g>
+    <text x="22" y="212" font-family="DM Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#8A5A12">18 titles match right now</text>
+    <g transform="translate(22 224)">
+      <rect width="72" height="26" rx="13" fill="#FFC531"/>
+      <text x="36" y="18" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="13" font-weight="700" fill="#22251F">Play</text>
+    </g>
+  </g>
+  <!-- arrows between -->
+  <g stroke="#AB6513" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M300 182h28"/>
+    <path d="M320 174l10 8-10 8"/>
+  </g>
+</svg>

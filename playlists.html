@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Playlists and smart playlists — Beebo Entertainment</title>
+<meta name="description" content="Line up films and episodes in a playlist, or set a few rules and let Beebo fill one for you. Playlists work on your PC, phone, TV, browser and in the car." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .addr{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.15rem;background:var(--bg-2);border:1px solid var(--border-strong);border-radius:10px;padding:12px 16px;display:inline-block;color:var(--ink);margin:4px 0}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+
+  .kv{display:grid;gap:12px;margin:14px 0 4px}
+  .kv > div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+  .kv b{display:block;font-family:var(--font-display);font-size:1rem;margin-bottom:3px}
+  .kv p{color:var(--muted);margin:0;font-size:.95rem}
+  @media (min-width:700px){.kv.two{grid-template-columns:1fr 1fr}}
+  .plain{margin:10px 0 0;padding-left:1.15em;color:var(--muted)}
+  .plain li{margin:.3em 0}
+  .note{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--muted);font-size:.95rem;margin:14px 0 0}
+  .note strong{color:var(--ink)}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/playlists.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="guide-visuals.css?v=1"><link rel="stylesheet" href="polish.css?v=3"><link rel="stylesheet" href="assets/bite-size.css?v=1"><link rel="stylesheet" href="assets/listen.css?v=1"></head>
+<body data-listen-mode="manual"><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+<div class="wrap bites guide">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+
+  <section class="bite guide-hero" data-listen="intro">
+    <figure class="bite-media contain"><img src="assets/illustrations/playlists.svg" alt="Diagram: a hand-picked playlist on one side, and a smart playlist that fills itself from rules on the other." width="640" height="360"></figure>
+    <div class="bite-copy">
+      <h1>Playlists</h1>
+      <p>Line up a few films for the weekend, or set some rules once and let Beebo keep the list filled for you. Your playlists are on every screen.</p>
+      <nav class="bite-jump" aria-label="On this page"><a href="#where">Where they are</a><a href="#make">Make one</a><a href="#smart">Smart playlists</a><a href="#rules">The rules</a><a href="#queue">The queue</a><a href="#share">Sharing</a><a href="#faq">Questions</a></nav>
+    </div>
+  </section>
+
+  <section class="bite" id="where" data-listen="where-they-are">
+    <figure class="bite-media"><img src="assets/home-evening.webp" alt="A couple watching television together at home" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">WHERE THEY ARE</p>
+      <h2>On every screen.</h2>
+      <p>On your PC, <strong>Playlists</strong> is a tab down the side. On the phone and the TV it is in <strong>Library</strong>. In a browser it is in the menu. In the car, Beebo has a <strong>Playlists</strong> menu of its own.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>You can make and change playlists on the PC, the phone, the TV and in a browser. In the car you can only play them, which is how it should be while you are driving.</p>
+      </div></details>
+      <div class="bite-links"><a href="car-companion.html">Beebo on the road</a><a href="driving-safety.html">Driving safety</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="make" data-listen="step-1-make-one">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>1</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">STEP 1</p>
+      <h2>Make one, pick the titles.</h2>
+      <p>Give it a name and choose <strong>New playlist</strong>. Then, from any poster, episode or show, use the <strong>＋ Playlist</strong> button to drop it in.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>Adding a whole show or a whole season adds its episodes in the order you would watch them.</p>
+        <p>Inside a playlist, small arrows move a title up or down a step, and a cross takes it out.</p>
+        <p>Play it with <strong>Play</strong>, mix it up with <strong>Shuffle</strong>, or pick up where you stopped with <strong>Resume</strong>. Resume remembers your own place, not anyone else’s.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="smart" data-listen="step-2-smart-playlists">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>2</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">STEP 2</p>
+      <h2>Or let it fill itself.</h2>
+      <p>A <strong>smart playlist</strong> has rules instead of a fixed list — “films, not watched, added in the last 30 days”. It works itself out fresh every time you open it, so it is never out of date.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>While you are editing the rules, Beebo shows how many titles match right now and names a few, so you can see straight away whether you have it right.</p>
+        <p>There are six ready-made ones to start from: <strong>Unwatched movies added this month</strong>, <strong>90s action</strong>, <strong>Short episodes under 30 minutes</strong>, <strong>Continue my shows</strong>, <strong>Movies in 4K</strong>, and <strong>My watchlist, not watched yet</strong>. Tap one and it is yours to adjust.</p>
+        <p>You can’t add a title to a smart playlist by hand, because its rules decide what is in it.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite wide-media" id="rules" data-listen="the-rules">
+    <figure class="bite-media"><img src="assets/library-guide.webp" alt="A personal film collection arranged on shelves" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">THE RULES</p>
+      <h2>What you can ask for.</h2>
+      <p>Films or episodes; a genre; a year, a range of years or a whole decade; a score out of 10; an age rating; 4K, HD or SD; how long it runs; an actor; a collection; a show; words in the title; whether you have watched it; and how recently it was added.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>You can also pull in <strong>your watchlist</strong>, <strong>your favourites</strong> and <strong>what is next up in Continue Watching</strong>.</p>
+        <p>Every rule can be turned around into an “is not”. Say whether titles must match <strong>all</strong> of your rules or <strong>any</strong> of them, choose the order, and cap the list at a number if you like.</p>
+        <p>Genres, actors, collections and shows are typed in by name, so watch the live count underneath: if it says nothing matches, the spelling is usually the reason.</p>
+        <p>Beebo can only sort by what it knows about a title. Posters and details come from <a href="posters-and-info.html">your TMDB key</a>, so a title Beebo never matched has no genre, year or rating to test.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="queue" data-listen="the-queue">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>☰</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">THE QUEUE</p>
+      <h2>Play next, or add to the queue.</h2>
+      <p>Not every evening needs a saved playlist. From any title, <strong>Play next</strong> puts it straight after what is on, and <strong>Add to queue</strong> puts it at the end.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>The queue lasts as long as the app, or the browser tab, is open. Close it and the queue is gone — that is what saved playlists are for.</p>
+        <p>Near the end of a video, Beebo offers to go on to the next thing in the queue, or to stop after this one.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="share" data-listen="sharing">
+    <figure class="bite-media"><img src="assets/library-moment.webp" alt="A woman relaxing with a tablet in a sage armchair" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">SHARING</p>
+      <h2>Yours, unless you share it.</h2>
+      <p>Playlists belong to the person who made them. The owner of the Beebo computer can <strong>share with the household</strong>, and then everyone can see it and play it, while only the owner can change it.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>A shared smart playlist is worked out for whoever is looking. “Unwatched films” shows each person the films <em>they</em> haven’t seen.</p>
+        <p>This is sharing inside your own household. It is not the same as sharing your library with another household, and nothing leaves your house.</p>
+        <p>What someone may see is still decided by their <a href="parental-controls.html">parental controls</a>: a title they are not allowed to watch never turns up in a playlist for them.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="faq-block" id="faq" data-listen="questions">
+    <h2>Questions</h2>
+    <div class="faq">
+    <details><summary>Do smart playlists update on their own?</summary><p>Yes. Nothing is saved but the rules, so the list is worked out again every time it is opened. A film you watched last night has already left an “unwatched” playlist.</p></details>
+    <details><summary>Can I put music or photos in a playlist?</summary><p>Not yet. Playlists play films and episodes. Anything else in a playlist is shown but skipped.</p></details>
+    <details><summary>Someone deleted a film from the library</summary><p>It stays in the playlist marked “No longer in the library”, and is skipped when you play. Take it out whenever you like.</p></details>
+    <details><summary>How many playlists can I have?</summary><p>Up to 200 each, with up to 5,000 titles in one playlist.</p></details>
+    <details><summary>Can I drag titles around?</summary><p>Not at the moment. Use the up and down arrows to move a title one step at a time.</p></details>
+    <details><summary>Can other people see my playlists?</summary><p>No, unless the owner of the Beebo computer shares one with the whole household.</p></details>
+    </div>
+  </section>
+
+  <div class="guide-nav">
+    <a href="media-hub.html">🎬 Your library</a>
+    <a href="music.html">🎵 Your music</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+</div>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script><script src="assets/loop-video.js?v=1" defer></script><script src="assets/listen.js?v=1" data-page="playlists" defer></script></body>
+</html>

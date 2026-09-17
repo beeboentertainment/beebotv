@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Photos and phone backup — Beebo Entertainment</title>
+<meta name="description" content="Beebo shows your photo folders on every screen, and can copy your phone's camera photos and videos to your own computer automatically. Nothing is ever deleted from your phone." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .addr{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.15rem;background:var(--bg-2);border:1px solid var(--border-strong);border-radius:10px;padding:12px 16px;display:inline-block;color:var(--ink);margin:4px 0}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+
+  .kv{display:grid;gap:12px;margin:14px 0 4px}
+  .kv > div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+  .kv b{display:block;font-family:var(--font-display);font-size:1rem;margin-bottom:3px}
+  .kv p{color:var(--muted);margin:0;font-size:.95rem}
+  @media (min-width:700px){.kv.two{grid-template-columns:1fr 1fr}}
+  .plain{margin:10px 0 0;padding-left:1.15em;color:var(--muted)}
+  .plain li{margin:.3em 0}
+  .note{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--muted);font-size:.95rem;margin:14px 0 0}
+  .note strong{color:var(--ink)}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/photos.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="guide-visuals.css?v=1"><link rel="stylesheet" href="polish.css?v=3"><link rel="stylesheet" href="assets/bite-size.css?v=1"><link rel="stylesheet" href="assets/listen.css?v=1"></head>
+<body data-listen-mode="manual"><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+<div class="wrap bites guide">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+
+  <section class="bite guide-hero" data-listen="intro">
+    <figure class="bite-media contain"><img src="assets/illustrations/photo-backup.svg" alt="Diagram: your phone copies its camera photos over Wi-Fi to a Phone backups folder on your home computer." width="640" height="360"></figure>
+    <div class="bite-copy">
+      <h1>Photos, and your<br>phone’s camera</h1>
+      <p>Beebo shows your photo folders on every screen, and can copy your phone’s camera to your own computer by itself. Nothing on your phone is ever deleted.</p>
+      <nav class="bite-jump" aria-label="On this page"><a href="#folders">Your folders</a><a href="#who">Who can see them</a><a href="#backup">Phone backup</a><a href="#where">Where they land</a><a href="#viewing">Looking at them</a><a href="#privacy">Privacy</a><a href="#faq">Questions</a></nav>
+    </div>
+  </section>
+
+  <section class="bite" id="folders" data-listen="step-1-folders">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>1</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">STEP 1</p>
+      <h2>Choose your photo folders.</h2>
+      <p>In Beebo on the PC, open the <strong>Photos</strong> tab and go to <strong>Folders &amp; backup</strong>. Add a folder, and every folder inside it becomes an album.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>If you add nothing, Beebo uses your Windows <strong>Pictures</strong> folder.</p>
+        <p>Folders have to be on this computer. A folder on another machine over the network isn’t supported.</p>
+        <p>Both photos and video clips are picked up, including the HEIC pictures iPhones take.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="who" data-listen="who-can-see-them">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>2</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">STEP 2</p>
+      <h2>Decide who can see them.</h2>
+      <p>On that same screen, <strong>Who can use Photos</strong> lists everyone in your household with two switches each: <strong>See photos</strong> and <strong>Back up their phone</strong>.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>You can always see your own photos. Everyone else sees nothing at all until you switch them on, and nobody can back up their phone to your computer unless you allow it.</p>
+      </div></details>
+      <div class="bite-links"><a href="manage-users.html">Add &amp; manage people</a></div>
+    </div>
+  </section>
+
+  <section class="bite wide-media" id="backup" data-listen="phone-backup">
+    <figure class="bite-media"><img src="assets/setup-phone.webp" alt="A viewer holding a phone with its screen facing them" width="1000" height="563" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">PHONE BACKUP</p>
+      <h2>Your camera, copied home.</h2>
+      <p>On your Android phone, open <strong>More</strong> and tap <strong>Photo backup</strong>. Beebo explains what it will do, you agree, and from then on new photos and videos are copied to your own computer.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p><strong>What it does out of the box:</strong> your <strong>Camera</strong> album only, <strong>only on Wi-Fi</strong>, videos included, and everything already in that album as well as new pictures. Every one of those is a switch you can change.</p>
+        <p>You can also tick other albums on the phone, ask it to wait until the phone is charging, or leave videos out.</p>
+        <p><strong>Nothing on your phone is ever deleted, moved or changed.</strong> Beebo only reads. Turning backup off later keeps everything already copied to the computer.</p>
+        <p>Buttons for <strong>Back up now</strong>, <strong>Pause</strong> and <strong>Try files that failed again</strong> are on the same screen, with a line telling you how it is getting on.</p>
+      </div></details>
+      <div class="bite-links"><a href="beebo-space-saver.html">Space Saver</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="where" data-listen="where-they-land">
+    <figure class="bite-media contain addr-card"><div><span class="addr-label">ON YOUR COMPUTER</span><span class="addr">Pictures › Phone backups › your phone › year › month</span><span class="addr-note">Ordinary folders and ordinary files.</span></div></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">WHERE THEY LAND</p>
+      <h2>Plain folders you can open.</h2>
+      <p>Backed-up pictures go into <strong>Phone backups</strong>, then a folder named after the phone, then the year and month the picture was taken. They are normal files: no special app is needed to get at them.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>A picture the computer already has is not stored a second time, even if you reinstall the app or use a new phone. Nothing already on the computer is ever written over: a different picture with the same name is saved alongside as “name (2)”.</p>
+        <p>If your computer is off, or you are out of range, the phone simply waits and carries on later — from exactly where it stopped, so a half-sent video isn’t started again from the beginning.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="viewing" data-listen="looking-at-them">
+    <figure class="bite-media"><img src="assets/home-evening.webp" alt="A couple looking at a screen together at home" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">LOOKING AT THEM</p>
+      <h2>Timeline, albums, videos.</h2>
+      <p>On the phone, the TV, the PC and in a browser you get the same three views: a <strong>Timeline</strong> by month, your <strong>Albums</strong>, and just the <strong>Videos</strong>. Tap a picture for the full screen, and swipe or pinch to zoom.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p><strong>On the TV.</strong> From the phone you can cast photos to a TV and start a <strong>Slideshow</strong>, which moves on every few seconds. Video clips play to the end by themselves.</p>
+        <p><strong>On the PC</strong> there is a <strong>Show in folder</strong> button, which opens the picture where it really lives in Windows.</p>
+      </div></details>
+      <div class="bite-links"><a href="cast-to-tv.html">Cast to your TV</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="privacy" data-listen="privacy">
+    <figure class="bite-media"><img src="assets/quiet-server.webp" alt="A quiet home computer on a shelf" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">PRIVACY</p>
+      <h2>Your pictures stay yours.</h2>
+      <p>Photos go from your phone to <em>your</em> computer and nowhere else. Beebo keeps no copy of them. The pictures other people, the website and TVs are shown never carry the location or the camera details.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>Only you, as the owner, can open the untouched original file.</p>
+        <p>There is one switch on the PC, <strong>Show where photos were taken (for you only)</strong>. It is off to start with, and it shows the place to you alone.</p>
+        <p>Away from home, pictures on their way to your computer are encrypted, like everything else Beebo sends.</p>
+      </div></details>
+      <div class="bite-links"><a href="movie-privacy.html">Privacy policy</a><a href="local-first.html">Local-first &amp; private</a></div>
+    </div>
+  </section>
+
+  <section class="faq-block" id="faq" data-listen="questions">
+    <h2>Questions</h2>
+    <div class="faq">
+    <details><summary>Will backing up free space on my phone?</summary><p>No. Photo backup copies, it never removes. If you want to clear space on the phone after copying, that is what <a href="beebo-space-saver.html">Space Saver</a> is for.</p></details>
+    <details><summary>Does it use my mobile data?</summary><p>Not unless you tell it to. “Only on Wi-Fi” is on from the start.</p></details>
+    <details><summary>What if my computer is switched off?</summary><p>Nothing is lost. The phone keeps the list of what it still has to send and carries on when the computer is back.</p></details>
+    <details><summary>Can I back up an iPhone?</summary><p>Photo backup is part of the Android app. On an iPhone you can look at the photos already on your computer through the browser.</p></details>
+    <details data-listen="questions-part-2"><summary>Do my old photos get copied too, or only new ones?</summary><p>Everything in the albums you chose, by default. There is a setting to take only new photos from now on instead.</p></details>
+    <details><summary>Can everyone in the house see my photos?</summary><p>Only the people you switch on in “Who can use Photos”. Nobody sees anything until you do.</p></details>
+    </div>
+  </section>
+
+  <div class="guide-nav">
+    <a href="music.html">🎵 Your music</a>
+    <a href="beebo-space-saver.html">🧹 Space Saver</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+</div>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script><script src="assets/loop-video.js?v=1" defer></script><script src="assets/listen.js?v=1" data-page="photos" defer></script></body>
+</html>

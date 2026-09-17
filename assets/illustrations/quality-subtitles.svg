@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+  <title id="t">Quality, audio and subtitles</title>
+  <desc id="d">While a video plays, the gear button in the player opens three lists: picture quality, audio track and subtitles.</desc>
+  <rect width="640" height="360" rx="18" fill="#FBF6EE"/>
+  <!-- player -->
+  <g transform="translate(30 66)">
+    <rect width="270" height="160" rx="12" fill="#22251F"/>
+    <circle cx="135" cy="68" r="26" fill="#FFC531"/>
+    <path d="M127 55l19 13-19 13z" fill="#22251F"/>
+    <rect x="18" y="122" width="234" height="6" rx="3" fill="#4A4C43"/>
+    <rect x="18" y="122" width="96" height="6" rx="3" fill="#FFC531"/>
+    <g transform="translate(196 136)">
+      <rect width="56" height="20" rx="10" fill="#FFC531"/>
+      <text x="28" y="14" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#22251F">Quality</text>
+    </g>
+    <circle cx="188" cy="146" r="9" fill="none" stroke="#FFC531" stroke-width="3"/>
+    <text x="135" y="188" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#22251F">The player</text>
+  </g>
+  <!-- arrow -->
+  <path d="M312 146h34" stroke="#AB6513" stroke-width="4" stroke-linecap="round"/>
+  <path d="M338 138l10 8-10 8" fill="none" stroke="#AB6513" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- sheet -->
+  <g transform="translate(364 40)">
+    <rect width="246" height="270" rx="14" fill="#FFFFFF" stroke="#E0D2BB" stroke-width="2"/>
+    <text x="20" y="34" font-family="DM Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#8A5A12">QUALITY</text>
+    <g font-family="DM Sans,Arial,sans-serif" font-size="15" fill="#22251F">
+      <rect x="16" y="44" width="214" height="26" rx="8" fill="#FBEAD1"/>
+      <text x="28" y="62">Auto</text>
+      <text x="28" y="92">Original</text>
+      <text x="28" y="118">1080p · 720p · 480p</text>
+    </g>
+    <text x="20" y="152" font-family="DM Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#8A5A12">AUDIO</text>
+    <text x="28" y="178" font-family="DM Sans,Arial,sans-serif" font-size="15" fill="#22251F">English · 5.1</text>
+    <text x="20" y="212" font-family="DM Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#8A5A12">SUBTITLES</text>
+    <g font-family="DM Sans,Arial,sans-serif" font-size="15" fill="#22251F">
+      <text x="28" y="238">Off</text>
+      <text x="28" y="262">Search online</text>
+    </g>
+  </g>
+</svg>

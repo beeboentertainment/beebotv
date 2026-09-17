@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What Beebo can do — Beebo Entertainment</title>
+<meta name="description" content="A plain-English tour of everything Beebo does: films and shows, music, photos, playlists, quality and subtitles, parental controls, sharing with another household, your dashboard and voice control." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .addr{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.15rem;background:var(--bg-2);border:1px solid var(--border-strong);border-radius:10px;padding:12px 16px;display:inline-block;color:var(--ink);margin:4px 0}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+
+  .kv{display:grid;gap:12px;margin:14px 0 4px}
+  .kv > div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+  .kv b{display:block;font-family:var(--font-display);font-size:1rem;margin-bottom:3px}
+  .kv p{color:var(--muted);margin:0;font-size:.95rem}
+  @media (min-width:700px){.kv.two{grid-template-columns:1fr 1fr}}
+  .plain{margin:10px 0 0;padding-left:1.15em;color:var(--muted)}
+  .plain li{margin:.3em 0}
+  .note{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--muted);font-size:.95rem;margin:14px 0 0}
+  .note strong{color:var(--ink)}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/what-beebo-can-do.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="guide-visuals.css?v=1"><link rel="stylesheet" href="polish.css?v=3"><link rel="stylesheet" href="assets/bite-size.css?v=1"><link rel="stylesheet" href="assets/listen.css?v=1"></head>
+<body data-listen-mode="manual"><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+<div class="wrap bites guide">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+
+  <section class="bite guide-hero" data-listen="intro">
+    <figure class="bite-media"><img src="assets/help-welcome.webp" alt="Two family members learning to use a tablet together at a kitchen table" width="1672" height="941"></figure>
+    <div class="bite-copy">
+      <h1>What Beebo can do</h1>
+      <p>Beebo started as a way to watch your own films at home. It now looks after your music and your photos too, and gives you a say in who watches what. Here is the whole picture, in one page.</p>
+      <nav class="bite-jump" aria-label="On this page"><a href="#films">Films &amp; shows</a><a href="#quality">Quality &amp; subtitles</a><a href="#music">Music</a><a href="#photos">Photos</a><a href="#playlists">Playlists</a><a href="#family">Your household</a><a href="#sharing">Another household</a><a href="#dashboard">Your dashboard</a><a href="#voice">Voice &amp; TV</a></nav>
+    </div>
+  </section>
+
+  <section class="bite" id="films" data-listen="films-and-shows">
+    <figure class="bite-media contain"><img src="assets/illustrations/how-beebo-works.svg" alt="Diagram: your movie folders sit on your Windows PC, and Beebo streams them to a phone, a TV and a web browser." width="640" height="360" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">WHERE IT STARTED</p>
+      <h2>Films and shows.</h2>
+      <p>Point Beebo at the folders your videos are already in. It builds a library with posters and descriptions, remembers where everyone left off, and streams it to your phone, TV and browser — at home or away.</p>
+      <div class="bite-links"><a href="media-hub.html">Your library</a><a href="posters-and-info.html">Posters &amp; info</a><a href="watch-away-from-home.html">Watch away from home</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="quality" data-listen="quality-and-subtitles">
+    <figure class="bite-media contain"><img src="assets/illustrations/quality-subtitles.svg" alt="Diagram: the player's gear button opens quality, audio track and subtitle choices." width="640" height="360" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">WHILE YOU WATCH</p>
+      <h2>Quality, audio and subtitles.</h2>
+      <p>One button in the player changes the picture quality, switches the soundtrack and turns subtitles on. On a weak connection, pick a smaller size and your home computer converts the video as it plays.</p>
+      <p>Beebo can also look up subtitles you don’t have and save them next to your video. That part needs a free OpenSubtitles account, set up once by the owner.</p>
+      <div class="bite-links"><a href="quality-and-subtitles.html">Quality &amp; subtitles guide</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="music" data-listen="music">
+    <figure class="bite-media contain"><img src="assets/illustrations/music-library.svg" alt="Diagram: your music folder on the PC becomes albums and artists on your phone, TV, browser and car." width="640" height="360" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">NEW</p>
+      <h2>Your music.</h2>
+      <p>Add your music folder and your albums appear next to your films, with the covers and the words from your own files. There is a queue, shuffle and repeat, it keeps playing with the screen off, and it comes with you into the car.</p>
+      <div class="bite-links"><a href="music.html">Music guide</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="photos" data-listen="photos">
+    <figure class="bite-media contain"><img src="assets/illustrations/photo-backup.svg" alt="Diagram: your phone copies its camera photos over Wi-Fi to a Phone backups folder on your home computer." width="640" height="360" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">NEW</p>
+      <h2>Photos, and your phone’s camera.</h2>
+      <p>Beebo shows your photo folders as a timeline and as albums, and can copy your phone’s camera to your own computer on Wi-Fi. Nothing is ever deleted from the phone, and where a photo was taken is hidden unless you ask for it.</p>
+      <div class="bite-links"><a href="photos.html">Photos guide</a><a href="beebo-space-saver.html">Space Saver</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="playlists" data-listen="playlists">
+    <figure class="bite-media contain"><img src="assets/illustrations/playlists.svg" alt="Diagram: a hand-picked playlist beside a smart playlist that fills itself from rules." width="640" height="360" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">NEW</p>
+      <h2>Playlists that fill themselves.</h2>
+      <p>Line up a few films by hand, or set rules once — unwatched, a genre, a decade, 4K, an actor — and let Beebo keep the list up to date. There is also a quick queue for tonight: play next, add to queue.</p>
+      <div class="bite-links"><a href="playlists.html">Playlists guide</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="family" data-listen="your-household">
+    <figure class="bite-media contain"><img src="assets/illustrations/parental-controls.svg" alt="Diagram: each person in the household has their own limits, checked before anything plays." width="640" height="360" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">YOUR HOUSEHOLD</p>
+      <h2>You decide who watches what.</h2>
+      <p>Give each person their own limits: an age rating, blocked genres or titles, minutes a day and hours when Beebo is closed, kept behind a PIN only you know. The computer at home enforces it, so it holds on every screen.</p>
+      <div class="bite-links"><a href="parental-controls.html">Parental controls</a><a href="manage-users.html">Add &amp; manage people</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="sharing" data-listen="another-household">
+    <figure class="bite-media contain"><img src="assets/illustrations/library-sharing.svg" alt="Diagram: your computer streams your library straight to one invited person in another household." width="640" height="360" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">ANOTHER HOUSEHOLD</p>
+      <h2>Let a friend watch your library.</h2>
+      <p>Invite one person, by email, to watch your own library from their own home. You choose what they see, how many screens at once and whether they may download, and you can stop it in a moment.</p>
+      <div class="bite-links">Sharing your library</div>
+    </div>
+  </section>
+
+  <section class="bite" id="dashboard" data-listen="your-dashboard">
+    <figure class="bite-media"><img src="assets/quiet-server.webp" alt="A quiet home computer on a shelf" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">FOR THE OWNER</p>
+      <h2>Your dashboard.</h2>
+      <p>Beebo on your PC has a <strong>Dashboard</strong> tab showing who is watching right now, what they are watching, and whether they are at home or away. If something needs to stop, you can stop it.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p><strong>Now playing</strong> names the person, the title, the kind of device and where they are watching from. Streams Beebo can stop have a Stop button: their player stops and cannot start that video again for a few minutes.</p>
+        <p><strong>Activity</strong> covers the last 7 or 30 days: how many plays, how much watch time, the most-played titles and the time each person spent.</p>
+        <p><strong>Library</strong> shows what you have, what is missing posters, how the Beebo Inbox is getting on, and how much room is left on your disks.</p>
+        <p><strong>Server health</strong> is about your own computer: how hard Beebo is working, how long it has been running, whether your away-from-home address is online, when you last made a backup, and anything that went wrong in the last day.</p>
+        <p><strong>Bandwidth</strong> is the video your computer is sending out right now, the busiest moment today and the total for today. Those two daily figures start again at midnight.</p>
+        <p>It is all read from your own computer and none of it is sent anywhere. The same thing is in the phone app under <strong>Owner tools</strong>. Any admin can look; only the owner can stop a stream.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="voice" data-listen="voice-and-tv">
+    <figure class="bite-media"><img src="assets/road-tab.webp" alt="Two children watching tablets facing toward them, safely belted in the back seat" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">HANDS FULL</p>
+      <h2>“Hey Google, play Friends season 2 episode 3 on Beebo.”</h2>
+      <p>Google Assistant can start something from your own library on your Android phone, on an Android TV and in the car, and control it once it is playing: pause, resume, next episode, skip forward.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>You can name a film, a show, a season and an episode, or add a year when two films share a name. Say “play Beebo” on its own and it carries on with the newest thing you were watching. Small mishearings are fine; if nothing in your library is close enough, Beebo says so rather than playing a guess.</p>
+        <p><strong>On an Android TV</strong>, press the microphone button on the remote and say a title: matches from your library turn up in the TV’s own search results. Your <strong>Continue watching</strong> titles also appear in the TV home screen’s Continue watching row.</p>
+        <p>The app has to be signed in to your Beebo computer, because it is looking through <em>your</em> library. Anything a person’s parental controls hide can’t be found or played by voice either.</p>
+        <p>Amazon Alexa is not supported, and there are no plans for it.</p>
+      </div></details>
+      <div class="bite-links"><a href="car-companion.html">Beebo on the road</a><a href="cast-to-tv.html">Cast to your TV</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="private" data-listen="still-yours">
+    <figure class="bite-media"><img src="assets/family-home.webp" alt="A family enjoying a quiet movie evening at home" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">ONE THING HASN’T CHANGED</p>
+      <h2>It is all still yours.</h2>
+      <p>Your films, your songs and your photos stay on your own computer. Beebo has no catalogue, no ads and no trackers, and it never keeps a copy of what you watch or the pictures you back up.</p>
+      <div class="bite-links"><a href="local-first.html">Local-first &amp; private</a><a href="movie-privacy.html">Privacy policy</a></div>
+    </div>
+  </section>
+
+  <div class="guide-nav">
+    <a href="server-setup.html">💻 Set up your PC</a>
+    <a href="app-on-your-phone.html">📱 Get Beebo on your phone</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+</div>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script><script src="assets/loop-video.js?v=1" defer></script><script src="assets/listen.js?v=1" data-page="what-beebo-can-do" defer></script></body>
+</html>

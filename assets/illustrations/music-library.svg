@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+  <title id="t">Your music on Beebo</title>
+  <desc id="d">Your music folder on the home PC becomes albums and artists on your phone, TV, browser and in the car.</desc>
+  <rect width="640" height="360" rx="18" fill="#FBF6EE"/>
+  <!-- music folder -->
+  <g transform="translate(30 116)">
+    <path d="M0 18h44l12 12h74v84H0z" fill="#F4D9A8"/>
+    <path d="M0 40h130v74H0z" fill="#E9B865"/>
+    <g transform="translate(48 58)" fill="#22251F">
+      <circle cx="6" cy="30" r="7"/><circle cx="30" cy="24" r="7"/>
+      <rect x="11" y="4" width="3" height="27"/><rect x="35" y="0" width="3" height="25"/>
+      <path d="M11 4l27-4v6l-27 4z"/>
+    </g>
+    <text x="65" y="148" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#22251F">Your music folder</text>
+    <text x="65" y="170" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">songs you already own</text>
+  </g>
+  <!-- arrow -->
+  <path d="M172 174h44" stroke="#AB6513" stroke-width="4" stroke-linecap="round"/>
+  <path d="M208 166l10 8-10 8" fill="none" stroke="#AB6513" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- album cards -->
+  <g transform="translate(234 84)">
+    <rect x="0" y="0" width="86" height="86" rx="8" fill="#E9B865"/>
+    <circle cx="43" cy="43" r="22" fill="#22251F"/><circle cx="43" cy="43" r="5" fill="#E9B865"/>
+    <rect x="98" y="0" width="86" height="86" rx="8" fill="#E8EBDF"/>
+    <circle cx="141" cy="43" r="22" fill="#22251F"/><circle cx="141" cy="43" r="5" fill="#E8EBDF"/>
+    <rect x="0" y="98" width="184" height="12" rx="6" fill="#E0D2BB"/>
+    <rect x="0" y="118" width="120" height="12" rx="6" fill="#E0D2BB"/>
+    <text x="92" y="166" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#22251F">Albums, artists, songs</text>
+    <text x="92" y="188" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">covers and lyrics from your files</text>
+  </g>
+  <!-- arrows out -->
+  <g stroke="#AB6513" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M434 150 C 462 112, 468 86, 488 80"/>
+    <path d="M434 162 H 484"/>
+    <path d="M434 176 C 462 220, 468 250, 488 256"/>
+  </g>
+  <!-- phone -->
+  <g transform="translate(498 46)">
+    <rect width="36" height="62" rx="7" fill="#22251F"/><rect x="5" y="7" width="26" height="44" rx="3" fill="#E8EBDF"/>
+    <text x="48" y="38" font-family="DM Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#22251F">Phone &amp; TV</text>
+  </g>
+  <!-- browser -->
+  <g transform="translate(494 140)">
+    <rect width="58" height="44" rx="5" fill="#22251F"/><rect x="5" y="11" width="48" height="28" rx="2" fill="#E8EBDF"/>
+    <circle cx="10" cy="6" r="2" fill="#FFC531"/><circle cx="17" cy="6" r="2" fill="#FFC531"/>
+    <text x="66" y="28" font-family="DM Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#22251F">Browser</text>
+  </g>
+  <!-- car -->
+  <g transform="translate(494 238)">
+    <path d="M4 26h50l-8-16H12z" fill="#22251F"/>
+    <rect x="0" y="26" width="58" height="16" rx="6" fill="#22251F"/>
+    <circle cx="14" cy="44" r="6" fill="#4A4C43"/><circle cx="44" cy="44" r="6" fill="#4A4C43"/>
+    <text x="66" y="34" font-family="DM Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#22251F">Car</text>
+  </g>
+</svg>

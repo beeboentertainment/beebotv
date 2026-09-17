@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+  <title id="t">Parental controls</title>
+  <desc id="d">Each person in the household has their own limits. The computer at home checks them before anything plays, on every screen.</desc>
+  <rect width="640" height="360" rx="18" fill="#FBF6EE"/>
+  <!-- people cards -->
+  <g transform="translate(34 52)">
+    <g>
+      <rect width="228" height="76" rx="12" fill="#FFFFFF" stroke="#E0D2BB" stroke-width="2"/>
+      <circle cx="40" cy="38" r="20" fill="#B9C9A8"/>
+      <circle cx="40" cy="32" r="7" fill="#FBF6EE"/><path d="M28 50a12 12 0 0 1 24 0z" fill="#FBF6EE"/>
+      <text x="72" y="32" font-family="DM Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#22251F">Ellie</text>
+      <text x="72" y="54" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">Up to PG · 60 min a day</text>
+    </g>
+    <g transform="translate(0 90)">
+      <rect width="228" height="76" rx="12" fill="#FFFFFF" stroke="#E0D2BB" stroke-width="2"/>
+      <circle cx="40" cy="38" r="20" fill="#E9B865"/>
+      <circle cx="40" cy="32" r="7" fill="#FBF6EE"/><path d="M28 50a12 12 0 0 1 24 0z" fill="#FBF6EE"/>
+      <text x="72" y="32" font-family="DM Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#22251F">Sam</text>
+      <text x="72" y="54" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">Up to PG-13 · no bedtime</text>
+    </g>
+    <g transform="translate(0 180)">
+      <rect width="228" height="76" rx="12" fill="#FFFFFF" stroke="#E0D2BB" stroke-width="2"/>
+      <circle cx="40" cy="38" r="20" fill="#22251F"/>
+      <circle cx="40" cy="32" r="7" fill="#FFC531"/><path d="M28 50a12 12 0 0 1 24 0z" fill="#FFC531"/>
+      <text x="72" y="32" font-family="DM Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#22251F">You</text>
+      <text x="72" y="54" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">Owner · holds the PIN</text>
+    </g>
+  </g>
+  <!-- arrow -->
+  <path d="M278 182h40" stroke="#AB6513" stroke-width="4" stroke-linecap="round"/>
+  <path d="M310 174l10 8-10 8" fill="none" stroke="#AB6513" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- the check on the PC -->
+  <g transform="translate(336 120)">
+    <rect x="0" y="0" width="150" height="98" rx="10" fill="#22251F"/>
+    <rect x="9" y="9" width="132" height="74" rx="4" fill="#FBF6EE"/>
+    <path d="M56 46l14 14 28-28" fill="none" stroke="#2F7D52" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="58" y="98" width="34" height="15" fill="#22251F"/>
+    <rect x="40" y="113" width="70" height="8" rx="4" fill="#22251F"/>
+    <text x="75" y="148" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#22251F">Checked at home</text>
+    <text x="75" y="170" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="14" fill="#686B60">before anything plays</text>
+  </g>
+  <!-- screens -->
+  <g transform="translate(524 74)">
+    <rect width="34" height="58" rx="7" fill="#22251F"/><rect x="5" y="7" width="24" height="40" rx="3" fill="#E8EBDF"/>
+    <text x="17" y="76" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="13" fill="#686B60">Phone</text>
+  </g>
+  <g transform="translate(514 176)">
+    <rect width="56" height="38" rx="5" fill="#22251F"/><rect x="5" y="5" width="46" height="28" rx="2" fill="#E8EBDF"/>
+    <rect x="22" y="38" width="12" height="7" fill="#22251F"/>
+    <text x="28" y="62" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="13" fill="#686B60">TV</text>
+  </g>
+  <g transform="translate(514 254)">
+    <rect width="56" height="42" rx="5" fill="#22251F"/><rect x="5" y="11" width="46" height="26" rx="2" fill="#E8EBDF"/>
+    <circle cx="10" cy="6" r="2" fill="#FFC531"/><circle cx="17" cy="6" r="2" fill="#FFC531"/>
+    <text x="28" y="66" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="13" fill="#686B60">Website</text>
+  </g>
+</svg>

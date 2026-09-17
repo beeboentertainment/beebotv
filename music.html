@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your music on Beebo — Beebo Entertainment</title>
+<meta name="description" content="Point Beebo at your music folder and your songs appear on your phone, TV, browser and in the car, with cover art, lyrics, a queue, shuffle and repeat." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .addr{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.15rem;background:var(--bg-2);border:1px solid var(--border-strong);border-radius:10px;padding:12px 16px;display:inline-block;color:var(--ink);margin:4px 0}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+
+  .kv{display:grid;gap:12px;margin:14px 0 4px}
+  .kv > div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+  .kv b{display:block;font-family:var(--font-display);font-size:1rem;margin-bottom:3px}
+  .kv p{color:var(--muted);margin:0;font-size:.95rem}
+  @media (min-width:700px){.kv.two{grid-template-columns:1fr 1fr}}
+  .plain{margin:10px 0 0;padding-left:1.15em;color:var(--muted)}
+  .plain li{margin:.3em 0}
+  .note{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--muted);font-size:.95rem;margin:14px 0 0}
+  .note strong{color:var(--ink)}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/music.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="guide-visuals.css?v=1"><link rel="stylesheet" href="polish.css?v=3"><link rel="stylesheet" href="assets/bite-size.css?v=1"><link rel="stylesheet" href="assets/listen.css?v=1"></head>
+<body data-listen-mode="manual"><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+<div class="wrap bites guide">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+
+  <section class="bite guide-hero" data-listen="intro">
+    <figure class="bite-media contain"><img src="assets/illustrations/music-library.svg" alt="Diagram: your music folder on the PC becomes albums and artists on your phone, TV, browser and car." width="640" height="360"></figure>
+    <div class="bite-copy">
+      <h1>Your music</h1>
+      <p>Beebo plays the songs you already own, the same way it plays your films. Point it at your music folder and your albums turn up on every screen.</p>
+      <nav class="bite-jump" aria-label="On this page"><a href="#folder">Add your folder</a><a href="#covers">Covers</a><a href="#lyrics">Lyrics</a><a href="#playing">Now playing</a><a href="#screens">Every screen</a><a href="#faq">Questions</a></nav>
+    </div>
+  </section>
+
+  <section class="bite" id="folder" data-listen="step-1-folder">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>1</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">STEP 1</p>
+      <h2>Choose your music folder.</h2>
+      <p>In Beebo on the PC, open <strong>Settings</strong> and find <strong>Music folder</strong>, just under your TV Shows folder. Pick the folder your songs are in, or use your Windows Music folder in one click.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>You can add more than one folder, and everything inside them is included.</p>
+        <p>Beebo reads MP3, M4A (including Apple Lossless), FLAC, OGG, Opus and WAV files.</p>
+        <p>It keeps an eye on those folders and picks up new songs by itself. There is also a <strong>Check for new songs</strong> button if you would rather not wait.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="covers" data-listen="covers-and-details">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>2</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">STEP 2</p>
+      <h2>Covers come from your files.</h2>
+      <p>Song titles, artists, albums and cover art are read from the files themselves. If a song has no cover inside it, Beebo uses a picture named <code>cover</code>, <code>folder</code> or <code>front</code> in the same folder.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>Nothing is looked up online. No posters service, no lyrics service, no tag service — your music library is built entirely from what is on your own disk.</p>
+      </div></details>
+      <div class="bite-links"><a href="local-first.html">Local-first &amp; private</a></div>
+    </div>
+  </section>
+
+  <section class="bite" id="lyrics" data-listen="lyrics">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>3</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">LYRICS</p>
+      <h2>Words that follow the song.</h2>
+      <p>Put an <code>.lrc</code> lyrics file next to a song, with the same name, and Beebo shows the words. If the file has timings in it, the current line lights up as the song plays, and you can tap a line to jump there.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>For example, <code>Hallelujah.mp3</code> and <code>Hallelujah.lrc</code> in the same folder.</p>
+        <p>A lyrics file without timings is shown as plain text instead. Lyrics saved inside the song file itself are used when there is no <code>.lrc</code> file.</p>
+        <p>Plain <code>.txt</code> files are not used, and lyrics are never downloaded from the internet.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite wide-media" id="playing" data-listen="now-playing">
+    <figure class="bite-media"><img src="assets/library-moment.webp" alt="A woman relaxing with a tablet in a sage armchair" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">NOW PLAYING</p>
+      <h2>Queue, shuffle, repeat.</h2>
+      <p>The Now Playing screen has the cover, a <strong>Lyrics</strong> button and a <strong>Queue</strong> button, with shuffle and repeat either side of the play button.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p><strong>Repeat</strong> has three settings: off, repeat the queue, and repeat this song.</p>
+        <p><strong>The queue</strong> shows what is coming up. Tap a row to jump to it, or remove it. Any song has <strong>Play next</strong> and <strong>Add to queue</strong> in its menu.</p>
+        <p><strong>It keeps playing</strong> with the screen off, with controls on your lock screen, in the notification shade, and on Bluetooth headphones and car buttons. A small strip at the bottom of the app shows what is playing wherever you are.</p>
+        <p>Music and films take turns: starting a song pauses a film, and starting a film pauses the music.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="screens" data-listen="every-screen">
+    <figure class="bite-media"><img src="assets/home-evening.webp" alt="A couple relaxing together at home" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">EVERY SCREEN</p>
+      <h2>Phone, TV, browser and car.</h2>
+      <p>On the phone and TV, open <strong>Browse</strong> and choose <strong>Music</strong>, then Albums, Artists or Songs. In a browser, there is a <strong>Music</strong> page. In the car, Music sits at the top of the Beebo menu.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p><strong>Phone and TV:</strong> search artists, albums and songs, sort albums by name, artist, year or recently added, and shuffle everything.</p>
+        <p><strong>Browser:</strong> a grid of albums with a search box; open an album to play it or shuffle it, with lyrics in the bar at the bottom.</p>
+        <p><strong>Car:</strong> Shuffle everything, Artists and Albums, no more than three taps deep. Tap a song and the rest of its album follows.</p>
+        <p><strong>Away from home</strong> you can lower the music quality to use less data, in the gear beside the Music section on your phone. It is a separate setting for home and away.</p>
+      </div></details>
+      <div class="bite-links"><a href="car-companion.html">Beebo on the road</a><a href="app-on-your-phone.html">Get Beebo on your phone</a></div>
+    </div>
+  </section>
+
+  <section class="faq-block" id="faq" data-listen="questions">
+    <h2>Questions</h2>
+    <div class="faq">
+    <details><summary>Does Beebo come with music?</summary><p>No, in the same way it comes with no films. Beebo plays the song files you already have on your own computer.</p></details>
+    <details><summary>My songs have no covers</summary><p>Beebo only uses the cover inside a song file, or a picture named cover, folder or front in that album’s folder. Adding one of those and pressing “Check for new songs” is usually all it takes.</p></details>
+    <details><summary>Can I download songs to my phone for offline listening?</summary><p>Not at the moment. Films and episodes can be downloaded; songs are streamed from your computer.</p></details>
+    <details><summary>Can I send music to my TV with Cast?</summary><p>Not at the moment. Casting works for films, shows and photos. Music plays on the phone, the TV app itself, the browser and the car.</p></details>
+    <details><summary>Does a song count as something I watched?</summary><p>No. Music is kept out of the household’s watch history.</p></details>
+    <details><summary>Which file types work?</summary><p>MP3, M4A (including Apple Lossless), FLAC, OGG, Opus and WAV. Others are skipped.</p></details>
+    </div>
+  </section>
+
+  <div class="guide-nav">
+    <a href="photos.html">📷 Your photos</a>
+    <a href="playlists.html">📃 Playlists</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+</div>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script><script src="assets/loop-video.js?v=1" defer></script><script src="assets/listen.js?v=1" data-page="music" defer></script></body>
+</html>

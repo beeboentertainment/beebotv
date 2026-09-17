@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Parental controls — Beebo Entertainment</title>
+<meta name="description" content="Set what each person in your household can watch on Beebo: age ratings, blocked genres and titles, a daily limit, bedtime hours and an owner PIN." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .addr{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.15rem;background:var(--bg-2);border:1px solid var(--border-strong);border-radius:10px;padding:12px 16px;display:inline-block;color:var(--ink);margin:4px 0}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+
+  .kv{display:grid;gap:12px;margin:14px 0 4px}
+  .kv > div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+  .kv b{display:block;font-family:var(--font-display);font-size:1rem;margin-bottom:3px}
+  .kv p{color:var(--muted);margin:0;font-size:.95rem}
+  @media (min-width:700px){.kv.two{grid-template-columns:1fr 1fr}}
+  .plain{margin:10px 0 0;padding-left:1.15em;color:var(--muted)}
+  .plain li{margin:.3em 0}
+  .note{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--muted);font-size:.95rem;margin:14px 0 0}
+  .note strong{color:var(--ink)}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/parental-controls.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="guide-visuals.css?v=1"><link rel="stylesheet" href="polish.css?v=3"><link rel="stylesheet" href="assets/bite-size.css?v=1"><link rel="stylesheet" href="assets/listen.css?v=1"></head>
+<body data-listen-mode="manual"><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+<div class="wrap bites guide">
+  <a class="back" href="help.html">← All help &amp; guides</a>
+
+  <section class="bite guide-hero" data-listen="intro">
+    <figure class="bite-media contain"><img src="assets/illustrations/parental-controls.svg" alt="Diagram: each person in the household has their own limits, and Beebo checks them before anything plays." width="640" height="360"></figure>
+    <div class="bite-copy">
+      <h1>Parental controls</h1>
+      <p>You decide what each person in your household can watch, and for how long. Beebo checks those limits everywhere, not just on the phone.</p>
+      <nav class="bite-jump" aria-label="On this page"><a href="#where">Where to set it</a><a href="#presets">Presets</a><a href="#limits">Time limits</a><a href="#pin">Owner PIN</a><a href="#everywhere">Where it applies</a><a href="#faq">Questions</a></nav>
+    </div>
+  </section>
+
+  <section class="bite" id="where" data-listen="where-to-set-it">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>1</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">WHERE TO SET IT</p>
+      <h2>One place per person.</h2>
+      <p>On your PC, open Beebo and go to <strong>Users</strong>. Pick a person and set their limits there. On your phone, it is <strong>Owner tools</strong>, then <strong>Family &amp; sharing</strong>.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>Everyone in your household already has their own Beebo login. Parental controls are set on that person, so the same limits follow them onto the phone, the TV, the car and the website.</p>
+        <p>New to accounts? Start with <a href="manage-users.html">Add &amp; manage people</a>.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="presets" data-listen="presets">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>2</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">PICK A STARTING POINT</p>
+      <h2>Four presets, then adjust.</h2>
+      <p>Choose <strong>Young children (under 7)</strong>, <strong>Ages 7 to 12</strong>, <strong>Teens (13 to 17)</strong> or <strong>Off</strong>. Each one sets a film rating and a TV rating for you. You can change anything afterwards.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p><strong>Highest film rating.</strong> US ratings G, PG, PG-13, R and NC-17, or Canadian ratings G, PG, 14A, 18A and R.</p>
+        <p><strong>Highest TV rating.</strong> TV-Y, TV-Y7, TV-G, TV-PG, TV-14 and TV-MA.</p>
+        <p><strong>Hide titles with no rating.</strong> Home videos and anything Beebo could not match are hidden when you turn this on.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="block" data-listen="blocked">
+    <figure class="bite-media step-badge" aria-hidden="true"><span>3</span></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">BLOCK WHAT YOU WANT</p>
+      <h2>Genres, titles, collections.</h2>
+      <p>On top of the rating, you can block whole genres, single titles, or a collection. Or turn it around: <strong>Only titles I allow</strong> shows nothing except the titles you pick.</p>
+    </div>
+  </section>
+
+  <section class="bite" id="limits" data-listen="time-limits">
+    <figure class="bite-media"><img src="assets/home-evening.webp" alt="A couple watching television together at home" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">TIME</p>
+      <h2>A daily limit and a bedtime.</h2>
+      <p>Give a person so many minutes a day, and hours when Beebo is closed — for example nothing between 9 at night and 7 in the morning. The daily count starts again at midnight.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>Minutes are counted only while that person is actually watching something.</p>
+        <p>When the time is up, Beebo says so in a friendly line rather than an error, and tells the person when watching opens again.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite" id="pin" data-listen="owner-pin">
+    <figure class="bite-media contain addr-card"><div><span class="addr-label">OWNER PIN</span><span class="addr">4 to 8 digits</span><span class="addr-note">Asked before anyone changes a profile or leaves it.</span></div></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">OWNER PIN</p>
+      <h2>Your four to eight digits.</h2>
+      <p>Beebo asks for the PIN before anyone leaves a profile that has limits, moves to a profile with more access, or changes those limits on the device itself.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>Five wrong tries lock the PIN for 15 minutes on that device.</p>
+        <p>Beebo does not keep the PIN itself, only a scrambled version of it, so nobody can read it back out of the app.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="bite wide-media" id="everywhere" data-listen="where-it-applies">
+    <figure class="bite-media"><img src="assets/quiet-server.webp" alt="A quiet home computer on a shelf" width="1672" height="941" loading="lazy"></figure>
+    <div class="bite-copy">
+      <p class="eyebrow">WHERE IT APPLIES</p>
+      <h2>Everywhere, not just the phone.</h2>
+      <p>The limits are kept by the computer at home, so hiding a poster is not the whole story: a blocked title also refuses to play, even if someone knows exactly where to look.</p>
+      <details class="more"><summary class="more-toggle"><span class="show">Show more</span><span class="less">Show less</span></summary><div class="more-body">
+        <p>It applies to every list and search, genre and actor filters, details pages, episode lists, cast, collections, Recently added, Surprise me, the watchlist, favourites, history, the shared queue, playlists, the website, casting to a TV, downloads and voice requests.</p>
+        <p>A restricted profile also can’t open the owner tools, Settings, trailers and look-it-up links, title requests, or Space Saver.</p>
+        <p>If you change a limit while someone is watching something they should no longer see, that stream stops within about a minute.</p>
+      </div></details>
+      <div class="bite-links"><a href="manage-users.html">Add &amp; manage people</a>Share with another household</div>
+    </div>
+  </section>
+
+  <section class="faq-block" id="faq" data-listen="questions">
+    <h2>Questions</h2>
+    <div class="faq">
+    <details><summary>Is this a kids’ mode?</summary><p>No. Beebo is not a children’s app and has no child-themed screens. Parental controls are a tool for the adult who runs the Beebo computer, to decide what the people in their household can watch.</p></details>
+    <details><summary>Where do the ratings come from?</summary><p>From the title information Beebo fetches for your library. A title Beebo could not match has no rating at all, which is why there is a separate “hide titles with no rating” switch. See <a href="posters-and-info.html">Posters &amp; info</a>.</p></details>
+    <details><summary>Can someone get around it by using the website instead?</summary><p>No. The same check runs on the computer at home, so the website, the browser player, casting and downloads all follow the same limits.</p></details>
+    <details data-listen="questions-part-2"><summary>Does it work away from home?</summary><p>Yes. The limits travel with the person’s login, so they apply on mobile data and at a friend’s place just as they do at home.</p></details>
+    <details><summary>What if I forget the owner PIN?</summary><p>Set a new one from the Beebo app on your own PC, under Users.</p></details>
+    <details><summary>Does it count time spent browsing?</summary><p>No. Only minutes actually spent watching are counted towards a daily limit.</p></details>
+    </div>
+  </section>
+
+  <div class="guide-nav">
+    🤝 Share with another household
+    <a href="manage-users.html">👪 Add &amp; manage people</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+</div>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.27</strong><time data-beebo-release-date="windows" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.11 (build 12)</strong><time data-beebo-release-date="android" datetime="2026-09-13T12:59:00Z">Released Sep 13, 2026, 8:59:00 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=3"></script><script src="assets/loop-video.js?v=1" defer></script><script src="assets/listen.js?v=1" data-page="parental-controls" defer></script></body>
+</html>
