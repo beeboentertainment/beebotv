@@ -470,7 +470,7 @@
     <p>Beebo’s <strong>Use my own relay</strong> setting also accepts a standard TURN server that uses shared-secret credentials (the “TURN REST API” style). Examples are <a href="https://github.com/coturn/coturn" target="_blank" rel="noopener noreferrer">coturn</a> with <code>use-auth-secret</code> or <a href="https://github.com/processone/eturnal" target="_blank" rel="noopener noreferrer">eturnal</a>. Enter your server’s address (for example <code>turn:relay.example.com:3478</code>, and <code>turns:relay.example.com:443</code> for strict networks) and its shared secret. If you run your own, lock it down so it can’t reach private or internal addresses. <a href="https://www.enablesecurity.com/blog/coturn-security-configuration-guide/" target="_blank" rel="noopener noreferrer">This coturn hardening guide</a> is a good start.</p>
   </div>
   <div class="callout safe">
-    <p><strong>Will Beebo run a relay for me?</strong> Not yet. <a href="#beebo-relay">Beebo Relay</a> is planned, so you wouldn’t need your own. There’s no launch date yet. Until then, your own relay is the way to connect from networks that block direct connections.</p>
+    <p><strong>Will Beebo run a relay for me?</strong> Yes. <a href="beebo-relay.html">Beebo Relay</a> is running and free at this time, so you don’t need your own. Your own Cloudflare relay stays available if you’d rather use your own account.</p>
   </div>
 
   <h2 data-listen="troubleshooting" id="trouble">Troubleshooting</h2>
@@ -530,14 +530,14 @@
      customer pays (prepaidMarkupPercent or payAsYouGoMarkupPercent).
      ========================================================================== */
   var FALLBACK = {
-    version: 2,
-    updatedAtEastern: "2026-09-15T10:51:00-04:00",
+    version: 3,
+    updatedAtEastern: "2026-09-17T05:07:00-04:00",
     currency: "USD",
-    status: "planned",
+    status: "free",
     beeboRelay: {
       costPerGB: 0.011,
-      payAsYouGoMarkupPercent: 20,
-      prepaidMarkupPercent: 10,
+      payAsYouGoMarkupPercent: 0,
+      prepaidMarkupPercent: 0,
       billing: { payAsYouGo: "Added to your monthly Beebo subscription invoice", prepaid: "Taken from your prepaid Beebo balance" },
       minimumMonthlyCharge: 0,
       topUp: { amounts: [10, 25, 50], bonusTiers: [{ minAmount: 25, bonusPercent: 5 }, { minAmount: 50, bonusPercent: 10 }] },

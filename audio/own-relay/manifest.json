@@ -1,7 +1,7 @@
 {
  "page": "own-relay",
  "voice": "am_puck",
- "generated": "2026-09-17 07:17",
+ "generated": "2026-09-17 07:25",
  "sections": [
   {
    "id": "use-your-own-cloudflare-relay",
@@ -337,27 +337,19 @@
    "heading": "Other relay servers (for technical users)",
    "clips": [
     {
-     "src": "other-relay-servers-for-technical-users-1.mp3",
-     "duration": 31.2,
-     "bytes": 156800,
-     "hash": "8d0aa9992f7c",
+     "src": "other-relay-servers-for-technical-users.mp3",
+     "duration": 42.7,
+     "bytes": 214400,
+     "hash": "77c0013bd5b2",
      "text": [
       "Other relay servers (for technical users)",
       "Any standard TURN server works.",
-      "Beebo’s Use my own relay setting also accepts a standard TURN server that uses shared-secret credentials (the “TURN REST API” style). Examples are coturn with use-auth-secret or eturnal. Enter your server’s address (for example turn:relay.example.com:3478, and turns:relay.example.com:443 for strict networks) and its shared secret. If you run your own, lock it down so it can’t reach private or internal addresses. This coturn hardening guide is a good start."
-     ]
-    },
-    {
-     "src": "other-relay-servers-for-technical-users-2.mp3",
-     "duration": 13.0,
-     "bytes": 65600,
-     "hash": "daf536725fa2",
-     "text": [
-      "Will Beebo run a relay for me? Not yet. Beebo Relay is planned, so you wouldn’t need your own. There’s no launch date yet. Until then, your own relay is the way to connect from networks that block direct connections."
+      "Beebo’s Use my own relay setting also accepts a standard TURN server that uses shared-secret credentials (the “TURN REST API” style). Examples are coturn with use-auth-secret or eturnal. Enter your server’s address (for example turn:relay.example.com:3478, and turns:relay.example.com:443 for strict networks) and its shared secret. If you run your own, lock it down so it can’t reach private or internal addresses. This coturn hardening guide is a good start.",
+      "Will Beebo run a relay for me? Yes. Beebo Relay is running and free at this time, so you don’t need your own. Your own Cloudflare relay stays available if you’d rather use your own account."
      ]
     }
    ],
-   "duration": 44.2
+   "duration": 42.7
   },
   {
    "id": "troubleshooting",
