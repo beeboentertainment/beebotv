@@ -31,6 +31,17 @@
   .how { max-width: 640px; margin: 30px auto 0; }
   .how ol { padding-left: 20px; line-height: 1.6; }
   .how li { margin: 6px 0; }
+  .manage-plan { max-width: 640px; margin: 40px auto 0; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 26px 28px; box-shadow: 0 12px 30px rgba(0,0,0,.06); }
+  .manage-plan h2 { margin-top: 0; }
+  .manage-plan .row { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+  .manage-plan input[type="email"], .manage-plan input[type="password"] { flex: 1 1 220px; padding: 10px 12px; border: 1px solid rgba(0,0,0,.15); border-radius: 10px; font-size: 15px; }
+  .manage-plan .seat-stepper { display: flex; align-items: center; gap: 14px; margin: 14px 0; }
+  .manage-plan .seat-stepper button { width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(0,0,0,.15); background: #f6f1e8; font-size: 20px; cursor: pointer; }
+  .manage-plan .seat-stepper button:disabled { opacity: .4; cursor: not-allowed; }
+  .manage-plan .seat-count { font-weight: 700; font-size: 17px; min-width: 220px; }
+  .manage-plan .status { font-size: 14px; color: #6b5d4a; margin-top: 10px; min-height: 1.2em; }
+  .manage-plan .status.error { color: #a33; }
+  .manage-plan .hidden { display: none; }
 </style>
 <link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/subscribe.html"><meta name="robots" content="noindex,follow"><link rel="stylesheet" href="polish.css?v=3"></head>
 <body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
@@ -89,6 +100,31 @@
       <li>When you're ready to keep it, <b>Subscribe</b> above to either plan and keep using the same login. Switch tiers or cancel anytime.</li>
     </ol>
   </div>
+
+  <div class="manage-plan" id="managePlan">
+    <h2>Already subscribed? Add more people</h2>
+    <p>Every household plan above already covers up to 6 people, including you. Need room for more? Sign in below with the same login you use in Beebo to add extra spots — CA$1/month per extra person, added to the same subscription so there's nothing new to check out separately.</p>
+
+    <form id="managePlanSignIn">
+      <div class="row">
+        <input type="email" id="managePlanEmail" placeholder="Your Beebo email" autocomplete="email" required>
+        <input type="password" id="managePlanPassword" placeholder="Your Beebo password" autocomplete="current-password" required>
+      </div>
+      <button class="btn btn-primary" type="submit" id="managePlanSignInBtn">Sign in</button>
+      <p class="status" id="managePlanSignInStatus"></p>
+    </form>
+
+    <div id="managePlanSeats" class="hidden">
+      <p>Household size: 6 people included, plus:</p>
+      <div class="seat-stepper">
+        <button type="button" id="seatsDown" aria-label="Fewer extra spots">−</button>
+        <span class="seat-count"><span id="seatsValue">0</span> extra spot(s) — <span id="householdTotal">6</span> people total</span>
+        <button type="button" id="seatsUp" aria-label="More extra spots">+</button>
+      </div>
+      <p class="fine">Changing this updates your existing subscription's next invoice — it is never billed separately.</p>
+      <p class="status" id="managePlanSeatsStatus"></p>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -97,6 +133,104 @@
   // TODO: set both to the real Stripe Payment Links once created, then remove the disabled/pending state above for each.
   var PAYMENT_LINK_1080P = 'PENDING_STRIPE_LINK_1080P';
   var PAYMENT_LINK_4K = 'PENDING_STRIPE_LINK_4K';
+</script>
+
+<script>
+  // "Add more people" — extra household seats, CA$1/month each, billed on the
+  // same subscription (worker/seatAddon.js, worker/worker.js's /account/seats).
+  // Sign-in reuses the SAME account (email + password) already used for
+  // desktop sign-in and the free trial: POST /auth/login, exactly as the
+  // desktop app itself does, so there's no separate "website account" to keep
+  // track of. See docs/GOOGLE-PLAY-BILLING-AND-SEAT-ADDON.md section 5.
+  (function () {
+    var API_BASE = 'https://login.beebo.tv';
+    var MAX_EXTRA_SEATS = 6;
+    var token = null;
+    var seats = 0;
+    var maxExtraSeats = MAX_EXTRA_SEATS;
+    var saving = false;
+
+    var signInForm = document.getElementById('managePlanSignIn');
+    var signInStatus = document.getElementById('managePlanSignInStatus');
+    var signInBtn = document.getElementById('managePlanSignInBtn');
+    var seatsSection = document.getElementById('managePlanSeats');
+    var seatsStatus = document.getElementById('managePlanSeatsStatus');
+    var seatsValueEl = document.getElementById('seatsValue');
+    var householdTotalEl = document.getElementById('householdTotal');
+    var seatsDownBtn = document.getElementById('seatsDown');
+    var seatsUpBtn = document.getElementById('seatsUp');
+
+    function renderSeats() {
+      seatsValueEl.textContent = String(seats);
+      householdTotalEl.textContent = String(6 + seats);
+      seatsDownBtn.disabled = saving || seats <= 0;
+      seatsUpBtn.disabled = saving || seats >= maxExtraSeats;
+    }
+
+    function setStatus(el, message, isError) {
+      el.textContent = message || '';
+      el.className = 'status' + (isError ? ' error' : '');
+    }
+
+    async function apiCall(path, method, body) {
+      var headers = { 'content-type': 'application/json' };
+      if (token) headers['authorization'] = 'Bearer ' + token;
+      var response = await fetch(API_BASE + path, { method: method, headers: headers, body: body ? JSON.stringify(body) : undefined });
+      var data = {};
+      try { data = await response.json(); } catch (e) {}
+      return { ok: response.ok, status: response.status, data: data };
+    }
+
+    async function changeSeats(next) {
+      if (saving || next < 0 || next > maxExtraSeats) return;
+      saving = true; renderSeats();
+      var result = await apiCall('/account/seats', 'POST', { seats: next });
+      saving = false;
+      if (result.ok) {
+        seats = result.data.seats || 0;
+        maxExtraSeats = result.data.maxExtraSeats || MAX_EXTRA_SEATS;
+        setStatus(seatsStatus, 'Saved. This will show on your next invoice.', false);
+      } else {
+        setStatus(seatsStatus, result.data.error === 'no_household_subscription'
+          ? 'This account has no active household subscription to add seats to yet.'
+          : 'Could not save that. Please try again in a moment.', true);
+      }
+      renderSeats();
+    }
+
+    seatsDownBtn.addEventListener('click', function () { changeSeats(seats - 1); });
+    seatsUpBtn.addEventListener('click', function () { changeSeats(seats + 1); });
+
+    signInForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      var email = document.getElementById('managePlanEmail').value.trim();
+      var password = document.getElementById('managePlanPassword').value;
+      if (!email || !password) return;
+      signInBtn.disabled = true;
+      setStatus(signInStatus, 'Signing in…', false);
+      var login = await apiCall('/auth/login', 'POST', { email: email, password: password });
+      if (!login.ok || !login.data.token) {
+        signInBtn.disabled = false;
+        setStatus(signInStatus, 'That email or password was not accepted.', true);
+        return;
+      }
+      token = login.data.token;
+      var current = await apiCall('/account/seats', 'GET');
+      signInBtn.disabled = false;
+      if (!current.ok) {
+        setStatus(signInStatus, current.data.error === 'no_household_subscription'
+          ? 'Signed in, but this account has no active household subscription yet.'
+          : 'Signed in, but your household size could not be checked right now.', true);
+        return;
+      }
+      seats = current.data.seats || 0;
+      maxExtraSeats = current.data.maxExtraSeats || MAX_EXTRA_SEATS;
+      setStatus(signInStatus, '', false);
+      signInForm.classList.add('hidden');
+      seatsSection.classList.remove('hidden');
+      renderSeats();
+    });
+  })();
 </script>
 <!-- Beebo analytics beacon -->
 
