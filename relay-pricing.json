@@ -1,9 +1,27 @@
 {
-  "version": 3,
-  "updatedAtEastern": "2026-09-20T05:55:19-04:00",
+  "version": 4,
+  "updatedAtEastern": "2026-09-20T16:30:00-04:00",
   "currency": "USD",
   "status": "free",
   "freeAtThisTime": true,
+  "tiers": [
+    {
+      "id": "beebo-standard",
+      "name": "Household",
+      "monthly": 3,
+      "currency": "CAD",
+      "maxAwayQuality": "1080p",
+      "householdMaxMembers": 6
+    },
+    {
+      "id": "beebo-standard-4k",
+      "name": "Household 4K",
+      "monthly": 5,
+      "currency": "CAD",
+      "maxAwayQuality": "4k",
+      "householdMaxMembers": 6
+    }
+  ],
   "beeboRelay": {
     "costPerGB": 0,
     "payAsYouGoMarkupPercent": 0,
@@ -47,14 +65,15 @@
   },
   "notes": {
     "about": "Shared public pricing configuration. Household subscription prices use subscriptionCurrency (CAD). The legacy currency field remains USD for vendor and historical relay-rate fields.",
-    "version": "Version 3 compatibility fields are retained. includedWithSubscription, subscriptionCurrency and householdMaxMembers describe the current offer. Older clients must not infer a free subscription from status=free.",
+    "version": "Version 4 adds the `tiers` array (two quality-based tiers replacing the old single-tier model). Version 3 compatibility fields (subscriptionMonthly, includedWithSubscription, subscriptionCurrency, householdMaxMembers) are retained and describe tier[0] (the base 1080p tier) for any older client that only reads the flat fields. Older clients must not infer a free subscription from status=free.",
+    "tiers": "Two household tiers, both up to 6 members, both including Beebo Relay with no extra usage charge, both free for local home use. They differ ONLY in the maximum video quality allowed for AWAY-FROM-HOME (remote) streaming: 'beebo-standard' caps away-from-home playback at 1080p; 'beebo-standard-4k' allows up to 4K away from home. Local/home-network playback is always full quality on both tiers — the cap only applies to the relay/remote path, since that is what uses Beebo Relay bandwidth. `id` matches the Stripe subscription's `beebo_plan` metadata value used by the licensing Worker.",
     "status": "free means no additional Beebo Relay usage charge inside the paid household away-from-home plan. It does not make the away-from-home subscription free.",
     "freeAtThisTime": "Compatibility flag: no separate relay usage billing. Current copy should say Included with away-from-home access.",
-    "subscriptionMonthly": "CA$3 per month for one household, not per person. Includes Beebo Relay connection with no additional relay usage charge.",
-    "subscriptionCurrency": "CAD. Applies to subscriptionMonthly and localHomeMonthly. Vendor prices keep their own stated currency.",
-    "householdMaxMembers": "Six family members in total, including the owner.",
-    "localHomeMonthly": "Zero: local home use does not require a subscription or trial.",
-    "includedWithSubscription": "Beebo Relay connection is included in the household away-from-home plan. This is not a promise of unlimited bandwidth or a specific video resolution.",
+    "subscriptionMonthly": "CA$3 per month for the base (1080p) household tier, not per person. See `tiers` for the full two-tier structure including the CA$5/month 4K tier.",
+    "subscriptionCurrency": "CAD. Applies to subscriptionMonthly, tiers[].monthly and localHomeMonthly. Vendor prices keep their own stated currency.",
+    "householdMaxMembers": "Six family members in total, including the owner. Same on both tiers.",
+    "localHomeMonthly": "Zero: local home use does not require a subscription or trial, and is always full quality regardless of tier.",
+    "includedWithSubscription": "Beebo Relay connection is included in the household away-from-home plan on both tiers. This is not a promise of unlimited bandwidth beyond each tier's stated quality cap.",
     "beeboRelay.costPerGB": "Legacy customer-charge field is zero because separate relay usage billing is disabled. This is not Beebo’s infrastructure cost.",
     "beeboRelay.topUp": "Disabled. No separate Beebo Relay balance top-up is required.",
     "cloudflare": "Optional customer-owned Cloudflare service; Cloudflare bills separately under its own terms. Legacy USD estimates retain their checked date and are not a Beebo charge.",
