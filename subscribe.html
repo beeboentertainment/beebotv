@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Subscribe — Beebo Entertainment</title>
-<meta name="description" content="Keep your Beebo Entertainment home server running — $0.99/month after a free 30-day trial." />
+<meta name="description" content="Keep your Beebo Entertainment home server running — CA$3/month per household (1080p away from home) or CA$5/month (4K away from home), after a free 30-day trial." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
@@ -14,15 +14,20 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
 <link rel="stylesheet" href="site.css" />
 <style>
-  .price-card { max-width: 460px; margin: 8px auto 0; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 28px; box-shadow: 0 12px 30px rgba(0,0,0,.06); text-align: center; }
-  .price-card .amount { font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #2b2b30; }
-  .price-card .amount span { font-size: 17px; font-weight: 600; color: #7a7f88; }
+  .price-tiers { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; max-width: 780px; margin: 8px auto 0; align-items: stretch; }
+  .price-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 28px; box-shadow: 0 12px 30px rgba(0,0,0,.06); text-align: center; display:flex; flex-direction:column; }
+  .price-card .tier-label { font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:#7a7f88; margin-bottom:6px; }
+  .price-card .amount { font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 1; color: #2b2b30; }
+  .price-card .amount span { font-size: 16px; font-weight: 600; color: #7a7f88; }
   .price-card .trial { display:inline-block; margin: 10px 0 2px; background:#eaf7ee; color:#1f8a45; font-weight:600; font-size:13px; padding:5px 12px; border-radius:999px; }
-  .price-card ul { list-style: none; padding: 0; margin: 18px 0 22px; text-align: left; }
+  .price-card ul { list-style: none; padding: 0; margin: 18px 0 22px; text-align: left; flex-grow: 1; }
   .price-card li { padding: 7px 0 7px 28px; position: relative; color:#3a3f48; }
   .price-card li::before { content: "✓"; position:absolute; left:2px; color:#1f8a45; font-weight:700; }
   .subscribe-btn { display:block; width:100%; box-sizing:border-box; text-align:center; font-size:17px; padding:14px 18px; }
+  .subscribe-btn[aria-disabled="true"] { opacity:.5; cursor:not-allowed; pointer-events:none; }
+  .pending-note { color:#8a5a00; background:#fff6e5; border:1px solid #f0d99a; border-radius:10px; font-size:13px; padding:8px 12px; margin-top:10px; }
   .fine { color:#8a8f98; font-size:12.5px; margin-top:12px; }
+  @media (max-width: 640px) { .price-tiers { grid-template-columns: 1fr; max-width: 460px; } }
   .how { max-width: 640px; margin: 30px auto 0; }
   .how ol { padding-left: 20px; line-height: 1.6; }
   .how li { margin: 6px 0; }
@@ -37,36 +42,61 @@
   <div class="page-hero">
     <div class="em">🐰</div>
     <h1>Keep your Beebo running</h1>
-    <p class="lead">Your Beebo server is free to try for a full month. After that, a small subscription keeps it running — so your whole household keeps watching your own library, anywhere.</p>
+    <p class="lead">Your Beebo server is free to try for a full month. After that, a small subscription keeps it running — so your whole household (up to 6 people) keeps watching your own library, anywhere. Pick the tier that matches how good you want it to look away from home.</p>
   </div>
 
-  <div class="price-card">
-    <div class="amount">$0.99<span> / month</span></div>
-    <div class="trial">30-day free trial — no card needed</div>
-    <ul>
-      <li>Stream your movies &amp; shows to every phone, tablet and TV in the house</li>
-      <li>Watch on the road, cast to the big screen, download for offline</li>
-      <li>New features and updates, delivered automatically</li>
-      <li>Cancel anytime</li>
-    </ul>
-    <a class="btn btn-primary subscribe-btn" id="subscribeBtn" href="#">Subscribe — $0.99/month</a>
-    <p class="fine">Secure checkout by Stripe. You can start your free trial right inside Beebo first — no payment until you subscribe.</p>
+  <div class="price-tiers">
+    <div class="price-card">
+      <div class="tier-label">1080p away from home</div>
+      <div class="amount">CA$3<span> / month, per household</span></div>
+      <div class="trial">30-day free trial — no card needed</div>
+      <ul>
+        <li>Stream your movies &amp; shows to every phone, tablet and TV in the house</li>
+        <li>Up to 6 people in your household, all on one subscription</li>
+        <li>Away from home, video plays up to 1080p</li>
+        <li>Beebo Relay included — no extra usage charge</li>
+        <li>Local home streaming is always full quality and free, no subscription needed</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <!-- TODO: set PAYMENT_LINK_1080P to the real Stripe Payment Link once created, then remove the disabled/pending state -->
+      <a class="btn btn-primary subscribe-btn" id="subscribeBtn1080p" href="#" aria-disabled="true" tabindex="-1">Checkout link coming very shortly</a>
+      <p class="pending-note">Finishing setup of this plan's secure checkout. Not live yet — check back shortly.</p>
+    </div>
+    <div class="price-card">
+      <div class="tier-label">4K away from home</div>
+      <div class="amount">CA$5<span> / month, per household</span></div>
+      <div class="trial">30-day free trial — no card needed</div>
+      <ul>
+        <li>Everything in the 1080p plan</li>
+        <li>Up to 6 people in your household, all on one subscription</li>
+        <li>Away from home, video plays up to full 4K</li>
+        <li>Beebo Relay included — no extra usage charge</li>
+        <li>Local home streaming is always full quality and free, no subscription needed</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <!-- TODO: set PAYMENT_LINK_4K to the real Stripe Payment Link once created, then remove the disabled/pending state -->
+      <a class="btn btn-primary subscribe-btn" id="subscribeBtn4k" href="#" aria-disabled="true" tabindex="-1">Checkout link coming very shortly</a>
+      <p class="pending-note">Finishing setup of this plan's secure checkout. Not live yet — check back shortly.</p>
+    </div>
   </div>
+  <p class="fine" style="text-align:center;max-width:640px;margin:14px auto 0">Secure checkout by Stripe. You can start your free trial right inside Beebo first — no payment until you subscribe. Your actual away-from-home picture quality also depends on your home internet's upload speed.</p>
 
   <div class="how">
     <h2>How it works</h2>
     <ol>
       <li><b>Install Beebo</b> on the computer that holds your movies and open it.</li>
       <li>Click <b>Start free trial</b> and create your login — your email and a password. You get 30 days free, no card needed.</li>
-      <li>When you're ready to keep it, <b>Subscribe</b> above for $0.99/month and keep using the same login. That's it — cancel anytime.</li>
+      <li>When you're ready to keep it, <b>Subscribe</b> above to either plan and keep using the same login. Switch tiers or cancel anytime.</li>
     </ol>
   </div>
 </div>
 
 <script>
-  // The Stripe payment link. TEST link for now — swap to the LIVE link at launch.
-  var PAYMENT_LINK = 'https://buy.stripe.com/6oU28s1xB9RNgJ67x1g7e00';
-  document.getElementById('subscribeBtn').setAttribute('href', PAYMENT_LINK);
+  // Stripe payment links for the two household tiers.
+  // PENDING: neither real Payment Link has been created yet — do not wire these up to any Stripe URL until they exist.
+  // TODO: set both to the real Stripe Payment Links once created, then remove the disabled/pending state above for each.
+  var PAYMENT_LINK_1080P = 'PENDING_STRIPE_LINK_1080P';
+  var PAYMENT_LINK_4K = 'PENDING_STRIPE_LINK_4K';
 </script>
 <!-- Beebo analytics beacon -->
 
