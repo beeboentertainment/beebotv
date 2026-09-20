@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Beebo Relay — Beebo Entertainment</title>
-<meta name="description" content="Beebo Relay passes your video along when a direct connection isn’t possible. Free at this time, encrypted end to end, and at cost with no markup if fees ever start." />
+<meta name="description" content="Beebo Relay passes your video along when a direct connection isn’t possible. Included with your household subscription at no extra usage charge, and encrypted end to end." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
@@ -69,14 +69,14 @@
 
   <div class="page-hero">
     <div class="em">🛰️</div>
-    <h1 data-listen="beebo-relay-free-at-this-time">Beebo Relay <span class="free-badge">Free at this time</span></h1>
+    <h1 data-listen="beebo-relay-free-at-this-time">Beebo Relay <span class="free-badge">Included with your subscription</span></h1>
     <p class="lead">Beebo Relay passes your video along when a <a href="direct-connection.html">direct connection</a> isn’t possible. Beebo always tries direct first. Beebo Relay is only used when direct doesn’t work.</p>
   </div>
 
   <div class="rl-chips">
-    <span class="rl-chip">Free at this time</span>
+    <span class="rl-chip">Included with your household subscription</span>
     <span class="rl-chip">Encrypted end to end</span>
-    <span class="rl-chip">At cost, 0% markup if fees ever start</span>
+    <span class="rl-chip">No extra usage charge</span>
   </div>
 
   <nav class="toc" aria-label="On this page">
@@ -99,13 +99,12 @@
 
   <h2 data-listen="what-it-costs" id="cost">What it costs</h2>
   <div class="callout safe">
-    <p><strong>Free at this time. $0.00 is charged.</strong></p>
-    <p>If fees ever start, you pay only what it costs Beebo to run Beebo Relay, with <strong>0% markup</strong> (no profit). We’ll tell you before anything is charged, and you’d be asked to accept new terms first.</p>
+    <p><strong>Included with your household away-from-home subscription. No additional Beebo Relay usage charge.</strong></p>
+    <p>Beebo Relay is included in the CA$3/month household plan (up to 6 people) — there’s no separate wallet, top-up or per-GB usage bill for it. This is not a promise of unlimited bandwidth or a specific video quality.</p>
   </div>
   <div class="feature">
-    <h3>If fees started today (estimate)</h3>
-    <p>The current at-cost estimate is about <strong>$0.011 per GB</strong>. For example, a 2-hour HD film for one relayed viewer uses about 6 GB. That’s about <strong>$0.07</strong> at cost.</p>
-    <p class="fineprint">Estimates only. Prices in US dollars (USD). Canadian cards may see a currency conversion.</p>
+    <h3>Fair use</h3>
+    <p>Each account has a monthly Beebo Relay data limit (200 GB a month by default) to keep the service fair for everyone on it.</p>
   </div>
 
   <h2 data-listen="turn-it-on" id="turn-on">Turn it on</h2>
@@ -135,7 +134,7 @@
   <div class="feature">
     <h3 data-listen="what-we-keep">What we keep</h3>
     <ul>
-      <li>How many GB your account used this month, for your monthly limit (and for billing if fees ever start).</li>
+      <li>How many GB your account used this month, to enforce your monthly limit.</li>
       <li>Basic connection records, including IP addresses, for up to 7 days, to stop abuse.</li>
       <li>A count of connections per country each month, with no addresses and not linked to your account, to help decide where to add servers.</li>
     </ul>
@@ -143,7 +142,7 @@
 
   <blockquote class="nick-note">
     <p><strong>A note from Nick</strong></p>
-    <p>“Beebo is made by a family man, not a data company. I have no interest in what you watch or how you use Beebo. Beebo Relay exists only to get your video past your home internet when a direct connection isn’t possible. It runs on a server I pay for. It’s free at this time, and if a fee ever comes it will be at cost, with no markup.”</p>
+    <p>“Beebo is made by a family man, not a data company. I have no interest in what you watch or how you use Beebo. Beebo Relay exists only to get your video past your home internet when a direct connection isn’t possible. It runs on a server I pay for, and it’s included in your household subscription — no separate relay bill, ever.”</p>
     <p class="nick-sign">— Nick, Beebo Entertainment</p>
   </blockquote>
 
@@ -155,7 +154,7 @@
     <h3>Use your free Cloudflare allowance, then Beebo Relay</h3>
     <p>This uses your own Cloudflare relay (set it up with <a href="own-relay.html">this guide</a>) while it’s inside Cloudflare’s free allowance: 1,000 GB a month, per Cloudflare account.</p>
     <ul>
-      <li>Once your Cloudflare relay has carried <strong>950 GB</strong> that month, new connections that need a relay use Beebo Relay (free at this time) until the month resets. We stop at 950 GB as a safety margin, because Cloudflare also counts packet overhead.</li>
+      <li>Once your Cloudflare relay has carried <strong>950 GB</strong> that month, new connections that need a relay use Beebo Relay (included with your subscription, no extra usage charge) until the month resets. We stop at 950 GB as a safety margin, because Cloudflare also counts packet overhead.</li>
       <li>Films already playing finish where they are.</li>
       <li>You choose the day the month starts in Settings (counted in UTC).</li>
     </ul>
@@ -174,13 +173,13 @@
         <tr><td><a href="direct-connection.html">Direct connection</a></td><td>$0</td></tr>
         <tr><td><a href="open-ports.html">Open ports</a></td><td>$0</td></tr>
         <tr><td><a href="direct-connection.html#home-only">Home only</a></td><td>$0</td></tr>
-        <tr><td>Beebo Relay</td><td><span class="free-badge">Free at this time</span> If fees start: at cost, about $0.011 per GB (estimate)</td></tr>
-        <tr><td><a href="own-relay.html">Cloudflare only</a></td><td>First 1,000 GB a month free, then $0.05 per GB, billed by Cloudflare</td></tr>
-        <tr><td><a href="#cloudflare-first">Cloudflare first, then Beebo Relay</a></td><td>Cloudflare free allowance up to 950 GB, then Beebo Relay (free at this time)</td></tr>
+        <tr><td>Beebo Relay</td><td><span class="free-badge">Included with your subscription</span> No extra usage charge</td></tr>
+        <tr><td><a href="own-relay.html">Cloudflare only</a></td><td>First 1,000 GB a month free, then $0.05 USD per GB, billed by Cloudflare</td></tr>
+        <tr><td><a href="#cloudflare-first">Cloudflare first, then Beebo Relay</a></td><td>Cloudflare free allowance up to 950 GB, then Beebo Relay (included, no extra usage charge)</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="fineprint">Prices in US dollars (USD). Canadian cards may see a currency conversion.</p>
+  <p class="fineprint">The Beebo household subscription is billed in Canadian dollars (CAD). Cloudflare’s own prices are set and billed by Cloudflare in US dollars (USD); Canadian cards may see a currency conversion on those charges.</p>
 
   <div class="guide-nav">
     <a href="direct-connection.html">Direct connection</a>
