@@ -16,19 +16,25 @@
     });
     if(state.windows && state.android) document.querySelectorAll('[data-beebo-release-headline]').forEach(el => {el.textContent='Windows '+state.windows+' · Android '+state.android;});
   }
-  get('/desktop-version.json').then(async data => {
-    let stamp=data.publishedAtUtc || data.releasedAt || data.publishedAt;
-    if(!stamp && data.version) {
-      try {
-        const release=await get('https://api.github.com/repos/SWGfan/beebotv/releases/tags/Beebo-'+encodeURIComponent(data.version));
-        stamp=release.published_at;
-      } catch (_) { /* Display the version even if the release-time lookup fails. */ }
-    }
-    show('windows',data.version,null,stamp,true);
+  function updateDownload(platform, raw) {
+    if (!raw) return;
+    try {
+      const url = new URL(raw, location.href);
+      const extension = platform === 'android' ? '.apk' : '.exe';
+      if (url.origin !== 'https://origin.beebo.tv' || !url.pathname.startsWith('/downloads/') || !url.pathname.endsWith(extension) || url.username || url.password) return;
+      document.querySelectorAll('[data-beebo-download="'+platform+'"]').forEach(link => { link.href = url.href; });
+    } catch (_) { /* Keep the verified embedded download link if metadata is invalid. */ }
+  }
+  get('/desktop-version.json').then(data => {
+    show('windows',data.version,null,data.publishedAtUtc || data.releasedAt || data.publishedAt,true);
+    updateDownload('windows',data.url);
   }).catch(() => {
     document.querySelectorAll('[data-beebo-release-date="windows"]').forEach(el=>{el.textContent+=' · last published details';});
   });
-  get('/downloads/app-build.json').then(data => show('android',data.versionName || data.version,data.versionCode,data.publishedAtUtc || data.builtAtUtc,Boolean(data.publishedAtUtc))).catch(() => {
+  get('/downloads/app-build.json').then(data => {
+    show('android',data.versionName || data.version,data.versionCode,data.publishedAtUtc || data.builtAtUtc,Boolean(data.publishedAtUtc));
+    updateDownload('android',data.url);
+  }).catch(() => {
     document.querySelectorAll('[data-beebo-release-date="android"]').forEach(el=>{el.textContent+=' · last published details';});
   });
 })();
