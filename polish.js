@@ -38,3 +38,19 @@
     document.querySelectorAll('[data-beebo-release-date="android"]').forEach(el=>{el.textContent+=' · last published details';});
   });
 })();
+
+/* A visible, keyboard-friendly way back to the beginning of a long guide. */
+(() => {
+  const top = document.getElementById('page-content') || document.getElementById('main') || document.body;
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'beebo-back-to-top';
+  button.setAttribute('aria-label', 'Back to top');
+  button.title = 'Back to top';
+  button.innerHTML = '<span aria-hidden="true">↑</span><span class="beebo-back-to-top-label">Top</span>';
+  button.addEventListener('click', () => top.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  const update = () => button.classList.toggle('is-visible', window.scrollY > 420);
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+  document.body.append(button);
+})();

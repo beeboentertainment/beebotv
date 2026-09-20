@@ -176,7 +176,7 @@
   function init(manifest) {
     var seen = {};
     (manifest.sections || []).forEach(function (section) {
-      if (!section.clips || !section.clips.length) return;
+      if (section.disabled || section.status === "stale" || !section.clips || !section.clips.length) return;
       var target = document.querySelector('[data-listen="' + section.id + '"]');
       if (!target) return;
       // Several link cards can share one grid: only one widget per spot.
