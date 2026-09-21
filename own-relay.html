@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Use your own Cloudflare relay — Beebo Entertainment</title>
-<meta name="description" content="Watch away from home when a direct connection isn’t possible: set up your own Cloudflare relay in about ten minutes, see what it costs with our calculator, and remove it whenever you like." />
+<meta name="description" content="Watch away from home when a direct connection isn’t possible: set up your own Cloudflare relay in about ten minutes — free for most households — see what it (and the paid fallback) would cost with our calculator, and remove it whenever you like." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
@@ -165,7 +165,7 @@
   <div class="page-hero">
     <div class="em">🔁</div>
     <h1 data-listen="use-your-own-cloudflare-relay">Use your own Cloudflare relay</h1>
-    <p class="lead">Most of the time, Beebo connects your phone straight to the computer at home. On a few networks that simply isn’t possible. A <strong>relay</strong> fixes that: it passes your films along, still locked, between home and wherever you are. You can set one up in your own Cloudflare account in about ten minutes, and for most families it costs nothing. We’re also planning <a href="#beebo-relay">Beebo Relay</a>, for anyone who’d rather not use Cloudflare. <a href="#cost">See what each option would cost you.</a></p>
+    <p class="lead">Most of the time, Beebo connects your phone straight to the computer at home. On a few networks that simply isn’t possible. A <strong>relay</strong> fixes that: it passes your films along, still locked, between home and wherever you are. You can set one up in your own Cloudflare account in about ten minutes, and for most families it’s free — Cloudflare’s own free allowance covers it, and you owe Beebo nothing for it. If you’d rather not use Cloudflare, or it doesn’t work for you, <a href="#beebo-relay">Beebo Relay</a> is Beebo’s paid fallback instead. <a href="#cost">See what each option would cost you.</a></p>
   </div>
 
   <div class="rl-chips">
@@ -181,7 +181,7 @@
       <li><a href="#when">Do you need it?</a></li>
       <li><a href="#setup">Set it up, step by step</a></li>
       <li><a href="#privacy">What the relay can and can’t see</a></li>
-      <li><a href="#beebo-relay">Beebo Relay (included with your subscription)</a></li>
+      <li><a href="#beebo-relay">Beebo Relay (a paid fallback)</a></li>
       <li><a href="#cost">What it costs (calculator)</a></li>
       <li><a href="#tunnel">Why not a Cloudflare Tunnel?</a></li>
       <li><a href="#other">Other relay servers</a></li>
@@ -290,15 +290,15 @@
   <p>Beebo’s connection uses WebRTC, which encrypts everything end to end with <strong>DTLS</strong>. The keys are agreed between your home PC and the viewer’s device, so a relay only ever handles locked packets. Cloudflare says this directly: it can’t access relayed WebRTC media because of DTLS, and it processes connection details such as IP addresses and ports. (<a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">Cloudflare TURN FAQ</a>, <a href="https://developers.cloudflare.com/realtime/turn/analytics/" target="_blank" rel="noopener noreferrer">TURN analytics</a>)</p>
   <p class="fineprint">That metadata is handled under your own agreement with Cloudflare. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare’s privacy policy</a>. Cloudflare’s relay runs on its global network except its China Network. (<a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">source</a>)</p>
 
-  <h2 data-listen="beebo-relay-free-at-this-time" id="beebo-relay">Beebo Relay <span class="cheap-badge">Included with your subscription</span></h2>
+  <h2 data-listen="beebo-relay-free-at-this-time" id="beebo-relay">Beebo Relay <span class="cheap-badge">A simple paid fallback</span></h2>
   <div class="callout safe">
-    <p><strong>Beebo Relay is included with your household away-from-home subscription — no additional relay usage charge.</strong> It’s Beebo Entertainment’s own relay, on an OVHcloud server in Beauharnois, Canada, for people who’d rather not set up Cloudflare. There’s no separate wallet, top-up or per-GB bill for it. <a href="beebo-relay.html">How Beebo Relay works and how to turn it on →</a></p>
+    <p><strong>Beebo Relay is a paid fallback — not something you need just to set up your own relay.</strong> It’s Beebo Entertainment’s own relay, on an OVHcloud server in Beauharnois, Canada, for people who’d rather not set up Cloudflare, or whose Cloudflare relay doesn’t work for them. It’s priced by streaming quality rather than data used, close to CA$3/month for 1080p or CA$5/month for 4K — there’s no separate wallet, top-up or per-GB bill for it. <a href="beebo-relay.html">How Beebo Relay works and how to turn it on →</a></p>
   </div>
   <p>You choose how relaying works in Beebo on your home PC (Settings › Connection). Whichever you choose, a relay is only used when a direct connection isn’t possible.</p>
   <div class="rl-options">
     <div class="rl-option">
       <h3 data-listen="beebo-relay-only"><span class="num" aria-hidden="true">1</span>Beebo Relay only</h3>
-      <p>No Cloudflare account needed. Relayed video goes through Beebo Relay, included with your subscription at no extra usage charge.</p>
+      <p>No Cloudflare account needed. Relayed video goes through Beebo Relay, Beebo’s paid fallback — close to CA$3/month for 1080p or CA$5/month for 4K, priced by quality rather than data used.</p>
     </div>
     <div class="rl-option">
       <h3><span class="num" aria-hidden="true">2</span>Cloudflare first, then Beebo Relay</h3>
@@ -332,9 +332,9 @@
 
   <h2 data-listen="what-it-costs-the-relay-calculator" id="cost">What it costs: the relay calculator</h2>
   <div class="callout safe">
-    <p><strong>Most homes pay nothing extra for relay.</strong> Beebo connects your devices directly whenever it can, and direct connections never touch a relay. A relay is only used when a direct connection isn’t possible (roughly one home in eight). Beebo Relay is included with your household subscription at no extra usage charge; only your own Cloudflare relay is priced per GB, and Cloudflare bills that directly.</p>
+    <p><strong>Most homes pay nothing for relay — to Beebo or to Cloudflare.</strong> Beebo connects your devices directly whenever it can, and direct connections never touch a relay. A relay is only used when a direct connection isn’t possible (roughly one home in eight), and your own Cloudflare relay’s free allowance (1,000 GB a month) covers nearly everyone who does need one. Beebo Relay is a separate paid fallback, priced by streaming quality rather than data used, only for households where a direct connection, automatic UPnP, and your own relay all fall short.</p>
   </div>
-  <p>Use this to see what relayed watching would cost in a month. It assumes all of your away-from-home watching needs the relay, so it shows the most you’d pay.</p>
+  <p>Use this to see what relayed watching would cost in a month. It assumes all of your away-from-home watching needs a relay, so it shows the most you’d pay. If you’re setting up your own Cloudflare relay and it works for you, the honest answer is usually “nothing” — this calculator mainly helps you see when that would change.</p>
 
   <div class="calc" id="calc">
     <p class="calc-status" id="rc-status" aria-live="polite">
@@ -355,9 +355,9 @@
     <fieldset>
       <legend>Your relay option</legend>
       <div class="opt-pick">
-        <label class="opt-card"><input type="radio" name="rc-option" value="cfThenBeebo" checked /><span class="box"><strong>Cloudflare first, then Beebo</strong><small>Free Cloudflare allowance, then Beebo Relay</small></span></label>
-        <label class="opt-card"><input type="radio" name="rc-option" value="beeboOnly" /><span class="box"><strong>Beebo only</strong><small>No Cloudflare account needed</small></span></label>
-        <label class="opt-card"><input type="radio" name="rc-option" value="cloudflareOnly" /><span class="box"><strong>My own Cloudflare only</strong><small>Cloudflare bills you past its free allowance</small></span></label>
+        <label class="opt-card"><input type="radio" name="rc-option" value="cloudflareOnly" checked /><span class="box"><strong>My own Cloudflare only</strong><small>Free from Beebo. Cloudflare bills you past its free allowance</small></span></label>
+        <label class="opt-card"><input type="radio" name="rc-option" value="cfThenBeebo" /><span class="box"><strong>Cloudflare first, then Beebo</strong><small>Free Cloudflare allowance, then Beebo Relay (paid fallback)</small></span></label>
+        <label class="opt-card"><input type="radio" name="rc-option" value="beeboOnly" /><span class="box"><strong>Beebo Relay only</strong><small>No Cloudflare account needed — Beebo’s paid fallback</small></span></label>
       </div>
     </fieldset>
 
@@ -425,7 +425,7 @@
     </div>
 
     <div class="calc-result" id="rc-result" aria-live="polite">
-      <h3 data-listen="about-0-99-a-month" id="rc-headline">About CA$3 a month</h3>
+      <h3 data-listen="about-0-99-a-month" id="rc-headline">About $0 a month</h3>
       <p class="plain" id="rc-plain"></p>
       <table class="bd">
         <caption class="visually-hidden">Monthly cost breakdown for the option you chose</caption>
@@ -447,7 +447,7 @@
       Cloudflare prices checked on <strong data-rl="checked">2026-09-15</strong> from Cloudflare’s <a href="https://developers.cloudflare.com/realtime/sfu/pricing/" target="_blank" rel="noopener noreferrer">Realtime pricing page</a> and <a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">TURN FAQ</a>: <span data-rl="price">$0.05</span> per GB sent from Cloudflare to the viewer, after a free tier of <span data-rl="free">1,000</span> GB (<a href="https://blog.cloudflare.com/introducing-cloudflare-realtime-and-realtimekit/" target="_blank" rel="noopener noreferrer">“each month”</a>). Data going <em>into</em> Cloudflare is free. The free tier is per Cloudflare account and is shared with any other Cloudflare Realtime use on that account. Cloudflare counts packet overhead too, which is one reason Beebo switches over at <span data-rl="switch">950</span> GB rather than right at the limit. Prices can change, so Cloudflare’s page is the final word.
     </p>
     <p data-listen="about-0-99-a-month-part" class="fineprint calc-note" data-show-for="cfThenBeebo beeboOnly">
-      Beebo Relay is included with your household away-from-home subscription (CA$3/month for 1080p, or CA$5/month for 4K — both up to 6 people) — there’s no additional relay usage charge, wallet or top-up. “Hours of watching” use the quality you picked above.
+      Beebo Relay is a flat monthly paid fallback (close to CA$3/month for 1080p, or CA$5/month for 4K — both up to 6 people), not metered by data — there’s no additional relay usage charge, wallet or top-up. “Hours of watching” use the quality you picked above.
     </p>
     <p class="fineprint calc-note">
       Quality figures are estimates: Netflix publishes up to 1 GB an hour for SD, 3 GB for HD and 7 GB for 4K (<a href="https://help.netflix.com/en/node/87" target="_blank" rel="noopener noreferrer">Netflix data usage</a>). Files you own are often higher quality. Every 1 Mbps of video is about 0.45 GB an hour, so an 11 Mbps HD file uses about 5 GB an hour.
@@ -470,7 +470,7 @@
     <p>Beebo’s <strong>Use my own relay</strong> setting also accepts a standard TURN server that uses shared-secret credentials (the “TURN REST API” style). Examples are <a href="https://github.com/coturn/coturn" target="_blank" rel="noopener noreferrer">coturn</a> with <code>use-auth-secret</code> or <a href="https://github.com/processone/eturnal" target="_blank" rel="noopener noreferrer">eturnal</a>. Enter your server’s address (for example <code>turn:relay.example.com:3478</code>, and <code>turns:relay.example.com:443</code> for strict networks) and its shared secret. If you run your own, lock it down so it can’t reach private or internal addresses. <a href="https://www.enablesecurity.com/blog/coturn-security-configuration-guide/" target="_blank" rel="noopener noreferrer">This coturn hardening guide</a> is a good start.</p>
   </div>
   <div class="callout safe">
-    <p><strong>Will Beebo run a relay for me?</strong> Yes. <a href="beebo-relay.html">Beebo Relay</a> is running and included with your household subscription at no extra usage charge, so you don’t need your own. Your own Cloudflare relay stays available if you’d rather use your own account.</p>
+    <p><strong>Will Beebo run a relay for me?</strong> Yes. <a href="beebo-relay.html">Beebo Relay</a> is running, as a paid fallback close to CA$3–5/month with no extra usage charge, so you don’t need your own. Your own Cloudflare relay stays available (and free) if you’d rather use your own account.</p>
   </div>
 
   <h2 data-listen="troubleshooting" id="trouble">Troubleshooting</h2>
@@ -554,7 +554,7 @@
   var DAYS_PER_MONTH = 30;
   var QUALITY_NAMES = { sd: "SD", hd: "HD 1080p", hdHigh: "High-quality HD files", uhd: "4K" };
   var QUALITY_HOURS = { sd: "hours of SD", hd: "hours of HD", hdHigh: "hours of high-quality HD", uhd: "hours of 4K", custom: "hours at your file sizes" };
-  var OPTION_NAMES = { cfThenBeebo: "Cloudflare first, then Beebo", beeboOnly: "Beebo only", cloudflareOnly: "My own Cloudflare only" };
+  var OPTION_NAMES = { cfThenBeebo: "Cloudflare first, then Beebo", beeboOnly: "Beebo Relay only", cloudflareOnly: "My own Cloudflare only" };
   var PAY_NAMES = { prepaid: "prepaid", payg: "pay as you go" };
   var EXAMPLES = {
     family: { hours: 2, per: "day", people: 3, quality: "hd", note: "Example: three people, each on their own phone or tablet, watching 2 hours every night in HD." },
@@ -655,7 +655,11 @@
       r.beeboCost = cents(usage + r.beeboMinimumTopUp);
     }
     r.relayCost = cents(r.cfCost + r.beeboCost);
-    r.subscription = p.subscriptionMonthly;
+    // "Cloudflare only" means no Beebo Relay subscription at all — you owe Beebo nothing.
+    // The flat monthly price only applies to the two options that actually use Beebo Relay
+    // as a fallback, and it's billed as a subscription (whether or not you dip into it that
+    // month), not metered per GB.
+    r.subscription = input.option === "cloudflareOnly" ? 0 : p.subscriptionMonthly;
     r.total = cents(r.relayCost + r.subscription);
 
     if (input.option !== "cloudflareOnly" && !input.skipExtras){
@@ -785,7 +789,7 @@
     } else gbPerHour = pricing.estimates.gbPerHour[q] || 0;
 
     return {
-      option: radioValue("rc-option") || "cfThenBeebo",
+      option: radioValue("rc-option") || "cloudflareOnly",
       payMethod: radioValue("rc-pay") === "payg" ? "payg" : "prepaid",
       topUpAmount: parseFloat(topUpEl.value),
       quality: q, per: per, hours: hours,
@@ -843,9 +847,8 @@
       rows += row("Paid to Cloudflare", gb(r.cfPaidGB) + " × " + rate(c.pricePerGB) + " per GB, billed to you by Cloudflare in USD", money(r.cfCost));
       plain = r.cfPaidGB > 0
         ? "Cloudflare covers the first " + c.freeGBPerMonth.toLocaleString("en-US") + " GB free, then charges " + rate(c.pricePerGB) + " per GB for the other " + gb(r.cfPaidGB) +
-          ": " + money(r.cfCost) + ", billed by Cloudflare. With the " + sub + " Beebo subscription, that’s " + money(r.total) + " a month in total."
-        : (r.totalGB > 0 ? "All " + gb(r.totalGB) + " fit inside Cloudflare’s free " + c.freeGBPerMonth.toLocaleString("en-US") + " GB, so relay costs you nothing." : "Nothing relayed, so no relay cost.") +
-          " You’d pay just the " + sub + " Beebo subscription.";
+          ": " + money(r.cfCost) + ", billed by Cloudflare. You owe Beebo nothing — this option doesn’t use Beebo Relay, so there’s no Beebo subscription."
+        : (r.totalGB > 0 ? "All " + gb(r.totalGB) + " fit inside Cloudflare’s free " + c.freeGBPerMonth.toLocaleString("en-US") + " GB, so this costs you nothing — not to Cloudflare, and not to Beebo." : "Nothing relayed, so no relay cost, and no Beebo Relay subscription either.");
     } else {
       rows += row("Covered free by your Cloudflare account", "Up to " + c.switchAtGB.toLocaleString("en-US") + " GB, then Beebo switches over", gb(r.cfFreeGB));
       if (r.cfPaidGB > 0) rows += row("Paid to Cloudflare", gb(r.cfPaidGB) + " × " + rate(c.pricePerGB) + " per GB, billed by Cloudflare in USD", money(r.cfCost));
@@ -862,9 +865,11 @@
             : (r.totalGB > 0 ? "All " + gb(r.totalGB) + " fit inside your free Cloudflare allowance, so relay costs you nothing." : "Nothing relayed, so no relay cost.") +
               " You’d pay just the " + sub + " Beebo subscription.");
     }
-    rows += row("Monthly relay cost", r.beeboGB > 0 ? (beeboIncluded ? "Beebo Relay portion included with your subscription; any Cloudflare portion above is billed separately" : (r.payMethod === "prepaid" ? "Taken from your prepaid balance" : "Added to your monthly Beebo bill")) : "", money(r.relayCost), "sum");
-    rows += row("Beebo household subscription", "Billed in Canadian dollars (CAD)", sub);
-    rows += row("Total per month", r.cfCost > 0 ? "Adds your CAD subscription and USD Cloudflare charge as face-value numbers, not a currency conversion" : "", money(r.total), "total");
+    rows += row("Monthly relay cost", r.beeboGB > 0 ? (beeboIncluded ? "Beebo Relay portion has no extra usage charge; any Cloudflare portion above is billed separately" : (r.payMethod === "prepaid" ? "Taken from your prepaid balance" : "Added to your monthly Beebo bill")) : "", money(r.relayCost), "sum");
+    if (r.subscription > 0){
+      rows += row("Beebo Relay subscription", "Billed in Canadian dollars (CAD)", sub);
+    }
+    rows += row("Total per month", r.subscription > 0 && r.cfCost > 0 ? "Adds your CAD subscription and USD Cloudflare charge as face-value numbers, not a currency conversion" : (r.subscription === 0 ? "No Beebo Relay subscription with this option" : ""), money(r.total), "total");
 
     $("rc-rows").innerHTML = rows;
     $("rc-plain").textContent = plain;
