@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Back up and restore your Beebo server | Beebo Docs</title>
+<meta name="description" content="Save your Beebo settings, users, history and poster choices to one file, restore them, and learn what a backup does and does not contain." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Back up and restore your Beebo server | Beebo Docs" />
+<meta property="og:description" content="Save your Beebo settings, users, history and poster choices to one file, restore them, and learn what a backup does and does not contain." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/backup-and-restore.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/setup-collection.webp" />
+<meta property="og:image:alt" content="Hands organising a personal video collection beside a portable drive" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/backup-and-restore.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/backup-and-restore.html#howto",
+  "name": "Back up and restore your Beebo server",
+  "description": "Save your Beebo settings, users, history and poster choices to one file, restore them, and learn what a backup does and does not contain.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Open Backup & Restore",
+      "text": "On the Beebo PC, open Settings and find Backup & Restore. The same thing is on the website’s Admin page, under Backup.",
+      "url": "https://beeboentertainment.com/docs/backup-and-restore.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Decide about passwords and keys",
+      "text": "Leave Include passwords and keys unticked for a smaller file with no secrets in it. Tick it if you want a full copy, then type a passphrase of at least 8 characters twice. Without the passphrase those secrets cannot be read back, so store it safely.",
+      "url": "https://beeboentertainment.com/docs/backup-and-restore.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Export the file",
+      "text": "Click Export backup to file and choose where to save it. A USB drive kept somewhere else is a good place. A confirmation message under the buttons.",
+      "url": "https://beeboentertainment.com/docs/backup-and-restore.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Restore from a backup file",
+      "text": "Click Restore from a backup file… and choose the file. If it holds secrets, type the passphrase and click Unlock, or choose Restore without passwords and keys. Beebo first shows This is what the restore would change: for each area, how many items would be replaced, added or are already the same, which users are new or updated, and how many history entries would replace the current ones. Nothing is written yet. A summary list and two buttons, Restore it now and Cancel.",
+      "url": "https://beeboentertainment.com/docs/backup-and-restore.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Confirm",
+      "text": "Click Restore it now. Before anything is written, Beebo saves a safety copy of the current settings next to the app’s settings file. If the backup included secrets, everyone may need to sign in again, and users listed under “Will need a new pass afterwards” need a new pass.",
+      "url": "https://beeboentertainment.com/docs/backup-and-restore.html#step-5"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">💾</div>
+    <h1>Back up and restore your Beebo server</h1>
+    <p class="lead">A Beebo backup is one file holding your server’s settings, users and history. It contains none of your movie or TV files, and restoring one never touches them.</p>
+  </div>
+
+  <div class="callout safe">
+    <p><span class="tag live">Available now</span> <strong>Status:</strong> Backup and restore work today, from Settings and from the website’s Admin page. Backups are made when you ask for one; Beebo does not make them on a schedule.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#contents">What is inside</a><a href="#steps">Steps</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+
+  <h2 id="contents">What is inside a backup</h2>
+  <ul class="plain">
+    <li><strong>Included:</strong> settings and folders, users and household passes, watched and progress history, favourites and watchlist, poster and title decisions, the quality cache and relay settings.</li>
+    <li><strong>Optional, encrypted:</strong> passwords and keys (sign-in passwords, household passes, the TMDB key, the email app password, the relay secret and signing keys), locked with a passphrase you choose.</li>
+    <li><strong>Not included:</strong> your movie and TV files, and private members’ viewing history, personal lists and sign-in credentials, which owner backups leave out. Restoring keeps existing private profiles protected.</li>
+  </ul>
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Open Backup &amp; Restore</h3>
+      <p>On the Beebo PC, open <strong>Settings</strong> and find <strong>Backup &amp; Restore</strong>. The same thing is on the website’s Admin page, under Backup.</p>
+      
+      <div class="callout"><p><strong>Screenshot coming.</strong> The Backup &amp; Restore box in Settings.</p></div>
+    </li>
+    <li id="step-2">
+      <h3>Decide about passwords and keys</h3>
+      <p>Leave <strong>Include passwords and keys</strong> unticked for a smaller file with no secrets in it. Tick it if you want a full copy, then type a passphrase of at least 8 characters twice. Without the passphrase those secrets cannot be read back, so store it safely.</p>
+      
+      
+    </li>
+    <li id="step-3">
+      <h3>Export the file</h3>
+      <p>Click <strong>Export backup to file</strong> and choose where to save it. A USB drive kept somewhere else is a good place.</p>
+      <p><strong>What you’ll see:</strong> A confirmation message under the buttons.</p>
+      
+    </li>
+    <li id="step-4">
+      <h3>Restore from a backup file</h3>
+      <p>Click <strong>Restore from a backup file…</strong> and choose the file. If it holds secrets, type the passphrase and click <strong>Unlock</strong>, or choose <strong>Restore without passwords and keys</strong>.</p>
+      <p>Beebo first shows <strong>This is what the restore would change</strong>: for each area, how many items would be replaced, added or are already the same, which users are new or updated, and how many history entries would replace the current ones. Nothing is written yet.</p>
+      <p><strong>What you’ll see:</strong> A summary list and two buttons, <strong>Restore it now</strong> and <strong>Cancel</strong>.</p>
+      
+    </li>
+    <li id="step-5">
+      <h3>Confirm</h3>
+      <p>Click <strong>Restore it now</strong>. Before anything is written, Beebo saves a safety copy of the current settings next to the app’s settings file. If the backup included secrets, everyone may need to sign in again, and users listed under “Will need a new pass afterwards” need a new pass.</p>
+      
+      
+    </li>
+  </ol>
+
+  <h2 id="moving">Moving to a new PC</h2>
+  <p>A backup holds folder settings, not files. On a new PC: copy your media over, install Beebo, restore the backup, then check the folder locations in Settings, because a restore does not move media. We have not tested every migration path, so keep the old PC until you have played something on the new one.</p>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>A restore asks for a passphrase I do not have</summary><p>You can still choose <strong>Restore without passwords and keys</strong> if the file allows it. Passwords and keys inside the file stay locked without the passphrase.</p></details>
+    <details><summary>I restored and my phone signed out</summary><p>That is expected when passwords and keys are restored: everyone may need to sign in again.</p></details>
+    <details><summary>How do I undo a restore?</summary><p>Before a restore, Beebo saves a safety copy of the current settings next to the app’s settings file. Choosing that copy with <strong>Restore from a backup file…</strong> is described as “a safety copy from this PC”, and everything goes back as it was. If you are unsure, export a fresh backup first, and tell us if you need help finding the safety copy.</p></details>
+    <details><summary>Do backups include my Android downloads?</summary><p>No. Downloads live on each phone, and the backup only covers the server.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="getting-started-windows.html">🖥️ Get started on Windows</a>
+    <a href="family-and-profiles.html">👪 Family and profiles</a>
+    <a href="run-beebo-on-a-nas-or-linux-server.html">🗄️ NAS and Docker</a>
+    <a href="privacy-in-plain-words.html">🔐 Privacy in plain words</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>

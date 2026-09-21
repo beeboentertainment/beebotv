@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get started with Beebo on Windows | Beebo Docs</title>
+<meta name="description" content="Install Beebo on Windows 10 or 11, add your movie and TV folders, get posters with a free TMDB key, and play your first movie. About 15 minutes." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Get started with Beebo on Windows | Beebo Docs" />
+<meta property="og:description" content="Install Beebo on Windows 10 or 11, add your movie and TV folders, get posters with a free TMDB key, and play your first movie. About 15 minutes." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/getting-started-windows.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/setup-pc.webp" />
+<meta property="og:image:alt" content="A compact home computer on an oak desk" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/getting-started-windows.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/getting-started-windows.html#howto",
+  "name": "Get started with Beebo on Windows",
+  "description": "Install Beebo on Windows 10 or 11, add your movie and TV folders, get posters with a free TMDB key, and play your first movie. About 15 minutes.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Download and install Beebo",
+      "text": "On the PC that will hold your movies, open the Get Beebo section of the home page, choose Download for Windows and run the file. It installs in one go and asks Windows for permission to make changes (an administrator prompt). Choose Yes. The installer also adds a Windows Firewall rule named “Beebo Entertainment” for port 47811, so phones and browsers on your own network can reach the PC. Beebo opens by itself when it finishes. A progress bar while it installs, then the Beebo window opens on a Welcome to Beebo screen. If Windows shows a blue “Windows protected your PC” box, that is because the installer is not signed yet. Click More info, then Run anyway.",
+      "url": "https://beeboentertainment.com/docs/getting-started-windows.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Create your owner account",
+      "text": "On the Get Started screen, find step 1, Create your owner account. Type a username (at least 3 letters or numbers), a password (at least 6 characters) and the same password again. Then click Create account. This is the username and password you will use to sign in from the Beebo app on your phone. Beebo may also show a screen called Try Beebo away from home or Sign in for away access. That screen is only for the optional away-from-home features, and it says that home viewing stays free. Step 1 gets a green tick and the message “Account created — this is what you’ll sign in with on your phone.”",
+      "url": "https://beeboentertainment.com/docs/getting-started-windows.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Choose your movie and TV folders",
+      "text": "Step 2 is called Choose your library & backup folders. It lists eight folders, but only two matter today: Movies and TV Shows. Click Choose folder… under each one and pick the folder where those files already are. The other six (Music, Photos & camera backups, Phone folder backups, Encrypted private folders, Video inbox and Library artwork) are optional. New installations keep all of them under C:\\Beebo. Changing a location does not move files that are already there. The chosen path appears under each title, and the progress line at the top of the screen shows a tick beside Video folders.",
+      "url": "https://beeboentertainment.com/docs/getting-started-windows.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Let Beebo find your files",
+      "text": "Open the Movies tab. Beebo lists what is in your Movies folder. If you add files later, open the tab and click Rescan. Extra drives work too: in Settings, click + Add another Movies folder (and the same for TV Shows). A poster grid, or a plain list of file names if you have not added a TMDB key yet. An empty library says “No movies found yet. Drop video files into your Movies folder (set in Settings) and hit Rescan.”",
+      "url": "https://beeboentertainment.com/docs/getting-started-windows.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Play your first movie",
+      "text": "On the PC, click a movie’s poster in the Movies tab. Windows opens the file in your default video player. To watch on your phone, a browser or a TV, keep Beebo running and follow Connect your phone. Your library is served from this PC, so it needs to be on and awake while people watch. Your video player opens and the movie starts. Nothing is copied or converted on the way.",
+      "url": "https://beeboentertainment.com/docs/getting-started-windows.html#step-5"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🖥️</div>
+    <h1>Get started with Beebo on Windows</h1>
+    <p class="lead">This guide takes you from a fresh download to your first movie, in about fifteen minutes. You need a Windows 10 or 11 PC and some movie or TV files you already own, because Beebo does not include any.</p>
+  </div>
+
+  <div class="callout safe">
+    <p><span class="tag live">Available now</span> <strong>Status:</strong> This guide is for Beebo for Windows 0.1.57, which is the current download. Beebo is free to use at home.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#before">Before you start</a><a href="#steps">Steps</a><a href="#posters">Posters in 3 steps</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+
+  <h2 id="before">Before you start</h2>
+  <ul class="plain">
+    <li>A <strong>Windows 10 or Windows 11</strong> computer that stays on when you want to watch. It becomes your server.</li>
+    <li>The folders where your movies and shows already live. Beebo reads them; it never moves or changes your files.</li>
+    <li>About ten minutes for the setup itself, plus a few more if you add posters. The installer is about 160 MB.</li>
+    <li>Optional: a free account at TMDB, the movie database that supplies posters, cast photos and descriptions. Steps are below.</li>
+  </ul>
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Download and install Beebo</h3>
+      <p>On the PC that will hold your movies, open the <a href="../index.html#get-app">Get Beebo section</a> of the home page, choose <strong>Download for Windows</strong> and run the file. It installs in one go and asks Windows for permission to make changes (an administrator prompt). Choose <strong>Yes</strong>.</p>
+      <p>The installer also adds a Windows Firewall rule named “Beebo Entertainment” for port 47811, so phones and browsers on your own network can reach the PC. Beebo opens by itself when it finishes.</p>
+      <p><strong>What you’ll see:</strong> A progress bar while it installs, then the Beebo window opens on a <strong>Welcome to Beebo</strong> screen. If Windows shows a blue “Windows protected your PC” box, that is because the installer is not signed yet. Click <strong>More info</strong>, then <strong>Run anyway</strong>.</p>
+      <div class="callout"><p><strong>Screenshot coming.</strong> The Windows installer, then the Welcome to Beebo screen.</p></div>
+    </li>
+    <li id="step-2">
+      <h3>Create your owner account</h3>
+      <p>On the Get Started screen, find step 1, <strong>Create your owner account</strong>. Type a username (at least 3 letters or numbers), a password (at least 6 characters) and the same password again. Then click <strong>Create account</strong>.</p>
+      <p>This is the username and password you will use to sign in from the Beebo app on your phone. Beebo may also show a screen called <strong>Try Beebo away from home</strong> or <strong>Sign in for away access</strong>. That screen is only for the optional away-from-home features, and it says that home viewing stays free.</p>
+      <p><strong>What you’ll see:</strong> Step 1 gets a green tick and the message “Account created — this is what you’ll sign in with on your phone.”</p>
+      
+    </li>
+    <li id="step-3">
+      <h3>Choose your movie and TV folders</h3>
+      <p>Step 2 is called <strong>Choose your library &amp; backup folders</strong>. It lists eight folders, but only two matter today: <strong>Movies</strong> and <strong>TV Shows</strong>. Click <strong>Choose folder…</strong> under each one and pick the folder where those files already are.</p>
+      <p>The other six (Music, Photos &amp; camera backups, Phone folder backups, Encrypted private folders, Video inbox and Library artwork) are optional. New installations keep all of them under <code>C:\Beebo</code>. Changing a location does not move files that are already there.</p>
+      <p><strong>What you’ll see:</strong> The chosen path appears under each title, and the progress line at the top of the screen shows a tick beside <strong>Video folders</strong>.</p>
+      <div class="callout"><p><strong>Screenshot coming.</strong> Step 2 of Get Started with the Movies and TV Shows folders chosen.</p></div>
+    </li>
+    <li id="step-4">
+      <h3>Let Beebo find your files</h3>
+      <p>Open the <strong>Movies</strong> tab. Beebo lists what is in your Movies folder. If you add files later, open the tab and click <strong>Rescan</strong>. Extra drives work too: in <strong>Settings</strong>, click <strong>+ Add another Movies folder</strong> (and the same for TV Shows).</p>
+      <p><strong>What you’ll see:</strong> A poster grid, or a plain list of file names if you have not added a TMDB key yet. An empty library says “No movies found yet. Drop video files into your Movies folder (set in Settings) and hit Rescan.”</p>
+      
+    </li>
+    <li id="step-5">
+      <h3>Play your first movie</h3>
+      <p>On the PC, click a movie’s poster in the <strong>Movies</strong> tab. Windows opens the file in your default video player.</p>
+      <p>To watch on your phone, a browser or a TV, keep Beebo running and follow <a href="connect-your-phone.html">Connect your phone</a>. Your library is served from this PC, so it needs to be on and awake while people watch.</p>
+      <p><strong>What you’ll see:</strong> Your video player opens and the movie starts. Nothing is copied or converted on the way.</p>
+      
+    </li>
+  </ol>
+
+  <h2 id="posters">Get posters and descriptions: a free TMDB key in 3 steps</h2>
+  <p>Beebo uses your own free TMDB key to fetch posters, cast photos and descriptions. Beebo does not ship with a key, so you make one. It takes about three minutes and you only do it once. There is an <a href="../tmdb-key-guide.html">illustrated version</a> if you prefer pictures.</p>
+  <ol class="steps">
+    <li>
+      <h3>Make a free TMDB account</h3>
+      <p>Go to <a href="https://www.themoviedb.org/signup" rel="noopener">themoviedb.org/signup</a>, fill in a username, your email and a password, then open the verification email TMDB sends you and click its link.</p>
+    </li>
+    <li>
+      <h3>Ask for a Developer key</h3>
+      <p>Open <a href="https://www.themoviedb.org/settings/api" rel="noopener">your TMDB API page</a>, click <strong>Create</strong> (it may say “Request an API Key”) and choose <strong>Developer</strong>, which is free. Accept the terms and fill the short form. Anything sensible works, for example the name <em>Beebo</em>, the website <code>http://localhost</code> and the description <em>Personal home media server</em>. Your key appears straight away as <strong>API Key (v3 auth)</strong>. Copy the whole string.</p>
+    </li>
+    <li>
+      <h3>Paste it into Beebo</h3>
+      <p>In Beebo, open <strong>Settings</strong>, paste the key into <strong>TMDB API key / token</strong> and click <strong>Save</strong>. Either the short v3 key or the long v4 Read Access Token works. Then go to <strong>Movies</strong> and click <strong>Rescan</strong>.</p>
+      <p><strong>What you’ll see:</strong> posters, cast photos and descriptions start filling in.</p>
+    </li>
+  </ol>
+  <div class="callout"><p><strong>Screenshot coming.</strong> The TMDB API page and the TMDB API key box in Beebo’s Settings.</p></div>
+  <p class="fineprint">Getting a key for your own home server is free. If you ever run Beebo commercially, TMDB may require a separate licence; see TMDB’s API terms. Beebo uses the TMDB API but is not endorsed or certified by TMDB.</p>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>Windows says it “protected my PC” and will not run the installer</summary><p>The installer is not code-signed yet, so Windows is cautious about a newly downloaded program. Click <strong>More info</strong>, then <strong>Run anyway</strong>. Only do this for the installer you downloaded from this site.</p></details>
+    <details><summary>The account form says my username or password is not accepted</summary><p>The messages are literal: “Pick a username of at least 3 letters/numbers”, “Use a password of at least 6 characters” or “The two passwords don’t match.” Fix the field it names and click <strong>Create account</strong> again.</p></details>
+    <details><summary>My Movies tab is empty</summary><p>Check that the Movies folder in <strong>Settings</strong> is the folder your files are in, put video files there and click <strong>Rescan</strong>. Beebo only looks in the folders you chose. If your files are on another drive, add it with <strong>+ Add another Movies folder</strong>.</p></details>
+    <details><summary>I see file names but no posters</summary><p>Posters, cast and descriptions need your TMDB key (see the three steps above). After you save the key, click <strong>Rescan</strong> on the Movies tab. Without a key the cast area says “No cast info found yet — make sure a TMDB key is set in Settings.”</p></details>
+    <details><summary>A movie has the wrong poster</summary><p><strong>Rescan</strong> re-checks every match from scratch, which fixes most mix-ups. For a single title, open its details and use the “Which movie did you mean?” picker to choose the right one.</p></details>
+    <details><summary>My phone cannot connect</summary><p>Work through <a href="fix-connection-problems.html">Fix connection problems</a>. The most common causes are a sleeping PC, a phone on a different Wi-Fi, or a security program blocking port 47811.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="connect-your-phone.html">📱 Connect your phone</a>
+    <a href="../tmdb-key-guide.html">🔑 TMDB key, with pictures</a>
+    <a href="../posters-and-info.html">Posters and info</a>
+    <a href="backup-and-restore.html">💾 Back up your server</a>
+    <a href="../windows.html">Beebo for Windows</a>
+    <a href="../server-setup.html">Short setup guide</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>

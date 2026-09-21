@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Family profiles, parental controls and bedtime | Beebo Docs</title>
+<meta name="description" content="Give each person their own login, set age ratings, a daily limit and bedtime, add an owner PIN, and let adults keep their viewing history private." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Family profiles, parental controls and bedtime | Beebo Docs" />
+<meta property="og:description" content="Give each person their own login, set age ratings, a daily limit and bedtime, add an owner PIN, and let adults keep their viewing history private." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/family-and-profiles.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/family-home.webp" />
+<meta property="og:image:alt" content="A family enjoying movie night at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/family-and-profiles.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/family-and-profiles.html#howto",
+  "name": "Family and profiles: logins, limits and private history",
+  "description": "Give each person their own login, set age ratings, a daily limit and bedtime, add an owner PIN, and let adults keep their viewing history private.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Add a person",
+      "text": "On the Beebo PC, click Users. Under Add a user directly, type the person’s name (an email is optional) and click Generate code. If someone asked for access, their request is under Pending requests: choose Approve or Deny. Send them their username and login code. They sign in with these on their phone, in a browser, or on a TV. A green box with the person’s username and login code, and a new row for them in the All users list.",
+      "url": "https://beeboentertainment.com/docs/family-and-profiles.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Set what they may watch",
+      "text": "In that person’s row, open Parental controls. Pick a starting point: Young children (under 7), Ages 7 to 12, Teens (13 to 17) or Off. Then open Fine-tune to change the rating scale (United States: G, PG, PG-13, R, NC-17, or Canada: G, PG, 14A, 18A, R), the highest film and TV rating, whether to hide titles with no rating, and which genres to hide. You can also block single titles or collections, or switch to Only show titles I allow. A summary line such as the rating limits, minutes a day and bedtime, under “Parental controls for” that person’s name.",
+      "url": "https://beeboentertainment.com/docs/family-and-profiles.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Add a daily limit and a bedtime",
+      "text": "In Fine-tune, type minutes into Daily watching limit, and set No watching from and until times, for example 21:00 until 07:00. Minutes only count while the person is actually watching, and the count starts again at midnight. When time is up, the person sees a friendly line such as “It’s past bedtime on this profile. Watching opens again at 07:00.” instead of an error.",
+      "url": "https://beeboentertainment.com/docs/family-and-profiles.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Set the owner PIN",
+      "text": "On the Users page, find Owner PIN, type four to eight digits and click Set PIN. On a shared phone or TV, Beebo asks for it before anyone leaves a profile with limits, moves to a profile with more access, or changes a restricted profile’s limits. Five wrong tries lock it for 15 minutes on that device. The label changes from “Owner PIN (not set)” to “Owner PIN (set)”.",
+      "url": "https://beeboentertainment.com/docs/family-and-profiles.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Optional: let an adult keep their viewing history private",
+      "text": "Private viewing history is for adults who share a server. First the owner marks the person as an adult in the Users row. The person then signs in with their own login in a browser, opens Viewing privacy, ticks Keep my viewing history private and confirms with their own password. It is only available to approved adults with no parental restrictions. With it on, the owner no longer sees that person’s titles, file names or playback progress. The owner can still see bandwidth, devices, connection status and total watch time, and cannot replace the person’s password; they recover it through their own email. In the owner’s Users view: “Viewing history is private. Titles, filenames and playback progress are hidden. Usage monitoring remains available.”",
+      "url": "https://beeboentertainment.com/docs/family-and-profiles.html#step-5"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">👪</div>
+    <h1>Family and profiles: logins, limits and private history</h1>
+    <p class="lead">Everyone in your household gets their own Beebo login, their own Continue Watching, and, if you choose, their own limits. You set it all up in the Users tab on the PC that runs Beebo, and the limits follow each person to every screen.</p>
+  </div>
+
+  <div class="callout safe">
+    <p><span class="tag live">Available now</span> <strong>Status:</strong> Users, parental controls, bedtime and the owner PIN work today. Beebo is not a children’s app and has no child-themed screens. Parental controls are a tool for the adult who runs the Beebo PC.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#steps">Steps</a><a href="#where">Where limits apply</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+
+  <img class="page-campaign-art" src="../assets/illustrations/parental-controls.svg" alt="Diagram: each person in the household has their own limits, and Beebo checks them before anything plays." width="640" height="360" loading="lazy">
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Add a person</h3>
+      <p>On the Beebo PC, click <strong>Users</strong>. Under <strong>Add a user directly</strong>, type the person’s name (an email is optional) and click <strong>Generate code</strong>. If someone asked for access, their request is under <strong>Pending requests</strong>: choose Approve or Deny.</p>
+      <p>Send them their username and login code. They sign in with these on their phone, in a browser, or on a TV.</p>
+      <p><strong>What you’ll see:</strong> A green box with the person’s username and login code, and a new row for them in the All users list.</p>
+      
+    </li>
+    <li id="step-2">
+      <h3>Set what they may watch</h3>
+      <p>In that person’s row, open <strong>Parental controls</strong>. Pick a starting point: <strong>Young children (under 7)</strong>, <strong>Ages 7 to 12</strong>, <strong>Teens (13 to 17)</strong> or <strong>Off</strong>. Then open <strong>Fine-tune</strong> to change the rating scale (United States: G, PG, PG-13, R, NC-17, or Canada: G, PG, 14A, 18A, R), the highest film and TV rating, whether to hide titles with no rating, and which genres to hide. You can also block single titles or collections, or switch to <strong>Only show titles I allow</strong>.</p>
+      <p><strong>What you’ll see:</strong> A summary line such as the rating limits, minutes a day and bedtime, under “Parental controls for” that person’s name.</p>
+      <div class="callout"><p><strong>Screenshot coming.</strong> The Parental controls panel for one person, with the presets and Fine-tune open.</p></div>
+    </li>
+    <li id="step-3">
+      <h3>Add a daily limit and a bedtime</h3>
+      <p>In <strong>Fine-tune</strong>, type minutes into <strong>Daily watching limit</strong>, and set <strong>No watching from</strong> and <strong>until</strong> times, for example 21:00 until 07:00. Minutes only count while the person is actually watching, and the count starts again at midnight.</p>
+      <p><strong>What you’ll see:</strong> When time is up, the person sees a friendly line such as “It’s past bedtime on this profile. Watching opens again at 07:00.” instead of an error.</p>
+      
+    </li>
+    <li id="step-4">
+      <h3>Set the owner PIN</h3>
+      <p>On the Users page, find <strong>Owner PIN</strong>, type four to eight digits and click <strong>Set PIN</strong>. On a shared phone or TV, Beebo asks for it before anyone leaves a profile with limits, moves to a profile with more access, or changes a restricted profile’s limits. Five wrong tries lock it for 15 minutes on that device.</p>
+      <p><strong>What you’ll see:</strong> The label changes from “Owner PIN (not set)” to “Owner PIN (set)”.</p>
+      
+    </li>
+    <li id="step-5">
+      <h3>Optional: let an adult keep their viewing history private</h3>
+      <p>Private viewing history is for adults who share a server. First the owner marks the person as an adult in the Users row. The person then signs in with their own login in a browser, opens <strong>Viewing privacy</strong>, ticks <strong>Keep my viewing history private</strong> and confirms with their own password. It is only available to approved adults with no parental restrictions.</p>
+      <p>With it on, the owner no longer sees that person’s titles, file names or playback progress. The owner can still see bandwidth, devices, connection status and total watch time, and cannot replace the person’s password; they recover it through their own email.</p>
+      <p><strong>What you’ll see:</strong> In the owner’s Users view: “Viewing history is private. Titles, filenames and playback progress are hidden. Usage monitoring remains available.”</p>
+      
+    </li>
+  </ol>
+
+  <h2 id="where">Where the limits apply</h2>
+  <p>The limits are kept by the PC at home, not by the phone. Titles over a person’s limit disappear from lists, search, details pages, playlists, casting, downloads and the website, and they refuse to play even if someone knows exactly where to look. If you change a limit while someone is watching something they should no longer see, the stream stops within about a minute. A restricted profile also cannot open the owner tools, Settings, trailers, title requests or Space Saver.</p>
+  <p>On the phone, the same controls are under <strong>Owner tools › Family &amp; sharing</strong>.</p>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>I forgot the owner PIN</summary><p>Set a new one from the Beebo app on your own PC, under Users.</p></details>
+    <details><summary>A person cannot turn on viewing privacy</summary><p>The owner must first mark the profile as an adult and remove parental restrictions, and the person must have set their own sign-in password. The page tells them which of these is missing.</p></details>
+    <details><summary>The login code was not emailed</summary><p>Beebo only emails logins if you have set up a sender email in Settings and added an email to the person’s account. Otherwise the code is shown next to their name, so you can send it yourself.</p></details>
+    <details><summary>I want to pause someone without deleting them</summary><p>Use <strong>Revoke</strong> on their row. It blocks their access but keeps the account and history. <strong>Reactivate</strong> brings it back.</p></details>
+    <details><summary>Can someone get around the limits with the website or casting?</summary><p>No. The same check runs on the PC for the website, the browser player, casting and downloads. Limits also apply away from home, because they travel with the person’s login.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="../manage-users.html">Add &amp; manage people</a>
+    <a href="../parental-controls.html">Parental controls (short guide)</a>
+    <a href="privacy-in-plain-words.html">🔐 Privacy in plain words</a>
+    <a href="../local-first.html">Local-first &amp; private</a>
+    <a href="away-from-home-options.html">🌍 Away from home</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>

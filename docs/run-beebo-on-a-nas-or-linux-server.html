@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Run Beebo on a NAS or Linux server with Docker | Beebo Docs</title>
+<meta name="description" content="The new headless Beebo server for Docker, Synology, QNAP, Unraid, TrueNAS and Raspberry Pi: folders, secret key, setup code and what v1 lacks." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Run Beebo on a NAS or Linux server with Docker | Beebo Docs" />
+<meta property="og:description" content="The new headless Beebo server for Docker, Synology, QNAP, Unraid, TrueNAS and Raspberry Pi: folders, secret key, setup code and what v1 lacks." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/quiet-server.webp" />
+<meta property="og:image:alt" content="A quiet home computer on a shelf" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+
+  .wrap pre{background:var(--bg-2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:10px 0 14px}
+  .wrap pre code{background:none;border:0;padding:0;word-break:normal;white-space:pre}</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#howto",
+  "name": "Run Beebo on a NAS or Linux server with Docker",
+  "description": "The new headless Beebo server for Docker, Synology, QNAP, Unraid, TrueNAS and Raspberry Pi: folders, secret key, setup code and what v1 lacks.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Make folders for settings and media",
+      "text": "Create a folder for Beebo’s own data (settings, accounts, watch history, artwork cache and certificates), for example /srv/beebo/config, and know where your media folders are. Read-only media is fine for watching. Uploads from the phone app, the Inbox and file clean-up write to the media folders, so give it write access if you want those.",
+      "url": "https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Make a secret key and keep it",
+      "text": "Beebo encrypts saved secrets (password hashes, sign-in signing keys, your TMDB key, webhook secrets) in its settings file. The key comes from an environment variable. Make one, for example with openssl rand -hex 32, and save it somewhere safe. If you change or lose it, the saved secrets become unreadable, and Beebo stops at start-up with a message instead of quietly signing everyone out. A 64-character string. Keep it outside the config folder if you want real separation: anyone who has the whole config folder and the key file has both.",
+      "url": "https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Start the container",
+      "text": "Run the container with your folders and key. This is the quick start from the server’s README: docker run -d --name beebo --restart unless-stopped \\ -p 47811:47811 \\ -e BEEBO_UPNP=0 \\ -e BEEBO_SECRET_KEY=\"\u003cyour key>\" \\ -v /srv/beebo/config:/config \\ -v /srv/media/movies:/media/movies \\ -v /srv/media/tv:/media/tv \\ -v /srv/media/music:/media/music \\ -v /srv/media/photos:/media/photos \\ beebo-server A compose file that keeps the key in a Docker secret comes with the image. A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.",
+      "url": "https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Read the first-run message",
+      "text": "A new server has no accounts. It prints a one-time message to its log. Run docker logs beebo. Lines like “First-run setup: this server has no owner account yet.”, an address such as https://192.168.1.20:47811/setup and a setup code shaped like 7KQ2-M9XD-4TNB.",
+      "url": "https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Create the owner account",
+      "text": "Open that address. Your browser will warn about the certificate, because Beebo made it itself; accept the warning. Enter the setup code, then choose the owner username and a password of 8 or more characters. Setup closes for good once the account exists. If you miss the message, restart the container for a new code. The code lives only in the log and in memory. A sign-in page. Sign in at https://\u003cserver-ip>:47811/. The admin pages only open over HTTPS. Phones and TVs on your network can keep using http://\u003cserver-ip>:47811.",
+      "url": "https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-5"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Add posters and connect your devices",
+      "text": "Give it a TMDB key with the BEEBO_TMDB_API_KEY environment variable (see the free key steps in Get started on Windows). Then connect phones and TVs to http://\u003cserver-ip>:47811 as in Connect your phone.",
+      "url": "https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-6"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🗄️</div>
+    <h1>Run Beebo on a NAS or Linux server with Docker</h1>
+    <p class="lead">Beebo has a headless server that runs without a window, in Docker on a Linux server, a NAS or a Raspberry Pi. It is the same server code as the Windows app, and it is new: a beta that is not yet available as a public download.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="tag beta">New · beta</span> <strong>Status:</strong> The Docker image is built from Beebo’s source and is <strong>not published to a public registry yet</strong>, so today it is available to testers on request at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20Docker%20server">testers@beeboentertainment.com</a>. Hardware video conversion is untested on real graphics cards. This is separate from the <a href="../linux.html">Linux desktop beta</a>, which needs a graphical session.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#before">Before you start</a><a href="#steps">Steps</a><a href="#folders">Folders and users</a><a href="#network">Networking</a><a href="#v1">What is in v1</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+
+  <h2 id="before">Before you start</h2>
+  <ul class="plain">
+    <li>A machine that runs Docker: a Linux server, a NAS (Synology, QNAP, Unraid, TrueNAS) or a Raspberry Pi 4 or 5 (64-bit).</li>
+    <li>The Beebo server image. It is called <code>beebo-server</code> below; testers receive it or its build instructions.</li>
+    <li>Your movies, TV, music and photos in folders the container can read.</li>
+    <li>A safe place to keep one secret key (step 2).</li>
+  </ul>
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Make folders for settings and media</h3>
+      <p>Create a folder for Beebo’s own data (settings, accounts, watch history, artwork cache and certificates), for example <code>/srv/beebo/config</code>, and know where your media folders are. Read-only media is fine for watching. Uploads from the phone app, the Inbox and file clean-up write to the media folders, so give it write access if you want those.</p>
+      
+      
+    </li>
+    <li id="step-2">
+      <h3>Make a secret key and keep it</h3>
+      <p>Beebo encrypts saved secrets (password hashes, sign-in signing keys, your TMDB key, webhook secrets) in its settings file. The key comes from an environment variable. Make one, for example with <code>openssl rand -hex 32</code>, and <strong>save it somewhere safe</strong>. If you change or lose it, the saved secrets become unreadable, and Beebo stops at start-up with a message instead of quietly signing everyone out.</p>
+      <p><strong>What you’ll see:</strong> A 64-character string. Keep it outside the config folder if you want real separation: anyone who has the whole config folder and the key file has both.</p>
+      
+    </li>
+    <li id="step-3">
+      <h3>Start the container</h3>
+      <p>Run the container with your folders and key. This is the quick start from the server’s README:</p>
+      <p><pre><code>docker run -d --name beebo --restart unless-stopped \
+  -p 47811:47811 \
+  -e BEEBO_UPNP=0 \
+  -e BEEBO_SECRET_KEY="&lt;your key&gt;" \
+  -v /srv/beebo/config:/config \
+  -v /srv/media/movies:/media/movies \
+  -v /srv/media/tv:/media/tv \
+  -v /srv/media/music:/media/music \
+  -v /srv/media/photos:/media/photos \
+  beebo-server</code></pre></p>
+      <p>A compose file that keeps the key in a Docker secret comes with the image. A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.</p>
+      
+      <div class="callout"><p><strong>Screenshot coming.</strong> A NAS container manager with the Beebo container running.</p></div>
+    </li>
+    <li id="step-4">
+      <h3>Read the first-run message</h3>
+      <p>A new server has no accounts. It prints a one-time message to its log. Run <code>docker logs beebo</code>.</p>
+      <p><strong>What you’ll see:</strong> Lines like “First-run setup: this server has no owner account yet.”, an address such as <code>https://192.168.1.20:47811/setup</code> and a setup code shaped like <code>7KQ2-M9XD-4TNB</code>.</p>
+      
+    </li>
+    <li id="step-5">
+      <h3>Create the owner account</h3>
+      <p>Open that address. Your browser will warn about the certificate, because Beebo made it itself; accept the warning. Enter the setup code, then choose the owner username and a password of 8 or more characters. Setup closes for good once the account exists. If you miss the message, restart the container for a new code. The code lives only in the log and in memory.</p>
+      <p><strong>What you’ll see:</strong> A sign-in page. Sign in at <code>https://&lt;server-ip&gt;:47811/</code>. The admin pages only open over HTTPS. Phones and TVs on your network can keep using <code>http://&lt;server-ip&gt;:47811</code>.</p>
+      
+    </li>
+    <li id="step-6">
+      <h3>Add posters and connect your devices</h3>
+      <p>Give it a TMDB key with the <code>BEEBO_TMDB_API_KEY</code> environment variable (see the free key steps in <a href="getting-started-windows.html#posters">Get started on Windows</a>). Then connect phones and TVs to <code>http://&lt;server-ip&gt;:47811</code> as in <a href="connect-your-phone.html">Connect your phone</a>.</p>
+      
+      
+    </li>
+  </ol>
+
+  <h2 id="folders">Folders and users</h2>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">Container path</th><th scope="col">What</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><code>/config</code></th><td>Settings, accounts, watch history, artwork cache, certificates</td><td>Back this up. It must be writable.</td></tr>
+        <tr><th scope="row"><code>/media/movies</code>, <code>/media/tv</code></th><td>Movies and TV</td><td>Read-only is fine for watching.</td></tr>
+        <tr><th scope="row"><code>/media/music</code>, <code>/media/photos</code></th><td>Music and photos</td><td>More folders: <code>BEEBO_MOVIES_DIRS=/media/movies,/media/movies-2</code>. The first in a list is where uploads go.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The server never runs as root. Media and <code>/config</code> must be readable, and <code>/config</code> writable, by whoever runs it. Either run the container as the owner of your files (<code>user:</code> in compose, or <code>--user</code> with <code>docker run</code>), or start as root and set <code>PUID</code> and <code>PGID</code> so Beebo takes ownership of <code>/config</code> and then drops to that user. Typical values: Synology <code>1026:100</code>, Unraid <code>99:100</code>, TrueNAS SCALE <code>568:568</code>. On QNAP use your user’s id (<code>id &lt;user&gt;</code> over SSH). Beebo’s port can be changed with <code>BEEBO_PORT</code>, but that changes the address phones use.</p>
+
+  <h2 id="network">Networking and video conversion</h2>
+  <ul class="plain">
+    <li><strong>Bridge (default):</strong> publish port 47811. Phones on your network use <code>http://&lt;nas-ip&gt;:47811</code>. The router cannot be reached from a bridged container, so automatic port mapping (UPnP) does not work: keep <code>BEEBO_UPNP=0</code>.</li>
+    <li><strong>Host network (Linux):</strong> the container uses the machine’s network, so router port mapping works as on the desktop. TCP 47811 and UDP 47820–47829 then belong to this container.</li>
+    <li><strong>Reverse proxy:</strong> Beebo’s admin pages need HTTPS to Beebo itself, so proxy to <code>https://&lt;nas&gt;:47811</code> and accept its certificate, or place your own <code>cert.pem</code> and <code>key.pem</code> in <code>/config/certs</code>.</li>
+    <li><strong>Hardware conversion:</strong> video that a device cannot play as it is gets converted while it plays. It works on the processor by default. Pass in an Intel or AMD device (<code>/dev/dri</code>) or use the NVIDIA container toolkit for hardware help. Raspberry Pi uses the processor only. This has not been tested on real graphics hardware; tell us what works for you.</li>
+  </ul>
+
+  <h2 id="v1">What is in v1, and what is not</h2>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">Feature</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Web viewer and phone or TV apps on your network</th><td><span class="tag beta">Works</span> Checked by an automated test that signs in and streams.</td></tr>
+        <tr><th scope="row">Library scan, video conversion on the processor, admin pages over HTTPS, first-run owner setup</th><td><span class="tag beta">Works</span> Automated test.</td></tr>
+        <tr><th scope="row">Users, parental controls, history, playlists, requests</th><td>Same code as the desktop. Sign-in and admin checked.</td></tr>
+        <tr><th scope="row">Music, photos, uploads, Inbox, conversion queue</th><td>Start at boot. Not exercised by the automated test.</td></tr>
+        <tr><th scope="row">Your <code>yourname.beebo.tv</code> address, Beebo sign-in, away-from-home peer connection, Beebo Relay</th><td><span class="tag plan">Not in v1</span> Home network and your own address only.</td></tr>
+        <tr><th scope="row">Automatic HTTPS certificates, email and OpenSubtitles settings screens</th><td><span class="tag plan">Not in v1</span> Bring your own certificate. Set the rest from the desktop app.</td></tr>
+        <tr><th scope="row">Tray icon, windows, folder pickers, story writer, BeeboSchool, home game server, desktop updater</th><td><span class="tag plan">Not included</span> Update by pulling a newer image.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fineprint">Beebo itself is proprietary software. The image includes FFmpeg under the LGPL; you may swap in your own build with <code>BEEBO_FFMPEG</code>. You can also run the same server directly with Node 22 or newer, without Docker.</p>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>The container stops straight away with exit code 78</summary><p>A setting has a wrong value. The message in <code>docker logs beebo</code> lists every problem it found. Fix them and start again.</p></details>
+    <details><summary>I missed the setup code</summary><p>Restart the container: <code>docker restart beebo</code> gives a new code. The code exists only in the log and in memory.</p></details>
+    <details><summary>It refuses to start and mentions the secret key</summary><p>The key was changed or lost, or the settings file was written with a different one. Put the original key back. Beebo stops instead of silently signing everyone out. Setting <code>BEEBO_ALLOW_PLAINTEXT_SECRETS=1</code> stores secrets unencrypted, is logged as a warning on every start, and we do not recommend it.</p></details>
+    <details><summary>It cannot read or write my folders</summary><p>Check the user the container runs as (PUID and PGID, or <code>user:</code>) against the folder permissions. On a Synology, also give that user read access to the shared folder.</p></details>
+    <details><summary>Away from home does not work</summary><p>In v1 it is not included: there is no beebo.tv address or away-from-home connection for the headless server. Use your home network, a VPN such as Tailscale or WireGuard, or forward the port yourself.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="getting-started-windows.html">🖥️ Get started on Windows</a>
+    <a href="connect-your-phone.html">📱 Connect your phone</a>
+    <a href="backup-and-restore.html">💾 Back up and restore</a>
+    <a href="jellyfin-apps-with-beebo.html">🧩 Jellyfin apps</a>
+    <a href="../linux.html">Linux desktop beta</a>
+    <a href="../platforms.html">All devices</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>

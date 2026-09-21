@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fix Beebo connection problems | Beebo Docs</title>
+<meta name="description" content="A decision tree for when your phone cannot reach Beebo: sleeping PC, firewall, router, shared internet address and different networks." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Fix Beebo connection problems | Beebo Docs" />
+<meta property="og:description" content="A decision tree for when your phone cannot reach Beebo: sleeping PC, firewall, router, shared internet address and different networks." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/fix-connection-problems.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/quiet-server.webp" />
+<meta property="og:image:alt" content="A quiet home computer on a shelf" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/fix-connection-problems.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://beeboentertainment.com/docs/fix-connection-problems.html#article",
+  "headline": "Fix Beebo connection problems",
+  "description": "A decision tree for when your phone cannot reach Beebo: sleeping PC, firewall, router, shared internet address and different networks.",
+  "url": "https://beeboentertainment.com/docs/fix-connection-problems.html",
+  "inLanguage": "en",
+  "datePublished": "2026-09-21",
+  "dateModified": "2026-09-21",
+  "author": {
+    "@type": "Organization",
+    "name": "Beebo Entertainment"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Beebo Entertainment",
+    "url": "https://beeboentertainment.com/"
+  },
+  "mainEntityOfPage": "https://beeboentertainment.com/docs/fix-connection-problems.html"
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🛠️</div>
+    <h1>Fix Beebo connection problems</h1>
+    <p class="lead">When your phone cannot reach Beebo, the cause is nearly always one of a few things: the PC is asleep, the phone is on a different network, something is blocking the port, or your home internet does not allow direct connections. Work through the steps in order; each one says what you should see.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="tag plan">Coming soon</span> <strong>Status:</strong> A built-in <strong>Connection Doctor</strong> that checks all of this for you and offers a fix button is planned, but it is not in the current version. Today, the checks below and the connection test in Get Started are the tools.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#messages">What your phone says</a><a href="#steps">The checks, in order</a><a href="#doctor">Connection Doctor</a><a href="#trouble">Still stuck?</a><a href="#related">Related pages</a></nav>
+
+  <h2 id="messages">What your phone says, and what it means</h2>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">Message</th><th scope="col">Usually means</th><th scope="col">Go to</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">“Can’t reach the server — is it running, and is the port right?”</th><td>Typed an address that is not answering: PC off or asleep, different Wi-Fi, wrong address, or blocked port.</td><td>Steps 1 to 3</td></tr>
+        <tr><th scope="row">“Your home computer isn’t online right now. Check that it’s switched on, awake and connected, and that Beebo is running on it.”</th><td>Away from home, beebo.tv cannot see your PC.</td><td>Steps 1 and 4</td></tr>
+        <tr><th scope="row">“…Beebo didn’t answer. Check that Beebo is open on the home computer and that the computer is awake and online.”</th><td>Same as above, for your home’s name.</td><td>Steps 1 and 4</td></tr>
+        <tr><th scope="row">“Couldn’t connect this phone to … home computer from this network… these two internet connections couldn’t reach each other.”</th><td>Direct connection is not possible between this network and your home network.</td><td>Steps 5 to 7</td></tr>
+        <tr><th scope="row">“No internet connection on this phone.” or “Couldn’t reach beebo.tv.”</th><td>The phone itself is offline or blocked.</td><td>Step 7</td></tr>
+        <tr><th scope="row">“There’s no Beebo at … .beebo.tv. Check Home.”</th><td>A typo in the name.</td><td>Check the Home box</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="steps">The checks, in order</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Is the PC on, awake and running Beebo?</h3>
+      <p>Everything streams from your PC, so if it is off, asleep or Beebo is closed, nothing works. Look for Beebo’s window or its icon near the clock. Beebo does not yet start by itself when Windows starts, so after a restart, open it.</p>
+      <p>To stop Windows sleeping while plugged in, open Windows <strong>Settings › System › Power &amp; sleep</strong> (Windows 10) or <strong>Power &amp; battery › Screen and sleep</strong> (Windows 11) and set “When plugged in, put my device to sleep after” to <strong>Never</strong>.</p>
+      <p><span class="tag beta">Next release</span> Beebo gets a <strong>Keep Beebo available</strong> section in Settings with “Start Beebo when I sign in to Windows”, a line saying whether it is keeping the PC awake, and an <strong>Open Windows sleep settings</strong> button.</p>
+      <p><strong>What you’ll see:</strong> Beebo’s window on the PC, or its icon by the clock. If you cannot find either, open Beebo from the Start menu.</p>
+      
+    </li>
+    <li id="step-2">
+      <h3>At home: are you on the same Wi-Fi, with the right address?</h3>
+      <p>Your phone must be on the same Wi-Fi as the PC, with mobile data not standing in for it. Guest networks, and some public or hotel Wi-Fi, keep devices from seeing each other. On the PC, open <strong>Get Started</strong> and click <strong>Refresh</strong> to see the current address, then type it exactly, including <code>:47811</code>.</p>
+      <p><strong>What you’ll see:</strong> An address like <code>192.168.1.50:47811</code> on the PC. After a router restart it may have changed.</p>
+      
+    </li>
+    <li id="step-3">
+      <h3>Is a firewall blocking Beebo?</h3>
+      <p>The Windows installer adds a firewall rule named “Beebo Entertainment” for TCP port 47811. Check it in <strong>Windows Security › Firewall &amp; network protection › Allow an app through firewall</strong>. If you use another company’s security suite, it has its own firewall: allow TCP port 47811 there.</p>
+      <p><strong>What you’ll see:</strong> “Beebo Entertainment” in the list, ticked. If a security program prompted you when Beebo first started and you clicked Cancel, that would explain a blocked phone.</p>
+      
+    </li>
+    <li id="step-4">
+      <h3>Away from home: use your beebo.tv address, with Beebo signed in</h3>
+      <p>The local <code>192.168…</code> address only works on your home Wi-Fi. Away from home, use your <code>yourname.beebo.tv</code> address, or your home’s name in the app’s <strong>Home</strong> box. The PC must be signed in to your Beebo account; until then Beebo says “Sign in to your Beebo account first. Then this computer gets its own beebo.tv address.” Look at <strong>Settings › Your Beebo address</strong> for any problem it reports.</p>
+      <p><strong>What you’ll see:</strong> On Get Started, step 4 shows your address and “It’s online now.”</p>
+      
+    </li>
+    <li id="step-5">
+      <h3>Run the connection test</h3>
+      <p>Use <strong>Get Started › Test your connection</strong>, or <strong>Settings › Connection › Re-run test</strong>. It checks watching at home, then away from home with your phone on mobile data, and tells you which route your phone used. You can also try the browser-based <a href="../will-beebo-work.html">Will Beebo work on your internet?</a> check.</p>
+      <p><strong>What you’ll see:</strong> “Your phone connected. Direct connection.” means you are done. A failure moves you to step 6.</p>
+      
+    </li>
+    <li id="step-6">
+      <h3>Direct connection blocked: shared address, two routers, or closed ports</h3>
+      <p>Beebo asks your router to open its ports itself. If that fails, the test may say “Your home has two routers in a row” or “Your internet provider shares one internet address between many homes”. Then, in order of effort:</p>
+      <p><strong>a)</strong> Turn on <strong>UPnP</strong> (sometimes called NAT-PMP) in your router and test again. <strong>b)</strong> <a href="../open-ports.html">Forward UDP ports 47820–47829</a> to the PC by hand. <strong>c)</strong> With two routers, forward on both, or put the provider’s modem in bridge mode. <strong>d)</strong> If your provider shares one address between many homes (carrier-grade NAT), no router setting will help; asking the provider for a public address usually does, or you can use <a href="../own-relay.html">your own Cloudflare relay</a> or <a href="../beebo-relay.html">Beebo Relay</a>. <strong>e)</strong> Choose <strong>Home only for now</strong> and watch on your home Wi-Fi.</p>
+      <p><strong>What you’ll see:</strong> A result of “Your home network blocks direct connections” with four options underneath.</p>
+      
+    </li>
+    <li id="step-7">
+      <h3>Try a different network</h3>
+      <p>Some mobile, office and hotel networks block direct connections even when your home is fine. Switch the phone between Wi-Fi and mobile data and try again. If one network fails and another works, the failing network is the problem, and a relay is the fix.</p>
+      <p><strong>What you’ll see:</strong> Either it connects, or the same message repeats on every network you try. In that case, go back to steps 5 and 6.</p>
+      
+    </li>
+  </ol>
+
+  <h2 id="doctor">Connection Doctor: coming soon</h2>
+  <p><span class="tag plan">Coming soon</span> A <strong>Connection Doctor</strong> is planned: one place that checks whether Beebo is running, whether the firewall rule is there, what your local address is, whether beebo.tv can see you and whether your router opened its ports, with a fix button next to each problem. It is not in the current version and there is no release date. This page will be updated when it ships.</p>
+  <div class="callout"><p><strong>Screenshot coming.</strong> The Test your connection wizard’s result screen with its four options.</p></div>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>It worked yesterday and not today</summary><p>Most often the PC restarted or went to sleep, Beebo was not reopened, or the router gave the PC a new local address. Check steps 1 and 2. If you use the <code>yourname.beebo.tv</code> address it does not depend on your local address.</p></details>
+    <details><summary>Only some of my family cannot connect away from home</summary><p>Away access is set per person. The owner can check it in the Users tab; see <a href="family-and-profiles.html">Family and profiles</a>. A person also needs to sign in once at home with their usual password, or use a temporary away pass the owner can generate.</p></details>
+    <details><summary>Video connects but keeps stopping</summary><p>Try a lower picture quality with the gear button in the player, since the PC then converts the video to something smaller while it plays. Your home internet’s upload speed limits how much can reach you away from home.</p></details>
+    <details><summary>Nothing here fits my problem</summary><p>Email <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20connection%20problem">testers@beeboentertainment.com</a> with what your phone says, which network you were on, and what the connection test result was. It is a plain email, with no form and no sign-up.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="away-from-home-options.html">🌍 Away from home: your options</a>
+    <a href="connect-your-phone.html">📱 Connect your phone</a>
+    <a href="../will-beebo-work.html">Will Beebo work on my internet?</a>
+    <a href="../open-ports.html">Open ports on your router</a>
+    <a href="../direct-connection.html">Direct connection</a>
+    <a href="../own-relay.html">Your own Cloudflare relay</a>
+    <a href="../beebo-relay.html">Beebo Relay</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>

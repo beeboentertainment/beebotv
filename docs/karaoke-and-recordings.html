@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sing along and record yourself with Beebo Music | Beebo Docs</title>
+<meta name="description" content="Follow synced lyrics on the Beebo Music page and record yourself singing, with optional webcam. Why browsers need https or localhost for the microphone." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Sing along and record yourself with Beebo Music | Beebo Docs" />
+<meta property="og:description" content="Follow synced lyrics on the Beebo Music page and record yourself singing, with optional webcam. Why browsers need https or localhost for the microphone." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/karaoke-and-recordings.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/family-home.webp" />
+<meta property="og:image:alt" content="A family enjoying movie night at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/karaoke-and-recordings.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/karaoke-and-recordings.html#howto",
+  "name": "Karaoke: sing along and record yourself",
+  "description": "Follow synced lyrics on the Beebo Music page and record yourself singing, with optional webcam. Why browsers need https or localhost for the microphone.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Give a song some lyrics",
+      "text": "Put an .lrc lyrics file next to the song, with the same name (for example Hallelujah.mp3 and Hallelujah.lrc). If the file has timings, the current line lights up as the song plays. A file without timings is shown as plain text. Lyrics saved inside the song file are used when there is no .lrc file. Beebo never downloads lyrics from the internet.",
+      "url": "https://beeboentertainment.com/docs/karaoke-and-recordings.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Open Music in a browser and play a song",
+      "text": "Open your Beebo address in a browser, choose Music, open an album and play a song. Use a secure address if you want to record (see below). A bar at the bottom with the song, previous and next buttons, a lyrics button and, in the next release, a microphone button.",
+      "url": "https://beeboentertainment.com/docs/karaoke-and-recordings.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Open the lyrics",
+      "text": "Press the lyrics button (the memo icon). The panel shows the words and scrolls with the song. The current line is brighter than the others.",
+      "url": "https://beeboentertainment.com/docs/karaoke-and-recordings.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Record yourself",
+      "text": "Press Record yourself (the microphone). Two options sit beside it: Include video (webcam), which is off unless you tick it, and Include the backing track, which is on unless you untick it. The browser asks permission to use your microphone (and camera, if you ticked video); choose Allow. A red button that says Stop recording, and “Recording… 0:12” counting up. With the webcam on, a small picture of you appears in the corner.",
+      "url": "https://beeboentertainment.com/docs/karaoke-and-recordings.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Stop and find it again",
+      "text": "Press Stop recording, or let the song end. Recording also stops if you skip to another song. Open My recordings (the studio-microphone button) to play or delete a recording. “Saved. Find it under My recordings.” Each recording lists the song, date, audio or video, length and size.",
+      "url": "https://beeboentertainment.com/docs/karaoke-and-recordings.html#step-5"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🎤</div>
+    <h1>Karaoke: sing along and record yourself</h1>
+    <p class="lead">On the Music page in your browser, Beebo shows a song’s lyrics and lights up the current line. In the next release you can also press a microphone button to record yourself singing along, with or without your webcam and the backing track.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="tag beta">Recording: beta · next release</span> <strong>Status:</strong> Following lyrics works today wherever your music has lyrics. Recording is built and tested but is not in the current downloads (Windows 0.1.57). Browsers only allow microphone access on secure pages, which affects how you open the page: see “Why the microphone needs https”.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#steps">Steps</a><a href="#https">Why the microphone needs https</a><a href="#keeps">Where recordings go</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Give a song some lyrics</h3>
+      <p>Put an <code>.lrc</code> lyrics file next to the song, with the same name (for example <code>Hallelujah.mp3</code> and <code>Hallelujah.lrc</code>). If the file has timings, the current line lights up as the song plays. A file without timings is shown as plain text. Lyrics saved inside the song file are used when there is no <code>.lrc</code> file. Beebo never downloads lyrics from the internet.</p>
+      
+      
+    </li>
+    <li id="step-2">
+      <h3>Open Music in a browser and play a song</h3>
+      <p>Open your Beebo address in a browser, choose <strong>Music</strong>, open an album and play a song. Use a secure address if you want to record (see below).</p>
+      <p><strong>What you’ll see:</strong> A bar at the bottom with the song, previous and next buttons, a lyrics button and, in the next release, a microphone button.</p>
+      
+    </li>
+    <li id="step-3">
+      <h3>Open the lyrics</h3>
+      <p>Press the lyrics button (the memo icon). The panel shows the words and scrolls with the song.</p>
+      <p><strong>What you’ll see:</strong> The current line is brighter than the others.</p>
+      <div class="callout"><p><strong>Screenshot coming.</strong> The Music page with lyrics open and the current line highlighted.</p></div>
+    </li>
+    <li id="step-4">
+      <h3>Record yourself</h3>
+      <p>Press <strong>Record yourself</strong> (the microphone). Two options sit beside it: <strong>Include video (webcam)</strong>, which is off unless you tick it, and <strong>Include the backing track</strong>, which is on unless you untick it. The browser asks permission to use your microphone (and camera, if you ticked video); choose Allow.</p>
+      <p><strong>What you’ll see:</strong> A red button that says <strong>Stop recording</strong>, and “Recording… 0:12” counting up. With the webcam on, a small picture of you appears in the corner.</p>
+      
+    </li>
+    <li id="step-5">
+      <h3>Stop and find it again</h3>
+      <p>Press <strong>Stop recording</strong>, or let the song end. Recording also stops if you skip to another song. Open <strong>My recordings</strong> (the studio-microphone button) to play or delete a recording.</p>
+      <p><strong>What you’ll see:</strong> “Saved. Find it under My recordings.” Each recording lists the song, date, audio or video, length and size.</p>
+      
+    </li>
+  </ol>
+
+  <h2 id="https">Why the microphone needs https (or localhost)</h2>
+  <p>Web browsers only let a page use the microphone or camera when the page is <strong>secure</strong>: an <code>https://</code> address, or the same computer at <code>localhost</code>. Your Beebo PC’s everyday home address, like <code>http://192.168.1.50:47811</code>, is not secure, so on other devices the browser will not offer the microphone and Beebo says <strong>“Recording needs a secure (https) connection.”</strong> This is a browser rule, not something Beebo can switch off.</p>
+  <ul class="plain">
+    <li><strong>On the Beebo PC itself,</strong> open <code>http://localhost:47811</code> in a browser. Browsers treat localhost as secure.</li>
+    <li><strong>On other devices,</strong> use an https address for your Beebo. The <strong>Secure connection (HTTPS)</strong> section in Settings sets up HTTPS for the web address you type there. We have not confirmed that recording works through the <code>yourname.beebo.tv</code> address, so treat that as untested.</li>
+    <li>If the browser says the microphone is blocked, allow it for that site in the browser’s address-bar menu and try again.</li>
+  </ul>
+
+  <h2 id="keeps">Where recordings go</h2>
+  <ul class="plain">
+    <li>A recording is uploaded to your Beebo PC and saved there, beside Beebo’s settings, under your account. The recordings list shows only your own, and only you can play or delete them through Beebo.</li>
+    <li>They are ordinary files on that PC, so whoever controls the PC can technically reach them. Do not record anything you would not want the PC’s owner to be able to find.</li>
+    <li>Each person can keep up to 200 recordings, and each can be up to 512 MB. Deleting a recording cannot be undone.</li>
+    <li>The webcam is only used if you tick <strong>Include video</strong>, and only while you are recording.</li>
+  </ul>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>It says “Recording needs a secure (https) connection.”</summary><p>Open the page over https, or on the Beebo PC at <code>localhost</code>, as explained above.</p></details>
+    <details><summary>It says “This browser cannot record.”</summary><p>The browser has no recording support. Recording is built for Chrome, Firefox and Safari; older or embedded browsers may not support it.</p></details>
+    <details><summary>The microphone or camera is blocked</summary><p>The message reads “The microphone (or camera) is blocked. Allow it for this site, then try again.” Use the padlock or site-settings icon by the address, allow the microphone, and press record again.</p></details>
+    <details><summary>I cannot hear the backing track in my recording</summary><p>Make sure <strong>Include the backing track</strong> is ticked. It records the song as it plays, so wear headphones to keep the speakers out of the microphone.</p></details>
+    <details><summary>There is no lyrics button</summary><p>The song has no <code>.lrc</code> file and no lyrics inside it. The button only shows for songs that have lyrics.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="../music.html">Play your own music</a>
+    <a href="sound-and-audio.html">🔊 Sound and audio options</a>
+    <a href="campsite-mode.html">🏕️ Campsite Mode</a>
+    <a href="privacy-in-plain-words.html">🔐 Privacy in plain words</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>

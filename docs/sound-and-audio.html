@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sound options: surround, night mode, levelling | Beebo Docs</title>
+<meta name="description" content="What Beebo does with audio: surround or stereo, dialogue focus, night mode, volume levelling, delay and HDMI passthrough, and what it does not promise." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Sound options: surround, night mode, levelling | Beebo Docs" />
+<meta property="og:description" content="What Beebo does with audio: surround or stereo, dialogue focus, night mode, volume levelling, delay and HDMI passthrough, and what it does not promise." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/sound-and-audio.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/family-home.webp" />
+<meta property="og:image:alt" content="A family enjoying movie night at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/sound-and-audio.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/sound-and-audio.html#howto",
+  "name": "Sound and audio options",
+  "description": "What Beebo does with audio: surround or stereo, dialogue focus, night mode, volume levelling, delay and HDMI passthrough, and what it does not promise.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Open the Sound section",
+      "text": "In the web player, or the Android and TV player, open the gear button and find Sound in the Quality & audio sheet. A line saying what is playing, in plain words, for example “Stereo (mixed down from 5.1) · AAC” or “Surround 5.1 · Dolby Digital”.",
+      "url": "https://beeboentertainment.com/docs/sound-and-audio.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Choose the sound mode",
+      "text": "Auto (the default) asks for surround only when your device says it can play it. Stereo mixes surround down to two speakers. Surround keeps 5.1 where your device can play it, using Dolby Digital Plus or Dolby Digital, or AAC 5.1.",
+      "url": "https://beeboentertainment.com/docs/sound-and-audio.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Choose how surround folds to stereo",
+      "text": "Standard is a proper mix-down with a limiter so loud scenes do not clip. Dialogue focus lifts the centre channel, where speech usually lives, and lowers the effects and bass.",
+      "url": "https://beeboentertainment.com/docs/sound-and-audio.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Night mode and volume levelling",
+      "text": "Night mode gently compresses the difference between loud and quiet, so explosions and whispers are closer in volume. Volume levelling evens out the loudness between titles. Levelling takes more processing on the PC (roughly a third of a processor core for 5.1 on our test PC), so it is off by default and the sheet says what it costs.",
+      "url": "https://beeboentertainment.com/docs/sound-and-audio.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Boost dialogue and fix lip-sync",
+      "text": "In the browser player, Dialogue boost adds 0 to 6 dB through a soft limiter. Audio delay shifts the sound from 500 ms earlier to 500 ms later. On Android, delay comes in five steps and is made by the PC. Boost and later sound are made in the browser where possible, so they need no conversion.",
+      "url": "https://beeboentertainment.com/docs/sound-and-audio.html#step-5"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Android and TV: HDMI passthrough",
+      "text": "The Android sheet adds HDMI passthrough: Auto / Off. On Auto, Dolby Digital, Dolby Digital Plus, DTS and TrueHD go to a receiver as they are when the device says it can take them. Off makes the phone or TV decode them. The sheet then says what actually reached the output, read from the device, for example “Sent to your TV or receiver as Dolby Digital Plus (5.1), undecoded”. Sound choices are saved per account with your other playback settings. Passthrough is saved on the device.",
+      "url": "https://beeboentertainment.com/docs/sound-and-audio.html#step-6"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🔊</div>
+    <h1>Sound and audio options</h1>
+    <p class="lead">The player’s Quality sheet gets a Sound section: choose surround or stereo, focus on dialogue, tame loud scenes at night, level volume between titles and fix lip-sync. Today you can already pick a different soundtrack; the new options arrive in the next release.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="tag beta">Beta · next release</span> <strong>Status:</strong> The Sound section is built and tested but is not in the current downloads (Windows 0.1.57, Android 1.38). It has not been tried on real receivers, TVs or across all browsers. Picking an audio track and the picture quality work today.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#today">Available today</a><a href="#steps">Steps</a><a href="#honest">What it does and does not claim</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+
+  <h2 id="today">Available today</h2>
+  <p>While something is playing, the gear button opens a sheet with <strong>Quality</strong>, <strong>Audio</strong> and <strong>Subtitles</strong>. If a file has more than one soundtrack, they are all listed with the language, the number of speakers and the sound format. See <a href="../quality-and-subtitles.html">Quality, audio and subtitles</a>.</p>
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Open the Sound section</h3>
+      <p>In the web player, or the Android and TV player, open the gear button and find <strong>Sound</strong> in the Quality &amp; audio sheet.</p>
+      <p><strong>What you’ll see:</strong> A line saying what is playing, in plain words, for example “Stereo (mixed down from 5.1) · AAC” or “Surround 5.1 · Dolby Digital”.</p>
+      <div class="callout"><p><strong>Screenshot coming.</strong> The Sound section of the Quality sheet in the web player.</p></div>
+    </li>
+    <li id="step-2">
+      <h3>Choose the sound mode</h3>
+      <p><strong>Auto</strong> (the default) asks for surround only when your device says it can play it. <strong>Stereo</strong> mixes surround down to two speakers. <strong>Surround</strong> keeps 5.1 where your device can play it, using Dolby Digital Plus or Dolby Digital, or AAC 5.1.</p>
+      
+      
+    </li>
+    <li id="step-3">
+      <h3>Choose how surround folds to stereo</h3>
+      <p><strong>Standard</strong> is a proper mix-down with a limiter so loud scenes do not clip. <strong>Dialogue focus</strong> lifts the centre channel, where speech usually lives, and lowers the effects and bass.</p>
+      
+      
+    </li>
+    <li id="step-4">
+      <h3>Night mode and volume levelling</h3>
+      <p><strong>Night mode</strong> gently compresses the difference between loud and quiet, so explosions and whispers are closer in volume. <strong>Volume levelling</strong> evens out the loudness between titles. Levelling takes more processing on the PC (roughly a third of a processor core for 5.1 on our test PC), so it is off by default and the sheet says what it costs.</p>
+      
+      
+    </li>
+    <li id="step-5">
+      <h3>Boost dialogue and fix lip-sync</h3>
+      <p>In the browser player, <strong>Dialogue boost</strong> adds 0 to 6 dB through a soft limiter. <strong>Audio delay</strong> shifts the sound from 500 ms earlier to 500 ms later. On Android, delay comes in five steps and is made by the PC. Boost and later sound are made in the browser where possible, so they need no conversion.</p>
+      
+      
+    </li>
+    <li id="step-6">
+      <h3>Android and TV: HDMI passthrough</h3>
+      <p>The Android sheet adds <strong>HDMI passthrough: Auto / Off</strong>. On Auto, Dolby Digital, Dolby Digital Plus, DTS and TrueHD go to a receiver as they are when the device says it can take them. Off makes the phone or TV decode them. The sheet then says what actually reached the output, read from the device, for example “Sent to your TV or receiver as Dolby Digital Plus (5.1), undecoded”.</p>
+      <p><strong>What you’ll see:</strong> Sound choices are saved per account with your other playback settings. Passthrough is saved on the device.</p>
+      
+    </li>
+  </ol>
+
+  <h2 id="honest">What it does and does not claim</h2>
+  <ul class="plain">
+    <li><strong>Only what it can play.</strong> DTS, TrueHD, Opus and FLAC soundtracks are always converted by the PC when a phone or browser cannot play them. Seven-channel sound is folded to 5.1, not dropped.</li>
+    <li><strong>No object audio.</strong> Beebo does not keep Dolby Atmos or DTS:X, and it never labels a conversion as either. The words in the sheet describe what you are really getting, including “converted from DTS”.</li>
+    <li><strong>Copying when nothing needs doing.</strong> If your device can play the file’s Dolby Digital, Dolby Digital Plus or AAC (up to 6 channels) and you have not asked for night mode, levelling or delay, the sound is copied untouched and only the picture is converted.</li>
+    <li><strong>Music.</strong> Beebo reads ReplayGain tags in your music files and levels loudness without re-encoding or changing the files. Songs with no tag are left alone.</li>
+    <li><strong>Not yet verified</strong> on real receivers and TVs, on every browser’s handling of multichannel HLS, or on a TV remote. Tell us what works for you.</li>
+  </ul>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>I chose surround and hear stereo</summary><p>Your device or browser did not report that it can play multichannel sound, or a headset is connected (a Bluetooth or wired headset always means stereo). Check the line at the top of the Sound section, which says what is being played.</p></details>
+    <details><summary>Conversion makes my PC busy</summary><p>Levelling, night mode, delay and surround all ask the PC to convert while you watch. Turn off what you do not need. See the encoder choices in Settings, in the section about quality choices for phones, TVs and browsers.</p></details>
+    <details><summary>Dialogue is out of sync</summary><p>Try <strong>Audio delay</strong>. If a positive delay does nothing in Safari or Android Chrome, that is expected: those browsers play the stream themselves, so the PC makes the delay instead.</p></details>
+    <details><summary>I do not see a Sound section</summary><p>It arrives with the release after Windows 0.1.57 and Android 1.38. Check <a href="../updates.html">What’s new</a>.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="../quality-and-subtitles.html">Quality, audio &amp; subtitles</a>
+    <a href="subtitles.html">💬 Subtitles</a>
+    <a href="skip-intros-and-credits.html">⏭️ Skip intros and credits</a>
+    <a href="karaoke-and-recordings.html">🎤 Karaoke and recordings</a>
+    <a href="../music.html">Play your own music</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Watch Beebo away from home: your 3 options | Beebo Docs</title>
+<meta name="description" content="Direct connection with automatic UPnP, your own relay, or Beebo Relay as a paid fallback: what each one is, what it costs and how to choose." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Watch Beebo away from home: your 3 options | Beebo Docs" />
+<meta property="og:description" content="Direct connection with automatic UPnP, your own relay, or Beebo Relay as a paid fallback: what each one is, what it costs and how to choose." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/away-from-home-options.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/away-guide.webp" />
+<meta property="og:image:alt" content="A woman watching a tablet beside a vacation cabin window" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/away-from-home-options.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/away-from-home-options.html#howto",
+  "name": "Watch away from home: your three options",
+  "description": "Direct connection with automatic UPnP, your own relay, or Beebo Relay as a paid fallback: what each one is, what it costs and how to choose.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Keep the PC on and signed in to Beebo",
+      "text": "Away-from-home viewing works through your PC. It has to be switched on, awake and running Beebo, signed in to your Beebo account. When it is off or asleep, nothing can stream from it. In Beebo’s Get Started screen, step 4, Watch away from home, shows your address and a QR code. It says “It’s online now.” once the address is live, a few seconds after Beebo starts.",
+      "url": "https://beeboentertainment.com/docs/away-from-home-options.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Run the two-part connection test",
+      "text": "On the PC, open Get Started and find step 5, Test your connection (later: Settings › Connection › Re-run test). Test 1 checks watching at home. Test 2 asks you to turn Wi-Fi off on your phone, open the Beebo app (or scan the code to open your address), sign in and start any video. Live status lines: “Your phone connected. Direct connection.” or “Your phone connected. Through Beebo Relay.” or “Your phone tried to connect but couldn’t get through.”",
+      "url": "https://beeboentertainment.com/docs/away-from-home-options.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Read the result",
+      "text": "You’re all set means the phone connected directly, and there is nothing else to do. Looks good so far means your router opened Beebo’s ports by itself; do the phone test to be sure. Your home network blocks direct connections means you need to change a router setting or use a relay. Two automatic hints can appear on the way: “Your home has two routers in a row” and “Your internet provider shares one internet address between many homes”. Both mean direct connections from outside probably will not work. Fix connection problems explains what to do. A headline such as “You’re all set”, “Your home network blocks direct connections” or “It works through your own relay”.",
+      "url": "https://beeboentertainment.com/docs/away-from-home-options.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Pick an option if direct does not work",
+      "text": "The result screen offers four choices: Beebo Relay, Cloudflare only (your own account, marked advanced), Open ports on my router, and Home only for now. You can change your mind at any time in Settings › Connection › Change option. Home only costs nothing and needs no setup, but watching away from home may not work. Each choice has a “How to set it up” panel and, where money is involved, what it would cost.",
+      "url": "https://beeboentertainment.com/docs/away-from-home-options.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Test again",
+      "text": "After any change (a router setting, a relay), run Test 2 again from a different network, such as mobile data. The same status lines, now showing your new route.",
+      "url": "https://beeboentertainment.com/docs/away-from-home-options.html#step-5"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🌍</div>
+    <h1>Watch away from home: your three options</h1>
+    <p class="lead">Away from home, your phone reaches the PC that holds your movies through your free yourname.beebo.tv address. Beebo tries a direct connection first, and only uses a relay if a direct connection is not possible.</p>
+  </div>
+
+  <div class="callout safe">
+    <p><span class="tag live">Available now</span> <strong>Status:</strong> Direct connections, automatic UPnP and your own Cloudflare relay work today. Beebo Relay is an optional paid fallback; see the <a href="../subscribe.html">pricing page</a> for its current status.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#options">The three options</a><a href="#cost">What it costs</a><a href="#steps">Choose your option</a><a href="#see">What a relay can see</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+
+  <img class="page-campaign-art" src="../assets/illustrations/away-connection.svg" alt="Diagram: your phone opens yourname.beebo.tv. Beebo tries a direct, encrypted connection to your home PC first, and only uses a relay if direct is not possible." width="640" height="360" loading="lazy">
+
+  <h2 id="options">The three options</h2>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">Option</th><th scope="col">Cost</th><th scope="col">Setup</th><th scope="col">Good for</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1. Direct connection, with automatic UPnP</th><td>$0, at any resolution</td><td>None for most homes. If your router refuses, <a href="../open-ports.html">open ports by hand</a>.</td><td>Most homes. Video goes straight from your PC to your phone.</td></tr>
+        <tr><th scope="row">2. Your own relay (Cloudflare)</th><td>$0 from Beebo. Cloudflare’s own free allowance covers most families, and Cloudflare bills you directly beyond it.</td><td>About ten minutes, once. <a href="../own-relay.html">Step-by-step guide</a>.</td><td>Networks where direct cannot work.</td></tr>
+        <tr><th scope="row">3. Beebo Relay</th><td>Optional paid fallback. About CA$3/month for 1080p or CA$5/month for 4K.</td><td>A choice in Settings › Connection, plus a subscription.</td><td>Homes where options 1 and 2 both fall short. <a href="../beebo-relay.html">Details</a>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fineprint">Beebo only uses a relay when a direct connection fails. A direct connection never touches one.</p>
+
+  <h2 id="cost">What it costs</h2>
+  <div class="callout">
+    <p>Beebo Entertainment is free to use at home. Away-from-home access is also free with a direct connection, automatic UPnP, or your own relay, at any resolution. Beebo Relay, Beebo's own relay servers, is an optional paid fallback for households where none of those work: about CA$3/month for 1080p or CA$5/month for 4K, priced by streaming quality rather than data used. No payment card required to get started.</p>
+  </div>
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Keep the PC on and signed in to Beebo</h3>
+      <p>Away-from-home viewing works through your PC. It has to be switched on, awake and running Beebo, signed in to your Beebo account. When it is off or asleep, nothing can stream from it.</p>
+      <p><strong>What you’ll see:</strong> In Beebo’s Get Started screen, step 4, <strong>Watch away from home</strong>, shows your address and a QR code. It says “It’s online now.” once the address is live, a few seconds after Beebo starts.</p>
+      
+    </li>
+    <li id="step-2">
+      <h3>Run the two-part connection test</h3>
+      <p>On the PC, open <strong>Get Started</strong> and find step 5, <strong>Test your connection</strong> (later: <strong>Settings › Connection › Re-run test</strong>). <strong>Test 1</strong> checks watching at home. <strong>Test 2</strong> asks you to turn Wi-Fi off on your phone, open the Beebo app (or scan the code to open your address), sign in and start any video.</p>
+      <p><strong>What you’ll see:</strong> Live status lines: “Your phone connected. Direct connection.” or “Your phone connected. Through Beebo Relay.” or “Your phone tried to connect but couldn’t get through.”</p>
+      <div class="callout"><p><strong>Screenshot coming.</strong> The Test your connection wizard, Test 2: Watch away from home.</p></div>
+    </li>
+    <li id="step-3">
+      <h3>Read the result</h3>
+      <p><strong>You’re all set</strong> means the phone connected directly, and there is nothing else to do. <strong>Looks good so far</strong> means your router opened Beebo’s ports by itself; do the phone test to be sure. <strong>Your home network blocks direct connections</strong> means you need to change a router setting or use a relay.</p>
+      <p>Two automatic hints can appear on the way: “Your home has two routers in a row” and “Your internet provider shares one internet address between many homes”. Both mean direct connections from outside probably will not work. <a href="fix-connection-problems.html#steps">Fix connection problems</a> explains what to do.</p>
+      <p><strong>What you’ll see:</strong> A headline such as “You’re all set”, “Your home network blocks direct connections” or “It works through your own relay”.</p>
+      
+    </li>
+    <li id="step-4">
+      <h3>Pick an option if direct does not work</h3>
+      <p>The result screen offers four choices: <strong>Beebo Relay</strong>, <strong>Cloudflare only</strong> (your own account, marked advanced), <strong>Open ports on my router</strong>, and <strong>Home only for now</strong>. You can change your mind at any time in <strong>Settings › Connection › Change option</strong>.</p>
+      <p>Home only costs nothing and needs no setup, but watching away from home may not work.</p>
+      <p><strong>What you’ll see:</strong> Each choice has a “How to set it up” panel and, where money is involved, what it would cost.</p>
+      
+    </li>
+    <li id="step-5">
+      <h3>Test again</h3>
+      <p>After any change (a router setting, a relay), run <strong>Test 2</strong> again from a different network, such as mobile data.</p>
+      <p><strong>What you’ll see:</strong> The same status lines, now showing your new route.</p>
+      
+    </li>
+  </ol>
+
+  <h2 id="see">What a relay can see</h2>
+  <p>A relay passes your video along in locked form. <strong>Beebo Relay cannot read your video.</strong> It can see the internet (IP) addresses of your home and of the viewer’s device, when a connection starts and stops, and how much data passes through. Your own Cloudflare relay handles the same kind of information under your own agreement with Cloudflare.</p>
+  <p>Separately, Beebo’s service (beebo.tv) helps your phone find your PC and signs people in. Your library and video do not go through it. The <a href="privacy-in-plain-words.html">privacy page</a> has the plain-words summary, and the <a href="../movie-privacy.html">privacy policy</a> has the details.</p>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>The address will not load away from home</summary><p>First check that the home PC is on, awake and running Beebo. If it is, run the connection test above. <a href="fix-connection-problems.html">Fix connection problems</a> has the full checklist.</p></details>
+    <details><summary>Does watching away from home use my mobile data?</summary><p>Yes. Off Wi-Fi, video streams over mobile data like any streaming app. In the player, the gear button lets you pick 720p or 480p to use less, and the Android app can download titles over Wi-Fi first so you can watch them offline.</p></details>
+    <details><summary>Do I need to forward ports on my router?</summary><p>Usually not. Beebo asks the router to open its ports by itself (NAT-PMP, then UPnP). Only if that fails do you need to <a href="../open-ports.html">forward UDP ports 47820–47829 by hand</a>.</p></details>
+    <details><summary>Can everyone in my family watch away from home?</summary><p>Away access is set per person by the owner. New accounts follow a default the owner can choose, and pending or revoked accounts still need approval. See <a href="family-and-profiles.html">Family and profiles</a>.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="fix-connection-problems.html">🛠️ Fix connection problems</a>
+    <a href="../watch-away-from-home.html">Watch away from home (short guide)</a>
+    <a href="../direct-connection.html">Direct connection</a>
+    <a href="../open-ports.html">Open ports on your router</a>
+    <a href="../own-relay.html">Your own Cloudflare relay</a>
+    <a href="../beebo-relay.html">Beebo Relay</a>
+    <a href="../will-beebo-work.html">Test your internet</a>
+    <a href="../subscribe.html">Beebo Relay pricing</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>

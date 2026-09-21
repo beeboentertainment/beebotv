@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Add subtitles with OpenSubtitles in Beebo | Beebo Docs</title>
+<meta name="description" content="Turn on subtitle search with a free OpenSubtitles account, use Search online in the player, and fetch subtitles for a whole library." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Add subtitles with OpenSubtitles in Beebo | Beebo Docs" />
+<meta property="og:description" content="Turn on subtitle search with a free OpenSubtitles account, use Search online in the player, and fetch subtitles for a whole library." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/subtitles.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/family-home.webp" />
+<meta property="og:image:alt" content="A family enjoying movie night at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/subtitles.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/subtitles.html#howto",
+  "name": "Subtitles: search and download with OpenSubtitles",
+  "description": "Turn on subtitle search with a free OpenSubtitles account, use Search online in the player, and fetch subtitles for a whole library.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Make a free OpenSubtitles account",
+      "text": "Sign up at opensubtitles.com and click the link in the email they send.",
+      "url": "https://beeboentertainment.com/docs/subtitles.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Create an API key",
+      "text": "Open the API consumers page, sign in if it asks, click New consumer, name it something like Beebo and save. Copy the API key it shows.",
+      "url": "https://beeboentertainment.com/docs/subtitles.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Paste it into Beebo",
+      "text": "On the Beebo PC, open Settings and find Subtitle search (OpenSubtitles). Paste the API key, then type your OpenSubtitles username and password, because OpenSubtitles only lets signed-in accounts download. Click Save. The password is stored encrypted on the PC and is never sent to your phones.",
+      "url": "https://beeboentertainment.com/docs/subtitles.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Click Test",
+      "text": "Test checks that everything works and shows how many subtitles your account can download each day. OpenSubtitles decides that number, free accounts get a small allowance, and it resets daily. A green tick and a message about your daily downloads.",
+      "url": "https://beeboentertainment.com/docs/subtitles.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Search from the player",
+      "text": "Start any title, tap the gear button in the player, open Subtitles and choose Search online. Pick a result; the labels show how many people downloaded it and whether it is an exact match for your file. The subtitle is saved in the video’s own folder, named after the video with the language added, and appears in the list. Beebo never overwrites a subtitle file you already have.",
+      "url": "https://beeboentertainment.com/docs/subtitles.html#step-5"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Optional: fetch subtitles for the whole library",
+      "text": "Below the account box, Fetch subtitles for the whole library looks for films and episodes with no subtitles and fetches them in small batches. Choose a language, how many titles per run (10, 25, 50 or 100) and whether to run once a day, or click Sweep now. It stops as soon as today’s downloads run low, but it does use the same daily allowance as manual searches. After a run: “Last run: looked at …, … needed subtitles, downloaded …” and how many downloads are left today.",
+      "url": "https://beeboentertainment.com/docs/subtitles.html#step-6"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">💬</div>
+    <h1>Subtitles: search and download with OpenSubtitles</h1>
+    <p class="lead">Beebo plays subtitles kept inside a video or in a file next to it. If you have none, it can search OpenSubtitles for you and save the file beside the video, once the owner has connected a free OpenSubtitles account.</p>
+  </div>
+
+  <div class="callout safe">
+    <p><span class="tag live">Available now</span> <strong>Status:</strong> Subtitle search is optional and free. The whole-library option arrived in Windows 0.1.57. Only the owner sets it up, once, on the PC.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#steps">Steps</a><a href="#using">Using subtitles</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+
+  <h2 id="before">How it works</h2>
+  <p>Only the Beebo PC talks to OpenSubtitles. Phones, TVs and browsers ask your own PC, which does the searching and downloading. OpenSubtitles receives your account details and the information it needs to find matching subtitles (a fingerprint of the file, plus the title, year, season and episode). Without an account set up, <strong>Search online</strong> simply says so.</p>
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Make a free OpenSubtitles account</h3>
+      <p>Sign up at <a href="https://www.opensubtitles.com/en/users/sign_up" rel="noopener">opensubtitles.com</a> and click the link in the email they send.</p>
+      
+      
+    </li>
+    <li id="step-2">
+      <h3>Create an API key</h3>
+      <p>Open the <a href="https://www.opensubtitles.com/en/consumers" rel="noopener">API consumers page</a>, sign in if it asks, click <strong>New consumer</strong>, name it something like <em>Beebo</em> and save. Copy the <strong>API key</strong> it shows.</p>
+      
+      
+    </li>
+    <li id="step-3">
+      <h3>Paste it into Beebo</h3>
+      <p>On the Beebo PC, open <strong>Settings</strong> and find <strong>Subtitle search (OpenSubtitles)</strong>. Paste the API key, then type your OpenSubtitles <strong>username</strong> and <strong>password</strong>, because OpenSubtitles only lets signed-in accounts download. Click <strong>Save</strong>. The password is stored encrypted on the PC and is never sent to your phones.</p>
+      
+      <div class="callout"><p><strong>Screenshot coming.</strong> The Subtitle search (OpenSubtitles) box in Settings.</p></div>
+    </li>
+    <li id="step-4">
+      <h3>Click Test</h3>
+      <p><strong>Test</strong> checks that everything works and shows how many subtitles your account can download each day. OpenSubtitles decides that number, free accounts get a small allowance, and it resets daily.</p>
+      <p><strong>What you’ll see:</strong> A green tick and a message about your daily downloads.</p>
+      
+    </li>
+    <li id="step-5">
+      <h3>Search from the player</h3>
+      <p>Start any title, tap the <strong>gear</strong> button in the player, open <strong>Subtitles</strong> and choose <strong>Search online</strong>. Pick a result; the labels show how many people downloaded it and whether it is an exact match for your file.</p>
+      <p><strong>What you’ll see:</strong> The subtitle is saved in the video’s own folder, named after the video with the language added, and appears in the list. Beebo never overwrites a subtitle file you already have.</p>
+      
+    </li>
+    <li id="step-6">
+      <h3>Optional: fetch subtitles for the whole library</h3>
+      <p>Below the account box, <strong>Fetch subtitles for the whole library</strong> looks for films and episodes with no subtitles and fetches them in small batches. Choose a language, how many titles per run (10, 25, 50 or 100) and whether to run once a day, or click <strong>Sweep now</strong>. It stops as soon as today’s downloads run low, but it does use the same daily allowance as manual searches.</p>
+      <p><strong>What you’ll see:</strong> After a run: “Last run: looked at …, … needed subtitles, downloaded …” and how many downloads are left today.</p>
+      
+    </li>
+  </ol>
+
+  <h2 id="using">What Beebo picks up from your folders</h2>
+  <ul class="plain">
+    <li>Subtitles kept <strong>inside</strong> the video file.</li>
+    <li>Files ending in <code>.srt</code> or <code>.vtt</code>, named after the video, like <code>My Film.srt</code>. Other subtitle formats sitting in the folder are ignored.</li>
+    <li><strong>Picture subtitles</strong> (the kind found on Blu-ray and DVD rips) are pictures, not words, so Beebo shows them by converting the video with them printed on top. It tells you when that is happening.</li>
+    <li>The subtitle language you choose is remembered for next time.</li>
+  </ul>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>Test says it failed</summary><p>Re-check the API key (paste it fresh), your OpenSubtitles username and password, and that the PC has internet. The Test button is greyed out until an API key is entered.</p></details>
+    <details><summary>Search online says nothing is set up</summary><p>The owner has not finished steps 1 to 4 yet. Only the owner can set this up, on the PC.</p></details>
+    <details><summary>I ran out of downloads for today</summary><p>OpenSubtitles limits each account per day and resets it daily. Wait, or switch the whole-library run off so it does not spend the allowance.</p></details>
+    <details><summary>A subtitle is listed but nothing shows on screen</summary><p>If it is a picture subtitle, the video must be converted to show it. If converting is switched off on the PC or the device cannot play the converted video, it cannot be shown. See <a href="../quality-and-subtitles.html">Quality, audio and subtitles</a>.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="../quality-and-subtitles.html">Quality, audio &amp; subtitles</a>
+    <a href="sound-and-audio.html">🔊 Sound and audio options</a>
+    <a href="getting-started-windows.html">🖥️ Get started on Windows</a>
+    <a href="privacy-in-plain-words.html">🔐 Privacy in plain words</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>

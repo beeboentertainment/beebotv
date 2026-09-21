@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Campsite Mode: a local theatre and games | Beebo Docs</title>
+<meta name="description" content="Turn an Android phone into a local theatre and game room: guests join over Wi-Fi with a browser, no app or account. Setup, features and privacy notes." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Campsite Mode: a local theatre and games | Beebo Docs" />
+<meta property="og:description" content="Turn an Android phone into a local theatre and game room: guests join over Wi-Fi with a browser, no app or account. Setup, features and privacy notes." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/campsite-mode.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/family-home.webp" />
+<meta property="og:image:alt" content="A family enjoying movie night at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/campsite-mode.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/campsite-mode.html#howto",
+  "name": "Campsite Mode: your phone as a theatre and game room",
+  "description": "Turn an Android phone into a local theatre and game room: guests join over Wi-Fi with a browser, no app or account. Setup, features and privacy notes.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Open Campsite Mode",
+      "text": "In the Android app, open Other › Games › Play with guests to start a session, or open the Campsite Mode screen directly. A screen with a tent icon and “Turn this phone into a little theatre and game room. Guests scan a code, type a name, and watch the videos you downloaded or play along — over local Wi-Fi.”",
+      "url": "https://beeboentertainment.com/docs/campsite-mode.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Tap Invite guests",
+      "text": "Tap Invite guests. This starts Campsite Mode so other phones can watch and play, then asks you to pick the Wi-Fi. Nothing is switched on until you choose.",
+      "url": "https://beeboentertainment.com/docs/campsite-mode.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Step 1: get guests on the Wi-Fi",
+      "text": "Pick how the other phones reach yours: Start Beebo’s own Wi-Fi (Beebo makes a Wi-Fi just for this, with no internet, and turns it off when you stop), Use my phone’s own hotspot, or Everyone’s already on the same Wi-Fi. With the first two, guests scan the first code and their phone joins your Wi-Fi with no typing and no password to read out. On some Android versions, Beebo asks for Location permission before it can make the Wi-Fi. The dialog explains why: it is only used to switch on the Wi-Fi, and Beebo never reads, stores or sends where you are. A join code for guests, headed “Step 1 — get guests on the Wi-Fi”.",
+      "url": "https://beeboentertainment.com/docs/campsite-mode.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Step 2: open the theatre",
+      "text": "Guests scan the second code, headed Step 2 — open the theatre, or open the address shown under it. Their browser opens on your phone’s page. They type a name and they are in. Under the code, “Sharing … downloaded videos” and a list of who is connected. If a guest sees “not connected to a network”, they skipped step 1, or their phone is in Airplane mode with Wi-Fi off.",
+      "url": "https://beeboentertainment.com/docs/campsite-mode.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Watch, play and share",
+      "text": "Guests pick from your downloaded videos, open the games, or join a shared photo and video show. Videos can be watched together, in sync. Everyone plays on their own phone; you can open the same games from your own screen.",
+      "url": "https://beeboentertainment.com/docs/campsite-mode.html#step-5"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Stop when you are done",
+      "text": "Tap Stop Campsite Mode. If nobody is connected for 15 minutes, Campsite Mode stops by itself.",
+      "url": "https://beeboentertainment.com/docs/campsite-mode.html#step-6"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">← All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🏕️</div>
+    <h1>Campsite Mode: your phone as a theatre and game room</h1>
+    <p class="lead">Campsite Mode turns your Android phone into a small local server. Guests join its Wi-Fi, scan a code, type a name and watch the videos you downloaded or play games together in their web browser, with no app and no account.</p>
+  </div>
+
+  <div class="callout safe">
+    <p><span class="tag live">Available now</span> <strong>Status:</strong> Campsite Mode is in the Android app (1.38). The guest server runs on the local Wi-Fi and makes no internet requests, so it works without a signal. It is for Android phones; it is hidden on TVs.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#before">Before you go</a><a href="#steps">Steps</a><a href="#do">What guests can do</a><a href="#safety">Safety and privacy</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+
+  <img class="page-campaign-art" src="../assets/illustrations/camping.svg" alt="A family watching a movie on a tablet by the campfire while camping in the wilderness" width="480" height="320" loading="lazy">
+  <h2 id="before">Before you go</h2>
+  <ul class="plain">
+    <li><strong>Download the videos you want while you still have Wi-Fi.</strong> Campsite Mode shares the videos already downloaded on the host phone; nothing streams from your home PC.</li>
+    <li>Guests need a phone, tablet or laptop with a web browser. They do not install anything or sign up.</li>
+    <li>Guests must stay near your phone to keep their signal, just like staying near a home Wi-Fi.</li>
+  </ul>
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Open Campsite Mode</h3>
+      <p>In the Android app, open <strong>Other › Games › Play with guests</strong> to start a session, or open the Campsite Mode screen directly.</p>
+      <p><strong>What you’ll see:</strong> A screen with a tent icon and “Turn this phone into a little theatre and game room. Guests scan a code, type a name, and watch the videos you downloaded or play along — over local Wi-Fi.”</p>
+      <div class="callout"><p><strong>Screenshot coming.</strong> The Campsite Mode start screen.</p></div>
+    </li>
+    <li id="step-2">
+      <h3>Tap Invite guests</h3>
+      <p>Tap <strong>Invite guests</strong>. This starts Campsite Mode so other phones can watch and play, then asks you to pick the Wi-Fi. Nothing is switched on until you choose.</p>
+      
+      
+    </li>
+    <li id="step-3">
+      <h3>Step 1: get guests on the Wi-Fi</h3>
+      <p>Pick how the other phones reach yours: <strong>Start Beebo’s own Wi-Fi</strong> (Beebo makes a Wi-Fi just for this, with no internet, and turns it off when you stop), <strong>Use my phone’s own hotspot</strong>, or <strong>Everyone’s already on the same Wi-Fi</strong>. With the first two, guests scan the first code and their phone joins your Wi-Fi with no typing and no password to read out.</p>
+      <p>On some Android versions, Beebo asks for Location permission before it can make the Wi-Fi. The dialog explains why: it is only used to switch on the Wi-Fi, and Beebo never reads, stores or sends where you are.</p>
+      <p><strong>What you’ll see:</strong> A join code for guests, headed “Step 1 — get guests on the Wi-Fi”.</p>
+      
+    </li>
+    <li id="step-4">
+      <h3>Step 2: open the theatre</h3>
+      <p>Guests scan the second code, headed <strong>Step 2 — open the theatre</strong>, or open the address shown under it. Their browser opens on your phone’s page. They type a name and they are in.</p>
+      <p><strong>What you’ll see:</strong> Under the code, “Sharing … downloaded videos” and a list of who is connected. If a guest sees “not connected to a network”, they skipped step 1, or their phone is in Airplane mode with Wi-Fi off.</p>
+      
+    </li>
+    <li id="step-5">
+      <h3>Watch, play and share</h3>
+      <p>Guests pick from your downloaded videos, open the games, or join a shared photo and video show. Videos can be watched together, in sync. Everyone plays on their own phone; you can open the same games from your own screen.</p>
+      
+      
+    </li>
+    <li id="step-6">
+      <h3>Stop when you are done</h3>
+      <p>Tap <strong>Stop Campsite Mode</strong>. If nobody is connected for 15 minutes, Campsite Mode stops by itself.</p>
+      
+      
+    </li>
+  </ol>
+
+  <h2 id="do">What guests can do</h2>
+  <ul class="plain">
+    <li><strong>Watch together.</strong> Guests see live sessions on their library page and can tap straight in, already in sync. Whoever opened the video holds playback, and the page hands it on if they wander off. Play, pause and seek happen on the browser page.</li>
+    <li><strong>Games.</strong> Dozens of shared games, plus solo ones, played on each person’s own phone in the browser. Everyone opens Games, chooses the same game, and the leader starts the round. You can also play against the computer on your phone with no Wi-Fi or hotspot at all.</li>
+    <li><strong>Campfire stories.</strong> Story starters to read out loud and pass round, a story spinner (a character, a place, a problem and a twist), and “next line” mode where anyone can add a sentence. Read aloud uses the phone’s built-in voice, and night red dims the screen to a soft red.</li>
+    <li><strong>Shared photos and videos.</strong> Take turns presenting: swipe to change the photo for everyone, or play a video together.</li>
+    <li><strong>Also in the app:</strong> a star chart, a packing list and a scavenger hunt. The <a href="trip-journal.html">Trip Journal</a> can turn a trip’s games and stories into a recap.</li>
+  </ul>
+
+  <h2 id="safety">Safety and privacy notes</h2>
+  <ul class="plain">
+    <li><strong>It runs on a local Wi-Fi, not the internet.</strong> The guest server and its pages make no internet requests, and Beebo’s own Wi-Fi has no internet. That is why it works with no signal. It does not mean the whole app is offline: the rest of the app can still reach the internet if the phone is connected, and Scavenger Hunt reads your location while its screen is open and can share finds through a Beebo hub if you have connected one.</li>
+    <li><strong>The guest page is plain HTTP on that Wi-Fi.</strong> Treat it like a shared room: anyone who can join the Wi-Fi and has the address can open it. Beebo’s own Wi-Fi is protected by a password, which the join code holds so nobody has to type it.</li>
+    <li><strong>Guests cannot save your videos in the ordinary way.</strong> The player page removes the download control and the right-click menu, and nothing is written to a guest’s device. That stops normal saving. It is not a claim that a determined person with developer tools could never copy a stream, so only share what you are happy to share.</li>
+    <li><strong>Names are whatever people type.</strong> Nothing checks who they are, and two people who type the same name count as one.</li>
+    <li><strong>Share only videos you have the right to share.</strong> Beebo includes no movies or shows.</li>
+  </ul>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>A guest’s page will not load after joining</summary><p>Beebo’s own Wi-Fi has no internet. Some phones try to use mobile data instead when the Wi-Fi has none, so have the guest turn mobile data off for a minute and reload. Also check they scanned step 1 first.</p></details>
+    <details><summary>The code will not open on a shared or hotel Wi-Fi</summary><p>Some public and hotel Wi-Fi keeps phones from seeing each other. Use Beebo’s own Wi-Fi or your phone’s hotspot instead.</p></details>
+    <details><summary>Nobody can see any videos</summary><p>The host phone shares only videos already downloaded in the Beebo app. Check the count under “Sharing … downloaded videos”. Download the videos while you still have Wi-Fi.</p></details>
+    <details><summary>Guests lose the connection</summary><p>They have gone out of range of the host phone. Move closer, and keep the host phone charged and awake while a session is running.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="trip-journal.html">📖 Trip Journal</a>
+    <a href="karaoke-and-recordings.html">🎤 Karaoke and recordings</a>
+    <a href="../local-first.html">Prepare for offline watching</a>
+    <a href="../car-companion.html">Beebo on the road</a>
+    <a href="../what-beebo-can-do.html">What Beebo can do</a>
+    <a href="privacy-in-plain-words.html">🔐 Privacy in plain words</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>
