@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Phone speakers: sync music across phones | Beebo Docs</title>
+<meta name="description" content="Step by step: play one song in sync on many phones with Campsite Mode, set Left and Right, trim the delay, and fix Wi-Fi, audio and Bluetooth problems." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Phone speakers: sync music across phones | Beebo Docs" />
+<meta property="og:description" content="Step by step: play one song in sync on many phones with Campsite Mode, set Left and Right, trim the delay, and fix Wi-Fi, audio and Bluetooth problems." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/docs/phone-speakers.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/friends-campsite.webp" />
+<meta property="og:image:alt" content="Friends sitting around a campfire, each looking at a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  /* ---- phone speakers pages: same building blocks as home-theater.html and docs/campsite-mode.html, layered on site.css tokens ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle;line-height:1.4}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:#7a4a08;background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:#231E18;background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:#6E6456;background:#fff;border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:14px 0}
+  .two-col .feature{margin:0}
+  .two-col .feature ul{margin:8px 0 0;padding-left:1.15em;color:var(--muted)}
+  .two-col .feature li{margin:0 0 6px}
+  .notyet{background:var(--surface);border:1px solid var(--border-strong);border-left:5px solid var(--accent);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 22px;margin:18px 0}
+  .notyet h2{margin-top:0}
+  .notyet ul{margin:8px 0 0;padding-left:1.25em}
+  .notyet li{margin:0 0 7px}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0 6px}
+  .legend div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .legend div .tag{display:block;width:max-content;margin-bottom:6px}
+  figure.diagram{margin:18px 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 12px 10px}
+  figure.diagram svg{display:block;width:100%;height:auto;max-width:620px;margin:0 auto}
+  figure.diagram figcaption{color:var(--muted);font-size:.9rem;line-height:1.5;text-align:center;margin-top:8px}
+  .dg-box{fill:var(--surface-2);stroke:var(--border-strong);stroke-width:2}
+  .dg-host{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2.5}
+  .dg-guest{fill:var(--surface);stroke:var(--accent);stroke-width:2}
+  .dg-pill{fill:var(--surface);stroke:var(--border-strong);stroke-width:1.5}
+  .dg-t{font:700 22px var(--font-display);fill:var(--ink)}
+  .dg-s{font:600 18px var(--font-body);fill:var(--muted)}
+  .dg-line{stroke:var(--accent-ink);stroke-width:2.5;fill:none}
+  .dg-wifi{stroke:var(--accent-ink);stroke-width:3;fill:none;stroke-linecap:round}
+  .dg-dot{fill:var(--accent-ink)}
+  .dg-qr{fill:var(--ink)}
+  .dg-qrbg{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+  .dg-arrowhead{fill:var(--accent-ink)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/docs/phone-speakers.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://beeboentertainment.com/docs/phone-speakers.html#howto",
+  "name": "Play one song in sync on many phones with Beebo Campsite Mode",
+  "description": "Step by step: play one song in sync on many phones with Campsite Mode, set Left and Right, trim the delay, and fix Wi-Fi, audio and Bluetooth problems.",
+  "inLanguage": "en",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Queue songs on the host phone",
+      "text": "On the host phone (the Android phone with the Beebo app), open Music, queue an album or some songs, and start one. Songs come from your Beebo computer’s music library, so the phone must be able to reach that computer. What you’ll see: the normal Music player. When you start Play together later, this phone’s own player pauses, because the host phone stays quiet.",
+      "url": "https://beeboentertainment.com/docs/phone-speakers.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Start Campsite Mode and pick the Wi-Fi",
+      "text": "Open Campsite Mode and tap Invite guests. Choose Start Beebo’s own Wi-Fi, Use my phone’s own hotspot or Everyone’s already on the same Wi-Fi. Beebo’s own Wi-Fi and the hotspot need no internet for the guests. What you’ll see: a join code headed “Step 1” and a second code headed “Step 2”. The full walk-through is in the Campsite Mode guide.",
+      "url": "https://beeboentertainment.com/docs/phone-speakers.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Guests join and open the Music tab",
+      "text": "Each guest scans the Step 1 code to join the Wi-Fi, then the Step 2 code (or types the address shown) so an ordinary browser opens your phone’s page. They enter a name and open the Music tab. They install nothing and sign up for nothing. What you’ll see: on the guest phone, “Waiting for your host” and then “Syncing clocks…”. On the host, each guest appears under Guest phones.",
+      "url": "https://beeboentertainment.com/docs/phone-speakers.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Each guest taps Tap to enable audio",
+      "text": "Phone browsers only allow sound after a tap. Each guest taps Tap to enable audio once. A guest who has not tapped is not waited for and joins in progress as soon as they do. What you’ll see: the guest’s Sync line changes, and the host card shows that phone as ready.",
+      "url": "https://beeboentertainment.com/docs/phone-speakers.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Tap Play together on the host",
+      "text": "On the host’s Music together card, tap Play together. Every phone downloads the song from the host phone over the Wi-Fi and starts at the same moment. A phone that joins late starts partway through. What you’ll see: “Waiting for guest phones to load the song…” on the host and “Downloading the track…” on the guests. The start waits until the phones that have tapped are ready, or up to about 20 seconds. Then the host shows “Playing” with the time. Pause, Play, the previous and next buttons and Stop apply to every phone.",
+      "url": "https://beeboentertainment.com/docs/phone-speakers.html#step-5"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Choose All, Left or Right for each phone",
+      "text": "Under Guest phones, each phone has All, Left and Right buttons. Set two phones one on each side of the room to Left and Right to make a stereo pair. A Left phone plays only the left side of the song on both of its speakers, and a Right phone only the right side. The change happens without restarting the song. What you’ll see: on the guest phone, “This phone plays” changes to Everything, Left speaker or Right speaker.",
+      "url": "https://beeboentertainment.com/docs/phone-speakers.html#step-6"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 7,
+      "name": "Fine-tune on each guest phone",
+      "text": "Each guest has a Volume slider and a trim under “Sounds late or early?”. Tap −10 ms to play that phone 10 milliseconds earlier and +10 ms for later, until it lines up by ear. A phone using a Bluetooth speaker usually needs earlier. What you’ll see: a Sync line that reads “In sync” (green), “Adjusting…” (amber) or “Out of sync” (red).",
+      "url": "https://beeboentertainment.com/docs/phone-speakers.html#step-7"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 8,
+      "name": "Stop when you are done",
+      "text": "Tap Stop on the host card to end the music, and Stop Campsite Mode when you are finished with the session. If nobody is connected for 15 minutes, Campsite Mode stops by itself. Songs are kept on the host phone only while Campsite Mode runs.",
+      "url": "https://beeboentertainment.com/docs/phone-speakers.html#step-8"
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="../docs.html">&larr; All docs</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">📱</div>
+    <h1>Phone speakers: play one song on many phones</h1>
+    <p class="lead">Beebo Campsite Mode can play the same music in sync on many phones at once, and can split it into a left and right stereo pair across two phones. This guide takes you from the host phone to a room of phones playing together.</p>
+  </div>
+
+  <div class="callout">
+    <p><span class="tag live">Available now — test build (Beta)</span> <strong>Status:</strong> in the Android test build 1.39 (build 40), which you can download from this site. It is a test build and still being tested. We have tried it on a computer, not yet on real phones over a hotspot. Android versions before 1.39 do not have Play together. For the short version, see <a href="../phone-speakers.html">Turn every phone into a speaker</a>.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#before">Before you start</a><a href="#steps">Steps</a><a href="#roles">Left, Right and All</a><a href="#indicator">The Sync line</a><a href="#trouble">If something goes wrong</a><a href="#safety">Safety and privacy</a><a href="#related">Related pages</a></nav>
+
+  <h2 id="before">Before you start</h2>
+  <ul class="plain">
+    <li>The host is an Android phone with the Beebo Android app 1.39 or later (the test build from this site).</li>
+    <li>Your music is in your Beebo library. The host phone loads the songs from your Beebo computer, so it needs to reach that computer.</li>
+    <li>Guests need a phone, tablet or laptop with a web browser. We have not yet checked it on real phones, so we do not promise it works on every phone or browser.</li>
+    <li>Guests stay near the host phone to keep their Wi-Fi signal. About eight guests on one hotspot is what we designed for.</li>
+    <li>Only play music you have the right to play. Beebo includes no music.</li>
+  </ul>
+
+  <h2 id="steps">Step by step</h2>
+  <ol class="steps">
+    <li id="step-1">
+      <h3>Queue songs on the host phone</h3>
+      <p>On the host phone (the Android phone with the Beebo app), open <strong>Music</strong>, queue an album or some songs, and start one. Songs come from your Beebo computer&rsquo;s music library, so the phone must be able to reach that computer.</p>
+      <p><strong>What you&rsquo;ll see:</strong> the normal Music player. When you start Play together later, this phone&rsquo;s own player pauses, because the host phone stays quiet.</p>
+    </li>
+    <li id="step-2">
+      <h3>Start Campsite Mode and pick the Wi-Fi</h3>
+      <p>Open Campsite Mode and tap <strong>Invite guests</strong>. Choose <strong>Start Beebo&rsquo;s own Wi-Fi</strong>, <strong>Use my phone&rsquo;s own hotspot</strong> or <strong>Everyone&rsquo;s already on the same Wi-Fi</strong>. Beebo&rsquo;s own Wi-Fi and the hotspot need no internet for the guests.</p>
+      <p><strong>What you&rsquo;ll see:</strong> a join code headed &ldquo;Step 1&rdquo; and a second code headed &ldquo;Step 2&rdquo;. The full walk-through is in the <a href="campsite-mode.html">Campsite Mode guide</a>.</p>
+    </li>
+    <li id="step-3">
+      <h3>Guests join and open the Music tab</h3>
+      <p>Each guest scans the Step 1 code to join the Wi-Fi, then the Step 2 code (or types the address shown) so an ordinary browser opens your phone&rsquo;s page. They enter a name and open the <strong>Music</strong> tab. They install nothing and sign up for nothing.</p>
+      <p><strong>What you&rsquo;ll see:</strong> on the guest phone, &ldquo;Waiting for your host&rdquo; and then &ldquo;Syncing clocks&hellip;&rdquo;. On the host, each guest appears under <strong>Guest phones</strong>.</p>
+    </li>
+    <li id="step-4">
+      <h3>Each guest taps Tap to enable audio</h3>
+      <p>Phone browsers only allow sound after a tap. Each guest taps <strong>Tap to enable audio</strong> once. A guest who has not tapped is not waited for and joins in progress as soon as they do.</p>
+      <p><strong>What you&rsquo;ll see:</strong> the guest&rsquo;s Sync line changes, and the host card shows that phone as ready.</p>
+    </li>
+    <li id="step-5">
+      <h3>Tap Play together on the host</h3>
+      <p>On the host&rsquo;s Music together card, tap <strong>Play together</strong>. Every phone downloads the song from the host phone over the Wi-Fi and starts at the same moment. A phone that joins late starts partway through.</p>
+      <p><strong>What you&rsquo;ll see:</strong> &ldquo;Waiting for guest phones to load the song&hellip;&rdquo; on the host and &ldquo;Downloading the track&hellip;&rdquo; on the guests. The start waits until the phones that have tapped are ready, or up to about 20 seconds. Then the host shows &ldquo;Playing&rdquo; with the time. <strong>Pause</strong>, <strong>Play</strong>, the previous and next buttons and <strong>Stop</strong> apply to every phone.</p>
+    </li>
+    <li id="step-6">
+      <h3>Choose All, Left or Right for each phone</h3>
+      <p>Under <strong>Guest phones</strong>, each phone has <strong>All</strong>, <strong>Left</strong> and <strong>Right</strong> buttons. Set two phones one on each side of the room to Left and Right to make a stereo pair. A Left phone plays only the left side of the song on both of its speakers, and a Right phone only the right side. The change happens without restarting the song.</p>
+      <p><strong>What you&rsquo;ll see:</strong> on the guest phone, &ldquo;This phone plays&rdquo; changes to Everything, Left speaker or Right speaker.</p>
+    </li>
+    <li id="step-7">
+      <h3>Fine-tune on each guest phone</h3>
+      <p>Each guest has a <strong>Volume</strong> slider and a trim under &ldquo;Sounds late or early?&rdquo;. Tap <strong>&minus;10 ms</strong> to play that phone 10 milliseconds earlier and <strong>+10 ms</strong> for later, until it lines up by ear. A phone using a Bluetooth speaker usually needs earlier.</p>
+      <p><strong>What you&rsquo;ll see:</strong> a Sync line that reads &ldquo;In sync&rdquo; (green), &ldquo;Adjusting&hellip;&rdquo; (amber) or &ldquo;Out of sync&rdquo; (red).</p>
+    </li>
+    <li id="step-8">
+      <h3>Stop when you are done</h3>
+      <p>Tap <strong>Stop</strong> on the host card to end the music, and <strong>Stop Campsite Mode</strong> when you are finished with the session. If nobody is connected for 15 minutes, Campsite Mode stops by itself. Songs are kept on the host phone only while Campsite Mode runs.</p>
+    </li>
+  </ol>
+
+  <h2 id="roles">Left, Right and All</h2>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">Setting</th><th scope="col">What that phone plays</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">All (shown as &ldquo;Everything&rdquo; on the phone)</th><td>The whole song. This is the default.</td></tr>
+        <tr><th scope="row">Left</th><td>Only the left side of the song, on both of the phone&rsquo;s speakers.</td></tr>
+        <tr><th scope="row">Right</th><td>Only the right side of the song, on both of the phone&rsquo;s speakers.</td></tr>
+        <tr><th scope="row">Voice <span class="tag plan">Planned</span></th><td>Groundwork for a later Campfire feature. For now a phone set to Voice plays the same music as everyone else, and the host card has no button for it.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fineprint">A left and right pair is a fun party feature. Phones will differ by tens of milliseconds, so it is not a calibrated stereo system.</p>
+
+  <h2 id="indicator">What the Sync line means</h2>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">The phone shows</th><th scope="col">Meaning</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Syncing clocks&hellip;</th><td>The phone is measuring its time difference from the host. Wait a few seconds.</td></tr>
+        <tr><th scope="row">Tap to enable audio</th><td>The browser needs one tap before it will play sound.</td></tr>
+        <tr><th scope="row">Downloading the track&hellip;</th><td>The song is coming from the host phone over the Wi-Fi.</td></tr>
+        <tr><th scope="row">In sync (green)</th><td>Estimated error is within about 30 ms.</td></tr>
+        <tr><th scope="row">Adjusting&hellip; (amber)</th><td>Estimated error is up to about 80 ms, and the phone is correcting.</td></tr>
+        <tr><th scope="row">Out of sync (red)</th><td>Estimated error is above about 80 ms. Move closer, reload, or trim.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fineprint">It is an estimate, not a measurement of what you hear. It cannot see delay added by a Bluetooth speaker, which is why the trim buttons exist.</p>
+
+  <h2 id="trouble">If something goes wrong</h2>
+  <div class="faq">
+    <details><summary>A guest&rsquo;s page will not load</summary><p>Beebo&rsquo;s own Wi-Fi has no internet, and some phones try to use mobile data instead when a Wi-Fi has none. Have the guest turn mobile data off for a minute and reload. Check they scanned the Step 1 code first. On a shared, hotel or public Wi-Fi, phones often cannot see each other, so use Beebo&rsquo;s own Wi-Fi or your phone&rsquo;s hotspot.</p></details>
+    <details><summary>The guest page keeps saying Tap to enable audio</summary><p>Tap it. The browser will not play sound until the page has had a tap, and this is a browser rule, not a Beebo setting. iPhones can ask again after a call or after the phone locks. A phone that has not tapped is not waited for, and joins in progress once it does.</p></details>
+    <details><summary>I tapped, but there is no sound</summary><p>Turn up the phone&rsquo;s volume and the Volume slider on the page, and check the phone is not on silent (on an iPhone, check the silent switch). Remember the host phone stays quiet on purpose. If the page says &ldquo;This browser cannot play synced audio&rdquo;, try Chrome or Safari.</p></details>
+    <details><summary>The screen locked and the music stopped</summary><p>Keep the page open with the screen on. Some phones pause a web page when the screen locks, and we have not tested ways to keep it playing. Open the page again and the phone catches up by itself. In your phone&rsquo;s settings you can set a longer screen timeout while you use the feature.</p></details>
+    <details><summary>The phones are not quite together</summary><p>Look at the Sync line. Green &ldquo;In sync&rdquo; means its estimated error is within about 30 ms. If it says &ldquo;Adjusting&hellip;&rdquo; or &ldquo;Out of sync&rdquo;, move that phone closer to the host, reload the page, and give it a few seconds, because phones re-check their clocks regularly. If it still sounds late or early, use the &minus;10 ms and +10 ms trim. The indicator is an estimate: it cannot see delay added by a speaker.</p></details>
+    <details><summary>A phone with a Bluetooth speaker sounds late</summary><p>Bluetooth adds delay, and browsers often do not report how much. Tap <strong>&minus;10 ms</strong> on that phone a few times until it lines up by ear. The setting is remembered on that phone.</p></details>
+    <details><summary>A phone lost the connection</summary><p>The page says &ldquo;Reconnecting to your host&hellip;&rdquo; and rejoins by itself when it is back in range. Keep guests near the host phone, and keep the host phone charged and awake while the session runs.</p></details>
+    <details><summary>A song is skipped, or the song takes a while to start</summary><p>Songs longer than 12 minutes are skipped. Each guest downloads each song from the host phone before it starts, and about eight guests on one hotspot is what we designed for, so a bigger group waits longer. We have not tested large groups on real phones.</p></details>
+    <details><summary>I cannot find the Music tab or the Play together button</summary><p>You need the Beebo Android app 1.39 or later on the host phone. Earlier versions do not have this feature. Guests do not need the app, only a browser.</p></details>
+  </div>
+
+  <h2 id="safety">Safety and privacy notes</h2>
+  <ul class="plain">
+    <li><strong>It runs on a local Wi-Fi, not the internet.</strong> Guests download songs from the host phone over that Wi-Fi.</li>
+    <li><strong>The guest page is plain HTTP on that Wi-Fi.</strong> Treat it like a shared room: anyone who can join the Wi-Fi and has the address can open the page. Beebo&rsquo;s own Wi-Fi is protected by a password, which the join code holds so nobody has to type it.</li>
+    <li><strong>Guests can only get the songs in the current queue,</strong> not your whole library. The host phone keeps copies of the current and upcoming songs only while Campsite Mode runs.</li>
+    <li><strong>Names are whatever people type.</strong> Nothing checks who they are.</li>
+  </ul>
+  <p>For what Beebo&rsquo;s own service handles, see <a href="privacy-in-plain-words.html">Privacy in plain words</a>.</p>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="../phone-speakers.html">📱 Turn every phone into a speaker</a>
+    <a href="campsite-mode.html">🏕️ Campsite Mode</a>
+    <a href="../music.html">🎵 Your music</a>
+    <a href="sound-and-audio.html">Sound and audio options</a>
+    <a href="../home-theater.html">Home theater and big screen</a>
+    <a href="privacy-in-plain-words.html">🔐 Privacy in plain words</a>
+  </div>
+  <p class="fineprint">Written for the Beebo Android test build 1.39 (build 40), as of September 21, 2026. The feature described is in that test build and has not been measured on real phones yet. Found something that does not match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.39 (build 40)</strong><time data-beebo-release-date="android" datetime="2026-09-21T15:30:29Z">Built Sep 21, 2026, 11:30:29 AM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../home-theater.html">Home theater and big screen</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>
