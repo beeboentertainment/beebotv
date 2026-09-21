@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Beebo vs. Plex, Jellyfin &amp; Emby — how they compare</title>
-<meta name="description" content="An honest, dated comparison of Beebo Entertainment against Plex, Jellyfin and Emby: away-from-home streaming, pricing, platform support, and where each one is still ahead." />
+<title>Beebo vs. other media server apps — full feature comparison</title>
+<meta name="description" content="A checkbox-style comparison of Beebo Entertainment against three other well-known personal media server apps: away-from-home streaming, pricing, platforms, and every feature each one offers or doesn't." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
@@ -18,10 +18,18 @@
 <style>
   .cmp-table-wrap{overflow-x:auto;margin:22px 0}
   table.cmp{width:100%;border-collapse:collapse;font-size:.92rem;min-width:640px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
-  .cmp th,.cmp td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+  .cmp th,.cmp td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--border);vertical-align:top}
   .cmp th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
-  .cmp td.yes{color:#1f6b45;font-weight:700}
-  .cmp td.no{color:#8a5a00}
+  .cmp th.beebo-col{background:var(--accent-soft)}
+  .cmp td.check,.cmp th.check-cell{text-align:center;white-space:nowrap}
+  .cmp-mark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;font-weight:800;font-size:.85rem;line-height:1}
+  .cmp-mark.yes{background:color-mix(in srgb,var(--good,#1f6b45) 16%,transparent);color:#1f6b45}
+  .cmp-mark.no{background:color-mix(in srgb,#8a5a00 12%,transparent);color:#8a5a00}
+  .cmp-mark.partial{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent-ink)}
+  .cmp-sub{display:block;color:var(--muted);font-size:.78rem;margin-top:2px}
+  .cmp-legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin:10px 0 26px}
+  .cmp-legend span{display:inline-flex;align-items:center;gap:6px}
+  .cmp-section-title{margin:34px 0 4px}
   .cmp-note{background:var(--surface);border-left:4px solid var(--accent);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin:20px 0}
   .cmp-note p{margin:0 0 8px}
   .cmp-note p:last-child{margin-bottom:0}
@@ -34,41 +42,77 @@
 <div class="wrap">
   <a class="back" href="index.html">← Back to Beebo Entertainment</a>
   <div class="page-hero">
-    <h1>Beebo vs. Plex, Jellyfin and Emby</h1>
-    <p class="lead">We're the newest name here, so we think it's fair to show our work rather than just claim we're better. Below is what we could verify from each product's own official sources, dated, with links — and we've included the places where the others are still ahead of us, not just the places where we're not.</p>
-    <p class="fineprint">Checked September 20, 2026. Prices, features and policies change — check the linked source before making a decision, and treat anything below as a snapshot, not a permanent fact.</p>
+    <h1>Beebo vs. other media server apps</h1>
+    <p class="lead">We're the newest name here, so instead of just claiming we're better, here's a full checkbox comparison: every feature we could verify, for us and for three other well-known personal media server apps, including the places where they're still ahead of us. We've left the other names off the table to keep it simple to scan — see "Sources" at the bottom for exactly who's who and where each fact came from.</p>
+    <p class="fineprint">Checked September 21, 2026. Prices, features and policies change — check the linked source before making a decision, and treat anything below as a snapshot, not a permanent fact.</p>
   </div>
 
+  <div class="cmp-legend">
+    <span><span class="cmp-mark yes">✓</span> Included</span>
+    <span><span class="cmp-mark partial">~</span> Partial / limited / paid add-on</span>
+    <span><span class="cmp-mark no">✗</span> Not offered</span>
+  </div>
+
+  <h2 class="cmp-section-title">Away from home</h2>
   <div class="cmp-table-wrap">
     <table class="cmp">
-      <thead><tr><th>Away from home</th><th>Beebo</th><th>Plex</th><th>Jellyfin</th><th>Emby</th></tr></thead>
+      <thead><tr><th>Feature</th><th class="beebo-col check-cell">Beebo</th><th class="check-cell">Company 1</th><th class="check-cell">Company 2</th><th class="check-cell">Company 3</th></tr></thead>
       <tbody>
-        <tr><td>Remote streaming of your own library</td><td class="yes">Included in every plan</td><td class="no">Needs Plex Pass or Remote Watch Pass since Apr 29, 2025</td><td class="no">No built-in remote access — you set up your own VPN/reverse proxy</td><td class="no">Classic port-forwarding; no built-in relay</td></tr>
-        <tr><td>Owner-run relay when a direct connection fails</td><td class="yes">Beebo Relay, included, no extra usage charge</td><td class="no">Plex Relay exists but is hard-capped at 2 Mbps</td><td class="no">No equivalent — a self-hosted VPN is the usual answer</td><td class="no">No equivalent</td></tr>
-        <tr><td>Away-from-home price</td><td class="yes">$3/month (1080p) or $5/month (4K), per household</td><td class="no">Remote Watch Pass $2.99/mo, or Plex Pass $6.99/mo (2025 press pricing)</td><td class="yes">Free (server and clients), but no built-in remote access to charge for</td><td class="no">Premiere from $4.99/mo for the paid tier</td></tr>
+        <tr><td>Remote streaming of your own library, built in</td><td class="check"><span class="cmp-mark yes">✓</span></td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">needs a paid pass</span></td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">you set up your own VPN/proxy</span></td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">classic port forwarding only</span></td></tr>
+        <tr><td>Owner-run relay when a direct connection fails, no port forwarding</td><td class="check"><span class="cmp-mark yes">✓</span><span class="cmp-sub">Beebo Relay, live today</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">exists, capped at 2 Mbps</span></td><td class="check"><span class="cmp-mark no">✗</span></td><td class="check"><span class="cmp-mark no">✗</span></td></tr>
+        <tr><td>Remote access included in the base price (no separate paywall)</td><td class="check"><span class="cmp-mark yes">✓</span></td><td class="check"><span class="cmp-mark no">✗</span></td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">free app, but no built-in remote to pay for</span></td><td class="check"><span class="cmp-mark no">✗</span></td></tr>
       </tbody>
     </table>
   </div>
 
+  <h2 class="cmp-section-title">Beyond streaming — other products from the same company</h2>
   <div class="cmp-table-wrap">
     <table class="cmp">
-      <thead><tr><th>Extras</th><th>Beebo</th><th>Plex</th><th>Jellyfin</th><th>Emby</th></tr></thead>
+      <thead><tr><th>Feature</th><th class="beebo-col check-cell">Beebo</th><th class="check-cell">Company 1</th><th class="check-cell">Company 2</th><th class="check-cell">Company 3</th></tr></thead>
       <tbody>
-        <tr><td>Zero-internet local party mode with games</td><td class="yes">Campsite Mode, ~40 games, no app needed for guests</td><td class="no">Not offered</td><td class="no">Not offered</td><td class="no">Not offered</td></tr>
-        <tr><td>Dedicated car app</td><td class="yes">Beebo Auto</td><td class="no">Android Auto is music-only; no official CarPlay</td><td class="no">Not offered</td><td class="no">CarPlay/Android Auto exist but are Premiere-gated</td></tr>
-        <tr><td>Hardware-accelerated transcoding</td><td class="yes">Included</td><td class="no">Needs Plex Pass</td><td class="yes">Free</td><td class="no">Needs Premiere</td></tr>
-        <tr><td>Own VPN product from the same company</td><td class="soon">BeeboVPN — in development</td><td class="no">Not offered</td><td class="no">Not offered</td><td class="no">Not offered</td></tr>
-        <tr><td>Game server hosting from the same company</td><td class="yes">Away Play now; Beebo-hosted plans in development</td><td class="no">Not offered</td><td class="no">Not offered</td><td class="no">Not offered</td></tr>
+        <tr><td>A household VPN from the same company</td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">BeeboVPN — live, invite-only test, 1 server</span></td><td class="check"><span class="cmp-mark no">✗</span></td><td class="check"><span class="cmp-mark no">✗</span></td><td class="check"><span class="cmp-mark no">✗</span></td></tr>
+        <tr><td>Game server hosting from the same company</td><td class="check"><span class="cmp-mark yes">✓</span><span class="cmp-sub">home-hosted live; Beebo-hosted plans coming</span></td><td class="check"><span class="cmp-mark no">✗</span></td><td class="check"><span class="cmp-mark no">✗</span></td><td class="check"><span class="cmp-mark no">✗</span></td></tr>
+        <tr><td>Zero-internet local party mode with built-in games</td><td class="check"><span class="cmp-mark yes">✓</span><span class="cmp-sub">Campsite Mode, ~40 games, no app needed for guests</span></td><td class="check"><span class="cmp-mark no">✗</span></td><td class="check"><span class="cmp-mark no">✗</span></td><td class="check"><span class="cmp-mark no">✗</span></td></tr>
+        <tr><td>Dedicated car app</td><td class="check"><span class="cmp-mark yes">✓</span><span class="cmp-sub">Beebo Auto</span></td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">Android Auto is music-only, no CarPlay</span></td><td class="check"><span class="cmp-mark no">✗</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">CarPlay/Android Auto, paid tier only</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="cmp-section-title">Playback &amp; hosting</h2>
+  <div class="cmp-table-wrap">
+    <table class="cmp">
+      <thead><tr><th>Feature</th><th class="beebo-col check-cell">Beebo</th><th class="check-cell">Company 1</th><th class="check-cell">Company 2</th><th class="check-cell">Company 3</th></tr></thead>
+      <tbody>
+        <tr><td>Hardware-accelerated transcoding</td><td class="check"><span class="cmp-mark yes">✓</span><span class="cmp-sub">included</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">needs a paid pass</span></td><td class="check"><span class="cmp-mark yes">✓</span><span class="cmp-sub">free</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">needs the paid tier</span></td></tr>
+        <tr><td>Live TV &amp; DVR</td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">not built yet</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">tuner + paid pass for DVR</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">tuner + a plugin</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">tuner + paid tier for some of it</span></td></tr>
+        <tr><td>Third-party automation ecosystem (auto-acquire, watch-history dashboards, etc.)</td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">not built yet</span></td><td class="check"><span class="cmp-mark yes">✓</span></td><td class="check"><span class="cmp-mark yes">✓</span></td><td class="check"><span class="cmp-mark yes">✓</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="cmp-section-title">Reach &amp; price</h2>
+  <div class="cmp-table-wrap">
+    <table class="cmp">
+      <thead><tr><th>Feature</th><th class="beebo-col check-cell">Beebo</th><th class="check-cell">Company 1</th><th class="check-cell">Company 2</th><th class="check-cell">Company 3</th></tr></thead>
+      <tbody>
+        <tr><td>Platform reach today (Roku, Fire TV, Apple TV, smart TVs, consoles)</td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">Windows server + Android/browser today; iPhone planned</span></td><td class="check"><span class="cmp-mark yes">✓</span></td><td class="check"><span class="cmp-mark yes">✓</span></td><td class="check"><span class="cmp-mark yes">✓</span></td></tr>
+        <tr><td>Fully usable with no subscription of any kind</td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">30-day free trial, then $3&ndash;5/mo per household</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">server + local playback free; remote/extras paid</span></td><td class="check"><span class="cmp-mark yes">✓</span><span class="cmp-sub">fully free and open source</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">server free; extras need the paid tier</span></td></tr>
+        <tr><td>Away-from-home price</td><td class="check"><span class="cmp-mark yes">✓</span><span class="cmp-sub">$3&ndash;5/month, per household, relay included</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">from ~$3/mo for the pass that unlocks it</span></td><td class="check"><span class="cmp-mark no">✗</span><span class="cmp-sub">nothing to charge for &mdash; no built-in remote access</span></td><td class="check"><span class="cmp-mark partial">~</span><span class="cmp-sub">from ~$5/mo paid tier</span></td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="cmp-note">
-    <p><strong>Where they're still ahead of us, honestly:</strong> Plex, Jellyfin and Emby all run on far more platforms today (Roku, Fire TV, Apple TV, smart TVs, game consoles) — Beebo is Windows-server-plus-Android/browser right now, with a native iPhone app planned but not shipped. All three also have mature Live TV/DVR support and a large ecosystem of automation add-ons (Sonarr/Radarr-style acquisition, Tautulli-style watch-history dashboards) that Beebo doesn't have built in yet. Jellyfin in particular has no subscription of any kind and a large, active third-party client and plugin community. If any of those matter more to you than away-from-home streaming and the extras above, one of them may suit you better today.</p>
-    <p>We're a small, newer company. Our bet is that most households care more about "does it just work when I'm away from home, and can it grow with my family" than about the long tail of automation plugins — and that we can keep prices honest by running Beebo Relay, BeeboVPN and Beebo Play on the same shared servers instead of three separate bills' worth of infrastructure. See our <a href="beebo-products.html">products page</a> for the full picture of what that looks like today versus what's still coming.</p>
+    <p><strong>Beebo Relay and BeeboVPN, honestly, as of today:</strong> both are live and genuinely working, running on our first server in Beauharnois, Canada. Beebo Relay is included with every Beebo Entertainment subscription, no extra usage charge. BeeboVPN is live too, but currently as an invite-only test on that same single server while we finish billing and polish before opening it up publicly. We plan to add server capacity in a region once enough households there actually need it &mdash; that's a real cost-and-reliability decision each time, not an automatic or instant process &mdash; and once there's more than one location, you'll be able to choose which one you connect to.</p>
+  </div>
+
+  <div class="cmp-note">
+    <p><strong>Where they're still ahead of us, honestly:</strong> all three of the others run on far more platforms today (Roku, Fire TV, Apple TV, smart TVs, game consoles) &mdash; Beebo is Windows-server-plus-Android/browser right now, with a native iPhone app planned but not shipped. All three also have mature Live TV/DVR support and a large ecosystem of third-party automation add-ons (auto-acquisition tools, watch-history dashboards) that Beebo doesn't have built in yet. One of the three has no subscription of any kind and a large, active third-party client and plugin community. If any of those matter more to you than away-from-home streaming, a household VPN, or game hosting, one of them may suit you better today.</p>
+    <p>We're a small, newer company. Our bet is that most households care more about "does it just work when I'm away from home, and can it grow with my family" than about the long tail of automation plugins &mdash; and that we can keep prices honest by running Beebo Relay, BeeboVPN and Beebo Play on the same shared servers instead of three separate bills' worth of infrastructure. See our <a href="beebo-products.html">products page</a> for the full picture of what that looks like today versus what's still coming.</p>
   </div>
 
   <h2>Sources</h2>
+  <p class="fineprint">Company 1 = Plex, Company 2 = Jellyfin, Company 3 = Emby, in that order in every table above. We checked each company's own official pages directly rather than guessing:</p>
   <ul class="cmp-sources">
     <li>Plex: <a href="https://www.plex.tv/plans/">plex.tv/plans</a> and Plex's own <a href="https://www.plex.tv/de/blog/important-2025-plex-updates/">2025 remote-playback policy update</a> — remote personal-media streaming requiring Plex Pass/Remote Watch Pass since April 29, 2025.</li>
     <li>Jellyfin: <a href="https://jellyfin.org/clients/">jellyfin.org/clients</a> (no subscription for server or official clients) and <a href="https://jellyfin.org/docs/general/post-install/networking/">jellyfin.org's own networking docs</a> (no built-in remote access; documents VPN/reverse-proxy as the way to connect remotely).</li>
