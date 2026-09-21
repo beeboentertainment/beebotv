@@ -171,6 +171,32 @@
 
     var spot = placement(target);
     spot.node.insertAdjacentElement(spot.where, w);
+    followVisibility(w, spot.node, target);
+  }
+
+  // A page can hide the card a Listen button belongs to (the Help page's search and category
+  // filters set hidden on the card). The button must disappear with it, not float on its own.
+  function followVisibility(w, anchor, target) {
+    function gone(n) {
+      if (!n) return false;
+      if (n.closest && n.closest("[hidden]")) return true;
+      try { return window.getComputedStyle(n).display === "none"; } catch (e) { return false; }
+    }
+    function sync() {
+      var hide = gone(anchor) || gone(target);
+      if (w.hidden !== hide) {
+        w.hidden = hide;
+        if (hide && player && player.widget === w) stop();
+      }
+    }
+    sync();
+    if (!window.MutationObserver) return;
+    var mo = new MutationObserver(sync);
+    [anchor, target].forEach(function (n) {
+      for (; n && n !== document.documentElement; n = n.parentElement) {
+        mo.observe(n, { attributes: true, attributeFilter: ["hidden", "style", "class"] });
+      }
+    });
   }
 
   function init(manifest) {
