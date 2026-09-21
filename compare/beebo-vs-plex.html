@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beebo vs Plex: an honest comparison (Sept 2026)</title>
+<meta name="description" content="How Beebo and Plex compare on price, remote access, ads, devices and features as of September 2026, including where Plex may suit you better." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta property="og:title" content="Beebo vs Plex: an honest comparison (Sept 2026)" />
+<meta property="og:description" content="How Beebo and Plex compare on price, remote access, ads, devices and features as of September 2026, including where Plex may suit you better." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/compare/beebo-vs-plex.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/family-home.webp" />
+<meta property="og:image:alt" content="A family enjoying movie night at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="../site.css" />
+<style>
+  .wrap{max-width:1040px}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 8px}
+  .wrap .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;margin:0 6px 4px 0;white-space:nowrap;border:1px solid transparent;vertical-align:middle;line-height:1.4}
+  .wrap .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .wrap .tag.beta{color:#7a4a08;background:var(--accent-soft);border-color:var(--border-strong)}
+  .wrap .tag.dev{color:#231E18;background:var(--bg-2);border-color:var(--border-strong)}
+  .wrap .tag.plan{color:#6E6456;background:#fff;border-color:var(--border-strong)}
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0 6px}
+  .legend div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .legend div .tag{display:block;width:max-content;margin-bottom:6px}
+  .cmp-wrap{margin:12px 0 8px}
+  table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.92rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .cmp th,.cmp td{text-align:left;padding:12px 13px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55}
+  .cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
+  .cmp thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2);font-size:1rem}
+  .cmp thead th.b{background:var(--accent-soft)}
+  .cmp tbody th{font-family:var(--font-display);font-weight:700;width:15%;background:transparent}
+  .cmp td.b{background:color-mix(in srgb,var(--accent-soft) 40%,transparent)}
+  .cmp td{color:var(--ink)}
+  .cmp-note{background:var(--surface);border-left:4px solid var(--accent);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin:20px 0}
+  .cmp-note p{margin:0 0 8px}
+  .cmp-note p:last-child{margin-bottom:0}
+  .feature .tag{margin-left:0}
+  .feature h3{gap:8px}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:14px 0}
+  .two-col .feature{margin:0}
+  .two-col .feature ul{margin:8px 0 0;padding-left:1.15em;color:var(--muted)}
+  .two-col .feature li{margin:0 0 6px}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  .sources li{margin:0 0 6px;font-size:.92rem;color:var(--muted)}
+  @media (max-width:860px){
+    table.cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:auto}
+    table.cmp{border:0;box-shadow:none;background:transparent}
+    .cmp thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .cmp tbody tr{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);margin:0 0 14px;padding:4px 0;overflow:hidden}
+    .cmp tbody th{width:auto;padding:12px 14px 4px;border:0;font-size:1.05rem}
+    .cmp td{border:0;padding:6px 14px 8px}
+    .cmp td::before{content:attr(data-label);display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+    .cmp td.b{background:var(--accent-soft)}
+  }
+</style>
+<link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://beeboentertainment.com/compare/beebo-vs-plex.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://beeboentertainment.com/compare/beebo-vs-plex.html#webpage",
+      "url": "https://beeboentertainment.com/compare/beebo-vs-plex.html",
+      "name": "Beebo vs Plex: an honest comparison (Sept 2026)",
+      "description": "How Beebo and Plex compare on price, remote access, ads, devices and features as of September 2026, including where Plex may suit you better.",
+      "inLanguage": "en",
+      "dateModified": "2026-09-21",
+      "about": {
+        "@id": "https://beeboentertainment.com/platforms.html#software"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://beeboentertainment.com/platforms.html#software",
+      "name": "Beebo Entertainment",
+      "url": "https://beeboentertainment.com/platforms.html",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows 10, Windows 11, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CAD",
+        "description": "Beebo Entertainment is free to use at home. Away-from-home viewing is free with a direct connection, automatic UPnP or your own relay. Beebo Relay is an optional paid fallback.",
+        "url": "https://beeboentertainment.com/subscribe.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://beeboentertainment.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Compare",
+          "item": "https://beeboentertainment.com/beebo-vs-other-apps.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Beebo vs Plex",
+          "item": "https://beeboentertainment.com/compare/beebo-vs-plex.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I have to pay to watch Beebo away from home?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Away from home is free with a direct connection, automatic UPnP or your own relay. The optional Beebo Relay is a paid fallback for households where none of those work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I choose Beebo or Plex?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on what you need. Plex is more mature and runs on far more devices today. Beebo may suit you if you run Windows, watch on Android or in a browser, and want a free app that keeps your library on your own PC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Beebo and Plex at the same time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Beebo does not move or change your files, so both can read the same folders. Beebo does not import Plex watch history."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">&#9776;</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html" aria-current="page">Compare</a><a href="../index.html#pricing">Pricing</a><a href="../docs.html">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo &#8599;</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+<main>
+<div class="wrap">
+<a class="back" href="../beebo-vs-other-apps.html">&larr; Compare all four</a>
+<div class="page-hero"><h1>Beebo vs Plex</h1><p class="lead">Plex is a very widely used personal media server. Beebo is a newer, smaller one built around Windows PCs, Android and browsers. Here is how they differ today, including where Plex is the stronger choice.</p><p class="fineprint">Checked September 21, 2026. As of September 2026 and only for the versions named on this page: Beebo for Windows 0.1.57 and the Beebo Android app 1.38.</p></div>
+<div class="callout safe"><p><strong>The short version.</strong> Plex is the more mature and more widely available product: more devices, more server choices and a larger feature set. Beebo is a free, Windows-first alternative where away-from-home viewing does not need a pass and your library and video stay on your own PC. Choose Plex if you need Apple TV, Roku, a NAS server or Plex&rsquo;s Live TV and DVR today. Choose Beebo if a free, Windows-first setup with Android and browser viewing matches how you watch.</p></div>
+<nav class="guide-nav" aria-label="On this page"><a href="#side-by-side">Side by side</a><a href="#cost">Cost</a><a href="#remote">Away from home</a><a href="#ads">Ads</a><a href="#ahead">When Plex may suit you better</a><a href="#suits">When Beebo may suit you better</a><a href="#choose">Who should choose what</a><a href="#switching">Trying Beebo</a><a href="#faq">Questions</a><a href="#sources">Sources</a></nav>
+<h2 id="side-by-side">Side by side</h2>
+<p>Beebo features carry a status label. Only <strong>Available now</strong> means it is in the current downloads (Windows 0.1.57, Android 1.38).</p>
+<div class="legend"><div><span class="tag live">Available now</span>In the current downloads: Windows 0.1.57 and Android 1.38. You can use it today.</div><div><span class="tag beta">Beta: next release</span>Built and tested by us, planned for the next release, and <strong>not</strong> in the current downloads.</div><div><span class="tag dev">In development</span>Being built. Not usable yet, and no release date.</div><div><span class="tag plan">Planned</span>We intend to do it. No date, and nothing is built you can use.</div></div>
+<h3 style="margin-top:22px">Cost, ads and licence</h3>
+<div class="cmp-wrap"><table class="cmp"><thead><tr><th scope="col">Feature</th><th scope="col" class="b">Beebo</th><th scope="col">Plex</th></tr></thead><tbody><tr><th scope="row">Cost of the app</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Free to use at home.</td><td data-label="Plex">Free to stream on your own network. Paid plans add features.</td></tr><tr><th scope="row">Watching your own library away from home</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Free with a direct connection, automatic UPnP or your own relay. Beebo Relay is an optional paid fallback.</td><td data-label="Plex">Needs a Plex Pass on the server owner&rsquo;s account, or a Remote Watch Pass on the account that is watching (per Plex support).</td></tr><tr><th scope="row">Paid options</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Only optional Beebo services are paid, such as Beebo Relay: about CA$3/month for 1080p or CA$5/month for 4K, per household. Its checkout is not open yet.</td><td data-label="Plex">Remote Watch Pass: US$2.99/month or US$29.99/year. Plex Pass: about US$7/month or US$70/year, or US$749.99 lifetime for new purchases since July 1, 2026.</td></tr><tr><th scope="row">Ads</th><td data-label="Beebo" class="b"><span class="tag plan">Planned</span> Ads are off by default. If Beebo ever offers optional ad-supported credit, it will only be switched on if you opt in, can be turned off any time, and is never required to use the app.</td><td data-label="Plex">Plex also offers a free, ad-supported catalogue of movies and shows, separate from your own library. Plex says a Plex Pass does not remove ads from it.</td></tr><tr><th scope="row">Licence</th><td data-label="Beebo" class="b">Not open source today. <span class="tag plan">Planned</span> Open-source direction, no date.</td><td data-label="Plex">Proprietary.</td></tr></tbody></table></div>
+<h3 style="margin-top:22px">Where it runs</h3>
+<div class="cmp-wrap"><table class="cmp"><thead><tr><th scope="col">Feature</th><th scope="col" class="b">Beebo</th><th scope="col">Plex</th></tr></thead><tbody><tr><th scope="row">Server computer</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Windows 10 and 11. <span class="tag beta">Beta: next release</span> Linux desktop, and a headless server for Docker and NAS boxes (the Docker image is not a public download yet).</td><td data-label="Plex">Windows, Mac, Linux, FreeBSD, Docker, Raspberry Pi and many NAS brands.</td></tr><tr><th scope="row">Phones and tablets</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Android app. iPhone and iPad can watch in Safari and add Beebo to the Home Screen. <span class="tag plan">Planned</span> Native iPhone app.</td><td data-label="Plex">iPhone, iPad and Android apps.</td></tr><tr><th scope="row">TVs and streaming boxes</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Android TV and Google TV (you install the Android app yourself), and casting to Chromecast or Google TV. <span class="tag dev">In development</span> Roku, Samsung and LG apps. <span class="tag plan">Planned</span> Apple TV.</td><td data-label="Plex">Apple TV, Android TV, Fire TV, Roku, Samsung, LG, consoles and more.</td></tr></tbody></table></div>
+<h3 style="margin-top:22px">Watching and your library</h3>
+<div class="cmp-wrap"><table class="cmp"><thead><tr><th scope="col">Feature</th><th scope="col" class="b">Beebo</th><th scope="col">Plex</th></tr></thead><tbody><tr><th scope="row">Hardware-accelerated video conversion</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Uses your PC&rsquo;s NVIDIA, Intel or AMD video encoders when it has them, and can tone-map HDR video. Included.</td><td data-label="Plex">A Plex Pass feature.</td></tr><tr><th scope="row">Skip intro and credits</th><td data-label="Beebo" class="b"><span class="tag beta">Beta: next release</span> Automatic detection, in the web player first.</td><td data-label="Plex">A Plex Pass feature.</td></tr><tr><th scope="row">Live TV and DVR</th><td data-label="Beebo" class="b"><span class="tag beta">Beta: next release</span> With your own HDHomeRun tuner and antenna. Beebo supplies no channels or guide data.</td><td data-label="Plex">Live TV and DVR with a Plex Pass, an antenna and a tuner.</td></tr><tr><th scope="row">Music</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Albums, artists, queue, and lyrics from your own files.</td><td data-label="Plex">Music library, with some extras (Plexamp) needing a Plex Pass.</td></tr><tr><th scope="row">Audiobooks and books</th><td data-label="Beebo" class="b"><span class="tag beta">Beta: next release</span> Audiobooks from your own files, with chapters, bookmarks, speed and a sleep timer. No books or comics.</td><td data-label="Plex">Not covered in our check.</td></tr><tr><th scope="row">Offline downloads to your phone</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> In the Android app. Included.</td><td data-label="Plex">A Plex Pass feature.</td></tr><tr><th scope="row">Family controls</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Age ratings, blocked titles, daily limit, bedtime hours and an owner PIN, enforced by your PC. Not a children&rsquo;s app.</td><td data-label="Plex">Advanced parental controls are a Plex Pass feature.</td></tr><tr><th scope="row">Themes and customisation</th><td data-label="Beebo" class="b"><span class="tag beta">Beta: next release</span> Four theme presets and custom colours for the browser pages, saved per person.</td><td data-label="Plex">Colour themes are a Plex Pass feature.</td></tr><tr><th scope="row">Backup and restore</th><td data-label="Beebo" class="b"><span class="tag live">Available now</span> Built in and included: settings, users, history and playlists, with saved passwords optionally protected by a passphrase. Manual, not scheduled.</td><td data-label="Plex">Not covered in our check.</td></tr><tr><th scope="row">Add-ons and integrations</th><td data-label="Beebo" class="b"><span class="tag beta">Beta: next release</span> A small read-only API and signed webhooks, for tools that run next to your server. No plug-ins.</td><td data-label="Plex">Not covered in our check.</td></tr><tr><th scope="row">Works with other apps</th><td data-label="Beebo" class="b"><span class="tag beta">Beta: next release</span> Optional and off by default: some Jellyfin-compatible apps can connect. Not yet tested against real Jellyfin apps.</td><td data-label="Plex">Plex&rsquo;s own apps.</td></tr></tbody></table></div>
+<h2 id="cost">Cost, in numbers</h2>
+<ul class="plain"><li><strong>Beebo:</strong> free to use at home. Away from home is free with a direct connection, automatic UPnP or your own relay. Only optional Beebo services, such as Beebo Relay, are paid (about CA$3/month for 1080p or CA$5/month for 4K, per household; its checkout is not open yet).</li><li><strong>Plex:</strong> the free plan streams on your own network. Remote Watch Pass is US$2.99/month or US$29.99/year. Plex Pass is about US$7/month or US$70/year, or US$749.99 lifetime for new purchases since July 1, 2026, and a new 5-year plan is US$249.99. Check <a href="https://www.plex.tv/plans/">Plex&rsquo;s plans page</a> for current prices.</li></ul>
+<p class="fineprint">Prices as of September 2026 and in the currency each company shows. They change, so check the source before you decide.</p>
+<h2 id="remote">Away from home</h2>
+<p>Plex&rsquo;s support pages say that remote playback of your own media needs a Plex Pass on the server owner&rsquo;s account, or a Remote Watch Pass on the account that is watching. Beebo tries a direct connection first, then automatic UPnP or your own relay, all at no charge. Only if none of those work is the optional paid Beebo Relay there as a fallback.</p>
+<h2 id="ads">Ads</h2>
+<p>Plex also offers a free, ad-supported catalogue of movies and shows, separate from your own library, and says a Plex Pass does not remove ads from it. Ads are off by default. If Beebo ever offers optional ad-supported credit, it will only be switched on if you opt in, can be turned off any time, and is never required to use the app.</p>
+<h2 id="ahead">When Plex may suit you better</h2>
+<ul class="plain"><li>More devices: Plex has apps for Apple TV, Roku, Fire TV, Samsung, LG, consoles and more. Beebo&rsquo;s Roku, Samsung and LG apps are in development, and Apple is Planned.</li><li>More server choices: Plex runs on Windows, Mac, Linux, FreeBSD, Docker and many NAS brands. Beebo&rsquo;s server is Windows today, with Linux and Docker in Beta.</li><li>Live TV and DVR, available now with a Plex Pass and a tuner. Beebo&rsquo;s is Beta and needs your own HDHomeRun tuner.</li><li>Plexamp and other music extras with a Plex Pass, and a long-established set of paid features.</li><li>An optional free, ad-supported catalogue of movies and shows, if you want it alongside your own library. Beebo includes no catalogue.</li><li>Years of development and a large community, where Beebo is new and small.</li></ul>
+<h2 id="suits">When Beebo may suit you better</h2>
+<ul class="plain"><li>The app is free to use at home, and features Plex lists under Plex Pass (hardware video conversion, offline downloads on Android) are included in Beebo. Some others, such as skip intro and themes, are Beta.</li><li>Away-from-home viewing is free with a direct connection, automatic UPnP or your own relay.</li><li>Your library and video stay on your own PC. Beebo&rsquo;s servers handle sign-in and introductions.</li><li>Campsite Mode (Android, available now) and Trip Journal (Beta) for camping and road trips.</li><li>Family controls enforced by your PC: age ratings, blocked titles, a daily limit, bedtime hours and an owner PIN.</li></ul>
+<h2 id="choose">Who should choose what</h2>
+<div class="two-col"><div class="feature"><h3>Choose Beebo if</h3><ul><li>You run Windows 10 or 11 at home.</li><li>You watch on Android, in a browser, or on Android TV and Google TV.</li><li>You want away-from-home options built in.</li><li>You are happy with a newer app that is still growing.</li></ul></div><div class="feature"><h3>Choose Plex if</h3><ul><li>You need the widest choice of devices today.</li><li>Your server will be a NAS, Mac or Linux box.</li><li>You value its maturity, community and long list of features.</li></ul></div></div>
+<h2 id="switching">Trying Beebo alongside Plex</h2>
+<p>Beebo does not move or change your files, so you can point it at the same folders Plex uses and try it beside Plex. Beebo does not import Plex watch history or artwork choices, so expect to start fresh in Beebo. Posters and descriptions in Beebo come from TMDB with your own free key.</p>
+<h2 id="faq">Questions</h2>
+<div class="faq"><details><summary>Do I have to pay to watch Beebo away from home?</summary><p>No. Away from home is free with a direct connection, automatic UPnP or your own relay. The optional Beebo Relay is a paid fallback for households where none of those work.</p></details><details><summary>Should I choose Beebo or Plex?</summary><p>It depends on what you need. Plex is more mature and runs on far more devices today. Beebo may suit you if you run Windows, watch on Android or in a browser, and want a free app that keeps your library on your own PC.</p></details><details><summary>Can I use Beebo and Plex at the same time?</summary><p>Yes. Beebo does not move or change your files, so both can read the same folders. Beebo does not import Plex watch history.</p></details></div>
+<h2 id="sources">Sources for the Plex facts</h2>
+<p class="fineprint">Read on September 21, 2026.</p>
+<ul class="sources plain"><li><a href="https://www.plex.tv/plans/" rel="noopener">Plex plans (free, Remote Watch Pass, Plex Pass)</a></li><li><a href="https://support.plex.tv/articles/requirements-for-remote-playback-of-personal-media/" rel="noopener">Plex support: Requirements for remote playback of personal media</a></li><li><a href="https://support.plex.tv/articles/remote-watch-pass-overview/" rel="noopener">Plex support: Remote Watch Pass overview</a></li><li><a href="https://www.plex.tv/blog/new-lifetime-plex-pass-pricing/" rel="noopener">Plex: New Lifetime Plex Pass pricing</a></li><li><a href="https://support.plex.tv/articles/frequently-asked-questions-vod/" rel="noopener">Plex support: Free movies and shows FAQ</a></li><li><a href="https://www.plex.tv/media-server-downloads/" rel="noopener">Plex Media Server downloads (supported platforms)</a></li><li><a href="https://support.plex.tv/articles/204080173-which-smart-tv-models-are-supported/" rel="noopener">Plex support: supported apps and smart TVs</a></li></ul>
+<p class="fineprint">Some Plex pages would not load for our automated check, so a few Plex facts come from the search summary of the official page and are worded carefully. Plex Pass prices were confirmed with press coverage; please check Plex&rsquo;s own page.</p>
+<div class="guide-nav"><a href="../beebo-vs-other-apps.html">All four side by side</a><a href="../compare/beebo-vs-jellyfin.html">Beebo vs Jellyfin</a><a href="../compare/beebo-vs-emby.html">Beebo vs Emby</a><a href="../platforms.html">Beebo devices</a><a href="../index.html#pricing">Beebo pricing</a></div>
+<p class="fineprint">Plex, Jellyfin and Emby are names and trademarks of their respective owners. Beebo Entertainment is not affiliated with, sponsored by or endorsed by them. We describe them only to compare products. Their prices and features change, so check their own pages before you decide: the facts here are a snapshot from September 21, 2026. Prices are in the currency each company shows (Plex in US dollars, Beebo in Canadian dollars). &ldquo;Not covered in our check&rdquo; means we did not verify it, not that it is missing.</p>
+</div>
+</main>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="../updates.html">What&rsquo;s new &#8599;</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>&copy; 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top &#8593;</a></div></footer><script src="../polish.js?v=4"></script></body>
+</html>
