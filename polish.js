@@ -21,7 +21,9 @@
     try {
       const url = new URL(raw, location.href);
       const extension = platform === 'android' ? '.apk' : '.exe';
-      if (url.origin !== 'https://origin.beebo.tv' || !url.pathname.startsWith('/downloads/') || !url.pathname.endsWith(extension) || url.username || url.password) return;
+      const ownHost = url.origin === 'https://origin.beebo.tv' && url.pathname.startsWith('/downloads/');
+      const githubRelease = platform === 'windows' && url.origin === 'https://github.com' && url.pathname.startsWith('/SWGfan/beebotv/releases/download/');
+      if (!(ownHost || githubRelease) || !url.pathname.endsWith(extension) || url.username || url.password) return;
       document.querySelectorAll('[data-beebo-download="'+platform+'"]').forEach(link => { link.href = url.href; });
     } catch (_) { /* Keep the verified embedded download link if metadata is invalid. */ }
   }

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cinema Mode: trailers before your movie | Beebo</title>
+<meta name="description" content="Cinema Mode plays a short pre-show of trailers before a film from your own Beebo library. Beta in Windows 0.1.58, off by default, with honest limits." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Cinema Mode: trailers before your movie | Beebo" />
+<meta property="og:description" content="Cinema Mode plays a short pre-show of trailers before a film from your own Beebo library. Beta in Windows 0.1.58, off by default, with honest limits." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/cinema-mode.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/home-evening.webp" />
+<meta property="og:image:alt" content="A couple watching television together at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- feature pages: same building blocks as home-theater.html, layered on site.css tokens ---- */
+  .wrap{max-width:1000px}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle;line-height:1.4}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:#7a4a08;background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:#231E18;background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:#6E6456;background:#fff;border-color:var(--border-strong)}
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0 6px}
+  .legend div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .legend div .tag{display:block;width:max-content;margin-bottom:6px}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .feature .tag{margin-left:0}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:14px 0}
+  .two-col .feature{margin:0}
+  .two-col .feature ul{margin:8px 0 0;padding-left:1.15em;color:var(--muted)}
+  .two-col .feature li{margin:0 0 6px}
+  .notyet{background:var(--surface);border:1px solid var(--border-strong);border-left:5px solid var(--accent);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 22px;margin:18px 0}
+  .notyet h2{margin-top:0}
+  .notyet ul{margin:8px 0 0;padding-left:1.25em}
+  .notyet li{margin:0 0 7px}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/cinema-mode.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://beeboentertainment.com/cinema-mode.html#webpage",
+      "url": "https://beeboentertainment.com/cinema-mode.html",
+      "name": "Cinema Mode: trailers before your movie | Beebo",
+      "description": "What Cinema Mode does, what it needs, how it treats families and privacy, and what has not been tested yet. Beta in Beebo for Windows 0.1.58.",
+      "inLanguage": "en",
+      "dateModified": "2026-09-21",
+      "about": {
+        "@id": "https://beeboentertainment.com/platforms.html#software"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://beeboentertainment.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Home theater and big screen",
+          "item": "https://beeboentertainment.com/home-theater.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cinema Mode",
+          "item": "https://beeboentertainment.com/cinema-mode.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Cinema Mode?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A short pre-show before a film from your own Beebo library: an optional intro clip you choose, then up to five trailers. It is off by default and is a beta in Beebo for Windows 0.1.58."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Cinema Mode need the internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trailers from your own files do not. Trailers from films you own but have not watched, and suggested trailers, need the internet and a free TMDB key of your own, and they play in YouTube's embedded player."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Beebo download or save YouTube trailers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Online trailers play only in YouTube's own embedded player, in your browser. Playing one contacts YouTube from your device, and YouTube's Terms of Service and Google's Privacy Policy apply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I stop it or skip it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It is off unless a person turns it on for themselves, and every pre-show has Skip, Skip all and Don't show trailers. If anything fails, the film just plays."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe for children?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parental controls apply, and a restricted profile only gets trailers its limits allow. Ratings come from TMDB and can be missing or wrong, so it is a filter and not a guarantee. It is a tool for the adult who runs the server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work on my TV?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The pre-show plays in a web browser page. It has not been tried in real TV browsers. If you cast or AirPlay, only the film starts on the TV."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">&#9776;</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#what">Meet Beebo</a><a href="platforms.html">Devices</a><a href="home-theater.html">Home theater</a><a href="beebo-products.html">Products</a><a href="beebo-vs-other-apps.html">Compare</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help &amp; guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo &#8599;</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+
+<main>
+<div class="wrap">
+  <a class="back" href="home-theater.html">&larr; Home theater and big screen</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🎞️</div>
+    <h1>Cinema Mode: a pre-show before your film</h1>
+    <p class="lead">Cinema Mode plays a short pre-show, an optional intro and a few trailers, before a film from your own library, like the lights going down at a theatre. It is a beta, it is off until you turn it on, and you can skip it at any time.</p>
+  </div>
+
+  <img class="page-campaign-art" src="assets/home-evening.webp" alt="A couple watching television together at home" width="1672" height="941" loading="lazy">
+
+  <div class="callout">
+    <p><span class="tag live">Available now — Beta (Windows 0.1.58)</span> <strong>Status:</strong> Cinema Mode is in Beebo for Windows 0.1.58 and is a beta. It is <strong>off unless a person turns it on for themselves</strong>. It has not yet been checked with real YouTube trailers across every browser, or in real TV browsers, and it needs the internet for online trailers.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#how">How it works</a><a href="#need">What you need</a><a href="#families">For families</a><a href="#privacy">Privacy</a><a href="#tested">What is not tested</a><a href="#faq">Questions</a></nav>
+
+  <h2 id="how">How it works</h2>
+  <ol class="steps">
+    <li><h3>Turn it on for yourself</h3><p>The owner can turn it on in Settings under Playback, then Cinema. Anyone else uses the <strong>Pre-show</strong> button in the web player&rsquo;s top bar. On the desktop Movie page there is a <strong>Play with pre-show</strong> box. It is off by default for every person.</p></li>
+    <li><h3>Press play on a film</h3><p>The film is held while a black screen opens. An intro clip you chose, if any, plays first, then up to five trailers, one after another. The default is two trailers.</p></li>
+    <li><h3>Skip whenever you like</h3><p>Under the picture there is always <strong>Skip</strong>, <strong>Skip all</strong> and <strong>Don&rsquo;t show trailers</strong>. On a keyboard, Escape skips everything and the right arrow skips one.</p></li>
+    <li><h3>The film starts by itself</h3><p>When the last trailer ends the film begins. If anything fails, such as no internet or a blocked video, that item is skipped, and if everything fails the film simply plays.</p></li>
+  </ol>
+  <div class="feature">
+    <h3>Where the trailers come from</h3>
+    <ul>
+      <li><strong>Your own files.</strong> Trailer files next to a film in your library, or in a Cinema folder you choose. These play from your own PC and need no internet.</li>
+      <li><strong>Films you own but have not watched.</strong> Beebo looks up the official trailer through TMDB, using your own free TMDB key, and plays it in YouTube&rsquo;s embedded player.</li>
+      <li><strong>Suggestions.</strong> Trailers for films similar to the one you are about to watch, chosen from TMDB&rsquo;s recommendations and shown the same way, through YouTube&rsquo;s embedded player.</li>
+    </ul>
+    <p class="fineprint">The pre-show is never shown when you resume a film part-way (unless you ask for it), before TV episodes, to a guest of a shared library, or when a person chose &ldquo;Never show trailers&rdquo;. Trailers do not repeat for a set number of days.</p>
+  </div>
+
+  <h2 id="need">What you need</h2>
+  <ul class="plain">
+    <li>Beebo for Windows 0.1.58 on the PC that holds your films.</li>
+    <li>The web player in a browser. The pre-show plays in the browser page. If you cast or AirPlay, only the film starts on the TV.</li>
+    <li>For online trailers: the internet, and a free TMDB key of your own (see the <a href="tmdb-key-guide.html">TMDB key guide</a>). Trailers from your own files need neither.</li>
+  </ul>
+
+  <h2 id="families">For families</h2>
+  <ul class="plain">
+    <li><strong>Parental controls apply.</strong> A restricted profile only gets trailers that the profile&rsquo;s own limits allow, and an unrated trailer is refused for them. A parental limit cannot be turned off from Cinema Mode.</li>
+    <li><strong>Theatre etiquette.</strong> By default a trailer is never rated above the film you are about to watch, and before a G or PG film an unrated or horror trailer is skipped.</li>
+    <li>This is a filter, not a guarantee. Ratings come from TMDB, use the US certification, and can be missing or wrong. Cinema Mode is a tool for the adult who runs the server, not a children&rsquo;s product.</li>
+  </ul>
+
+  <h2 id="privacy">Privacy</h2>
+  <ul class="plain">
+    <li><strong>Off by default,</strong> and the owner can switch online trailers off for the whole server.</li>
+    <li><strong>Your own trailer files stay on your PC</strong> and play only to people in your household.</li>
+    <li><strong>Playing an online trailer contacts YouTube</strong> from the device you are watching on, because the trailer plays in YouTube&rsquo;s own embedded player (from the privacy-enhanced youtube-nocookie.com address). YouTube&rsquo;s Terms of Service and Google&rsquo;s Privacy Policy apply to that. Beebo does not download, save, re-stream or change YouTube videos.</li>
+    <li><strong>Looking up a trailer goes through TMDB,</strong> with your own key. Beebo remembers which trailers each person has seen, on your own PC, so they do not repeat.</li>
+    <li>Beebo adds no accounts, ads or analytics for this feature. See <a href="docs/privacy-in-plain-words.html">Privacy in plain words</a> for every outside service Beebo can contact.</li>
+  </ul>
+  <p class="fineprint">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+
+  <section class="notyet" id="tested" aria-labelledby="tested-title">
+    <h2 id="tested-title">What is not tested yet</h2>
+    <ul>
+      <li>A real YouTube trailer has not been checked in every browser (Chrome, Edge, Firefox, Safari, Android Chrome) or in the desktop player window. YouTube may refuse to play an embed from some home-network addresses; if it does, that trailer is skipped.</li>
+      <li>TV browsers (Samsung, LG, Android TV, Fire TV) have not been tried, and neither have remote-control buttons for Skip.</li>
+      <li>Some browsers block a video that starts by itself. If that happens the pre-show may need a click.</li>
+      <li>Trailers for TV shows are not offered. The pre-show is built for the web player, and the native TV and phone apps have not been tried with it.</li>
+    </ul>
+  </section>
+
+  <div class="guide-nav">
+    <a href="docs/trailers.html">🎞️ Trailers page</a>
+    <a href="movie-night.html">🎉 Movie Night</a>
+    <a href="home-theater.html">Home theater and big screen</a>
+    <a href="what-beebo-can-do.html">What Beebo can do</a>
+    <a href="docs/privacy-in-plain-words.html">🔐 Privacy in plain words</a>
+    <a href="docs.html">📖 Docs</a>
+  </div>
+
+  <h2 id="faq">Questions</h2>
+  <div class="faq">
+    <details><summary>What is Cinema Mode?</summary><p>A short pre-show before a film from your own Beebo library: an optional intro clip you choose, then up to five trailers. It is off by default and is a beta in Beebo for Windows 0.1.58.</p></details>
+    <details><summary>Does Cinema Mode need the internet?</summary><p>Trailers from your own files do not. Trailers from films you own but have not watched, and suggested trailers, need the internet and a free TMDB key of your own, and they play in YouTube&rsquo;s embedded player.</p></details>
+    <details><summary>Does Beebo download or save YouTube trailers?</summary><p>No. Online trailers play only in YouTube&rsquo;s own embedded player, in your browser. Playing one contacts YouTube from your device, and YouTube&rsquo;s Terms of Service and Google&rsquo;s Privacy Policy apply.</p></details>
+    <details><summary>Can I stop it or skip it?</summary><p>Yes. It is off unless a person turns it on for themselves, and every pre-show has Skip, Skip all and Don&rsquo;t show trailers. If anything fails, the film just plays.</p></details>
+    <details><summary>Is it safe for children?</summary><p>Parental controls apply, and a restricted profile only gets trailers its limits allow. Ratings come from TMDB and can be missing or wrong, so it is a filter and not a guarantee. It is a tool for the adult who runs the server.</p></details>
+    <details><summary>Does it work on my TV?</summary><p>The pre-show plays in a web browser page. It has not been tried in real TV browsers. If you cast or AirPlay, only the film starts on the TV.</p></details>
+  </div>
+
+  <p class="fineprint">This product uses the TMDB API but is not endorsed or certified by TMDB. Written for Beebo for Windows 0.1.58 and the Beebo Android app 1.39, as of September 21, 2026. Found something that does not match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20cinema-mode%20page%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="windows.html#download">Get Beebo for Windows &#8599;</a></div>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.39 (build 40)</strong><time data-beebo-release-date="android" datetime="2026-09-21T15:30:29Z">Built Sep 21, 2026, 11:30:29 AM Eastern</time></div><a href="updates.html">What&rsquo;s new &#8599;</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="home-theater.html">Home theater and big screen</a><a href="phone-speakers.html">Phone speakers (Beta)</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help &amp; guides</a><a href="docs.html">Docs</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>&copy; 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top &#8593;</a></div></footer><script src="polish.js?v=4"></script></body>
+</html>

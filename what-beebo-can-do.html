@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>What Beebo can do — Beebo Entertainment</title>
-<meta name="description" content="A plain-English tour of what Beebo does: films, music, photos, playlists, quality, family controls, the big screen, and what is coming in the next release." />
+<meta name="description" content="A plain-English tour of what Beebo does: films, music, photos, playlists, quality, family controls, the big screen, and what is new in Windows 0.1.58." />
 <meta name="theme-color" content="#FBF6EE" />
 <meta property="og:title" content="What Beebo can do — Beebo Entertainment" />
-<meta property="og:description" content="A plain-English tour of what Beebo does: films, music, photos, playlists, quality, family controls, the big screen, and what is coming in the next release." />
+<meta property="og:description" content="A plain-English tour of what Beebo does: films, music, photos, playlists, quality, family controls, the big screen, and what is new in Windows 0.1.58." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://beeboentertainment.com/what-beebo-can-do.html" />
 <meta property="og:image" content="https://beeboentertainment.com/assets/family-home.webp" />
@@ -59,7 +59,7 @@
     <div class="bite-copy">
       <h1>What Beebo can do</h1>
       <p>Beebo started as a way to watch your own films at home. It now looks after your music and your photos too, and gives you a say in who watches what. Here is the whole picture, in one page.</p>
-      <nav class="bite-jump" aria-label="On this page"><a href="#films">Films &amp; shows</a><a href="#quality">Quality &amp; subtitles</a><a href="#music">Music</a><a href="#photos">Photos</a><a href="#playlists">Playlists</a><a href="#family">Your household</a><a href="#sharing">Another household</a><a href="#dashboard">Your dashboard</a><a href="#voice">Voice &amp; TV</a><a href="#bigscreen">Big screen</a><a href="#next">Next release</a></nav>
+      <nav class="bite-jump" aria-label="On this page"><a href="#films">Films &amp; shows</a><a href="#quality">Quality &amp; subtitles</a><a href="#music">Music</a><a href="#photos">Photos</a><a href="#playlists">Playlists</a><a href="#family">Your household</a><a href="#sharing">Another household</a><a href="#dashboard">Your dashboard</a><a href="#voice">Voice &amp; TV</a><a href="#bigscreen">Big screen</a><a href="#next">New in 0.1.58</a></nav>
     </div>
   </section>
 
@@ -172,7 +172,7 @@
     <div class="bite-copy">
       <p class="eyebrow">ON THE BIG SCREEN</p>
       <h2>Your living room, honestly.</h2>
-      <p>Beebo runs on Android TV and Google TV, casts to a Chromecast, converts video with your PC’s graphics card and plays your original files untouched. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices are in development, and Beebo does not yet claim HDR10+, Dolby Vision, Atmos or DTS:X passthrough.</p>
+      <p>Beebo runs on Android TV and Google TV, casts to a Chromecast, plays your original files untouched and, in Windows 0.1.58 (Beta), converts video with your PC’s graphics card. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices are in development, and Beebo does not claim HDR10+, Dolby Vision, Atmos or DTS:X passthrough to a receiver, because we have not checked it on real equipment.</p>
       <div class="bite-links"><a href="home-theater.html">Home theater and big screen</a><a href="platforms.html">All devices</a></div>
     </div>
   </section>
@@ -180,30 +180,38 @@
   <section class="bite" id="next">
     <figure class="bite-media"><img src="assets/quiet-server.webp" alt="A quiet home computer on a shelf" width="1672" height="941" loading="lazy"></figure>
     <div class="bite-copy">
-      <p class="eyebrow">BETA, NEXT RELEASE</p>
-      <h2>Built, and coming in the next release.</h2>
-      <p>These are built and tested by us but are <strong>not</strong> in Beebo for Windows 0.1.57 or the Android app 1.39. We will say when they ship.</p>
+      <p class="eyebrow">NEW IN WINDOWS 0.1.58 (BETA)</p>
+      <h2>New in Windows 0.1.58, and still Beta.</h2>
+      <p>These are in the current Windows download, version 0.1.58, published September 21, 2026. They are new, so each carries the label <span class="tag live">Available now — Beta (Windows 0.1.58)</span> and says what has not yet been tried on real equipment. Android app 1.39 has matching screens for several of them.</p>
       <details class="more"><summary class="more-toggle"><span class="show">Show the list</span><span class="less">Hide the list</span></summary><div class="more-body">
         <ul class="plain">
-          <li><strong>Rebuilt video conversion:</strong> automatic fallback between graphics and processor encoders, more HDR tone-mapping methods, a limit and waiting line, and an old-PC mode.</li>
-          <li><strong>Live TV and DVR</strong> with your own antenna and HDHomeRun tuner. Beebo supplies no channels or guide data.</li>
-          <li><strong>Audiobooks, podcasts and internet radio.</strong></li>
+          <li><strong>Rebuilt video conversion:</strong> NVIDIA, Intel Quick Sync and AMD encoders (VAAPI on Linux), automatic fallback, HDR tone-mapping, a limit and waiting line, and an old-PC mode. Only Intel Quick Sync and the processor path have been exercised on real hardware.</li>
+          <li><strong>File badges and direct-play decisions:</strong> 4K, HDR10, HDR10+, Dolby Vision, Atmos and DTS:X badges, and a per-device choice between playing the original, copying it or converting it. Passthrough to a receiver is <strong>unverified on real equipment</strong>, so we do not claim it.</li>
+          <li><strong>Live TV and DVR</strong> with your own antenna and HDHomeRun tuner. Beebo supplies no channels or guide data. Never tested on a real tuner.</li>
+          <li><strong>Audiobooks, podcasts and internet radio.</strong> Podcasts and radio contact the feeds and directories you choose.</li>
           <li><strong>Player extras:</strong> seek-preview thumbnails, chapters, subtitle styling, and more than one version of a film.</li>
-          <li><strong>Library views:</strong> filters, saved views, shelves and a detailed list.</li>
+          <li><strong>Sound options and skip intro:</strong> surround, night mode and volume levelling, plus automatic intro and credit detection with a Skip button.</li>
+          <li><strong>Library views:</strong> filters, shelves, a detailed list, backdrops, grouped views and folders.</li>
           <li><strong>Watch together</strong> rooms with an invite link, chat and reactions.</li>
+          <li><strong><a href="cinema-mode.html">Cinema Mode</a>:</strong> a short pre-show of trailers before the film, using official YouTube embeds, so it needs the internet.</li>
+          <li><strong><a href="movie-night.html">Movie Night</a> party games</strong> for the TV, played on phones that join by QR code. Tested only with simulated phones.</li>
+          <li><strong><a href="phone-speakers.html">Phones as surround speakers for movies:</a></strong> a TV or PC shows the picture and each phone plays one channel. Simulated and measured on one computer only, not tried on real phones.</li>
           <li><strong>Switch to Beebo:</strong> bring watched marks, resume points, ratings and playlists from Plex, Jellyfin, Emby, Kodi or Letterboxd, with a review step and an undo.</li>
-          <li><strong>Two-factor sign-in</strong> (optional), a password strength check and a list of signed-in devices.</li>
-          <li><strong>A small read-only API</strong> with API keys, signed webhooks and a metrics endpoint, for tools that run next to your server.</li>
-          <li><strong>Themes and customization packs</strong>, desktop screens in Spanish, French, German, Brazilian Portuguese and Italian, and an accessibility pass on the main screens.</li>
-          <li><strong>Speech Pack:</strong> an optional add-on you download from Settings that makes automatic subtitles on your own PC.</li>
-          <li><strong>Trip Journal sharing</strong> (a private link served from your own PC).</li>
-          <li><strong>An installable phone web app</strong> for your Home Screen.</li>
-          <li><strong>Jellyfin-compatible mode</strong>, off by default and not yet tried with real Jellyfin apps.</li>
-          <li><strong>Linux desktop and a Docker or NAS server.</strong></li>
+          <li><strong>Two-factor sign-in</strong> (optional), per-person API keys, signed webhooks and a metrics endpoint for tools that run next to your server.</li>
+          <li><strong>Themes and layout packs</strong>, screens in English, Spanish, French, German, Brazilian Portuguese and Italian for the main screens, and accessibility improvements.</li>
+          <li><strong>Speech Pack:</strong> an optional add-on that downloads whisper.cpp (MIT licence) on request and makes automatic subtitles on your own PC.</li>
+          <li><strong>Trip Journal sharing:</strong> a private link served from your own PC (Android 1.39 and Windows 0.1.58).</li>
+          <li><strong>Jellyfin-compatible mode</strong>, off by default. It was checked against the official Jellyfin API description and SDK but has not been tried with real Jellyfin apps. See <a href="docs/jellyfin-apps-with-beebo.html">the app-by-app table</a>.</li>
+          <li><strong><a href="linux.html">Linux desktop</a> downloads and a <a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker image</a></strong> for Linux servers and NAS boxes. Tested on Ubuntu 22.04 in our automated build only, and Linux has no automatic updates yet.</li>
+          <li><strong>Faster:</strong> big libraries open several times faster and idle CPU is much lower. Away-from-home streaming was about four to five times faster in our tests on a good connection.</li>
+          <li><strong>Safer:</strong> a large security review, with fixes.</li>
         </ul>
-        <p><strong>Available now — test build (Beta):</strong> <a href="phone-speakers.html">synced group music on many phones</a> in Campsite Mode, with an optional left and right stereo pair across two phones. It is in the Android test build 1.39 and has not been measured on real phones yet. Phones as surround speakers for movies are in development.</p>
+        <p>The Windows installer is still not code-signed, so Windows SmartScreen may show a warning the first time you run it.</p>
+        <p><strong>Available now — test build (Beta):</strong> <a href="phone-speakers.html">synced group music on many phones</a> in Campsite Mode, with an optional left and right stereo pair across two phones, in the Android test build 1.39. It has not been measured on real phones yet.</p>
+        <p><strong><span class="tag beta">Beta — next Android release</span></strong> Family camping features merged after Android 1.39 and not yet in a download: License Plate Hunt, Trip Clock, Quiet Hours and Wind-Down, Roadside Quiz packs (336 original questions) and a Campfire Songbook engine. The Songbook ships no songs; you import song packs. They are tested by our automated tests, not yet on real phones.</p>
+        <p><strong><span class="tag dev">In development</span></strong> A Scavenger Hunt for Everyone that runs offline in guests&rsquo; browsers, and new family features for the Beebo Auto companion. Neither has been released or run on a real phone or in a car.</p>
       </div></details>
-      <div class="bite-links"><a href="updates.html">What’s new</a><a href="beebo-vs-other-apps.html">How Beebo compares</a></div>
+      <div class="bite-links"><a href="updates.html">What&rsquo;s new</a><a href="beebo-vs-other-apps.html">How Beebo compares</a></div>
     </div>
   </section>
 
@@ -224,5 +232,5 @@
   </div>
 </div>
 
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.54</strong><time data-beebo-release-date="windows" datetime="2026-09-20T08:20:14Z">Released Sep 20, 2026, 4:20:14 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.35 (build 36)</strong><time data-beebo-release-date="android" datetime="2026-09-20T08:14:23Z">Released Sep 20, 2026, 4:14:23 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script><script src="assets/loop-video.js?v=1" defer></script><script src="assets/listen.js?v=3" data-page="what-beebo-can-do" defer></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.39 (build 40)</strong><time data-beebo-release-date="android" datetime="2026-09-21T15:30:29Z">Built Sep 21, 2026, 11:30:29 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script><script src="assets/loop-video.js?v=1" defer></script><script src="assets/listen.js?v=3" data-page="what-beebo-can-do" defer></script></body>
 </html>

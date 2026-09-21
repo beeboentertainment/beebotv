@@ -64,13 +64,18 @@
   "url": "https://beeboentertainment.com/windows.html",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Windows 10, Windows 11",
+  "softwareVersion": "0.1.58",
+  "downloadUrl": "https://github.com/SWGfan/beebotv/releases/download/Beebo-0.1.58/BeeboEntertainmentSetup.exe",
   "softwareRequirements": "A Windows PC and user-provided media files. Remote streaming requires an online server and configured remote access.",
   "description": "Beebo Entertainment is a personal home media server for Windows 10 and 11. Organize your own movies and home videos, control household access, and watch at home or away on phones, tablets, browsers and TVs. No movies or shows are included.",
   "featureList": [
     "Personal media library organization",
     "Household accounts managed by the server owner",
     "Playback on phones, tablets and browsers",
-    "Offline downloads on Android"
+    "Offline downloads on Android",
+    "Video conversion with your graphics card (Beta)",
+    "Live TV and DVR with your own HDHomeRun tuner (Beta)",
+    "Audiobooks, podcasts and internet radio (Beta)"
   ],
   "offers": {
     "@type": "Offer",
@@ -111,11 +116,25 @@
     <li>For posters, cast and descriptions, a free TMDB key of your own. There is a <a href="tmdb-key-guide.html">step-by-step guide</a>.</li>
   </ul>
 
+  <h2 id="download">Download Beebo for Windows 0.1.58</h2>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <tbody>
+        <tr><th scope="row">Version</th><td>0.1.58, released September 21, 2026, 2:09 PM Eastern</td></tr>
+        <tr><th scope="row">File</th><td><a data-beebo-download="windows" href="https://github.com/SWGfan/beebotv/releases/download/Beebo-0.1.58/BeeboEntertainmentSetup.exe">BeeboEntertainmentSetup.exe</a>, 194,132,991 bytes (about 194 MB)</td></tr>
+        <tr><th scope="row">SHA-256</th><td><code>64cf4f2f62c8f7d8e4d01eb2e07c63cda3370b32a19745f0e2101579ea475f1b</code></td></tr>
+        <tr><th scope="row">Needs</th><td>Windows 10 or 11</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fineprint"><strong>The installer is not code-signed yet.</strong> Windows 0.1.58 is not signed with a publisher certificate (Authenticode), so Windows SmartScreen may warn that the publisher is unknown. The <a href="server-setup.html">Windows setup guide</a> explains what to do. To check your download, compare its SHA-256 with the value above (in PowerShell: <code>Get-FileHash .\BeeboEntertainmentSetup.exe</code>).</p>
+  <p>New features in this version are labelled <span class="tag live">Available now — Beta (Windows 0.1.58)</span>. See <a href="what-beebo-can-do.html#next">what is new in 0.1.58</a> and <a href="home-theater.html">Home theater and big screen</a> for what has and has not been tried on real equipment.</p>
+
   <h2 id="how">How it works</h2>
   <ol class="steps">
     <li>
       <h3>Install Beebo on your PC</h3>
-      <p>Download the installer from the <a href="index.html#get-app">Get Beebo section</a> and run it. Beebo opens on its own when it finishes. Windows may show a security prompt for a newly downloaded installer; the <a href="server-setup.html">Windows setup guide</a> explains what to do.</p>
+      <p>Download the installer from the <a href="#download">download details above</a> or the <a href="index.html#get-app">Get Beebo section</a> and run it. Beebo opens on its own when it finishes. Windows may show a security prompt for a newly downloaded installer; the <a href="server-setup.html">Windows setup guide</a> explains what to do.</p>
     </li>
     <li>
       <h3>Create your account and choose your folders</h3>
@@ -144,9 +163,9 @@
   <h2 id="limits">Honest limits</h2>
   <ul class="plain">
     <li><strong>The PC has to be on.</strong> When it is off or asleep, nothing can stream from it.</li>
-    <li><strong>The server runs on Windows.</strong> A <a href="linux.html">Linux beta</a> and a <a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker server for NAS boxes</a> are coming with the next release.</li>
+    <li><strong>Windows is the main server.</strong> A <a href="linux.html">Linux desktop beta</a> and a <a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker image for NAS boxes and servers</a> are also available as betas.</li>
     <li><strong>No movies or shows are included.</strong> Beebo plays the files you already own.</li>
-    <li><strong>No Live TV or DVR in the current download.</strong> Live TV and DVR with your own HDHomeRun tuner are in Beta for the next release. There is no plug-in ecosystem yet. <a href="beebo-vs-other-apps.html">See how Beebo compares</a>, including where other apps are ahead.</li>
+    <li><strong>Live TV and DVR are Beta.</strong> They work with your own HDHomeRun tuner and have never been tested on a real tuner. Beebo supplies no channels. There is no plug-in ecosystem, only a small read-only API. <a href="beebo-vs-other-apps.html">See how Beebo compares</a>, including where other apps are ahead.</li>
     <li><strong>No native apps yet</strong> for iPhone, iPad, Apple TV, Fire TV, Roku, Samsung, LG or Xbox. They are in development. See <a href="platforms.html">the devices page</a> for what works today and <a href="home-theater.html">Home theater and big screen</a> for the big-screen picture.</li>
     <li><strong>Offline downloads need the Android app.</strong></li>
   </ul>
@@ -162,5 +181,5 @@
 </div>
 </main>
 
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.54</strong><time data-beebo-release-date="windows" datetime="2026-09-20T08:20:14Z">Released Sep 20, 2026, 4:20:14 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.35 (build 36)</strong><time data-beebo-release-date="android" datetime="2026-09-20T08:14:23Z">Released Sep 20, 2026, 4:14:23 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="home-theater.html">Home theater and big screen</a><a href="phone-speakers.html">Phone speakers (Beta)</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.39 (build 40)</strong><time data-beebo-release-date="android" datetime="2026-09-21T15:30:29Z">Built Sep 21, 2026, 11:30:29 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="home-theater.html">Home theater and big screen</a><a href="phone-speakers.html">Phone speakers (Beta)</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script></body>
 </html>

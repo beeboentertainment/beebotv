@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Use Jellyfin apps with Beebo (experimental) | Beebo Docs</title>
-<meta name="description" content="An optional, off-by-default mode that lets Jellyfin-compatible apps browse and play your Beebo library. What it is, how to turn it on and what is untested." />
+<title>Use Jellyfin apps with Beebo (beta) | Beebo Docs</title>
+<meta name="description" content="An optional, off-by-default beta mode that lets Jellyfin-compatible apps browse and play your Beebo library. An app-by-app table, and what is untested." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
-<meta property="og:title" content="Use Jellyfin apps with Beebo (experimental) | Beebo Docs" />
-<meta property="og:description" content="An optional, off-by-default mode that lets Jellyfin-compatible apps browse and play your Beebo library. What it is, how to turn it on and what is untested." />
+<meta property="og:title" content="Use Jellyfin apps with Beebo (beta) | Beebo Docs" />
+<meta property="og:description" content="An optional, off-by-default beta mode that lets Jellyfin-compatible apps browse and play your Beebo library. An app-by-app table, and what is untested." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://beeboentertainment.com/docs/jellyfin-apps-with-beebo.html" />
 <meta property="og:image" content="https://beeboentertainment.com/assets/quiet-server.webp" />
@@ -60,15 +60,15 @@
   "@context": "https://schema.org",
   "@type": "HowTo",
   "@id": "https://beeboentertainment.com/docs/jellyfin-apps-with-beebo.html#howto",
-  "name": "Jellyfin apps with Beebo (experimental)",
-  "description": "An optional, off-by-default mode that lets Jellyfin-compatible apps browse and play your Beebo library. What it is, how to turn it on and what is untested.",
+  "name": "Jellyfin apps with Beebo (beta)",
+  "description": "An optional, off-by-default beta mode that lets Jellyfin-compatible apps browse and play your Beebo library. An app-by-app table, and what is untested.",
   "inLanguage": "en",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Update Beebo when the release is out",
-      "text": "The setting only exists in the release that follows Windows 0.1.57. Check What’s new for the version that includes it.",
+      "name": "Update Beebo to Windows 0.1.58",
+      "text": "The setting is in Windows 0.1.58 and newer. If you have an older version, update first.",
       "url": "https://beeboentertainment.com/docs/jellyfin-apps-with-beebo.html#step-1"
     },
     {
@@ -103,12 +103,12 @@
   <a class="back" href="../docs.html">← All docs</a>
   <div class="page-hero">
     <div class="em" aria-hidden="true">🧩</div>
-    <h1>Jellyfin apps with Beebo (experimental)</h1>
-    <p class="lead">Beebo can speak enough of the Jellyfin protocol for Jellyfin-compatible apps to browse and play your library. It is experimental, it is off until you turn it on, and it has not been tested against a real Jellyfin app yet.</p>
+    <h1>Jellyfin apps with Beebo (beta)</h1>
+    <p class="lead">Beebo can speak enough of the Jellyfin protocol for Jellyfin-compatible apps to browse and play your library. It is a beta in Windows 0.1.58, it is off until you turn it on, and it has not been tried with a real Jellyfin app yet.</p>
   </div>
 
   <div class="callout">
-    <p><span class="tag beta">Experimental · next release</span> <strong>Status:</strong> This mode is built and covered by automated tests, but it is not in the current downloads (Windows 0.1.57). It has <strong>not</strong> been verified against any real Jellyfin app, and testing it with real apps is <span class="tag dev">In development</span>. Beebo is not Jellyfin, and is not affiliated with or endorsed by the Jellyfin project.</p>
+    <p><span class="tag live">Available now — Beta (Windows 0.1.58)</span> <strong>Status:</strong> This mode is in Beebo for Windows 0.1.58, off by default. It is covered by automated tests, including a check of its answers against the official Jellyfin API description and SDK. It has <strong>not</strong> been tried with any real Jellyfin app, and testing it with real apps has not started. Beebo is not Jellyfin, and is not affiliated with or endorsed by the Jellyfin project.</p>
   </div>
   <nav class="guide-nav" aria-label="On this page"><a href="#what">What it is</a><a href="#steps">Turn it on</a><a href="#apps">Which apps</a><a href="#limits">What is not supported</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
 
@@ -119,8 +119,8 @@
   <h2 id="steps">Step by step</h2>
   <ol class="steps">
     <li id="step-1">
-      <h3>Update Beebo when the release is out</h3>
-      <p>The setting only exists in the release that follows Windows 0.1.57. Check <a href="../updates.html">What’s new</a> for the version that includes it.</p>
+      <h3>Update Beebo to Windows 0.1.58</h3>
+      <p>The setting is in Windows 0.1.58 and newer. If you have an older version, update first. <a href="../updates.html">What’s new</a> lists the changes.</p>
       
       
     </li>
@@ -145,21 +145,33 @@
   </ol>
 
   <h2 id="apps">Which apps should work</h2>
-  <p>We wrote this from the public description of the protocol and how apps are known to behave, not from running the apps. <strong>None of these has been verified against a real Beebo server.</strong> These are the ones we expect to work:</p>
-  <ul class="plain">
-    <li>Jellyfin apps for Android TV and Android phones, and Findroid.</li>
-    <li>Kodi with the JellyCon add-on.</li>
-    <li>Swiftfin on iPhone, iPad and Apple TV.</li>
-    <li>Finamp, for music.</li>
-    <li>Jellyfin-compatible apps on Samsung, LG, Roku and Xbox, where they exist.</li>
-    <li>Infuse: we do not know whether it supports custom Jellyfin servers at all.</li>
-  </ul>
-  <p>The Settings screen also lists a “From anywhere” address. Away-from-home viewing in Beebo uses a connection set up by Beebo’s own apps and browser page, so we have not confirmed that a Jellyfin app on another network can use it. Treat your home network as the case to try first.</p>
+  <p>We checked Beebo&rsquo;s answers against the official Jellyfin API description and drove it with the official typed SDK in our automated tests. That proves the format of the answers, not any particular app. <strong>Nobody has run any of these apps against Beebo yet.</strong> Everything below comes from each app&rsquo;s public source or documentation, so read the middle column as what we <em>expect</em>, not what we have seen.</p>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">App</th><th scope="col">Where</th><th scope="col">What we expect</th><th scope="col">Tried with real app?</th><th scope="col">Known limits</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Swiftfin</th><td>iPhone, iPad, Apple TV</td><td>Expected to work</td><td>No</td><td>Remote control from other apps is not offered.</td></tr>
+        <tr><th scope="row">Infuse</th><td>Apple TV, iPhone, iPad, Mac</td><td>Expected to work in Direct mode</td><td>No</td><td>Closed source, so we only know its documentation. Library mode with its sync plug-in is not expected to work.</td></tr>
+        <tr><th scope="row">Streamyfin</th><td>iPhone, Android</td><td>Expected to work</td><td>No</td><td>Creating playlists from the app is refused. Live library-changed nudges are not sent.</td></tr>
+        <tr><th scope="row">Gelly</th><td>Linux</td><td>Expected to work</td><td>No</td><td>Creating playlists is refused.</td></tr>
+        <tr><th scope="row">Jellyfin for Android TV</th><td>Android TV, Fire TV</td><td>Partial</td><td>No</td><td>Its setup may refuse a server whose product name is not Jellyfin&rsquo;s. Beebo reports its own name.</td></tr>
+        <tr><th scope="row">Findroid</th><td>Android</td><td>Partial</td><td>No</td><td>The same product-name check. Files that cannot be played directly have no fallback.</td></tr>
+        <tr><th scope="row">Jellyfin Web</th><td>Browsers</td><td>Partial</td><td>No</td><td>Beebo does not host that web app; it would have to be hosted elsewhere and pointed at Beebo.</td></tr>
+        <tr><th scope="row">JellyCon</th><td>Kodi</td><td>Partial</td><td>No</td><td>Converted playback uses the add-on&rsquo;s own URL, and its width limits are ignored.</td></tr>
+        <tr><th scope="row">Finamp</th><td>iPhone, Android (music)</td><td>Partial</td><td>No</td><td>Playing your music files directly is expected to work. Its converted-audio path is missing.</td></tr>
+        <tr><th scope="row">Home Assistant integration</th><td>Home automation</td><td>Partial</td><td>No</td><td>It can show what is playing but cannot control playback.</td></tr>
+        <tr><th scope="row">Jellyfin for Kodi (sync add-on)</th><td>Kodi</td><td>Not expected to work</td><td>No</td><td>It needs a server plug-in that Beebo does not have.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fineprint">&ldquo;Expected to work&rdquo; means the calls the app makes are implemented and checked at protocol level. &ldquo;Partial&rdquo; means it should work with the stated limit. &ldquo;Not expected to work&rdquo; means a needed piece is missing. <strong>Infuse</strong> is mentioned for its Direct mode only. We have not confirmed that an app on another network can use the &ldquo;From anywhere&rdquo; address in Settings, so treat your home network as the case to try first. Jellyfin-compatible apps on Samsung, LG, Roku and Xbox are not in this table because we have looked at none of them. Names are trademarks of their owners and are used only to say what we expect to work.</p>
 
   <h2 id="limits">What is not supported</h2>
   <ul class="plain">
     <li>Live TV, plug-ins, SyncPlay and remote control between devices, and the WebSocket that live “now playing” screens rely on. Apps that need them show them as unavailable.</li>
-    <li>Trickplay thumbnails, chapters, intro and credits markers, and lyrics.</li>
+    <li>Lyrics, and chapter pictures. Seek-preview thumbnails, chapter names and intro and credit markers are offered.</li>
+    <li>Two-factor accounts cannot sign in with their normal password from these apps. The owner makes an app password for them in Settings.</li>
+    <li>Auto-discovery: apps that scan the network for servers will not find Beebo by themselves, so type its address.</li>
     <li>Downloading files through the app, and anything that changes the server (users, libraries, restart). These answer “not allowed”.</li>
     <li>Only Movies, TV Shows, Music and Collections libraries. A file you just added can take up to a minute to appear.</li>
     <li>If you restore an older backup, apps may need to re-sync their library the next time they sign in.</li>
@@ -168,7 +180,7 @@
   <h2 id="trouble">If something goes wrong</h2>
   <div class="faq">
     <details><summary>The app says this is not a Jellyfin server</summary><p>The mode is off, or you typed an address the app cannot reach. When it is off, Beebo answers those requests with a plain “not found” so apps report an unknown server. Tick the box in Settings and try again.</p></details>
-    <details><summary>An app I use does not work at all</summary><p>That is what “experimental” means. Please tell us which app and version at <a href="mailto:testers@beeboentertainment.com?subject=Jellyfin%20app%20with%20Beebo">testers@beeboentertainment.com</a>, and what it showed.</p></details>
+    <details><summary>An app I use does not work at all</summary><p>That is what “beta” means. Please tell us which app and version at <a href="mailto:testers@beeboentertainment.com?subject=Jellyfin%20app%20with%20Beebo">testers@beeboentertainment.com</a>, and what it showed.</p></details>
     <details><summary>Can I see the whole library from a restricted profile?</summary><p>No. The mode asks Beebo’s own library for each request as that person, so blocked titles, bedtime and daily limits still apply.</p></details>
   </div>
 
@@ -181,9 +193,9 @@
     <a href="../beebo-vs-other-apps.html">How Beebo compares</a>
     <a href="faq.html">FAQ</a>
   </div>
-  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.39, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+  <p class="fineprint">Written for Beebo for Windows 0.1.58 and the Beebo Android app 1.39, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
 </div>
 </main>
 
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.39 (build 40)</strong><time data-beebo-release-date="android" datetime="2026-09-21T15:30:29Z">Built Sep 21, 2026, 11:30:29 AM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../home-theater.html">Home theater and big screen</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.39 (build 40)</strong><time data-beebo-release-date="android" datetime="2026-09-21T15:30:29Z">Built Sep 21, 2026, 11:30:29 AM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../home-theater.html">Home theater and big screen</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
 </html>

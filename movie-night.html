@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Movie Night: party games on your TV, played on phones</title>
+<meta name="description" content="Movie Night turns your TV into a party-game screen made from your own Beebo library. Phones join by QR code, no accounts. Beta in Windows 0.1.58." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Movie Night: party games on your TV, played on phones" />
+<meta property="og:description" content="Movie Night turns your TV into a party-game screen made from your own Beebo library. Phones join by QR code, no accounts. Beta in Windows 0.1.58." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/movie-night.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/home-evening.webp" />
+<meta property="og:image:alt" content="A couple watching television together at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- feature pages: same building blocks as home-theater.html, layered on site.css tokens ---- */
+  .wrap{max-width:1000px}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle;line-height:1.4}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:#7a4a08;background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:#231E18;background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:#6E6456;background:#fff;border-color:var(--border-strong)}
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0 6px}
+  .legend div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .legend div .tag{display:block;width:max-content;margin-bottom:6px}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .feature .tag{margin-left:0}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:14px 0}
+  .two-col .feature{margin:0}
+  .two-col .feature ul{margin:8px 0 0;padding-left:1.15em;color:var(--muted)}
+  .two-col .feature li{margin:0 0 6px}
+  .notyet{background:var(--surface);border:1px solid var(--border-strong);border-left:5px solid var(--accent);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 22px;margin:18px 0}
+  .notyet h2{margin-top:0}
+  .notyet ul{margin:8px 0 0;padding-left:1.25em}
+  .notyet li{margin:0 0 7px}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/movie-night.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://beeboentertainment.com/movie-night.html#webpage",
+      "url": "https://beeboentertainment.com/movie-night.html",
+      "name": "Movie Night: party games on your TV, played on phones",
+      "description": "What Movie Night is, its games, what it needs, how it treats families and privacy, and what has not been tested. Beta in Beebo for Windows 0.1.58.",
+      "inLanguage": "en",
+      "dateModified": "2026-09-21",
+      "about": {
+        "@id": "https://beeboentertainment.com/platforms.html#software"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://beeboentertainment.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Home theater and big screen",
+          "item": "https://beeboentertainment.com/home-theater.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Movie Night",
+          "item": "https://beeboentertainment.com/movie-night.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Movie Night?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Party games for the living-room TV, played from phones and made from your own Beebo library: guess the movie from a pixelated poster, match the cast, guess the year, and vote fairly on what to watch. It is a beta in Beebo for Windows 0.1.58."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do guests need an app or an account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They scan a QR code with a phone browser on your home Wi-Fi and type a nickname. Up to 12 people can join."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Movie Night need the internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not while you play, once your library's posters and details have been saved from TMDB. The games read only what your PC has already saved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What data does Movie Night collect?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It keeps no accounts or profiles of guests. Guests give only a nickname, the room lives in memory on your PC and ends with the night, and there are no ads, analytics or cookies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it suitable for children?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parental controls and a rating limit (PG-13 by default) apply to the films used. It is a family activity, not a children's product, and there is no chat, so supervise the room."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Has it been tested?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only with simulated phones. It has not been tried on real phones, real TVs or a real Wi-Fi network yet."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">&#9776;</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#what">Meet Beebo</a><a href="platforms.html">Devices</a><a href="home-theater.html">Home theater</a><a href="beebo-products.html">Products</a><a href="beebo-vs-other-apps.html">Compare</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help &amp; guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo &#8599;</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+
+<main>
+<div class="wrap">
+  <a class="back" href="home-theater.html">&larr; Home theater and big screen</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🎉</div>
+    <h1>Movie Night: party games for the TV</h1>
+    <p class="lead">Movie Night turns your TV into a party-game screen. Guests join from their phones by QR code, and the questions come from your own Beebo library. It is a beta, and it has been tested only with simulated phones.</p>
+  </div>
+
+  <img class="page-campaign-art" src="assets/home-evening.webp" alt="A couple watching television together at home" width="1672" height="941" loading="lazy">
+
+  <div class="callout">
+    <p><span class="tag live">Available now — Beta (Windows 0.1.58)</span> <strong>Status:</strong> Movie Night is in Beebo for Windows 0.1.58 and is a beta. It has been tested only with <strong>simulated phones</strong>, not on real phones, a real TV or a real Wi-Fi network. The Android app screen for it is <span class="tag beta">Beta — next Android release</span>.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#how">How it works</a><a href="#games">The games</a><a href="#need">What you need</a><a href="#families">Families and privacy</a><a href="#tested">What is not tested</a><a href="#faq">Questions</a></nav>
+
+  <h2 id="how">How it works</h2>
+  <p>The TV shows a big QR code and a short room code. Up to 12 people join by scanning it with a phone browser on your home Wi-Fi. The questions are made from <strong>your own library</strong>: the posters, taglines, cast and years your PC has already saved.</p>
+  <ol class="steps">
+    <li><h3>Start a room</h3><p>On the desktop app, open a film&rsquo;s page and press <strong>Start Movie Night</strong>, then show it on the PC or on your TV. Or open the Movie Night page from any TV browser: <code>http://&lt;pc-address&gt;:47811/tv</code>.</p></li>
+    <li><h3>Guests scan the QR code</h3><p>They pick a nickname and a colour. No app, no account and no internet. The first guest to join can start games and skip from their phone, and the TV remote can do the same.</p></li>
+    <li><h3>Play</h3><p>Pick a game from the menu, or a group vote for what to watch. Scores and a final scoreboard appear on the TV, for players or for teams.</p></li>
+    <li><h3>Watch tonight&rsquo;s film</h3><p>If you started from a film&rsquo;s page, <strong>Play tonight&rsquo;s movie</strong> starts it, and an Intermission quiz can ask about it.</p></li>
+  </ol>
+
+  <h2 id="games">The games</h2>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">Game</th><th scope="col">What happens</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Name That Movie</th><td>A poster starts as chunky pixels and gets clearer in stages, with the tagline, top cast and year as clues. Pick the title from four. Earlier answers score more.</td></tr>
+        <tr><th scope="row">Cast Match</th><td>Which of these actors was in a given film?</td></tr>
+        <tr><th scope="row">Year Guess</th><td>Slide to the year a film came out. The closest guess earns a bonus.</td></tr>
+        <tr><th scope="row">Before or After</th><td>Two posters: which came out first?</td></tr>
+        <tr><th scope="row">Trivia Night</th><td>A mixed round of all of the above, plus taglines and who played which character.</td></tr>
+        <tr><th scope="row">Intermission quiz</th><td>Three quick 15-second questions, about the film that just played first.</td></tr>
+        <tr><th scope="row">Pick Tonight&rsquo;s Movie</th><td>A fair group vote. Each person says Yes to any film they would be happy with and may veto one. A tie is settled by a fair random draw, and the screen says which rule decided it.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fineprint">A game only uses films that have enough saved (for example a poster, a year and some cast). If your library has too little saved, the lobby says what a game still needs. Team scores are averaged so a bigger team is not favoured.</p>
+
+  <h2 id="need">What you need</h2>
+  <ul class="plain">
+    <li>Beebo for Windows 0.1.58 on the PC that holds your films, with posters and details already saved from TMDB (see the <a href="tmdb-key-guide.html">TMDB key guide</a>).</li>
+    <li>A TV or screen with a web browser, or the PC itself connected to the TV. There is no Movie Night app for Roku, Samsung, LG, Xbox or Apple TV yet; those apps are <span class="tag dev">In development</span>.</li>
+    <li>Phones with an ordinary web browser, on the same home Wi-Fi. By default only your home network can join.</li>
+    <li>No internet during the game, once your library&rsquo;s details have been saved.</li>
+  </ul>
+
+  <h2 id="families">Families and privacy</h2>
+  <ul class="plain">
+    <li><strong>Parental controls and a rating limit apply.</strong> Only titles the room&rsquo;s host profile may see, and that are within the owner&rsquo;s rating limit (PG-13 by default), go into a game. Films with no saved rating are left out unless the owner allows them.</li>
+    <li><strong>Guests need no account.</strong> They give only a nickname, which is typed by them, limited in length and cleaned of odd characters. The host can remove anyone and lock the room. There is no chat and no free text apart from the nickname, so supervise the room as you would any group activity.</li>
+    <li><strong>Games use your own cached library data.</strong> They read only what your PC has already saved, and make no requests to the internet. The rooms live in memory on your PC and end with the night.</li>
+    <li>No accounts, ads, analytics, cookies or third-party requests. The phone remembers your nickname in its own browser storage only.</li>
+    <li>Movie Night is a family activity, not a children&rsquo;s product.</li>
+  </ul>
+  <p class="fineprint">This product uses the TMDB API but is not endorsed or certified by TMDB. Posters shown are the ones already saved for your library.</p>
+
+  <section class="notyet" id="tested" aria-labelledby="tested-title">
+    <h2 id="tested-title">What is not tested yet</h2>
+    <ul>
+      <li>Real phones on a real Wi-Fi network. Movie Night has been run with simulated phones only.</li>
+      <li>Real TV browsers, and the remote-control keys on them.</li>
+      <li>The Android app&rsquo;s Movie Night screen (a window that can only visit your PC) is not in Android 1.39: <span class="tag beta">Beta — next Android release</span>.</li>
+      <li>A rare wrong answer in Cast Match may in truth have a small part in the film, because it checks the saved cast list, which holds the top-billed actors only. The question says &ldquo;was in&rdquo;, not &ldquo;was billed in&rdquo;.</li>
+    </ul>
+  </section>
+
+  <div class="guide-nav">
+    <a href="cinema-mode.html">🎞️ Cinema Mode</a>
+    <a href="phone-speakers.html">📱 Phone speakers</a>
+    <a href="home-theater.html">Home theater and big screen</a>
+    <a href="what-beebo-can-do.html">What Beebo can do</a>
+    <a href="docs/privacy-in-plain-words.html">🔐 Privacy in plain words</a>
+    <a href="docs.html">📖 Docs</a>
+  </div>
+
+  <h2 id="faq">Questions</h2>
+  <div class="faq">
+    <details><summary>What is Movie Night?</summary><p>Party games for the living-room TV, played from phones and made from your own Beebo library: guess the movie from a pixelated poster, match the cast, guess the year, and vote fairly on what to watch. It is a beta in Beebo for Windows 0.1.58.</p></details>
+    <details><summary>Do guests need an app or an account?</summary><p>No. They scan a QR code with a phone browser on your home Wi-Fi and type a nickname. Up to 12 people can join.</p></details>
+    <details><summary>Does Movie Night need the internet?</summary><p>Not while you play, once your library&rsquo;s posters and details have been saved from TMDB. The games read only what your PC has already saved.</p></details>
+    <details><summary>What data does Movie Night collect?</summary><p>It keeps no accounts or profiles of guests. Guests give only a nickname, the room lives in memory on your PC and ends with the night, and there are no ads, analytics or cookies.</p></details>
+    <details><summary>Is it suitable for children?</summary><p>Parental controls and a rating limit (PG-13 by default) apply to the films used. It is a family activity, not a children&rsquo;s product, and there is no chat, so supervise the room.</p></details>
+    <details><summary>Has it been tested?</summary><p>Only with simulated phones. It has not been tried on real phones, real TVs or a real Wi-Fi network yet.</p></details>
+  </div>
+
+  <p class="fineprint">This product uses the TMDB API but is not endorsed or certified by TMDB. Written for Beebo for Windows 0.1.58 and the Beebo Android app 1.39, as of September 21, 2026. Found something that does not match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20movie-night%20page%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="windows.html#download">Get Beebo for Windows &#8599;</a></div>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.39 (build 40)</strong><time data-beebo-release-date="android" datetime="2026-09-21T15:30:29Z">Built Sep 21, 2026, 11:30:29 AM Eastern</time></div><a href="updates.html">What&rsquo;s new &#8599;</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="home-theater.html">Home theater and big screen</a><a href="phone-speakers.html">Phone speakers (Beta)</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help &amp; guides</a><a href="docs.html">Docs</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>&copy; 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top &#8593;</a></div></footer><script src="polish.js?v=4"></script></body>
+</html>
