@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beebo: home media server for Windows 10 and 11</title>
+<meta name="description" content="Beebo is a private home media server for Windows 10 and 11. Your own movies and shows, on your phone, browser and TV. Free at home, no catalogue included." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Beebo: home media server for Windows 10 and 11" />
+<meta property="og:description" content="Beebo is a private home media server for Windows 10 and 11. Your own movies and shows, on your phone, browser and TV. Free at home, no catalogue included." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/windows.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/setup-pc.webp" />
+<meta property="og:image:alt" content="A compact home computer on an oak desk" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/windows.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://beeboentertainment.com/windows.html#software",
+  "name": "Beebo Entertainment for Windows",
+  "url": "https://beeboentertainment.com/windows.html",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "softwareRequirements": "A Windows PC and user-provided media files. Remote streaming requires an online server and configured remote access.",
+  "description": "Beebo Entertainment is a personal home media server for Windows 10 and 11. Organize your own movies and home videos, control household access, and watch at home or away on phones, tablets, browsers and TVs. No movies or shows are included.",
+  "featureList": [
+    "Personal media library organization",
+    "Household accounts managed by the server owner",
+    "Playback on phones, tablets and browsers",
+    "Offline downloads on Android"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CAD",
+    "description": "Beebo Entertainment is free to use at home. Away-from-home access is also free with a direct connection, automatic UPnP, or your own relay, at any resolution. Beebo Relay, Beebo's own relay servers, is an optional paid fallback for households where none of those work: about CA$3/month for 1080p or CA$5/month for 4K, priced by streaming quality rather than data used. No payment card required to get started.",
+    "url": "https://beeboentertainment.com/subscribe.html"
+  }
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#what">Meet Beebo</a><a href="platforms.html">Devices</a><a href="beebo-products.html">Products</a><a href="beebo-vs-other-apps.html">Compare</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help &amp; guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="platforms.html">← Beebo on your devices</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🖥️</div>
+    <h1>Beebo: a private home media server for Windows 10 and 11</h1>
+    <p class="lead">Beebo is personal home media server software for Windows 10 and 11. It turns the movies, shows and home videos on your PC into a library you can watch on your phone, tablet, browser and TV.</p>
+  </div>
+
+  <img class="page-campaign-art" src="assets/setup-pc.webp" alt="A compact home computer on an oak desk" width="1000" height="563" loading="lazy">
+
+  <div class="callout safe">
+    <p><strong>At a glance:</strong> you supply the movie and show files, Beebo supplies the software. The app is free to use at home, your files stay on your own computer, and there is no catalogue of movies or shows included.</p>
+  </div>
+
+  <h2 id="what">What Beebo is</h2>
+  <p>Beebo is a private home media server. You point it at the folders on your PC that already hold your movies, shows and home videos, and it builds a library with posters and descriptions. Continue Watching remembers where each person left off, and everyone in the household signs in with their own account.</p>
+  <p><strong>Beebo does not come with movies or shows.</strong> Use media you have permission to store and play.</p>
+
+  <h2 id="requirements">What you need</h2>
+  <ul class="plain">
+    <li>A <strong>Windows 10 or Windows 11</strong> computer that stays on when you want to watch. It is the server.</li>
+    <li>The folders where your movies and shows already live.</li>
+    <li>A device to watch on: the Android app, or any web browser. To see it on a TV, cast to a Chromecast or Google TV. See <a href="platforms.html">all devices</a>.</li>
+    <li>For posters, cast and descriptions, a free TMDB key of your own. There is a <a href="tmdb-key-guide.html">step-by-step guide</a>.</li>
+  </ul>
+
+  <h2 id="how">How it works</h2>
+  <ol class="steps">
+    <li>
+      <h3>Install Beebo on your PC</h3>
+      <p>Download the installer from the <a href="index.html#get-app">Get Beebo section</a> and run it. Beebo opens on its own when it finishes. Windows may show a security prompt for a newly downloaded installer; the <a href="server-setup.html">Windows setup guide</a> explains what to do.</p>
+    </li>
+    <li>
+      <h3>Create your account and choose your folders</h3>
+      <p>The first time Beebo opens, you choose a username and password and pick your movie and TV folders. Beebo builds your library and never moves or changes your files. The whole setup takes about ten minutes.</p>
+    </li>
+    <li>
+      <h3>Watch at home</h3>
+      <p>Install the Android app, or open Beebo in any web browser, and type the address shown on the PC&rsquo;s Get Started screen. To watch on a TV, <a href="cast-to-tv.html">cast to a Chromecast or Google TV</a>.</p>
+    </li>
+    <li>
+      <h3>Watch away from home</h3>
+      <p>Every Beebo gets a free address like yourname.beebo.tv. Open it on mobile data or any Wi-Fi, sign in, and your library is there. Your PC must be on and running Beebo.</p>
+    </li>
+  </ol>
+
+  <h2 id="away">Away from home, and what it costs</h2>
+  <p>Beebo connects your phone straight to your home PC first. If that is not possible, Beebo can try automatic UPnP, or you can <a href="open-ports.html">open ports on your router</a> or <a href="own-relay.html">bring your own relay</a>. All of these are $0, at any resolution. <a href="beebo-relay.html">Beebo Relay</a>, Beebo&rsquo;s own relay, is a simple paid fallback if none of those work for you. A relay passes the video along but can&rsquo;t see it.</p>
+  <div class="callout">
+    <p>Beebo Entertainment is free to use at home. Away-from-home access is also free with a direct connection, automatic UPnP, or your own relay, at any resolution. Beebo Relay, Beebo&#x27;s own relay servers, is an optional paid fallback for households where none of those work: about CA$3/month for 1080p or CA$5/month for 4K, priced by streaming quality rather than data used. No payment card required to get started.</p>
+  </div>
+  <p>Not sure your internet allows it? <a href="will-beebo-work.html">Check that Beebo will work on your internet</a>, or read <a href="watch-away-from-home.html">Watch away from home</a>.</p>
+
+  <h2 id="privacy">Your files and your privacy</h2>
+  <p>Your files stay on your own computer, and you decide who gets in: add people yourself or approve their requests, and remove access any time. Sign-in and connection set-up use a Beebo service that handles account and connection details. Read the <a href="movie-privacy.html">privacy policy</a> for what it sees.</p>
+
+  <h2 id="limits">Honest limits</h2>
+  <ul class="plain">
+    <li><strong>The PC has to be on.</strong> When it is off or asleep, nothing can stream from it.</li>
+    <li><strong>The server runs on Windows.</strong> A <a href="linux.html">Linux beta</a> is coming with the next release.</li>
+    <li><strong>No movies or shows are included.</strong> Beebo plays the files you already own.</li>
+    <li><strong>No Live TV or DVR</strong>, and no plug-in ecosystem yet. <a href="beebo-vs-other-apps.html">See how Beebo compares</a>, including where other apps are ahead.</li>
+    <li><strong>No native apps yet</strong> for iPhone, iPad, Apple TV, Roku, Samsung or LG TVs. See <a href="platforms.html">the devices page</a> for what works today.</li>
+    <li><strong>Offline downloads need the Android app.</strong></li>
+  </ul>
+
+  <div class="guide-nav">
+    <a href="server-setup.html">🖥️ Windows setup guide</a>
+    <a href="platforms.html">📺 All devices</a>
+    <a href="watch-away-from-home.html">🌍 Watch away from home</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="index.html#get-app">Get Beebo for Windows ↗</a></div>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.54</strong><time data-beebo-release-date="windows" datetime="2026-09-20T08:20:14Z">Released Sep 20, 2026, 4:20:14 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.35 (build 36)</strong><time data-beebo-release-date="android" datetime="2026-09-20T08:14:23Z">Released Sep 20, 2026, 4:14:23 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script></body>
+</html>

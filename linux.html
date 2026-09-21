@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beebo for Linux (beta)</title>
+<meta name="description" content="Beebo for Linux is coming as a beta: the same desktop server as Windows, as an AppImage and a .deb. Requirements, install steps and honest limits." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Beebo for Linux (beta)" />
+<meta property="og:description" content="Beebo for Linux is coming as a beta: the same desktop server as Windows, as an AppImage and a .deb. Requirements, install steps and honest limits." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/linux.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/quiet-server.webp" />
+<meta property="og:image:alt" content="A quiet home computer on a shelf" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/linux.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://beeboentertainment.com/linux.html#software",
+  "name": "Beebo Entertainment for Linux (beta)",
+  "url": "https://beeboentertainment.com/linux.html",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Linux (64-bit, glibc; tested on Ubuntu 22.04)",
+  "softwareRequirements": "A 64-bit glibc-based Linux distribution such as Ubuntu 22.04 or newer, a graphical desktop session, libfuse2 for the AppImage, and your own media files.",
+  "description": "Beta, coming with the next release. The same desktop media server as the Windows version, packaged as an AppImage and a .deb. Not yet published; the download link will appear on this page when the release is available."
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#what">Meet Beebo</a><a href="platforms.html">Devices</a><a href="beebo-products.html">Products</a><a href="beebo-vs-other-apps.html">Compare</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help &amp; guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="platforms.html">← Beebo on your devices</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🐧</div>
+    <h1>Beebo for Linux (beta)</h1>
+    <p class="lead">Beebo for Linux is the same desktop media server as the Windows version, packaged as an AppImage and a .deb. It is a beta that arrives with the next release, and the download link will appear on this page when that release is published.</p>
+  </div>
+
+  <img class="page-campaign-art" src="assets/quiet-server.webp" alt="A quiet home computer on a shelf" width="1672" height="941" loading="lazy">
+
+  <div class="callout">
+    <p><strong>Status: beta, coming with the next release.</strong> The download link appears here when the release is published. Until then there is nothing to download, and the install steps below are written ahead of time.</p>
+  </div>
+
+  <h2 id="what">What it is</h2>
+  <p>Beebo for Linux is the same desktop server as the Windows version, packaged as an <strong>AppImage</strong> and a <strong>.deb</strong> package. You point it at your own movie and show folders, and you watch on the Android app, in any web browser, or by casting to a Chromecast or Google TV. Everything else about how Beebo works is the same as on <a href="windows.html">Windows</a>.</p>
+
+  <h2 id="requirements">Requirements</h2>
+  <ul class="plain">
+    <li>A 64-bit PC (x86-64) running a glibc-based distribution such as <strong>Ubuntu 22.04 or newer</strong>.</li>
+    <li><strong>libfuse2</strong> if you use the AppImage. The package name can differ between distributions.</li>
+    <li>A graphical desktop session. Beebo is a desktop app, and this beta is not built or tested for headless or Docker installs.</li>
+    <li>Your own movie and show files. Beebo includes no movies or shows.</li>
+  </ul>
+
+  <h2 id="status">How well it has been tested</h2>
+  <p>This is a <strong>beta</strong>. It has been tested by an automated install and launch on <strong>Ubuntu 22.04 only</strong>. Other distributions and desktops have not been tested.</p>
+
+  <h2 id="install">Install steps <span class="tag beta">Available with the release</span></h2>
+  <p class="fineprint">These steps cannot be followed yet, because the files are not published. File names below are placeholders.</p>
+  <ol class="steps">
+    <li>
+      <h3>Option A: the .deb package (Ubuntu and Debian)</h3>
+      <p>Download the <code>.deb</code> file, then in a terminal in the download folder run:</p>
+      <p><code>sudo apt install ./&lt;downloaded-file&gt;.deb</code></p>
+      <p>Then start Beebo from your applications menu.</p>
+    </li>
+    <li>
+      <h3>Option B: the AppImage (most distributions)</h3>
+      <p>Install libfuse2 with your package manager, download the <code>.AppImage</code> file, and make it runnable:</p>
+      <p><code>chmod +x &lt;downloaded-file&gt;.AppImage</code></p>
+      <p>Then run it with <code>./&lt;downloaded-file&gt;.AppImage</code> or double-click it in your file manager.</p>
+    </li>
+    <li>
+      <h3>Set up your library</h3>
+      <p>The first time Beebo opens, create your owner account and choose your movie and TV folders, just like on Windows. The <a href="server-setup.html">setup guide</a> shows the same steps for Windows.</p>
+    </li>
+  </ol>
+
+  <h2 id="limits">Honest limits</h2>
+  <ul class="plain">
+    <li><strong>Beta.</strong> Expect rough edges, and tell us what you find.</li>
+    <li><strong>No automatic updates on Linux.</strong> You install new versions yourself.</li>
+    <li><strong>Saved passwords and keys are only encrypted if your system has a keyring</strong> such as GNOME Keyring or KWallet. Without one, Beebo keeps them as plain text in its settings file.</li>
+    <li><strong>The system tray icon has not been checked</strong> on Linux desktops yet.</li>
+    <li><strong>Away-from-home connections have not been tested on Linux.</strong> Watching at home on your own network is the expected first use.</li>
+  </ul>
+
+  <div class="callout">
+    <p><strong>Want to know when the Linux beta is published?</strong> <a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20for%20Linux">Email us to be notified</a>. This is a plain email to <code>testers@beeboentertainment.com</code>: there is no form and no sign-up. Tell us which device you use and we will write back when there is news.</p>
+  </div>
+
+  <div class="guide-nav">
+    <a href="platforms.html">📺 All devices</a>
+    <a href="windows.html">🖥️ Windows 10 and 11</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="platforms.html">← Back to all devices</a></div>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.54</strong><time data-beebo-release-date="windows" datetime="2026-09-20T08:20:14Z">Released Sep 20, 2026, 4:20:14 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.35 (build 36)</strong><time data-beebo-release-date="android" datetime="2026-09-20T08:14:23Z">Released Sep 20, 2026, 4:14:23 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script></body>
+</html>

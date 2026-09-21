@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beebo on Android TV and Google TV</title>
+<meta name="description" content="Beebo works on Android TV and Google TV through the Android app. How to install it, how to sign in with a remote, what works and what is hidden on a TV." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Beebo on Android TV and Google TV" />
+<meta property="og:description" content="Beebo works on Android TV and Google TV through the Android app. How to install it, how to sign in with a remote, what works and what is hidden on a TV." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/android-tv.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/home-evening.webp" />
+<meta property="og:image:alt" content="A couple watching television together at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/android-tv.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://beeboentertainment.com/android-tv.html#software",
+  "name": "Beebo Entertainment for Android TV and Google TV",
+  "url": "https://beeboentertainment.com/android-tv.html",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Android TV, Google TV",
+  "softwareRequirements": "A running Beebo server on a Windows PC and the Beebo Android app, installed manually because it is not yet listed for TVs on Google Play.",
+  "description": "The Beebo Android app runs on Android TV and Google TV with remote-control navigation. It is installed manually for now.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CAD",
+    "description": "Beebo Entertainment is free to use at home. Away-from-home access is also free with a direct connection, automatic UPnP, or your own relay, at any resolution. Beebo Relay, Beebo's own relay servers, is an optional paid fallback for households where none of those work: about CA$3/month for 1080p or CA$5/month for 4K, priced by streaming quality rather than data used. No payment card required to get started.",
+    "url": "https://beeboentertainment.com/subscribe.html"
+  }
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#what">Meet Beebo</a><a href="platforms.html">Devices</a><a href="beebo-products.html">Products</a><a href="beebo-vs-other-apps.html">Compare</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help &amp; guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="platforms.html">← Beebo on your devices</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">📺</div>
+    <h1>Beebo on Android TV and Google TV</h1>
+    <p class="lead">The Beebo Android app runs on Android TV and Google TV, with navigation built for a TV remote. You install it yourself for now, and this page shows how to install it and sign in.</p>
+  </div>
+
+  <img class="page-campaign-art" src="assets/home-evening.webp" alt="A couple watching television together at home" width="1672" height="941" loading="lazy">
+
+  <div class="callout safe">
+    <p><strong>Status: works today through the Android app.</strong> You install it yourself, because Beebo is not yet listed for TVs on Google Play. If you would rather not install anything on the TV, <a href="cast-to-tv.html">casting from your phone</a> works with a Chromecast or Google TV.</p>
+  </div>
+
+  <h2 id="requirements">Requirements</h2>
+  <ul class="plain">
+    <li>An Android TV or Google TV device: a TV with either built in, a Chromecast with Google TV, or an Android TV box.</li>
+    <li>A running Beebo server on your <a href="windows.html">Windows 10 or 11 PC</a>, with your account already created.</li>
+    <li>The Beebo Android app file (an <code>.apk</code>) from the <a href="index.html#get-app">download section</a>. It is the same app as the phone version. It is built for both 32-bit and 64-bit ARM, because many TV devices, including Chromecast with Google TV, use a 32-bit system.</li>
+  </ul>
+
+  <h2 id="install">How to install and sign in</h2>
+  <ol class="steps">
+    <li>
+      <h3>Get the app file</h3>
+      <p>On a phone or computer, open the <a href="index.html#get-app">Get Beebo section</a> and download the Android app.</p>
+    </li>
+    <li>
+      <h3>Put it on your TV</h3>
+      <p>Beebo does not have a TV-specific installer. Copy the <code>.apk</code> to the TV, for example on a USB drive, and open it with a file manager app installed on the TV. Android will ask you to allow installs from that app. The exact menus vary by TV.</p>
+    </li>
+    <li>
+      <h3>Open Beebo</h3>
+      <p>Beebo has a TV launcher icon, so it appears among your TV&rsquo;s apps.</p>
+    </li>
+    <li>
+      <h3>Sign in with your remote</h3>
+      <p>On the first screen, type your Beebo address, then your username and password. Use the local address shown on the PC&rsquo;s Get Started screen (a few numbers like <code>192.168.1.50:47811</code>) when the TV is on the same Wi-Fi as the PC, or your <code>yourname.beebo.tv</code> address.</p>
+    </li>
+  </ol>
+
+  <h2 id="how">What you get on the TV</h2>
+  <ul class="plain">
+    <li>Your library, with navigation designed for a TV remote: a menu rail down the left side and the remote&rsquo;s directional pad for moving around and seeking.</li>
+    <li>Voice search. Once you are signed in, press the microphone button on the remote and say a title, and matching films and shows from your Beebo library appear in the TV&rsquo;s search results.</li>
+    <li>A Continue watching row on the TV&rsquo;s home screen. It is kept on the TV itself.</li>
+  </ul>
+
+  <h2 id="limits">Honest limits</h2>
+  <ul class="plain">
+    <li><strong>Not listed for TVs on Google Play yet.</strong> That is why you install the file yourself.</li>
+    <li><strong>Signing in means typing with the remote.</strong> A sign-in with a code shown on the TV is not built yet.</li>
+    <li><strong>Some phone features are hidden on a TV:</strong> Campsite Mode, Star Chart, Nearby, Scavenger Hunt, Space Saver and offline Downloads. Buying or subscribing is not available on a TV.</li>
+    <li><strong>There is no published list of tested TV models.</strong> If something does not work on your TV, <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20on%20Android%20TV%3A%20a%20problem">tell us which TV you have</a>.</li>
+    <li><strong>Amazon Fire TV devices are not covered on this page.</strong></li>
+  </ul>
+
+  <div class="guide-nav">
+    <a href="cast-to-tv.html">📺 Cast to your TV</a>
+    <a href="app-on-your-phone.html">📱 Get Beebo on your phone</a>
+    <a href="platforms.html">All devices</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="index.html#get-app">Get the Android app ↗</a></div>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.54</strong><time data-beebo-release-date="windows" datetime="2026-09-20T08:20:14Z">Released Sep 20, 2026, 4:20:14 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.35 (build 36)</strong><time data-beebo-release-date="android" datetime="2026-09-20T08:14:23Z">Released Sep 20, 2026, 4:14:23 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script></body>
+</html>

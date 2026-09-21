@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beebo on Roku (in development)</title>
+<meta name="description" content="A Beebo channel for Roku is in development, with no release date. What we are building, what you would need, and what works on a TV today." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Beebo on Roku (in development)" />
+<meta property="og:description" content="A Beebo channel for Roku is in development, with no release date. What we are building, what you would need, and what works on a TV today." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/roku.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/home-evening.webp" />
+<meta property="og:image:alt" content="A couple watching television together at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- device pages: components layered on site.css tokens (same building blocks as beebo-relay.html / app-on-your-phone.html) ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:var(--ink);background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:var(--muted);background:var(--surface);border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/roku.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://beeboentertainment.com/roku.html#software",
+  "name": "Beebo Entertainment for Roku (in development)",
+  "url": "https://beeboentertainment.com/roku.html",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Roku OS",
+  "description": "In development and not yet available. A Roku channel for playing a Beebo home media library on Roku devices and Roku TVs. No release date."
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#what">Meet Beebo</a><a href="platforms.html">Devices</a><a href="beebo-products.html">Products</a><a href="beebo-vs-other-apps.html">Compare</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help &amp; guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="platforms.html">← Beebo on your devices</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">📺</div>
+    <h1>Beebo on Roku (in development)</h1>
+    <p class="lead">A Beebo channel for Roku devices and Roku TVs is in development, and there is no release date yet. This page says what we are building, what it will need, and what you can use on a TV today.</p>
+  </div>
+
+  <img class="page-campaign-art" src="assets/home-evening.webp" alt="A couple watching television together at home" width="1672" height="941" loading="lazy">
+
+  <div class="callout">
+    <p><strong>Status: in development, with no release date.</strong> There is no Roku channel to install today, and nothing on this page needs to be downloaded.</p>
+  </div>
+
+  <h2 id="what">What we are building</h2>
+  <p>A Roku channel that plays your Beebo library on a Roku device or Roku TV. Roku channels use Roku&rsquo;s own platform, so the Android app cannot simply be reused, and the channel has to be written for Roku from the start. Your Beebo server, on your Windows PC, would do the same work it does for every other device.</p>
+
+  <h2 id="requirements">What you would need</h2>
+  <ul class="plain">
+    <li>A Beebo server running on a <a href="windows.html">Windows 10 or 11 PC</a>.</li>
+    <li>A Roku device or Roku TV. Which models will work has not been decided.</li>
+  </ul>
+
+  <h2 id="how">How it is expected to work</h2>
+  <ul class="plain">
+    <li>The channel would show your library and play it from your PC. It is not a separate library and includes no movies or shows.</li>
+    <li>Roku players are pickier about video formats than phones are, so Beebo will probably need to convert some files on your PC while they play. How well that works will depend on your PC and your Roku model.</li>
+    <li>Typing a password with a Roku remote is slow. A quicker sign-in, such as a code shown on the TV, has not been built yet.</li>
+  </ul>
+
+  <h2 id="limits">Honest limits</h2>
+  <ul class="plain">
+    <li><strong>It does not exist yet.</strong> There is no beta and no date.</li>
+    <li><strong>It has to pass Roku&rsquo;s review</strong> before it can be shared widely, and that has its own timeline.</li>
+    <li>The details above describe what we expect, and may change.</li>
+  </ul>
+
+  <h2 id="today">What works today on a TV</h2>
+  <p>Beebo&rsquo;s casting guide covers Chromecast and Google TV, and AirPlay from Safari. It does not list Roku. If you have another TV device, you can <a href="cast-to-tv.html">cast from the Android app</a> to a Chromecast or Google TV, or <a href="android-tv.html">run the Android app on Android TV or Google TV</a>. Any web browser also works on a phone, tablet or computer.</p>
+
+  <div class="callout">
+    <p><strong>Want to know when a Roku channel is ready?</strong> <a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20on%20Roku">Email us to be notified</a>. This is a plain email to <code>testers@beeboentertainment.com</code>: there is no form and no sign-up. Tell us which device you use and we will write back when there is news.</p>
+  </div>
+
+  <div class="guide-nav">
+    <a href="platforms.html">📺 All devices</a>
+    <a href="cast-to-tv.html">Cast to your TV</a>
+    <a href="android-tv.html">Android TV and Google TV</a>
+    <a href="help.html">📚 All guides</a>
+  </div>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="platforms.html">← Back to all devices</a></div>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.54</strong><time data-beebo-release-date="windows" datetime="2026-09-20T08:20:14Z">Released Sep 20, 2026, 4:20:14 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.35 (build 36)</strong><time data-beebo-release-date="android" datetime="2026-09-20T08:14:23Z">Released Sep 20, 2026, 4:14:23 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script></body>
+</html>
