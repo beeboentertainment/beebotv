@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Camping, hiking and road-trip extras | Beebo</title>
+<meta name="description" content="Trail Kit, campfire cards, a story game, a night-sky guide and a road-trip riddle game for families, all working offline. In development, with honest limits." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Camping, hiking and road-trip extras | Beebo" />
+<meta property="og:description" content="Trail Kit, campfire cards, a story game, a night-sky guide and a road-trip riddle game for families, all working offline. In development, with honest limits." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/outdoors-kit.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/home-evening.webp" />
+<meta property="og:image:alt" content="A couple watching television together at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- feature pages: same building blocks as home-theater.html, layered on site.css tokens ---- */
+  .wrap{max-width:1000px}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle;line-height:1.4}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:#7a4a08;background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:#231E18;background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:#6E6456;background:#fff;border-color:var(--border-strong)}
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0 6px}
+  .legend div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .legend div .tag{display:block;width:max-content;margin-bottom:6px}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .feature .tag{margin-left:0}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:14px 0}
+  .two-col .feature{margin:0}
+  .two-col .feature ul{margin:8px 0 0;padding-left:1.15em;color:var(--muted)}
+  .two-col .feature li{margin:0 0 6px}
+  .notyet{background:var(--surface);border:1px solid var(--border-strong);border-left:5px solid var(--accent);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 22px;margin:18px 0}
+  .notyet h2{margin-top:0}
+  .notyet ul{margin:8px 0 0;padding-left:1.25em}
+  .notyet li{margin:0 0 7px}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/outdoors-kit.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","@id":"https://beeboentertainment.com/outdoors-kit.html#webpage","url":"https://beeboentertainment.com/outdoors-kit.html","name":"Camping, hiking and road-trip extras | Beebo","description":"Trail Kit, campfire cards, a story game, a night-sky guide and a road-trip riddle game for families, all working offline. In development, with honest limits.","inLanguage":"en","dateModified":"2026-09-21"},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://beeboentertainment.com/"},{"@type":"ListItem","position":2,"name":"Camping, hiking and road-trip extras","item":"https://beeboentertainment.com/outdoors-kit.html"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Can I use these today?","acceptedAnswer":{"@type":"Answer","text":"Not yet. They are built and pass automated tests, but they are not in the Android download and have not been tried on real phones. They are In development."}},
+{"@type":"Question","name":"Do they need the internet or an account?","acceptedAnswer":{"@type":"Answer","text":"No. They are designed to work with no signal and no account, and they send nothing anywhere."}},
+{"@type":"Question","name":"Is Trail Kit a map or a safety device?","acceptedAnswer":{"@type":"Answer","text":"No. It is not a map, not navigation and not a safety device, and it cannot call for help."}}
+]}]}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">&#9776;</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#what">Meet Beebo</a><a href="platforms.html">Devices</a><a href="home-theater.html">Home theater</a><a href="beebo-products.html">Products</a><a href="beebo-vs-other-apps.html">Compare</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help &amp; guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo &#8599;</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+
+
+
+<main>
+<div class="wrap">
+  <a class="back" href="what-beebo-can-do.html">&larr; What Beebo can do</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🏕️</div>
+    <h1>Camping, hiking and road-trip extras</h1>
+    <p class="lead">Small things that make a walk in the woods, a campfire evening or a long car ride more fun for a family or a group of any age. They work with no signal and no account, and they send nothing anywhere.</p>
+  </div>
+  <div class="callout" data-tester-notice style="margin:14px 0;padding:10px 16px;font-size:.95rem"><p><strong>Testers wanted</strong> &mdash; posted <time datetime="2026-09-21T20:46:00Z">Sep 21, 2026, 4:46 PM Eastern</time>. We need testers on real phones and on a real trail. Real feedback earns a lifetime streaming pass. <a href="become-a-tester.html#windows">Help test Beebo on Windows &rarr;</a></p></div>
+
+  <div class="callout">
+    <p><span class="tag dev">In development</span> <strong>Status:</strong> everything on this page is built and passes our automated tests, but it is <strong>not in the Android download yet</strong> and nobody has tried it on a real phone, on a trail, at a campsite or in a car. We will change the label to Beta when a build with it is published and tested.</p>
+  </div>
+  <nav class="guide-nav" aria-label="On this page"><a href="#trail">Trail Kit</a><a href="#campfire">Campfire</a><a href="#car">In the car</a><a href="#limits">Limits</a><a href="#faq">Questions</a></nav>
+
+  <h2 id="trail">Trail Kit (on a hike)</h2>
+  <div class="two-col">
+    <div class="feature"><h3>Hike tracker</h3><ul><li>A timer with trail stamps at set times and, if you allow it, step counts.</li><li>Water and snack reminders shown on screen only, and rotating trail-leader and photographer roles.</li><li>Step counting is off by default and uses the phone&rsquo;s own step counter.</li></ul></div>
+    <div class="feature"><h3>Sun and moon</h3><ul><li>Sunrise, sunset, golden hour, first and last light, and a &ldquo;be back before dark&rdquo; planner.</li><li>The moon&rsquo;s phase and the next full and new moon.</li><li>Worked out on the phone from a place you type in. No network call.</li></ul></div>
+    <div class="feature"><h3>Nature bingo and Quiet ears</h3><ul><li>A card matched to the season and the kind of place, made only of things to look for or listen for.</li><li>A timed listening game. The microphone is not used and nothing is recorded.</li></ul></div>
+    <div class="feature"><h3>Journal, lists and badges</h3><ul><li>A page per walk that can also go into your Trip Journal.</li><li>Tick-off lists: before you go, ten essentials, and care for the trail.</li><li>Twelve keepsake badges with no streaks or ranking.</li></ul></div>
+  </div>
+
+  <h2 id="campfire">Campfire and camp games</h2>
+  <div class="two-col">
+    <div class="feature"><h3>Story Stew</h3><p>A fill-in-the-blanks story game with twelve stories (cozy, silly and adventure). Players take turns adding a word, and nobody sees the story until the last blank is filled. It works on one phone or with guests on the campsite Wi-Fi.</p></div>
+    <div class="feature"><h3>Campfire Cards</h3><p>Riddles, jokes and say-it-fast phrases in three age bands. The answer is only sent to phones when the leader taps &ldquo;Show the answer&rdquo;.</p></div>
+    <div class="feature"><h3>Night Sky Cards</h3><p>Fourteen cards with a &ldquo;find it tonight&rdquo; tip, plus the Moon tonight. The moon is approximate and can be off by about half a day.</p></div>
+    <div class="feature"><h3>Rainy-day box and Camp Jobs</h3><p>Thirty-three quick activities for the tent, the car and rest stops, and a fair chore wheel with a star chart. Names stay on the phone.</p></div>
+  </div>
+
+  <h2 id="car">In the car</h2>
+  <div class="feature"><h3>Riddle Road (Beebo Auto)</h3><p>A voice game for passengers: riddles, jokes and say-it-fast phrases read aloud, using the same cards as the phone app. It is for passengers only and never for the driver.</p></div>
+
+  <h2 id="limits">What these are not, and what is not tested</h2>
+  <ul class="plain">
+    <li>Trail Kit is not a map, not navigation and not a safety device, and it cannot call for help. Do not rely on it for safety.</li>
+    <li>Nothing here has been tried on real phones, on a trail, in a phone browser at a campsite, or in a car. Text size, glare, screen readers and hotspot use are unknown.</li>
+    <li>The riddles, jokes and stories are new and have not had an outside review.</li>
+    <li>The moon phase is good to a few hours. There are no moonrise or moonset times and no star maps.</li>
+    <li>These are written for families and groups of all ages. Parents or adults run them. Beebo is not a children&rsquo;s product.</li>
+  </ul>
+
+  <h2 id="faq">Questions</h2>
+  <div class="faq">
+    <details><summary>Can I use these today?</summary><p>Not yet. They are built and tested by machine but are not in the Android download, and no person has tried them on a phone.</p></details>
+    <details><summary>Do they need the internet or an account?</summary><p>No. They are designed to work with no signal and no account, and they send nothing anywhere.</p></details>
+    <details><summary>Is Trail Kit a map or a safety device?</summary><p>No. It is not a map, not navigation and not a safety device, and it cannot call for help.</p></details>
+    <details><summary>Where do I say what I would like added?</summary><p>Tell us on the <a href="become-a-tester.html">testers page</a>. Real feedback from a real trip is the most useful thing you can give us.</p></details>
+  </div>
+
+  <p class="fineprint">Written for the Beebo Android app 1.41 and Beebo Auto 1.8, as of September 21, 2026.</p>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="become-a-tester.html">Help us test</a></div>
+</div>
+</main>
+
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.40 (build 41)</strong><time data-beebo-release-date="android" datetime="2026-09-21T20:26:44Z">Built Sep 21, 2026, 4:26:44 PM Eastern</time></div><a href="updates.html">What&rsquo;s new &#8599;</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="home-theater.html">Home theater and big screen</a><a href="phone-speakers.html">Phone speakers (Beta)</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help &amp; guides</a><a href="docs.html">Docs</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>&copy; 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top &#8593;</a></div></footer><script src="polish.js?v=4"></script></body>
+</html>
