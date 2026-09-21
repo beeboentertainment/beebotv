@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home theater and big screen with Beebo: honest status</title>
+<meta name="description" content="Beebo on the big screen: video conversion with your graphics card, TV apps, server platforms and HDR or surround sound, each with an honest status label." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Home theater and big screen with Beebo: honest status" />
+<meta property="og:description" content="Beebo on the big screen: video conversion with your graphics card, TV apps, server platforms and HDR or surround sound, each with an honest status label." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://beeboentertainment.com/home-theater.html" />
+<meta property="og:image" content="https://beeboentertainment.com/assets/home-evening.webp" />
+<meta property="og:image:alt" content="A couple watching television together at home" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- home theater page: same building blocks as platforms.html, layered on site.css tokens ---- */
+  .wrap{max-width:1000px}
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle;line-height:1.4}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:#7a4a08;background:var(--accent-soft);border-color:var(--border-strong)}
+  .tag.dev{color:#231E18;background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:#6E6456;background:#fff;border-color:var(--border-strong)}
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0 6px}
+  .legend div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .legend div .tag{display:block;width:max-content;margin-bottom:6px}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .feature .tag{margin-left:0}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:14px 0}
+  .two-col .feature{margin:0}
+  .two-col .feature ul{margin:8px 0 0;padding-left:1.15em;color:var(--muted)}
+  .two-col .feature li{margin:0 0 6px}
+  .notyet{background:var(--surface);border:1px solid var(--border-strong);border-left:5px solid var(--accent);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 22px;margin:18px 0}
+  .notyet h2{margin-top:0}
+  .notyet ul{margin:8px 0 0;padding-left:1.25em}
+  .notyet li{margin:0 0 7px}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  @media (max-width:640px){table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/home-theater.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://beeboentertainment.com/home-theater.html#webpage",
+      "url": "https://beeboentertainment.com/home-theater.html",
+      "name": "Home theater and big screen with Beebo: honest status",
+      "description": "What Beebo does on the big screen today, what is in beta and what is not built yet: video conversion, TV apps, server platforms, HDR and surround sound.",
+      "inLanguage": "en",
+      "dateModified": "2026-09-21",
+      "about": {
+        "@id": "https://beeboentertainment.com/platforms.html#software"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://beeboentertainment.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Devices",
+          "item": "https://beeboentertainment.com/platforms.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Home theater and big screen",
+          "item": "https://beeboentertainment.com/home-theater.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Beebo have hardware transcoding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in two stages. The current Windows download (0.1.57) already converts video with your PC's NVIDIA, Intel Quick Sync or AMD encoder when it has one, and falls back to the processor. A rebuilt engine is in Beta for the next release: it tests each encoder, switches to the next one automatically if one fails, tone-maps HDR video, limits how many conversions run at once and adapts to an old PC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Beebo have big-screen apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Available now: the Android app on Android TV and Google TV (you install it yourself), casting to Chromecast and Google TV, and AirPlay from Safari. In development, not published and not tested on real devices: Fire TV, Roku, Samsung, LG, Xbox and Apple TV, iPhone and iPad apps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Beebo support HDR10+, Dolby Vision, Atmos and DTS:X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. Passthrough of HDR10+, Dolby Vision, Dolby Atmos and DTS:X is in development, so Beebo does not claim support. What works today: playing the original file untouched, and converting HDR video to standard dynamic range when a lower quality is chosen. Surround sound options are in Beta for the next release."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Beebo server have to run on Windows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Today, yes: the released server runs on Windows 10 and 11. A Linux desktop version and a headless server for Docker and NAS boxes are in Beta for the next release, and macOS is in development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Beebo only a travel companion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Camping and road-trip features are one part of Beebo. It is a media server for your own movies, shows, music and photos that plays at home on your phone, browser and TV, with family controls, and works away from home too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Beebo work when the internet is down?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beebo is designed for local-first use, and an offline audit is in progress. We do not yet claim that every feature has been verified offline. Away-from-home viewing, poster and subtitle lookups and update checks need the internet."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">&#9776;</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#what">Meet Beebo</a><a href="platforms.html">Devices</a><a href="home-theater.html" aria-current="page">Home theater</a><a href="beebo-products.html">Products</a><a href="beebo-vs-other-apps.html">Compare</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help &amp; guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo &#8599;</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="platforms.html">&larr; Beebo on your devices</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">🎬</div>
+    <h1>Home theater and big screen</h1>
+    <p class="lead">Beebo is a media server for your own movies, shows, music and photos. Camping and road trips are one part of it. This page is about the living-room part, and it answers four questions people ask, with a status label on every answer.</p>
+  </div>
+
+  <img class="page-campaign-art" src="assets/home-evening.webp" alt="A couple watching television together at home" width="1672" height="941" loading="lazy">
+
+  <div class="callout safe">
+    <p><strong>The short version.</strong> Beebo already converts video with your graphics card, runs on Android TV and Google TV, and plays your original files untouched. Better conversion, Linux and Docker servers, Live TV and more surround-sound options are in Beta for the next release. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices, and passthrough of HDR10+, Dolby Vision, Atmos and DTS:X, are in development, so we do not claim them today.</p>
+  </div>
+
+  <nav class="guide-nav" aria-label="On this page"><a href="#labels">Status labels</a><a href="#answers">Four answers</a><a href="#transcoding">Video conversion</a><a href="#tv-apps">TV apps</a><a href="#servers">Server platforms</a><a href="#formats">Picture and sound</a><a href="#extras">Living-room extras</a><a href="#offline">Internet down</a><a href="#not-yet">What is not there yet</a><a href="#faq">Questions</a></nav>
+
+  <h2 id="labels">How to read the labels</h2>
+  <p>We only say <strong>Available now</strong> when it is in the current public downloads: Beebo for Windows 0.1.57 and the Beebo Android app 1.38. Everything built since then is at best Beta.</p>
+  <div class="legend"><div><span class="tag live">Available now</span>In the current downloads: Windows 0.1.57 and Android 1.38. You can use it today.</div><div><span class="tag beta">Beta: next release</span>Built and tested by us, planned for the next release, and <strong>not</strong> in the current downloads.</div><div><span class="tag dev">In development</span>Being built. Not usable yet, not tested on real devices, and no release date.</div><div><span class="tag plan">Planned</span>We intend to do it. No date, and nothing is built you can use.</div></div>
+
+  <h2 id="answers">Four questions, four short answers</h2>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">The question</th><th scope="col">The honest answer</th><th scope="col">Status</th><th scope="col">Details</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Is there a hardware transcoding engine?</th><td>Yes. The released version already uses your PC&rsquo;s NVIDIA, Intel or AMD video encoder when it has one. A rebuilt engine with automatic fallback, limits and an old-PC mode is next.</td><td><span class="tag live">Available now</span> basic<br><span class="tag beta">Beta: next release</span> rebuilt</td><td><a href="#transcoding">Video conversion</a></td></tr>
+        <tr><th scope="row">Are there big-screen apps?</th><td>Android TV and Google TV run the Android app today, and casting works. Fire TV, Roku, Samsung, LG, Xbox and Apple TV apps are being built but are not published or tested on real devices.</td><td><span class="tag live">Available now</span> Android TV, casting<br><span class="tag dev">In development</span> the rest</td><td><a href="#tv-apps">TV apps</a></td></tr>
+        <tr><th scope="row">What about HDR10+, Dolby Vision, Atmos and DTS:X?</th><td>We do not claim them. Original files play untouched, and HDR converts to standard video when a lower quality is picked. Passthrough of these formats is being built.</td><td><span class="tag live">Available now</span> original files, HDR conversion<br><span class="tag dev">In development</span> passthrough</td><td><a href="#formats">Picture and sound</a></td></tr>
+        <tr><th scope="row">Does the server have to run on Windows?</th><td>The released server does. Linux and a Docker or NAS server are in Beta, and macOS is in development.</td><td><span class="tag live">Available now</span> Windows<br><span class="tag beta">Beta: next release</span> Linux, Docker</td><td><a href="#servers">Server platforms</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="transcoding">1. Video conversion, and using your graphics card</h2>
+  <p>When a phone is on mobile data, a TV cannot play a file, or someone picks 1080p, 720p or 480p, your Beebo PC converts the film while it plays. The result is standard H.264 video and AAC sound, sent in small pieces (HLS). Your original files are never touched. <strong>Original quality</strong> skips the conversion and is never limited.</p>
+
+  <div class="feature">
+    <h3>What the current download does <span class="tag live">Available now</span></h3>
+    <p>Windows 0.1.57 tests your PC with a one-second sample encode, because a video tool can list an NVIDIA encoder even when the PC has no NVIDIA card. It then uses the first encoder that really works: NVIDIA (NVENC), Intel Quick Sync or AMD, and otherwise the processor. When it converts an HDR film, it can also tone-map it to standard video using the processor.</p>
+  </div>
+  <div class="feature">
+    <h3>The rebuilt engine <span class="tag beta">Beta: next release</span></h3>
+    <p>Built and covered by our automated tests, but not in Windows 0.1.57.</p>
+    <ul class="plain" style="margin-top:10px">
+      <li><strong>Encoders it can use:</strong> NVIDIA NVENC, Intel Quick Sync and AMD on Windows and Linux, VAAPI on Linux, Apple VideoToolbox on a Mac, and the processor as the always-available last choice. Beebo checks each one with a test encode at start-up and remembers the result. <strong>Check again</strong> in Settings re-tests after a driver update or a new graphics card.</li>
+      <li><strong>Automatic fallback:</strong> if an encoder stops, or shows no picture for 10 seconds while someone waits, the same viewing session moves to the next encoder, picking up right after the last piece it made. It should not end with a dead player, and Beebo writes one plain line to its log for each switch.</li>
+      <li><strong>HDR tone-mapping:</strong> several methods, each proven by a test on a sample HDR picture before it is used (VAAPI, Vulkan, OpenCL, or the processor). The picture is scaled down first, so a 4K film played at 720p is cheaper to tone-map. If every method fails, the film still plays, with duller colours.</li>
+      <li><strong>Limits and a waiting line:</strong> the owner can set how many conversions run at once (1 to 8), or leave it automatic (1 on a weak PC, 2 normally, 3 on a strong one, plus 1 when a graphics encoder is in use). Someone over the limit is told &ldquo;The server is busy right now&rdquo;, given their place in line, and starts by themselves when a slot frees up. First come, first served, with no promised wait time.</li>
+      <li><strong>Old or slow PC:</strong> Beebo chooses lighter settings from the core count, speed and memory, and runs conversions at below-normal priority so the rest of the PC stays usable. The owner can override this in Settings.</li>
+      <li><strong>A dashboard tile</strong> shows conversions running and waiting, and whether a graphics card is in use. Live TV uses the same encoder chain and fallback.</li>
+    </ul>
+  </div>
+  <div class="feature">
+    <h3>What this does not do yet <span class="tag dev">In development</span></h3>
+    <ul class="plain" style="margin-top:10px">
+      <li>Conversion always produces H.264 video at up to 1080p. There is no HEVC or AV1 output yet, and Beebo does not yet copy a compatible video stream untouched while converting only the sound.</li>
+      <li>Decoding the source film is still done by the processor, which matters on an old PC with 4K HEVC files. Hardware decoding is not built yet.</li>
+      <li>We have not verified the NVIDIA, AMD, Linux VAAPI or Apple VideoToolbox paths, or the newer HDR tone-map methods, on real hardware. The automated tests use stand-ins. If your graphics card fails, the fallback is designed to carry on with the next encoder.</li>
+      <li>The separate offline &ldquo;Convert&rdquo; tool does not use hardware acceleration.</li>
+    </ul>
+  </div>
+  <p class="fineprint">The 4K files you own can still play as the original when your TV or player can handle them. Beebo Relay&rsquo;s paid tiers are priced by streaming quality; away-from-home viewing with a direct connection, UPnP or your own relay is free. See <a href="watch-away-from-home.html">Watch away from home</a>.</p>
+
+  <h2 id="tv-apps">2. TV apps, casting and Jellyfin-compatible apps</h2>
+  <p>Beebo&rsquo;s own TV apps are behind Plex, Jellyfin and Emby, and we say so on the <a href="beebo-vs-other-apps.html">comparison page</a>. Here is where each device stands.</p>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">Device</th><th scope="col">Status</th><th scope="col">What that means</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><a href="android-tv.html">Android TV and Google TV</a></th><td><span class="tag live">Available now</span></td><td>The Android app runs on Android TV and Google TV with remote-control navigation, voice search and a Continue watching row. You install the app file yourself (sideloading) because it is not listed for TVs on Google Play. There is no published list of tested TV models.</td></tr>
+        <tr><th scope="row"><a href="cast-to-tv.html">Chromecast and Google TV casting</a></th><td><span class="tag live">Available now</span></td><td>Cast from the Android app; your phone becomes the remote. Phone and TV on the same Wi-Fi.</td></tr>
+        <tr><th scope="row">Apple TV through AirPlay</th><td><span class="tag live">Available now</span></td><td>Watch in Safari on an iPhone, iPad or Mac and use the AirPlay button. This is not a Beebo app on the Apple TV.</td></tr>
+        <tr><th scope="row">Amazon Fire TV and Fire tablets</th><td><span class="tag dev">In development</span></td><td>A build without Google services exists in our code. It has not been run on a real Fire device and is not in the Amazon Appstore. We have not tested whether the regular Android app installs and works on Fire TV, and Chromecast casting is not part of the Fire build.</td></tr>
+        <tr><th scope="row"><a href="roku.html">Roku</a></th><td><span class="tag dev">In development</span></td><td>A channel exists in our code. It is not published, has not been tested on a real Roku, and has to pass Roku&rsquo;s review.</td></tr>
+        <tr><th scope="row"><a href="samsung-lg-tv.html">Samsung and LG smart TVs</a></th><td><span class="tag dev">In development</span></td><td>One web-based TV app is being built for both brands. It has not been tested on a real TV and each brand&rsquo;s store has its own review.</td></tr>
+        <tr><th scope="row">Xbox</th><td><span class="tag dev">In development</span></td><td>An app shell exists in our code. It has never been built into a package or run on a console, and needs Microsoft Store review.</td></tr>
+        <tr><th scope="row"><a href="apple.html">Apple TV, iPhone and iPad apps</a></th><td><span class="tag dev">In development</span></td><td>Code exists. It is not on any Apple device, not published, and needs Apple&rsquo;s approval. Until then, iPhone and iPad use Safari, and Beebo can be added to the Home Screen. A native Mac app is <span class="tag plan">Planned</span>.</td></tr>
+        <tr><th scope="row">Jellyfin-compatible apps</th><td><span class="tag beta">Beta: next release</span></td><td>An optional mode, off unless you turn it on, lets some Jellyfin-compatible apps connect to Beebo. It has <strong>not</strong> been tried with a real Jellyfin app yet, so we do not promise any app will work. Checking it against real apps is <span class="tag dev">In development</span>. See <a href="docs/jellyfin-apps-with-beebo.html">Jellyfin apps with Beebo</a>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fineprint">Beebo is not Jellyfin and is not affiliated with or endorsed by the Jellyfin project. Roku, Samsung, LG, Xbox, Apple, Amazon, Fire TV, Google TV and Chromecast are trademarks of their owners, named only to say where Beebo runs. For the TV steps see <a href="docs/playing-on-tvs.html">Playing on TVs</a>.</p>
+
+  <h2 id="servers">3. Server platforms: not Windows-only</h2>
+  <p>The server is the computer that holds your files. It has to be on while people watch from it.</p>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">Server</th><th scope="col">Status</th><th scope="col">What that means</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><a href="windows.html">Windows 10 and 11</a></th><td><span class="tag live">Available now</span></td><td>The released server and app. The installer is not code-signed yet, so Windows may show a warning at first.</td></tr>
+        <tr><th scope="row"><a href="linux.html">Linux desktop</a></th><td><span class="tag beta">Beta: next release</span></td><td>The same desktop server as an AppImage and a .deb. Tested by an automated install and launch on Ubuntu 22.04 only. It needs a graphical desktop session.</td></tr>
+        <tr><th scope="row"><a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker and NAS (headless)</a></th><td><span class="tag beta">Beta: next release</span></td><td>The same server code without a window, in a Docker container, for a Linux server or a NAS that runs Docker, including Unraid and TrueNAS. The Docker image is not on a public registry yet, so it is available to testers on request, and ready-made entries for the Unraid, TrueNAS and similar app stores are prepared but not submitted. We publish no list of NAS models tested.</td></tr>
+        <tr><th scope="row">Always-on running</th><td><span class="tag beta">Beta: next release</span></td><td>A Docker container is set to restart by itself. On Windows, next-release settings can start Beebo when you sign in and keep the PC awake while it is streaming. The current Windows download has no start-at-login setting.</td></tr>
+        <tr><th scope="row">macOS</th><td><span class="tag dev">In development</span></td><td>Test builds are made automatically, unsigned. No person has run them on a real Mac yet.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="fineprint"><a href="docs/faq.html">Docs FAQ</a> covers cost and setup. Beebo includes no movies or shows; you supply your own files.</p>
+
+  <h2 id="formats">4. Picture and sound formats: what we can and cannot say</h2>
+  <p>We only state what we have verified. Dolby, Dolby Vision, Dolby Atmos, DTS, DTS:X and HDR10+ are trademarks of their owners, named here only to say what Beebo does and does not do.</p>
+  <div class="two-col">
+    <div class="feature"><h3>Works <span class="tag live">Available now</span></h3><ul>
+      <li><strong>Original files play untouched.</strong> Choose Original quality and Beebo sends the file as it is. What your screen and speakers then show is up to your player and TV.</li>
+      <li><strong>HDR to standard video.</strong> When Beebo converts an HDR film, it can tone-map it to standard video so colours do not look washed out, using the processor.</li>
+      <li><strong>Choosing an audio track</strong> and subtitles in the player.</li>
+    </ul></div>
+    <div class="feature"><h3>Sound options <span class="tag beta">Beta: next release</span></h3><ul>
+      <li>Auto, stereo or surround. Stereo uses a real mix-down with an optional dialogue-focus mix and a limiter.</li>
+      <li>Surround: 5.1 sound as Dolby Digital Plus, Dolby Digital or AAC 5.1, following what the player says it can play. Compatible tracks are copied untouched.</li>
+      <li>Night mode, volume levelling and audio delay.</li>
+      <li>DTS, TrueHD, Opus and FLAC tracks a device cannot play are converted, and Beebo never labels a conversion as Atmos or DTS:X.</li>
+      <li>See <a href="docs/sound-and-audio.html">Sound and audio</a>. Not yet verified on real receivers and TVs.</li>
+    </ul></div>
+  </div>
+  <div class="feature">
+    <h3>HDR10+, Dolby Vision, Dolby Atmos and DTS passthrough <span class="tag dev">In development</span></h3>
+    <p>Sending these formats intact to your TV or receiver is being built. Until it is done and verified on real equipment, <strong>we do not claim support for HDR10+, Dolby Vision, Atmos or DTS:X</strong>. When Beebo converts a soundtrack, object-based audio such as Atmos is not kept. The next release has an early HDMI passthrough setting in the Android app, but we have not checked it on a real receiver, so we are not counting it as support.</p>
+  </div>
+
+  <h2 id="extras">5. Living-room extras</h2>
+  <p>Built and merged since the current download, so all of these are Beta for the next release. Details and caveats are on <a href="what-beebo-can-do.html">What Beebo can do</a>.</p>
+  <div class="rl-table-wrap">
+    <table class="rl-table">
+      <thead><tr><th scope="col">Feature</th><th scope="col">Status</th><th scope="col">In plain words</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Live TV and DVR</th><td><span class="tag beta">Beta: next release</span></td><td>Watch and record over-the-air TV with your own antenna and your own HDHomeRun tuner. Beebo supplies no channels, streams or guide data.</td></tr>
+        <tr><th scope="row">Seek previews, chapters, subtitle styling</th><td><span class="tag beta">Beta: next release</span></td><td>Thumbnails while you scrub, chapter marks, and options to style subtitles.</td></tr>
+        <tr><th scope="row">More than one version of a film</th><td><span class="tag beta">Beta: next release</span></td><td>Keep, for example, a 4K and a 1080p copy of the same film and pick one when you play.</td></tr>
+        <tr><th scope="row">Watch together</th><td><span class="tag beta">Beta: next release</span></td><td>People signed in to your server watch in step, with chat and reactions, using an invite link.</td></tr>
+        <tr><th scope="row">Audiobooks, podcasts and internet radio</th><td><span class="tag beta">Beta: next release</span></td><td>Audiobooks from your own files. Podcasts from public feeds you subscribe to, and radio from an open station directory or an address you type. These contact the feeds, stations and public directories you choose.</td></tr>
+        <tr><th scope="row">Library views</th><td><span class="tag beta">Beta: next release</span></td><td>Filters, saved views, shelves and a detailed list, remembered per person.</td></tr>
+        <tr><th scope="row">Switching from another server</th><td><span class="tag beta">Beta: next release</span></td><td>Bring watched marks, resume points, ratings and playlists from Plex, Jellyfin, Emby, Kodi or Letterboxd, with a review step and an undo.</td></tr>
+        <tr><th scope="row">Cinema Mode pre-show and Movie Night party games</th><td><span class="tag dev">In development</span></td><td>Not usable yet.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="offline">Works when your internet is down</h2>
+  <div class="callout">
+    <p><strong>Designed for local-first use; an offline audit is in progress.</strong> Your library, watch history and family settings live on your own PC, and streaming at home goes over your own network. We have not finished checking every feature with the internet off, so we do not claim that all of them work offline. Away-from-home viewing, poster and description lookups, subtitle searches and update checks need the internet. See <a href="docs/privacy-in-plain-words.html">Privacy in plain words</a> for what Beebo&rsquo;s service handles.</p>
+  </div>
+
+  <section class="notyet" id="not-yet" aria-labelledby="not-yet-title">
+    <h2 id="not-yet-title">What is not there yet</h2>
+    <p>The short, honest list, as of September 21, 2026, for Beebo for Windows 0.1.57 and the Android app 1.38:</p>
+    <ul>
+      <li>No Beebo app yet for Fire TV, Roku, Samsung, LG, Xbox, Apple TV, iPhone or iPad. They are in development and untested on real devices.</li>
+      <li>No support claimed for HDR10+, Dolby Vision, Dolby Atmos or DTS:X passthrough. It is in development.</li>
+      <li>Conversion is H.264 up to 1080p, with software decoding. No HEVC or AV1 output, no hardware decoding, no video remux yet.</li>
+      <li>The rebuilt transcoding engine, Linux, the Docker server, Live TV and the other Beta items above are not in the current downloads.</li>
+      <li>The NVIDIA, AMD, VAAPI and VideoToolbox conversion paths have not been verified on real hardware, and the Jellyfin-compatible mode has not been tried with real Jellyfin apps.</li>
+      <li>Linux has only been tested by an automated install on Ubuntu 22.04. macOS has never been run on a real Mac.</li>
+      <li>The Windows installer is not code-signed, and there is no published list of tested TV models.</li>
+      <li>The Android app is a test download from this site. A Google Play listing is in closed testing.</li>
+      <li>No PlayStation app, and none planned.</li>
+      <li>Offline behaviour has not been fully audited.</li>
+    </ul>
+    <p class="fineprint" style="margin-top:12px">Plex, Jellyfin and Emby are ahead of Beebo on devices, server choices and add-ons. <a href="beebo-vs-other-apps.html">See the four-way comparison</a>, including where they are ahead.</p>
+  </section>
+
+  <h2 id="faq">Questions about the big screen</h2>
+  <div class="faq">
+    <details><summary>Does Beebo have hardware transcoding?</summary><p>Yes, in two stages. The current Windows download (0.1.57) already converts video with your PC&rsquo;s NVIDIA, Intel Quick Sync or AMD encoder when it has one, and falls back to the processor. A rebuilt engine is in Beta for the next release: it tests each encoder, switches to the next one automatically if one fails, tone-maps HDR video, limits how many conversions run at once and adapts to an old PC.</p></details>
+    <details><summary>Does Beebo have big-screen apps?</summary><p>Available now: the Android app on Android TV and Google TV (you install it yourself), casting to Chromecast and Google TV, and AirPlay from Safari. In development, not published and not tested on real devices: Fire TV, Roku, Samsung, LG, Xbox and Apple TV, iPhone and iPad apps.</p></details>
+    <details><summary>Does Beebo support HDR10+, Dolby Vision, Atmos and DTS:X?</summary><p>Not yet. Passthrough of HDR10+, Dolby Vision, Dolby Atmos and DTS:X is in development, so Beebo does not claim support. What works today: playing the original file untouched, and converting HDR video to standard dynamic range when a lower quality is chosen. Surround sound options are in Beta for the next release.</p></details>
+    <details><summary>Does the Beebo server have to run on Windows?</summary><p>Today, yes: the released server runs on Windows 10 and 11. A Linux desktop version and a headless server for Docker and NAS boxes are in Beta for the next release, and macOS is in development.</p></details>
+    <details><summary>Is Beebo only a travel companion?</summary><p>No. Camping and road-trip features are one part of Beebo. It is a media server for your own movies, shows, music and photos that plays at home on your phone, browser and TV, with family controls, and works away from home too.</p></details>
+    <details><summary>Does Beebo work when the internet is down?</summary><p>Beebo is designed for local-first use, and an offline audit is in progress. We do not yet claim that every feature has been verified offline. Away-from-home viewing, poster and subtitle lookups and update checks need the internet.</p></details>
+  </div>
+
+  <div class="guide-nav">
+    <a href="platforms.html">📺 All devices</a>
+    <a href="android-tv.html">Android TV and Google TV</a>
+    <a href="docs/playing-on-tvs.html">Playing on TVs</a>
+    <a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker, NAS and Linux server</a>
+    <a href="docs/sound-and-audio.html">Sound and audio</a>
+    <a href="beebo-vs-other-apps.html">How Beebo compares</a>
+    <a href="docs.html">📖 Setup docs</a>
+  </div>
+  <p class="fineprint">Written for Beebo for Windows 0.1.57 and the Beebo Android app 1.38, as of September 21, 2026. Found something that does not match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20home%20theater%20page%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+
+  <div class="cta"><a class="btn btn-primary btn-lg" href="index.html#get-app">Get Beebo &#8599;</a></div>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.57</strong><time data-beebo-release-date="windows" datetime="2026-09-21T01:33:32Z">Released Sep 20, 2026, 9:33:32 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.38 (build 39)</strong><time data-beebo-release-date="android" datetime="2026-09-21T01:42:18Z">Built Sep 20, 2026, 9:42:18 PM Eastern</time></div><a href="updates.html">What&rsquo;s new &#8599;</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="home-theater.html">Home theater and big screen</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help &amp; guides</a><a href="docs.html">Docs</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>&copy; 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top &#8593;</a></div></footer><script src="polish.js?v=4"></script></body>
+</html>
