@@ -221,8 +221,8 @@
   </div>
   <p class="fineprint">The 4K files you own can still play as the original when your TV or player can handle them. Beebo Relay&rsquo;s paid tiers are priced by streaming quality; away-from-home viewing with a direct connection, UPnP or your own relay is free. See <a href="watch-away-from-home.html">Watch away from home</a>. Away from home, Windows 0.1.58 is also about four to five times faster in our own tests of the tunnel that carries the video; that figure is from our tests on a good connection, not a promise for your setup.</p>
 
-  <h2 id="tv-apps">2. TV apps, casting and Jellyfin-compatible apps</h2>
-  <p>Beebo&rsquo;s own TV apps are behind Plex, Jellyfin and Emby, and we say so on the <a href="beebo-vs-other-apps.html">comparison page</a>. Here is where each device stands.</p>
+  <h2 id="tv-apps">2. TV apps, casting and compatible third-party apps</h2>
+  <p>Beebo&rsquo;s own TV apps are behind other media-library services, and we say so on the <a href="beebo-vs-other-apps.html">comparison page</a>. Here is where each device stands.</p>
   <div class="rl-table-wrap">
     <table class="rl-table">
       <thead><tr><th scope="col">Device</th><th scope="col">Status</th><th scope="col">What that means</th></tr></thead>
@@ -235,11 +235,11 @@
         <tr><th scope="row"><a href="samsung-lg-tv.html">Samsung and LG smart TVs</a></th><td><span class="tag dev">In development</span></td><td>One web-based TV app is being built for both brands, with a device profile wired in. It has never been run on a real TV and each brand&rsquo;s store has its own review.</td></tr>
         <tr><th scope="row">Xbox</th><td><span class="tag dev">In development</span></td><td>An app shell exists in our code. It has never been built into a package or run on a console, and needs Microsoft Store review.</td></tr>
         <tr><th scope="row"><a href="apple.html">Apple TV, iPhone and iPad apps</a></th><td><span class="tag dev">In development</span></td><td>Code exists, with a device profile wired in. It has never been run on an Apple device, is not published, and needs Apple&rsquo;s approval. Until then, iPhone and iPad use Safari, and Beebo can be added to the Home Screen. A native Mac app is <span class="tag plan">Planned</span>.</td></tr>
-        <tr><th scope="row">Jellyfin-compatible apps</th><td><span class="tag live">Available now — Beta (Windows 0.1.58)</span></td><td>An optional mode, <strong>off unless you turn it on</strong>, lets some Jellyfin-compatible apps connect to Beebo. It was checked against the official Jellyfin API description and SDK, but has <strong>not</strong> been tried with real Jellyfin apps. Some apps are expected to work and some only partly; we promise none. See <a href="docs/jellyfin-apps-with-beebo.html">Jellyfin apps with Beebo</a> for the app-by-app table.</td></tr>
+        <tr><th scope="row">compatible third-party apps</th><td><span class="tag live">Available now — Beta (Windows 0.1.58)</span></td><td>An optional mode, <strong>off unless you turn it on</strong>, lets some compatible third-party apps connect to Beebo. It was checked against the official compatible client API description and SDK, but has <strong>not</strong> been tried with real compatible third-party apps. Some apps are expected to work and some only partly; we promise none. See <a href="docs/interoperable-apps.html">compatible third-party apps with Beebo</a> for the app-by-app table.</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="fineprint">Beebo is not Jellyfin and is not affiliated with or endorsed by the Jellyfin project. Roku, Samsung, LG, Xbox, Apple, Amazon, Fire TV, Google TV and Chromecast are trademarks of their owners, named only to say where Beebo runs. For the TV steps see <a href="docs/playing-on-tvs.html">Playing on TVs</a>.</p>
+  <p class="fineprint">Beebo is not third-party and is not affiliated with or endorsed by the third-party project. Roku, Samsung, LG, Xbox, Apple, Amazon, Fire TV, Google TV and Chromecast are trademarks of their owners, named only to say where Beebo runs. For the TV steps see <a href="docs/playing-on-tvs.html">Playing on TVs</a>.</p>
 
   <h2 id="servers">3. Server platforms: not Windows-only</h2>
   <p>The server is the computer that holds your files. It has to be on while people watch from it.</p>
@@ -294,7 +294,7 @@
         <tr><th scope="row">Watch together</th><td><span class="tag live">Available now — Beta (Windows 0.1.58)</span></td><td>People signed in to your server watch in step, with chat and reactions, using an invite link.</td></tr>
         <tr><th scope="row">Audiobooks, podcasts and internet radio</th><td><span class="tag live">Available now — Beta (Windows 0.1.58)</span></td><td>Audiobooks from your own files. Podcasts from public feeds you subscribe to, and radio from an open station directory or an address you type. These contact the feeds, stations and directories you choose.</td></tr>
         <tr><th scope="row">Library views</th><td><span class="tag live">Available now — Beta (Windows 0.1.58)</span></td><td>Filters, shelves, a detailed list, backdrops, grouped views and folders, remembered per person.</td></tr>
-        <tr><th scope="row">Switching from another server</th><td><span class="tag live">Available now — Beta (Windows 0.1.58)</span></td><td>Bring watched marks, resume points, ratings and playlists from Plex, Jellyfin, Emby, Kodi or Letterboxd, with a review step and an undo.</td></tr>
+        <tr><th scope="row">Switching from another server</th><td><span class="tag live">Available now — Beta (Windows 0.1.58)</span></td><td>Bring watched marks, resume points, ratings and playlists from another media-library service, with a review step and an undo.</td></tr>
         <tr><th scope="row"><a href="cinema-mode.html">Pre-show</a></th><td><span class="tag live">Available now — Beta (Windows 0.1.58)</span></td><td>Trailers and a short intro before the film, from your own library and official YouTube embeds. The YouTube trailers need the internet. See <a href="cinema-mode.html">Pre-show</a>.</td></tr>
         <tr><th scope="row"><a href="movie-night.html">Movie Night party games</a></th><td><span class="tag live">Available now — Beta (Windows 0.1.58)</span></td><td>Games for the TV, played on phones that join by QR code. Tested only with simulated phones. See <a href="movie-night.html">Movie Night</a>.</td></tr>
         <tr><th scope="row"><a href="phone-speakers.html">Phones as surround speakers for movies</a></th><td><span class="tag live">Available now — Beta (Windows 0.1.58, simulated only)</span></td><td>A TV or PC shows the picture while each phone plays one channel of the movie&rsquo;s sound. Tested in simulation and by measurement on one computer, not on real phones. The music version, the same song in sync on many phones, is <span class="tag live">Available now — test build (Beta)</span> in the Android 1.40 test build. See <a href="phone-speakers.html">Turn every phone into a speaker</a>.</td></tr>
@@ -316,14 +316,14 @@
       <li>Conversion is H.264 up to 1080p, with software decoding. No HEVC or AV1 output and no hardware decoding.</li>
       <li>Only Intel Quick Sync and software conversion have been exercised on real hardware. NVIDIA, AMD and Linux VAAPI paths have not.</li>
       <li>Live TV has never been tested on a real HDHomeRun tuner. Phone speakers for movies and Movie Night have only been tested with simulated phones.</li>
-      <li>The Jellyfin-compatible mode has not been tried with real Jellyfin apps.</li>
+      <li>The compatible third-party mode has not been tried with real compatible third-party apps.</li>
       <li>Linux is tested on Ubuntu 22.04 in our automated build only, and has no automatic updates. The Docker image is not tested on any specific NAS model. macOS has never been run on a real Mac.</li>
       <li>The Windows installer is not code-signed, and there is no published list of tested TV models.</li>
       <li>The Android app is a test download from this site. A Google Play listing is in closed testing.</li>
       <li>No PlayStation app, and none planned.</li>
       <li>The owner check of offline use with the router unplugged has not been done yet.</li>
     </ul>
-    <p class="fineprint" style="margin-top:12px">Plex, Jellyfin and Emby are ahead of Beebo on devices, server choices and add-ons. <a href="beebo-vs-other-apps.html">See the four-way comparison</a>, including where they are ahead.</p>
+    <p class="fineprint" style="margin-top:12px">other media-library services are ahead of Beebo on devices, server choices and add-ons. <a href="beebo-vs-other-apps.html">See the four-way comparison</a>, including where they are ahead.</p>
   </section>
 
   <h2 id="faq">Questions about the big screen</h2>
