@@ -52,6 +52,12 @@
   .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
   .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
   .guide-nav a:hover{border-color:var(--accent)}
+  .platform-access{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0 28px}
+  .platform-access-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+  .platform-access-card h3{margin:0 0 8px;font-size:1.08rem}
+  .platform-access-card p{margin:0 0 12px;color:var(--muted);line-height:1.5}
+  .platform-access-card .tag{margin-bottom:9px}
+  .platform-access-card a{font-weight:700;color:var(--accent-ink)}
   @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
 </style>
 <link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/platforms.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
@@ -160,6 +166,32 @@
     <p><strong>The short version:</strong> the Beebo server runs on a Windows 10 or 11 PC, with Linux and Docker downloads in beta. To watch, use the Android app, any web browser, Android TV or Google TV, or cast to a Chromecast or Google TV. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices are in development and not available yet. Setting up a home theater? Read <a href="home-theater.html">Home theater and big screen</a> for what works, what is in beta and what is not there yet.</p>
   </div>
 
+  <section aria-labelledby="download-access">
+    <h2 id="download-access">Downloads and tester access</h2>
+    <p>Every Beebo platform is listed on this page. A <strong>Download</strong> link means there is a package a person can install today. A <strong>Beta</strong> link means the package is available but still needs wider real-device testing. <strong>Tester access coming soon</strong> means we will show that platform here as soon as its first public test package is ready.</p>
+    <div class="platform-access">
+      <article class="platform-access-card">
+        <span class="tag live">Download today</span>
+        <h3>Windows and Android</h3>
+        <p>Install Beebo on a Windows 10 or 11 computer, then watch on Android phones and tablets.</p>
+        <a href="index.html#get-app">Get the current downloads →</a>
+      </article>
+      <article class="platform-access-card">
+        <span class="tag beta">Beta downloads</span>
+        <h3>Linux and Docker</h3>
+        <p>Linux desktop and Docker/NAS server builds are available for testers who are comfortable with beta software.</p>
+        <a href="linux.html">See Linux downloads →</a><br>
+        <a href="docs/run-beebo-on-a-nas-or-linux-server.html">See Docker and NAS guide →</a>
+      </article>
+      <article class="platform-access-card">
+        <span class="tag plan">Tester access coming soon</span>
+        <h3>Apple, TV and console apps</h3>
+        <p>Apple, Fire TV, Roku, Samsung, LG and Xbox are each listed below with their current status. We will add a tester or store link here only after that platform has a real install package ready.</p>
+        <a href="become-a-tester.html#areas">Join the tester list →</a>
+      </article>
+    </div>
+  </section>
+
   <h2 id="status">What works on which device</h2>
   <p>Beebo has two parts. The <strong>server</strong> is the computer that holds your own movie and show files. The <strong>viewers</strong> are the phones, browsers and TVs you watch on. Here is where each device stands today.</p>
   <div class="rl-table-wrap">
@@ -232,3 +264,4 @@
 
 <footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.40 (build 41)</strong><time data-beebo-release-date="android" datetime="2026-09-21T20:26:44Z">Built Sep 21, 2026, 4:26:44 PM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="home-theater.html">Home theater and big screen</a><a href="phone-speakers.html">Phone speakers (Beta)</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="docs.html">Docs</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script></body>
 </html>
+
