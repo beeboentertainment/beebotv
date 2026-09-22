@@ -21,7 +21,7 @@
     try {
       const url = new URL(raw, location.href);
       const extension = platform === 'android' ? '.apk' : '.exe';
-      const ownHost = url.origin === 'https://origin.beebo.tv' && url.pathname.startsWith('/downloads/');
+      const ownHost = url.origin === location.origin && url.pathname.startsWith('/downloads/');
       const githubRelease = platform === 'windows' && url.origin === 'https://github.com' && url.pathname.startsWith('/SWGfan/beebotv/releases/download/');
       if (!(ownHost || githubRelease) || !url.pathname.endsWith(extension) || url.username || url.password) return;
       document.querySelectorAll('[data-beebo-download="'+platform+'"]').forEach(link => { link.href = url.href; });
