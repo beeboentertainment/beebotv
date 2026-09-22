@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>What Beebo can do — Beebo Entertainment</title>
-<meta name="description" content="A plain-English tour of what Beebo does: films, music, photos, playlists, quality, family controls, the big screen, and what is new in Windows 0.1.58." />
+<meta name="description" content="The complete guide to Beebo: your media library, player, music, photos, household controls, Camp Mode, 46 games, travel tools, devices and advanced server features." />
 <meta name="theme-color" content="#FBF6EE" />
 <meta property="og:title" content="What Beebo can do — Beebo Entertainment" />
-<meta property="og:description" content="A plain-English tour of what Beebo does: films, music, photos, playlists, quality, family controls, the big screen, and what is new in Windows 0.1.58." />
+<meta property="og:description" content="The complete guide to Beebo: your media library, player, music, photos, household controls, Camp Mode, 46 games, travel tools, devices and advanced server features." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://beeboentertainment.com/what-beebo-can-do.html" />
 <meta property="og:image" content="https://beeboentertainment.com/assets/family-home.webp" />
@@ -48,6 +48,15 @@
   .plain li{margin:.3em 0}
   .note{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--muted);font-size:.95rem;margin:14px 0 0}
   .note strong{color:var(--ink)}
+  .catalog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0 28px}
+  .catalog-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+  .catalog-card h3{font-size:1.06rem;margin:0 0 7px}
+  .catalog-card p{font-size:.94rem;line-height:1.5;color:var(--muted);margin:0 0 10px}
+  .catalog-card a{font-weight:700;color:var(--accent-ink)}
+  .catalog-card ul{font-size:.9rem;line-height:1.45;color:var(--muted);padding-left:1.1em;margin:0}
+  .catalog-card li{margin:.22em 0}
+  .status-key{display:flex;flex-wrap:wrap;gap:9px;margin:11px 0 0}
+  @media(max-width:760px){.catalog{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/what-beebo-can-do.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="guide-visuals.css?v=1"><link rel="stylesheet" href="polish.css?v=3"><link rel="stylesheet" href="assets/bite-size.css?v=1"><link rel="stylesheet" href="assets/listen.css?v=2"></head>
 <body data-listen-mode="manual"><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#what">Meet Beebo</a><a href="index.html#away">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
@@ -58,8 +67,31 @@
     <figure class="bite-media"><img src="assets/help-welcome.webp" alt="Two family members learning to use a tablet together at a kitchen table" width="1672" height="941"></figure>
     <div class="bite-copy">
       <h1>What Beebo can do</h1>
-      <p>Beebo started as a way to watch your own films at home. It now looks after your music and your photos too, and gives you a say in who watches what. Here is the whole picture, in one page.</p>
-      <nav class="bite-jump" aria-label="On this page"><a href="#films">Films &amp; shows</a><a href="#quality">Quality &amp; subtitles</a><a href="#music">Music</a><a href="#photos">Photos</a><a href="#playlists">Playlists</a><a href="#family">Your household</a><a href="#sharing">Another household</a><a href="#dashboard">Your dashboard</a><a href="#voice">Voice &amp; TV</a><a href="#bigscreen">Big screen</a><a href="#next">New in 0.1.58</a></nav>
+      <p>Beebo started as a way to watch your own films at home. It now looks after your music and your photos too, and gives you a say in who watches what. Here is the whole picture, with every major feature grouped so you can find what matters to you.</p>
+      <nav class="bite-jump" aria-label="On this page"><a href="#catalog">Complete catalogue</a><a href="#films">Films &amp; shows</a><a href="#quality">Quality &amp; subtitles</a><a href="#music">Music</a><a href="#photos">Photos</a><a href="#playlists">Playlists</a><a href="#family">Your household</a><a href="#sharing">Another household</a><a href="#dashboard">Your dashboard</a><a href="#voice">Voice &amp; TV</a><a href="#bigscreen">Big screen</a><a href="#next">New in 0.1.58</a></nav>
+    </div>
+  </section>
+
+  <section class="bite" id="catalog" data-listen="feature-catalogue">
+    <div class="bite-copy" style="max-width:none">
+      <p class="eyebrow">THE COMPLETE CATALOGUE</p>
+      <h2>Everything Beebo is built to help with.</h2>
+      <p>Start with the parts that matter to you. Each link opens a plain-English guide with the details. <strong>Available now</strong> means it is in a current Beebo download. <strong>Beta</strong> means it is built and needs more real-world testing. <strong>In development</strong> means we are not asking you to rely on it yet.</p>
+      <div class="status-key"><span class="tag live">Available now</span><span class="tag beta">Beta — real-world testing continues</span><span class="tag dev">In development</span></div>
+      <div class="catalog">
+        <article class="catalog-card"><h3>🎬 Your media library</h3><p>Movies, TV shows, personal videos, trailers, multiple file versions, poster repair, missing episodes and missing sequel tracking.</p><a href="media-hub.html">Explore your library →</a></article>
+        <article class="catalog-card"><h3>▶ A better player</h3><p>Resume, chapters, seek-preview thumbnails, audio tracks, subtitle styling and timing, quality choices, direct play and hardware-assisted conversion.</p><a href="quality-and-subtitles.html">See player controls →</a></article>
+        <article class="catalog-card"><h3>🎵 Music, spoken audio and radio</h3><p>Music library, lyrics, queues, shuffle, smart playlists, audiobooks, podcasts, internet radio and karaoke recordings.</p><a href="music.html">Explore music →</a></article>
+        <article class="catalog-card"><h3>📷 Photos and phone backups</h3><p>Phone camera backups, albums, timeline, map view with location privacy controls, RAW photo support and Space Saver tools.</p><a href="photos.html">Explore photos →</a></article>
+        <article class="catalog-card"><h3>👨‍👩‍👧‍👦 Household and privacy</h3><p>Up to six household profiles, parental controls, Easy Mode, Family Viewing, PINs, private folders, account security and owner tools.</p><a href="manage-users.html">Explore household controls →</a></article>
+        <article class="catalog-card"><h3>📺 TV, browser and devices</h3><p>Windows server, Android phones and tablets, browser viewing, Android TV/Google TV, casting, Linux and Docker/NAS beta builds.</p><a href="platforms.html">See every device →</a></article>
+        <article class="catalog-card"><h3>🌍 Watch away from home</h3><p>Personal Beebo address, direct connection first, optional UPnP, bring-your-own relay choices and Beebo Relay when needed.</p><a href="watch-away-from-home.html">See connection choices →</a></article>
+        <article class="catalog-card"><h3>🏕 Camp Mode and group nights</h3><p>Offline guest joining by QR code, prepared downloads, shared viewing, scoreboard, group photo/video sharing, synced phone music and karaoke.</p><a href="outdoors-kit.html">Explore Camp Mode →</a></article>
+        <article class="catalog-card"><h3>🎲 46 games and puzzles</h3><p>Card, board-and-dice, party, word-and-talk, outdoor/travel and solo puzzles. Guests join from a browser—nothing to install.</p><a href="games.html">See every game →</a></article>
+        <article class="catalog-card"><h3>🚗 Road trips and outdoors</h3><p>Trip Journal, trail and campsite tools, scavenger hunts, night-sky guide, packing support, road-trip games and Beebo Auto work.</p><a href="outdoors-kit.html">Explore travel tools →</a></article>
+        <article class="catalog-card"><h3>📡 Live TV and home theater</h3><p>Use your own HDHomeRun tuner or M3U list, DVR tools, pre-show trailers, audio options and detailed big-screen playback guidance.</p><a href="home-theater.html">Explore home theater →</a></article>
+        <article class="catalog-card"><h3>🛠 Owner and advanced tools</h3><p>Dashboard, uploads, automatic sorting, migration tools, activity and bandwidth stats, optional two-factor sign-in, API keys, themes and accessibility options.</p><a href="help.html">Browse all guides →</a></article>
+      </div>
     </div>
   </section>
 
@@ -235,3 +267,4 @@
 
 <footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.40 (build 41)</strong><time data-beebo-release-date="android" datetime="2026-09-21T20:26:44Z">Built Sep 21, 2026, 4:26:44 PM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script><script src="assets/loop-video.js?v=1" defer></script><script src="assets/listen.js?v=3" data-page="what-beebo-can-do" defer></script></body>
 </html>
+
