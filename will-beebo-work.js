@@ -23,7 +23,7 @@
 
   // The probe mailbox lives in the Beebo Worker. A local copy of the site can point
   // it at a local Worker with ?api=http://127.0.0.1:PORT (only on localhost).
-  var API = 'https://beebo-licensing.nicholaswill86.workers.dev';
+  var API = 'https://login.beebo.tv';
   if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
     var apiParam = new URLSearchParams(location.search).get('api');
     if (apiParam && /^http:\/\/(localhost|127\.0\.0\.1):\d{2,5}$/.test(apiParam)) API = apiParam;
