@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Beebo Entertainment — Privacy Policy</title>
-<meta name="description" content="Beebo Entertainment app privacy policy: everything stays between your phone and your own server — no ads, no analytics, no trackers." />
+<meta name="description" content="Beebo Entertainment app privacy policy: where your media is stored, what account and connection services process, optional sharing, and deletion controls." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
@@ -24,53 +24,53 @@
     <div class="em">🔐</div>
     <h1 data-listen="beebo-entertainment-privacy-policy">Beebo Entertainment — Privacy Policy</h1>
   </div>
-  <p class="muted" style="text-align:center">Effective date: 26 August 2026</p>
+  <p class="muted" style="text-align:center">Updated: 23 September 2026</p>
 
-  <p>Beebo Entertainment (<code>com.beeboentertainment.movie</code>) is a personal media player: it connects to <em>your own</em> home media server and streams the movies and TV shows you already own to your phone. This policy explains, honestly and completely, what the app does with your information.</p>
+  <p>Beebo Entertainment (<code>com.beeboentertainment.movie</code>) is a personal media player: it connects to <em>your own</em> home media server and streams the movies and TV shows you already own to your phone. This policy describes the principal data flows and controls in Beebo. Optional features and connection routes may process different information.</p>
 
   <div class="callout">
-    <p><strong>In short:</strong> everything the app handles stays between your phone and your own server. Nothing is sent to the developer, to Google, or to any third party. There are no ads, no analytics, and no trackers, and nothing is ever sold or shared.</p>
+    <p><strong>Your library, with explicit sharing:</strong> source media is stored on your own computer. Beebo account services process sign-in, subscription and connection information. A managed relay can forward traffic, and downloads or shared files are copied to the devices you choose. Optional internet features contact their selected providers.</p>
   </div>
 
   <h2 data-listen="what-the-app-is">What the app is</h2>
-  <p>Beebo Entertainment is a <strong>client</strong> for a media server that runs on your own computer. Your video files live on that computer. The app catalogs them, shows posters and details, and plays them by streaming directly between your phone and your server.</p>
+  <p>Beebo Entertainment is a <strong>client</strong> for a media server that runs on your own computer. Your video files live on that computer. The app catalogs them, shows posters and details, and plays them using the connection route available between your player and your server, which may include a relay.</p>
 
   <h2 data-listen="what-the-app-stores-and-why">What the app stores, and why</h2>
   <ul>
     <li><strong>Your server address</strong> — so the app knows where your library is.</li>
-    <li><strong>Your access code (login)</strong> — kept on your device so you stay signed in to your own server. It is used only to authenticate to that server.</li>
+    <li><strong>Sign-in and session details</strong> — kept on your device to authenticate to your selected home server or the relevant Beebo account service.</li>
     <li><strong>Viewing progress</strong> — where you left off in a title ("continue watching"), so playback resumes. This is kept on your device and your server.</li>
     <li><strong>Downloaded videos</strong> — if you choose to download a title for offline viewing, the file is stored on your device until you delete it.</li>
   </ul>
-  <p>That's all. Nothing here reaches the developer, and there is no advertising identifier anywhere in the app. Two features do read more, and only when you choose to use them: the Campsite <strong>Scavenger Hunt</strong> reads your location to pin a find (that stays on your phone unless you share the waypoint with your own group), and <strong>Space Saver</strong> reads the photos and files you point it at, to copy them to your own home computer.</p>
+  <p>Optional features use additional data when you choose them: photo backup and file uploads use the selected files; camera and microphone features use the permissions you grant; outdoor activities can use your location and share selected waypoints with your group. Do not share a photo, file, recording or location with guests unless you intend those guests to receive it.</p>
 
   <h2 data-listen="where-your-data-goes">Where your data goes</h2>
-  <p>Video and the items above travel <strong>only</strong> between your phone and your own server. Away from home that connection is encrypted end-to-end and goes straight from your device to your computer. On your own home Wi-Fi it is a direct local connection, and you can switch on full HTTPS in the desktop app under Settings. Your <strong>video never passes through the developer’s servers</strong>. Signing in and making the away-from-home connection use a small coordination service we run, which sees your account email and connection details — never your library, and never your video.</p>
+  <p>A local or direct route connects your player to your home server. A relay route forwards traffic through the relay you use, which can be Beebo-operated or owner-operated. Beebo’s account and coordination services process account identifiers, sign-in information and connection details such as IP addresses; managed services also need subscription and usage information. Transport encryption depends on the configured route. HTTPS or a VPN does not, by itself, prove that every intermediary is unable to read all content.</p><p>Library files are not automatically moved into Beebo cloud storage by installing the app. This is distinct from a stream passing through a relay, an intentional upload, or a completed download on another device. See <a href="docs/privacy-in-plain-words.html">the plain-language data-flow guide</a>.</p>
 
   <h2 data-listen="ads-analytics-and-third-parties">Ads, analytics, and third parties</h2>
-  <p>The app contains <strong>no advertising, no analytics and no trackers</strong>, and nothing about your use of it is measured or reported to anyone. It does include two third-party components, both from Google and both doing exactly one job: the Cast library, so you can send a film to a Chromecast, and the WebRTC library, which is what connects your phone straight to your computer when you’re away from home. Neither reports anything about you.</p>
+  <p>Local media playback does not require opting into advertising. Optional rewards or provider integrations must be checked separately before use; a planned rewards feature is not a claim that an ad service is currently active. Metadata, subtitles, casting, trailers, podcast feeds, updates and payment services may contact outside providers when used. Those requests can disclose an IP address and feature-specific information such as a search term. This website also loads fonts from an external font service. See the data-flow guide for the current integration details.</p>
 
   <h2 data-listen="content">Content</h2>
-  <p>Beebo Entertainment ships with no media of its own. It plays only the content you provide from your own server. You are responsible for the media in your library.</p>
+  <p>Beebo primarily plays media you provide. Original Beebo demonstration media is separate from your personal library. You are responsible for having the rights needed for the files you add and any sharing you enable.</p>
 
   <h2>Children</h2>
-  <p>This is a general-purpose personal utility and is not directed at children. It collects no personal data from anyone, including children.</p>
+  <p>Beebo includes household controls and shared activities. Parents should configure household permissions and supervise optional guest sharing, recording and location features. Account and connection services process the information described above; a child profile is not a promise that no personal information is processed.</p>
 
   <h2 data-listen="data-retention-and-deletion">Data retention and deletion</h2>
-  <p>On-device data (your saved login, viewing progress, and any downloads) is removed when you uninstall the app or clear its data. Anything stored on your own server is under your control on that server.</p>
+  <p>You can remove downloads and local app data using the app or your device settings. Clearing app data does not delete files already copied to your computer, another device or external storage. Use the <a href="delete-account.html">account deletion instructions</a> for service-account requests. Uninstalling an app does not cancel a subscription. Check your billing account separately. For questions about service records and applicable retention, contact the privacy address below.</p>
 
   <h2 data-listen="changes-to-this-policy">Changes to this policy</h2>
   <p>If this policy changes, the updated version will be published at the same address with a new effective date.</p>
 
-  <h2>Contact</h2>
+  <h2>Private profiles and encrypted files</h2><p>Hiding viewing history from household screens is different from encrypting it against the person who controls the storage computer. A private file vault also depends on its own encryption and recovery settings. Giving another person a recovery key can give that person the ability to recover protected files. Review those settings before uploading sensitive information.</p><h2>Contact</h2>
   <p>Questions about this policy: <a href="mailto:privacy@beeboentertainment.com">privacy@beeboentertainment.com</a></p>
 
-  <p class="muted" style="margin-top:30px">Beebo Entertainment · <code>com.beeboentertainment.movie</code> · Effective 26 August 2026</p>
+  <p class="muted" style="margin-top:30px">Beebo Entertainment · <code>com.beeboentertainment.movie</code> · Updated 23 September 2026</p>
 </div>
 
 
 
-<!-- Beebo analytics beacon -->
 
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.40 (build 41)</strong><time data-beebo-release-date="android" datetime="2026-09-21T20:26:44Z">Built Sep 21, 2026, 4:26:44 PM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script><script src="assets/listen.js?v=3" data-page="movie-privacy" defer></script></body>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.59</strong><time data-beebo-release-date="windows" datetime="2026-09-22T13:57:01Z">Released Sep 22, 2026, 9:57:01 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.42 (build 43)</strong><time data-beebo-release-date="android" datetime="2026-09-22T14:42:08.248Z">Built Sep 22, 2026, 10:42:08 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=6"></script></body>
 </html>

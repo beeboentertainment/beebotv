@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Use your own Cloudflare relay — Beebo Entertainment</title>
-<meta name="description" content="Watch away from home when a direct connection isn’t possible: set up your own Cloudflare relay in about ten minutes — free for most households — see what it (and the paid fallback) would cost with our calculator, and remove it whenever you like." />
+<meta name="description" content="Set up your own compatible TURN relay for Beebo, understand route-specific privacy, check external provider costs, and distinguish planned Beebo-managed service terms." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
@@ -47,79 +47,9 @@
   .rl-option .num{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;margin-right:6px}
   .soon-badge{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;letter-spacing:.03em;color:#7a4a06;background:#fde7bf;border:1px solid #efc77c;border-radius:999px;padding:2px 10px;vertical-align:middle;white-space:nowrap}
 
-  /* calculator */
-  .calc{background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin:14px 0}
-  .calc-status{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px;font-size:.88rem;color:var(--muted)}
-  .calc fieldset{border:0;margin:0;padding:0;min-width:0}
-  .calc legend{font-weight:700;font-size:.95rem;padding:0;margin:0 0 8px}
-  .calc-examples{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin:0 0 18px}
-  .calc-examples p{margin:0 0 8px;font-weight:700;font-size:.92rem}
-  .calc-examples .ex-row{display:flex;flex-wrap:wrap;gap:8px}
-  .ex-btn{font:inherit;font-size:.9rem;font-weight:600;text-align:left;background:var(--surface);color:var(--ink);border:1px solid var(--border-strong);border-radius:999px;padding:8px 14px;cursor:pointer;box-shadow:var(--shadow)}
-  .ex-btn:hover{border-color:var(--accent)}
-  .ex-btn[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
-  .calc-examples p.ex-note{margin:8px 0 0;font-size:.88rem;font-weight:400;color:var(--muted)}
-  .ex-note:empty{display:none}
-  .opt-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}
-  .opt-card{position:relative;display:block;cursor:pointer}
-  .opt-card input{position:absolute;opacity:0;width:1px;height:1px}
-  .opt-card span.box{display:block;height:100%;box-sizing:border-box;background:var(--surface-2);border:2px solid var(--border-strong);border-radius:12px;padding:11px 13px}
-  .opt-card strong{display:block;font-size:.95rem;line-height:1.3}
-  .opt-card small{display:block;color:var(--muted);font-size:.82rem;margin-top:3px;line-height:1.4}
-  .opt-card input:checked + span.box{border-color:var(--accent);background:var(--accent-soft)}
-  .opt-card input:focus-visible + span.box{outline:3px solid var(--accent);outline-offset:2px}
-  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
-  .calc-field{display:flex;flex-direction:column;gap:6px;min-width:0}
-  .calc-field > label{font-weight:700;font-size:.95rem}
-  .calc-field .hint{color:var(--muted);font-size:.84rem}
-  .calc-field select,.calc-field input[type=number]{font:inherit;font-size:1rem;padding:10px 12px;border-radius:10px;border:1px solid var(--border-strong);background:var(--surface-2);color:var(--ink);width:100%;max-width:100%;box-sizing:border-box}
-  .calc-field select:focus-visible,.calc-field input:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
-  .hours-row{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
-  .hours-row input[type=number]{flex:1 1 90px;width:auto}
-  .calc .seg{display:inline-flex;border:1px solid var(--border-strong);border-radius:10px;overflow:hidden;flex:0 0 auto}
-  .seg label{position:relative;cursor:pointer}
-  .seg input{position:absolute;opacity:0;width:1px;height:1px}
-  .seg span{display:block;padding:10px 12px;font-weight:600;font-size:.92rem;background:var(--surface-2)}
-  .seg input:checked + span{background:var(--accent);color:#26180A}
-  .seg input:focus-visible + span{outline:3px solid var(--ink);outline-offset:-3px}
-  .calc-custom{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:14px}
-  .warnline{color:#8a4b00;font-size:.86rem;font-weight:600;margin:0}
-
-  .calc-result{margin-top:20px;background:var(--surface-2);border:1px solid var(--border-strong);border-radius:14px;padding:18px}
-  .calc-result h3{margin:0 0 4px;font-size:1.3rem;line-height:1.3}
-  .calc-result .plain{margin:0 0 12px;color:var(--ink)}
-  .bd{width:100%;border-collapse:collapse;font-size:.96rem}
-  .bd th,.bd td{padding:9px 0;border-top:1px solid var(--border);vertical-align:top}
-  .bd th{text-align:left;font-weight:600;padding-right:12px}
-  .bd th small{display:block;font-weight:400;color:var(--muted);font-size:.84rem;margin-top:2px}
-  .bd td{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600}
-  .bd tr.sum th,.bd tr.sum td{border-top:2px solid var(--border-strong)}
-  .bd tr.total th,.bd tr.total td{border-top:2px solid var(--ink);font-family:var(--font-display);font-size:1.15rem;font-weight:800}
-  .bd tr.markup th,.bd tr.markup td{color:var(--accent-ink)}
-  .linkish{font:inherit;background:none;border:0;padding:0;color:var(--accent-ink);font-weight:600;text-decoration:underline;cursor:pointer}
-  .compare{margin-top:12px}
-  .compare table{width:100%;border-collapse:collapse;font-size:.92rem}
-  .compare th,.compare td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--border)}
-  .compare td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
-  .compare tr.current{background:var(--accent-soft)}
-  .calc-note{margin-top:14px}
-  .wrap [hidden]{display:none!important}
   .rl-sub{font-size:1.15rem;margin:22px 0 4px}
   .rl-two .feature p{color:var(--muted);margin:0 0 6px}
   .cheap-badge{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.7rem;color:#1f6b45;background:#e2f4ea;border:1px solid #a9d9bf;border-radius:999px;padding:1px 8px;vertical-align:middle;white-space:nowrap}
-  .pay-box{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:12px 14px 14px;margin:0 0 18px}
-  .pay-box .opt-pick{margin-bottom:12px}
-  .opt-pick.two{grid-template-columns:repeat(2,1fr)}
-  .topup-field{max-width:320px}
-  .save-line{margin:12px 0 0;background:#e9f6ef;border:1px solid #b5dcc6;color:#1d5e3d;border-radius:10px;padding:9px 12px;font-weight:600;font-size:.94rem}
-  .prepaid-box{margin-top:12px;border:1px dashed var(--border-strong);border-radius:12px;padding:12px 14px;background:var(--surface)}
-  .prepaid-box h4{margin:0 0 6px;font-family:var(--font-display);font-size:1.05rem}
-  .prepaid-box p{margin:0 0 8px}
-  .prepaid-box ul{margin:0 0 8px;padding-left:1.2em}
-  .prepaid-box li{margin:0 0 5px}
-  .prepaid-box .fineprint{margin:0}
-  .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-
   table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:420px}
   .rl-table-wrap{overflow-x:auto;margin:10px 0}
   .rl-table th,.rl-table td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
@@ -143,19 +73,14 @@
   .toc li{margin:0 0 4px;break-inside:avoid}
 
   @media (max-width:640px){
-    .rl-two,.calc-grid,.calc-custom,.rl-options,.opt-pick,.opt-pick.two{grid-template-columns:1fr}
-    .topup-field{max-width:none}
-    .calc{padding:18px 14px}
-    .calc-result{padding:14px 12px}
-    .bd{font-size:.92rem}
-    .bd td{white-space:normal}
+    .rl-two,.rl-options{grid-template-columns:1fr}
     .steps>li{padding:16px 16px 16px 56px}
     .steps>li::before{left:12px}
     .toc ol{columns:1}
   }
 </style>
-<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/own-relay.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3"><link rel="stylesheet" href="assets/listen.css?v=2"></head>
-<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="index.html#features">Meet Beebo</a><a href="index.html#offgrid">Beyond home</a><a href="index.html#pricing">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://beeboentertainment.com/own-relay.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3"></head>
+<body><a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="index.html" aria-label="Beebo Entertainment home"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="what-beebo-can-do.html">Meet Beebo</a><a href="stream-anywhere.html">Beyond home</a><a href="subscribe.html">Pricing</a><a href="help.html">Help & guides</a><a class="pro-cta" href="index.html#download">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
 
 
 
@@ -164,14 +89,14 @@
 
   <div class="page-hero">
     <div class="em">🔁</div>
-    <h1 data-listen="use-your-own-cloudflare-relay">Use your own Cloudflare relay</h1>
-    <p class="lead">Most of the time, Beebo connects your phone straight to the computer at home. On a few networks that simply isn’t possible. A <strong>relay</strong> fixes that: it passes your films along, still locked, between home and wherever you are. You can set one up in your own Cloudflare account in about ten minutes, and for most families it’s free — Cloudflare’s own free allowance covers it, and you owe Beebo nothing for it. If you’d rather not use Cloudflare, or it doesn’t work for you, <a href="#beebo-relay">Beebo Relay</a> is Beebo’s paid fallback instead. <a href="#cost">See what each option would cost you.</a></p>
+    <h1>Use your own Cloudflare relay</h1>
+    <p class="lead">When your player cannot reach your computer directly, a compatible relay can forward the connection. You can configure your own TURN service in Beebo. This guide shows the existing Cloudflare setup route and the standard shared-secret option. External account costs and terms are separate from Beebo. <a href="#privacy">Privacy depends on the actual route</a>; <a href="#cost">check costs before enabling a fallback</a>.</p>
   </div>
 
   <div class="rl-chips">
-    <span class="rl-chip">~10 minutes</span>
-    <span class="rl-chip">1,000 GB a month free from Cloudflare</span>
-    <span class="rl-chip">Your keys stay on your PC</span>
+    <span class="rl-chip">Owner-managed setup</span>
+    <span class="rl-chip">Provider limits apply</span>
+    <span class="rl-chip">Credentials managed on your PC</span>
     <span class="rl-chip">Remove it anytime</span>
   </div>
 
@@ -181,8 +106,8 @@
       <li><a href="#when">Do you need it?</a></li>
       <li><a href="#setup">Set it up, step by step</a></li>
       <li><a href="#privacy">What the relay can and can’t see</a></li>
-      <li><a href="#beebo-relay">Beebo Relay (a paid fallback)</a></li>
-      <li><a href="#cost">What it costs (calculator)</a></li>
+      <li><a href="#beebo-relay">Beebo-managed fallback</a></li>
+      <li><a href="#cost">Costs and limits</a></li>
       <li><a href="#tunnel">Why not a Cloudflare Tunnel?</a></li>
       <li><a href="#other">Other relay servers</a></li>
       <li><a href="#trouble">Troubleshooting</a></li>
@@ -190,23 +115,22 @@
     </ol>
   </nav>
 
-  <h2 data-listen="do-you-need-it" id="when">Do you need it?</h2>
+  <h2 id="when">Do you need it?</h2>
   <div class="feature">
-    <h3>Probably not, but it’s worth checking</h3>
-    <p>Beebo connects directly on most home and mobile networks. On a small share of them (roughly one in eight, depending on your internet provider and the network you’re visiting), the two ends can’t reach each other without help. That usually happens with some mobile networks, office or hotel Wi-Fi, and internet providers that share one public address between many homes.</p>
+    <h3>Test your route first</h3><p>A direct connection can work without a relay. Some networks use shared public addresses, restrictive firewalls or other policies that prevent it. The result depends on both the home network and the player’s current connection; no fixed percentage of households is promised.</p>
   </div>
   <div class="callout safe">
     <p><strong>Find out first:</strong> run <a href="will-beebo-work.html">Will Beebo work on your internet?</a> with your home computer and your phone. If it says you connect directly, you don’t need a relay. If it says a relay is needed, or you sometimes can’t connect from one particular place, carry on below.</p>
   </div>
 
   <figure class="rl-diagram">
-    <svg viewBox="0 0 640 190" role="img" aria-label="Diagram: normally the phone connects straight to the home PC. With a relay, locked video goes from the home PC to the relay and on to the phone.">
-      <text x="10" y="22" font-family="Figtree,sans-serif" font-size="13" font-weight="700" fill="var(--muted)">USUALLY</text>
+    <svg viewBox="0 0 640 190" role="img" aria-label="Diagram: a direct route connects the home computer and phone; a TURN route forwards traffic through the configured relay. Encryption depends on the protocol endpoints.">
+      <text x="10" y="22" font-family="Figtree,sans-serif" font-size="13" font-weight="700" fill="var(--muted)">DIRECT ROUTE</text>
       <rect x="10" y="34" width="120" height="44" rx="10" fill="var(--accent-soft)" stroke="var(--border-strong)"/>
       <text x="70" y="61" text-anchor="middle" font-family="Figtree,sans-serif" font-size="14" font-weight="700" fill="var(--ink)">Home PC</text>
       <line x1="136" y1="56" x2="500" y2="56" stroke="var(--good)" stroke-width="3"/>
       <polygon points="500,50 512,56 500,62" fill="var(--good)"/>
-      <text x="318" y="48" text-anchor="middle" font-family="Figtree,sans-serif" font-size="12" fill="var(--muted)">direct, encrypted, free</text>
+      <text x="318" y="48" text-anchor="middle" font-family="Figtree,sans-serif" font-size="12" fill="var(--muted)">your direct connection</text>
       <rect x="516" y="34" width="114" height="44" rx="10" fill="var(--accent-soft)" stroke="var(--border-strong)"/>
       <text x="573" y="61" text-anchor="middle" font-family="Figtree,sans-serif" font-size="14" font-weight="700" fill="var(--ink)">Your phone</text>
 
@@ -217,26 +141,26 @@
       <polygon points="248,144 260,150 248,156" fill="var(--accent)"/>
       <rect x="264" y="128" width="112" height="44" rx="10" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
       <text x="320" y="149" text-anchor="middle" font-family="Figtree,sans-serif" font-size="14" font-weight="700" fill="var(--ink)">Your relay</text>
-      <text x="320" y="164" text-anchor="middle" font-family="Figtree,sans-serif" font-size="11" fill="var(--muted)">can’t unlock it</text>
+      <text x="320" y="164" text-anchor="middle" font-family="Figtree,sans-serif" font-size="11" fill="var(--muted)">TURN transport</text>
       <line x1="382" y1="150" x2="500" y2="150" stroke="var(--accent)" stroke-width="3"/>
       <polygon points="500,144 512,150 500,156" fill="var(--accent)"/>
       <rect x="516" y="128" width="114" height="44" rx="10" fill="var(--accent-soft)" stroke="var(--border-strong)"/>
       <text x="573" y="155" text-anchor="middle" font-family="Figtree,sans-serif" font-size="14" font-weight="700" fill="var(--ink)">Your phone</text>
     </svg>
-    <figcaption>Beebo only uses the relay when a direct connection fails. Direct connections never touch it and cost nothing.</figcaption>
+    <figcaption>A direct media route does not forward that media through a TURN relay. Account coordination and other requests are separate. Verify the actual selected route in the app.</figcaption>
   </figure>
 
-  <h2 data-listen="set-it-up-step-by-step" id="setup">Set it up, step by step</h2>
-  <p>You’ll create a free Cloudflare account, make a <strong>TURN key</strong> (TURN is the technical name for this kind of relay), and paste two values into Beebo. Cloudflare sometimes renames menus. If something looks different, follow <a href="https://developers.cloudflare.com/realtime/turn/generate-credentials/" target="_blank" rel="noopener noreferrer">Cloudflare’s official TURN guide</a>.</p>
+  <h2 id="setup">Set it up, step by step</h2>
+  <p>You’ll create a Cloudflare account, review its service and billing terms, make a <strong>TURN key</strong> (TURN is the technical name for this kind of relay), and paste two values into Beebo. Cloudflare sometimes renames menus. If something looks different, follow <a href="https://developers.cloudflare.com/realtime/turn/generate-credentials/" target="_blank" rel="noopener noreferrer">Cloudflare’s official TURN guide</a>.</p>
 
   <ol class="steps">
     <li>
-      <h3 data-listen="create-a-cloudflare-account">Create a Cloudflare account</h3>
+      <h3>Create a Cloudflare account</h3>
       <p>Go to <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener noreferrer">dash.cloudflare.com/sign-up</a>, enter your email and a password, and select <strong>Create Account</strong>. Cloudflare emails you a link to verify your address, so open it. You don’t need a website or domain name for this. (<a href="https://developers.cloudflare.com/fundamentals/account/create-account/" target="_blank" rel="noopener noreferrer">Cloudflare’s account guide</a>)</p>
-      <p>This is <em>your</em> account. Cloudflare bills you directly for anything above the free allowance, and Beebo never sees your Cloudflare login. Depending on your account, Cloudflare may ask you to add a payment method.</p>
+      <p>This is <em>your</em> provider account. Review its included allowance, charges and any payment-method requirement. Create that account with the provider directly; enter only the required TURN credentials in Beebo, not your provider account password.</p>
     </li>
     <li>
-      <h3 data-listen="open-realtime-then-turn-server">Open Realtime, then TURN Server</h3>
+      <h3>Open Realtime, then TURN Server</h3>
       <p>In the Cloudflare dashboard, find the <strong>Realtime</strong> section (<a href="https://blog.cloudflare.com/introducing-cloudflare-realtime-and-realtimekit/" target="_blank" rel="noopener noreferrer">it used to be called <em>Calls</em></a>) and choose <strong>TURN Server</strong>. Cloudflare’s docs link here, and it should take you to the right place once you’re signed in: <a href="https://dash.cloudflare.com/?to=/:account/calls" target="_blank" rel="noopener noreferrer">open Realtime in the dashboard</a>.</p>
     </li>
     <li>
@@ -244,7 +168,7 @@
       <p>Select <strong>Create</strong> and give the key a name you’ll recognise, such as <code>Beebo</code>. The name is just a label for you. A TURN key is a long-lived secret that lets your Beebo PC make short-lived passes for your viewers. (<a href="https://developers.cloudflare.com/realtime/turn/generate-credentials/" target="_blank" rel="noopener noreferrer">Cloudflare: generate credentials</a>)</p>
     </li>
     <li>
-      <h3 data-listen="copy-the-key-id-and-the">Copy the key ID and the API token</h3>
+      <h3>Copy the key ID and the API token</h3>
       <p>Cloudflare shows two values for the new key. The labels may differ slightly:</p>
       <ul>
         <li><strong>TURN Token ID</strong> (the key ID): a long string of letters and numbers.</li>
@@ -254,12 +178,12 @@
       <p><strong>Treat the token like a password.</strong> Anyone who has it could run up relay usage on your account. Don’t email it or post it anywhere.</p>
     </li>
     <li>
-      <h3 data-listen="paste-them-into-beebo">Paste them into Beebo</h3>
+      <h3>Paste them into Beebo</h3>
       <p>On your home PC, open Beebo and go to <strong>Settings → Away from home → Use my own relay</strong>. Choose Cloudflare, paste the <strong>key ID</strong> and the <strong>API token</strong>, and save.</p>
-      <p>Both values stay on your PC. Beebo uses them there to make short-lived relay passes for people who are signed in to your library. Your token is never sent to your viewers’ devices.</p>
+      <p>The computer stores the long-lived TURN credentials and uses them to request short-lived relay credentials from the provider. The viewing device receives the short-lived credentials for the connection, rather than your long-lived API token.</p>
     </li>
     <li>
-      <h3 data-listen="test-it-away-from-home">Test it away from home</h3>
+      <h3>Test it away from home</h3>
       <p>Turn off Wi-Fi on your phone so it uses mobile data, then open your <code>yourname.beebo.tv</code> address and play something. Ideally, try from the place that wouldn’t connect before. Remember, Beebo only uses the relay when it has to, so a working direct connection is still the normal result.</p>
     </li>
   </ol>
@@ -268,222 +192,52 @@
     <p><strong>Good habit:</strong> set a spending alert in Cloudflare under <strong>Manage Account → Billing → Billable Usage → Create budget alert</strong>. It emails you if your usage-based spend passes an amount you choose. Alerts only notify you and don’t switch anything off. (<a href="https://developers.cloudflare.com/billing/manage/budget-alerts/" target="_blank" rel="noopener noreferrer">Cloudflare budget alerts</a>)</p>
   </div>
 
-  <h2 data-listen="what-the-relay-can-and-can" id="privacy">What the relay can and can’t see</h2>
-  <div class="rl-two">
-    <div class="feature">
-      <h3>It can’t see</h3>
-      <ul>
-        <li>Your films, pictures or sound</li>
-        <li>What you’re watching (titles, posters, your library)</li>
-        <li>Your Beebo sign-ins and household pass</li>
-      </ul>
-    </div>
-    <div class="feature">
-      <h3 data-listen="it-can-see">It can see</h3>
-      <ul>
-        <li>The internet (IP) addresses of your home and of the viewer’s device</li>
-        <li>When a connection starts and stops</li>
-        <li>How much data passes through, and roughly where from (Cloudflare shows usage by country and city)</li>
-      </ul>
-    </div>
-  </div>
-  <p>Beebo’s connection uses WebRTC, which encrypts everything end to end with <strong>DTLS</strong>. The keys are agreed between your home PC and the viewer’s device, so a relay only ever handles locked packets. Cloudflare says this directly: it can’t access relayed WebRTC media because of DTLS, and it processes connection details such as IP addresses and ports. (<a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">Cloudflare TURN FAQ</a>, <a href="https://developers.cloudflare.com/realtime/turn/analytics/" target="_blank" rel="noopener noreferrer">TURN analytics</a>)</p>
-  <p class="fineprint">That metadata is handled under your own agreement with Cloudflare. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare’s privacy policy</a>. Cloudflare’s relay runs on its global network except its China Network. (<a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">source</a>)</p>
+  <h2 id="privacy">What the selected route exposes</h2>
+  <div class="rl-two"><div class="feature"><h3>WebRTC through TURN</h3><p>When your home computer and player are the endpoints of the encrypted WebRTC transport, the TURN server forwards encrypted payloads without terminating that transport. This statement applies to that route; it is not a claim that every Beebo request uses it.</p></div><div class="feature"><h3>Connection metadata</h3><p>A TURN provider can process IP addresses, ports, connection times and traffic volume. Account coordination, sign-in, metadata lookup and other internet features have their own data flows outside the media transport.</p></div></div>
+  <p>A reverse proxy or other relayed HTTP route can have different encryption endpoints. An HTTPS label alone does not mean every intermediary is unable to read content. Check which route you selected and review <a href="movie-privacy.html">Beebo’s privacy policy</a>.</p>
+  <p class="fineprint">The external provider’s own terms apply. Read its <a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">TURN FAQ</a>, <a href="https://developers.cloudflare.com/realtime/turn/analytics/" target="_blank" rel="noopener noreferrer">connection analytics documentation</a> and <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">privacy policy</a>.</p>
 
-  <h2 data-listen="beebo-relay-free-at-this-time" id="beebo-relay">Beebo Relay <span class="cheap-badge">A simple paid fallback</span></h2>
-  <div class="callout safe">
-    <p><strong>Beebo Relay is a paid fallback — not something you need just to set up your own relay.</strong> It’s Beebo Entertainment’s own relay, on an OVHcloud server in Beauharnois, Canada, for people who’d rather not set up Cloudflare, or whose Cloudflare relay doesn’t work for them. It’s priced by streaming quality rather than data used, close to CA$3/month for 1080p or CA$5/month for 4K — there’s no separate wallet, top-up or per-GB bill for it. <a href="beebo-relay.html">How Beebo Relay works and how to turn it on →</a></p>
-  </div>
-  <p>You choose how relaying works in Beebo on your home PC (Settings › Connection). Whichever you choose, a relay is only used when a direct connection isn’t possible.</p>
+  <h2 id="beebo-relay">Beebo-managed fallback</h2>
+  <div class="callout safe"><p>Beebo Relay has been used successfully in owner testing. Account coverage, final limits and paid activation are still being verified. The planned household options are CA$3/month for two simultaneous managed streams or CA$5/month for four. These are planned service terms, not a checkout or a guarantee that every account is ready. <a href="subscribe.html">See current pricing status</a> and <a href="release-evidence.html">testing evidence</a>.</p></div>
+  <p>Connection settings offer different relay preferences. A preference is not proof that the selected fallback worked on your network; test it from outside your home.</p>
   <div class="rl-options">
-    <div class="rl-option">
-      <h3 data-listen="beebo-relay-only"><span class="num" aria-hidden="true">1</span>Beebo Relay only</h3>
-      <p>No Cloudflare account needed. Relayed video goes through Beebo Relay, Beebo’s paid fallback — close to CA$3/month for 1080p or CA$5/month for 4K, priced by quality rather than data used.</p>
-    </div>
-    <div class="rl-option">
-      <h3><span class="num" aria-hidden="true">2</span>Cloudflare first, then Beebo Relay</h3>
-      <p>Your own Cloudflare account carries relayed video until you’ve used <strong><span data-rl="switch">950</span> GB</strong> that month, inside its free <span data-rl="free">1,000</span> GB. Then your PC switches to Beebo Relay by itself.</p>
-    </div>
-    <div class="rl-option">
-      <h3><span class="num" aria-hidden="true">3</span>Cloudflare only</h3>
-      <p>No Beebo Relay at all. Everything goes through your own Cloudflare account, and Cloudflare bills you directly for anything past its free <span data-rl="free">1,000</span> GB.</p>
-    </div>
+    <div class="rl-option"><h3><span class="num" aria-hidden="true">1</span>Beebo Relay</h3><p>Uses the Beebo-managed option when supported and authorized. No separate external TURN account is needed for that route.</p></div>
+    <div class="rl-option"><h3><span class="num" aria-hidden="true">2</span>Your relay, then Beebo</h3><p>The configured fallback policy may switch from your provider to Beebo’s managed route. Verify the trigger, available entitlement and costs before relying on automatic switching.</p></div>
+    <div class="rl-option"><h3><span class="num" aria-hidden="true">3</span>Your relay only</h3><p>Uses your external account or server for the relayed route. Provider charges and capacity limits are yours; this does not purchase a Beebo-managed relay plan.</p></div>
   </div>
+  <h3 class="rl-sub">Managed-service data handling</h3>
+  <p>Beebo services process account, connection and usage information needed for access and operations. The media or proxy path determines where encryption ends. Do not assume that every managed route has the same visibility as a TURN-only WebRTC transport. See the <a href="movie-privacy.html">privacy policy</a> and <a href="docs/privacy-in-plain-words.html">data-flow guide</a>.</p>
 
-  <h3 data-listen="what-beebo-relay-can-and-can" class="rl-sub">What Beebo Relay can and can’t see</h3>
-  <div class="rl-two">
-    <div class="feature">
-      <h3>Beebo Relay can’t see</h3>
-      <ul>
-        <li>Your films, pictures or sound. They stay encrypted end to end, and the keys never leave your devices.</li>
-        <li>What you’re watching, or anything in your library</li>
-      </ul>
-    </div>
-    <div class="feature">
-      <h3>Beebo Relay can see</h3>
-      <ul>
-        <li>The internet (IP) addresses of your home and of the viewer’s device</li>
-        <li>When a relayed connection starts and stops</li>
-        <li>How much data passes through, to enforce your monthly fair-use limit</li>
-      </ul>
-    </div>
-  </div>
-  <p class="fineprint">That’s the same information any relay handles, including Cloudflare’s. See our <a href="movie-privacy.html">privacy policy</a> for the details.</p>
+  <h2 id="cost">Costs and limits, explained separately</h2>
+  <div class="feature"><h3>Your own connection</h3><p>Beebo does not add a managed-relay charge merely because you configured your own compatible relay. Your provider can charge for its account, traffic or server. The owner sets capacity based on the actual connection and equipment. Account discovery and sign-in on these routes are still undergoing end-to-end validation.</p></div>
+  <div class="feature"><h3>External provider pricing</h3><p>Check the provider’s current account allowance, billing currency, traffic accounting and overage charges before creating credentials. A free allowance is not a spending cap. Budget alerts notify you but do not necessarily stop usage. This page does not promise that a particular household stays within an external free tier.</p><p><a href="https://developers.cloudflare.com/realtime/pricing/" target="_blank" rel="noopener noreferrer">Read the TURN provider’s pricing</a> and inspect your account’s usage dashboard.</p></div>
+  <div class="feature"><h3>Beebo’s planned managed plans</h3><p>The proposed two-stream and four-stream household options are separate from video quality, household profile count and data transferred. Final limits, currency, taxes and cancellation terms must be shown before paid activation. <a href="subscribe.html">Review Beebo’s planned prices</a>.</p></div>
+  <p class="fineprint">To estimate traffic, a continuous 1 Mbps stream uses about 0.45 decimal GB per hour before protocol overhead and retries. Use the actual source or converted bitrate, including audio. See <a href="how-beebo-streams.html#profiles">Beebo’s conversion-profile examples</a>. Traffic estimates are not a bill or a speed guarantee.</p>
 
-  <h2 data-listen="what-it-costs-the-relay-calculator" id="cost">What it costs: the relay calculator</h2>
-  <div class="callout safe">
-    <p><strong>Most homes pay nothing for relay — to Beebo or to Cloudflare.</strong> Beebo connects your devices directly whenever it can, and direct connections never touch a relay. A relay is only used when a direct connection isn’t possible (roughly one home in eight), and your own Cloudflare relay’s free allowance (1,000 GB a month) covers nearly everyone who does need one. Beebo Relay is a separate paid fallback, priced by streaming quality rather than data used, only for households where a direct connection, automatic UPnP, and your own relay all fall short.</p>
-  </div>
-  <p>Use this to see what relayed watching would cost in a month. It assumes all of your away-from-home watching needs a relay, so it shows the most you’d pay. If you’re setting up your own Cloudflare relay and it works for you, the honest answer is usually “nothing” — this calculator mainly helps you see when that would change.</p>
+  <h2 id="tunnel">TURN and a web tunnel are different</h2>
+  <div class="feature"><h3>Different transport, different privacy boundary</h3><p>A reverse-proxy tunnel can terminate the visitor’s HTTPS connection and open another connection to the source server. That differs from a TURN service forwarding an encrypted transport between its endpoints. Review the actual configuration rather than assuming both products expose the same data. <a href="https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/" target="_blank" rel="noopener noreferrer">Provider encryption-mode documentation</a>.</p></div>
+  <div class="feature"><h3>Check terms for the product you use</h3><p>A provider can apply different traffic rules to its CDN, tunnel and TURN products. Confirm that the current agreement for the specific service permits your intended media traffic. A free plan is not automatically an unlimited video-delivery plan. <a href="https://www.cloudflare.com/service-specific-terms-application-services/" target="_blank" rel="noopener noreferrer">Read the provider’s current service terms</a>.</p></div>
 
-  <div class="calc" id="calc">
-    <p class="calc-status" id="rc-status" aria-live="polite">
-      <span class="soon-badge" id="rc-planned" hidden>Beebo Relay is planned — prices are estimates</span>
-      <span id="rc-checked">Cloudflare prices checked on <strong data-rl="checked">2026-09-15</strong></span>
-    </p>
-
-    <div class="calc-examples">
-      <p id="rc-ex-label">Try a worked example</p>
-      <div class="ex-row" role="group" aria-labelledby="rc-ex-label">
-        <button type="button" class="ex-btn" data-example="family" aria-pressed="false">A family watching 2 hours a night in HD</button>
-        <button type="button" class="ex-btn" data-example="solo" aria-pressed="false">Someone watching 8 hours a day in HD</button>
-        <button type="button" class="ex-btn" data-example="busy" aria-pressed="false">A busy household with high-quality HD files</button>
-      </div>
-      <p class="ex-note" id="rc-ex-note" aria-live="polite"></p>
-    </div>
-
-    <fieldset>
-      <legend>Your relay option</legend>
-      <div class="opt-pick">
-        <label class="opt-card"><input type="radio" name="rc-option" value="cloudflareOnly" checked /><span class="box"><strong>My own Cloudflare only</strong><small>Free from Beebo. Cloudflare bills you past its free allowance</small></span></label>
-        <label class="opt-card"><input type="radio" name="rc-option" value="cfThenBeebo" /><span class="box"><strong>Cloudflare first, then Beebo</strong><small>Free Cloudflare allowance, then Beebo Relay (paid fallback)</small></span></label>
-        <label class="opt-card"><input type="radio" name="rc-option" value="beeboOnly" /><span class="box"><strong>Beebo Relay only</strong><small>No Cloudflare account needed — Beebo’s paid fallback</small></span></label>
-      </div>
-    </fieldset>
-
-    <div class="pay-box" id="rc-pay-box" hidden>
-      <fieldset>
-        <legend>How you pay for Beebo Relay</legend>
-        <div class="opt-pick two">
-          <label class="opt-card"><input type="radio" name="rc-pay" value="prepaid" checked /><span class="box"><strong>Prepaid</strong><small>Load up a balance: <span data-rl="prepaidPrice">$0.00</span> per GB</small></span></label>
-          <label class="opt-card"><input type="radio" name="rc-pay" value="payg" /><span class="box"><strong>Pay as you go</strong><small>Billed monthly: <span data-rl="paygPrice">$0.00</span> per GB</small></span></label>
-        </div>
-      </fieldset>
-      <div class="calc-field topup-field" id="rc-topup-field" hidden>
-        <label for="rc-topup">Top-up amount</label>
-        <select id="rc-topup" aria-describedby="rc-topup-hint">
-          <option value="10">$10</option>
-          <option value="25" selected>$25 (+5% bonus credit)</option>
-          <option value="50">$50 (+10% bonus credit)</option>
-        </select>
-        <span class="hint" id="rc-topup-hint" data-rl="balancePolicy">Never expires. Refundable on request.</span>
-      </div>
-    </div>
-
-    <div class="calc-grid">
-      <div class="calc-field">
-        <label for="rc-hours">Hours watched away from home, per person</label>
-        <div class="hours-row">
-          <input id="rc-hours" type="number" inputmode="decimal" min="0" step="0.5" value="2" aria-describedby="rc-hours-hint" />
-          <fieldset class="seg">
-            <legend class="visually-hidden">Hours are counted</legend>
-            <label><input type="radio" name="rc-per" value="day" checked /><span>per day</span></label>
-            <label><input type="radio" name="rc-per" value="month" /><span>per month</span></label>
-          </fieldset>
-        </div>
-        <span class="hint" id="rc-hours-hint">“Per day” counts a 30-day month. Two films a month is about 4 hours.</span>
-        <p class="warnline" id="rc-hours-warn" hidden></p>
-      </div>
-      <div class="calc-field">
-        <label for="rc-people">People watching away from home</label>
-        <input id="rc-people" type="number" inputmode="numeric" min="0" max="50" step="1" value="1" aria-describedby="rc-people-hint" />
-        <span class="hint" id="rc-people-hint">Count each phone, tablet or laptop playing at once. Several people sharing one screen count as one.</span>
-      </div>
-      <div class="calc-field">
-        <label for="rc-quality">Video quality</label>
-        <select id="rc-quality" aria-describedby="rc-quality-hint">
-          <option value="sd">SD: about 1 GB per hour</option>
-          <option value="hd" selected>HD 1080p: about 3 GB per hour</option>
-          <option value="hdHigh">High-quality HD files: about 5 GB per hour</option>
-          <option value="uhd">4K: about 7 GB per hour</option>
-          <option value="custom">Custom: I know how big my films are</option>
-        </select>
-        <span class="hint" id="rc-quality-hint">Estimates. Your own files may be bigger or smaller.</span>
-      </div>
-      <div class="calc-custom" id="rc-custom" hidden>
-        <div class="calc-field">
-          <label for="rc-gbfilm">GB per film</label>
-          <input id="rc-gbfilm" type="number" inputmode="decimal" min="0" max="500" step="0.1" value="4" aria-describedby="rc-gbfilm-hint" />
-          <span class="hint" id="rc-gbfilm-hint">On your PC, right-click a film file and choose Properties to see its size.</span>
-        </div>
-        <div class="calc-field">
-          <label for="rc-filmlen">Typical film length, in hours</label>
-          <input id="rc-filmlen" type="number" inputmode="decimal" min="0.1" max="10" step="0.1" value="2" aria-describedby="rc-filmlen-hint" />
-          <span class="hint" id="rc-filmlen-hint">Used to turn GB per film into GB per hour.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="calc-result" id="rc-result" aria-live="polite">
-      <h3 data-listen="about-0-99-a-month" id="rc-headline">About $0 a month</h3>
-      <p class="plain" id="rc-plain"></p>
-      <table class="bd">
-        <caption class="visually-hidden">Monthly cost breakdown for the option you chose</caption>
-        <tbody id="rc-rows"></tbody>
-      </table>
-      <p class="save-line" id="rc-save" hidden></p>
-      <div class="prepaid-box" id="rc-prepaid" hidden>
-        <h4 id="rc-topup-title">Your $25 top-up</h4>
-        <p id="rc-topup-lasts"></p>
-        <ul id="rc-warnings"></ul>
-        <p class="fineprint" id="rc-runout"></p>
-      </div>
-      <p class="fineprint" style="margin:12px 0 0"><button type="button" class="linkish" id="rc-compare-btn" aria-expanded="false" aria-controls="rc-compare">Compare other options</button></p>
-      <div class="compare" id="rc-compare" hidden></div>
-    </div>
-
-    <p class="fineprint calc-note" id="rc-source"></p>
-    <p class="fineprint calc-note" data-show-for="cfThenBeebo cloudflareOnly">
-      Cloudflare prices checked on <strong data-rl="checked">2026-09-15</strong> from Cloudflare’s <a href="https://developers.cloudflare.com/realtime/sfu/pricing/" target="_blank" rel="noopener noreferrer">Realtime pricing page</a> and <a href="https://developers.cloudflare.com/realtime/turn/faq/" target="_blank" rel="noopener noreferrer">TURN FAQ</a>: <span data-rl="price">$0.05</span> per GB sent from Cloudflare to the viewer, after a free tier of <span data-rl="free">1,000</span> GB (<a href="https://blog.cloudflare.com/introducing-cloudflare-realtime-and-realtimekit/" target="_blank" rel="noopener noreferrer">“each month”</a>). Data going <em>into</em> Cloudflare is free. The free tier is per Cloudflare account and is shared with any other Cloudflare Realtime use on that account. Cloudflare counts packet overhead too, which is one reason Beebo switches over at <span data-rl="switch">950</span> GB rather than right at the limit. Prices can change, so Cloudflare’s page is the final word.
-    </p>
-    <p data-listen="about-0-99-a-month-part" class="fineprint calc-note" data-show-for="cfThenBeebo beeboOnly">
-      Beebo Relay is a flat monthly paid fallback (close to CA$3/month for 1080p, or CA$5/month for 4K — both up to 6 people), not metered by data — there’s no additional relay usage charge, wallet or top-up. “Hours of watching” use the quality you picked above.
-    </p>
-    <p class="fineprint calc-note">
-      Quality figures are estimates: Netflix publishes up to 1 GB an hour for SD, 3 GB for HD and 7 GB for 4K (<a href="https://help.netflix.com/en/node/87" target="_blank" rel="noopener noreferrer">Netflix data usage</a>). Files you own are often higher quality. Every 1 Mbps of video is about 0.45 GB an hour, so an 11 Mbps HD file uses about 5 GB an hour.
-    </p>
-  </div>
-
-  <h2 data-listen="why-not-a-cloudflare-tunnel" id="tunnel">Why not a Cloudflare Tunnel?</h2>
+  <h2 id="other">Other relay servers (for technical users)</h2>
   <div class="feature">
-    <h3>A tunnel works differently</h3>
-    <p>A Cloudflare Tunnel publishes your PC as a website behind Cloudflare’s proxy. The visitor’s secure connection ends at Cloudflare, and Cloudflare opens a second connection to your PC. Cloudflare’s own docs describe these as two separate connections. (<a href="https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/" target="_blank" rel="noopener noreferrer">Cloudflare encryption modes</a>) So the web traffic, including video, is decrypted inside Cloudflare’s network on its way through. A relay never holds the keys.</p>
-  </div>
-  <div class="feature">
-    <h3 data-listen="video-terms-are-a-grey-area">Video terms are a grey area</h3>
-    <p>Cloudflare’s terms for its content delivery network (Free, Pro and Business plans) say that, unless you’re an Enterprise customer, you must use specific paid services such as Stream to serve video and other large files. Cloudflare may limit accounts that don’t. (<a href="https://www.cloudflare.com/service-specific-terms-application-services/" target="_blank" rel="noopener noreferrer">Service-Specific Terms</a>, updated 2 June 2026, checked 2026-09-15.) Cloudflare has said that restriction applies only to its CDN (<a href="https://blog.cloudflare.com/updated-tos/" target="_blank" rel="noopener noreferrer">Cloudflare blog, 2023</a>). But a tunnel’s public web address is served through that same proxy, and Cloudflare doesn’t clearly say whether streaming films through a tunnel is allowed. We couldn’t find a definite answer. The TURN relay is a product built and priced for exactly this kind of traffic, so that’s what we recommend.</p>
-  </div>
-
-  <h2 data-listen="other-relay-servers-for-technical-users" id="other">Other relay servers (for technical users)</h2>
-  <div class="feature">
-    <h3>Any standard TURN server works</h3>
+    <h3>Compatible shared-secret TURN servers</h3>
     <p>Beebo’s <strong>Use my own relay</strong> setting also accepts a standard TURN server that uses shared-secret credentials (the “TURN REST API” style). Examples are <a href="https://github.com/coturn/coturn" target="_blank" rel="noopener noreferrer">coturn</a> with <code>use-auth-secret</code> or <a href="https://github.com/processone/eturnal" target="_blank" rel="noopener noreferrer">eturnal</a>. Enter your server’s address (for example <code>turn:relay.example.com:3478</code>, and <code>turns:relay.example.com:443</code> for strict networks) and its shared secret. If you run your own, lock it down so it can’t reach private or internal addresses. <a href="https://www.enablesecurity.com/blog/coturn-security-configuration-guide/" target="_blank" rel="noopener noreferrer">This coturn hardening guide</a> is a good start.</p>
   </div>
   <div class="callout safe">
-    <p><strong>Will Beebo run a relay for me?</strong> Yes. <a href="beebo-relay.html">Beebo Relay</a> is running, as a paid fallback close to CA$3–5/month with no extra usage charge, so you don’t need your own. Your own Cloudflare relay stays available (and free) if you’d rather use your own account.</p>
+    <p><strong>Will Beebo run a relay for me?</strong> Yes. <a href="beebo-relay.html">Beebo Relay</a> has been used successfully in owner testing; paid plans and limits are being finalized, so you don’t need your own. You can choose your own compatible relay instead; its provider terms and charges apply.</p>
   </div>
 
-  <h2 data-listen="troubleshooting" id="trouble">Troubleshooting</h2>
+  <h2 id="trouble">Troubleshooting</h2>
   <div class="faq">
     <details><summary>I added my relay but still can’t connect</summary>
       <p>Check that the key ID and API token were pasted in full, with no extra spaces at the start or end. Make sure you used the token for the <strong>TURN key</strong>, not a general Cloudflare account API token. If you’re not sure, create a fresh TURN key in Cloudflare and paste the new pair into Beebo.</p>
       <p>The home PC also needs to be on, running Beebo, and online. A relay can’t reach a PC that’s asleep.</p>
     </details>
     <details><summary>How do I know the relay is being used?</summary>
-      <p>In Cloudflare, open <strong>Realtime → TURN Server</strong> and look for usage on your key, or check <strong>Manage Account → Billing → Billable Usage</strong>. If you only see usage now and then, that’s normal: most sessions connect directly. (<a href="https://developers.cloudflare.com/realtime/turn/analytics/" target="_blank" rel="noopener noreferrer">TURN analytics</a>)</p>
+      <p>In Cloudflare, open <strong>Realtime → TURN Server</strong> and look for usage on your key, or check <strong>Manage Account → Billing → Billable Usage</strong>. Provider traffic on that key is one useful signal. Confirm the session route in Beebo; successful playback alone does not prove which route was used. (<a href="https://developers.cloudflare.com/realtime/turn/analytics/" target="_blank" rel="noopener noreferrer">TURN analytics</a>)</p>
     </details>
-    <details data-listen="troubleshooting-part-2"><summary>It works on mobile data but not on hotel or office Wi-Fi</summary>
-      <p>Some networks allow almost nothing except ordinary secure web traffic. Cloudflare’s relay also accepts connections over TLS on port 443, the same port websites use, which gets through most of these networks (<a href="https://developers.cloudflare.com/realtime/turn/" target="_blank" rel="noopener noreferrer">Cloudflare TURN ports</a>). Some networks block streaming or peer-to-peer traffic on purpose, and no relay can fix that.</p>
+    <details><summary>It works on mobile data but not on hotel or office Wi-Fi</summary>
+      <p>Some networks allow almost nothing except ordinary secure web traffic. Cloudflare’s relay also accepts connections over TLS on port 443, the same port websites use, which can work where ordinary UDP traffic is blocked (<a href="https://developers.cloudflare.com/realtime/turn/" target="_blank" rel="noopener noreferrer">Cloudflare TURN ports</a>). Some networks block streaming or peer-to-peer traffic on purpose, and no relay can fix that.</p>
     </details>
     <details><summary>It stopped working after a while</summary>
       <p>If the TURN key was deleted in Cloudflare, or the Cloudflare account was closed or restricted, the relay stops. Create a new key and paste it into Beebo. Also check your email for billing notices from Cloudflare.</p>
@@ -491,7 +245,7 @@
     <details><summary>Video is choppier through the relay</summary>
       <p>Relayed video takes a longer route, so it depends on the internet speeds at both ends, especially your home <em>upload</em> speed. Try a lower quality for away-from-home viewing.</p>
     </details>
-    <details data-listen="troubleshooting-part-3"><summary>My Cloudflare bill is higher than I expected</summary>
+    <details><summary>My Cloudflare bill is higher than I expected</summary>
       <p>Check <strong>Manage Account → Billing → Billable Usage</strong> in Cloudflare. If it looks wrong, delete the TURN key (see below). That stops it being used, and you can make a new one later. Then set a budget alert so you hear about it early next time. (<a href="https://developers.cloudflare.com/billing/manage/billable-usage/" target="_blank" rel="noopener noreferrer">Billable usage</a>)</p>
     </details>
     <details><summary>Does this work in mainland China?</summary>
@@ -499,14 +253,14 @@
     </details>
   </div>
 
-  <h2 data-listen="remove-it-anytime" id="remove">Remove it anytime</h2>
+  <h2 id="remove">Remove it anytime</h2>
   <ol class="steps">
-    <li><h3>Turn it off in Beebo</h3><p>On your home PC, go to <strong>Settings → Away from home</strong> and turn off <strong>Use my own relay</strong> (or clear the key ID and token). Beebo goes back to direct connections only.</p></li>
+    <li><h3>Turn it off in Beebo</h3><p>On your home PC, go to <strong>Settings → Away from home</strong> and turn off <strong>Use my own relay</strong> (or clear the key ID and token). Then verify the remaining connection preferences; any separately enabled managed fallback is a different setting.</p></li>
     <li><h3>Delete the TURN key in Cloudflare</h3><p>In the dashboard, open <strong>Realtime → TURN Server</strong>, find your key and delete it. After that, the key can no longer be used to create relay passes. (<a href="https://developers.cloudflare.com/api/resources/calls/subresources/turn/methods/delete/" target="_blank" rel="noopener noreferrer">Cloudflare: delete a TURN key</a>)</p></li>
-    <li><h3 data-listen="optional-close-the-cloudflare-account">Optional: close the Cloudflare account</h3><p>If you don’t use Cloudflare for anything else, you can close the account from Cloudflare’s dashboard. Nothing in Beebo depends on it.</p></li>
+    <li><h3>Optional: close the Cloudflare account</h3><p>If you don’t use Cloudflare for anything else, you can close the account from Cloudflare’s dashboard. Nothing in Beebo depends on it.</p></li>
   </ol>
 
-  <p class="fineprint">Cloudflare, Cloudflare Realtime and Cloudflare Tunnel are trademarks of Cloudflare, Inc. Beebo isn’t affiliated with or endorsed by Cloudflare. Prices and terms on this page were checked on 2026-09-15 and can change. Always check Cloudflare’s own pages before relying on them.</p>
+  <p class="fineprint">Cloudflare, Cloudflare Realtime and Cloudflare Tunnel are trademarks of Cloudflare, Inc. Beebo isn’t affiliated with or endorsed by Cloudflare. Setup labels and provider terms can change. Review the linked provider documentation and your own account before enabling a service. Beebo product wording reviewed September 23, 2026.</p>
 
   <div class="guide-nav">
     <a href="will-beebo-work.html">Will Beebo work on your internet?</a>
@@ -517,465 +271,7 @@
   <div class="cta"><a class="btn btn-primary btn-lg" href="help.html">← Back to Help &amp; Guides</a></div>
 </div>
 
-<script>
-(function(){
-  "use strict";
-  /* ==========================================================================
-     Relay cost calculator.
-     Prices come from relay-pricing.json (the same file the Beebo desktop app
-     reads). FALLBACK is a built-in copy used only when that file can't be
-     fetched, e.g. when this page is opened straight from disk. Keep it in step
-     with relay-pricing.json. Never hard-code a customer price per GB: it is
-     always costPerGB x (1 + markup / 100), with the markup for the way the
-     customer pays (prepaidMarkupPercent or payAsYouGoMarkupPercent).
-     ========================================================================== */
-  var FALLBACK = {
-    version: 3,
-    updatedAtEastern: "2026-09-20T05:55:19-04:00",
-    currency: "USD",
-    status: "free",
-    beeboRelay: {
-      costPerGB: 0,
-      payAsYouGoMarkupPercent: 0,
-      prepaidMarkupPercent: 0,
-      billing: { payAsYouGo: "Included with the household away-from-home subscription; no additional relay usage charge.", prepaid: "No separate Beebo Relay top-up is required." },
-      minimumMonthlyCharge: 0,
-      topUp: { enabled: false, amounts: [], bonusTiers: [] },
-      lowBalanceWarnPercents: [],
-      balancePolicy: "Separate Beebo Relay usage billing and top-ups are disabled.",
-      includedWithSubscription: true
-    },
-    cloudflare: { pricePerGB: 0.05, freeGBPerMonth: 1000, switchAtGB: 950, pricesCheckedOn: "2026-09-15", source: "https://developers.cloudflare.com/realtime/sfu/pricing/" },
-    estimates: { gbPerHour: { sd: 1, hd: 3, hdHigh: 5, uhd: 7 } },
-    subscriptionMonthly: 3,
-    subscriptionCurrency: "CAD",
-    householdMaxMembers: 6
-  };
-  var DAYS_PER_MONTH = 30;
-  var QUALITY_NAMES = { sd: "SD", hd: "HD 1080p", hdHigh: "High-quality HD files", uhd: "4K" };
-  var QUALITY_HOURS = { sd: "hours of SD", hd: "hours of HD", hdHigh: "hours of high-quality HD", uhd: "hours of 4K", custom: "hours at your file sizes" };
-  var OPTION_NAMES = { cfThenBeebo: "Cloudflare first, then Beebo", beeboOnly: "Beebo Relay only", cloudflareOnly: "My own Cloudflare only" };
-  var PAY_NAMES = { prepaid: "prepaid", payg: "pay as you go" };
-  var EXAMPLES = {
-    family: { hours: 2, per: "day", people: 3, quality: "hd", note: "Example: three people, each on their own phone or tablet, watching 2 hours every night in HD." },
-    solo:   { hours: 8, per: "day", people: 1, quality: "hd", note: "Example: one person on one device, watching 8 hours every day in HD." },
-    busy:   { hours: 3, per: "day", people: 4, quality: "hdHigh", note: "Example: four people, each on their own device, watching 3 hours every night from high-quality HD files." }
-  };
 
-  /* ---------- pure helpers (no page access) ---------- */
-  function numOr(v, d){ return (typeof v === "number" && isFinite(v) && v >= 0) ? v : d; }
-  function strOr(v, d){ return (typeof v === "string" && v) ? v : d; }
-  function cents(x){ return Math.round(x * 100 + 1e-7) / 100; }
 
-  function normalise(raw){
-    var f = FALLBACK, fb = f.beeboRelay, r = (raw && typeof raw === "object") ? raw : {};
-    var b = r.beeboRelay || {}, c = r.cloudflare || {}, g = (r.estimates && r.estimates.gbPerHour) || {};
-    var fg = f.estimates.gbPerHour, bill = (b.billing && typeof b.billing === "object") ? b.billing : {}, tu = b.topUp || {};
-    // enabled defaults to true only when the field is missing entirely (older config shape).
-    // An explicit false, or an explicit empty amounts/bonusTiers array, means top-ups are off —
-    // it must NOT fall back to FALLBACK's non-empty demo values in that case.
-    var tuEnabledGiven = typeof tu.enabled === "boolean";
-    var tuEnabled = tuEnabledGiven ? tu.enabled : fb.topUp.enabled;
-    var amountsGiven = Array.isArray(tu.amounts);
-    var amounts = amountsGiven ? tu.amounts.filter(function(a){ return numOr(a, 0) > 0; }) : [];
-    var tiersGiven = Array.isArray(tu.bonusTiers);
-    var tiers = tiersGiven ? tu.bonusTiers.filter(function(t){ return t && numOr(t.minAmount, -1) >= 0 && numOr(t.bonusPercent, -1) >= 0; }) : null;
-    var warns = Array.isArray(b.lowBalanceWarnPercents) ? b.lowBalanceWarnPercents.filter(function(w){ return numOr(w, -1) > 0 && w < 100; }) : null;
-    return {
-      version: numOr(r.version, f.version),
-      updatedAtEastern: strOr(r.updatedAtEastern, f.updatedAtEastern),
-      currency: strOr(r.currency, f.currency),
-      status: strOr(r.status, f.status),
-      beeboRelay: {
-        costPerGB: numOr(b.costPerGB, fb.costPerGB),
-        payAsYouGoMarkupPercent: numOr(b.payAsYouGoMarkupPercent, fb.payAsYouGoMarkupPercent),
-        prepaidMarkupPercent: numOr(b.prepaidMarkupPercent, fb.prepaidMarkupPercent),
-        billing: { payAsYouGo: strOr(bill.payAsYouGo, fb.billing.payAsYouGo), prepaid: strOr(bill.prepaid, fb.billing.prepaid) },
-        minimumMonthlyCharge: numOr(b.minimumMonthlyCharge, fb.minimumMonthlyCharge),
-        topUp: {
-          enabled: tuEnabled,
-          amounts: !tuEnabled ? [] : (amountsGiven ? amounts.slice().sort(function(x, y){ return x - y; }) : fb.topUp.amounts.slice()),
-          bonusTiers: !tuEnabled ? [] : ((tiersGiven ? tiers : fb.topUp.bonusTiers).slice().sort(function(x, y){ return x.minAmount - y.minAmount; }))
-        },
-        lowBalanceWarnPercents: !tuEnabled ? [] : (warns || fb.lowBalanceWarnPercents).slice().sort(function(x, y){ return y - x; }),
-        balancePolicy: strOr(b.balancePolicy, fb.balancePolicy),
-        includedWithSubscription: (typeof b.includedWithSubscription === "boolean") ? b.includedWithSubscription : fb.includedWithSubscription
-      },
-      cloudflare: {
-        pricePerGB: numOr(c.pricePerGB, f.cloudflare.pricePerGB),
-        freeGBPerMonth: numOr(c.freeGBPerMonth, f.cloudflare.freeGBPerMonth),
-        switchAtGB: numOr(c.switchAtGB, f.cloudflare.switchAtGB),
-        pricesCheckedOn: strOr(c.pricesCheckedOn, f.cloudflare.pricesCheckedOn),
-        source: strOr(c.source, f.cloudflare.source)
-      },
-      estimates: { gbPerHour: { sd: numOr(g.sd, fg.sd), hd: numOr(g.hd, fg.hd), hdHigh: numOr(g.hdHigh, fg.hdHigh), uhd: numOr(g.uhd, fg.uhd) } },
-      subscriptionMonthly: numOr(r.subscriptionMonthly, f.subscriptionMonthly),
-      subscriptionCurrency: strOr(r.subscriptionCurrency, f.subscriptionCurrency),
-      householdMaxMembers: numOr(r.householdMaxMembers, f.householdMaxMembers)
-    };
-  }
-
-  function priceFor(p, payMethod){
-    var b = p.beeboRelay, m = payMethod === "payg" ? b.payAsYouGoMarkupPercent : b.prepaidMarkupPercent;
-    return { markupPercent: m, pricePerGB: b.costPerGB * (1 + m / 100) };
-  }
-
-  function bonusFor(p, amount){
-    var tiers = p.beeboRelay.topUp.bonusTiers, pct = 0;
-    for (var i = 0; i < tiers.length; i++) if (amount >= tiers[i].minAmount) pct = Math.max(pct, tiers[i].bonusPercent);
-    return { bonusPercent: pct, bonus: cents(amount * pct / 100) };
-  }
-
-  /* input: { option, hoursPerMonth, people, gbPerHour, payMethod: "prepaid"|"payg", topUpAmount }
-     All per calendar month. */
-  function compute(p, input){
-    var b = p.beeboRelay, c = p.cloudflare;
-    var pay = input.payMethod === "payg" ? "payg" : "prepaid";
-    var pr = priceFor(p, pay);
-    var total = Math.max(0, input.hoursPerMonth) * Math.max(0, input.people) * Math.max(0, input.gbPerHour);
-    var r = {
-      option: input.option, payMethod: pay, totalGB: total,
-      cfGB: 0, cfFreeGB: 0, cfPaidGB: 0, cfCost: 0,
-      beeboGB: 0, costPerGB: b.costPerGB, markupPercent: pr.markupPercent, pricePerGB: pr.pricePerGB,
-      beeboAtCost: 0, beeboMarkup: 0, beeboMinimumTopUp: 0, beeboCost: 0
-    };
-    if (input.option === "beeboOnly") r.beeboGB = total;
-    else if (input.option === "cloudflareOnly") r.cfGB = total;
-    else { r.cfGB = Math.min(total, c.switchAtGB); r.beeboGB = total - r.cfGB; }
-
-    r.cfFreeGB = Math.min(r.cfGB, c.freeGBPerMonth);
-    r.cfPaidGB = r.cfGB - r.cfFreeGB;
-    r.cfCost = cents(r.cfPaidGB * c.pricePerGB);
-
-    if (r.beeboGB > 0){
-      var usage = cents(r.beeboGB * r.pricePerGB);            // what the customer pays for usage
-      r.beeboAtCost = Math.min(usage, cents(r.beeboGB * b.costPerGB));
-      r.beeboMarkup = cents(usage - r.beeboAtCost);             // always shown as its own line
-      if (pay === "payg" && usage < b.minimumMonthlyCharge) r.beeboMinimumTopUp = cents(b.minimumMonthlyCharge - usage);
-      r.beeboCost = cents(usage + r.beeboMinimumTopUp);
-    }
-    r.relayCost = cents(r.cfCost + r.beeboCost);
-    // "Cloudflare only" means no Beebo Relay subscription at all — you owe Beebo nothing.
-    // The flat monthly price only applies to the two options that actually use Beebo Relay
-    // as a fallback, and it's billed as a subscription (whether or not you dip into it that
-    // month), not metered per GB.
-    r.subscription = input.option === "cloudflareOnly" ? 0 : p.subscriptionMonthly;
-    r.total = cents(r.relayCost + r.subscription);
-
-    if (input.option !== "cloudflareOnly" && !input.skipExtras){
-      // Prepaid vs pay as you go for the same usage.
-      var otherPay = compute(p, { option: input.option, hoursPerMonth: input.hoursPerMonth, people: input.people, gbPerHour: input.gbPerHour, payMethod: pay === "payg" ? "prepaid" : "payg", skipExtras: true });
-      var prepaidRun = pay === "prepaid" ? r : otherPay;
-      var paygRun = pay === "payg" ? r : otherPay;
-      r.prepaidMonthly = prepaidRun.beeboCost;
-      r.paygMonthly = paygRun.beeboCost;
-      r.prepaidSavesMonthly = cents(Math.max(0, paygRun.beeboCost - prepaidRun.beeboCost));
-
-      if (pay === "prepaid"){
-        var amount = numOr(input.topUpAmount, b.topUp.amounts[0]);
-        var bo = bonusFor(p, amount);
-        var credit = cents(amount + bo.bonus);
-        var exactMonthly = r.beeboGB * r.pricePerGB;              // unrounded, for "how long it lasts"
-        var perHour = Math.max(0, input.gbPerHour) * r.pricePerGB; // cost of one hour of watching via Beebo Relay
-        r.topUp = {
-          amount: amount, bonusPercent: bo.bonusPercent, bonus: bo.bonus, credit: credit,
-          months: exactMonthly > 0 ? credit / exactMonthly : Infinity,
-          hours: perHour > 0 ? credit / perHour : Infinity,
-          warnings: b.lowBalanceWarnPercents.map(function(w){
-            var left = credit * w / 100;
-            return {
-              percent: w, balanceLeft: cents(left),
-              hoursLeft: perHour > 0 ? left / perHour : Infinity,
-              monthsUntil: exactMonthly > 0 ? (credit - left) / exactMonthly : Infinity
-            };
-          })
-        };
-      }
-    }
-    return r;
-  }
-
-  window.BeeboRelayCalc = { FALLBACK: FALLBACK, normalise: normalise, compute: compute, bonusFor: bonusFor, priceFor: priceFor };
-
-  /* ---------- page ---------- */
-  function $(id){ return document.getElementById(id); }
-  if (!$("calc")) return;
-
-  var pricing = normalise(FALLBACK), loadedFrom = "fallback";
-
-  function money(v){ return "$" + v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
-  function wholeMoney(v){ return v % 1 === 0 ? "$" + v.toLocaleString("en-US") : money(v); }
-  function rate(v){ return "$" + v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 4 }); }
-  function gb(v){ return v.toLocaleString("en-US", { maximumFractionDigits: v < 10 ? 1 : 0 }) + " GB"; }
-  function nice(v){ return v.toLocaleString("en-US", { maximumFractionDigits: 1 }); }
-  function plural(n, one, many){ return nice(n) + " " + (n === 1 ? one : many); }
-  function hoursText(h){ return h === Infinity ? "unlimited" : (h >= 10 ? Math.floor(h).toLocaleString("en-US") : nice(h)); }
-  function listText(items){ return items.length < 2 ? items.join("") : items.slice(0, -1).join(", ") + " or " + items[items.length - 1]; }
-  function andText(items){ return items.length < 2 ? items.join("") : items.slice(0, -1).join(", ") + " and " + items[items.length - 1]; }
-  function duration(months){
-    if (months === Infinity) return "for as long as you like";
-    var days = months * DAYS_PER_MONTH;
-    if (days < 1) return "less than a day";
-    if (days < 60) return "about " + plural(Math.round(days), "day", "days");
-    if (months > 120) return "more than 10 years";
-    return "about " + nice(Math.round(months * 10) / 10) + " months";
-  }
-  function esc(s){ return String(s).replace(/[&<>"]/g, function(ch){ return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]; }); }
-  function readNum(el, d){ var v = parseFloat(el.value); return (isFinite(v) && v >= 0) ? v : d; }
-  function radioValue(name){ var el = document.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ""; }
-  function setRadio(name, value){ var el = document.querySelector('input[name="' + name + '"][value="' + value + '"]'); if (el) el.checked = true; }
-  function lowerFirst(s){ return s.charAt(0).toLowerCase() + s.slice(1); }
-
-  var hoursEl = $("rc-hours"), peopleEl = $("rc-people"), qualityEl = $("rc-quality"),
-      customEl = $("rc-custom"), gbFilmEl = $("rc-gbfilm"), filmLenEl = $("rc-filmlen"), topUpEl = $("rc-topup");
-
-  function applyPricingLabels(){
-    var p = pricing, b = p.beeboRelay, labels = document.querySelectorAll("[data-rl]");
-    var pre = priceFor(p, "prepaid"), pg = priceFor(p, "payg");
-    var bonusBits = b.topUp.bonusTiers.filter(function(t){ return t.bonusPercent > 0; }).map(function(t){ return "top up " + wholeMoney(t.minAmount) + " or more and get " + nice(t.bonusPercent) + "% extra credit"; });
-    for (var i = 0; i < labels.length; i++){
-      var k = labels[i].getAttribute("data-rl"), t = null;
-      if (k === "price") t = money(p.cloudflare.pricePerGB);
-      else if (k === "free") t = p.cloudflare.freeGBPerMonth.toLocaleString("en-US");
-      else if (k === "switch") t = p.cloudflare.switchAtGB.toLocaleString("en-US");
-      else if (k === "checked") t = p.cloudflare.pricesCheckedOn;
-      else if (k === "beeboCost") t = rate(b.costPerGB);
-      else if (k === "prepaidPrice") t = rate(pre.pricePerGB);
-      else if (k === "paygPrice") t = rate(pg.pricePerGB);
-      else if (k === "prepaidMarkup") t = nice(b.prepaidMarkupPercent);
-      else if (k === "paygMarkup") t = nice(b.payAsYouGoMarkupPercent);
-      else if (k === "paygBilling") t = lowerFirst(b.billing.payAsYouGo);
-      else if (k === "balancePolicy") t = b.balancePolicy;
-      else if (k === "topUpList") t = listText(b.topUp.amounts.map(wholeMoney));
-      else if (k === "warnList") t = andText(b.lowBalanceWarnPercents.map(function(w){ return nice(w) + "%"; }));
-      else if (k === "bonusList") t = bonusBits.length ? (bonusBits.join("; ").charAt(0).toUpperCase() + bonusBits.join("; ").slice(1) + ".") : "No bonus credit on top-ups at the moment.";
-      if (t !== null) labels[i].textContent = t;
-    }
-    var g = p.estimates.gbPerHour;
-    for (var j = 0; j < qualityEl.options.length; j++){
-      var o = qualityEl.options[j];
-      if (g[o.value] !== undefined) o.textContent = QUALITY_NAMES[o.value] + ": about " + plural(g[o.value], "GB", "GB") + " per hour";
-    }
-    // Top-up choices from the JSON, keeping the current choice where possible.
-    var keep = parseFloat(topUpEl.value), html = "", amounts = b.topUp.amounts;
-    if (amounts.indexOf(keep) < 0) keep = amounts[Math.min(1, amounts.length - 1)];
-    amounts.forEach(function(a){
-      var bo = bonusFor(p, a);
-      html += '<option value="' + a + '"' + (a === keep ? " selected" : "") + ">" + esc(wholeMoney(a) + (bo.bonusPercent > 0 ? " (+" + nice(bo.bonusPercent) + "% bonus credit)" : "")) + "</option>";
-    });
-    topUpEl.innerHTML = html;
-
-    $("rc-planned").hidden = p.status !== "planned";
-    $("rc-source").textContent = loadedFrom === "json"
-      ? "Prices from relay-pricing.json (version " + p.version + ", updated " + p.updatedAtEastern.slice(0, 10) + ")."
-      : "Showing our built-in copy of the prices, because relay-pricing.json couldn’t be loaded.";
-  }
-
-  function readInputs(){
-    var per = radioValue("rc-per") === "month" ? "month" : "day";
-    var maxH = per === "day" ? 24 : 24 * 31;
-    var hours = readNum(hoursEl, 0), warn = $("rc-hours-warn");
-    if (hours > maxH){
-      warn.hidden = false;
-      warn.textContent = "That’s more than " + maxH + " hours " + (per === "day" ? "in a day" : "in a month") + ", so we’ve used " + maxH + ".";
-      hours = maxH;
-    } else warn.hidden = true;
-
-    var gbPerHour, q = qualityEl.value;
-    customEl.hidden = q !== "custom";
-    if (q === "custom"){
-      var len = readNum(filmLenEl, 2); if (len <= 0) len = 2;
-      gbPerHour = readNum(gbFilmEl, 0) / len;
-    } else gbPerHour = pricing.estimates.gbPerHour[q] || 0;
-
-    return {
-      option: radioValue("rc-option") || "cloudflareOnly",
-      payMethod: radioValue("rc-pay") === "payg" ? "payg" : "prepaid",
-      topUpAmount: parseFloat(topUpEl.value),
-      quality: q, per: per, hours: hours,
-      hoursPerMonth: per === "day" ? hours * DAYS_PER_MONTH : hours,
-      people: Math.floor(readNum(peopleEl, 0)),
-      gbPerHour: gbPerHour
-    };
-  }
-
-  function row(label, sub, value, cls){
-    return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><th scope="row">' + esc(label) +
-      (sub ? '<small>' + esc(sub) + '</small>' : '') + '</th><td>' + esc(value) + '</td></tr>';
-  }
-
-  function beeboRows(r){
-    if (!pricing.beeboRelay.topUp.enabled){
-      return row("Beebo Relay usage", gb(r.beeboGB) + " relayed, included with your household subscription", "No extra charge");
-    }
-    var h = "";
-    h += row("Beebo Relay at cost", gb(r.beeboGB) + " × " + rate(r.costPerGB) + " per GB", money(r.beeboAtCost));
-    h += row("Markup (" + nice(r.markupPercent) + "%, " + PAY_NAMES[r.payMethod] + ")", "Your price per GB: " + rate(r.pricePerGB), money(r.beeboMarkup), "markup");
-    if (r.beeboMinimumTopUp > 0){
-      h += row("Minimum monthly charge", "Pay as you go has a " + money(pricing.beeboRelay.minimumMonthlyCharge) + " monthly minimum once it’s used", money(r.beeboMinimumTopUp));
-    }
-    return h;
-  }
-
-  function render(){
-    var i = readInputs(), p = pricing, c = p.cloudflare, r = compute(p, i);
-    var sub = money(r.subscription), rows = "", usesBeebo = r.option !== "cloudflareOnly";
-    var beeboIncluded = !p.beeboRelay.topUp.enabled;
-    var payWord = r.payMethod === "payg" ? "added to your monthly Beebo bill" : "taken from your prepaid balance";
-
-    $("rc-pay-box").hidden = !usesBeebo || beeboIncluded;
-    $("rc-topup-field").hidden = !usesBeebo || beeboIncluded || r.payMethod !== "prepaid";
-
-    var usageSub = (i.per === "day" ? plural(i.hours, "hour", "hours") + " a day × " + DAYS_PER_MONTH + " days" : plural(i.hours, "hour", "hours") + " a month") +
-      " × " + plural(i.people, "person", "people") + " × " + nice(i.gbPerHour) + " GB per hour";
-    rows += row("Data relayed this month", usageSub, gb(r.totalGB));
-
-    var plain;
-    if (r.option === "beeboOnly"){
-      rows += row("Through Beebo Relay", "All relayed data", gb(r.beeboGB));
-      if (r.beeboGB > 0) rows += beeboRows(r);
-      plain = beeboIncluded
-        ? (r.totalGB > 0
-            ? "All " + gb(r.totalGB) + " would go through Beebo Relay, included with your household subscription at no extra usage charge. You’d pay just the " + sub + " subscription."
-            : "Nothing relayed, so no relay cost. You’d pay just the " + sub + " subscription.")
-        : (r.totalGB > 0
-            ? "All " + gb(r.totalGB) + " would go through Beebo Relay at " + rate(r.pricePerGB) + " per GB (" + PAY_NAMES[r.payMethod] + "), coming to " + money(r.beeboCost) +
-              " a month, " + payWord + ". With the " + sub + " subscription, that’s " + money(r.total) + " a month."
-            : "Nothing relayed, so no relay cost. You’d pay just the " + sub + " subscription.");
-    } else if (r.option === "cloudflareOnly"){
-      rows += row("Free from your Cloudflare account", "The first " + c.freeGBPerMonth.toLocaleString("en-US") + " GB each month", gb(r.cfFreeGB));
-      rows += row("Paid to Cloudflare", gb(r.cfPaidGB) + " × " + rate(c.pricePerGB) + " per GB, billed to you by Cloudflare in USD", money(r.cfCost));
-      plain = r.cfPaidGB > 0
-        ? "Cloudflare covers the first " + c.freeGBPerMonth.toLocaleString("en-US") + " GB free, then charges " + rate(c.pricePerGB) + " per GB for the other " + gb(r.cfPaidGB) +
-          ": " + money(r.cfCost) + ", billed by Cloudflare. You owe Beebo nothing — this option doesn’t use Beebo Relay, so there’s no Beebo subscription."
-        : (r.totalGB > 0 ? "All " + gb(r.totalGB) + " fit inside Cloudflare’s free " + c.freeGBPerMonth.toLocaleString("en-US") + " GB, so this costs you nothing — not to Cloudflare, and not to Beebo." : "Nothing relayed, so no relay cost, and no Beebo Relay subscription either.");
-    } else {
-      rows += row("Covered free by your Cloudflare account", "Up to " + c.switchAtGB.toLocaleString("en-US") + " GB, then Beebo switches over", gb(r.cfFreeGB));
-      if (r.cfPaidGB > 0) rows += row("Paid to Cloudflare", gb(r.cfPaidGB) + " × " + rate(c.pricePerGB) + " per GB, billed by Cloudflare in USD", money(r.cfCost));
-      rows += row("Through Beebo Relay", r.beeboGB > 0 ? "Everything after the first " + c.switchAtGB.toLocaleString("en-US") + " GB" : "Only used after " + c.switchAtGB.toLocaleString("en-US") + " GB in a month", gb(r.beeboGB));
-      if (r.beeboGB > 0) rows += beeboRows(r);
-      plain = beeboIncluded
-        ? (r.beeboGB > 0
-            ? "Your Cloudflare account covers the first " + gb(r.cfGB) + " free. The other " + gb(r.beeboGB) + " go through Beebo Relay, included with your household subscription at no extra usage charge. With the " + sub + " subscription, that’s " + money(r.total) + " a month."
-            : (r.totalGB > 0 ? "All " + gb(r.totalGB) + " fit inside your free Cloudflare allowance, so relay costs you nothing." : "Nothing relayed, so no relay cost.") +
-              " You’d pay just the " + sub + " Beebo subscription.")
-        : (r.beeboGB > 0
-            ? "Your Cloudflare account covers the first " + gb(r.cfGB) + " free. The other " + gb(r.beeboGB) + " go through Beebo Relay at " + rate(r.pricePerGB) + " per GB (" + PAY_NAMES[r.payMethod] + "), coming to " +
-              money(r.beeboCost) + " a month, " + payWord + ". With the " + sub + " subscription, that’s " + money(r.total) + " a month."
-            : (r.totalGB > 0 ? "All " + gb(r.totalGB) + " fit inside your free Cloudflare allowance, so relay costs you nothing." : "Nothing relayed, so no relay cost.") +
-              " You’d pay just the " + sub + " Beebo subscription.");
-    }
-    rows += row("Monthly relay cost", r.beeboGB > 0 ? (beeboIncluded ? "Beebo Relay portion has no extra usage charge; any Cloudflare portion above is billed separately" : (r.payMethod === "prepaid" ? "Taken from your prepaid balance" : "Added to your monthly Beebo bill")) : "", money(r.relayCost), "sum");
-    if (r.subscription > 0){
-      rows += row("Beebo Relay subscription", "Billed in Canadian dollars (CAD)", sub);
-    }
-    rows += row("Total per month", r.subscription > 0 && r.cfCost > 0 ? "Adds your CAD subscription and USD Cloudflare charge as face-value numbers, not a currency conversion" : (r.subscription === 0 ? "No Beebo Relay subscription with this option" : ""), money(r.total), "total");
-
-    $("rc-rows").innerHTML = rows;
-    $("rc-plain").textContent = plain;
-    $("rc-headline").textContent = OPTION_NAMES[r.option] + ": about " + money(r.total) + " a month";
-
-    // Prepaid saving line (Beebo options only, and only while paid usage tiers exist).
-    var save = $("rc-save");
-    if (usesBeebo && !beeboIncluded && r.beeboGB > 0){
-      save.hidden = false;
-      save.textContent = r.prepaidSavesMonthly > 0
-        ? "Prepaid saves " + money(r.prepaidSavesMonthly) + " a month here: " + money(r.prepaidMonthly) + " prepaid vs " + money(r.paygMonthly) + " pay as you go."
-        : "Prepaid and pay as you go cost the same at this usage (" + money(r.prepaidMonthly) + " a month).";
-    } else save.hidden = true;
-
-    // Top-up details (prepaid only, and only while Beebo Relay top-ups exist).
-    var box = $("rc-prepaid");
-    if (usesBeebo && !beeboIncluded && r.payMethod === "prepaid" && r.topUp){
-      var t = r.topUp, unit = QUALITY_HOURS[i.quality] || "hours of watching";
-      box.hidden = false;
-      $("rc-topup-title").textContent = "Your " + wholeMoney(t.amount) + " top-up";
-      var creditText = t.bonus > 0
-        ? wholeMoney(t.amount) + " + " + money(t.bonus) + " bonus = " + money(t.credit)
-        : wholeMoney(t.amount) + " of credit (no bonus at this amount)";
-      var lasts = r.beeboGB > 0
-        ? creditText + " lasts " + duration(t.months) + " at your usage, or about " + hoursText(t.hours) + " " + unit + " through Beebo Relay."
-        : creditText + ". At this usage you wouldn’t use Beebo Relay at all, and your balance never expires.";
-      $("rc-topup-lasts").textContent = lasts;
-      var wl = "";
-      if (i.gbPerHour > 0){
-        t.warnings.forEach(function(w){
-          wl += "<li>" + esc("At " + nice(w.percent) + "% left (" + money(w.balanceLeft) + "), we’d warn you: about " + hoursText(w.hoursLeft) + " " + unit + " left." +
-            (r.beeboGB > 0 ? " At your usage that’s " + duration(w.monthsUntil) + " after topping up." : "")) + "</li>";
-        });
-      }
-      $("rc-warnings").innerHTML = wl;
-      $("rc-warnings").hidden = !wl;
-      $("rc-runout").textContent = p.beeboRelay.balancePolicy + " If it runs out, you choose: top up again, pay as you go with Beebo, or switch to Cloudflare only.";
-    } else box.hidden = true;
-
-    // Only show the notes that belong to the chosen option.
-    var notes = document.querySelectorAll("[data-show-for]");
-    for (var n = 0; n < notes.length; n++) notes[n].hidden = (" " + notes[n].getAttribute("data-show-for") + " ").indexOf(" " + r.option + " ") < 0;
-    $("rc-checked").hidden = r.option === "beeboOnly";
-
-    // Comparison, hidden until asked for.
-    var cmp = '<table><caption class="visually-hidden">All three options for the same watching</caption><thead><tr><th scope="col">Option</th><th scope="col" class="n">Relay</th><th scope="col" class="n">Total a month</th></tr></thead><tbody>';
-    ["cfThenBeebo", "beeboOnly", "cloudflareOnly"].forEach(function(o){
-      var x = compute(p, { option: o, hoursPerMonth: i.hoursPerMonth, people: i.people, gbPerHour: i.gbPerHour, payMethod: r.payMethod, topUpAmount: i.topUpAmount });
-      cmp += '<tr' + (o === r.option ? ' class="current"' : '') + '><th scope="row">' + esc(OPTION_NAMES[o]) + (o === r.option ? ' <small>(your choice)</small>' : '') +
-        '</th><td class="n">' + money(x.relayCost) + '</td><td class="n">' + money(x.total) + '</td></tr>';
-    });
-    $("rc-compare").innerHTML = cmp + '</tbody></table><p class="fineprint" style="margin:6px 0 0">Beebo Relay figures use ' + esc(PAY_NAMES[r.payMethod]) + ' pricing.</p>';
-  }
-
-  function clearExample(){
-    var btns = document.querySelectorAll(".ex-btn");
-    for (var i = 0; i < btns.length; i++) btns[i].setAttribute("aria-pressed", "false");
-    $("rc-ex-note").textContent = "";
-  }
-
-  /* events */
-  var EXAMPLE_FIELDS = { "rc-hours": 1, "rc-people": 1, "rc-quality": 1, "rc-gbfilm": 1, "rc-filmlen": 1 };
-  var calc = $("calc");
-  calc.addEventListener("input", function(e){
-    if (EXAMPLE_FIELDS[e.target.id]) clearExample();
-    render();
-  });
-  calc.addEventListener("change", function(e){
-    if (e.target.name === "rc-per"){
-      // Keep the same amount of watching when switching between per day and per month.
-      var h = readNum(hoursEl, 0);
-      hoursEl.value = e.target.value === "month" ? nice(h * DAYS_PER_MONTH).replace(/,/g, "") : String(Math.round(h / DAYS_PER_MONTH * 10) / 10);
-      clearExample();
-    }
-    render();
-  });
-  var exBtns = document.querySelectorAll(".ex-btn");
-  for (var k = 0; k < exBtns.length; k++){
-    exBtns[k].addEventListener("click", function(){
-      var ex = EXAMPLES[this.getAttribute("data-example")]; if (!ex) return;
-      setRadio("rc-per", ex.per);
-      hoursEl.value = ex.hours; peopleEl.value = ex.people; qualityEl.value = ex.quality;
-      clearExample();
-      this.setAttribute("aria-pressed", "true");
-      $("rc-ex-note").textContent = ex.note;
-      render();
-    });
-  }
-  $("rc-compare-btn").addEventListener("click", function(){
-    var box = $("rc-compare"), open = box.hidden;
-    box.hidden = !open;
-    this.setAttribute("aria-expanded", open ? "true" : "false");
-    this.textContent = open ? "Hide the comparison" : "Compare other options";
-  });
-
-  applyPricingLabels();
-  render();
-
-  if (window.fetch){
-    fetch("relay-pricing.json", { cache: "no-cache" })
-      .then(function(res){ if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
-      .then(function(json){ pricing = normalise(json); loadedFrom = "json"; applyPricingLabels(); render(); })
-      .catch(function(){ /* keep the built-in copy */ });
-  }
-})();
-</script>
-
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.40 (build 41)</strong><time data-beebo-release-date="android" datetime="2026-09-21T20:26:44Z">Built Sep 21, 2026, 4:26:44 PM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="index.html#pricing">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=4"></script><script src="assets/listen.js?v=3" data-page="own-relay" defer></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.59</strong><time data-beebo-release-date="windows" datetime="2026-09-22T13:57:01Z">Released Sep 22, 2026, 9:57:01 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.42 (build 43)</strong><time data-beebo-release-date="android" datetime="2026-09-22T14:42:08.248Z">Built Sep 22, 2026, 10:42:08 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="subscribe.html">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help & guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="polish.js?v=6"></script></body>
 </html>

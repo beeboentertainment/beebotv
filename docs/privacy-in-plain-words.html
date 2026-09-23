@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Beebo privacy in plain words | Beebo Docs</title>
-<meta name="description" content="What stays on your PC, what Beebo’s servers handle, which optional features contact other services, and how to check it yourself. Not a legal document." />
+<meta name="description" content="What is primarily stored on your PC, what Beebo’s servers handle, which optional features contact other services, and how to check it yourself. Not a legal document." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
 <meta property="og:title" content="Beebo privacy in plain words | Beebo Docs" />
-<meta property="og:description" content="What stays on your PC, what Beebo’s servers handle, which optional features contact other services, and how to check it yourself. Not a legal document." />
+<meta property="og:description" content="What is primarily stored on your PC, what Beebo’s servers handle, which optional features contact other services, and how to check it yourself. Not a legal document." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://beeboentertainment.com/docs/privacy-in-plain-words.html" />
 <meta property="og:image" content="https://beeboentertainment.com/assets/family-home.webp" />
@@ -61,7 +61,7 @@
   "@type": "TechArticle",
   "@id": "https://beeboentertainment.com/docs/privacy-in-plain-words.html#article",
   "headline": "Privacy in plain words",
-  "description": "What stays on your PC, what Beebo’s servers handle, which optional features contact other services, and how to check it yourself. Not a legal document.",
+  "description": "What is primarily stored on your PC, what Beebo’s servers handle, which optional features contact other services, and how to check it yourself. Not a legal document.",
   "url": "https://beeboentertainment.com/docs/privacy-in-plain-words.html",
   "inLanguage": "en",
   "datePublished": "2026-09-21",
@@ -87,26 +87,26 @@
   <div class="page-hero">
     <div class="em" aria-hidden="true">🔐</div>
     <h1>Privacy in plain words</h1>
-    <p class="lead">Your library and video don’t go to Beebo. Beebo’s servers handle sign-in and introductions, and a few optional features talk to other services, which this page lists. It is a plain-language summary and not a legal document: the privacy policy has the formal terms.</p>
+    <p class="lead">Your source library remains on your computer. A stream may pass through a relay. Beebo’s account services handle sign-in and connections, and a few optional features talk to other services, which this page lists. It is a plain-language summary and not a legal document: the privacy policy has the formal terms.</p>
   </div>
   <nav class="guide-nav" aria-label="On this page"><a href="#stays">Stays on your PC</a><a href="#service">What Beebo’s service handles</a><a href="#others">Other services</a><a href="#steps">Check it yourself</a><a href="#related">Related pages</a></nav>
 
   <div class="callout safe">
-    <p><strong>The short version:</strong> your library and video don’t go to Beebo. Beebo’s servers handle sign-in and introductions. The details are in the <a href="../movie-privacy.html">privacy policy</a>.</p>
+    <p><strong>The short version:</strong> your source library lives on your computer; direct connections and relayed traffic take different routes. Beebo account services process sign-in and connection information. The details are in the <a href="../movie-privacy.html">privacy policy</a>.</p>
   </div>
 
-  <h2 id="stays">What stays on your PC</h2>
+  <h2 id="stays">What is primarily stored on your PC</h2><p>These are primary storage locations, not a promise that information is never transmitted or copied. Sync, downloads, backups, metadata lookup and guest sharing can use other devices or services.</p>
   <ul class="plain">
     <li>Your movies, shows and music, and their file names.</li>
     <li>Who has watched what: watch history, viewing profiles and parental settings.</li>
     <li>Photo backups from your phone.</li>
-    <li>Saved secrets such as your TMDB key, OpenSubtitles password and email app password. They are encrypted using the PC’s own keystore.</li>
-    <li>If you use a relay, it passes along locked packets. <strong>Beebo Relay cannot read your video.</strong></li>
+    <li>Saved secrets such as your TMDB key, OpenSubtitles password and email app password. OS-backed secret storage is used when available; protection depends on the platform and an available keyring. Do not assume every host configuration encrypts every saved setting.</li>
+    <li>If you use a relay, your stream passes through that relay. Encryption endpoints depend on the route: do not assume that transport encryption makes every intermediary unable to read content.</li>
   </ul>
 
   <h2 id="service">What Beebo’s service handles</h2>
-  <p>Beebo runs a small service (beebo.tv) that does the introductions. It handles your Beebo account email and sign-in, your <code>yourname.beebo.tv</code> name, and setting up the connection between your phone and your PC. That includes connection details such as internet (IP) addresses, and, for away-from-home sign-in, your household members’ usernames with scrambled passes rather than plain passwords. It also handles subscriptions and payments for the paid options. Video and your library go straight between your devices, or through a relay if you chose one; they do not go through this service.</p>
-  <p>The Beebo Android app and desktop app contain no advertising or third-party analytics, crash-reporting or tracking components that we know of. The Android app does include Google’s own casting and Play components, which are closed-source, so we cannot describe everything they do.</p>
+  <p>Beebo runs a small service (beebo.tv) that does the introductions. It handles your Beebo account email and sign-in, your <code>yourname.beebo.tv</code> name, and setting up the connection between your phone and your PC. That includes connection details such as internet (IP) addresses, and, for away-from-home sign-in, your household members’ usernames with scrambled passes rather than plain passwords. It also handles subscriptions and payments for the paid options. The account coordination service and the relay are different services. The former coordinates access; the latter can carry the media traffic. Connection and usage records are separate from your source files.</p>
+  <p>Local playback does not require opting into advertising. Optional integrations and rewards, when available, need their own data disclosures. Casting, store and network components may contact their providers. A source review is not a guarantee of zero telemetry across every dependency.</p>
 
   <h2 id="others">Other services, and when they are used</h2>
   <div class="rl-table-wrap">
@@ -116,7 +116,7 @@
         <tr><th scope="row">TMDB</th><td>Only after you add your own key, and for poster pictures</td><td>Cleaned titles and years from file names, TMDB ids, words you type in search, and your key. Some poster pictures load straight from TMDB in the browser pages, so TMDB can see the address of the device showing them.</td></tr>
         <tr><th scope="row">TVmaze</th><td>When a show’s episode list is opened</td><td>The show name, to get real episode names. It needs no key and has no separate switch.</td></tr>
         <tr><th scope="row">OpenSubtitles</th><td>Only after you set up an account</td><td>Your API key, username and password, plus a fingerprint of the file and its title, year, season and episode. Only the PC talks to it.</td></tr>
-        <tr><th scope="row">YouTube</th><td>When you click Watch trailer</td><td>Nothing from Beebo. The trailer opens in your own browser.</td></tr>
+        <tr><th scope="row">YouTube</th><td>When you click Watch trailer</td><td>The opened website receives a normal browser request, including your IP address; the link or search can identify the selected trailer. The provider’s own privacy terms apply.</td></tr>
         <tr><th scope="row">Apple iTunes Search and the podcast feeds you choose</th><td>Only if you use podcasts in Beebo for Windows 0.1.58 (Beta), and only when you search for a show or subscribe</td><td>Your search words go to Apple’s public iTunes Search directory, used only to find a show’s feed address. Each podcast feed you subscribe to is then fetched from its publisher’s own server, like any podcast app.</td></tr>
         <tr><th scope="row">Radio Browser directory and the stations you choose</th><td>Only if you use internet radio (Beta), when you browse or search stations</td><td>Your search terms go to the Radio Browser community directory. A station you play, or an address you type, is contacted directly from your PC.</td></tr>
         <tr><th scope="row">GitHub releases and Hugging Face</th><td>Only if you press the download button for the optional Speech Pack add-on in Settings</td><td>A normal download request for the whisper.cpp speech engine (from its GitHub release) and a speech model (from Hugging Face). Making the subtitles then runs on your own PC.</td></tr>
@@ -173,5 +173,5 @@
 </div>
 </main>
 
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.40 (build 41)</strong><time data-beebo-release-date="android" datetime="2026-09-21T20:26:44Z">Built Sep 21, 2026, 4:26:44 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../home-theater.html">Home theater and big screen</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.59</strong><time data-beebo-release-date="windows" datetime="2026-09-22T13:57:01Z">Released Sep 22, 2026, 9:57:01 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.42 (build 43)</strong><time data-beebo-release-date="android" datetime="2026-09-22T14:42:08.248Z">Built Sep 22, 2026, 10:42:08 AM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../home-theater.html">Home theater and big screen</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=6"></script></body>
 </html>

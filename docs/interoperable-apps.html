@@ -89,7 +89,7 @@
       "@type": "HowToStep",
       "position": 4,
       "name": "Sign in with your Beebo login",
-      "text": "Use your own Beebo username and password. Some apps also offer Quick Connect, which shows a code that you approve from another signed-in app. A person you approve with Quick Connect gets exactly the access that person has. Your Movies, TV Shows, Music and Collections, but only the ones that are not empty.",
+      "text": "Use your own Beebo username and password. Some apps also offer Quick Connect, which shows a code that you approve from another signed-in app. Verify which profile and permissions are being approved before accepting a Quick Connect request. Your Movies, TV Shows, Music and Collections, but only the ones that are not empty.",
       "url": "https://beeboentertainment.com/docs/interoperable-apps.html#step-4"
     }
   ]
@@ -104,16 +104,16 @@
   <div class="page-hero">
     <div class="em" aria-hidden="true">🧩</div>
     <h1>compatible third-party apps with Beebo (beta)</h1>
-    <p class="lead">Beebo can speak enough of the compatible client protocol for compatible third-party apps to browse and play your library. It is a beta in Windows 0.1.58, it is off until you turn it on, and it has not been tried with a real compatible third-party app yet.</p>
+    <p class="lead">Beebo can speak enough of the compatible client protocol for compatible third-party apps to browse and play your library. This guide records the compatibility preview introduced in Windows 0.1.58. It is off until you turn it on; a current real-client result has not been established in this review.</p>
   </div>
 
   <div class="callout">
-    <p><span class="tag live">Available now — Beta (Windows 0.1.58)</span> <strong>Status:</strong> This mode is in Beebo for Windows 0.1.58, off by default. It is covered by automated tests, including a check of its answers against the official compatible client API description and SDK. It has <strong>not</strong> been tried with any real compatible third-party app, and testing it with real apps has not started. Beebo is not third-party, and is not affiliated with or endorsed by the third-party project.</p>
+    <p><span class="tag dev">Compatibility preview · off by default</span> <strong>Status:</strong> This mode is in Beebo for Windows 0.1.58, off by default. It is covered by automated tests, including a check of its answers against the official compatible client API description and SDK. It has <strong>not</strong> been tried with any real compatible third-party app, and testing it with real apps has not started. Compatibility mode is independently implemented by Beebo. It is not an endorsement or certification from another app’s developer.</p>
   </div>
-  <nav class="guide-nav" aria-label="On this page"><a href="#what">What it is</a><a href="#steps">Turn it on</a><a href="#apps">Which apps</a><a href="#limits">What is not supported</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
+  <p class="fineprint"><strong>Evidence update, September 23, 2026:</strong> the protocol-level checks described below are historical documentation, not a new full-client test. <a href="../release-evidence.html">Read current release evidence</a>.</p><nav class="guide-nav" aria-label="On this page"><a href="#what">What it is</a><a href="#steps">Turn it on</a><a href="#apps">Which apps</a><a href="#limits">What is not supported</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
 
   <h2 id="what">What it is</h2>
-  <p>Many free apps for TVs, phones and computers can connect to a compatible media server. This mode lets those apps connect to your Beebo PC instead. <strong>Beebo does the work</strong>: your library, sign-ins and settings all stay in Beebo, and the apps just ask for lists and video. People sign in with their own Beebo username and password, and every parental control, restricted profile and private-history setting still applies exactly as it does in the Beebo apps. Sign-in uses the same lockout protections as Beebo’s own.</p>
+  <p>Many free apps for TVs, phones and computers can connect to a compatible media server. This mode lets those apps connect to your Beebo PC instead. <strong>Beebo does the work</strong>: your library, sign-ins and settings all stay in Beebo, and the apps just ask for lists and video. The implementation routes sign-in and library access through Beebo’s authentication and permission checks. Real-client validation of restricted profiles, private history and sign-in remains required; do not treat protocol-format checks as proof of every access-control boundary.</p>
   <p>It is a separate, optional door into the same library, not a second library. Photos and private folders are not exposed to these apps.</p>
 
   <h2 id="steps">Step by step</h2>
@@ -138,37 +138,37 @@
     </li>
     <li id="step-4">
       <h3>Sign in with your Beebo login</h3>
-      <p>Use your own Beebo username and password. Some apps also offer <strong>Quick Connect</strong>, which shows a code that you approve from another signed-in app. A person you approve with Quick Connect gets exactly the access that person has.</p>
+      <p>Use your own Beebo username and password. Some apps also offer <strong>Quick Connect</strong>, which shows a code that you approve from another signed-in app. Verify which profile and permissions are being approved before accepting a Quick Connect request.</p>
       <p><strong>What you’ll see:</strong> Your Movies, TV Shows, Music and Collections, but only the ones that are not empty.</p>
       
     </li>
   </ol>
 
-  <h2 id="apps">Which apps should work</h2>
+  <h2 id="apps">Client cases being evaluated</h2>
   <p>We checked Beebo&rsquo;s answers against the official compatible client API description and drove it with the official typed SDK in our automated tests. That proves the format of the answers, not any particular app. <strong>Nobody has run any of these apps against Beebo yet.</strong> Everything below comes from each app&rsquo;s public source or documentation, so read the middle column as what we <em>expect</em>, not what we have seen.</p>
   <div class="rl-table-wrap">
     <table class="rl-table">
       <thead><tr><th scope="col">App</th><th scope="col">Where</th><th scope="col">What we expect</th><th scope="col">Tried with real app?</th><th scope="col">Known limits</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Swiftfin</th><td>iPhone, iPad, Apple TV</td><td>Expected to work</td><td>No</td><td>Remote control from other apps is not offered.</td></tr>
-        <tr><th scope="row">Infuse</th><td>Apple TV, iPhone, iPad, Mac</td><td>Expected to work in Direct mode</td><td>No</td><td>Closed source, so we only know its documentation. Library mode with its sync plug-in is not expected to work.</td></tr>
-        <tr><th scope="row">Streamyfin</th><td>iPhone, Android</td><td>Expected to work</td><td>No</td><td>Creating playlists from the app is refused. Live library-changed nudges are not sent.</td></tr>
-        <tr><th scope="row">Gelly</th><td>Linux</td><td>Expected to work</td><td>No</td><td>Creating playlists is refused.</td></tr>
-        <tr><th scope="row">third-party for Android TV</th><td>Android TV, Fire TV</td><td>Partial</td><td>No</td><td>Its setup may refuse a server whose product name is not third-party&rsquo;s. Beebo reports its own name.</td></tr>
-        <tr><th scope="row">Findroid</th><td>Android</td><td>Partial</td><td>No</td><td>The same product-name check. Files that cannot be played directly have no fallback.</td></tr>
-        <tr><th scope="row">third-party Web</th><td>Browsers</td><td>Partial</td><td>No</td><td>Beebo does not host that web app; it would have to be hosted elsewhere and pointed at Beebo.</td></tr>
-        <tr><th scope="row">JellyCon</th><td>Kodi</td><td>Partial</td><td>No</td><td>Converted playback uses the add-on&rsquo;s own URL, and its width limits are ignored.</td></tr>
-        <tr><th scope="row">Finamp</th><td>iPhone, Android (music)</td><td>Partial</td><td>No</td><td>Playing your music files directly is expected to work. Its converted-audio path is missing.</td></tr>
-        <tr><th scope="row">Home Assistant integration</th><td>Home automation</td><td>Partial</td><td>No</td><td>It can show what is playing but cannot control playback.</td></tr>
-        <tr><th scope="row">third-party for Kodi (sync add-on)</th><td>Kodi</td><td>Not expected to work</td><td>No</td><td>It needs a server plug-in that Beebo does not have.</td></tr>
+        <tr><th scope="row">Compatible client 1</th><td>iPhone, iPad, Apple TV</td><td>Expected to work</td><td>No</td><td>Remote control from other apps is not offered.</td></tr>
+        <tr><th scope="row">Compatible client 2</th><td>Apple TV, iPhone, iPad, Mac</td><td>Expected to work in Direct mode</td><td>No</td><td>Closed source, so we only know its documentation. Library mode with its sync plug-in is not expected to work.</td></tr>
+        <tr><th scope="row">Compatible client 3</th><td>iPhone, Android</td><td>Expected to work</td><td>No</td><td>Creating playlists from the app is refused. Live library-changed nudges are not sent.</td></tr>
+        <tr><th scope="row">Compatible client 4</th><td>Linux</td><td>Expected to work</td><td>No</td><td>Creating playlists is refused.</td></tr>
+        <tr><th scope="row">Compatible TV client 5</th><td>Android TV, Fire TV</td><td>Partial</td><td>No</td><td>Its setup may refuse a server whose reported product name does not match the one it expects. Beebo reports its own name.</td></tr>
+        <tr><th scope="row">Compatible client 6</th><td>Android</td><td>Partial</td><td>No</td><td>The same product-name check. Files that cannot be played directly have no fallback.</td></tr>
+        <tr><th scope="row">Compatible browser client 7</th><td>Browsers</td><td>Partial</td><td>No</td><td>Beebo does not host that web app; it would have to be hosted elsewhere and pointed at Beebo.</td></tr>
+        <tr><th scope="row">Compatible add-on 8</th><td>an external media-center app</td><td>Partial</td><td>No</td><td>Converted playback uses the add-on&rsquo;s own URL, and its width limits are ignored.</td></tr>
+        <tr><th scope="row">Compatible music client 9</th><td>iPhone, Android (music)</td><td>Partial</td><td>No</td><td>Playing your music files directly is expected to work. Its converted-audio path is missing.</td></tr>
+        <tr><th scope="row">Home-automation integration</th><td>Home automation</td><td>Partial</td><td>No</td><td>It can show what is playing but cannot control playback.</td></tr>
+        <tr><th scope="row">Library-sync add-on 10</th><td>an external media-center app</td><td>Not expected to work</td><td>No</td><td>It needs a server plug-in that Beebo does not have.</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="fineprint">&ldquo;Expected to work&rdquo; means the calls the app makes are implemented and checked at protocol level. &ldquo;Partial&rdquo; means it should work with the stated limit. &ldquo;Not expected to work&rdquo; means a needed piece is missing. <strong>Infuse</strong> is mentioned for its Direct mode only. We have not confirmed that an app on another network can use the &ldquo;From anywhere&rdquo; address in Settings, so treat your home network as the case to try first. compatible third-party apps on Samsung, LG, Roku and Xbox are not in this table because we have looked at none of them. Names are trademarks of their owners and are used only to say what we expect to work.</p>
+  <p class="fineprint">&ldquo;Expected to work&rdquo; means the calls the app makes are implemented and checked at protocol level. &ldquo;Partial&rdquo; means it should work with the stated limit. &ldquo;Not expected to work&rdquo; means a needed piece is missing. <strong>Compatible client 2</strong> is mentioned for its Direct mode only. We have not confirmed that an app on another network can use the &ldquo;From anywhere&rdquo; address in Settings, so treat your home network as the case to try first. compatible third-party apps on Samsung, LG, Roku and Xbox are not in this table because we have looked at none of them. Client numbers are neutral labels for the documented compatibility cases; they are not the Company A/B/C labels in the comparison chart. Tell the tester team the actual app and version privately so a result can be attached to the correct case.</p>
 
   <h2 id="limits">What is not supported</h2>
   <ul class="plain">
-    <li>Live TV, plug-ins, SyncPlay and remote control between devices, and the WebSocket that live “now playing” screens rely on. Apps that need them show them as unavailable.</li>
+    <li>Live TV, plug-ins, group-playback synchronization and remote control between devices, and the WebSocket that live “now playing” screens rely on. Apps that need them show them as unavailable.</li>
     <li>Lyrics, and chapter pictures. Seek-preview thumbnails, chapter names and intro and credit markers are offered.</li>
     <li>Two-factor accounts cannot sign in with their normal password from these apps. The owner makes an app password for them in Settings.</li>
     <li>Auto-discovery: apps that scan the network for servers will not find Beebo by themselves, so type its address.</li>
@@ -180,7 +180,7 @@
   <h2 id="trouble">If something goes wrong</h2>
   <div class="faq">
     <details><summary>The app says this is not a compatible media server</summary><p>The mode is off, or you typed an address the app cannot reach. When it is off, Beebo answers those requests with a plain “not found” so apps report an unknown server. Tick the box in Settings and try again.</p></details>
-    <details><summary>An app I use does not work at all</summary><p>That is what “beta” means. Please tell us which app and version at <a href="mailto:testers@beeboentertainment.com?subject=third-party%20app%20with%20Beebo">testers@beeboentertainment.com</a>, and what it showed.</p></details>
+    <details><summary>An app I use does not work at all</summary><p>Compatibility is still being verified. Please tell us which app and version at <a href="mailto:testers@beeboentertainment.com?subject=third-party%20app%20with%20Beebo">testers@beeboentertainment.com</a>, and what it showed.</p></details>
     <details><summary>Can I see the whole library from a restricted profile?</summary><p>No. The mode asks Beebo’s own library for each request as that person, so blocked titles, bedtime and daily limits still apply.</p></details>
   </div>
 
@@ -197,5 +197,5 @@
 </div>
 </main>
 
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.58</strong><time data-beebo-release-date="windows" datetime="2026-09-21T18:09:39Z">Released Sep 21, 2026, 2:09:39 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.40 (build 41)</strong><time data-beebo-release-date="android" datetime="2026-09-21T20:26:44Z">Built Sep 21, 2026, 4:26:44 PM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../home-theater.html">Home theater and big screen</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.59</strong><time data-beebo-release-date="windows" datetime="2026-09-22T13:57:01Z">Released Sep 22, 2026, 9:57:01 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.42 (build 43)</strong><time data-beebo-release-date="android" datetime="2026-09-22T14:42:08.248Z">Built Sep 22, 2026, 10:42:08 AM Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../home-theater.html">Home theater and big screen</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../index.html#pricing">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=6"></script></body>
 </html>

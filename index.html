@@ -29,8 +29,10 @@ body{background:var(--cream);color:var(--ink)}
 .downloads{border-top:1px solid var(--line);padding:40px 0}.section-kicker{text-align:center;max-width:650px;margin:0 auto 23px}.section-kicker h2{font:800 clamp(1.85rem,3vw,2.65rem)/1 'Baloo 2',sans-serif;margin:5px 0 10px}.section-kicker p{color:var(--muted);margin:0;line-height:1.55}.download-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.download-card{border:1px solid var(--line);background:var(--card);border-radius:18px;padding:25px;box-shadow:0 9px 24px rgba(74,53,18,.07);display:flex;flex-direction:column;gap:11px}.download-card .platform{font-size:.75rem;letter-spacing:.14em;font-weight:800;color:var(--gold-dark)}.download-card h3{font:800 1.65rem/1 'Baloo 2',sans-serif;margin:0}.download-card p{color:var(--muted);line-height:1.45;margin:0;min-height:45px}.release{font-size:.86rem;color:var(--muted);margin-top:auto}.download-card .primary{align-self:flex-start;margin-top:8px}.download-card.coming{background:#f5efe4}.download-card.coming .primary{background:var(--blue)}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:30px 0 52px}.simple-feature{background:rgba(255,253,249,.72);border:1px solid var(--line);border-radius:16px;padding:22px}.simple-feature .mark{font-size:1.6rem}.simple-feature h3{font:800 1.28rem 'Baloo 2',sans-serif;margin:8px 0 5px}.simple-feature p{color:var(--muted);line-height:1.55;margin:0}
 .technical-panel{border:1px solid #cbbd9d;background:#f2eadc;border-radius:20px;padding:34px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}.technical-panel h2{font:800 2rem/1 'Baloo 2',sans-serif;margin:0 0 8px}.technical-panel p{color:var(--muted);max-width:64ch;margin:0;line-height:1.55}.simple-footer{max-width:1120px;margin:auto;padding:25px 22px 45px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}.simple-footer a{color:inherit}
-@media(max-width:760px){.simple-header{padding:15px 18px}.simple-nav a:not(.technical){display:none}.intro{grid-template-columns:1fr;padding-top:35px;gap:25px}.intro-art{order:-1}.download-grid,.three{grid-template-columns:1fr}.technical-panel{grid-template-columns:1fr;padding:26px}.technical-panel .secondary{width:max-content}.simple-main{padding:18px 18px 56px}}
-  .simple-skip{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}.simple-skip:focus{left:14px;top:14px;width:auto;height:auto;padding:10px 14px;border-radius:8px;background:#fff;color:var(--ink);z-index:30;box-shadow:0 2px 10px rgba(0,0,0,.18)}\n</style>
+@media(max-width:760px){.simple-main{display:flex;flex-direction:column}.simple-main>.intro{order:0}.simple-main>.downloads{order:1}.simple-main>.three,.simple-main>.technical-panel{order:2}.intro-art{display:none}.simple-header{padding:15px 18px}.simple-nav a:not(.technical){display:none}.intro{grid-template-columns:1fr;padding-top:35px;gap:25px}.intro-art{order:-1}.download-grid,.three{grid-template-columns:1fr}.technical-panel{grid-template-columns:1fr;padding:26px}.technical-panel .secondary{width:max-content}.simple-main{padding:18px 18px 56px}}
+  .simple-skip{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}.simple-skip:focus{left:14px;top:14px;width:auto;height:auto;padding:10px 14px;border-radius:8px;background:#fff;color:var(--ink);z-index:30;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.intro{padding:25px 0 28px;gap:24px}.intro h1{font-size:clamp(2.2rem,4vw,3.35rem)}.intro p{font-size:1.02rem;line-height:1.55}.intro-art img{aspect-ratio:1.55}.simple-actions{gap:8px;margin-top:18px}.primary,.secondary{min-height:42px;padding:0 13px;font-size:.9rem}.downloads{padding:25px 0}.download-card{padding:20px}.simple-header{scroll-margin-top:80px}@media(max-width:760px){.intro{padding:15px 0 24px}.intro h1{font-size:2.35rem}.simple-actions{display:grid;grid-template-columns:1fr 1fr}.simple-actions a{font-size:.8rem;padding:0 8px}.simple-main>span{height:0}.simple-main>.downloads{order:1}}
+</style>
 </head>
 <body>
 <a class="simple-skip" href="#main">Skip to content</a>
@@ -38,43 +40,46 @@ body{background:var(--cream);color:var(--ink)}
   <a class="simple-brand" href="index.html"><img src="assets/beebo-badge-96.png" alt=""><span>Beebo<small>ENTERTAINMENT</small></span></a>
   <nav class="simple-nav" aria-label="Main navigation"><a href="what-beebo-can-do.html">All features</a><a href="help.html">Help</a><a class="technical" href="beebo-vs-other-apps.html">Technical details &amp; comparison</a></nav>
 </header>
-<main id="main" class="simple-main">
-  <section class="intro">
+<main id="main" class="simple-main"><span id="what"></span>
+  <section class="intro" id="features">
     <div>
       <p class="eyebrow">YOUR HOME LIBRARY, MADE SIMPLE</p>
       <h1>Your movies.<br>Your people.<br>Your place.</h1>
-      <p>Beebo organizes the movies, shows, photos and music you already have on your Windows computer, then brings them to the screens you use every day.</p>
-      <div class="simple-actions"><a class="primary" href="#download">Download Beebo</a><a class="secondary" href="what-beebo-can-do.html">See every feature</a><a class="secondary" href="try-layouts.html">Try the layouts</a><a class="secondary" href="how-beebo-streams.html">How streaming works</a></div>
+      <p>Your own movies, shows, music and photos, together with family games and offline trips. Start with your computer, then connect your phone. Features and testing status vary by platform.</p>
+      <div class="simple-actions"><a class="primary" href="#download">Choose your download</a><a class="secondary" href="what-beebo-can-do.html">See every feature</a><a class="secondary" href="try-layouts.html">Try the layouts</a><a class="secondary" href="how-beebo-streams.html">How streaming works</a></div>
     </div>
     <figure class="intro-art"><img src="assets/family-home.webp" alt="A family enjoying a relaxed movie evening at home"></figure>
   </section>
 
-  <section id="download" class="downloads" aria-labelledby="download-title">
-    <div class="section-kicker"><p class="eyebrow">GET STARTED</p><h2 id="download-title">Choose your screen</h2><p>Start with the Windows app that looks after your library, then add Beebo to your Android phone.</p></div>
+  <span id="get-app"></span><section id="download" class="downloads" aria-labelledby="download-title">
+    <div class="section-kicker"><p class="eyebrow">GET STARTED</p><h2 id="download-title">Choose your screen</h2><p>Start with the Windows library app, then add the Android phone app. These are current test downloads; check the feature and device testing notes before installing.</p></div>
     <div class="download-grid">
-      <article class="download-card"><span class="platform">WINDOWS</span><h3>Beebo for Windows <span data-beebo-release-version="windows">0.1.59</span></h3><p>Set up your library, invite your household and choose the folders you want Beebo to use.</p><time class="release" data-beebo-release-date="windows" datetime="2026-09-22T13:57:01Z">Released Sep 22, 2026, 9:57:01 AM Eastern</time><a class="primary" data-beebo-download="windows" href="https://github.com/SWGfan/beebotv/releases/download/Beebo-0.1.59/BeeboEntertainmentSetup.exe">Download for Windows</a></article>
-      <article class="download-card"><span class="platform">ANDROID</span><h3>Beebo for Android <span data-beebo-release-version="android">1.42 (build 43)</span></h3><p>Browse, watch, download for trips and enjoy your library on the go.</p><time class="release" data-beebo-release-date="android" datetime="2026-09-22T14:12:28Z">Built Sep 22, 2026, 10:12:28 AM Eastern</time><a class="primary" data-beebo-download="android" href="/downloads/BeeboEntertainment.apk">Download for Android</a></article>
+      <article class="download-card"><span class="platform">WINDOWS</span><h3>Beebo for Windows <span data-beebo-release-version="windows">0.1.59</span></h3><p>Set up your library, invite your household and choose the folders you want Beebo to use.</p><time data-beebo-release-date="windows" datetime="2026-09-22T13:57:01Z">Released Sep 22, 2026, 9:57:01 AM Eastern</time><a class="primary" data-beebo-download="windows" href="https://github.com/SWGfan/beebotv/releases/download/Beebo-0.1.59/BeeboEntertainmentSetup.exe">Download for Windows</a></article>
+      <article class="download-card"><span class="platform">ANDROID</span><h3>Beebo for Android <span data-beebo-release-version="android">1.42 (build 43)</span></h3><p>Browse, watch, download for trips and enjoy your library on the go.</p><time data-beebo-release-date="android" datetime="2026-09-22T14:42:08.248Z">Built Sep 22, 2026, 10:42:08 AM Eastern</time><a class="primary" data-beebo-download="android" href="/downloads/BeeboEntertainment.apk">Download for Android</a></article>
     </div>
-  </section>
+  <p style="text-align:center;margin:20px 0 0"><a href="platforms.html">Other platforms and tester availability</a> · <a href="release-evidence.html">What has been checked?</a></p></section>
 
   <section class="three" aria-label="A simple introduction to Beebo">
-    <article class="simple-feature"><div class="mark" aria-hidden="true">1</div><h3>Choose your folders</h3><p>You decide what Beebo sees. Your personal media stays on your own computer.</p></article>
+    <article class="simple-feature"><div class="mark" aria-hidden="true">1</div><h3>Choose your folders</h3><p>You decide what Beebo sees. Your source library lives in the folders you choose. Downloads and shared files go to the devices you select.</p></article>
     <article class="simple-feature"><div class="mark" aria-hidden="true">2</div><h3>Make it easy to find</h3><p>Browse your library, pick up where you left off, and share the right access with your household.</p></article>
     <article class="simple-feature"><div class="mark" aria-hidden="true">3</div><h3>Enjoy it your way</h3><p>Watch at home, download before a trip, or use the features that suit your family.</p></article>
   </section>
 
-  <section class="three" aria-label="What Beebo is building next">
-    <article class="simple-feature"><div class="mark" aria-hidden="true">*</div><h3>Keep your library healthy</h3><p>Beebo is improving tools that help you spot unavailable files, missing episodes, duplicate copies and folders needing attention.</p></article>
-    <article class="simple-feature"><div class="mark" aria-hidden="true">+</div><h3>Pack, then share offline</h3><p>Guests can already join Campsite Mode, play games and watch prepared downloads. Host-led photo and video sharing is next.</p></article>
-    <article class="simple-feature"><div class="mark" aria-hidden="true">o</div><h3>Make every screen easier</h3><p>Large controls, captions, simpler navigation and family game-night tools are being refined for more ways to enjoy Beebo.</p></article>
+  <section class="three" id="offgrid" aria-label="More ways to enjoy Beebo">
+    <article class="simple-feature"><h3>Your whole collection</h3><p>Browse movies, shows, music and photos. See missing episodes and sequels, explore cast credits, and distinguish files you own from titles you may want to find.</p><p><a href="what-beebo-can-do.html">Explore the feature guide →</a></p></article>
+    <article class="simple-feature"><h3>Pack, then share offline</h3><p>Finish downloading to a supported phone before you leave. Your computer can then be off. Camp Mode lets nearby guests join the host’s hotspot and browser page to play games or watch prepared downloads without internet access.</p><p><a href="docs/campsite-mode.html">How guests join →</a></p></article>
+    <article class="simple-feature"><h3>Make it yours</h3><p>Explore desktop layout and theme choices, sidebar preferences and poster sizes. Our interactive website preview uses sample media; it is a preview, not a running home server.</p><p><a href="try-layouts.html">Try the layout preview →</a> · <a href="games.html">Explore all 46 games →</a></p></article>
+  </section>
+  <section id="pricing" class="technical-panel" aria-labelledby="pricing-title" style="margin-bottom:22px">
+    <div><p class="eyebrow">FREE SOFTWARE. OPTIONAL MANAGED SERVICES.</p><h2 id="pricing-title">Understand what you pay for.</h2><p>Local playback has no Beebo software fee. Owner-operated remote access and Beebo-managed relay service are different options. See the planned managed-service prices, limits and activation status before choosing a plan.</p></div><a class="secondary" href="subscribe.html">Free &amp; paid options</a>
   </section>
   <section class="technical-panel" aria-labelledby="technical-title">
-    <div><p class="eyebrow">WANT THE FULL PICTURE?</p><h2 id="technical-title">Technical details, features and an honest comparison.</h2><p>See what Beebo offers today, where it is still growing, and how it compares with three established media-server services. The public comparison uses anonymous service labels and explains both strengths and gaps.</p></div>
-    <div class="simple-actions"><a class="secondary" href="next-features.html">What's next</a><a class="secondary" href="beebo-vs-other-apps.html">Explore the details</a></div>
+    <div><p class="eyebrow">WANT THE FULL PICTURE?</p><h2 id="technical-title">Technical details, features and an honest comparison.</h2><p>See what Beebo offers today, where it is still growing, and how it compares with three established media-server services. The public comparison uses Company A, B and C labels and explains both strengths and gaps.</p></div>
+    <div class="simple-actions"><a class="secondary" href="release-evidence.html">Build &amp; testing status</a><a class="secondary" href="beebo-vs-other-apps.html">Explore the details</a></div>
   </section>
 </main>
-<footer class="simple-footer"><span>© 2026 Beebo Entertainment</span><nav><a href="what-beebo-can-do.html">All features</a> · <a href="updates.html">What’s new</a> · <a href="movie-privacy.html">Privacy</a> · <a href="terms.html">Terms</a></nav><p data-beebo-update-credit style="flex-basis:100%;margin:6px 0 0;font-size:.8rem;line-height:1.6">Website update prepared with ChatGPT — GPT-6 Astra (Ultra reasoning).<br>Updated <time datetime="2026-09-23T08:12:02Z">Sep 23, 2026, 4:12 AM Eastern</time>.</p></footer>
-<script src="polish.js?v=5"></script>
+<footer class="simple-footer"><span>© 2026 Beebo Entertainment</span><nav><a href="what-beebo-can-do.html">All features</a> · <a href="updates.html">What’s new</a> · <a href="movie-privacy.html">Privacy</a> · <a href="terms.html">Terms</a></nav><p data-beebo-update-credit style="flex-basis:100%;margin:6px 0 0;font-size:.8rem;line-height:1.6">Website update prepared with ChatGPT — GPT-6 Astra (Ultra reasoning).<br>Updated <time datetime="2026-09-23T08:51:45Z">Sep 23, 2026, 4:51 AM Eastern</time>.</p></footer>
+<script src="polish.js?v=6"></script>
 </body>
 </html>
 

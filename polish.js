@@ -22,7 +22,7 @@
       const url = new URL(raw, location.href);
       const extension = platform === 'android' ? '.apk' : '.exe';
       const ownHost = url.origin === location.origin && url.pathname.startsWith('/downloads/');
-      const githubRelease = platform === 'windows' && url.origin === 'https://github.com' && url.pathname.startsWith('/SWGfan/beebotv/releases/download/');
+      const githubRelease = platform === 'windows' && url.origin === 'https://github.com' && ['/SWGfan/beebotv/releases/download/', '/beeboentertainment/beebotv/releases/download/'].some(prefix => url.pathname.startsWith(prefix));
       if (!(ownHost || githubRelease) || !url.pathname.endsWith(extension) || url.username || url.password) return;
       document.querySelectorAll('[data-beebo-download="'+platform+'"]').forEach(link => { link.href = url.href; });
     } catch (_) { /* Keep the verified embedded download link if metadata is invalid. */ }
@@ -50,7 +50,7 @@
   button.setAttribute('aria-label', 'Back to top');
   button.title = 'Back to top';
   button.innerHTML = '<span aria-hidden="true">↑</span><span class="beebo-back-to-top-label">Top</span>';
-  button.addEventListener('click', () => top.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  button.addEventListener('click', () => top.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }));
   const update = () => button.classList.toggle('is-visible', window.scrollY > 420);
   window.addEventListener('scroll', update, { passive: true });
   update();
@@ -66,8 +66,8 @@
   credit.style.cssText = "flex-basis:100%;margin:6px 0 0;font-size:.8rem;line-height:1.6";
   credit.append(document.createTextNode("Website update prepared with ChatGPT — GPT-6 Astra (Ultra reasoning)."), document.createElement('br'), document.createTextNode('Updated '));
   const timestamp = document.createElement('time');
-  timestamp.dateTime = "2026-09-23T08:12:02Z";
-  timestamp.textContent = "Sep 23, 2026, 4:12 AM Eastern";
+  timestamp.dateTime = "2026-09-23T08:51:45Z";
+  timestamp.textContent = "Sep 23, 2026, 4:51 AM Eastern";
   credit.append(timestamp, document.createTextNode('.'));
   footer.append(credit);
 })();
