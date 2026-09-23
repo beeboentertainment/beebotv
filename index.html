@@ -37,11 +37,11 @@
       <div class="hero-stage reveal" aria-label="Beebo interface preview">
         <div class="stage-glow"></div>
         <div class="player-shell">
-          <img src="assets/beebo-dark-demo/cloudberry-fanart.jpg" alt="Original Beebo and Appa Cloudberry Cove artwork" class="player-art">
+          <video id="mascotVideo" class="player-art" poster="assets/beebo-dark-demo/beebo-the-mascot-poster.png" playsinline preload="metadata" aria-label="Beebo mascot real and cartoon split-screen showcase"><source src="assets/beebo-dark-demo/beebo-mascot-real-cartoon.mp4" type="video/mp4"></video>
           <div class="player-shade"></div>
-          <div class="player-top"><span class="live-dot"></span><span>NOW IN YOUR LIBRARY</span><button aria-label="Add to list" type="button">＋</button></div>
-          <div class="player-copy"><p>ORIGINAL DEMO LIBRARY</p><h2>Cloudberry<br>Cove</h2><div class="player-meta"><span>1h 34m</span><span>Family</span><span>Demo source</span></div></div>
-          <div class="player-controls"><button aria-label="Play demo" class="round-play" type="button">▶</button><span class="progress"><i></i></span><span>01:12</span><button aria-label="More player options" type="button">•••</button></div>
+          <div class="player-top"><span class="live-dot"></span><span>BEEBO MASCOT / REAL + CARTOON</span><button id="mascotRestart" aria-label="Restart mascot video" type="button">↺</button></div>
+          <div class="player-copy"><p>ONE CLIP / TWO TREATMENTS</p><h2>Beebo<br>the Mascot</h2><div class="player-meta"><span>23 seconds</span><span>Original footage</span><span>Cartoon treatment</span></div></div>
+          <div class="player-controls"><button id="mascotPlay" aria-label="Play mascot video" class="round-play" type="button">▶</button><span class="progress"><i id="mascotProgress"></i></span><span id="mascotTime">0:00</span><button id="mascotMute" aria-label="Mute mascot video" type="button">◖</button></div>
         </div>
         <div class="poster-rack" aria-label="Original demo media"><img src="assets/beebo-dark-demo/moon-bridge-poster.jpg" alt="Moon Bridge Mystery original demo poster"><img src="assets/beebo-dark-demo/lantern-festival-poster.jpg" alt="The Lantern Festival original demo poster"><img src="assets/beebo-dark-demo/trailkeepers-poster.jpg" alt="Little Trailkeepers original demo poster"></div>
         <div class="floating-note"><span class="note-icon">✓</span><span><b>Ready when you are</b><small>Start local. Choose what comes next.</small></span></div>
@@ -135,6 +135,27 @@
     });
   }));
 
+  const mascotVideo = document.querySelector('#mascotVideo');
+  const mascotPlay = document.querySelector('#mascotPlay');
+  const mascotRestart = document.querySelector('#mascotRestart');
+  const mascotMute = document.querySelector('#mascotMute');
+  const mascotProgress = document.querySelector('#mascotProgress');
+  const mascotTime = document.querySelector('#mascotTime');
+  const formatTime = (seconds) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+  const syncMascotControls = () => {
+    if (!mascotVideo || !mascotPlay) return;
+    mascotPlay.textContent = mascotVideo.paused ? '▶' : '❚❚';
+    mascotPlay.setAttribute('aria-label', mascotVideo.paused ? 'Play mascot video' : 'Pause mascot video');
+    if (mascotProgress && Number.isFinite(mascotVideo.duration) && mascotVideo.duration > 0) mascotProgress.style.width = `${(mascotVideo.currentTime / mascotVideo.duration) * 100}%`;
+    if (mascotTime) mascotTime.textContent = formatTime(mascotVideo.currentTime || 0);
+  };
+  mascotPlay?.addEventListener('click', async () => { try { if (mascotVideo.paused) await mascotVideo.play(); else mascotVideo.pause(); } catch (_) { showToast('Video playback could not start in this browser.'); } syncMascotControls(); });
+  mascotRestart?.addEventListener('click', () => { mascotVideo.currentTime = 0; mascotVideo.play().catch(() => {}); syncMascotControls(); });
+  mascotMute?.addEventListener('click', () => { mascotVideo.muted = !mascotVideo.muted; mascotMute.textContent = mascotVideo.muted ? '◌' : '◖'; mascotMute.setAttribute('aria-label', mascotVideo.muted ? 'Unmute mascot video' : 'Mute mascot video'); });
+  mascotVideo?.addEventListener('timeupdate', syncMascotControls);
+  mascotVideo?.addEventListener('play', syncMascotControls);
+  mascotVideo?.addEventListener('pause', syncMascotControls);
+  mascotVideo?.addEventListener('ended', syncMascotControls);
   const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
     if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
   }), { threshold: 0.12 });
