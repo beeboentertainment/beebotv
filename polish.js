@@ -56,3 +56,18 @@
   update();
   document.body.append(button);
 })();
+
+/* Dated editorial credit. This is not an app release or a testing certification. */
+(() => {
+  const footer = document.querySelector('body > footer') || document.querySelector('footer');
+  if (!footer || footer.querySelector('[data-beebo-update-credit]')) return;
+  const credit = document.createElement('p');
+  credit.setAttribute('data-beebo-update-credit', '');
+  credit.style.cssText = "flex-basis:100%;margin:6px 0 0;font-size:.8rem;line-height:1.6";
+  credit.append(document.createTextNode("Website update prepared with ChatGPT — GPT-6 Astra (Ultra reasoning)."), document.createElement('br'), document.createTextNode('Updated '));
+  const timestamp = document.createElement('time');
+  timestamp.dateTime = "2026-09-23T08:12:02Z";
+  timestamp.textContent = "Sep 23, 2026, 4:12 AM Eastern";
+  credit.append(timestamp, document.createTextNode('.'));
+  footer.append(credit);
+})();
