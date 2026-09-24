@@ -1,0 +1,48 @@
+/* Codec explanations, shared by the streaming guide and comparison page. */
+.codec-guide { scroll-margin-top: 110px; }
+.codec-guide .codec-summary { border: 1px solid #bcb9aa; border-left: 4px solid #80602c; background: #efeadf; padding: 22px 24px; margin: 20px 0; }
+.codec-guide .codec-summary p:last-child { margin-bottom: 0; }
+.codec-guide .codec-kicker { color: #665025; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.codec-guide .codec-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.codec-guide .codec-card { border: 1px solid #d5cfc1; background: #fffdf9; padding: 22px; }
+.codec-guide .codec-card h3 { margin: 0 0 10px; }
+.codec-guide .codec-card p { font-size: .95rem; }
+.codec-guide .codec-card p:last-child { margin-bottom: 0; }
+.codec-guide .codec-scroll { max-width: 100%; overflow-x: auto; border: 1px solid #d5cfc1; background: #fffdf9; margin: 20px 0; }
+.codec-guide .codec-scroll:focus-visible { outline: 3px solid #70572c; outline-offset: 4px; }
+.codec-guide .codec-table { width: 100%; min-width: 900px; border-collapse: collapse; font-size: .94rem; line-height: 1.6; }
+.codec-guide .codec-table caption { text-align: left; padding: 16px 18px; background: #ece5d6; color: #24251f; font-weight: 700; }
+.codec-guide .codec-table :is(th,td) { text-align: left; vertical-align: top; border-bottom: 1px solid #d5cfc1; padding: 16px 18px; }
+.codec-guide .codec-table thead th { background: #f0ece2; color: #24251f; font-weight: 700; }
+.codec-guide .codec-table tbody th { width: 20%; min-width: 155px; color: #24251f; }
+.codec-guide .codec-table td { width: 26.66%; color: #343931; }
+.codec-guide .codec-table tr:last-child>* { border-bottom: 0; }
+.codec-guide .codec-table td p { margin: 10px 0 0; }
+.codec-guide .codec-state { display: inline-block; padding: 3px 8px; border-radius: 2px; font-size: .8rem; font-weight: 700; line-height: 1.5; margin-bottom: 7px; }
+.codec-guide .codec-state.local { background: #d7eddd; color: #16452e; }
+.codec-guide .codec-state.pending { background: #e8e5dd; color: #43473f; }
+.codec-guide .codec-state.no { background: #f1e3df; color: #743d35; }
+.codec-guide .codec-state.fix { background: #f2d889; color: #493600; }
+.codec-guide .codec-free { color: #196240; font-weight: 700; }
+.codec-guide .codec-paid { color: #8b322c; font-weight: 700; }
+.codec-guide .codec-gap-table { min-width: 1120px; }
+.codec-guide .codec-gap-table :is(th,td) { width: 20%; }
+.codec-guide .codec-gap-table tbody th p { font-weight: 400; font-size: .86rem; margin: 10px 0 0; }
+.codec-guide .codec-evidence { font-size: .87rem; color: #535b52; border-top: 1px solid #d5cfc1; padding-top: 15px; }
+.codec-guide .codec-note { font-size: .92rem; color: #535b52; }
+.codec-guide .codec-definitions { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 12px 22px; }
+.codec-guide .codec-definitions dt { font-weight: 700; }
+.codec-guide .codec-definitions dd { margin: 0; }
+.codec-guide details { border: 1px solid #d5cfc1; background: #fffdf9; border-radius: 2px; margin: 14px 0; }
+.codec-guide summary { cursor: pointer; padding: 16px 20px; font-weight: 700; }
+.codec-guide details>div { padding: 0 20px 18px; }
+.codec-guide summary:focus-visible { outline: 3px solid #70572c; outline-offset: 3px; }
+.codec-guide .codec-sources { font-size: .9rem; }
+@media (max-width: 760px) {
+  .codec-guide .codec-grid { grid-template-columns: 1fr; }
+  .codec-guide .codec-summary { padding: 18px; }
+  .codec-guide .codec-definitions { grid-template-columns: 1fr; gap: 5px; }
+  .codec-guide .codec-definitions dd { margin-bottom: 13px; }
+  .codec-guide .codec-table { font-size: .9rem; }
+}
+@media print { .codec-guide .codec-scroll { overflow: visible; } .codec-guide .codec-table { min-width: 0; font-size: 9pt; } }
