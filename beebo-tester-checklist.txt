@@ -1,0 +1,74 @@
+BEEBO REAL-DEVICE TESTER CHECKLIST
+Updated September 25, 2026
+
+Thank you for helping Nick test Beebo. You do not need to be technical or test every feature. Start with the first session, then pick one assigned area. Honest failures and confusing steps are useful feedback.
+
+BEFORE YOU START
+- Use the exact build and installation link in your invitation. A website APK and a store test build may offer different features. Record both phone and desktop versions.
+- Use your own permitted sample media or the authorized demo library. Use disposable copies for transfers, deletion and account tests. Do not scan or move your entire library for a test.
+- Nick will confirm any required demo access or service entitlement. Do not buy a subscription or change router settings just to complete a checklist.
+- Never post passwords, account email addresses, IP addresses, recovery keys, payment details, private photos or unredacted logs in public chat. Report a privacy/security issue privately to Nick first.
+- If you have an official Android closed-test invitation, follow that opt-in link and remain enrolled for the full period. Joining Discord or downloading a website APK is not enrollment in that track. No rating or store review is required.
+
+YOUR TEST RECORD
+Tester nickname:
+Date / time zone:
+Phone or TV model / operating-system version:
+Beebo version / build / install source:
+Desktop version / operating system, if used:
+Connection: home Wi-Fi / other Wi-Fi / mobile data / offline:
+Test media: short description, format and duration (no private filenames needed):
+
+Use these results: PASS = observed expected behavior; FAIL = observed a problem; BLOCKED = cannot start because setup/access is missing; NOT RUN = not attempted; NOT APPLICABLE = absent from this assigned platform/build. A completed checklist item is not automatically a pass. Include the test ID in your report.
+
+FIRST SESSION - ABOUT 20 MINUTES
+[ ] B01 Install and open. Install the invited build and launch it. Expected: no crash or endless loading; first-run instructions are understandable. Record any permission request you do not understand.
+[ ] B02 Sign in or use the offered local route. Follow the actual screen, then close/reopen the app. Expected: the correct account/library returns. Do not assume every platform has a no-login option.
+[ ] B03 Connect at home. Connect the phone to the assigned desktop/library on the same network, using the offered QR/manual method. Expected: the chosen library loads and any displayed route agrees with the test setup. Do not publish the QR code or address.
+[ ] B04 Browse and search. Open a movie and a TV series, search a known title, then search for something absent. Expected: correct results, readable episode availability and a clear no-results message. A missing poster alone must not mean a missing file.
+[ ] B05 Watch a sample. Play for about five minutes; pause, resume, seek forward/back and return to the title. Expected: sound and picture stay in sync, controls work and playback does not start just from highlighting a poster.
+[ ] B06 Tracks and resume. Change an available subtitle/audio track, rotate the phone, leave and reopen the title. Expected: readable controls and sensible resume behavior. If no alternate tracks exist, record that rather than a failure.
+[ ] B07 A brief interruption. During permitted test playback, briefly disconnect your phone's Wi-Fi, then restore it. Expected: a truthful interruption/recovery message or continued buffered playback; no crash, lost library or false claim that the file was deleted. Avoid accidental mobile-data use if you do not want it.
+[ ] B08 Find your way around. Open Settings/Appearance, use Back, choose an existing theme and larger text, then restart. Expected: labels remain readable, buttons reachable and choices retained. Only test Cinema Library if it is included in your installed build; website mockups do not count.
+
+PICK AN ADDITIONAL AREA - ONLY WHEN YOUR BUILD AND EQUIPMENT SUPPORT IT
+[ ] R01 Away from home: use another Wi-Fi network or mobile data with consent. Test the assigned direct route, Beebo Relay, and your own compatible relay separately. Record the route the app reports and whether playback starts and stays usable. Do not label another Wi-Fi network as a home connection or infer routing from location alone. Nick/engineering should corroborate route reporting with diagnostics.
+[ ] R02 Connection recovery: switch the permitted remote network, reconnect and repeat pause/seek. Record buffering and whether playback resumes. Do not change router/firewall settings without the owner's instructions.
+[ ] D01 Downloads: download one short sample on the phone. Check Preparing versus Downloading, progress, pause/resume and a permitted retry. Expected: incomplete files are not labelled ready or playable.
+[ ] D02 Offline: after completion, enable airplane mode with Wi-Fi off and play the downloaded sample. Expected: this completed local copy plays without the computer. Restore connectivity afterwards. Record any feature that still needs a connection.
+[ ] D03 Storage and consent: check Wi-Fi-only behavior and any mobile-data prompt. Delete only the disposable downloaded copy after confirmation. Expected: no unintended original deletion; cancelling unfinished season work retains completed episodes.
+[ ] C01 Campsite host: on a supported phone with completed sample downloads, start Campsite Mode and invite a second device. Follow Wi-Fi/hotspot step first, then theatre/browser join step. Expected: a guest joins using the offered route and only intended shared content is visible.
+[ ] C02 Camp without internet: after joining the local hotspot/Wi-Fi, turn off cellular internet while keeping that local connection active. Play the shared download and one offered game. Expected: the local activities being tested continue without internet. Do not turn off the local network needed by guests.
+[ ] C03 Camp sharing: use shared sample photos/videos and next/previous where offered. Confirm guests follow the intended view. Check the difference between connected guests and current viewers, and that the browser participant with playback control controls the video.
+[ ] C04 Camp recovery: disconnect/rejoin one guest, then end the host session. Expected: clear reconnect/ended state and no unintended continued access. Record guest count and browsers, without private names.
+[ ] G01 Each assigned game: record its exact name/build, solo/bot/multiplayer mode and player count. Test instructions, start, valid/invalid turn, score, end, rematch, disconnect/rejoin and exit. Repeat separately for each available mode; one game pass does not validate every game. No purchases, prizes or public tournaments are needed for this test.
+[ ] P01 Profiles and privacy: with Nick's disposable test profiles, verify child restrictions, restricted/private folders and any adult history-privacy option. Expected: a restricted profile cannot see protected titles/files/history or change owner settings. Stop and report privately if it can. Do not use real private files.
+[ ] P02 Photos and backup: use a few disposable images. Check view permission, backup destination and viewer navigation. Interrupt a sample transfer and confirm its result. Expected: view access does not grant backup/admin access, and original removal happens only after an explicit permitted action.
+[ ] M01 Music: test queue, pause/next/stop, background return and sleep timer where present. Desktop mixes and phone album/song browsing may differ; record the actual route. Expected: current-track state and error messages remain accurate.
+[ ] T01 Live TV: only with an authorized compatible source, test tuning, favourites and guide. Test a short recording only when that build, permission and source support it. Missing source access is BLOCKED, not a fabricated pass.
+[ ] A01 Accessibility: use larger system text, a screen reader if familiar, high contrast and reduced motion. Test reading order, focused controls, labels and Back. Report clipping or unreachable controls. A sighted visual check alone is not a screen-reader pass.
+[ ] V01 TV/casting: only on an invited build/receiver, test remote focus, selecting a title, playback controls, Back and reconnect. Do not expect phone-only Downloads or Campsite hosting on TV. Record sender and receiver separately.
+[ ] U01 Update: install the next invited update over the prior test build when supplied. Expected: permitted account, library, downloads and appearance settings remain, and the first-session checks still pass. A clean install and an update are separate results.
+[ ] S01 Paid services/rewards: invited test accounts and payment test mode only. Test correct allowed/denied access, cancelled/pending transactions, restoration and sign-out as assigned. Do not use a real card or click ads to generate revenue while testing. Ask Nick if test access is unavailable.
+
+REPORT ONE RESULT AT A TIME
+Test ID / feature:
+Build and device (from your record above):
+Result: PASS / FAIL / BLOCKED / NOT RUN / NOT APPLICABLE
+Steps I followed (1, 2, 3):
+What I expected:
+What actually happened:
+How often: e.g. 2 of 3 attempts
+Could I recover? How?
+Optional redacted screenshot/clip:
+How easy was this? What confused me?
+
+Post ordinary results in the Beebo community's #test-results, bugs in #bug-reports, or email testers@beeboentertainment.com. Do not post sensitive security findings or private logs publicly. Discord invite: https://discord.gg/P64HjkNjB4
+
+SUGGESTED SCHEDULE
+First session: B01-B08. Next sessions: one or two assigned areas, plus normal use. After a fix or new build: repeat the failed steps and B03-B06. At the end: send a short summary of what you used, what improved and what is still blocked. Keep the build number with every result.
+
+For an applicable official closed test, remain opted in continuously for the specified period. This schedule is our testing suggestion, not a requirement to submit a review or use the app at an exact time each day. Nick may recognize useful contributions under the existing published tester/community terms. Rewards never depend on positive feedback, ratings or store reviews.
+
+Testing guide and existing offer: https://beeboentertainment.com/become-a-tester.html
+Official account-dependent closed-test rule: https://support.google.com/googleplay/android-developer/answer/14151465?hl=en
