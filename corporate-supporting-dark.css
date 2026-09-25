@@ -1,0 +1,222 @@
+/*
+  Beebo supporting pages — shared dark corporate presentation.
+  This layer deliberately changes presentation only. Existing content, routes,
+  availability markers and page-specific behaviour stay in their own files.
+*/
+:root[data-beebo-corporate-dark] {
+  color-scheme: dark;
+  --bg: #101719;
+  --bg-2: #151f21;
+  --surface: #182123;
+  --surface-2: #1d292b;
+  --paper: #182123;
+  --card: #182123;
+  --soft: #202c2e;
+  --cream: #101719;
+  --ink: #f3f2ec;
+  --text: #f3f2ec;
+  --muted: #b7bdb9;
+  --line: #354143;
+  --border: #354143;
+  --border-strong: #586668;
+  --accent: #d5b779;
+  --accent-ink: #d5b779;
+  --accent-soft: #263031;
+  --gold: #d5b779;
+  --gold-dark: #d5b779;
+  --dark: #0c1214;
+  --spot: #0c1214;
+  --spot-ink: #f3f2ec;
+  --spot-muted: #b7bdb9;
+  --tech-paper: #101719;
+  --tech-card: #182123;
+  --tech-ink: #f3f2ec;
+  --tech-muted: #b7bdb9;
+  --tech-gold: #d5b779;
+  --tech-line: #354143;
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --radius: 2px;
+  --radius-sm: 2px;
+  --shadow: none;
+  --shadow-lg: none;
+}
+
+html[data-beebo-corporate-dark] { background: #101719; }
+html[data-beebo-corporate-dark] body {
+  margin: 0;
+  background: #101719;
+  color: #f3f2ec;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+html[data-beebo-corporate-dark] :is(h1, h2, h3, h4, button, input, select, textarea, th) {
+  font-family: Arial, Helvetica, sans-serif;
+}
+html[data-beebo-corporate-dark] :is(h1, h2, h3, h4) { color: #f3f2ec; }
+html[data-beebo-corporate-dark] :is(p, li, td, dd, figcaption, small) { color: inherit; }
+html[data-beebo-corporate-dark] a { color: #d5b779; text-underline-offset: 4px; }
+html[data-beebo-corporate-dark] a:focus-visible,
+html[data-beebo-corporate-dark] button:focus-visible,
+html[data-beebo-corporate-dark] input:focus-visible,
+html[data-beebo-corporate-dark] select:focus-visible,
+html[data-beebo-corporate-dark] summary:focus-visible {
+  outline: 3px solid #d5b779;
+  outline-offset: 4px;
+}
+html[data-beebo-corporate-dark] :is(.wrap, .shell, .container, .section, .tech-main, .catalog-wrap, .cmp, .help-center) {
+  color: #f3f2ec;
+}
+html[data-beebo-corporate-dark] :is(.lead, .lede, .page-hero p, .intro p, .about-lead, .tech-lead, .tech-muted, .muted, .fine) {
+  color: #b7bdb9;
+}
+html[data-beebo-corporate-dark] :is(.eyebrow, .tech-eyebrow, .help-tag, .page-kicker, .kicker, .tagline) {
+  color: #d5b779;
+}
+
+/* Header and footer: one compact vocabulary across the older page templates. */
+html[data-beebo-corporate-dark] :is(.nav, .header, .pro-header, .cmp-header, .catalog-head, .top) {
+  background: #101719;
+  color: #f3f2ec;
+  border-color: #354143;
+  box-shadow: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html[data-beebo-corporate-dark] :is(.nav-in, .header, .pro-header-inner, .cmp-header, .catalog-head, .top) {
+  min-height: 78px;
+}
+html[data-beebo-corporate-dark] :is(.brand, .logo, .pro-brand, .catalog-brand, .cmp-brand) {
+  color: #f3f2ec !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: -.045em;
+}
+html[data-beebo-corporate-dark] :is(.brand img, .logo img, .pro-brand img) { border-radius: 0; }
+html[data-beebo-corporate-dark] :is(.nav-links a, .header nav a, .pro-header nav a, .catalog-head nav a, .cmp-header a, .top a) {
+  color: #b7bdb9;
+  border-radius: 0;
+}
+html[data-beebo-corporate-dark] :is(.nav-links a:hover, .header nav a:hover, .pro-header nav a:hover, .catalog-head nav a:hover, .cmp-header a:hover, .top a:hover) {
+  color: #d5b779;
+  background: transparent;
+}
+html[data-beebo-corporate-dark] :is(.nav-cta, .pro-cta, .header .button, .catalog-actions a, .catalog-actions button) {
+  background: #d5b779;
+  color: #172024 !important;
+  border: 1px solid #d5b779;
+  border-radius: 2px;
+  box-shadow: none;
+}
+html[data-beebo-corporate-dark] :is(.pro-menu, .menu-toggle) {
+  border: 1px solid #586668;
+  border-radius: 2px;
+  background: transparent;
+  color: #f3f2ec;
+}
+html[data-beebo-corporate-dark] :is(.pro-footer, .catalog-footer, .footer) {
+  background: #0c1214;
+  color: #b7bdb9;
+  border-color: #354143;
+  box-shadow: none;
+}
+html[data-beebo-corporate-dark] :is(.pro-footer h1, .pro-footer h2, .pro-footer h3, .pro-footer strong, .pro-footer .pro-brand, .catalog-footer strong) { color: #f3f2ec; }
+html[data-beebo-corporate-dark] :is(.pro-footer a, .catalog-footer a, .footer a) { color: #b7bdb9; }
+html[data-beebo-corporate-dark] :is(.pro-footer a:hover, .catalog-footer a:hover, .footer a:hover) { color: #d5b779; }
+
+/* Flat surfaces and practical controls. Status-specific colours are deliberately
+   not listed here, so green/pale-green/yellow/red evidence remains truthful. */
+html[data-beebo-corporate-dark] :is(.card, .feature, .feature-section, .game-card, .help-card, .help-tools, .help-start, .notice, .note, .facts article, .checklist article, .table-wrap, .tab-panel, .catalog-note, .comparison-method, .price-key, .no-table-note, .pro-next, .search-empty, #guide-empty, .layout-list li, .bp-card, .bp-why, .tech-card, .tech-details, .codec-card, .codec-summary, .codec-scroll, .tech-scroll, .beebo-release-panel, .beebo-release-status > div) {
+  background: #182123;
+  color: #f3f2ec;
+  border-color: #354143;
+  border-radius: 2px;
+  box-shadow: none;
+}
+html[data-beebo-corporate-dark] :is(.card:hover, .help-card:hover, .game-card:hover, .bp-card:hover, .beebo-release-panel:hover) {
+  border-color: #879293;
+  box-shadow: none;
+  transform: none;
+}
+html[data-beebo-corporate-dark] :is(.btn, .button, .cta, .action, .button.compact, #reset-guides, .beebo-release-action, .filters button, .help-filters button, .section-nav a, .tab-btn) {
+  border-radius: 2px;
+  box-shadow: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html[data-beebo-corporate-dark] :is(.btn-primary, .button.gold, .action-gold, .button.compact, #reset-guides) {
+  background: #d5b779;
+  color: #172024;
+  border-color: #d5b779;
+}
+html[data-beebo-corporate-dark] :is(.btn-ghost, .button:not(.gold):not(.compact), .filters button, .help-filters button, .section-nav a, .tab-btn) {
+  background: transparent;
+  color: #f3f2ec;
+  border-color: #586668;
+}
+html[data-beebo-corporate-dark] :is(.filters button, .help-filters button)[aria-pressed=true],
+html[data-beebo-corporate-dark] .tab-btn[aria-selected=true] {
+  background: #d5b779;
+  color: #172024;
+  border-color: #d5b779;
+}
+html[data-beebo-corporate-dark] :is(input, select, textarea, .help-tools input, .catalog-tools input, .catalog-tools select) {
+  background: #101719;
+  color: #f3f2ec;
+  border-color: #586668;
+  border-radius: 2px;
+}
+html[data-beebo-corporate-dark] ::placeholder { color: #a4adab; opacity: 1; }
+
+/* Editorial, guide and table surfaces. */
+html[data-beebo-corporate-dark] :is(.page-hero, .hero, .catalog-hero, .intro, .tech-hero, .help-intro) {
+  background: transparent;
+  color: #f3f2ec;
+}
+html[data-beebo-corporate-dark] :is(.page-hero, .hero, .catalog-hero, .intro, .tech-hero) { border-color: #354143; }
+html[data-beebo-corporate-dark] :is(.feature, .feature-notes article, .steps article, .extra-grid > a, .section-nav, .tech-jump, .tech-footer-links) { border-color: #354143; }
+html[data-beebo-corporate-dark] :is(.spotlight, .help-start, .camp-section, .pricing-section, .announcement, .trust-strip, .place-panel, .tech-note) {
+  background: #1a2527;
+  color: #f3f2ec;
+  border-color: #354143;
+}
+html[data-beebo-corporate-dark] :is(.spotlight p, .help-start p, .camp-section p, .pricing-section p, .announcement, .trust-strip, .place-panel p, .tech-note) { color: #c3cac6; }
+html[data-beebo-corporate-dark] :is(.place-tabs, .questions details, .faq, .release-grid, .about-links a) { border-color: #354143; }
+html[data-beebo-corporate-dark] :is(.place-tabs button, .questions summary) { color: #b7bdb9; }
+html[data-beebo-corporate-dark] :is(.place-tabs button[aria-selected=true], .questions summary:hover) { color: #d5b779; border-color: #d5b779; }
+
+html[data-beebo-corporate-dark] :is(.tech-table, .codec-table, table, .detail-table, .evidence-table) {
+  color: #f3f2ec;
+  border-color: #354143;
+}
+html[data-beebo-corporate-dark] :is(.tech-table caption, .codec-table caption, thead th, .detail-table th, .evidence-table th, .matrix-group th) {
+  background: #202c2e;
+  color: #f3f2ec;
+  border-color: #354143;
+}
+html[data-beebo-corporate-dark] :is(.tech-table th, .tech-table td, .codec-table th, .codec-table td, table th, table td, .detail-table th, .detail-table td, .evidence-table th, .evidence-table td) {
+  border-color: #354143;
+  color: inherit;
+}
+html[data-beebo-corporate-dark] :is(.tech-main code, .codec-guide code, code) { background: #202c2e; color: #f3e3b7; }
+html[data-beebo-corporate-dark] :is(.tech-main .tech-price, .codec-guide .codec-free) { color: #8fd2a5; }
+html[data-beebo-corporate-dark] :is(.codec-guide .codec-paid) { color: #f0b2aa; }
+
+html[data-beebo-corporate-dark] :is(.beebo-release-platform, .beebo-release-panel time, .beebo-release-status > div time, .release, .release-date) { color: #b7bdb9 !important; }
+html[data-beebo-corporate-dark] :is(.beebo-release-panel strong, .beebo-release-status > div strong) { color: #f3f2ec; }
+html[data-beebo-corporate-dark] .beebo-back-to-top {
+  border: 1px solid #a8905f;
+  border-radius: 2px;
+  background: #d5b779;
+  color: #172024;
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  html[data-beebo-corporate-dark] :is(.nav, .header, .pro-header, .cmp-header, .catalog-head, .top) { min-height: 0; }
+  html[data-beebo-corporate-dark] :is(.nav-links, .header nav, .pro-header nav, .catalog-head nav) { background: #101719; }
+  html[data-beebo-corporate-dark] :is(.pro-footer, .catalog-footer, .footer) { padding-inline: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-beebo-corporate-dark] * { transition: none !important; animation: none !important; }
+}
