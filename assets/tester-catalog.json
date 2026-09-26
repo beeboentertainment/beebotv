@@ -1,0 +1,298 @@
+{
+  "schema": 1,
+  "platforms": {
+    "windows": "Windows",
+    "linux": "Linux",
+    "android": "Android phone / tablet",
+    "androidtv": "Android TV / Google TV",
+    "browser": "Web browser",
+    "iosbrowser": "iPhone / iPad browser",
+    "macbrowser": "Mac browser",
+    "casting": "Casting",
+    "docker": "Docker / NAS",
+    "macos": "Native macOS — future test build",
+    "ios": "Native iPhone / iPad — future test build",
+    "appletv": "Apple TV — future test build",
+    "fire": "Fire TV / tablet — future test build",
+    "roku": "Roku — future test build",
+    "smarttv": "Samsung / LG TV — future test build",
+    "xbox": "Xbox — future test build"
+  },
+  "categories": {
+    "0": {
+      "title": "Every platform",
+      "items": [
+        {
+          "id": "start",
+          "title": "Open and reopen",
+          "steps": "Open the installed app or browser viewer. Close and reopen it. Record crashes, blank screens or an unusually slow start."
+        },
+        {
+          "id": "signin",
+          "title": "Sign in and sign out",
+          "steps": "Use your own test account. Record how many sign-in forms you see. Sign out and confirm private pages cannot be reopened without signing in."
+        },
+        {
+          "id": "permissions",
+          "title": "Correct access",
+          "steps": "Using test profiles only, confirm household users see the intended library and cannot use owner-only controls. Never include passwords in a report."
+        },
+        {
+          "id": "library",
+          "title": "Browse and find media",
+          "steps": "Search for an authorized sample, filter films / shows / music where available, and try an A–Z jump. Check artwork and poster positions."
+        },
+        {
+          "id": "playback",
+          "title": "Playback and seeking",
+          "steps": "Play a short authorized sample. Pause, resume and seek. Note audio sync, buffering, format and quality. Test subtitles / audio tracks only if included in the build."
+        },
+        {
+          "id": "resume",
+          "title": "Resume and history",
+          "steps": "Stop partway through a sample, reopen it and check progress. Use a separate profile to check history stays with the right person."
+        },
+        {
+          "id": "visual",
+          "title": "Visual layout",
+          "steps": "Look for missing or black images, cropped text, overlap, large empty gaps and controls hidden behind headers. Try a smaller window or rotation where supported."
+        },
+        {
+          "id": "accessibility",
+          "title": "Readability and controls",
+          "steps": "Try larger text, a keyboard / remote or screen reader if available. Check focus visibility, labels, contrast and reduced-motion settings."
+        },
+        {
+          "id": "stability",
+          "title": "Stability and performance",
+          "steps": "Use the app for 10 minutes. Note freezes, heat, battery drain or unusual CPU / memory use if measured. Do not guess a measurement."
+        },
+        {
+          "id": "reconnect",
+          "title": "Connection changes",
+          "steps": "With a short sample, test your permitted home and away connection. Compare the displayed direct / relay label. Note reconnection problems; do not disable security controls."
+        },
+        {
+          "id": "settings",
+          "title": "Settings and preferences",
+          "steps": "Find a setting, change it, reopen the app and check it was saved. Record confusing names, duplicates or a missing option."
+        }
+      ]
+    },
+    "1": {
+      "title": "Desktop server",
+      "items": [
+        {
+          "id": "install",
+          "title": "Install or update",
+          "steps": "Install the assigned build, or update the existing app. Record warnings exactly. Check existing settings and files remain intact. Back up first."
+        },
+        {
+          "id": "folders",
+          "title": "Add media folders",
+          "steps": "Add a folder containing copies of authorized samples. Confirm scanning and titles work without changing or deleting your originals."
+        },
+        {
+          "id": "desktopsettings",
+          "title": "Settings organization",
+          "steps": "Try categories, search, Show all tabs and Appearance. Resize the window. Check every control remains reachable and A–Z jumps show the full poster."
+        },
+        {
+          "id": "host",
+          "title": "Serve another device",
+          "steps": "While the server is running, use a second device to sign in and play a short sample. Record both builds and the route label."
+        }
+      ]
+    },
+    "2": {
+      "title": "Phone and tablet",
+      "items": [
+        {
+          "id": "mobileinstall",
+          "title": "Install / update on phone",
+          "steps": "Record version and build before and after updating. Check your account and preferences remain. Never uninstall to fix an update unless instructed."
+        },
+        {
+          "id": "browseheader",
+          "title": "Browse scrolling",
+          "steps": "Scroll down: the search / filter area should move away while the alphabet remains reachable. Return to the top and check it reappears."
+        },
+        {
+          "id": "gamesart",
+          "title": "Game artwork",
+          "steps": "Open Play. Check Sea Battle, Plate & Sign Hunt and Story Stew, then scan other cards for black or missing images."
+        },
+        {
+          "id": "offline",
+          "title": "Offline / Camp Mode — optional",
+          "steps": "Only if supported in your build: prepare an authorized sample, disconnect internet and try it. Separately try Camp Mode with consenting nearby test devices."
+        },
+        {
+          "id": "mobilecast",
+          "title": "Cast control — optional",
+          "steps": "Check the Cast icon is visible. With a supported receiver on the same network, try discovery, playback, pause and disconnect."
+        }
+      ]
+    },
+    "3": {
+      "title": "TV and console",
+      "items": [
+        {
+          "id": "tvnav",
+          "title": "Remote / controller navigation",
+          "steps": "Reach every row using only the remote or controller. Check focus, Back, playback controls and on-screen keyboard."
+        },
+        {
+          "id": "tvview",
+          "title": "Living-room readability",
+          "steps": "From your usual viewing distance, check text size, safe screen edges, subtitles and the selected item."
+        },
+        {
+          "id": "tvsleep",
+          "title": "Sleep / wake",
+          "steps": "Pause, put the device to sleep, wake it and check that controls and playback recover."
+        }
+      ]
+    },
+    "4": {
+      "title": "Browser",
+      "items": [
+        {
+          "id": "browserlogin",
+          "title": "Single sign-in and tabs",
+          "steps": "Record the exact page and whether one username/password form opens the library. Required two-factor codes are a separate security step. Check refresh, Back and two test-profile tabs without sharing credentials."
+        },
+        {
+          "id": "browsermedia",
+          "title": "Browser media controls",
+          "steps": "Check fullscreen, volume, subtitles and returning from another tab. Record browser version. Only test available controls."
+        }
+      ]
+    },
+    "5": {
+      "title": "Linux / Docker",
+      "items": [
+        {
+          "id": "linuxinstall",
+          "title": "Package / container startup",
+          "steps": "Record distribution, architecture and package / image version. Follow the provided guide. Note missing dependencies, file permissions or failed startup."
+        },
+        {
+          "id": "persistence",
+          "title": "Restart and persistence",
+          "steps": "Restart the app or your test container. Confirm media paths and preferences survive. Use backed-up test data."
+        }
+      ]
+    },
+    "6": {
+      "title": "Casting",
+      "items": [
+        {
+          "id": "discover",
+          "title": "Receiver discovery",
+          "steps": "With permission, connect sender and receiver to the same network. Record device models and whether the receiver appears."
+        },
+        {
+          "id": "castplay",
+          "title": "Cast and disconnect",
+          "steps": "Play a short sample, pause, seek, change volume, then disconnect. Note which device controls playback and any audio / picture issues."
+        }
+      ]
+    },
+    "7": {
+      "title": "Optional Windows Remote Desktop pilot",
+      "items": [
+        {
+          "id": "remotedesktop",
+          "title": "Attended screen sharing — optional",
+          "steps": "Only on the assigned pilot with the owner present: check the request/approval flow. If separately approved, try pointer control. Stop sharing and confirm control ends. Do not share a sensitive screen."
+        }
+      ]
+    }
+  },
+  "map": {
+    "windows": [
+      0,
+      1,
+      7
+    ],
+    "linux": [
+      0,
+      1,
+      5
+    ],
+    "android": [
+      0,
+      2
+    ],
+    "androidtv": [
+      0,
+      3
+    ],
+    "browser": [
+      0,
+      4
+    ],
+    "iosbrowser": [
+      0,
+      4
+    ],
+    "macbrowser": [
+      0,
+      4
+    ],
+    "casting": [
+      0,
+      6
+    ],
+    "docker": [
+      0,
+      5
+    ],
+    "macos": [
+      0,
+      1
+    ],
+    "ios": [
+      0,
+      2
+    ],
+    "appletv": [
+      0,
+      3
+    ],
+    "fire": [
+      0,
+      2,
+      3
+    ],
+    "roku": [
+      0,
+      3
+    ],
+    "smarttv": [
+      0,
+      3
+    ],
+    "xbox": [
+      0,
+      3
+    ]
+  },
+  "future": [
+    "macos",
+    "ios",
+    "appletv",
+    "fire",
+    "roku",
+    "smarttv",
+    "xbox"
+  ],
+  "statuses": [
+    "not-tested",
+    "pass",
+    "fail",
+    "blocked",
+    "not-applicable"
+  ]
+}
