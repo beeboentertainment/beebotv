@@ -1,6 +1,6 @@
 # Beebo Remote Desktop — public tester checklist
 
-Windows test version: **0.1.61-rdtest.1**. Built and locally checked; real-device testing is pending. The 160 focused source tests and 21 simulated browser checks are not real-device passes or installer certification.
+Windows test version: **0.1.61-rdtest.2**. Built and locally checked; real-device testing is pending. The 160 focused source tests and 21 simulated browser checks are not real-device passes or installer certification.
 
 ## Before testing
 
@@ -57,3 +57,12 @@ Use **Pass / Fail / Not tested / Blocked** for every result. Do not treat skippe
 Do **not** post passwords, emails, IP addresses, server addresses, verification codes, access links, raw logs or screenshots showing personal content. Redact examples or ask for a private support route. If viewing or input continues after you stop it, stop locally, close Beebo and report privately before testing again.
 
 [Beebo tester community](https://discord.gg/P64HjkNjB4) · [General testing guide](https://www.beeboentertainment.com/become-a-tester.html)
+
+## Interface update checks — September 26
+
+- Windows: find a setting by search; switch categories without losing an unsaved draft; save and reopen.
+- Windows: try grouped tabs and Show all tabs; confirm custom order and hidden choices.
+- Windows: jump to a letter in Movies and TV; the heading and complete first poster row should remain visible.
+- Android build 48: scroll Browse; the alphabet remains while the header and filters leave view. Scroll to the top to restore them.
+- Android: check Cast visibility on light and dark themes, discovery, connect and disconnect.
+- Report exact build, device and Pass/Fail/Not tested/Blocked. No actual capture/control is required for these interface checks.

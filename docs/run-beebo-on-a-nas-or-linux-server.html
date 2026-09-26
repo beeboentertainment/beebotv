@@ -113,10 +113,11 @@
 </script>
 <link rel="stylesheet" href="../beebo-testers.css?v=2">
 <link rel="stylesheet" href="../corporate-supporting-dark.css?v=20260925">
+<link rel="stylesheet" href="/website-shell.css?v=20260926"><script src="/website-shell.js?v=20260926" defer></script>
 </head>
 <body>
-<aside class="beebo-tester-banner" aria-label="Help test Beebo" data-beebo-testers-banner><div class="beebo-tester-inner"><p class="beebo-tester-message"><strong>Beebo needs testers.</strong><span>Try Beebo on your devices. Help shape the launch.</span></p><div class="beebo-tester-goal"><span>Android goal: 12 testers · 14 consecutive days</span><div class="beebo-tester-actions"><a class="beebo-tester-primary" href="../become-a-tester.html">Become a tester <span aria-hidden="true">↗</span></a><a href="https://discord.gg/P64HjkNjB4" target="_blank" rel="noopener noreferrer">Join tester chat <span aria-hidden="true">↗</span></a></div></div></div></aside>
-<a class="pro-skip" href="#page-content">Skip to content</a><header class="pro-header"><div class="pro-header-inner"><a class="pro-brand" href="../index.html" aria-label="Beebo Entertainment home"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><button class="pro-menu" type="button" aria-expanded="false" aria-controls="pro-navigation">Menu <span aria-hidden="true">☰</span></button><nav id="pro-navigation" aria-label="Main navigation"><a href="../index.html#what">Meet Beebo</a><a href="../platforms.html">Devices</a><a href="../beebo-products.html">Products</a><a href="../beebo-vs-other-apps.html">Compare</a><a href="../subscribe.html">Pricing</a><a href="../docs.html" aria-current="page">Docs</a><a href="../help.html">Help &amp; guides</a><a class="pro-cta" href="../index.html#get-app">Get Beebo ↗</a></nav></div></header><div id="page-content" tabindex="-1"></div>
+<aside class="beebo-tester-banner" aria-label="Help test Beebo" data-beebo-testers-banner><div class="beebo-tester-inner"><p class="beebo-tester-message"><strong>Beebo needs testers.</strong><span>Try Beebo on your devices. Help shape the launch.</span></p><div class="beebo-tester-goal"><span>Join the community to coordinate testing.</span><div class="beebo-tester-actions"><a class="beebo-tester-primary" href="../become-a-tester.html">Become a tester <span aria-hidden="true">↗</span></a><a href="https://discord.gg/P64HjkNjB4" target="_blank" rel="noopener noreferrer">Join tester chat <span aria-hidden="true">↗</span></a></div></div></div></aside><header class="beebo-site-header" id="top"><div class="beebo-header-row"><a class="beebo-header-brand" href="/index.html" aria-label="Beebo home"><img class="beebo-brand-icon" src="/assets/beebo-desktop.ico" width="44" height="44" alt=""><span>Beebo<small>ENTERTAINMENT &amp; CONNECTION</small></span></a><nav class="beebo-header-nav" aria-label="Main navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/index.html#camp">Camp Mode</a><a href="/index.html#connections">Pricing & routes</a><a href="/help.html">Support</a></nav><details class="beebo-header-menu"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/index.html#camp">Camp Mode</a><a href="/index.html#connections">Pricing & routes</a><a href="/help.html">Support</a></nav></details><a class="beebo-header-download" href="/index.html#download">Download Beebo <span aria-hidden="true">↗</span></a></div></header>
+<a class="pro-skip" href="#page-content">Skip to content</a><div id="page-content" tabindex="-1"></div>
 
 <main>
 <div class="wrap">
@@ -145,14 +146,14 @@
     <li id="step-1">
       <h3>Make folders for settings and media</h3>
       <p>Create a folder for Beebo’s own data (settings, accounts, watch history, artwork cache and certificates), for example <code>/srv/beebo/config</code>, and know where your media folders are. Read-only media is fine for watching. Uploads from the phone app, the Inbox and file clean-up write to the media folders, so give it write access if you want those.</p>
-      
-      
+
+
     </li>
     <li id="step-2">
       <h3>Make a secret key and keep it</h3>
       <p>Beebo encrypts saved secrets (password hashes, sign-in signing keys, your TMDB key, webhook secrets) in its settings file. The key comes from an environment variable. Make one, for example with <code>openssl rand -hex 32</code>, and <strong>save it somewhere safe</strong>. If you change or lose it, the saved secrets become unreadable, and Beebo stops at start-up with a message instead of quietly signing everyone out.</p>
       <p><strong>What you’ll see:</strong> A 64-character string. Keep it outside the config folder if you want real separation: anyone who has the whole config folder and the key file has both.</p>
-      
+
     </li>
     <li id="step-3">
       <h3>Start the container</h3>
@@ -168,26 +169,26 @@
   -v /srv/media/photos:/media/photos:ro \
   ghcr.io/swgfan/beebo-server:0.1.58</code></pre></p>
       <p>The <code>:ro</code> on the media folders mounts them read-only, which is fine for watching. Leave it off if you want uploads from the phone app, the Inbox and file clean-up to write to those folders. Add <code>/media/audiobooks</code> the same way for audiobooks. If your files belong to another user, see Folders and users below (<code>--user</code>, or <code>PUID</code> and <code>PGID</code>). A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.</p>
-      
+
       <div class="callout"><p><strong>Screenshot coming.</strong> A NAS container manager with the Beebo container running.</p></div>
     </li>
     <li id="step-4">
       <h3>Read the first-run message</h3>
       <p>A new server has no accounts. It prints a one-time message to its log. Run <code>docker logs beebo</code>.</p>
       <p><strong>What you’ll see:</strong> Lines like “First-run setup: this server has no owner account yet.”, an address such as <code>https://192.168.1.20:47811/setup</code> and a setup code shaped like <code>7KQ2-M9XD-4TNB</code>.</p>
-      
+
     </li>
     <li id="step-5">
       <h3>Create the owner account</h3>
       <p>Open that address (https, port 47811). Your browser will warn about the certificate, because Beebo made it itself (it is self-signed); accept the warning. Enter the setup code, then choose the owner username and a password of 8 or more characters. Setup closes for good once the account exists. If you miss the message, restart the container for a new code. The code lives only in the log and in memory.</p>
       <p><strong>What you’ll see:</strong> A sign-in page. Sign in at <code>https://&lt;server-ip&gt;:47811/</code>. The admin pages only open over HTTPS. Phones and TVs on your network can keep using <code>http://&lt;server-ip&gt;:47811</code>.</p>
-      
+
     </li>
     <li id="step-6">
       <h3>Add posters and connect your devices</h3>
       <p>Give it a TMDB key with the <code>BEEBO_TMDB_API_KEY</code> environment variable (see the free key steps in <a href="getting-started-windows.html#posters">Get started on Windows</a>). Then connect phones and TVs to <code>http://&lt;server-ip&gt;:47811</code> as in <a href="connect-your-phone.html">Connect your phone</a>.</p>
-      
-      
+
+
     </li>
   </ol>
 
@@ -252,5 +253,5 @@
 </div>
 </main>
 
-<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.61</strong><time data-beebo-release-date="windows" datetime="2026-09-23T17:13:58Z">Released Sep 23, 2026, 1:13:58 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.46-tester (build 47)</strong><time data-beebo-release-date="android" datetime="2026-09-26T08:26:09.9618771Z">Built Sep 26, 2026, 4:26:09 a.m. Eastern</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../home-theater.html">Home theater and big screen</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../subscribe.html">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=4"></script></body>
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.61</strong><time data-beebo-release-date="windows" datetime="2026-09-23T17:13:58Z">Released Sep 23, 2026, 1:13:58 PM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.47-tester (build 48)</strong><time data-beebo-release-date="android" datetime="2026-09-26T09:14:50.914Z">Built Sep 26, 2026, 5:14:50 a.m. EDT</time></div><a href="../updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="../index.html"><img src="../assets/beebo-badge-96.png" width="46" height="46" alt=""><span>Beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="../about-beebo.html">About Beebo</a><a href="../platforms.html">Beebo on your devices</a><a href="../home-theater.html">Home theater and big screen</a><a href="../phone-speakers.html">Phone speakers (Beta)</a><a href="../subscribe.html">Pricing</a><a href="../become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="../help.html">Help &amp; guides</a><a href="../docs.html">Docs</a><a href="../visual-tour.html">Illustrated app tour</a><a href="../server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../driving-safety.html">Driving safety</a><a href="../delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer><script src="../polish.js?v=20260926"></script></body>
 </html>
