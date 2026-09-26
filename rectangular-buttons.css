@@ -1,0 +1,13 @@
+/* Shared Beebo website control shape. Keep each page's colors, spacing and focus states. */
+html body :is(
+  button,
+  a,
+  summary,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  [role="tab"]
+) {
+  border-radius: 0 !important;
+}
