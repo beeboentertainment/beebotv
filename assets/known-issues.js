@@ -1,0 +1,17 @@
+'use strict';
+(() => {
+  const API='https://beebo-licensing.nicholaswill86.workers.dev/tester-feedback/issues';
+  const states={reported:'Reported',confirmed:'Confirmed','in-progress':'In progress','ready-for-retest':'Ready for retest','verified-fixed':'Verified fixed'};
+  const categories={bug:'Bug',performance:'Slowness',visual:'Visual problem'};
+  const $=s=>document.querySelector(s);let issues=[],platforms={};
+  function el(tag,text){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;}
+  function selectOptions(node,values){for(const [id,label] of Object.entries(values)){const o=el('option',label);o.value=id;node.append(o);}}
+  function render(){const root=$('#known-issue-list');root.replaceChildren();const matches=issues.filter(i=>(!$('#issue-platform').value||i.platform===$('#issue-platform').value)&&(!$('#issue-status').value||i.status===$('#issue-status').value)&&(!$('#issue-category').value||i.category===$('#issue-category').value));
+    $('#issue-count').textContent=issues.length?matches.length+' of '+issues.length+' reviewed issue(s) shown. This list is not a complete audit.':'No reviewed issues have been published here yet. This does not mean every feature is free of bugs.';
+    if(issues.length&&!matches.length)root.append(el('p','No published issues match these filters.'));
+    for(const i of matches){const card=el('article');card.className='known-issue';const status=el('span',states[i.status]);status.className='issue-state';status.dataset.state=i.status;card.append(status,el('h2',i.title),el('p',categories[i.category]+' · '+(platforms[i.platform]||i.platform)+' · '+(i.build||'Build not specified')));card.append(el('p',i.summary));if(i.workaround)card.append(el('h3','Workaround'),el('p',i.workaround));if(i.fixedBuild)card.append(el('p','Fix checked in build '+i.fixedBuild+'. This does not certify other builds or devices.'));const date=new Date(i.updatedAt);if(!Number.isNaN(date.getTime())){const time=el('time','Updated '+date.toLocaleDateString());time.dateTime=date.toISOString();card.append(time);}root.append(card);}
+  }
+  async function load(){const status=$('#issues-message');status.textContent='Loading reviewed issues…';$('#refresh-issues').disabled=true;try{const r=await fetch(API,{cache:'no-store'});if(!r.ok)throw Error();const b=await r.json();if(!Array.isArray(b.issues))throw Error();issues=b.issues.filter(i=>i&&states[i.status]&&categories[i.category]&&typeof i.title==='string'&&typeof i.summary==='string');render();status.textContent='Showing the latest published list.';}catch{issues=[];$('#known-issue-list').replaceChildren();$('#issue-count').textContent='';status.textContent='The issue list is unavailable right now. No result or absence of bugs is being implied. Please try again later.';}finally{$('#refresh-issues').disabled=false;}}
+  selectOptions($('#issue-status'),states);selectOptions($('#issue-category'),categories);for(const id of ['issue-platform','issue-status','issue-category'])$('#'+id).onchange=render;$('#refresh-issues').onclick=load;
+  fetch('assets/tester-catalog.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(c=>{platforms=c.platforms;selectOptions($('#issue-platform'),platforms);const platform=new URLSearchParams(location.search).get('platform');if(platforms[platform])$('#issue-platform').value=platform;if(issues.length)render();}).catch(()=>{$('#issue-platform').disabled=true;});load();
+})();
