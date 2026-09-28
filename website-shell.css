@@ -10,6 +10,10 @@ body .beebo-site-header{position:relative;display:block;width:100%;max-width:non
 .beebo-site-header .beebo-header-actions{display:flex;align-items:center;gap:18px;flex-shrink:0}
 .beebo-site-header .beebo-header-library{font-size:13px;font-weight:700;white-space:nowrap;color:#f3f2ec;border:1px solid #65736e;border-radius:0;padding:8px 10px;background:#182123}
 .beebo-site-header .beebo-header-download{font-size:13px;font-weight:600;white-space:nowrap;color:#d5b779;border:0;border-bottom:1px solid #d5b779;border-radius:0;padding:10px 0;background:none}
+/* Some Windows font fallbacks draw ↗ as a separated slash and dot. Keep the
+   header download cue as one baseline-aligned, universally available arrow. */
+.beebo-site-header .beebo-header-download span[aria-hidden="true"]{display:inline-flex;align-items:center;margin-left:4px;font:0/1 Arial,sans-serif;vertical-align:middle}
+.beebo-site-header .beebo-header-download span[aria-hidden="true"]::before{content:"→";font:700 14px/1 Arial,sans-serif}
 .beebo-site-header .beebo-header-menu{display:none;position:relative;margin-left:auto}
 .beebo-site-header summary{font:600 13px/1.5 Arial,Helvetica,sans-serif;cursor:pointer;padding:10px 12px;color:#f3f2ec;border:1px solid #536365;border-radius:3px;list-style:none}
 .beebo-site-header summary::-webkit-details-marker{display:none}
