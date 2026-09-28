@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101719">
+  <title>Beebo Play — Beebo Entertainment</title>
+  <meta name="description" content="Play a quick game with a bot, invite a friend, or find an open table.">
+  <link rel="icon" href="/assets/favicon-32.png">
+  <link rel="stylesheet" href="/website-shell.css?v=20260926">
+  <link rel="stylesheet" href="play.css">
+  <link rel="stylesheet" href="experience-note.css">
+  <script src="/qrcode-generator.js" defer></script>
+  <script src="play.js" defer></script>
+</head>
+<body data-api-origin="https://login.beebo.tv" data-sign-in-url="/account/sign-in">
+  <a class="skip-link" href="#play-main">Skip to Beebo Play</a>
+  <header class="beebo-site-header" id="top">
+    <div class="beebo-header-row">
+      <a class="beebo-header-brand" href="/index.html" aria-label="Beebo home"><img class="beebo-brand-icon" src="/assets/beebo-desktop.ico" width="44" height="44" alt=""><span>Beebo<small>ENTERTAINMENT &amp; CONNECTION</small></span></a>
+      <nav class="beebo-header-nav" aria-label="Main navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/games.html">Games</a><a href="/help.html">Support</a></nav>
+      <details class="beebo-header-menu"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/games.html">Games</a><a href="/help.html">Support</a></nav></details>
+      <a class="beebo-header-download" href="/index.html#download">Download Beebo <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="play-main">
+    <section class="play-hero" aria-labelledby="play-heading">
+      <div>
+        <p class="eyebrow">Beebo Play</p>
+        <h1>Pick a game.<br>Find your table.</h1>
+        <p class="lede">Play a quick round with a bot, share a private table with a friend, or join an open table from anywhere.</p>
+        <p class="experience-note"><strong>Browser beta:</strong> Tic-Tac-Toe is available here. The rest of Beebo’s games stay in Camp Mode in the Beebo app; browser tables do not cross-play with app-hosted games.</p>
+      </div>
+      <aside class="identity-card" aria-labelledby="identity-heading">
+        <p class="eyebrow">Your seat</p>
+        <h2 id="identity-heading">Play your way.</h2>
+        <p>Use a guest nickname or sign in to an existing Beebo account. Both can join a table.</p>
+        <a id="play-sign-in" class="text-link" href="/account/sign-in">Sign in to your account <span aria-hidden="true">↗</span></a>
+      </aside>
+    </section>
+
+    <section class="lobby-section" aria-labelledby="lobby-heading">
+      <div class="section-heading"><div><p class="eyebrow">Live lobby</p><h2 id="lobby-heading">Tables looking for players</h2></div><button class="quiet-button" id="refresh-lobby" type="button">Refresh</button></div>
+      <p id="lobby-status" class="status-message" role="status">Connecting to the lobby…</p>
+      <div id="open-tables" class="open-tables" aria-live="polite" aria-busy="true"></div>
+    </section>
+
+    <section class="games-section" aria-labelledby="games-heading">
+      <div class="section-heading"><div><p class="eyebrow">Browser game</p><h2 id="games-heading">Start your next round</h2></div><p class="section-note">Open tables appear first when the lobby is available.</p></div>
+      <div id="game-list" class="game-list" aria-live="polite" aria-busy="true"></div>
+    </section>
+
+    <section id="room-panel" class="room-panel" hidden aria-labelledby="room-heading">
+      <div class="room-topline"><p class="eyebrow">Your table</p><button type="button" class="quiet-button" id="leave-room">Leave table</button></div>
+      <div class="room-layout">
+        <div>
+          <h2 id="room-heading">Tic-Tac-Toe</h2>
+          <p id="room-status" class="room-status" role="status">Waiting for the table…</p>
+          <div id="tic-tac-toe-board" class="ttt-board" role="grid" aria-label="Tic-Tac-Toe board"></div>
+        </div>
+        <aside id="invite-panel" class="invite-panel" hidden aria-labelledby="invite-heading">
+          <p class="eyebrow">Private invite</p>
+          <h3 id="invite-heading">Share this table</h3>
+          <div id="invite-qr" class="invite-qr" aria-label="QR code for private game invite"></div>
+          <p>Have your friend scan this code, or copy the invite. The invite stays in the link fragment, not the address sent to the server.</p>
+          <button id="copy-invite" class="primary-button" type="button">Copy invite</button>
+          <p id="copy-status" class="small-status" role="status"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="how-it-works" aria-labelledby="how-heading">
+      <p class="eyebrow">How it works</p>
+      <h2 id="how-heading">One link. Two players. Your own screens.</h2>
+      <ol><li>Choose a bot, private friend, or an open table.</li><li>For a private table, send the QR invite to the person you want to play.</li><li>Take turns from your own devices. For Camp Mode games, continue in the Beebo app.</li></ol>
+    </section>
+  </main>
+
+  <dialog id="seat-dialog" aria-labelledby="seat-title">
+    <form id="seat-form" method="dialog">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button>
+      <p class="eyebrow">Choose your seat</p>
+      <h2 id="seat-title">What should the table call you?</h2>
+      <p id="seat-context">Choose a name for this game.</p>
+      <label for="guest-nickname">Nickname<input id="guest-nickname" name="nickname" autocomplete="nickname" maxlength="24" required placeholder="Your nickname"></label>
+      <p class="form-help">You can play as a guest, or sign in if you already have a Beebo account.</p>
+      <div class="dialog-actions"><button class="primary-button" type="submit">Continue as guest</button><a id="dialog-sign-in" class="secondary-button" href="/account/sign-in">Sign in</a></div>
+      <p id="seat-error" class="form-error" role="alert" hidden></p>
+    </form>
+  </dialog>
+
+  <footer class="play-footer"><span>© 2026 Beebo Entertainment</span><nav aria-label="Footer"><a href="/games.html">Game catalogue</a> · <a href="/help.html">Support</a> · <a href="/movie-privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></nav></footer>
+</body>
+</html>
