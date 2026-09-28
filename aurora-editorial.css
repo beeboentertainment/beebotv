@@ -363,3 +363,111 @@ html[data-aurora] .guide-photo img {
   border-radius: var(--aurora-radius-lg);
   border: 1px solid var(--aurora-hairline);
 }
+
+/* =========================================================================
+   8. Plain-language feature guides
+
+   The first supporting-page batch uses the older site.css structural
+   vocabulary (.wrap, .page-hero, .feature and .callout).  Keep that markup
+   while assigning its visual roles here, so the pages no longer need their
+   own stack of legacy theme, reset and rectangular-control stylesheets.
+   ========================================================================= */
+html[data-aurora] {
+  color-scheme: dark;
+  --bg: var(--aurora-canvas);
+  --bg-2: var(--aurora-surface);
+  --surface: var(--aurora-surface);
+  --surface-2: var(--aurora-elevated);
+  --ink: var(--aurora-text);
+  --text: var(--aurora-text);
+  --muted: var(--aurora-text-muted);
+  --border: var(--aurora-hairline);
+  --border-strong: var(--aurora-hairline);
+  --accent: var(--aurora-gold);
+  --accent-ink: var(--aurora-gold);
+  --accent-soft: var(--aurora-elevated);
+  --spot: var(--aurora-canvas);
+  --spot-ink: var(--aurora-text);
+  --spot-muted: var(--aurora-text-muted);
+  --font-display: var(--aurora-font-display);
+  --font-body: var(--aurora-font-body);
+  --radius: var(--aurora-radius);
+  --radius-sm: var(--aurora-radius-sm);
+  --shadow: none;
+  --shadow-lg: none;
+}
+html[data-aurora] .wrap {
+  max-width: min(var(--aurora-measure), var(--aurora-content));
+  color: var(--aurora-text);
+  padding-top: var(--aurora-space-3);
+  padding-bottom: var(--aurora-space-6);
+}
+html[data-aurora] .back {
+  color: var(--aurora-text-muted);
+  text-decoration-color: var(--aurora-hairline);
+}
+html[data-aurora] .back:hover { color: var(--aurora-gold-strong); }
+html[data-aurora] .page-hero {
+  background: linear-gradient(180deg, var(--aurora-surface), var(--aurora-canvas));
+  border: 1px solid var(--aurora-hairline);
+  border-radius: var(--aurora-radius-lg);
+  margin: var(--aurora-space-3) 0 var(--aurora-space-5);
+  padding: var(--aurora-space-5) var(--aurora-space-4);
+}
+html[data-aurora] .page-hero .em { color: var(--aurora-gold); }
+html[data-aurora] .page-hero h1 {
+  color: var(--aurora-text);
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+}
+html[data-aurora] .page-hero .lead,
+html[data-aurora] .page-hero p { color: var(--aurora-text-muted); }
+html[data-aurora] .page-campaign-art {
+  display: block;
+  width: 100%;
+  max-height: 410px;
+  margin: var(--aurora-space-4) 0 0;
+  object-fit: cover;
+  border: 1px solid var(--aurora-hairline);
+  border-radius: var(--aurora-radius-lg);
+}
+html[data-aurora] .wrap > h2 {
+  border-left-color: var(--aurora-gold);
+  color: var(--aurora-text);
+}
+html[data-aurora] .feature,
+html[data-aurora] .app {
+  background: var(--aurora-surface);
+  border-color: var(--aurora-hairline);
+  border-radius: var(--aurora-radius-lg);
+  box-shadow: none;
+}
+html[data-aurora] .feature h3,
+html[data-aurora] .app h3 { color: var(--aurora-text); }
+html[data-aurora] .feature p,
+html[data-aurora] .app p { color: var(--aurora-text-muted); }
+html[data-aurora] .callout {
+  background: var(--aurora-elevated);
+  border-color: var(--aurora-hairline);
+  border-left-color: var(--aurora-gold);
+  border-radius: var(--aurora-radius);
+  box-shadow: none;
+  color: var(--aurora-text);
+}
+html[data-aurora] .callout.safe { border-left-color: var(--aurora-success); }
+html[data-aurora] .callout p { color: var(--aurora-text-muted); }
+html[data-aurora] .apps { gap: var(--aurora-space-3); }
+html[data-aurora] .tag,
+html[data-aurora] .app .pill {
+  background: var(--aurora-elevated);
+  color: var(--aurora-gold);
+  border: 1px solid var(--aurora-hairline);
+  border-radius: var(--aurora-radius-pill) !important;
+}
+html[data-aurora] .tag.soon { color: var(--aurora-success); }
+html[data-aurora] .pcap { color: var(--aurora-text-muted); }
+html[data-aurora] .pcap b { color: var(--aurora-text); }
+html[data-aurora] .phone {
+  background: var(--aurora-canvas);
+  border-color: var(--aurora-hairline);
+  box-shadow: none;
+}
