@@ -1,9 +1,9 @@
 {
-    "version":  "0.1.62",
-    "url":  "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.62/BeeboEntertainmentSetup.exe",
-    "sha256":  "26e10428e147f4cd660945302b81af5611254791fa5b54ebc3d521625bfe998b",
-    "size":  194986891,
-    "notes":  "What\u0027s new in 0.1.62:\n• Cinema Library is now the default look for new setups (existing users unaffected)\n• Faster conversions on older PCs: your graphics card now helps read video, not just encode it\n• Fixed HDR conversion failing on PCs with more than one graphics processor\n• Conversions now properly pause when you pause playback, instead of running in the background\n• New optional H.265 (HEVC) output for compatible devices, off by default\n• New setting: choose where converted files are stored, with a size limit\n• Fixed AV1 conversions silently starting as H.264\n• Advanced: point Beebo at your own ffmpeg for the x264 encoder (Settings \u003e Playback)\n• One shared sign-in for the owner and household members connecting away from home\n• Offensive names are now blocked everywhere; new personal web addresses need 5+ characters",
-    "publishedAtUtc":  "2026-09-27T18:39:36Z",
-    "publishedAtEastern":  "Sep 27, 2026, 2:39:36 PM Eastern"
+    "version":  "0.1.63",
+    "url":  "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.63/BeeboEntertainmentSetup.exe",
+    "sha256":  "f73747f79c90e4cf89d17fdd9b4210ed16f41d7b5795bf21e35a4bbe86460805",
+    "size":  206733230,
+    "notes":  "What's new in 0.1.63:\n\u2022 Fixed the Admin > Upload page failing when reached through your away-from-home address (<name>.beebo.tv) \u2013 large pieces of the file were being sent as one oversized network message and stalling. Uploads now work the same whether you're home or away.\n\u2022 Routine dependency updates (React updated to 19, and other library bumps across the project).",
+    "publishedAtUtc":  "2026-09-28T09:04:39Z",
+    "publishedAtEastern":  "Sep 28, 2026, 5:04:39 AM Eastern"
 }
