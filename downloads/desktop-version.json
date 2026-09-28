@@ -1,9 +1,9 @@
 {
-    "version":  "0.1.63",
-    "url":  "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.63/BeeboEntertainmentSetup.exe",
-    "sha256":  "f73747f79c90e4cf89d17fdd9b4210ed16f41d7b5795bf21e35a4bbe86460805",
-    "size":  206733230,
-    "notes":  "What's new in 0.1.63:\n\u2022 Fixed the Admin > Upload page failing when reached through your away-from-home address (<name>.beebo.tv) \u2013 large pieces of the file were being sent as one oversized network message and stalling. Uploads now work the same whether you're home or away.\n\u2022 Routine dependency updates (React updated to 19, and other library bumps across the project).",
-    "publishedAtUtc":  "2026-09-28T09:04:39Z",
-    "publishedAtEastern":  "Sep 28, 2026, 5:04:39 AM Eastern"
+    "version":  "0.1.64",
+    "url":  "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.64/BeeboEntertainmentSetup.exe",
+    "sha256":  "c1b9322456d858622a574620bf40a45b2e4eed4d22258a29a7ea9994cb098b20",
+    "size":  206733486,
+    "notes":  "What's new in 0.1.64:\n\u2022 Fixed the automatic-install update setting not actually auto-installing new releases while the app kept running (it only ever checked once, right after launch). It now rechecks periodically, so turning that setting on actually works.\n\u2022 Fixed the Admin > Upload page failing when reached through your away-from-home address.\n\u2022 Routine dependency updates (React updated to 19, and other library bumps across the project).",
+    "publishedAtUtc":  "2026-09-28T09:16:00Z",
+    "publishedAtEastern":  "Sep 28, 2026, 5:16:00 AM Eastern"
 }
