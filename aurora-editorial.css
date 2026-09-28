@@ -1,0 +1,365 @@
+/* =========================================================================
+   Aurora Editorial — shared public-site design system (2026-09-28 pass).
+   Internal name only; not a public brand. Additive layer: it does not
+   remove any existing stylesheet, it re-skins/organises the pages that
+   opt in via the [data-aurora] attribute on <html>, so unmigrated pages
+   are completely unaffected. See docs/CODEX-PUBLIC-SITE-AURORA-EDITORIAL-
+   SPEC-2026-09-28.md (main monorepo) for the design brief this implements.
+
+   Scope for this pass: home, Help, Visual Tour, Become a Tester, Updates.
+   Everything here is presentation only — no page copy, price, legal text
+   or Available/Beta/In development/Planned status wording is defined or
+   changed in this file.
+   ========================================================================= */
+
+:root {
+  /* Palette roles (spec section "Palette roles") */
+  --aurora-canvas: #08131f;
+  --aurora-surface: #101f31;
+  --aurora-elevated: #172a40;
+  --aurora-hairline: #2b4158;
+  --aurora-hairline-soft: #24384c;
+  --aurora-text: #f4f0e8;
+  --aurora-text-muted: #b8c5d0;
+  --aurora-gold: #d9b66f;
+  --aurora-gold-strong: #e8ca8f;
+  --aurora-gold-ink: #17232f;
+  --aurora-blue: #75b7ff;
+  --aurora-blue-ink: #0b2038;
+  --aurora-success: #7bc67e;
+  --aurora-warning: #e8c26a;
+  --aurora-danger: #e88b7d;
+
+  /* Spacing scale */
+  --aurora-space-1: 8px;
+  --aurora-space-2: 12px;
+  --aurora-space-3: 16px;
+  --aurora-space-4: 24px;
+  --aurora-space-5: 32px;
+  --aurora-space-6: 48px;
+  --aurora-space-7: 72px;
+
+  /* Shape + measure */
+  --aurora-radius-sm: 6px;
+  --aurora-radius: 8px;
+  --aurora-radius-lg: 14px;
+  --aurora-radius-pill: 999px;
+  --aurora-content: 1240px;
+  --aurora-measure: 70ch;
+
+  /* Type */
+  --aurora-font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --aurora-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* =========================================================================
+   1. Page canvas + base type, scoped to migrated pages only
+   ========================================================================= */
+html[data-aurora] { background: var(--aurora-canvas); }
+html[data-aurora] body {
+  background: var(--aurora-canvas);
+  color: var(--aurora-text);
+  font-family: var(--aurora-font-body);
+}
+html[data-aurora] :is(h1, h2, h3, h4) {
+  font-family: var(--aurora-font-display);
+  color: var(--aurora-text);
+  letter-spacing: -0.02em;
+}
+html[data-aurora] :is(a, button, summary, input, select, textarea) { font-family: var(--aurora-font-body); }
+html[data-aurora] :is(a, button, [role="button"], summary, input, select):focus-visible {
+  outline: 3px solid var(--aurora-blue) !important;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-aurora] * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* One moderate corner radius sitewide-within-scope, per the spec's fix for
+   the previous global rectangular-button override. Pills (filter chips,
+   status/legend badges) opt back into a pill shape below. */
+html[data-aurora] :is(
+  button, a, summary,
+  input[type="button"], input[type="submit"], input[type="reset"],
+  [role="button"], [role="tab"]
+) { border-radius: var(--aurora-radius) !important; }
+html[data-aurora] :is(
+  .help-filters button, .tab-btn, .filters button, .tour-jumps a,
+  .beebo-tester-banner a, .status, .beebo-badge, .aurora-badge, .aurora-chip
+) { border-radius: var(--aurora-radius-pill) !important; }
+
+/* =========================================================================
+   2. Shared shell: header
+   ========================================================================= */
+html[data-aurora] .beebo-site-header {
+  background: color-mix(in srgb, var(--aurora-canvas) 92%, #000 8%);
+  border-bottom-color: var(--aurora-hairline);
+  font-family: var(--aurora-font-body);
+}
+html[data-aurora] .beebo-site-header .beebo-header-row { min-height: 76px; }
+html[data-aurora] .beebo-site-header a { color: var(--aurora-text); }
+html[data-aurora] .beebo-site-header a:hover { color: var(--aurora-gold-strong); }
+html[data-aurora] .beebo-site-header .beebo-header-nav a { color: var(--aurora-text-muted); }
+html[data-aurora] .beebo-site-header .beebo-header-download {
+  color: var(--aurora-gold);
+  border-bottom-color: var(--aurora-gold);
+}
+html[data-aurora] .beebo-site-header summary {
+  border-color: var(--aurora-hairline);
+  border-radius: var(--aurora-radius) !important;
+}
+html[data-aurora] .beebo-site-header .beebo-header-menu nav {
+  background: var(--aurora-surface);
+  border-color: var(--aurora-hairline);
+}
+html[data-aurora] .beebo-site-header :is(a, summary):focus-visible {
+  outline: 3px solid var(--aurora-blue);
+  outline-offset: 4px;
+}
+/* Mobile: one compact row (brand + menu). The download action moves inside
+   the opened menu as its first, most prominent item instead of forcing a
+   second header row before page content. */
+@media (max-width: 580px) {
+  html[data-aurora] .beebo-site-header .beebo-header-row {
+    display: flex;
+    min-height: 64px;
+    grid-template-columns: none;
+  }
+  html[data-aurora] .beebo-site-header .beebo-header-download { display: none; }
+  html[data-aurora] .beebo-site-header .beebo-header-menu { margin-left: auto; }
+  html[data-aurora] .beebo-header-menu nav .beebo-header-menu-download {
+    display: flex !important;
+    justify-content: center;
+    margin: 0 0 8px;
+    padding: 12px !important;
+    background: var(--aurora-gold);
+    color: var(--aurora-gold-ink) !important;
+    font-weight: 700;
+    border-radius: var(--aurora-radius) !important;
+  }
+}
+
+/* Tester banner: keep exact wording/links, compact it to the spec's "one
+   line on desktop, concise stack on mobile" and align it to the palette. */
+html[data-aurora] .beebo-tester-banner {
+  background: var(--aurora-gold) !important;
+  border-bottom-color: var(--aurora-gold-ink) !important;
+  color: var(--aurora-gold-ink) !important;
+}
+html[data-aurora] .beebo-tester-banner .beebo-tester-inner { padding: 10px 48px !important; }
+html[data-aurora] .beebo-tester-banner .beebo-tester-message strong,
+html[data-aurora] .beebo-tester-banner .beebo-tester-message,
+html[data-aurora] .beebo-tester-banner .beebo-tester-goal { color: var(--aurora-gold-ink) !important; }
+html[data-aurora] .beebo-tester-banner .beebo-tester-message { display: flex; align-items: baseline; gap: 8px; }
+html[data-aurora] .beebo-tester-banner a {
+  border-color: var(--aurora-gold-ink) !important;
+  color: var(--aurora-gold-ink) !important;
+}
+html[data-aurora] .beebo-tester-banner a.beebo-tester-primary {
+  background: var(--aurora-gold-ink) !important;
+  color: var(--aurora-gold) !important;
+}
+@media (max-width: 1000px) {
+  html[data-aurora] .beebo-tester-banner .beebo-tester-inner { padding: 10px 24px !important; }
+}
+@media (max-width: 760px) {
+  html[data-aurora] .beebo-tester-banner .beebo-tester-message { flex-direction: column; gap: 2px; }
+  html[data-aurora] .beebo-tester-banner .beebo-tester-inner { padding: 12px 18px !important; }
+}
+
+/* =========================================================================
+   3. Shared shell: footer (one visual system across pro-footer / site-footer
+      / the tester-program .footer, without touching link text or hrefs)
+   ========================================================================= */
+html[data-aurora] :is(.pro-footer, .site-footer, .footer) {
+  background: var(--aurora-canvas);
+  border-top: 1px solid var(--aurora-hairline);
+  color: var(--aurora-text-muted);
+  font-family: var(--aurora-font-body);
+}
+html[data-aurora] :is(.pro-footer, .site-footer, .footer) :is(strong, h1, h2, h3) { color: var(--aurora-text); }
+html[data-aurora] :is(.pro-footer, .site-footer, .footer) a { color: var(--aurora-text-muted); }
+html[data-aurora] :is(.pro-footer, .site-footer, .footer) a:hover { color: var(--aurora-gold-strong); }
+html[data-aurora] .pro-footer-bottom,
+html[data-aurora] .footer-bottom { border-top-color: var(--aurora-hairline-soft); }
+html[data-aurora] :is(.beebo-release-panel, .beebo-release-status > div) {
+  background: var(--aurora-surface);
+  border: 1px solid var(--aurora-hairline);
+  border-radius: var(--aurora-radius-lg) !important;
+}
+html[data-aurora] :is(.beebo-release-panel, .beebo-release-status > div) strong { color: var(--aurora-text); }
+html[data-aurora] :is(.beebo-release-panel, .beebo-release-status > div) time,
+html[data-aurora] .beebo-release-platform { color: var(--aurora-text-muted) !important; }
+html[data-aurora] .beebo-release-panel:hover { border-color: var(--aurora-gold); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.28); }
+html[data-aurora] .beebo-release-action {
+  background: var(--aurora-gold);
+  color: var(--aurora-gold-ink) !important;
+  border-radius: var(--aurora-radius) !important;
+}
+html[data-aurora] .beebo-back-to-top {
+  background: var(--aurora-gold);
+  color: var(--aurora-gold-ink);
+  border-color: var(--aurora-gold);
+}
+
+/* =========================================================================
+   4. Page introduction band — eyebrow / title / lead / optional notice.
+      Reused verbatim across Help, Visual Tour, Become a Tester, Updates.
+   ========================================================================= */
+html[data-aurora] .aurora-page-intro {
+  background: linear-gradient(180deg, var(--aurora-surface), var(--aurora-canvas));
+  border: 1px solid var(--aurora-hairline);
+  border-radius: var(--aurora-radius-lg);
+  padding: var(--aurora-space-6) var(--aurora-space-5);
+  margin: var(--aurora-space-4) 0 var(--aurora-space-5);
+}
+html[data-aurora] .aurora-page-intro :is(.eyebrow, .help-tag, .visual-kicker) {
+  color: var(--aurora-gold);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+html[data-aurora] .aurora-page-intro h1 {
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  line-height: 1.08;
+  margin: 12px 0 16px;
+}
+html[data-aurora] .aurora-page-intro > div > p,
+html[data-aurora] .aurora-page-intro > p,
+html[data-aurora] .aurora-page-intro .lead,
+html[data-aurora] .aurora-page-intro .tour-intro,
+html[data-aurora] .aurora-page-intro .release-intro {
+  color: var(--aurora-text-muted);
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: var(--aurora-measure);
+}
+html[data-aurora] .aurora-page-intro img {
+  border-radius: var(--aurora-radius-lg);
+  object-fit: cover;
+}
+html[data-aurora] .aurora-page-intro .status-note,
+html[data-aurora] .aurora-page-intro .release-versions {
+  margin-top: var(--aurora-space-3);
+}
+html[data-aurora] .aurora-page-intro .release-versions span {
+  border-color: var(--aurora-hairline);
+  color: var(--aurora-text-muted);
+  border-radius: var(--aurora-radius-pill) !important;
+}
+html[data-aurora] .aurora-page-intro .cta-row,
+html[data-aurora] .aurora-page-intro .hero-actions {
+  margin-top: var(--aurora-space-4);
+}
+html[data-aurora] .aurora-page-intro .jump,
+html[data-aurora] .tour-jumps {
+  margin-top: var(--aurora-space-4);
+  border-color: var(--aurora-hairline-soft) !important;
+}
+html[data-aurora] .tour-jumps a {
+  border-color: var(--aurora-hairline);
+  color: var(--aurora-text-muted);
+}
+html[data-aurora] .aurora-page-intro .jump a { color: var(--aurora-text-muted); }
+@media (max-width: 760px) {
+  html[data-aurora] .aurora-page-intro { padding: var(--aurora-space-4) var(--aurora-space-3); }
+}
+
+/* =========================================================================
+   5. Evidence Notice — the compact "here is what's tested / not yet tested"
+      component. Visual treatment only: every existing word, date, link and
+      status stays exactly as written on the page.
+   ========================================================================= */
+html[data-aurora] :is(#interface-test-update, .status-note, .pro-next[data-tester-notice], .catalog-note) {
+  background: var(--aurora-elevated) !important;
+  border: 1px solid var(--aurora-hairline) !important;
+  border-left: 3px solid var(--aurora-blue) !important;
+  border-radius: var(--aurora-radius) !important;
+  color: var(--aurora-text) !important;
+  padding: var(--aurora-space-3) var(--aurora-space-4) !important;
+}
+html[data-aurora] :is(#interface-test-update, .status-note, .pro-next[data-tester-notice], .catalog-note) p {
+  color: var(--aurora-text-muted) !important;
+}
+html[data-aurora] :is(#interface-test-update, .status-note, .pro-next[data-tester-notice], .catalog-note) strong {
+  color: var(--aurora-text) !important;
+}
+html[data-aurora] :is(#interface-test-update, .status-note, .pro-next[data-tester-notice], .catalog-note) a {
+  color: var(--aurora-blue) !important;
+}
+
+/* =========================================================================
+   6. Cards, buttons, fields
+   ========================================================================= */
+html[data-aurora] :is(
+  .card, .help-card, .intro-card, .two > div, .area, .details-note,
+  .offer, .release-row article, .release-update, .goal, .first-session-checks li,
+  .download-panel, .price-card, .setup-steps li, .after-intro, .visual-guide,
+  .desktop-guide, .visual-tour-link
+) {
+  background: var(--aurora-surface);
+  border-color: var(--aurora-hairline) !important;
+  border-radius: var(--aurora-radius-lg) !important;
+  color: var(--aurora-text);
+}
+html[data-aurora] :is(.help-card, .card):hover { border-color: var(--aurora-gold) !important; }
+html[data-aurora] .help-card p,
+html[data-aurora] .help-tag,
+html[data-aurora] .a-short,
+html[data-aurora] .capture-note { color: var(--aurora-text-muted) !important; }
+html[data-aurora] .help-start {
+  background: var(--aurora-elevated) !important;
+  color: var(--aurora-text) !important;
+  border-radius: var(--aurora-radius-lg) !important;
+}
+html[data-aurora] .help-tools {
+  background: var(--aurora-surface) !important;
+  border: 1px solid var(--aurora-hairline);
+  border-radius: var(--aurora-radius-lg) !important;
+}
+html[data-aurora] .help-tools input {
+  background: var(--aurora-canvas) !important;
+  color: var(--aurora-text) !important;
+  border-color: var(--aurora-hairline) !important;
+}
+html[data-aurora] .help-filters button {
+  background: transparent !important;
+  color: var(--aurora-text-muted) !important;
+  border-color: var(--aurora-hairline) !important;
+}
+html[data-aurora] .help-filters button[aria-pressed="true"] {
+  background: var(--aurora-gold) !important;
+  color: var(--aurora-gold-ink) !important;
+  border-color: var(--aurora-gold) !important;
+}
+
+/* Three action tiers: filled gold primary, outlined secondary, text tertiary. */
+html[data-aurora] :is(.action-gold, .button.primary, .btn-primary, .beebo-header-download.primary) {
+  background: var(--aurora-gold) !important;
+  border-color: var(--aurora-gold) !important;
+  color: var(--aurora-gold-ink) !important;
+}
+html[data-aurora] :is(.action-gold, .button.primary, .btn-primary):hover { background: var(--aurora-gold-strong) !important; }
+html[data-aurora] :is(.button, .btn):not(.primary):not(.btn-primary) {
+  background: transparent !important;
+  border-color: var(--aurora-hairline) !important;
+  color: var(--aurora-text) !important;
+}
+html[data-aurora] :is(.button, .btn):not(.primary):not(.btn-primary):hover { border-color: var(--aurora-gold) !important; }
+html[data-aurora] .text-action,
+html[data-aurora] .download-link,
+html[data-aurora] a:not(.button):not(.btn):not(.action):not(.beebo-header-download):not(.beebo-tester-primary) {
+  color: var(--aurora-gold);
+}
+html[data-aurora] a:not(.button):not(.btn):not(.action):hover { color: var(--aurora-gold-strong); }
+
+/* =========================================================================
+   7. Images — deliberate, consistent framing instead of ad hoc heights
+   ========================================================================= */
+html[data-aurora] .screen-stage,
+html[data-aurora] .beebo-demo-art img,
+html[data-aurora] .guide-photo img {
+  border-radius: var(--aurora-radius-lg);
+  border: 1px solid var(--aurora-hairline);
+}
