@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-beebo-corporate-dark>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Open your own Beebo server and sign in to watch your library.">
+  <meta name="theme-color" content="#101719">
+  <title>Open your Beebo library | Beebo Entertainment</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/website-shell.css?v=20260926">
+  <link rel="stylesheet" href="/rectangular-buttons.css?v=20260926">
+  <link rel="stylesheet" href="/watch-your-library.css">
+  <script src="/website-shell.js?v=20260926" defer></script>
+  <script src="/watch-your-library.js" defer></script>
+</head>
+<body>
+  <header class="beebo-site-header" id="top">
+    <div class="beebo-header-row">
+      <a class="beebo-header-brand" href="/index.html" aria-label="Beebo home"><img class="beebo-brand-icon" src="/assets/beebo-desktop.ico" width="44" height="44" alt=""><span>Beebo<small>ENTERTAINMENT &amp; CONNECTION</small></span></a>
+      <nav class="beebo-header-nav" aria-label="Main navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/index.html#camp">Camp Mode</a><a href="/help.html">Support</a></nav>
+      <a class="beebo-header-download" href="/index.html#download">Download Beebo <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="page-content" tabindex="-1">
+    <section class="library-entry" aria-labelledby="library-entry-title">
+      <p class="library-entry-kicker">YOUR BEEBO SERVER</p>
+      <h1 id="library-entry-title">Open your library.</h1>
+      <p class="library-entry-lead">Enter the address for the computer that runs Beebo. You will sign in on your own server — this website never receives your password.</p>
+      <form class="library-entry-form" data-library-entry-form novalidate>
+        <label for="server-address">Your Beebo address</label>
+        <p class="library-entry-hint" id="server-address-hint">For example, <code>familyname.beebo.tv</code> when away, or <code>http://192.168.1.50:47811</code> on home Wi-Fi.</p>
+        <div class="library-entry-controls">
+          <input id="server-address" name="server-address" type="text" inputmode="url" autocomplete="url" spellcheck="false" placeholder="familyname.beebo.tv" aria-describedby="server-address-hint server-address-status" required>
+          <button type="submit">Open my server <span aria-hidden="true">↗</span></button>
+        </div>
+        <p class="library-entry-status" id="server-address-status" data-library-entry-status aria-live="polite"></p>
+      </form>
+      <aside class="library-entry-note">
+        <h2>Where do I find this?</h2>
+        <p>On the computer running Beebo, open <strong>Get Started</strong> and look for the connection address or QR code. Your permanent address usually ends in <code>.beebo.tv</code>.</p>
+        <a href="/docs/connect-your-phone.html">Connection instructions <span aria-hidden="true">→</span></a>
+      </aside>
+      <div class="library-entry-divider"></div>
+      <p class="library-entry-support">Need the desktop app or help finding your address? <a href="/index.html#download">Download Beebo</a> or <a href="/help.html">visit Support</a>.</p>
+    </section>
+  </main>
+</body>
+</html>
