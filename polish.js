@@ -20,9 +20,10 @@
     if (!raw) return;
     try {
       const url = new URL(raw, location.href);
+      const isWindowsFamily = platform === 'windows' || platform === 'windows-story-voices';
       const extension = platform === 'android' ? '.apk' : '.exe';
       const ownHost = url.origin === location.origin && url.pathname.startsWith('/downloads/');
-      const githubRelease = platform === 'windows' && url.origin === 'https://github.com' && ['/SWGfan/beebotv/releases/download/', '/beeboentertainment/beebotv/releases/download/'].some(prefix => url.pathname.startsWith(prefix));
+      const githubRelease = isWindowsFamily && url.origin === 'https://github.com' && ['/SWGfan/beebotv/releases/download/', '/beeboentertainment/beebotv/releases/download/'].some(prefix => url.pathname.startsWith(prefix));
       if (!(ownHost || githubRelease) || !url.pathname.endsWith(extension) || url.username || url.password) return;
       document.querySelectorAll('[data-beebo-download="'+platform+'"]').forEach(link => { link.href = url.href; });
     } catch (_) { /* Keep the verified embedded download link if metadata is invalid. */ }
@@ -30,6 +31,10 @@
   get('/desktop-version.json').then(data => {
     show('windows',data.version,null,data.publishedAtUtc || data.releasedAt || data.publishedAt,true);
     updateDownload('windows',data.url);
+    // Second, opt-in Windows variant (bundles Story Voices - Python/Kokoro/PyTorch/eSpeak-NG).
+    // Same shape as the top-level fields, under a sibling key so old feeds/consumers are
+    // unaffected; see desktop/apps/desktop/electron/desktopUpdater.js's pickFeedVariant().
+    if (data.storyVoicesVariant) updateDownload('windows-story-voices', data.storyVoicesVariant.url);
   }).catch(() => {
     document.querySelectorAll('[data-beebo-release-date="windows"]').forEach(el=>{el.textContent+=' · last published details';});
   });
