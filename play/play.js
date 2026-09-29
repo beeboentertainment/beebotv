@@ -144,7 +144,7 @@
   async function loadLobby() {
     if (!api.configured) { elements.openTables.setAttribute('aria-busy', 'false'); elements.gameList.setAttribute('aria-busy', 'false'); setLobbyMessage('Multiplayer is not connected to this preview yet. Configure the web-games service to show live tables.', 'error'); showEmpty(elements.openTables, 'The lobby will show open tables once the web-games service is connected.'); renderUnavailableGame('Live availability is unavailable until the service is connected.'); return; }
     setLobbyMessage('Refreshing the live lobby…');
-    try { renderLobby(await api.lobby()); } catch (error) { elements.openTables.setAttribute('aria-busy', 'false'); elements.gameList.setAttribute('aria-busy', 'false'); setLobbyMessage(error.message, 'error'); showEmpty(elements.openTables, 'The live lobby could not be reached. Try refreshing.'); renderUnavailableGame('Live availability is unavailable while the lobby cannot be reached.'); }
+    try { renderLobby(await api.lobby()); } catch (error) { elements.openTables.setAttribute('aria-busy', 'false'); elements.gameList.setAttribute('aria-busy', 'false'); setLobbyMessage('Multiplayer is not connected to this preview yet. Configure the web-games service to show live tables.', 'error'); showEmpty(elements.openTables, 'The lobby will show open tables once the web-games service is connected.'); renderUnavailableGame('Live availability is unavailable until the service is connected.'); }
   }
   async function joinFromFragment() {
     const params = new URLSearchParams(location.hash.slice(1)); const invite = params.get('join');
