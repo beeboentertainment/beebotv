@@ -4,6 +4,10 @@
 @media(max-width:440px){.hero h1{font-size:52px}.eyebrow{font-size:9px;letter-spacing:1.3px}.hero-actions{gap:20px}.action{gap:27px}.text-action{font-size:12px}.figure-heading{font-size:8px;padding-inline:14px}.mascot-poster{height:230px}.mascot-figure figcaption{padding:20px 15px}.mascot-figure figcaption strong{font-size:16px}.mascot-figure figcaption span{font-size:9px}.download-panel{gap:15px;flex-wrap:wrap}.download-panel>div:nth-child(2){flex:1}.download-link{margin-left:50px;padding:9px 0;font-size:12px}.download-panel h3{font-size:16px}.feature-grid{grid-template-columns:1fr}.feature-grid p{max-width:none}.section-intro h2,.camp-copy h2,.verification-section h2{font-size:32px;letter-spacing:-1.1px}.footer-main{grid-template-columns:1fr 1fr}.footer-main nav:last-child{grid-column:1/-1}.footer-main nav:last-child{display:grid;grid-template-columns:1fr 1fr}.footer-main nav:last-child strong{grid-column:1/-1}.beebo-back-to-top{right:12px;bottom:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
+/* Aurora's dark tokens must not override this light homepage panel. */
+html[data-aurora] .platform-section{color:#1d292c}
+html[data-aurora] .platform-section :is(h1,h2,h3,h4){color:#1d292c}
+
 .camp-hero-note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:22px;max-width:470px}.camp-hero-note>span{display:block;font-size:8px;font-weight:700;letter-spacing:1.5px;color:var(--gold);margin-bottom:4px}.downloads+.camp-section{border-top:1px solid var(--line);padding-top:55px}
 
 /* First-time setup: the homepage starts with one clear path before product detail. */
