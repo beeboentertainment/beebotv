@@ -4,6 +4,19 @@ html[data-aurora] .evidence-shell {
   padding: 28px 0 72px;
 }
 
+/* Present to keyboard users first, without leaving a stray link above the tester banner. */
+html[data-aurora] .skip {
+  position: absolute;
+  top: -90px;
+  left: 16px;
+  z-index: 99;
+  padding: 12px;
+  background: var(--aurora-surface);
+  color: var(--aurora-text);
+  border: 1px solid var(--aurora-gold);
+}
+html[data-aurora] .skip:focus { top: 12px; }
+
 html[data-aurora] .evidence-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(290px, .75fr);
