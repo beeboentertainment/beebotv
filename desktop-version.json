@@ -1,9 +1,9 @@
 {
-    "version":  "0.1.64",
-    "url":  "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.64/Beebo.Entertainment.Setup.0.1.64.exe",
-    "sha256":  "c1b9322456d858622a574620bf40a45b2e4eed4d22258a29a7ea9994cb098b20",
-    "size":  206733486,
-    "notes":  "What's new in 0.1.64:\n• Fixed: the automatic-install update setting wasn't actually auto-installing new releases while the app kept running (it only checked once, right after launch). It now rechecks periodically, so turning that setting on actually works.\n• Fixed: the Admin > Upload page (adding a movie/TV file to your library) failing when reached through your away-from-home address - large pieces of the file were being sent as one oversized network message over that connection and stalling. Uploads now work the same whether you're home or away.\n• Routine dependency updates (React updated to 19, and other library bumps across the project).",
-    "publishedAtUtc":  "2026-09-28T09:15:51Z",
-    "publishedAtEastern":  "Sep 28, 2026, 5:15:51 AM Eastern"
+    "version":  "0.1.65",
+    "url":  "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.65/Beebo.Entertainment.Setup.0.1.65.exe",
+    "sha256":  "2162216d7677af0fdfbcc1a527619925dee4a37f3dc1f296458f24bfe976f8cb",
+    "size":  206793671,
+    "notes":  "What's new in 0.1.65:\n• New Home screen with a featured title, Continue Watching queue, and quick browse panels — plus three alternate layouts (Command Deck, High-Impact Theater, Studio Canvas) and an opt-in Layout Studio to rearrange it (Beta — not yet visually checked on a real screen, so please tell us if anything looks off).\n• Two new appearance options: Aurora Spotlight and an opt-in Light theme.\n• Cleaner window: Settings now uses your full window width, and the old File/Edit/View menu bar is hidden.\n• Sidebar menu groups reorganized to be clearer.\n• New security alerts: you'll be notified when a new device signs in or two-factor authentication is changed on your account.\n• Fixed: Home screen getting stuck on 'Loading...' forever on a brand-new install.\n• Fixed: Live TV looping 'Reconnecting...' forever instead of telling you the channel actually stopped.\n• Fixed: fast-forwarding a video (especially away from home) could wrongly trigger an unnecessary 'unsupported format' re-conversion.\n• Fixed: the web player could silently freeze during playback on a network hiccup; it now recovers automatically.\n• Fixed: the Cast button now tells you honestly when casting can't work while watching away from home, instead of silently failing.\n• Added confirmation prompts before several actions that used to happen instantly with one click (revoking a household member's device access, deleting an app password, clearing a queue, removing a station, and more).\n• Continued accessibility improvements (better contrast and keyboard focus) across more settings screens.\n• The Viewing Privacy page is now available in all 6 supported languages.",
+    "publishedAtUtc":  "2026-09-29T10:03:05Z",
+    "publishedAtEastern":  "Sep 29, 2026, 6:03:05 AM Eastern"
 }
