@@ -1,9 +1,9 @@
 {
-    "version":  "0.1.62",
-    "url":  "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.62/BeeboEntertainmentSetup.exe",
-    "sha256":  "26e10428e147f4cd660945302b81af5611254791fa5b54ebc3d521625bfe998b",
-    "size":  194986891,
-    "notes":  "What\u0027s new in 0.1.62:\n• Cinema Library is now the default look for new setups (existing users unaffected)\n• Faster conversions on older PCs: your graphics card now helps read video, not just encode it\n• Fixed HDR conversion failing on PCs with more than one graphics processor\n• Conversions now properly pause when you pause playback, instead of running in the background\n• New optional H.265 (HEVC) output for compatible devices, off by default\n• New setting: choose where converted files are stored, with a size limit\n• Fixed AV1 conversions silently starting as H.264\n• Advanced: point Beebo at your own ffmpeg for the x264 encoder (Settings \u003e Playback)\n• One shared sign-in for the owner and household members connecting away from home\n• Offensive names are now blocked everywhere; new personal web addresses need 5+ characters",
-    "publishedAtUtc":  "2026-09-27T18:39:36Z",
-    "publishedAtEastern":  "Sep 27, 2026, 2:39:36 PM Eastern"
+    "version":  "0.1.64",
+    "url":  "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.64/Beebo.Entertainment.Setup.0.1.64.exe",
+    "sha256":  "c1b9322456d858622a574620bf40a45b2e4eed4d22258a29a7ea9994cb098b20",
+    "size":  206733486,
+    "notes":  "What's new in 0.1.64:\n• Fixed: the automatic-install update setting wasn't actually auto-installing new releases while the app kept running (it only checked once, right after launch). It now rechecks periodically, so turning that setting on actually works.\n• Fixed: the Admin > Upload page (adding a movie/TV file to your library) failing when reached through your away-from-home address - large pieces of the file were being sent as one oversized network message over that connection and stalling. Uploads now work the same whether you're home or away.\n• Routine dependency updates (React updated to 19, and other library bumps across the project).",
+    "publishedAtUtc":  "2026-09-28T09:15:51Z",
+    "publishedAtEastern":  "Sep 28, 2026, 5:15:51 AM Eastern"
 }
