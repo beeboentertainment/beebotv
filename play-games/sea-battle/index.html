@@ -53,6 +53,8 @@ footer.site{margin:20px 0 32px;padding-top:12px;border-top:1px solid var(--line)
 @media(min-width:720px){.seas.two{grid-template-columns:1.4fr 1fr}}
 .sea h3{margin:0 0 6px;font-size:1rem;color:var(--cream)}
 .grid{--n:8;display:grid;grid-template-columns:28px repeat(8,1fr);gap:3px;max-width:480px}
+.grid-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;padding:2px}
+@media (max-width:420px){.grid-scroll:not(.compact-grid) .grid{grid-template-columns:20px repeat(8,44px);width:396px;max-width:none}}
 .grid .hd{display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--muted);min-height:20px}
 .cell{position:relative;min-height:44px;min-width:0;aspect-ratio:1;padding:0;border-radius:6px;border:1px solid #2a3f57;background:#0f2234;color:var(--cream);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .small .cell{min-height:30px;cursor:default}
@@ -167,6 +169,7 @@ function cellName(c) { return G.label(c); }
 /** Build a lettered 8x8 grid of buttons with roving tabindex and arrow-key movement. */
 function buildGrid(container, opts) {
   container.innerHTML = '';
+  container.className = 'grid-scroll' + (opts.compact ? ' compact-grid' : '');
   var grid = document.createElement('div');
   grid.className = 'grid';
   grid.setAttribute('role', 'group');
@@ -383,7 +386,7 @@ function renderBattle(afterShot) {
   var first = cells.filter(function (b) { return !b.disabled; })[0];
   if (first) { cells.forEach(function (x) { x.tabIndex = -1; }); first.tabIndex = 0; }
   var view = ownView(viewer);
-  var mc = buildGrid(mg, { label: 'Your own sea, ships and enemy shots', onPick: null });
+  var mc = buildGrid(mg, { label: 'Your own sea, ships and enemy shots', onPick: null, compact: true });
   mc.forEach(function (b, i) { var r = view(i); setCell(b, r[0], r[1], cellName(i) + ', ' + r[2]); b.disabled = true; b.tabIndex = -1; });
 
   if (afterShot && !game.over && ui.mode === 'pass') {
