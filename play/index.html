@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#101719">
   <title>Beebo Play — Beebo Entertainment</title>
   <meta name="description" content="A preview of Beebo Play, our planned browser game lobby. It is not live yet — this page previews the design.">
+  <meta name="robots" content="noindex,follow">
   <link rel="icon" href="/assets/favicon-32.png">
   <link rel="stylesheet" href="/website-shell.css?v=20260926">
   <link rel="stylesheet" href="play.css">
@@ -13,7 +14,7 @@
   <script src="/qrcode-generator.js" defer></script>
   <script src="play.js" defer></script>
 </head>
-<body data-api-origin="https://login.beebo.tv" data-sign-in-url="/account/sign-in">
+<body data-api-origin="https://login.beebo.tv" data-sign-in-url="/app-on-your-phone.html">
   <a class="skip-link" href="#play-main">Skip to Beebo Play</a>
   <header class="beebo-site-header" id="top">
     <div class="beebo-header-row">
@@ -35,8 +36,8 @@
       <aside class="identity-card" aria-labelledby="identity-heading">
         <p class="eyebrow">Your seat</p>
         <h2 id="identity-heading">Play your way.</h2>
-        <p>Use a guest nickname or sign in to an existing Beebo account. Both can join a table.</p>
-        <a id="play-sign-in" class="text-link" href="/account/sign-in">Sign in to your account <span aria-hidden="true">↗</span></a>
+        <p>Guest nicknames and account sign-in are planned for browser tables. The shared game sign-in is not available yet.</p>
+        <a id="play-sign-in" class="text-link" href="/app-on-your-phone.html">How Beebo sign-in works <span aria-hidden="true">↗</span></a>
       </aside>
     </section>
 
@@ -85,7 +86,7 @@
       <p id="seat-context">Choose a name for this game.</p>
       <label for="guest-nickname">Nickname<input id="guest-nickname" name="nickname" autocomplete="nickname" maxlength="24" required placeholder="Your nickname"></label>
       <p class="form-help">You can play as a guest, or sign in if you already have a Beebo account.</p>
-      <div class="dialog-actions"><button class="primary-button" type="submit">Continue as guest</button><a id="dialog-sign-in" class="secondary-button" href="/account/sign-in">Sign in</a></div>
+      <div class="dialog-actions"><button class="primary-button" type="submit">Continue as guest</button><a id="dialog-sign-in" class="secondary-button" href="/app-on-your-phone.html">Sign-in guide</a></div>
       <p id="seat-error" class="form-error" role="alert" hidden></p>
     </form>
   </dialog>
