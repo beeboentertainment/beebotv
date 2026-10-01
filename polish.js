@@ -21,7 +21,7 @@
     try {
       const url = new URL(raw, location.href);
       const isWindowsFamily = platform === 'windows' || platform === 'windows-story-voices';
-      const extension = platform === 'android' ? '.apk' : '.exe';
+      const extension = platform === 'android' || platform === 'auto' ? '.apk' : '.exe';
       const ownHost = url.origin === location.origin && url.pathname.startsWith('/downloads/');
       const githubRelease = isWindowsFamily && url.origin === 'https://github.com' && ['/SWGfan/beebotv/releases/download/', '/beeboentertainment/beebotv/releases/download/'].some(prefix => url.pathname.startsWith(prefix));
       if (!(ownHost || githubRelease) || !url.pathname.endsWith(extension) || url.username || url.password) return;
@@ -43,6 +43,12 @@
     updateDownload('android',data.url);
   }).catch(() => {
     document.querySelectorAll('[data-beebo-release-date="android"]').forEach(el=>{el.textContent+=' · last published details';});
+  });
+  get('/downloads/auto-build.json').then(data => {
+    show('auto',data.versionName || data.version,data.versionCode,data.publishedAtUtc || data.builtAtUtc,Boolean(data.publishedAtUtc));
+    updateDownload('auto',data.url);
+  }).catch(() => {
+    document.querySelectorAll('[data-beebo-release-date="auto"]').forEach(el=>{el.textContent+=' · last published details';});
   });
 })();
 
