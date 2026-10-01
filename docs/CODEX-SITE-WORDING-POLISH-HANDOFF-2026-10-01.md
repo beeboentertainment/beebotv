@@ -13,6 +13,7 @@ Branch: `codex/site-copy-polish-2026-10-01`, based on beebotv main `d962a83`. We
 - `next-features.html`: clearer title, description and benefit-first introduction to the Available, Beta, In development and Planned sections. Individual feature status classifications were not changed.
 - `camp-stories.html`: clearer concept-first opening and consistent Campsite Mode name, while keeping the generated-image and untested-audio disclosures.
 - `known-issues.html`, `tester-checklist.html`, `tester-results.html`: descriptive public-page titles and search descriptions. Issue/test data and reporting behavior were not changed.
+- `server-setup.html`: benefit-first title, description and opening; removed the unverified ten-minute estimate. The detailed technical steps were left intact.
 
 The tracked public-page inventory contains 98 HTML pages, excluding scratch templates and domain-site copies. All 98 already had a download link by the current audit pattern, but only the homepage linked to `next-features.html` before this work. A separate mechanical pass now adds a visible **Feature status** link to the shared desktop and mobile header on every tracked public HTML page, and normalizes the header label to **Campsite Mode**. All 98 now have both links by the current audit pattern. Individual copy review still remains open; this is not a whole-site sign-off.
 
@@ -26,6 +27,7 @@ The tracked public-page inventory contains 98 HTML pages, excluding scratch temp
 - `app-on-your-phone.html` still says the browser install works on iPhone/iPad and uses absolute-sounding family-address and away-from-home language farther down the page. Those instructions need live compatibility and network review before stronger wording changes.
 - `next-features.html` calls Story Mode available, while other public copy refers to Story Studio; the feature name and availability need confirmation before renaming the status card.
 - `help.html` still advertises a lifetime streaming pass for testers and older September 26 build numbers. Reward approval and current-build evidence are needed before that page is rewritten.
+- `server-setup.html` still gives Windows-version, app-signing and installer-warning instructions. These need current installer/build review, not copy-only assumptions.
 
 ## Verification so far
 
