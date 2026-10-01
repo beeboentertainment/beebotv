@@ -28,6 +28,8 @@ The tracked public-page inventory contains 98 HTML pages, excluding scratch temp
 - `next-features.html` calls Story Mode available, while other public copy refers to Story Studio; the feature name and availability need confirmation before renaming the status card.
 - `help.html` still advertises a lifetime streaming pass for testers and older September 26 build numbers. Reward approval and current-build evidence are needed before that page is rewritten.
 - `server-setup.html` still gives Windows-version, app-signing and installer-warning instructions. These need current installer/build review, not copy-only assumptions.
+- `beebo-products.html` still mixes “Available now” badges with Beebo Relay billing being finalized, a BeeboVPN invite test, planned CA-dollar prices, and broad device/game claims. Product and pricing approval is needed before a benefit-first rewrite can safely preserve the true status of each offering.
+- `apple.html` says Safari and AirPlay work today; that should be checked against real Apple-device evidence before strengthening or changing its compatibility language.
 
 ## Verification so far
 
