@@ -14,6 +14,7 @@ Branch: `codex/site-copy-polish-2026-10-01`, based on beebotv main `d962a83`. We
 - `camp-stories.html`: clearer concept-first opening and consistent Campsite Mode name, while keeping the generated-image and untested-audio disclosures.
 - `known-issues.html`, `tester-checklist.html`, `tester-results.html`: descriptive public-page titles and search descriptions. Issue/test data and reporting behavior were not changed.
 - `server-setup.html`: benefit-first title, description and opening; removed the unverified ten-minute estimate. The detailed technical steps were left intact.
+- `docs/getting-started-windows.html`: benefit-first description and opening, with the unverified fifteen-minute estimate removed from page metadata, social metadata and HowTo structured data. The structured data parses; technical steps were not changed.
 
 The tracked public-page inventory contains 98 HTML pages, excluding scratch templates and domain-site copies. All 98 already had a download link by the current audit pattern, but only the homepage linked to `next-features.html` before this work. A separate mechanical pass now adds a visible **Feature status** link to the shared desktop and mobile header on every tracked public HTML page, and normalizes the header label to **Campsite Mode**. All 98 now have both links by the current audit pattern. Individual copy review still remains open; this is not a whole-site sign-off.
 
