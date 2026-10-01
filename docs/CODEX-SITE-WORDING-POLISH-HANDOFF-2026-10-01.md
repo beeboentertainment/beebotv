@@ -36,6 +36,7 @@ The tracked public-page inventory contains 98 HTML pages, excluding scratch temp
 - `apple.html` says Safari and AirPlay work today; that should be checked against real Apple-device evidence before strengthening or changing its compatibility language.
 - `become-a-tester.html` contains volunteer rewards and lifetime-pass terms. No offer language was changed without owner approval.
 - **Priority review: `car-companion.html`** currently states Watch Together, QR joining, Android Auto/Beebo Auto, passenger games and in-car audio synchronization as working; it also says “safely,” “Built for road trips with kids,” and shows two “Download from this site” badges. This conflicts with the Feature status page, where Watch Together and Car Party are In development and switched off. The page was left unchanged because a safe rewrite needs Claude/Nick to confirm each actual build path; do not present it as a verified current feature or child-safety assurance.
+- `tournaments.html` marks Beebo Championships “Coming soon” but promises one month of subscription account credit to each eligible winner. Prize and subscription terms need owner approval; no offer copy was changed.
 
 ## Verification so far
 
