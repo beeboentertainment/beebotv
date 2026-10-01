@@ -52,7 +52,7 @@
   .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
   .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
   .guide-nav a:hover{border-color:var(--accent)}
-  .platform-access{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0 28px}
+  .platform-access{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;margin:16px 0 28px}
   .platform-access-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
   .platform-access-card h3{margin:0 0 8px;font-size:1.08rem}
   .platform-access-card p{margin:0 0 12px;color:var(--muted);line-height:1.5}
@@ -183,6 +183,12 @@
         <a href="index.html#get-app">Get the current downloads →</a>
       </article>
       <article class="platform-access-card">
+        <span class="tag beta">Test download</span>
+        <h3>Beebo Auto <span data-beebo-release-version="auto">1.11</span></h3>
+        <p>Test download for Android Auto, not on Google Play, never tested in a real car. Use only when parked and follow the <a href="driving-safety.html">driving safety guidance</a>.</p>
+        <a data-beebo-download="auto" href="/downloads/BeeboAuto.apk">Download Beebo Auto APK →</a>
+      </article>
+      <article class="platform-access-card">
         <span class="tag beta">Beta downloads</span>
         <h3>Linux and Docker</h3>
         <p>Linux desktop and Docker/NAS server builds are available for testers who are comfortable with beta software.</p>
@@ -206,6 +212,7 @@
       <tbody>
         <tr><th scope="row"><a href="windows.html">Windows 10 and 11</a></th><td><span class="tag live">Available now</span></td><td>The Beebo server and app, version <span data-beebo-release-version="windows">0.1.62</span>. This is the PC that holds your movies and shows and streams them to your other devices.</td><td><a href="index.html#get-app">Download</a></td></tr>
         <tr><th scope="row">Android phones and tablets</th><td><span class="tag live">Test download</span></td><td>Install the app from this site, outside Google Play. On October 1, the newest development test build played home-server video on a Galaxy S24 Ultra (Android 16); the published build ran offline tabs, Settings, Campsite lobby and games on a Galaxy S9+ (Android 10), with two offline problems found. Fixes are in development and await a phone retest. These are our own two-phone checks, not a broad beta; Google Play testing has not started.</td><td><a href="app-on-your-phone.html#android-tested">Verified paths</a><br><a href="release-evidence.html#current-pass">Full testing limits</a></td></tr>
+        <tr><th scope="row">Beebo Auto</th><td><span class="tag beta">Test download</span></td><td>Android Auto test build <span data-beebo-release-version="auto">1.11</span>. Not on Google Play and never tested in a real car. Use only when parked.</td><td><a data-beebo-download="auto" href="/downloads/BeeboAuto.apk">Download APK</a><br><a href="driving-safety.html">Safety guidance</a></td></tr>
         <tr><th scope="row"><a href="android-tv.html">Android TV and Google TV</a></th><td><span class="tag live">Available now</span></td><td>The same Android app runs on Android TV and Google TV with remote-control navigation. You install it yourself, because it is not listed for TVs on Google Play yet. The Android 1.40 test build adds device profiles for better direct play (<span class="tag live">Available now — test build (Beta)</span>, not yet checked on real TVs).</td><td><a href="android-tv.html">Install guide</a></td></tr>
         <tr><th scope="row">Web browser</th><td><span class="tag live">Available</span></td><td>Open your Beebo address in any web browser, at home or away, and sign in. On iPhone and iPad, use Safari. Offline downloads need the Android app.</td><td><a href="app-on-your-phone.html">Browser guide</a></td></tr>
         <tr><th scope="row">Chromecast, Google TV and AirPlay casting</th><td><span class="tag live">Available</span></td><td>Cast to a Chromecast or Google TV from the Android app, or use AirPlay from Safari on an iPhone, iPad or Mac. Your device and the TV need to be on the same Wi-Fi.</td><td><a href="cast-to-tv.html">Casting guide</a></td></tr>
