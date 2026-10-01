@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Information for legal reviewers | Beebo Entertainment</title>
+<meta name="description" content="A factual overview of Beebo Entertainment for lawyers and other reviewers: what the software does, where data goes, who provides services, and the questions we would like reviewed.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://www.beeboentertainment.com/legal-review.html">
+<style>
+  :root { color-scheme: light dark; --bg:#fbf8f1; --ink:#1d2430; --muted:#566170; --card:#ffffff; --line:#e1d9c6; --accent:#7a5a00; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e141c; --ink:#f1ead8; --muted:#a7b1bd; --card:#17202b; --line:#2a3646; --accent:#e0b252; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:52rem; margin:0 auto; padding:1.5rem 1rem 4rem; }
+  h1 { font-size:1.85rem; margin:.2rem 0 .5rem; line-height:1.2; }
+  h2 { font-size:1.3rem; margin:2.2rem 0 .6rem; padding-top:.4rem; border-top:1px solid var(--line); }
+  h3 { font-size:1.05rem; margin:1.1rem 0 .3rem; }
+  p, li { max-width:46rem; }
+  .note { color:var(--muted); font-size:.95rem; }
+  .box { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:.9rem 1.1rem; margin:1rem 0; }
+  a { color:var(--accent); font-weight:600; word-break:break-word; }
+  table { width:100%; border-collapse:collapse; margin:.6rem 0; font-size:.95rem; }
+  th, td { text-align:left; vertical-align:top; padding:.5rem .6rem; border-bottom:1px solid var(--line); }
+  th { background:var(--card); }
+  .scroll { overflow-x:auto; }
+  nav ul { columns:2; padding-left:1.1rem; margin:.4rem 0; }
+  @media (max-width:640px) { nav ul { columns:1; } }
+  .tag { display:inline-block; font-size:.78rem; font-weight:700; padding:1px 9px; border-radius:999px; border:1px solid var(--line); white-space:nowrap; }
+</style>
+</head>
+<body>
+<main>
+  <p class="note"><a href="/">Beebo Entertainment</a> &rsaquo; Information for legal reviewers</p>
+  <h1>Information for legal reviewers</h1>
+  <p class="note">Last updated October 2, 2026. This page is an unlisted summary prepared for lawyers and other reviewers who are looking at Beebo at the owner&rsquo;s request. It describes the software and services as they are today, including features that are still in development, and uses our public status labels: <span class="tag">Available</span> <span class="tag">Beta</span> <span class="tag">In development</span> <span class="tag">Planned</span>. It is a factual overview, not legal advice and not a legal position.</p>
+
+  <nav aria-label="On this page" class="box">
+    <strong>On this page</strong>
+    <ul>
+      <li><a href="#who">Who we are</a></li>
+      <li><a href="#what">What Beebo is</a></li>
+      <li><a href="#status">Products and status</a></li>
+      <li><a href="#data">Where data lives and what we keep</a></li>
+      <li><a href="#vendors">Service providers and third parties</a></li>
+      <li><a href="#licences">Licences and third-party software</a></li>
+      <li><a href="#people">Ages, accounts and user content</a></li>
+      <li><a href="#money">Payments and paid services</a></li>
+      <li><a href="#policies">Published policies</a></li>
+      <li><a href="#questions">Questions we would like reviewed</a></li>
+      <li><a href="#documents">Documents on request</a></li>
+    </ul>
+  </nav>
+
+  <h2 id="who">Who we are</h2>
+  <p>Beebo Entertainment is operated by <strong>Nicholas Will</strong> in Ontario, Canada, as a sole proprietor. There is no incorporated company at this time. Contact for legal matters: <a href="mailto:legal@beeboentertainment.com">legal@beeboentertainment.com</a>. Privacy questions: <a href="mailto:privacy@beeboentertainment.com">privacy@beeboentertainment.com</a>.</p>
+
+  <h2 id="what">What Beebo is</h2>
+  <p>Beebo is a free media server and a set of apps for a person&rsquo;s <strong>own</strong> movies, shows, music, photos, audiobooks, podcasts and radio. The server runs on the customer&rsquo;s own computer (Windows is the main version). Phones, TVs, cars and browsers connect to that computer.</p>
+  <ul>
+    <li><strong>Beebo does not host, supply or see the customer&rsquo;s media.</strong> Video goes from the customer&rsquo;s computer to the viewer, directly where possible. Beebo does not include any catalogue of films, shows, music or channels.</li>
+    <li>Beebo&rsquo;s own servers carry small pieces of text: sign-in, licences, each household&rsquo;s <code>name.beebo.tv</code> address, and the messages used to set up a connection.</li>
+    <li>Away-from-home connections try a direct peer-to-peer route first, then a router port mapping, then the customer&rsquo;s own relay, and finally an optional Beebo-run relay server that carries encrypted data it cannot read.</li>
+    <li>Other features: Campsite Mode (a local Wi-Fi group screen with games, music and photos, run from a phone or computer), Story Studio (turns a story into a cartoon on the owner&rsquo;s own computer), Trip Journal, Beebo Auto (Android Auto companion), Live TV from the customer&rsquo;s own tuner or playlist, and parental controls for household profiles.</li>
+    <li>Beebo includes no piracy tools and our public materials do not promote any.</li>
+  </ul>
+
+  <h2 id="status">Products and status</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Product</th><th>Status today</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><th>Windows desktop server</th><td><span class="tag">Available</span></td><td>Installer is not code-signed. Auto-update uses a published checksum.</td></tr>
+      <tr><th>Android phone app</th><td><span class="tag">Available</span> as a test download</td><td>Not on Google Play. A Play-specific version exists but has not been submitted.</td></tr>
+      <tr><th>Beebo Auto (Android Auto)</th><td><span class="tag">Available</span> as a test download</td><td>Not on Google Play. Never tested in a real car.</td></tr>
+      <tr><th>Browser access and web games</th><td><span class="tag">Available</span></td><td>Eight small browser games run entirely on the visitor&rsquo;s device.</td></tr>
+      <tr><th>Beebo Relay (optional connection fallback)</th><td><span class="tag">Beta</span></td><td>Server side runs on our own hosting. Pricing is not final.</td></tr>
+      <tr><th>Live TV (own tuner or own playlist)</th><td><span class="tag">Beta</span></td><td>We supply no channels or guide data.</td></tr>
+      <tr><th>Linux, Docker, macOS</th><td><span class="tag">Beta</span> / <span class="tag">In development</span></td><td>Not widely distributed.</td></tr>
+      <tr><th>Campsite walkie-talkie, remote guests, library sharing, Watch Together, Story Studio</th><td><span class="tag">In development</span></td><td>Several are switched off on our servers until tested.</td></tr>
+      <tr><th>BeeboVPN, hosted game servers, ads or credits</th><td><span class="tag">In development</span> / <span class="tag">Planned</span></td><td>Not offered to the public.</td></tr>
+      <tr><th>Apple, Roku, Samsung, LG, Xbox, Fire TV clients</th><td><span class="tag">In development</span></td><td>Never run on real devices.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Public status page: <a href="/next-features.html">Feature status</a>. Test results by feature: <a href="/release-evidence.html">release evidence</a>.</p>
+
+  <h2 id="data">Where data lives and what we keep</h2>
+  <h3>On the customer&rsquo;s own devices (not received by us)</h3>
+  <p>The library, file names, watch history, household profiles, parental limits, photos, music, recordings, settings and the customer&rsquo;s own third-party keys stay on their computer or phone. Beebo does not receive them.</p>
+  <h3>On Beebo&rsquo;s own service</h3>
+  <p>The service holds account and licence records and the information needed to connect a person to their own computer. In summary (see the privacy policy for the authoritative version):</p>
+  <ul>
+    <li>Sign-in details: email address and salted password hashes; a member&rsquo;s username and hash for household sign-in at <code>name.beebo.tv</code>.</li>
+    <li>Licence, trial and subscription records, and billing identifiers (card numbers are handled by Stripe and are not held by us).</li>
+    <li>Each household&rsquo;s connection details, sign-in lockout counters and short-lived connection messages.</li>
+    <li>For Beebo Relay: an opaque customer identifier and the amount of data carried. Basic connection records including IP addresses are kept for a short period for abuse prevention.</li>
+    <li>Library-sharing records (invites and the guest&rsquo;s email) and abuse reports, for features that are in development.</li>
+  </ul>
+  <h3>Hosting locations</h3>
+  <p>The service runs on a server rented from OVHcloud in Beauharnois, Quebec. A Cloudflare front door answers requests for <code>beebo.tv</code> names and forwards them to that server; Cloudflare also provides DNS for the domain. The public website is hosted on GitHub Pages. The software itself runs on customers&rsquo; devices wherever they are.</p>
+
+  <h2 id="vendors">Service providers and third parties</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Provider</th><th>Used for</th></tr></thead>
+    <tbody>
+      <tr><td>OVHcloud (Canada)</td><td>Beebo&rsquo;s service, relay and VPN servers.</td></tr>
+      <tr><td>Cloudflare</td><td>Domain DNS and the front door that forwards <code>beebo.tv</code> requests; optionally a customer&rsquo;s own relay.</td></tr>
+      <tr><td>GitHub</td><td>Website hosting, code and release downloads.</td></tr>
+      <tr><td>Stripe; Google Play Billing</td><td>Payments, where paid services are offered.</td></tr>
+      <tr><td>TMDB, TVmaze, OpenSubtitles</td><td>Posters and details, listings and subtitles. Requests come from the customer&rsquo;s own computer, using the customer&rsquo;s own key or account where one is required.</td></tr>
+      <tr><td>Google (Play, Cast, Assistant, Android Auto, Gmail/Workspace)</td><td>Distribution and casting; email.</td></tr>
+      <tr><td>Namecheap</td><td>Domain registration.</td></tr>
+    </tbody>
+  </table></div>
+  <p>The apps load no analytics and no third-party scripts or fonts from other sites. The website uses no analytics scripts; some website pages load a web font from Google Fonts, so Google receives those visitors&rsquo; IP addresses. GitHub Pages, which hosts the website, also sees visitors&rsquo; IP addresses.</p>
+
+  <h2 id="licences">Licences and third-party software</h2>
+  <ul>
+    <li><strong>Our code:</strong> the client and platform apps are licensed under the GNU AGPL-3.0, applied by the owner without a lawyer&rsquo;s review. The account service, party mailbox, relay and VPN code, and secrets and deployment files, are not under that licence.</li>
+    <li><strong>Video:</strong> Windows builds bundle an LGPL build of FFmpeg as a separate program, using the libopenh264 H.264 encoder (no x264). A source kit is published with the release. Hardware encoders and the customer&rsquo;s own installed FFmpeg can also be used. H.265 output is off by default and hardware-only.</li>
+    <li><strong>Other components:</strong> Electron/Chromium, Node.js, React, WebRTC libraries (one is MPL-2.0), and an Android media library. The apps include an open-source notices screen.</li>
+    <li><strong>Artwork and characters:</strong> Beebo and Appa are original characters based on the owner&rsquo;s own pets. Game names are descriptive or traditional; we maintain a name-clearance record.</li>
+  </ul>
+
+  <h2 id="people">Ages, accounts and user content</h2>
+  <ul>
+    <li>The apps are intended for adults (18+) and are not directed at children. Household profiles can have parental limits set by the household owner.</li>
+    <li>Campsite sessions run on the host&rsquo;s own phone or computer. Guests join from a browser. Beebo does not host or moderate those sessions.</li>
+    <li>Story Studio creates videos on the owner&rsquo;s own computer. Nothing is uploaded to us.</li>
+    <li>Features that carry voice, location or photos between people are in development and are not public.</li>
+  </ul>
+
+  <h2 id="money">Payments and paid services</h2>
+  <p>The apps are free. Optional paid connection services (Beebo Relay, BeeboVPN) are in Beta or development, and pricing is not final, so no prices appear on this page. Payments are taken by Stripe, or by Google Play Billing in the Play version. There are no ads in the video player or in the car and TV apps; a rewards and credits system is built but switched off.</p>
+
+  <h2 id="policies">Published policies</h2>
+  <ul>
+    <li><a href="/movie-privacy.html">Privacy policy</a> and <a href="/docs/privacy-in-plain-words.html">privacy in plain words</a></li>
+    <li><a href="/terms.html">Terms of use</a></li>
+    <li><a href="/known-issues.html">Known issues</a> and <a href="/release-evidence.html">release evidence</a></li>
+  </ul>
+
+  <h2 id="questions">Questions we would like reviewed</h2>
+  <p>In rough order of importance to us:</p>
+  <ol>
+    <li><strong>Business structure.</strong> Should a sole proprietor incorporate before offering paid services? Business name registration and insurance.</li>
+    <li><strong>Open-source licensing.</strong> Is AGPL-3.0 with a proprietary service side workable? What notices are needed, including when a host shares the app with a guest?</li>
+    <li><strong>Trademarks and content.</strong> Registering &ldquo;Beebo&rdquo;; the rights customers have in videos they make with our characters; clearance of game names.</li>
+    <li><strong>Privacy and terms.</strong> Whether our privacy policy and terms are complete and accurate for PIPEDA, Quebec Law 25 and any foreign law that may apply; retention and deletion wording; breach handling.</li>
+    <li><strong>Copyright and misuse.</strong> What copyright complaint process is appropriate for a tool-maker that hosts no media but runs a relay and sign-in service.</li>
+    <li><strong>Paid services.</strong> Terms for subscriptions: renewal, cancellation, refunds, taxes, advertising claims.</li>
+    <li><strong>People-to-people features.</strong> Voice, photos and location in group sessions, including minors and recording or interception rules.</li>
+    <li><strong>Technology licences.</strong> H.264 and H.265 patent exposure when using FFmpeg and a customer&rsquo;s own hardware encoder; AI model licences for the optional subtitle and voice features.</li>
+    <li><strong>Third-party services.</strong> Compliance with TMDB and OpenSubtitles terms.</li>
+    <li><strong>Children and family features.</strong> Whether an 18+ rating with parent-run household profiles is consistent with child-privacy rules and store policies.</li>
+  </ol>
+
+  <h2 id="documents">Documents on request</h2>
+  <p>We can provide, under confidentiality: a component-by-component data map; a third-party services and licences checklist; drafts of updated privacy and terms text; open-source licence options; name-clearance records; and a longer list of detailed questions. Write to <a href="mailto:legal@beeboentertainment.com">legal@beeboentertainment.com</a>.</p>
+
+  <p class="note">This page reflects the software and services as of its date. Features marked In development or Planned are not available to the public.</p>
+</main>
+</body>
+</html>
