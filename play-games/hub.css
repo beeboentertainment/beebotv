@@ -31,3 +31,6 @@ h3{margin:0 0 .4rem;font-size:1.2rem}
 footer{padding-top:2rem;padding-bottom:2rem;color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){.btn,.chip{transition:background .15s}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.card .thumb{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:8px;margin:0 0 .75rem}
+.hero-art{display:block;width:100%;height:auto;max-height:22rem;object-fit:cover;border-radius:12px;margin:1rem 0 0}
