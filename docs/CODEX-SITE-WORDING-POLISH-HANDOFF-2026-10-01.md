@@ -15,6 +15,7 @@ Branch: `codex/site-copy-polish-2026-10-01`, based on beebotv main `d962a83`. We
 - `known-issues.html`, `tester-checklist.html`, `tester-results.html`: descriptive public-page titles and search descriptions. Issue/test data and reporting behavior were not changed.
 - `server-setup.html`: benefit-first title, description and opening; removed the unverified ten-minute estimate. The detailed technical steps were left intact.
 - `docs/getting-started-windows.html`: benefit-first description and opening, with the unverified fifteen-minute estimate removed from page metadata, social metadata and HowTo structured data. The structured data parses; technical steps were not changed.
+- `docs/phone-speakers.html`: the title, metadata, HowTo description and opening now say the music path is a Beta in an Android test build and real-phone hotspot playback still needs testing. The existing setup steps and lower-page limits were preserved; structured data parses.
 
 The tracked public-page inventory contains 98 HTML pages, excluding scratch templates and domain-site copies. All 98 already had a download link by the current audit pattern, but only the homepage linked to `next-features.html` before this work. A separate mechanical pass now adds a visible **Feature status** link to the shared desktop and mobile header on every tracked public HTML page, and normalizes the header label to **Campsite Mode**. All 98 now have both links by the current audit pattern. Individual copy review still remains open; this is not a whole-site sign-off.
 
@@ -31,6 +32,7 @@ The tracked public-page inventory contains 98 HTML pages, excluding scratch temp
 - `server-setup.html` still gives Windows-version, app-signing and installer-warning instructions. These need current installer/build review, not copy-only assumptions.
 - `beebo-products.html` still mixes “Available now” badges with Beebo Relay billing being finalized, a BeeboVPN invite test, planned CA-dollar prices, and broad device/game claims. Product and pricing approval is needed before a benefit-first rewrite can safely preserve the true status of each offering.
 - `apple.html` says Safari and AirPlay work today; that should be checked against real Apple-device evidence before strengthening or changing its compatibility language.
+- `become-a-tester.html` contains volunteer rewards and lifetime-pass terms. No offer language was changed without owner approval.
 
 ## Verification so far
 
