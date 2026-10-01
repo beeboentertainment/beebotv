@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sea Battle - Play free | Beebo Entertainment</title>
+<meta name="description" content="Play Sea Battle free in your browser: hide your fleet, call squares and sink every enemy ship. Against Hopping Beebo or a friend on the same screen. No sign-in, no download.">
+<meta name="color-scheme" content="dark">
+<style>
+:root{
+  --bg:#0a1018; --panel:#131c28; --panel2:#1b2736; --gold:#e0b252; --cream:#f4ecd8; --muted:#9aa7b6;
+  --line:#2a3a4e; --teal:#5cc8c0; --coral:#ff8a7a; --violet:#b9a2ff; --ink:#0a1018;
+  --p1:#e0b252; --p2:#5cc8c0; --p3:#ff8a7a; --p4:#b9a2ff;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--gold)}
+.wrap{max-width:860px;margin:0 auto;padding:16px}
+header.top{padding:8px 0 4px}
+.back{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+h1{margin:4px 0 4px;font-size:clamp(1.6rem,6vw,2.3rem);color:var(--gold);line-height:1.15}
+.lede{margin:0 0 12px;color:var(--muted)}
+h2{font-size:1.1rem;margin:0 0 8px;color:var(--gold)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:4px;min-width:150px;flex:1 1 150px}
+.field label{font-size:.85rem;color:var(--muted)}
+select,.btn{font:inherit;min-height:44px;border-radius:10px}
+select{background:var(--panel2);color:var(--cream);border:1px solid var(--line);padding:0 10px;width:100%}
+.btn{background:var(--gold);color:var(--ink);border:2px solid var(--gold);padding:0 18px;font-weight:700;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.secondary{background:transparent;color:var(--cream);border-color:var(--line)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--cream);outline-offset:2px;box-shadow:0 0 0 5px var(--ink)}
+.status{margin:12px 0;padding:12px 14px;background:var(--panel2);border-left:4px solid var(--gold);border-radius:8px;min-height:3em;color:var(--cream)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.tally{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tally li{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.tally b{color:var(--gold)}
+details.panel summary{cursor:pointer;font-weight:700;color:var(--gold);min-height:44px;display:flex;align-items:center}
+details.panel ul,details.panel ol{padding-left:1.2em;margin:6px 0}
+footer.site{margin:20px 0 32px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--panel2);border:1px solid var(--line)}
+.chip i{display:inline-block;width:14px;height:14px;border-radius:50%}
+.turn-chip{border-color:var(--gold)}
+@media (max-width:420px){.wrap{padding:10px}.panel{padding:10px}.controls .field:first-child{flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+.seas{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:720px){.seas.two{grid-template-columns:1.4fr 1fr}}
+.sea h3{margin:0 0 6px;font-size:1rem;color:var(--cream)}
+.grid{--n:8;display:grid;grid-template-columns:28px repeat(8,1fr);gap:3px;max-width:480px}
+.grid .hd{display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--muted);min-height:20px}
+.cell{position:relative;min-height:44px;min-width:0;aspect-ratio:1;padding:0;border-radius:6px;border:1px solid #2a3f57;background:#0f2234;color:var(--cream);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.small .cell{min-height:30px;cursor:default}
+.small .grid{max-width:300px}
+.cell:hover:not([disabled]){background:#173048}
+.cell[disabled]{cursor:default}
+.cell.ship{background:#6b7d92;border-color:#9aa7b6}
+.cell.miss{background:#0b1620}
+.cell.hit{background:#7a2c24;border-color:var(--coral)}
+.cell.sunk{background:#2a1512;border-color:var(--coral)}
+.cell svg{width:70%;height:70%;pointer-events:none}
+.cell.preview{outline:2px dashed var(--gold)}
+.fleetbar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.shipbtn{min-height:44px}
+.shipbtn[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.shipbtn.done{border-color:var(--teal)}
+.cover{text-align:center;padding:32px 12px}
+.cover h2{font-size:1.4rem}
+.afloat{display:flex;gap:6px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.afloat .hull{display:inline-flex;gap:2px}
+.afloat .hull i{width:14px;height:14px;background:var(--cream);border-radius:3px;display:inline-block}
+.afloat .hull.sunk i{background:var(--coral);opacity:.6}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<a class="back" href="../index.html">&larr; All Campsite games</a>
+<h1>Sea Battle</h1>
+<p class="lede">Hide your fleet on your own sea, then call squares until one fleet is gone. Play Hopping Beebo, or pass the device back and forth with a friend.</p>
+</header>
+<main>
+<section class="panel" aria-label="Game setup">
+<form class="controls" onsubmit="return false">
+
+<div class="field"><label for="mode">Mode</label>
+<select id="mode"><option value="cpu" selected>vs Hopping Beebo</option><option value="pass">Pass and play (2 captains)</option></select></div>
+<div class="field"><label for="level">Hopping Beebo skill</label>
+<select id="level"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select></div>
+<button type="button" class="btn" id="new-game">New game</button>
+</form>
+</section>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+<section class="panel" id="stage" aria-label="Game area"></section>
+<section class="panel" aria-labelledby="score-h">
+<h2 id="score-h">Session score</h2>
+<ul class="tally" id="tally"></ul>
+<p class="lede" style="margin:8px 0 0;font-size:.85rem">Scores are kept only while this page stays open. Nothing is saved or sent anywhere.</p>
+</section>
+<details class="panel">
+<summary>How to play</summary>
+
+<ol>
+<li>The sea is an 8 by 8 grid. Each captain hides five ships: lengths 4, 3, 3, 2 and 2. Ships may touch but never overlap.</li>
+<li>To place a ship, pick it, choose Across or Down, then press the square where it starts. Press Shuffle fleet for a random layout.</li>
+<li>Take turns calling one square each. You are told hit or miss, and when a whole ship is sunk.</li>
+<li>One shot per turn, hit or miss. The first captain to sink every enemy ship wins.</li>
+</ol>
+<p>In pass and play the screen is covered between turns so nobody sees the other fleet. Hopping Beebo plays fair: it only uses its own list of shots, never your hidden fleet. Easy guesses; Medium searches in a pattern and finishes wounded ships; Hard works out where the remaining ships can still fit. Use the arrow keys to move around a grid and Enter or Space to choose a square.</p>
+</details>
+</main>
+<footer class="site">
+<p>Part of Beebo Entertainment's Campsite games. Beebo is free software; the full app adds guests on their own phones.</p>
+<p><a href="../index.html">Back to all games</a></p>
+</footer>
+</div>
+<script src="game.js"></script>
+<script>
+(function () {
+'use strict';
+/* ---- shared page helpers (inlined) ---- */
+var $ = function (id) { return document.getElementById(id); };
+var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+function announce(msg) { $('status').textContent = msg; }
+var tally = { names: [], wins: {}, draws: 0 };
+var tallyExtra = [];
+function resetTally(names, noDraws) { tally = { names: names.slice(), wins: {}, draws: 0, noDraws: !!noDraws }; tallyExtra = []; names.forEach(function (n) { tally.wins[n] = 0; }); renderTally(); }
+function addWin(name) { tally.wins[name] = (tally.wins[name] || 0) + 1; renderTally(); }
+function addDraw() { tally.draws++; renderTally(); }
+function renderTally() {
+  var ul = $('tally'); ul.innerHTML = '';
+  tally.names.forEach(function (n) {
+    var li = document.createElement('li');
+    li.innerHTML = '<span></span>: <b>' + (tally.wins[n] || 0) + '</b>';
+    li.firstChild.textContent = n;
+    ul.appendChild(li);
+  });
+  tallyExtra.forEach(function (t) { var x = document.createElement('li'); x.textContent = t; ul.appendChild(x); });
+  if (!tally.noDraws) { var d = document.createElement('li'); d.innerHTML = 'Draws: <b>' + tally.draws + '</b>'; ul.appendChild(d); }
+}
+function playerNames(count, computers) {
+  var out = [], humans = count - computers;
+  for (var i = 0; i < count; i++) {
+    if (i >= humans) out.push({ name: computers > 1 ? 'Hopping Beebo ' + (i - humans + 1) : 'Hopping Beebo', bot: true });
+    else out.push({ name: (humans === 1 && computers > 0) ? 'You' : 'Player ' + (i + 1), bot: false });
+  }
+  return out;
+}
+function vb(name, you, other) { return name === 'You' ? you : other; }
+var PCOLORS = ['var(--p1)', 'var(--p2)', 'var(--p3)', 'var(--p4)'];
+
+var G = window.BeeboSeaBattle;
+var SVGNS = 'http://www.w3.org/2000/svg';
+var ui = null, game = null, timer = null, busy = false;
+
+var ICON_MISS = '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.5" fill="#9aa7b6"/></svg>';
+var ICON_HIT = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4L16 16M16 4L4 16" stroke="#f4ecd8" stroke-width="3.2" stroke-linecap="round"/></svg>';
+
+function cellName(c) { return G.label(c); }
+
+/** Build a lettered 8x8 grid of buttons with roving tabindex and arrow-key movement. */
+function buildGrid(container, opts) {
+  container.innerHTML = '';
+  var grid = document.createElement('div');
+  grid.className = 'grid';
+  grid.setAttribute('role', 'group');
+  grid.setAttribute('aria-label', opts.label);
+  var corner = document.createElement('div'); corner.className = 'hd'; grid.appendChild(corner);
+  for (var c = 0; c < 8; c++) { var h = document.createElement('div'); h.className = 'hd'; h.setAttribute('aria-hidden', 'true'); h.textContent = String.fromCharCode(65 + c); grid.appendChild(h); }
+  var cells = [];
+  for (var r = 0; r < 8; r++) {
+    var rh = document.createElement('div'); rh.className = 'hd'; rh.setAttribute('aria-hidden', 'true'); rh.textContent = r + 1; grid.appendChild(rh);
+    for (var cc = 0; cc < 8; cc++) {
+      var idx = r * 8 + cc;
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'cell'; b.dataset.i = idx;
+      b.tabIndex = idx === 0 ? 0 : -1;
+      grid.appendChild(b); cells.push(b);
+    }
+  }
+  grid.addEventListener('keydown', function (e) {
+    var t = e.target; if (!t.classList || !t.classList.contains('cell')) return;
+    var i = Number(t.dataset.i), nr = Math.floor(i / 8), nc = i % 8, moved = true;
+    if (e.key === 'ArrowRight') nc = Math.min(7, nc + 1);
+    else if (e.key === 'ArrowLeft') nc = Math.max(0, nc - 1);
+    else if (e.key === 'ArrowDown') nr = Math.min(7, nr + 1);
+    else if (e.key === 'ArrowUp') nr = Math.max(0, nr - 1);
+    else moved = false;
+    if (moved) { e.preventDefault(); var n = cells[nr * 8 + nc]; cells.forEach(function (x) { x.tabIndex = -1; }); n.tabIndex = 0; n.focus(); }
+  });
+  grid.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('.cell') : null;
+    if (!t || t.disabled || !opts.onPick) return;
+    cells.forEach(function (x) { x.tabIndex = -1; }); t.tabIndex = 0;
+    opts.onPick(Number(t.dataset.i));
+  });
+  container.appendChild(grid);
+  return cells;
+}
+
+function setCell(b, cls, content, label) {
+  b.className = 'cell' + (cls ? ' ' + cls : '');
+  b.innerHTML = content || '';
+  b.setAttribute('aria-label', label);
+}
+
+function names() { return ui.mode === 'cpu' ? ['You', G.BOT_NAME] : ['Captain 1', 'Captain 2']; }
+
+/* ---------- setup / placement ---------- */
+function newGame() {
+  clearTimeout(timer); busy = false; game = null;
+  ui = ui || {};
+  ui.mode = $('mode').value; ui.level = $('level').value;
+  $('level').disabled = ui.mode !== 'cpu';
+  var key = ui.mode;
+  if (ui.tallyKey !== key) { resetTally(names()); ui.tallyKey = key; }
+  ui.placed = [[null, null, null, null, null], [null, null, null, null, null]];
+  ui.captain = 0; ui.sel = 0; ui.across = true;
+  ui.phase = 'place';
+  renderPlace();
+  announce(ui.mode === 'cpu' ? 'Place your fleet. Pick a ship, then press a square.' : 'Captain 1, place your fleet. Captain 2, look away.');
+}
+
+function takenCells(p) { var t = []; p.forEach(function (s) { if (s) t = t.concat(s); }); return t; }
+
+function renderPlace() {
+  var cap = ui.captain, placed = ui.placed[cap];
+  var stage = $('stage'); stage.innerHTML = '';
+  var h = document.createElement('h2');
+  h.textContent = ui.mode === 'cpu' ? 'Place your fleet' : names()[cap] + ', place your fleet';
+  stage.appendChild(h);
+  var bar = document.createElement('div'); bar.className = 'fleetbar'; bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', 'Ships to place');
+  G.SHIPS.forEach(function (size, i) {
+    var b = document.createElement('button'); b.type = 'button';
+    b.className = 'btn secondary shipbtn' + (placed[i] ? ' done' : '');
+    b.setAttribute('aria-pressed', ui.sel === i ? 'true' : 'false');
+    b.textContent = 'Ship of ' + size + (placed[i] ? ' (placed)' : '');
+    b.addEventListener('click', function () { ui.sel = i; renderPlace(); $('stage').querySelectorAll('.shipbtn')[i].focus(); });
+    bar.appendChild(b);
+  });
+  stage.appendChild(bar);
+  var ctl = document.createElement('div'); ctl.className = 'row'; ctl.style.margin = '8px 0';
+  var rot = document.createElement('button'); rot.type = 'button'; rot.className = 'btn secondary';
+  rot.textContent = 'Direction: ' + (ui.across ? 'Across' : 'Down') + ' (press to turn)';
+  rot.addEventListener('click', function () { ui.across = !ui.across; renderPlace(); stage.querySelector('.rotbtn').focus(); });
+  rot.classList.add('rotbtn');
+  var sh = document.createElement('button'); sh.type = 'button'; sh.className = 'btn secondary'; sh.textContent = 'Shuffle fleet';
+  sh.addEventListener('click', function () {
+    var f = G.placeFleet(G.defaultRng());
+    ui.placed[cap] = f.map(function (s) { return s.cells; });
+    renderPlace(); announce('Fleet shuffled. Press Ready when you like it.');
+  });
+  var clear = document.createElement('button'); clear.type = 'button'; clear.className = 'btn secondary'; clear.textContent = 'Clear';
+  clear.addEventListener('click', function () { ui.placed[cap] = [null, null, null, null, null]; ui.sel = 0; renderPlace(); announce('Fleet cleared.'); });
+  var ready = document.createElement('button'); ready.type = 'button'; ready.className = 'btn'; ready.id = 'ready';
+  var all = placed.every(function (x) { return !!x; });
+  ready.textContent = ui.mode === 'cpu' ? 'Ready: start battle' : (cap === 0 ? 'Ready: hide my fleet' : 'Ready: start battle');
+  ready.disabled = !all;
+  ready.addEventListener('click', onReady);
+  [rot, sh, clear, ready].forEach(function (x) { ctl.appendChild(x); });
+  stage.appendChild(ctl);
+  var holder = document.createElement('div'); stage.appendChild(holder);
+  var cells = buildGrid(holder, { label: 'Your sea. Press a square to place the selected ship.', onPick: onPlace });
+  var owner = {};
+  placed.forEach(function (s, i) { if (s) s.forEach(function (c) { owner[c] = i; }); });
+  cells.forEach(function (b, i) {
+    if (i in owner) setCell(b, 'ship', '', cellName(i) + ', ship of ' + G.SHIPS[owner[i]]);
+    else setCell(b, '', '', cellName(i) + ', water');
+  });
+}
+
+function onPlace(cell) {
+  var cap = ui.captain, i = ui.sel;
+  var row = Math.floor(cell / 8), col = cell % 8;
+  var cells = G.shipCells(row, col, G.SHIPS[i], ui.across);
+  var others = [];
+  ui.placed[cap].forEach(function (s, k) { if (s && k !== i) others = others.concat(s); });
+  if (!cells) { announce('That ship does not fit there. It would leave the sea. Try another square or turn it.'); return; }
+  if (!G.canPlace(cells, others)) { announce('That ship would overlap another. Try another square.'); return; }
+  ui.placed[cap][i] = cells;
+  var nextFree = -1; for (var k = 0; k < 5; k++) if (!ui.placed[cap][k]) { nextFree = k; break; }
+  if (nextFree >= 0) ui.sel = nextFree;
+  renderPlace();
+  announce('Placed the ship of ' + G.SHIPS[i] + ' at ' + cellName(cells[0]) + (ui.across ? ' across.' : ' down.') + (nextFree < 0 ? ' All ships placed. Press Ready.' : ''));
+  var focus = $('stage').querySelector('.cell[data-i="' + cell + '"]'); if (focus) { $('stage').querySelectorAll('.cell').forEach(function (x) { x.tabIndex = -1; }); focus.tabIndex = 0; focus.focus(); }
+}
+
+function fleetOf(p) { return G.SHIPS.map(function (size, i) { return { size: size, cells: ui.placed[p][i].slice() }; }); }
+
+function onReady() {
+  if (ui.mode === 'cpu') {
+    var rng = G.defaultRng();
+    startBattle([fleetOf(0), G.placeFleet(rng)]);
+  } else if (ui.captain === 0) {
+    ui.captain = 1; ui.sel = 0; ui.across = true;
+    showCover('Captain 2, your turn to hide a fleet', 'Pass the device to Captain 2. Captain 1, look away. Captain 2, press the button when you have it.', 'I am Captain 2', function () { renderPlace(); announce('Captain 2, place your fleet.'); });
+  } else {
+    startBattle([fleetOf(0), fleetOf(1)]);
+  }
+}
+
+function startBattle(fleets) {
+  game = G.createGame({ fleets: fleets });
+  ui.phase = 'battle';
+  if (ui.mode === 'pass') {
+    showCover('Captain 1 to call the first square', 'Pass the device to Captain 1. Both fleets are hidden. Captain 1, press the button when you have it.', 'I am Captain 1', function () { renderBattle(); announce('Captain 1, call a square on the enemy sea.'); });
+  } else { renderBattle(); announce('Battle! You shoot first. Call a square on the enemy sea.'); }
+}
+
+function showCover(title, text, btn, then) {
+  var stage = $('stage'); stage.innerHTML = '';
+  var d = document.createElement('div'); d.className = 'cover';
+  d.innerHTML = '<h2></h2><p class="lede"></p>';
+  d.querySelector('h2').textContent = title; d.querySelector('p').textContent = text;
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = btn;
+  b.addEventListener('click', then);
+  d.appendChild(b); stage.appendChild(d);
+  b.focus();
+  announce(title + '. Boards are hidden.');
+}
+
+/* ---------- battle ---------- */
+function ownView(p) {
+  // what captain p sees on their own sea: ships and the enemy's shots at them
+  var theirShots = game.shots[1 - p];
+  var owner = {};
+  game.fleets[p].forEach(function (s) { s.cells.forEach(function (c) { owner[c] = s; }); });
+  return function (i) {
+    var shot = theirShots[i], s = owner[i];
+    if (shot === 3) return ['sunk', ICON_HIT, 'Your ship, sunk'];
+    if (shot === 2) return ['hit', ICON_HIT, 'Your ship, hit'];
+    if (shot === 1) return ['miss', ICON_MISS, 'Water, enemy missed'];
+    return s ? ['ship', '', 'Your ship'] : ['', '', 'Water'];
+  };
+}
+
+function afloatBar(p) {
+  // sizes of enemy ships (relative to captain p) and whether sunk
+  var d = document.createElement('div'); d.className = 'afloat';
+  d.appendChild(document.createTextNode('Enemy ships: '));
+  game.fleets[1 - p].forEach(function (s) {
+    var sunk = s.hits.length === s.cells.length;
+    var h = document.createElement('span'); h.className = 'hull' + (sunk ? ' sunk' : '');
+    h.setAttribute('role', 'img'); h.setAttribute('aria-label', 'Ship of ' + s.size + (sunk ? ', sunk' : ', afloat'));
+    for (var k = 0; k < s.size; k++) h.appendChild(document.createElement('i'));
+    d.appendChild(h);
+  });
+  return d;
+}
+
+function renderBattle(afterShot) {
+  var viewer = ui.mode === 'cpu' ? 0 : (afterShot ? afterShot.player : game.turn);
+  var stage = $('stage'); stage.innerHTML = '';
+  var h = document.createElement('h2');
+  h.textContent = game.over ? 'Battle over' : (ui.mode === 'cpu' ? 'Battle: call a square' : names()[viewer] + ', call a square');
+  stage.appendChild(h);
+  var seas = document.createElement('div'); seas.className = 'seas two';
+  var enemy = document.createElement('div'); enemy.className = 'sea';
+  var eh = document.createElement('h3'); eh.textContent = ui.mode === 'cpu' ? 'Enemy sea (Hopping Beebo)' : 'Enemy sea'; enemy.appendChild(eh);
+  var eg = document.createElement('div'); enemy.appendChild(eg);
+  var mine = document.createElement('div'); mine.className = 'sea small';
+  var mh = document.createElement('h3'); mh.textContent = 'Your fleet'; mine.appendChild(mh);
+  var mg = document.createElement('div'); mine.appendChild(mg);
+  seas.appendChild(enemy); seas.appendChild(mine); stage.appendChild(seas);
+  stage.appendChild(afloatBar(viewer));
+
+  var canShoot = !game.over && !busy && !afterShot && game.turn === viewer;
+  var cells = buildGrid(eg, { label: 'Enemy sea. Press a square to call it.', onPick: fireAt });
+  var known = game.shots[viewer];
+  cells.forEach(function (b, i) {
+    var v = known[i], nm = cellName(i);
+    if (v === 0) { setCell(b, '', '', nm + ', not called'); b.disabled = !canShoot; }
+    else if (v === 1) { setCell(b, 'miss', ICON_MISS, nm + ', miss'); b.disabled = true; }
+    else if (v === 2) { setCell(b, 'hit', ICON_HIT, nm + ', hit'); b.disabled = true; }
+    else { setCell(b, 'sunk', ICON_HIT, nm + ', part of a sunk ship'); b.disabled = true; }
+  });
+  var first = cells.filter(function (b) { return !b.disabled; })[0];
+  if (first) { cells.forEach(function (x) { x.tabIndex = -1; }); first.tabIndex = 0; }
+  var view = ownView(viewer);
+  var mc = buildGrid(mg, { label: 'Your own sea, ships and enemy shots', onPick: null });
+  mc.forEach(function (b, i) { var r = view(i); setCell(b, r[0], r[1], cellName(i) + ', ' + r[2]); b.disabled = true; b.tabIndex = -1; });
+
+  if (afterShot && !game.over && ui.mode === 'pass') {
+    var nxt = names()[game.turn];
+    var pb = document.createElement('button'); pb.type = 'button'; pb.className = 'btn'; pb.style.marginTop = '12px';
+    pb.textContent = 'Hide boards and pass to ' + nxt;
+    pb.addEventListener('click', function () {
+      showCover(nxt + ' to call a square', 'Pass the device to ' + nxt + '. ' + names()[afterShot.player] + ', look away.', 'I am ' + nxt, function () { renderBattle(); announce(nxt + ', call a square on the enemy sea.'); });
+    });
+    stage.appendChild(pb); pb.focus();
+  }
+  if (game.over) {
+    var again = document.createElement('p'); again.className = 'lede'; again.textContent = 'Press New game to play again.'; stage.appendChild(again);
+  }
+}
+
+function sentence(ev, who) {
+  var s = who + ' called ' + cellName(ev.cell) + ': ' + (ev.hit ? 'hit' : 'miss');
+  if (ev.sunk) s += ', and sank a ship of ' + ev.sunk;
+  return s + '.';
+}
+
+function fireAt(cell) {
+  if (busy || !game || game.over) return;
+  var p = game.turn;
+  if (ui.mode === 'cpu' && p !== 0) return;
+  var ev;
+  try { ev = G.fire(game, p, cell); } catch (e) { announce(String(e.message)); return; }
+  var who = names()[p];
+  announce(sentence(ev, ui.mode === 'cpu' ? 'You' : who) + (ev.over ? ' ' + who + vb(ui.mode === 'cpu' ? 'You' : who, ' win!', ' wins!') : ''));
+  if (ev.over) { finish(p); renderBattle(ev); return; }
+  if (ui.mode === 'pass') { renderBattle(ev); return; }
+  busy = true; renderBattle(ev);
+  timer = setTimeout(cpuTurn, reduceMotion ? 300 : 900);
+}
+
+function cpuTurn() {
+  var cell = G.botShot(game, 1, ui.level);
+  var ev = G.fire(game, 1, cell);
+  busy = false;
+  announce(sentence(ev, G.BOT_NAME) + (ev.over ? ' ' + G.BOT_NAME + ' wins!' : ' Your turn.'));
+  if (ev.over) finish(1);
+  renderBattle();
+}
+
+function finish(winner) { addWin(names()[winner]); }
+
+$('new-game').addEventListener('click', newGame);
+$('mode').addEventListener('change', newGame);
+$('level').addEventListener('change', newGame);
+newGame();
+
+})();
+</script>
+</body>
+</html>

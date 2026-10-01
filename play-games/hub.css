@@ -1,0 +1,33 @@
+:root{--page:#0a1018;--panel:#131c28;--gold:#e0b252;--cream:#f4ecd8;--muted:#9aa7b6;--line:#243245}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--cream);font:1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--gold)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#0a1018;padding:.5rem 1rem;z-index:10}
+.skip:focus{left:0}
+.hero,main,footer{max-width:60rem;margin:0 auto;padding-left:1rem;padding-right:1rem}
+.hero{padding-top:2.5rem;padding-bottom:1rem}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;margin:0}
+h1{font-size:clamp(1.7rem,6vw,2.6rem);line-height:1.2;margin:.4rem 0}
+h2{font-size:1.5rem;margin:2rem 0 .75rem}
+h3{margin:0 0 .4rem;font-size:1.2rem}
+.lead{color:var(--muted);font-size:1.1rem;max-width:40rem}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem}
+.chip{background:var(--panel);color:var(--cream);border:1px solid var(--line);border-radius:999px;padding:.5rem 1rem;font:inherit;cursor:pointer;min-height:44px}
+.chip[aria-pressed="true"]{background:var(--gold);color:#0a1018;border-color:var(--gold);font-weight:600}
+.status{color:var(--muted);min-height:1.5em;margin:.25rem 0}
+.grid{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(15rem,100%),1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem;display:flex;flex-direction:column}
+.card p{margin:0 0 .6rem}
+.card[hidden]{display:none}
+.tags{color:var(--muted);font-size:.9rem}
+.score{color:var(--cream);font-size:.9rem}
+.score[hidden]{display:none}
+.btn{margin-top:auto;display:inline-block;text-align:center;background:var(--gold);color:#0a1018;text-decoration:none;font-weight:700;padding:.65rem 1rem;border-radius:8px;min-height:44px}
+.btn:hover{background:var(--cream)}
+.note{color:var(--muted);margin-top:1rem}
+.status-list{padding-left:1.2rem}
+.label{background:var(--panel);border:1px solid var(--gold);border-radius:6px;padding:.1rem .5rem}
+footer{padding-top:2rem;padding-bottom:2rem;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.btn,.chip{transition:background .15s}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

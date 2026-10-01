@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dots and Boxes - Play free | Beebo Entertainment</title>
+<meta name="description" content="Play Dots and Boxes free in your browser: draw lines, close boxes and take another turn. Against Hopping Beebo (easy, medium or hard) or 2 to 4 friends on the same screen. No sign-in, no download.">
+<meta name="color-scheme" content="dark">
+<style>
+:root{
+  --bg:#0a1018; --panel:#131c28; --panel2:#1b2736; --gold:#e0b252; --cream:#f4ecd8; --muted:#9aa7b6;
+  --line:#2a3a4e; --teal:#5cc8c0; --coral:#ff8a7a; --violet:#b9a2ff; --ink:#0a1018;
+  --p1:#e0b252; --p2:#5cc8c0; --p3:#ff8a7a; --p4:#b9a2ff;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--gold)}
+.wrap{max-width:860px;margin:0 auto;padding:16px}
+header.top{padding:8px 0 4px}
+.back{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+h1{margin:4px 0 4px;font-size:clamp(1.6rem,6vw,2.3rem);color:var(--gold);line-height:1.15}
+.lede{margin:0 0 12px;color:var(--muted)}
+h2{font-size:1.1rem;margin:0 0 8px;color:var(--gold)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:4px;min-width:150px;flex:1 1 150px}
+.field label{font-size:.85rem;color:var(--muted)}
+select,.btn{font:inherit;min-height:44px;border-radius:10px}
+select{background:var(--panel2);color:var(--cream);border:1px solid var(--line);padding:0 10px;width:100%}
+.btn{background:var(--gold);color:var(--ink);border:2px solid var(--gold);padding:0 18px;font-weight:700;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.secondary{background:transparent;color:var(--cream);border-color:var(--line)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--cream);outline-offset:2px;box-shadow:0 0 0 5px var(--ink)}
+.status{margin:12px 0;padding:12px 14px;background:var(--panel2);border-left:4px solid var(--gold);border-radius:8px;min-height:3em;color:var(--cream)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.tally{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tally li{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.tally b{color:var(--gold)}
+details.panel summary{cursor:pointer;font-weight:700;color:var(--gold);min-height:44px;display:flex;align-items:center}
+details.panel ul,details.panel ol{padding-left:1.2em;margin:6px 0}
+footer.site{margin:20px 0 32px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--panel2);border:1px solid var(--line)}
+.chip i{display:inline-block;width:14px;height:14px;border-radius:50%}
+.turn-chip{border-color:var(--gold)}
+@media (max-width:420px){.wrap{padding:10px}.panel{padding:10px}.controls .field:first-child{flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+.board-wrap{max-width:520px;margin:0 auto}
+#board{width:100%;height:auto;display:block;touch-action:manipulation}
+.ln{cursor:pointer}
+.ln .vis{stroke:#2e4259;stroke-width:8;stroke-linecap:round;transition:stroke .15s}
+.ln:hover .vis{stroke:#6d86a3}
+.ln.drawn{cursor:default}
+.ln.drawn:hover .vis{stroke:inherit}
+.ln.last .vis{stroke-width:11}
+.ln:focus{outline:none}
+.ln:focus-visible .vis{stroke:#f4ecd8;stroke-width:12}
+.players{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:10px}
+.chip b{color:var(--gold)}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<a class="back" href="../index.html">&larr; All Campsite games</a>
+<h1>Dots and Boxes</h1>
+<p class="lede">Draw a line between two dots. Close the fourth side of a box and it is yours, and you go again. Most boxes wins.</p>
+</header>
+<main>
+<section class="panel" aria-label="Game setup">
+<form class="controls" onsubmit="return false">
+
+<div class="field"><label for="mode">Players</label>
+<select id="mode"><option value="cpu" selected>vs Hopping Beebo</option><option value="p2">2 friends, same screen</option><option value="p3">3 friends, same screen</option><option value="p4">4 friends, same screen</option></select></div>
+<div class="field"><label for="level">Hopping Beebo skill</label>
+<select id="level"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select></div>
+<div class="field"><label for="size">Board size</label>
+<select id="size"><option value="3">3 by 3 boxes</option><option value="4" selected>4 by 4 boxes</option><option value="5">5 by 5 boxes</option></select></div>
+<button type="button" class="btn" id="new-game">New game</button>
+</form>
+</section>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+
+<section class="panel" aria-label="Game board">
+<div class="players" id="players-bar" aria-label="Scores"></div>
+<div class="board-wrap"><svg id="board" role="group" aria-label="Dots and Boxes board"></svg></div>
+</section>
+<section class="panel" aria-labelledby="score-h">
+<h2 id="score-h">Session score</h2>
+<ul class="tally" id="tally"></ul>
+<p class="lede" style="margin:8px 0 0;font-size:.85rem">Scores are kept only while this page stays open. Nothing is saved or sent anywhere.</p>
+</section>
+<details class="panel">
+<summary>How to play</summary>
+
+<ol>
+<li>Take turns drawing one line between two neighbouring dots. Press or tap the gap between two dots.</li>
+<li>When your line closes the fourth side of a box, the box is yours, shown with your number. You must then draw another line.</li>
+<li>When every box is taken, the player with the most boxes wins.</li>
+</ol>
+<p>Tip: try not to draw the third side of a box, because that lets the next player take it. Hopping Beebo on Easy often misses things; on Medium it takes every free box and avoids giving boxes away; on Hard it also counts chains and sometimes declines the last two boxes of a chain to keep control. With the keyboard, use the arrow keys to move between lines and Enter or Space to draw.</p>
+</details>
+</main>
+<footer class="site">
+<p>Part of Beebo Entertainment's Campsite games. Beebo is free software; the full app adds guests on their own phones.</p>
+<p><a href="../index.html">Back to all games</a></p>
+</footer>
+</div>
+<script src="game.js"></script>
+<script>
+(function () {
+'use strict';
+/* ---- shared page helpers (inlined) ---- */
+var $ = function (id) { return document.getElementById(id); };
+var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+function announce(msg) { $('status').textContent = msg; }
+var tally = { names: [], wins: {}, draws: 0 };
+var tallyExtra = [];
+function resetTally(names, noDraws) { tally = { names: names.slice(), wins: {}, draws: 0, noDraws: !!noDraws }; tallyExtra = []; names.forEach(function (n) { tally.wins[n] = 0; }); renderTally(); }
+function addWin(name) { tally.wins[name] = (tally.wins[name] || 0) + 1; renderTally(); }
+function addDraw() { tally.draws++; renderTally(); }
+function renderTally() {
+  var ul = $('tally'); ul.innerHTML = '';
+  tally.names.forEach(function (n) {
+    var li = document.createElement('li');
+    li.innerHTML = '<span></span>: <b>' + (tally.wins[n] || 0) + '</b>';
+    li.firstChild.textContent = n;
+    ul.appendChild(li);
+  });
+  tallyExtra.forEach(function (t) { var x = document.createElement('li'); x.textContent = t; ul.appendChild(x); });
+  if (!tally.noDraws) { var d = document.createElement('li'); d.innerHTML = 'Draws: <b>' + tally.draws + '</b>'; ul.appendChild(d); }
+}
+function playerNames(count, computers) {
+  var out = [], humans = count - computers;
+  for (var i = 0; i < count; i++) {
+    if (i >= humans) out.push({ name: computers > 1 ? 'Hopping Beebo ' + (i - humans + 1) : 'Hopping Beebo', bot: true });
+    else out.push({ name: (humans === 1 && computers > 0) ? 'You' : 'Player ' + (i + 1), bot: false });
+  }
+  return out;
+}
+function vb(name, you, other) { return name === 'You' ? you : other; }
+var PCOLORS = ['var(--p1)', 'var(--p2)', 'var(--p3)', 'var(--p4)'];
+
+var G = window.BeeboDots;
+var NS = 'http://www.w3.org/2000/svg';
+var COLOR_HEX = ['#e0b252', '#5cc8c0', '#ff8a7a', '#b9a2ff'];
+var game = null, timer = null, lineEls = [], boxEls = [], centers = [], lastLine = -1, focusLine = -1;
+var M = 40, S = 100;
+
+function el(name, attrs, parent) {
+  var e = document.createElementNS(NS, name);
+  for (var k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+
+function setup() {
+  var mode = $('mode').value;
+  $('level').disabled = mode !== 'cpu';
+  var n = mode === 'cpu' ? 2 : Number(mode.slice(1));
+  return { players: mode === 'cpu' ? playerNames(2, 1) : playerNames(n, 0), size: Number($('size').value), level: $('level').value, key: mode + '/' };
+}
+var lastKey = '';
+
+function newGame() {
+  clearTimeout(timer);
+  var s = setup();
+  if (s.key !== lastKey) { resetTally(s.players.map(function (p) { return p.name; })); lastKey = s.key; }
+  game = G.createGame({ size: s.size, players: s.players, level: s.level });
+  lastLine = -1; focusLine = -1;
+  build(); refresh();
+  announce('New game. ' + game.players[0].name + vb(game.players[0].name, ' go', ' goes') + ' first. Draw a line between two dots.');
+  next();
+}
+
+function lineGeometry(line) {
+  var b = game.board;
+  if (line < b.horizontal) {
+    var r = Math.floor(line / b.cols), c = line % b.cols;
+    return { x1: M + c * S, y1: M + r * S, x2: M + (c + 1) * S, y2: M + r * S, h: true, r: r, c: c };
+  }
+  var k = line - b.horizontal, rr = Math.floor(k / (b.cols + 1)), cc = k % (b.cols + 1);
+  return { x1: M + cc * S, y1: M + rr * S, x2: M + cc * S, y2: M + (rr + 1) * S, h: false, r: rr, c: cc };
+}
+
+function build() {
+  var b = game.board, svg = $('board'), size = b.cols * S + 2 * M;
+  svg.innerHTML = '';
+  svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+  boxEls = []; lineEls = []; centers = [];
+  for (var bx = 0; bx < b.boxCount; bx++) {
+    var r = Math.floor(bx / b.cols), c = bx % b.cols;
+    var rect = el('rect', { x: M + c * S + 6, y: M + r * S + 6, width: S - 12, height: S - 12, rx: 8, fill: 'transparent' }, svg);
+    var t = el('text', { x: M + c * S + S / 2, y: M + r * S + S / 2 + 12, 'text-anchor': 'middle', 'font-size': 34, 'font-weight': 800, 'font-family': 'system-ui,sans-serif', fill: '#0a1018' }, svg);
+    boxEls.push({ rect: rect, text: t });
+  }
+  for (var l = 0; l < b.lineCount; l++) {
+    var g = lineGeometry(l);
+    var grp = el('g', { 'class': 'ln', role: 'button', tabindex: -1 }, svg);
+    var hit = g.h
+      ? el('rect', { x: g.x1 + 14, y: g.y1 - 38, width: S - 28, height: 76, fill: 'transparent' }, grp)
+      : el('rect', { x: g.x1 - 38, y: g.y1 + 14, width: 76, height: S - 28, fill: 'transparent' }, grp);
+    var vis = el('line', { 'class': 'vis', x1: g.x1 + 4, y1: g.y1 + (g.h ? 0 : 4), x2: g.x2 - 4, y2: g.y2 - (g.h ? 0 : 4) }, grp);
+    if (g.h) { vis.setAttribute('x1', g.x1 + 4); vis.setAttribute('x2', g.x2 - 4); vis.setAttribute('y1', g.y1); vis.setAttribute('y2', g.y2); }
+    else { vis.setAttribute('x1', g.x1); vis.setAttribute('x2', g.x2); vis.setAttribute('y1', g.y1 + 4); vis.setAttribute('y2', g.y2 - 4); }
+    grp.dataset.i = l;
+    grp.addEventListener('click', onLine);
+    grp.addEventListener('keydown', onKey);
+    grp.addEventListener('focus', function (e) { focusLine = Number(e.currentTarget.dataset.i); });
+    lineEls.push({ g: grp, vis: vis, hit: hit });
+    centers.push({ x: (g.x1 + g.x2) / 2, y: (g.y1 + g.y2) / 2 });
+  }
+  for (var rr = 0; rr <= b.rows; rr++) for (var cc = 0; cc <= b.cols; cc++) el('circle', { cx: M + cc * S, cy: M + rr * S, r: 9, fill: '#f4ecd8', 'pointer-events': 'none' }, svg);
+}
+
+function lineLabel(i) {
+  var g = lineGeometry(i);
+  var base = (g.h ? 'Horizontal' : 'Vertical') + ' line, row ' + (g.r + 1) + ', column ' + (g.c + 1);
+  return game.lines[i] ? base + ', drawn by ' + game.players[game.drawnBy[i]].name : base + ', not drawn';
+}
+
+function refresh() {
+  var b = game.board;
+  lineEls.forEach(function (o, i) {
+    var drawn = !!game.lines[i];
+    o.g.setAttribute('class', 'ln' + (drawn ? ' drawn' : '') + (i === lastLine ? ' last' : ''));
+    o.g.setAttribute('aria-label', lineLabel(i));
+    o.g.setAttribute('aria-disabled', drawn ? 'true' : 'false');
+    o.vis.setAttribute('style', drawn ? 'stroke:' + COLOR_HEX[game.drawnBy[i]] : '');
+  });
+  boxEls.forEach(function (o, i) {
+    var ow = game.owners[i];
+    if (ow >= 0) { o.rect.setAttribute('fill', COLOR_HEX[ow]); o.rect.setAttribute('opacity', '.9'); o.text.textContent = ow + 1; }
+    else { o.rect.setAttribute('fill', 'transparent'); o.text.textContent = ''; }
+  });
+  var bar = $('players-bar'); bar.innerHTML = '';
+  game.players.forEach(function (p, i) {
+    var c = document.createElement('span');
+    c.className = 'chip' + (!game.over && game.turn === i ? ' turn-chip' : '');
+    c.innerHTML = '<i style="background:' + COLOR_HEX[i] + '"></i><span class="nm"></span> <b>' + game.scores[i] + '</b>';
+    c.querySelector('.nm').textContent = (i + 1) + ' ' + p.name + (!game.over && game.turn === i ? ' (to move)' : '') + ':';
+    bar.appendChild(c);
+  });
+  // roving tabindex: one stop among undrawn lines
+  var stop = (focusLine >= 0 && !game.lines[focusLine]) ? focusLine : firstOpen();
+  lineEls.forEach(function (o, i) { o.g.tabIndex = (i === stop && !game.over) ? 0 : -1; });
+}
+function firstOpen() { for (var i = 0; i < game.lines.length; i++) if (!game.lines[i]) return i; return -1; }
+
+function onLine(e) { var i = Number(e.currentTarget.dataset.i); humanMove(i); }
+function onKey(e) {
+  var i = Number(e.currentTarget.dataset.i);
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); humanMove(i); return; }
+  var dir = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
+  if (!dir) return;
+  e.preventDefault();
+  var from = centers[i], best = -1, bestScore = Infinity;
+  for (var j = 0; j < centers.length; j++) {
+    if (j === i || game.lines[j]) continue;
+    var dx = centers[j].x - from.x, dy = centers[j].y - from.y;
+    var along = dx * dir[0] + dy * dir[1];
+    if (along <= 1) continue;
+    var across = Math.abs(dx * dir[1]) + Math.abs(dy * dir[0]);
+    var score = along + across * 2;
+    if (score < bestScore) { bestScore = score; best = j; }
+  }
+  if (best >= 0) focusOn(best);
+}
+function focusOn(i) { lineEls.forEach(function (o, k) { o.g.tabIndex = k === i ? 0 : -1; }); lineEls[i].g.focus(); }
+
+function humanMove(i) {
+  if (game.over || game.players[game.turn].bot) return;
+  if (game.lines[i]) { announce('That line is already drawn.'); return; }
+  apply(i);
+}
+
+function apply(i) {
+  var ev = G.play(game, i);
+  lastLine = i;
+  var wasFocus = document.activeElement && document.activeElement.classList && document.activeElement.classList.contains('ln');
+  refresh();
+  announce(G.describe(game, ev) + (ev.over ? ' Press New game to play again.' : ''));
+  if (ev.over) { end(ev); return; }
+  if (wasFocus && !game.players[game.turn].bot) {
+    var near = i, best = Infinity;
+    for (var j = 0; j < centers.length; j++) { if (game.lines[j]) continue; var d = Math.abs(centers[j].x - centers[i].x) + Math.abs(centers[j].y - centers[i].y); if (d < best) { best = d; near = j; } }
+    focusOn(near);
+  }
+  next();
+}
+
+function end(ev) {
+  if (ev.winners.length === 1) addWin(game.players[ev.winners[0]].name); else addDraw();
+  lineEls.forEach(function (o) { o.g.tabIndex = -1; });
+}
+
+function next() {
+  if (game.over) return;
+  var p = game.players[game.turn];
+  if (p.bot) timer = setTimeout(function () { if (game.over) return; apply(G.botChoose(game)); }, reduceMotion ? 250 : 650);
+}
+
+$('new-game').addEventListener('click', newGame);
+$('mode').addEventListener('change', newGame);
+$('level').addEventListener('change', newGame);
+$('size').addEventListener('change', newGame);
+newGame();
+
+})();
+</script>
+</body>
+</html>
