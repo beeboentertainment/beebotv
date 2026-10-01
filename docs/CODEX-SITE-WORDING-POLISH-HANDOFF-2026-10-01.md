@@ -9,7 +9,7 @@ Branch: `codex/site-copy-polish-2026-10-01`, based on beebotv main `d962a83`. We
 - `platforms.html`: shorter title, description and introduction, consistent name and Feature status link. Device-status table was not reclassified without fresh build evidence.
 - `docs/faq.html`: shorter title/introduction, benefit-first Beebo explanation and corresponding structured data, adult-controls question instead of a child-safety promise, Feature status link. FAQ JSON-LD still parses.
 
-The tracked public-page inventory contains 98 HTML pages, excluding scratch templates and domain-site copies. All 98 already had a download link by the current audit pattern, but only the homepage linked to `next-features.html` before this work. The remaining pages still need individual copy review and a visible Feature status link. This is a partial handoff, not a whole-site sign-off.
+The tracked public-page inventory contains 98 HTML pages, excluding scratch templates and domain-site copies. All 98 already had a download link by the current audit pattern, but only the homepage linked to `next-features.html` before this work. A separate mechanical pass now adds a visible **Feature status** link to the shared desktop and mobile header on every tracked public HTML page, and normalizes the header label to **Campsite Mode**. All 98 now have both links by the current audit pattern. Individual copy review still remains open; this is not a whole-site sign-off.
 
 ## Unclear claims left unchanged for Claude/Nick
 
@@ -21,4 +21,4 @@ The tracked public-page inventory contains 98 HTML pages, excluding scratch temp
 
 ## Verification so far
 
-`git diff --check` passed before each commit. The FAQ and Campsite JSON-LD blocks parse. No layout, visual, real-device or live-site test has been claimed for these copy-only commits. More pages and the site-wide link audit remain open.
+`git diff --check` passed before each commit. The FAQ and Campsite JSON-LD blocks parse. A local Chrome check at desktop and phone widths found both links on the homepage, Campsite guide, and story guide with no page-width overflow; it is not a whole-site visual regression test. No real-device or live-site test has been claimed. More individual page copy reviews remain open.
