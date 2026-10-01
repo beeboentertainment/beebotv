@@ -51,7 +51,7 @@ footer.site{margin:20px 0 32px;padding-top:12px;border-top:1px solid var(--line)
 
 .board-wrap{max-width:520px;margin:0 auto}
 #board{width:100%;height:auto;display:block;touch-action:manipulation}
-.ln{cursor:pointer}
+.ln{cursor:pointer;touch-action:manipulation}
 .ln .vis{stroke:#2e4259;stroke-width:8;stroke-linecap:round;transition:stroke .15s}
 .ln:hover .vis{stroke:#6d86a3}
 .ln.drawn{cursor:default}
@@ -202,9 +202,11 @@ function build() {
   for (var l = 0; l < b.lineCount; l++) {
     var g = lineGeometry(l);
     var grp = el('g', { 'class': 'ln', role: 'button', tabindex: -1 }, svg);
+    // Keep every line's touch target at least 44 CSS pixels on a 360px-wide phone,
+    // including the 5-by-5 board where the SVG is scaled down the most.
     var hit = g.h
-      ? el('rect', { x: g.x1 + 14, y: g.y1 - 38, width: S - 28, height: 76, fill: 'transparent' }, grp)
-      : el('rect', { x: g.x1 - 38, y: g.y1 + 14, width: 76, height: S - 28, fill: 'transparent' }, grp);
+      ? el('rect', { x: g.x1 + 8, y: g.y1 - 42, width: S - 16, height: 84, fill: 'transparent' }, grp)
+      : el('rect', { x: g.x1 - 42, y: g.y1 + 8, width: 84, height: S - 16, fill: 'transparent' }, grp);
     var vis = el('line', { 'class': 'vis', x1: g.x1 + 4, y1: g.y1 + (g.h ? 0 : 4), x2: g.x2 - 4, y2: g.y2 - (g.h ? 0 : 4) }, grp);
     if (g.h) { vis.setAttribute('x1', g.x1 + 4); vis.setAttribute('x2', g.x2 - 4); vis.setAttribute('y1', g.y1); vis.setAttribute('y2', g.y2); }
     else { vis.setAttribute('x1', g.x1); vis.setAttribute('x2', g.x2); vis.setAttribute('y1', g.y1 + 4); vis.setAttribute('y2', g.y2 - 4); }
