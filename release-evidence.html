@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Testing transparency — Beebo Entertainment</title>
-  <meta name="description" content="An honest record of what Beebo testing can show, what still needs human confirmation, and how results are reviewed.">
+  <meta name="description" content="October 1, 2026 testing evidence for Beebo desktop, Android phones, browser microphone checks and servers, with devices, versions and untested paths.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#171b1c">
   <link rel="canonical" href="https://beeboentertainment.com/release-evidence.html">
@@ -41,12 +41,12 @@
         <h1 id="page-title">Evidence, not assumptions.</h1>
         <p>Beebo uses local checks, AI-assisted hand testing and human reports to find problems. They are useful together—but no one kind of testing proves every device, route or feature.</p>
         <p>Every published result needs a build, a scope and an honest limit. A human tester is still needed on every release.</p>
-        <div class="evidence-actions"><a class="button primary" href="#current-pass">Read the current pass</a><a class="button" href="become-a-tester.html">Help test Beebo</a></div>
+        <div class="evidence-actions"><a class="button primary" href="#desktop-checks">Desktop</a><a class="button" href="#current-pass">Android phones</a><a class="button" href="#browser-checks">Browser microphone</a><a class="button" href="#server-checks">Servers</a></div>
       </div>
       <aside class="evidence-ledger" aria-label="Current evidence ledger">
-        <header><span class="evidence-label">Current record</span><h2>Awaiting completed device pass</h2></header>
+        <header><span class="evidence-label">Current record</span><h2>October 1 verification record</h2></header>
         <dl>
-          <div><dt>Review scope</dt><dd>In progress</dd></div><div><dt>Applicable-check tally</dt><dd>Awaiting record</dd></div><div><dt>Human-device confirmation</dt><dd>Still required</dd></div><div><dt>Last reviewed</dt><dd>Results pending</dd></div>
+          <div><dt>Review scope</dt><dd>Desktop, phones, browser, servers</dd></div><div><dt>Builds</dt><dd>Development / published test</dd></div><div><dt>Broader testing</dt><dd>Still required</dd></div><div><dt>Record date</dt><dd><time datetime="2026-10-01">Oct 1, 2026</time></dd></div>
         </dl>
       </aside>
     </section>
@@ -60,17 +60,76 @@
         <article class="evidence-card"><span class="evidence-mark limits" aria-hidden="true">×</span><h3>Needs more people or hardware</h3><p>Some paths require another person, another device, a receiver, a tuner or payment access. One session cannot validate them alone.</p></article>
       </div>
     </section>
+    <section class="evidence-section" id="desktop-checks" aria-labelledby="desktop-checks-title">
+      <span class="evidence-kicker">Windows desktop · October 1, 2026</span><h2 id="desktop-checks-title">What passed on the desktop.</h2>
+      <p>Beebo <strong>0.1.70</strong>, published <time datetime="2026-10-01">October 1, 2026</time>. The real-app checks below used our development PC and the packaged Windows app. <strong>All listed checks passed</strong> applies to the listed checks only; the last column stays unverified.</p>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable Windows desktop verification" tabindex="0"><table class="evidence-table">
+        <caption>Windows desktop verification record — October 1, 2026 · Beebo 0.1.70</caption>
+        <thead><tr><th scope="col">Feature</th><th scope="col">Automatic checks</th><th scope="col">Real device / real app</th><th scope="col">Not tested</th></tr></thead><tbody>
+          <tr><th scope="row">Installer and updates</th><td><strong>All listed checks passed</strong>: 437 of 437 test files, video-converter bundle, installer/feed hash, new/tampered/downgrade/feed-error updater checks.</td><td>Development PC auto-updated to 0.1.70 and runs.</td><td>Home-PC upgrade over an existing install; SmartScreen behaviour. Installer is unsigned.</td></tr>
+          <tr><th scope="row">Story Studio: whole story</th><td><strong>All listed checks passed</strong> (hundreds of tests).</td><td>Packaged app: sidebar, draft, cards, cast, preview, voices notice, 64-second export with subtitles, cancel, bad folder and save/open.</td><td>Native file dialogs on screen; Open folder button.</td></tr>
+          <tr><th scope="row">Story Studio: pages and choices</th><td><strong>All listed checks passed</strong>: map, checks, routes, in-app play and playable export.</td><td>Packaged app with real voices: three-page story, keep/remake pages, whole film, five-page branching story, one video per ending and a playable export opened from disk in Chrome. Four defects found and fixed.</td><td>Audio heard by a person; Safari, Firefox and TV browsers; native dialogs.</td></tr>
+          <tr><th scope="row">Story Studio: real voices</th><td>Tests use a simulated voice engine.</td><td>Real Kokoro through the app: three voices, word-aligned timing and no overlap.</td><td>Listening by ear for quality.</td></tr>
+          <tr><th scope="row">Sound effects and music</th><td><strong>All listed checks passed</strong>: repeatable output, loudness and loops.</td><td>One clip was listened to and its sound approved.</td><td>Other music beds by ear.</td></tr>
+          <tr><th scope="row">Painted rabbits, scenes and props</th><td>Tests pass with the art installed.</td><td>Frames reviewed with both rabbits, 11 scenes rendered without errors, held-prop frames.</td><td>Side/front views in the published app; seams still visible; Appa remains a candidate.</td></tr>
+          <tr><th scope="row">Desktop polish fixes</th><td><strong>All listed checks passed</strong>: 246 plus related checks for plain errors, focus trap and update dialog.</td><td>No real-screen check recorded.</td><td>Real-screen error, keyboard-focus and update-dialog checks.</td></tr>
+          <tr><th scope="row">Walkie-talkie: desktop host</th><td><strong>All listed checks passed</strong>: 125 of 125 walkie and guard tests, including two Chrome pages exchanging audio.</td><td>Phone browser prerequisite checks below; feature remains In development.</td><td>Two phones talking over Wi-Fi; iPhone; screen-off.</td></tr>
+          <tr><th scope="row">Walkie hub: internet connection</th><td><strong>All listed checks passed</strong>: local loopback, real test peers and Chrome guest.</td><td>No real internet device check recorded.</td><td>Internet/mobile-data connection through real routers; relay; iPhone.</td></tr>
+          <tr><th scope="row">Scroll smoothness and appearance</th><td>Not yet measured.</td><td>No result yet.</td><td>All smoothness measurements and real-screen appearance checks.</td></tr>
+        </tbody></table></div>
+    </section>
     <section class="evidence-section" id="current-pass" aria-labelledby="pass-title">
-      <span class="evidence-kicker">Current AI-assisted hand-testing pass</span><h2 id="pass-title">Results will appear after the pass is complete and reviewed.</h2>
-      <p>This section intentionally does not guess at totals. When the active device pass is complete, it will list the real checklist count and each outcome using the same vocabulary testers use: Pass, Fail, Blocked, Not run and Not applicable.</p>
+      <span class="evidence-kicker">Developer's own device testing</span><h2 id="pass-title">Android testing update, Oct 1, 2026</h2>
+      <p>On <time datetime="2026-10-01">October 1, 2026</time>, we tested two of our own phones. These are limited checks on two different builds, not a broad beta. The Android app remains a <strong>Test download</strong> installed outside Google Play. <strong>Google Play testing has not started.</strong></p>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable October 1 Android testing results" tabindex="0">
+        <table class="evidence-table">
+          <caption>Android phone checks on October 1, 2026</caption>
+          <thead><tr><th scope="col">Phone</th><th scope="col">Android version</th><th scope="col">What was tested</th><th scope="col">Result</th><th scope="col">Not tested</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Samsung Galaxy S24 Ultra</th><td>Android 16</td><td>A test build of the newest development code. Home opened already signed in; all five tabs, Settings and the Campsite lobby opened. Real episode playback through the home server, then background/foreground and picture-in-picture.</td><td>Picture and sound played, with the playback position advancing. Picture-in-picture continued playing and reopened. No crashes, freezes or native errors were recorded during the session.</td><td>Chromecast handover (no receiver), user screen rotation, Library contents, deeper Settings, a real Campsite game, offline screens, downloads, Watch Together and Trip Journal.</td></tr>
+            <tr><th scope="row">Samsung Galaxy S9+</th><td>Android 10</td><td>The published 1.51-tester3 test build (build 53), in airplane mode. All five tabs, Settings, the Campsite lobby, offline games and background/foreground.</td><td>No crashes or freezes recorded. Slow frames: 5.2%. Memory: about 77 MB at launch and 136 MB after visiting every tab. Two offline problems found: a banner covering content and Browse/Library spinning without a message.</td><td>Home-server features, real playback, picture-in-picture, Chromecast, downloads, hotspot guest joins and the newest development build.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Offline fixes await a phone retest.</strong> Both S9+ problems have been fixed in development code for the next phone build. The published build tested here still has them; the fixes have not been retested on a phone.</p>
+      <p><strong>Campsite walkie-talkie: In development / Planned.</strong> Separate Chrome test pages exercised microphones on both phones and the camera on the S24 Ultra only, after accepting a one-time certificate warning. They exchanged audio with a PC test browser, not a finished two-phone walkie feature. <a href="#browser-checks">See the browser checks and limits</a>.</p>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable Android feature verification" tabindex="0"><table class="evidence-table">
+        <caption>Android feature verification — October 1, 2026 · published test download versus newer development code</caption>
+        <thead><tr><th scope="col">Feature</th><th scope="col">Automatic checks</th><th scope="col">Real device</th><th scope="col">Not tested</th></tr></thead><tbody>
+          <tr><th scope="row">Launch, tabs, Settings and Campsite lobby</th><td><strong>All listed checks passed</strong>: app unit suites — web 2,963, Play 2,841 and Amazon 2,838; policy checks clean.</td><td>S24 Ultra, Android 16, development test build; S9+, Android 10, published 1.51-tester3 (53), offline. See the device table above.</td><td>Library contents; deeper Settings; user rotation.</td></tr>
+          <tr><th scope="row">Playback, picture-in-picture and background/foreground</th><td>Unit tests.</td><td>S24 development test build: real home-server video and sound, advancing position, picture-in-picture.</td><td>Playback on S9+.</td></tr>
+          <tr><th scope="row">Offline banner and loading</th><td><strong>All listed checks passed</strong>: new state-machine tests.</td><td>S9+ published test build found two defects; development fixes await a phone retest.</td><td>The fixed build on a phone.</td></tr>
+          <tr><th scope="row">Chromecast</th><td>Unit tests.</td><td>App launched without a crash; Cast button present.</td><td>Casting to a real receiver.</td></tr>
+          <tr><th scope="row">Share the app by QR</th><td><strong>All listed checks passed</strong>: 24 tests, including real server, partial downloads, limits and distribution checks.</td><td>PC against the S24 host: page and headers correct; 72.7 MB downloaded with matching SHA-256.</td><td>Install on a second phone; iPhone; hotspot with device isolation.</td></tr>
+          <tr><th scope="row">Google Play reviewer demo mode</th><td><strong>All listed checks passed</strong>: 11 tests across all three distributions.</td><td>No phone check recorded; Google Play testing has not started.</td><td>Real-phone clips, subtitles, resume and exit.</td></tr>
+          <tr><th scope="row">Walkie-talkie: Android host</th><td><strong>All listed checks passed</strong>: 80 new tests, real secure sockets and 12 guests.</td><td>No phone test of this host; feature is In development.</td><td>Chrome accepting the phone-made certificate; battery; screen-off.</td></tr>
+          <tr><th scope="row">Phone-hosted secure page</th><td><strong>All listed checks passed</strong>: 31 tests and a real secure connection handshake.</td><td>No phone check recorded.</td><td>Chrome/Android accepting the phone-generated certificate.</td></tr>
+          <tr><th scope="row">Plain errors and accessibility fixes</th><td><strong>All listed checks passed</strong>.</td><td>No phone check recorded.</td><td>TalkBack; 200% font size; real failures.</td></tr>
+        </tbody></table></div>
       <div class="evidence-results">
-        <article class="evidence-placeholder" data-testing-results-placeholder aria-live="polite"><span class="evidence-label">Results placeholder</span><h3>Awaiting the completed hand-test record</h3><p>The live pass is still being carried out. We will publish only the actual applicable-check total, result breakdown, build and limits after the record is reviewed.</p><dl><div><dt>Applicable checks</dt><dd>Awaiting verified count</dd></div><div><dt>Passed</dt><dd>Awaiting verified count</dd></div><div><dt>Failed</dt><dd>Awaiting verified count</dd></div><div><dt>Blocked / not applicable</dt><dd>Awaiting verified count</dd></div></dl></article>
+        <article class="evidence-placeholder"><span class="evidence-label">What this record establishes</span><h3>Specific paths on specific phones</h3><p>The S24 Ultra exercised development-build playback. The S9+ exercised the published test build offline and found problems. Neither session verifies every feature, Android device or connection route. The device sessions did not record counted checklist totals; automatic test counts are reported separately above.</p></article>
         <aside class="evidence-limits"><span class="evidence-label">Known limits of a solo pass</span><h3>Not something one session can prove</h3><ul><li>Campsite guest joins and shared play need another participating device.</li><li>Casting needs a compatible receiver and a real network route.</li><li>Live TV needs the relevant tuner and broadcast setup.</li><li>Paid-service flows need authorised payment test access.</li></ul></aside>
       </div>
     </section>
-    <section class="evidence-section" aria-labelledby="ledger-title">
-      <span class="evidence-kicker">What the next record will include</span><h2 id="ledger-title">A result needs enough context to be useful.</h2>
-      <div class="evidence-table-wrap" role="region" aria-label="Testing record fields" tabindex="0"><table class="evidence-table"><thead><tr><th scope="col">Field</th><th scope="col">Why it matters</th><th scope="col">Current state</th></tr></thead><tbody><tr><td>Build and platform</td><td>Shows exactly which packaged version and device family was tested.</td><td class="evidence-state">Awaiting completed record</td></tr><tr><td>Checklist outcome</td><td>Keeps Pass, Fail, Blocked, Not run and Not applicable distinct.</td><td class="evidence-state">Awaiting completed record</td></tr><tr><td>Device and connection</td><td>Explains the route, receiver or network involved without exposing private access details.</td><td class="evidence-state">Awaiting completed record</td></tr><tr><td>Issue follow-up</td><td>Links a reproducible problem to its public status when it is safe to share.</td><td class="evidence-state">Awaiting completed record</td></tr></tbody></table></div>
+    <section class="evidence-section" id="browser-checks" aria-labelledby="browser-checks-title">
+      <span class="evidence-kicker">Browser test pages · October 1, 2026</span><h2 id="browser-checks-title">Microphone checks on both phones; camera on S24 only.</h2>
+      <p>These Phase 0 test pages checked browser prerequisites for the planned walkie-talkie. They used a test certificate, not the Android host's own certificate, and exchanged hold-to-talk audio with a headless Chrome browser on the PC. They do not verify a released walkie-talkie feature.</p>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable browser microphone verification" tabindex="0"><table class="evidence-table">
+        <caption>Phone-browser checks — October 1, 2026</caption>
+        <thead><tr><th scope="col">Phone / browser</th><th scope="col">Listed checks and result</th><th scope="col">Measured audio path</th><th scope="col">Not tested</th></tr></thead><tbody>
+          <tr><th scope="row">S24 Ultra · Android 16 · Chrome</th><td><strong>All listed checks passed</strong>: certificate warning accepted in two taps; secure page context; microphone and camera; AudioWorklet and WebCodecs Opus.</td><td>Median round trip 7–9 ms. 8,894 of about 9,000 frames over three minutes; no gaps recorded.</td><td>Locked screen; Samsung Internet; iPhone Safari; a real two-phone conversation.</td></tr>
+          <tr><th scope="row">S9+ · Android 10 · Chrome 154 · USB tunnel</th><td><strong>All listed checks passed</strong>: certificate warning accepted in two taps; secure page context; microphone; AudioWorklet and WebCodecs Opus.</td><td>Median round trip 6.7 ms. 8,989 of 8,989 frames over three minutes; no gaps recorded.</td><td>Camera; locked screen; Samsung Internet; iPhone Safari; a real two-phone conversation.</td></tr>
+        </tbody></table></div>
+    </section>
+    <section class="evidence-section" id="server-checks" aria-labelledby="server-checks-title">
+      <span class="evidence-kicker">Server checks · October 1, 2026</span><h2 id="server-checks-title">Passing tests do not mean a service is deployed.</h2>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable server verification" tabindex="0"><table class="evidence-table">
+        <caption>Server and service verification — October 1, 2026 · development checks and live update feed</caption>
+        <thead><tr><th scope="col">Item</th><th scope="col">Checks and result</th><th scope="col">Deployment / version</th><th scope="col">Not tested</th></tr></thead><tbody>
+          <tr><th scope="row">Walkie anywhere signalling</th><td><strong>All listed checks passed</strong>: service groups of 153 and 603 checks, worker 605 and desktop adapter 7; real sockets and WebSocket.</td><td>OVH service development code, off by default. Not deployed.</td><td>Real Caddy/HAProxy route; internet/mobile-data connections, relay and iPhone.</td></tr>
+          <tr><th scope="row">Cloudflare worker</th><td><strong>All listed checks passed</strong>: 605 of 605 suite checks.</td><td>Existing worker unchanged except an exported helper; these are code checks.</td><td>No new live-service verification is established by this suite.</td></tr>
+          <tr><th scope="row">Update feed</th><td><strong>All listed checks passed</strong>: live feed serving the recorded desktop version.</td><td>Desktop 0.1.70 verified live after rollback and restore.</td><td>Home-PC upgrade; SmartScreen; signed installer.</td></tr>
+        </tbody></table></div>
     </section>
     <section class="evidence-section" aria-labelledby="contribute-title">
       <span class="evidence-kicker">Human testing remains essential</span><h2 id="contribute-title">Turn one result into useful evidence.</h2>
