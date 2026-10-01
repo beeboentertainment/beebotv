@@ -1,0 +1,43 @@
+# Website wording polish — in progress
+
+Branch: `codex/site-copy-polish-2026-10-01`, based on beebotv main `d962a83`. Website HTML copy only. No push, merge, deploy, installer-feed change or app-code change.
+
+## Reviewed and committed so far
+
+- `index.html`: benefit-led title and description, consistent Campsite Mode name, honest distinction between a tested two-phone guest join and still-untested shared media/games, visible Feature status link.
+- `docs/campsite-mode.html`: clearer benefit-first introduction, consistent name, simpler Beta badges, visible Feature status link; preserved real-phone evidence and all test caveats.
+- `platforms.html`: shorter title, description and introduction, consistent name and Feature status link. Device-status table was not reclassified without fresh build evidence.
+- `docs/faq.html`: shorter title/introduction, benefit-first Beebo explanation and corresponding structured data, adult-controls question instead of a child-safety promise, Feature status link. FAQ JSON-LD still parses.
+- `app-on-your-phone.html`: shorter title and description, benefit-first opening, and the Android Test download / Google Play limit stated up front. The detailed setup steps were not changed.
+- `index.html`: the Campsite Mode spotlight no longer promises unverified shared-media or game paths; the session example uses the consistent feature name.
+- `next-features.html`: clearer title, description and benefit-first introduction to the Available, Beta, In development and Planned sections. Individual feature status classifications were not changed.
+- `camp-stories.html`: clearer concept-first opening and consistent Campsite Mode name, while keeping the generated-image and untested-audio disclosures.
+- `known-issues.html`, `tester-checklist.html`, `tester-results.html`: descriptive public-page titles and search descriptions. Issue/test data and reporting behavior were not changed.
+- `server-setup.html`: benefit-first title, description and opening; removed the unverified ten-minute estimate. The detailed technical steps were left intact.
+- `docs/getting-started-windows.html`: benefit-first description and opening, with the unverified fifteen-minute estimate removed from page metadata, social metadata and HowTo structured data. The structured data parses; technical steps were not changed.
+- `docs/phone-speakers.html`: the title, metadata, HowTo description and opening now say the music path is a Beta in an Android test build and real-phone hotspot playback still needs testing. The existing setup steps and lower-page limits were preserved; structured data parses.
+- `phone-speakers.html`: title, metadata, FAQ structured-data introduction and opening now distinguish the separate music/movie Betas and their unverified real-phone paths. Existing technical details and caveats were preserved; structured data parses.
+- `outdoors-kit.html`: opening and all description metadata now say the offline activities are in development, absent from the Android download and not tested on real phones. The existing status callout and activity details remain; structured data parses.
+
+The tracked public-page inventory contains 98 HTML pages, excluding scratch templates and domain-site copies. All 98 already had a download link by the current audit pattern, but only the homepage linked to `next-features.html` before this work. A separate mechanical pass now adds a visible **Feature status** link to the shared desktop and mobile header on every tracked public HTML page, and normalizes the header label to **Campsite Mode**. All 98 now have both links by the current audit pattern. Individual copy review still remains open; this is not a whole-site sign-off.
+
+## Unclear claims left unchanged for Claude/Nick
+
+- Homepage relay introductory month, free fallback, prices and rewards copy needs product approval; it was not rewritten.
+- `platforms.html` says “any web browser” and lists Android TV/casting as Available despite narrower real-device test notes. Device and build evidence must decide whether to narrow that language.
+- `docs/faq.html` contains planned relay prices, direct/UPnP access claims, and older build-specific statements. It also says specific parental controls are enforced by the PC. Those statements were left intact pending technical review.
+- `docs/campsite-mode.html` describes simulated phone-speaker synchronization and prepared-video paths. The Beta labels and real-device caveats remain; do not present those paths as verified on the September 30 host/guest test.
+- `story-writer.html` currently describes 17 premade stories in Android 1.11 and Windows 0.1.27. The public site has no page literally named Story Studio. Confirm current feature/version scope before renaming or revising that guide.
+- `app-on-your-phone.html` still says the browser install works on iPhone/iPad and uses absolute-sounding family-address and away-from-home language farther down the page. Those instructions need live compatibility and network review before stronger wording changes.
+- `next-features.html` calls Story Mode available, while other public copy refers to Story Studio; the feature name and availability need confirmation before renaming the status card.
+- `help.html` still advertises a lifetime streaming pass for testers and older September 26 build numbers. Reward approval and current-build evidence are needed before that page is rewritten.
+- `server-setup.html` still gives Windows-version, app-signing and installer-warning instructions. These need current installer/build review, not copy-only assumptions.
+- `beebo-products.html` still mixes “Available now” badges with Beebo Relay billing being finalized, a BeeboVPN invite test, planned CA-dollar prices, and broad device/game claims. Product and pricing approval is needed before a benefit-first rewrite can safely preserve the true status of each offering.
+- `apple.html` says Safari and AirPlay work today; that should be checked against real Apple-device evidence before strengthening or changing its compatibility language.
+- `become-a-tester.html` contains volunteer rewards and lifetime-pass terms. No offer language was changed without owner approval.
+- **Priority review: `car-companion.html`** currently states Watch Together, QR joining, Android Auto/Beebo Auto, passenger games and in-car audio synchronization as working; it also says “safely,” “Built for road trips with kids,” and shows two “Download from this site” badges. This conflicts with the Feature status page, where Watch Together and Car Party are In development and switched off. The page was left unchanged because a safe rewrite needs Claude/Nick to confirm each actual build path; do not present it as a verified current feature or child-safety assurance.
+- `tournaments.html` marks Beebo Championships “Coming soon” but promises one month of subscription account credit to each eligible winner. Prize and subscription terms need owner approval; no offer copy was changed.
+
+## Verification so far
+
+`git diff --check` passed before each commit. The FAQ and Campsite JSON-LD blocks parse. A local Chrome check at desktop and phone widths found both links on the homepage, Campsite guide, and story guide with no page-width overflow; it is not a whole-site visual regression test. No real-device or live-site test has been claimed. More individual page copy reviews remain open.
