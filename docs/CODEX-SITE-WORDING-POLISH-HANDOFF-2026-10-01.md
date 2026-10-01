@@ -8,6 +8,7 @@ Branch: `codex/site-copy-polish-2026-10-01`, based on beebotv main `d962a83`. We
 - `docs/campsite-mode.html`: clearer benefit-first introduction, consistent name, simpler Beta badges, visible Feature status link; preserved real-phone evidence and all test caveats.
 - `platforms.html`: shorter title, description and introduction, consistent name and Feature status link. Device-status table was not reclassified without fresh build evidence.
 - `docs/faq.html`: shorter title/introduction, benefit-first Beebo explanation and corresponding structured data, adult-controls question instead of a child-safety promise, Feature status link. FAQ JSON-LD still parses.
+- `app-on-your-phone.html`: shorter title and description, benefit-first opening, and the Android Test download / Google Play limit stated up front. The detailed setup steps were not changed.
 
 The tracked public-page inventory contains 98 HTML pages, excluding scratch templates and domain-site copies. All 98 already had a download link by the current audit pattern, but only the homepage linked to `next-features.html` before this work. A separate mechanical pass now adds a visible **Feature status** link to the shared desktop and mobile header on every tracked public HTML page, and normalizes the header label to **Campsite Mode**. All 98 now have both links by the current audit pattern. Individual copy review still remains open; this is not a whole-site sign-off.
 
@@ -18,6 +19,7 @@ The tracked public-page inventory contains 98 HTML pages, excluding scratch temp
 - `docs/faq.html` contains planned relay prices, direct/UPnP access claims, and older build-specific statements. It also says specific parental controls are enforced by the PC. Those statements were left intact pending technical review.
 - `docs/campsite-mode.html` describes simulated phone-speaker synchronization and prepared-video paths. The Beta labels and real-device caveats remain; do not present those paths as verified on the September 30 host/guest test.
 - `story-writer.html` currently describes 17 premade stories in Android 1.11 and Windows 0.1.27. The public site has no page literally named Story Studio. Confirm current feature/version scope before renaming or revising that guide.
+- `app-on-your-phone.html` still says the browser install works on iPhone/iPad and uses absolute-sounding family-address and away-from-home language farther down the page. Those instructions need live compatibility and network review before stronger wording changes.
 
 ## Verification so far
 
