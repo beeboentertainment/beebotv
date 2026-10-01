@@ -11,6 +11,8 @@ Branch: `codex/site-copy-polish-2026-10-01`, based on beebotv main `d962a83`. We
 - `app-on-your-phone.html`: shorter title and description, benefit-first opening, and the Android Test download / Google Play limit stated up front. The detailed setup steps were not changed.
 - `index.html`: the Campsite Mode spotlight no longer promises unverified shared-media or game paths; the session example uses the consistent feature name.
 - `next-features.html`: clearer title, description and benefit-first introduction to the Available, Beta, In development and Planned sections. Individual feature status classifications were not changed.
+- `camp-stories.html`: clearer concept-first opening and consistent Campsite Mode name, while keeping the generated-image and untested-audio disclosures.
+- `known-issues.html`, `tester-checklist.html`, `tester-results.html`: descriptive public-page titles and search descriptions. Issue/test data and reporting behavior were not changed.
 
 The tracked public-page inventory contains 98 HTML pages, excluding scratch templates and domain-site copies. All 98 already had a download link by the current audit pattern, but only the homepage linked to `next-features.html` before this work. A separate mechanical pass now adds a visible **Feature status** link to the shared desktop and mobile header on every tracked public HTML page, and normalizes the header label to **Campsite Mode**. All 98 now have both links by the current audit pattern. Individual copy review still remains open; this is not a whole-site sign-off.
 
