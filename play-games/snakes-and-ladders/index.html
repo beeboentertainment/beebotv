@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snakes and Ladders - Play free | Beebo Entertainment</title>
+<meta name="description" content="Play Snakes and Ladders free in your browser: a dice race for 2 to 4 players, against Hopping Beebo or friends on the same screen. No sign-in, no download.">
+<meta name="color-scheme" content="dark">
+<style>
+:root{
+  --bg:#0a1018; --panel:#131c28; --panel2:#1b2736; --gold:#e0b252; --cream:#f4ecd8; --muted:#9aa7b6;
+  --line:#2a3a4e; --teal:#5cc8c0; --coral:#ff8a7a; --violet:#b9a2ff; --ink:#0a1018;
+  --p1:#e0b252; --p2:#5cc8c0; --p3:#ff8a7a; --p4:#b9a2ff;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--gold)}
+.wrap{max-width:860px;margin:0 auto;padding:16px}
+header.top{padding:8px 0 4px}
+.back{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+h1{margin:4px 0 4px;font-size:clamp(1.6rem,6vw,2.3rem);color:var(--gold);line-height:1.15}
+.lede{margin:0 0 12px;color:var(--muted)}
+h2{font-size:1.1rem;margin:0 0 8px;color:var(--gold)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:4px;min-width:150px;flex:1 1 150px}
+.field label{font-size:.85rem;color:var(--muted)}
+select,.btn{font:inherit;min-height:44px;border-radius:10px}
+select{background:var(--panel2);color:var(--cream);border:1px solid var(--line);padding:0 10px;width:100%}
+.btn{background:var(--gold);color:var(--ink);border:2px solid var(--gold);padding:0 18px;font-weight:700;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.secondary{background:transparent;color:var(--cream);border-color:var(--line)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--cream);outline-offset:2px;box-shadow:0 0 0 5px var(--ink)}
+.status{margin:12px 0;padding:12px 14px;background:var(--panel2);border-left:4px solid var(--gold);border-radius:8px;min-height:3em;color:var(--cream)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.tally{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tally li{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.tally b{color:var(--gold)}
+details.panel summary{cursor:pointer;font-weight:700;color:var(--gold);min-height:44px;display:flex;align-items:center}
+details.panel ul,details.panel ol{padding-left:1.2em;margin:6px 0}
+footer.site{margin:20px 0 32px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--panel2);border:1px solid var(--line)}
+.chip i{display:inline-block;width:14px;height:14px;border-radius:50%}
+.turn-chip{border-color:var(--gold)}
+@media (max-width:420px){.wrap{padding:10px}.panel{padding:10px}.controls .field:first-child{flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+.board-wrap{max-width:560px;margin:0 auto}
+#board{width:100%;height:auto;display:block;border-radius:12px;border:2px solid var(--line);background:#0e1620}
+.tok{transition:transform .45s ease}
+.dock{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin:12px 0}
+#roll{min-width:180px;font-size:1.1rem}
+.die{width:64px;height:64px}
+.players{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip b{color:var(--gold)}
+.legend{font-size:.85rem;color:var(--muted);text-align:center;margin:6px 0 0}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<a class="back" href="../index.html">&larr; All Campsite games</a>
+<h1>Snakes and Ladders</h1>
+<p class="lede">Roll the die, climb the ladders, mind the snakes. First one home wins. Play against Hopping Beebo or pass the screen around with friends.</p>
+</header>
+<main>
+<section class="panel" aria-label="Game setup">
+<form class="controls" onsubmit="return false">
+
+<div class="field"><label for="players">Players</label>
+<select id="players"><option value="2" selected>2 players</option><option value="3">3 players</option><option value="4">4 players</option></select></div>
+<div class="field"><label for="computers">Hopping Beebo plays</label>
+<select id="computers"></select></div>
+<button type="button" class="btn" id="new-game">New game</button>
+</form>
+</section>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+
+<section class="panel" aria-label="Game board">
+<div class="players" id="players-bar" aria-label="Players and squares"></div>
+<div class="board-wrap"><svg id="board" viewBox="0 0 1000 1000" role="img" aria-labelledby="board-title"><title id="board-title">Snakes and Ladders board, 100 squares</title></svg></div>
+<p class="legend">Gold ladders go up. Coral snakes slide you down. A six rolls again, up to three rolls in a turn.</p>
+<div class="dock">
+<svg id="die" class="die" viewBox="0 0 64 64" role="img" aria-label="Die, not rolled yet"></svg>
+<button type="button" class="btn" id="roll">Roll the die</button>
+</div>
+</section>
+<section class="panel" aria-labelledby="score-h">
+<h2 id="score-h">Session score</h2>
+<ul class="tally" id="tally"></ul>
+<p class="lede" style="margin:8px 0 0;font-size:.85rem">Scores are kept only while this page stays open. Nothing is saved or sent anywhere.</p>
+</section>
+<details class="panel">
+<summary>How to play</summary>
+
+<ol>
+<li>Everyone starts off the board. Take turns rolling the die and moving that many squares.</li>
+<li>Land on the foot of a ladder and you climb to its top. Land on a snake's head and you slide down to its tail.</li>
+<li>Roll a six and you go again, but never more than three rolls in one turn.</li>
+<li>You do not need an exact roll to finish. Reach or pass square 100 and you win.</li>
+</ol>
+<p>With Hopping Beebo in the game it rolls for itself. The die is the only thing that decides a move, so there is no difficulty setting. Press the Roll button with Enter or Space.</p>
+</details>
+</main>
+<footer class="site">
+<p>Part of Beebo Entertainment's Campsite games. Beebo is free software; the full app adds guests on their own phones.</p>
+<p><a href="../index.html">Back to all games</a></p>
+</footer>
+</div>
+<script src="game.js"></script>
+<script>
+(function () {
+'use strict';
+/* ---- shared page helpers (inlined) ---- */
+var $ = function (id) { return document.getElementById(id); };
+var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+function announce(msg) { $('status').textContent = msg; }
+var tally = { names: [], wins: {}, draws: 0 };
+var tallyExtra = [];
+function resetTally(names, noDraws) { tally = { names: names.slice(), wins: {}, draws: 0, noDraws: !!noDraws }; tallyExtra = []; names.forEach(function (n) { tally.wins[n] = 0; }); renderTally(); }
+function addWin(name) { tally.wins[name] = (tally.wins[name] || 0) + 1; renderTally(); }
+function addDraw() { tally.draws++; renderTally(); }
+function renderTally() {
+  var ul = $('tally'); ul.innerHTML = '';
+  tally.names.forEach(function (n) {
+    var li = document.createElement('li');
+    li.innerHTML = '<span></span>: <b>' + (tally.wins[n] || 0) + '</b>';
+    li.firstChild.textContent = n;
+    ul.appendChild(li);
+  });
+  tallyExtra.forEach(function (t) { var x = document.createElement('li'); x.textContent = t; ul.appendChild(x); });
+  if (!tally.noDraws) { var d = document.createElement('li'); d.innerHTML = 'Draws: <b>' + tally.draws + '</b>'; ul.appendChild(d); }
+}
+function playerNames(count, computers) {
+  var out = [], humans = count - computers;
+  for (var i = 0; i < count; i++) {
+    if (i >= humans) out.push({ name: computers > 1 ? 'Hopping Beebo ' + (i - humans + 1) : 'Hopping Beebo', bot: true });
+    else out.push({ name: (humans === 1 && computers > 0) ? 'You' : 'Player ' + (i + 1), bot: false });
+  }
+  return out;
+}
+function vb(name, you, other) { return name === 'You' ? you : other; }
+var PCOLORS = ['var(--p1)', 'var(--p2)', 'var(--p3)', 'var(--p4)'];
+
+var G = window.BeeboSnakes;
+var game = null, busy = false, timer = null;
+var NS = 'http://www.w3.org/2000/svg';
+var COLOR_HEX = ['#e0b252', '#5cc8c0', '#ff8a7a', '#b9a2ff'];
+
+function el(name, attrs, parent) {
+  var e = document.createElementNS(NS, name);
+  for (var k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function center(n) { var g = G.squareToGrid(n); return { x: g.col * 100 + 50, y: g.row * 100 + 50 }; }
+function startPoint(i) { return { x: 50 + i * 18, y: 975 }; }
+
+function drawBoard() {
+  var svg = $('board');
+  var keep = svg.querySelector('title');
+  svg.innerHTML = ''; svg.appendChild(keep);
+  for (var n = 1; n <= 100; n++) {
+    var g = G.squareToGrid(n);
+    el('rect', { x: g.col * 100, y: g.row * 100, width: 100, height: 100, fill: ((g.col + g.row) % 2 ? '#162231' : '#1b2a3b'), stroke: '#0a1018', 'stroke-width': 2 }, svg);
+    var t = el('text', { x: g.col * 100 + 8, y: g.row * 100 + 24, fill: '#9aa7b6', 'font-size': 20, 'font-family': 'system-ui,sans-serif' }, svg);
+    t.textContent = n;
+  }
+  var jumps = G.JUMPS, from;
+  for (from in jumps) {
+    from = Number(from);
+    var to = jumps[from];
+    var a = center(from), b = center(to);
+    var dx = b.x - a.x, dy = b.y - a.y, len = Math.sqrt(dx * dx + dy * dy), ux = dx / len, uy = dy / len, px = -uy, py = ux;
+    if (to > from) {
+      // ladder: two rails and rungs
+      el('line', { x1: a.x + px * 12, y1: a.y + py * 12, x2: b.x + px * 12, y2: b.y + py * 12, stroke: '#e0b252', 'stroke-width': 7, 'stroke-linecap': 'round' }, svg);
+      el('line', { x1: a.x - px * 12, y1: a.y - py * 12, x2: b.x - px * 12, y2: b.y - py * 12, stroke: '#e0b252', 'stroke-width': 7, 'stroke-linecap': 'round' }, svg);
+      var rungs = Math.max(2, Math.floor(len / 38));
+      for (var r = 1; r < rungs; r++) {
+        var f = r / rungs, cx = a.x + dx * f, cy = a.y + dy * f;
+        el('line', { x1: cx + px * 12, y1: cy + py * 12, x2: cx - px * 12, y2: cy - py * 12, stroke: '#f4ecd8', 'stroke-width': 4 }, svg);
+      }
+    } else {
+      // snake: wavy path from head (a) to tail (b)
+      var amp = 26, seg = Math.max(3, Math.round(len / 90)), d = 'M' + a.x + ' ' + a.y;
+      for (var s = 1; s <= seg; s++) {
+        var f1 = (s - 0.5) / seg, f2 = s / seg, sign = (s % 2 ? 1 : -1);
+        d += ' Q' + (a.x + dx * f1 + px * amp * sign) + ' ' + (a.y + dy * f1 + py * amp * sign) + ' ' + (a.x + dx * f2) + ' ' + (a.y + dy * f2);
+      }
+      el('path', { d: d, fill: 'none', stroke: '#ff8a7a', 'stroke-width': 13, 'stroke-linecap': 'round', opacity: .92 }, svg);
+      el('path', { d: d, fill: 'none', stroke: '#7a2c24', 'stroke-width': 3, 'stroke-dasharray': '2 14', 'stroke-linecap': 'round' }, svg);
+      el('circle', { cx: a.x, cy: a.y, r: 15, fill: '#ff8a7a', stroke: '#7a2c24', 'stroke-width': 3 }, svg);
+      el('circle', { cx: a.x - 5, cy: a.y - 4, r: 3, fill: '#0a1018' }, svg);
+      el('circle', { cx: a.x + 5, cy: a.y - 4, r: 3, fill: '#0a1018' }, svg);
+    }
+  }
+  var home = el('text', { x: 50, y: 70, 'text-anchor': 'middle', fill: '#e0b252', 'font-size': 22, 'font-weight': 700 }, svg);
+  home.textContent = 'HOME';
+  var start = el('text', { x: 4, y: 998, fill: '#9aa7b6', 'font-size': 14 }, svg);
+  start.textContent = '';
+  game.players.forEach(function (p, i) {
+    var gEl = el('g', { id: 'tok' + i, 'class': 'tok' }, svg);
+    el('circle', { r: 17, fill: COLOR_HEX[i], stroke: '#0a1018', 'stroke-width': 3 }, gEl);
+    var tt = el('text', { 'text-anchor': 'middle', y: 6, fill: '#0a1018', 'font-size': 18, 'font-weight': 800, 'font-family': 'system-ui,sans-serif' }, gEl);
+    tt.textContent = i + 1;
+    placeToken(i, game.pos[i]);
+  });
+}
+
+function placeToken(i, square) {
+  var g = document.getElementById('tok' + i); if (!g) return;
+  var c = square === 0 ? startPoint(i) : center(square);
+  var share = 0, k;
+  for (k = 0; k < i; k++) if (game.pos[k] === square && square !== 0) share++;
+  var ox = square === 0 ? 0 : (share % 2 ? 22 : -22) * (share ? 1 : 0), oy = square === 0 ? 0 : (share > 1 ? 22 : (share ? -10 : 0));
+  g.style.transform = 'translate(' + (c.x + ox) + 'px,' + (c.y + oy) + 'px)';
+  g.setAttribute('transform', 'translate(' + (c.x + ox) + ' ' + (c.y + oy) + ')');
+}
+function placeAll() { game.players.forEach(function (p, i) { placeToken(i, game.pos[i]); }); }
+
+var PIPS = { 1: [[32, 32]], 2: [[18, 18], [46, 46]], 3: [[18, 18], [32, 32], [46, 46]], 4: [[18, 18], [46, 18], [18, 46], [46, 46]], 5: [[18, 18], [46, 18], [32, 32], [18, 46], [46, 46]], 6: [[18, 18], [46, 18], [18, 32], [46, 32], [18, 46], [46, 46]] };
+function drawDie(v) {
+  var d = $('die'); d.innerHTML = '';
+  el('rect', { x: 2, y: 2, width: 60, height: 60, rx: 10, fill: '#f4ecd8', stroke: '#e0b252', 'stroke-width': 3 }, d);
+  if (v) PIPS[v].forEach(function (p) { el('circle', { cx: p[0], cy: p[1], r: 5.5, fill: '#0a1018' }, d); });
+  d.setAttribute('aria-label', v ? 'Die shows ' + v : 'Die, not rolled yet');
+}
+
+function renderBar() {
+  var bar = $('players-bar'); bar.innerHTML = '';
+  game.players.forEach(function (p, i) {
+    var c = document.createElement('span');
+    c.className = 'chip' + (!game.over && game.turn === i ? ' turn-chip' : '');
+    c.innerHTML = '<i style="background:' + COLOR_HEX[i] + '"></i><span class="nm"></span> <b>' + (game.pos[i] || 'start') + '</b>';
+    c.querySelector('.nm').textContent = (i + 1) + ' ' + p.name + (!game.over && game.turn === i ? ' (to roll)' : '');
+    bar.appendChild(c);
+  });
+}
+
+function fillComputers() {
+  var n = Number($('players').value), sel = $('computers'), keep = sel.value || '1';
+  sel.innerHTML = '';
+  for (var c = 0; c <= n - 1; c++) {
+    var o = document.createElement('option'); o.value = c;
+    o.textContent = c === 0 ? 'Nobody (friends only)' : (c === 1 ? '1 seat' : c + ' seats');
+    sel.appendChild(o);
+  }
+  sel.value = Number(keep) <= n - 1 ? keep : '1';
+}
+
+function setupKey() { return $('players').value + '/' + $('computers').value; }
+var lastKey = '';
+
+function newGame() {
+  clearTimeout(timer); busy = false;
+  var n = Number($('players').value), comp = Number($('computers').value);
+  var list = playerNames(n, comp);
+  var key = setupKey();
+  if (key !== lastKey) { resetTally(list.map(function (p) { return p.name; })); lastKey = key; }
+  game = G.createGame({ players: list });
+  drawBoard(); drawDie(0); renderBar();
+  announce('New game. ' + game.players[0].name + vb(game.players[0].name, ' roll', ' rolls') + ' first.');
+  next();
+}
+
+function next() {
+  renderBar();
+  var rollBtn = $('roll');
+  if (game.over) { rollBtn.disabled = true; return; }
+  var p = game.players[game.turn];
+  if (p.bot) {
+    rollBtn.disabled = true;
+    timer = setTimeout(doRoll, reduceMotion ? 400 : 900);
+  } else {
+    rollBtn.disabled = false;
+    rollBtn.textContent = (game.players.length > 2 || game.players.some(function (q) { return q.bot; }) ? p.name + ': ' : '') + 'Roll the die';
+  }
+}
+
+function doRoll() {
+  if (busy || game.over) return;
+  busy = true;
+  $('roll').disabled = true;
+  var ev = G.roll(game);
+  drawDie(ev.die);
+  // step 1: onto the landing square. step 2: ladder or snake.
+  game.pos[ev.player] = ev.landed; placeToken(ev.player, ev.landed);
+  var delay = reduceMotion ? 0 : 520;
+  var finish = function () {
+    game.pos[ev.player] = ev.to; placeToken(ev.player, ev.to);
+    announce(G.describe(game, ev));
+    if (game.over) { end(); return; }
+    busy = false;
+    timer = setTimeout(next, reduceMotion ? 0 : 350);
+  };
+  if (ev.jump) { timer = setTimeout(finish, delay + 200); } else { finish(); }
+  renderBar();
+}
+
+function end() {
+  renderBar();
+  var rb = $('roll'); rb.disabled = true; rb.textContent = 'Game over';
+  if (game.winner >= 0) { addWin(game.players[game.winner].name); announce(G.describe(game, game.last) + ' Press New game to play again.'); }
+  else { addDraw(); announce('A long enough race. It is a dead heat. Press New game to play again.'); }
+  if (game.capped && game.winner >= 0) announce('That is a long enough race. ' + game.players[game.winner].name + ' was furthest along and wins.');
+}
+
+$('roll').addEventListener('click', function () { if (!game.players[game.turn].bot) doRoll(); });
+$('new-game').addEventListener('click', newGame);
+$('players').addEventListener('change', function () { fillComputers(); newGame(); });
+$('computers').addEventListener('change', newGame);
+fillComputers(); $('computers').value = '1';
+newGame();
+
+})();
+</script>
+</body>
+</html>
