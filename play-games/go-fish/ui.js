@@ -31,12 +31,12 @@
     var text=name(action.seat)+' asked '+name(action.target)+' for '+rankName(action.rank)+'s. ';
     if(action.taken)text+='Took '+action.taken+' '+(action.taken===1?'card':'cards')+'.';
     else text+='Go Fish!'+(action.wished?' Drew the wished-for rank and asks again.':'');
-    if(action.booked.length)text+=' Completed '+action.booked.map(rankName).join(', ')+' book.';
+    if(action.booked.length)text+=' Completed the '+action.booked.map(rankName).join(', ')+(action.booked.length>1?' books.':' book.');
     return text;}
   function render(){var seat=state.turn;
     $('handoff').hidden=!gate;$('hand-area').hidden=gate||busy||state.done||mode==='ai'&&seat===1;
     if(gate)$('handoff-message').textContent='Give the screen to '+name(seat)+'. Their cards stay hidden until they press the button.';
-    var message=state.done?(state.winner<0?'Round ends with the top book scores tied.':name(state.winner)+' wins with the most books.'):
+    var message=state.done?(state.winner<0?'Round ends with the top book scores tied.':name(state.winner)+(name(state.winner)==='You'?' win':' wins')+' with the most books.'):
       gate?'Pass the screen to '+name(seat)+'.':busy?'Hopping Beebo is choosing a question.':name(seat)+' to ask for a rank.';
     $('status').textContent=message;$('last').textContent=publicAction();renderRoster();renderHand();}
   function botTurn(){if(mode!=='ai'||state.done||state.turn!==1)return;busy=true;render();var token=roundToken;

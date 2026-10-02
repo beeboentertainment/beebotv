@@ -40,7 +40,7 @@
   function render(){var seat=state.turn;
     $('handoff').hidden=!gate;$('hand-area').hidden=gate||busy||state.done||mode==='ai'&&seat===1;
     if(gate)$('handoff-message').textContent='Give the screen to '+name(seat)+'. Their cards stay hidden until they press the button.';
-    var message=state.done?(state.winner<0?'Round ends in a tie.':name(state.winner)+' wins the round.'):
+    var message=state.done?(state.winner<0?'Round ends in a tie.':name(state.winner)+(name(state.winner)==='You'?' win':' wins')+' the round.'):
       gate?'Pass the screen to '+name(seat)+'.':busy?'Hopping Beebo is playing.':name(seat)+' to play on '+cardName(game.top(state))+' — active suit '+suitWords[state.suit]+'.';
     $('status').textContent=message;renderRoster();renderTable();renderChoice();renderHand();}
   function botTurn(){if(mode!=='ai'||state.done||state.turn!==1)return;busy=true;render();var token=roundToken;

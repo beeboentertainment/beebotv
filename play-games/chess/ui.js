@@ -83,7 +83,7 @@
     if (winner===0) list[2]++;
     else list[mode==='friend'?(winner>0?0:1):(winner===aiSide()?1:0)]++;
     paintScore(); paint();
-    var text=winner===0?'Draw by '+reason+'.':actor(winner)+(mode==='friend'?' wins':' wins')+' by '+reason+'.';
+    var text=winner===0?'Draw by '+reason+'.':actor(winner)+(actor(winner)==='You'?' win':' wins')+' by '+reason+'.';
     say(text+' Press New game to play again.',true);
   }
   function moveText(before,move) {

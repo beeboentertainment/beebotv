@@ -82,10 +82,10 @@
     $('handoff').hidden=!gate;$('play-area').hidden=gate;$('sheet-area').hidden=gate;
     if(gate)$('handoff-message').textContent='Give the screen to '+name(seat)+'. They should press I am ready themselves.';
     var message;
-    if(result.over)message=mode==='solo'?'Final score: '+result.totals[0]+'.':result.winner<0?'The game is a tie.':name(result.winner)+' wins with '+result.totals[result.winner]+' points.';
+    if(result.over)message=mode==='solo'?'Final score: '+result.totals[0]+'.':result.winner<0?'The game is a tie.':name(result.winner)+(name(result.winner)==='You'?' win':' wins')+' with '+result.totals[result.winner]+' points.';
     else if(gate)message='Pass the screen to '+name(seat)+'.';
     else if(busy)message='Hopping Beebo is taking a turn.';
-    else message=name(seat)+(mode==='solo'||mode==='ai'&&seat===0?' have':' has')+' '+(13-state.sheets[seat].filter(function(x){return x>=0;}).length)+' boxes left.';
+    else message=name(seat)+(mode==='solo'||mode==='ai'&&seat===0?' have':' has')+' '+(function(n){return n+(n===1?' box':' boxes');})(13-state.sheets[seat].filter(function(x){return x>=0;}).length)+' left.';
     $('status').textContent=message;$('turn-title').textContent=name(seat)+' — roll and score';
     renderRoster();renderDice();renderSheet();
   }
