@@ -42,7 +42,7 @@
     if(gate)$('handoff-message').textContent='Give the screen to '+name(state.turn)+'. They should press I am ready themselves.';
     var message;
     if(result.over)message=result.winner<0?'The game is a draw, '+result.scores[0]+' to '+result.scores[1]+'.':
-      name(result.winner)+' wins, '+result.scores[result.winner]+' to '+result.scores[1-result.winner]+'.';
+      name(result.winner)+(name(result.winner)==='You'?' win':' wins')+', '+result.scores[result.winner]+' to '+result.scores[1-result.winner]+'.';
     else if(gate)message='Pass the screen to '+name(state.turn)+'.';
     else if(busy)message='Hopping Beebo is choosing a pit.';
     else message=name(state.turn)+(mode==='ai'&&state.turn===0?' are':' is')+' up. Choose a pit on '+

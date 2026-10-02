@@ -48,7 +48,7 @@
     $('handoff').hidden=!gate;$('play-area').hidden=gate;
     if(gate)$('handoff-message').textContent='Give the screen to '+name(active)+'. They should press I am ready themselves.';
     var message;
-    if(result.over)message=result.winner<0?'The game is a draw after 50 moves without a capture.':name(result.winner)+' wins the game.';
+    if(result.over)message=result.winner<0?'The game is a draw after 50 moves without a capture.':name(result.winner)+(name(result.winner)==='You'?' win':' wins')+' the game.';
     else if(gate)message='Pass the screen to '+name(active)+'.';
     else if(busy)message='Hopping Beebo is choosing a move.';
     else if(state.pending)message=name(active)+(mode==='ai'&&active===0?' must':' must')+' capture a marked opponent piece.';

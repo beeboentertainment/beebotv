@@ -39,7 +39,7 @@
   function botMove(s,rng){rng=rng||Math.random;var moves=legalMoves(s);if(!moves.length)return null;
     var counts={};s.hands[s.turn].forEach(function(c){counts[c[0]]=(counts[c[0]]||0)+1;});
     var maxRank=Math.max.apply(null,moves.map(function(m){return counts[m.rank];}));moves=moves.filter(function(m){return counts[m.rank]===maxRank;});
-    var maxTarget=Math.max.apply(null,moves.map(function(m){return s.hands[m.target].length;}));moves=moves.filter(function(m){return s.hands[m.target].length===maxTarget;});
+    /* Target is random among everyone with cards: always asking the biggest hand could repeat forever once the stock is empty. */
     return moves[Math.floor(rng()*moves.length)];
   }
   return{newGame:newGame,legalMoves:legalMoves,applyMove:applyMove,botMove:botMove,scores:scores,deck:deck,RANKS:RANKS};

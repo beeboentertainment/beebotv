@@ -59,7 +59,7 @@
     generation++;clearTimeout(aiTimer);waiting=false;selected=-1;
     $('handoff').hidden=true;concealHand();paintPublic();
     var result=G.outcome(state),winner=result.winner;
-    var message=winner<0?'The round is a draw — the lightest hands are tied.':playerName(winner)+' wins by '+result.reason+' and scores '+result.scores[winner]+' pips.';
+    var message=winner<0?'The round is a draw — the lightest hands are tied.':playerName(winner)+(playerName(winner)==='You'?' win':' wins')+' by '+({'played out':'playing every tile','blocked game':'a blocked game'}[result.reason]||result.reason)+' and scores '+result.scores[winner]+' pips.';
     announce(message+' Press New round to play again.',true);
   }
   function handoff() {

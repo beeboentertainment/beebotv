@@ -27,7 +27,7 @@
       return n;}
     n.war++;for(var p=0;p<2;p++){var buried=Math.min(3,Math.max(0,n.piles[p].length-1));while(buried--)n.stake.push(n.piles[p].shift());}
     n.last={type:'war',shown:[a,b],cards:n.stake.length,depth:n.war};
-    var broke=n.piles.findIndex(function(p){return !p.length;});if(broke>=0){n.done=true;n.winner=1-broke;}
+    var broke=n.piles.findIndex(function(p){return !p.length;});if(broke>=0){n.done=true;n.winner=n.piles[0].length||n.piles[1].length?1-broke:-1;}
     return n;
   }
   function botMove(s,seat){return legalMoves(s).find(function(m){return m.seat===seat;})||null;}

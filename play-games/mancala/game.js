@@ -1,4 +1,4 @@
-/* Beebo Mancala: six pits, four stones, Kalah capture and extra-turn rules. */
+/* Beebo Mancala: six pits, four stones, traditional sowing, capture and extra-turn rules. */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
   else root.MancalaGame = factory();

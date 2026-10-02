@@ -18,7 +18,7 @@
       renderCard(seat);var button=$('flip'+seat);button.textContent=mode==='ai'?(seat?'Hopping Beebo turns':'Turn your card'):'Player '+(seat+1)+': turn card';
       button.disabled=state.done||busy||!!state.revealed[seat]||mode==='ai'&&seat===1;
     }
-    var message=state.done?(state.winner<0?'Game ends in a tie.':name(state.winner)+' wins War.'):
+    var message=state.done?(state.winner<0?'Game ends in a tie.':name(state.winner)+(name(state.winner)==='You'?' win':' wins')+' War.'):
       busy?'Hopping Beebo is turning a card.':state.revealed[0]||state.revealed[1]?'One card is turned face down. Waiting for the other player.':state.war?'War! Both players turn another card.':'Both players turn a card.';
     $('status').textContent=message;$('table-note').textContent='Comparison '+state.tricks+' of '+game.CAP+'. '+state.stake.length+' cards at stake.'+(state.war?' War depth '+state.war+'.':'');}
   function botTurn(){if(mode!=='ai'||state.done||state.revealed[1])return;busy=true;render();var token=roundToken;

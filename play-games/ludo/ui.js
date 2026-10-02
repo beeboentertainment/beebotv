@@ -64,7 +64,7 @@
     $('handoff').hidden=!gate;$('play-area').hidden=gate;
     if(gate)$('handoff-message').textContent='Give the screen to '+name(seat)+'. They should press I am ready themselves.';
     var message;
-    if(result.over)message=result.winner<0?'The game ends in a progress tie.':name(result.winner)+' wins'+(state.turns>=240?' on total progress.':' with all four tokens home.');
+    if(result.over)message=result.winner<0?'The game ends in a progress tie.':name(result.winner)+(name(result.winner)==='You'?' win':' wins')+''+(state.turns>=240?' on total progress.':' with all four tokens home.');
     else if(gate)message='Pass the screen to '+name(seat)+'.';
     else if(busy)message='Hopping Beebo is taking a turn.';
     else if(state.pendingRoll)message=name(seat)+(mode==='ai'&&seat===0?' roll':' rolls')+' the die.';
