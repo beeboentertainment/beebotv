@@ -9,9 +9,9 @@ const read = path => readFileSync(join(root, path), 'utf8');
 const catalog = read('games.html');
 const hub = read('play-games/index.html');
 const sitemap = read('sitemap.xml');
-const names = ['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen'];
+const names = ['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen'];
 const expected = new Map([
-  ['checkers','checkers'], ['chess','chess'], ['dominoes','dominoes'], ['mancala','mancala'], ['morris','nine-mens-morris'], ['fivedice','five-dice'], ['dotsboxes','dots-and-boxes'],
+  ['checkers','checkers'], ['chess','chess'], ['dominoes','dominoes'], ['mancala','mancala'], ['morris','nine-mens-morris'], ['fivedice','five-dice'], ['ludo','ludo'], ['dotsboxes','dots-and-boxes'],
   ['dropfour','drop-four'], ['reversi','reversi'], ['seabattle','sea-battle'],
   ['snakesladders','snakes-and-ladders'], ['ttt','tic-tac-toe'], ['pairs','memory-match'],
 ]);
