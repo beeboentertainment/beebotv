@@ -11,7 +11,7 @@ const hub = read('play-games/index.html');
 const sitemap = read('sitemap.xml');
 const names = ['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve'];
 const expected = new Map([
-  ['checkers','checkers'], ['chess','chess'], ['dominoes','dominoes'], ['mancala','mancala'], ['dotsboxes','dots-and-boxes'],
+  ['checkers','checkers'], ['chess','chess'], ['dominoes','dominoes'], ['mancala','mancala'], ['morris','nine-mens-morris'], ['dotsboxes','dots-and-boxes'],
   ['dropfour','drop-four'], ['reversi','reversi'], ['seabattle','sea-battle'],
   ['snakesladders','snakes-and-ladders'], ['ttt','tic-tac-toe'], ['pairs','memory-match'],
 ]);
