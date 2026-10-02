@@ -76,6 +76,29 @@ html[data-beebo-corporate-dark] :is(.eyebrow, .tech-eyebrow, .help-tag, .page-ki
   color: #d5b779;
 }
 
+/* Status labels are paragraphs on a few supporting pages.  The shared
+   paragraph-colour rule below would otherwise make their semantic text pale
+   on pale status fills. Keep each state readable in the dark presentation. */
+html[data-beebo-corporate-dark] .status:is(.working, .building, .later) {
+  font-size: .75rem;
+  line-height: 1.25;
+}
+html[data-beebo-corporate-dark] .status.working {
+  background: #163c29;
+  border-color: #57966e;
+  color: #b9f2c9;
+}
+html[data-beebo-corporate-dark] .status.building {
+  background: #493819;
+  border-color: #b58b38;
+  color: #ffe1a4;
+}
+html[data-beebo-corporate-dark] .status.later {
+  background: #1e335a;
+  border-color: #6685be;
+  color: #cddcff;
+}
+
 /* Header and footer: one compact vocabulary across the older page templates. */
 html[data-beebo-corporate-dark] :is(.nav, .header, .pro-header, .cmp-header, .catalog-head, .top) {
   background: #101719;
