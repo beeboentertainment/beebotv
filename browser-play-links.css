@@ -1,0 +1,19 @@
+.game-card .play-now {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 8px 16px;
+  border: 1px solid #77510b;
+  border-radius: 8px;
+  background: #77510b;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.game-card .play-now:hover { background: #543906; }
+.game-card .play-now:focus-visible { outline: 3px solid #977023; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .game-card .play-now { transition: none; }
+}
