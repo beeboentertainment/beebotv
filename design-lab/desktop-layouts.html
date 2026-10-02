@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-theme="control-room">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beebo desktop layout lab</title>
+  <link rel="stylesheet" href="desktop-layouts.css">
+</head>
+<body>
+  <a class="skip-link" href="#layout-canvas">Skip to layout canvas</a>
+  <header class="lab-header">
+    <div>
+      <p class="eyebrow">LOCAL DESIGN LAB</p>
+      <h1>Beebo desktop layouts</h1>
+    </div>
+    <div class="theme-picker" role="group" aria-label="Choose a layout direction">
+      <button type="button" data-theme-choice="control-room" aria-pressed="true">Control Room</button>
+      <button type="button" data-theme-choice="library-table" aria-pressed="false">Library Table</button>
+      <button type="button" data-theme-choice="wayfinder" aria-pressed="false">Wayfinder</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="direction-title">
+      <div>
+        <p class="eyebrow" id="direction-kicker">CONTROL ROOM</p>
+        <h2 id="direction-title">A calm household media control room.</h2>
+        <p id="direction-copy">Rearrange the panels when your household needs a different view. Every move snaps to a safe grid position and never overlaps another panel.</p>
+      </div>
+      <div class="lab-controls">
+        <button type="button" class="primary-action" id="arrange-toggle" aria-pressed="false">Arrange panels</button>
+        <button type="button" id="reset-layout">Reset layout</button>
+      </div>
+    </section>
+
+    <p class="status-message" id="layout-status" role="status" aria-live="polite">Default Control Room arrangement loaded.</p>
+
+    <section id="layout-canvas" class="layout-canvas" aria-label="Interactive desktop panel layout">
+      <article class="panel now-playing" data-panel="now-playing" tabindex="-1">
+        <div class="panel-toolbar"><p class="panel-label">NOW PLAYING</p><div class="arrange-actions" aria-label="Move Now Playing panel"></div></div>
+        <div class="art art-sunset" aria-hidden="true"></div>
+        <h3>Evening on the water</h3>
+        <p class="progress-label">42 minutes remaining</p>
+        <div class="progress" aria-label="Playback progress: 58 percent"><span></span></div>
+        <div class="panel-actions"><button type="button" class="primary-action">Continue</button><button type="button">Details</button></div>
+      </article>
+
+      <article class="panel shelf" data-panel="shelf" tabindex="-1">
+        <div class="panel-toolbar"><p class="panel-label">RECENTLY ADDED</p><div class="arrange-actions" aria-label="Move Recently Added panel"></div></div>
+        <h3>From your shelves</h3>
+        <div class="poster-row" aria-label="Four titles recently added">
+          <div class="poster poster-forest" aria-label="Forest film"></div><div class="poster poster-peak" aria-label="Mountain film"></div><div class="poster poster-sea" aria-label="Sea film"></div><div class="poster poster-leaf" aria-label="Nature film"></div>
+        </div>
+      </article>
+
+      <article class="panel home-pulse" data-panel="home-pulse" tabindex="-1">
+        <div class="panel-toolbar"><p class="panel-label">HOME PULSE</p><div class="arrange-actions" aria-label="Move Home Pulse panel"></div></div>
+        <h3>Connected at home</h3>
+        <ul class="health-list"><li><span class="signal good"></span>Library available</li><li><span class="signal good"></span>1 household device ready</li><li><span class="signal quiet"></span>No downloads in progress</li></ul>
+      </article>
+
+      <article class="panel queue" data-panel="queue" tabindex="-1">
+        <div class="panel-toolbar"><p class="panel-label">UP NEXT</p><div class="arrange-actions" aria-label="Move Up Next panel"></div></div>
+        <h3>Queue</h3>
+        <ol class="queue-list"><li>River walk <span>26m</span></li><li>After the rain <span>41m</span></li><li>Night sky <span>52m</span></li></ol>
+      </article>
+
+      <article class="panel household" data-panel="household" tabindex="-1">
+        <div class="panel-toolbar"><p class="panel-label">TONIGHT WITH</p><div class="arrange-actions" aria-label="Move Tonight With panel"></div></div>
+        <h3>Make a shared plan</h3>
+        <p>Keep the next watch, downloaded favourites, and household moments in one easy view.</p>
+        <button type="button">Open household view</button>
+      </article>
+    </section>
+  </main>
+  <script src="desktop-layouts.js"></script>
+</body>
+</html>
