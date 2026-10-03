@@ -26,6 +26,10 @@
 // (which would trade a large amount of origin load for closing a
 // ten-minute window). See RELEASING.md.
 //
+// It also stamps: every <a data-beebo-download="windows"> href (the static fallback link used
+// when JavaScript has not run, so it is never the dead releases/latest/download/ address), and the
+// softwareVersion / downloadUrl of the Windows JSON-LD block on windows.html.
+//
 // Usage: node tools/stamp-release-footers.mjs [--check]
 //   --check  exit non-zero if any matching page's baked footer is stale,
 //            without writing anything (useful in CI/pre-publish checks).
@@ -89,6 +93,19 @@ const windowsVersionText = desktop.version;
 const windowsStamp = desktop.publishedAtUtc || desktop.releasedAt || desktop.publishedAt;
 const windowsDate = releaseLabel(windowsStamp, true);
 
+// Same rule polish.js applies before it rewrites a download link: only a release asset of this
+// repository, ending in .exe. Anything else in the feed is not baked into the pages.
+const GITHUB_RELEASE_PREFIXES = [
+  'https://github.com/beeboentertainment/beebotv/releases/download/',
+  'https://github.com/SWGfan/beebotv/releases/download/',
+];
+const windowsDownloadUrl = (typeof desktop.url === 'string' &&
+  GITHUB_RELEASE_PREFIXES.some((p) => desktop.url.startsWith(p)) && desktop.url.endsWith('.exe'))
+  ? desktop.url : null;
+if (!windowsDownloadUrl) {
+  console.error('desktop-version.json has no usable Windows release url; download links will not be stamped.');
+}
+
 const androidVersionText = (android.versionName || android.version) +
   (android.versionCode ? ` (build ${android.versionCode})` : '');
 const androidStamp = android.publishedAtUtc || android.builtAtUtc;
@@ -102,17 +119,19 @@ function stampPlatform(html, platform, versionText, dateInfo) {
   let changed = false;
 
   const versionRe = new RegExp(
-    `(<strong data-beebo-release-version="${platform}">)([^<]*)(</strong>)`
+    `(<(strong|span) data-beebo-release-version="${platform}">)([^<]*)(</\\2>)`,
+    'g'
   );
   const newVersion = escapeHtml(versionText);
-  html = html.replace(versionRe, (m, pre, cur, post) => {
+  html = html.replace(versionRe, (m, pre, tag, cur, post) => {
     if (cur === newVersion) return m;
     changed = true;
     return pre + newVersion + post;
   });
 
   const dateRe = new RegExp(
-    `(<time data-beebo-release-date="${platform}" datetime=")([^"]*)("[^>]*>)([^<]*)(</time>)`
+    `(<time data-beebo-release-date="${platform}" datetime=")([^"]*)("[^>]*>)([^<]*)(</time>)`,
+    'g'
   );
   html = html.replace(dateRe, (m, pre, curDatetime, mid, curText, post) => {
     const newDatetime = dateInfo.datetime ?? '';
@@ -125,6 +144,38 @@ function stampPlatform(html, platform, versionText, dateInfo) {
   return { html, changed };
 }
 
+// Every <a> that carries data-beebo-download="windows" gets the exact installer address.
+function stampWindowsLinks(html) {
+  let changed = false;
+  if (!windowsDownloadUrl) return { html, changed };
+  html = html.replace(/<a\b[^>]*\bdata-beebo-download="windows"[^>]*>/g, (tag) =>
+    tag.replace(/(\bhref=")([^"]*)(")/, (m, pre, cur, post) => {
+      if (cur === windowsDownloadUrl) return m;
+      changed = true;
+      return pre + windowsDownloadUrl + post;
+    }));
+  return { html, changed };
+}
+
+// windows.html's schema.org block: softwareVersion and downloadUrl.
+function stampWindowsJsonLd(html) {
+  let changed = false;
+  if (!html.includes('"name": "Beebo Entertainment for Windows"')) return { html, changed };
+  html = html.replace(/("softwareVersion": ")([^"]*)(")/, (m, pre, cur, post) => {
+    if (cur === windowsVersionText) return m;
+    changed = true;
+    return pre + windowsVersionText + post;
+  });
+  if (windowsDownloadUrl) {
+    html = html.replace(/("downloadUrl": ")([^"]*)(")/, (m, pre, cur, post) => {
+      if (cur === windowsDownloadUrl) return m;
+      changed = true;
+      return pre + windowsDownloadUrl + post;
+    });
+  }
+  return { html, changed };
+}
+
 const files = findHtmlFiles(repoRoot);
 const staleFiles = [];
 let updatedCount = 0;
@@ -132,7 +183,9 @@ let scannedCount = 0;
 
 for (const file of files) {
   const original = readFileSync(file, 'utf8');
-  if (!original.includes('data-beebo-release-version')) continue;
+  if (!original.includes('data-beebo-release-version') &&
+      !original.includes('data-beebo-download="windows"') &&
+      !original.includes('"name": "Beebo Entertainment for Windows"')) continue;
   scannedCount++;
 
   let html = original;
@@ -141,7 +194,11 @@ for (const file of files) {
   html = w.html;
   const a = stampPlatform(html, 'android', androidVersionText, androidDate);
   html = a.html;
-  const changed = w.changed || a.changed;
+  const l = stampWindowsLinks(html);
+  html = l.html;
+  const j = stampWindowsJsonLd(html);
+  html = j.html;
+  const changed = w.changed || a.changed || l.changed || j.changed;
 
   if (changed) {
     staleFiles.push(file);
@@ -161,6 +218,6 @@ if (check) {
   }
   console.log('All page footers match desktop-version.json / downloads/app-build.json.');
 } else {
-  console.log(`Scanned ${scannedCount} page(s) with a version footer.`);
+  console.log(`Scanned ${scannedCount} page(s) with a version footer, download link or Windows schema block.`);
   console.log(`Updated ${updatedCount} page(s) to Windows ${windowsVersionText} / Android ${androidVersionText}.`);
 }
