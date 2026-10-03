@@ -1,7 +1,7 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
-  "updated": "2026-10-02",
-  "updatedEastern": "Oct 2, 2026, 8:47 PM Eastern",
+  "updated": "2026-10-03",
+  "updatedEastern": "Oct 3, 2026, 5:35 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed.",
   "overallAveragePercent": 49,
@@ -85,8 +85,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 2, 2026",
-      "leftToReach100": "A real car test; the first-stop oddity fixed; the passenger web page checked by hand."
+      "lastTested": "Oct 3, 2026",
+      "leftToReach100": "A real car test; re-test the passenger join on the camp Wi-Fi after the Oct 3 fixes (join code hint, app stays usable with no internet on that Wi-Fi); the passenger web page by hand."
     },
     {
       "group": "Android phone app",
@@ -257,16 +257,16 @@
       "group": "Android phone app",
       "name": "Chromecast",
       "status": "Beta",
-      "percentComplete": 40,
+      "percentComplete": 60,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Casting to a real receiver."
+      "lastTested": "Oct 3, 2026",
+      "leftToReach100": "A cast starting playing, not paused; casting to other receivers; a real-world check. Seeking while casting passed by hand on Oct 3."
     },
     {
       "group": "Android phone app",
@@ -565,8 +565,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Listen on real speakers with a real film; add it to the phone app."
+      "lastTested": "Oct 3, 2026",
+      "leftToReach100": "Listen on real speakers with a real film (a synthetic test on Oct 3 flattened a 26 dB swing to about 1.5 dB in both modes; the phone app already has it)."
     },
     {
       "group": "Other systems",
