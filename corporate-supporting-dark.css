@@ -243,3 +243,10 @@ html[data-beebo-corporate-dark] .beebo-back-to-top {
 @media (prefers-reduced-motion: reduce) {
   html[data-beebo-corporate-dark] * { transition: none !important; animation: none !important; }
 }
+
+/* Feature index (beebo-vs-other-apps.html): the page's own light card colour left white boxes with
+   light text in dark mode. Give the collapsible areas the dark card colour and readable text. */
+html[data-beebo-corporate-dark] .feature-index details { background: #202c2e; border-color: #354143; color: #f3efe6; }
+html[data-beebo-corporate-dark] .feature-index summary { color: #f3efe6; }
+html[data-beebo-corporate-dark] .feature-index summary .matrix-note { color: #c9c3b6; }
+html[data-beebo-corporate-dark] .feature-index details[open] summary { border-bottom-color: #354143; }
