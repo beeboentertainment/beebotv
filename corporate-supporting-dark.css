@@ -250,3 +250,88 @@ html[data-beebo-corporate-dark] .feature-index details { background: #202c2e; bo
 html[data-beebo-corporate-dark] .feature-index summary { color: #f3efe6; }
 html[data-beebo-corporate-dark] .feature-index summary .matrix-note { color: #c9c3b6; }
 html[data-beebo-corporate-dark] .feature-index details[open] summary { border-bottom-color: #354143; }
+
+/* ---------------------------------------------------------------------------
+   Contrast sweep, Oct 3, 2026 (docs/qa/SITE-VISUAL-BUGS-2026-10-03.md).
+   Colours and wrapping only. Light card colours that page styles never
+   overrode for the dark presentation, and light-theme "muted"/"gold" text
+   values that are too dark on the dark page.
+   --------------------------------------------------------------------------- */
+
+/* A1 codec guide boxes (beebo-vs-other-apps.html, how-beebo-streams.html) */
+html[data-beebo-corporate-dark] .codec-guide :is(details, .codec-card, .codec-scroll) { background: #202c2e; border-color: #354143; color: #f3efe6; }
+html[data-beebo-corporate-dark] .codec-guide :is(summary, dt, dd, .codec-sources) { color: #f3efe6; }
+/* B7 codec guide small print */
+html[data-beebo-corporate-dark] .codec-guide .codec-kicker { color: #d5b779; }
+html[data-beebo-corporate-dark] .codec-guide :is(.codec-note, .codec-evidence) { color: #b7bdb9; }
+html[data-beebo-corporate-dark] .status-legend > span:not(.status) { color: #b7bdb9; }
+
+/* A2 platforms.html callouts, access cards, guide navigation, FAQ boxes */
+html[data-beebo-corporate-dark] :is(.callout, .callout.safe, .platform-access-card, .guide-nav a, .faq details) { background: #182123; border-color: #354143; color: #f3f2ec; }
+
+/* A3 tester pages: report notes, result template, table headers */
+html[data-beebo-corporate-dark] :is(.report-note, .report-tpl) { background: #1d292b; color: #f3f2ec; border-color: #354143; }
+html[data-beebo-corporate-dark] :is(.report-note, .report-tpl) strong { color: #f3f2ec; }
+html[data-beebo-corporate-dark] table th:not([class]) { background: #202c2e; color: #f3f2ec; border-color: #354143; }
+
+/* A4 portrait-party.html step cards */
+html[data-beebo-corporate-dark] article.step { background: #1d292b; border-color: #354143; color: #f3f2ec; }
+html[data-beebo-corporate-dark] article.step b { color: #d5b779; }
+
+/* A6, B10: guide-visual colours live in guide-visuals.css (also loaded by the aurora pages). */
+
+/* A7 guided-test notice */
+html[data-beebo-corporate-dark] .tester-notice { background: #263031; color: #f3f2ec; border-color: #354143; }
+html[data-beebo-corporate-dark] .tester-notice :is(h2, p) { color: #f3f2ec; }
+html[data-beebo-corporate-dark] .tester-notice a { color: #e2c78e; }
+
+/* A8 try-layouts.html preview controls */
+html[data-beebo-corporate-dark] :is(.choice, .toggle, .control-row button) { background: #1d292b; color: #f3f2ec; border-color: #586668; }
+html[data-beebo-corporate-dark] :is(.choice, .toggle, .control-row button)[aria-pressed=true] { background: #d5b779; color: #101719; border-color: #d5b779; }
+
+/* A9 activated.html card and error box (the whole white card, so the loading and form states read too) */
+html[data-beebo-corporate-dark] .key-card { background: #182123; border-color: #354143; color: #f3f2ec; }
+html[data-beebo-corporate-dark] .key-card label { color: #f3f2ec; }
+html[data-beebo-corporate-dark] #error { background: #182123; border-color: #354143; color: #f3f2ec; }
+html[data-beebo-corporate-dark] #error .err { color: #f3a49c; }
+
+/* B1, B11 muted literals */
+html[data-beebo-corporate-dark] :is(.game-card .mode, .capability .where, .help-card p, #guide-count, footer.foot, .foot) { color: #b7bdb9; }
+html[data-beebo-corporate-dark] .capability .where strong { color: inherit; }
+html[data-beebo-corporate-dark] .beebo-corporate-page :is(.help-card p, .help-intro > div > p:last-child, .help-tools #guide-count),
+html[data-beebo-corporate-dark] :is(.help-intro > div > p:last-child, .help-tools #guide-count) { color: #b7bdb9; }
+/* B2 corporate content gold (summaries such as "How to play") */
+html[data-beebo-corporate-dark] .beebo-corporate-page { --gold: #d5b779; --gold-dark: #d5b779; }
+html[data-beebo-corporate-dark] .game-card summary { color: #d5b779; }
+
+/* B3 "In development" pills */
+html[data-beebo-corporate-dark] .tag.dev { background: #3a3020; color: #f0d9a6; border-color: #6b5a35; }
+
+/* B4 footer tagline and copyright */
+html[data-beebo-corporate-dark] :is(.pro-footer-bottom, .pro-footer-bottom span, .pro-footer-top p) { color: #9aa19d; }
+
+/* B6 launch-status notices */
+html[data-beebo-corporate-dark] .notice strong { color: #d5b779; }
+
+/* B8 included / separate-service labels */
+html[data-beebo-corporate-dark] :is(.free, .yes, strong.fee) { color: #7fd1a1; }
+html[data-beebo-corporate-dark] .paid { color: #f09a92; }
+html[data-beebo-corporate-dark] strong[style*="#216442"] { color: #7fd1a1 !important; }
+
+/* Gold call-to-action links: dark text on the gold fill (found during the re-check) */
+html[data-beebo-corporate-dark] a.cta { color: #101719; }
+
+/* Guide jump pills (music.html and other bite-size guides): white pill under gold link text (found during the re-check) */
+html[data-beebo-corporate-dark] .bite-jump a { background: #182123; border-color: #354143; }
+
+/* B9 tester-results.html refresh button */
+html[data-beebo-corporate-dark] #refresh-recruitment { color: #d5b779; border-color: #d5b779; }
+
+/* C1 small "Beta" pills on their pale green fill */
+html[data-beebo-corporate-dark]:not([data-aurora]) .tag.beta { color: #2b6a48; }
+
+/* C3 skip link: visible colours when it receives keyboard focus */
+html[data-beebo-corporate-dark] :is(.pro-skip, .skip) { background: #d5b779; color: #101719; }
+
+/* D1 long status pills wrap instead of pushing the page sideways */
+html[data-beebo-corporate-dark] .tag { white-space: normal; max-width: 100%; overflow-wrap: anywhere; }
