@@ -471,3 +471,15 @@ html[data-aurora] .phone {
   border-color: var(--aurora-hairline);
   box-shadow: none;
 }
+
+/* Footer wordmark, tagline and copyright on the dark aurora footer (contrast sweep Oct 3, 2026). */
+html[data-aurora] .pro-footer .pro-brand span { color: #d5b779; }
+html[data-aurora] .pro-footer .pro-brand small,
+html[data-aurora] .pro-footer .pro-footer-top p,
+html[data-aurora] .pro-footer .pro-footer-bottom,
+html[data-aurora] .pro-footer .pro-footer-bottom span { color: #b7bdb9; }
+/* Skip links: dark text on the gold focus box, and the guided-test notice link on its pale fill (contrast sweep Oct 3, 2026). */
+html[data-aurora] a:is(.skip, .pro-skip) { background: #d5b779; color: #101719 !important; }
+html[data-aurora]:not([data-beebo-corporate-dark]) .tester-notice a { color: #704e00 !important; }
+/* Home page product cards: the aurora link gold on the cream cards (found during the re-check). */
+html[data-aurora]:not([data-beebo-corporate-dark]) .product-card .product-link { color: #704e00 !important; }
