@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Testing transparency — Beebo Entertainment</title>
-  <meta name="description" content="October 1, 2026 testing evidence for Beebo desktop, Android phones, browser microphone checks and servers, with devices, versions and untested paths.">
+  <meta name="description" content="Dated Beebo testing evidence, updated October 2, 2026: checks passed out of checks planned, what is left, and the history of earlier tests for desktop, Android phones, Linux servers and Remote Desktop.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#171b1c">
   <link rel="canonical" href="https://beeboentertainment.com/release-evidence.html">
@@ -44,9 +44,9 @@
         <div class="evidence-actions"><a class="button primary" href="#desktop-checks">Desktop</a><a class="button" href="#current-pass">Android phones</a><a class="button" href="#browser-checks">Browser microphone</a><a class="button" href="#server-checks">Servers</a></div>
       </div>
       <aside class="evidence-ledger" aria-label="Current evidence ledger">
-        <header><span class="evidence-label">Current record</span><h2>October 1 verification record</h2></header>
+        <header><span class="evidence-label">Current record</span><h2>October 2 verification record</h2></header>
         <dl>
-          <div><dt>Review scope</dt><dd>Desktop, phones, browser, servers</dd></div><div><dt>Builds</dt><dd>Development / published test</dd></div><div><dt>Broader testing</dt><dd>Still required</dd></div><div><dt>Record date</dt><dd><time datetime="2026-10-01">Oct 1, 2026</time></dd></div>
+          <div><dt>Review scope</dt><dd>Desktop, phones, browser, servers</dd></div><div><dt>Builds</dt><dd>Development / published test</dd></div><div><dt>Broader testing</dt><dd>Still required</dd></div><div><dt>Last tested</dt><dd><time datetime="2026-10-02">Oct 2, 2026</time> (previous: Oct 1, 2026, see history)</dd></div>
         </dl>
       </aside>
     </section>
@@ -59,6 +59,42 @@
         <article class="evidence-card"><span class="evidence-mark pending" aria-hidden="true">?</span><h3>Verification pending</h3><p>There is not enough reviewed evidence to call this a pass or a failure yet. It stays visible instead of becoming an optimistic claim.</p></article>
         <article class="evidence-card"><span class="evidence-mark limits" aria-hidden="true">×</span><h3>Needs more people or hardware</h3><p>Some paths require another person, another device, a receiver, a tuner or payment access. One session cannot validate them alone.</p></article>
       </div>
+    </section>
+    <section class="evidence-section" id="progress" aria-labelledby="progress-title">
+      <span class="evidence-kicker">Progress · last updated October 2, 2026 (Eastern)</span><h2 id="progress-title">How much has been checked, and what is left.</h2>
+      <p><strong>How to read the percentages:</strong> each one is <em>checks passed out of checks planned</em> for that area. It measures how much of our test list has passed. It is not a measure of how finished or bug-free the product is, and 100% means every listed check passed, not that nothing can go wrong. Every row says when it was last tested and what is still left. <strong>Builds:</strong> the phone build we tested on Oct 2 (1.51-tester8, from our newest code) is a development build and is not yet on the download page; the current test download is 1.51-tester7.</p>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable progress table" tabindex="0"><table class="evidence-table">
+        <caption>Checks passed out of checks planned, by area</caption>
+        <thead><tr><th scope="col">Area</th><th scope="col">Last tested</th><th scope="col">Checks passed</th><th scope="col">Left to check off</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Android phone hand-test list, Galaxy S24 Ultra (test build 1.51-tester8, newest code)</th><td><time datetime="2026-10-02">Oct 2, 2026</time></td><td><strong>11 of 13 (85%)</strong><br>1 partly, 1 not run</td><td>Watch Together between two devices (needs two devices). Pack for a trip should show a space and time estimate before downloading; today it does not. Not yet checked on this run: seeking and picture-in-picture, and the passenger web page by hand (the passenger join was checked through the same web address a browser uses).</td></tr>
+          <tr><th scope="row">Android phone hand-test list, Galaxy S9+ (Android 10)</th><td><time datetime="2026-10-02">Oct 2, 2026</time> (tab check only)</td><td><strong>0 of 13 (0%)</strong><br>The five bottom tabs opened by our test tool: 5 of 5</td><td>All 13 hand steps still to be run on this phone.</td></tr>
+          <tr><th scope="row">Windows desktop hand-test list</th><td>Not yet run on this list</td><td><strong>0 of 10 (0%)</strong></td><td>Install over an existing copy, library, playing a film, converter settings, signed-in devices list, Movie Night voting, languages, keyboard-only use, phone speakers, quit and reopen.</td></tr>
+          <tr><th scope="row">Linux server (headless), start-to-playback smoke test</th><td><time datetime="2026-10-02">Oct 2, 2026</time></td><td><strong>60 of 60 (100%)</strong><br>15 checks on each of 4 systems</td><td>Not tested: the desktop app window on Linux, ARM and Raspberry Pi, real NAS boxes, hardware video conversion.</td></tr>
+          <tr><th scope="row">Linux, full automated desktop test run (Ubuntu 24.04)</th><td><time datetime="2026-10-02">Oct 2, 2026</time></td><td><strong>483 of 488 test files (99%)</strong> on the first run</td><td>Of the 5 that failed, 3 were fixed or passed again alone (a real Linux video-conversion bug was found and fixed). 2 still fail: one needs the full desktop program installed, one is the walkie-talkie internet connection test.</td></tr>
+          <tr><th scope="row">Windows desktop, automated tests on the newest code</th><td><time datetime="2026-10-02">Oct 2, 2026</time></td><td><strong>495 of 495 test files (100%)</strong><br>2 known tests skipped on purpose</td><td>Automated tests are not a real-screen check; see the hand-test list above.</td></tr>
+          <tr><th scope="row">Android automated unit tests (three app versions)</th><td><time datetime="2026-10-02">Oct 2, 2026</time></td><td><strong>All listed tests passed</strong></td><td>Unit tests cannot load the phone's native video-call library, which is why a real phone is still required for those parts.</td></tr>
+          <tr><th scope="row">Remote Desktop (<strong>In development</strong>, owner only, off by default)</th><td><time datetime="2026-10-02">Oct 2, 2026</time></td><td>Automated checks: <strong>267 of 267</strong><br>Real screen checks: <strong>0 of 4 (0%)</strong></td><td>Still to check on a real screen: seeing the computer from a phone on the same Wi-Fi, using the mouse and keyboard, a connection from away from home, and the approval prompts. A relay fallback is not built.</td></tr>
+          <tr><th scope="row">Strong volume leveler (<strong>In development</strong>, not yet released)</th><td><time datetime="2026-10-02">Oct 2, 2026</time></td><td>Automated checks passed. One measured test clip: the gap between a quiet voice and an explosion went from 25 dB to under 1 dB.</td><td>Listening on real speakers with a real film; the phone app does not have the choice yet.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+    <section class="evidence-section" id="history" aria-labelledby="history-title">
+      <span class="evidence-kicker">Test history · newest first</span><h2 id="history-title">When we tested, what we found.</h2>
+      <p>We keep earlier results so you can see testing is ongoing, including the problems it found. Times are Eastern.</p>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable test history" tabindex="0"><table class="evidence-table">
+        <caption>Dated testing history</caption>
+        <thead><tr><th scope="col">Date</th><th scope="col">What was tested</th><th scope="col">What happened</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><time datetime="2026-10-02">Oct 2, 2026</time></th><td>Galaxy S24 Ultra hand test, 1.51-tester8</td><td>11 of 13 steps passed, 1 partly, 1 not run. Car party start, join, stop and wrong-code message all worked. One oddity found: the first "Stop for everyone" after choosing "Keep party" did nothing; a second try worked. It has been handed to a developer to fix. No crashes during the session.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-02">Oct 2, 2026</time></th><td>Linux: Ubuntu 24.04, Fedora 43, Debian 13, Arch</td><td>Server smoke test passed 15 of 15 on each. The full Ubuntu test run found a real bug: AV1/HEVC video conversion wrote nothing on Linux because of a file path rule. Fixed and re-tested the same day.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-02">Oct 2, 2026</time></th><td>Phone test tool on the S9+ and S24</td><td>Our own checking tool could not see the bottom bar on either phone. Fixed, so the five tabs now pass on the S9+; the More sections are the next fix.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-02">Oct 2, 2026</time></th><td>Remote Desktop review</td><td>A reviewer found one low-risk gap in the same-Wi-Fi rule; fixed and tested the same day. Not yet run on a real screen.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-01">Oct 1, 2026</time></th><td>Windows desktop 0.1.70, Android phones (S24 Ultra and S9+), browser microphone pages, servers</td><td>Full record below. Desktop test files 437 of 437. The S9+ found two offline-screen defects that were fixed afterwards.</td></tr>
+          <tr><th scope="row"><time datetime="2026-09-29">Sep 29, 2026</time></th><td>Android phone, real device</td><td>A library update passed every automated test but crashed on a real phone at sign-in. It was reverted before release, and a rule was added: any update to a native video-call library must be tried on a real phone first.</td></tr>
+          <tr><th scope="row"><time datetime="2026-09-29">Sep 29, 2026</time></th><td>Windows installer</td><td>A published installer was found to be missing the video converter because its size was far smaller than expected. It was replaced within the hour, and a check for the converter was added to the build.</td></tr>
+        </tbody>
+      </table></div>
     </section>
     <section class="evidence-section" id="desktop-checks" aria-labelledby="desktop-checks-title">
       <span class="evidence-kicker">Windows desktop · October 1, 2026</span><h2 id="desktop-checks-title">What passed on the desktop.</h2>
