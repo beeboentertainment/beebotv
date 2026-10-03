@@ -30,6 +30,12 @@
 // when JavaScript has not run, so it is never the dead releases/latest/download/ address), and the
 // softwareVersion / downloadUrl of the Windows JSON-LD block on windows.html.
 //
+// And the facts lines of the "Get the latest apps" panel on updates.html: for each of windows, android
+// and auto, <span data-beebo-release-size="p"> ("258.2 MB (258,243,356 bytes)") and
+// <code data-beebo-release-sha256="p"> come from the feeds' size/bytes and sha256, next to the
+// <time data-beebo-release-date="p"> and <span data-beebo-release-version="p"> that were already stamped.
+// Beebo Auto (downloads/auto-build.json) is stamped like the other two.
+//
 // Usage: node tools/stamp-release-footers.mjs [--check]
 //   --check  exit non-zero if any matching page's baked footer is stale,
 //            without writing anything (useful in CI/pre-publish checks).
@@ -88,6 +94,7 @@ function releaseLabel(stampIso, released) {
 
 const desktop = readJson('desktop-version.json');
 const android = readJson('downloads/app-build.json');
+const auto = readJson('downloads/auto-build.json');
 
 const windowsVersionText = desktop.version;
 const windowsStamp = desktop.publishedAtUtc || desktop.releasedAt || desktop.publishedAt;
@@ -110,6 +117,23 @@ const androidVersionText = (android.versionName || android.version) +
   (android.versionCode ? ` (build ${android.versionCode})` : '');
 const androidStamp = android.publishedAtUtc || android.builtAtUtc;
 const androidDate = releaseLabel(androidStamp, Boolean(android.publishedAtUtc));
+
+// What polish.js shows for Beebo Auto: the version name only (build numbers are shown for Android only).
+const autoVersionText = auto.versionName || auto.version;
+const autoStamp = auto.publishedAtUtc || auto.builtAtUtc;
+const autoDate = releaseLabel(autoStamp, Boolean(auto.publishedAtUtc));
+
+// Same shape as the earlier size lines on updates.html: decimal MB with one decimal, then the exact bytes.
+function sizeText(bytes) {
+  const n = Number(bytes);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  return `${(n / 1e6).toFixed(1)} MB (${n.toLocaleString('en-US')} bytes)`;
+}
+const facts = {
+  windows: { size: sizeText(desktop.size), sha256: desktop.sha256 },
+  android: { size: sizeText(android.bytes), sha256: android.sha256 },
+  auto: { size: sizeText(auto.bytes), sha256: auto.sha256 },
+};
 
 function escapeHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -141,6 +165,21 @@ function stampPlatform(html, platform, versionText, dateInfo) {
     return pre + newDatetime + mid + newText + post;
   });
 
+  return { html, changed };
+}
+
+// <span|code data-beebo-release-size="p"> and <span|code data-beebo-release-sha256="p">: the facts lines.
+function stampFacts(html, platform) {
+  let changed = false;
+  for (const [attr, value] of [['size', facts[platform].size], ['sha256', facts[platform].sha256]]) {
+    if (!value || !/^[A-Za-z0-9 .,()]+$/.test(value)) continue;
+    const re = new RegExp(`(<(span|code) data-beebo-release-${attr}="${platform}">)([^<]*)(</\\2>)`, 'g');
+    html = html.replace(re, (m, pre, tag, cur, post) => {
+      if (cur === value) return m;
+      changed = true;
+      return pre + value + post;
+    });
+  }
   return { html, changed };
 }
 
@@ -194,11 +233,19 @@ for (const file of files) {
   html = w.html;
   const a = stampPlatform(html, 'android', androidVersionText, androidDate);
   html = a.html;
+  const u = stampPlatform(html, 'auto', autoVersionText, autoDate);
+  html = u.html;
+  let factsChanged = false;
+  for (const p of ['windows', 'android', 'auto']) {
+    const r = stampFacts(html, p);
+    html = r.html;
+    factsChanged = factsChanged || r.changed;
+  }
   const l = stampWindowsLinks(html);
   html = l.html;
   const j = stampWindowsJsonLd(html);
   html = j.html;
-  const changed = w.changed || a.changed || l.changed || j.changed;
+  const changed = w.changed || a.changed || u.changed || factsChanged || l.changed || j.changed;
 
   if (changed) {
     staleFiles.push(file);
@@ -219,5 +266,5 @@ if (check) {
   console.log('All page footers match desktop-version.json / downloads/app-build.json.');
 } else {
   console.log(`Scanned ${scannedCount} page(s) with a version footer, download link or Windows schema block.`);
-  console.log(`Updated ${updatedCount} page(s) to Windows ${windowsVersionText} / Android ${androidVersionText}.`);
+  console.log(`Updated ${updatedCount} page(s) to Windows ${windowsVersionText} / Android ${androidVersionText} / Auto ${autoVersionText}.`);
 }
