@@ -1,7 +1,7 @@
 /* Public forms never fetch owner data or expose evidence URLs. */
 'use strict';
 (() => {
-const API='https://beebo-licensing.nicholaswill86.workers.dev/tester-feedback';
+const API='https://login.beebo.tv/tester-feedback';
 const $=s=>document.querySelector(s),labels={'not-tested':'Not tested',pass:'Pass',fail:'Fail',blocked:'Blocked','not-applicable':'Not applicable'};
 let catalog,files=[],previews=[],reportId=crypto.randomUUID(),dirty=false,enabled=false,sent=false;
 function el(tag,text){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;}

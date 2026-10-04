@@ -1,7 +1,7 @@
 'use strict';
 (() => {
  const root=document.getElementById('reviewer-notes'),message=document.getElementById('reviewer-notes-status');if(!root)return;
- const API='https://beebo-licensing.nicholaswill86.workers.dev/tester-feedback/reviews';
+ const API='https://login.beebo.tv/tester-feedback/reviews';
  const outcomes={pass:'Passed',fail:'Problem reported',blocked:'Blocked','not-applicable':'Not applicable','not-tested':'Not tested'};
  const labels={};let platforms={},request=0;
  function el(tag,text){const node=document.createElement(tag);if(text!==undefined)node.textContent=text;return node;}
