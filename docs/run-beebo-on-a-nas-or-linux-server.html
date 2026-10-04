@@ -84,7 +84,7 @@
       "@type": "HowToStep",
       "position": 3,
       "name": "Start the container",
-      "text": "Pull the public image (no sign-in needed; the current tag is 0.1.58): docker run -d --name beebo --restart unless-stopped \\ -p 47811:47811 \\ -e BEEBO_UPNP=0 \\ -e BEEBO_SECRET_KEY=\"\u003cyour key>\" \\ -v /srv/beebo/config:/config \\ -v /srv/media/movies:/media/movies:ro \\ -v /srv/media/tv:/media/tv:ro \\ -v /srv/media/music:/media/music:ro \\ -v /srv/media/photos:/media/photos:ro \\ ghcr.io/swgfan/beebo-server:0.1.58 Mounting media read-only (:ro) is fine for watching; leave it off if you want uploads and file clean-up. A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.",
+      "text": "Once the image is offered for download again, start it (the last built tag is 0.1.58): docker run -d --name beebo --restart unless-stopped \\ -p 47811:47811 \\ -e BEEBO_UPNP=0 \\ -e BEEBO_SECRET_KEY=\"\u003cyour key>\" \\ -v /srv/beebo/config:/config \\ -v /srv/media/movies:/media/movies:ro \\ -v /srv/media/tv:/media/tv:ro \\ -v /srv/media/music:/media/music:ro \\ -v /srv/media/photos:/media/photos:ro \\ ghcr.io/swgfan/beebo-server:0.1.58 Mounting media read-only (:ro) is fine for watching; leave it off if you want uploads and file clean-up. A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.",
       "url": "https://beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-3"
     },
     {
@@ -126,18 +126,18 @@
   <div class="page-hero">
     <div class="em" aria-hidden="true">🗄️</div>
     <h1>Run Beebo on a NAS or Linux server with Docker</h1>
-    <p class="lead">Beebo has a headless server that runs without a window, in Docker on a Linux server, a NAS or a Raspberry Pi. It is the same server code as the Windows app. It is a real, downloadable image today &mdash; <strong>Beta</strong>: it builds cleanly, passes our automated tests, and can be pulled and run right now, but it has not been tried on a specific NAS model or on real Raspberry Pi hardware yet.</p>
+    <p class="lead">Beebo has a headless server that runs without a window, in Docker on a Linux server, a NAS or a Raspberry Pi. It is the same server code as the Windows app. <strong>Beta</strong>: it builds cleanly and passes our automated tests, but the image is <strong>not offered for download right now</strong>, and it has not been tried on a specific NAS model or on real Raspberry Pi hardware yet.</p>
   </div>
 
   <div class="callout">
-    <p><span class="tag live">Available now &mdash; Beta</span> <strong>Status:</strong> The headless server builds cleanly and passes our automated tests (first-run setup, sign-in, library scan, HLS streaming), and the image is public on GitHub Container Registry &mdash; <code>docker pull ghcr.io/swgfan/beebo-server:latest</code> works today, no sign-in required. We have not tested it on any specific NAS model or on a Raspberry Pi, and hardware video conversion needs GPU passthrough we have not tested on real graphics cards. Ready-made entries for the Unraid, TrueNAS, CasaOS, Umbrel and Synology app stores are prepared but <strong>not submitted</strong>. This is separate from the <a href="../linux.html">Linux desktop beta</a>, which needs a graphical session. <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20Docker%20image">Tell us</a> how it runs on your NAS or Pi &mdash; that real-hardware report is exactly what moves this from Beta to Available.</p>
+    <p><span class="tag">Beta &mdash; not offered for download right now</span> <strong>Status:</strong> The headless server builds cleanly and passes our automated tests (first-run setup, sign-in, library scan, HLS streaming), but the image is not offered for download right now. The steps below describe how it runs once it is published again. We have not tested it on any specific NAS model or on a Raspberry Pi, and hardware video conversion needs GPU passthrough we have not tested on real graphics cards. Ready-made entries for the Unraid, TrueNAS, CasaOS, Umbrel and Synology app stores are prepared but <strong>not submitted</strong>. This is separate from the <a href="../linux.html">Linux desktop beta</a>, which needs a graphical session. <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20Docker%20image">Tell us</a> how it runs on your NAS or Pi &mdash; that real-hardware report is exactly what moves this from Beta to Available.</p>
   </div>
   <nav class="guide-nav" aria-label="On this page"><a href="#before">Before you start</a><a href="#steps">Steps</a><a href="#folders">Folders and users</a><a href="#network">Networking</a><a href="#v1">What is in v1</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
 
   <h2 id="before">Before you start</h2>
   <ul class="plain">
     <li>A machine that runs Docker on 64-bit x86 or 64-bit ARM: a Linux server or a NAS that supports Docker. We do not publish a list of tested NAS models.</li>
-    <li>The Beebo server Docker image &mdash; public today at <code>ghcr.io/swgfan/beebo-server</code>, no sign-in needed to pull it.</li>
+    <li>The Beebo server Docker image &mdash; not offered for download right now (see the status note above).</li>
     <li>Your movies, TV, music and photos in folders the container can read.</li>
     <li>A safe place to keep one secret key (step 2).</li>
   </ul>
