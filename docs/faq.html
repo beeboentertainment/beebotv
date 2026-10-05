@@ -99,7 +99,7 @@
       "name": "Which devices can I watch on?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Android app on phones and tablets, any web browser (including Safari on iPhone and iPad), the Android app on Android TV and Google TV, and casting to a Chromecast or Google TV. Apps for Roku, Samsung, LG, Amazon Fire TV, Xbox and Apple TV are in development; none has a date and none has been tested on real devices yet. See Playing on TVs and Beebo on your devices."
+        "text": "The Android app on phones and tablets (Available, as a test download) and any web browser, including Safari on iPhone and iPad (Available). The Android app on Android TV and Google TV, and casting to a Chromecast or Google TV, are Beta. Fire TV, Roku and LG have Beta tester builds you install yourself; Samsung, Xbox and Apple TV are Beta with no download yet. None of the TV apps has been tested on a real TV yet. See Playing on TVs and Beebo on your devices."
       }
     },
     {
@@ -107,7 +107,7 @@
       "name": "Does Beebo work for a home theater?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Partly, and we say which part. Android TV and Google TV, and casting are available now. Video conversion with your PC’s graphics card, Linux and Docker servers and Live TV are in Windows 0.1.58 as betas. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices, and passthrough of HDR10+, Dolby Vision, Atmos and DTS:X, are in development, so Beebo does not claim them."
+        "text": "Partly, and we say which part. Android TV and Google TV, and casting, are Beta. Video conversion with your PC’s graphics card and Live TV are Beta in Beebo for Windows; Linux and Docker servers are Beta but not offered for download right now. Tester builds for Fire TV, Roku and LG are Beta and not tested on real TVs. Passthrough of HDR10+, Dolby Vision, Atmos and DTS:X is in development, so Beebo does not claim it."
       }
     },
     {
@@ -115,7 +115,7 @@
       "name": "Is there an iPhone or iPad app?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not yet. A native iPhone and iPad app is in development, is not published and needs Apple’s approval. iPhone and iPad watch in Safari today, and you can add Beebo to the Home Screen. Offline downloads need the Android app."
+        "text": "Not yet. A native iPhone and iPad app (Beta) is not published, has never been tested on a real iPhone or iPad, and needs Apple’s approval. iPhone and iPad watch in Safari today, and you can add Beebo to the Home Screen. Offline downloads need the Android app."
       }
     },
     {
@@ -123,7 +123,7 @@
       "name": "Can I run Beebo on Linux or a NAS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both are betas. The Linux desktop build (an AppImage and a .deb, tested on Ubuntu 22.04 in our automated build only) is still in development and is not offered for download right now. A headless Docker image for Linux servers and NAS boxes is a beta that is not offered for download right now. We have not tested any specific NAS model, and Linux has no automatic updates yet. See Run Beebo on a NAS or Linux server and the Linux page."
+        "text": "Both are betas. The Linux desktop build (an AppImage and a .deb, tested on Ubuntu 22.04 in our automated build only) is a beta that is not offered for download right now. A headless Docker image for Linux servers and NAS boxes is a beta that is not offered for download right now. We have not tested any specific NAS model, and Linux has no automatic updates yet. See Run Beebo on a NAS or Linux server and the Linux page."
       }
     },
     {
@@ -163,7 +163,7 @@
       "name": "Does Beebo do Live TV, DVR or plug-ins?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Live TV and DVR are Beta with your own HDHomeRun tuner only, and have not been tested on a real tuner. Adding your own M3U/IPTV playlist is in development, not available today. Beebo supplies no channels or guide data. A small read-only API with signed webhooks is in Beta too, and there is no plug-in ecosystem. Other media servers are ahead on those, and on how many devices they support. How Beebo compares says where."
+        "text": "Live TV and DVR are Beta with your own HDHomeRun tuner only, and have not been tested on a real tuner. Adding your own M3U/IPTV playlist is in Beta too (in Beebo for Windows since 0.1.72). Beebo supplies no channels or guide data. A small read-only API with signed webhooks is in Beta too, and there is no plug-in ecosystem. Other media servers are ahead on those, and on how many devices they support. How Beebo compares says where."
       }
     },
     {
@@ -218,15 +218,15 @@
     <details><summary>Does Beebo cost anything?</summary><p>Beebo Entertainment is free to use at home. Away-from-home access is also free with a direct connection, automatic UPnP, or your own relay, at any resolution. Beebo Relay, Beebo's own relay servers, is an optional paid fallback for households where none of those work: planned CA$3/month for two simultaneous managed streams or CA$5/month for four; final billing, quality and household limits await verification. No payment card required to get started.</p></details>
     <details><summary>Does my PC have to stay on?</summary><p>Yes. Your library is served from your PC, so it has to be on, awake and running Beebo whenever someone watches, at home or away. See <a href="fix-connection-problems.html">Fix connection problems</a> for keeping it awake.</p></details>
     <details><summary>Do I need a TMDB key?</summary><p>You do not need one to play your files, but posters, cast photos and descriptions come from TMDB, and Beebo asks you to use your own free key. It takes about three minutes; the steps are in <a href="getting-started-windows.html#posters">Get started on Windows</a>.</p></details>
-    <details><summary>Which devices can I watch on?</summary><p>The Android app on phones and tablets, any web browser (including Safari on iPhone and iPad), the Android app on Android TV and Google TV, and casting to a Chromecast or Google TV. Apps for Roku, Samsung, LG, Amazon Fire TV, Xbox and Apple TV are in development; none has a date and none has been tested on real devices yet. See <a href="playing-on-tvs.html">Playing on TVs</a> and <a href="../platforms.html">Beebo on your devices</a>.</p></details>
-    <details><summary>Does Beebo work for a home theater?</summary><p>Partly, and we say which part. Android TV and Google TV, and casting are available now. Video conversion with your PC’s graphics card, Linux and Docker servers and Live TV are in Windows 0.1.58 as betas. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices, and passthrough of HDR10+, Dolby Vision, Atmos and DTS:X, are in development, so Beebo does not claim them. See <a href="../home-theater.html">Home theater and big screen</a>.</p></details>
-    <details><summary>Is there an iPhone or iPad app?</summary><p>Not yet. A native iPhone and iPad app is in development, is not published and needs Apple’s approval. iPhone and iPad watch in Safari today, and you can add Beebo to the Home Screen. Offline downloads need the Android app.</p></details>
-    <details><summary>Can I run Beebo on Linux or a NAS?</summary><p>Both are betas. The Linux desktop build (an AppImage and a .deb, tested on Ubuntu 22.04 in our automated build only) is still in development and is not offered for download right now. A headless Docker image for Linux servers and NAS boxes is a beta that is not offered for download right now. We have not tested any specific NAS model, and Linux has no automatic updates yet. See <a href="run-beebo-on-a-nas-or-linux-server.html">Run Beebo on a NAS or Linux server</a> and the <a href="../linux.html">Linux page</a>.</p></details>
+    <details><summary>Which devices can I watch on?</summary><p>The Android app on phones and tablets (Available, as a test download) and any web browser, including Safari on iPhone and iPad (Available). The Android app on Android TV and Google TV, and casting to a Chromecast or Google TV, are Beta. Fire TV, Roku and LG have Beta tester builds you install yourself; Samsung, Xbox and Apple TV are Beta with no download yet. None of the TV apps has been tested on a real TV yet. See <a href="playing-on-tvs.html">Playing on TVs</a> and <a href="../platforms.html">Beebo on your devices</a>.</p></details>
+    <details><summary>Does Beebo work for a home theater?</summary><p>Partly, and we say which part. Android TV and Google TV, and casting, are Beta. Video conversion with your PC’s graphics card and Live TV are Beta in Beebo for Windows; Linux and Docker servers are Beta but not offered for download right now. Tester builds for Fire TV, Roku and LG are Beta and not tested on real TVs. Passthrough of HDR10+, Dolby Vision, Atmos and DTS:X is in development, so Beebo does not claim it. See <a href="../home-theater.html">Home theater and big screen</a>.</p></details>
+    <details><summary>Is there an iPhone or iPad app?</summary><p>Not yet. A native iPhone and iPad app (Beta) is not published, has never been tested on a real iPhone or iPad, and needs Apple’s approval. iPhone and iPad watch in Safari today, and you can add Beebo to the Home Screen. Offline downloads need the Android app.</p></details>
+    <details><summary>Can I run Beebo on Linux or a NAS?</summary><p>Both are betas. The Linux desktop build (an AppImage and a .deb, tested on Ubuntu 22.04 in our automated build only) is a beta that is not offered for download right now. A headless Docker image for Linux servers and NAS boxes is a beta that is not offered for download right now. We have not tested any specific NAS model, and Linux has no automatic updates yet. See <a href="run-beebo-on-a-nas-or-linux-server.html">Run Beebo on a NAS or Linux server</a> and the <a href="../linux.html">Linux page</a>.</p></details>
     <details><summary>How do I watch away from home?</summary><p>Open your free yourname.beebo.tv address, or type your home’s name in the Android app, and sign in. Beebo tries a direct connection to your PC first. <a href="away-from-home-options.html">Away from home: your three options</a> explains direct, your own relay and Beebo Relay.</p></details>
     <details><summary>Does my library get uploaded to Beebo?</summary><p>No. Your library and video don’t go to Beebo. Beebo’s servers handle sign-in and introductions, meaning finding your PC and setting up the connection. Some optional features talk to other services, and each is listed in <a href="privacy-in-plain-words.html">Privacy in plain words</a>. The <a href="../movie-privacy.html">privacy policy</a> has the details.</p></details>
     <details><summary>What household controls can adults set?</summary><p>Beebo is not a children’s app and has no child-themed screens. Adults who run the PC can set age ratings, blocked genres and titles, a daily limit, bedtime hours and an owner PIN. The PC enforces these controls. See <a href="family-and-profiles.html">Family and profiles</a>.</p></details>
     <details><summary>Can I download movies to my phone?</summary><p>Yes, on the Android app. Save a title while you are on Wi-Fi, then open Downloads to watch it with no signal. Downloads are not available in a browser.</p></details>
-    <details><summary>Does Beebo do Live TV, DVR or plug-ins?</summary><p>Live TV and DVR are Beta with your own HDHomeRun tuner only, and have not been tested on a real tuner. Adding your own M3U/IPTV playlist is in development, not available today. Beebo supplies no channels or guide data. A small read-only API with signed webhooks is in Beta too, and there is no plug-in ecosystem. Other media servers are ahead on those, and on how many devices they support. <a href="../beebo-vs-other-apps.html">How Beebo compares</a> says where.</p></details>
+    <details><summary>Does Beebo do Live TV, DVR or plug-ins?</summary><p>Live TV and DVR are Beta with your own HDHomeRun tuner only, and have not been tested on a real tuner. Adding your own M3U/IPTV playlist is in Beta too (in Beebo for Windows since 0.1.72). Beebo supplies no channels or guide data. A small read-only API with signed webhooks is in Beta too, and there is no plug-in ecosystem. Other media servers are ahead on those, and on how many devices they support. <a href="../beebo-vs-other-apps.html">How Beebo compares</a> says where.</p></details>
     <details><summary>How do I update Beebo?</summary><p>Beebo for Windows checks for a newer version when it starts. You can also open <strong>Settings</strong> and click <strong>Check for updates</strong>. The Android app is updated by installing the newer file from the <a href="../index.html#get-app">Get Beebo section</a> over the old one, which keeps your settings. <a href="../updates.html">What’s new</a> lists releases.</p></details>
     <details><summary>How do I back up my Beebo settings?</summary><p>In Settings, use <strong>Backup &amp; Restore</strong>. A backup contains none of your movie files. See <a href="backup-and-restore.html">Back up and restore</a>.</p></details>
     <details><summary>How do I delete my account?</summary><p>Follow <a href="../delete-account.html">Delete your Beebo Entertainment account</a>. Your movies and shows never leave your computer, so Beebo never had a copy.</p></details>
@@ -242,7 +242,7 @@
     <a href="../docs.html">Docs home</a>
     <a href="../next-features.html">Feature status</a>
   </div>
-  <p class="fineprint">Written for Beebo for Windows 0.1.58 and the Beebo Android app 1.40, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+  <p class="fineprint">Written for Beebo for Windows 0.1.58 and the Beebo Android app 1.40, as of September 21, 2026. Status notes on this page were last checked on October 5, 2026, against Beebo for Windows 0.1.79 and the Android test build 1.51-tester11 (build 61). Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
 </div>
 </main>
 
