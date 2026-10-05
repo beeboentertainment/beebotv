@@ -74,7 +74,7 @@
     "Playback on phones, tablets and browsers",
     "Offline downloads on Android",
     "Video conversion with your graphics card (Beta)",
-    "Live TV and DVR with your own HDHomeRun tuner (Beta)",
+    "Live TV and DVR with your own HDHomeRun tuner or M3U/IPTV playlist (Beta)",
     "Audiobooks, podcasts and internet radio (Beta)"
   ],
   "offers": {
@@ -122,19 +122,19 @@
     <li>For posters, cast and descriptions, a free TMDB key of your own. There is a <a href="tmdb-key-guide.html">step-by-step guide</a>.</li>
   </ul>
 
-  <h2 id="download">Download Beebo for Windows 0.1.62</h2>
+  <h2 id="download">Download Beebo for Windows 0.1.79</h2>
   <div class="rl-table-wrap">
     <table class="rl-table">
       <tbody>
-        <tr><th scope="row">Version</th><td>0.1.62, released September 27, 2026 at 2:39 PM Eastern</td></tr>
-        <tr><th scope="row">File</th><td><a data-beebo-download="windows" href="https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.79/Beebo.Entertainment.Setup.0.1.79.exe">BeeboEntertainmentSetup.exe</a><span class="download-checklist"><a href="/tester-checklist.html?platform=windows&amp;build=0.1.61">Test this version · checklist &amp; feedback →</a><br><a href="/tester-results.html?platform=windows&amp;build=0.1.61">Testing status &amp; reviewer notes →</a></span>, 194,932,746 bytes (about 195 MB)</td></tr>
-        <tr><th scope="row">SHA-256</th><td><code>26e10428e147f4cd660945302b81af5611254791fa5b54ebc3d521625bfe998b</code></td></tr>
+        <tr><th scope="row">Version</th><td>0.1.79, released October 5, 2026 at 4:56 AM Eastern</td></tr>
+        <tr><th scope="row">File</th><td><a data-beebo-download="windows" href="https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.79/Beebo.Entertainment.Setup.0.1.79.exe">Beebo.Entertainment.Setup.0.1.79.exe</a><span class="download-checklist"><a href="/tester-checklist.html?platform=windows&amp;build=0.1.79">Test this version · checklist &amp; feedback →</a><br><a href="/tester-results.html?platform=windows&amp;build=0.1.79">Testing status &amp; reviewer notes →</a></span>, 257,660,130 bytes (about 258 MB)</td></tr>
+        <tr><th scope="row">SHA-256</th><td><code>b5f46cba71796d4848908a040699a5208558e1e1d50ed161b66c2025e78adfd0</code></td></tr>
         <tr><th scope="row">Needs</th><td>Windows 10 or 11</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="fineprint"><strong>The installer is not code-signed yet.</strong> Windows 0.1.62 is not signed with a publisher certificate (Authenticode), so Windows SmartScreen may warn that the publisher is unknown. The <a href="server-setup.html">Windows setup guide</a> explains what to do. To check your download, compare its SHA-256 with the value above (in PowerShell: <code>Get-FileHash .\BeeboEntertainmentSetup.exe</code>).</p>
-  <p>New features are labelled <span class="tag live">Available now — Beta</span> with the Windows version they arrived in. See <a href="updates.html">what is new in each release</a> and <a href="home-theater.html">Home theater and big screen</a> for what has and has not been tried on real equipment.</p>
+  <p class="fineprint"><strong>The installer is not code-signed yet.</strong> Windows 0.1.79 is not signed with a publisher certificate (Authenticode), so Windows SmartScreen may warn that the publisher is unknown. The <a href="server-setup.html">Windows setup guide</a> explains what to do. To check your download, compare its SHA-256 with the value above (in PowerShell: <code>Get-FileHash .\Beebo.Entertainment.Setup.0.1.79.exe</code>).</p>
+  <p>New features are labelled <span class="tag beta">Beta</span> with the Windows version they arrived in. See <a href="updates.html">what is new in each release</a> and <a href="home-theater.html">Home theater and big screen</a> for what has and has not been tried on real equipment.</p>
 
   <h2 id="how">How it works</h2>
   <ol class="steps">
@@ -148,7 +148,7 @@
     </li>
     <li>
       <h3>Watch at home</h3>
-      <p>Install the Android app, or open Beebo in any web browser, and type the address shown on the PC&rsquo;s Get Started screen. To watch on a TV, <a href="cast-to-tv.html">cast to a Chromecast or Google TV</a>.</p>
+      <p>Install the Android app and sign in with your home&rsquo;s name (or the owner&rsquo;s email) and your own username and password, or open the address shown on the PC&rsquo;s Get Started screen in any web browser. To watch on a TV, <a href="cast-to-tv.html">cast to a Chromecast or Google TV</a>.</p>
     </li>
     <li>
       <h3>Watch away from home</h3>
@@ -171,8 +171,8 @@
     <li><strong>The PC has to be on.</strong> When it is off or asleep, nothing can stream from it.</li>
     <li><strong>Windows is the main server.</strong> A <a href="linux.html">Linux desktop beta</a> and a <a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker image for NAS boxes and servers</a> are also betas, though neither is offered for download right now.</li>
     <li><strong>No movies or shows are included.</strong> Beebo plays the files you already own.</li>
-    <li><strong>Live TV and DVR are Beta with your own HDHomeRun tuner only.</strong> They have not been tested on a real tuner. Adding your own M3U/IPTV playlist is in development, not available today. Beebo supplies no channels. There is no plug-in ecosystem, only a small read-only API. <a href="beebo-vs-other-apps.html">See how Beebo compares</a>, including where other apps are ahead.</li>
-    <li><strong>No native apps yet</strong> for iPhone, iPad, Apple TV, Fire TV, Roku, Samsung, LG or Xbox. They are in development. See <a href="platforms.html">the devices page</a> for what works today and <a href="home-theater.html">Home theater and big screen</a> for the big-screen picture.</li>
+    <li><strong>Live TV and DVR are Beta, with your own HDHomeRun tuner or your own M3U/IPTV playlist.</strong> They have not been tested with a real tuner or real playlists. Beebo supplies no channels. There is no plug-in ecosystem, only a small read-only API. <a href="beebo-vs-other-apps.html">See how Beebo compares</a>, including where other apps are ahead.</li>
+    <li><strong>No finished TV or Apple apps yet.</strong> Fire TV, Roku and LG TV have Beta tester builds you install yourself, not tested on a real TV yet. iPhone, iPad, Apple TV, Samsung and Xbox have no install file yet. See <a href="platforms.html">the devices page</a> for what works today and <a href="home-theater.html">Home theater and big screen</a> for the big-screen picture.</li>
     <li><strong>Offline downloads need the Android app.</strong></li>
   </ul>
 

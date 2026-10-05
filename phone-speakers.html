@@ -92,7 +92,7 @@
       "name": "Try phones as speakers in Campsite Mode | Beebo",
       "description": "Explore Beebo's phone-speaker Betas for shared music and movie audio. See the setup, current test evidence and real-device limits before trying them.",
       "inLanguage": "en",
-      "dateModified": "2026-09-21"
+      "dateModified": "2026-10-05"
     },
     {
       "@type": "BreadcrumbList",
@@ -134,7 +134,7 @@
           "name": "Can I try it today?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, as a test. It is in the Android test build 1.40 (build 41), which you download and install from this site (see Get Beebo on your phone). It is Beta: it is still being tested and has not been checked on real phones over a hotspot, so expect rough edges. Older Android versions do not have it."
+            "text": "Yes, as a test. It is in the Android test build 1.51-tester11 (build 61), which you download and install from this site (see Get Beebo on your phone). It is Beta: it is still being tested and has not been checked on real phones over a hotspot, so expect rough edges. Older Android versions do not have it."
           }
         },
         {
@@ -174,7 +174,7 @@
           "name": "Does it work for movies?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, in a beta. Beebo for Windows 0.1.58 can use phones as separate speakers for a movie. Choose a connected compatible device for the picture, then assign phones to available audio positions such as front left, front right, centre, surround or subwoofer. The selection depends on the film and the current layout. This has been tested in simulation and by measurement on one computer, not on real phones. Campsite Mode can also let guests watch downloaded videos together on their own phones, where each phone plays the whole soundtrack."
+            "text": "Yes, in a beta. Beebo for Windows (0.1.58 and later) can use phones as separate speakers for a movie. Choose a connected compatible device for the picture, then assign phones to available audio positions such as front left, front right, centre, surround or subwoofer. The selection depends on the film and the current layout. This has been tested in simulation and by measurement on one computer, not on real phones. Campsite Mode can also let guests watch downloaded videos together on their own phones, where each phone plays the whole soundtrack."
           }
         },
         {
@@ -229,11 +229,11 @@
   <img class="page-campaign-art" src="assets/friends-campsite.webp" alt="Friends sitting around a campfire, each looking at a phone" width="1672" height="941" loading="lazy">
 
   <div class="callout">
-    <p><span class="tag live">Available now — test build (Beta)</span> <strong>Status:</strong> synced music on many phones is in the Android test build 1.40 (build 41), which you can download from this site. It is a test build and still being tested: we have tried it on a computer, <strong>not yet on real phones</strong> over a hotspot. Android versions before 1.39 do not have it.</p>
+    <p><span class="tag beta">Beta</span> <strong>Status:</strong> synced music on many phones is in the Android test build 1.51-tester11 (build 61), which you can download from this site. It is a test build and still being tested: we have tried it on a computer, <strong>not yet on real phones</strong> over a hotspot. Android versions before 1.39 do not have it.</p>
   </div>
 
   <div class="callout safe">
-    <p><strong>Quick answer for anyone asking.</strong> For music, the group can choose a main screen and play the same track in sync on many phones, including a Left and Right pair. For movies and videos, choose the screen for the picture, then assign connected phones to the available audio positions. The Android music feature is in test build 1.40 (Beta). The separate Windows movie-and-video speaker feature is <span class="tag live">Available now — Beta (Windows 0.1.58, simulated only)</span>. See <a href="#movies">movie surround</a>.</p>
+    <p><strong>Quick answer for anyone asking.</strong> For music, the group can choose a main screen and play the same track in sync on many phones, including a Left and Right pair. For movies and videos, choose the screen for the picture, then assign connected phones to the available audio positions. The Android music feature is in the Android test build (Beta). The separate Windows movie-and-video speaker feature is <span class="tag beta">Beta (Windows, simulated only)</span>. See <a href="#movies">movie surround</a>.</p>
   </div>
 
   <nav class="guide-nav" aria-label="On this page"><a href="#how">How it works</a><a href="#need">What you need</a><a href="#expect">What to expect</a><a href="#status">Status at a glance</a><a href="#movies">Movie surround</a><a href="#not-yet">Not yet</a><a href="#faq">Questions</a><a href="#related">Related pages</a></nav>
@@ -318,7 +318,7 @@
     <div class="feature"><h3>Speakers and delay</h3><ul>
       <li>Bluetooth speakers add delay, often a lot more than a phone&rsquo;s own speaker.</li>
       <li>Each guest page has a <strong>&minus;10 ms / +10 ms</strong> trim to line a phone up by ear.</li>
-      <li>Each joined phone displays its assigned position before playback starts. The current layouts can label phones as Left, Right or All; movie layouts can use available positions such as Front left, Front right, Centre, Back left, Back right and Subwoofer.</li><li><strong>Wireless-speaker boxes: Planned.</strong> In development: a Campsite placement and timing-trim screen for participating phones. There is no verified compatibility with Bluetooth, Chromecast, Sonos, portable job-site radios or other speaker brands yet.</li>
+      <li>Each joined phone displays its assigned position before playback starts. The current layouts can label phones as Left, Right or All; movie layouts can use available positions such as Front left, Front right, Centre, Back left, Back right and Subwoofer.</li><li><strong>Wireless-speaker boxes: Planned.</strong> Beta: a Campsite Wireless speakers screen for placing and timing participating phones is in the Android test download; it has only been opened on a real phone, not used with a real speaker. There is no verified compatibility with Bluetooth, Chromecast, Sonos, portable job-site radios or other speaker brands yet.</li>
     </ul></div>
     <div class="feature"><h3>Screens and browsers</h3><ul>
       <li>Keep the page open with the screen on. Some phones pause a web page when the screen locks, and we have not yet tested ways around that.</li>
@@ -333,24 +333,24 @@
   </div>
 
   <h2 id="status">Status at a glance</h2>
-  <p>We only say <strong>Available now</strong> when a feature is in the public downloads. The music feature is in the Android test build, and movie surround is in the Windows download, so each carries a longer label that says how far it has been tested.</p>
-  <div class="legend"><div><span class="tag live">Available now — test build (Beta)</span>In the public Android test build 1.40 and usable, but still being tested and not yet checked on real phones.</div><div><span class="tag live">Available now — Beta (Windows 0.1.58, simulated only)</span>In the Windows download, version 0.1.58, and usable. Tested only in simulation and by measurement on one computer, not on real phones.</div><div><span class="tag dev">In development</span>Being built. Not usable yet, not tested on real devices, no date.</div><div><span class="tag plan">Planned</span>We intend to do it. No date, and nothing usable is built.</div></div>
+  <p>We only say <strong>Available</strong> when a feature is in the public downloads and tested. The music feature is in the Android test build, and movie surround is in the Windows download, so each is labelled <strong>Beta</strong> with a note on how far it has been tested.</p>
+  <div class="legend"><div><span class="tag beta">Beta</span>In the public Android test build 1.51-tester11 and usable, but still being tested and not yet checked on real phones.</div><div><span class="tag beta">Beta (Windows, simulated only)</span>In the Windows download (0.1.58 and later, now 0.1.79) and usable. Tested only in simulation and by measurement on one computer, not on real phones.</div><div><span class="tag dev">In development</span>Being built. Not usable yet, not tested on real devices, no date.</div><div><span class="tag plan">Planned</span>We intend to do it. No date, and nothing usable is built.</div></div>
   <div class="rl-table-wrap">
     <table class="rl-table">
       <thead><tr><th scope="col">What</th><th scope="col">Status</th><th scope="col">In plain words</th></tr></thead>
       <tbody>
-        <tr><th scope="row">The same music, in sync, on many phones</th><td><span class="tag live">Available now — test build (Beta)</span></td><td>Host phone plays a queue from your Beebo music library and every guest phone in a browser plays it in step over the host&rsquo;s Wi-Fi.</td></tr>
-        <tr><th scope="row">Speaker placement shown on each phone</th><td><span class="tag live">Available now — test build (Beta)</span></td><td>Each joined phone shows its assigned position. Current music layouts use Left, Right or All; the movie beta can use the available front, centre, surround and subwoofer positions for its selected layout.</td></tr>
-        <tr><th scope="row">Volume, trim and the Sync indicator on each phone</th><td><span class="tag live">Available now — test build (Beta)</span></td><td>Each guest can turn their phone up or down and nudge it 10 ms at a time. The indicator is an estimate.</td></tr>
-        <tr><th scope="row">Phones as surround speakers for movies and videos</th><td><span class="tag live">Available now — Beta (Windows 0.1.58, simulated only)</span></td><td>Choose the connected compatible device that shows the picture; phones play their assigned available channels. Needs Beebo for Windows 0.1.58. See the movie surround section below.</td></tr>
+        <tr><th scope="row">The same music, in sync, on many phones</th><td><span class="tag beta">Beta</span></td><td>Host phone plays a queue from your Beebo music library and every guest phone in a browser plays it in step over the host&rsquo;s Wi-Fi.</td></tr>
+        <tr><th scope="row">Speaker placement shown on each phone</th><td><span class="tag beta">Beta</span></td><td>Each joined phone shows its assigned position. Current music layouts use Left, Right or All; the movie beta can use the available front, centre, surround and subwoofer positions for its selected layout.</td></tr>
+        <tr><th scope="row">Volume, trim and the Sync indicator on each phone</th><td><span class="tag beta">Beta</span></td><td>Each guest can turn their phone up or down and nudge it 10 ms at a time. The indicator is an estimate.</td></tr>
+        <tr><th scope="row">Phones as surround speakers for movies and videos</th><td><span class="tag beta">Beta (Windows, simulated only)</span></td><td>Choose the connected compatible device that shows the picture; phones play their assigned available channels. Needs Beebo for Windows 0.1.58 or later. See the movie surround section below.</td></tr>
         <tr><th scope="row">Campfire story voices on different phones</th><td><span class="tag plan">Planned</span></td><td>A &ldquo;voice&rdquo; role exists in the guest page as groundwork only. For now it plays the same music as everyone else.</td></tr>
       </tbody>
     </table>
   </div>
 
   <section id="movies" aria-labelledby="movies-title">
-    <h2 id="movies-title">Movie and video surround: phones as speakers <span class="tag live">Available now — Beta (Windows 0.1.58, simulated only)</span></h2>
-    <p>Everything above is about <strong>music</strong>. Beebo for Windows 0.1.58 adds a movie and video version. Choose the connected compatible device that makes the best main screen for the group, then place each phone as a speaker. Depending on the selected layout and the film, a phone can be assigned front left, front right, centre, surround, back left, back right or subwoofer. The picture screen&rsquo;s own sound is muted while phones are playing.</p>
+    <h2 id="movies-title">Movie and video surround: phones as speakers <span class="tag beta">Beta (Windows, simulated only)</span></h2>
+    <p>Everything above is about <strong>music</strong>. Beebo for Windows 0.1.58 and later adds a movie and video version. Choose the connected compatible device that makes the best main screen for the group, then place each phone as a speaker. Depending on the selected layout and the film, a phone can be assigned front left, front right, centre, surround, back left, back right or subwoofer. The picture screen&rsquo;s own sound is muted while phones are playing.</p>
     <div class="feature">
       <h3>How it works</h3>
       <ul>
@@ -364,7 +364,7 @@
     <div class="feature">
       <h3>What you need</h3>
       <ul>
-        <li>A PC running Beebo for Windows 0.1.58, holding the film.</li>
+        <li>A PC running Beebo for Windows 0.1.58 or later, holding the film.</li>
         <li>A connected compatible phone, tablet, TV or computer to show the picture.</li>
         <li>Phones with an ordinary web browser, on the same home Wi-Fi. By default only phones on your home network can join.</li>
       </ul>
@@ -393,12 +393,12 @@
   <h2 id="faq">Questions about phone speakers</h2>
   <div class="faq">
     <details><summary>Does Beebo Campsite Mode sync sound across multiple phones?</summary><p>For music, Beebo Campsite Mode can play the same track in sync on many phones and can split it into a left and right stereo pair. The group chooses a connected compatible device as its main screen, while the other phones remain speakers. Each phone shows its position before playback begins. The Android feature is a Beta test build and has not yet been measured on real phones. Movie and video surround is a separate Windows beta, tested only in simulation.</p></details>
-    <details><summary>Can I try it today?</summary><p>Yes, as a test. It is in the Android test build 1.40 (build 41), which you download and install from this site (see <a href="app-on-your-phone.html">Get Beebo on your phone</a>). It is Beta: it is still being tested and has not been checked on real phones over a hotspot, so expect rough edges. Older Android versions do not have it.</p></details>
+    <details><summary>Can I try it today?</summary><p>Yes, as a test. It is in the Android test build 1.51-tester11 (build 61), which you download and install from this site (see <a href="app-on-your-phone.html">Get Beebo on your phone</a>). It is Beta: it is still being tested and has not been checked on real phones over a hotspot, so expect rough edges. Older Android versions do not have it.</p></details>
     <details><summary>Does it need the internet?</summary><p>The guests&rsquo; phones do not. They join the host phone&rsquo;s Wi-Fi (Beebo&rsquo;s own Wi-Fi, the phone&rsquo;s hotspot or a shared Wi-Fi), and the music travels over that Wi-Fi. The host phone gets its songs from your Beebo computer, so it needs to be able to reach that computer to load them.</p></details>
     <details><summary>Do guests need an app or an account?</summary><p>No. A guest scans the code and opens the page in an ordinary web browser on a phone, tablet or laptop, then taps once to turn sound on. They install nothing and sign up for nothing. The host needs the Beebo Android app.</p></details>
     <details><summary>How many phones can play together?</summary><p>We designed it for about eight guest phones on one hotspot. Each guest downloads each song from the host phone, so more phones mean more Wi-Fi traffic and a longer wait before a song starts. We have not tested large groups on real phones, so we do not promise a number.</p></details>
-    <details><summary>Will I be able to use a wireless speaker box?</summary><p>That is planned, not available or verified today. In development: a Campsite placement and timing-trim screen for participating phones. No Bluetooth, Chromecast, Sonos, portable job-site radio or other speaker-brand compatibility has been confirmed. A phone's own wireless audio output may add delay, and a trim control cannot guarantee a synchronized external speaker.</p></details>
-    <details><summary>Does it work for movies and videos?</summary><p>Yes, in a beta. Beebo for Windows 0.1.58 can use phones as separate speakers for a movie or video. Choose a connected compatible device for the picture, then assign phones to the available audio positions, such as Front left, Front right, Centre, Back left or Back right. We have tested it in simulation and by measurement on one computer, not on real phones. Campsite Mode can also let guests watch downloaded videos together on their own phones, where each phone plays the whole soundtrack.</p></details>
+    <details><summary>Will I be able to use a wireless speaker box?</summary><p>That is planned, not available or verified today. Beta: a Campsite Wireless speakers screen for placing and timing participating phones is in the Android test download; it has only been opened on a real phone, not used with a real speaker. No Bluetooth, Chromecast, Sonos, portable job-site radio or other speaker-brand compatibility has been confirmed. A phone's own wireless audio output may add delay, and a trim control cannot guarantee a synchronized external speaker.</p></details>
+    <details><summary>Does it work for movies and videos?</summary><p>Yes, in a beta. Beebo for Windows (0.1.58 and later) can use phones as separate speakers for a movie or video. Choose a connected compatible device for the picture, then assign phones to the available audio positions, such as Front left, Front right, Centre, Back left or Back right. We have tested it in simulation and by measurement on one computer, not on real phones. Campsite Mode can also let guests watch downloaded videos together on their own phones, where each phone plays the whole soundtrack.</p></details>
     <details><summary>Does the host phone play the music too?</summary><p>Not in this first version. The host phone is the conductor: it stays quiet and starts, pauses and skips for everyone. Playing on the host phone in sync as well is not built.</p></details>
     <details><summary>How accurate is the sync?</summary><p>In our tests on one computer, two browser windows reported the same point in a song within a fraction of a millisecond, and a simulated phone with a badly drifting clock stayed within about 13 milliseconds. That is not the same as real phones on a hotspot, which we have not measured yet. We expect differences of tens of milliseconds, which suits group listening but is not exact enough to call a calibrated stereo system. Each phone shows a Sync indicator that turns green when its estimated error is within about 30 ms.</p></details>
     <details><summary>Will it keep playing when a phone&rsquo;s screen locks?</summary><p>Keep the page open with the screen on. Some phones pause a web page when the screen locks, and we have not tested ways to keep it playing. If a phone drops out, open the page again and it catches up by itself. iPhones may ask for the audio tap again after a call or a lock.</p></details>
@@ -414,7 +414,7 @@
     <a href="beebo-vs-other-apps.html">How Beebo compares</a>
     <a href="docs/privacy-in-plain-words.html">🔐 Privacy in plain words</a>
   </div>
-  <p class="fineprint">Written for the Beebo Android test build 1.40 (build 41), as of September 21, 2026. The feature described is in that test build and has not been measured on real phones yet. Found something that does not match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20phone%20speakers%20page%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+  <p class="fineprint">Written for the Beebo Android test build 1.51-tester11 (build 61), as of October 5, 2026. The feature described is in that test build and has not been measured on real phones yet. Found something that does not match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20phone%20speakers%20page%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
 
   <div class="cta"><a class="btn btn-primary btn-lg" href="index.html#get-app">Get Beebo &#8599;</a></div>
 </div>
