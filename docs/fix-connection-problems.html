@@ -94,7 +94,7 @@
   <div class="page-hero">
     <div class="em" aria-hidden="true">🛠️</div>
     <h1>Fix Beebo connection problems</h1>
-    <p class="lead">When your phone cannot reach Beebo, the cause is nearly always one of a few things: the PC is asleep, the phone is on a different network, something is blocking the port, or your home internet does not allow direct connections. Work through the steps in order; each one says what you should see.</p>
+    <p class="lead">When your phone cannot reach Beebo, the cause is nearly always one of a few things. The PC is asleep. The phone is on a different network. Something, such as a firewall, is blocking Beebo. Or your home internet does not allow direct connections. Work through the steps in order. Each one says what you should see.</p>
   </div>
 
   <div class="callout">
@@ -107,12 +107,12 @@
     <table class="rl-table">
       <thead><tr><th scope="col">Message</th><th scope="col">Usually means</th><th scope="col">Go to</th></tr></thead>
       <tbody>
-        <tr><th scope="row">“Can’t reach the server — is it running, and is the port right?”</th><td>Typed an address that is not answering: PC off or asleep, different Wi-Fi, wrong address, or blocked port.</td><td>Steps 1 to 3</td></tr>
+        <tr><th scope="row">“Can’t reach the server. Is your home computer on and running Beebo?”</th><td>The address you typed is not answering. The PC may be off or asleep, the phone may be on a different Wi-Fi, the address may be wrong, or something may be blocking Beebo.</td><td>Steps 1 to 3</td></tr>
         <tr><th scope="row">“Your home computer isn’t online right now. Check that it’s switched on, awake and connected, and that Beebo is running on it.”</th><td>Away from home, beebo.tv cannot see your PC.</td><td>Steps 1 and 4</td></tr>
         <tr><th scope="row">“…Beebo didn’t answer. Check that Beebo is open on the home computer and that the computer is awake and online.”</th><td>Same as above, for your home’s name.</td><td>Steps 1 and 4</td></tr>
         <tr><th scope="row">“Couldn’t connect this phone to … home computer from this network… these two internet connections couldn’t reach each other.”</th><td>Direct connection is not possible between this network and your home network.</td><td>Steps 5 to 7</td></tr>
         <tr><th scope="row">“No internet connection on this phone.” or “Couldn’t reach beebo.tv.”</th><td>The phone itself is offline or blocked.</td><td>Step 7</td></tr>
-        <tr><th scope="row">“There’s no Beebo at … .beebo.tv. Check Home.”</th><td>A typo in the name.</td><td>Check the Home box</td></tr>
+        <tr><th scope="row">“There’s no Beebo at … .beebo.tv. Check Home.”</th><td>A typo in the name.</td><td>Check what you typed in the <strong>Home</strong> box</td></tr>
       </tbody>
     </table>
   </div>
@@ -121,7 +121,7 @@
   <ol class="steps">
     <li id="step-1">
       <h3>Is the PC on, awake and running Beebo?</h3>
-      <p>Everything streams from your PC, so if it is off, asleep or Beebo is closed, nothing works. Look for Beebo’s window or its icon near the clock. Beebo for Windows (0.1.58 and newer) can start by itself when you sign in to Windows (see below), but if you have not turned that on, open Beebo after a restart.</p>
+      <p>Everything streams from your PC. If the PC is off or asleep, or Beebo is closed, nothing works. Look for Beebo’s window or its icon near the clock. Beebo for Windows (0.1.58 and newer) can start by itself when you sign in to Windows (see below), but if you have not turned that on, open Beebo after a restart.</p>
       <p>To stop Windows sleeping while plugged in, open Windows <strong>Settings › System › Power &amp; sleep</strong> (Windows 10) or <strong>Power &amp; battery › Screen and sleep</strong> (Windows 11) and set “When plugged in, put my device to sleep after” to <strong>Never</strong>.</p>
       <p><span class="tag beta">Beta</span> Beebo has a <strong>Keep Beebo available</strong> section in Settings with “Start Beebo when I sign in to Windows”, a line saying whether it is keeping the PC awake, and an <strong>Open Windows sleep settings</strong> button.</p>
       <p><strong>What you’ll see:</strong> Beebo’s window on the PC, or its icon by the clock. If you cannot find either, open Beebo from the Start menu.</p>
@@ -129,32 +129,49 @@
     </li>
     <li id="step-2">
       <h3>At home: are you on the same Wi-Fi, with the right address?</h3>
-      <p>Your phone must be on the same Wi-Fi as the PC, with mobile data not standing in for it. Guest networks, and some public or hotel Wi-Fi, keep devices from seeing each other. On the PC, open <strong>Get Started</strong> and click <strong>Refresh</strong> to see the current address, then type it exactly, including <code>:47811</code>.</p>
+      <p>Your phone must be on the same Wi-Fi as the PC, not on mobile data. Guest networks, and some public or hotel Wi-Fi, keep devices from seeing each other.</p>
+      <ol>
+        <li>On the PC, open <strong>Get Started</strong>.</li>
+        <li>Click <strong>Refresh</strong> to see the current address.</li>
+        <li>On the phone, type that address exactly, including <code>:47811</code> at the end.</li>
+      </ol>
       <p><strong>What you’ll see:</strong> An address like <code>192.168.1.50:47811</code> on the PC. After a router restart it may have changed.</p>
 
     </li>
     <li id="step-3">
       <h3>Is a firewall blocking Beebo?</h3>
-      <p>The Windows installer adds a firewall rule named “Beebo Entertainment” for TCP port 47811. Check it in <strong>Windows Security › Firewall &amp; network protection › Allow an app through firewall</strong>. If you use another company’s security suite, it has its own firewall: allow TCP port 47811 there.</p>
+      <p>A firewall is the part of Windows (or of your security program) that decides which programs may talk to other devices. The Windows installer adds a firewall rule named “Beebo Entertainment” for TCP port 47811 (the “door number” Beebo uses).</p>
+      <ol>
+        <li>Open <strong>Windows Security</strong>.</li>
+        <li>Go to <strong>Firewall &amp; network protection › Allow an app through firewall</strong>.</li>
+        <li>Look for “Beebo Entertainment” in the list.</li>
+      </ol>
+      <p>If you use another company’s security program, it has its own firewall. Allow TCP port 47811 there too.</p>
       <p><strong>What you’ll see:</strong> “Beebo Entertainment” in the list, ticked. If a security program prompted you when Beebo first started and you clicked Cancel, that would explain a blocked phone.</p>
 
     </li>
     <li id="step-4">
       <h3>Away from home: use your beebo.tv address, with Beebo signed in</h3>
-      <p>The local <code>192.168…</code> address only works on your home Wi-Fi. Away from home, use your <code>yourname.beebo.tv</code> address, or your home’s name in the app’s <strong>Home</strong> box. The PC must be signed in to your Beebo account; until then Beebo says “Sign in to your Beebo account first. Then this computer gets its own beebo.tv address.” Look at <strong>Settings › Your Beebo address</strong> for any problem it reports.</p>
-      <p><strong>What you’ll see:</strong> On Get Started, step 4 shows your address and “It’s online now.”</p>
+      <p>The local <code>192.168…</code> address only works on your home Wi-Fi. Away from home, use your <code>yourname.beebo.tv</code> address, or type your home’s name in the app’s <strong>Home</strong> box. The PC must be signed in to your Beebo account. Until it is, Beebo says “Sign in to your Beebo account first. Then this computer gets its own beebo.tv address.” Look at <strong>Settings › Your Beebo address</strong> for any problem it reports.</p>
+      <p><strong>What you’ll see:</strong> On Get Started, step 5, <strong>Watch away from home</strong>, shows your address and “It’s online now.”</p>
 
     </li>
     <li id="step-5">
       <h3>Run the connection test</h3>
-      <p>Use <strong>Get Started › Test your connection</strong>, or <strong>Settings › Connection › Re-run test</strong>. It checks watching at home, then away from home with your phone on mobile data, and tells you which route your phone used. You can also try the browser-based <a href="../will-beebo-work.html">Will Beebo work on your internet?</a> check.</p>
+      <p>Use <strong>Get Started › Test your connection</strong>, or <strong>Settings › Connection › Re-run test</strong>. The test first checks watching at home. Then it checks watching away from home, with your phone on mobile data. It tells you which route your phone used. You can also try the browser-based <a href="../will-beebo-work.html">Will Beebo work on your internet?</a> check.</p>
       <p><strong>What you’ll see:</strong> “Your phone connected. Direct connection.” means you are done. A failure moves you to step 6.</p>
 
     </li>
     <li id="step-6">
       <h3>Direct connection blocked: shared address, two routers, or closed ports</h3>
-      <p>Beebo asks your router to open its ports itself. If that fails, the test may say “Your home has two routers in a row” or “Your internet provider shares one internet address between many homes”. Then, in order of effort:</p>
-      <p><strong>a)</strong> Turn on <strong>UPnP</strong> (sometimes called NAT-PMP) in your router and test again. <strong>b)</strong> <a href="../open-ports.html">Forward UDP ports 47820–47829</a> to the PC by hand. <strong>c)</strong> With two routers, forward on both, or put the provider’s modem in bridge mode. <strong>d)</strong> If your provider shares one address between many homes (carrier-grade NAT), no router setting will help; asking the provider for a public address usually does, or you can use <a href="../own-relay.html">your own Cloudflare relay</a> or <a href="../beebo-relay.html">Beebo Relay</a>. <strong>e)</strong> Choose <strong>Home only for now</strong> and watch on your home Wi-Fi.</p>
+      <p>Beebo asks your router to let it through by itself. If that fails, the test may say “Your home has two routers in a row” or “Your internet provider shares one internet address between many homes”. Try these, easiest first:</p>
+      <ol type="a">
+        <li>Turn on <strong>UPnP</strong> (sometimes called NAT-PMP) in your router’s settings, then test again. UPnP lets Beebo ask the router to let it through.</li>
+        <li><a href="../open-ports.html">Forward UDP ports 47820–47829</a> to the PC by hand. Port forwarding means telling your router to send Beebo’s traffic to your PC.</li>
+        <li>If you have two routers, forward the ports on both. Or ask your provider how to put their modem in bridge mode, so it stops acting as a second router.</li>
+        <li>If your provider shares one address between many homes (called carrier-grade NAT, or CGNAT), no router setting will help. Asking the provider for a public address usually does. Or you can use <a href="../own-relay.html">your own Cloudflare relay</a> or <a href="../beebo-relay.html">Beebo Relay</a>.</li>
+        <li>Choose <strong>Home only for now</strong> and watch on your home Wi-Fi.</li>
+      </ol>
       <p><strong>What you’ll see:</strong> A result of “Your home network blocks direct connections” with four options underneath.</p>
 
     </li>
@@ -167,14 +184,14 @@
   </ol>
 
   <h2 id="doctor">Connection Doctor</h2>
-  <p><span class="tag beta">Beta</span> Open it from <strong>Get Started</strong>, <strong>Settings › Help</strong>, the connection-test screen, or the tray icon — look for “Can’t connect? Fix it for me”. It runs its checks in order (server running, firewall, local network address, internet, router port-opening, shared/CGNAT address, your beebo.tv address, and sleep setting) and shows each as a pass, warning or problem with a plain-English explanation of what it means. For a firewall problem, a router that did not open its ports, a stale beebo.tv address, or a sleep setting that will cut off phones and TVs, it offers a one-click fix; anything that needs Windows administrator approval asks first and waits for you to confirm. A <strong>Copy report</strong> button lets you paste the results into an email to us.</p>
+  <p><span class="tag beta">Beta</span> Open it from <strong>Get Started</strong>, <strong>Settings › Help</strong>, the connection-test screen, or the tray icon — look for “Can’t connect? Fix it for me”. It runs its checks in order (server running, firewall, local network address, internet, router port-opening, shared/CGNAT address, your beebo.tv address, and sleep setting) and shows each as a pass, warning or problem with a plain-English explanation of what it means. For a firewall problem, a router that did not open its ports, a stale beebo.tv address, or a sleep setting that will cut off phones and TVs, it offers a one-click fix; anything that needs Windows administrator approval asks first and waits for you to confirm. A <strong>Copy a report for support</strong> button copies the results so you can paste them into an email to us.</p>
   <div class="callout"><p><strong>Screenshot coming.</strong> The Connection Doctor window listing its checks and fix buttons.</p></div>
 
   <h2 id="trouble">If something goes wrong</h2>
   <div class="faq">
     <details><summary>It worked yesterday and not today</summary><p>Most often the PC restarted or went to sleep, Beebo was not reopened, or the router gave the PC a new local address. Check steps 1 and 2. If you use the <code>yourname.beebo.tv</code> address it does not depend on your local address.</p></details>
-    <details><summary>Only some of my family cannot connect away from home</summary><p>Away access is set per person. The owner can check it in the Users tab; see <a href="family-and-profiles.html">Family and profiles</a>. A person also needs to sign in once at home with their usual password, or use a temporary away pass the owner can generate.</p></details>
-    <details><summary>Video connects but keeps stopping</summary><p>Try a lower picture quality with the gear button in the player, since the PC then converts the video to something smaller while it plays. Your home internet’s upload speed limits how much can reach you away from home.</p></details>
+    <details><summary>Only some of my family cannot connect away from home</summary><p>Away access is set per person. The owner can check it on the <strong>Users</strong> page. See <a href="family-and-profiles.html">Family and profiles</a>. A person also needs to sign in once at home with their usual password, or use a temporary away pass the owner can generate.</p></details>
+    <details><summary>Video connects but keeps stopping</summary><p>Try a lower picture quality with the gear button in the player. The PC then shrinks the video while it plays, so less data has to travel. Your home internet’s upload speed limits how much can reach you away from home.</p></details>
     <details><summary>Nothing here fits my problem</summary><p>Email <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20connection%20problem">testers@beeboentertainment.com</a> with what your phone says, which network you were on, and what the connection test result was. It is a plain email, with no form and no sign-up.</p></details>
   </div>
 

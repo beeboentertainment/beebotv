@@ -70,42 +70,42 @@
       "@type": "HowToStep",
       "position": 1,
       "name": "Make folders for settings and media",
-      "text": "Create a folder for Beebo’s own data (settings, accounts, watch history, artwork cache and certificates), for example /srv/beebo/config, and know where your media folders are. Read-only media is fine for watching. Uploads from the phone app, the Inbox and file clean-up write to the media folders, so give it write access if you want those.",
+      "text": "Create a folder for Beebo’s own data, for example /srv/beebo/config. Beebo keeps its settings, accounts, watch history, saved artwork and certificates there. Also note where your media folders are. Beebo only needs to read your media folders to play them. Uploads from the phone app, the Inbox and file clean-up do write to the media folders, so give Beebo write access too if you want those.",
       "url": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "name": "Make a secret key and keep it",
-      "text": "Beebo encrypts saved secrets (password hashes, sign-in signing keys, your TMDB key, webhook secrets) in its settings file. The key comes from an environment variable. Make one, for example with openssl rand -hex 32, and save it somewhere safe. If you change or lose it, the saved secrets become unreadable, and Beebo stops at start-up with a message instead of quietly signing everyone out. A 64-character string. Keep it outside the config folder if you want real separation: anyone who has the whole config folder and the key file has both.",
+      "text": "Beebo encrypts the secrets it saves in its settings file, such as password hashes, sign-in signing keys, your TMDB key and webhook secrets. It needs one secret key to do that. You give Beebo the key through an environment variable (a named setting you pass to the container when you start it). Make a key, for example with openssl rand -hex 32, and save it somewhere safe. If you change or lose it, the saved secrets become unreadable. Beebo then stops at start-up with a message, instead of quietly signing everyone out. A 64-character string. Keep it outside the config folder if you want real separation: anyone who has the whole config folder and the key file has both.",
       "url": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Start the container",
-      "text": "Once the image is offered for download again, start it (the last built tag is 0.1.58): docker run -d --name beebo --restart unless-stopped \\ -p 47811:47811 \\ -e BEEBO_UPNP=0 \\ -e BEEBO_SECRET_KEY=\"\u003cyour key>\" \\ -v /srv/beebo/config:/config \\ -v /srv/media/movies:/media/movies:ro \\ -v /srv/media/tv:/media/tv:ro \\ -v /srv/media/music:/media/music:ro \\ -v /srv/media/photos:/media/photos:ro \\ ghcr.io/swgfan/beebo-server:0.1.58 Mounting media read-only (:ro) is fine for watching; leave it off if you want uploads and file clean-up. A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.",
+      "text": "Once the image is offered for download again, start it like this. The last built tag is 0.1.58, older than the current Windows app (0.1.79); a newer image will be posted when it is ready. Pin a version number rather than latest if you want to control exactly when you upgrade: docker run -d --name beebo --restart unless-stopped \\ -p 47811:47811 \\ -e BEEBO_UPNP=0 \\ -e BEEBO_SECRET_KEY=\"<your key>\" \\ -v /srv/beebo/config:/config \\ -v /srv/media/movies:/media/movies:ro \\ -v /srv/media/tv:/media/tv:ro \\ -v /srv/media/music:/media/music:ro \\ -v /srv/media/photos:/media/photos:ro \\ ghcr.io/swgfan/beebo-server:0.1.58 The :ro at the end of each media folder line means “read-only”: Beebo can play the files but not change them. That is fine for watching. Leave it off if you want uploads from the phone app, the Inbox and file clean-up to write to those folders. Add /media/audiobooks the same way for audiobooks. If your files belong to another user, see Folders and users below (--user, or PUID and PGID). A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.",
       "url": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Read the first-run message",
-      "text": "A new server has no accounts. It prints a one-time message to its log. Run docker logs beebo. Lines like “First-run setup: this server has no owner account yet.”, an address such as https://192.168.1.20:47811/setup and a setup code shaped like 7KQ2-M9XD-4TNB.",
+      "text": "A new server has no accounts. It prints a one-time message to its log (the text the container writes as it runs). To read it, run docker logs beebo. Lines like “First-run setup: this server has no owner account yet.”, an address such as https://192.168.1.20:47811/setup and a setup code shaped like 7KQ2-M9XD-4TNB.",
       "url": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-4"
     },
     {
       "@type": "HowToStep",
       "position": 5,
       "name": "Create the owner account",
-      "text": "Open that address (https, port 47811). Your browser will warn about the certificate, because Beebo made it itself (it is self-signed); accept the warning. Enter the setup code, then choose the owner username and a password of 8 or more characters. Setup closes for good once the account exists. If you miss the message, restart the container for a new code. The code lives only in the log and in memory. A sign-in page. Sign in at https://\u003cserver-ip>:47811/. The admin pages only open over HTTPS. Phones and TVs on your network can keep using http://\u003cserver-ip>:47811.",
+      "text": "In a web browser, open the address from the log (it starts with https and ends in :47811/setup). Your browser will warn about the certificate (the server’s security ID card). That is because Beebo made the certificate itself (it is “self-signed”). Accept the warning to continue. Type the code from the log into Setup code. Choose an Owner username and a password of 8 or more characters, and type the password again in Repeat password. Click Create owner account. Setup closes for good once the account exists. If you miss the message, restart the container for a new code. The code lives only in the log and in memory. A sign-in page. Sign in at https://<server-ip>:47811/. The admin pages only open over HTTPS. Phones and TVs on your network can keep using http://<server-ip>:47811.",
       "url": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-5"
     },
     {
       "@type": "HowToStep",
       "position": 6,
       "name": "Add posters and connect your devices",
-      "text": "Give it a TMDB key with the BEEBO_TMDB_API_KEY environment variable (see the free key steps in Get started on Windows). Then connect phones and TVs to http://\u003cserver-ip>:47811 as in Connect your phone.",
+      "text": "Posters and movie information come from TMDB, a free movie database. Give Beebo a TMDB key with the BEEBO_TMDB_API_KEY environment variable (see the free key steps in Get started on Windows). Then connect phones and TVs to http://<server-ip>:47811 as in Connect your phone. Replace <server-ip> with your server’s address on your home network.",
       "url": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-6"
     }
   ]
@@ -127,7 +127,7 @@
   <div class="page-hero">
     <div class="em" aria-hidden="true">🗄️</div>
     <h1>Run Beebo on a NAS or Linux server with Docker</h1>
-    <p class="lead">Beebo has a headless server that runs without a window, in Docker on a Linux server, a NAS or a Raspberry Pi. It is the same server code as the Windows app. <strong>Beta</strong>: it builds cleanly and passes our automated tests, but the image is <strong>not offered for download right now</strong>, and it has not been tried on a specific NAS model or on real Raspberry Pi hardware yet.</p>
+    <p class="lead">Beebo has a “headless” server: a version with no window that runs in the background. It runs in Docker on a Linux server, a NAS or a Raspberry Pi. Docker is a tool that runs ready-made programs (called containers) in their own sealed box. A NAS is a storage box on your home network that holds files for the whole house. It is the same server code as the Windows app. <strong>Beta</strong>: it builds cleanly and passes our automated tests, but the image is <strong>not offered for download right now</strong>, and it has not been tried on a specific NAS model or on real Raspberry Pi hardware yet.</p>
   </div>
 
   <div class="callout">
@@ -147,13 +147,15 @@
   <ol class="steps">
     <li id="step-1">
       <h3>Make folders for settings and media</h3>
-      <p>Create a folder for Beebo’s own data (settings, accounts, watch history, artwork cache and certificates), for example <code>/srv/beebo/config</code>, and know where your media folders are. Read-only media is fine for watching. Uploads from the phone app, the Inbox and file clean-up write to the media folders, so give it write access if you want those.</p>
+      <p>Create a folder for Beebo’s own data, for example <code>/srv/beebo/config</code>. Beebo keeps its settings, accounts, watch history, saved artwork and certificates there. Also note where your media folders are.</p>
+      <p>Beebo only needs to read your media folders to play them. Uploads from the phone app, the Inbox and file clean-up do write to the media folders, so give Beebo write access too if you want those.</p>
 
 
     </li>
     <li id="step-2">
       <h3>Make a secret key and keep it</h3>
-      <p>Beebo encrypts saved secrets (password hashes, sign-in signing keys, your TMDB key, webhook secrets) in its settings file. The key comes from an environment variable. Make one, for example with <code>openssl rand -hex 32</code>, and <strong>save it somewhere safe</strong>. If you change or lose it, the saved secrets become unreadable, and Beebo stops at start-up with a message instead of quietly signing everyone out.</p>
+      <p>Beebo encrypts the secrets it saves in its settings file, such as password hashes, sign-in signing keys, your TMDB key and webhook secrets. It needs one secret key to do that. You give Beebo the key through an environment variable (a named setting you pass to the container when you start it).</p>
+      <p>Make a key, for example with <code>openssl rand -hex 32</code>, and <strong>save it somewhere safe</strong>. If you change or lose it, the saved secrets become unreadable. Beebo then stops at start-up with a message, instead of quietly signing everyone out.</p>
       <p><strong>What you’ll see:</strong> A 64-character string. Keep it outside the config folder if you want real separation: anyone who has the whole config folder and the key file has both.</p>
 
     </li>
@@ -170,25 +172,33 @@
   -v /srv/media/music:/media/music:ro \
   -v /srv/media/photos:/media/photos:ro \
   ghcr.io/swgfan/beebo-server:0.1.58</code></pre></p>
-      <p>The <code>:ro</code> on the media folders mounts them read-only, which is fine for watching. Leave it off if you want uploads from the phone app, the Inbox and file clean-up to write to those folders. Add <code>/media/audiobooks</code> the same way for audiobooks. If your files belong to another user, see Folders and users below (<code>--user</code>, or <code>PUID</code> and <code>PGID</code>). A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.</p>
+      <p>The <code>:ro</code> at the end of each media folder line means “read-only”: Beebo can play the files but not change them. That is fine for watching. Leave it off if you want uploads from the phone app, the Inbox and file clean-up to write to those folders. Add <code>/media/audiobooks</code> the same way for audiobooks.</p>
+      <p>If your files belong to another user, see <a href="#folders">Folders and users</a> below (<code>--user</code>, or <code>PUID</code> and <code>PGID</code>). A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.</p>
 
       <div class="callout"><p><strong>Screenshot coming.</strong> A NAS container manager with the Beebo container running.</p></div>
     </li>
     <li id="step-4">
       <h3>Read the first-run message</h3>
-      <p>A new server has no accounts. It prints a one-time message to its log. Run <code>docker logs beebo</code>.</p>
+      <p>A new server has no accounts. It prints a one-time message to its log (the text the container writes as it runs). To read it, run <code>docker logs beebo</code>.</p>
       <p><strong>What you’ll see:</strong> Lines like “First-run setup: this server has no owner account yet.”, an address such as <code>https://192.168.1.20:47811/setup</code> and a setup code shaped like <code>7KQ2-M9XD-4TNB</code>.</p>
 
     </li>
     <li id="step-5">
       <h3>Create the owner account</h3>
-      <p>Open that address (https, port 47811). Your browser will warn about the certificate, because Beebo made it itself (it is self-signed); accept the warning. Enter the setup code, then choose the owner username and a password of 8 or more characters. Setup closes for good once the account exists. If you miss the message, restart the container for a new code. The code lives only in the log and in memory.</p>
+      <ol>
+        <li>In a web browser, open the address from the log (it starts with https and ends in <code>:47811/setup</code>).</li>
+        <li>Your browser will warn about the certificate (the server’s security ID card). That is because Beebo made the certificate itself (it is “self-signed”). Accept the warning to continue.</li>
+        <li>Type the code from the log into <strong>Setup code</strong>.</li>
+        <li>Choose an <strong>Owner username</strong> and a password of 8 or more characters, and type the password again in <strong>Repeat password</strong>.</li>
+        <li>Click <strong>Create owner account</strong>.</li>
+      </ol>
+      <p>Setup closes for good once the account exists. If you miss the message, restart the container for a new code. The code lives only in the log and in memory.</p>
       <p><strong>What you’ll see:</strong> A sign-in page. Sign in at <code>https://&lt;server-ip&gt;:47811/</code>. The admin pages only open over HTTPS. Phones and TVs on your network can keep using <code>http://&lt;server-ip&gt;:47811</code>.</p>
 
     </li>
     <li id="step-6">
       <h3>Add posters and connect your devices</h3>
-      <p>Give it a TMDB key with the <code>BEEBO_TMDB_API_KEY</code> environment variable (see the free key steps in <a href="getting-started-windows.html#posters">Get started on Windows</a>). Then connect phones and TVs to <code>http://&lt;server-ip&gt;:47811</code> as in <a href="connect-your-phone.html">Connect your phone</a>.</p>
+      <p>Posters and movie information come from TMDB, a free movie database. Give Beebo a TMDB key with the <code>BEEBO_TMDB_API_KEY</code> environment variable (see the free key steps in <a href="getting-started-windows.html#posters">Get started on Windows</a>). Then connect phones and TVs to <code>http://&lt;server-ip&gt;:47811</code> as in <a href="connect-your-phone.html">Connect your phone</a>. Replace <code>&lt;server-ip&gt;</code> with your server’s address on your home network.</p>
 
 
     </li>
@@ -205,7 +215,7 @@
       </tbody>
     </table>
   </div>
-  <p>The server never runs as root. Media and <code>/config</code> must be readable, and <code>/config</code> writable, by whoever runs it. Either run the container as the owner of your files (<code>user:</code> in compose, or <code>--user</code> with <code>docker run</code>), or start as root and set <code>PUID</code> and <code>PGID</code> so Beebo takes ownership of <code>/config</code> and then drops to that user. Typical values: Synology <code>1026:100</code>, Unraid <code>99:100</code>, TrueNAS SCALE <code>568:568</code>. On QNAP use your user’s id (<code>id &lt;user&gt;</code> over SSH). Beebo’s port can be changed with <code>BEEBO_PORT</code>, but that changes the address phones use.</p>
+  <p>The server never runs as root (the all-powerful administrator account on Linux). The user it runs as must be able to read your media and <code>/config</code>, and to write to <code>/config</code>. Either run the container as the owner of your files (<code>user:</code> in compose, or <code>--user</code> with <code>docker run</code>), or start as root and set <code>PUID</code> and <code>PGID</code> so Beebo takes ownership of <code>/config</code> and then drops to that user. Typical values: Synology <code>1026:100</code>, Unraid <code>99:100</code>, TrueNAS SCALE <code>568:568</code>. On QNAP use your user’s id (<code>id &lt;user&gt;</code> over SSH). Beebo’s port can be changed with <code>BEEBO_PORT</code>, but that changes the address phones use.</p>
 
   <h2 id="network">Networking and video conversion</h2>
   <ul class="plain">

@@ -68,7 +68,7 @@
       "@type": "HowToStep",
       "position": 1,
       "name": "Check it is on",
-      "text": "On the Beebo PC, open Settings and find Skip intros and credits. The box Detect intros and credits automatically is ticked by default. Untick it any time to stop detection. A tick in the box. A progress tile also appears on the Dashboard while Beebo scans.",
+      "text": "On the Beebo PC, open Settings, then Playback, and find Skip intros and credits. The box Detect intros and credits automatically is ticked by default. Untick it any time to stop detection. A tick in the box. A progress tile also appears on the Dashboard while Beebo scans.",
       "url": "https://www.beeboentertainment.com/docs/skip-intros-and-credits.html#step-1"
     },
     {
@@ -82,14 +82,14 @@
       "@type": "HowToStep",
       "position": 3,
       "name": "Use Skip intro in the web player",
-      "text": "Play an episode in a browser. While the detected intro is playing, a Skip intro button appears. The button only appears inside the detected window. It does not automatically jump to the next episode when it finds credits by itself.",
+      "text": "Play an episode in a browser. While the detected intro is playing, a Skip intro button appears. The button only appears while the detected intro is playing. It does not automatically jump to the next episode when it finds credits by itself.",
       "url": "https://www.beeboentertainment.com/docs/skip-intros-and-credits.html#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Fix or redo a show",
-      "text": "On the website’s admin pages, the Markers tab lets you re-scan or clear a show.",
+      "text": "In a browser, open your Beebo server’s Admin page and go to the Markers tab. Next to a show, click Re-scan intro/credits to look again, or Clear auto markers to remove what Beebo found.",
       "url": "https://www.beeboentertainment.com/docs/skip-intros-and-credits.html#step-4"
     }
   ]
@@ -111,7 +111,7 @@
   <div class="page-hero">
     <div class="em" aria-hidden="true">⏭️</div>
     <h1>Automatic intro and credits skipping</h1>
-    <p class="lead">Beebo can find where a show’s opening titles start and end, and where the end credits begin, entirely on your own PC. The web player then offers a Skip intro button inside the detected window.</p>
+    <p class="lead">Beebo can find where a show’s opening titles start and end, and where the end credits begin, entirely on your own PC. The web player then shows a Skip intro button while the intro is playing.</p>
   </div>
 
   <div class="callout">
@@ -121,18 +121,18 @@
 
   <h2 id="how">How detection works</h2>
   <ul class="plain">
-    <li><strong>Intros.</strong> An opening title sequence is the same sound in every episode of a season. Beebo compares the first ten minutes or so of the episodes with each other and keeps the stretch that at least two other episodes confirm. It does not need to “recognise” the music. A run must be between 15 seconds and 3 minutes long, and a cold open before the titles is handled.</li>
+    <li><strong>Intros.</strong> An opening title sequence is the same sound in every episode of a season. Beebo compares the first ten minutes or so of the episodes with each other and keeps the stretch that at least two other episodes confirm. It does not need to “recognise” the music. The intro must be between 15 seconds and 3 minutes long. A scene that plays before the opening titles (a “cold open”) is fine.</li>
     <li><strong>Credits.</strong> Only the end of each file is examined (roughly the last 12 minutes, or the last fifth of a short item). Credits are marked where the picture goes dark and stays mostly dark, and the episodes of a season must agree about how far from the end that is. Films are held to a stricter bar.</li>
-    <li><strong>Local only.</strong> It uses the ffmpeg that ships with Beebo, on your PC. Nothing is uploaded and nothing is looked up online.</li>
-    <li><strong>Polite.</strong> It works one file at a time (at most two), at low priority, and waits while anyone is watching, converting or transcoding. Results are remembered so a restart does not redo them. If Beebo is not confident, it shows nothing.</li>
-    <li><strong>You stay in charge.</strong> Anything marked by hand always wins over what Beebo finds, and an explicit clear stays cleared.</li>
+    <li><strong>Local only.</strong> It uses Beebo’s own built-in video tool (ffmpeg), on your PC. Nothing is uploaded and nothing is looked up online.</li>
+    <li><strong>Polite.</strong> It works on one file at a time (at most two), at low priority. It waits while anyone is watching or while a video is being converted. Results are remembered, so a restart does not redo them. If Beebo is not sure, it shows nothing.</li>
+    <li><strong>You stay in charge.</strong> Anything marked by hand always wins over what Beebo finds. If you clear a show’s markers, they stay cleared.</li>
   </ul>
 
   <h2 id="steps">Step by step</h2>
   <ol class="steps">
     <li id="step-1">
       <h3>Check it is on</h3>
-      <p>On the Beebo PC, open <strong>Settings</strong> and find <strong>Skip intros and credits</strong>. The box <strong>Detect intros and credits automatically</strong> is ticked by default. Untick it any time to stop detection.</p>
+      <p>On the Beebo PC, open <strong>Settings</strong>, then <strong>Playback</strong>, and find <strong>Skip intros and credits</strong>. The box <strong>Detect intros and credits automatically</strong> is ticked by default. Untick it any time to stop detection.</p>
       <p><strong>What you’ll see:</strong> A tick in the box. A progress tile also appears on the Dashboard while Beebo scans.</p>
       <div class="callout"><p><strong>Screenshot coming.</strong> The Skip intros and credits box in Settings.</p></div>
     </li>
@@ -145,12 +145,12 @@
     <li id="step-3">
       <h3>Use Skip intro in the web player</h3>
       <p>Play an episode in a browser. While the detected intro is playing, a <strong>Skip intro</strong> button appears.</p>
-      <p><strong>What you’ll see:</strong> The button only appears inside the detected window. It does not automatically jump to the next episode when it finds credits by itself.</p>
+      <p><strong>What you’ll see:</strong> The button only appears while the detected intro is playing. It does not automatically jump to the next episode when it finds credits by itself.</p>
 
     </li>
     <li id="step-4">
       <h3>Fix or redo a show</h3>
-      <p>On the website’s admin pages, the <strong>Markers</strong> tab lets you re-scan or clear a show.</p>
+      <p>In a browser, open your Beebo server’s <strong>Admin</strong> page and go to the <strong>Markers</strong> tab. Next to a show, click <strong>Re-scan intro/credits</strong> to look again, or <strong>Clear auto markers</strong> to remove what Beebo found.</p>
 
 
     </li>
@@ -159,15 +159,15 @@
   <h2 id="limits">What it cannot do</h2>
   <ul class="plain">
     <li>It works well on shows with several episodes of a season in your library, all sharing the same opening. A single episode, or a show whose intro changes every week, may get nothing.</li>
-    <li>Marks with low confidence are hidden rather than guessed.</li>
+    <li>If Beebo is not sure about a mark, it hides it instead of guessing.</li>
     <li>It has been tested on generated audio and sample video, and only lightly on real libraries, so treat it as a beta.</li>
     <li>The Android app and TV apps do not show the new markers yet.</li>
   </ul>
 
   <h2 id="trouble">If something goes wrong</h2>
   <div class="faq">
-    <details><summary>There is no Skip intro button</summary><p>The show may not be scanned yet, the intro may not have been confident enough, or you are using an app that does not read markers yet. Only the web player shows the button so far.</p></details>
-    <details><summary>The button skips to the wrong place</summary><p>Use the Markers tab on the admin site to clear or re-scan that show, and tell us about it at <a href="mailto:testers@beeboentertainment.com?subject=Intro%20detection">testers@beeboentertainment.com</a>.</p></details>
+    <details><summary>There is no Skip intro button</summary><p>The show may not be scanned yet, Beebo may not have been sure enough about the intro, or you are using an app that does not read markers yet. Only the web player shows the button so far.</p></details>
+    <details><summary>The button skips to the wrong place</summary><p>On the <strong>Admin</strong> page, open the <strong>Markers</strong> tab and use <strong>Clear auto markers</strong> or <strong>Re-scan intro/credits</strong> for that show, and tell us about it at <a href="mailto:testers@beeboentertainment.com?subject=Intro%20detection">testers@beeboentertainment.com</a>.</p></details>
     <details><summary>Does scanning slow down my PC?</summary><p>It runs at low priority, one file at a time, and pauses while anyone is watching. You can switch it off in Settings.</p></details>
   </div>
 
