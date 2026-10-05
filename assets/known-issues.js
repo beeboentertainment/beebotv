@@ -1,6 +1,6 @@
 'use strict';
 (() => {
-  const API='https://beebo-licensing.nicholaswill86.workers.dev/tester-feedback/issues';
+  const API='https://login.beebo.tv/tester-feedback/issues';
   const states={reported:'Reported',confirmed:'Confirmed','in-progress':'In progress','ready-for-retest':'Ready for retest','verified-fixed':'Verified fixed'};
   const categories={bug:'Bug',performance:'Slowness',visual:'Visual problem'};
   const $=s=>document.querySelector(s);let issues=[],platforms={};
