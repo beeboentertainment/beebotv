@@ -68,7 +68,7 @@
       "@type": "HowToStep",
       "position": 1,
       "name": "Give a song some lyrics",
-      "text": "Put an .lrc lyrics file next to the song, with the same name (for example Hallelujah.mp3 and Hallelujah.lrc). If the file has timings, the current line lights up as the song plays. A file without timings is shown as plain text. Lyrics saved inside the song file are used when there is no .lrc file. Beebo never downloads lyrics from the internet.",
+      "text": "Put a lyrics file (a small text file ending in .lrc) in the same folder as the song, with the same name. For example: Hallelujah.mp3 and Hallelujah.lrc. If the file has timings, the current line lights up as the song plays. A file without timings is shown as plain text. Lyrics saved inside the song file are used when there is no .lrc file. Beebo never downloads lyrics from the internet.",
       "url": "https://www.beeboentertainment.com/docs/karaoke-and-recordings.html#step-1"
     },
     {
@@ -89,14 +89,14 @@
       "@type": "HowToStep",
       "position": 4,
       "name": "Record yourself",
-      "text": "Press Record yourself (the microphone). Two options sit beside it: Include video (webcam), which is off unless you tick it, and Include the backing track, which is on unless you untick it. The browser asks permission to use your microphone (and camera, if you ticked video); choose Allow. A red button that says Stop recording, and “Recording… 0:12” counting up. With the webcam on, a small picture of you appears in the corner.",
+      "text": "Press Record yourself (the microphone). Two options sit beside it: Include video (webcam). This is off unless you tick it. Include the backing track (the song itself). This is on unless you untick it. The browser asks permission to use your microphone (and camera, if you ticked video). Choose Allow. A red button that says Stop recording, and “Recording… 0:12” counting up. With the webcam on, a small picture of you appears in the corner.",
       "url": "https://www.beeboentertainment.com/docs/karaoke-and-recordings.html#step-4"
     },
     {
       "@type": "HowToStep",
       "position": 5,
       "name": "Stop and find it again",
-      "text": "Press Stop recording, or let the song end. Recording also stops if you skip to another song. Open My recordings (the studio-microphone button) to play or delete a recording. “Saved. Find it under My recordings.” Each recording lists the song, date, audio or video, length and size.",
+      "text": "Press Stop recording, or let the song end. Recording also stops if you skip to another song. To play or delete a recording later, open My recordings (the studio-microphone button). “Saved. Find it under My recordings.” Each recording lists the song, date, audio or video, length and size.",
       "url": "https://www.beeboentertainment.com/docs/karaoke-and-recordings.html#step-5"
     }
   ]
@@ -130,7 +130,7 @@
   <ol class="steps">
     <li id="step-1">
       <h3>Give a song some lyrics</h3>
-      <p>Put an <code>.lrc</code> lyrics file next to the song, with the same name (for example <code>Hallelujah.mp3</code> and <code>Hallelujah.lrc</code>). If the file has timings, the current line lights up as the song plays. A file without timings is shown as plain text. Lyrics saved inside the song file are used when there is no <code>.lrc</code> file. Beebo never downloads lyrics from the internet.</p>
+      <p>Put a lyrics file (a small text file ending in <code>.lrc</code>) in the same folder as the song, with the same name. For example: <code>Hallelujah.mp3</code> and <code>Hallelujah.lrc</code>. If the file has timings, the current line lights up as the song plays. A file without timings is shown as plain text. Lyrics saved inside the song file are used when there is no <code>.lrc</code> file. Beebo never downloads lyrics from the internet.</p>
 
 
     </li>
@@ -148,20 +148,25 @@
     </li>
     <li id="step-4">
       <h3>Record yourself</h3>
-      <p>Press <strong>Record yourself</strong> (the microphone). Two options sit beside it: <strong>Include video (webcam)</strong>, which is off unless you tick it, and <strong>Include the backing track</strong>, which is on unless you untick it. The browser asks permission to use your microphone (and camera, if you ticked video); choose Allow.</p>
+      <p>Press <strong>Record yourself</strong> (the microphone). Two options sit beside it:</p>
+      <ul class="plain">
+        <li><strong>Include video (webcam)</strong>. This is off unless you tick it.</li>
+        <li><strong>Include the backing track</strong> (the song itself). This is on unless you untick it.</li>
+      </ul>
+      <p>The browser asks permission to use your microphone (and camera, if you ticked video). Choose <strong>Allow</strong>.</p>
       <p><strong>What you’ll see:</strong> A red button that says <strong>Stop recording</strong>, and “Recording… 0:12” counting up. With the webcam on, a small picture of you appears in the corner.</p>
 
     </li>
     <li id="step-5">
       <h3>Stop and find it again</h3>
-      <p>Press <strong>Stop recording</strong>, or let the song end. Recording also stops if you skip to another song. Open <strong>My recordings</strong> (the studio-microphone button) to play or delete a recording.</p>
+      <p>Press <strong>Stop recording</strong>, or let the song end. Recording also stops if you skip to another song. To play or delete a recording later, open <strong>My recordings</strong> (the studio-microphone button).</p>
       <p><strong>What you’ll see:</strong> “Saved. Find it under My recordings.” Each recording lists the song, date, audio or video, length and size.</p>
 
     </li>
   </ol>
 
   <h2 id="https">Why the microphone needs https (or localhost)</h2>
-  <p>Web browsers only let a page use the microphone or camera when the page is <strong>secure</strong>: an <code>https://</code> address, or the same computer at <code>localhost</code>. Your Beebo PC’s everyday home address, like <code>http://192.168.1.50:47811</code>, is not secure, so on other devices the browser will not offer the microphone and Beebo says <strong>“Recording needs a secure (https) connection.”</strong> This is a browser rule, not something Beebo can switch off.</p>
+  <p>Web browsers only let a page use the microphone or camera when the page is <strong>secure</strong>. That means an <code>https://</code> address, or the Beebo PC itself at <code>localhost</code> (the address a computer uses for itself). Your Beebo PC’s everyday home address, like <code>http://192.168.1.50:47811</code>, is not secure, so on other devices the browser will not offer the microphone and Beebo says <strong>“Recording needs a secure (https) connection.”</strong> This is a browser rule, not something Beebo can switch off.</p>
   <ul class="plain">
     <li><strong>On the Beebo PC itself,</strong> open <code>http://localhost:47811</code> in a browser. Browsers treat localhost as secure.</li>
     <li><strong>On other devices,</strong> use an https address for your Beebo. The <strong>Secure connection (HTTPS)</strong> section in Settings sets up HTTPS for the web address you type there. We have not confirmed that recording works through the <code>yourname.beebo.tv</code> address, so treat that as untested.</li>
@@ -180,7 +185,7 @@
   <div class="faq">
     <details><summary>It says “Recording needs a secure (https) connection.”</summary><p>Open the page over https, or on the Beebo PC at <code>localhost</code>, as explained above.</p></details>
     <details><summary>It says “This browser cannot record.”</summary><p>The browser has no recording support. Recording is built for Chrome, Firefox and Safari; older or embedded browsers may not support it.</p></details>
-    <details><summary>The microphone or camera is blocked</summary><p>The message reads “The microphone (or camera) is blocked. Allow it for this site, then try again.” Use the padlock or site-settings icon by the address, allow the microphone, and press record again.</p></details>
+    <details><summary>The microphone or camera is blocked</summary><p>The message reads “The microphone is blocked. Allow it for this site, then try again.” (or “The microphone or camera is blocked…” if you ticked video). Use the padlock or site-settings icon by the address, allow the microphone, and press record again.</p></details>
     <details><summary>I cannot hear the backing track in my recording</summary><p>Make sure <strong>Include the backing track</strong> is ticked. It records the song as it plays, so wear headphones to keep the speakers out of the microphone.</p></details>
     <details><summary>There is no lyrics button</summary><p>The song has no <code>.lrc</code> file and no lyrics inside it. The button only shows for songs that have lyrics.</p></details>
   </div>
