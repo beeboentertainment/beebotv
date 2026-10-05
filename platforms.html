@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Where you can use Beebo | Devices and testing status</title>
-<meta name="description" content="See which Beebo apps you can download, which devices still need testing, and which platforms are in development. Android is a Test download, not on Google Play." />
+<meta name="description" content="See which Beebo apps you can download, which devices still need testing, and which platforms are in beta. Android is a Test download, not on Google Play." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
@@ -73,7 +73,7 @@
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Windows 10, Windows 11, Android",
       "softwareRequirements": "A Windows PC and user-provided media files. Remote streaming requires an online server and configured remote access.",
-      "description": "Beebo Entertainment is a personal home media server for Windows. The server runs on Windows 10 and 11; you can watch with the Android app, in any web browser, or by casting to a Chromecast or Google TV. A Linux desktop version and a Docker image are betas that are not offered for download right now; apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices are in development.",
+      "description": "Beebo Entertainment is a personal home media server for Windows. The server runs on Windows 10 and 11; you can watch with the Android app, in any web browser, or by casting to a Chromecast or Google TV. A Linux desktop version and a Docker image are betas that are not offered for download right now; tester builds for Fire TV, Roku and LG TV are in beta and not tested on real TVs; Samsung, Xbox and Apple devices have no install file yet.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -106,7 +106,7 @@
           "name": "Is there a Beebo app for iPhone, iPad or Apple TV?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not yet. Native Apple TV, iPhone and iPad apps are in development, are not published or tested on real devices, need Apple’s approval, and have no date. Today, iPhone and iPad can watch in Safari, and you can send video to an Apple TV with AirPlay from Safari on an iPhone, iPad or Mac. Offline downloads need the Android app."
+            "text": "Not yet. Native Apple TV, iPhone and iPad apps are in beta, are not published or tested on real devices, need Apple’s approval, and have no date. Today, iPhone and iPad can watch in Safari, and you can send video to an Apple TV with AirPlay from Safari on an iPhone, iPad or Mac. Offline downloads need the Android app."
           }
         },
         {
@@ -114,7 +114,7 @@
           "name": "Is there a Beebo app for Roku, Samsung, LG, Fire TV or Xbox?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not yet. Apps for Roku, Samsung and LG smart TVs, Amazon Fire TV and Xbox are in development, with no release dates and no tests on real devices yet. In the meantime you can cast from the Android app to a Chromecast or Google TV, or run the Android app on Android TV or Google TV."
+            "text": "Fire TV, Roku and LG TV have beta tester builds you install yourself, with install guides on this site. None has been tested on a real TV yet. Samsung and Xbox have no install file yet; you can try the TV web browser or the Edge browser on the Xbox. You can also cast from the Android app to a Chromecast or Google TV, or run the Android app on Android TV or Google TV."
           }
         },
         {
@@ -130,7 +130,7 @@
           "name": "Does Beebo work for a home theater?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Partly, and we say which part. Android TV and Google TV, and casting are available now. Video conversion with your PC's graphics card, Linux and Docker servers and Live TV are available in Windows 0.1.58 as betas. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices, and passthrough of HDR10+, Dolby Vision, Atmos and DTS:X, are in development, so Beebo does not claim them."
+            "text": "Partly, and we say which part. Android TV and Google TV, and casting are available now. Video conversion with your PC's graphics card, Linux and Docker servers and Live TV are available in Windows 0.1.58 as betas. Fire TV, Roku and LG TV tester builds are in beta and not tested on real TVs; apps for Samsung, Xbox and Apple devices have no install file yet; passthrough of HDR10+, Dolby Vision, Atmos and DTS:X is in development, so Beebo does not claim it."
           }
         },
         {
@@ -169,12 +169,12 @@
   <img class="page-campaign-art" src="assets/family-home.webp" alt="A family enjoying a quiet movie evening, with a television and a tablet facing their viewers" width="1672" height="941" loading="lazy">
 
   <div class="callout safe">
-    <p><strong>The short version:</strong> the Beebo server runs on a Windows 10 or 11 PC, with Linux and Docker downloads in beta. To watch, use the Android app, any web browser, Android TV or Google TV, or cast to a Chromecast or Google TV. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices are in development and not available yet. Setting up a home theater? Read <a href="home-theater.html">Home theater and big screen</a> for what works, what is in beta and what is not there yet.</p>
+    <p><strong>The short version:</strong> the Beebo server runs on a Windows 10 or 11 PC, with Linux and Docker downloads in beta. To watch, use the Android app, any web browser, Android TV or Google TV, or cast to a Chromecast or Google TV. Fire TV, Roku and LG TV tester builds are in beta (not tested on real TVs yet); Samsung, Xbox, Mac and native Apple apps are in beta with no download yet. Setting up a home theater? Read <a href="home-theater.html">Home theater and big screen</a> for what works, what is in beta and what is not there yet.</p>
   </div>
 
   <section aria-labelledby="download-access">
     <h2 id="download-access">Downloads and tester access</h2>
-    <p>Every Beebo platform is listed on this page. A <strong>Download</strong> link means there is a package a person can install today. A <strong>Beta</strong> link means the package is available but still needs wider real-device testing. <strong>Tester access coming soon</strong> means we will show that platform here as soon as its first public test package is ready.</p>
+    <p>Every Beebo platform is listed on this page. A <strong>Download</strong> link means there is a package a person can install today. A <strong>Beta</strong> link means you can try it now, but it is new, some parts may not work, and some parts are not tested on a real device. A <strong>Try</strong> note means there is no install file, but you can try Beebo in that device’s web browser. <strong>Tester access coming soon</strong> means we will show that platform here as soon as its first public test package is ready.</p>
     <div class="platform-access">
       <article class="platform-access-card">
         <span class="tag live">Download today</span>
@@ -196,10 +196,12 @@
         <a href="docs/run-beebo-on-a-nas-or-linux-server.html">See Docker and NAS guide →</a>
       </article>
       <article class="platform-access-card">
-        <span class="tag plan">Tester access coming soon</span>
-        <h3>Apple, TV and console apps</h3>
-        <p>Apple, Fire TV, Roku, Samsung, LG and Xbox are each listed below with their current status. We will add a tester or store link here only after that platform has a real install package ready.</p>
-        <a href="become-a-tester.html#areas">Join the tester list →</a>
+        <span class="tag beta">Beta test builds</span>
+        <h3>Fire TV, Roku and LG TV</h3>
+        <p>Tester builds for friends who help us test. None has been tested on a real TV yet, so things may not work. Samsung, Xbox, Mac and Apple have no install file yet; see the table below.</p>
+        <a href="fire-tv-install.html">Fire TV install guide →</a><br>
+        <a href="roku-install.html">Roku install guide →</a><br>
+        <a href="lg-install.html">LG TV install guide →</a>
       </article>
     </div>
   </section>
@@ -218,12 +220,13 @@
         <tr><th scope="row">Chromecast, Google TV and AirPlay casting</th><td><span class="tag beta">Beta</span></td><td>Cast to a Chromecast or Google TV from the Android app, or use AirPlay from Safari on an iPhone, iPad or Mac. Your device and the TV need to be on the same Wi-Fi. Casting from the Android app was used with a real TV on October 3, 2026; we have not tested AirPlay ourselves.</td><td><a href="cast-to-tv.html">Casting guide</a></td></tr>
         <tr><th scope="row"><a href="linux.html">Linux</a></th><td><span class="tag dev">Beta — in development, not offered for download right now</span></td><td>The same desktop server as Windows, as an AppImage and a .deb. The old 0.1.58 build has been taken down; a newer build will be posted when it is ready. Tested on Ubuntu 22.04 in our automated build only, and it has no automatic updates yet.</td><td><a href="linux.html">Linux page</a></td></tr>
         <tr><th scope="row"><a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker and NAS server</a></th><td><span class="tag dev">Beta — not offered for download right now</span></td><td>The same server without a window, in a Docker image for a Linux server or a NAS that runs Docker (amd64 and arm64). The image is not offered for download right now; store listings for Unraid, TrueNAS, CasaOS, Umbrel and Synology are prepared but not submitted. We list no NAS model as tested.</td><td><a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker guide</a></td></tr>
-        <tr><th scope="row">macOS</th><td><span class="tag dev">In development</span></td><td>Test builds are made automatically but no person has run them on a real Mac yet. There is no download.</td><td><a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20on%20Mac">Notify me</a></td></tr>
-        <tr><th scope="row">Amazon Fire TV and Fire tablets</th><td><span class="tag dev">In development</span></td><td>A Fire-specific build exists in our code but has not been run on a real Fire device. There is no Fire TV app to install, and no release date.</td><td><a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20on%20Fire%20TV">Notify me</a></td></tr>
-        <tr><th scope="row"><a href="roku.html">Roku</a></th><td><span class="tag dev">In development</span></td><td>There is no Roku channel to install yet, and no release date.</td><td><a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20on%20Roku">Notify me</a></td></tr>
-        <tr><th scope="row"><a href="samsung-lg-tv.html">Samsung and LG smart TVs</a></th><td><span class="tag dev">In development</span></td><td>There is no Samsung or LG TV app to install yet, and no release date.</td><td><a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20on%20Samsung%20and%20LG%20TVs">Notify me</a></td></tr>
-        <tr><th scope="row">Xbox</th><td><span class="tag dev">In development</span></td><td>An app shell exists in our code but has never been run on a console. There is nothing to install, and no release date.</td><td><a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20on%20Xbox">Notify me</a></td></tr>
-        <tr><th scope="row"><a href="apple.html">Apple TV, iPhone and iPad</a></th><td><span class="tag dev">In development</span></td><td>Native apps are being built. They are not published or tested on real devices, and they need Apple’s approval, with no dates. A native Mac app is planned. iPhone, iPad and Mac can use the browser viewer today.</td><td><a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20on%20Apple%20devices">Notify me</a></td></tr>
+        <tr><th scope="row">macOS</th><td><span class="tag beta">Beta</span></td><td>Beta: test builds are made automatically, but no person has run them on a real Mac yet. No download yet.</td><td>No download yet<br><a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20on%20Mac">Notify me</a></td></tr>
+        <tr><th scope="row"><a href="fire-tv-install.html">Amazon Fire TV</a></th><td><span class="tag beta">Beta</span></td><td>Beta: a tester build you install yourself with the Downloader app. Not tested on a real Fire TV yet. Needs a Fire TV that runs Fire OS. Sign in with a code you approve on your phone (Link a TV), or with your email and password.</td><td><a href="https://github.com/beeboentertainment/beebotv/releases/download/Beebo-TV-test-2026-10-05/BeeboFireTV.apk">Download APK</a><br><a href="fire-tv-install.html">Install guide</a></td></tr>
+        <tr><th scope="row"><a href="roku.html">Roku</a></th><td><span class="tag beta">Beta</span></td><td>Beta: a tester channel you install from a computer on the same Wi-Fi, using the Roku developer installer. Tried in a simulator only, not tested on a real Roku yet. Works best on the same Wi-Fi as your Beebo computer.</td><td><a href="https://github.com/beeboentertainment/beebotv/releases/download/Beebo-TV-test-2026-10-05/beebo-roku.zip">Download file</a><br><a href="roku-install.html">Install guide</a></td></tr>
+        <tr><th scope="row"><a href="samsung-lg-tv.html">LG smart TVs</a></th><td><span class="tag beta">Beta</span></td><td>Beta: a tester app for LG TVs (webOS 5 or newer) in Developer Mode, installed with LG’s free tools from a computer. Tried in a desktop browser only, not tested on a real TV yet.</td><td><a href="https://github.com/beeboentertainment/beebotv/releases/download/Beebo-TV-test-2026-10-05/beebo-lg.ipk">Download file</a><br><a href="lg-install.html">Install guide</a></td></tr>
+        <tr><th scope="row"><a href="samsung-lg-tv.html">Samsung smart TVs</a></th><td><span class="tag beta">Beta</span></td><td>Beta: there is no install file yet. You can try the TV’s own web browser on the same home network; it works best with a pointer remote. Not tested on a real TV yet.</td><td>Try: open your Beebo address in the TV’s web browser</td></tr>
+        <tr><th scope="row">Xbox</th><td><span class="tag beta">Beta</span></td><td>Beta: no download yet. The app shell has never been built or run on a console. You can try the Edge browser on the Xbox; that is not tested yet either.</td><td>Try: the Edge browser on the Xbox</td></tr>
+        <tr><th scope="row"><a href="apple.html">Apple TV, iPhone and iPad</a></th><td><span class="tag beta">Beta</span></td><td>Beta: on iPhone and iPad, use Safari and Add to Home Screen today. The native apps are not published, have never been tested on a real Apple device, and need Apple’s approval, with no dates.</td><td>Try: Safari, Add to Home Screen<br><a href="mailto:testers@beeboentertainment.com?subject=Notify%20me%3A%20Beebo%20on%20Apple%20devices">Notify me</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -236,7 +239,7 @@
   </div>
   <div class="feature">
     <h3>The viewers: Android, any browser, and your TV</h3>
-    <p>Watch with the Android app on a phone or tablet, or in any web browser. For the big screen, <a href="cast-to-tv.html">cast to a Chromecast or Google TV</a>, or run the Android app on <a href="android-tv.html">Android TV or Google TV</a>. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple TV are in development and not available yet. The <a href="home-theater.html">Home theater and big screen</a> page covers video conversion, TV apps, servers and picture and sound formats. The <a href="docs/playing-on-tvs.html">Playing on TVs guide</a> and the <a href="docs/run-beebo-on-a-nas-or-linux-server.html">NAS and Docker guide</a> have the steps.</p>
+    <p>Watch with the Android app on a phone or tablet, or in any web browser. For the big screen, <a href="cast-to-tv.html">cast to a Chromecast or Google TV</a>, or run the Android app on <a href="android-tv.html">Android TV or Google TV</a>. Fire TV, Roku and LG TV tester builds are in beta and not tested on real TVs yet; Samsung, Xbox and Apple TV have no install file yet. The <a href="home-theater.html">Home theater and big screen</a> page covers video conversion, TV apps, servers and picture and sound formats. The <a href="docs/playing-on-tvs.html">Playing on TVs guide</a> and the <a href="docs/run-beebo-on-a-nas-or-linux-server.html">NAS and Docker guide</a> have the steps.</p>
   </div>
   <div class="feature">
     <h3>Away from home</h3>
@@ -247,10 +250,10 @@
   <div class="faq">
     <details><summary>Which devices does Beebo work on today?</summary><p>The Beebo server runs on a Windows 10 or 11 PC. You watch on Android phones and tablets with the Android app, in any web browser (including Safari on iPhone and iPad), and on a TV by casting to a Chromecast or Google TV. Android TV and Google TV can also run the Android app directly. A Linux desktop version and a Docker image are betas that are not offered for download right now. The <a href="home-theater.html">Home theater and big screen</a> page has the full status.</p></details>
     <details><summary>Does Beebo work on Windows 10?</summary><p>Yes. Beebo’s server and app run on Windows 10 and Windows 11. The PC needs to be on while you stream from it, and you supply your own movie and show files.</p></details>
-    <details><summary>Is there a Beebo app for iPhone, iPad or Apple TV?</summary><p>Not yet. Native Apple TV, iPhone and iPad apps are in development, are not published or tested on real devices, need Apple’s approval, and have no date. Today, iPhone and iPad can watch in Safari, and you can send video to an Apple TV with AirPlay from Safari on an iPhone, iPad or Mac. Offline downloads need the Android app.</p></details>
-    <details><summary>Is there a Beebo app for Roku, Samsung, LG, Fire TV or Xbox?</summary><p>Not yet. Apps for Roku, Samsung and LG smart TVs, Amazon Fire TV and Xbox are in development, with no release dates and no tests on real devices yet. In the meantime you can cast from the Android app to a Chromecast or Google TV, or run the Android app on Android TV or Google TV.</p></details>
+    <details><summary>Is there a Beebo app for iPhone, iPad or Apple TV?</summary><p>Not yet. Native Apple TV, iPhone and iPad apps are in beta, are not published or tested on real devices, need Apple’s approval, and have no date. Today, iPhone and iPad can watch in Safari, and you can send video to an Apple TV with AirPlay from Safari on an iPhone, iPad or Mac. Offline downloads need the Android app.</p></details>
+    <details><summary>Is there a Beebo app for Roku, Samsung, LG, Fire TV or Xbox?</summary><p>Fire TV, Roku and LG TV have beta tester builds you install yourself, with install guides on this site. None has been tested on a real TV yet. Samsung and Xbox have no install file yet; you can try the TV web browser or the Edge browser on the Xbox. You can also cast from the Android app to a Chromecast or Google TV, or run the Android app on Android TV or Google TV.</p></details>
     <details><summary>Can I run the Beebo server on Linux?</summary><p>Linux is a beta that is still in development. The Linux build (an AppImage and a .deb package, the same desktop server as on Windows) is not offered for download right now. The last build, 0.1.58, was tested on Ubuntu 22.04 in our automated build only, not on other distributions or desktops, and Linux has no automatic updates yet. A headless Docker image for servers and NAS boxes is also in beta. See the <a href="linux.html">Linux page</a>.</p></details>
-    <details><summary>Does Beebo work for a home theater?</summary><p>Partly, and we say which part. Android TV and Google TV, and casting are available now. Video conversion with your PC&rsquo;s graphics card, Linux and Docker servers and Live TV are available in Windows 0.1.58 as betas. Apps for Fire TV, Roku, Samsung, LG, Xbox and Apple devices, and passthrough of HDR10+, Dolby Vision, Atmos and DTS:X, are in development, so Beebo does not claim them. See <a href="home-theater.html">Home theater and big screen</a>.</p></details>
+    <details><summary>Does Beebo work for a home theater?</summary><p>Partly, and we say which part. Android TV and Google TV, and casting are available now. Video conversion with your PC&rsquo;s graphics card, Linux and Docker servers and Live TV are available in Windows 0.1.58 as betas. Fire TV, Roku and LG TV tester builds are in beta and not tested on real TVs; apps for Samsung, Xbox and Apple devices have no install file yet; passthrough of HDR10+, Dolby Vision, Atmos and DTS:X is in development, so Beebo does not claim it. See <a href="home-theater.html">Home theater and big screen</a>.</p></details>
     <details><summary>Does Beebo cost anything?</summary><p>Beebo Entertainment is free to use at home. Away-from-home access is also free with a direct connection, automatic UPnP, or your own relay, at any resolution. Beebo Relay, Beebo&#x27;s own relay servers, is an optional paid fallback for households where none of those work: planned CA$3/month for two simultaneous managed streams or CA$5/month for four; final billing, quality and household limits await verification. No payment card required to get started.</p></details>
   </div>
 
