@@ -119,7 +119,8 @@
     <table class="rl-table">
       <thead><tr><th scope="col">Service</th><th scope="col">When</th><th scope="col">What it receives</th></tr></thead>
       <tbody>
-        <tr><th scope="row">TMDB</th><td>Only after you add your own key, and for poster pictures</td><td>Cleaned titles and years from file names, TMDB ids, words you type in search, and your key. Some poster pictures load straight from TMDB in the browser pages, so TMDB can see the address of the device showing them.</td></tr>
+        <tr><th scope="row">TMDB</th><td>When you add your own key, and for poster pictures</td><td>Cleaned titles and years from file names, TMDB ids, words you type in search, and your key. Some poster pictures load straight from TMDB in the browser pages, so TMDB can see the address of the device showing them.</td></tr>
+        <tr><th scope="row">Beebo’s title lookup (TMDB through Beebo’s server)</th><td>Automatically, if you have not entered your own TMDB key and you are signed in</td><td>Beebo’s server looks up titles for you using Beebo’s TMDB key. It sees the cleaned title and year, search words, your sign-in token and your internet (IP) address, caches the answer (14 days for films), and counts your household’s requests to limit how many can be made in an hour.</td></tr>
         <tr><th scope="row">TVmaze</th><td>When a show’s episode list is opened</td><td>The show name, to get real episode names. It needs no key and has no separate switch.</td></tr>
         <tr><th scope="row">OpenSubtitles</th><td>Only after you set up an account</td><td>Your API key, username and password, plus a fingerprint of the file and its title, year, season and episode. Only the PC talks to it.</td></tr>
         <tr><th scope="row">YouTube</th><td>When you click Watch trailer</td><td>The opened website receives a normal browser request, including your IP address; the link or search can identify the selected trailer. The provider’s own privacy terms apply.</td></tr>
@@ -132,6 +133,9 @@
         <tr><th scope="row">Cloudflare</th><td>Only if you use your own relay</td><td>Your relay traffic, under your own agreement with Cloudflare.</td></tr>
         <tr><th scope="row">Google Cast</th><td>When you cast</td><td>Handled by Google’s casting component.</td></tr>
         <tr><th scope="row">Update check</th><td>When Beebo for Windows starts</td><td>A plain request for the version file on this website and, if you update, the installer download.</td></tr>
+        <tr><th scope="row">Price list</th><td>When Beebo for Windows starts and every 12 hours</td><td>A plain request for a small price file (<code>relay-pricing.json</code>) from this website (your IP address only).</td></tr>
+        <tr><th scope="row">Notification services: ntfy, Pushover, Discord, Slack, email</th><td>Only if you set one up and turn it on in Settings</td><td>The message and your PC’s IP address. By default a message says only how many, never a title or a person’s name, unless you choose otherwise.</td></tr>
+        <tr><th scope="row">Public STUN servers (Cloudflare, Google, Nextcloud)</th><td>Only if you run the <a href="../will-beebo-work.html">Will Beebo work?</a> test on this website</td><td>The test asks these three servers how your connection looks from outside. They receive your public IP address.</td></tr>
         <tr><th scope="row">Your router</th><td>When Beebo starts</td><td>A request on your own network to open Beebo’s ports (UPnP or NAT-PMP).</td></tr>
       </tbody>
     </table>
@@ -175,7 +179,7 @@
     <a href="../local-first.html">Local-first &amp; private</a>
     <a href="faq.html">FAQ</a>
   </div>
-  <p class="fineprint">Written for Beebo for Windows 0.1.67 and the Beebo Android app 1.51-tester3, as of September 29, 2026. The home address, podcast and Scavenger Hunt lines were corrected on October 5, 2026 for Beebo for Windows 0.1.79 and the Beebo Android app 1.51-tester11. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+  <p class="fineprint">Written for Beebo for Windows 0.1.67 and the Beebo Android app 1.51-tester3, as of September 29, 2026. The TMDB, home address, podcast and Scavenger Hunt lines were corrected, and the price list, notification services and STUN server rows added, on October 5, 2026 for Beebo for Windows 0.1.79 and the Beebo Android app 1.51-tester11. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
 </div>
 </main>
 
