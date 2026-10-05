@@ -33,7 +33,7 @@
 <main>
   <p class="note"><a href="/">Beebo Entertainment</a> &rsaquo; Information for legal reviewers</p>
   <h1>Information for legal reviewers</h1>
-  <p class="note">Last updated October 2, 2026; product status table updated October 5, 2026. This page is an unlisted summary prepared for lawyers and other reviewers who are looking at Beebo at the owner&rsquo;s request. It describes the software and services as they are today, including features that are still in development, and uses our public status labels: <span class="tag">Available</span> <span class="tag">Beta</span> <span class="tag">In development</span> <span class="tag">Planned</span>. It is a factual overview, not legal advice and not a legal position.</p>
+  <p class="note">Last updated October 2, 2026; product status table and hosting details updated October 5, 2026. This page is an unlisted summary prepared for lawyers and other reviewers who are looking at Beebo at the owner&rsquo;s request. It describes the software and services as they are today, including features that are still in development, and uses our public status labels: <span class="tag">Available</span> <span class="tag">Beta</span> <span class="tag">In development</span> <span class="tag">Planned</span>. It is a factual overview, not legal advice and not a legal position.</p>
 
   <nav aria-label="On this page" class="box">
     <strong>On this page</strong>
@@ -98,14 +98,14 @@
     <li>Library-sharing records (invites and the guest&rsquo;s email) and abuse reports, for features that are in development.</li>
   </ul>
   <h3>Hosting locations</h3>
-  <p>The service runs on a server rented from OVHcloud in Beauharnois, Quebec. A Cloudflare front door answers requests for <code>beebo.tv</code> names and forwards them to that server; Cloudflare also provides DNS for the domain. The public website is hosted on GitHub Pages. The software itself runs on customers&rsquo; devices wherever they are.</p>
+  <p>The service runs on a server rented from OVHcloud in Beauharnois, Quebec. Since October 2, 2026 the <code>beebo.tv</code> and <code>beebotv.com</code> domains use Beebo&rsquo;s own name servers (<code>ns1.beebo.tv</code> and <code>ns2.beebo.tv</code>) on that same server, and requests for <code>beebo.tv</code> names go straight to it. A Cloudflare forwarding service set up before that date is still kept only as a temporary fallback and is being retired. The public website is hosted on GitHub Pages. The software itself runs on customers&rsquo; devices wherever they are.</p>
 
   <h2 id="vendors">Service providers and third parties</h2>
   <div class="scroll"><table>
     <thead><tr><th>Provider</th><th>Used for</th></tr></thead>
     <tbody>
       <tr><td>OVHcloud (Canada)</td><td>Beebo&rsquo;s service, relay and VPN servers.</td></tr>
-      <tr><td>Cloudflare</td><td>Domain DNS and the front door that forwards <code>beebo.tv</code> requests; optionally a customer&rsquo;s own relay.</td></tr>
+      <tr><td>Cloudflare</td><td>A temporary fallback that forwards old <code>beebo.tv</code> requests to our server, being retired (domain DNS moved to our own name servers on October 2, 2026); optionally a customer&rsquo;s own relay.</td></tr>
       <tr><td>GitHub</td><td>Website hosting, code and release downloads.</td></tr>
       <tr><td>Stripe; Google Play Billing</td><td>Payments, where paid services are offered.</td></tr>
       <tr><td>TMDB, TVmaze, OpenSubtitles</td><td>Posters and details, listings and subtitles. Requests come from the customer&rsquo;s own computer, using the customer&rsquo;s own key or account where one is required.</td></tr>
