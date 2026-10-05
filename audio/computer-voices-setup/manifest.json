@@ -1,7 +1,7 @@
 {
  "page": "computer-voices-setup",
  "voice": "am_puck",
- "generated": "2026-09-17 17:58",
+ "generated": "2026-10-05 07:51",
  "sections": [
   {
    "id": "computer-voices-setup",
@@ -9,47 +9,55 @@
    "clips": [
     {
      "src": "computer-voices-setup-1.mp3",
-     "duration": 29.1,
-     "bytes": 146220,
-     "hash": "d17107d49f46",
+     "duration": 29.8,
+     "bytes": 149580,
+     "hash": "05ec82786a71",
      "text": [
       "Computer voices setup.",
       "The optional computer voice engine for stories is a one-time setup on your Windows PC. No subscription or API key is needed.",
-      "Windows 0.1.27 includes the 17 original story templates and external narration scripts. On first launch it creates a writable story library in the Beebo user data folder. It preserves existing custom templates and generated audio."
+      "Beebo for Windows (since 0.1.27) includes the 17 original story templates and external narration scripts. On first launch, it creates a writable story library in the Beebo user data folder. It preserves existing custom templates and generated audio."
      ]
     },
     {
      "src": "computer-voices-setup-2.mp3",
-     "duration": 22.2,
-     "bytes": 111420,
-     "hash": "c0fc7265cd2f",
+     "duration": 21.7,
+     "bytes": 109380,
+     "hash": "16fc668a63d2",
      "text": [
-      "The optional voice engine is installed separately. No subscription or API key is required. Internet is needed for initial package/model/voice downloads. Once the chosen English voices are cached, generation can run offline on the PC. The phone must remain connected to that PC to prepare or stream computer audio. Installed phone voices work without the PC."
+      "The optional voice engine is installed separately. No subscription or API key is required. An internet connection is needed for the initial package, model, and voice downloads. Once the chosen English voices are cached, generation can run offline on the PC. The phone must remain connected to that PC to prepare or stream computer audio. Installed phone voices work without the PC."
      ]
     }
    ],
-   "duration": 51.3
+   "duration": 51.5
   },
   {
    "id": "setup-on-another-windows-pc",
    "heading": "Setup on another Windows PC",
    "clips": [
     {
-     "src": "setup-on-another-windows-pc.mp3",
-     "duration": 57.7,
-     "bytes": 288906,
-     "hash": "7f43d342e4ec",
+     "src": "setup-on-another-windows-pc-1.mp3",
+     "duration": 43.2,
+     "bytes": 216426,
+     "hash": "94df070915ef",
      "text": [
       "Setup on another Windows PC.",
       "Install Python 3.12 from https://www.python.org/downloads/ if needed.",
-      "In a terminal run py -3 -m pip install kokoro==0.9.4 soundfile numpy. These packages also install runtime dependencies, including PyTorch.",
-      "For unfamiliar names, install eSpeak-NG separately from its official project: https://github.com/espeak-ng/espeak-ng/releases . This is the optional pronunciation fallback. The English dictionary can work without it, but unsupported words/names may be skipped.",
-      "Install/reopen Windows Beebo. It uses its bundled FFmpeg for MP3 conversion.",
-      "In Android 1.11 open Other → Stories, choose a book, enter names, select Computer voices and tap Start story → Prepare computer voices. Keep internet connected for the first download of the model and each voice."
+      "In a terminal, run py -3 -m pip install kokoro==0.9.4 soundfile numpy. These packages also install runtime dependencies, including PyTorch.",
+      "For unfamiliar names, install eSpeak-NG separately from its official project: https://github.com/espeak-ng/espeak-ng/releases. This is the optional pronunciation fallback. The English dictionary can work without it, but unsupported words or names may be skipped.",
+      "Install or reopen Beebo for Windows. It uses its bundled FFmpeg for MP3 conversion."
+     ]
+    },
+    {
+     "src": "setup-on-another-windows-pc-2.mp3",
+     "duration": 17.0,
+     "bytes": 85626,
+     "hash": "1e14779767d2",
+     "text": [
+      "In the Android app (the website download; the store versions have no Stories) open Play → Stories, choose a book, enter names, select Computer voices and tap Start story → Prepare computer voices. Keep internet connected for the first download of the model and each voice."
      ]
     }
    ],
-   "duration": 57.7
+   "duration": 60.2
   },
   {
    "id": "setup-on-another-windows-pc-part",
