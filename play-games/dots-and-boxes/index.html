@@ -62,17 +62,19 @@ footer.site{margin:20px 0 32px;padding-top:12px;border-top:1px solid var(--line)
 .players{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:10px}
 .chip b{color:var(--gold)}
 
+.a11y-skip{position:absolute;left:-9999px;top:0;z-index:1000;background:#fffdf7;color:#22251f;padding:12px 18px;font-weight:700;text-decoration:underline;border-radius:0 0 8px 0}.a11y-skip:focus{left:0;outline:3px solid #9a6a12;outline-offset:2px}
 </style>
 <link rel="canonical" href="https://www.beeboentertainment.com/play-games/dots-and-boxes/"><meta property="og:type" content="website"><meta property="og:site_name" content="Beebo Entertainment"><meta property="og:title" content="Dots and Boxes - Play free | Beebo Entertainment"><meta property="og:description" content="Play Dots and Boxes free in your browser: draw lines and close boxes against Hopping Beebo or 2 to 4 friends on one screen. No sign-in, no download."><meta property="og:url" content="https://www.beeboentertainment.com/play-games/dots-and-boxes/"><meta property="og:image" content="https://www.beeboentertainment.com/play-games/assets/dots-and-boxes.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Dots and Boxes - Play free | Beebo Entertainment"><meta name="twitter:description" content="Play Dots and Boxes free in your browser: draw lines and close boxes against Hopping Beebo or 2 to 4 friends on one screen. No sign-in, no download."><meta name="twitter:image" content="https://www.beeboentertainment.com/play-games/assets/dots-and-boxes.webp">
 </head>
 <body>
+<a class="a11y-skip" href="#page-content">Skip to the game</a>
 <div class="wrap">
 <header class="top">
 <a class="back" href="../index.html">&larr; All Campsite games</a>
 <h1>Dots and Boxes</h1>
 <p class="lede">Draw a line between two dots. Close the fourth side of a box and it is yours, and you go again. Most boxes wins.</p>
 </header>
-<main>
+<main id="page-content" tabindex="-1">
 <section class="panel" aria-label="Game setup">
 <form class="controls" onsubmit="return false">
 

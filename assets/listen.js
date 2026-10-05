@@ -62,12 +62,10 @@
       icon.textContent = "❚❚";
       word.textContent = "Pause";
       btn.setAttribute("aria-label", "Pause: " + label);
-      btn.setAttribute("aria-pressed", "true");
     } else {
       icon.textContent = "▶";
       word.textContent = state === "paused" ? "Resume" : "Listen";
       btn.setAttribute("aria-label", (state === "paused" ? "Resume: " : "Listen: ") + label);
-      btn.setAttribute("aria-pressed", "false");
       if (state === "idle") {
         widget.querySelector(".bb-listen-bar i").style.width = "0";
         widget.querySelector(".bb-listen-time").textContent = fmt(widget._total);
