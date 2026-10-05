@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Campsite Mode: invite guests from your phone | Beebo Docs</title>
-<meta name="description" content="Host a local Campsite Mode session from your Android phone. Guests join in a browser over Wi-Fi. Video and games still need real-device testing." />
+<meta name="description" content="Host a local Campsite Mode session from your Android phone. Guests join in a browser over Wi-Fi. One shared film has worked on two real phones; guest games still need real-device testing." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
@@ -98,7 +98,7 @@
       "@type": "HowToStep",
       "position": 5,
       "name": "Watch, play and share",
-      "text": "After guests join, try a prepared shared video or game on each phone. Real guest-video playback, game sessions and synchronized watching still need a recorded two-phone test.",
+      "text": "After guests join, try a prepared shared video or game on each phone. One shared film has worked from a host phone to one guest phone; guest game sessions and watching with more guests still need a recorded test.",
       "url": "https://beeboentertainment.com/docs/campsite-mode.html#step-5"
     },
     {
@@ -126,11 +126,11 @@
   <div class="page-hero">
     <div class="em" aria-hidden="true">🏕️</div>
     <h1>Campsite Mode: your phone as a theatre and game room</h1>
-    <p class="lead">Invite nearby guests from your Android phone over local Wi-Fi. They join in a browser, without a separate app or sign-in. Prepare a Campsite Pack before the trip. A host and guest connected on two real phones; shared-video playback and games still need real-device tests.</p>
+    <p class="lead">Invite nearby guests from your Android phone over local Wi-Fi. They join in a browser, without a separate app or sign-in. Prepare a Campsite Pack before the trip. A host and guest connected on two real phones and one shared film played; guest games and bigger groups still need real-device tests.</p>
   </div>
 
   <div class="callout safe">
-    <p><span class="tag beta">Beta</span> <strong>Status:</strong> Campsite Mode is in the Android test app. On September 30, an S24 Ultra hosted and an S9+ joined over real home Wi-Fi. The guest browser opened the local library and the host showed one connected guest. No videos had been shared into that session; neither shared-video playback nor a game was verified. The exact app build was not recorded. Hotspot behaviour still varies by Android phone and network. This feature is for Android phones; it is hidden on TVs.</p>
+    <p><span class="tag beta">Beta</span> <strong>Status:</strong> Campsite Mode is in the Android test app. Real-device checks so far: on September 30, an S24 Ultra hosted and an S9+ joined over real home Wi-Fi, and the guest browser opened the local library. On October 4, an S24 Ultra host (a development build) shared one film to one guest phone in Chrome, and the guest joined it. On October 5, the Campsite host screen and a Crazy Eights round against Hopping Beebo worked on a Galaxy S9+, and the Campsite screen opened on a Galaxy S24 Ultra (Android 16), without starting a hotspot. A second film, more guests, guest games over Wi-Fi and the Wi-Fi join code scanned by a real phone are not tested yet. See <a href="../whats-tested.html">what’s tested</a>. Hotspot behaviour still varies by Android phone and network. This feature is for Android phones; it is hidden on TVs.</p>
   </div>
   <nav class="guide-nav" aria-label="On this page"><a href="#before">Before you go</a><a href="#offline">Computer off, still ready</a><a href="#steps">Steps</a><a href="#do">What guests can do</a><a href="#safety">Safety and privacy</a><a href="#trouble">If something goes wrong</a><a href="#related">Related pages</a></nav>
 
@@ -165,7 +165,7 @@
     <li id="step-3">
       <h3>Step 1: get guests on the Wi-Fi</h3>
       <p>Pick how the other phones reach yours: <strong>Start Beebo’s local Wi-Fi</strong>, <strong>Use my phone’s own hotspot</strong>, or <strong>Everyone’s already on the same Wi-Fi</strong>. The local-network options have no internet, which is fine: they are only there to connect the group to the host device. Guests scan the first code to join the selected Wi-Fi without reading out a password.</p>
-      <p>Android controls which hotspot options are available on each phone. Beebo asks only for the nearby-Wi-Fi permission Android requires when needed. If the phone needs the owner to switch on its own hotspot, Beebo should show <strong>Open hotspot settings</strong> instead of pretending it has turned it on.</p>
+      <p>Android controls which hotspot options are available on each phone. Beebo asks only for the nearby-Wi-Fi permission Android requires when needed. If the phone needs the owner to switch on its own hotspot, Beebo shows <strong>Open network settings</strong> instead of pretending it has turned it on. Android does not always open the hotspot page itself, so the card also says where to look in your phone’s Settings. This help is new in Android 1.51-tester11, and phone brands label their settings differently.</p>
       <p><strong>What you’ll see:</strong> A join code for guests, headed “Step 1 — get guests on the Wi-Fi”.</p>
 
     </li>
@@ -178,7 +178,7 @@
     </li>
     <li id="step-5">
       <h3>Watch, play and share</h3>
-      <p>After guests join, try a prepared shared video or game on each phone. The two-phone test so far proved the connection and empty guest library, not video playback, game play or synchronization. Record what happens on both devices.</p>
+      <p>After guests join, try a prepared shared video or game on each phone. The two-phone tests so far proved the connection, the guest library and one shared film from host to guest (October 4, 2026), not guest game play over Wi-Fi or sync with more guests. Record what happens on both devices.</p>
 
 
     </li>
@@ -192,13 +192,13 @@
 
   <h2 id="do">What guests can do</h2>
   <ul class="plain">
-    <li><strong>Watch together (Campsite shared video).</strong> This is Campsite&rsquo;s local shared video on your own Wi-Fi, separate from the online Watch Together rooms, which are In development. Guests see live sessions on their library page and can tap straight in, already in sync. Whoever opened the video holds playback, and the page is designed to hand it on if they wander off. Play, pause and seek happen on the browser page. The shared-timeline sync and the handoff itself are built and reachable from the guest page, but have not yet been tried with real guests over a real Wi-Fi connection.</li>
+    <li><strong>Watch together (Campsite shared video).</strong> This is Campsite&rsquo;s local shared video on your own Wi-Fi, separate from the online Watch Together rooms, which are <span class="tag beta">Beta</span>. Guests see live sessions on their library page and can tap straight in, already in sync. Whoever opened the video holds playback, and the page is designed to hand it on if they wander off. Play, pause and seek happen on the browser page. The shared-timeline sync and the handoff itself are built and reachable from the guest page, but have not yet been tried with real guests over a real Wi-Fi connection.</li>
     <li><strong>Games and tournaments.</strong> Shared and solo games run on each person’s own phone in the browser. The group chooses the same game and the leader starts the round. A campsite-session tournament table, optional nickname and per-session guest stats are <span class="tag plan">Planned</span>; they will be shown as available only after real-device testing.</li>
     <li><strong>Campfire stories.</strong> Story starters to read out loud and pass round, a story spinner (a character, a place, a problem and a twist), and “next line” mode where anyone can add a sentence. Read aloud uses the phone’s built-in voice, and night red dims the screen to a soft red.</li>
     <li><strong>Shared photos and videos.</strong> Take turns presenting: swipe to change the photo for everyone, or play a video together.</li>
-    <li><strong>Synced group music.</strong> <span class="tag beta">Beta</span> Beebo Campsite Mode can play the same music in sync on many phones at once, and can split it into a left and right stereo pair across two phones. The host phone queues songs from your Beebo music library, and each guest’s phone plays them in step over the host’s Wi-Fi, with no internet needed by the guests. It is in the Android test build 1.40 and has not been measured on real phones yet. Phones as surround speakers for movies, where a TV or PC shows the picture, are <span class="tag beta">Beta (Windows 0.1.58; simulated only)</span> in Windows 0.1.58. See <a href="../phone-speakers.html">Turn every phone into a speaker</a> and the <a href="phone-speakers.html">step-by-step guide</a>.</li>
+    <li><strong>Synced group music.</strong> <span class="tag beta">Beta</span> Beebo Campsite Mode can play the same music in sync on many phones at once, and can split it into a left and right stereo pair across two phones. The host phone queues songs from your Beebo music library, and each guest’s phone plays them in step over the host’s Wi-Fi, with no internet needed by the guests. It is in the Android test download and has not been measured on real phones yet. Phones as surround speakers for movies, where a TV or PC shows the picture, are <span class="tag beta">Beta</span> in Beebo for Windows (simulated only). See <a href="../phone-speakers.html">Turn every phone into a speaker</a> and the <a href="phone-speakers.html">step-by-step guide</a>.</li>
     <li><strong>Also in the app:</strong> a star chart, a packing list and a scavenger hunt. The <a href="trip-journal.html">Trip Journal</a> can turn a trip’s games and stories into a recap.</li>
-    <li><strong>New in Android 1.40.</strong> <span class="tag live">Available now — test build (Beta)</span> A License Plate &amp; Sign Hunt (a checklist game for passengers), a Trip Clock (an estimate, not navigation), Quiet Hours and a Bedtime Wind-Down, Roadside Quiz packs (336 original questions) and a Campfire Songbook engine. The Songbook has no song library: only two tiny placeholder chants are built in, and you import song packs you have checked you may use. There is also a Scavenger Hunt for Everyone that runs offline in guests’ browsers, with no app. All of these are in the current test build and have not been run on real phones yet. Family features for the separate Beebo Auto car app are <span class="tag dev">In development</span> and are not in any download.</li>
+    <li><strong>Added in Android 1.40, still in the current test download.</strong> <span class="tag beta">Beta</span> A License Plate &amp; Sign Hunt (a checklist game for passengers), a Trip Clock (an estimate, not navigation), Quiet Hours and a Bedtime Wind-Down, Roadside Quiz packs (336 original questions) and a Campfire Songbook engine. The Songbook has no song library: only two tiny placeholder chants are built in, and you import song packs you have checked you may use. There is also a Scavenger Hunt for Everyone that runs offline in guests’ browsers, with no app. All of these are in the current test build and have not been run on real phones yet. Family features for the separate Beebo Auto car app are <span class="tag beta">Beta</span>: they are in the Beebo Auto test download and have never been tried in a real car.</li>
   </ul>
 
   <h2 id="safety">Safety and privacy notes</h2>
@@ -229,7 +229,7 @@
     <a href="../what-beebo-can-do.html">What Beebo can do</a>
     <a href="privacy-in-plain-words.html">🔐 Privacy in plain words</a>
   </div>
-  <p class="fineprint">Written for Beebo for Windows 0.1.58 and the Beebo Android app 1.40, as of September 21, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+  <p class="fineprint">Written for Beebo for Windows 0.1.58 and the Beebo Android app 1.40, as of September 21, 2026. Status notes on this page were last checked on October 5, 2026, against Beebo for Windows 0.1.79 and the Android test build 1.51-tester11 (build 61). Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
 </div>
 </main>
 
