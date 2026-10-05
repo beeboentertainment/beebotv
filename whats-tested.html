@@ -1,0 +1,226 @@
+<!doctype html>
+<html data-beebo-corporate-dark data-aurora lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>What's new and what's tested · Beebo</title>
+  <meta name="description" content="What is new in Beebo for Windows 0.1.79 and the Android test build 1.51-tester11 (October 5, 2026), the status of every platform and feature, what was tried on real devices, what only automatic tests checked, and what is not tested yet.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#171b1c">
+  <link rel="canonical" href="https://www.beeboentertainment.com/whats-tested.html">
+  <link rel="icon" href="assets/favicon-32.png">
+  <link rel="stylesheet" href="corporate-content.css?v=1">
+  <link rel="stylesheet" href="beebo-testers.css?v=2">
+  <link rel="stylesheet" href="corporate-supporting-dark.css?v=20261003b">
+  <link rel="stylesheet" href="website-shell.css?v=20260926">
+  <link rel="stylesheet" href="rectangular-buttons.css?v=20260926">
+  <link rel="stylesheet" href="aurora-editorial.css?v=20261003b">
+  <link rel="stylesheet" href="testing-evidence.css?v=20261003b">
+  <script src="website-shell.js?v=20260926" defer></script>
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Beebo Entertainment"><meta property="og:title" content="What's new and what's tested · Beebo"><meta property="og:description" content="Beebo for Windows 0.1.79 and Android 1.51-tester11 (October 5, 2026): what is new, the status of each platform and feature, what was tried on real devices and what is not tested yet."><meta property="og:url" content="https://www.beeboentertainment.com/whats-tested.html"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="What's new and what's tested · Beebo"><meta name="twitter:description" content="Beebo for Windows 0.1.79 and Android 1.51-tester11 (October 5, 2026): what is new, the status of each platform and feature, what was tried on real devices and what is not tested yet.">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "What's new and what's tested", "url": "https://www.beeboentertainment.com/whats-tested.html", "description": "What is new in Beebo for Windows 0.1.79 and the Android test build 1.51-tester11 (October 5, 2026), the status of every platform and feature, what was tried on real devices, what only automatic tests checked, and what is not tested yet.", "inLanguage": "en", "dateModified": "2026-10-05", "isPartOf": {"@type": "WebSite", "name": "Beebo Entertainment", "url": "https://www.beeboentertainment.com/"}}</script>
+  <style>
+    html[data-aurora] .st { display: inline-block; padding: 2px 9px; border: 1px solid currentColor; border-radius: 999px; font-size: .82rem; font-weight: 700; white-space: nowrap; }
+    html[data-aurora] .st-available { color: #7fd1a0; }
+    html[data-aurora] .st-beta { color: #e6c27a; }
+    html[data-aurora] .st-dev { color: #9fb8e8; }
+    html[data-aurora] .st-planned { color: #c9b6e4; }
+    html[data-aurora] .whats-new-list li { margin: 0 0 6px; }
+    html[data-aurora] .whats-new-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; }
+    html[data-aurora] .whats-new-cols h3 { margin-top: 18px; }
+  </style>
+</head>
+<body class="beebo-corporate-page">
+  <a class="skip" href="#whats-tested">Skip to content</a>
+  <aside class="beebo-tester-banner" aria-label="Help test Beebo" data-beebo-testers-banner>
+    <div class="beebo-tester-inner">
+      <p class="beebo-tester-message"><strong>Beebo needs testers.</strong><span>Try Beebo on your devices. Help shape the launch.</span></p>
+      <div class="beebo-tester-goal"><span>Join the community to coordinate testing.</span><div class="beebo-tester-actions"><a class="beebo-tester-primary" href="become-a-tester.html">Become a tester <span aria-hidden="true">↗</span></a><a href="https://discord.gg/P64HjkNjB4" target="_blank" rel="noopener noreferrer">Join tester chat <span aria-hidden="true">↗</span></a></div></div>
+    </div>
+  </aside>
+  <header class="beebo-site-header" id="top">
+    <div class="beebo-header-row">
+      <a class="beebo-header-brand" href="/index.html" aria-label="Beebo home"><img class="beebo-brand-icon" src="/assets/beebo-desktop.ico" width="44" height="44" alt=""><span>Beebo<small>ENTERTAINMENT &amp; CONNECTION</small></span></a>
+      <nav class="beebo-header-nav" aria-label="Main navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/next-features.html">Feature status</a><a href="/index.html#camp">Campsite Mode</a><a href="/index.html#connections">Pricing &amp; routes</a><a href="/help.html">Support</a></nav>
+      <details class="beebo-header-menu"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/next-features.html">Feature status</a><a href="/index.html#camp">Campsite Mode</a><a href="/index.html#connections">Pricing &amp; routes</a><a href="/help.html">Support</a></nav></details>
+      <a class="beebo-header-download" href="/index.html#download">Download Beebo <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main class="evidence-shell" id="whats-tested" tabindex="-1">
+    <section class="evidence-hero" aria-labelledby="page-title">
+      <div>
+        <span class="evidence-kicker">Updated October 5, 2026</span>
+        <h1 id="page-title">What's new, and what's tested.</h1>
+        <p>This page covers <strong>Beebo for Windows 0.1.79</strong> and the <strong>Android test build 1.51-tester11 (build 61)</strong>, both released on <time datetime="2026-10-05">October 5, 2026</time>.</p>
+        <p>We say what changed in plain words. Then we say what a person tried on a real phone or PC, what only our automatic tests checked, and what nobody has tested yet. A test that was not run is unknown, not broken.</p>
+        <div class="evidence-actions"><a class="button primary" href="#new">What's new</a><a class="button" href="#status">Status table</a><a class="button" href="#real-devices">Real devices</a><a class="button" href="#not-tested">Not tested yet</a></div>
+      </div>
+      <aside class="evidence-ledger" aria-label="This release at a glance">
+        <header><span class="evidence-label">At a glance</span><h2>October 5, 2026</h2></header>
+        <dl>
+          <div><dt>Windows</dt><dd>0.1.79 · not code-signed</dd></div>
+          <div><dt>Android</dt><dd>1.51-tester11 (build 61) · test download, not on Google Play</dd></div>
+          <div><dt>Beebo Auto</dt><dd>1.15 · unchanged in this release</dd></div>
+          <div><dt>Newest phone check</dt><dd>Galaxy S9+, Oct 5: 15 of 16 checks passed</dd></div>
+          <div><dt>Exact release files on a device</dt><dd>No hands-on test recorded yet</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="evidence-section" id="new" aria-labelledby="new-title">
+      <span class="evidence-kicker">What's new · October 5, 2026</span>
+      <h2 id="new-title">What changed, in plain words.</h2>
+      <div class="whats-new-cols">
+        <div>
+          <h3>Windows 0.1.79</h3>
+          <ul class="whats-new-list">
+            <li>We fixed a few security problems we found in our own review. We keep the details private.</li>
+            <li>"Stream once" (one film shared with guests at a campsite) now needs your computer's yes. A TV link, a viewer link or a library guest cannot start it.</li>
+            <li>The Admin web pages, the Movies and TV pages in a web browser, and the guest pages (phone speakers, Movie Night, the walkie-talkie) are now in Spanish, French, German, Portuguese (Brazil) and Italian.</li>
+            <li>The Surprise, Upload and trip-share pages are translated too. A trip-share page opens in the viewer's language.</li>
+            <li>Settings search and six sidebar labels are now translated. German now uses the polite "Sie" everywhere.</li>
+            <li>The new translations were made with a machine's help. A native speaker has not read them yet, so some wording may be a little off.</li>
+            <li>Music radio: pressing "Next song" very fast no longer fills the wrong station.</li>
+            <li>Sign-in now only uses Beebo's own address. You should not notice a change.</li>
+          </ul>
+          <p>Windows may still show a SmartScreen warning, because the installer is not code-signed. Full notes: <a href="updates.html#windows-0-1-79">Windows 0.1.79</a>.</p>
+        </div>
+        <div>
+          <h3>Android 1.51-tester11</h3>
+          <ul class="whats-new-list">
+            <li>Changing the app language now works at once. You no longer have to close and reopen the app.</li>
+            <li>When the picture stops because the video screen was closed, the player says so and offers "Try again". It no longer wrongly says the phone can't play the file.</li>
+            <li>Picture-in-picture keeps playing when you change the language.</li>
+            <li>Missing episodes no longer show the episode code twice.</li>
+            <li>Casting: the first cast of a film your computer is still preparing now waits up to 2 minutes instead of failing after 30 seconds. The phone says "Preparing on your computer" while it waits.</li>
+            <li>Campsite: the Wi-Fi QR code keeps Wi-Fi names in other alphabets. The guest page no longer mixes up two films with the same name.</li>
+            <li>Clearer help on the Campsite Wi-Fi card for hotspot, "wrong password" and "no internet" problems.</li>
+          </ul>
+          <p>This is a test build you install yourself. It is not on Google Play. Full notes: <a href="updates.html#android-1-51-tester11">Android 1.51-tester11</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence-section" id="status" aria-labelledby="status-title">
+      <span class="evidence-kicker">Status · October 5, 2026</span>
+      <h2 id="status-title">Where each platform and feature stands.</h2>
+      <p>We use four labels. <span class="st st-available">Available</span> means it is in a current download and you can use it today. <span class="st st-beta">Beta</span> means you can use it, but it is new and some parts are not tested on real equipment. <span class="st st-dev">In development</span> means it is being built or is switched off, and it is not ready to rely on. <span class="st st-planned">Planned</span> means it is not built yet.</p>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable platform status table" tabindex="0"><table class="evidence-table">
+        <caption>Platforms</caption>
+        <thead><tr><th scope="col">Platform</th><th scope="col">Status</th><th scope="col">What that means today</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Windows 10 and 11 (the server)</th><td><span class="st st-available">Available</span></td><td>Version 0.1.79. Not code-signed, so Windows may warn the first time.</td></tr>
+          <tr><th scope="row">Android phones and tablets</th><td><span class="st st-available">Available</span></td><td>Test download 1.51-tester11, installed from this site. Not on Google Play.</td></tr>
+          <tr><th scope="row">Android on Google Play</th><td><span class="st st-dev">In development</span></td><td>Not submitted. Google Play testing has not started.</td></tr>
+          <tr><th scope="row">Any web browser</th><td><span class="st st-available">Available</span></td><td>Served by your own Beebo computer. On iPhone and iPad, use Safari.</td></tr>
+          <tr><th scope="row">Beebo Auto (Android Auto)</th><td><span class="st st-available">Available</span></td><td>Test download 1.15. Not on Google Play and never tested in a real car. Use only when parked.</td></tr>
+          <tr><th scope="row">Android TV and Google TV</th><td><span class="st st-beta">Beta</span></td><td>The TV layout is in the same Android app. We have no recorded test on a real Android TV yet.</td></tr>
+          <tr><th scope="row">Chromecast casting from the Android app</th><td><span class="st st-beta">Beta</span></td><td>Used with a real TV on October 3. The longer first-cast wait in tester11 has not been seen on a real Chromecast yet.</td></tr>
+          <tr><th scope="row">Linux desktop</th><td><span class="st st-beta">Beta</span></td><td>Not offered for download right now. A newer build will be posted when it is ready.</td></tr>
+          <tr><th scope="row">Docker and NAS server</th><td><span class="st st-beta">Beta</span></td><td>Not offered for download right now. Not tested on any NAS model.</td></tr>
+          <tr><th scope="row">macOS</th><td><span class="st st-dev">In development</span></td><td>Builds are made automatically, but no person has run one on a real Mac. No download.</td></tr>
+          <tr><th scope="row">iPhone, iPad and Apple TV apps</th><td><span class="st st-dev">In development</span></td><td>Not published and never tested on a real Apple device. iPhone and iPad can use Safari today.</td></tr>
+          <tr><th scope="row">Amazon Fire TV</th><td><span class="st st-dev">In development</span></td><td>Never run on a real Fire device. Nothing to install.</td></tr>
+          <tr><th scope="row">Roku</th><td><span class="st st-dev">In development</span></td><td>Tried in a simulator only. Never run on a real Roku. Nothing to install.</td></tr>
+          <tr><th scope="row">Samsung and LG smart TVs</th><td><span class="st st-dev">In development</span></td><td>Tried in a desktop browser only. Never run on a real TV. Nothing to install.</td></tr>
+          <tr><th scope="row">Xbox</th><td><span class="st st-dev">In development</span></td><td>The app shell has never been built or run on a console. Nothing to install.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable feature status table" tabindex="0"><table class="evidence-table">
+        <caption>Features</caption>
+        <thead><tr><th scope="col">Feature</th><th scope="col">Status</th><th scope="col">What that means today</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Your library, player and web player</th><td><span class="st st-available">Available</span></td><td>Films and shows from your own folders, with resume, seeking and picture-in-picture on Android.</td></tr>
+          <tr><th scope="row">Watching away from home (direct, then Beebo Relay)</th><td><span class="st st-beta">Beta</span></td><td>Tried on a real phone through another phone's mobile data on October 4. Not tried on many networks.</td></tr>
+          <tr><th scope="row">Campsite games</th><td><span class="st st-available">Available</span></td><td>In the Android test download. Games work with no Wi-Fi; guests join from a browser.</td></tr>
+          <tr><th scope="row">Campsite "stream once" for guests</th><td><span class="st st-dev">In development</span></td><td>One film was shared from a host phone to one guest phone on October 4. More than one film and more guests are not tested.</td></tr>
+          <tr><th scope="row">Watch Together</th><td><span class="st st-dev">In development</span></td><td>Worked on two real phones in one home (October 2 and 3). Not ready to rely on yet.</td></tr>
+          <tr><th scope="row">Car Party</th><td><span class="st st-dev">In development</span></td><td>A two-phone try on October 3 found problems. Not tried in a real car.</td></tr>
+          <tr><th scope="row">Campsite walkie-talkie</th><td><span class="st st-dev">In development</span></td><td>Switched off by default. Two phones have not talked to each other over Wi-Fi yet.</td></tr>
+          <tr><th scope="row">Desktop and web page translations</th><td><span class="st st-beta">Beta</span></td><td>Spanish, French, German, Portuguese (Brazil) and Italian, made with a machine's help. No native speaker has read them yet.</td></tr>
+          <tr><th scope="row">Android app translations</th><td><span class="st st-dev">In development</span></td><td>Only a few screens are translated. Most of the phone app is still in English.</td></tr>
+          <tr><th scope="row">Compatible third-party app mode</th><td><span class="st st-beta">Beta</span></td><td>Off by default. Not every compatible app has been tried.</td></tr>
+          <tr><th scope="row">Live TV with your own tuner</th><td><span class="st st-beta">Beta</span></td><td>Never tested with a real tuner. Beebo supplies no channels.</td></tr>
+          <tr><th scope="row">Beebo Relay</th><td><span class="st st-beta">Beta</span></td><td>The fallback connection when a direct one does not work. See <a href="beebo-relay.html">Beebo Relay</a>.</td></tr>
+          <tr><th scope="row">Link a TV</th><td><span class="st st-dev">In development</span></td><td>Switched off. Not verified on real devices.</td></tr>
+          <tr><th scope="row">Library sharing between households</th><td><span class="st st-dev">In development</span></td><td>Built, not offered yet.</td></tr>
+          <tr><th scope="row">Story Studio</th><td><span class="st st-dev">In development</span></td><td>Owner only, on Windows.</td></tr>
+          <tr><th scope="row">Remote Desktop</th><td><span class="st st-dev">In development</span></td><td>Off by default, owner only. Never tried on a real screen.</td></tr>
+          <tr><th scope="row">BeeboVPN</th><td><span class="st st-dev">In development</span></td><td>Not offered to the public.</td></tr>
+          <tr><th scope="row">Online games with people in other homes</th><td><span class="st st-dev">In development</span></td><td>Switched off. The <a href="play-games/">browser games on this site</a> are a separate thing and work today.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="evidence-section" id="real-devices" aria-labelledby="real-title">
+      <span class="evidence-kicker">Real devices · newest first</span>
+      <h2 id="real-title">What a person tried on a real phone or PC.</h2>
+      <p>These are our own checks on our own phones. They are not a broad beta. Each line says which build was used. None of these checks used the exact tester11 file or the exact 0.1.79 installer.</p>
+      <div class="evidence-table-wrap" role="region" aria-label="Scrollable real-device test results" tabindex="0"><table class="evidence-table">
+        <caption>Real-device checks, October 2 to 5, 2026</caption>
+        <thead><tr><th scope="col">Date</th><th scope="col">Device and build</th><th scope="col">Result</th><th scope="col">Not covered</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><time datetime="2026-10-05">Oct 5, 2026</time></th><td>Galaxy S9+ (Android 10), a release build of the newest code from that night, installed over the existing app, on home Wi-Fi</td><td><strong>15 of 16 checks passed.</strong> Install kept the sign-in; cold start, Home, Browse, Library, playing a film, seeking, pause, resume, Spanish text, back to English, the Campsite host screen, a Crazy Eights round, the Downloads screen, and no crash. The one failure: a language change only showed after a restart. That is fixed in tester11 and was retried on the S9+ with a test build: the screen changed at once, Back worked, and a second change worked.</td><td>Away from home, casting, picture-in-picture, downloading a title, hosting guests over a hotspot, any Android 13 or newer phone.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-04">Oct 4, 2026</time></th><td>Galaxy S9 joined to a second phone's hotspot, with that phone on mobile data (a release build)</td><td><strong>Passed.</strong> Sign-in was kept, the connection card said "Through Beebo Relay", and the film kept playing with no crash.</td><td>A direct connection from another internet provider; casting; long sessions.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-04">Oct 4, 2026</time></th><td>Campsite on two phones: Galaxy S24 Ultra as host (development build), Galaxy S9 as guest in Chrome</td><td><strong>Passed for one film.</strong> The guest saw the library, asked for a film, the host started it, and the guest joined it.</td><td>A second film, two films with the same name, sound quality, more guests.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-04">Oct 4, 2026</time></th><td>Galaxy S9+, the published 1.51-tester10 file installed over the existing app</td><td><strong>Passed.</strong> It updated in place and kept the sign-in.</td><td>A full feature check of that file.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-03">Oct 3, 2026</time></th><td>The owner's own hand test on a Galaxy S24 Ultra and a Galaxy S9+ (builds of the night before)</td><td><strong>9 checks: 6 passed, 1 mostly passed, 1 had problems, 1 not reported.</strong> Passed: sign out and back in with your own Continue watching; a second household member sees their own row; seeking, also while casting to a TV; picture-in-picture; sound with the screen off during a video; Library health. Mostly passed: largest text size, with one problem in the bottom bar. Problems: joining a Car Party (the QR said the Wi-Fi password was wrong, and after joining the app stopped loading videos and posters).</td><td>Music and podcasts with the screen off; the trip estimate.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-03">Oct 3, 2026</time></th><td>Watch Together, two different household members: S24 Ultra host, S9+ viewer</td><td><strong>Passed.</strong> The second member joined the owner's room and followed playback.</td><td>More than two phones, iPhone, long sessions, and coming back after the app was closed (see known problems).</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-02">Oct 2, 2026</time></th><td>Galaxy S24 Ultra, test build 1.51-tester8</td><td><strong>11 of 13 steps passed</strong>, 1 partly, 1 not run.</td><td>See the <a href="release-evidence.html#history">older testing record</a>.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-02">Oct 2, 2026</time></th><td>Galaxy S9+ (Android 10), a locally signed release build</td><td><strong>11 of 13 steps passed</strong>, 2 partly.</td><td>See the <a href="release-evidence.html#history">older testing record</a>.</td></tr>
+          <tr><th scope="row"><time datetime="2026-10-02">Oct 2, 2026</time></th><td>Watch Together on two phones: S24 Ultra host, S9+ viewer</td><td><strong>Passed.</strong> The viewer showed "In sync" and followed the host.</td><td>Both phones were in one home.</td></tr>
+        </tbody>
+      </table></div>
+      <p>On Windows, our own PC has updated itself through the update feed in earlier releases. Our 10-step hand-test list for the Windows app has not been run by a person yet.</p>
+    </section>
+
+    <section class="evidence-section" id="machine-tested" aria-labelledby="machine-title">
+      <span class="evidence-kicker">Automatic tests only</span>
+      <h2 id="machine-title">Checked by our automatic tests, not yet by a person.</h2>
+      <p>Automatic tests run on a computer. They catch many mistakes, but they cannot tell us how a screen looks or feels, or how a real network behaves.</p>
+      <ul>
+        <li><strong>Windows 0.1.79:</strong> all the new translations (checked for missing words and broken text in all six languages), the German "Sie" and Portuguese wording fixes, the "Next song" fix, the network-folder message, genre names with a <code>$</code> sign, and the sign-in address change. The "stream once" approval was also tried on a real test server, but not with real guests or a TV link.</li>
+        <li><strong>Android 1.51-tester11:</strong> the "picture stopped" message, picture-in-picture during a language change, Link a TV and pairing answers coming back after Android closes the app, the Campsite QR with a non-Latin Wi-Fi name, the hotspot help text, and the 2-minute cast wait (with a simulated clock).</li>
+        <li><strong>Test runs on the code from release night (October 5):</strong> on a Linux test machine, 739 of 739 Windows-app test files, 951 of 951 server tests and 506 of 508 service tests passed (2 skipped because they need Windows or a missing tool). The Android app's 4,120 automatic tests passed the same night. These ran a few hours before the final release commit, not on it.</li>
+        <li><strong>TV apps (Roku, Samsung, LG, Xbox):</strong> their automatic tests pass on a desktop computer. That proves the code, not a TV.</li>
+      </ul>
+    </section>
+
+    <section class="evidence-section" id="not-tested" aria-labelledby="not-tested-title">
+      <span class="evidence-kicker">Not tested yet · October 5, 2026</span>
+      <h2 id="not-tested-title">What nobody has tested yet.</h2>
+      <ul>
+        <li>The exact 0.1.79 installer and the exact tester11 file on a real PC or phone. The published files were checked against their published fingerprints (SHA-256), but no hands-on test of them is recorded.</li>
+        <li>The new translations on a real screen, and by a native speaker.</li>
+        <li>The Android language change on Android 11, 12, 13 or newer, and on phones from other makers.</li>
+        <li>The 2-minute first-cast wait and the "Preparing on your computer" message on a real Chromecast.</li>
+        <li>The Campsite QR with a non-Latin Wi-Fi name scanned by a real phone, and the guest-page changes with a real guest phone.</li>
+        <li>Link a TV, Android TV on a real TV, Beebo Auto in a real car, and every TV app on real hardware.</li>
+        <li>iPhone in Safari for Campsite and Watch Together, a real Mac, a real Linux desktop and any NAS.</li>
+        <li>Away from home on many different networks; so far it was tried on one mobile-data connection.</li>
+        <li>Windows: an update over an existing install on a second PC, and the Windows hand-test list.</li>
+      </ul>
+    </section>
+
+    <section class="evidence-section" id="known-problems" aria-labelledby="known-title">
+      <span class="evidence-kicker">Known problems in these versions</span>
+      <h2 id="known-title">Problems we know about.</h2>
+      <ul>
+        <li><strong>Watch Together:</strong> if a viewer's app is closed and reopened, it does not rejoin the party and does not explain that it left.</li>
+        <li><strong>Car Party:</strong> the October 3 problems (the QR saying the Wi-Fi password is wrong, and the app not loading after joining) are not confirmed fixed on real phones.</li>
+        <li><strong>Largest text size:</strong> one problem in the Android bottom bar.</li>
+        <li><strong>Windows installer:</strong> not code-signed, so SmartScreen may warn the first time.</li>
+      </ul>
+      <p>More: <a href="known-issues.html">Known issues</a> · <a href="release-evidence.html">Older testing record and progress by feature</a> · <a href="updates.html">Release notes</a></p>
+    </section>
+
+    <section class="evidence-section" aria-labelledby="help-title">
+      <span class="evidence-kicker">Help us test</span>
+      <h2 id="help-title">One result from your device helps.</h2>
+      <p>Write down the app version and your device, try one thing, and tell us what happened, good or bad.</p>
+      <div class="evidence-actions"><a class="button primary" href="become-a-tester.html">Become a tester</a><a class="button" href="tester-results.html">Tester results</a></div>
+    </section>
+  </main>
+  <footer class="beebo-site-footer"><div class="beebo-footer-inner"><p>© 2026 Beebo Entertainment</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="updates.html">What's new</a><a href="become-a-tester.html">Become a tester</a><a href="tester-results.html">Tester results</a><a href="known-issues.html">Known issues</a><a href="help.html">Help</a></nav></div></footer>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Delete your Beebo Entertainment account</title>
-<meta name="description" content="Delete a Beebo Entertainment account (Beebo account, hub account, or your account on a home Beebo) and what that removes." />
+<meta name="description" content="Delete a Beebo Entertainment account (Beebo account, or your account on a home Beebo) and what that removes." />
 <meta name="robots" content="noindex" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,7 +56,7 @@
     <h2 data-listen="which-account-do-you-have" class="del-h2">Which account do you have?</h2>
     <ul class="del-list">
       <li><strong>Beebo account</strong>: the email and password of whoever pays for Beebo (the "Owner sign-in" in the app, and beebo.tv).</li>
-      <li><strong>Hub account</strong>: an email and password used for watch parties at hub.beebotv.com.</li>
+      <li><strong>Hub account</strong> (retired): the old watch-party sign-in at hub.beebotv.com. The apps stopped using it in October 2026, and this page can no longer reach it. If you made one and want it removed, ask us through <a href="help.html">Help &amp; guides</a>.</li>
       <li><strong>An account on a home Beebo</strong>: a username a household member uses on the owner's computer. See the last section.</li>
     </ul>
 
@@ -68,13 +68,6 @@
       <li>Trial, licence, referral and usage records</li>
       <li>Any Beebo Relay settings and relay usage records</li>
       <li>Sign-ins already handed out (your home computer, family members' phones, emailed links) stop working straight away</li>
-    </ul>
-    <h2 data-listen="deleting-a-hub-account-removes" class="del-h2">Deleting a hub account removes</h2>
-    <ul class="del-list">
-      <li>Your email address and password</li>
-      <li>The computer paired to it and any unused pairing codes</li>
-      <li>Links you saved in the app, Car Pack and trial status, usage totals and waiting messages</li>
-      <li>Any watch party or car party you're hosting (everyone in it is disconnected)</li>
     </ul>
     <h2 data-listen="what-is-kept" class="del-h2">What is kept</h2>
     <ul class="del-list">
@@ -92,9 +85,7 @@
       <fieldset class="del-which">
         <legend>Delete</legend>
         <label class="confirm"><input id="wBeebo" type="checkbox" checked /> <span>My Beebo account (beebo.tv)</span></label>
-        <label class="confirm"><input id="wHub" type="checkbox" checked /> <span>My hub account (hub.beebotv.com)</span></label>
       </fieldset>
-      <p class="del-note">If the two accounts have different passwords, delete them one at a time.</p>
       <label class="confirm"><input id="cf" type="checkbox" required /> <span>I understand the accounts I ticked, and the data listed above, are deleted permanently.</span></label>
       <button id="go" class="btn-danger" type="submit" disabled>Permanently delete</button>
       <div id="msg" role="status"></div>
@@ -109,12 +100,10 @@
 </main>
 
 <script>
-  // Two services, each with its own account:
-  //   Beebo account: the Cloudflare Worker, on a beebo.tv host.
-  //   Hub account:   the hub's web route, POST /api/v1/account/delete { email, password }.
+  // Beebo account: Beebo's own service, on a beebo.tv host.
+  // (The old hub account option was removed when the hub was retired in October 2026.)
   var TARGETS = [
-    { box: 'wBeebo', name: 'Beebo account', url: 'https://login.beebo.tv/account/delete' },
-    { box: 'wHub', name: 'Hub account', url: 'https://hub.beebotv.com/api/v1/account/delete' }
+    { box: 'wBeebo', name: 'Beebo account', url: 'https://login.beebo.tv/account/delete' }
   ];
   var form = document.getElementById('delForm'), go = document.getElementById('go'), cf = document.getElementById('cf'), msg = document.getElementById('msg');
   function anyTicked() { return TARGETS.some(function (t) { return document.getElementById(t.box).checked; }); }
