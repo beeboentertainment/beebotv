@@ -57,8 +57,7 @@
   .wrap pre{background:var(--bg-2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:10px 0 14px}
   .wrap pre code{background:none;border:0;padding:0;word-break:normal;white-space:pre}</style>
 <link rel="stylesheet" href="../refresh.css"><link rel="canonical" href="https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="../polish.css?v=3">
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "HowTo",
   "@id": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#howto",
@@ -77,7 +76,7 @@
       "@type": "HowToStep",
       "position": 2,
       "name": "Make a secret key and keep it",
-      "text": "Beebo encrypts the secrets it saves in its settings file, such as password hashes, sign-in signing keys, your TMDB key and webhook secrets. It needs one secret key to do that. You give Beebo the key through an environment variable (a named setting you pass to the container when you start it). Make a key, for example with openssl rand -hex 32, and save it somewhere safe. If you change or lose it, the saved secrets become unreadable. Beebo then stops at start-up with a message, instead of quietly signing everyone out. A 64-character string. Keep it outside the config folder if you want real separation: anyone who has the whole config folder and the key file has both.",
+      "text": "Beebo encrypts the secrets it saves in its settings file, such as sign-in signing keys, your TMDB key, webhook secrets, two-factor secrets and away-from-home passes. It needs one secret key to do that. You give Beebo the key through an environment variable (a named setting you pass to the container when you start it). Make a key, for example with openssl rand -hex 32, and save it somewhere safe. If you change or lose it, the saved secrets become unreadable. Beebo then stops at start-up with a message, instead of quietly signing everyone out. A 64-character string. Keep it outside the config folder if you want real separation: anyone who has the whole config folder and the key file has both.",
       "url": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-2"
     },
     {
@@ -109,8 +108,7 @@
       "url": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-6"
     }
   ]
-}
-</script>
+}</script>
 <link rel="stylesheet" href="../beebo-testers.css?v=2">
 <link rel="stylesheet" href="../corporate-supporting-dark.css?v=20261003b">
 <link rel="stylesheet" href="/website-shell.css?v=20260926"><script src="/website-shell.js?v=20260926" defer></script>
@@ -154,7 +152,7 @@
     </li>
     <li id="step-2">
       <h3>Make a secret key and keep it</h3>
-      <p>Beebo encrypts the secrets it saves in its settings file, such as password hashes, sign-in signing keys, your TMDB key and webhook secrets. It needs one secret key to do that. You give Beebo the key through an environment variable (a named setting you pass to the container when you start it).</p>
+      <p>Beebo encrypts the secrets it saves in its settings file, such as sign-in signing keys, your TMDB key, webhook secrets, two-factor secrets and away-from-home passes. It needs one secret key to do that. You give Beebo the key through an environment variable (a named setting you pass to the container when you start it).</p>
       <p>Make a key, for example with <code>openssl rand -hex 32</code>, and <strong>save it somewhere safe</strong>. If you change or lose it, the saved secrets become unreadable. Beebo then stops at start-up with a message, instead of quietly signing everyone out.</p>
       <p><strong>What you’ll see:</strong> A 64-character string. Keep it outside the config folder if you want real separation: anyone who has the whole config folder and the key file has both.</p>
 
@@ -261,7 +259,7 @@
     <a href="../platforms.html">All devices</a>
     <a href="../home-theater.html">Home theater and big screen</a>
   </div>
-  <p class="fineprint">Written for Beebo for Windows 0.1.59 and the Beebo Android app 1.42, as of September 23, 2026. Status notes on this page were last checked on October 5, 2026, against Beebo for Windows 0.1.79 and the Android test build 1.51-tester11 (build 61). Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+  <p class="fineprint">Checked against Beebo for Windows 0.1.79 and the Android test build 1.51-tester12 (build 62) on October 5, 2026. Found something that doesn’t match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20docs%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
 </div>
 </main>
 
