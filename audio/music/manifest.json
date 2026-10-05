@@ -1,7 +1,7 @@
 {
  "page": "music",
  "voice": "am_puck",
- "generated": "2026-09-17 17:51",
+ "generated": "2026-10-05 07:53",
  "sections": [
   {
    "id": "intro",
@@ -26,19 +26,19 @@
    "clips": [
     {
      "src": "step-1-folder.mp3",
-     "duration": 37.1,
-     "bytes": 186304,
-     "hash": "3de8ae44dea2",
+     "duration": 43.4,
+     "bytes": 217744,
+     "hash": "5b5122e64620",
      "text": [
       "Choose your music folder.",
       "In Beebo on the PC, open Settings and find Music folder, just under your TV Shows folder. Pick the folder your songs are in, or use your Windows Music folder in one click.",
       "You can add more than one folder, and everything inside them is included.",
-      "Beebo reads MP3, M4A (including Apple Lossless), FLAC, OGG, Opus and WAV files.",
-      "It keeps an eye on those folders and picks up new songs by itself. There is also a Check for new songs button if you would rather not wait."
+      "Beebo reads MP3, M4A (including Apple Lossless), AAC, FLAC, OGG, Opus, WAV, AIFF, WMA, APE, WavPack, DSD (DSF and DFF) and MKA files.",
+      "It watches those folders and picks up new songs by itself. There is also a Check for new songs button if you would rather not wait."
      ]
     }
    ],
-   "duration": 37.1
+   "duration": 43.4
   },
   {
    "id": "covers-and-details",
@@ -83,21 +83,30 @@
    "heading": "Queue, shuffle, repeat.",
    "clips": [
     {
-     "src": "now-playing.mp3",
-     "duration": 43.2,
-     "bytes": 216422,
-     "hash": "3cd3a3ca3a13",
+     "src": "now-playing-1.mp3",
+     "duration": 31.8,
+     "bytes": 159662,
+     "hash": "0a49e53d5401",
      "text": [
       "Queue, shuffle, repeat.",
       "The Now Playing screen has the cover, a Lyrics button and a Queue button, with shuffle and repeat either side of the play button.",
       "Repeat has three settings: off, repeat the queue, and repeat this song.",
-      "The queue shows what is coming up. Tap a row to jump to it, or remove it. Any song has Play next and Add to queue in its menu.",
+      "Songs from the same album play gapless, back to back with no pause or crossfade between tracks, exactly as the album was made.",
+      "The queue shows what is coming up. Tap a row to jump to it, or remove it. Any song has Play next and Add to queue in its menu."
+     ]
+    },
+    {
+     "src": "now-playing-2.mp3",
+     "duration": 20.1,
+     "bytes": 100982,
+     "hash": "4267fcc93e78",
+     "text": [
       "It keeps playing with the screen off, with controls on your lock screen, in the notification shade, and on Bluetooth headphones and car buttons. A small strip at the bottom of the app shows what is playing wherever you are.",
       "Music and films take turns: starting a song pauses a film, and starting a film pauses the music."
      ]
     }
    ],
-   "duration": 43.2
+   "duration": 51.9
   },
   {
    "id": "every-screen",
@@ -118,15 +127,16 @@
     },
     {
      "src": "every-screen-2.mp3",
-     "duration": 10.7,
-     "bytes": 53946,
-     "hash": "2e7f485d6df6",
+     "duration": 28.6,
+     "bytes": 143826,
+     "hash": "d81ac6f86f45",
      "text": [
-      "Away from home you can lower the music quality to use less data, in the gear beside the Music section on your phone. It is a separate setting for home and away."
+      "Away from home you can lower the music quality to use less data, in the gear beside the Music section on your phone. Home and away have separate settings.",
+      "Beta: in Campsite Mode, the same music can play in sync on many phones, with an optional left and right pair. It is in the Android test download (since 1.40; current build 1.51-tester11) and has not been measured on real phones yet. See Turn every phone into a speaker."
      ]
     }
    ],
-   "duration": 50.3
+   "duration": 68.2
   },
   {
    "id": "questions",
@@ -150,19 +160,34 @@
     },
     {
      "src": "questions-2.mp3",
-     "duration": 26.7,
-     "bytes": 133968,
-     "hash": "a2a61d4129d6",
+     "duration": 9.2,
+     "bytes": 46608,
+     "hash": "895f2ca41e09",
      "text": [
-      "Not at the moment. Casting works for films, shows and photos. Music plays on the phone, the TV app itself, the browser and the car.",
-      "Does a song count as something I watched?",
-      "No. Music is kept out of the household’s watch history.",
-      "Which file types work?",
-      "MP3, M4A (including Apple Lossless), FLAC, OGG, Opus and WAV. Others are skipped."
+      "Not at the moment. Casting works for films, shows and photos. Music plays on the phone, the TV app itself, the browser and the car."
      ]
     }
    ],
-   "duration": 67.0
+   "duration": 49.5
+  },
+  {
+   "id": "questions-part-2",
+   "heading": "Questions (part 2)",
+   "clips": [
+    {
+     "src": "questions-part-2.mp3",
+     "duration": 24.1,
+     "bytes": 121137,
+     "hash": "e9ee75c5b1e0",
+     "text": [
+      "Does a song count as something I watched?",
+      "No. Music is kept out of the household’s watch history.",
+      "Which file types work?",
+      "MP3, M4A (including Apple Lossless), AAC, FLAC, OGG, Opus, WAV, AIFF, WMA, APE, WavPack, DSD (DSF and DFF) and MKA. Others are skipped."
+     ]
+    }
+   ],
+   "duration": 24.1
   }
  ]
 }
