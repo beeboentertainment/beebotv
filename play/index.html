@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101719">
   <title>Beebo Play — Beebo Entertainment</title>
-  <meta name="description" content="A preview of Beebo Play, our planned browser game lobby. It is not live yet — this page previews the design.">
+  <meta name="description" content="Beebo Play: Tic-Tac-Toe in your browser against Beebo or a friend with a private invite link. Beta, in testing with friends.">
   <meta name="robots" content="noindex,follow">
   <link rel="icon" href="/assets/favicon-32.png">
   <link rel="stylesheet" href="/website-shell.css?v=20260926">
-  <link rel="stylesheet" href="play.css">
+  <link rel="stylesheet" href="play.css?v=20261005">
   <link rel="stylesheet" href="experience-note.css">
   <script src="/qrcode-generator.js" defer></script>
-  <script src="play.js" defer></script>
+  <script src="play.js?v=20261005" defer></script>
 </head>
 <body data-api-origin="https://login.beebo.tv" data-sign-in-url="/app-on-your-phone.html">
   <a class="skip-link" href="#play-main">Skip to Beebo Play</a>
@@ -30,14 +30,18 @@
       <div>
         <p class="eyebrow">Beebo Play</p>
         <h1>Pick a game.<br>Find your table.</h1>
-        <p class="experience-note"><strong>Planned — not live yet:</strong> this page previews Beebo Play's design. Sign-in, tables and games will not work until the web-games service is connected; when it launches, Tic-Tac-Toe will be the first browser game here.</p>
-        <p class="lede">Play a quick round with a bot, share a private table with a friend, or join an open table from anywhere. The rest of Beebo’s games stay in Camp Mode in the Beebo app; browser tables do not cross-play with app-hosted games.</p>
+        <p class="experience-note"><strong>Beta: in testing with friends.</strong> Tic-Tac-Toe is the only browser game so far. Things may change or break while we test; open tables with strangers are switched off.</p>
+        <p class="lede">Play a quick round against Beebo, or start a private table and send the invite link to a friend. The rest of Beebo’s games stay in Camp Mode in the Beebo app; browser tables do not cross-play with app-hosted games.</p>
       </div>
       <aside class="identity-card" aria-labelledby="identity-heading">
-        <p class="eyebrow">Your seat</p>
-        <h2 id="identity-heading">Play your way.</h2>
-        <p>Guest nicknames and account sign-in are planned for browser tables. The shared game sign-in is not available yet.</p>
-        <a id="play-sign-in" class="text-link" href="/app-on-your-phone.html">How Beebo sign-in works <span aria-hidden="true">↗</span></a>
+        <p class="eyebrow">Got an invite?</p>
+        <h2 id="identity-heading">Join a friend.</h2>
+        <p>Open the invite link your friend sent, or paste it here. No account needed; you play as a guest with a nickname.</p>
+        <form id="paste-invite-form" class="paste-invite" novalidate>
+          <label for="paste-invite">Invite link</label>
+          <div class="paste-row"><input id="paste-invite" name="invite" autocomplete="off" spellcheck="false" placeholder="https://www.beeboentertainment.com/play/#join=…"><button class="primary-button" type="submit">Join</button></div>
+          <p id="paste-invite-error" class="form-error" role="alert" hidden></p>
+        </form>
       </aside>
     </section>
 
@@ -48,7 +52,7 @@
     </section>
 
     <section class="games-section" aria-labelledby="games-heading">
-      <div class="section-heading"><div><p class="eyebrow">Browser game</p><h2 id="games-heading">Start your next round</h2></div><p class="section-note">Open tables appear first when the lobby is available.</p></div>
+      <div class="section-heading"><div><p class="eyebrow">Browser game</p><h2 id="games-heading">Start your next round</h2></div><p class="section-note">Play the computer, or invite one friend with a private link.</p></div>
       <div id="game-list" class="game-list" aria-live="polite" aria-busy="true"></div>
     </section>
 
@@ -58,14 +62,19 @@
         <div>
           <h2 id="room-heading">Tic-Tac-Toe</h2>
           <p id="room-status" class="room-status" role="status">Waiting for the table…</p>
+          <p id="room-players" class="room-players"></p>
           <div id="tic-tac-toe-board" class="ttt-board" role="grid" aria-label="Tic-Tac-Toe board"></div>
+          <div id="room-actions" class="room-actions"></div>
         </div>
         <aside id="invite-panel" class="invite-panel" hidden aria-labelledby="invite-heading">
           <p class="eyebrow">Private invite</p>
           <h3 id="invite-heading">Share this table</h3>
           <div id="invite-qr" class="invite-qr" aria-label="QR code for private game invite"></div>
-          <p>Have your friend scan this code, or copy the invite. The invite stays in the link fragment, not the address sent to the server.</p>
-          <button id="copy-invite" class="primary-button" type="button">Copy invite</button>
+          <p>Send this link to one friend, or let them scan the code. The invite part of the link is never sent to a server until your friend joins.</p>
+          <label class="invite-link-label" for="invite-link">Invite link</label>
+          <input id="invite-link" class="invite-link" readonly>
+          <p id="invite-expiry" class="small-status"></p>
+          <button id="copy-invite" class="primary-button" type="button">Share or copy link</button>
           <p id="copy-status" class="small-status" role="status"></p>
         </aside>
       </div>
@@ -74,7 +83,7 @@
     <section class="how-it-works" aria-labelledby="how-heading">
       <p class="eyebrow">How it works</p>
       <h2 id="how-heading">One link. Two players. Your own screens.</h2>
-      <ol><li>Choose a bot, private friend, or an open table.</li><li>For a private table, send the QR invite to the person you want to play.</li><li>Take turns from your own devices. For Camp Mode games, continue in the Beebo app.</li></ol>
+      <ol><li>Choose “Invite a friend” and pick a nickname.</li><li>Send the invite link (or show the QR code) to one friend. It works once, for 15 minutes.</li><li>Your friend opens it, picks a nickname, and you take turns from your own devices. Keep this page open: reloading leaves the table.</li></ol>
     </section>
   </main>
 
@@ -84,9 +93,9 @@
       <p class="eyebrow">Choose your seat</p>
       <h2 id="seat-title">What should the table call you?</h2>
       <p id="seat-context">Choose a name for this game.</p>
-      <label for="guest-nickname">Nickname<input id="guest-nickname" name="nickname" autocomplete="nickname" maxlength="24" required placeholder="Your nickname"></label>
-      <p class="form-help">You can play as a guest, or sign in if you already have a Beebo account.</p>
-      <div class="dialog-actions"><button class="primary-button" type="submit">Continue as guest</button><a id="dialog-sign-in" class="secondary-button" href="/app-on-your-phone.html">Sign-in guide</a></div>
+      <label for="guest-nickname">Nickname<input id="guest-nickname" name="nickname" autocomplete="nickname" maxlength="24" placeholder="Your nickname"></label>
+      <p class="form-help">Only the other player at your table sees this name. Keep it family-friendly.</p>
+      <div class="dialog-actions"><button class="primary-button" type="submit">Continue</button><button class="secondary-button" type="button" data-close-dialog>Cancel</button></div>
       <p id="seat-error" class="form-error" role="alert" hidden></p>
     </form>
   </dialog>
