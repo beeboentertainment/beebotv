@@ -293,3 +293,5 @@ a.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color
 @keyframes beeboPeek { 0%, 100% { transform: translateY(2px) rotate(-2deg) } 50% { transform: translateY(-3px) rotate(2deg) } }
 @media (max-width:430px) { .nav-cta .peek { width: 34px; left: 12px } }
 @media (prefers-reduced-motion: reduce) { .nav-cta, .nav-cta .peek { animation: none } }
+/* Skip link (accessibility pass, Oct 5, 2026) */
+.a11y-skip{position:absolute;left:-9999px;top:0;z-index:1000;background:#fffdf7;color:#22251f;padding:12px 18px;font-weight:700;text-decoration:underline;border-radius:0 0 8px 0}.a11y-skip:focus{left:0;outline:3px solid #9a6a12;outline-offset:2px}

@@ -38,7 +38,7 @@
 .bb-listen-bar i{display:block; height:100%; width:0; background:var(--bbl-accent); transition:width .25s linear}
 .bb-listen-tx{padding:7px 14px; color:var(--bbl-accent-ink) !important; font-weight:600 !important}
 .bb-listen button:hover{border-color:var(--bbl-accent)}
-.bb-listen button:focus-visible{outline:3px solid var(--bbl-accent); outline-offset:2px}
+.bb-listen button:focus-visible{outline:3px solid var(--bbl-accent-ink); outline-offset:2px}
 .bb-listen[data-state="playing"] .bb-listen-play,
 .bb-listen[data-state="paused"] .bb-listen-play{background:var(--bbl-soft); border-color:var(--bbl-accent)}
 .bb-listen-transcript{

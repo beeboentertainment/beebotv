@@ -53,11 +53,13 @@ footer{color:var(--muted);font-size:.9rem;margin-top:24px;border-top:1px solid v
 .ck .piece{width:76%;height:76%;position:relative}
 .ck .piece.king::after{content:"";position:absolute;inset:28% 24% 30%;background:#0a1018;clip-path:polygon(0 100%,0 25%,25% 55%,50% 0,75% 55%,100% 25%,100% 100%)}
 .ck .cell:focus-visible{outline-offset:-4px}
+.a11y-skip{position:absolute;left:-9999px;top:0;z-index:1000;background:#fffdf7;color:#22251f;padding:12px 18px;font-weight:700;text-decoration:underline;border-radius:0 0 8px 0}.a11y-skip:focus{left:0;outline:3px solid #9a6a12;outline-offset:2px}
 </style>
 <link rel="canonical" href="https://www.beeboentertainment.com/play-games/checkers/"><meta property="og:type" content="website"><meta property="og:site_name" content="Beebo Entertainment"><meta property="og:title" content="Checkers - play in your browser | Beebo Entertainment"><meta property="og:description" content="Play Checkers (English draughts) in your browser against Hopping Beebo or a friend on the same screen. No account, no download."><meta property="og:url" content="https://www.beeboentertainment.com/play-games/checkers/"><meta property="og:image" content="https://www.beeboentertainment.com/play-games/assets/checkers.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Checkers - play in your browser | Beebo Entertainment"><meta name="twitter:description" content="Play Checkers (English draughts) in your browser against Hopping Beebo or a friend on the same screen. No account, no download."><meta name="twitter:image" content="https://www.beeboentertainment.com/play-games/assets/checkers.webp">
 </head>
 <body>
-<main class="wrap">
+<a class="a11y-skip" href="#page-content">Skip to the game</a>
+<main class="wrap" id="page-content" tabindex="-1">
   <p><a href="../index.html">&larr; All games</a></p>
   <h1>Checkers</h1>
   <p class="lead">Jump your opponent's pieces and reach the far side for a king. Play Hopping Beebo, or pass the screen to a friend.</p>

@@ -25,3 +25,5 @@ body { margin: 0; min-width: 320px; background: #101719; color: #f3f2ec; font-fa
 .library-entry-divider { width: 100%; height: 1px; margin-top: 42px; background: #354143; }
 .library-entry-support { margin-top: 20px; font-size: 14px; }
 @media (max-width: 620px) { .library-entry { width: min(100% - 32px, 760px); min-height: calc(100vh - 108px); padding-top: 64px; } .library-entry-form { padding: 20px; } .library-entry-controls { grid-template-columns: 1fr; } .library-entry button { width: 100%; } }
+/* Skip link (accessibility pass, Oct 5, 2026) */
+.a11y-skip{position:absolute;left:-9999px;top:0;z-index:1000;background:#fffdf7;color:#22251f;padding:12px 18px;font-weight:700;text-decoration:underline;border-radius:0 0 8px 0}.a11y-skip:focus{left:0;outline:3px solid #9a6a12;outline-offset:2px}
