@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dots and Boxes - Play free | Beebo Entertainment</title>
-<meta name="description" content="Play Dots and Boxes free in your browser: draw lines and close boxes against Hopping Beebo or 2 to 4 friends on one screen. No sign-in, no download.">
+<meta name="description" content="Play Dots and Boxes free in your browser: draw lines, close boxes and take another turn. Against Hopping Beebo (easy, medium or hard) or 2 to 4 friends on the same screen. No sign-in, no download.">
 <meta name="color-scheme" content="dark">
 <style>
 :root{
@@ -62,19 +62,94 @@ footer.site{margin:20px 0 32px;padding-top:12px;border-top:1px solid var(--line)
 .players{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:10px}
 .chip b{color:var(--gold)}
 
-.a11y-skip{position:absolute;left:-9999px;top:0;z-index:1000;background:#fffdf7;color:#22251f;padding:12px 18px;font-weight:700;text-decoration:underline;border-radius:0 0 8px 0}.a11y-skip:focus{left:0;outline:3px solid #9a6a12;outline-offset:2px}
 </style>
-<link rel="canonical" href="https://www.beeboentertainment.com/play-games/dots-and-boxes/"><meta property="og:type" content="website"><meta property="og:site_name" content="Beebo Entertainment"><meta property="og:title" content="Dots and Boxes - Play free | Beebo Entertainment"><meta property="og:description" content="Play Dots and Boxes free in your browser: draw lines and close boxes against Hopping Beebo or 2 to 4 friends on one screen. No sign-in, no download."><meta property="og:url" content="https://www.beeboentertainment.com/play-games/dots-and-boxes/"><meta property="og:image" content="https://www.beeboentertainment.com/play-games/assets/dots-and-boxes.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Dots and Boxes - Play free | Beebo Entertainment"><meta name="twitter:description" content="Play Dots and Boxes free in your browser: draw lines and close boxes against Hopping Beebo or 2 to 4 friends on one screen. No sign-in, no download."><meta name="twitter:image" content="https://www.beeboentertainment.com/play-games/assets/dots-and-boxes.webp">
+<style id="campsite-art-style">
+/* Beebo-owned tabletop materials adapted from apps/core's campsite-games.html.
+   Scoped to these eight pages; controls, focus, hit areas and rules stay in the pages. */
+[data-campsite-art] { --p1:#bc9cf8; --p2:#efcc69; --p3:#8adab0; --p4:#f3adb4; }
+[data-campsite-art] .boardwrap { max-width:100%; overflow-x:auto; padding:4px 2px 18px; justify-content:safe center; }
+#board.ttt { background:linear-gradient(145deg,#48516f,#17243d); gap:7px; border:2px solid #8791b0; padding:12px; border-radius:16px; box-shadow:0 7px 0 #0a1429,0 13px 30px #0006; flex-shrink:0; }
+.ttt .cell { background:linear-gradient(145deg,#253653,#0e1d34); box-shadow:inset 0 3px 5px #0007; border-color:#445579; font-family:Georgia,serif; }
+.ttt .cell.x { color:#dcc3ff; text-shadow:0 3px 0 #6a4699,0 -1px 0 #f8edff; }
+.ttt .cell.o { color:#f2d47e; text-shadow:0 3px 0 #87602c,0 -1px 0 #fff3c9; }
+.ttt .cell.win { outline:3px solid #e9cd7b; outline-offset:-4px; background:#3d3c56; }
+#board.df { background:linear-gradient(150deg,#526da0,#26375e 50%,#14243d); border:2px solid #8295bc; box-shadow:0 8px 0 #101b30,0 15px 25px #01091770,inset 0 2px 2px #ffffff4d; flex-shrink:0; min-width:324px; }
+.df .slot { background:radial-gradient(circle at 50% 75%,#18263d,#070c18 74%); box-shadow:inset 0 3px 6px #020611c4; }
+.df .slot.disc,.ck .piece,.rv .disc.d0,.rv .disc.d1 { position:relative; box-shadow:0 3px 0 #17223b,0 5px 5px #0007,inset 0 2px 3px #fff8; border:1px solid #fff6; }
+.df .slot.p0,.ck .piece.p0,.rv .disc.d0 { background:radial-gradient(circle at 28% 20%,#eadbff,#a883d1 55%,#685085); }
+.df .slot.p1,.ck .piece.p1,.rv .disc.d1 { background:radial-gradient(circle at 28% 20%,#fff4bc,#e0b658 55%,#97712e); }
+.df .slot.disc:before,.ck .piece:before,.rv .disc.d0:before,.rv .disc.d1:before { content:''; position:absolute; inset:17%; border-radius:50%; border:2px solid #ffffff66; box-shadow:inset 0 1px 2px #0005; pointer-events:none; }
+#board.ck { padding:10px; background:repeating-linear-gradient(4deg,#593b2b 0 3px,#624330 4px 5px,#5c3d2b 6px 12px); border:2px solid #c09869; border-radius:12px; box-shadow:0 8px 0 #322522,0 14px 25px #02081466; min-width:376px; flex-shrink:0; }
+.ck .cell.lt { background:linear-gradient(110deg,#eddbb6,#dbc297); }
+.ck .cell.dk { background:repeating-linear-gradient(7deg,#69513f 0 5px,#705644 6px 8px,#684e3e 9px 16px); }
+.ck .cell.sel { box-shadow:inset 0 0 0 4px #bc9cf8; }
+.ck .cell.target { box-shadow:inset 0 0 0 3px #b5eed0; }
+#board.rv { min-width:390px; flex-shrink:0; }
+.rvgrid { gap:2px; padding:10px; background:linear-gradient(145deg,#3f746b,#163e3b); border:2px solid #82b6a2; box-shadow:0 7px 0 #0c262b,0 14px 24px #0006; }
+.rv .cell { background:#174740; box-shadow:inset 1px 1px 2px #001d25; }
+.rv .cell.last { box-shadow:inset 0 0 0 3px var(--gold); }
+[data-campsite-art="snakes-and-ladders"] #board { background:linear-gradient(145deg,#273e3d,#112d35); border:5px solid #ad9060; border-radius:16px; box-shadow:0 6px 0 #463526,0 14px 28px #0007; }
+[data-campsite-art="dots-and-boxes"] .board-wrap { background:radial-gradient(ellipse at top,#315a72,#172c43); border:2px solid #839eaf; border-radius:16px; box-shadow:0 6px 0 #0e2135,0 12px 20px #0006; }
+[data-campsite-art="dots-and-boxes"] .ln .vis { stroke:#a8cfcd55; }
+[data-campsite-art="dots-and-boxes"] .ln:hover .vis { stroke:#e8d495; }
+[data-campsite-art="dots-and-boxes"] .ln:focus-visible .vis { stroke:#f4ecd8; }
+[data-campsite-art="dots-and-boxes"] #board>circle { filter:drop-shadow(0 2px 2px #06131d); }
+[data-campsite-art="memory-match"] .deck { background:radial-gradient(ellipse at top,#385f6280,transparent),#152d36; border:1px solid #426165; border-radius:15px; padding:8px; box-shadow:inset 0 0 20px #020b1940; }
+[data-campsite-art="memory-match"] .card { aspect-ratio:5/7; background:transparent; border:0; box-shadow:0 4px 7px #0006; }
+[data-campsite-art="memory-match"] .card svg { width:100%; height:100%; pointer-events:none; }
+[data-campsite-art="memory-match"] .card svg.back { padding:0; min-height:0; }
+[data-campsite-art="memory-match"] .card.up { outline:3px solid #efcc69; outline-offset:-3px; }
+[data-campsite-art="memory-match"] .card.done { outline-color:#8adab0; opacity:.6; }
+/* Keep keyboard focus outside the state border, including aria-disabled up/done cards. */
+[data-campsite-art="memory-match"] .card:focus-visible { outline:3px solid #fff; outline-offset:1px; box-shadow:0 0 0 1px #0a1018,0 0 0 5px #0a1018; opacity:1; }
+[data-campsite-art="memory-match"] .card .tag { background:#17243d; color:#fff4d9; border-radius:4px; padding:0 3px; }
+/* Whole-ship art occupies CSS grid tracks: it resizes and scrolls with the existing buttons. */
+[data-campsite-art="sea-battle"] .sea { min-width:0; }
+[data-campsite-art="sea-battle"] .seas { grid-template-columns:minmax(0,1fr); }
+@media(min-width:720px) { [data-campsite-art="sea-battle"] .seas.two { grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); } }
+[data-campsite-art="sea-battle"] .grid { position:relative; isolation:isolate; gap:0; padding:0; border:1px solid #528397; border-radius:6px; background:radial-gradient(ellipse at 20% 10%,#24708366,transparent 58%),repeating-linear-gradient(160deg,transparent 0 16px,#85d6df06 17px 18px,transparent 19px 35px),linear-gradient(145deg,#10485f,#082839); }
+[data-campsite-art="sea-battle"] .cell { background:transparent; border:0; border-right:1px solid #83bdd52a; border-bottom:1px solid #83bdd52a; border-radius:0; }
+[data-campsite-art="sea-battle"] .cell:hover:not([disabled]) { background:#a3e7ef25; }
+[data-campsite-art="sea-battle"] .cell:focus-visible { outline-offset:-3px; z-index:4; }
+[data-campsite-art="sea-battle"] .cell.hit,[data-campsite-art="sea-battle"] .cell.sunk { background:radial-gradient(circle,#e578394d,transparent 69%); }
+[data-campsite-art="sea-battle"] .cell>svg { position:relative; z-index:3; }
+[data-campsite-art="sea-battle"] .ship-art { pointer-events:none; z-index:2; min-width:0; min-height:0; position:relative; }
+[data-campsite-art="sea-battle"] .ship-art svg { position:absolute; inset:0; width:100%; height:100%; }
+.sb-ship-svg { display:block; width:100%; height:100%; pointer-events:none; filter:drop-shadow(0 2px 2px #001724aa); }
+[data-campsite-art="sea-battle"] .ship-art.wreck { opacity:.6; filter:grayscale(.8); }
+[data-campsite-art="sea-battle"] .shipbtn { display:flex; flex-direction:column; align-items:center; padding:8px; flex:1 1 100px; }
+[data-campsite-art="sea-battle"] .shipbtn>.sb-ship-svg { height:32px; width:100%; max-width:150px; }
+[data-campsite-art="sea-battle"] .afloat .hull { width:84px; height:28px; }
+[data-campsite-art="sea-battle"] .afloat .hull.sunk { opacity:.6; filter:grayscale(.8); }
+@media(max-width:420px) { [data-campsite-art="sea-battle"] .grid-scroll:not(.compact-grid) .grid { width:372px; } }
+@media(max-width:420px) {
+  #board.ck { min-width:370px; width:100%; padding:7px; }
+  #board.rv { min-width:370px; width:100%; }
+  .rvgrid { padding:3px; gap:1px; }
+}
+/* Guest six-face die, with the website's existing roll timing and announcement. */
+.die { display:grid; place-items:center; }
+.art-die { --die:42px; width:var(--die); height:var(--die); perspective:550px; position:relative; pointer-events:none; }
+.art-die-view { width:100%; height:100%; transform-style:preserve-3d; transform:rotateX(-19deg) rotateY(-24deg); }
+.art-cube { width:100%; height:100%; position:relative; transform-style:preserve-3d; }
+.art-face { position:absolute; inset:0; border-radius:18%; background:linear-gradient(135deg,#fffdf4,#e7d7bb); border:1px solid #e6cba2; backface-visibility:hidden; box-shadow:inset 0 0 5px #f8fbff,inset -3px -3px 5px #c3a98055; }
+.art-face .art-pips { width:100%; height:100%; display:block; }
+.art-face:nth-child(1) { transform:translateZ(calc(var(--die)/2)); }
+.art-face:nth-child(2) { transform:rotateX(90deg) translateZ(calc(var(--die)/2)); background:#fffae9; }
+.art-face:nth-child(3) { transform:rotateY(90deg) translateZ(calc(var(--die)/2)); background:#d9c6a6; }
+.art-face:nth-child(4) { transform:rotateY(-90deg) translateZ(calc(var(--die)/2)); background:#ede0c8; }
+.art-face:nth-child(5) { transform:rotateX(-90deg) translateZ(calc(var(--die)/2)); background:#cdb99d; }
+.art-face:nth-child(6) { transform:rotateY(180deg) translateZ(calc(var(--die)/2)); }
+</style>
 </head>
-<body>
-<a class="a11y-skip" href="#page-content">Skip to the game</a>
+<body data-campsite-art="dots-and-boxes">
 <div class="wrap">
 <header class="top">
 <a class="back" href="../index.html">&larr; All Campsite games</a>
 <h1>Dots and Boxes</h1>
 <p class="lede">Draw a line between two dots. Close the fourth side of a box and it is yours, and you go again. Most boxes wins.</p>
 </header>
-<main id="page-content" tabindex="-1">
+<main>
 <section class="panel" aria-label="Game setup">
 <form class="controls" onsubmit="return false">
 
@@ -151,7 +226,7 @@ var PCOLORS = ['var(--p1)', 'var(--p2)', 'var(--p3)', 'var(--p4)'];
 
 var G = window.BeeboDots;
 var NS = 'http://www.w3.org/2000/svg';
-var COLOR_HEX = ['#e0b252', '#5cc8c0', '#ff8a7a', '#b9a2ff'];
+var COLOR_HEX = ['#bc9cf8', '#efcc69', '#8adab0', '#f3adb4'];
 var game = null, timer = null, lineEls = [], boxEls = [], centers = [], lastLine = -1, focusLine = -1;
 var M = 40, S = 100;
 
@@ -199,7 +274,7 @@ function build() {
   for (var bx = 0; bx < b.boxCount; bx++) {
     var r = Math.floor(bx / b.cols), c = bx % b.cols;
     var rect = el('rect', { x: M + c * S + 6, y: M + r * S + 6, width: S - 12, height: S - 12, rx: 8, fill: 'transparent' }, svg);
-    var t = el('text', { x: M + c * S + S / 2, y: M + r * S + S / 2 + 12, 'text-anchor': 'middle', 'font-size': 34, 'font-weight': 800, 'font-family': 'system-ui,sans-serif', fill: '#0a1018' }, svg);
+    var t = el('text', { x: M + c * S + S / 2, y: M + r * S + S / 2 + 12, 'text-anchor': 'middle', 'font-size': 34, 'font-weight': 800, 'font-family': 'system-ui,sans-serif', fill: '#f5f4ff' }, svg);
     boxEls.push({ rect: rect, text: t });
   }
   for (var l = 0; l < b.lineCount; l++) {
@@ -240,7 +315,7 @@ function refresh() {
   });
   boxEls.forEach(function (o, i) {
     var ow = game.owners[i];
-    if (ow >= 0) { o.rect.setAttribute('fill', COLOR_HEX[ow]); o.rect.setAttribute('opacity', '.9'); o.text.textContent = ow + 1; }
+    if (ow >= 0) { o.rect.setAttribute('fill', COLOR_HEX[ow]); o.rect.setAttribute('opacity', '.45'); o.text.textContent = ow + 1; }
     else { o.rect.setAttribute('fill', 'transparent'); o.text.textContent = ''; }
   });
   var bar = $('players-bar'); bar.innerHTML = '';
