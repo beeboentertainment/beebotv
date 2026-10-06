@@ -65,13 +65,54 @@
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Linux (64-bit x86-64, glibc; tested on Ubuntu 22.04)",
   "softwareRequirements": "A 64-bit glibc-based Linux distribution such as Ubuntu 22.04 or newer, a graphical desktop session, libfuse2 for the AppImage, and your own media files.",
-  "description": "Beta, in development. The same desktop media server as the Windows version, packaged as an AppImage and a .deb. Not offered for download right now. The last build was tested on Ubuntu 22.04 in an automated build only. No automatic updates yet.",
+  "description": "Beta, in development. The same desktop media server as the Windows version, packaged as an AppImage and a .deb. Not offered for download right now: the old 0.1.58 build was taken down on October 4, 2026 because it was many versions behind Windows; Linux has not been dropped and a newer build will be posted when it has been built and checked. The last build was tested on Ubuntu 22.04 in an automated build only. No automatic updates yet.",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "CAD",
     "description": "Free to use at home. No movies or shows are included."
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.beeboentertainment.com/linux.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a Linux version of Beebo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, as a beta that is still in development. Beebo for Linux is the same desktop media server as the Windows version, packaged as an AppImage and a .deb for 64-bit x86-64 PCs. It is not offered for download right now. The last build, 0.1.58, was tested on Ubuntu 22.04 in our automated build only, and Linux has no automatic updates yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is there no Linux download link?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On October 4, 2026 we took down old downloads that were many versions behind the current Windows release. The Linux 0.1.58 build was one of them, and the Docker image was made private at the same time. Linux has not been dropped, and the app is not being rewritten: the Linux version is built from the same code as the Windows version. A newer Linux build will be posted on the Linux page once it has been built and checked. There is no date yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I run Beebo on Linux today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not from a download on this site right now. The Beebo server runs on Windows 10 and 11 today. You can watch your library from a Linux PC in any web browser, by opening your Beebo address and signing in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a Docker image for a NAS or Linux server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is a headless Docker image (beta) for Linux servers and NAS boxes, for amd64 and arm64. It is not offered for download right now, for the same reason as the Linux desktop build. Store listings for Unraid, TrueNAS, CasaOS, Umbrel and Synology are prepared but not submitted, and no NAS model is listed as tested."
+      }
+    }
+  ]
 }
 </script>
 <link rel="stylesheet" href="beebo-testers.css?v=2">
@@ -99,12 +140,20 @@
   <img class="page-campaign-art" src="assets/quiet-server.webp" alt="A quiet home computer on a shelf" width="1672" height="941" loading="lazy">
 
   <div class="callout">
-    <p><strong>Status: <span class="tag dev">Beta — in development, not offered for download right now</span></strong> The 0.1.58 build published on September 21, 2026 has been taken down. Please read <a href="#limits">the honest limits</a>.</p>
+    <p><strong>Status: <span class="tag dev">Beta — in development, not offered for download right now</span></strong> The 0.1.58 build published on September 21, 2026 was taken down on October 4, 2026 because it was many versions behind Windows. Linux has not been dropped; see <a href="#why-no-download">why there is no download right now</a>. Please read <a href="#limits">the honest limits</a>.</p>
   </div>
 
   <h2 id="download">Download</h2>
-  <p><strong>The Linux build is not offered for download right now.</strong> The old 0.1.58 AppImage and .deb have been taken down. Linux remains a beta that is still in development, and a newer build will be posted on this page when it is ready. Until then you can run Beebo on <a href="windows.html">Windows</a>, or try the headless <a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker image</a> (also a beta).</p>
+  <p><strong>The Linux build is not offered for download right now.</strong> The old 0.1.58 AppImage and .deb have been taken down. Linux remains a beta that is still in development, and a newer build will be posted on this page when it is ready. Until then you can run Beebo on <a href="windows.html">Windows</a>, and watch from a Linux PC in any web browser. The headless <a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker image</a> (also a beta) is not offered for download right now either.</p>
   <p class="fineprint">When it returns, the Linux build is for 64-bit x86-64 PCs only. There is no ARM (Raspberry Pi) desktop build.</p>
+
+  <h2 id="why-no-download">Why there is no Linux download right now</h2>
+  <p>On October 4, 2026 we took down old downloads that were many versions behind the current Windows release. The Linux 0.1.58 build was one of them, and the Docker image was made private at the same time.</p>
+  <ul class="plain">
+    <li><strong>Linux has not been dropped.</strong> It is still a beta that is in development.</li>
+    <li><strong>The app is not being rewritten.</strong> The Linux version is built from the same code as the Windows version, which gets new releases often.</li>
+    <li><strong>What happens next:</strong> a newer Linux build will be posted on this page once it has been built and checked. There is no date yet. The <a href="updates.html">release notes</a> will say when it is back.</li>
+  </ul>
 
   <h2 id="what">What it is</h2>
   <p>Beebo for Linux is the same desktop server as the Windows version, packaged as an <strong>AppImage</strong> and a <strong>.deb</strong> package. You point it at your own movie and show folders, and you watch on the Android app, in any web browser, or by casting to a Chromecast or Google TV. Everything else about how Beebo works is the same as on <a href="windows.html">Windows</a>.</p>
@@ -154,6 +203,14 @@
     <li><strong>The system tray icon has not been checked</strong> on Linux desktops yet.</li>
     <li><strong>Away-from-home connections have not been tested on Linux.</strong> Watching at home on your own network is the expected first use.</li>
   </ul>
+
+  <h2 id="faq">Questions about Linux</h2>
+  <div class="faq">
+    <details><summary>Is there a Linux version of Beebo?</summary><p>Yes, as a beta that is still in development. Beebo for Linux is the same desktop media server as the Windows version, packaged as an AppImage and a .deb for 64-bit x86-64 PCs. It is not offered for download right now. The last build, 0.1.58, was tested on Ubuntu 22.04 in our automated build only, and Linux has no automatic updates yet.</p></details>
+    <details><summary>Why is there no Linux download link?</summary><p>On October 4, 2026 we took down old downloads that were many versions behind the current Windows release. The Linux 0.1.58 build was one of them, and the Docker image was made private at the same time. Linux has not been dropped, and the app is not being rewritten: the Linux version is built from the same code as the Windows version. A newer Linux build will be posted on the Linux page once it has been built and checked. There is no date yet.</p></details>
+    <details><summary>Can I run Beebo on Linux today?</summary><p>Not from a download on this site right now. The Beebo server runs on Windows 10 and 11 today. You can watch your library from a Linux PC in any web browser, by opening your Beebo address and signing in.</p></details>
+    <details><summary>Is there a Docker image for a NAS or Linux server?</summary><p>There is a headless Docker image (beta) for Linux servers and NAS boxes, for amd64 and arm64. It is not offered for download right now, for the same reason as the Linux desktop build. Store listings for Unraid, TrueNAS, CasaOS, Umbrel and Synology are prepared but not submitted, and no NAS model is listed as tested.</p></details>
+  </div>
 
   <div class="callout">
     <p><strong>Tried it?</strong> <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20for%20Linux%20feedback">Tell us what worked and what did not</a>, including your distribution and desktop. This is a plain email to <code>testers@beeboentertainment.com</code>: there is no form and no sign-up.</p>
