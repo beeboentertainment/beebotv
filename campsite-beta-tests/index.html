@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campsite test sheets | Beebo</title><meta name="description" content="Plain-English test sheets for two Campsite features that are still in development and open for testing."><meta name="robots" content="index,follow"><style>:root{color-scheme:light dark;--ink:#242626;--muted:#59605e;--paper:#f6f4ee;--surface:#fffefa;--line:#d5d2c8;--gold:#7b5c24;--dark:#171b1c;--note:#e8eee4;--noteline:#71966b;--warn:#f1eee5;--warnline:#ac9056}
+@media(prefers-color-scheme:dark){:root{--ink:#ece9e0;--muted:#b9bdb6;--paper:#171b1c;--surface:#20262a;--line:#3d4647;--gold:#e1c58a;--dark:#0f1213;--note:#22332a;--noteline:#71966b;--warn:#2b2820;--warnline:#ac9056}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}:focus-visible{outline:3px solid #aa852f;outline-offset:3px}
+.shell{width:min(980px,92vw);margin:auto}
+.skip{position:absolute;left:16px;top:-90px;background:#fff;color:#000;padding:12px;z-index:9}.skip:focus{top:12px}
+header.top{background:var(--dark);color:#f5f0e5;border-bottom:1px solid #625436}
+header.top .shell{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:18px 0}
+header.top a{color:#e1c58a;text-decoration:none;font-weight:700}
+header.top nav{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+.eyebrow{display:block;color:var(--gold);font:700 .75rem/1.5 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-top:36px}
+h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;letter-spacing:-.03em;margin:10px 0 16px}
+h2{font-size:1.5rem;line-height:1.2;margin:34px 0 12px}
+.lead{font-size:1.1rem;max-width:760px}
+.status{border-left:4px solid var(--noteline);background:var(--note);padding:14px 18px;margin:22px 0}
+.status p{margin:0}.status p+p{margin-top:8px}
+.box{border:1px solid var(--line);background:var(--surface);padding:18px 20px;margin:18px 0}
+.report{background:var(--warn);border-left:4px solid var(--warnline);padding:16px 20px;margin:26px 0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border:1px solid var(--line);background:var(--surface);padding:20px}
+.card h2{margin-top:0;font-size:1.25rem}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:1px solid var(--gold);color:var(--ink);background:transparent;font:700 .9rem Arial,sans-serif;text-decoration:none;cursor:pointer;border-radius:2px}
+.progress{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 0;font-size:.9rem;z-index:2}
+.steps{list-style:none;padding:0;margin:16px 0}
+.step{border:1px solid var(--line);background:var(--surface);padding:14px 16px;margin:0 0 12px}
+.step h3{margin:0 0 6px;font-size:1rem}
+.step p{margin:4px 0}
+.see{color:var(--muted)}
+.result{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px}
+.result label{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;cursor:pointer}
+.result input{width:22px;height:22px}
+.opt{font-size:.8rem;color:var(--muted)}
+footer{background:var(--dark);color:#c8cbc5;padding:26px 0;margin-top:44px}
+footer a{color:#e1c58a}footer nav{display:flex;gap:18px;flex-wrap:wrap}footer p{font-size:.85rem;margin:14px 0 0}
+@media(max-width:700px){.cards{grid-template-columns:1fr}}</style></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="shell"><a href="../index.html">Beebo Entertainment</a><nav aria-label="Main"><a href="index.html">Campsite tests</a><a href="../tester-checklist.html">Tester checklist</a><a href="../whats-tested.html">What is tested</a></nav></div></header>
+<main id="main" class="shell"><span class="eyebrow">Campsite testing</span><h1>Help us test Campsite features</h1>
+<p class="lead">Two features are ready for real people on real phones and TVs. These sheets walk you through them one step at a time.</p>
+<div class="status" role="note"><p><strong>Nothing on these pages is Beta yet.</strong> Both are labelled In development, open for testing. The only exception is the Windows part of Movie Night, which is already Beta on its own page.</p></div>
+<h2>What testing means</h2>
+<p>You follow the steps, look at what happens, and tick Pass if it matches "You should see", or Fail if it does not. A Fail is useful, not a mistake. We would rather hear about a problem now than after launch. If something works, please tell us that too.</p>
+<p>Your ticks stay in this browser on this device. You can leave a sheet and come back to it later.</p>
+<div class="cards"><div class="card"><h2><a href="family-timeline.html">Shared photos &amp; videos</a></h2><p>Show photos and short videos from one phone on every phone at your campsite. About 45 minutes. Status: In development, open for testing.</p></div>
+<div class="card"><h2><a href="movie-game-night.html">Movie Night and Game Night</a></h2><p>A film quiz and vote on your TV, and a score-keeping panel for Campsite games. About 50 minutes. Status: In development, open for testing (Movie Night on Windows is <a href="../movie-night.html">already Beta</a>).</p></div></div>
+<h2>Before you start</h2><ul><li>Use test accounts and media you are allowed to use. Do not use photos of other people.</li><li>Keep original files safe. Test with copies.</li><li>Use your home Wi-Fi, not a guest network.</li></ul>
+<section class="report" aria-labelledby="rep"><h2 id="rep" style="margin-top:0">How to report a problem</h2>
+<p>Tick Fail on the step, then tell us what you saw. Use the <a href="../tester-checklist.html">tester checklist and report form</a>, or email <a href="mailto:testers@beeboentertainment.com">testers@beeboentertainment.com</a>.</p>
+<p>Please include: your phone or PC model, the Beebo version, the step number, what you expected and what happened. Do not include passwords, email addresses, Wi-Fi names, QR codes or photos of other people.</p></section></main>
+<footer><div class="shell"><nav aria-label="Footer"><a href="../index.html">Home</a><a href="index.html">Campsite tests</a><a href="../tester-checklist.html">Tester checklist</a><a href="../movie-privacy.html">Privacy</a><a href="../terms.html">Terms</a></nav><p>&copy; 2026 Beebo Entertainment</p></div></footer></body></html>
