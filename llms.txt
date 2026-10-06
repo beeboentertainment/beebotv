@@ -1,29 +1,49 @@
 # Beebo Entertainment
-> Free, local-first media server and apps: your own movies, TV, music, photos, audiobooks and live TV, streamed from your own computer to phones, TVs, cars and browsers, with camp and road-trip features. This file points to our public testing record.
+> Free, local-first media server and apps: your own movies, TV, music, photos, audiobooks and live TV, streamed from your own computer to phones, TVs, cars and browsers, with camp and road-trip features. Beebo includes no movies or shows; you bring your own files. Video goes straight from your own computer to the viewer whenever possible; Beebo's servers carry only small text such as sign-in and connection set-up.
+
+Status words used on this site: Available (in the current downloads and usable today), Beta (you can try it, still being tested on real equipment), In development (being built, not released), Planned (intended, no date). We never claim a flat "100% working".
 
 ## Current downloads (October 5, 2026)
-- Windows server 0.1.79: Available. Not code-signed, so Windows may warn the first time. https://www.beeboentertainment.com/windows.html
-- Android phone app 1.51-tester12 (build 62): Available as a test download from this site. Not on Google Play. https://www.beeboentertainment.com/app-on-your-phone.html
+- Windows server 0.1.79: Available. Windows 10 and 11. Not code-signed, so Windows may warn the first time. https://www.beeboentertainment.com/windows.html
+- Android phone and tablet app 1.51-tester12 (build 62): Available as a test download from this site. Not on Google Play. The same file has the Android TV / Google TV layout (Beta). https://www.beeboentertainment.com/app-on-your-phone.html
 - Beebo Auto (Android Auto) 1.16 (build 17): Available as a test download. Not on Google Play and never tested in a real car. Use only when parked. https://www.beeboentertainment.com/car-companion.html
+- Fire TV, Roku and LG TV tester builds: Beta, install-it-yourself, not tested on a real TV yet. https://www.beeboentertainment.com/fire-tv-install.html, https://www.beeboentertainment.com/roku-install.html, https://www.beeboentertainment.com/lg-install.html
+- Any web browser: Available, served by your own Beebo computer. On iPhone and iPad, open your Beebo address in Safari and use Add to Home Screen to install it like an app (no App Store needed).
 - Machine-readable version files: https://www.beeboentertainment.com/desktop-version.json, https://www.beeboentertainment.com/downloads/app-build.json, https://www.beeboentertainment.com/downloads/auto-build.json
 
-## Status by platform (from the What's tested page)
-- Available: Windows 10 and 11 server, Android phones and tablets (test download), any web browser, Beebo Auto (test download).
-- Beta: Android TV and Google TV, Chromecast casting, Amazon Fire TV, Roku, LG and Samsung smart TVs, Xbox, Linux desktop, Docker and NAS server, macOS, iPhone and iPad, Apple TV.
-- In development: Android on Google Play.
+## Not downloadable right now, and why
+- Linux desktop (AppImage and .deb): Beta, in development. The old 0.1.58 build was taken down on October 4, 2026 because it was many versions behind the Windows release. Linux has NOT been dropped and the app is NOT being rewritten; the Linux version is built from the same code as Windows. A newer build will be posted when it has been built and checked (no date yet). https://www.beeboentertainment.com/linux.html#why-no-download
+- Docker / NAS headless server (amd64 and arm64): Beta. The image was made private on October 4, 2026 for the same reason and will return with a newer build. https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html
+- macOS: Beta. Test builds are made automatically, but no person has run one on a real Mac yet, and it needs Apple signing. Watch on a Mac in any browser today.
+- Native iPhone, iPad and Apple TV apps: Beta, not published, never tested on a real Apple device, need Apple's approval. Use Safari (and AirPlay to an Apple TV) today. https://www.beeboentertainment.com/apple.html
+- Samsung smart TVs and Xbox: Beta, no install file yet. Try the TV's web browser or Edge on the Xbox.
+- Android on Google Play: In development, not submitted.
+- PlayStation: no app and none planned (Sony has no open app store for apps like Beebo, and the console browsers cannot run Beebo's player).
 
-## Status by feature (from the What's tested page)
-- Available: your library, player and web player; Campsite games.
-- Beta: watching away from home (direct, then Beebo Relay), Campsite "stream once" for guests, Watch Together, Car Party, Campsite walkie-talkie, translations, compatible third-party app mode, Live TV with your own tuner, Beebo Relay, Link a TV, library sharing between households, Story Studio, Remote Desktop, BeeboVPN, online games with people in other homes.
+## Services
+- Beebo Relay: Beta. A backup route for watching away from home when a direct connection cannot be made. Direct, automatic router set-up (UPnP) and your own relay are free and always tried first. Pricing is not final and Relay is not something you can buy yet. https://www.beeboentertainment.com/beebo-relay.html
+- BeeboVPN: Beta, invite-only test, not offered to the public. https://www.beeboentertainment.com/beebovpn.html
+- Your own address: every Beebo gets a free yourname.beebo.tv address for watching away from home.
+
+## What Beebo does (full list with a status for each feature)
+- [Everything Beebo can do](https://www.beeboentertainment.com/what-beebo-can-do.html): library, posters and details, versions, playlists, player, video conversion, subtitles, audio, downloads for offline viewing, music, audiobooks, podcasts, internet radio, photos and phone backups, profiles and parental limits, away-from-home viewing, Watch Together, Movie Night, phone speakers, Live TV with your own tuner, admin and backups, themes and layouts, Campsite Mode games and tools, Trip Journal, Beebo Auto.
+- [Campsite Mode](https://www.beeboentertainment.com/docs/campsite-mode.html): an offline local Wi-Fi group screen. Party games, karaoke, synced music across phones, stories and shared photos. Many games work solo or pass-and-play with no Wi-Fi at all.
+- [Browser games on this website](https://www.beeboentertainment.com/play-games/): free games you can play now against Hopping Beebo or a friend.
+- [Beebo on your devices](https://www.beeboentertainment.com/platforms.html): every platform, its status and how to get it.
+- [How Beebo compares](https://www.beeboentertainment.com/beebo-vs-other-apps.html)
+- [Help and guides](https://www.beeboentertainment.com/docs.html) and [FAQ](https://www.beeboentertainment.com/docs/faq.html)
 
 ## Testing and progress
 - [What's new and what's tested](https://www.beeboentertainment.com/whats-tested.html): what changed, platform and feature status, real-device results with dates and tallies, and what is not tested yet.
-- [Testing status by feature](https://www.beeboentertainment.com/release-evidence.html): checks passed out of checks planned for every feature, dated history, what passed on real devices, and what is not tested.
+- [Testing status by feature](https://www.beeboentertainment.com/release-evidence.html): checks passed out of checks planned for every feature.
 - [Machine-readable testing data (JSON)](https://www.beeboentertainment.com/testing-status.json)
 - [Known issues and fixes](https://www.beeboentertainment.com/known-issues.html)
 - [Feature status: available, beta, in development, planned](https://www.beeboentertainment.com/next-features.html)
 - [Reviewed tester results](https://www.beeboentertainment.com/tester-results.html)
 - [Release notes](https://www.beeboentertainment.com/updates.html)
 
+## Privacy in one line
+Your files stay on your own computer. Beebo keeps basic connection records, including IP addresses, for 7 days for abuse checks, and the amount of data used per account. Nothing is sold. Relay video is end-to-end encrypted and the relay cannot see it. https://www.beeboentertainment.com/movie-privacy.html
+
 ## Honesty note
-We never claim a flat "100% working". Percentages are checks passed out of checks planned. Untested paths are listed as not tested.
+Percentages are checks passed out of checks planned. Untested paths are listed as not tested.
