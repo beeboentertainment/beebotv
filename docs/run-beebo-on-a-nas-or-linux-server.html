@@ -83,7 +83,7 @@
       "@type": "HowToStep",
       "position": 3,
       "name": "Start the container",
-      "text": "Once the image is offered for download again, start it like this. The last built tag is 0.1.58, older than the current Windows app (0.1.79); a newer image will be posted when it is ready. Pin a version number rather than latest if you want to control exactly when you upgrade: docker run -d --name beebo --restart unless-stopped \\ -p 47811:47811 \\ -e BEEBO_UPNP=0 \\ -e BEEBO_SECRET_KEY=\"<your key>\" \\ -v /srv/beebo/config:/config \\ -v /srv/media/movies:/media/movies:ro \\ -v /srv/media/tv:/media/tv:ro \\ -v /srv/media/music:/media/music:ro \\ -v /srv/media/photos:/media/photos:ro \\ ghcr.io/swgfan/beebo-server:0.1.58 The :ro at the end of each media folder line means “read-only”: Beebo can play the files but not change them. That is fine for watching. Leave it off if you want uploads from the phone app, the Inbox and file clean-up to write to those folders. Add /media/audiobooks the same way for audiobooks. If your files belong to another user, see Folders and users below (--user, or PUID and PGID). A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.",
+      "text": "Once the image is offered for download again, start it like this. The last built tag is 0.1.58, older than the current Windows app (0.1.80); a newer image will be posted when it is ready. Pin a version number rather than latest if you want to control exactly when you upgrade: docker run -d --name beebo --restart unless-stopped \\ -p 47811:47811 \\ -e BEEBO_UPNP=0 \\ -e BEEBO_SECRET_KEY=\"<your key>\" \\ -v /srv/beebo/config:/config \\ -v /srv/media/movies:/media/movies:ro \\ -v /srv/media/tv:/media/tv:ro \\ -v /srv/media/music:/media/music:ro \\ -v /srv/media/photos:/media/photos:ro \\ ghcr.io/swgfan/beebo-server:0.1.58 The :ro at the end of each media folder line means “read-only”: Beebo can play the files but not change them. That is fine for watching. Leave it off if you want uploads from the phone app, the Inbox and file clean-up to write to those folders. Add /media/audiobooks the same way for audiobooks. If your files belong to another user, see Folders and users below (--user, or PUID and PGID). A wrong setting stops the container with a message listing every problem (exit code 78), so a typo does not start an empty server.",
       "url": "https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html#step-3"
     },
     {
@@ -159,7 +159,7 @@
     </li>
     <li id="step-3">
       <h3>Start the container</h3>
-      <p>Once the image is offered for download again, start it like this. The last built tag is <code>0.1.58</code>, older than the current Windows app (0.1.79); a newer image will be posted when it is ready. Pin a version number rather than <code>latest</code> if you want to control exactly when you upgrade:</p>
+      <p>Once the image is offered for download again, start it like this. The last built tag is <code>0.1.58</code>, older than the current Windows app (0.1.80); a newer image will be posted when it is ready. Pin a version number rather than <code>latest</code> if you want to control exactly when you upgrade:</p>
       <p><pre><code>docker run -d --name beebo --restart unless-stopped \
   -p 47811:47811 \
   -e BEEBO_UPNP=0 \
