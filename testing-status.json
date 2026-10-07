@@ -1,7 +1,7 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "updated": "2026-10-07",
-  "updatedEastern": "Oct 7, 2026, 11:30 AM Eastern",
+  "updatedEastern": "Oct 7, 2026, 2:28 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed.",
   "overallAveragePercent": 50,
@@ -818,16 +818,19 @@
       "group": "Services and website",
       "name": "BeeboVPN",
       "status": "In development",
-      "percentComplete": 40,
+      "percentComplete": 55,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
-        "Real-world check": false,
+        "Real device": true,
+        "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Real tunnel review."
+      "lastTested": "Owner test on one Windows PC, a few days before Oct 7, 2026 (exact date not recorded), on an earlier build",
+      "leftToReach100": "Paid-plan check from the server, early release of a reserved slot, the split-tunnel driver on a real PC, installer, DNS and kill-switch proof, and the owner trying the current build.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:28 PM Eastern",
+      "changeNote": "The owner connected on one Windows PC and reached a site that his internet provider blocks. That was an earlier build; the newer features have not been tried. Automated checks pass; paid plans, the split-tunnel driver and the installer are not yet proven."
     },
     {
       "group": "Services and website",
