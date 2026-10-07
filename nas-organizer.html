@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beebo Space Saver — Beebo Entertainment</title>
-<meta name="description" content="Beebo Space Saver is Beta. Selected phone files, size and fingerprint checks, and a separate Free up choice. Current device checks remain.">
+<title>Organize files on a NAS — Beebo Entertainment</title>
+<meta name="description" content="A NAS destination for Beebo’s media organizer is in development. Review first, verified copies and explicit moves; real NAS checks remain.">
 <meta name="theme-color" content="#08131F">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -13,17 +13,17 @@
 <link rel="stylesheet" href="corporate-supporting-dark.css?v=20261003b">
 <link rel="stylesheet" href="website-shell.css?v=20260926">
 <link rel="stylesheet" href="aurora-editorial.css?v=20261003b">
-<link rel="canonical" href="https://www.beeboentertainment.com/beebo-space-saver.html">
+<link rel="canonical" href="https://www.beeboentertainment.com/nas-organizer.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Beebo Entertainment">
-<meta property="og:title" content="Beebo Space Saver — Beta">
-<meta property="og:description" content="Beebo Space Saver is Beta. Selected phone files, size and fingerprint checks, and a separate Free up choice. Current device checks remain.">
-<meta property="og:url" content="https://www.beeboentertainment.com/beebo-space-saver.html">
+<meta property="og:title" content="Organize files on a NAS — In development">
+<meta property="og:description" content="A NAS destination for Beebo’s media organizer is in development. Review first, verified copies and explicit moves; real NAS checks remain.">
+<meta property="og:url" content="https://www.beeboentertainment.com/nas-organizer.html">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Beebo Space Saver — Beta">
-<meta name="twitter:description" content="Beebo Space Saver is Beta. Selected phone files, size and fingerprint checks, and a separate Free up choice. Current device checks remain.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Beebo Space Saver","url":"https://www.beeboentertainment.com/beebo-space-saver.html","description":"Beebo Space Saver is Beta. Selected phone files, size and fingerprint checks, and a separate Free up choice. Current device checks remain.","inLanguage":"en"}</script>
+<meta name="twitter:title" content="Organize files on a NAS — In development">
+<meta name="twitter:description" content="A NAS destination for Beebo’s media organizer is in development. Review first, verified copies and explicit moves; real NAS checks remain.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Organize files on a NAS","url":"https://www.beeboentertainment.com/nas-organizer.html","description":"A NAS destination for Beebo’s media organizer is in development. Review first, verified copies and explicit moves; real NAS checks remain.","inLanguage":"en"}</script>
 <script src="website-shell.js?v=20260926" defer></script>
 </head>
 <body>
@@ -32,15 +32,15 @@
 <main class="wrap" id="page-content" tabindex="-1">
 <a class="back" href="docs.html">← All Beebo guides</a>
 <div class="page-hero">
-<h1>Beebo Space Saver <span class="tag" data-feature-status="Beta">Beta</span></h1>
-<p class="lead">Copy selected phone photos, videos and files to your Beebo computer, check the copies, then choose whether to free up the phone.</p>
+<h1>Organize files on a NAS <span class="tag" data-feature-status="In development">In development</span></h1>
+<p class="lead">Choose a writable network folder as a destination for the desktop media organizer, then review the plan before it writes anything.</p>
 </div>
-<div class="callout"><p><strong>Beta.</strong> This feature page separates the work in the code from what has been checked on real equipment. Read the untested section before trying it.</p></div>
-<section><h2>Choose what to copy</h2><div class="feature"><p>Space Saver is the phone-to-computer backup feature. You choose folders or individual files rather than giving every file an automatic deletion rule. The destination is the computer running your Beebo server.</p></div></section>
-<section><h2>A matching filename is not enough</h2><div class="feature"><p>A file is eligible only after the phone and computer confirm the same size and digital fingerprint. Missing or different fingerprints do not confirm a backup. An older server that cannot provide this proof should not make a file eligible to clear.</p></div></section>
-<section><h2>Free up is a separate choice</h2><div class="feature"><p>Copying and clearing the phone are separate actions. The deletion gate requires confirmed copies, rejects files that changed after the check and asks for confirmation. Review the destination copies first, and do not treat an upload message by itself as proof that clearing a file is safe.</p></div></section>
-<section aria-labelledby="untested"><h2 id="untested">What is not tested yet</h2><div class="feature"><p>The current phone-to-computer folder backup, independent copy verification and Free up journey have not been validated end to end on the current phone/server combination. Background interruptions, reconnects, changed files and storage limits still need real-device checks. Beta is not a promise that every phone or storage provider has passed.</p></div></section>
-<section aria-labelledby="related"><h2 id="related">Related guides</h2><ul><li><a href="photos.html">Photos and phone backup</a></li><li><a href="docs/backup-and-restore.html">Server backup and restore</a></li><li><a href="release-evidence.html">Release and testing evidence</a></li></ul></section>
+<div class="callout"><p><strong>In development.</strong> This feature page separates the work in the code from what has been checked on real equipment. Read the untested section before trying it.</p></div>
+<section><h2>Your destination, your choice</h2><div class="feature"><p>The optional organizer searches only the folders or drives you choose. You can select videos, photos or both, choose a writable destination and review where each file would go. It does not search automatically or change your library folders for you.</p></div></section>
+<section><h2>Copy first, review before moving</h2><div class="feature"><p>Copy is the default. Move is a separate explicit choice. The plan shows destinations, warnings and space estimates before confirmation. Copies are verified with a digital fingerprint, and a move checks the original and the copy again before removing the original.</p></div></section>
+<section><h2>Network-folder limits</h2><div class="feature"><p>The code skips protected or linked paths and checks for changed files and name collisions. A network drive can behave differently from a local disk. A remaining timing gap exists if another program deliberately replaces a reserved destination name just as the organizer finishes publishing it. Use a disposable Copy trial before trusting a new NAS destination; these checks are not an absolute guarantee against another program changing files.</p></div></section>
+<section aria-labelledby="untested"><h2 id="untested">What is not tested yet</h2><div class="feature"><p>Temporary-file tests cover organizer safeguards, but a real NAS model, interrupted network share and the complete reviewed screen flow have not been established by this page. Windows access permissions and enough space still matter. Running Beebo on a NAS is a different feature from using a NAS folder as this organizer’s destination.</p></div></section>
+<section aria-labelledby="related"><h2 id="related">Related guides</h2><ul><li><a href="docs/run-beebo-on-a-nas-or-linux-server.html">Running the server on a NAS</a></li><li><a href="docs/backup-and-restore.html">Server backup and restore</a></li><li><a href="release-evidence.html">Release and testing evidence</a></li></ul></section>
 <p>Feature facts checked against the project’s source on <time datetime="2026-10-07">October 7, 2026</time>. This is not a claim of a new release or a live-service check.</p>
 </main>
 <footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.81</strong><time data-beebo-release-date="windows" datetime="2026-10-07T06:01:55.000Z">Released Oct 7, 2026, 2:01:55 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.51-tester14 (build 64)</strong><time data-beebo-release-date="android" datetime="2026-10-07T06:03:30.000Z">Built Oct 7, 2026, 2:03:30 AM Eastern</time></div><a href="updates.html">What’s new ↗</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>Beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help &amp; guides</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>© 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top ↑</a></div></footer>
