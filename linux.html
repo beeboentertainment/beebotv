@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Beebo for Linux (beta, in development)</title>
-<meta name="description" content="Beebo for Linux (beta, in development): the desktop media server as an AppImage or .deb. Not offered for download right now; requirements and honest limits." />
+<title>Beebo for Linux (beta)</title>
+<meta name="description" content="Beebo for Linux (beta): the desktop media server as an AppImage or .deb, version 0.1.82. Download, install steps and honest limits." />
 <meta name="theme-color" content="#FBF6EE" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-<meta property="og:title" content="Beebo for Linux (beta, in development)" />
-<meta property="og:description" content="Beebo for Linux (beta, in development): the desktop media server as an AppImage or .deb. Not offered for download right now; requirements and honest limits." />
+<meta property="og:title" content="Beebo for Linux (beta)" />
+<meta property="og:description" content="Beebo for Linux (beta): the desktop media server as an AppImage or .deb, version 0.1.82. Download, install steps and honest limits." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.beeboentertainment.com/linux.html" />
 <meta property="og:image" content="https://www.beeboentertainment.com/assets/quiet-server.webp" />
@@ -65,7 +65,10 @@
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Linux (64-bit x86-64, glibc; tested on Ubuntu 22.04)",
   "softwareRequirements": "A 64-bit glibc-based Linux distribution such as Ubuntu 22.04 or newer, a graphical desktop session, libfuse2 for the AppImage, and your own media files.",
-  "description": "Beta, in development. The same desktop media server as the Windows version, packaged as an AppImage and a .deb. Not offered for download right now: the old 0.1.58 build was taken down on October 4, 2026 because it was many versions behind Windows; Linux has not been dropped and a newer build will be posted when it has been built and checked. The last build was tested on Ubuntu 22.04 in an automated build only. No automatic updates yet.",
+  "softwareVersion": "0.1.82",
+  "downloadUrl": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-Linux-0.1.82/Beebo.Entertainment-0.1.82.AppImage",
+  "fileSize": "323011600 bytes",
+  "description": "Beta. The same desktop media server as the Windows version, packaged as an AppImage and a .deb, version 0.1.82. Built on a real Linux toolchain; it starts and answers on its web address in an automated check run headless under WSL. Not yet run on a real Linux desktop by a person, and not code-signed. No automatic updates yet.",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -85,15 +88,15 @@
       "name": "Is there a Linux version of Beebo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, as a beta that is still in development. Beebo for Linux is the same desktop media server as the Windows version, packaged as an AppImage and a .deb for 64-bit x86-64 PCs. It is not offered for download right now. The last build, 0.1.58, was tested on Ubuntu 22.04 in our automated build only, and Linux has no automatic updates yet."
+        "text": "Yes, as a beta. Beebo for Linux is the same desktop media server as the Windows version, packaged as an AppImage and a .deb for 64-bit x86-64 PCs. The current build, 0.1.82, is a beta that is available to download on this page. It starts and answers on its web address in an automated check, but it has not yet been run on a real Linux desktop by a person, and Linux has no automatic updates yet."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is there no Linux download link?",
+      "name": "Where do I download Beebo for Linux?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "On October 4, 2026 we took down old downloads that were many versions behind the current Windows release. The Linux 0.1.58 build was one of them, and the Docker image was made private at the same time. Linux has not been dropped, and the app is not being rewritten: the Linux version is built from the same code as the Windows version. A newer Linux build will be posted on the Linux page once it has been built and checked. There is no date yet."
+        "text": "Beebo for Linux 0.1.82 (AppImage and .deb) is on the Linux page. The old 0.1.58 Linux build was removed on October 4, 2026 because it was many versions behind. The new build is the same version as Windows."
       }
     },
     {
@@ -101,7 +104,7 @@
       "name": "Can I run Beebo on Linux today?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not from a download on this site right now. The Beebo server runs on Windows 10 and 11 today. You can watch your library from a Linux PC in any web browser, by opening your Beebo address and signing in."
+        "text": "Yes, as a beta. Download the AppImage or the .deb from the Linux page and follow the install steps. It has not yet been run on a real Linux desktop by a person. You can also watch your library from a Linux PC in any web browser."
       }
     },
     {
@@ -109,7 +112,7 @@
       "name": "Is there a Docker image for a NAS or Linux server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "There is a headless Docker image (beta) for Linux servers and NAS boxes, for amd64 and arm64. It is not offered for download right now, for the same reason as the Linux desktop build. Store listings for Unraid, TrueNAS, CasaOS, Umbrel and Synology are prepared but not submitted, and no NAS model is listed as tested."
+        "text": "There is a headless Docker image (beta) for Linux servers and NAS boxes, for amd64 and arm64. It is not offered for download right now. Store listings for Unraid, TrueNAS, CasaOS, Umbrel and Synology are prepared but not submitted, and no NAS model is listed as tested."
       }
     }
   ]
@@ -120,7 +123,7 @@
 <link rel="stylesheet" href="/website-shell.css?v=20260926"><script src="/website-shell.js?v=20260926" defer></script>
 <link rel="stylesheet" href="/rectangular-buttons.css?v=20260926">
 <link rel="stylesheet" href="/assets/tester-feedback.css">
-<meta property="og:site_name" content="Beebo Entertainment"><meta name="twitter:title" content="Beebo for Linux (beta, in development)"><meta name="twitter:description" content="Beebo for Linux (beta, in development): the desktop media server as an AppImage or .deb. Not offered for download right now; requirements and honest limits."><meta name="twitter:image" content="https://www.beeboentertainment.com/assets/quiet-server.webp">
+<meta property="og:site_name" content="Beebo Entertainment"><meta name="twitter:title" content="Beebo for Linux (beta)"><meta name="twitter:description" content="Beebo for Linux (beta): the desktop media server as an AppImage or .deb, version 0.1.82. Download, install steps and honest limits."><meta name="twitter:image" content="https://www.beeboentertainment.com/assets/quiet-server.webp">
 </head>
 <body>
 <aside class="beebo-tester-banner" aria-label="Help test Beebo" data-beebo-testers-banner><div class="beebo-tester-inner"><p class="beebo-tester-message"><strong>Beebo needs testers.</strong><span>Try Beebo on your devices. Help shape the launch.</span></p><div class="beebo-tester-goal"><span>Join the community to coordinate testing.</span><div class="beebo-tester-actions"><a class="beebo-tester-primary" href="become-a-tester.html">Become a tester <span aria-hidden="true">↗</span></a><a href="https://discord.gg/P64HjkNjB4" target="_blank" rel="noopener noreferrer">Join tester chat <span aria-hidden="true">↗</span></a></div></div></div></aside><header class="beebo-site-header" id="top"><div class="beebo-header-row"><a class="beebo-header-brand" href="/index.html" aria-label="Beebo home"><img class="beebo-brand-icon" src="/assets/beebo-desktop.ico" width="44" height="44" alt=""><span>Beebo<small>ENTERTAINMENT &amp; CONNECTION</small></span></a><nav class="beebo-header-nav" aria-label="Main navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/next-features.html">Feature status</a><a href="/index.html#camp">Campsite Mode</a><a href="/index.html#connections">Pricing & routes</a><a href="/help.html">Support</a></nav><details class="beebo-header-menu"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/next-features.html">Feature status</a><a href="/index.html#camp">Campsite Mode</a><a href="/index.html#connections">Pricing & routes</a><a href="/help.html">Support</a></nav></details><a class="beebo-header-download" href="/index.html#download">Download Beebo <span aria-hidden="true">↗</span></a></div></header>
@@ -132,7 +135,7 @@
   <div class="page-hero">
     <div class="em" aria-hidden="true">🐧</div>
     <h1>Beebo for Linux (beta)</h1>
-    <p class="lead">Beebo for Linux is the same desktop media server as the Windows version, packaged as an AppImage and a .deb. It is a beta that is still in development, and it is not offered for download right now. The last build (0.1.58) was tested on Ubuntu 22.04 in our automated build only, and Linux has no automatic updates yet.</p>
+    <p class="lead">Beebo for Linux is the same desktop media server as the Windows version, packaged as an AppImage and a .deb. Version 0.1.82 is a beta and is available to download below. It has not yet been run on a real Linux desktop by a person, and Linux has no automatic updates yet.</p>
   </div>
 
   <div class="callout" data-tester-notice style="margin:14px 0;padding:10px 16px;font-size:.95rem"><p><strong>Testers wanted</strong> &mdash; posted <time datetime="2026-09-21T20:46:00Z">Sep 21, 2026, 4:46 PM Eastern</time>. We need testers on real Linux PCs. Real feedback earns a lifetime streaming pass. <a href="become-a-tester.html#linux">Help test Linux &rarr;</a></p></div>
@@ -140,19 +143,24 @@
   <img class="page-campaign-art" src="assets/quiet-server.webp" alt="A quiet home computer on a shelf" width="1672" height="941" loading="lazy">
 
   <div class="callout">
-    <p><strong>Status: <span class="tag dev">Beta — in development, not offered for download right now</span></strong> The 0.1.58 build published on September 21, 2026 was taken down on October 4, 2026 because it was many versions behind Windows. Linux has not been dropped; see <a href="#why-no-download">why there is no download right now</a>. Please read <a href="#limits">the honest limits</a>.</p>
+    <p><strong>Status: <span class="tag dev">Beta</span></strong> Version 0.1.82, the same version as Windows 0.1.82. Built on a real Linux toolchain; it starts and answers on its web address in an automated check (run headless in Linux under WSL). It has not yet been run on a real Linux desktop by a person, and it is not code-signed. See <a href="#why-no-download">why this build is different from the old one</a>. Please read <a href="#limits">the honest limits</a>.</p>
   </div>
 
   <h2 id="download">Download</h2>
-  <p><strong>The Linux build is not offered for download right now.</strong> The old 0.1.58 AppImage and .deb have been taken down. Linux remains a beta that is still in development, and a newer build will be posted on this page when it is ready. Until then you can run Beebo on <a href="windows.html">Windows</a>, and watch from a Linux PC in any web browser. The headless <a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker image</a> (also a beta) is not offered for download right now either.</p>
-  <p class="fineprint">When it returns, the Linux build is for 64-bit x86-64 PCs only. There is no ARM (Raspberry Pi) desktop build.</p>
-
-  <h2 id="why-no-download">Why there is no Linux download right now</h2>
-  <p>On October 4, 2026 we took down old downloads that were many versions behind the current Windows release. The Linux 0.1.58 build was one of them, and the Docker image was made private at the same time.</p>
+  <p><strong>Beebo for Linux 0.1.82</strong> (beta) for 64-bit x86-64 PCs. Pick one file; you do not need both.</p>
   <ul class="plain">
-    <li><strong>Linux has not been dropped.</strong> It is still a beta that is in development.</li>
-    <li><strong>The app is not being rewritten.</strong> The Linux version is built from the same code as the Windows version, which gets new releases often.</li>
-    <li><strong>What happens next:</strong> a newer Linux build will be posted on this page once it has been built and checked. There is no date yet. The <a href="updates.html">release notes</a> will say when it is back.</li>
+    <li><a href="https://github.com/beeboentertainment/beebotv/releases/download/Beebo-Linux-0.1.82/Beebo.Entertainment-0.1.82.AppImage"><strong>AppImage</strong>: Beebo.Entertainment-0.1.82.AppImage</a> &middot; 323.0 MB (323,011,600 bytes)<br>SHA-256 <code>1820efdf4983d411c00d3e71c0251ace8f657c04ad5ed5c7d3df935149a25a20</code></li>
+    <li><a href="https://github.com/beeboentertainment/beebotv/releases/download/Beebo-Linux-0.1.82/Beebo.Entertainment_0.1.82_amd64.deb"><strong>.deb for Debian and Ubuntu</strong>: Beebo.Entertainment_0.1.82_amd64.deb</a> &middot; 269.7 MB (269,749,948 bytes)<br>SHA-256 <code>d09aceff2769a303b7432a7aa2cd498206325d613731e8e04cd3c3aafbf94ec6</code></li>
+  </ul>
+  <p>Both include the bundled LGPL video converter. Neither is code-signed. The headless <a href="docs/run-beebo-on-a-nas-or-linux-server.html">Docker image</a> (also a beta) is not offered for download right now.</p>
+  <p class="fineprint">The Linux build is for 64-bit x86-64 PCs only. There is no ARM (Raspberry Pi) desktop build.</p>
+
+  <h2 id="why-no-download">Why this build is different from the old one</h2>
+  <p>The old 0.1.58 Linux build was removed on October 4, 2026 because it was many versions behind. This one is the same version as Windows.</p>
+  <ul class="plain">
+    <li><strong>Built like the Windows installer.</strong> The program code is minified and no extra source is included. Apart from hashed file names, the app contents match the Windows build byte for byte.</li>
+    <li><strong>Honest status:</strong> built on a real Linux toolchain, and it starts and answers on its web address in an automated check (run headless in Linux under WSL). A person has not yet run it on a real Linux desktop.</li>
+    <li>The <a href="updates.html">release notes</a> list what is in each version.</li>
   </ul>
 
   <h2 id="what">What it is</h2>
@@ -167,21 +175,21 @@
   </ul>
 
   <h2 id="status">How well it has been tested</h2>
-  <p>This is a <strong>beta</strong>. It was built on Ubuntu 22.04 in our automated build and tested there only: an automated install and launch. Other distributions, desktops and real Linux PCs have not been tested by us. If it works or fails for you, please tell us.</p>
+  <p>This is a <strong>beta</strong>. It was built on a real Linux toolchain and, in an automated check run headless in Linux under WSL, it starts and answers on its web address. It has not yet been run on a real Linux desktop by a person, and other distributions and desktops have not been tested by us. If it works or fails for you, please tell us.</p>
 
-  <h2 id="install">Install steps (for when a Linux build is offered again)</h2>
+  <h2 id="install">Install steps</h2>
   <ol class="steps">
     <li>
       <h3>Option A: the .deb package (Ubuntu and Debian)</h3>
-      <p>Download the <code>.deb</code> file, then in a terminal in the download folder run:</p>
-      <p><code>sudo apt install ./Beebo-Entertainment-&lt;version&gt;-amd64.deb</code></p>
+      <p>Download the <code>.deb</code> file above, then in a terminal in the download folder run:</p>
+      <p><code>sudo apt install ./Beebo.Entertainment_0.1.82_amd64.deb</code></p>
       <p>Then start Beebo from your applications menu.</p>
     </li>
     <li>
       <h3>Option B: the AppImage (most distributions)</h3>
-      <p>Install libfuse2 with your package manager (the package name can differ between distributions), download the <code>.AppImage</code> file, and make it runnable:</p>
-      <p><code>chmod +x Beebo-Entertainment-&lt;version&gt;-x86_64.AppImage</code></p>
-      <p>Then run it with <code>./Beebo-Entertainment-&lt;version&gt;-x86_64.AppImage</code> or double-click it in your file manager.</p>
+      <p>Install libfuse2 with your package manager (on Ubuntu 22.04 and newer it is not installed by default; the package name can differ between distributions), download the <code>.AppImage</code> file above, and make it runnable:</p>
+      <p><code>chmod +x Beebo.Entertainment-0.1.82.AppImage</code></p>
+      <p>Then run it with <code>./Beebo.Entertainment-0.1.82.AppImage</code> or double-click it in your file manager.</p>
     </li>
     <li>
       <h3>Set up your library</h3>
@@ -196,8 +204,8 @@
   <h2 id="limits">Honest limits</h2>
   <ul class="plain">
     <li><strong>Beta.</strong> Expect rough edges, and tell us what you find.</li>
-    <li><strong>Tested on Ubuntu 22.04 in our automated build only.</strong> Not on other distributions or desktops, and not on real hardware by us.</li>
-    <li><strong>No automatic updates on Linux yet.</strong> You install new versions yourself from this page, once a build is offered again. Windows has automatic updates; Linux does not.</li>
+    <li><strong>Not yet run on a real Linux desktop by a person.</strong> Only an automated start-up check (headless, under WSL) has been done. Not code-signed.</li>
+    <li><strong>No automatic updates on Linux yet.</strong> You install new versions yourself from this page. Windows has automatic updates; Linux does not.</li>
     <li><strong>Hardware video conversion on Linux is untested.</strong> VAAPI and other graphics paths have not been run on real Linux hardware, so expect conversion to use the processor.</li>
     <li><strong>Saved passwords and keys are only encrypted if your system has a keyring</strong> such as GNOME Keyring or KWallet. Without one, Beebo keeps them as plain text in its settings file.</li>
     <li><strong>The system tray icon has not been checked</strong> on Linux desktops yet.</li>
@@ -206,10 +214,10 @@
 
   <h2 id="faq">Questions about Linux</h2>
   <div class="faq">
-    <details><summary>Is there a Linux version of Beebo?</summary><p>Yes, as a beta that is still in development. Beebo for Linux is the same desktop media server as the Windows version, packaged as an AppImage and a .deb for 64-bit x86-64 PCs. It is not offered for download right now. The last build, 0.1.58, was tested on Ubuntu 22.04 in our automated build only, and Linux has no automatic updates yet.</p></details>
-    <details><summary>Why is there no Linux download link?</summary><p>On October 4, 2026 we took down old downloads that were many versions behind the current Windows release. The Linux 0.1.58 build was one of them, and the Docker image was made private at the same time. Linux has not been dropped, and the app is not being rewritten: the Linux version is built from the same code as the Windows version. A newer Linux build will be posted on the Linux page once it has been built and checked. There is no date yet.</p></details>
-    <details><summary>Can I run Beebo on Linux today?</summary><p>Not from a download on this site right now. The Beebo server runs on Windows 10 and 11 today. You can watch your library from a Linux PC in any web browser, by opening your Beebo address and signing in.</p></details>
-    <details><summary>Is there a Docker image for a NAS or Linux server?</summary><p>There is a headless Docker image (beta) for Linux servers and NAS boxes, for amd64 and arm64. It is not offered for download right now, for the same reason as the Linux desktop build. Store listings for Unraid, TrueNAS, CasaOS, Umbrel and Synology are prepared but not submitted, and no NAS model is listed as tested.</p></details>
+    <details><summary>Is there a Linux version of Beebo?</summary><p>Yes, as a beta. Beebo for Linux is the same desktop media server as the Windows version, packaged as an AppImage and a .deb for 64-bit x86-64 PCs. The current build, 0.1.82, is a beta available to download on this page. It has not yet been run on a real Linux desktop by a person, and Linux has no automatic updates yet.</p></details>
+    <details><summary>Where do I download Beebo for Linux?</summary><p>Beebo for Linux 0.1.82 (AppImage and .deb) is in the Download section above. The old 0.1.58 Linux build was removed on October 4, 2026 because it was many versions behind. The new build is the same version as Windows.</p></details>
+    <details><summary>Can I run Beebo on Linux today?</summary><p>Yes, as a beta. Download the AppImage or the .deb above and follow the install steps. It has not yet been run on a real Linux desktop by a person. You can also watch your library from a Linux PC in any web browser.</p></details>
+    <details><summary>Is there a Docker image for a NAS or Linux server?</summary><p>There is a headless Docker image (beta) for Linux servers and NAS boxes, for amd64 and arm64. It is not offered for download right now. Store listings for Unraid, TrueNAS, CasaOS, Umbrel and Synology are prepared but not submitted, and no NAS model is listed as tested.</p></details>
   </div>
 
   <div class="callout">
