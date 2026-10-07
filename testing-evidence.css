@@ -237,3 +237,8 @@ html[data-aurora] .upd-delta, html[data-beebo-corporate-dark] .upd-delta { color
 @media (prefers-color-scheme: dark) { .upd-delta { color: #b9a6ff; } }
 @media (prefers-reduced-motion: reduce) { .evidence-table .bar i { transition: none; } }
 @media (max-width: 640px) { .site-stamp { font-size: .9em; } }
+
+.meaning-box { margin: 14px 0 6px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(128,128,128,.35); background: rgba(128,128,128,.08); }
+.meaning-box h3 { margin: 0 0 8px; }
+.meaning-box p, .meaning-box li { max-width: 70ch; }
+.meaning-box ul { padding-left: 1.2em; margin: 8px 0; }
