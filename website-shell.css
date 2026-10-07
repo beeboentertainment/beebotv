@@ -1,4 +1,6 @@
+@import url("responsive-accessibility.css");
 /* Shared public navigation. Scoped so guide styles cannot move its controls. */
+.beebo-site-header :is(.beebo-header-brand,.beebo-header-download,summary){min-height:44px;min-width:44px;display:inline-flex;align-items:center;box-sizing:border-box}
 body .beebo-site-header{position:relative;display:block;width:100%;max-width:none;margin:0;padding:0;border:0;border-bottom:1px solid #354143;border-radius:0;background:#101719;color:#f3f2ec;font:16px/1.5 Arial,Helvetica,sans-serif;box-shadow:none;z-index:20}
 .beebo-site-header .beebo-header-row{width:min(1280px,calc(100% - 64px));min-height:92px;margin:0 auto;display:flex;align-items:center;gap:28px;flex-wrap:nowrap}
 .beebo-site-header a{color:#f3f2ec;text-decoration:none;letter-spacing:normal}

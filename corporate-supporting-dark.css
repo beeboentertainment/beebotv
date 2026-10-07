@@ -1,3 +1,4 @@
+@import url('responsive-accessibility.css');
 /*
   Beebo supporting pages — shared dark corporate presentation.
   This layer deliberately changes presentation only. Existing content, routes,
@@ -335,3 +336,8 @@ html[data-beebo-corporate-dark] :is(.pro-skip, .skip) { background: #d5b779; col
 
 /* D1 long status pills wrap instead of pushing the page sideways */
 html[data-beebo-corporate-dark] .tag { white-space: normal; max-width: 100%; overflow-wrap: anywhere; }
+
+/* Plain comparison articles inherit the corporate ink, so must inherit its surface too. */
+html[data-beebo-corporate-dark] main > article:not([class]) { background: #182123; border-color: #354143; color: #f3f2ec; }
+/* Include the shared accessibility skip link, not just the older guide aliases. */
+html[data-beebo-corporate-dark] .a11y-skip { background: #d5b779; color: #101719; }
