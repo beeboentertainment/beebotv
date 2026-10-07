@@ -4,6 +4,24 @@ html[data-aurora] .evidence-shell {
   padding: 28px 0 72px;
 }
 
+/* Opt-in light presentation uses the existing corporate palette. The page's
+   default dark theme is unchanged; neither theme introduces fixed white cards. */
+html[data-aurora][data-theme="light"] {
+  color-scheme: light;
+  --aurora-canvas: var(--paper);
+  --aurora-surface: var(--card);
+  --aurora-hairline: var(--line);
+  --aurora-hairline-soft: var(--line);
+  --aurora-text: var(--dark);
+  --muted: #5c6062;
+  --aurora-text-muted: var(--muted);
+  --aurora-gold: var(--gold);
+}
+html[data-aurora][data-theme="light"] .tier-tag.tier-green { color: #1c7a3d; }
+html[data-aurora][data-theme="light"] .tier-tag.tier-yellow { color: #8a6100; }
+html[data-aurora][data-theme="light"] .tier-tag.tier-red { color: #b3261e; }
+html[data-aurora][data-theme="light"] .upd-delta { color: #5a3fc4; }
+
 /* Present to keyboard users first, without leaving a stray link above the tester banner. */
 html[data-aurora] .skip {
   position: absolute;
@@ -153,10 +171,10 @@ html[data-aurora] .evidence-limits { border-left: 3px solid var(--aurora-gold); 
 html[data-aurora] .evidence-limits ul { margin: 0; padding-left: 19px; }
 html[data-aurora] .evidence-limits li + li { margin-top: 10px; }
 
-html[data-aurora] .evidence-table-wrap { overflow-x: auto; border: 1px solid var(--aurora-hairline); }
-html[data-aurora] .evidence-table { width: 100%; min-width: 760px; border-collapse: collapse; }
+html[data-aurora] .evidence-table-wrap { min-width: 0; border: 1px solid var(--aurora-hairline); }
+html[data-aurora] .evidence-table { width: 100%; min-width: 0; table-layout: fixed; border-collapse: collapse; }
 html[data-aurora] .evidence-table th,
-html[data-aurora] .evidence-table td { padding: 15px 16px; text-align: left; border-bottom: 1px solid var(--aurora-hairline); vertical-align: top; }
+html[data-aurora] .evidence-table td { padding: 15px 12px; text-align: left; border-bottom: 1px solid var(--aurora-hairline); vertical-align: top; overflow-wrap: anywhere; }
 html[data-aurora] .evidence-table th { color: var(--aurora-text-muted); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; }
 html[data-aurora] .evidence-table tbody tr:last-child td { border-bottom: 0; }
 html[data-aurora] .evidence-state { color: var(--aurora-gold); font-weight: 700; }
@@ -192,7 +210,7 @@ html[data-aurora] .evidence-actions { display: flex; gap: 12px; flex-wrap: wrap;
 .evidence-table tr.feat.tier-green { background: linear-gradient(90deg, rgba(34,160,80,.30), rgba(34,160,80,.06) 70%, transparent); box-shadow: inset 5px 0 0 rgba(34,160,80,.85); }
 .evidence-table tr.feat.tier-yellow { background: linear-gradient(90deg, rgba(230,168,20,.32), rgba(230,168,20,.07) 70%, transparent); box-shadow: inset 5px 0 0 rgba(230,168,20,.9); }
 .evidence-table tr.feat.tier-red { background: linear-gradient(90deg, rgba(222,64,64,.28), rgba(222,64,64,.06) 70%, transparent); box-shadow: inset 5px 0 0 rgba(222,64,64,.85); }
-.evidence-table .done-cell { white-space: nowrap; min-width: 150px; }
+.evidence-table .done-cell { white-space: normal; min-width: 0; }
 .evidence-table .done-cell strong { font-size: 1.1em; }
 .tier-tag { display: inline-block; font-size: .72em; font-weight: 700; letter-spacing: .02em; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; vertical-align: middle; }
 .tier-tag.tier-green { color: #1c7a3d; background: rgba(34,160,80,.14); }
@@ -209,7 +227,7 @@ html[data-aurora] .tier-tag.tier-red, html[data-beebo-corporate-dark] .tier-tag.
 .evidence-table tr.tier-green .bar i { background: linear-gradient(90deg, rgba(34,160,80,.55), rgba(34,160,80,1)); }
 .evidence-table tr.tier-yellow .bar i { background: linear-gradient(90deg, rgba(230,168,20,.55), rgba(230,168,20,1)); }
 .evidence-table tr.tier-red .bar i { background: linear-gradient(90deg, rgba(222,64,64,.55), rgba(222,64,64,1)); min-width: 3px; }
-.evidence-table .chk-cell { white-space: nowrap; }
+.evidence-table .chk-cell { white-space: normal; }
 .chk { display: inline-block; margin: 0 3px 3px 0; padding: 2px 7px; border-radius: 6px; font-size: .72em; line-height: 1.4; border: 1px solid rgba(128,128,128,.45); }
 .chk b { font-weight: 600; margin-right: 4px; }
 .chk.ok { background: rgba(34,160,80,.22); border-color: rgba(34,160,80,.8); }
@@ -217,9 +235,34 @@ html[data-aurora] .tier-tag.tier-red, html[data-beebo-corporate-dark] .tier-tag.
 .status-legend { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 14px 0 6px; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(128,128,128,.35); }
 .status-legend .legend-note { flex-basis: 100%; font-size: .85em; opacity: .85; }
 
-.evidence-table tr.feat td:last-child { min-width: 340px; }
-.evidence-table tr.feat td:nth-last-child(2) { min-width: 110px; }
-.evidence-table tr.feat th[scope="row"] { min-width: 150px; }
+.feature-progress-table thead th:nth-child(1) { width: 15%; }
+.feature-progress-table thead th:nth-child(2) { width: 11%; }
+.feature-progress-table thead th:nth-child(3) { width: 16%; }
+.feature-progress-table thead th:nth-child(4) { width: 19.5%; }
+.feature-progress-table thead th:nth-child(5) { width: 12%; }
+.feature-progress-table thead th:nth-child(6) { width: 26.5%; }
+
+@media (max-width: 860px) {
+  html[data-aurora] .evidence-table,
+  html[data-aurora] .evidence-table caption,
+  html[data-aurora] .evidence-table tbody { display: block; width: 100%; }
+  html[data-aurora] .evidence-table thead {
+    position: absolute; width: 1px; height: 1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+  html[data-aurora] .evidence-table thead tr,
+  html[data-aurora] .evidence-table thead th { display: block; width: 1px; min-width: 0; height: 1px; padding: 0; overflow: hidden; }
+  html[data-aurora] .evidence-table tbody tr { display: block; border-bottom: 1px solid var(--aurora-hairline); }
+  html[data-aurora] .evidence-table tbody tr:last-child { border-bottom: 0; }
+  html[data-aurora] .evidence-table tbody th,
+  html[data-aurora] .evidence-table tbody td { display: block; width: auto; min-width: 0; border-bottom: 0; padding: 10px 16px; }
+  html[data-aurora] .evidence-table tbody th[scope="row"] { font-size: 1rem; color: var(--aurora-text); letter-spacing: normal; text-transform: none; padding-top: 18px; }
+  html[data-aurora] .evidence-table td[data-label]::before {
+    content: attr(data-label); display: block; margin-bottom: 3px;
+    color: var(--aurora-text); font-size: .78rem; font-weight: 700;
+  }
+  html[data-aurora] .evidence-table td:last-child { padding-bottom: 20px; }
+}
 
 /* Temporary testing-phase change markers (testing-status.json "showChangeMarkers": true; built by tools/build-status-page.mjs). */
 .site-stamp { margin: 0 0 14px; padding: 8px 14px; border-radius: 10px; border: 1px solid rgba(110,80,220,.45); background: rgba(110,80,220,.10); font-size: .95em; }
@@ -242,3 +285,18 @@ html[data-aurora] .upd-delta, html[data-beebo-corporate-dark] .upd-delta { color
 .meaning-box h3 { margin: 0 0 8px; }
 .meaning-box p, .meaning-box li { max-width: 70ch; }
 .meaning-box ul { padding-left: 1.2em; margin: 8px 0; }
+
+/* Platform guide's existing table uses the same wrap/card policy, without
+   opting the rest of that page into Aurora or changing its theme. */
+html .rl-table-wrap { overflow: visible; min-width: 0; }
+html .rl-table { width: 100%; min-width: 0; table-layout: fixed; }
+html .rl-table th, html .rl-table td { overflow-wrap: anywhere; }
+html .rl-table .tag { max-width: 100%; white-space: normal; overflow-wrap: anywhere; box-sizing: border-box; }
+@media (max-width: 860px) {
+  html .rl-table, html .rl-table tbody { display: block; width: 100%; }
+  html .rl-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  html .rl-table thead tr, html .rl-table thead th { display: block; width: 1px; min-width: 0; height: 1px; padding: 0; overflow: hidden; }
+  html .rl-table tbody tr { display: block; margin-bottom: 12px; border: 1px solid var(--border); }
+  html .rl-table tbody th, html .rl-table tbody td { display: block; width: auto; padding: 10px 14px; border-bottom: 0; }
+  html .rl-table td[data-label]::before { content: attr(data-label); display: block; font-weight: 700; margin-bottom: 4px; }
+}
