@@ -1,0 +1,252 @@
+<!doctype html>
+<html data-beebo-corporate-dark lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Use your phone as a mouse and keyboard for your PC (In development) | Beebo</title>
+<meta name="description" content="Can you use your phone to move your computer's mouse with Beebo? Not yet as a finished feature. A first version, Remote Desktop, is in Beebo for Windows, switched off by default and not yet tested on a real phone." />
+<meta name="theme-color" content="#FBF6EE" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Use your phone as a mouse and keyboard for your PC (In development) | Beebo" />
+<meta property="og:description" content="Can you use your phone to move your computer's mouse with Beebo? Not yet as a finished feature. A first version, Remote Desktop, is in Beebo for Windows, switched off by default and not yet tested on a real phone." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.beeboentertainment.com/phone-remote-control.html" />
+<meta name="twitter:card" content="summary" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* ---- phone remote control page: same building blocks as home-theater.html and docs/campsite-mode.html, layered on site.css tokens ---- */
+  .wrap code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  .wrap p a,.wrap li a,.wrap td a{color:var(--accent-ink);font-weight:600}
+  .fineprint{color:var(--muted);font-size:.9rem;line-height:1.55}
+  .wrap ul.plain{margin:8px 0 14px;padding-left:1.25em}
+  .wrap ul.plain li{margin:0 0 7px}
+  .steps{list-style:none;counter-reset:step;margin:16px 0 8px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px 18px 62px;position:relative}
+  .steps>li::before{content:counter(step);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:11px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:1.12rem;display:grid;place-items:center}
+  .steps>li h3{font-size:1.08rem;margin:0 0 5px}
+  .steps>li p{color:var(--muted);margin:0 0 .55em}
+  .steps>li p:last-child{margin-bottom:0}
+  .tag{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px;white-space:nowrap;border:1px solid transparent;vertical-align:middle;line-height:1.4}
+  .tag.live{color:#1f6b45;background:#e2f4ea;border-color:#a9d9bf}
+  .tag.beta{color:#4a8a67;background:#eef8f1;border-color:#c9e8d4}
+  .tag.dev{color:#231E18;background:var(--bg-2);border-color:var(--border-strong)}
+  .tag.plan{color:#6E6456;background:#fff;border-color:var(--border-strong)}
+  .rl-table-wrap{overflow-x:auto;margin:10px 0}
+  table.rl-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
+  .rl-table th,.rl-table td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .rl-table thead th{font-family:var(--font-display);font-weight:700;background:var(--bg-2)}
+  .rl-table tbody th{font-family:var(--font-display);font-weight:700;background:transparent}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:14px 0}
+  .two-col .feature{margin:0}
+  .two-col .feature ul{margin:8px 0 0;padding-left:1.15em;color:var(--muted)}
+  .two-col .feature li{margin:0 0 6px}
+  .notyet{background:var(--surface);border:1px solid var(--border-strong);border-left:5px solid var(--accent);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 22px;margin:18px 0}
+  .notyet h2{margin-top:0}
+  .notyet ul{margin:8px 0 0;padding-left:1.25em}
+  .notyet li{margin:0 0 7px}
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:0 18px;margin:10px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-family:var(--font-display);padding:14px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--accent-ink);font-weight:800;font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);padding:0 0 14px;margin:0}
+  .guide-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+  .guide-nav a{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 15px;font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+  .guide-nav a:hover{border-color:var(--accent)}
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0 6px}
+  .legend div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .legend div .tag{display:block;width:max-content;margin-bottom:6px}
+  figure.diagram{margin:18px 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 12px 10px}
+  figure.diagram svg{display:block;width:100%;height:auto;max-width:620px;margin:0 auto}
+  figure.diagram figcaption{color:var(--muted);font-size:.9rem;line-height:1.5;text-align:center;margin-top:8px}
+  .dg-box{fill:var(--surface-2);stroke:var(--border-strong);stroke-width:2}
+  .dg-host{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2.5}
+  .dg-guest{fill:var(--surface);stroke:var(--accent);stroke-width:2}
+  .dg-pill{fill:var(--surface);stroke:var(--border-strong);stroke-width:1.5}
+  .dg-t{font:700 22px var(--font-display);fill:var(--ink)}
+  .dg-s{font:600 18px var(--font-body);fill:var(--muted)}
+  .dg-line{stroke:var(--accent-ink);stroke-width:2.5;fill:none}
+  .dg-wifi{stroke:var(--accent-ink);stroke-width:3;fill:none;stroke-linecap:round}
+  .dg-dot{fill:var(--accent-ink)}
+  .dg-qr{fill:var(--ink)}
+  .dg-qrbg{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+  .dg-arrowhead{fill:var(--accent-ink)}
+  @media (max-width:640px){.steps>li{padding:16px 16px 16px 56px}.steps>li::before{left:12px}table.rl-table{min-width:0}.rl-table thead{display:none}.rl-table tr{display:block;padding:12px 0;border-bottom:1px solid var(--border)}.rl-table th,.rl-table td{display:block;border:0;padding:2px 0}}
+</style>
+<link rel="stylesheet" href="refresh.css"><link rel="canonical" href="https://www.beeboentertainment.com/phone-remote-control.html"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="polish.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.beeboentertainment.com/phone-remote-control.html#webpage",
+      "url": "https://www.beeboentertainment.com/phone-remote-control.html",
+      "name": "Use your phone as a mouse and keyboard for your PC (In development) | Beebo",
+      "description": "Can you use your phone to move your computer's mouse with Beebo? Not yet as a finished feature. A first version, Remote Desktop, is in Beebo for Windows, switched off by default and not yet tested on a real phone.",
+      "inLanguage": "en",
+      "dateModified": "2026-10-07"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.beeboentertainment.com/phone-remote-control.html#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I use my phone to move my computer's mouse with Beebo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet as a finished feature. A first version, called Remote Desktop, is inside Beebo for Windows (0.1.58 and later). It is switched off by default and has not been tested on a real phone yet. A simple touchpad-only version is planned."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Remote Desktop on by default?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is off by default. Only the owner of the PC can switch it on, in Settings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who can use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only the owner. Other household members and guests cannot use it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the PC ask before someone can see or control it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The PC asks for a separate local approval for viewing and another for controlling, each time. Someone has to approve at the PC itself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use it away from home?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It works from a phone or any browser on the same Wi-Fi, or through the owner's own away-from-home connection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I forget to stop it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It stops by itself after 5 minutes without use. There is also an emergency stop key on the PC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Has it been tested on a real phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It has never been run on a real phone or in a real computer session. So far it has only been checked by automated tests. We do not claim it works on every phone or that it is ready."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the touchpad-only mode?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a planned, simpler mode with no screen sharing. Your phone would show only a touchpad and a keyboard. It is planned, with no date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I try it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is not offered for general testing yet. Watch this page for news, or ask us at testers@beeboentertainment.com."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="beebo-testers.css?v=2">
+<link rel="stylesheet" href="corporate-supporting-dark.css?v=20261003b">
+<link rel="stylesheet" href="/website-shell.css?v=20260926"><script src="/website-shell.js?v=20260926" defer></script>
+<link rel="stylesheet" href="/rectangular-buttons.css?v=20260926">
+<meta property="og:site_name" content="Beebo Entertainment"><meta name="twitter:title" content="Use your phone as a mouse and keyboard for your PC (In development) | Beebo"><meta name="twitter:description" content="Can you use your phone to move your computer's mouse with Beebo? Not yet as a finished feature. A first version, Remote Desktop, is in Beebo for Windows, switched off by default and not yet tested on a real phone.">
+</head>
+<body>
+<aside class="beebo-tester-banner" aria-label="Help test Beebo" data-beebo-testers-banner><div class="beebo-tester-inner"><p class="beebo-tester-message"><strong>Beebo needs testers.</strong><span>Try Beebo on your devices. Help shape the launch.</span></p><div class="beebo-tester-goal"><span>Join the community to coordinate testing.</span><div class="beebo-tester-actions"><a class="beebo-tester-primary" href="become-a-tester.html">Become a tester <span aria-hidden="true">↗</span></a><a href="https://discord.gg/P64HjkNjB4" target="_blank" rel="noopener noreferrer">Join tester chat <span aria-hidden="true">↗</span></a></div></div></div></aside><header class="beebo-site-header" id="top"><div class="beebo-header-row"><a class="beebo-header-brand" href="/index.html" aria-label="Beebo home"><img class="beebo-brand-icon" src="/assets/beebo-desktop.ico" width="44" height="44" alt=""><span>Beebo<small>ENTERTAINMENT &amp; CONNECTION</small></span></a><nav class="beebo-header-nav" aria-label="Main navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/next-features.html">Feature status</a><a href="/index.html#camp">Campsite Mode</a><a href="/index.html#connections">Pricing & routes</a><a href="/help.html">Support</a></nav><details class="beebo-header-menu"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/next-features.html">Feature status</a><a href="/index.html#camp">Campsite Mode</a><a href="/index.html#connections">Pricing & routes</a><a href="/help.html">Support</a></nav></details><a class="beebo-header-download" href="/index.html#download">Download Beebo <span aria-hidden="true">↗</span></a></div></header>
+<a class="pro-skip" href="#page-content">Skip to content</a><div id="page-content" tabindex="-1"></div>
+
+<main>
+<div class="wrap">
+  <a class="back" href="what-beebo-can-do.html">&larr; What Beebo can do</a>
+  <div class="page-hero">
+    <div class="em" aria-hidden="true">📱</div>
+    <h1>Use your phone as a mouse and keyboard for your PC</h1>
+    <p class="lead">Beebo for Windows has a first version of this, called Remote Desktop. It is in development, switched off by default, and has not been tested on a real phone yet. This page says plainly what exists today and what is only planned.</p>
+  </div>
+
+  <div class="callout safe" id="quick-answer">
+    <p><strong>Can I use my phone to move my computer&rsquo;s mouse with Beebo?</strong></p>
+    <p><strong>Not yet as a finished feature. A first version, called Remote Desktop, is inside Beebo for Windows. It is switched off by default and has not been tested on a real phone yet. A simple touchpad-only version is planned.</strong></p>
+    <p class="fineprint"><span class="tag dev">In development</span> Honest status: automated tests only. It has never been run on a real phone or in a real computer session.</p>
+  </div>
+
+  <nav class="guide-nav" aria-label="On this page"><a href="#today">What it does today</a><a href="#safe">What keeps it safe</a><a href="#status">Honest status</a><a href="#planned">What is planned</a><a href="#faq">Questions</a></nav>
+
+  <h2 id="today">What it does today</h2>
+  <p>Beebo for Windows 0.1.58 and later contains Remote Desktop. When the owner has switched it on and approved it at the PC, a phone or any web browser on the same Wi-Fi can show the PC screen, move the mouse and type. The same works through the owner&rsquo;s own away-from-home connection.</p>
+  <p>It is a first version. It is not a finished phone touchpad, and we do not say it works on every phone.</p>
+
+  <h2 id="safe">What keeps it safe</h2>
+  <ul class="plain">
+    <li><strong>Off by default.</strong> The owner switches it on in Settings.</li>
+    <li><strong>Owner only.</strong> No one else in the household and no guest can use it.</li>
+    <li><strong>Two approvals at the PC.</strong> The PC asks for a separate local approval for viewing and another for controlling, each time.</li>
+    <li><strong>Your Wi-Fi or your own connection.</strong> Same Wi-Fi, or the owner&rsquo;s own away-from-home connection.</li>
+    <li><strong>It stops when you stop.</strong> It ends after 5 minutes without use.</li>
+    <li><strong>Emergency stop key.</strong> You can end it at once from the PC.</li>
+  </ul>
+
+  <h2 id="status">Honest status</h2>
+  <div class="callout">
+    <p><span class="tag dev">In development</span> <strong>Status:</strong> checked by automated tests only. It has <strong>not been tested on a real phone</strong> or in a real computer session. It may have problems we have not found. Do not rely on it.</p>
+  </div>
+
+  <h2 id="planned">What is planned</h2>
+  <p>A simpler touchpad-only mode is planned: no screen sharing, just a touchpad and a keyboard on your phone. <span class="tag plan">Planned</span> We have no date for it.</p>
+
+  <h2 id="faq">Questions</h2>
+  <div class="faq">
+    <details><summary>Can I use my phone to move my computer&rsquo;s mouse with Beebo?</summary><p>Not yet as a finished feature. A first version, called Remote Desktop, is inside Beebo for Windows (0.1.58 and later). It is switched off by default and has not been tested on a real phone yet. A simple touchpad-only version is planned.</p></details>
+    <details><summary>Is Remote Desktop on by default?</summary><p>No. It is off by default. Only the owner of the PC can switch it on, in Settings.</p></details>
+    <details><summary>Who can use it?</summary><p>Only the owner. Other household members and guests cannot use it.</p></details>
+    <details><summary>Does the PC ask before someone can see or control it?</summary><p>Yes. The PC asks for a separate local approval for viewing and another for controlling, each time. Someone has to approve at the PC itself.</p></details>
+    <details><summary>Can I use it away from home?</summary><p>It works from a phone or any browser on the same Wi-Fi, or through the owner&rsquo;s own away-from-home connection.</p></details>
+    <details><summary>What if I forget to stop it?</summary><p>It stops by itself after 5 minutes without use. There is also an emergency stop key on the PC.</p></details>
+    <details><summary>Has it been tested on a real phone?</summary><p>No. It has never been run on a real phone or in a real computer session. So far it has only been checked by automated tests. We do not claim it works on every phone or that it is ready.</p></details>
+    <details><summary>What is the touchpad-only mode?</summary><p>It is a planned, simpler mode with no screen sharing. Your phone would show only a touchpad and a keyboard. It is planned, with no date.</p></details>
+    <details><summary>How can I try it?</summary><p>It is not offered for general testing yet. Watch this page for news, or ask us at testers@beeboentertainment.com.</p></details>
+  </div>
+
+  <h2 id="related">Related pages</h2>
+  <div class="guide-nav">
+    <a href="what-beebo-can-do.html">What Beebo can do</a>
+    <a href="docs/faq.html">FAQ</a>
+    <a href="phone-speakers.html">Phone speakers (Beta)</a>
+    <a href="next-features.html">Feature status</a>
+    <a href="docs/privacy-in-plain-words.html">Privacy in plain words</a>
+  </div>
+  <p class="fineprint">As of October 7, 2026. Found something that does not match what you see? Tell us at <a href="mailto:testers@beeboentertainment.com?subject=Beebo%20phone%20remote%20control%20page%20correction">testers@beeboentertainment.com</a>. It is a plain email, with no form and no sign-up.</p>
+</div>
+</main>
+
+<footer class="pro-footer"><section class="beebo-release-status" aria-label="Current Beebo releases"><div><span class="beebo-release-platform">WINDOWS</span><strong data-beebo-release-version="windows">0.1.82</strong><time data-beebo-release-date="windows" datetime="2026-10-07T15:30:07.000Z">Released Oct 7, 2026, 11:30:07 AM Eastern</time></div><div><span class="beebo-release-platform">ANDROID</span><strong data-beebo-release-version="android">1.51-tester15 (build 65)</strong><time data-beebo-release-date="android" datetime="2026-10-07T15:30:07.000Z">Built Oct 7, 2026, 11:30:07 AM Eastern</time></div><a href="updates.html">What&rsquo;s new &#8599;</a></section><div class="pro-footer-top"><div><a class="pro-brand" href="index.html"><img src="assets/beebo-badge-96.png" width="46" height="46" alt=""><span>Beebo<small>ENTERTAINMENT</small></span></a><p>Your movies. Your people. Your little world.</p></div><nav aria-label="Explore Beebo"><strong>Make yourself at home</strong><a href="about-beebo.html">About Beebo</a><a href="platforms.html">Beebo on your devices</a><a href="home-theater.html">Home theater and big screen</a><a href="phone-speakers.html">Phone speakers (Beta)</a><a href="phone-speakers.html">Phone speakers (Beta)</a><a href="subscribe.html">Pricing</a><a href="become-a-tester.html">Become a tester</a></nav><nav aria-label="Beebo support"><strong>A little helping hand</strong><a href="help.html">Help &amp; guides</a><a href="docs.html">Docs</a><a href="visual-tour.html">Illustrated app tour</a><a href="server-setup.html">Windows setup</a></nav></div><div class="pro-footer-bottom"><span>&copy; 2026 Beebo Entertainment</span><nav aria-label="Policies"><a href="movie-privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="driving-safety.html">Driving safety</a><a href="delete-account.html">Delete account</a></nav><a href="#page-content">Back to top &#8593;</a></div></footer><script src="polish.js?v=20260926"></script></body>
+</html>
