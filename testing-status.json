@@ -1,15 +1,15 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
-  "updated": "2026-10-06",
-  "updatedEastern": "Oct 6, 2026, 9:30 PM Eastern",
+  "updated": "2026-10-07",
+  "updatedEastern": "Oct 7, 2026, 2:10 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed.",
-  "overallAveragePercent": 49,
+  "overallAveragePercent": 50,
   "groupAveragePercent": {
     "Android phone app": 59,
     "Windows desktop app": 49,
     "Other systems": 40,
-    "Services and website": 33
+    "Services and website": 39
   },
   "featureCount": 58,
   "features": [
@@ -41,10 +41,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Screen-off playback; the 480p switch error re-checked on a phone; seeking and floating player re-run on the newest build.",
-      "previousPercent": 80,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "Oct 5 phone check on two phones: playback and the quality list passed, but switching from original to 480p threw a sound-decoder error (one phone recovered on its own). Not yet re-checked after fixes."
+      "leftToReach100": "Screen-off playback; the 480p switch error re-checked on a phone; seeking and floating player re-run on the newest build."
     },
     {
       "group": "Android phone app",
@@ -74,10 +71,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Rejoin after the app is closed (notice built, not yet checked on a phone); a readiness review.",
-      "previousPercent": 80,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "Label is now In development. Oct 5: a notice after the app is closed during a party was built and tested; no new device check."
+      "leftToReach100": "Rejoin after the app is closed (notice built, not yet checked on a phone); a readiness review."
     },
     {
       "group": "Android phone app",
@@ -122,7 +116,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1-2, 2026",
-      "leftToReach100": "Start a Surprise me run; more playlist and watchlist cases."
+      "leftToReach100": "Start a Surprise me run; more playlist and watchlist cases.",
+      "previousPercent": 60,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Voice search for a bare play or resume and for non-Latin titles passes automated tests. No new phone check."
     },
     {
       "group": "Android phone app",
@@ -139,8 +136,8 @@
       "lastTested": "Oct 1, 2026",
       "leftToReach100": "A real guest phone joining.",
       "previousPercent": 60,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "Label changed from \"Available (test download)\" to Beta (Nick, Oct 6). Checks are unchanged."
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "tester14 switches the Beebo Wi-Fi off again if the guest server cannot start or stops. Automated tests only; still no real guest phone."
     },
     {
       "group": "Android phone app",
@@ -187,8 +184,8 @@
       "lastTested": "Oct 5, 2026",
       "leftToReach100": "Fix and re-check the smaller-size choice; show a space and time estimate up front; a full real download run.",
       "previousPercent": 60,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "Oct 5 phone check: download, progress and offline playback worked, but the \"Smaller 720p\" choice made a copy bigger than the original for a 576p film."
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "A download list that has one unreadable entry now keeps the rest. Automated tests only; no real phone."
     },
     {
       "group": "Android phone app",
@@ -204,9 +201,9 @@
       },
       "lastTested": "Not yet tested on a real device",
       "leftToReach100": "A real trip on a real phone: photos, recap and an exported video.",
-      "previousPercent": null,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "New row. Built and covered by automated tests (including the video export); not yet run on a real trip."
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "tester14 leaves clips with missing files out of a recap instead of failing, and blanks hidden iPhone location entries. Automated tests only; no real device."
     },
     {
       "group": "Android phone app",
@@ -223,8 +220,8 @@
       "lastTested": "Oct 1, 2026",
       "leftToReach100": "The other 42 games on a phone; real guests.",
       "previousPercent": 60,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "Label changed from \"Available (test download)\" to Beta (Nick, Oct 6). Checks are unchanged."
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "War, Go Fish and Dominoes now refuse a wrong number of players, and Game Night bots only join an open lobby. Automated tests only; no real multi-phone session."
     },
     {
       "group": "Android phone app",
@@ -299,10 +296,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 5, 2026",
-      "leftToReach100": "Casting to other kinds of TV or receiver; one S9+ cast result was marked unclean because another session was using the phone; a readiness review.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "A real TV passed on Oct 5: 3 fresh casts and a recast on two phones reached playing in 7 to 8 seconds (21 of 22 checks passed; home Wi-Fi, one TV)."
+      "leftToReach100": "Casting to other kinds of TV or receiver; one S9+ cast result was marked unclean because another session was using the phone; a readiness review."
     },
     {
       "group": "Android phone app",
@@ -318,9 +312,9 @@
       },
       "lastTested": "Oct 6, 2026 (one car, one drive)",
       "leftToReach100": "Music, maps ducking, away from home, passenger games, Car Party, more cars, and a readiness review.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "First real-car check on Oct 6 on one car: sign-in, movies and shows list, fast-forward, sound and steering-wheel buttons worked. Music and everything else was not tested."
+      "previousPercent": 80,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Auto 1.18 (build 19) is live: music search and voice requests, no blank music lists. Automated tests pass (624). The Oct 6 real-car check was on 1.17 and did not cover music; no new car check tonight."
     },
     {
       "group": "Android phone app",
@@ -396,9 +390,9 @@
       },
       "lastTested": "Not yet tested on a real device",
       "leftToReach100": "Switch it on, then pair a real Smart TV, Roku and Android TV; real-world check.",
-      "previousPercent": 0,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "The pairing page and server side are now built and covered by automated tests (worker, Smart TV and Roku suites). Still switched off and never tried on a real TV."
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Passed the final Android test runs (web 6221, play 6040, amazon 6028, 0 failed). Still no real TV pairing recorded."
     },
     {
       "group": "Android phone app",
@@ -414,9 +408,9 @@
       },
       "lastTested": "Not yet tested on a real device",
       "leftToReach100": "A full TalkBack (screen reader) pass on a phone; a 200% font check; a readiness review.",
-      "previousPercent": null,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "New row. Built and covered by automated tests; an audit of TalkBack labels exists, but no full real-device pass yet."
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Large buttons, high contrast and a captions default are built in 0.1.81 / tester14 and pass automated tests. No screen reader check by a person yet."
     },
     {
       "group": "Windows desktop app",
@@ -431,7 +425,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Code-signing certificate (Windows shows a warning today); a first update on a second PC."
+      "leftToReach100": "Install over 0.1.80 by a person, the free-space warning on a real PC, and uninstall removing the start-at-boot task.",
+      "previousPercent": 80,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Reviewed and tested tonight: the updater checks free disk space and warns before installing while Beebo is busy, uninstall removes the start-at-boot task, and an unfinished version is never treated as newer. Automated and edge-case tests only; not run by a person on 0.1.81."
     },
     {
       "group": "Windows desktop app",
@@ -461,7 +458,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Run through a real reboot; the three-mode screen on screen."
+      "leftToReach100": "Run through a real reboot; the three-mode screen on screen.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "The start-at-boot task is now removed on uninstall and updater edge cases have new tests. No real reboot or install-over check yet."
     },
     {
       "group": "Windows desktop app",
@@ -491,7 +491,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "A real tuner and real playlists."
+      "leftToReach100": "A real tuner and real playlists.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Recordings whose names Windows reserves (CON, NUL, COM1) are now saved under a safe name. Tested on the name-making code only; no real tuner."
     },
     {
       "group": "Windows desktop app",
@@ -536,7 +539,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "More Jellyfin apps tried."
+      "leftToReach100": "More Jellyfin apps tried.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "A person, series or season filter that is not a real id now matches nothing instead of everything. Automated tests only."
     },
     {
       "group": "Windows desktop app",
@@ -551,7 +557,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Real-screen checks."
+      "leftToReach100": "Real-screen checks.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Security review cleared tonight: an unreadable rating limit now fails safe (treated as strict), and daily screen time counts the repeated hour when the clocks go back. Fake-clock tests only; no real clock change and no person has used it on 0.1.81."
     },
     {
       "group": "Windows desktop app",
@@ -566,7 +575,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "A real screen reader and high-contrast check."
+      "leftToReach100": "A real screen reader and high-contrast check.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "One screen-reader stop per label-and-switch row and reduced-motion handling on more pages. Automatic contrast and keyboard tests only; no person using a screen reader."
     },
     {
       "group": "Windows desktop app",
@@ -581,7 +593,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Native-speaker review of all translations."
+      "leftToReach100": "Native-speaker review of all translations.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "More screens now show plain sentences instead of error codes in six languages. Still machine-assisted; no native speaker has read them."
     },
     {
       "group": "Windows desktop app",
@@ -611,7 +626,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Real-screen test on the same Wi-Fi, mouse and keyboard, away from home, approval prompts."
+      "leftToReach100": "Real-screen test on the same Wi-Fi, mouse and keyboard, away from home, approval prompts.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Safety review cleared tonight: the host now gets a notice when a request arrives. Automated tests only; still no real session recorded."
     },
     {
       "group": "Windows desktop app",
@@ -626,10 +644,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 5, 2026 (screen seen, not used)",
-      "leftToReach100": "Run a real scan on real folders; handle folders with unclear names; a readiness review.",
-      "previousPercent": null,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "New row. The screen opens on the phone; no real scan was run yet. Label: Beta."
+      "leftToReach100": "A real phone backing up a real folder, then deleting it from the phone; a check on a real PC.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Review cleared tonight: a backup counts only when the computer holds an identical copy (checked by contents), different files with the same name are never overwritten, and unknown sizes are never offered for deletion. Automated tests on both sides; no real phone run."
     },
     {
       "group": "Windows desktop app",
@@ -645,9 +663,9 @@
       },
       "lastTested": "Oct 5, 2026 (form seen, nothing sent)",
       "leftToReach100": "Send a real invite and open it in a second household; terms review; a readiness review.",
-      "previousPercent": null,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "New row. Built and covered by automated tests; the invite form was seen on Oct 5 but nothing was sent. Held back until terms are approved."
+      "previousPercent": 40,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Sync recovery reviewed and tested tonight: owner approval per computer, and a removed or blocked computer clears the household list. Still In development; automated tests only."
     },
     {
       "group": "Windows desktop app",
@@ -724,8 +742,8 @@
       "lastTested": "Oct 6, 2026",
       "leftToReach100": "Delete Cloudflare leftovers after a few quiet days (needs the owner's OK).",
       "previousPercent": 80,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "Server updated on Oct 6 from the newest main; the licence clean-up ran on the live server (0 duplicates found); health checks passed."
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Server hardening reviewed and tested tonight (Quick Connect first-approver, API-key rules, payment and Cloudflare timeouts, limits on tester uploads). Service suites passed (worker 1446 passed, 0 failed; service 1025 + 1442). Whether the newest server changes are live depends on the latest server update."
     },
     {
       "group": "Services and website",
@@ -776,16 +794,19 @@
       "group": "Services and website",
       "name": "Online games (play with others)",
       "status": "In development",
-      "percentComplete": 20,
+      "percentComplete": 40,
       "checks": {
-        "Built": false,
+        "Built": true,
         "Automated tests": true,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Phases 2 and 3; real phones; server setup; lawyer questions."
+      "leftToReach100": "Run on the real server behind the switches, and real players at a private table.",
+      "previousPercent": 20,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Counted as Built (code exists, off by default). The rules of all eight games now have automated tests and the games run as their own limited user. Still not live."
     },
     {
       "group": "Services and website",
@@ -802,41 +823,44 @@
       "lastTested": "Oct 1, 2026",
       "leftToReach100": "Two real phones over the internet.",
       "previousPercent": 60,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "Oct 5: a first usable path was built (the desktop hosts, guests use a browser page). Not yet tested on two real phones over the internet."
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "Phone join-by-link with an invite check is built in tester14, in six languages. Still off by default; automated tests only."
     },
     {
       "group": "Services and website",
       "name": "Portrait Party (turn a photo into a card)",
       "status": "Planned",
-      "percentComplete": 0,
+      "percentComplete": 40,
       "checks": {
-        "Built": false,
-        "Automated tests": false,
-        "Real device": false,
-        "Real-world check": false,
-        "Ready to call Available": false
-      },
-      "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Everything: only a design document exists, no code, and a lawyer answer is needed first.",
-      "previousPercent": null,
-      "changedEastern": "Oct 6, 2026, 9:30 PM Eastern",
-      "changeNote": "New row. Design only today."
-    },
-    {
-      "group": "Services and website",
-      "name": "Trip Journal link away from home",
-      "status": "In development",
-      "percentComplete": 20,
-      "checks": {
-        "Built": false,
+        "Built": true,
         "Automated tests": true,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Anonymous links do not work yet."
+      "leftToReach100": "Wire it to a menu, then a real-device check. Stays Planned until then.",
+      "previousPercent": 0,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "The consent, filter and one-card-store logic is built and passes automated tests; nothing is wired to a menu or switched on. Label stays Planned."
+    },
+    {
+      "group": "Services and website",
+      "name": "Trip Journal link away from home",
+      "status": "In development",
+      "percentComplete": 40,
+      "checks": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "lastTested": "Not yet tested on a real device",
+      "leftToReach100": "Switch the server flag on for a test, then a real link opened from another network.",
+      "previousPercent": 20,
+      "changedEastern": "Oct 7, 2026, 2:10 AM Eastern",
+      "changeNote": "The PC and phone sides for links and guest clips are now built and tested, off by default and not switched on for anyone. Expired or revoked links end a running download at once."
     },
     {
       "group": "Services and website",
@@ -936,6 +960,6 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 3, 2026, 11:00 AM Eastern",
+  "previousUpdatedEastern": "Oct 6, 2026, 9:30 PM Eastern",
   "showChangeMarkers": true
 }
