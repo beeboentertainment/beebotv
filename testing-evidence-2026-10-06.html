@@ -1,0 +1,203 @@
+<!doctype html>
+<html data-beebo-corporate-dark data-aurora lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Testing evidence, October 6, 2026 · Beebo</title>
+  <meta name="description" content="Test results for Beebo main branch on October 6 to 7, 2026 with exact counts and commits, the real bugs found and fixed since 0.1.80, feature status labels, and what has never been tested.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#171b1c">
+  <link rel="icon" href="assets/favicon-32.png">
+  <link rel="stylesheet" href="corporate-content.css?v=1">
+  <link rel="stylesheet" href="beebo-testers.css?v=2">
+  <link rel="stylesheet" href="corporate-supporting-dark.css?v=20261003b">
+  <link rel="stylesheet" href="website-shell.css?v=20260926">
+  <link rel="stylesheet" href="rectangular-buttons.css?v=20260926">
+  <link rel="stylesheet" href="aurora-editorial.css?v=20261003b">
+  <link rel="stylesheet" href="testing-evidence.css?v=20261003b">
+  <script src="website-shell.js?v=20260926" defer></script>
+  <style>
+    html[data-aurora] .te-table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+    html[data-aurora] .te-table th, html[data-aurora] .te-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,.14); vertical-align: top; }
+    html[data-aurora] .te-wrap { overflow-x: auto; }
+    html[data-aurora] .te-list li { margin: 0 0 8px; }
+  </style>
+</head>
+<body class="beebo-corporate-page">
+  <a class="skip" href="#testing-evidence">Skip to content</a>
+  <header class="beebo-site-header" id="top">
+    <div class="beebo-header-row">
+      <a class="beebo-header-brand" href="/index.html" aria-label="Beebo home"><img class="beebo-brand-icon" src="/assets/beebo-desktop.ico" width="44" height="44" alt=""><span>Beebo<small>ENTERTAINMENT &amp; CONNECTION</small></span></a>
+      <nav class="beebo-header-nav" aria-label="Main navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/next-features.html">Feature status</a><a href="/whats-tested.html">What's tested</a><a href="/help.html">Support</a></nav>
+    </div>
+  </header>
+  <main class="evidence-shell" id="testing-evidence" tabindex="-1">
+    <section class="evidence-hero" aria-labelledby="page-title">
+      <div>
+        <span class="evidence-kicker">October 6 to 7, 2026</span>
+        <h1 id="page-title">Testing evidence, October 6, 2026.</h1>
+        <p>This page lists only what our automatic tests proved on the development branch (<code>main</code>), with the exact version of the code each number belongs to. It also lists the real bugs found and fixed since desktop 0.1.80 was cut, and says what we have never tested. A test that was not run is unknown, not broken, and a passing test is not the same as a feature that works on every device.</p>
+        <p>These runs were made on our development branch. They are not a new release, and they say nothing about the downloads currently on the website. The newest code named here is <code>7df632628</code>.</p>
+        <div class="evidence-actions"><a class="button primary" href="#results">Test results</a><a class="button" href="#bugs">Bugs found</a><a class="button" href="#status">Feature status</a><a class="button" href="#not-tested">Not tested</a></div>
+      </div>
+    </section>
+
+    <section class="evidence-section" id="results" aria-labelledby="results-title">
+      <span class="evidence-kicker">Automatic test suites on Windows</span>
+      <h2 id="results-title">Results on main, five runs.</h2>
+      <p>"Files" means a whole test file. Each run was done on one Windows PC by the person merging that batch of work. A blank "not run" means the batch did not touch that part, so it was not run. The source of every number is listed in the page source, at the bottom.</p>
+      <div class="te-wrap"><table class="te-table">
+        <caption>Windows runs of the main branch, October 6, 2026 (oldest to newest)</caption>
+        <thead><tr><th scope="col">Suite</th><th scope="col">Batch 14 (<code>07d060613</code>)</th><th scope="col">Batch 19 (<code>0c33cdc60</code>)</th><th scope="col">Batch 20 (<code>e509add84</code>)</th><th scope="col">Batch 21 (<code>66fd46f1e</code>)</th><th scope="col">Batch 22 (<code>7df632628</code>, newest)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Windows app, test files</th><td><b class="count">871</b> of 871 passed</td><td><b class="count">882</b> of 882 passed</td><td><b class="count">907</b> of 910 on the first run (see notes)</td><td><b class="count">908</b> passed, 1 failed on the first run (see notes)</td><td><b class="count">926</b> files in the run (see notes)</td></tr>
+          <tr><th scope="row">Cloud service rules (worker), tests</th><td><b class="count">1150</b> passed</td><td>Not run</td><td><b class="count">1294</b> passed, 0 failed</td><td><b class="count">1371</b> passed, 0 failed</td><td><b class="count">1399</b> passed, 0 failed</td></tr>
+          <tr><th scope="row">Home server copy (service), own tests</th><td><b class="count">650</b> passed, 0 failed, 21 skipped</td><td>Not run</td><td><b class="count">691</b> passed</td><td><b class="count">698</b> passed, 0 failed</td><td><b class="count">998</b> passed, 0 failed</td></tr>
+          <tr><th scope="row">Home server copy running the worker tests</th><td><b class="count">1146</b> passed</td><td>Not run</td><td><b class="count">1290</b> passed</td><td><b class="count">1367</b> passed, 0 failed</td><td><b class="count">1395</b> passed, 0 failed</td></tr>
+          <tr><th scope="row">Android phone app unit tests, web, Google Play and Amazon builds</th><td>Web <b class="count">4799</b>, Play <b class="count">4640</b>, Amazon <b class="count">4637</b>; 0 failures</td><td>All three passed; no count recorded</td><td>All three passed; no count recorded</td><td>All three passed (with the policy checks); no count recorded</td><td>All three passed (with the policy checks); no count recorded</td></tr>
+          <tr><th scope="row">Beebo Auto (car app) unit tests</th><td>Not run</td><td>Not run</td><td>Passed; no count recorded</td><td>Not changed, not run</td><td>Not changed, not run</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="te-list">
+        <li>Batch 14: one Windows-app test file (the walkie-talkie browser test) passed only on its automatic second try.</li>
+        <li>Batch 19 first went to a branch only, because the three Android runs each failed one test (a rule that stops new English-only text in the Android app). The photo-backup change that caused it was taken back out, and the Android runs then passed. That change came back in batch 22 after it was fixed.</li>
+        <li>Batch 20: three test files failed on the first run. Two belonged to merged work that broke existing tests; that work was taken back out and re-run, and the files passed again. The third (a school-permissions file) timed out while the PC was busy and passed on its own. Smart TV and Roku were not run.</li>
+        <li>Batch 21: one photo-privacy test file failed on a Windows temporary-folder clean-up error under load; it passed 28 of 28, three times, when run alone. Five branches without a review verdict were left out.</li>
+        <li>Batch 22: the first run had 8 failing files. After fixes, all passed when re-run. Two other files (<code>headless-boot</code> and <code>music-library-edge</code>) failed only because the real video converter had been copied into that folder; both passed 38 of 38 without it. One file (<code>api-routes-13</code>) passed on the automatic second try. One worker test failed once under load and passed 17 of 17 twice alone. The batch also changed some tests so they match behaviour changes made on purpose.</li>
+        <li>Batches 15 to 18 (smaller merges between these) are not shown in the table; their notes did not record counts we can cite here.</li>
+      </ul>
+    </section>
+
+    <section class="evidence-section" id="linux" aria-labelledby="linux-title">
+      <span class="evidence-kicker">Linux (Ubuntu)</span>
+      <h2 id="linux-title">Linux test runs.</h2>
+      <p>We also run the same suites on Ubuntu 24.04, in WSL2 on the Windows PC or in a cloud container. This is not a Linux desktop release, and none of it is a test on a separate Linux computer or a NAS. Each run tested a different commit, so the numbers are not a trend.</p>
+      <div class="te-wrap"><table class="te-table">
+        <caption>Linux runs</caption>
+        <thead><tr><th scope="col">Suite</th><th scope="col">Run 3, Oct 5 (<code>29b2ec44</code>)</th><th scope="col">Run 5, Oct 6 (<code>7ce8accbc</code>)</th><th scope="col">Oct 6 jobs L1, L2, L3 (<code>0c33cdc60</code>)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Windows-app test files passed</th><td><b class="count">739</b>, 0 failed</td><td><b class="count">839</b> of 843</td><td><b class="count">862</b> of 882 first time, plus 2 on the automatic re-run; 18 failed twice (see notes)</td></tr>
+          <tr><th scope="row">Cloud service rules (worker)</th><td><b class="count">951</b> of 951</td><td><b class="count">1087</b> of 1087</td><td><b class="count">1154</b> of 1154 (Node 24.19.0)</td></tr>
+          <tr><th scope="row">Home server copy (service), own tests</th><td><b class="count">506</b> of 508 (2 skipped)</td><td><b class="count">634</b> of 635 (1 skipped, Windows only)</td><td><b class="count">669</b> of 671 with the database add-on installed (2 skipped)</td></tr>
+          <tr><th scope="row">Home server copy running the worker tests</th><td><b class="count">948</b> of 948, in each of two database modes</td><td><b class="count">1084</b> of 1084, in each of two database modes</td><td><b class="count">1150</b> of 1150 in one database mode; the other mode is described in the report</td></tr>
+          <tr><th scope="row">Smart TV web app (Linux, Node 22)</th><td>Not run</td><td>Not run</td><td><b class="count">509</b> of 509</td></tr>
+          <tr><th scope="row">Roku channel logic (Linux, Node 22)</th><td>Not run</td><td>Not run</td><td><b class="count">25</b> of 25</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="te-list">
+        <li>Run 5: four Windows-app test files failed. The report says all four were problems in the tests themselves (for example a test that called a program by a name Ubuntu does not use). Fixes were merged, but we have not repeated that whole Linux run since, so we do not claim they pass on Linux.</li>
+        <li>L1: most of the 18 files failed because the container's video converter was not the one the app ships. Re-run alone with the right converter, they passed. One test had a real timing bug in the test itself, fixed on main; one failed only when run as the system administrator account; two failed only under load and passed alone, and the report says the cause was not found. The report found no failure in the app itself, and only the 14 converter-related files were repeated with the correct converter.</li>
+        <li>The Smart TV and Roku runs were tests and builds in a container. They are not runs on a TV or a Roku.</li>
+      </ul>
+    </section>
+
+    <section class="evidence-section" id="bugs" aria-labelledby="bugs-title">
+      <span class="evidence-kicker">Bug hunts and security reviews</span>
+      <h2 id="bugs-title">Real bugs found and fixed since 0.1.80.</h2>
+      <p>Since desktop 0.1.80 was cut (code tag <code>release-2026-10-06a</code>), our helpers wrote tests that feed each part of the app broken, huge, repeated or out-of-order input, and our reviewers read the results. Each fix below is on <code>main</code> as of <code>7df632628</code>. Fixed on main does not mean released: none of the Windows app or Android items is in a download yet. Many hunts found nothing and changed no code. Some other fixes were still waiting on helper branches when that commit was made, and are not listed.</p>
+      <h3>Windows app</h3>
+      <ul class="te-list">
+        <li>Posters, backdrops and actor photos went blank if you had chosen a different port in Settings.</li>
+        <li>Photos: location details inside a video file could be shown to a household member who should not see them. They are now blanked for everyone but the owner.</li>
+        <li>Streaming a video or a shared trip link: a viewer who hung up could leave a file open on the PC.</li>
+        <li>Parental controls: changing, resetting or removing the PIN now ends every unlocked session at once. Daily watch limits and bedtime are now counted by real minute, so the repeated hour when the clocks go back is no longer free.</li>
+        <li>Safety copies (backups of settings): only a file from the app's own safety-copy folder is accepted as one, sign-in state is kept out of them, and "restore without passwords" is honoured.</li>
+        <li>An approved computer that was wiped or replaced no longer locks the household out.</li>
+        <li>Recordings: file names that Windows reserves (such as a name starting with CON or NUL) are handled, and a guide time of 30 February is refused.</li>
+        <li>Update check: a pre-release version number was not placed correctly against a final release.</li>
+        <li>Skip-intro and credits detection: odd or empty results could produce an invalid confidence figure.</li>
+        <li>Jellyfin-compatible mode: seven bugs found and fixed by 38 new adversarial tests.</li>
+        <li>Importing from another server (migration): a spreadsheet with too many columns, an empty folder, unknown source names and over-long ids are now handled.</li>
+        <li>Playlists, podcast and radio feeds: bad rule field names, invisible start-of-file marks, control characters in subscription lists, feeds with more than 2000 items and a bare-number date are now handled.</li>
+        <li>Headless (no-window) server: it now exits with a clear code when its port cannot be used, handles blank folder lists, and its Docker health check uses the right port.</li>
+        <li>Names: a name made only of look-alike blank characters is now refused.</li>
+        <li>Campsite: War, Go Fish and Dominoes refuse an invalid number of players, long tournament heats stay alive, and Sea Battle no longer loses a keyboard click after a cancelled drag. The Family Timeline beta gaps in shared photos were fixed.</li>
+      </ul>
+      <h3>Android phone app</h3>
+      <ul class="te-list">
+        <li>Downloads list: one unreadable saved download could wipe the whole list. Each saved row is now read on its own.</li>
+        <li>Pairing links: a link could name a different house than its address, skipping the "Use this Beebo?" question, and two kinds of malformed home addresses were accepted. All three are refused. Extra checks were added for numbers written as words and odd IPv6 addresses.</li>
+        <li>Photo backup: a PC that kept stalling an upload could keep the phone retrying, and a very large file could overflow a counter. Both fixed.</li>
+        <li>Connection problems: timeouts, refused connections and secure-connection failures are now told apart, and the reconnect counter cannot overflow.</li>
+        <li>Synced music: a phone reporting a non-number error was shown as perfectly in sync.</li>
+        <li>Audiobooks and Lookup Sites screens: a late reply could change a different book's session or erase a newer draft.</li>
+        <li>Batch downloads announce the chosen size before queueing, the Audiobooks Back button stays inside the app after a restore, and duplicate text entries were removed.</li>
+      </ul>
+      <h3>Server (cloud account service)</h3>
+      <p>Items marked "deployed Oct 6, 8:11 PM Eastern" were part of the server deploy of <code>7df632628</code>.</p>
+      <ul class="te-list">
+        <li>Deployed Oct 6, 8:11 PM Eastern: Stripe payment events are read in the right order, a repeat of an event is safe, and in-progress claims no longer collide.</li>
+        <li>Deployed Oct 6, 8:11 PM Eastern: a Google Play cancellation sent during a Google outage is retried, within a time limit, instead of being lost.</li>
+        <li>Deployed Oct 6, 8:11 PM Eastern: share guests can never be given the owner's rights, a guest's password is checked at sign-in, and a takeover removes the guest's tokens.</li>
+        <li>Deployed Oct 6, 8:11 PM Eastern: usage limits that count per hour keep their counters for the full hour, and hold under many requests at once.</li>
+        <li>Deployed Oct 6, 8:11 PM Eastern: e-mail sending refuses bad recipients and subjects; a failed send no longer kills a link that is already in the inbox.</li>
+        <li>Deployed Oct 6, 8:11 PM Eastern: tester uploads are limited to one per address, six an hour per address, and bounded in memory and time.</li>
+        <li>Deployed Oct 6, 8:11 PM Eastern: the server's setup scripts refuse wildcard or injected characters, and its scheduled jobs finish waiting work after a failure.</li>
+        <li>Deployed Oct 6, 8:11 PM Eastern: the name rules (see the Windows app list above) also apply on the server.</li>
+      </ul>
+      <h3>Smart TV and Roku apps</h3>
+      <ul class="te-list">
+        <li>Smart TV app: opening a screen that failed left a blank screen, and a saved-position lookup could match built-in object names. Both fixed on main.</li>
+        <li>Roku app: a page size of zero and a non-text address could stall or crash the app logic. Both fixed on main.</li>
+      </ul>
+      <p>Security review 6 (a written report) was merged in batch 19. The reviews found nothing that lets a stranger into a library or account, and we do not publish technical detail of weaknesses here.</p>
+    </section>
+
+    <section class="evidence-section" id="status" aria-labelledby="status-title">
+      <span class="evidence-kicker">Feature status</span>
+      <h2 id="status-title">What is what, in our own labels.</h2>
+      <p>The labels are Available, Beta, In development and Planned. A label describes how far a feature has got. It is not a test result.</p>
+      <div class="te-wrap"><table class="te-table">
+        <caption>Status labels, as in our project status table</caption>
+        <thead><tr><th scope="col">Feature</th><th scope="col">Label</th><th scope="col">Note</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Windows desktop server</th><td>Available</td><td>Not code-signed.</td></tr>
+          <tr><th scope="row">Android phone app (test download)</th><td>Available</td><td>Not on Google Play.</td></tr>
+          <tr><th scope="row">Android phone app on Google Play</th><td>In development</td><td>Not submitted.</td></tr>
+          <tr><th scope="row">Beebo Auto (Android Auto)</th><td>Available</td><td>Test download. Never tested in a real car.</td></tr>
+          <tr><th scope="row">Browser (any device)</th><td>Available</td><td>Served by the desktop server.</td></tr>
+          <tr><th scope="row">Android TV</th><td>Beta</td><td>No recorded run on a real Android TV.</td></tr>
+          <tr><th scope="row">Linux desktop, headless and Docker server</th><td>Beta</td><td>Not offered for download right now; no NAS or Raspberry Pi test.</td></tr>
+          <tr><th scope="row">Jellyfin-compatible mode</th><td>Beta</td><td>Not every Jellyfin app tested.</td></tr>
+          <tr><th scope="row">Beebo Relay</th><td>Beta</td><td></td></tr>
+          <tr><th scope="row">Fire TV, macOS, iPhone, iPad, Apple TV, Roku, Samsung, LG, Xbox</th><td>In development</td><td>Never run on real hardware.</td></tr>
+          <tr><th scope="row">BeeboVPN</th><td>In development</td><td></td></tr>
+          <tr><th scope="row">Remote Desktop, Story Studio, Walkie-talkie from anywhere, online games, library sharing between households</th><td>In development</td><td>Built but switched off, or owner only. Untested on real devices.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="evidence-section" id="not-tested" aria-labelledby="not-tested-title">
+      <span class="evidence-kicker">What is not tested</span>
+      <h2 id="not-tested-title">What nobody has tested yet.</h2>
+      <ul class="te-list">
+        <li>No real Roku, Samsung TV, LG TV, Xbox, Apple TV, iPhone, iPad or Mac has ever run Beebo. Those apps have only been run in simulators, browsers, containers or build servers.</li>
+        <li>Beebo Auto has never been tested in a real car.</li>
+        <li>Campsite games have not been played by real groups of several phones. Only one phone, a Samsung S9+, has been used as a second device.</li>
+        <li>Remote Desktop, Portrait Party, Household Library (library sharing), Story Studio, walkie-talkie from anywhere and the online games are built but switched off or owner-only, and none has been tested on real devices.</li>
+        <li>Fire TV and Fire tablets have had no device test. Android TV has no recorded run on a real Android TV device.</li>
+        <li>The Linux and Docker server builds have not been tested on any NAS model or real Raspberry Pi.</li>
+        <li>Hardware video conversion has been checked on one Intel graphics chip. NVIDIA, AMD and Mac hardware are untested.</li>
+        <li>The translations were made with a machine's help and no native speaker has read them.</li>
+        <li>The Windows installer is not code-signed, so Windows may show a warning.</li>
+        <li>A passing automatic test does not show that a feature works on a real device. Real-device results are on <a href="whats-tested.html">What's tested</a> and <a href="tester-results.html">Tester results</a>.</li>
+      </ul>
+      <p>We never claim that every feature works. If a feature is not listed with a result above, treat it as unknown.</p>
+    </section>
+  </main>
+  <footer class="beebo-site-footer"><div class="beebo-footer-inner"><p>© 2026 Beebo Entertainment</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="whats-tested.html">What's tested</a><a href="release-evidence.html">Release evidence</a><a href="tester-results.html">Tester results</a><a href="known-issues.html">Known issues</a><a href="help.html">Help</a></nav></div></footer>
+<!--
+SOURCES (each count on this page appears below; all from GitHub issue #76 FINISHED comments or docs/qa; verified Oct 7, 2026)
+[S1] Batch 14, main 07d060613 (issue #76 "FINISHED: Claude integrator batch 14"): desktop 871 of 871 files; worker 1150; service npm test 650 pass 0 fail 21 skipped; service test:worker 1146; Android web 4799, play 4640, amazon 4637, 0 failures; walkie-chrome.e2e passed on automatic re-run.
+[S2] Batch 19, main 0c33cdc60 (issue #76 "FINISHED: Claude integrator batch 19 ... main fast-forwarded dc6067726 -> 0c33cdc60"): desktop 882 of 882, 0 failed; Android web, play, amazon passed after the hunt-91 revert; the earlier branch-only run failed one rule test in each Android build (EnglishLiteralGuardTest); worker, service, smarttv, roku not run.
+[S3] Batch 20, main e509add84 (issue #76 "FINISHED batch 20"): desktop 907 of 910 files first run (two reverted branches V and AM, plus school-child-permissions timeout); worker 1294 pass 0 fail plus probe; service npm test 691; test:worker 1290; Android core web, play, amazon and apps/auto green; smarttv and roku not run.
+[S4] Batch 21, main 66fd46f1e (file finished-batch21.md, posted on #76): worker 1371, 0 fail; service 698, 0 fail; test:worker 1367, 0 fail; desktop 908 files passed, 1 failed first (hunt-50-photo-gps-leak, ENOTEMPTY teardown, 28/28 alone three times); Android amazon, play, web and policy guards BUILD SUCCESSFUL; apps/auto untouched.
+[S5] Batch 22, main 7df632628 (file finished-batch22.md, posted on #76): desktop 926 files; 8 files failed first run and passed after fixes; headless-boot and music-library-edge failed only with copied ffmpeg, 38/38 without; api-routes-13 passed on re-run; worker 1399 pass 0 fail (AdMob SSV flaky 17/17 alone twice); service 998, 0 fail; test:worker 1395, 0 fail; Android core web, play, amazon and checkPlayReleasePolicy pass; apps/auto not touched.
+[S6] Linux run 3, main 29b2ec44 (docs/qa/LINUX-SUITE-3-2026-10-05.md): desktop 739 files; worker 951 of 951; service 506 of 508; test:worker 948 of 948 in both SQLite modes.
+[S7] Linux run 5, 7ce8accbc (docs/qa/LINUX-SUITE-5-2026-10-06.md): desktop 839 of 843 files; worker 1087 of 1087; service 634 of 635; test:worker 1084 of 1084 in both SQLite modes; 4 failing files are test problems.
+[S8] Linux L1 (docs/qa/LINUX-L1-2026-10-06.md, main 0c33cdc60): 882 files, 862 passed first time, 2 on re-run, 18 failed twice; 14 files re-run with LGPL ffmpeg; no product-code failure found. L2 (docs/qa/LINUX-L2-2026-10-06.md): worker 1154 of 1154; service 669 pass of 671 with better-sqlite3, 2 skipped; test:worker better-sqlite3 1150 of 1150. L3 (docs/qa/LINUX-L3-2026-10-06.md): smart TV 509 of 509, Roku 25 of 25, Node 22.
+[S9] Bugs: git log release-2026-10-06a..7df632628 on main (commits such as the c20 posters branch merged on main, 0d58f7354, 037e9a110, fd9b34bb4, 1def8902d, d4643eda8, b6bc22d6b, ccb4b37bb, 815b106b4, 95e1dc0bb, c5a008762, dc2d48334 (7 bugs, 38 tests), a789d1196, 381ef6f97, 8a1ef64ea, 608693731, ecaf54c83, 246ed4246, 25f579879, 9919b9a82, f3bcd9979, 873d1f234, 4283387d9, 961ce94d9, 06a9a7326, fbc7f0270, e0f1c2f50, d15d9e394, cae8276c7, 6d5ce0f69, cf911a1de, dd6fb88c1, 4702fc2f8, 2f9693c76, c6a757c3a). Server items marked deployed are those in the server deploy of main 7df632628 on Oct 6, 8:11 PM Eastern (as given by the coordinator). Security review 6 merged in batch 19 (issue #76). Not listed: fixes still on helper branches at 7df632628 (checked with git branch -r --merged).
+[S10] Statuses and not-tested items: CLAUDE.md section 9 platform table and section 7.5.
+-->
+</body>
+</html>
