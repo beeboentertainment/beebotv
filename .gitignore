@@ -5,3 +5,9 @@
 *.stale-*
 # Catch-all: .bak2, .bak3, .bak.repair and anything else in that family.
 *.bak*
+
+# Internal site tooling: kept locally, never published (backup: private repo site-tools/)
+/tools/
+/site-check/
+/scripts/
+/downloads/desktop-version.NEXT.json
