@@ -1,9 +1,9 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "updated": "2026-10-09",
-  "updatedEastern": "Oct 9, 2026, 6:30 AM Eastern",
+  "updatedEastern": "Oct 9, 2026, 9:57 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
-  "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed.",
+  "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 51,
   "groupAveragePercent": {
     "Android phone app": 59,
@@ -26,10 +26,42 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 9, 2026",
-      "leftToReach100": "TalkBack (screen reader) check; Library, Play and More re-checked on the Samsung S24 Ultra.",
+      "leftToReach100": "Re-open Library, Play and More on the Samsung S24 Ultra, run a TalkBack (screen reader) pass, and get a final review of the newest build.",
       "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
-      "changeNote": "Android tester16 (build 66), Oct 9. Samsung S9+ (Android 10, home Wi-Fi): it started signed in on Home in under a second, and Home, Browse (Films, Shows, Music, search), Library, Play and More all opened with no crash logged. Samsung S24 Ultra (Android 16): a test copy of the same code opened on Home and Browse with search, and no crash was logged; its Library, Play and More tabs were not individually opened. The S24 ran a test build, not the download from the site. Not tested: TalkBack, other languages, a fresh sign-in."
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
+          "changeNote": "Android tester16 (build 66), Oct 9. Samsung S9+ (Android 10, home Wi-Fi): it started signed in on Home in under a second, and Home, Browse (Films, Shows, Music, search), Library, Play and More all opened with no crash logged. Samsung S24 Ultra (Android 16): a test copy of the same code opened on Home and Browse with search, and no crash was logged; its Library, Play and More tabs were not individually opened. The S24 ran a test build, not the download from the site. Not tested: TalkBack, other languages, a fresh sign-in."
+        }
+      ],
+      "roadTo100": {
+        "means": "The newest build starts reliably and Home, Browse, Library, Play and More all work on both test phones, including TalkBack, with a reviewer sign-off.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Opened on the Samsung S9+ with all five tabs working and no crash logged.",
+          "On the S24 Ultra a test copy opened on Home and Browse."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Open Library, Play and More on the Samsung S24 Ultra and record the result."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Walk the five tabs with TalkBack (the screen reader) and check labels and focus order."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add a test for returning to a tab after the app is restored or hits an error, if review finds a gap."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No review record exists yet for the newest build."
+          }
+        ]
+      }
     },
     {
       "group": "Android phone app",
@@ -44,10 +76,46 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 9, 2026",
-      "leftToReach100": "Fix: background audio pauses when the phone screen turns off (found on the S9+; whether the Screen off option should default to off is the owner's decision, not yet confirmed as a bug). Not yet checked on a phone: return to portrait after rotating, subtitle menu on a film with subtitles, the 480p switch error; seeking and floating player re-run on the newest build.",
-      "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
-      "changeNote": "Android tester16 (build 66), Oct 9, Samsung S9+ on home Wi-Fi: a film played, pause, resume, +15 seconds and -5 seconds all worked; picture-in-picture started and playback carried on; the quality picker opened (no option was changed); after force-closing the app, Continue watching kept the film at its place. One check FAILED: audio stopped about five seconds after the screen turned off. Not run: rotating back to portrait, the subtitle menu (the film tried had no subtitle entry), sound confirmed by ear. On the Samsung S24 Ultra, a test build played a film, paused, resumed and fast-forwarded, but picture-in-picture, quality, subtitles and screen-off were not tried there.",
-      "previousPercent": 80
+      "leftToReach100": "Fix audio stopping when the screen turns off (or Nick decides the default), then re-test rotation, subtitles, 480p, seeking and the floating player on a phone.",
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "previousPercent": 80,
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
+          "changeNote": "Android tester16 (build 66), Oct 9, Samsung S9+ on home Wi-Fi: a film played, pause, resume, +15 seconds and -5 seconds all worked; picture-in-picture started and playback carried on; the quality picker opened (no option was changed); after force-closing the app, Continue watching kept the film at its place. One check FAILED: audio stopped about five seconds after the screen turned off. Not run: rotating back to portrait, the subtitle menu (the film tried had no subtitle entry), sound confirmed by ear. On the Samsung S24 Ultra, a test build played a film, paused, resumed and fast-forwarded, but picture-in-picture, quality, subtitles and screen-off were not tried there."
+        }
+      ],
+      "roadTo100": {
+        "means": "On the newest build a real phone plays a film with sound, seeks, rotates back to portrait, shows subtitles, switches quality and floats in picture-in-picture, and a reviewer signs off.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "S9+ played a film, paused, resumed, seeked, started the floating player and kept Continue watching after a force close.",
+          "Automated playback tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "CODE",
+            "text": "Find and fix why audio stops about five seconds after the screen turns off, and add a test for it."
+          },
+          {
+            "kind": "NICK",
+            "text": "Decide whether Screen off should stop or keep the audio by default on a new install."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Re-test rotating back to portrait, the subtitle menu on a film that has subtitles, and the 480p switch."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Re-test seeking and the floating player on the newest build, and confirm sound by ear."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "Two competing screen-off changes are waiting for review and disagree about what the test should expect."
+          }
+        ]
+      }
     },
     {
       "group": "Android phone app",
@@ -62,7 +130,36 @@
         "Ready to call Available": false
       },
       "lastTested": "Sep 17-18, 2026",
-      "leftToReach100": "Oct 3 (correction): sign-in and Continue watching worked through the updated server, but the phone was on the same network as the home PC, so this was not an away-from-home video test. Earlier the same day the owner reported a direct connection on mobile data (5G). Left: a recorded mobile-data playback test and a Beebo Relay test on the newest build; relay price decision."
+      "leftToReach100": "Record a real mobile-data playback test and a Beebo Relay playback test on the newest build, and get the Relay price decision.",
+      "roadTo100": {
+        "means": "A current phone plays video from the home PC over mobile data, and again through Beebo Relay, with both results recorded and the Relay price approved.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Route-choice tests pass.",
+          "The owner reported a direct connection on mobile data (5G) earlier; on Oct 3 sign-in and Continue watching worked through the new server."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Play a film on mobile data (not home Wi-Fi) on the newest build and record it."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Repeat through Beebo Relay and record it."
+          },
+          {
+            "kind": "NICK",
+            "text": "Decide the Relay price."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "The Oct 3 test was on the same network as the home PC, so it does not count as an away-from-home result."
+          }
+        ]
+      },
+      "previousPercent": 80,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -77,10 +174,42 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Rejoin after the app is closed (notice built, not yet checked on a phone); a readiness review.",
+      "leftToReach100": "Test it on two real phones, including closing and re-opening the app to rejoin, then run a readiness review.",
       "previousPercent": 80,
-      "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
-      "changeNote": "Windows 0.1.82: leaving a room no longer counts against the open-room limit. Automated tests only; not tried with two phones."
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
+          "changeNote": "Windows 0.1.82: leaving a room no longer counts against the open-room limit. Automated tests only; not tried with two phones."
+        }
+      ],
+      "roadTo100": {
+        "means": "Two phones join, stay in sync, leave, and rejoin after the app is closed, and a reviewer signs off.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Join and leave tests pass, including the 'room is full' notice.",
+          "Leaving a room no longer counts toward the open-room limit (automated tests only)."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Two phones: start, join, watch in sync, leave."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Close and re-open the guest app and confirm it rejoins."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add a test for rejoining after the system closes the app, if it is missing."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No current two-phone result or readiness review is recorded."
+          }
+        ]
+      }
     },
     {
       "group": "Android phone app",
@@ -95,7 +224,36 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 3, 2026",
-      "leftToReach100": "A real car test; re-test the passenger join on the camp Wi-Fi after the Oct 3 fixes (join code hint, app stays usable with no internet on that Wi-Fi); the passenger web page by hand."
+      "leftToReach100": "Test in a real parked car and on camp Wi-Fi with no internet, including the passenger web page, after the Oct 3 fixes.",
+      "roadTo100": {
+        "means": "A host phone and passengers play together in a real car and on camp Wi-Fi, and recover from a lost connection.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Host, guest and recovery tests pass.",
+          "The join-code hint and no-internet behaviour were fixed on Oct 3 (not yet re-tested on a phone)."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Parked car: host a party and join from passenger phones."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Repeat on camp Wi-Fi with no internet, including recovery and the passenger page."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add focused tests for the join-code hint and for using the page offline."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No real-car or passenger result is recorded for the newest build."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -110,7 +268,32 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Clearer wording for the Ready tile and the host-folder message."
+      "leftToReach100": "Improve the wording of the Ready tile and the host-folder message, then show all three states on a phone.",
+      "roadTo100": {
+        "means": "Ready, missing-folder and recovery states all show clear wording on a real phone and pass tests and review.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Health-state tests pass.",
+          "Checked on a real phone earlier."
+        ],
+        "remaining": [
+          {
+            "kind": "CODE",
+            "text": "Make the Ready tile and the host-folder message clearer and add tests for the wording."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Show a ready library, a missing folder and a recovery on a phone."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No sign-off on the new wording exists yet."
+          }
+        ]
+      },
+      "previousPercent": 80,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -125,10 +308,42 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 9, 2026",
-      "leftToReach100": "Fix: Surprise me starts a film straight away instead of opening a title page (found on the S9+; check whether that is the intended design); the watchlist star was not tried; more playlist cases; a normal-use check.",
+      "leftToReach100": "Settle how Surprise me should behave (title page first or play at once), fix its error handling, then test stars and playlists on a phone.",
       "previousPercent": 60,
-      "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
-      "changeNote": "Android tester16 (build 66), Oct 9, Samsung S9+: Surprise me was tried and FAILED the checklist item. It started playing a film immediately instead of opening a title page first. The watchlist star was not tried, and Surprise me was not tried on the S24 Ultra. Percentage unchanged."
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
+          "changeNote": "Android tester16 (build 66), Oct 9, Samsung S9+: Surprise me was tried and FAILED the checklist item. It started playing a film immediately instead of opening a title page first. The watchlist star was not tried, and Surprise me was not tried on the S24 Ultra. Percentage unchanged."
+        }
+      ],
+      "roadTo100": {
+        "means": "Surprise me, playlists, watchlist and favourites behave as intended on a real phone and pass tests and review.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Playlist and favourite logic is covered by automated tests.",
+          "A change that shows the title before playing is waiting on review."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Decide whether Surprise me should start a film straight away or open the title page first."
+          },
+          {
+            "kind": "CODE",
+            "text": "Fix the Surprise me error-handling and stale-filter problems found in review."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "On a phone: star a title, use several playlists, go back and retry."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "The review of the title-first change found gaps that are not yet fixed."
+          }
+        ]
+      }
     },
     {
       "group": "Android phone app",
@@ -143,7 +358,32 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "A real guest phone joining."
+      "leftToReach100": "Join, leave and reconnect with a real guest phone, and list every start/stop error case with a test.",
+      "roadTo100": {
+        "means": "A host phone starts and stops Campsite and real guests join, leave and reconnect cleanly.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Host start/stop tests pass.",
+          "Tried on a real phone as host."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Host with a second phone: join, leave, reconnect, then shut down."
+          },
+          {
+            "kind": "CODE",
+            "text": "List host start/stop error and retry cases and add missing tests."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No guest-phone result is recorded."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -158,10 +398,38 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1-2, 2026",
-      "leftToReach100": "Screen-off playback.",
+      "leftToReach100": "Play a real station and a real podcast on a phone, including with the screen off.",
       "previousPercent": 80,
-      "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
-      "changeNote": "Windows 0.1.82: internet radio playlists with relative entries or spaces now play. Automated tests only; not tried with a real station on a phone."
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
+          "changeNote": "Windows 0.1.82: internet radio playlists with relative entries or spaces now play. Automated tests only; not tried with a real station on a phone."
+        }
+      ],
+      "roadTo100": {
+        "means": "A real station and a real podcast play on a phone, keep playing with the screen off, and recover after a break.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Feed, player and background tests pass.",
+          "Radio playlists with spaces or relative entries now play (automated tests only)."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Play a real radio station and a podcast episode, then turn the screen off."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add tests for screen-off and resume edge cases."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No recorded phone result for screen-off playback."
+          }
+        ]
+      }
     },
     {
       "group": "Android phone app",
@@ -176,7 +444,32 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Play a real audiobook; a full test is queued."
+      "leftToReach100": "Play a real audiobook on a phone across chapters and an app restart; the queued test run is still to be done.",
+      "roadTo100": {
+        "means": "A real audiobook plays on a phone, changes chapters, keeps bookmarks, and resumes after the app restarts.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Chapter, bookmark and resume tests exist and pass.",
+          "Tried on a real phone earlier."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Play a real book, change chapters, background the app, restart, and resume."
+          },
+          {
+            "kind": "CODE",
+            "text": "Run the queued audiobook test group and list what it covers."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No full current-device record exists."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -191,7 +484,36 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 5, 2026",
-      "leftToReach100": "Fix and re-check the smaller-size choice; show a space and time estimate up front; a full real download run."
+      "leftToReach100": "Fix the smaller-size choice, show a space and time estimate before downloading, and do a full real download on a phone.",
+      "roadTo100": {
+        "means": "The planner shows honest size and time estimates, offers smaller sizes that really work, and completes a real download when space is tight.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Planner, size and error tests pass.",
+          "Tried on a real phone earlier."
+        ],
+        "remaining": [
+          {
+            "kind": "CODE",
+            "text": "Fix the smaller-size choice and add a test."
+          },
+          {
+            "kind": "CODE",
+            "text": "Show a space and time estimate up front and test it."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Run a full real download with limited free space."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "The smaller-size behaviour is still unresolved."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -206,7 +528,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "A real trip on a real phone: photos, recap and an exported video."
+      "leftToReach100": "Record a real trip with photos, make the recap and export a video on a phone; sharing and privacy need a careful review first.",
+      "roadTo100": {
+        "means": "A real trip is captured on a phone, a recap is made and a video exported, and the sharing and privacy behaviour has been reviewed.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Recap and export code exists and automated tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Capture a real trip with photos, build the recap and export a video."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "Sharing guest photos and video in an export needs a careful privacy review first."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No phone result exists yet."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -221,7 +567,32 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "The other 42 games on a phone; real guests."
+      "leftToReach100": "Try each of the 43 games on phones with real guests; so far only one game has a recorded phone result.",
+      "roadTo100": {
+        "means": "Every shipped game has a basic test and has been played on phones with real guests.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Games are built and basic tests pass.",
+          "One game was played on a real phone."
+        ],
+        "remaining": [
+          {
+            "kind": "CODE",
+            "text": "Write a list of all 43 games with their tests and add missing basic checks."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Play all 43 games with real guests on phones."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "Only one game has a recorded phone result."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -236,7 +607,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "A real presentation with guests."
+      "leftToReach100": "Run a real photo and video presentation with guests; the privacy behaviour needs a careful review first.",
+      "roadTo100": {
+        "means": "A host presents photos and videos to real guests on their phones, errors are handled, and privacy has been reviewed.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Built, tests pass, tried on a real phone."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Run a presentation with guests on their own phones."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "Sharing and media privacy behaviour needs a careful review."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No real-world presentation is recorded."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -251,7 +646,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "A real speaker; the group test; the guest page trim and off controls."
+      "leftToReach100": "Test a real speaker group, with guest trim and off controls; add tests for the group limits.",
+      "roadTo100": {
+        "means": "Real phones act as a speaker group, and guest volume trim and off controls work.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Built, tests pass, tried on a real phone."
+        ],
+        "remaining": [
+          {
+            "kind": "CODE",
+            "text": "Add tests for group size, trim and off limits."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Set up a real speaker group and use the guest page trim and off controls."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No group result is recorded."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -266,7 +685,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Install on a second phone."
+      "leftToReach100": "Install the app on a second phone through the QR code, and test bad or expired codes.",
+      "roadTo100": {
+        "means": "A second phone installs the app by scanning the QR over the hotspot, and bad codes are handled.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Built, tests pass, QR page served from a phone."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Install on a second phone using the QR."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add a test for an invalid or expired QR page."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No second-phone install is recorded."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -281,7 +724,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "A real wake from sleep."
+      "leftToReach100": "Wake a real sleeping PC from the phone, and test the error and retry messages.",
+      "roadTo100": {
+        "means": "The phone wakes a properly set-up sleeping PC and explains clearly if it cannot.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Wake-packet and error tests pass; tried on a phone earlier."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Wake a real PC from sleep and record it."
+          },
+          {
+            "kind": "CODE",
+            "text": "Test the error message and retry limits."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No wake-from-sleep result is recorded."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -296,10 +763,41 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 9, 2026",
-      "leftToReach100": "Casting to other kinds of TV or receiver; nobody has yet looked at the TV picture during a test, so the picture and sound on the TV are not verified; one S9+ cast result was marked unclean because another session was using the phone; cast conversion and quality not tested on this build; a readiness review.",
+      "leftToReach100": "Check picture and sound on the TV, try other TVs and receivers, and test film conversion and quality choices.",
       "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
-      "changeNote": "Android tester16 code, Oct 9, Samsung S24 Ultra (test build): the Living Room TV was listed, the phone connected to it, pause, resume and fast-forward commands were sent from the phone, then casting was stopped and the phone showed Disconnected. Nobody could see the TV picture, so this shows the session started, accepted commands and ended, not that the picture and sound were checked. Not tested: converting a film for the TV, quality choices, other TVs."
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
+          "changeNote": "Android tester16 code, Oct 9, Samsung S24 Ultra (test build): the Living Room TV was listed, the phone connected to it, pause, resume and fast-forward commands were sent from the phone, then casting was stopped and the phone showed Disconnected. Nobody could see the TV picture, so this shows the session started, accepted commands and ended, not that the picture and sound were checked. Not tested: converting a film for the TV, quality choices, other TVs."
+        }
+      ],
+      "roadTo100": {
+        "means": "Casting shows the right picture and sound on more than one TV or receiver, with working controls, quality choices and recovery.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "On the S24 Ultra the Living Room TV was found, connected, accepted pause, resume and fast-forward, and disconnected."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Cast and look at the TV: confirm picture and sound."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Try another kind of TV or receiver."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add tests for converted films and quality choices."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "An S9+ cast result was unclean (another session was using the phone) and conversion is untested on this build."
+          }
+        ]
+      }
     },
     {
       "group": "Android phone app",
@@ -314,7 +812,40 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 6, 2026 (one car, one drive)",
-      "leftToReach100": "Music, maps ducking, away from home, passenger games, Car Party, more cars, and a readiness review."
+      "leftToReach100": "Test music, maps ducking, away from home, passenger games and Car Party in the car, and in more cars.",
+      "roadTo100": {
+        "means": "Every Beebo Auto feature works in real cars, including after a lost connection, with a safety review.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "First real-car check passed for the listed items on one car on Oct 6.",
+          "Behaviour tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "In a parked car: music, car-screen titles, maps ducking."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Away from home, passenger games and Car Party."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Try a second car."
+          },
+          {
+            "kind": "CODE",
+            "text": "List Android Auto error and offline cases and add tests."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "One car is not enough to call it ready."
+          }
+        ]
+      },
+      "previousPercent": 80,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -329,7 +860,35 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Run on a real TV and a real Fire TV."
+      "leftToReach100": "Run it on a real Android TV and a real Fire TV; no device result exists.",
+      "roadTo100": {
+        "means": "The TV screens and remote control work on a real Android TV and a real Fire TV.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "TV remote-navigation code and tests exist."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Install and use it on a real Android TV."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Install and use it on a real Fire TV."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "TV pairing and sign-in need a careful review first."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No TV device result exists."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -344,7 +903,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Offline demo check; Play paperwork and the 14-day closed test."
+      "leftToReach100": "Pass the offline demo check, then Nick completes the Play paperwork and the 14-day closed test; not submitted.",
+      "roadTo100": {
+        "means": "The Play build passes its policy checks and demo, and Nick finishes Play's paperwork and required closed test.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Play-version policy tests pass; the Play build exists."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Run the offline demo check on a phone."
+          },
+          {
+            "kind": "NICK",
+            "text": "Finish the Play account, paperwork and the 14-day closed test."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "Not submitted to Google Play; that waits for Nick's go-ahead."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -359,7 +942,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Server side; safe screen capture; a two-phone test."
+      "leftToReach100": "Needs the server side and safe screen sharing built and carefully reviewed, then a two-phone test.",
+      "roadTo100": {
+        "means": "Screen sharing to a helper's phone works safely with clear consent, tested on two phones and reviewed.",
+        "done": [
+          "Checks passed: Automated tests.",
+          "Some session tests exist, but the feature is switched off."
+        ],
+        "remaining": [
+          {
+            "kind": "BLOCKED",
+            "text": "Screen capture and privacy design need a careful security review first."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Two-phone test, only after a reviewed build exists."
+          }
+        ]
+      },
+      "previousPercent": 20,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -374,7 +977,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Decide: replace with Remote Desktop or remove."
+      "leftToReach100": "Nick decides to replace it with Remote Desktop or remove it.",
+      "roadTo100": {
+        "means": "Nick picks a replacement or removal, and the chosen version is built, tested and checked on a phone.",
+        "done": [
+          "Checks passed: none yet.",
+          "The old button is hidden."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Decide: replace it with Remote Desktop or remove it."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No approved direction yet."
+          },
+          {
+            "kind": "CODE",
+            "text": "Build and test the chosen path after the decision."
+          }
+        ]
+      },
+      "previousPercent": 0,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -389,7 +1016,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Switch it on, then pair a real Smart TV, Roku and Android TV; real-world check."
+      "leftToReach100": "Switch it on and pair a real Smart TV, Roku and Android TV; the pairing flow needs a careful security review.",
+      "roadTo100": {
+        "means": "A phone pairs with a Smart TV, a Roku and an Android TV and recovers if pairing fails.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Built and tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "BLOCKED",
+            "text": "Pairing and sign-in tokens need a careful security review first."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Pair a real Smart TV, Roku and Android TV."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "The feature is switched off on our servers; no device result exists."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Android phone app",
@@ -404,10 +1055,41 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "A full TalkBack (screen reader) pass on a phone; a 200% font check; a readiness review.",
+      "leftToReach100": "Run a full TalkBack and 200% font pass on a phone, then a review.",
       "previousPercent": 40,
-      "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
-      "changeNote": "tester15: error and loading boxes in Browse keep their size with large text, and label-and-switch rows (tester guide, walkie-talkie settings) read as one control. Automated tests and a 16 of 16 S9+ smoke run; Browse and the walkie-talkie rows at the largest text size and TalkBack not tried on a phone."
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
+          "changeNote": "tester15: error and loading boxes in Browse keep their size with large text, and label-and-switch rows (tester guide, walkie-talkie settings) read as one control. Automated tests and a 16 of 16 S9+ smoke run; Browse and the walkie-talkie rows at the largest text size and TalkBack not tried on a phone."
+        }
+      ],
+      "roadTo100": {
+        "means": "Large text, high contrast, reduced motion and TalkBack work across the main screens on the newest build, with a review.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Preference tests pass; some large-text checks were done on a phone."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Do a full TalkBack pass."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Set 200% font and high contrast and check for clipped text."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add tests for any preference or error state the review finds untested."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No full accessibility review is recorded."
+          }
+        ]
+      }
     },
     {
       "group": "Windows desktop app",
@@ -422,10 +1104,42 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 8, 2026",
-      "leftToReach100": "Install over an older version by a person, the free-space warning on a real PC, and uninstall removing the start-at-boot task.",
+      "leftToReach100": "Install over an older version by a person, see the low-disk warning on a real PC, check uninstall removes the start-at-boot task, and get an update-safety review.",
       "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 3:58 AM Eastern",
-      "changeNote": "Windows 0.1.83: the new signed installer ran on the owner's Windows 11 PC. The app shows version 0.1.83 and opened on its home screen, and Windows reports the program file's signature as valid. Updating from inside the app using the live update feed has not been tried yet, and no film was played in this check."
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 3:58 AM Eastern",
+          "changeNote": "Windows 0.1.83: the new signed installer ran on the owner's Windows 11 PC. The app shows version 0.1.83 and opened on its home screen, and Windows reports the program file's signature as valid. Updating from inside the app using the live update feed has not been tried yet, and no film was played in this check."
+        }
+      ],
+      "roadTo100": {
+        "means": "The installer and updater work on real PCs from an older version, warn about low disk space, clean up on uninstall, and the update checks have been independently reviewed.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Installer and updater tests pass.",
+          "A 0.1.83 install check was done on Oct 9."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Install over an older release on a real Windows PC and confirm settings survive."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check the low-disk-space warning on a real PC."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Uninstall and confirm the start-at-boot task is removed."
+          },
+          {
+            "kind": "CODE",
+            "text": "Independent review of the update-trust checks on the final code."
+          }
+        ]
+      }
     },
     {
       "group": "Windows desktop app",
@@ -440,10 +1154,38 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1-2, 2026",
-      "leftToReach100": "Real-screen checks of the newest polish.",
+      "leftToReach100": "Do a real-PC walk through the library, player and browser player on the newest polish, and get a review of the final screens.",
       "previousPercent": 80,
-      "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
-      "changeNote": "Windows 0.1.82: collections list a repeated film once and 'Matrix, The' files next to 'The Matrix'; photos ignore impossible time-zone offsets. Automated tests only."
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
+          "changeNote": "Windows 0.1.82: collections list a repeated film once and 'Matrix, The' files next to 'The Matrix'; photos ignore impossible time-zone offsets. Automated tests only."
+        }
+      ],
+      "roadTo100": {
+        "means": "On a real PC the library, desktop player and browser player work through a full journey (seek, tracks, subtitles) on the newest build, with a review.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Library and player behaviour tests pass.",
+          "Playback checked in earlier tests."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Open a real library and play local and browser-player media on a real PC."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check seek, audio tracks and subtitles on the newest build."
+          },
+          {
+            "kind": "CODE",
+            "text": "Independent review of the final screens."
+          }
+        ]
+      }
     },
     {
       "group": "Windows desktop app",
@@ -458,7 +1200,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Run through a real reboot; the three-mode screen on screen."
+      "leftToReach100": "Run all three update modes and Start with Windows through a real reboot.",
+      "roadTo100": {
+        "means": "Each update mode behaves correctly and Start with Windows works after a real restart.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Settings and update-mode tests exist."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Restart a real Windows PC and confirm Start with Windows."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Try each of the three update modes and view the mode screen."
+          },
+          {
+            "kind": "CODE",
+            "text": "Independent review of the update-trust checks."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -473,7 +1239,28 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Other graphics cards; replace the bundled video converter for licence reasons."
+      "leftToReach100": "Test on graphics cards from at least two makers, and Nick decides how to replace the bundled video converter for licence reasons.",
+      "roadTo100": {
+        "means": "Quality and speed settings convert correctly on at least two different graphics-card families, and the converter licence question is settled.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Planner and settings tests pass.",
+          "Tested with simulated converter runs."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Run the converter hand-test on two graphics-card families."
+          },
+          {
+            "kind": "NICK",
+            "text": "Decide how to replace the bundled video converter for licence reasons."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -488,7 +1275,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "A real tuner and real playlists."
+      "leftToReach100": "Tune a real TV tuner and play a real playlist, and review guide and source restrictions.",
+      "roadTo100": {
+        "means": "A real tuner and a real playlist both work on a PC, with a correct guide and safe source rules.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Live TV planning tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Tune a real tuner."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Import and play a real playlist."
+          },
+          {
+            "kind": "CODE",
+            "text": "Independent review of the guide, path and source restrictions."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -503,7 +1314,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Page builder on the real app; household profiles."
+      "leftToReach100": "Build and export a story in the real app, and review how it behaves with household profiles.",
+      "roadTo100": {
+        "means": "A story is built and exported in the real desktop app, and household profiles are handled safely.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Studio logic and export tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Build and export a story in the real desktop app."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "Household-profile behaviour needs a careful review first."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -518,7 +1349,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "A real two-device Movie Night."
+      "leftToReach100": "Run one host and one guest on two real devices, and review the sharing and session behaviour.",
+      "roadTo100": {
+        "means": "A host and a guest on two real devices join, play, pause and leave together, with the sharing rules reviewed.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Movie Night behaviour tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Two real devices: join, play, pause and leave."
+          },
+          {
+            "kind": "CODE",
+            "text": "Independent review of the sharing and session rules."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -533,7 +1384,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "More Jellyfin apps tried."
+      "leftToReach100": "Try more Jellyfin apps and fix whatever does not work.",
+      "roadTo100": {
+        "means": "Several real Jellyfin apps connect and play, and anything unsupported is listed.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Compatibility tests exist and pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Connect several real Jellyfin apps and record what works and what does not."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add a test for each incompatibility found."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -548,7 +1419,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Real-screen checks."
+      "leftToReach100": "Check restricted and normal profiles on a real PC, and review the household rules.",
+      "roadTo100": {
+        "means": "Restricted and normal profiles behave correctly on a real PC and the household rules have been reviewed.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Parental-control tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Check restricted and unrestricted profiles on a real PC."
+          },
+          {
+            "kind": "CODE",
+            "text": "Independent review of the parental and household rules."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -563,7 +1454,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "A real screen reader and high-contrast check."
+      "leftToReach100": "Use a real Windows screen reader and high-contrast mode on the main journeys.",
+      "roadTo100": {
+        "means": "The library, player and settings can be used with the keyboard and a screen reader in high-contrast mode.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Keyboard and screen-reader tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Use a real Windows screen reader on the library, player and settings."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check high-contrast mode."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add tests for the problems found."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -578,7 +1493,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Native-speaker review of all translations."
+      "leftToReach100": "Native speakers review all translations, and long text and right-to-left layouts get checked on a real PC.",
+      "roadTo100": {
+        "means": "Native speakers have reviewed every language and long or right-to-left text fits on a real PC.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Translation completeness tests pass; five languages are machine-assisted, three are previews."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Get native-speaker review of every translation."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check long text and right-to-left layouts on a real Windows PC."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -593,7 +1528,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "A commercial TMDB licence decision for a paid product."
+      "leftToReach100": "Nick decides about a commercial TMDB licence for a paid product, then offline behaviour is checked on a real PC.",
+      "roadTo100": {
+        "means": "Posters and info work, fail gracefully offline on a real PC, and our use of TMDB is properly licensed for any paid product.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Poster and info tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Decide about a commercial TMDB licence."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check offline and degraded behaviour on a real PC after the decision."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -608,7 +1563,35 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Real-screen test on the same Wi-Fi, mouse and keyboard, away from home, approval prompts."
+      "leftToReach100": "Test on the same Wi-Fi and away from home, with mouse, keyboard, approval prompts, disconnect and revoke, and review the safety.",
+      "roadTo100": {
+        "means": "A phone can see and control a PC with clear approvals, and disconnect and revoke work, tested on same Wi-Fi and away from home and reviewed.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Safety-focused tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Test same-Wi-Fi view and control with mouse and keyboard."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Test away from home."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check the approval prompts, disconnect and revoke."
+          },
+          {
+            "kind": "CODE",
+            "text": "Independent review of the remote-control safety design."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -623,7 +1606,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 5, 2026 (screen seen, not used)",
-      "leftToReach100": "A real phone backing up a real folder, then deleting it from the phone; a check on a real PC."
+      "leftToReach100": "Back up a real phone folder, check the copy, then do the confirmed removal and see the result on a PC.",
+      "roadTo100": {
+        "means": "A real phone folder is backed up and verified, the confirmed removal works, and the delete steps have been reviewed.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Storage and photo tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Back up a real phone folder and verify it."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Do the confirmed removal and check the PC result."
+          },
+          {
+            "kind": "CODE",
+            "text": "Independent review of the delete and overwrite steps."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -638,7 +1645,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 5, 2026 (form seen, nothing sent)",
-      "leftToReach100": "Send a real invite and open it in a second household; terms review; a readiness review."
+      "leftToReach100": "Send a real invite to a second household, settle the sharing terms, and review readiness.",
+      "roadTo100": {
+        "means": "A real second household accepts an invite and watches shared titles under approved terms.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Sharing route and screen tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Send and open a real invite in a second household."
+          },
+          {
+            "kind": "NICK",
+            "text": "Decide the sharing terms."
+          },
+          {
+            "kind": "CODE",
+            "text": "Independent readiness review of the sharing rules."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Windows desktop app",
@@ -653,7 +1684,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 3, 2026",
-      "leftToReach100": "Listen on real speakers with a real film (a synthetic test on Oct 3 flattened a 26 dB swing to about 1.5 dB in both modes; the phone app already has it)."
+      "leftToReach100": "Listen to a real film on real speakers in both modes and record what you hear.",
+      "roadTo100": {
+        "means": "On real speakers a real film sounds more even in both modes, with before and after notes.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Loudness tests pass; a test on Oct 3 flattened a 26 dB swing to about 1.5 dB."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Listen to a real film on real speakers in both modes and write down what you hear."
+          },
+          {
+            "kind": "CODE",
+            "text": "Add a test if the listening finds a repeatable fault."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Other systems",
@@ -668,7 +1719,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Raspberry Pi and ARM; a real NAS; hardware video conversion."
+      "leftToReach100": "Run on an ARM or Raspberry Pi and a real NAS, including video conversion.",
+      "roadTo100": {
+        "means": "The Linux server runs on common hardware (including ARM and a real NAS) and converts video.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Built and tests pass; a virtual run worked."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Run on a Raspberry Pi or other ARM device."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Run on a real NAS and convert a video."
+          },
+          {
+            "kind": "CODE",
+            "text": "Fix and test any fault those runs find."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Other systems",
@@ -683,7 +1758,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Run it in a real Linux desktop session (without testing flags), the system tray, hardware conversion, auto-update. It built and started in a virtual machine on Oct 3."
+      "leftToReach100": "Install and run it on a real Linux desktop: tray, conversion, update and reinstall.",
+      "roadTo100": {
+        "means": "A clean Linux install runs, shows its tray icon, converts video, updates and reinstalls.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Built and started in a virtual machine."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Clean install and launch on a real Linux desktop."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check the tray, conversion, update and reinstall."
+          },
+          {
+            "kind": "CODE",
+            "text": "Fix and test any fault found."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Other systems",
@@ -698,10 +1797,41 @@
         "Ready to call Available": false
       },
       "lastTested": "Automated tests only, run on Windows (Oct 9, 2026). Never run on a Mac.",
-      "leftToReach100": "Never run by a person on a Mac. Mac builds are unsigned and have only been built by an automatic builder, not opened on a real Mac.",
-      "previousPercent": 20,
-      "changedEastern": "Oct 9, 2026, 4:50 AM Eastern",
-      "changeNote": "20 automated checks for the Mac build now pass, plus a new Oct 8 check that the Mac download page refuses a link with a password in it. They cover the packaging settings, update rules and video-encoder choice, not a running Mac app. Nobody has opened it on a real Mac."
+      "leftToReach100": "Run on Intel and Apple Silicon Macs, and Nick decides about signing.",
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 4:50 AM Eastern",
+          "changeNote": "20 automated checks for the Mac build now pass, plus a new Oct 8 check that the Mac download page refuses a link with a password in it. They cover the packaging settings, update rules and video-encoder choice, not a running Mac app. Nobody has opened it on a real Mac."
+        }
+      ],
+      "roadTo100": {
+        "means": "The Mac app is signed, opens without warnings and plays and converts on both Mac types.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Built by the automatic builder only; unsigned."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Run the current build on an Intel Mac."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Run it on an Apple Silicon Mac (playback, conversion, permissions, update)."
+          },
+          {
+            "kind": "NICK",
+            "text": "Decide about Apple signing and notarization."
+          },
+          {
+            "kind": "CODE",
+            "text": "Fix and test any fault found."
+          }
+        ]
+      }
     },
     {
       "group": "Services and website",
@@ -716,7 +1846,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 6, 2026",
-      "leftToReach100": "Delete Cloudflare leftovers after a few quiet days (needs the owner's OK)."
+      "leftToReach100": "Nick approves removing the old Cloudflare leftovers, then DNS and secure-connection checks are repeated.",
+      "roadTo100": {
+        "means": "Everything runs only on our own servers and name servers, with the leftovers removed and rechecked.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Own servers and name servers are live; DNS tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Approve removing the old Cloudflare leftovers."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Repeat the DNS and secure-connection checks after removal."
+          }
+        ]
+      },
+      "previousPercent": 80,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -731,7 +1881,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Sep 17-18, 2026",
-      "leftToReach100": "Price decision."
+      "leftToReach100": "Nick decides the price and entitlement rules, and the fallback is proven across two real networks.",
+      "roadTo100": {
+        "means": "Relay carries video across two real networks, recovers after a drop, and its price is decided.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Relay is live; Relay tests pass."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Decide pricing and who gets Relay."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Prove fallback and recovery across two real networks."
+          }
+        ]
+      },
+      "previousPercent": 80,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -746,7 +1916,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Real phones with touch, Safari and Firefox; online play is not live."
+      "leftToReach100": "Check on real phones with touch and in Safari and Firefox; online play stays off until Nick approves its scope.",
+      "roadTo100": {
+        "means": "The browser games work with touch, Safari and Firefox on real devices.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Game logic tests pass; the games are live."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Check touch on real phones and Safari and Firefox."
+          },
+          {
+            "kind": "NICK",
+            "text": "Decide the scope of public online play."
+          },
+          {
+            "kind": "CODE",
+            "text": "Fix any fault found."
+          }
+        ]
+      },
+      "previousPercent": 80,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -761,7 +1955,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "A way to send email (own mail server queued)."
+      "leftToReach100": "Nick approves a mail service, then reset, expiry, delivery and verification are tested with real email.",
+      "roadTo100": {
+        "means": "People can reset a password and verify their email with real messages arriving, with expiry and abuse limits tested.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Built and tests pass; switched off."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Approve a way to send email."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Test reset, expiry, delivery and verification with real mail clients."
+          },
+          {
+            "kind": "CODE",
+            "text": "Safe delivery and abuse-limit fixes."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -776,7 +1994,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Run on the real server behind the switches, and real players at a private table."
+      "leftToReach100": "Nick approves a real-server test with private players, then matching, reconnect and moderation are tested.",
+      "roadTo100": {
+        "means": "Real players find matches, reconnect and are moderated safely on the real server.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Game engine and connection tests pass; load-tested earlier."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Approve a test on the real server with private players."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Test matching, reconnect and moderation with real players."
+          },
+          {
+            "kind": "CODE",
+            "text": "Operational fixes from that test."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -791,7 +2033,27 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Two real phones over the internet."
+      "leftToReach100": "Test with two real phones on unrelated networks.",
+      "roadTo100": {
+        "means": "Two phones on different networks talk to each other reliably.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device.",
+          "Server and connection tests pass; switched off."
+        ],
+        "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "Two phones on different networks."
+          },
+          {
+            "kind": "CODE",
+            "text": "Fix and test any fault found."
+          }
+        ]
+      },
+      "previousPercent": 60,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -806,7 +2068,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Wire it to a menu, then a real-device check. Stays Planned until then."
+      "leftToReach100": "Wire it to a menu, run it on a supported device, and Nick decides when it stops being Planned.",
+      "roadTo100": {
+        "means": "The feature is reachable from a menu, tested on a supported device, and its public status is decided.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Card-making code exists but is not reachable from any menu."
+        ],
+        "remaining": [
+          {
+            "kind": "CODE",
+            "text": "Add the menu entry and tests."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Run it on a supported device."
+          },
+          {
+            "kind": "NICK",
+            "text": "Decide when to change its status from Planned."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -821,7 +2107,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Switch the server flag on for a test, then a real link opened from another network."
+      "leftToReach100": "Turn the server switch on for a test, then open a real link from another network and test expiry and revoke.",
+      "roadTo100": {
+        "means": "A trip link opens from another network, expires on time and can be revoked.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Server link code and tests pass; switched off."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Approve a controlled test with the switch on."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Open a real link from another network; test expiry and revoke."
+          },
+          {
+            "kind": "CODE",
+            "text": "Fix edge cases found."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -836,10 +2146,42 @@
         "Ready to call Available": false
       },
       "lastTested": "Owner test on one Windows PC, a few days before Oct 7, 2026 (exact date not recorded), on an earlier build",
-      "leftToReach100": "Paid-plan check from the server, early release of a reserved slot, the split-tunnel driver on a real PC, installer, DNS and kill-switch proof, and the owner trying the current build.",
-      "previousPercent": 40,
-      "changedEastern": "Oct 7, 2026, 2:28 PM Eastern",
-      "changeNote": "The owner connected on one Windows PC and reached a site that his internet provider blocks. That was an earlier build; the newer features have not been tried. Automated checks pass; paid plans, the split-tunnel driver and the installer are not yet proven."
+      "leftToReach100": "Check paid plans, release of a reserved slot, the split-tunnel driver, installer, DNS and kill switch on a real PC, and review the security.",
+      "previousPercent": 55,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 7, 2026, 2:28 PM Eastern",
+          "changeNote": "The owner connected on one Windows PC and reached a site that his internet provider blocks. That was an earlier build; the newer features have not been tried. Automated checks pass; paid plans, the split-tunnel driver and the installer are not yet proven."
+        }
+      ],
+      "roadTo100": {
+        "means": "BeeboVPN works end to end on real PCs including paid plans, split tunnelling, DNS and kill switch, with a careful security review.",
+        "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Server and entitlement tests pass.",
+          "The owner tried one PC on an earlier build and got past an ISP-blocked site."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Decide paid plans, server choices and early release of a reserved slot."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Test the split-tunnel driver, installer, DNS leaks and kill switch on a real PC."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "Paid access can only be set up by Nick on the live server."
+          },
+          {
+            "kind": "CODE",
+            "text": "Safe follow-up fixes after a careful security review."
+          }
+        ]
+      }
     },
     {
       "group": "Services and website",
@@ -854,7 +2196,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "App screens with real data; money decisions."
+      "leftToReach100": "Nick decides the policy and whether to switch it on; then app screens are checked with real data and fraud rules are reviewed.",
+      "roadTo100": {
+        "means": "Rewards, ads and credit work with real data, fraud is blocked, and Nick has approved turning it on.",
+        "done": [
+          "Checks passed: Built, Automated tests.",
+          "Ledger and reward tests pass; switched off."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Decide the policy and whether to enable it."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check the app screens with approved real data."
+          },
+          {
+            "kind": "CODE",
+            "text": "More fraud and ledger tests, after a careful review."
+          }
+        ]
+      },
+      "previousPercent": 40,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -869,7 +2235,35 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Control plane and everything after it."
+      "leftToReach100": "Nick approves scope, price and running costs first; nothing is built yet beyond a plan.",
+      "roadTo100": {
+        "means": "Hosted game servers run safely with backups, monitoring and abuse handling.",
+        "done": [
+          "Checks passed: none yet.",
+          "Planning notes only."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Approve scope, pricing and operations."
+          },
+          {
+            "kind": "CODE",
+            "text": "Build and test the control system."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Run a staged test with monitoring and backups."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No infrastructure approved."
+          }
+        ]
+      },
+      "previousPercent": 0,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -884,7 +2278,35 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Everything; plan only today."
+      "leftToReach100": "Nick decides scope, price, data retention and support; nothing is built yet.",
+      "roadTo100": {
+        "means": "Managed hosting runs with controls, backups and tested incident drills.",
+        "done": [
+          "Checks passed: none yet.",
+          "Planning notes only."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Decide scope, pricing, retention and support."
+          },
+          {
+            "kind": "CODE",
+            "text": "Build and test the controls."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Staging, backup and incident drills."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No hosting provider approved."
+          }
+        ]
+      },
+      "previousPercent": 0,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -899,7 +2321,31 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Paused; nothing is wired into the app."
+      "leftToReach100": "Paused; Nick decides whether and how to resume.",
+      "roadTo100": {
+        "means": "Original 3D characters and story videos are in the app, tested for speed and accessibility.",
+        "done": [
+          "Checks passed: none yet.",
+          "Paused; nothing is wired into the app."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Decide whether to resume and set the original-content scope."
+          },
+          {
+            "kind": "CODE",
+            "text": "Build and test the approved integration."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check speed and accessibility."
+          }
+        ]
+      },
+      "previousPercent": 0,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     },
     {
       "group": "Services and website",
@@ -914,7 +2360,35 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Everything."
+      "leftToReach100": "Nick decides privacy and account scope; nothing is built yet.",
+      "roadTo100": {
+        "means": "Voice commands work through Google Assistant and Alexa with safe sign-in, tested on real speakers.",
+        "done": [
+          "Checks passed: none yet.",
+          "An example Home Assistant setup exists; nothing else."
+        ],
+        "remaining": [
+          {
+            "kind": "NICK",
+            "text": "Decide product, privacy and account scope."
+          },
+          {
+            "kind": "CODE",
+            "text": "Build sign-in and commands."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Test on real Assistant and Alexa devices."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "No production setup with Google or Amazon."
+          }
+        ]
+      },
+      "previousPercent": 0,
+      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
     }
   ],
   "statusLabels": [
@@ -924,6 +2398,24 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 9, 2026, 4:50 AM Eastern",
-  "showChangeMarkers": true
+  "previousUpdatedEastern": "Oct 9, 2026, 6:30 AM Eastern",
+  "showChangeMarkers": true,
+  "hero": {
+    "recordName": "October 9 update record",
+    "scope": "Desktop, phones, browser, servers",
+    "lastTested": "Oct 9, 2026",
+    "lastTestedIso": "2026-10-09",
+    "previousTested": "Oct 3, 2026",
+    "broader": "Still required",
+    "newerText": "the published Windows {desktop} and Android {android} release notes are on <a href=\"updates.html\">Updates</a>, and earlier test results are on <a href=\"whats-tested.html\">What’s new and what’s tested</a>. The only hands-on test of Android {android} so far is on one Samsung Galaxy S9+ (17 of 20 checks passed, 1 did not, 2 were not run; details in the history below). The Galaxy S24 Ultra, car and TV checks have not been redone on this build."
+  },
+  "historyNew": [
+    {
+      "iso": "2026-10-09",
+      "date": "Oct 9, 2026 (Eastern)",
+      "headline": "Android 1.51-tester17 hands-on test on one Galaxy S9+: 17 of 20 checks passed, 1 did not, 2 not run",
+      "tested": "Android 1.51-tester17 (build 67), installed over tester16 on a Samsung Galaxy S9+ (Android 10) by cable; home Wi-Fi only.",
+      "happened": "Passed: the install over the older build kept the signed-in account; cold start to Home in under a second; all five tabs and search; the Connection route screen (home Wi-Fi, direct); play, pause, resume and seek forward and back; the floating picture-in-picture window when pressing Home during a film; the quality picker and the subtitle menu opening (the film tried had no built-in subtitles); audio kept playing with the screen off when the “Screen off” switch was turned on; progress kept after force-closing the app; Audio only mode with Home; no crash was logged. Did not pass: on this phone “Screen off” was Off when first seen, so audio stopped when the screen turned off until the switch was turned on; we could not tell whether that was an earlier choice or the default on a fresh install, so the new-install default is untested. Not run: rotating back to portrait, and the watchlist star (not reachable in the landscape dialog). Note: Surprise me starts a random film straight away rather than showing a title page. Not tested: the Galaxy S24 Ultra, a car, a TV, mobile data or Beebo Relay, and a fresh install."
+    }
+  ]
 }

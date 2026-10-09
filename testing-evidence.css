@@ -320,3 +320,25 @@ html .rl-table .tag { max-width: 100%; white-space: normal; overflow-wrap: anywh
 .history-body p{margin:.5rem 0}
 @media (max-width:640px){.history-entry>summary{grid-template-columns:1fr}}
 .history-entry[open]>summary .history-headline{display:none}
+
+/* Road to 100%: expandable roadmap per feature */
+.road { margin-top: 8px; border: 1px solid rgba(128,128,128,.4); border-radius: 8px; background: rgba(128,128,128,.07); }
+.road > summary { cursor: pointer; padding: 6px 10px; font-weight: 700; font-size: .92em; list-style-position: inside; }
+.road > summary:focus-visible { outline: 3px solid #6e50dc; outline-offset: 2px; border-radius: 6px; }
+.road-body { padding: 2px 10px 10px; font-size: .92em; overflow-wrap: anywhere; }
+.road-body p { margin: 6px 0; }
+.road-body ul { margin: 4px 0 6px; padding-left: 1.2em; }
+.road-h { font-weight: 800; text-transform: uppercase; letter-spacing: .04em; font-size: .78em; margin-top: 10px; opacity: .8; }
+.road-group { margin: 6px 0; padding: 4px 8px; border-radius: 6px; border-left: 4px solid; }
+.road-label { margin: 0 0 2px; font-weight: 800; }
+.road-code { border-color: #1f8f4c; background: rgba(34,160,80,.12); }
+.road-device { border-color: #2a6fd6; background: rgba(42,111,214,.12); }
+.road-nick { border-color: #b8860b; background: rgba(230,168,20,.15); }
+.road-blocked { border-color: #c0392b; background: rgba(222,64,64,.12); }
+.road-hist { opacity: .85; font-size: .95em; }
+.road-intro { padding: 12px 16px; margin: 14px 0; border-radius: 10px; border: 1px solid rgba(128,128,128,.4); background: rgba(128,128,128,.07); }
+.road-intro h3 { margin-top: 0; }
+.road-kinds { list-style: none; padding: 0; margin: 8px 0; }
+.road-kinds li { margin: 6px 0; padding: 6px 10px; border-radius: 6px; border-left: 4px solid; }
+.road-totals { font-weight: 600; }
+.left-cell { overflow-wrap: anywhere; }
