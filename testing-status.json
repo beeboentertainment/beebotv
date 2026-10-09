@@ -1,14 +1,14 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "updated": "2026-10-09",
-  "updatedEastern": "Oct 9, 2026, 3:58 AM Eastern",
+  "updatedEastern": "Oct 9, 2026, 4:50 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed.",
-  "overallAveragePercent": 50,
+  "overallAveragePercent": 51,
   "groupAveragePercent": {
     "Android phone app": 59,
     "Windows desktop app": 49,
-    "Other systems": 40,
+    "Other systems": 47,
     "Services and website": 39
   },
   "featureCount": 58,
@@ -686,16 +686,19 @@
       "group": "Other systems",
       "name": "macOS desktop",
       "status": "In development",
-      "percentComplete": 20,
+      "percentComplete": 40,
       "checks": {
         "Built": true,
-        "Automated tests": false,
+        "Automated tests": true,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Never run by a person on a Mac."
+      "lastTested": "Automated tests only, run on Windows (Oct 9, 2026). Never run on a Mac.",
+      "leftToReach100": "Never run by a person on a Mac. Mac builds are unsigned and have only been built by an automatic builder, not opened on a real Mac.",
+      "previousPercent": 20,
+      "changedEastern": "Oct 9, 2026, 4:50 AM Eastern",
+      "changeNote": "20 automated checks for the Mac build now pass, plus a new Oct 8 check that the Mac download page refuses a link with a password in it. They cover the packaging settings, update rules and video-encoder choice, not a running Mac app. Nobody has opened it on a real Mac."
     },
     {
       "group": "Services and website",
