@@ -1,7 +1,7 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
-  "updated": "2026-10-07",
-  "updatedEastern": "Oct 7, 2026, 2:28 PM Eastern",
+  "updated": "2026-10-09",
+  "updatedEastern": "Oct 9, 2026, 3:58 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed.",
   "overallAveragePercent": 50,
@@ -25,11 +25,11 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 2, 2026",
+      "lastTested": "Oct 8, 2026",
       "leftToReach100": "TalkBack (screen reader) check.",
       "previousPercent": 80,
-      "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
-      "changeNote": "Android tester15 (build 65): a Samsung S9+ installed it over tester14, kept its sign-in and passed 16 of 16 checks. Not tried on other phones."
+      "changedEastern": "Oct 9, 2026, 3:58 AM Eastern",
+      "changeNote": "Android tester16 (build 66): a Samsung S9+ installed it over tester15, kept its sign-in and opened on Home in under a second. The Home, Browse, Library and More tabs loaded and no crash was logged. The Play tab was not opened in this check. Not tried on other phones."
     },
     {
       "group": "Android phone app",
@@ -43,8 +43,11 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Screen-off playback; the 480p switch error re-checked on a phone; seeking and floating player re-run on the newest build."
+      "lastTested": "Oct 8, 2026",
+      "leftToReach100": "Screen-off playback; the 480p switch error re-checked on a phone; seeking and floating player re-run on the newest build.",
+      "changedEastern": "Oct 9, 2026, 3:58 AM Eastern",
+      "changeNote": "Android tester16 (build 66) on a Samsung S9+ at home on Wi-Fi: a film resumed from the Resume prompt and played with picture, pause held its place, play carried on, and fast-forward jumped about 15 seconds. Picture-in-picture, subtitles, quality changes and casting were not tried in this check.",
+      "previousPercent": 80
     },
     {
       "group": "Android phone app",
@@ -415,11 +418,11 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 1, 2026",
+      "lastTested": "Oct 8, 2026",
       "leftToReach100": "Install over an older version by a person, the free-space warning on a real PC, and uninstall removing the start-at-boot task.",
       "previousPercent": 80,
-      "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
-      "changeNote": "Windows 0.1.82 (small release): the packaged app starts and answers, and the full desktop test run passed 1,001 of 1,002 files (the one guard-test failure was fixed and passed 6 of 6). Not run by a person: installing over an older version on a real Windows PC."
+      "changedEastern": "Oct 9, 2026, 3:58 AM Eastern",
+      "changeNote": "Windows 0.1.83: the new signed installer ran on the owner's Windows 11 PC. The app shows version 0.1.83 and opened on its home screen, and Windows reports the program file's signature as valid. Updating from inside the app using the live update feed has not been tried yet, and no film was played in this check."
     },
     {
       "group": "Windows desktop app",
