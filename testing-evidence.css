@@ -273,6 +273,7 @@ html[data-aurora] .tier-tag.tier-red, html[data-beebo-corporate-dark] .tier-tag.
 .evidence-table tr.feat.is-updated > th[scope="row"] { box-shadow: inset 0 0 0 999px rgba(110,80,220,.10); }
 .upd-delta { display: inline-block; margin-top: 2px; font-size: .8em; font-weight: 700; color: #5a3fc4; }
 .upd-note { margin: 0 0 6px; padding: 6px 8px; border-radius: 8px; border-left: 4px solid #6e50dc; background: rgba(110,80,220,.12); font-size: .92em; }
+.upd-note.upd-old { padding: 0; border-left: 0; background: none; font-size: .85em; opacity: .75; }
 .evidence-table .bar { position: relative; }
 .evidence-table .bar .bar-prev { position: absolute; top: -2px; bottom: -2px; width: 3px; margin-left: -1px; background: #6e50dc; border-radius: 2px; }
 .evidence-table .bar i { transition: width .6s ease; }
