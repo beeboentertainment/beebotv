@@ -1,12 +1,12 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "updated": "2026-10-09",
-  "updatedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+  "updatedEastern": "Oct 9, 2026, 10:57 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
-  "overallAveragePercent": 51,
+  "overallAveragePercent": 50,
   "groupAveragePercent": {
-    "Android phone app": 59,
+    "Android phone app": 58,
     "Windows desktop app": 49,
     "Other systems": 47,
     "Services and website": 39
@@ -165,20 +165,24 @@
       "group": "Android phone app",
       "name": "Watch Together",
       "status": "In development",
-      "percentComplete": 80,
+      "percentComplete": 60,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
-        "Real-world check": true,
+        "Real-world check": false,
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
       "leftToReach100": "Test it on two real phones, including closing and re-opening the app to rejoin, then run a readiness review.",
       "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 9, 2026, 10:57 AM Eastern",
+      "changeNote": "Corrected: the real-world check was ticked but this feature has not been tried on real hardware yet",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        },
         {
           "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
           "changeNote": "Windows 0.1.82: leaving a room no longer counts against the open-room limit. Automated tests only; not tried with two phones."
@@ -187,7 +191,7 @@
       "roadTo100": {
         "means": "Two phones join, stay in sync, leave, and rejoin after the app is closed, and a reviewer signs off.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Checks passed: Built, Automated tests, Real device.",
           "Join and leave tests pass, including the 'room is full' notice.",
           "Leaving a room no longer counts toward the open-room limit (automated tests only)."
         ],
@@ -389,20 +393,24 @@
       "group": "Android phone app",
       "name": "Podcasts and radio",
       "status": "Available (test download)",
-      "percentComplete": 80,
+      "percentComplete": 60,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
-        "Real-world check": true,
+        "Real-world check": false,
         "Ready to call Available": false
       },
       "lastTested": "Oct 1-2, 2026",
       "leftToReach100": "Play a real station and a real podcast on a phone, including with the screen off.",
       "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 9, 2026, 10:57 AM Eastern",
+      "changeNote": "Corrected: the real-world check was ticked but this feature has not been tried on real hardware yet",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        },
         {
           "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
           "changeNote": "Windows 0.1.82: internet radio playlists with relative entries or spaces now play. Automated tests only; not tried with a real station on a phone."
@@ -411,7 +419,7 @@
       "roadTo100": {
         "means": "A real station and a real podcast play on a phone, keep playing with the screen off, and recover after a break.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Checks passed: Built, Automated tests, Real device.",
           "Feed, player and background tests pass.",
           "Radio playlists with spaces or relative entries now play (automated tests only)."
         ],
@@ -2398,7 +2406,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 9, 2026, 6:30 AM Eastern",
+  "previousUpdatedEastern": "Oct 9, 2026, 9:57 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 9 update record",
