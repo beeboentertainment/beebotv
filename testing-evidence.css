@@ -342,3 +342,20 @@ html .rl-table .tag { max-width: 100%; white-space: normal; overflow-wrap: anywh
 .road-kinds li { margin: 6px 0; padding: 6px 10px; border-radius: 6px; border-left: 4px solid; }
 .road-totals { font-weight: 600; }
 .left-cell { overflow-wrap: anywhere; }
+
+/* Code checks and human checks are intentionally separate: a full code bar
+   still leaves visible real-world work, rather than implying release-ready. */
+.code-vs-human-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+.code-vs-human-group { padding: 18px; border: 1px solid rgba(128,128,128,.4); border-radius: 12px; background: rgba(128,128,128,.07); min-width: 0; }
+.code-vs-human-group h3 { margin: 0 0 14px; }
+.code-human-meter { margin: 12px 0; }
+.code-human-meter-label { display: flex; justify-content: space-between; gap: 12px; }
+.code-human-bar { display: block; height: 10px; margin-top: 6px; overflow: hidden; border-radius: 999px; background: rgba(128,128,128,.25); }
+.code-human-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #2a6fd6, #57a5ff); }
+.code-human-meter + .code-human-meter .code-human-bar i { background: linear-gradient(90deg, #1f8f4c, #63d68c); }
+.code-vs-human-left { margin: 16px 0; }
+.code-vs-human-group details { border-top: 1px solid rgba(128,128,128,.35); padding-top: 12px; }
+.code-vs-human-group summary { cursor: pointer; font-weight: 700; }
+.code-vs-human-table { margin-top: 14px; }
+.code-vs-human-table th:first-child { width: 32%; }
+@media (max-width: 860px) { .code-vs-human-groups { grid-template-columns: 1fr; } }

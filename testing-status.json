@@ -1,5 +1,64 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
+  "codeVsHuman": {
+    "updatedEastern": "Oct 11, 2026, 7:25 AM Eastern",
+    "method": "Code done is the share of Built and Automated tests that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the rounded average of their features. Remaining counts are open road-to-100 items.",
+    "groups": [
+      {
+        "name": "Android phone app", "codeDone": 94, "humanTestingLeft": 67,
+        "remaining": { "CODE": 19, "DEVICE": 34, "NICK": 5, "BLOCKED": 29 },
+        "features": [
+          { "name": "Opening the app and the five tabs", "codeDone": 100, "humanTestingLeft": 33, "codeItemsLeft": 1 },
+          { "name": "Playing films, seeking, picture-in-picture", "codeDone": 100, "humanTestingLeft": 33, "codeItemsLeft": 1 },
+          { "name": "Away from home (direct, then relay)", "codeDone": 100, "humanTestingLeft": 33, "codeItemsLeft": 0 },
+          { "name": "Watch Together", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Car party (host and passengers)", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Library health", "codeDone": 100, "humanTestingLeft": 33, "codeItemsLeft": 1 },
+          { "name": "Surprise me, playlists, watchlist, favourites", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Campsite host start and stop", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Podcasts and radio", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Audiobooks", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Pack for a trip (download planner)", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 2 },
+          { "name": "Trip Journal (trips, recap, video export)", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 0 },
+          { "name": "Campsite games (43)", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Shared photos and videos", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 0 },
+          { "name": "Wireless speakers", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Share the app (QR over the hotspot)", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Wake my PC", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 1 },
+          { "name": "Chromecast", "codeDone": 100, "humanTestingLeft": 33, "codeItemsLeft": 1 },
+          { "name": "Beebo Auto (Android Auto)", "codeDone": 100, "humanTestingLeft": 33, "codeItemsLeft": 1 },
+          { "name": "Android TV and Fire TV screens", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 0 },
+          { "name": "Google Play version", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 0 },
+          { "name": "Phone Help (show your screen to another phone)", "codeDone": 50, "humanTestingLeft": 100, "codeItemsLeft": 0 },
+          { "name": "Stream from my PC (old button)", "codeDone": 0, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Link a TV", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 0 },
+          { "name": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 }
+        ]
+      },
+      {
+        "name": "Windows desktop app", "codeDone": 100, "humanTestingLeft": 85,
+        "remaining": { "CODE": 12, "DEVICE": 25, "NICK": 4, "BLOCKED": 1 },
+        "features": [
+          { "name": "Installer and self-update", "codeDone": 100, "humanTestingLeft": 33, "codeItemsLeft": 1 },
+          { "name": "Library, player and web player", "codeDone": 100, "humanTestingLeft": 33, "codeItemsLeft": 1 },
+          { "name": "Update modes and start with Windows", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Converter and quality / speed settings", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 0 },
+          { "name": "Live TV (tuner and own playlist)", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Story Studio", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 0 },
+          { "name": "Movie Night", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Jellyfin-compatible mode", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Parental controls and household profiles", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Keyboard and screen-reader support", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Languages (5 translated with machine help, 3 previews)", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 0 },
+          { "name": "Posters and info (TMDB)", "codeDone": 100, "humanTestingLeft": 67, "codeItemsLeft": 0 },
+          { "name": "Remote Desktop (see and control the PC)", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Space Saver", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Library sharing with another household", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 },
+          { "name": "Strong volume leveler", "codeDone": 100, "humanTestingLeft": 100, "codeItemsLeft": 1 }
+        ]
+      }
+    ]
+  },
   "updated": "2026-10-09",
   "updatedEastern": "Oct 9, 2026, 10:57 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
