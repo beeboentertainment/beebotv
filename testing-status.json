@@ -59,8 +59,13 @@
       }
     ]
   },
-  "updated": "2026-10-09",
-  "updatedEastern": "Oct 9, 2026, 10:57 AM Eastern",
+  "releaseChanges": {
+    "title": "What changed since the last release",
+    "summary": "Since the last release, 5 merged fixes and 22 new automated tests were added. The 8 language options are unchanged.",
+    "sourceNote": "These counts come from the recorded changes since the last release."
+  },
+  "updated": "2026-10-11",
+  "updatedEastern": "Oct 11, 2026, 9:38 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 50,
@@ -217,8 +222,14 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changedEastern": "Oct 11, 2026, 9:38 AM Eastern",
+      "changeNote": "Fixed the browser page so a recent reload can keep a signed-in away-from-home session; automated tests were added.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -462,10 +473,14 @@
       },
       "lastTested": "Oct 1-2, 2026",
       "leftToReach100": "Play a real station and a real podcast on a phone, including with the screen off.",
-      "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 10:57 AM Eastern",
-      "changeNote": "Corrected: the real-world check was ticked but this feature has not been tried on real hardware yet",
+      "previousPercent": 60,
+      "changedEastern": "Oct 11, 2026, 9:38 AM Eastern",
+      "changeNote": "Fixed podcast chapter times with fractions of a second; an automated test was added.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 10:57 AM Eastern",
+          "changeNote": "Corrected: the real-world check was ticked but this feature has not been tried on real hardware yet"
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
@@ -832,9 +847,13 @@
       "lastTested": "Oct 9, 2026",
       "leftToReach100": "Check picture and sound on the TV, try other TVs and receivers, and test film conversion and quality choices.",
       "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 11, 2026, 9:38 AM Eastern",
+      "changeNote": "Improved casting so the TV returns to idle after a session and shows clearer connection messages; automated tests were added.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        },
         {
           "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
           "changeNote": "Android tester16 code, Oct 9, Samsung S24 Ultra (test build): the Living Room TV was listed, the phone connected to it, pause, resume and fast-forward commands were sent from the phone, then casting was stopped and the phone showed Disconnected. Nobody could see the TV picture, so this shows the session started, accepted commands and ended, not that the picture and sound were checked. Not tested: converting a film for the TV, quality choices, other TVs."
@@ -1223,9 +1242,13 @@
       "lastTested": "Oct 1-2, 2026",
       "leftToReach100": "Do a real-PC walk through the library, player and browser player on the newest polish, and get a review of the final screens.",
       "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 11, 2026, 9:38 AM Eastern",
+      "changeNote": "Fixed multi-disc album cover lookup and title matching for ordinary words; automated tests were added.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        },
         {
           "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
           "changeNote": "Windows 0.1.82: collections list a repeated film once and 'Matrix, The' files next to 'The Matrix'; photos ignore impossible time-zone offsets. Automated tests only."
@@ -2465,7 +2488,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+  "previousUpdatedEastern": "Oct 9, 2026, 10:57 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 9 update record",
