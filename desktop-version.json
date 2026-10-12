@@ -1,9 +1,9 @@
 {
-    "version": "0.1.86",
-    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.86/Beebo.Entertainment.Setup.0.1.86.exe",
-    "sha256": "54ced97da4b4a5bf8e23f621b4c3de75e1a7105c53cb3361ba1dba3d471d8c78",
-    "size": 257926112,
-    "notes": "What's new in 0.1.86:\n• Many small fixes found by our own code reviews: podcasts (chapters and Atom feeds), music (multi-disc cover art, lyrics), audiobooks, title matching with unusual letters, subtitle timing, Live TV and radio cleanup.\n• Choosing a settings folder that cannot be stored no longer loses your other settings.\n• On the TV screens, Back closes a poster information box that is showing.\n• The What's new box lists this release.\n• Built from commit 34cffeb6e, Oct 11, 2026, 11:27 AM Eastern.",
-    "publishedAtUtc": "2026-10-11T15:27:00Z",
-    "publishedAtEastern": "Oct 11, 2026, 11:27 AM Eastern"
+    "version": "0.1.87",
+    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.87/Beebo.Entertainment.Setup.0.1.87.exe",
+    "sha256": "5541283f1f57986d08f901adbed32f2412cf37e59f1a66c1dd829d0d66696ce6",
+    "size": 257927824,
+    "notes": "What's new in 0.1.87:\n• Many more small fixes found by our own code reviews: podcasts and radio keep the newest search and show you chose, bad podcast feed entries no longer hide good ones, and old radio station details clear when you change station.\n• Music and audiobooks: very large lyric timing offsets and bad CUE chapter times are handled safely, and audiobook chapter ends survive extreme speed changes.\n• \"New\" cards expire after seven days, missing artwork is retried when its folder is rescanned, and a failed Watchlist refresh now shows an error you can retry.\n• Notification settings keep your unsaved recipient while a test runs, and the webhook test says whether a message was only queued or really delivered.\n• Streaming stops waiting for a viewer who has already left, and bad saved playback settings fall back to safe values.\n• Built from commit 2a45347cd, Oct 12, 2026, 3:02 AM Eastern.",
+    "publishedAtUtc": "2026-10-12T07:03:39Z",
+    "publishedAtEastern": "Oct 12, 2026, 3:03 AM Eastern"
 }
