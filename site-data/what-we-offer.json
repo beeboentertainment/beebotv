@@ -1,0 +1,1497 @@
+{
+  "meta": {
+    "updatedEastern": "Oct 13, 2026",
+    "updatedIso": "2026-10-13",
+    "title": "Everything Beebo Entertainment is and offers",
+    "how": "One row per feature. status is one of Available, Beta, In development, Planned. Rows that match a feature on the testing evidence page carry its name in ts; the percentages for those come from testing-status.json, read by the build script, and are not calculated here. Run site-data/build-what-we-offer.js to rebuild the home section, the page and llms.txt. Download versions are read from the three feed files.",
+    "statusRules": {
+      "Available": "In a current download and usable today, and a person has run the main use on a real device or PC (the evidence line says what).",
+      "Beta": "In a current download or switchable today, but new, tested by automatic tests only, or with real problems found.",
+      "In development": "Being built, switched off, not in a current download, or never tried on the real equipment it needs.",
+      "Planned": "Intended, not built."
+    }
+  },
+  "areas": [
+    {
+      "id": "windows",
+      "name": "Windows server",
+      "blurb": "The Windows app that holds your library and serves it to your other screens."
+    },
+    {
+      "id": "android",
+      "name": "Android phone",
+      "blurb": "The Android phone and tablet app (test download, not on Google Play)."
+    },
+    {
+      "id": "tvauto",
+      "name": "Android TV and Beebo Auto",
+      "blurb": "The TV layout in the Android app, and Beebo Auto for Android Auto."
+    },
+    {
+      "id": "othertv",
+      "name": "Other TV and Apple platforms",
+      "blurb": "Fire TV, Roku, LG, Samsung, Xbox and the native Apple apps."
+    },
+    {
+      "id": "computers",
+      "name": "Computers, browsers and NAS",
+      "blurb": "Any web browser, Linux and Docker or NAS."
+    },
+    {
+      "id": "campsite",
+      "name": "Campsite Mode",
+      "blurb": "The offline local Wi-Fi group screen: guests, games, shared videos and music."
+    },
+    {
+      "id": "trip",
+      "name": "Trip Journal",
+      "blurb": "Trips, recaps, videos and private trip links."
+    },
+    {
+      "id": "away",
+      "name": "Away from home",
+      "blurb": "Watching from outside your home, and watching together."
+    },
+    {
+      "id": "music",
+      "name": "Music, audiobooks, podcasts and radio",
+      "blurb": "Listening to your own music and audiobooks, plus podcasts and internet radio."
+    },
+    {
+      "id": "livetv",
+      "name": "Live TV",
+      "blurb": "Live TV with your own tuner or playlist. Beebo supplies no channels."
+    },
+    {
+      "id": "household",
+      "name": "Parental controls and household",
+      "blurb": "Profiles, limits, privacy and sharing between homes."
+    },
+    {
+      "id": "online",
+      "name": "Online services",
+      "blurb": "Sign-in, browser games and the optional extras."
+    }
+  ],
+  "features": [
+    {
+      "id": "w-install",
+      "area": "windows",
+      "name": "Installer, signing and updates",
+      "status": "Available",
+      "evidence": "The Windows installer is digitally signed (signature checked valid on an earlier release on Oct 9, 2026). A PC updated itself from 0.1.78 to 0.1.79 while idle on Oct 5; on Oct 13 the update check on a newer test build said up to date. Not tried: updating over an older version on a second PC.",
+      "ts": "Installer and self-update",
+      "realTest": "yes"
+    },
+    {
+      "id": "w-library",
+      "area": "windows",
+      "name": "Library folders, scanning and matching",
+      "status": "Available",
+      "evidence": "Oct 5 on 0.1.79: the chosen folders and what each scan found were shown. Oct 13: all 27 desktop pages opened with content or a clear empty state on a small test library.",
+      "ts": "Library, player and web player",
+      "realTest": "yes"
+    },
+    {
+      "id": "w-posters",
+      "area": "windows",
+      "name": "Posters, details and cast (you add your own TMDB key)",
+      "status": "Available",
+      "evidence": "Oct 5: titles, ratings and descriptions were shown with a trailer button. A new PC with no key shows placeholder posters (seen Oct 13). Beebo does not include a shared key.",
+      "ts": "Posters and info (TMDB)",
+      "realTest": "partly"
+    },
+    {
+      "id": "w-playback",
+      "area": "windows",
+      "name": "Direct play and on-demand conversion to 1080p, 720p and 480p",
+      "status": "Available",
+      "evidence": "Oct 5 and Oct 13: the original file played; in the browser player 720p, 480p and Auto switched and kept playing from the same second. The desktop app opens films in the PC's own player; in-app playback is the phone app and the browser.",
+      "ts": "Converter and quality / speed settings",
+      "realTest": "yes"
+    },
+    {
+      "id": "w-hwconv",
+      "area": "windows",
+      "name": "Hardware-assisted conversion (graphics chip)",
+      "status": "Beta",
+      "evidence": "Intel Quick Sync was found and used on one PC (Oct 5). NVIDIA, AMD, Linux and Mac encoders are not tested. Optional HEVC and AV1 output are hardware-only or opt-in, off by default, and not tested on real hardware.",
+      "realTest": "partly"
+    },
+    {
+      "id": "w-hdr",
+      "area": "windows",
+      "name": "HDR to SDR conversion",
+      "status": "Beta",
+      "evidence": "Automatic tests only; no HDR film or HDR TV test is recorded.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-passthrough",
+      "area": "windows",
+      "name": "HDR10+, Dolby Vision, Atmos and DTS:X passthrough",
+      "status": "In development",
+      "evidence": "Not claimed. Being built.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-audio",
+      "area": "windows",
+      "name": "Audio tracks and sound modes (stereo mix-down, dialogue focus, night mode)",
+      "status": "Beta",
+      "evidence": "Oct 13: two audio tracks and the sound modes were listed in the browser player. Nobody has listened to them.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-subs",
+      "area": "windows",
+      "name": "Subtitles: embedded, image subtitles and online search with your own key",
+      "status": "Beta",
+      "evidence": "Automatic tests only. The test clips have no subtitles, so nobody has tried them on a real film.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-chapters",
+      "area": "windows",
+      "name": "Chapters, seek previews, skip intro and credits",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-lists",
+      "area": "windows",
+      "name": "Watchlist, favourites, Continue watching, playlists and smart playlists",
+      "status": "Available",
+      "evidence": "Oct 5 and Oct 13: a title was added to and removed from the watchlist, a playlist was made and deleted, smart playlists listed their titles.",
+      "realTest": "yes"
+    },
+    {
+      "id": "w-collections",
+      "area": "windows",
+      "name": "Collections, missing films and missing episodes",
+      "status": "Available",
+      "evidence": "Oct 13: 101 collections with counts, search narrowed them, missing films were marked not in library, and missing aired episodes were listed (data from TVmaze).",
+      "realTest": "yes"
+    },
+    {
+      "id": "w-layouts",
+      "area": "windows",
+      "name": "Home layouts, 11 layout packs and 8 colour themes",
+      "status": "Available",
+      "evidence": "Oct 13: all five Home layouts opened with real content; Customize layout save, cancel and reset worked. Oct 5: 11 layouts and 8 themes were offered.",
+      "realTest": "yes"
+    },
+    {
+      "id": "w-languages",
+      "area": "windows",
+      "name": "Languages: English plus Spanish, French, German, Portuguese (Brazil) and Italian",
+      "status": "Beta",
+      "evidence": "The five translations were made with a machine's help; three more are previews. Oct 13: switching English to Spanish and back changed the whole app at once. No native speaker has read the wording.",
+      "ts": "Languages (5 translated with machine help, 3 previews)",
+      "realTest": "partly"
+    },
+    {
+      "id": "w-dashboard",
+      "area": "windows",
+      "name": "Owner dashboard: sessions, bandwidth, health and user permissions",
+      "status": "Available",
+      "evidence": "Oct 5 and Oct 13: the dashboard showed a playing stream, bandwidth, conversions, library counts and each person's controls.",
+      "realTest": "yes"
+    },
+    {
+      "id": "w-backup",
+      "area": "windows",
+      "name": "Back up and restore settings",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-photos",
+      "area": "windows",
+      "name": "Photos and phone backups: timeline, albums, map",
+      "status": "Beta",
+      "evidence": "Oct 12: three files were uploaded from a phone to a PC. Oct 13: the PC screens opened on an empty test library. Deleting and the private folder were not tried.",
+      "realTest": "partly"
+    },
+    {
+      "id": "w-spacesaver",
+      "area": "windows",
+      "name": "Space Saver: folder clean-up and encrypted private storage",
+      "status": "Beta",
+      "evidence": "Automatic tests only. It changes files, so it has not been tried on a real library.",
+      "ts": "Space Saver",
+      "realTest": "no"
+    },
+    {
+      "id": "w-upload",
+      "area": "windows",
+      "name": "Upload page and Beebo Inbox (watched drop folder)",
+      "status": "Beta",
+      "evidence": "The Upload screen opened on Oct 13. The Inbox is covered by automatic tests only; it never deletes your files.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-jellyfin",
+      "area": "windows",
+      "name": "Jellyfin-compatible mode (use Jellyfin apps with Beebo)",
+      "status": "Beta",
+      "evidence": "Off by default. Automatic tests only; not every compatible app has been tried.",
+      "ts": "Jellyfin-compatible mode",
+      "realTest": "no"
+    },
+    {
+      "id": "w-api",
+      "area": "windows",
+      "name": "Personal API keys, notifications, webhooks and metrics",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-migrate",
+      "area": "windows",
+      "name": "Switch to Beebo importers (Plex, Jellyfin, Emby, Kodi, Letterboxd)",
+      "status": "Beta",
+      "evidence": "The screen opened on Oct 13. No real import from another app is recorded.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-scrobble",
+      "area": "windows",
+      "name": "Sharing watch and listen history to Trakt, Last.fm or ListenBrainz (opt-in)",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-startup",
+      "area": "windows",
+      "name": "Start with Windows and read-only library folders",
+      "status": "Beta",
+      "evidence": "Opt-in. Automatic tests only; start with Windows has never been run through a real restart.",
+      "ts": "Update modes and start with Windows",
+      "realTest": "no"
+    },
+    {
+      "id": "w-storybooks",
+      "area": "windows",
+      "name": "Personalized storybooks and story writing",
+      "status": "Beta",
+      "evidence": "The screens opened on Oct 13. Not tested beyond opening.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-remotedesk",
+      "area": "windows",
+      "name": "Remote Desktop (see and control the PC from a phone)",
+      "status": "In development",
+      "evidence": "Off by default, owner only, and the person at the PC must approve. Automatic tests only; never tried on a real screen from a real phone.",
+      "ts": "Remote Desktop (see and control the PC)",
+      "realTest": "no"
+    },
+    {
+      "id": "w-story",
+      "area": "windows",
+      "name": "Story Studio (turn a story into a short cartoon on your own PC)",
+      "status": "In development",
+      "evidence": "Owner only. Tried in the real packaged app on Oct 1 (a 64-second export with real computer voices). Only we have tried it.",
+      "ts": "Story Studio",
+      "realTest": "partly"
+    },
+    {
+      "id": "w-homegame",
+      "area": "windows",
+      "name": "Home Game Server panel",
+      "status": "In development",
+      "evidence": "The panel opens (Oct 13) and shows Stopped. No game server has been run with players.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-readaloud",
+      "area": "windows",
+      "name": "Read It To Me",
+      "status": "In development",
+      "evidence": "Merged after the current Windows download was built, so it is not in a download yet.",
+      "realTest": "no"
+    },
+    {
+      "id": "w-guestupload",
+      "area": "windows",
+      "name": "Guest upload requests (a guest asks, you approve)",
+      "status": "In development",
+      "evidence": "Merged after the current Windows download was built, so it is not in a download yet.",
+      "realTest": "no"
+    },
+    {
+      "id": "p-launch",
+      "area": "android",
+      "name": "Opening the app and the five tabs (Home, Browse, Library, Play, More)",
+      "status": "Available",
+      "evidence": "Oct 11 and Oct 13 on a Galaxy S24 Ultra and a Galaxy S9+: all five tabs opened with content and no crash was logged.",
+      "ts": "Opening the app and the five tabs",
+      "realTest": "yes"
+    },
+    {
+      "id": "p-play",
+      "area": "android",
+      "name": "Playing films: resume, seek, pause and the quality menu",
+      "status": "Available",
+      "evidence": "Oct 13 on both phones: resume prompt, play, skip forward and back, pause, and the Auto, original and 480p choices worked.",
+      "ts": "Playing films, seeking, picture-in-picture",
+      "realTest": "yes"
+    },
+    {
+      "id": "p-pip",
+      "area": "android",
+      "name": "Picture-in-picture",
+      "status": "Available",
+      "evidence": "Oct 13 on the Galaxy S9+: the film floated over Home, kept playing, and tapping it returned to the full player.",
+      "realTest": "yes"
+    },
+    {
+      "id": "p-screenoff",
+      "area": "android",
+      "name": "Keeping sound going with the screen off",
+      "status": "Beta",
+      "evidence": "Oct 13 on the S9+: with the default setting the sound stopped when the screen turned off. With the player's Screen off option on, it kept playing. Making it the default is undecided.",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-downloads",
+      "area": "android",
+      "name": "Downloads for offline viewing, with delete",
+      "status": "Available",
+      "evidence": "Oct 13 on the S9+: a 1.6 GB episode downloaded on Wi-Fi and was deleted, freeing the space. Oct 5: a downloaded episode played with Wi-Fi off. Smaller sizes were not offered for that file.",
+      "realTest": "yes"
+    },
+    {
+      "id": "p-pack",
+      "area": "android",
+      "name": "Pack for a trip (download planner)",
+      "status": "Beta",
+      "evidence": "Tried on a real phone on Oct 2; a full start-to-finish trip download still needs a real test.",
+      "ts": "Pack for a trip (download planner)",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-cast",
+      "area": "android",
+      "name": "Casting to a Chromecast TV",
+      "status": "Beta",
+      "evidence": "Oct 13 to a real Chromecast TV from two phones: a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop. The phone's volume keys do not change the TV volume. Converted films and other TVs are not tested.",
+      "ts": "Chromecast",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-browse",
+      "area": "android",
+      "name": "Browse, search, collections and Request a title",
+      "status": "Available",
+      "evidence": "Oct 13 on the S24 Ultra: films, shows and music filters, search, 101 collections and the request screen opened. Sending a request was not tried.",
+      "realTest": "yes"
+    },
+    {
+      "id": "p-lists",
+      "area": "android",
+      "name": "Watchlist, favourites, playlists and Surprise me",
+      "status": "Available",
+      "evidence": "Oct 13: playlist made and deleted, watchlist add and remove, and the Surprise me chooser opened. Surprise me was not played through; favourites were not tapped.",
+      "ts": "Surprise me, playlists, watchlist, favourites",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-health",
+      "area": "android",
+      "name": "Library health",
+      "status": "Available",
+      "evidence": "Oct 13: it showed real counts of missing posters, unmatched titles and unreachable files, and says nothing is deleted. Rename or match was not tried.",
+      "ts": "Library health",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-access",
+      "area": "android",
+      "name": "Accessibility choices: larger text, high contrast, reduce motion, Simple Mode, Caregiver view, captions",
+      "status": "Available",
+      "evidence": "Oct 13 on the S24 Ultra: each was switched on and off. 150% text and high contrast were readable on Home and Browse. TalkBack and 200% text are not tested.",
+      "ts": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-languages",
+      "area": "android",
+      "name": "Phone app languages (English plus five)",
+      "status": "Beta",
+      "evidence": "Oct 13: six languages switched live on Home and the tabs. Much of the app is still English, and no native speaker has read the wording.",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-demo",
+      "area": "android",
+      "name": "Demo mode (three sample clips, no account)",
+      "status": "Available",
+      "evidence": "Oct 13 on the S9+: the banner, title page, player and Exit worked. The title page mentions a subtitles button that the demo player does not show.",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-wake",
+      "area": "android",
+      "name": "Wake my PC",
+      "status": "Beta",
+      "evidence": "Oct 13: the button and its message worked. A real wake of a sleeping PC has not been tried.",
+      "ts": "Wake my PC",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-recipes",
+      "area": "android",
+      "name": "Family Recipes and shopping list",
+      "status": "Beta",
+      "evidence": "Oct 13: four starter recipes opened, the people counter and a shopping list worked. Amounts, adding a recipe and sharing were not tried.",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-packing",
+      "area": "android",
+      "name": "Packing list shared between phones",
+      "status": "Available",
+      "evidence": "Oct 13 on two phones: add, tick and remove showed up on the other phone within about 6 seconds. Ticking offline was not tried.",
+      "realTest": "yes"
+    },
+    {
+      "id": "p-jobs",
+      "area": "android",
+      "name": "Camp Jobs and Star Chart",
+      "status": "Available",
+      "evidence": "Oct 13: names, a shared job wheel, ticking jobs for stars and removing names all worked. The Add button hides behind the keyboard until it is closed.",
+      "realTest": "yes"
+    },
+    {
+      "id": "p-dash",
+      "area": "android",
+      "name": "Family Dashboard",
+      "status": "Available",
+      "evidence": "Oct 13: its cards matched the numbers on the other screens.",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-pets",
+      "area": "android",
+      "name": "Pet Photos and Explorer badges",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "p-remote",
+      "area": "android",
+      "name": "Phone as a TV remote web page, media keys and per-person look-up sites",
+      "status": "In development",
+      "evidence": "Built, automatic tests only, not in a finished state.",
+      "realTest": "no"
+    },
+    {
+      "id": "tv-layout",
+      "area": "tvauto",
+      "name": "Android TV and Google TV layout (inside the Android app)",
+      "status": "Beta",
+      "evidence": "No test on a real Android TV is recorded. The code and its screen checks exist.",
+      "ts": "Android TV and Fire TV screens",
+      "realTest": "no"
+    },
+    {
+      "id": "tv-next",
+      "area": "tvauto",
+      "name": "Watch Next row on Android TV",
+      "status": "Beta",
+      "evidence": "Automatic tests only; no real TV test.",
+      "realTest": "no"
+    },
+    {
+      "id": "tv-link",
+      "area": "tvauto",
+      "name": "Link a TV (sign a TV in with a code approved on your phone)",
+      "status": "In development",
+      "evidence": "Built; the server switch is on. Never tried with a real TV app.",
+      "ts": "Link a TV",
+      "realTest": "no"
+    },
+    {
+      "id": "tv-polish",
+      "area": "tvauto",
+      "name": "Android TV remote focus and readability polish",
+      "status": "In development",
+      "evidence": "Written and reviewed; not yet merged into a download.",
+      "realTest": "no"
+    },
+    {
+      "id": "auto-core",
+      "area": "tvauto",
+      "name": "Beebo Auto: sign-in, video list, playback and steering-wheel buttons",
+      "status": "Available",
+      "evidence": "One real car check on Oct 6, 2026 (a 2021 Audi SQ5 with Android Auto) passed for sign-in, the movie and show lists, playback with sound through the car speakers and the steering-wheel buttons. That check did not record which build was used. Use only when parked.",
+      "ts": "Beebo Auto (Android Auto)",
+      "realTest": "partly"
+    },
+    {
+      "id": "auto-music",
+      "area": "tvauto",
+      "name": "Beebo Auto: music, car-screen titles, Maps voice ducking, away from home",
+      "status": "Beta",
+      "evidence": "Not tested in a car yet.",
+      "realTest": "no"
+    },
+    {
+      "id": "auto-family",
+      "area": "tvauto",
+      "name": "Beebo Auto: Family Fun and passenger games",
+      "status": "Beta",
+      "evidence": "Not tested in a car yet.",
+      "realTest": "no"
+    },
+    {
+      "id": "auto-party",
+      "area": "tvauto",
+      "name": "Car Party (host in the car, passengers join on a web page)",
+      "status": "Beta",
+      "evidence": "Oct 13 on two phones: the host started a party with a code and QR, a passenger joined and saw what was playing and who was in the car, then left. A blank name does not yet get an automatic guest name on the live server. Not tried in a real car.",
+      "ts": "Car party (host and passengers)",
+      "realTest": "partly"
+    },
+    {
+      "id": "o-fire",
+      "area": "othertv",
+      "name": "Amazon Fire TV tester build",
+      "status": "In development",
+      "evidence": "An install-it-yourself tester build. Not tested on a real Fire TV.",
+      "realTest": "no"
+    },
+    {
+      "id": "o-roku",
+      "area": "othertv",
+      "name": "Roku channel",
+      "status": "In development",
+      "evidence": "Tried in a simulator only.",
+      "realTest": "no"
+    },
+    {
+      "id": "o-lg",
+      "area": "othertv",
+      "name": "LG smart TV app",
+      "status": "In development",
+      "evidence": "Tried in a desktop browser only.",
+      "realTest": "no"
+    },
+    {
+      "id": "o-samsung",
+      "area": "othertv",
+      "name": "Samsung smart TV app",
+      "status": "In development",
+      "evidence": "No install file yet. Tried in a desktop browser only; the TV's web browser works today.",
+      "realTest": "no"
+    },
+    {
+      "id": "o-xbox",
+      "area": "othertv",
+      "name": "Xbox app",
+      "status": "In development",
+      "evidence": "No download yet. Never built or run on a console; the Edge browser on the Xbox works today.",
+      "realTest": "no"
+    },
+    {
+      "id": "o-iphone",
+      "area": "othertv",
+      "name": "Native iPhone and iPad app",
+      "status": "In development",
+      "evidence": "Not published, never run on a real iPhone or iPad, needs Apple's approval.",
+      "realTest": "no"
+    },
+    {
+      "id": "o-appletv",
+      "area": "othertv",
+      "name": "Native Apple TV app",
+      "status": "In development",
+      "evidence": "Not published and never run on a real Apple TV.",
+      "realTest": "no"
+    },
+    {
+      "id": "o-mac",
+      "area": "othertv",
+      "name": "macOS server app",
+      "status": "In development",
+      "evidence": "Test builds are made automatically; no person has run one on a real Mac, and it needs Apple signing.",
+      "ts": "macOS desktop",
+      "realTest": "no"
+    },
+    {
+      "id": "c-browser",
+      "area": "computers",
+      "name": "Any web browser: library and player, served by your own Beebo computer",
+      "status": "Available",
+      "evidence": "Oct 13 in Chrome on a PC: 17 of 17 pages answered, a film played with sound, and quality switches worked with no page errors. Subtitles, Safari, Firefox and phone browsers were not tried.",
+      "realTest": "yes"
+    },
+    {
+      "id": "c-iosweb",
+      "area": "computers",
+      "name": "iPhone and iPad: add the web app to the Home Screen",
+      "status": "Beta",
+      "evidence": "Automatic tests only; not run on a real iPhone or iPad. Offline downloads need the Android app.",
+      "realTest": "no"
+    },
+    {
+      "id": "c-linux",
+      "area": "computers",
+      "name": "Linux desktop (AppImage and .deb, version 0.1.82)",
+      "status": "Beta",
+      "evidence": "Starts and answers on its web address in an automatic headless check. Not run on a real Linux desktop by a person; not code-signed; one release behind Windows.",
+      "ts": "Linux desktop app",
+      "realTest": "no"
+    },
+    {
+      "id": "c-docker",
+      "area": "computers",
+      "name": "Docker or NAS headless server",
+      "status": "Beta",
+      "evidence": "Not offered for download right now. Not tested on any NAS model.",
+      "ts": "Linux server (headless, Docker)",
+      "realTest": "no"
+    },
+    {
+      "id": "cs-host",
+      "area": "campsite",
+      "name": "Host start and stop; a guest joins by QR with no account (same Wi-Fi)",
+      "status": "Available",
+      "evidence": "Oct 13 on two phones: host start, join, and Stop with a confirmation worked; the guest address stopped answering after Stop.",
+      "ts": "Campsite host start and stop",
+      "realTest": "yes"
+    },
+    {
+      "id": "cs-guest",
+      "area": "campsite",
+      "name": "Guest names without sign-up, and reconnecting after a Wi-Fi drop",
+      "status": "Available",
+      "evidence": "Oct 13: a blank name became Guest 1; with the guest's Wi-Fi off for 15 seconds the same guest came back with no re-join.",
+      "realTest": "yes"
+    },
+    {
+      "id": "cs-library",
+      "area": "campsite",
+      "name": "Guests browse the host's library; a guest asks, the host approves",
+      "status": "Available",
+      "evidence": "Oct 13: a guest saw the host's library, asked to watch one and the host approved it. A film played with sound on the guest phone.",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-games",
+      "area": "campsite",
+      "name": "Campsite games (42 in the list)",
+      "status": "Available",
+      "evidence": "Oct 13: all 42 opened from a guest phone and 41 started against a computer opponent (the 42nd asks the host to pick a list). Sea Battle was finished by two people on Oct 13; Crazy Eights was played by hand. The other games were not played to the end by people.",
+      "ts": "Campsite games",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-offline",
+      "area": "campsite",
+      "name": "Solo and pass-and-play games with no Wi-Fi",
+      "status": "Available",
+      "evidence": "Oct 1 on a phone in airplane mode and Oct 13 against the computer opponent: the lobby, rules and computer turns worked.",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-hotspot",
+      "area": "campsite",
+      "name": "Guests join over the host phone's own Wi-Fi or a direct Wi-Fi link",
+      "status": "Beta",
+      "evidence": "Oct 11: a guest joined over a host phone's temporary Wi-Fi and played Tic-Tac-Toe. Oct 13: two people finished Sea Battle over a direct Wi-Fi. A guest on mobile data is not tested.",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-shareapp",
+      "area": "campsite",
+      "name": "Share the app by QR",
+      "status": "Beta",
+      "evidence": "Oct 13: a real QR scan opened the page, the file matched the installed build byte for byte, and it installed over the existing app. A phone that never had Beebo and an iPhone are not tested.",
+      "ts": "Share the app (QR over the hotspot)",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-downloaded",
+      "area": "campsite",
+      "name": "Shared downloaded videos play in a guest's browser",
+      "status": "Beta",
+      "evidence": "Oct 4 and Oct 13: a downloaded episode was listed and played on a guest phone. On Oct 13 one shared episode looked silent on one guest phone and the cause is unexplained.",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-streamonce",
+      "area": "campsite",
+      "name": "Watch together without downloading first (stream once)",
+      "status": "In development",
+      "evidence": "Oct 4: one film was shared from a host phone to one guest phone. Oct 13: the size prompt appeared on the host. More films and more guests are not tested.",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-guestsave",
+      "area": "campsite",
+      "name": "A guest saves a shared video to their own phone (host approves)",
+      "status": "In development",
+      "evidence": "Worked on a test build on Oct 13 (a 1.6 GB file arrived after the host approved). Not in a download yet; the saved file was not played back.",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-wireless",
+      "area": "campsite",
+      "name": "Wireless speakers: guests' phones as music speakers",
+      "status": "Beta",
+      "evidence": "Oct 13: one guest phone appeared as a speaker with positions and a timing nudge, and the page warns that wireless speakers add delay. A real group and the click test heard by a person are not tested.",
+      "ts": "Wireless speakers",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-phonespeakers",
+      "area": "campsite",
+      "name": "Phone speakers for a film (left, right and surround from phones)",
+      "status": "Beta",
+      "evidence": "Oct 13: two phones played left and right for a film on a PC; the owner said it sounded great but one phone sounded a tiny bit off. Timing stayed within about 10 ms on average in a 75-second recording.",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-syncmusic",
+      "area": "campsite",
+      "name": "Synced group music across phones",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "cs-karaoke",
+      "area": "campsite",
+      "name": "Karaoke and recordings",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "cs-slides",
+      "area": "campsite",
+      "name": "Shared photo and video presentation",
+      "status": "Beta",
+      "evidence": "Not tried with a real audience.",
+      "ts": "Shared photos and videos",
+      "realTest": "no"
+    },
+    {
+      "id": "cs-cards",
+      "area": "campsite",
+      "name": "Roadside Quiz, Campfire Songbook, Night Sky Cards and Rainy-Day box",
+      "status": "Available",
+      "evidence": "Oct 5 on a Galaxy S24 Ultra: a quiz question was scored, both songbook chants and line-by-line play worked, the moon phase was right for that day, and the filters worked.",
+      "realTest": "yes"
+    },
+    {
+      "id": "cs-clock",
+      "area": "campsite",
+      "name": "Trip clock and quiet hours",
+      "status": "Beta",
+      "evidence": "Oct 13: the screens opened with trip length, arrive-at and a privacy line. They were not run.",
+      "realTest": "partly"
+    },
+    {
+      "id": "cs-hunts",
+      "area": "campsite",
+      "name": "Treasure and scavenger hunts",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "cs-walkie",
+      "area": "campsite",
+      "name": "Walkie-talkie on the same Wi-Fi",
+      "status": "Beta",
+      "evidence": "Oct 1: browser tests on two phones passed for microphone access and a 3-minute stream. Two phones talking to each other is not confirmed.",
+      "realTest": "no"
+    },
+    {
+      "id": "cs-walkie-any",
+      "area": "campsite",
+      "name": "Walkie-talkie from anywhere",
+      "status": "In development",
+      "evidence": "The server side is switched on. Joining a real room from two networks is not tested.",
+      "ts": "Walkie-talkie from anywhere",
+      "realTest": "no"
+    },
+    {
+      "id": "cs-movienight",
+      "area": "campsite",
+      "name": "Movie Night (TV-led party games, phones join)",
+      "status": "Beta",
+      "evidence": "Automatic tests only; not tried on a real TV with phones.",
+      "ts": "Movie Night",
+      "realTest": "no"
+    },
+    {
+      "id": "cs-remoteguests",
+      "area": "campsite",
+      "name": "Campsite guests who are not on the same Wi-Fi (invite link)",
+      "status": "In development",
+      "evidence": "Server side only so far; the phone host part is not built.",
+      "realTest": "no"
+    },
+    {
+      "id": "cs-family",
+      "area": "campsite",
+      "name": "Family Timeline and Portrait Party",
+      "status": "In development",
+      "evidence": "Being built. Portrait Party would be private and consent-based, with no public gallery.",
+      "ts": "Portrait Party (turn a photo into a card)",
+      "realTest": "no"
+    },
+    {
+      "id": "t-core",
+      "area": "trip",
+      "name": "Start a trip, recap and Present slideshow",
+      "status": "Beta",
+      "evidence": "Oct 13 on the S24 Ultra: Start trip, We're home, the recap card and a full-screen Present slide worked.",
+      "ts": "Trip Journal (trips, recap, video export)",
+      "realTest": "partly"
+    },
+    {
+      "id": "t-video",
+      "area": "trip",
+      "name": "Save the trip as an MP4 video",
+      "status": "In development",
+      "evidence": "Failed in the published phone build on Oct 13. The fix worked on a test build the same day (a 5-second and a 13-second video were made) but is not in a download yet, and the finished video was not played back by eye.",
+      "ts": "Trip Journal (trips, recap, video export)",
+      "realTest": "partly"
+    },
+    {
+      "id": "t-linkhome",
+      "area": "trip",
+      "name": "Private trip link served from your own computer (home Wi-Fi)",
+      "status": "Beta",
+      "evidence": "Oct 13: a link with a photo and a clip opened on a second phone on the home Wi-Fi; views counted, +7 days, Turn off and Delete all worked. The ordinary link did not open from outside the home.",
+      "realTest": "partly"
+    },
+    {
+      "id": "t-linkaway",
+      "area": "trip",
+      "name": "Trip link that opens away from home (through Beebo's server)",
+      "status": "Beta",
+      "evidence": "Needs the owner to switch on a setting. Oct 13: one real test on 5G mobile data opened the page and played the clip. A second person's phone and an iPhone are not tested.",
+      "ts": "Trip Journal link away from home",
+      "realTest": "partly"
+    },
+    {
+      "id": "t-guests",
+      "area": "trip",
+      "name": "Guest photos and clips added to a trip (you say yes to each)",
+      "status": "Beta",
+      "evidence": "Not tried.",
+      "realTest": "no"
+    },
+    {
+      "id": "a-direct",
+      "area": "away",
+      "name": "Direct connection away from home",
+      "status": "Available",
+      "evidence": "Oct 13 on a phone with Wi-Fi off (5G): the library loaded and a film played; Oct 12 in a two-home test two viewers watched at once from one home PC.",
+      "ts": "Away from home (direct, then relay)",
+      "realTest": "yes"
+    },
+    {
+      "id": "a-upnp",
+      "area": "away",
+      "name": "Automatic router set-up (UPnP)",
+      "status": "Beta",
+      "evidence": "Automatic tests only; no router test is recorded in the sources for this page.",
+      "realTest": "no"
+    },
+    {
+      "id": "a-ownrelay",
+      "area": "away",
+      "name": "Use your own relay",
+      "status": "Beta",
+      "evidence": "Documented and covered by automatic tests; no real third-party relay test is recorded.",
+      "realTest": "no"
+    },
+    {
+      "id": "a-relay",
+      "area": "away",
+      "name": "Beebo Relay (optional fallback when a direct connection fails)",
+      "status": "Beta",
+      "evidence": "Oct 13: after the account's relay switch was fixed on the server, a film played over the relay from a phone on 5G. Two people on the relay at once are not tested. Terms are not final.",
+      "ts": "Beebo Relay (fallback connection)",
+      "realTest": "partly"
+    },
+    {
+      "id": "a-relayself",
+      "area": "away",
+      "name": "Relay self-serve switch-on and usage line",
+      "status": "In development",
+      "evidence": "No screen yet lets a person turn the relay on for their own account. Being built.",
+      "realTest": "no"
+    },
+    {
+      "id": "a-route",
+      "area": "away",
+      "name": "Connection route card and diagnosis",
+      "status": "Available",
+      "evidence": "Oct 13: the card said direct on Wi-Fi, direct over the internet on mobile data, and Beebo Relay when it was used, and updated by itself within about 30 seconds of Wi-Fi returning.",
+      "realTest": "yes"
+    },
+    {
+      "id": "a-address",
+      "area": "away",
+      "name": "Your own address (yourname.beebo.tv)",
+      "status": "Available",
+      "evidence": "Used for sign-in and for the Oct 13 away trip link. Many networks and providers were not tried.",
+      "realTest": "partly"
+    },
+    {
+      "id": "a-watch",
+      "area": "away",
+      "name": "Watch Together (host and viewers in step)",
+      "status": "Beta",
+      "evidence": "Oct 13 on two phones: host, join as viewer, the viewer followed a 45-second skip within 8 seconds, and left and rejoined within 1 second. Chat, reactions, closing the app and a phone on mobile data are not tested.",
+      "ts": "Watch Together",
+      "realTest": "partly"
+    },
+    {
+      "id": "a-ask",
+      "area": "away",
+      "name": "Viewer who cannot connect can Ask the owner",
+      "status": "In development",
+      "evidence": "Written, not yet merged or deployed.",
+      "realTest": "no"
+    },
+    {
+      "id": "a-setup",
+      "area": "away",
+      "name": "First-run setup and Test my connection",
+      "status": "In development",
+      "evidence": "Written, with open review findings.",
+      "realTest": "no"
+    },
+    {
+      "id": "a-peruser",
+      "area": "away",
+      "name": "Away-from-home access and speed limit per person",
+      "status": "In development",
+      "evidence": "Built; not yet tested on a device.",
+      "realTest": "no"
+    },
+    {
+      "id": "m-music",
+      "area": "music",
+      "name": "Music on the phone: albums, artists, songs, queue, shuffle, sleep timer",
+      "status": "Beta",
+      "evidence": "Oct 13 on two phones with synthetic test songs: play, next, previous, pause and the sleep timer worked. Phones were muted, so no person heard the sound. The Albums/Artists/Songs buttons overlap a heading.",
+      "realTest": "partly"
+    },
+    {
+      "id": "m-desktop",
+      "area": "music",
+      "name": "Music inside the Windows app window",
+      "status": "In development",
+      "evidence": "On Oct 13 the player stayed at 0:00. The cause was found and a fix written; it is not in a download yet.",
+      "realTest": "no"
+    },
+    {
+      "id": "m-mixes",
+      "area": "music",
+      "name": "Music mixes and radio from your own library",
+      "status": "Beta",
+      "evidence": "Oct 13: a Recently added mix started and moved to the next song. Artist and album radio from the phone were not tried.",
+      "realTest": "partly"
+    },
+    {
+      "id": "m-extras",
+      "area": "music",
+      "name": "Lyrics, gapless playback, crossfade and loudness levelling",
+      "status": "Beta",
+      "evidence": "Automatic tests only; there was no real music library to listen to.",
+      "realTest": "no"
+    },
+    {
+      "id": "m-quality",
+      "area": "music",
+      "name": "Music streaming quality away from home and at home",
+      "status": "Beta",
+      "evidence": "Oct 13: the choice saved and came back. That the sound really changes was not checked.",
+      "realTest": "partly"
+    },
+    {
+      "id": "m-audiobooks",
+      "area": "music",
+      "name": "Audiobooks: books, chapters, speed, sleep timer, bookmarks",
+      "status": "Beta",
+      "evidence": "Oct 13 with a made-up 3-chapter book: chapter jump and speeds from 0.75x to 2x worked, and the book moved on to the next chapter by itself. Bookmarks and the book's sleep timer were not tried.",
+      "ts": "Audiobooks",
+      "realTest": "partly"
+    },
+    {
+      "id": "m-podcasts",
+      "area": "music",
+      "name": "Podcasts: find, play and sleep timer",
+      "status": "Beta",
+      "evidence": "Oct 13: a real episode played and paused, and searching the public directory listed real shows.",
+      "ts": "Podcasts and radio",
+      "realTest": "partly"
+    },
+    {
+      "id": "m-follow",
+      "area": "music",
+      "name": "Following a new podcast from the phone",
+      "status": "Beta",
+      "evidence": "Failed on Oct 13: the app said the computer had a problem and the show was not followed. Cause not yet found.",
+      "realTest": "no"
+    },
+    {
+      "id": "m-podimport",
+      "area": "music",
+      "name": "Bring the podcasts you already follow elsewhere",
+      "status": "In development",
+      "evidence": "Being built; not merged.",
+      "realTest": "no"
+    },
+    {
+      "id": "m-radio",
+      "area": "music",
+      "name": "Internet radio: browse, favourites and play",
+      "status": "Available",
+      "evidence": "Oct 13 on the S24 Ultra: a live station reached PLAYING within 10 seconds, and pause and stop worked. Playing with the screen off is not tested.",
+      "ts": "Podcasts and radio",
+      "realTest": "partly"
+    },
+    {
+      "id": "l-tuner",
+      "area": "livetv",
+      "name": "Live TV and recording with your own HDHomeRun tuner",
+      "status": "Beta",
+      "evidence": "Never tested with a real tuner. Beebo supplies no channels.",
+      "ts": "Live TV (tuner and own playlist)",
+      "realTest": "no"
+    },
+    {
+      "id": "l-m3u",
+      "area": "livetv",
+      "name": "Your own M3U or IPTV playlist",
+      "status": "Beta",
+      "evidence": "Automatic tests only; not tried with a real playlist.",
+      "realTest": "no"
+    },
+    {
+      "id": "l-phone",
+      "area": "livetv",
+      "name": "Live TV on the phone",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "l-official",
+      "area": "livetv",
+      "name": "Official Free TV (opens broadcasters' own sites)",
+      "status": "Available",
+      "evidence": "Oct 13: one broadcaster's entry opened its own website and the video played there. Beebo only launches the broadcaster's own service. Other broadcasters were not tried.",
+      "realTest": "partly"
+    },
+    {
+      "id": "l-rooms",
+      "area": "livetv",
+      "name": "Live Rooms",
+      "status": "In development",
+      "evidence": "Being built.",
+      "realTest": "no"
+    },
+    {
+      "id": "h-profiles",
+      "area": "household",
+      "name": "Household profiles with their own progress",
+      "status": "Available",
+      "evidence": "Oct 3 and Oct 5: phones signed in as different profiles kept separate Continue watching lists.",
+      "ts": "Parental controls and household profiles",
+      "realTest": "yes"
+    },
+    {
+      "id": "h-private",
+      "area": "household",
+      "name": "Private viewing history",
+      "status": "Available",
+      "evidence": "Oct 5 and Oct 13: with the setting on, the owner tools showed that profile's history as private.",
+      "realTest": "yes"
+    },
+    {
+      "id": "h-parental",
+      "area": "household",
+      "name": "Parental limits and ratings",
+      "status": "Beta",
+      "evidence": "Automatic tests only; not tried on a restricted profile on a real device.",
+      "realTest": "no"
+    },
+    {
+      "id": "h-modes",
+      "area": "household",
+      "name": "Kids Mode, Easy Mode and Family Viewing mode",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "h-devices",
+      "area": "household",
+      "name": "Signed-in devices and sign-out",
+      "status": "Available",
+      "evidence": "Oct 13: the device list and Sign out buttons were shown (not pressed). The list shows the same address for every device.",
+      "realTest": "partly"
+    },
+    {
+      "id": "h-delete",
+      "area": "household",
+      "name": "Account deletion from the app",
+      "status": "Beta",
+      "evidence": "The delete form asks you to confirm first; nothing was deleted in the test.",
+      "realTest": "partly"
+    },
+    {
+      "id": "h-2fa",
+      "area": "household",
+      "name": "Optional two-factor sign-in",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "h-ldap",
+      "area": "household",
+      "name": "Directory sign-in (LDAP)",
+      "status": "Beta",
+      "evidence": "Automatic tests only.",
+      "realTest": "no"
+    },
+    {
+      "id": "h-sharing",
+      "area": "household",
+      "name": "Library sharing between households (invite-only)",
+      "status": "In development",
+      "evidence": "Oct 12 between two real homes: invite, accept, play and stop sharing worked, and problems found are fixed in code but not in a download. The sharing terms are still a draft.",
+      "ts": "Library sharing with another household",
+      "realTest": "partly"
+    },
+    {
+      "id": "s-signin",
+      "area": "online",
+      "name": "Sign-in and licence service (one sign-in for every Beebo app)",
+      "status": "Available",
+      "evidence": "Used by every phone, browser and PC test on Oct 12 and Oct 13.",
+      "realTest": "yes"
+    },
+    {
+      "id": "s-games",
+      "area": "online",
+      "name": "Browser games on this website (17 games, play a friend or Hopping Beebo)",
+      "status": "Available",
+      "evidence": "Oct 1: the first 8 game pages loaded at phone width with no errors and a full Drop Four round was played against Hopping Beebo. A script cross-checks that the site lists 17 browser games; the other nine have not been hand-tested, and real phones with touch were not tried.",
+      "ts": "Website and browser games",
+      "realTest": "yes"
+    },
+    {
+      "id": "s-online",
+      "area": "online",
+      "name": "Online games with people in other homes (private tables with a code)",
+      "status": "In development",
+      "evidence": "On Oct 12 the lobby page loaded; playing with people in other homes was not tested.",
+      "ts": "Online games (play with others)",
+      "realTest": "no"
+    },
+    {
+      "id": "s-vpn",
+      "area": "online",
+      "name": "BeeboVPN",
+      "status": "In development",
+      "evidence": "Invite-only test, not offered to the public.",
+      "ts": "BeeboVPN",
+      "realTest": "no"
+    },
+    {
+      "id": "s-rewards",
+      "area": "online",
+      "name": "Beebo Points Rewards",
+      "status": "Planned",
+      "evidence": "Switched off. There are no points to earn in the current app.",
+      "ts": "Rewards, ads and credit",
+      "realTest": "no"
+    },
+    {
+      "id": "s-hosting",
+      "area": "online",
+      "name": "Managed hosting and server locations",
+      "status": "Planned",
+      "evidence": "A plan only.",
+      "ts": "Managed hosting",
+      "realTest": "no"
+    },
+    {
+      "id": "s-hostedgames",
+      "area": "online",
+      "name": "Hosted game servers (Beebo Play)",
+      "status": "Planned",
+      "evidence": "A plan only.",
+      "ts": "Beebo Play (hosted game servers)",
+      "realTest": "no"
+    }
+  ],
+  "notCounted": [
+    {
+      "name": "PlayStation app",
+      "status": "Dropped",
+      "note": "No app and none planned: Sony has no open app store for apps like Beebo, the PS5 has no regular web browser, and the PS4 browser is too old to run Beebo's video player."
+    },
+    {
+      "name": "Original coordination hub with its own separate login",
+      "status": "Retired",
+      "note": "Removed from the Android apps on Oct 2, 2026. Beebo now has one sign-in."
+    },
+    {
+      "name": "\"Stream from my PC\" button in the phone app",
+      "status": "Retired",
+      "note": "Removed from the phone app on Oct 3, 2026. Remote Desktop is the planned replacement and is In development."
+    }
+  ],
+  "workingOn": [
+    "Making Campsite game rooms clear when players leave, so the lead passes to someone who is still there and the host can end a game.",
+    "Fixing bottom sheets that sit under the phone's navigation bar, and screens that are cramped in landscape.",
+    "Letting a Campsite guest save a shared video to their own phone, with the host approving each request.",
+    "Letting a passenger in a Car Party watch what is playing, and joining with a blank name.",
+    "A first-run setup and a Test my connection screen, and an Ask the owner button for a viewer who cannot connect.",
+    "A self-serve switch to turn Beebo Relay on for your own account, plus a usage line on the phone.",
+    "Family Watch Together: face tiles beside the film so far-away family can watch along.",
+    "Saving a Trip Journal as a video on every phone, and trip links opened from the desktop app.",
+    "Bringing the podcasts you already follow into Beebo, and fixing following a new podcast.",
+    "Phone speakers: automatic line-up, keeping the room between videos, and a movable panel.",
+    "Android TV focus and readability polish, and finishing Link a TV.",
+    "Letting Campsite guests who are not on the same Wi-Fi join by invite link.",
+    "The Windows app's music player window, which stayed silent in a test.",
+    "More real-device tests: a real car, a real TV, a real tuner, a real Mac, a real Linux desktop and a NAS."
+  ],
+  "knownProblems": [
+    "On a phone, sound stops when the screen turns off unless the player's Screen off option is on.",
+    "Following a new podcast from the phone failed in a test on Oct 13.",
+    "Saving a Trip Journal as a video failed in the published phone build; the fix is not in a download yet.",
+    "The Windows app's own music window stayed silent in a test; a fix is written and not in a download yet.",
+    "The Music screen's Albums, Artists and Songs buttons overlap a heading on two phones.",
+    "The phone's volume keys do not change the TV volume while casting.",
+    "An ordinary trip link opens only on the home Wi-Fi unless away links are switched on.",
+    "The demo player has no subtitles button although the title page mentions one."
+  ],
+  "ideas": [
+    {
+      "title": "Old-phone doorbell",
+      "line": "An old phone at the door becomes a doorbell button; the owner gets a notification, sees the camera and can talk back."
+    },
+    {
+      "title": "Phone as mouse or touchpad",
+      "line": "Use the phone as a touchpad or mouse for the PC or TV."
+    },
+    {
+      "title": "Home intercom and baby monitor",
+      "line": "Old phones or webcams become room monitors or intercoms that only allowed profiles can watch."
+    },
+    {
+      "title": "Door camera and intercom",
+      "line": "Connect open-standard IP doorbells and cameras with no subscription."
+    },
+    {
+      "title": "Couch watch parties with voice",
+      "line": "Watch together with synced play and pause, plus live voice chat."
+    },
+    {
+      "title": "Dashcam and travel auto-sync",
+      "line": "After a trip, dashcam video and the Trip Journal copy to the home PC when you park."
+    },
+    {
+      "title": "Home dashboard screen",
+      "line": "A wall tablet or desktop screen showing several live camera streams."
+    },
+    {
+      "title": "Local camera recorder",
+      "line": "A private home recorder that spots people or pets on your own PC and never uses a cloud."
+    },
+    {
+      "title": "Family moments feed",
+      "line": "A daily nudge to share a quick photo or clip into a private household feed on the home PC."
+    },
+    {
+      "title": "Kitchen announcements",
+      "line": "A short voice message that plays at once on chosen household phones or speakers."
+    },
+    {
+      "title": "Family tech help",
+      "line": "The owner can see a family member's Beebo screen and talk them through a problem."
+    },
+    {
+      "title": "Media requests and wishlist",
+      "line": "Guests and limited profiles ask for a title and the owner is notified.",
+      "partly": true
+    },
+    {
+      "title": "Campsite emergency hub",
+      "line": "An offline emergency screen over the camp hotspot with map markers, alerts and saved first-aid pages."
+    },
+    {
+      "title": "Sleep sounds and smart alarm",
+      "line": "A bedroom companion with white noise, a sound alert for a baby's room and a chosen wake-up sound."
+    },
+    {
+      "title": "Multi-room music sync",
+      "line": "The same music in step on phones, tablets and TVs around the house.",
+      "partly": true
+    },
+    {
+      "title": "Time capsule",
+      "line": "Lock family videos, photos and journals until a future date."
+    },
+    {
+      "title": "Family achievements",
+      "line": "Fun badges and household leaderboards from what people watch and play, all on the home PC."
+    },
+    {
+      "title": "Old-device control deck",
+      "line": "An old tablet becomes a small dashboard and button pad for the PC."
+    },
+    {
+      "title": "Multi-camera live studio",
+      "line": "Use several old phones as wireless cameras and switch between them from the PC."
+    },
+    {
+      "title": "Hand playback to a nearby device",
+      "line": "Start on your phone, walk into the room and it moves to the TV or speaker nearby at the same position.",
+      "partly": true
+    },
+    {
+      "title": "Spare-phone backup node",
+      "line": "Keep an extra encrypted copy of Beebo's settings and journals on old phones around the house."
+    },
+    {
+      "title": "Remote Desktop controller pad",
+      "line": "A phone or tablet becomes a touchpad, keyboard and game pad for the PC."
+    },
+    {
+      "title": "Spare-phone video conversion helpers",
+      "line": "Idle old phones help the PC convert video."
+    },
+    {
+      "title": "Surround sound from old phones",
+      "line": "Spread a movie's surround channels across several phones used as room speakers.",
+      "partly": true
+    },
+    {
+      "title": "Offline reference library for camping",
+      "line": "Save web pages such as recipes and trail guides to the PC so they open in Campsite Mode with no internet."
+    },
+    {
+      "title": "PC keyboard and mouse on a spare tablet",
+      "line": "Move your PC mouse and keyboard over to an old tablet next to it."
+    },
+    {
+      "title": "Home sound and movement alarm",
+      "line": "An old phone listens for glass breaking or movement and alerts the owner."
+    },
+    {
+      "title": "Private home voice assistant",
+      "line": "Old phones answer a wake word and talk to an assistant that runs on the home PC with nothing sent to a cloud."
+    },
+    {
+      "title": "Digital picture frame and info board",
+      "line": "Old tablets and TVs show a photo slideshow and family notices from the home PC."
+    },
+    {
+      "title": "Family sign-in code vault",
+      "line": "A private household place on the home PC to keep sign-in codes for other services."
+    },
+    {
+      "title": "Home network traffic viewer",
+      "line": "An old device shows which devices use how much of the home internet."
+    },
+    {
+      "title": "Paper scanner with offline text search",
+      "line": "Photograph a document, save it to the home PC and search its words with no cloud."
+    },
+    {
+      "title": "Campsite team tracker",
+      "line": "Everyone's phone shows where the group is on an offline map over the camp hotspot."
+    },
+    {
+      "title": "Run and ride safety companion",
+      "line": "A phone watches a heart-rate band, detects a crash and opens an audio link to family at home."
+    },
+    {
+      "title": "Sports replay booth",
+      "line": "An old phone films a rolling clip and one tap replays the last moments in slow motion."
+    },
+    {
+      "title": "Beebo Auto trail guide",
+      "line": "Beebo Auto shows saved trip checkpoints and plays offline audiobooks and music together.",
+      "partly": true
+    },
+    {
+      "title": "Ghost runner for indoor workouts",
+      "line": "A virtual ghost on a TV races your past times on a treadmill or bike."
+    },
+    {
+      "title": "TV volume from the phone while casting",
+      "line": "The phone's volume keys and an on-screen slider turn the TV sound up and down."
+    },
+    {
+      "title": "Poster made from the video itself",
+      "line": "When a home video has no poster, Beebo uses a picture taken from the video."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is Beebo Entertainment?",
+      "a": "Beebo is a free, local-first media server with apps. It runs on your own Windows computer, holds the movies, shows, music, photos, audiobooks, podcasts and radio that you already own, and streams them to your phone, tablet, TV, car or any web browser. Beebo includes no movies or shows; you bring your own files."
+    },
+    {
+      "q": "Is Beebo free?",
+      "a": "The Windows server and the apps are free to use at home. Optional extras such as Beebo Relay (Beta) and BeeboVPN (In development) are listed with their status, and their terms are not final. This page does not list prices."
+    },
+    {
+      "q": "Is Beebo open source?",
+      "a": "No. Beebo's own code is closed source and all rights are reserved. It does use third-party open-source components, and the apps include a notices screen that lists them."
+    },
+    {
+      "q": "Does my video go through Beebo's servers?",
+      "a": "Whenever possible, video goes straight from your computer to the viewer. Beebo's servers carry only small text such as sign-in and connection set-up. If a direct connection cannot be made, the optional Beebo Relay (Beta) can carry the video; it is end-to-end encrypted and the relay cannot see it."
+    },
+    {
+      "q": "Which devices work today?",
+      "a": "The server runs on Windows 10 and 11 and is Available. You watch with the Android test app, in any web browser, or by casting to a Chromecast. Linux and Docker or NAS are Beta. Fire TV, Roku, LG, Samsung, Xbox, macOS and the native iPhone, iPad and Apple TV apps are In development and have not been tested on real hardware."
+    },
+    {
+      "q": "Is Beebo on Google Play?",
+      "a": "No. The Android app is a test download from this website that you install yourself. The Google Play version is in development and has not been submitted."
+    },
+    {
+      "q": "What is not finished?",
+      "a": "Many things. The full list on this page says exactly which features are Available, Beta, In development or Planned, what was tested on real devices and when, and what nobody has tested yet. Examples: TV apps on real TVs, a real tuner, a real Mac, a real Linux desktop, and most of Beebo Auto beyond one real car check."
+    },
+    {
+      "q": "How is the completion percentage worked out?",
+      "a": "It is a share-of-list count, not a promise and not an audit. For example, the share of listed features whose label is Available. The rules and the data file are on this page, and the numbers are calculated from that file by a script."
+    },
+    {
+      "q": "What does Beebo keep about me?",
+      "a": "Your files stay on your own computer. Beebo keeps the amount of data used per account and basic connection records, including IP addresses, for 7 days for abuse checks. Nothing is sold."
+    },
+    {
+      "q": "Do you test on real devices?",
+      "a": "Yes, on our own devices: a Galaxy S24 Ultra, a Galaxy S9+, a Chromecast TV, Windows PCs and one real car on one drive. These are our own checks, not a broad beta. Every line says what was tried and what was not."
+    }
+  ]
+}
