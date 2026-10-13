@@ -406,7 +406,7 @@ try { JSON.parse(ldBlock().replace(/^<script[^>]*>/, '').replace(/<\/script>$/, 
 const check = process.argv.includes('--check');
 let changed = 0;
 for (const t of targets) {
-  if (t.text !== t.next) {
+  if (t.text.split(String.fromCharCode(13)).join('') !== t.next.split(String.fromCharCode(13)).join('')) { // line endings do not count as a change
     changed++;
     if (check) console.error('out of date: ' + t.file);
     else fs.writeFileSync(t.p, t.next, 'utf8');
