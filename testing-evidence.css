@@ -321,6 +321,15 @@ html .rl-table .tag { max-width: 100%; white-space: normal; overflow-wrap: anywh
 @media (max-width:640px){.history-entry>summary{grid-template-columns:1fr}}
 .history-entry[open]>summary .history-headline{display:none}
 
+/* A single native disclosure keeps long dated records readable on a phone
+   without hiding the current item from keyboard or screen-reader users. */
+.older-history{display:block;margin:1rem 0;border:1px solid var(--line);border-radius:12px;background:rgba(127,127,127,.05);overflow:hidden}
+.older-history>summary{cursor:pointer;padding:.75rem 1rem;font-weight:700;overflow-wrap:anywhere}
+.older-history>summary:hover,.older-history>summary:focus-visible{background:rgba(127,127,127,.1)}
+.older-history>summary:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.older-history .history-list{border-top:0}
+@media (max-width:640px){.older-history{margin:.75rem 0}.older-history>summary{padding:.7rem .8rem}}
+
 /* Road to 100%: expandable roadmap per feature */
 .road { margin-top: 8px; border: 1px solid rgba(128,128,128,.4); border-radius: 8px; background: rgba(128,128,128,.07); }
 .road > summary { cursor: pointer; padding: 6px 10px; font-weight: 700; font-size: .92em; list-style-position: inside; }

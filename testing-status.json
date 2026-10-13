@@ -59,14 +59,61 @@
       }
     ]
   },
+  "fullProgress": {
+    "updatedEastern": "Oct 13, 2026 (Eastern)",
+    "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
+    "method": "Code checklist is the recorded built-and-automated-test progress. Human-device is a strict percentage of the recorded real-device checks for the named area. A percentage is evidence coverage, not a promise that every device, route or situation works.",
+    "comparison": {
+      "baseline": "Oct 11, 2026, 7:25 AM Eastern published checkpoint",
+      "current": "Oct 13, 2026 source snapshot and dated hand-test records",
+      "androidCode": "The published Android checkpoint was 94%. The Oct 12 code-gap review recorded about 90% before its merges and about 97% after them. Device coverage was not recomputed by those merges."
+    },
+    "areas": [
+      { "name": "Windows desktop", "codeChecklistPercent": 100, "humanDevicePercent": 44, "codeChangePoints": 0, "humanDeviceChangePoints": 13, "source": "Oct 11 checkpoint and Oct 12 Windows/two-home records" },
+      { "name": "Android phone", "codeChecklistPercent": 97, "humanDevicePercent": 76, "codeChangePoints": 3, "codeChangeFromOct12MorningPoints": 7, "source": "Oct 11 checkpoint, Oct 12 code-gap review and phone records" },
+      { "name": "Beebo Auto", "codeChecklistPercent": 100, "humanDevicePercent": 100, "source": "Recorded single real-car checklist row; not every car or route" },
+      { "name": "Campsite games", "codeChecklistPercent": 100, "humanDevicePercent": 2, "humanTestedGames": 1, "totalGames": 41, "humanDeviceChangePoints": 2, "source": "Oct 13 two-person Sea Battle record; other games have scripted-guest coverage only" },
+      { "name": "Car Party", "codeChecklistPercent": 100, "humanDevicePercent": 100, "source": "Recorded single parked-car checklist row; not a driving-safety validation" },
+      { "name": "Trip Journal", "codeChecklistPercent": 100, "humanDevicePercent": 0 },
+      { "name": "Live TV", "codeChecklistPercent": 100, "humanDevicePercent": 0 },
+      { "name": "Away from home and Relay", "codeChecklistPercent": 100, "humanDevicePercent": 100 },
+      { "name": "Chromecast", "codeChecklistPercent": 100, "humanDevicePercent": 100 },
+      { "name": "Jellyfin API", "codeChecklistPercent": 100, "humanDevicePercent": 0 },
+      { "name": "Web player and browser", "codeChecklistPercent": 100, "humanDevicePercent": 100 },
+      { "name": "Photos and backup", "codeChecklistPercent": 100, "humanDevicePercent": 100, "humanDeviceChangePoints": 50 },
+      { "name": "Music, Pod and Audiobooks", "codeChecklistPercent": 100, "humanDevicePercent": 100 },
+      { "name": "Parental controls", "codeChecklistPercent": 100, "humanDevicePercent": 0 },
+      { "name": "Accessibility", "codeChecklistPercent": 100, "humanDevicePercent": 0 },
+      { "name": "Languages", "codeChecklistPercent": 100, "humanDevicePercent": 0 },
+      { "name": "Server and accounts", "codeChecklistPercent": 100, "humanDevicePercent": 50 },
+      { "name": "Linux, Mac and Docker", "codeChecklistPercent": 100, "humanDevicePercent": 33 }
+    ],
+    "handTesting": [
+      { "date": "2026-10-12", "scope": "Two homes, phone on 5G and published downloads", "result": "Direct and Relay playback, network switching, two direct viewers, library sharing, backup, browse and media walks were recorded; named gaps remain." },
+      { "date": "2026-10-12", "scope": "Windows desktop", "screensOpened": 35, "result": "About 35 screens were opened on an unpublished test build; settings search and restoring maximized state were found." },
+      { "date": "2026-10-12", "scope": "Signed-in browser", "pagesOpened": 17, "result": "Playback, seeking, pause/resume and quality switching were recorded; subtitles, audio tracks, touch layout and other browsers remain open." },
+      { "date": "2026-10-12", "scope": "Campsite scripted guest coverage", "gameRooms": 41, "result": "Rooms were entered, started or correctly refused; this is not a hand-played result for the other games." },
+      { "date": "2026-10-13", "scope": "Campsite Sea Battle", "players": 2, "friendDevice": "Samsung S20", "route": "DIRECT-BeeboTV Wi-Fi (BeeboDirect)", "routeMeaning": "First recorded real-person result on that route; earlier Campsite tests used the same-Wi-Fi route.", "result": "The friend created the game, Nick joined, they played to the end, the friend won and it worked well.", "notRecorded": ["Nick's phone", "browsers", "game length", "sound and graphics observations"], "stillNotTested": ["phone hotspot", "guest on mobile data"] }
+    ],
+    "automatedTestTotals": [
+      { "area": "Worker", "count": 1675 },
+      { "area": "Service", "count": 1103 },
+      { "area": "Service", "count": 1669 },
+      { "area": "Desktop", "count": 1303, "unit": "test files" },
+      { "area": "Android web", "count": 7189, "approximate": true }
+    ],
+    "notInMainSourceSnapshot": ["Campsite abandoned-room cleanup", "Car Party passenger-watch change", "Car Party automatic guest-name change", "Campsite guest downloads"],
+    "notTestedSummary": ["TalkBack, Windows screen reader and high contrast", "native-speaker review of translations", "real tuner and playlist", "Jellyfin clients", "real trip and export", "careful parental-controls device run", "Roku, Samsung/LG TV, Xbox, Apple hardware, Linux desktop/NAS and Intel or Apple-Silicon Mac", "Campsite phone hotspot, guest on mobile data, games other than Sea Battle, synced music, karaoke, recordings and guest uploads"],
+    "fontStatus": "Self-hosted Google Fonts are pending approval to obtain font packages; no package was added."
+  },
   "releaseChanges": {
     "title": "What changed since the last release",
     "summary": "Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-12",
-  "updatedEastern": "Oct 12, 2026, 12:00 PM Eastern",
-  "pageUrl": "https://www.beeboentertainment.com/release-evidence.html",
+  "updated": "2026-10-13",
+  "updatedEastern": "Oct 13, 2026 (Eastern)",
+  "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 52,
   "groupAveragePercent": {
@@ -668,7 +715,7 @@
     },
     {
       "group": "Android phone app",
-      "name": "Campsite games (43)",
+      "name": "Campsite games",
       "status": "Beta",
       "percentComplete": 60,
       "checks": {
@@ -678,33 +725,33 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 12, 2026 (one solo game)",
-      "leftToReach100": "Try each of the 43 games on phones with real guests; so far only one game has a recorded phone result.",
+      "lastTested": "Oct 13, 2026 (Sea Battle: two people over DIRECT-BeeboTV Wi-Fi)",
+      "leftToReach100": "Try the other Campsite games on phones with real guests; they currently have scripted-guest coverage only. A phone hotspot and a guest on mobile data are not tested.",
       "roadTo100": {
         "means": "Every shipped game has a basic test and has been played on phones with real guests.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Games are built and basic tests pass.",
-          "One game was played on a real phone."
+          "On Oct 13 Nick and a friend completed Sea Battle over DIRECT-BeeboTV Wi-Fi; the friend used a Samsung S20 and reported result was that it worked well."
         ],
         "remaining": [
           {
             "kind": "CODE",
-            "text": "Write a list of all 43 games with their tests and add missing basic checks."
+            "text": "Keep the game inventory and basic-test coverage current."
           },
           {
             "kind": "DEVICE",
-            "text": "Play all 43 games with real guests on phones."
+            "text": "Play the games other than Sea Battle with real guests on phones; include phone-hotspot and guest-mobile-data routes."
           },
           {
             "kind": "BLOCKED",
-            "text": "Only one game has a recorded phone result."
+            "text": "Only Sea Battle has a recorded two-person result; the other 40 games have scripted-guest coverage only."
           }
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
-      "changeNote": "A solo game started on a real phone with no hotspot.",
+      "changedEastern": "Oct 13, 2026 (Eastern)",
+      "changeNote": "Nick and a friend completed Sea Battle over DIRECT-BeeboTV Wi-Fi. It is the first real-person result on that route and applies to Sea Battle only; a phone hotspot and a guest on mobile data are still not tested.",
       "changeHistory": [
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
@@ -2579,7 +2626,7 @@
       "date": "Oct 12, 2026 (Eastern)",
       "headline": "Two-home real-device test: phone on 5G, home Wi-Fi and a friend’s Wi-Fi; relay, two viewers, library sharing, Windows hand test",
       "tested": "A two-home test on Oct 12, 2026: a Windows PC at each of two separate homes on two different networks, one family server at a third home, a Samsung Galaxy S24 Ultra on home Wi-Fi, on 5G mobile data and at a friend’s Wi-Fi, a Galaxy S9+, and a browser on the S24 and on a PC. Builds: the published Android 1.51-tester22 (build 72), Windows desktop 0.1.87 (published) and a 0.1.88 test build that is not published.",
-      "happened": "Passed on real devices: away-from-home playback (a direct connection to a home PC worked; a connection through Beebo Relay worked from a phone on 5G once switched on, with the first picture in about 3 seconds; the phone browser on 5G also played); play, pause, resume (a 63-second pause held its exact position), seek and quality switching to 480p in the phone browser and in the phone app; two viewers watching at once from one home PC, both connected directly in about a second; the phone app kept playing across Wi-Fi to 5G to Wi-Fi switches and through 24 seconds of airplane mode; sharing a library with another home (send an invite, accept, play, and “stop sharing” refusing new playback within about 30 seconds); the online games lobby loaded; uploading from the phone to the home PC (Space Saver backup: 3 files arrived); browse sort and filters, favourites and watchlist, playlists, radio, podcasts, a solo Campsite game with no hotspot, dark theme, landscape and restart. On this website, 67 of 67 home-page links returned OK, and the installer and APK sizes matched the update feeds. Windows hand test on the 0.1.88 test build: about 35 screens were opened and looked right (Home, Movies, TV Shows, Trailers, Discover, Live TV, Audiobooks, Podcasts, Radio, Music, Photos, Upload, Switch to Beebo, the admin pages, Users, Watch History, Story Studio and all eight Settings pages). Not yet done: Log out on screen, the signed-in browser player, subtitles and keyboard-only use. Found, fix written and tested in the code, not yet in a published download: a shared-library guest could be dropped to a sign-in screen with no way back to their own home; a stopped share showed a wrong message and still looked active in the guest’s list; the web player froze for minutes after a phone switched from Wi-Fi to mobile data; the home PC could stop accepting viewers after many sessions because ports were not released; the app’s own picture-in-picture window did not close properly; some text was clipped at 150% text size; Library health showed a misleading counter and a stale “cannot be reached” line; skip-intro jumped over a 2:39 opening scene on one show; Auto quality chose 480p on a fast home connection; a share with downloads switched off still offered a download button. Found, still open: a 40 to 70 second freeze after seeking far into a long converted film (a safeguard is written, but the cause is not fully confirmed); voices slightly out of sync after jumps on one TV episode (a likely cause was found and fixed in the code, but it is not confirmed on the real episode); the Read It To Me buttons were hidden behind the bottom bar (a fix is in progress); a new home name could not get its secure certificate until it was registered by hand; casting from a browser to a friend’s Chromecast was blocked because that TV is not yet registered for Beebo’s test receiver (casting to a TV through the phone app was proven earlier on the home TV). Not tested: Chromecast to the friend’s TV, Beebo Auto in a car, Watch Together with a second device, a real TV pairing code (Link a TV is switched off on the server; a wrong code was refused with a plain message), TalkBack, two people on Beebo Relay at once, the Windows Log out button on screen, a House-to-House share started from a PC, and the new fixes on real devices."
+      "happened": "Passed on real devices: away-from-home playback (a direct connection to a home PC worked; a connection through Beebo Relay worked from a phone on 5G once switched on, with the first picture in about 3 seconds; the phone browser on 5G also played); play, pause, resume (a 63-second pause held its exact position), seek and quality switching to 480p in the phone browser and in the phone app; two viewers watching at once from one home PC, both connected directly in about a second; the phone app kept playing across Wi-Fi to 5G to Wi-Fi switches and through 24 seconds of airplane mode; sharing a library with another home (send an invite, accept, play, and “stop sharing” refusing new playback within about 30 seconds); the online games lobby loaded; uploading from the phone to the home PC (Space Saver backup: 3 files arrived); browse sort and filters, favourites and watchlist, playlists, radio, podcasts, Campsite game-room coverage using scripted guests (not a hand-played result for another game), dark theme, landscape and restart. On this website, 67 of 67 home-page links returned OK, and the installer and APK sizes matched the update feeds. Windows hand test on the 0.1.88 test build: about 35 screens were opened and looked right (Home, Movies, TV Shows, Trailers, Discover, Live TV, Audiobooks, Podcasts, Radio, Music, Photos, Upload, Switch to Beebo, the admin pages, Users, Watch History, Story Studio and all eight Settings pages). Not yet done: Log out on screen, the signed-in browser player, subtitles and keyboard-only use. Found, fix written and tested in the code, not yet in a published download: a shared-library guest could be dropped to a sign-in screen with no way back to their own home; a stopped share showed a wrong message and still looked active in the guest’s list; the web player froze for minutes after a phone switched from Wi-Fi to mobile data; the home PC could stop accepting viewers after many sessions because ports were not released; the app’s own picture-in-picture window did not close properly; some text was clipped at 150% text size; Library health showed a misleading counter and a stale “cannot be reached” line; skip-intro jumped over a 2:39 opening scene on one show; Auto quality chose 480p on a fast home connection; a share with downloads switched off still offered a download button. Found, still open: a 40 to 70 second freeze after seeking far into a long converted film (a safeguard is written, but the cause is not fully confirmed); voices slightly out of sync after jumps on one TV episode (a likely cause was found and fixed in the code, but it is not confirmed on the real episode); the Read It To Me buttons were hidden behind the bottom bar (a fix is in progress); a new home name could not get its secure certificate until it was registered by hand; casting from a browser to a friend’s Chromecast was blocked because that TV is not yet registered for Beebo’s test receiver (casting to a TV through the phone app was proven earlier on the home TV). Not tested: Chromecast to the friend’s TV, Beebo Auto in a car, Watch Together with a second device, a real TV pairing code (Link a TV is switched off on the server; a wrong code was refused with a plain message), TalkBack, two people on Beebo Relay at once, the Windows Log out button on screen, a House-to-House share started from a PC, and the new fixes on real devices."
     },
     {
       "iso": "2026-10-09",

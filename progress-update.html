@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Progress and real-device testing — Beebo Entertainment</title>
+  <meta name="description" content="A dated, plain-English record of Beebo code checklist progress, real-device testing, what changed on October 12–13, and what is still untested.">
+  <link rel="canonical" href="https://www.beeboentertainment.com/progress-update.html">
+  <link rel="icon" href="assets/favicon-32.png">
+  <link rel="stylesheet" href="testing-evidence.css?v=20261013">
+  <link rel="stylesheet" href="website-shell.css?v=20260926">
+  <style>
+    .progress-shell{max-width:1180px;margin:0 auto;padding:48px 22px 72px}.progress-shell h1{max-width:18ch}.progress-intro{max-width:76ch;font-size:1.08rem;line-height:1.7}.progress-note{border-left:4px solid #c9a45a;padding:16px 18px;margin:24px 0;background:#1b2630;border-radius:0 10px 10px 0}.progress-section{margin-top:54px}.progress-section h2{margin-bottom:10px}.progress-table-wrap{overflow-x:auto;border:1px solid #39505c;border-radius:12px}.progress-table{width:100%;border-collapse:collapse;min-width:920px}.progress-table th,.progress-table td{padding:14px 12px;vertical-align:top;text-align:left;border-bottom:1px solid #30424c;line-height:1.45}.progress-table th{background:#18232b}.progress-table tr:last-child td{border-bottom:0}.metric{font-weight:750;white-space:nowrap}.metric-muted{color:#b6c2c9;font-weight:650}.progress-table small{display:block;margin-top:6px;color:#c3ced3}.hand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}.hand-card{border:1px solid #39505c;border-radius:12px;padding:20px;background:#172129}.hand-card h3{margin-top:0}.hand-card p{line-height:1.58}.hand-card ul{padding-left:20px;line-height:1.55}.change-list{padding-left:22px;line-height:1.65}.change-list li{margin:10px 0}.older-history{margin-top:20px;border:1px solid #39505c;border-radius:12px;padding:0 18px;background:#172129}.older-history>summary{padding:16px 0;font-weight:750;cursor:pointer}.older-history[open]>summary{border-bottom:1px solid #39505c}.older-history .hand-grid{padding:18px 0}.source-list{line-height:1.65}.source-list li{margin:7px 0}.status-plain{font-weight:700}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:5;background:#fff;color:#000;padding:10px}.progress-footer{margin-top:56px;padding-top:24px;border-top:1px solid #39505c}@media(max-width:720px){.progress-shell{padding:30px 16px 52px}.progress-table{min-width:0}.progress-table thead{display:none}.progress-table,.progress-table tbody,.progress-table tr,.progress-table td{display:block;width:100%}.progress-table tr{padding:12px 0;border-bottom:1px solid #39505c}.progress-table td{border:0;padding:6px 14px}.progress-table td::before{content:attr(data-label);display:block;font-size:.8rem;font-weight:750;color:#c9d5db;margin-bottom:2px}.progress-table td:first-child{padding-top:12px}.progress-table tr:last-child{border-bottom:0}.progress-note{padding:14px}.older-history{padding:0 14px}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#progress">Skip to progress</a>
+  <header class="beebo-site-header" id="top">
+    <div class="beebo-header-row">
+      <a class="beebo-header-brand" href="/index.html" aria-label="Beebo home"><img class="beebo-brand-icon" src="/assets/beebo-desktop.ico" width="44" height="44" alt=""><span>Beebo<small>ENTERTAINMENT &amp; CONNECTION</small></span></a>
+      <nav class="beebo-header-nav" aria-label="Main navigation"><a href="/index.html#setup">How it works</a><a href="/what-beebo-can-do.html">Features</a><a href="/whats-tested.html">What's tested</a><a href="/updates.html">Updates</a><a href="/help.html">Support</a></nav>
+      <a class="beebo-header-download" href="/index.html#download">Download Beebo <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main class="progress-shell" id="progress" tabindex="-1">
+    <p class="evidence-kicker">TEST RECORD · OCTOBER 13, 2026</p>
+    <h1>Progress, real-device testing, and what is still unknown.</h1>
+    <p class="progress-intro">This is the full, dated picture behind our status pages. It separates checked code from a person using a real device. It does not mean every path works, and it does not turn an untested path into a pass.</p>
+    <div class="progress-note"><strong>How to read the percentages.</strong> “Code checklist” is the share of the listed feature rows where both <em>Built</em> and <em>Automated tests</em> are checked. “Human-device” is the share where the separate <em>Real device</em> check is recorded. These are checklist measures, not a claim of bug-free software. Areas overlap when a feature belongs to both a platform and a named slice. If we have no comparable checklist rows, the page says <strong>not measured yet</strong>.</div>
+
+    <section class="progress-section" aria-labelledby="area-title">
+      <p class="evidence-kicker">CHECKLIST PROGRESS</p>
+      <h2 id="area-title">Progress by area.</h2>
+      <p>Changes compare the public October 11, 7:25 AM Eastern snapshot with the October 12 dated test record. The Android code estimate is separately marked because the overnight review counted code gaps, not device tests.</p>
+      <div class="progress-table-wrap" role="region" aria-label="Progress by product area" tabindex="0">
+        <table class="progress-table">
+          <thead><tr><th scope="col">Area</th><th scope="col">Code checklist</th><th scope="col">Human-device</th><th scope="col">Movement</th><th scope="col">What the record establishes — and does not</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Area"><strong>Windows desktop</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">44%</span></td><td data-label="Movement"><strong>0 / +13 points</strong><small>Two of 16 desktop rows gained a recorded device check on Oct 12.</small></td><td data-label="Evidence"><span class="status-plain">About 35 screens</span> were opened on a Windows 0.1.88 test build; a phone backup and two-home library share were also tried. Sign-out, signed-in browser playback, subtitles and keyboard-only use are still not tested in that run.</td></tr>
+            <tr><td data-label="Area"><strong>Android phone</strong></td><td data-label="Code checklist"><span class="metric">About 97%</span><small>The published checklist was 94%; an overnight code-gap review estimated about 90% before its merges and about 97% after.</small></td><td data-label="Human-device"><span class="metric">76%</span></td><td data-label="Movement"><strong>About +3 / +7 code points</strong><small>+3 from the Oct 11 published 94% checkpoint; +7 from the Oct 12 morning estimate. Device coverage was not recomputed by the code merges.</small></td><td data-label="Evidence">S24 Ultra and S9+ walks, playback, network changes, Campsite, browser and two-home checks were recorded. TalkBack, a fresh install, every route and many exact newest-build retests remain open.</td></tr>
+            <tr><td data-label="Area"><strong>Beebo Auto</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>One checklist row, not every car or route.</small></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">One real-car check covered sign-in, lists, sound and steering-wheel controls. Music, car-screen artwork, away-from-home use, passenger games, Car Party and other cars are not tested.</td></tr>
+            <tr><td data-label="Area"><strong>Campsite games</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">2%</span><small>1 of 41 games: Sea Battle.</small></td><td data-label="Movement"><strong>0 / +2 points</strong><small>One documented two-person game was added on Oct 13; the other games remain scripted-guest coverage only.</small></td><td data-label="Evidence">An S9+ host and S24 browser guest exercised join, library, music and 41 game rooms on the same-Wi-Fi route on Oct 12. On Oct 13, Nick and a friend completed Sea Battle via DIRECT-BeeboTV Wi-Fi on a Samsung S20—the first real-person result on that route. A phone hotspot and a guest on mobile data, other hand-played games, karaoke, recordings and guest uploads are not tested.</td></tr>
+            <tr><td data-label="Area"><strong>Car Party</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>One checklist row.</small></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">Nick tested it in a real parked car: a guest could follow and send reactions. A passenger could not watch the movie, and a guest had to type a name. Those two fixes are <strong>not in the main snapshot</strong> used here.</td></tr>
+            <tr><td data-label="Area"><strong>Trip Journal</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">No recorded real trip, recap or video-export device run.</td></tr>
+            <tr><td data-label="Area"><strong>Live TV</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">A real tuner and a real playlist still need a device run.</td></tr>
+            <tr><td data-label="Area"><strong>Away from home / Relay</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>Two related checklist rows.</small></td><td data-label="Movement"><strong>No score change</strong><small>Oct 12 added a two-home replay.</small></td><td data-label="Evidence">A phone on 5G played directly and through Beebo Relay; two direct viewers connected at once. Two people on Relay at once remains untested.</td></tr>
+            <tr><td data-label="Area"><strong>Chromecast</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">An earlier home-TV cast is recorded. A browser cast to a friend's TV, other receivers and away-from-home casting are not tested.</td></tr>
+            <tr><td data-label="Area"><strong>Jellyfin API</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">More Jellyfin apps still need real-client checks.</td></tr>
+            <tr><td data-label="Area"><strong>Web player / browser</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>Two related checklist rows.</small></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">A signed-in desktop browser run covered 17 pages and playback. Subtitles, audio tracks, Cast, AirPlay, PiP, fullscreen, keyboard-only use and other browsers are still untested.</td></tr>
+            <tr><td data-label="Area"><strong>Photos and backup</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span></td><td data-label="Movement"><strong>0 / +50 points</strong><small>The phone-to-PC backup row gained its real-device check on Oct 12.</small></td><td data-label="Evidence">Three phone files arrived on a home PC. The removal step and broader photo/video sharing paths were not tested.</td></tr>
+            <tr><td data-label="Area"><strong>Music / Podcasts / Audiobooks</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>Two recorded phone rows.</small></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">Radio and podcast browsing was observed; the October 12 run did not check their playback. Audiobook chapter/restart and screen-off runs remain needed.</td></tr>
+            <tr><td data-label="Area"><strong>Recipes / Family</strong></td><td data-label="Code checklist"><span class="metric-muted">Not measured yet</span></td><td data-label="Human-device"><span class="metric-muted">Not measured yet</span></td><td data-label="Movement"><strong>Not measured</strong></td><td data-label="Evidence">Servings and per-person shopping-list work was merged into the code, but this public checklist has no comparable Recipes/Family row and no recorded device acceptance run.</td></tr>
+            <tr><td data-label="Area"><strong>Read It To Me</strong></td><td data-label="Code checklist"><span class="metric-muted">Not measured yet</span></td><td data-label="Human-device"><span class="metric-muted">Not measured yet</span></td><td data-label="Movement"><strong>Not measured</strong></td><td data-label="Evidence">Home-computer voice selection and related fixes were merged into the code. A real-device acceptance run is not recorded.</td></tr>
+            <tr><td data-label="Area"><strong>Parental controls</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">Restricted and normal profile behaviour still needs a careful real-PC run.</td></tr>
+            <tr><td data-label="Area"><strong>Accessibility</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">Some large-text controls were tried and a clipping issue was found, but the formal accessibility rows do not yet have their recorded device checks. TalkBack, Windows screen reader and high contrast remain untested.</td></tr>
+            <tr><td data-label="Area"><strong>Languages</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">A language picker was merged. Native-speaker review, long text and right-to-left layouts have not been recorded on devices.</td></tr>
+            <tr><td data-label="Area"><strong>Server / accounts</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">50%</span></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">The own-server row has a recorded device check. Reset and email verification remain switched off and lack a real-email test.</td></tr>
+            <tr><td data-label="Area"><strong>TV platforms: Roku, Samsung/LG, Xbox, Apple, Fire TV</strong></td><td data-label="Code checklist"><span class="metric-muted">Not measured yet</span></td><td data-label="Human-device"><span class="metric-muted">Not measured yet</span></td><td data-label="Movement"><strong>Not measured</strong></td><td data-label="Evidence">There is no like-for-like checklist across these platforms. The Android TV / Fire TV row has no recorded real-device check; the other named platforms have no recorded real-hardware run here.</td></tr>
+            <tr><td data-label="Area"><strong>Linux / macOS / Docker</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">33%</span><small>Three existing rows.</small></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">The record includes server and build checks, not a broad hardware run. A real Linux desktop, NAS or Raspberry Pi, and Intel and Apple-Silicon Macs remain untested.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="progress-section" aria-labelledby="hand-title">
+      <p class="evidence-kicker">REAL PEOPLE, REAL DEVICES</p>
+      <h2 id="hand-title">What was hand tested.</h2>
+      <div class="hand-grid">
+        <article class="hand-card"><h3>Oct 12 · Two homes and a phone on 5G</h3><p><strong>Passed:</strong> direct and Relay playback, network switching, two direct viewers, library sharing from invite through stopping access, phone backup, browse, favourites, playlists, radio, podcasts, Campsite host/guest setup, landscape and restart.</p><p><strong>Not tested:</strong> two people on Relay, a friend's Chromecast, Beebo Auto in a car, a real TV pairing code, TalkBack and the newest fixes on real devices.</p></article>
+        <article class="hand-card"><h3>Oct 12 · Windows desktop walk</h3><p><strong>Passed:</strong> about 35 screens were opened and looked right on the unpublished 0.1.88 test build, including media areas, admin screens and all eight Settings pages.</p><p><strong>Found:</strong> settings search missed the intro/skip section, and the window did not stay maximized when brought forward. <strong>Not tested:</strong> sign-out, signed-in browser player, subtitles, track switching, PiP, keyboard-only use, high contrast and 150% scaling.</p></article>
+        <article class="hand-card"><h3>Oct 12 · Signed-in browser</h3><p><strong>Passed:</strong> sign-in and reload, 17 pages, clip and film playback, seeking, pause/resume and switching quality.</p><p><strong>Found:</strong> old browser pages chose the wrong automatic quality, lacked a reconnect action after idle, had a nearly blank Suggestions page and showed empty-image icons. <strong>Not tested:</strong> subtitles, audio tracks, Cast, AirPlay, PiP, fullscreen, touch layout, keyboard-only use and Firefox, Edge or Safari.</p></article>
+        <article class="hand-card"><h3>Oct 12 · Campsite</h3><p><strong>Passed:</strong> S9+ host and S24 browser guest join, guest library, music controls, 41 game rooms entered and started or correctly refused, a complete scripted-guest Drop Four game and guest data pages, on the same-Wi-Fi route.</p><p><strong>Found:</strong> abandoned rooms did not clear, the host sheet button was under the navigation bar, and a stopped host needs a watched unattended run. <strong>Not tested:</strong> a phone hotspot, a guest on mobile data, a real two-phone board-game touch run, synced audio, karaoke, recordings, guest uploads and a screen-off host.</p></article>
+        <article class="hand-card"><h3>Oct 13 · Campsite Sea Battle, two people</h3><p><strong>Passed:</strong> Nick hosted while a friend on a Samsung S20 created Sea Battle; Nick joined, they played a full game to the end, the friend won, and it worked well. They used DIRECT-BeeboTV Wi-Fi (BeeboDirect), the Wi-Fi Beebo creates for Campsite without internet: the first real-person result on that route.</p><p><strong>Scope:</strong> this is human testing for Sea Battle only. The other 40 Campsite games still have scripted-guest coverage only. Nick's phone, browsers, game length, sound and graphics observations were not recorded. A phone hotspot and a guest on mobile data are still not tested.</p></article>
+        <article class="hand-card"><h3>Earlier two-phone checks</h3><p><strong>Passed:</strong> S24 and S9+ Watch Together joins and sync, and Campsite host/guest checks on the documented routes. The October 11–12 phone walks reported no crashes for the paths they opened.</p><p><strong>Not tested:</strong> Watch Together rejoin after app closure, every connection route, every game and every device size.</p></article>
+        <article class="hand-card"><h3>Nick's real-car Car Party check</h3><p><strong>Passed:</strong> a guest could follow along and send reactions in a real parked car.</p><p><strong>Failed or missing:</strong> a passenger could not watch the playing movie, and a guest could not continue with a blank name. Both fixes are still in development, not in the source snapshot used for this page. This was not a driving-safety validation.</p></article>
+      </div>
+    </section>
+
+    <section class="progress-section" aria-labelledby="changes-title">
+      <p class="evidence-kicker">CODE CHANGELOG · OCTOBER 12–13</p>
+      <h2 id="changes-title">What changed — and what did not make the cut.</h2>
+      <p>These entries describe code merged into the source snapshot used for this record. They are not a promise that a change is in a published download or has been re-tested on a real device.</p>
+      <ul class="change-list">
+        <li><strong>Guest video requests with host approval</strong> and <strong>phone video upload</strong> were merged.</li>
+        <li><strong>Family Recipes</strong> gained servings and per-person shopping-list work.</li>
+        <li><strong>Read It To Me</strong> gained home-computer voice selection and related cleanup.</li>
+        <li><strong>Language picker</strong> work and <strong>landscape / Back-navigation</strong> fixes were merged.</li>
+        <li><strong>Security-header policy code</strong> was added and tested; the server deployment is still pending, so the public hosts are not claimed to have those headers yet.</li>
+      </ul>
+      <div class="progress-note"><strong>Still not in the source snapshot used here:</strong> the abandoned Campsite-game-room cleanup, the Car Party passenger-watch and automatic-guest-name changes, and Campsite guest downloads. They are not listed as shipped or human-tested.</div>
+    </section>
+
+    <section class="progress-section" aria-labelledby="counts-title">
+      <p class="evidence-kicker">AUTOMATED TEST COUNTS</p>
+      <h2 id="counts-title">Latest recorded test totals.</h2>
+      <p>These counts describe automated checks, not real-device coverage and not a combined release result: Worker <strong>1,675</strong>; home server <strong>1,103</strong> own tests plus <strong>1,669</strong> worker-suite tests; desktop <strong>1,303 test files</strong>; Android web flavour <strong>about 7,189 tests</strong>. Different runs can use different source snapshots, so the counts are not added together.</p>
+    </section>
+
+    <details class="older-history">
+      <summary>Older history (2 entries)</summary>
+      <div class="hand-grid">
+        <article class="hand-card"><h3>Oct 11 · Published Android build walk</h3><p>The published tester22 build was opened on the S9+ and S24. Tabs, search, playback controls, picture-in-picture, quality picker, screen-off audio when enabled, progress after a force-close and no crash log were recorded for the named paths. Rotation, fresh-install behaviour, car, TV and mobile-data routes were not covered in that run.</p></article>
+        <article class="hand-card"><h3>Oct 6 · First Beebo Auto car check</h3><p>One car and one drive covered the listed sign-in, list, sound and steering-wheel paths. It did not cover music, car-screen titles or artwork, away-from-home use, passenger games, Car Party or another car.</p></article>
+      </div>
+    </details>
+
+    <section class="progress-section" aria-labelledby="unknown-title">
+      <p class="evidence-kicker">PLAINLY UNTESTED</p>
+      <h2 id="unknown-title">What remains untested.</h2>
+      <ul class="source-list">
+        <li>Two people watching through Beebo Relay at once; broad browser-to-TV casting; and a fresh-install Android run.</li>
+        <li>TalkBack, Windows screen-reader and high-contrast journeys, native-speaker review of translations, and long or right-to-left layouts.</li>
+        <li>Real tuner and playlist use for Live TV; broad Jellyfin-client testing; a real trip and export; and a careful parental-controls device run.</li>
+        <li>Real Roku, Samsung/LG TV, Xbox, Apple hardware, a real Linux desktop or NAS/Raspberry Pi, and Intel or Apple-Silicon Macs.</li>
+        <li>The phone's own hotspot and a Campsite guest on mobile data; hand-played Campsite games other than Sea Battle; synced music, karaoke, recordings and guest uploads.</li>
+      </ul>
+    </section>
+
+    <section class="progress-section" aria-labelledby="sources-title">
+      <p class="evidence-kicker">SOURCES AND LIMITS</p>
+      <h2 id="sources-title">Where this record comes from.</h2>
+      <ul class="source-list">
+        <li>Our October 11 published progress checkpoint and the October 12 dated real-device record.</li>
+        <li>The dated two-home, desktop, browser, Campsite and phone test reports, the Oct 13 Sea Battle two-person record, plus the recorded Android code-gap review.</li>
+        <li>The source change history through the October 13 snapshot, checked so unfinished work is not described as merged.</li>
+        <li>Self-hosted Google Fonts remain pending approval to obtain font packages; no font package was added for this update.</li>
+      </ul>
+      <p>The machine-readable version of the public progress data is in <a href="testing-status.json">testing-status.json</a>. For feature-by-feature five-check status, see <a href="release-evidence.html">release evidence</a>. For versioned notes, see <a href="updates.html">updates</a>.</p>
+    </section>
+  </main>
+  <footer class="beebo-site-footer progress-footer"><div class="beebo-footer-inner"><p>© 2026 Beebo Entertainment</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="whats-tested.html">What's tested</a><a href="release-evidence.html">Release evidence</a><a href="updates.html">Updates</a><a href="help.html">Help</a></nav></div></footer>
+</body>
+</html>
