@@ -9,14 +9,14 @@
   "overall": {
     "listed": 140,
     "byStatus": {
-      "Available": 38,
-      "Beta": 66,
+      "Available": 29,
+      "Beta": 75,
       "In development": 33,
       "Planned": 3
     },
-    "available": 38,
+    "available": 29,
     "availableOrBeta": 104,
-    "pctAvailable": 27,
+    "pctAvailable": 21,
     "pctAvailableOrBeta": 74,
     "evidenceFeatures": 49,
     "evidenceAvg": 55
@@ -27,14 +27,14 @@
       "name": "Windows server",
       "listed": 30,
       "byStatus": {
-        "Available": 8,
-        "Beta": 16,
+        "Available": 7,
+        "Beta": 17,
         "In development": 6,
         "Planned": 0
       },
-      "available": 8,
+      "available": 7,
       "availableOrBeta": 24,
-      "pctAvailable": 27,
+      "pctAvailable": 23,
       "pctAvailableOrBeta": 80,
       "evidenceFeatures": 10,
       "evidenceAvg": 56
@@ -44,14 +44,14 @@
       "name": "Android phone",
       "listed": 20,
       "byStatus": {
-        "Available": 12,
-        "Beta": 7,
+        "Available": 8,
+        "Beta": 11,
         "In development": 1,
         "Planned": 0
       },
-      "available": 12,
+      "available": 8,
       "availableOrBeta": 19,
-      "pctAvailable": 60,
+      "pctAvailable": 40,
       "pctAvailableOrBeta": 95,
       "evidenceFeatures": 8,
       "evidenceAvg": 68
@@ -112,14 +112,14 @@
       "name": "Campsite Mode",
       "listed": 23,
       "byStatus": {
-        "Available": 6,
-        "Beta": 12,
+        "Available": 5,
+        "Beta": 13,
         "In development": 5,
         "Planned": 0
       },
-      "available": 6,
+      "available": 5,
       "availableOrBeta": 18,
-      "pctAvailable": 26,
+      "pctAvailable": 22,
       "pctAvailableOrBeta": 78,
       "evidenceFeatures": 8,
       "evidenceAvg": 58
@@ -163,14 +163,14 @@
       "name": "Music, audiobooks, podcasts and radio",
       "listed": 10,
       "byStatus": {
-        "Available": 1,
-        "Beta": 7,
+        "Available": 0,
+        "Beta": 8,
         "In development": 2,
         "Planned": 0
       },
-      "available": 1,
+      "available": 0,
       "availableOrBeta": 8,
-      "pctAvailable": 10,
+      "pctAvailable": 0,
       "pctAvailableOrBeta": 80,
       "evidenceFeatures": 2,
       "evidenceAvg": 60
@@ -197,14 +197,14 @@
       "name": "Parental controls and household",
       "listed": 9,
       "byStatus": {
-        "Available": 3,
-        "Beta": 5,
+        "Available": 2,
+        "Beta": 6,
         "In development": 1,
         "Planned": 0
       },
-      "available": 3,
+      "available": 2,
       "availableOrBeta": 8,
-      "pctAvailable": 33,
+      "pctAvailable": 22,
       "pctAvailableOrBeta": 89,
       "evidenceFeatures": 2,
       "evidenceAvg": 60
@@ -214,14 +214,14 @@
       "name": "Online services",
       "listed": 7,
       "byStatus": {
-        "Available": 2,
-        "Beta": 0,
+        "Available": 1,
+        "Beta": 1,
         "In development": 2,
         "Planned": 3
       },
-      "available": 2,
+      "available": 1,
       "availableOrBeta": 2,
-      "pctAvailable": 29,
+      "pctAvailable": 14,
       "pctAvailableOrBeta": 29,
       "evidenceFeatures": 6,
       "evidenceAvg": 36
@@ -239,6 +239,11 @@
     }
   },
   "labelConflictsWithEvidencePage": [
+    {
+      "id": "w-posters",
+      "ours": "Beta",
+      "evidencePage": "Available"
+    },
     {
       "id": "p-access",
       "ours": "Available",
@@ -313,6 +318,16 @@
       "id": "m-podcasts",
       "ours": "Beta",
       "evidencePage": "Available (test download)"
+    },
+    {
+      "id": "m-radio",
+      "ours": "Beta",
+      "evidencePage": "Available (test download)"
+    },
+    {
+      "id": "s-games",
+      "ours": "Beta",
+      "evidencePage": "Available"
     }
   ],
   "ideas": 39,

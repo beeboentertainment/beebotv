@@ -77,9 +77,9 @@
     {
       "id": "w-install",
       "area": "windows",
-      "name": "Installer, signing and updates",
+      "name": "Installer and updates",
       "status": "Available",
-      "evidence": "The Windows installer is digitally signed (signature checked valid on an earlier release on Oct 9, 2026). A PC updated itself from 0.1.78 to 0.1.79 while idle on Oct 5; on Oct 13 the update check on a newer test build said up to date. Not tried: updating over an older version on a second PC.",
+      "evidence": "A PC updated itself from 0.1.78 to 0.1.79 while idle on Oct 5; on Oct 13 the update check on a newer test build said up to date. Not tried: updating over an older version on a second PC. Windows may show a SmartScreen warning the first time.",
       "ts": "Installer and self-update",
       "realTest": "yes"
     },
@@ -96,8 +96,8 @@
       "id": "w-posters",
       "area": "windows",
       "name": "Posters, details and cast (you add your own TMDB key)",
-      "status": "Available",
-      "evidence": "Oct 5: titles, ratings and descriptions were shown with a trailer button. A new PC with no key shows placeholder posters (seen Oct 13). Beebo does not include a shared key.",
+      "status": "Beta",
+      "evidence": "Oct 5: titles, ratings and descriptions were shown with a trailer button (one check). A new PC with no key shows placeholder posters (seen Oct 13). Beebo does not include a shared key.",
       "ts": "Posters and info (TMDB)",
       "realTest": "partly"
     },
@@ -171,7 +171,7 @@
       "area": "windows",
       "name": "Collections, missing films and missing episodes",
       "status": "Available",
-      "evidence": "Oct 13: 101 collections with counts, search narrowed them, missing films were marked not in library, and missing aired episodes were listed (data from TVmaze).",
+      "evidence": "Oct 5 and Oct 13: collections showed which films are not in the library; on Oct 13 there were 101 collections with counts, search narrowed them, and missing aired episodes were listed (data from TVmaze).",
       "realTest": "yes"
     },
     {
@@ -338,7 +338,7 @@
       "area": "android",
       "name": "Playing films: resume, seek, pause and the quality menu",
       "status": "Available",
-      "evidence": "Oct 13 on both phones: resume prompt, play, skip forward and back, pause, and the Auto, original and 480p choices worked.",
+      "evidence": "Oct 3: the owner's own hand test passed seeking and sound with the screen off during a video. Oct 13 on both phones: resume prompt, play, skip forward and back, pause, and the Auto, original and 480p choices worked (phones were muted that day, so sound was not heard).",
       "ts": "Playing films, seeking, picture-in-picture",
       "realTest": "yes"
     },
@@ -347,7 +347,7 @@
       "area": "android",
       "name": "Picture-in-picture",
       "status": "Available",
-      "evidence": "Oct 13 on the Galaxy S9+: the film floated over Home, kept playing, and tapping it returned to the full player.",
+      "evidence": "Oct 3: the owner's own hand test passed picture-in-picture on both phones. Oct 13 on the Galaxy S9+: the film floated over Home, kept playing, and tapping it returned to the full player.",
       "realTest": "yes"
     },
     {
@@ -389,7 +389,7 @@
       "area": "android",
       "name": "Browse, search, collections and Request a title",
       "status": "Available",
-      "evidence": "Oct 13 on the S24 Ultra: films, shows and music filters, search, 101 collections and the request screen opened. Sending a request was not tried.",
+      "evidence": "Oct 5 and Oct 13 on the S24 Ultra: films, shows and music filters, search, 101 collections and the request screen opened. Sending a request was not tried.",
       "realTest": "yes"
     },
     {
@@ -431,8 +431,8 @@
       "id": "p-demo",
       "area": "android",
       "name": "Demo mode (three sample clips, no account)",
-      "status": "Available",
-      "evidence": "Oct 13 on the S9+: the banner, title page, player and Exit worked. The title page mentions a subtitles button that the demo player does not show.",
+      "status": "Beta",
+      "evidence": "Oct 13 on the S9+ (one check): the banner, title page, player and Exit worked. The title page mentions a subtitles button that the demo player does not show.",
       "realTest": "partly"
     },
     {
@@ -456,24 +456,24 @@
       "id": "p-packing",
       "area": "android",
       "name": "Packing list shared between phones",
-      "status": "Available",
-      "evidence": "Oct 13 on two phones: add, tick and remove showed up on the other phone within about 6 seconds. Ticking offline was not tried.",
-      "realTest": "yes"
+      "status": "Beta",
+      "evidence": "Oct 13 on two phones (one check): add, tick and remove showed up on the other phone within about 6 seconds. Ticking offline was not tried.",
+      "realTest": "partly"
     },
     {
       "id": "p-jobs",
       "area": "android",
       "name": "Camp Jobs and Star Chart",
-      "status": "Available",
-      "evidence": "Oct 13: names, a shared job wheel, ticking jobs for stars and removing names all worked. The Add button hides behind the keyboard until it is closed.",
-      "realTest": "yes"
+      "status": "Beta",
+      "evidence": "Oct 13 (one check): names, a shared job wheel, ticking jobs for stars and removing names all worked. The Add button hides behind the keyboard until it is closed.",
+      "realTest": "partly"
     },
     {
       "id": "p-dash",
       "area": "android",
       "name": "Family Dashboard",
-      "status": "Available",
-      "evidence": "Oct 13: its cards matched the numbers on the other screens.",
+      "status": "Beta",
+      "evidence": "Oct 13 (one check): its cards matched the numbers on the other screens.",
       "realTest": "partly"
     },
     {
@@ -788,9 +788,9 @@
       "id": "cs-cards",
       "area": "campsite",
       "name": "Roadside Quiz, Campfire Songbook, Night Sky Cards and Rainy-Day box",
-      "status": "Available",
-      "evidence": "Oct 5 on a Galaxy S24 Ultra: a quiz question was scored, both songbook chants and line-by-line play worked, the moon phase was right for that day, and the filters worked.",
-      "realTest": "yes"
+      "status": "Beta",
+      "evidence": "Oct 5 on one Galaxy S24 Ultra (one check): a quiz question was scored, both songbook chants and line-by-line play worked, the moon phase was right for that day, and the filters worked. On Oct 13 the screens only opened.",
+      "realTest": "partly"
     },
     {
       "id": "cs-clock",
@@ -1063,8 +1063,8 @@
       "id": "m-radio",
       "area": "music",
       "name": "Internet radio: browse, favourites and play",
-      "status": "Available",
-      "evidence": "Oct 13 on the S24 Ultra: a live station reached PLAYING within 10 seconds, and pause and stop worked. Playing with the screen off is not tested.",
+      "status": "Beta",
+      "evidence": "Oct 13 on the S24 Ultra: a live station reached PLAYING within 10 seconds, and pause and stop worked. The phone was muted, so no person has heard it; playing with the screen off is not tested.",
       "ts": "Podcasts and radio",
       "realTest": "partly"
     },
@@ -1146,8 +1146,8 @@
       "id": "h-devices",
       "area": "household",
       "name": "Signed-in devices and sign-out",
-      "status": "Available",
-      "evidence": "Oct 13: the device list and Sign out buttons were shown (not pressed). The list shows the same address for every device.",
+      "status": "Beta",
+      "evidence": "Oct 13: the device list and Sign out buttons were shown but Sign out was not pressed. The list shows the same address for every device.",
       "realTest": "partly"
     },
     {
@@ -1195,10 +1195,10 @@
       "id": "s-games",
       "area": "online",
       "name": "Browser games on this website (17 games, play a friend or Hopping Beebo)",
-      "status": "Available",
-      "evidence": "Oct 1: the first 8 game pages loaded at phone width with no errors and a full Drop Four round was played against Hopping Beebo. A script cross-checks that the site lists 17 browser games; the other nine have not been hand-tested, and real phones with touch were not tried.",
+      "status": "Beta",
+      "evidence": "Oct 1 (one day): the first 8 game pages loaded at phone width with no errors and a full Drop Four round was played against Hopping Beebo. A script cross-checks that the site lists 17 browser games; the other nine have not been hand-tested, and real phones with touch were not tried.",
       "ts": "Website and browser games",
-      "realTest": "yes"
+      "realTest": "partly"
     },
     {
       "id": "s-online",
