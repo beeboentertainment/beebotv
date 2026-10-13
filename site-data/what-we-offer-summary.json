@@ -7,54 +7,54 @@
     "auto": "1.18 (build 19)"
   },
   "overall": {
-    "listed": 140,
+    "listed": 147,
     "byStatus": {
-      "Available": 29,
-      "Beta": 75,
-      "In development": 33,
-      "Planned": 3
+      "Available": 23,
+      "Beta": 74,
+      "In development": 45,
+      "Planned": 5
     },
-    "available": 29,
-    "availableOrBeta": 104,
-    "pctAvailable": 21,
-    "pctAvailableOrBeta": 74,
-    "evidenceFeatures": 49,
+    "available": 23,
+    "availableOrBeta": 97,
+    "pctAvailable": 16,
+    "pctAvailableOrBeta": 66,
+    "evidenceFeatures": 64,
     "evidenceAvg": 55
   },
   "areas": [
     {
       "id": "windows",
       "name": "Windows server",
-      "listed": 30,
+      "listed": 32,
       "byStatus": {
-        "Available": 7,
-        "Beta": 17,
-        "In development": 6,
+        "Available": 6,
+        "Beta": 19,
+        "In development": 7,
         "Planned": 0
       },
-      "available": 7,
-      "availableOrBeta": 24,
-      "pctAvailable": 23,
-      "pctAvailableOrBeta": 80,
-      "evidenceFeatures": 10,
-      "evidenceAvg": 56
+      "available": 6,
+      "availableOrBeta": 25,
+      "pctAvailable": 19,
+      "pctAvailableOrBeta": 78,
+      "evidenceFeatures": 13,
+      "evidenceAvg": 55
     },
     {
       "id": "android",
       "name": "Android phone",
-      "listed": 20,
+      "listed": 22,
       "byStatus": {
-        "Available": 8,
-        "Beta": 11,
-        "In development": 1,
+        "Available": 6,
+        "Beta": 12,
+        "In development": 4,
         "Planned": 0
       },
-      "available": 8,
-      "availableOrBeta": 19,
-      "pctAvailable": 40,
-      "pctAvailableOrBeta": 95,
-      "evidenceFeatures": 8,
-      "evidenceAvg": 68
+      "available": 6,
+      "availableOrBeta": 18,
+      "pctAvailable": 27,
+      "pctAvailableOrBeta": 82,
+      "evidenceFeatures": 15,
+      "evidenceAvg": 63
     },
     {
       "id": "tvauto",
@@ -62,14 +62,14 @@
       "listed": 8,
       "byStatus": {
         "Available": 1,
-        "Beta": 5,
-        "In development": 2,
+        "Beta": 4,
+        "In development": 3,
         "Planned": 0
       },
       "available": 1,
-      "availableOrBeta": 6,
+      "availableOrBeta": 5,
       "pctAvailable": 13,
-      "pctAvailableOrBeta": 75,
+      "pctAvailableOrBeta": 63,
       "evidenceFeatures": 4,
       "evidenceAvg": 55
     },
@@ -110,18 +110,18 @@
     {
       "id": "campsite",
       "name": "Campsite Mode",
-      "listed": 23,
+      "listed": 24,
       "byStatus": {
-        "Available": 5,
-        "Beta": 13,
-        "In development": 5,
-        "Planned": 0
+        "Available": 3,
+        "Beta": 12,
+        "In development": 8,
+        "Planned": 1
       },
-      "available": 5,
-      "availableOrBeta": 18,
-      "pctAvailable": 22,
-      "pctAvailableOrBeta": 78,
-      "evidenceFeatures": 8,
+      "available": 3,
+      "availableOrBeta": 15,
+      "pctAvailable": 13,
+      "pctAvailableOrBeta": 63,
+      "evidenceFeatures": 9,
       "evidenceAvg": 58
     },
     {
@@ -130,31 +130,31 @@
       "listed": 5,
       "byStatus": {
         "Available": 0,
-        "Beta": 4,
-        "In development": 1,
+        "Beta": 2,
+        "In development": 3,
         "Planned": 0
       },
       "available": 0,
-      "availableOrBeta": 4,
+      "availableOrBeta": 2,
       "pctAvailable": 0,
-      "pctAvailableOrBeta": 80,
+      "pctAvailableOrBeta": 40,
       "evidenceFeatures": 2,
-      "evidenceAvg": 40
+      "evidenceAvg": 60
     },
     {
       "id": "away",
       "name": "Away from home",
       "listed": 11,
       "byStatus": {
-        "Available": 3,
+        "Available": 2,
         "Beta": 4,
-        "In development": 4,
+        "In development": 5,
         "Planned": 0
       },
-      "available": 3,
-      "availableOrBeta": 7,
-      "pctAvailable": 27,
-      "pctAvailableOrBeta": 64,
+      "available": 2,
+      "availableOrBeta": 6,
+      "pctAvailable": 18,
+      "pctAvailableOrBeta": 55,
       "evidenceFeatures": 3,
       "evidenceAvg": 73
     },
@@ -172,8 +172,8 @@
       "availableOrBeta": 8,
       "pctAvailable": 0,
       "pctAvailableOrBeta": 80,
-      "evidenceFeatures": 2,
-      "evidenceAvg": 60
+      "evidenceFeatures": 4,
+      "evidenceAvg": 55
     },
     {
       "id": "livetv",
@@ -212,124 +212,188 @@
     {
       "id": "online",
       "name": "Online services",
-      "listed": 7,
+      "listed": 9,
       "byStatus": {
         "Available": 1,
         "Beta": 1,
-        "In development": 2,
-        "Planned": 3
+        "In development": 3,
+        "Planned": 4
       },
       "available": 1,
       "availableOrBeta": 2,
-      "pctAvailable": 14,
-      "pctAvailableOrBeta": 29,
-      "evidenceFeatures": 6,
-      "evidenceAvg": 36
+      "pctAvailable": 11,
+      "pctAvailableOrBeta": 22,
+      "evidenceFeatures": 9,
+      "evidenceAvg": 37
     }
   ],
   "evidencePage": {
-    "updatedEastern": "Oct 13, 2026 (Eastern)",
-    "overallAveragePercent": 52,
-    "featureCount": 58,
+    "updatedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+    "overallAveragePercent": 54,
+    "featureCount": 66,
     "groupAveragePercent": {
-      "Android phone app": 58,
-      "Windows desktop app": 53,
+      "Android phone app": 60,
+      "Windows desktop app": 54,
       "Other systems": 47,
-      "Services and website": 40
+      "Services and website": 41
     }
   },
-  "labelConflictsWithEvidencePage": [
+  "labelDecisions": [
     {
       "id": "w-posters",
+      "name": "Posters, details and cast (you add your own TMDB key)",
       "ours": "Beta",
-      "evidencePage": "Available"
+      "evidencePage": "Available",
+      "shown": "Beta"
+    },
+    {
+      "id": "w-layouts",
+      "name": "Home layouts, 11 layout packs and 8 colour themes",
+      "ours": "Available",
+      "evidencePage": "Beta",
+      "shown": "Beta"
+    },
+    {
+      "id": "w-keyboard",
+      "name": "Keyboard and screen-reader support",
+      "ours": "Beta",
+      "evidencePage": "Available",
+      "shown": "Beta"
+    },
+    {
+      "id": "p-browse",
+      "name": "Browse, search, collections and Request a title",
+      "ours": "Available",
+      "evidencePage": "Beta",
+      "shown": "Beta"
     },
     {
       "id": "p-access",
+      "name": "Accessibility choices: larger text, high contrast, reduce motion, Simple Mode, Caregiver view, captions",
       "ours": "Available",
-      "evidencePage": "In development"
+      "evidencePage": "In development",
+      "shown": "In development"
     },
     {
       "id": "auto-party",
+      "name": "Car Party (host in the car, passengers join on a web page)",
       "ours": "Beta",
-      "evidencePage": "In development"
+      "evidencePage": "In development",
+      "shown": "In development"
     },
     {
       "id": "cs-host",
+      "name": "Host start and stop; a guest joins by QR with no account (same Wi-Fi)",
       "ours": "Available",
-      "evidencePage": "Beta"
+      "evidencePage": "Beta",
+      "shown": "Beta"
     },
     {
       "id": "cs-games",
+      "name": "Campsite games (42 in the list)",
       "ours": "Available",
-      "evidencePage": "Beta"
+      "evidencePage": "Beta",
+      "shown": "Beta"
     },
     {
       "id": "cs-shareapp",
+      "name": "Share the app by QR",
       "ours": "Beta",
-      "evidencePage": "Available (test download)"
+      "evidencePage": "Available (test download)",
+      "shown": "Beta"
     },
     {
       "id": "cs-wireless",
+      "name": "Wireless speakers: guests' phones as music speakers",
       "ours": "Beta",
-      "evidencePage": "In development"
+      "evidencePage": "In development",
+      "shown": "In development"
     },
     {
       "id": "cs-slides",
+      "name": "Shared photo and video presentation",
       "ours": "Beta",
-      "evidencePage": "In development"
+      "evidencePage": "In development",
+      "shown": "In development"
     },
     {
       "id": "cs-movienight",
+      "name": "Movie Night (TV-led party games, phones join)",
       "ours": "Beta",
-      "evidencePage": "In development"
+      "evidencePage": "In development",
+      "shown": "In development"
     },
     {
-      "id": "cs-family",
+      "id": "cs-portrait",
+      "name": "Portrait Party (private, consent-based photo cards)",
       "ours": "In development",
-      "evidencePage": "Planned"
+      "evidencePage": "Planned",
+      "shown": "Planned"
     },
     {
       "id": "t-core",
+      "name": "Start a trip, recap and Present slideshow",
       "ours": "Beta",
-      "evidencePage": "In development"
+      "evidencePage": "In development",
+      "shown": "In development"
     },
     {
       "id": "t-linkaway",
+      "name": "Trip link that opens away from home (through Beebo's server)",
       "ours": "Beta",
-      "evidencePage": "In development"
+      "evidencePage": "In development",
+      "shown": "In development"
     },
     {
       "id": "a-direct",
+      "name": "Direct connection away from home",
       "ours": "Available",
-      "evidencePage": "Beta"
+      "evidencePage": "Beta",
+      "shown": "Beta"
     },
     {
       "id": "a-watch",
+      "name": "Watch Together (host and viewers in step)",
       "ours": "Beta",
-      "evidencePage": "In development"
+      "evidencePage": "In development",
+      "shown": "In development"
     },
     {
       "id": "m-audiobooks",
+      "name": "Audiobooks: books, chapters, speed, sleep timer, bookmarks",
       "ours": "Beta",
-      "evidencePage": "Available (test download)"
+      "evidencePage": "Available (test download)",
+      "shown": "Beta"
     },
     {
       "id": "m-podcasts",
+      "name": "Podcasts: find, play and sleep timer",
       "ours": "Beta",
-      "evidencePage": "Available (test download)"
+      "evidencePage": "Available (test download)",
+      "shown": "Beta"
     },
     {
       "id": "m-radio",
+      "name": "Internet radio: browse, favourites and play",
       "ours": "Beta",
-      "evidencePage": "Available (test download)"
+      "evidencePage": "Available (test download)",
+      "shown": "Beta"
+    },
+    {
+      "id": "h-parental",
+      "name": "Parental limits and ratings",
+      "ours": "Beta",
+      "evidencePage": "Available",
+      "shown": "Beta"
     },
     {
       "id": "s-games",
+      "name": "Browser games on this website (17 games, play a friend or Hopping Beebo)",
       "ours": "Beta",
-      "evidencePage": "Available"
+      "evidencePage": "Available",
+      "shown": "Beta"
     }
   ],
   "ideas": 39,
-  "notCounted": 3
+  "notCounted": 4
 }

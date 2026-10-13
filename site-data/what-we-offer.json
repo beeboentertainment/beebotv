@@ -3,7 +3,7 @@
     "updatedEastern": "Oct 13, 2026",
     "updatedIso": "2026-10-13",
     "title": "Everything Beebo Entertainment is and offers",
-    "how": "One row per feature. status is one of Available, Beta, In development, Planned. Rows that match a feature on the testing evidence page carry its name in ts; the percentages for those come from testing-status.json, read by the build script, and are not calculated here. Run site-data/build-what-we-offer.js to rebuild the home section, the page and llms.txt. Download versions are read from the three feed files.",
+    "how": "One row per feature. status is one of Available, Beta, In development, Planned. The mapping to features on the testing evidence page is in site-data/evidence-map.json. For every mapped row the build script reads the label, the percentage and the Tested on text from testing-status.json, and if the two labels differ the stricter (less Available) one is shown. Run site-data/build-what-we-offer.js to rebuild the home section, the page and llms.txt. Download versions are read from the three feed files.",
     "statusRules": {
       "Available": "In a current download and usable today, and a person has run the main use on a real device or PC (the evidence line says what).",
       "Beta": "In a current download or switchable today, but new, tested by automatic tests only, or with real problems found.",
@@ -80,7 +80,6 @@
       "name": "Installer and updates",
       "status": "Available",
       "evidence": "A PC updated itself from 0.1.78 to 0.1.79 while idle on Oct 5; on Oct 13 the update check on a newer test build said up to date. Not tried: updating over an older version on a second PC. Windows may show a SmartScreen warning the first time.",
-      "ts": "Installer and self-update",
       "realTest": "yes"
     },
     {
@@ -89,7 +88,6 @@
       "name": "Library folders, scanning and matching",
       "status": "Available",
       "evidence": "Oct 5 on 0.1.79: the chosen folders and what each scan found were shown. Oct 13: all 27 desktop pages opened with content or a clear empty state on a small test library.",
-      "ts": "Library, player and web player",
       "realTest": "yes"
     },
     {
@@ -98,7 +96,6 @@
       "name": "Posters, details and cast (you add your own TMDB key)",
       "status": "Beta",
       "evidence": "Oct 5: titles, ratings and descriptions were shown with a trailer button (one check). A new PC with no key shows placeholder posters (seen Oct 13). Beebo does not include a shared key.",
-      "ts": "Posters and info (TMDB)",
       "realTest": "partly"
     },
     {
@@ -107,7 +104,6 @@
       "name": "Direct play and on-demand conversion to 1080p, 720p and 480p",
       "status": "Available",
       "evidence": "Oct 5 and Oct 13: the original file played; in the browser player 720p, 480p and Auto switched and kept playing from the same second. The desktop app opens films in the PC's own player; in-app playback is the phone app and the browser.",
-      "ts": "Converter and quality / speed settings",
       "realTest": "yes"
     },
     {
@@ -188,7 +184,6 @@
       "name": "Languages: English plus Spanish, French, German, Portuguese (Brazil) and Italian",
       "status": "Beta",
       "evidence": "The five translations were made with a machine's help; three more are previews. Oct 13: switching English to Spanish and back changed the whole app at once. No native speaker has read the wording.",
-      "ts": "Languages (5 translated with machine help, 3 previews)",
       "realTest": "partly"
     },
     {
@@ -221,7 +216,6 @@
       "name": "Space Saver: folder clean-up and encrypted private storage",
       "status": "Beta",
       "evidence": "Automatic tests only. It changes files, so it has not been tried on a real library.",
-      "ts": "Space Saver",
       "realTest": "no"
     },
     {
@@ -238,7 +232,6 @@
       "name": "Jellyfin-compatible mode (use Jellyfin apps with Beebo)",
       "status": "Beta",
       "evidence": "Off by default. Automatic tests only; not every compatible app has been tried.",
-      "ts": "Jellyfin-compatible mode",
       "realTest": "no"
     },
     {
@@ -271,7 +264,6 @@
       "name": "Start with Windows and read-only library folders",
       "status": "Beta",
       "evidence": "Opt-in. Automatic tests only; start with Windows has never been run through a real restart.",
-      "ts": "Update modes and start with Windows",
       "realTest": "no"
     },
     {
@@ -288,7 +280,6 @@
       "name": "Remote Desktop (see and control the PC from a phone)",
       "status": "In development",
       "evidence": "Off by default, owner only, and the person at the PC must approve. Automatic tests only; never tried on a real screen from a real phone.",
-      "ts": "Remote Desktop (see and control the PC)",
       "realTest": "no"
     },
     {
@@ -297,7 +288,6 @@
       "name": "Story Studio (turn a story into a short cartoon on your own PC)",
       "status": "In development",
       "evidence": "Owner only. Tried in the real packaged app on Oct 1 (a 64-second export with real computer voices). Only we have tried it.",
-      "ts": "Story Studio",
       "realTest": "partly"
     },
     {
@@ -325,12 +315,27 @@
       "realTest": "no"
     },
     {
+      "id": "w-keyboard",
+      "area": "windows",
+      "name": "Keyboard and screen-reader support",
+      "status": "Beta",
+      "realTest": "no",
+      "evidence": "Automatic tests only; no screen-reader pass is recorded."
+    },
+    {
+      "id": "w-leveler",
+      "area": "windows",
+      "name": "Strong volume leveler",
+      "status": "In development",
+      "realTest": "no",
+      "evidence": "Being built."
+    },
+    {
       "id": "p-launch",
       "area": "android",
       "name": "Opening the app and the five tabs (Home, Browse, Library, Play, More)",
       "status": "Available",
       "evidence": "Oct 11 and Oct 13 on a Galaxy S24 Ultra and a Galaxy S9+: all five tabs opened with content and no crash was logged.",
-      "ts": "Opening the app and the five tabs",
       "realTest": "yes"
     },
     {
@@ -339,7 +344,6 @@
       "name": "Playing films: resume, seek, pause and the quality menu",
       "status": "Available",
       "evidence": "Oct 3: the owner's own hand test passed seeking and sound with the screen off during a video. Oct 13 on both phones: resume prompt, play, skip forward and back, pause, and the Auto, original and 480p choices worked (phones were muted that day, so sound was not heard).",
-      "ts": "Playing films, seeking, picture-in-picture",
       "realTest": "yes"
     },
     {
@@ -372,7 +376,6 @@
       "name": "Pack for a trip (download planner)",
       "status": "Beta",
       "evidence": "Tried on a real phone on Oct 2; a full start-to-finish trip download still needs a real test.",
-      "ts": "Pack for a trip (download planner)",
       "realTest": "partly"
     },
     {
@@ -381,7 +384,6 @@
       "name": "Casting to a Chromecast TV",
       "status": "Beta",
       "evidence": "Oct 13 to a real Chromecast TV from two phones: a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop. The phone's volume keys do not change the TV volume. Converted films and other TVs are not tested.",
-      "ts": "Chromecast",
       "realTest": "partly"
     },
     {
@@ -398,7 +400,6 @@
       "name": "Watchlist, favourites, playlists and Surprise me",
       "status": "Available",
       "evidence": "Oct 13: playlist made and deleted, watchlist add and remove, and the Surprise me chooser opened. Surprise me was not played through; favourites were not tapped.",
-      "ts": "Surprise me, playlists, watchlist, favourites",
       "realTest": "partly"
     },
     {
@@ -407,7 +408,6 @@
       "name": "Library health",
       "status": "Available",
       "evidence": "Oct 13: it showed real counts of missing posters, unmatched titles and unreachable files, and says nothing is deleted. Rename or match was not tried.",
-      "ts": "Library health",
       "realTest": "partly"
     },
     {
@@ -416,7 +416,6 @@
       "name": "Accessibility choices: larger text, high contrast, reduce motion, Simple Mode, Caregiver view, captions",
       "status": "Available",
       "evidence": "Oct 13 on the S24 Ultra: each was switched on and off. 150% text and high contrast were readable on Home and Browse. TalkBack and 200% text are not tested.",
-      "ts": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
       "realTest": "partly"
     },
     {
@@ -441,7 +440,6 @@
       "name": "Wake my PC",
       "status": "Beta",
       "evidence": "Oct 13: the button and its message worked. A real wake of a sleeping PC has not been tried.",
-      "ts": "Wake my PC",
       "realTest": "partly"
     },
     {
@@ -493,12 +491,27 @@
       "realTest": "no"
     },
     {
+      "id": "g-play",
+      "area": "android",
+      "name": "Android app on Google Play",
+      "status": "In development",
+      "realTest": "no",
+      "evidence": "Not submitted to Google Play. The Android app is a sideload test download from this site. The offline demo was tried on one phone on Oct 13."
+    },
+    {
+      "id": "p-help",
+      "area": "android",
+      "name": "Phone Help (show your screen to another phone)",
+      "status": "In development",
+      "realTest": "no",
+      "evidence": "Switched off and paused. Not available."
+    },
+    {
       "id": "tv-layout",
       "area": "tvauto",
       "name": "Android TV and Google TV layout (inside the Android app)",
       "status": "Beta",
       "evidence": "No test on a real Android TV is recorded. The code and its screen checks exist.",
-      "ts": "Android TV and Fire TV screens",
       "realTest": "no"
     },
     {
@@ -515,7 +528,6 @@
       "name": "Link a TV (sign a TV in with a code approved on your phone)",
       "status": "In development",
       "evidence": "Built; the server switch is on. Never tried with a real TV app.",
-      "ts": "Link a TV",
       "realTest": "no"
     },
     {
@@ -532,7 +544,6 @@
       "name": "Beebo Auto: sign-in, video list, playback and steering-wheel buttons",
       "status": "Available",
       "evidence": "One real car check on Oct 6, 2026 (a 2021 Audi SQ5 with Android Auto) passed for sign-in, the movie and show lists, playback with sound through the car speakers and the steering-wheel buttons. That check did not record which build was used. Use only when parked.",
-      "ts": "Beebo Auto (Android Auto)",
       "realTest": "partly"
     },
     {
@@ -557,7 +568,6 @@
       "name": "Car Party (host in the car, passengers join on a web page)",
       "status": "Beta",
       "evidence": "Oct 13 on two phones: the host started a party with a code and QR, a passenger joined and saw what was playing and who was in the car, then left. A blank name does not yet get an automatic guest name on the live server. Not tried in a real car.",
-      "ts": "Car party (host and passengers)",
       "realTest": "partly"
     },
     {
@@ -622,7 +632,6 @@
       "name": "macOS server app",
       "status": "In development",
       "evidence": "Test builds are made automatically; no person has run one on a real Mac, and it needs Apple signing.",
-      "ts": "macOS desktop",
       "realTest": "no"
     },
     {
@@ -647,7 +656,6 @@
       "name": "Linux desktop (AppImage and .deb, version 0.1.82)",
       "status": "Beta",
       "evidence": "Starts and answers on its web address in an automatic headless check. Not run on a real Linux desktop by a person; not code-signed; one release behind Windows.",
-      "ts": "Linux desktop app",
       "realTest": "no"
     },
     {
@@ -656,7 +664,6 @@
       "name": "Docker or NAS headless server",
       "status": "Beta",
       "evidence": "Not offered for download right now. Not tested on any NAS model.",
-      "ts": "Linux server (headless, Docker)",
       "realTest": "no"
     },
     {
@@ -665,7 +672,6 @@
       "name": "Host start and stop; a guest joins by QR with no account (same Wi-Fi)",
       "status": "Available",
       "evidence": "Oct 13 on two phones: host start, join, and Stop with a confirmation worked; the guest address stopped answering after Stop.",
-      "ts": "Campsite host start and stop",
       "realTest": "yes"
     },
     {
@@ -690,7 +696,6 @@
       "name": "Campsite games (42 in the list)",
       "status": "Available",
       "evidence": "Oct 13: all 42 opened from a guest phone and 41 started against a computer opponent (the 42nd asks the host to pick a list). Sea Battle was finished by two people on Oct 13; Crazy Eights was played by hand. The other games were not played to the end by people.",
-      "ts": "Campsite games",
       "realTest": "partly"
     },
     {
@@ -715,7 +720,6 @@
       "name": "Share the app by QR",
       "status": "Beta",
       "evidence": "Oct 13: a real QR scan opened the page, the file matched the installed build byte for byte, and it installed over the existing app. A phone that never had Beebo and an iPhone are not tested.",
-      "ts": "Share the app (QR over the hotspot)",
       "realTest": "partly"
     },
     {
@@ -748,7 +752,6 @@
       "name": "Wireless speakers: guests' phones as music speakers",
       "status": "Beta",
       "evidence": "Oct 13: one guest phone appeared as a speaker with positions and a timing nudge, and the page warns that wireless speakers add delay. A real group and the click test heard by a person are not tested.",
-      "ts": "Wireless speakers",
       "realTest": "partly"
     },
     {
@@ -781,7 +784,6 @@
       "name": "Shared photo and video presentation",
       "status": "Beta",
       "evidence": "Not tried with a real audience.",
-      "ts": "Shared photos and videos",
       "realTest": "no"
     },
     {
@@ -822,7 +824,6 @@
       "name": "Walkie-talkie from anywhere",
       "status": "In development",
       "evidence": "The server side is switched on. Joining a real room from two networks is not tested.",
-      "ts": "Walkie-talkie from anywhere",
       "realTest": "no"
     },
     {
@@ -831,7 +832,6 @@
       "name": "Movie Night (TV-led party games, phones join)",
       "status": "Beta",
       "evidence": "Automatic tests only; not tried on a real TV with phones.",
-      "ts": "Movie Night",
       "realTest": "no"
     },
     {
@@ -843,13 +843,20 @@
       "realTest": "no"
     },
     {
-      "id": "cs-family",
+      "id": "cs-timeline",
       "area": "campsite",
-      "name": "Family Timeline and Portrait Party",
+      "name": "Family Timeline (host-led photo and video sharing)",
       "status": "In development",
-      "evidence": "Being built. Portrait Party would be private and consent-based, with no public gallery.",
-      "ts": "Portrait Party (turn a photo into a card)",
-      "realTest": "no"
+      "realTest": "no",
+      "evidence": "Being built."
+    },
+    {
+      "id": "cs-portrait",
+      "area": "campsite",
+      "name": "Portrait Party (private, consent-based photo cards)",
+      "status": "In development",
+      "realTest": "no",
+      "evidence": "Being built. It would be private and consent-based, with no public gallery."
     },
     {
       "id": "t-core",
@@ -857,7 +864,6 @@
       "name": "Start a trip, recap and Present slideshow",
       "status": "Beta",
       "evidence": "Oct 13 on the S24 Ultra: Start trip, We're home, the recap card and a full-screen Present slide worked.",
-      "ts": "Trip Journal (trips, recap, video export)",
       "realTest": "partly"
     },
     {
@@ -866,7 +872,6 @@
       "name": "Save the trip as an MP4 video",
       "status": "In development",
       "evidence": "Failed in the published phone build on Oct 13. The fix worked on a test build the same day (a 5-second and a 13-second video were made) but is not in a download yet, and the finished video was not played back by eye.",
-      "ts": "Trip Journal (trips, recap, video export)",
       "realTest": "partly"
     },
     {
@@ -883,7 +888,6 @@
       "name": "Trip link that opens away from home (through Beebo's server)",
       "status": "Beta",
       "evidence": "Needs the owner to switch on a setting. Oct 13: one real test on 5G mobile data opened the page and played the clip. A second person's phone and an iPhone are not tested.",
-      "ts": "Trip Journal link away from home",
       "realTest": "partly"
     },
     {
@@ -900,7 +904,6 @@
       "name": "Direct connection away from home",
       "status": "Available",
       "evidence": "Oct 13 on a phone with Wi-Fi off (5G): the library loaded and a film played; Oct 12 in a two-home test two viewers watched at once from one home PC.",
-      "ts": "Away from home (direct, then relay)",
       "realTest": "yes"
     },
     {
@@ -925,7 +928,6 @@
       "name": "Beebo Relay (optional fallback when a direct connection fails)",
       "status": "Beta",
       "evidence": "Oct 13: after the account's relay switch was fixed on the server, a film played over the relay from a phone on 5G. Two people on the relay at once are not tested. Terms are not final.",
-      "ts": "Beebo Relay (fallback connection)",
       "realTest": "partly"
     },
     {
@@ -958,7 +960,6 @@
       "name": "Watch Together (host and viewers in step)",
       "status": "Beta",
       "evidence": "Oct 13 on two phones: host, join as viewer, the viewer followed a 45-second skip within 8 seconds, and left and rejoined within 1 second. Chat, reactions, closing the app and a phone on mobile data are not tested.",
-      "ts": "Watch Together",
       "realTest": "partly"
     },
     {
@@ -1031,7 +1032,6 @@
       "name": "Audiobooks: books, chapters, speed, sleep timer, bookmarks",
       "status": "Beta",
       "evidence": "Oct 13 with a made-up 3-chapter book: chapter jump and speeds from 0.75x to 2x worked, and the book moved on to the next chapter by itself. Bookmarks and the book's sleep timer were not tried.",
-      "ts": "Audiobooks",
       "realTest": "partly"
     },
     {
@@ -1040,7 +1040,6 @@
       "name": "Podcasts: find, play and sleep timer",
       "status": "Beta",
       "evidence": "Oct 13: a real episode played and paused, and searching the public directory listed real shows.",
-      "ts": "Podcasts and radio",
       "realTest": "partly"
     },
     {
@@ -1065,7 +1064,6 @@
       "name": "Internet radio: browse, favourites and play",
       "status": "Beta",
       "evidence": "Oct 13 on the S24 Ultra: a live station reached PLAYING within 10 seconds, and pause and stop worked. The phone was muted, so no person has heard it; playing with the screen off is not tested.",
-      "ts": "Podcasts and radio",
       "realTest": "partly"
     },
     {
@@ -1074,7 +1072,6 @@
       "name": "Live TV and recording with your own HDHomeRun tuner",
       "status": "Beta",
       "evidence": "Never tested with a real tuner. Beebo supplies no channels.",
-      "ts": "Live TV (tuner and own playlist)",
       "realTest": "no"
     },
     {
@@ -1115,7 +1112,6 @@
       "name": "Household profiles with their own progress",
       "status": "Available",
       "evidence": "Oct 3 and Oct 5: phones signed in as different profiles kept separate Continue watching lists.",
-      "ts": "Parental controls and household profiles",
       "realTest": "yes"
     },
     {
@@ -1180,7 +1176,6 @@
       "name": "Library sharing between households (invite-only)",
       "status": "In development",
       "evidence": "Oct 12 between two real homes: invite, accept, play and stop sharing worked, and problems found are fixed in code but not in a download. The sharing terms are still a draft.",
-      "ts": "Library sharing with another household",
       "realTest": "partly"
     },
     {
@@ -1197,7 +1192,6 @@
       "name": "Browser games on this website (17 games, play a friend or Hopping Beebo)",
       "status": "Beta",
       "evidence": "Oct 1 (one day): the first 8 game pages loaded at phone width with no errors and a full Drop Four round was played against Hopping Beebo. A script cross-checks that the site lists 17 browser games; the other nine have not been hand-tested, and real phones with touch were not tried.",
-      "ts": "Website and browser games",
       "realTest": "partly"
     },
     {
@@ -1206,7 +1200,6 @@
       "name": "Online games with people in other homes (private tables with a code)",
       "status": "In development",
       "evidence": "On Oct 12 the lobby page loaded; playing with people in other homes was not tested.",
-      "ts": "Online games (play with others)",
       "realTest": "no"
     },
     {
@@ -1215,7 +1208,6 @@
       "name": "BeeboVPN",
       "status": "In development",
       "evidence": "Invite-only test, not offered to the public.",
-      "ts": "BeeboVPN",
       "realTest": "no"
     },
     {
@@ -1224,7 +1216,6 @@
       "name": "Beebo Points Rewards",
       "status": "Planned",
       "evidence": "Switched off. There are no points to earn in the current app.",
-      "ts": "Rewards, ads and credit",
       "realTest": "no"
     },
     {
@@ -1233,7 +1224,6 @@
       "name": "Managed hosting and server locations",
       "status": "Planned",
       "evidence": "A plan only.",
-      "ts": "Managed hosting",
       "realTest": "no"
     },
     {
@@ -1242,8 +1232,23 @@
       "name": "Hosted game servers (Beebo Play)",
       "status": "Planned",
       "evidence": "A plan only.",
-      "ts": "Beebo Play (hosted game servers)",
       "realTest": "no"
+    },
+    {
+      "id": "s-reset",
+      "area": "online",
+      "name": "Reset a forgotten sign-in and e-mail verification",
+      "status": "In development",
+      "realTest": "no",
+      "evidence": "Built and switched off until a mail provider is chosen and the flow is tested."
+    },
+    {
+      "id": "s-assistant",
+      "area": "online",
+      "name": "Google Assistant and Alexa",
+      "status": "Planned",
+      "realTest": "no",
+      "evidence": "A plan only."
     }
   ],
   "notCounted": [
@@ -1261,6 +1266,11 @@
       "name": "\"Stream from my PC\" button in the phone app",
       "status": "Retired",
       "note": "Removed from the phone app on Oct 3, 2026. Remote Desktop is the planned replacement and is In development."
+    },
+    {
+      "name": "3D characters and story videos",
+      "status": "Paused",
+      "note": "On hold. The painted 2D look stays."
     }
   ],
   "workingOn": [

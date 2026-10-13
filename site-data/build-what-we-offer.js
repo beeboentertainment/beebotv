@@ -25,7 +25,7 @@ const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const SITE = 'https://www.beeboentertainment.com';
 const STATUSES = ['Available', 'Beta', 'In development', 'Planned'];
 const REAL = ['yes', 'partly', 'no'];
-const NOT_COUNTED = ['Dropped', 'Retired'];
+const NOT_COUNTED = ['Dropped', 'Retired', 'Paused'];
 
 const data = JSON.parse(read('site-data/what-we-offer.json'));
 const winFeed = JSON.parse(read('desktop-version.json'));
@@ -33,6 +33,24 @@ const appFeed = JSON.parse(read('downloads/app-build.json'));
 const autoFeed = JSON.parse(read('downloads/auto-build.json'));
 const ts = JSON.parse(read('testing-status.json')); // the site's one testing-percentage system; read-only here
 const tsByName = new Map(ts.features.map((f) => [f.name, f]));
+/* Mapping from our rows to the evidence page's features, and the label rule: if both pages have a label for the same
+   feature, the stricter (less Available) one is shown, so the two pages cannot disagree. */
+const evMap = JSON.parse(read('site-data/evidence-map.json')).map;
+const RANK = { Available: 0, Beta: 1, 'In development': 2, Planned: 3 };
+const labelOf = (s) => STATUSES.find((x) => String(s).startsWith(x)) || null;
+const labelDecisions = [];
+for (const id of Object.keys(evMap)) if (!data.features.some((f) => f.id === id)) console.error('evidence-map.json: unknown row id ' + id);
+for (const f of data.features) {
+  f.ts = evMap[f.id] || null;
+  f.ownStatus = f.status;
+  const t = f.ts ? tsByName.get(f.ts) : null;
+  const theirs = t ? labelOf(t.status) : null;
+  if (theirs && theirs !== f.ownStatus) {
+    const shown = RANK[theirs] > RANK[f.ownStatus] ? theirs : f.ownStatus;
+    labelDecisions.push({ id: f.id, name: f.name, ours: f.ownStatus, evidencePage: t.status, shown });
+    f.status = shown;
+  }
+}
 
 /* ---------- validation ---------- */
 const problems = [];
@@ -54,7 +72,7 @@ for (const a of data.areas) if (!data.features.some((f) => f.area === a.id)) pro
 
 /* forbidden strings: nothing private may reach a public file */
 const FORBIDDEN = [/10\.0\.\d/, /192\.168\./, /148\.113/, /workers\.dev/i, /@gmail/i, /\.jks/i, /password/i, /keystore/i, /C:\\/, /D:\\/, /\/c\/Beebo/i, /apps\/core/, /worker\.js/, /\.kt\b/];
-const scanText = JSON.stringify(data);
+const scanText = JSON.stringify(data, (k, v) => (k === 'ts' ? undefined : v)); // ts holds names from the evidence page, not our wording
 for (const re of FORBIDDEN) if (re.test(scanText)) problems.push('forbidden pattern in data: ' + re);
 if (problems.length) {
   console.error('what-we-offer.json problems:\n - ' + problems.join('\n - '));
@@ -88,7 +106,7 @@ const summary = {
   overall,
   areas: perArea.map((a) => ({ id: a.id, name: a.name, ...pickStats(a) })),
   evidencePage: { updatedEastern: ts.updatedEastern, overallAveragePercent: ts.overallAveragePercent, featureCount: ts.featureCount, groupAveragePercent: ts.groupAveragePercent },
-  labelConflictsWithEvidencePage: data.features.filter((f) => f.ts && !labelMatches(f.status, tsByName.get(f.ts).status)).map((f) => ({ id: f.id, ours: f.status, evidencePage: tsByName.get(f.ts).status })),
+  labelDecisions,
   ideas: data.ideas.length,
   notCounted: data.notCounted.length,
 };
@@ -111,6 +129,10 @@ function tsInfo(f) {
   const t = tsByName.get(f.ts);
   const n = Object.values(t.checks || {}).filter(Boolean).length;
   return t.percentComplete + '% on the testing evidence page (' + n + ' of 5 checks passed' + (t.lastTested ? ', last tested ' + t.lastTested : '') + ')';
+}
+function testedOn(f) {
+  const t = f.ts ? tsByName.get(f.ts) : null;
+  return t && t.testedOn ? 'Tested on: ' + t.testedOn : '';
 }
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
@@ -141,7 +163,7 @@ function percentBlock(headingTag) {
   const o = overall;
   return `<${h} id="${h === 'h2' ? 'how-complete' : 'wwo-how-complete'}">How complete are we?</${h}>
 <p class="wwo-big"><strong>${o.pctAvailable}%</strong> of the ${o.listed} features we list are <em>Available</em>, <strong>${o.pctAvailableOrBeta}%</strong> are Available or Beta.</p>
-<p>Testing is measured separately, on our <a href="release-evidence.html#features">testing evidence page</a>: ${ts.featureCount} features, each with 5 checks worth 20% each (Built, Automated tests, Real device, Real-world check, Ready to call Available). Its overall average is <strong>${ts.overallAveragePercent}%</strong> (evidence page updated ${esc(ts.updatedEastern.split(' (')[0])} Eastern); by group: ${Object.entries(ts.groupAveragePercent).map(([k, v]) => esc(k) + ' ' + v + '%').join(', ')}. The last column below averages that page's numbers for the features that appear on both lists.</p>
+<p>The testing percentages on this page come from our <a href="release-evidence.html#features">testing evidence page</a> (release-evidence.html), and its overall figure is <strong>${ts.overallAveragePercent}%</strong>: each of its ${ts.featureCount} features has 5 checks worth 20% each (Built, Automated tests, Real device, Real-world check, and Ready to call Available, which is ticked only once the exact published download has been tested). By group: ${Object.entries(ts.groupAveragePercent).map(([k, v]) => esc(k) + ' ' + v + '%').join(', ')}. When a feature is on both lists, its label, percentage and Tested on note are read from that page, and if the two labels differ the stricter one is shown. The last column below averages that page's numbers for the features that appear on both lists.</p>
 <p>By status: ${o.byStatus.Available} Available, ${o.byStatus.Beta} Beta, ${o.byStatus['In development']} In development, ${o.byStatus.Planned} Planned.</p>
 <p class="wwo-fine"><strong>How to read this.</strong> These percentages are share-of-list counts, not a promise or an audit. Every feature we list counts once, whether it is big or small, so a long list of small Beta items can move the number as much as one big feature. Features that were dropped or retired, and ideas, are not counted. Available means it is in a current download and a person has run its main use on a real device or PC. Beta means it is in a download or switchable today but is new, tested only by automatic tests, or had real problems. In development means it is being built, switched off, not in a download, or never tried on the real equipment it needs. Planned means intended, not built. The data file is <a href="site-data/what-we-offer.json">site-data/what-we-offer.json</a>; a script calculates the label counts from it and reads the testing numbers from <a href="testing-status.json">testing-status.json</a>.</p>
 <div class="wwo-tablewrap"><table class="wwo-table wwo-table-pct"><thead><tr><th scope="col">Area</th><th scope="col">Listed</th><th scope="col">Available</th><th scope="col">Available or Beta</th><th scope="col">Testing evidence page, average of matched features</th></tr></thead><tbody>
@@ -228,7 +250,7 @@ function pageBlock() {
       const trs = rows
         .map(
           (f) =>
-            `<tr id="f-${esc(f.id)}"><th scope="row">${esc(f.name)}</th><td data-label="Label">${chip(f.status)}</td><td data-label="What was seen">${esc(f.evidence)}${f.ts ? ' <span class="wwo-test">' + esc(tsInfo(f)) + '.</span>' : ''}</td></tr>`
+            `<tr id="f-${esc(f.id)}"><th scope="row">${esc(f.name)}</th><td data-label="Label">${chip(f.status)}</td><td data-label="What was seen">${esc(f.evidence)}${f.ts ? ' <span class="wwo-test">' + esc(tsInfo(f)) + '.</span>' + (testedOn(f) ? ' <span class="wwo-test">' + esc(testedOn(f)) + '</span>' : '') : ''}${f.ts && f.status !== f.ownStatus ? ' <span class="wwo-test">The testing evidence page and this list used different labels for this feature; the stricter one is shown.</span>' : ''}</td></tr>`
         )
         .join('\n');
       return `<section class="wwo-area" id="area-${esc(a.id)}">
