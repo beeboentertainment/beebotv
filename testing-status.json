@@ -483,8 +483,8 @@
     "summary": "Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-13T14:00:00-04:00",
-  "updatedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+  "updated": "2026-10-14T10:48:00-04:00",
+  "updatedEastern": "Oct 14, 2026, 10:48 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -2991,17 +2991,23 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (phone on 5G through Beebo Relay)",
-      "leftToReach100": "Nick decides the price and entitlement rules, a customer-facing way to switch Relay on is merged and tested, and the fallback is proven with two people at once.",
+      "lastTested": "Oct 13, 2026 (phone on 5G through Beebo Relay); Oct 12, 2026 (friend's house, published Windows 0.1.87)",
+      "leftToReach100": "Retest through Beebo Relay on the currently published builds (Windows 0.1.88 and Android 1.51-tester23) to tick Ready to call Available; Nick decides the price and entitlement rules, a customer-facing way to switch Relay on is merged and tested, and the fallback is proven with two people at once.",
       "roadTo100": {
         "means": "Relay carries video across two real networks, recovers after a drop, and its price is decided.",
         "done": [
           "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Relay is live; Relay tests pass.",
+          "Oct 12, 2026, about 4:00 to 4:30 AM Eastern, with the published Windows 0.1.87 on a 4-core home PC at a friend's house (router with no UPnP answer) and a Samsung Galaxy S24 Ultra on 5G: with Beebo Relay off the phone could not connect directly; after the owner switched Relay on, it connected through Beebo Relay in about one second and several videos played (fast-forward and pause worked). Not measured with a stopwatch; the usage counter did not move in the first two minutes.",
+          "Sep 17-18, 2026 (older builds): away from home through Beebo Relay proven at a friend's house (recorded in the project log).",
           "Oct 12, 2026: A phone on 5G played through Beebo Relay once it was switched on; the first picture came in about 3 seconds. Two people on the relay at once were not tested.",
           "Oct 13, 2026, S24 Ultra on 5G: a film played through Beebo Relay after the account switch was turned on; the usage counter moved with a delay."
         ],
         "remaining": [
+          {
+            "kind": "DEVICE",
+            "text": "To tick Ready to call Available: retest through Beebo Relay on the currently published builds (Windows 0.1.88 and Android 1.51-tester23) on a real phone on mobile data, with the home PC behind a router that cannot make a direct connection, and record the result."
+          },
           {
             "kind": "DEVICE",
             "text": "Prove fallback and recovery across two real networks."
@@ -3017,9 +3023,13 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: at first the phone could not use Beebo Relay: the test account's relay switch was off on the server, so the app (as designed) fell back to the normal connection. After the owner ran a script to switch it on, the S24 Ultra on 5G with Wi-Fi off connected through Beebo Relay and played a film (about 106 MB; the route card said Beebo Relay). The monthly usage counter moved from 4.1 to 4.3 GB about 20 minutes later, so usage is counted with a delay. Gap found: no screen in the phone app, desktop app or website lets a customer switch Relay on for their own account (a fix is written but not merged). Two people on Relay at once were not tested. Percentage unchanged.",
+      "changedEastern": "Oct 14, 2026, 10:48 AM Eastern",
+      "changeNote": "Oct 14: added the real-world record behind the Real device and Real-world ticks. On Oct 12, 2026 (about 4:00 to 4:30 AM Eastern) a home PC running the published Windows 0.1.87, at a friend's house on a router with no automatic port opening (UPnP got no answer), could not be reached directly from the phone browser of a Samsung Galaxy S24 Ultra on 5G (\"Couldn't connect directly\"); after the owner switched Beebo Relay on, the phone connected through Beebo Relay in about one second and several videos played, with fast-forward and pause working. Earlier proof: away from home through Beebo Relay at a friend's house on Sep 17-18, 2026 (older builds). Ready to call Available is still not ticked: it needs a retest through Beebo Relay on the currently published builds (Windows 0.1.88 and Android 1.51-tester23). Percentage unchanged at 80.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: at first the phone could not use Beebo Relay: the test account's relay switch was off on the server, so the app (as designed) fell back to the normal connection. After the owner ran a script to switch it on, the S24 Ultra on 5G with Wi-Fi off connected through Beebo Relay and played a film (about 106 MB; the route card said Beebo Relay). The monthly usage counter moved from 4.1 to 4.3 GB about 20 minutes later, so usage is counted with a delay. Gap found: no screen in the phone app, desktop app or website lets a customer switch Relay on for their own account (a fix is written but not merged). Two people on Relay at once were not tested. Percentage unchanged."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "A phone on 5G played through Beebo Relay once it was switched on; the first picture came in about 3 seconds. Two people on the relay at once were not tested."
@@ -3029,7 +3039,7 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; Beebo Relay on our own server; the home computer runs the published desktop 0.1.87."
+      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; Beebo Relay on our own server; the home computer runs the published desktop 0.1.87. Oct 12, 2026 record: the phone browser of a Samsung Galaxy S24 Ultra on 5G to a 4-core Windows PC at a friend's house running the published desktop 0.1.87, through Beebo Relay on our own server (the phone also had the published Android 1.51-tester22 installed)."
     },
     {
       "group": "Services and website",
@@ -3535,7 +3545,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 13, 2026, 4:14 AM Eastern",
+  "previousUpdatedEastern": "Oct 13, 2026, 2:00 PM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 13 update record",
