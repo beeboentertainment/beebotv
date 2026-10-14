@@ -279,7 +279,7 @@
     ]
   },
   "fullProgress": {
-    "updatedEastern": "Oct 13, 2026 (Eastern)",
+    "updatedEastern": "Oct 13, 2026, 4:14 AM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Code checklist is the recorded built-and-automated-test progress. Human-device is a strict percentage of the recorded real-device checks for the named area. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
@@ -483,7 +483,7 @@
     "summary": "Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-13",
+  "updated": "2026-10-13T14:00:00-04:00",
   "updatedEastern": "Oct 13, 2026, 2:00 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
@@ -519,7 +519,7 @@
           "changeNote": "Galaxy S24 Ultra on the published tester22 build: cold start and restart passed again."
         },
         {
-          "changedEastern": "Oct 12, 2026",
+          "changedEastern": "Oct 12, 2026, 12:05 PM Eastern",
           "changeNote": "Cold launch and all five bottom tabs passed on both the Galaxy S9+ and S24 Ultra, with no crashes logged."
         },
         {
@@ -583,7 +583,7 @@
           "changeNote": "Galaxy S24 Ultra: seek, pause (a 63-second pause held its exact position), quality switching to 480p and 720p, 24 seconds of airplane mode while playing, and Wi-Fi to 5G to Wi-Fi switches all passed. Found: the app’s own picture-in-picture window did not close properly; fixed in the code, not yet in a published download."
         },
         {
-          "changedEastern": "Oct 12, 2026",
+          "changedEastern": "Oct 12, 2026, 12:05 PM Eastern",
           "changeNote": "Pause, resume, skip, seek and converted 480p playback passed. Both phones were muted."
         },
         {
@@ -972,7 +972,7 @@
       "changeNote": "Oct 13: the S24 Ultra started hosting, a guest on the S9+ joined with the name left blank and was named \"Guest 1\", the guest came back as the same guest after 15 seconds with Wi-Fi off, and Stop (with its confirmation) closed the guest address. This used the home Wi-Fi route, not a phone hotspot or mobile data. Test build; the percentage did not change.",
       "changeHistory": [
         {
-          "changedEastern": "Oct 12, 2026",
+          "changedEastern": "Oct 12, 2026, 12:05 PM Eastern",
           "changeNote": "The S24 guest joined the S9+ host over the temporary Wi-Fi; the host showed \"1 guest connected\". Stopping hosting and switching Wi-Fi off passed."
         },
         {
@@ -1237,7 +1237,7 @@
           "changeNote": "Campsite game-room coverage ran with scripted guests; no other game is claimed as hand-played."
         },
         {
-          "changedEastern": "Oct 12, 2026",
+          "changedEastern": "Oct 12, 2026, 12:05 PM Eastern",
           "changeNote": "Tic-Tac-Toe against the computer opponent ran on the guest web page over the temporary Wi-Fi."
         },
         {
@@ -1458,7 +1458,7 @@
       "changeNote": "Oct 13, with a person watching a real Chromecast on the Living Room TV: from the S9+ and from the S24 Ultra the picture and sound were seen on the TV, and pause, play, skip forward, skip back, a quality change and stop casting all worked; the TV returned to idle each time. Phone volume buttons did NOT change the TV volume (volume control from the phone is not claimed). Converted films, subtitles while casting, a second sender and other TVs or receivers were not tested. Percentage unchanged.",
       "changeHistory": [
         {
-          "changedEastern": "Oct 12, 2026",
+          "changedEastern": "Oct 12, 2026, 12:05 PM Eastern",
           "changeNote": "Original and converted 480p files both cast to the Living Room TV with picture and sound confirmed by the owner; stopping the cast returned control to the phone."
         },
         {
@@ -3540,8 +3540,8 @@
   "hero": {
     "recordName": "October 13 update record",
     "scope": "Desktop, phones, browser, servers",
-    "lastTested": "Oct 13, 2026",
-    "lastTestedIso": "2026-10-13",
+    "lastTested": "Oct 13, 2026, 1:15 PM Eastern",
+    "lastTestedIso": "2026-10-13T13:15:00-04:00",
     "previousTested": "Oct 12, 2026",
     "broader": "Still required",
     "newerText": "the published downloads are Windows {desktop} and Android {android}. On Oct 13 we ran a full device pass with a Galaxy S24 Ultra, a Galaxy S9+, a Windows PC and a real Chromecast on a living-room TV, on home Wi-Fi and on 5G. It used a test build of the current code, not the published downloads (a newer Windows 0.1.88 test build, and a phone app build with some unmerged fixes), so no feature was marked Ready. It was counted in the progress table: a few checks moved up, new rows were added, and three failures are written down plainly (podcast Follow, Trip Journal video export before its fix, and the silent desktop Music window). Not tested: Beebo Auto in a car, Android TV, Fire TV, TalkBack, a real wake from sleep, Live TV with a tuner, other TVs and receivers, and a phone that never had Beebo installing from the QR. Earlier results are on <a href=\"whats-tested.html\">What’s new and what’s tested</a> and the release notes are on <a href=\"updates.html\">Updates</a>."
