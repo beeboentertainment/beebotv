@@ -28,6 +28,32 @@ const REAL = ['yes', 'partly', 'no'];
 const NOT_COUNTED = ['Dropped', 'Retired', 'Paused'];
 
 const data = JSON.parse(read('site-data/what-we-offer.json'));
+
+/* Updated stamps must carry the DATE AND TIME in Eastern (owner rule, Oct 13, 2026). The author edits both fields in
+   what-we-offer.json when the content changes; the generator only formats the stored values, so --check never fails
+   just because the clock moved. A stamp with a date but no time stops the build. */
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function checkUpdatedStamp(meta) {
+  const m = /^([A-Z][a-z]{2}) (\d{1,2}), (\d{4}), (\d{1,2}):(\d{2}) (AM|PM) Eastern$/.exec(String(meta.updatedEastern || ''));
+  const i = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):\d{2}[+-]\d{2}:\d{2}$/.exec(String(meta.updatedIso || ''));
+  if (!m) throw new Error('site-data/what-we-offer.json meta.updatedEastern must be a date AND time in Eastern, like "Oct 13, 2026, 2:05 PM Eastern" (got ' + JSON.stringify(meta.updatedEastern) + ')');
+  if (!i) throw new Error('site-data/what-we-offer.json meta.updatedIso must be a full ISO timestamp with the Eastern offset, like "2026-10-13T14:05:00-04:00" (got ' + JSON.stringify(meta.updatedIso) + ')');
+  const h24 = (Number(m[4]) % 12) + (m[6] === 'PM' ? 12 : 0);
+  const same = MONTHS.indexOf(m[1]) + 1 === Number(i[2]) && Number(m[2]) === Number(i[3]) && Number(m[3]) === Number(i[1]) && h24 === Number(i[4]) && Number(m[5]) === Number(i[5]);
+  if (!same) throw new Error('site-data/what-we-offer.json meta.updatedEastern (' + meta.updatedEastern + ') and meta.updatedIso (' + meta.updatedIso + ') are not the same moment');
+}
+checkUpdatedStamp(data.meta);
+/* a UTC timestamp (the release feed's publishedAtUtc) as a full ISO timestamp with the Eastern offset */
+function easternIso(utc) {
+  const d = new Date(utc);
+  if (Number.isNaN(d.getTime())) return undefined;
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Toronto', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' }).formatToParts(d).map((x) => [x.type, x.value]));
+  const asUtc = Date.UTC(+parts.year, +parts.month - 1, +parts.day, +parts.hour, +parts.minute, +parts.second);
+  const off = Math.round((asUtc - Math.floor(d.getTime() / 1000) * 1000) / 60000);
+  const hh = String(Math.floor(Math.abs(off) / 60)).padStart(2, '0');
+  const mm = String(Math.abs(off) % 60).padStart(2, '0');
+  return parts.year + '-' + parts.month + '-' + parts.day + 'T' + parts.hour + ':' + parts.minute + ':' + parts.second + (off < 0 ? '-' : '+') + hh + ':' + mm;
+}
 const winFeed = JSON.parse(read('desktop-version.json'));
 const appFeed = JSON.parse(read('downloads/app-build.json'));
 const autoFeed = JSON.parse(read('downloads/auto-build.json'));
@@ -347,7 +373,7 @@ function ldBlock() {
       applicationCategory: 'MultimediaApplication',
       operatingSystem: 'Windows 10, Windows 11',
       softwareVersion: winFeed.version,
-      datePublished: String(winFeed.publishedAtUtc || '').slice(0, 10) || undefined,
+      datePublished: easternIso(winFeed.publishedAtUtc),
       downloadUrl: winFeed.url,
       isAccessibleForFree: true,
       publisher: org,
