@@ -483,8 +483,8 @@
     "summary": "Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-14T10:48:00-04:00",
-  "updatedEastern": "Oct 14, 2026, 10:48 AM Eastern",
+  "updated": "2026-10-14T21:44:00-04:00",
+  "updatedEastern": "Oct 14, 2026, 9:44 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -508,12 +508,16 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026",
-      "leftToReach100": "Run a TalkBack (screen reader) pass, re-check the five tabs on the published download after the next release, and get a final review of the newest build.",
+      "lastTested": "Oct 14, 2026 (published tester23 on four phones); Oct 13, 2026 (test build)",
+      "leftToReach100": "Run a TalkBack (screen reader) pass and get a final review of the newest build; the Oct 14 runs covered the published tester23 on four phones, without TalkBack.",
       "previousPercent": 80,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13 full device pass: all five tabs (Home, Browse, Library, Play, More) opened with content on a Galaxy S24 Ultra and a Galaxy S9+, with no crash logged. This was a test build of the current code, not the published download, so the percentage did not change.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published Android 1.51-tester23, all five tabs (Home, Browse, Library, Play, More) opened with content on four phones: Galaxy S9+ (7:14 AM), Pixel 3, Galaxy S24 Ultra and Galaxy S25 (evening). Updating over the older app kept the sign-in on the Pixel 3 and S25. The Back button rule held on the screens tried: from a tab or the player, one or two presses; from a title page, three presses to leave (Browse, Home, out); the story reader is the exception (4 to 5 presses from a later page to reach Home). No crash was logged on any of the four phones. The percentage did not change: Real device was already ticked and now also rests on the exact published file. TalkBack was not run and no review of this build exists.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13 full device pass: all five tabs (Home, Browse, Library, Play, More) opened with content on a Galaxy S24 Ultra and a Galaxy S9+, with no crash logged. This was a test build of the current code, not the published download, so the percentage did not change. Tested on: Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "Galaxy S24 Ultra on the published tester22 build: cold start and restart passed again."
@@ -535,7 +539,8 @@
           "Both phones cold-launched to Home and opened all five tabs on the published tester22 build.",
           "Oct 11, 2026, tester22 build 72: Cold launch and all five bottom tabs passed on both the Galaxy S9+ and S24 Ultra, with no crashes logged.",
           "Oct 12, 2026: Galaxy S24 Ultra on the published tester22 build: cold start and restart passed again.",
-          "Oct 13, 2026, test build: all five tabs opened with content on both phones (S24 Ultra and S9+), no crash logged."
+          "Oct 13, 2026, test build: all five tabs opened with content on both phones (S24 Ultra and S9+), no crash logged.",
+          "Oct 14, 2026, published tester23 (build 73): all five tabs opened with content and no crash was logged on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25; Back leaves the app in at most three presses from the screens tried (the story reader needs 4 to 5)."
         ],
         "remaining": [
           {
@@ -558,7 +563,7 @@
           }
         ]
       },
-      "testedOn": "Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)"
     },
     {
       "group": "Android phone app",
@@ -572,12 +577,16 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026",
-      "leftToReach100": "Fix audio stopping when the screen turns off (or Nick decides the default), then re-test rotation, subtitles on a film that has them, and the floating player, and have a person listen on the published download.",
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: on both phones the resume prompt, play, pause, skip and the quality menu worked; on the S9+ the floating picture-in-picture player kept playing and returned to full screen when tapped; playback speed 2x applied. Still true: with the default setting the sound stops when the screen turns off (the \"Screen off: On\" option kept it playing for 30 seconds); that is not fixed. Subtitles were not tested (the test films have none) and no person listened, so sound was judged from the phone's audio output being active. Test build; the percentage did not change.",
+      "lastTested": "Oct 14, 2026 (published tester23 on four phones); Oct 13, 2026 (test build)",
+      "leftToReach100": "Fix audio stopping when the screen turns off (or Nick decides the default), find out why one episode took about 50 seconds to start on the S24, then re-test rotation and subtitles on a film that has them, and have a person listen on the published download.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23 a title played, paused and seeked on all four phones. Galaxy S9+: resume prompt worked, +15 and -5 skips moved the position, Pause held it, the quality menu (Auto, 480p, Audio only) worked, the floating picture-in-picture player kept playing and returned to full screen, and with the “Screen off: On” option (already on) the film kept playing with the screen off. Pixel 3: resume, +15 and a drag on the bar moved the position. Galaxy S24 Ultra: an episode played, skipped +15 and -5 and paused, at home and on 5G. Galaxy S25: resume, play and pause held its position. Things to know: on the S24 at home the episode opened paused with a spinner for about 50 seconds before a tap on Play started it (not explained); the reports record the player state and position, not sound heard by a person; and the films tried had no subtitles, so the subtitles menu was not seen (on the Pixel 3 the gear menu showed only Speed and Audio). Percentage unchanged.",
       "previousPercent": 80,
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: on both phones the resume prompt, play, pause, skip and the quality menu worked; on the S9+ the floating picture-in-picture player kept playing and returned to full screen when tapped; playback speed 2x applied. Still true: with the default setting the sound stops when the screen turns off (the \"Screen off: On\" option kept it playing for 30 seconds); that is not fixed. Subtitles were not tested (the test films have none) and no person listened, so sound was judged from the phone's audio output being active. Test build; the percentage did not change. Tested on: Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "Galaxy S24 Ultra: seek, pause (a 63-second pause held its exact position), quality switching to 480p and 720p, 24 seconds of airplane mode while playing, and Wi-Fi to 5G to Wi-Fi switches all passed. Found: the app’s own picture-in-picture window did not close properly; fixed in the code, not yet in a published download."
@@ -599,7 +608,8 @@
           "Automated playback tests pass.",
           "Oct 11, 2026, tester22 build 72: Pause, resume, skip, seek and converted 480p playback passed. Both phones were muted.",
           "Oct 12, 2026: Galaxy S24 Ultra: seek, pause (a 63-second pause held its exact position), quality switching to 480p and 720p, 24 seconds of airplane mode while playing, and Wi-Fi to 5G to Wi-Fi switches all passed. Found: the app’s own picture-in-picture window did not close properly; fixed in the code, not yet in a published download.",
-          "Oct 13, 2026, test build on the S24 Ultra and S9+: resume, play, pause, skip, quality menu, picture-in-picture (S9+), 480p kept playing, 2x speed applied. The sound stops with the screen off by default; the Screen off: On option kept playing for 30 seconds (S9+)."
+          "Oct 13, 2026, test build on the S24 Ultra and S9+: resume, play, pause, skip, quality menu, picture-in-picture (S9+), 480p kept playing, 2x speed applied. The sound stops with the screen off by default; the Screen off: On option kept playing for 30 seconds (S9+).",
+          "Oct 14, 2026, published tester23 on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25: resume, play, pause, skip and seek worked; on the S9+ the quality menu, the floating picture-in-picture player and playing with the screen off (Screen off: On) worked. One episode took about 50 seconds to start on the S24."
         ],
         "remaining": [
           {
@@ -612,7 +622,7 @@
           },
           {
             "kind": "DEVICE",
-            "text": "Re-test the floating player on the newest build and confirm phone sound by ear; the Oct 11 phones were muted."
+            "text": "Confirm phone sound by ear on the published download; the Oct 14 runs recorded the player state and position, not sound heard by a person. (The floating player passed on the S9+ on Oct 14.)"
           },
           {
             "kind": "NICK",
@@ -621,6 +631,10 @@
           {
             "kind": "BLOCKED",
             "text": "Two competing screen-off changes are waiting for review and disagree about what the test should expect."
+          },
+          {
+            "kind": "CODE",
+            "text": "On the S24 at home an episode opened paused with a spinner for about 50 seconds before a tap on Play started it; find out why."
           }
         ],
         "hist": [
@@ -630,7 +644,7 @@
           }
         ]
       },
-      "testedOn": "Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)"
     },
     {
       "group": "Android phone app",
@@ -644,7 +658,7 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (Galaxy S24 Ultra on 5G with Wi-Fi off)",
+      "lastTested": "Oct 14, 2026 (published tester23, Galaxy S24 Ultra on 5G with Wi-Fi off); Oct 13, 2026 (test build)",
       "leftToReach100": "Decide the Relay price, test two people on Beebo Relay at once, and re-test on real devices the fixes for the web player freezing after a phone switched from Wi-Fi to mobile data and for the home PC running out of free ports after many sessions (fixed in the code, not yet in a published download).",
       "roadTo100": {
         "means": "A current phone plays video from the home PC over mobile data, and again through Beebo Relay, with both results recorded and the Relay price approved.",
@@ -653,7 +667,8 @@
           "Route-choice tests pass.",
           "The owner reported a direct connection on mobile data (5G) earlier; on Oct 3 sign-in and Continue watching worked through the new server.",
           "Oct 12, 2026, two homes on two different networks, with the published Android 1.51-tester22: a direct connection to a home PC worked, a phone on 5G played through Beebo Relay once it was switched on (first picture in about 3 seconds), and the phone browser on 5G played too. Two viewers watched at once from one home PC and both connected directly in about a second. The phone app kept playing across Wi-Fi to 5G to Wi-Fi switches and 24 seconds of airplane mode.",
-          "Oct 13, 2026, S24 Ultra on 5G with Wi-Fi off: library, route card and a film worked; the route card updated by itself when Wi-Fi returned."
+          "Oct 13, 2026, S24 Ultra on 5G with Wi-Fi off: library, route card and a film worked; the route card updated by itself when Wi-Fi returned.",
+          "Oct 14, 2026, published tester23 on a Galaxy S24 Ultra on 5G with Wi-Fi off, home computer on desktop 0.1.88: library loaded, an episode played about 90 seconds, the route card said direct over the internet and counted 90 MB, and it went back to the home Wi-Fi wording after Wi-Fi returned."
         ],
         "remaining": [
           {
@@ -685,9 +700,13 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: the S24 Ultra on 5G mobile data with Wi-Fi switched off loaded the library, showed the route card (\"Direct over the internet\") and played a film; when Wi-Fi came back the route card updated by itself within about 30 seconds. Test build; the percentage did not change.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23, a Galaxy S24 Ultra on 5G mobile data with Wi-Fi switched off loaded the library, played an episode for about 90 seconds with the position moving, and a skip moved it forward. The Connection route screen said “Direct over the internet - no relay”, “Your phone is on: Mobile data” and “This connection: 90 MB”, and the app log showed the direct path. About 25 seconds after Wi-Fi was switched back on the card read “Connected directly to Beebo on your home Wi-Fi” again. The same screen also showed the right home Wi-Fi route on the Galaxy S9+, Pixel 3 and Galaxy S25. The owner was present and watching the S24 steps, per his statement (the steps were run by a helper). Not done: a second home from the S24 (the phone had no way to open it), two people at once, and away-from-home runs on the S9+ (it has no SIM), Pixel 3 and S25. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: the S24 Ultra on 5G mobile data with Wi-Fi switched off loaded the library, showed the route card (\"Direct over the internet\") and played a film; when Wi-Fi came back the route card updated by itself within about 30 seconds. Test build; the percentage did not change. Tested on: Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "Oct 12 two-home test: playback on 5G worked directly and through Beebo Relay, two viewers at once worked, and the app survived network switches. The percentage did not change: found problems are not yet in a published download and two people on the relay at once were not tested."
@@ -697,7 +716,7 @@
           "changeNote": "Fixed the browser page so a recent reload can keep a signed-in away-from-home session; automated tests were added."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.88; the route screen was also read on the home Wi-Fi on a Galaxy S9+, Pixel 3 and Galaxy S25."
     },
     {
       "group": "Android phone app",
@@ -829,7 +848,7 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026",
+      "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (test build)",
       "leftToReach100": "Improve the wording of the Ready tile and the host-folder message, then show all three states on a phone.",
       "roadTo100": {
         "means": "Ready, missing-folder and recovery states all show clear wording on a real phone and pass tests and review.",
@@ -838,7 +857,8 @@
           "Health-state tests pass.",
           "Checked on a real phone earlier.",
           "Oct 12, 2026: The screen opened on a real phone. Found: a misleading counter and a stale “cannot be reached” line; fixed in the code, not yet in a published download.",
-          "Oct 13, 2026, S24 Ultra: Library health showed real numbers from a real library; nothing was changed."
+          "Oct 13, 2026, S24 Ultra: Library health showed real numbers from a real library; nothing was changed.",
+          "Oct 14, 2026, published tester23 on a Galaxy S9+ (non-owner profile): the screen opened with 59 titles needing attention and nothing was changed."
         ],
         "remaining": [
           {
@@ -856,9 +876,13 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: on a phone connected to a real home library the screen showed its numbers (136 need attention: 63 missing posters, 58 unmatched titles, 15 files that cannot be reached) and said nothing is deleted or changed. \"Rename or match\" and \"Check shows for missing episodes\" were not tried. Test build; the percentage did not change.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23 the Library health screen opened on a Galaxy S9+ signed in as a profile that is not the owner. It listed 59 titles under “Needs attention” (all unmatched titles, with “Rename or match” and “Needs a look”) and said only the owner account can run the folder check. Nothing was deleted or changed. The ready, missing-folder and recovery states were not shown. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: on a phone connected to a real home library the screen showed its numbers (136 need attention: 63 missing posters, 58 unmatched titles, 15 files that cannot be reached) and said nothing is deleted or changed. \"Rename or match\" and \"Check shows for missing episodes\" were not tried. Test build; the percentage did not change. Tested on: Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "The screen opened on a real phone. Found: a misleading counter and a stale “cannot be reached” line; fixed in the code, not yet in a published download."
@@ -868,7 +892,7 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.87, signed in as a non-owner profile."
     },
     {
       "group": "Android phone app",
@@ -882,12 +906,16 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026",
+      "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (test build)",
       "leftToReach100": "Settle how Surprise me should behave (title page first or play at once), fix its error handling, then test stars and playlists on a phone.",
       "previousPercent": 60,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: on the S24 Ultra the Surprise me chooser opened, a playlist was created and deleted, and a title was added to and removed from the watchlist. Surprise me was not played through, favourites and adding a title to a playlist were not tried. Test build; the percentage did not change.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23 (Galaxy S9+): a playlist was created, a title was added to it from its details page, and the playlist was deleted (“The titles stay in your library; only the playlist goes”). The Watchlist and Favourite buttons on a details page put the title into Library > Watchlist and Favourites, and removing it emptied both. The Surprise me chooser opened and “Play a random film” started a film that the player reported playing. Still open: whether Surprise me should show a title page first (Nick's decision) and its error handling. Muted; no person used it for real. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: on the S24 Ultra the Surprise me chooser opened, a playlist was created and deleted, and a title was added to and removed from the watchlist. Surprise me was not played through, favourites and adding a title to a playlist were not tried. Test build; the percentage did not change. Tested on: Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "Adding and removing favourites and watchlist titles, and playlists, worked on a real phone."
@@ -904,7 +932,8 @@
           "Playlist and favourite logic is covered by automated tests.",
           "A change that shows the title before playing is waiting on review.",
           "Oct 12, 2026: Adding and removing favourites and watchlist titles, and playlists, worked on a real phone.",
-          "Oct 13, 2026, S24 Ultra: Surprise me chooser opened; playlist created and deleted; watchlist add and remove worked."
+          "Oct 13, 2026, S24 Ultra: Surprise me chooser opened; playlist created and deleted; watchlist add and remove worked.",
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: playlist created, filled and deleted; watchlist and favourite added and removed; the Surprise me chooser opened and started a film."
         ],
         "remaining": [
           {
@@ -913,7 +942,7 @@
           },
           {
             "kind": "DEVICE",
-            "text": "On a phone: star a title, use several playlists, go back and retry."
+            "text": "On a phone: use several playlists, go back and retry (on Oct 14 one playlist, one watchlist and one favourite each worked once on the S9+)."
           },
           {
             "kind": "NICK",
@@ -931,7 +960,7 @@
           }
         ]
       },
-      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), home Wi-Fi, connected to a home computer running the Beebo desktop app 0.1.87."
     },
     {
       "group": "Android phone app",
@@ -945,8 +974,8 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026",
-      "leftToReach100": "Test guest leave and reconnect and start/stop error cases. The guest page only loaded after mobile data was switched off on the guest phone.",
+      "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+ host); Oct 13, 2026 (test build)",
+      "leftToReach100": "Test guest leave and reconnect and start/stop error cases, make the guest page say plainly when the host has stopped, and test a phone-hotspot route and a guest on mobile data. The guest page only loaded after mobile data was switched off on the guest phone.",
       "roadTo100": {
         "means": "A host phone starts and stops Campsite and real guests join, leave and reconnect cleanly.",
         "done": [
@@ -954,7 +983,8 @@
           "Host start/stop tests pass.",
           "Tried on a real phone as host.",
           "Oct 11, 2026, tester22 build 72: The S24 guest joined the S9+ host over the temporary Wi-Fi; the host showed \"1 guest connected\". Stopping hosting and switching Wi-Fi off passed.",
-          "Oct 13, 2026, home Wi-Fi route: host start, blank-name guest named \"Guest 1\", a guest reconnected after 15 seconds offline, and host stop closed the guest address."
+          "Oct 13, 2026, home Wi-Fi route: host start, blank-name guest named \"Guest 1\", a guest reconnected after 15 seconds offline, and host stop closed the guest address.",
+          "Oct 14, 2026, published tester23, same-Wi-Fi route: a Galaxy S9+ hosted, a Pixel 3 and a Galaxy S24 Ultra joined as guests (“2 guests connected”), and Stop returned the host to its start screen and closed the guest address."
         ],
         "remaining": [
           {
@@ -964,13 +994,21 @@
           {
             "kind": "DEVICE",
             "text": "Test a phone-hotspot route and a guest on mobile data; follow the help text if the guest page does not load."
+          },
+          {
+            "kind": "CODE",
+            "text": "After the host stops, the guest page keeps saying “Reconnecting... held for 90 seconds” for at least two minutes and never says the host stopped; make it say so."
           }
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: the S24 Ultra started hosting, a guest on the S9+ joined with the name left blank and was named \"Guest 1\", the guest came back as the same guest after 15 seconds with Wi-Fi off, and Stop (with its confirmation) closed the guest address. This used the home Wi-Fi route, not a phone hotspot or mobile data. Test build; the percentage did not change.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23 a Galaxy S9+ hosted twice on the same Wi-Fi (Invite guests, “Everyone's already on the same Wi-Fi”: no hotspot, a QR and a plain web address). Morning: the banner “Hosting your campsite” showed, Stop asked for confirmation and the guest address then refused connections. Evening, with a Pixel 3 and a Galaxy S24 Ultra as guests in Chrome: the guest page opened on both with no certificate warning, the host showed “2 guests connected”, and Stop (with its confirmation) returned the host to “Make this phone the host” while both guest pages changed to “Reconnecting...”. Findings: after Stop a guest page kept saying “Reconnecting... your game is held for 90 seconds” for at least two minutes and never says the host stopped; the Invite-guests sheet stayed half open after Back. Same-Wi-Fi route only: no phone hotspot and no guest on mobile data. Nobody was present for the evening run. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: the S24 Ultra started hosting, a guest on the S9+ joined with the name left blank and was named \"Guest 1\", the guest came back as the same guest after 15 seconds with Wi-Fi off, and Stop (with its confirmation) closed the guest address. This used the home Wi-Fi route, not a phone hotspot or mobile data. Test build; the percentage did not change. Tested on: Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest in the phone browser) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:05 PM Eastern",
           "changeNote": "The S24 guest joined the S9+ host over the temporary Wi-Fi; the host showed \"1 guest connected\". Stopping hosting and switching Wi-Fi off passed."
@@ -980,7 +1018,7 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest in the phone browser) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "Samsung Galaxy S9+ (Android 10) as host, with a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests in Chrome, all on the same home Wi-Fi, running the published Android 1.51-tester23 (build 73)."
     },
     {
       "group": "Android phone app",
@@ -994,12 +1032,16 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (radio and a podcast played; Follow FAILED)",
+      "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+: radio played, Follow still FAILING); Oct 13, 2026 (test build)",
       "leftToReach100": "Fix and re-test Follow on a new podcast (it failed on Oct 13), then test screen-off listening, downloads and the queue.",
       "previousPercent": 60,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: a live radio station and a podcast episode both played on the S24 Ultra (the position moved in real time, pause and stop worked). FAILED: tapping Follow on a new show from the search results showed \"Your Beebo computer had a problem. Try again in a moment.\" three times, and the show never appeared under Following (not diagnosed; it may be the computer's version, the follow route or a very long follow list). Screen-off listening, downloads and queue editing were not tested. Percentage unchanged.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14 (Galaxy S9+, published tester23, home computer on desktop 0.1.87 that morning): a live radio station reached playing within about 8 seconds and pause and stop worked; searching for podcasts listed real shows with cover art. Follow on a new show STILL FAILED with the same “Your Beebo computer had a problem. Try again in a moment.” as on Oct 13; the report marks it as needing a newer desktop, and it was not retried on desktop 0.1.88. Podcast episode playback and screen-off listening were not tested. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: a live radio station and a podcast episode both played on the S24 Ultra (the position moved in real time, pause and stop worked). FAILED: tapping Follow on a new show from the search results showed \"Your Beebo computer had a problem. Try again in a moment.\" three times, and the show never appeared under Following (not diagnosed; it may be the computer's version, the follow route or a very long follow list). Screen-off listening, downloads and queue editing were not tested. Percentage unchanged. Tested on: Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "The radio and podcast screens opened and could be browsed on a real phone. Playback was not checked in this run."
@@ -1016,7 +1058,8 @@
           "Feed, player and background tests pass.",
           "Radio playlists with spaces or relative entries now play (automated tests only).",
           "Oct 12, 2026: The radio and podcast screens opened and could be browsed on a real phone. Playback was not checked in this run.",
-          "Oct 13, 2026, S24 Ultra: a live radio station and a podcast episode played; podcast search found real shows."
+          "Oct 13, 2026, S24 Ultra: a live radio station and a podcast episode played; podcast search found real shows.",
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: a live radio station played, paused and stopped; podcast search listed real shows. Follow on a new show still failed (desktop 0.1.87)."
         ],
         "remaining": [
           {
@@ -1047,7 +1090,7 @@
           }
         ]
       },
-      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.87."
     },
     {
       "group": "Android phone app",
@@ -1061,7 +1104,7 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (a computer-made 3-chapter test book)",
+      "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (a computer-made 3-chapter test book)",
       "leftToReach100": "Play a real audiobook on a phone across chapters and an app restart; the queued test run is still to be done.",
       "roadTo100": {
         "means": "A real audiobook plays on a phone, changes chapters, keeps bookmarks, and resumes after the app restarts.",
@@ -1069,7 +1112,8 @@
           "Checks passed: Built, Automated tests, Real device.",
           "Chapter, bookmark and resume tests exist and pass.",
           "Tried on a real phone earlier.",
-          "Oct 13, 2026, S24 Ultra: test book listed, chapters and start times correct, chapter jump, speed 0.75x to 2x and automatic next chapter worked (sound not heard)."
+          "Oct 13, 2026, S24 Ultra: test book listed, chapters and start times correct, chapter jump, speed 0.75x to 2x and automatic next chapter worked (sound not heard).",
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: the test book showed its chapters and a chapter tap started it in the right place (sound not heard)."
         ],
         "remaining": [
           {
@@ -1087,15 +1131,19 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: a 3-chapter test audiobook (made by computer voice, not a real book) showed its chapters with the right start times, a tap on Chapter Two started it in the right place, speeds 0.75x to 2x worked, and at 2x it moved into Chapter Three by itself. Nobody listened (phone sound was muted) and Bookmark, the book's sleep timer and \"Mark as finished\" were not tested. Percentage unchanged.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14 (Galaxy S9+, published tester23): the 3-chapter computer-made test book listed its chapters (0:00, 0:12, 0:25); tapping Chapter Two started it at about 15.7 seconds with the right title and author, and Pause worked. Muted; nobody listened. Speed, Bookmark, the book sleep timer and “Mark as finished” were not tried on this run. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: a 3-chapter test audiobook (made by computer voice, not a real book) showed its chapters with the right start times, a tap on Chapter Two started it in the right place, speeds 0.75x to 2x worked, and at 2x it moved into Chapter Three by itself. Nobody listened (phone sound was muted) and Bookmark, the book's sleep timer and \"Mark as finished\" were not tested. Percentage unchanged. Tested on: Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.87."
     },
     {
       "group": "Android phone app",
@@ -1153,15 +1201,16 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (video export failed, then passed on a fixed unpublished build)",
-      "leftToReach100": "Merge and publish the export fix, play a finished video by eye, record a real trip with real photos, and review sharing and privacy.",
+      "lastTested": "Oct 14, 2026 (published tester23: made a video on the S24 Ultra and Pixel 3, FAILED on the Galaxy S9+); Oct 13, 2026 (test build)",
+      "leftToReach100": "Find and fix why the video export times out on the Galaxy S9+ (Android 10), play a finished video by eye, record a real trip with real photos, and review sharing and privacy.",
       "roadTo100": {
         "means": "A real trip is captured on a phone, a recap is made and a video exported, and the sharing and privacy behaviour has been reviewed.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Recap and export code exists and automated tests pass.",
           "Oct 13, 2026, S24 Ultra: start trip, \"We're home\", recap card and Present worked.",
-          "Oct 13, 2026: \"Save as a video\" failed on the test build; with the fix it made 5-second and 13-second videos on the S24 (fix not yet in a published download; the videos were not played back)."
+          "Oct 13, 2026: \"Save as a video\" failed on the test build; with the fix it made 5-second and 13-second videos on the S24 (fix not yet in a published download; the videos were not played back).",
+          "Oct 14, 2026, published tester23: “Save as a video” made a 17-second video from 3 photos on a Galaxy S24 Ultra and a Pixel 3 (not played back by eye). It FAILED on a Galaxy S9+ (Android 10) at 1080p, 720p and cards-only with a muxing timeout (error 7002)."
         ],
         "remaining": [
           {
@@ -1170,7 +1219,7 @@
           },
           {
             "kind": "CODE",
-            "text": "Merge the Trip Journal video-export fix (the Oct 13 test build failed to make a video; the fix worked on one phone but is not in a published download)."
+            "text": "The Trip Journal “Save as a video” export fails on the Galaxy S9+ (Android 10) on the published tester23 (muxing timeout, error 7002, also with cards only); find the cause and fix it. It works on the Galaxy S24 Ultra and the Pixel 3."
           },
           {
             "kind": "DEVICE",
@@ -1178,16 +1227,20 @@
           }
         ]
       },
-      "previousPercent": 40,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: on the S24 Ultra, starting and ending a trip, the recap card and Present worked. \"Save as a video\" FAILED twice with \"The video could not be made\" on the test build of the current code. After a fix (on a branch, not yet merged or in a published download) it worked on the S24: a 1-card trip made a video in about 3 seconds and a trip with a test photo and clip made one (13 seconds, 9 MB, no sound). The finished videos were not played back by eye. Real device is ticked for the screens and the re-test of the fixed export; it was tried only with computer-made test files, not a real trip.",
+      "previousPercent": 60,
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23, “Save as a video” worked on two phones and FAILED on one. It made a video on the Galaxy S24 Ultra (3 photos, about 10 seconds, a 17-second video, 2 MB, no sound; the owner was present and watching, per his statement) and on the Pixel 3 (3 photos, under 8 seconds, a 17-second video, 12 MB, no sound). On the Galaxy S9+ (Android 10) it FAILED at 1080p, at 720p and with cards only: “The video could not be made.” (the log shows a muxing timeout error 7002 about 10 seconds in). So the Oct 13 fix works on two phones and not on this older Samsung phone. No finished video was played back by eye on any phone, and only test photos were used, not a real trip. Also on the S9+: Back on the Save-as-a-video screen went straight to More in one press. Percentage unchanged: Real device stays ticked for the screens and the two phones where the export worked; the S9+ failure is recorded here.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: on the S24 Ultra, starting and ending a trip, the recap card and Present worked. \"Save as a video\" FAILED twice with \"The video could not be made\" on the test build of the current code. After a fix (on a branch, not yet merged or in a published download) it worked on the S24: a 1-card trip made a video in about 3 seconds and a trip with a test photo and clip made one (13 seconds, 9 MB, no sound). The finished videos were not played back by eye. Real device is ticked for the screens and the re-test of the fixed export; it was tried only with computer-made test files, not a real trip. Tested on: Samsung Galaxy S24 Ultra: a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download (video export failed); then a build with the export fix, also not published (video export passed)."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra: a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download (video export failed); then a build with the export fix, also not published (video export passed)."
+      "testedOn": "Published Android 1.51-tester23 (build 73) on a Samsung Galaxy S24 Ultra and a Google Pixel 3 (video made) and on a Samsung Galaxy S9+ (Android 10) (video failed), with three test photos."
     },
     {
       "group": "Android phone app",
@@ -1201,8 +1254,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (every game opened and started with a computer opponent; Crazy Eights played by hand; Sea Battle by two people)",
-      "leftToReach100": "Play the games other than Sea Battle with real guests on phones; a phone hotspot and a guest on mobile data are not tested.",
+      "lastTested": "Oct 14, 2026 (published tester23: Reversi by two guests, two games against the computer); Oct 13, 2026 (test build)",
+      "leftToReach100": "Play the games other than Sea Battle and Reversi with real guests on phones; a phone hotspot and a guest on mobile data are not tested.",
       "roadTo100": {
         "means": "Every shipped game has a basic test and has been played on phones with real guests.",
         "done": [
@@ -1211,7 +1264,8 @@
           "Tic-Tac-Toe against the computer ran on the guest phone web page on Oct 11; this does not prove all Campsite games or human shared play.",
           "Oct 11, 2026, tester22 build 72: Tic-Tac-Toe against the computer opponent ran on the guest web page over the temporary Wi-Fi.",
           "Oct 12, 2026: Campsite game-room coverage ran with scripted guests; no other game is claimed as hand-played.",
-          "Oct 13, 2026, home Wi-Fi: 42 of 42 games opened, 41 started with a computer opponent; Crazy Eights played by hand against the computer."
+          "Oct 13, 2026, home Wi-Fi: 42 of 42 games opened, 41 started with a computer opponent; Crazy Eights played by hand against the computer.",
+          "Oct 14, 2026, published tester23: Reversi between two guest phones (roster, start, and a move shown on the other phone); Tic-Tac-Toe and Crazy Eights against the computer on the S9+."
         ],
         "remaining": [
           {
@@ -1229,9 +1283,13 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: through a guest phone on home Wi-Fi, 42 of 42 games opened and 41 started into play with a computer opponent added (the 42nd, \"plates\", asks the host to choose a list first). The game list the app returned has 42 games. Crazy Eights was played by hand against the computer (suit choice and computer turns were correct). This proves games open and start; it does not prove each game is fun or fair, and only Sea Battle has been played start to finish by people. Percentage unchanged.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23, two guests on their own phones (a Pixel 3 and a Galaxy S24 Ultra, in Chrome) joined a Galaxy S9+ host on the same Wi-Fi. The S24 opened Reversi as leader, the Pixel joined the same room, the roster showed both names, Start round put the board on both phones, and a move made on the S24 showed on the Pixel at once. The Pixel's own tap did not visibly change the board (tapped by guessed coordinates in landscape; not counted as a fault). On the S9+ alone, Tic-Tac-Toe with the computer opponent “Hopping Beebo (Bot)” worked, and Crazy Eights against the computer dealt 7 cards each and a move was made. The game list has 42 games; the other games were not re-run on this build. Nobody was present for the Reversi run. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: through a guest phone on home Wi-Fi, 42 of 42 games opened and 41 started into play with a computer opponent added (the 42nd, \"plates\", asks the host to choose a list first). The game list the app returned has 42 games. Crazy Eights was played by hand against the computer (suit choice and computer turns were correct). This proves games open and start; it does not prove each game is fun or fair, and only Sea Battle has been played start to finish by people. Percentage unchanged. Tested on: Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest in the phone browser) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; the earlier Sea Battle game was played by two people on their own phones over the DIRECT-BeeboTV Wi-Fi route."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "Campsite game-room coverage ran with scripted guests; no other game is claimed as hand-played."
@@ -1245,7 +1303,7 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest in the phone browser) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; the earlier Sea Battle game was played by two people on their own phones over the DIRECT-BeeboTV Wi-Fi route."
+      "testedOn": "Published Android 1.51-tester23 (build 73): Samsung Galaxy S9+ (Android 10) as host, a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests in Chrome, all on the same home Wi-Fi."
     },
     {
       "group": "Android phone app",
@@ -1259,14 +1317,15 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (one finding)",
-      "leftToReach100": "Run a real photo and video presentation with guests; the privacy behaviour needs a careful review first.",
+      "lastTested": "Oct 14, 2026 (published tester23: NOT proven); Oct 13, 2026 (one finding, test build)",
+      "leftToReach100": "Run a real photo and video presentation with guests (host with a downloaded video and trip sharing open), re-check the silent-video finding and the guest save on the published download; the privacy behaviour needs a careful review first.",
       "roadTo100": {
         "means": "A host presents photos and videos to real guests on their phones, errors are handled, and privacy has been reviewed.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Built, tests pass, tried on a real phone.",
-          "Oct 13, 2026, two phones: a shared video played its picture on the guest phone but was silent (open finding); guest save arrived after host approval in a test build."
+          "Oct 13, 2026, two phones: a shared video played its picture on the guest phone but was silent (open finding); guest save arrived after host approval in a test build.",
+          "Oct 14, 2026, published tester23: guest pages loaded; no sharing was open, so shared-video playback and guest Save were not tried. Requests without a valid guest cookie were refused."
         ],
         "remaining": [
           {
@@ -1288,15 +1347,19 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13 (early morning two-phone test): a shared, already-downloaded video played its picture on the guest phone but looked silent there (the phone's audio output was idle and no sound was heard); this is not explained. A library title on the same guest phone played with sound. A guest \"save to my phone\" button (a change not yet merged, tested in a test build) showed only after the host switched it on, needed the host to approve, and the file arrived (about 1.6 GB in about 30 seconds); its name had a stray \".dat\" in it and the saved file was not played back. Percentage unchanged.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: NOT proven on the published tester23. In the three-phone Campsite run the guest Photos/Videos pages loaded, but the host had not opened trip sharing and had no downloaded video ready, so there was nothing to play or save: no Save or “Ask to save” control appeared on any guest page, so a guest save could not be tried. Playing a library film “together” would have downloaded about 489 MB to 2.4 GB onto the host phone, so it was not approved and nothing was played. Access checks without a valid guest cookie (file, media, stream, clips and save addresses) returned 404, 401 or 403 and nothing leaked. The Oct 13 finding (a shared downloaded video that looked silent on a guest phone) was not re-run. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13 (early morning two-phone test): a shared, already-downloaded video played its picture on the guest phone but looked silent there (the phone's audio output was idle and no sound was heard); this is not explained. A library title on the same guest phone played with sound. A guest \"save to my phone\" button (a change not yet merged, tested in a test build) showed only after the host switched it on, needed the host to approve, and the file arrived (about 1.6 GB in about 30 seconds); its name had a stray \".dat\" in it and the saved file was not played back. Percentage unchanged. Tested on: Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "Published Android 1.51-tester23 (build 73): Samsung Galaxy S9+ (Android 10) as host, a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests, same home Wi-Fi; access checks run from a PC against the host."
     },
     {
       "group": "Android phone app",
@@ -1357,14 +1420,15 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (QR scanned; installed over the same build)",
+      "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+ host); Oct 13, 2026 (QR scanned; installed over the same build)",
       "leftToReach100": "Install the app through the QR on a phone that never had Beebo, and test bad or expired codes and the 30-minute auto-off.",
       "roadTo100": {
         "means": "A second phone installs the app by scanning the QR over the hotspot, and bad codes are handled.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Built, tests pass, QR page served from a phone.",
-          "Oct 13, 2026, real QR scan by a person on a second phone: page, download (checksum matched) and install over the same build worked; \"Turn off sharing\" closed the address."
+          "Oct 13, 2026, real QR scan by a person on a second phone: page, download (checksum matched) and install over the same build worked; \"Turn off sharing\" closed the address.",
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: the shared file matched the published APK byte for byte and “Turn off sharing” closed the address."
         ],
         "remaining": [
           {
@@ -1382,15 +1446,19 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: the S24 Ultra host showed the QR and address and said sharing switches itself off in 30 minutes. A person pointed the S9+ camera at the QR, the share page loaded, the 43 MB file downloaded (identical SHA-256 to the installed app) and installed (\"App installed\"), and the app opened with no crash. Limits: the S9+ already had this exact build, so it was an update, not a first install on a phone that never had Beebo; iPhone has no file; bad or expired codes and the 30-minute auto-off were not tested. \"Turn off sharing\" made the address answer 404. Percentage unchanged.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23 the Galaxy S9+ host showed the QR and the address and said sharing switches itself off in 30 minutes. The file downloaded from a PC (45,503,408 bytes, SHA-256 starting A04C7222) was byte-identical to the published APK. “Turn off sharing” said guests cannot download the app and the address then answered 404. Not tried: installing it on a second phone (the Oct 13 install was an update over the same build), bad or expired codes and the 30-minute auto-off. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: the S24 Ultra host showed the QR and address and said sharing switches itself off in 30 minutes. A person pointed the S9+ camera at the QR, the share page loaded, the 43 MB file downloaded (identical SHA-256 to the installed app) and installed (\"App installed\"), and the app opened with no crash. Limits: the S9+ already had this exact build, so it was an update, not a first install on a phone that never had Beebo; iPhone has no file; bad or expired codes and the 30-minute auto-off were not tested. \"Turn off sharing\" made the address answer 404. Percentage unchanged. Tested on: Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest, scanning the QR with its camera), home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest, scanning the QR with its camera), home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "Samsung Galaxy S9+ (Android 10) as the Campsite host on the same home Wi-Fi, running the published Android 1.51-tester23 (build 73); the file was downloaded from a PC."
     },
     {
       "group": "Android phone app",
@@ -1785,12 +1853,16 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (switches on a real phone; no screen reader)",
-      "leftToReach100": "Run a full TalkBack and 200% font pass on a phone, compare the large playback controls with the normal ones, then a review.",
-      "previousPercent": 40,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: on the S24 Ultra, text at 150% on Home and Browse grew without clipping; High contrast turned the whole app black with yellow headings and stayed readable; Simple Mode, Reduce motion, Large playback controls and Prefer captions switched on and off without a crash; Caregiver view set Simple Mode, High contrast, 150% text and captions together and turning it off put them back. Not proven: that the bigger playback buttons are bigger, that captions came on by themselves (the test film has no captions), a visible Simple Mode effect beyond a small change on Play, 200% text and TalkBack (the screen reader was not turned on). Real device is ticked for the switches; Real-world check is not.",
+      "lastTested": "Oct 14, 2026 (published tester23; Large playback controls FAILED, low confidence); Oct 13, 2026 (test build)",
+      "leftToReach100": "Run a full TalkBack and 200% font pass on a phone, fix the Large playback controls so they are visibly bigger and fit on screen, then a review.",
+      "previousPercent": 60,
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23 (Galaxy S9+) High contrast (black with yellow headings, readable), Reduce motion, Simple Mode (it visibly hid Stories on Play and the Tools group on More), Large playback controls and Prefer captions each switched on and off without a crash, and Caregiver view turned on high contrast and the largest text (the bottom tab bar then wrapped to two rows) and turning it off put everything back. Text size 1.3: Home, Browse, Library, Play and More showed no clipped text on the S9+ and the Pixel 3, nor did the Music and More screens on the S24 Ultra, and Beebo's own Larger text 130% opened all five tabs on the S25 (its Library chip row scrolls sideways, so Favourites and Playlists need a scroll). FAILED (low confidence): Large playback controls. With it on, the skip and pause buttons were the same size as with it off and the top button row ran off the right edge (“BAD Q” cut off). Also at 150% text the bottom tab bar wraps to two rows. Prefer captions could not be checked (no film with subtitles). TalkBack was not run. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: on the S24 Ultra, text at 150% on Home and Browse grew without clipping; High contrast turned the whole app black with yellow headings and stayed readable; Simple Mode, Reduce motion, Large playback controls and Prefer captions switched on and off without a crash; Caregiver view set Simple Mode, High contrast, 150% text and captions together and turning it off put them back. Not proven: that the bigger playback buttons are bigger, that captions came on by themselves (the test film has no captions), a visible Simple Mode effect beyond a small change on Play, 200% text and TalkBack (the screen reader was not turned on). Real device is ticked for the switches; Real-world check is not. Tested on: Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "The accessibility switches were tried on and off on a real phone. Found: some text was clipped at 150% text size; fixed in the code, not yet in a published download. A screen reader (TalkBack) was not tried, so no check changes."
@@ -1806,7 +1878,8 @@
           "Checks passed: Built, Automated tests, Real device.",
           "Preference tests pass; some large-text checks were done on a phone.",
           "Oct 12, 2026: The accessibility switches were tried on and off on a real phone. Found: some text was clipped at 150% text size; fixed in the code, not yet in a published download. A screen reader (TalkBack) was not tried, so no check changes.",
-          "Oct 13, 2026, S24 Ultra: 150% text, High contrast, Simple Mode, Reduce motion, Large playback controls, Prefer captions and Caregiver view (on and off) all switched without a crash; 150% text and High contrast looked right."
+          "Oct 13, 2026, S24 Ultra: 150% text, High contrast, Simple Mode, Reduce motion, Large playback controls, Prefer captions and Caregiver view (on and off) all switched without a crash; 150% text and High contrast looked right.",
+          "Oct 14, 2026, published tester23: the accessibility switches and Caregiver view worked on a Galaxy S9+; text size 1.3 showed no clipped text on three phones. Large playback controls looked the same size as off (low confidence)."
         ],
         "remaining": [
           {
@@ -1828,6 +1901,10 @@
           {
             "kind": "CODE",
             "text": "At 150% text the Caregiver view game cards squeeze their description into a narrow column (cosmetic)."
+          },
+          {
+            "kind": "CODE",
+            "text": "With Large playback controls on, the skip and pause buttons looked the same size as with it off and the top button row ran off the right edge (“BAD Q” cut off) on the Galaxy S9+; at 150% text the bottom tab bar wraps to two rows."
           }
         ],
         "hist": [
@@ -1837,7 +1914,7 @@
           }
         ]
       },
-      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "Published Android 1.51-tester23 (build 73) on a Samsung Galaxy S9+ (switches, Caregiver view, text size), a Google Pixel 3 and a Samsung Galaxy S24 Ultra (text size 1.3) and a Samsung Galaxy S25 (in-app Larger text 130%)."
     },
     {
       "group": "Android phone app",
@@ -1851,23 +1928,20 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (three computer-made sample songs; sound not heard)",
-      "leftToReach100": "Have a person listen to real music on the phone, test crossfade, gapless, the queue and album and artist radio, and fix the Albums / Artists / Songs buttons overlapping the \"Mixes and radio\" heading.",
-      "previousPercent": null,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "New row. Oct 13: three computer-made sample songs from the home computer showed as an album on both phones; play, next, previous, pause, the full player and the sleep timer (\"End of track\" paused when the song ended) worked, and a Music streaming-quality choice was saved. Nobody listened (phone sound was muted), so \"plays\" means the app reported playing with the position moving. Found: the Albums / Artists / Songs buttons sit on top of the \"Mixes and radio\" heading on both phones.",
-      "testedOn": "Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87.",
+      "lastTested": "Oct 14, 2026 (published tester23, four phones); Oct 13, 2026 (three computer-made sample songs; sound not heard)",
+      "leftToReach100": "Have a person listen to real music on the phone and test crossfade, gapless, the queue and album and artist radio.",
+      "previousPercent": 60,
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: the Albums / Artists / Songs buttons no longer sit on the “Mixes and radio” heading. On the published tester23 the Music page shows the heading, then the three cards, then the buttons, with no overlap, on the Galaxy S9+, Pixel 3, Galaxy S24 Ultra (also at text size 1.3) and Galaxy S25. On the S9+ the sample album played (First Hop, then Next to Carrot Waltz) and Pause worked. Sound was muted or not judged by ear in these runs, so “plays” means the app reported playing with the position moving. The songs are still the three computer-made samples. Percentage unchanged.",
+      "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
         "means": "Real music plays on a phone with sound, crossfade, gapless playback, queue and radio working, and a reviewer signs off.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
-          "Oct 13, 2026, S24 Ultra and S9+: sample album listed, play, next, previous, pause, full player, sleep timer and the quality choice worked (sound not heard)."
+          "Oct 13, 2026, S24 Ultra and S9+: sample album listed, play, next, previous, pause, full player, sleep timer and the quality choice worked (sound not heard).",
+          "Oct 14, 2026, published tester23: the Music header overlap is gone on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25; the sample album played and paused on the S9+ (sound not heard)."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Fix the Albums / Artists / Songs buttons that overlap the \"Mixes and radio\" heading (seen on two phones)."
-          },
           {
             "kind": "DEVICE",
             "text": "Listen to real music; test crossfade, gapless, queue, lyrics and album and artist radio."
@@ -1877,7 +1951,13 @@
             "text": "No recording with real music or sound heard by a person exists."
           }
         ]
-      }
+      },
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "New row. Oct 13: three computer-made sample songs from the home computer showed as an album on both phones; play, next, previous, pause, the full player and the sleep timer (\"End of track\" paused when the song ended) worked, and a Music streaming-quality choice was saved. Nobody listened (phone sound was muted), so \"plays\" means the app reported playing with the position moving. Found: the Albums / Artists / Songs buttons sit on top of the \"Mixes and radio\" heading on both phones. Tested on: Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -1999,17 +2079,18 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026",
+      "lastTested": "Oct 14, 2026 (published tester23); Oct 13, 2026 (test build)",
       "leftToReach100": "Send a real request and confirm it reaches the owner, and test the Complete filter and the trailer buttons.",
-      "previousPercent": null,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "New row. Oct 13: Collections listed 101 collections with posters and counts; search narrowed 101 to 1 for \"alien\", the Missing films filter kept it, and the Alien Collection showed \"2 of 4 in your library\" with the two missing films dimmed and a \"Look this up\" button. The Request a title screen opened. Sending a request, the Complete filter and the trailer buttons were not tried.",
-      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87.",
+      "previousPercent": 60,
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23 the Galaxy S9+ listed 101 collections with posters and counts. Searching for a title that is not in the library offered a Request button on the S9+, Pixel 3 and Galaxy S25 (Request a title also opens on the S25), and titles with an ampersand (Law & Order, Tom&Jerry, Dumb & Dumber, Fast & Furious) searched without any error on all four phones. No request was sent, because it would reach the owner's server. Percentage unchanged.",
+      "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
         "means": "A person browses collections, sees what is missing and sends a request that the owner receives.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
-          "Oct 13, 2026, S24 Ultra: collections listed, searched and opened with missing-film markers; the Request a title screen opened."
+          "Oct 13, 2026, S24 Ultra: collections listed, searched and opened with missing-film markers; the Request a title screen opened.",
+          "Oct 14, 2026, published tester23: 101 collections listed (S9+); a missing title showed the Request button and ampersand searches worked on all four phones; no request was sent."
         ],
         "remaining": [
           {
@@ -2017,7 +2098,13 @@
             "text": "Send a request and see it arrive on the owner side."
           }
         ]
-      }
+      },
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "New row. Oct 13: Collections listed 101 collections with posters and counts; search narrowed 101 to 1 for \"alien\", the Missing films filter kept it, and the Alien Collection showed \"2 of 4 in your library\" with the two missing films dimmed and a \"Look this up\" button. The Request a title screen opened. Sending a request, the Complete filter and the trailer buttons were not tried. Tested on: Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+        }
+      ]
     },
     {
       "group": "Windows desktop app",
@@ -2574,14 +2661,15 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 12, 2026 (phone upload to a home PC; 3 files arrived)",
+      "lastTested": "Oct 14, 2026 (published tester23, camera backup on a Galaxy S9+; the screen opened on three phones); Oct 12, 2026 (phone upload to a home PC; 3 files arrived)",
       "leftToReach100": "Back up a full real phone folder, check the copy, then do the confirmed removal and see the result on a PC.",
       "roadTo100": {
         "means": "A real phone folder is backed up and verified, the confirmed removal works, and the delete steps have been reviewed.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Storage and photo tests pass.",
-          "Oct 12, 2026: uploading from a real phone to a home PC with Space Saver backup worked; 3 files arrived."
+          "Oct 12, 2026: uploading from a real phone to a home PC with Space Saver backup worked; 3 files arrived.",
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: a new photo was backed up to the home computer by the automatic run (3 to 4 files); the Photos & backups screen opened on three phones."
         ],
         "remaining": [
           {
@@ -2598,15 +2686,20 @@
           }
         ]
       },
-      "previousPercent": 40,
-      "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
-      "changeNote": "The Real device check passed: a real phone uploaded 3 files to a home PC. The removal step was not tried.",
+      "previousPercent": 60,
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14: on the published tester23 the Photos & backups screen opened with its four tabs (Library, Camera backup, Folders & cleanup, Private folder) on the Galaxy S9+, Pixel 3 and Galaxy S24 Ultra; nothing was copied or removed on the Pixel and S24. On the S9+ a new test photo put in the camera folder was uploaded by the automatic run within about 8 minutes (the count went from 3 to 4 files) and the page said “Up to date”. Not tried: the confirmed removal of phone copies, mobile data, the remove-location switch and held-back files. Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
+          "changeNote": "The Real device check passed: a real phone uploaded 3 files to a home PC. The removal step was not tried."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
-      ]
+      ],
+      "testedOn": "Published Android 1.51-tester23 (build 73): a Samsung Galaxy S9+ (Android 10, camera backup to a home computer running the Beebo desktop app 0.1.87) and a Google Pixel 3 and Samsung Galaxy S24 Ultra (the screen only)."
     },
     {
       "group": "Windows desktop app",
@@ -2991,8 +3084,8 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (phone on 5G through Beebo Relay); Oct 12, 2026 (friend's house, published Windows 0.1.87)",
-      "leftToReach100": "Retest through Beebo Relay on the currently published builds (Windows 0.1.88 and Android 1.51-tester23) to tick Ready to call Available; Nick decides the price and entitlement rules, a customer-facing way to switch Relay on is merged and tested, and the fallback is proven with two people at once.",
+      "lastTested": "Oct 14, 2026 (published tester23 forced through Beebo Relay on 5G); Oct 13, 2026 (test build); Oct 12, 2026 (friend's house, published Windows 0.1.87)",
+      "leftToReach100": "Retest through Beebo Relay without forcing it, on the published builds (Windows 0.1.88 and Android 1.51-tester23), with the home PC behind a router that cannot make a direct connection, to tick Ready to call Available (a forced Relay pass on those builds worked on Oct 14); Nick decides the price and entitlement rules, a customer-facing way to switch Relay on is merged and tested, and the fallback is proven with two people at once.",
       "roadTo100": {
         "means": "Relay carries video across two real networks, recovers after a drop, and its price is decided.",
         "done": [
@@ -3001,12 +3094,13 @@
           "Oct 12, 2026, about 4:00 to 4:30 AM Eastern, with the published Windows 0.1.87 on a 4-core home PC at a friend's house (router with no UPnP answer) and a Samsung Galaxy S24 Ultra on 5G: with Beebo Relay off the phone could not connect directly; after the owner switched Relay on, it connected through Beebo Relay in about one second and several videos played (fast-forward and pause worked). Not measured with a stopwatch; the usage counter did not move in the first two minutes.",
           "Sep 17-18, 2026 (older builds): away from home through Beebo Relay proven at a friend's house (recorded in the project log).",
           "Oct 12, 2026: A phone on 5G played through Beebo Relay once it was switched on; the first picture came in about 3 seconds. Two people on the relay at once were not tested.",
-          "Oct 13, 2026, S24 Ultra on 5G: a film played through Beebo Relay after the account switch was turned on; the usage counter moved with a delay."
+          "Oct 13, 2026, S24 Ultra on 5G: a film played through Beebo Relay after the account switch was turned on; the usage counter moved with a delay.",
+          "Oct 14, 2026, published tester23 on a Galaxy S24 Ultra on 5G with “Always use Beebo Relay” forced on, home computer on desktop 0.1.88: the route screen and app log showed Beebo Relay and a film played (30 MB). A forced test, not the natural fallback."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "To tick Ready to call Available: retest through Beebo Relay on the currently published builds (Windows 0.1.88 and Android 1.51-tester23) on a real phone on mobile data, with the home PC behind a router that cannot make a direct connection, and record the result."
+            "text": "To tick Ready to call Available: retest through Beebo Relay without forcing it, on the currently published builds (Windows 0.1.88 and Android 1.51-tester23), on a real phone on mobile data, with the home PC behind a router that cannot make a direct connection, and record the result. (A forced Relay pass on those builds worked on Oct 14.)"
           },
           {
             "kind": "DEVICE",
@@ -3023,9 +3117,13 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 14, 2026, 10:48 AM Eastern",
-      "changeNote": "Oct 14: added the real-world record behind the Real device and Real-world ticks. On Oct 12, 2026 (about 4:00 to 4:30 AM Eastern) a home PC running the published Windows 0.1.87, at a friend's house on a router with no automatic port opening (UPnP got no answer), could not be reached directly from the phone browser of a Samsung Galaxy S24 Ultra on 5G (\"Couldn't connect directly\"); after the owner switched Beebo Relay on, the phone connected through Beebo Relay in about one second and several videos played, with fast-forward and pause working. Earlier proof: away from home through Beebo Relay at a friend's house on Sep 17-18, 2026 (older builds). Ready to call Available is still not ticked: it needs a retest through Beebo Relay on the currently published builds (Windows 0.1.88 and Android 1.51-tester23). Percentage unchanged at 80.",
+      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+      "changeNote": "Oct 14 (evening): one forced-relay pass on the published builds. On a Galaxy S24 Ultra on 5G (Wi-Fi off) running the published Android 1.51-tester23, with “Always use Beebo Relay” switched on for the test (it was off before and was put back off), the route screen read “Beebo Relay (you chose Always use Beebo Relay)”, “Phone > Beebo Relay > your PC”, the app log showed the relay path, and a film played (“This connection: 30 MB”). The home computer was the one running desktop 0.1.88. The Relay usage counter did not move for those 30 MB (a counter delay seen before). The owner was present and watching, per his statement. This was a forced test on a home that can also be reached directly, so it is not the natural-fallback case this row still needs: a home PC behind a router that cannot make a direct connection, on the published builds. Not tested: the second (4-core) home through Beebo Relay from the S24 (the phone had no way to open it) and two people at once. Percentage unchanged at 80; Ready to call Available stays not yet; status stays Beta.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 14, 2026, 10:48 AM Eastern",
+          "changeNote": "Oct 14: added the real-world record behind the Real device and Real-world ticks. On Oct 12, 2026 (about 4:00 to 4:30 AM Eastern) a home PC running the published Windows 0.1.87, at a friend's house on a router with no automatic port opening (UPnP got no answer), could not be reached directly from the phone browser of a Samsung Galaxy S24 Ultra on 5G (\"Couldn't connect directly\"); after the owner switched Beebo Relay on, the phone connected through Beebo Relay in about one second and several videos played, with fast-forward and pause working. Earlier proof: away from home through Beebo Relay at a friend's house on Sep 17-18, 2026 (older builds). Ready to call Available is still not ticked: it needs a retest through Beebo Relay on the currently published builds (Windows 0.1.88 and Android 1.51-tester23). Percentage unchanged at 80. Tested on: Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; Beebo Relay on our own server; the home computer runs the published desktop 0.1.87. Oct 12, 2026 record: the phone browser of a Samsung Galaxy S24 Ultra on 5G to a 4-core Windows PC at a friend's house running the published desktop 0.1.87, through Beebo Relay on our own server (the phone also had the published Android 1.51-tester22 installed)."
+        },
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "Oct 13: at first the phone could not use Beebo Relay: the test account's relay switch was off on the server, so the app (as designed) fell back to the normal connection. After the owner ran a script to switch it on, the S24 Ultra on 5G with Wi-Fi off connected through Beebo Relay and played a film (about 106 MB; the route card said Beebo Relay). The monthly usage counter moved from 4.1 to 4.3 GB about 20 minutes later, so usage is counted with a delay. Gap found: no screen in the phone app, desktop app or website lets a customer switch Relay on for their own account (a fix is written but not merged). Two people on Relay at once were not tested. Percentage unchanged."
@@ -3039,7 +3137,7 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; Beebo Relay on our own server; the home computer runs the published desktop 0.1.87. Oct 12, 2026 record: the phone browser of a Samsung Galaxy S24 Ultra on 5G to a 4-core Windows PC at a friend's house running the published desktop 0.1.87, through Beebo Relay on our own server (the phone also had the published Android 1.51-tester22 installed)."
+      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running the published Android 1.51-tester23 (build 73) with “Always use Beebo Relay” switched on for the test, through Beebo Relay on our own server to a home computer running the Beebo desktop app 0.1.88. Earlier record (Oct 12, 2026): the phone browser of a Samsung Galaxy S24 Ultra on 5G to a 4-core Windows PC at a friend's house running the published desktop 0.1.87, through Beebo Relay on our own server (the phone also had the published Android 1.51-tester22 installed)."
     },
     {
       "group": "Services and website",
@@ -3545,18 +3643,25 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+  "previousUpdatedEastern": "Oct 14, 2026, 10:48 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
-    "recordName": "October 13 update record",
+    "recordName": "October 14 update record",
     "scope": "Desktop, phones, browser, servers",
-    "lastTested": "Oct 13, 2026, 1:15 PM Eastern",
-    "lastTestedIso": "2026-10-13T13:15:00-04:00",
-    "previousTested": "Oct 12, 2026",
+    "lastTested": "Oct 14, 2026, 9:06 PM Eastern",
+    "lastTestedIso": "2026-10-14T21:06:00-04:00",
+    "previousTested": "Oct 13, 2026, 1:15 PM Eastern",
     "broader": "Still required",
-    "newerText": "the published downloads are Windows {desktop} and Android {android}. On Oct 13 we ran a full device pass with a Galaxy S24 Ultra, a Galaxy S9+, a Windows PC and a real Chromecast on a living-room TV, on home Wi-Fi and on 5G. It used a test build of the current code, not the published downloads (a newer Windows 0.1.88 test build, and a phone app build with some unmerged fixes), so no feature was marked Ready. It was counted in the progress table: a few checks moved up, new rows were added, and three failures are written down plainly (podcast Follow, Trip Journal video export before its fix, and the silent desktop Music window). Not tested: Beebo Auto in a car, Android TV, Fire TV, TalkBack, a real wake from sleep, Live TV with a tuner, other TVs and receivers, and a phone that never had Beebo installing from the QR. Earlier results are on <a href=\"whats-tested.html\">What’s new and what’s tested</a> and the release notes are on <a href=\"updates.html\">Updates</a>."
+    "newerText": "the published downloads are Windows {desktop} and Android {android}. On Oct 14 we installed that exact published phone file on four phones (a Galaxy S9+, a Pixel 3, a Galaxy S24 Ultra and a Galaxy S25), ran the single-phone checklist on each, and ran a three-phone Campsite test. The results are in <a href=\"#published-run\">Today’s published-build run</a>: no crash was logged, no percentage changed (those paths already had a Real device tick; they now rest on the exact published file too), and the failures are written down plainly (Trip Journal “Save as a video” on the Galaxy S9+, the demo-mode subtitles hint, and Large playback controls). Not tested today: Chromecast, Beebo Auto in a car, the second home through Beebo Relay from the S24, shared-video playback in Campsite and guest Save, and TalkBack. The Oct 13 full device pass used test builds and stays in the history below. Earlier results are on <a href=\"whats-tested.html\">What’s new and what’s tested</a> and the release notes are on <a href=\"updates.html\">Updates</a>."
   },
   "historyNew": [
+    {
+      "iso": "2026-10-14",
+      "date": "Oct 14, 2026 (Eastern)",
+      "headline": "Published Android 1.51-tester23 on four phones, plus a three-phone Campsite test: no crash logged, three failures written down, no percentage changed",
+      "tested": "The published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern), installed from the website download, on a Samsung Galaxy S9+ (Android 10, 7:14 to 8:25 AM Eastern), a Google Pixel 3 (Android 12, about 7:15 to 7:45 PM), a Samsung Galaxy S24 Ultra (8:28 to 8:48 PM, home Wi-Fi, 5G and Beebo Relay) and a Samsung Galaxy S25 (Android 16, 8:28 to 8:41 PM), plus a three-phone Campsite test (S9+ host, Pixel 3 and S24 guests, 8:56 to 9:06 PM). The home computers ran the Beebo desktop app: 0.1.87 for the morning S9+ run, 0.1.88 for the S24 run. An old Android 4.4 phone cannot run the app (it needs Android 7 or newer). Nick Will (owner) was present and watching live during the S24 and S25 runs, per his statement (from about 8:35 PM Eastern; the S9+, Pixel 3 and Campsite runs had no one watching).",
+      "happened": "Galaxy S9+: 47 passed, 3 failed, 2 need a newer desktop, 12 skipped. Pixel 3: 13 passed, 0 failed, 2 skipped. Galaxy S24 Ultra: 15 passed, 0 failed, 1 partly, 2 skipped. Galaxy S25: 14 passed, 0 failed. Campsite on three phones: 7 passed, 1 partly, 1 skipped. No crash was logged on any phone. Passed on the published file: the five tabs, the Back button rule on the screens tried, the Music header with no overlap, search with an ampersand, playing, pausing and seeking, Story mode (opening it and Back), Photos & backups (opening), the Connection route screen, away from home on 5G directly, one film forced through Beebo Relay, the Trip Journal video on the S24 Ultra and Pixel 3, Campsite host start and stop, guest pages, and Reversi between two guest phones. Failed: Trip Journal “Save as a video” on the Galaxy S9+ (muxing timeout, at 1080p, 720p and cards-only); the demo mode page says to tap a subtitles button the demo player does not have; Large playback controls looked the same size as off (low confidence). Still failing, needing a newer desktop: podcast Follow. Not proven: shared-video playback in Campsite and a guest Save (nothing was shared and no Save control appeared). Noted: Back inside a story takes four to five presses to reach Home; an episode took about 50 seconds to start on the S24 at home; after the host stops Campsite a guest page keeps saying “Reconnecting”. No percentage changed and no new check was ticked: the paths already had a Real device tick, and no Real-world check was added because the steps were run by a helper. Not tested: Chromecast, Beebo Auto in a car, the second (4-core) home and its Beebo Relay check from the S24, TalkBack, a finished Trip Journal video watched by eye, and landscape tab screens on the S24."
+    },
     {
       "iso": "2026-10-13",
       "date": "Oct 13, 2026 (Eastern)",
