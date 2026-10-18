@@ -479,9 +479,9 @@
     "fontStatus": "Self-hosted Google Fonts are pending approval to obtain font packages; no package was added."
   },
   "releaseChanges": {
-    "title": "What changed since the last release",
-    "summary": "Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
-    "sourceNote": "These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
+    "title": "Historical changes recorded October 14, 2026",
+    "summary": "October 14 record: Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
+    "sourceNote": "Historical release comparison, not the new release: These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
   "updated": "2026-10-14T21:44:00-04:00",
   "updatedEastern": "Oct 14, 2026, 9:44 PM Eastern",
@@ -3652,7 +3652,7 @@
     "lastTestedIso": "2026-10-14T21:06:00-04:00",
     "previousTested": "Oct 13, 2026, 1:15 PM Eastern",
     "broader": "Still required",
-    "newerText": "the published downloads are Windows {desktop} and Android {android}. On Oct 14 we installed that exact published phone file on four phones (a Galaxy S9+, a Pixel 3, a Galaxy S24 Ultra and a Galaxy S25), ran the single-phone checklist on each, and ran a three-phone Campsite test. The results are in <a href=\"#published-run\">Today’s published-build run</a>: no crash was logged, no percentage changed (those paths already had a Real device tick; they now rest on the exact published file too), and the failures are written down plainly (Trip Journal “Save as a video” on the Galaxy S9+, the demo-mode subtitles hint, and Large playback controls). Not tested today: Chromecast, Beebo Auto in a car, the second home through Beebo Relay from the S24, shared-video playback in Campsite and guest Save, and TalkBack. The Oct 13 full device pass used test builds and stays in the history below. Earlier results are on <a href=\"whats-tested.html\">What’s new and what’s tested</a> and the release notes are on <a href=\"updates.html\">Updates</a>."
+    "newerText": "Historical October 14 record: the published downloads then were Windows 0.1.88 and Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern). On Oct 14 we installed that exact published phone file on four phones (a Galaxy S9+, a Pixel 3, a Galaxy S24 Ultra and a Galaxy S25), ran the single-phone checklist on each, and ran a three-phone Campsite test. The results are in <a href=\"#published-run\">Today’s published-build run</a>: no crash was logged, no percentage changed (those paths already had a Real device tick; they now rest on the exact published file too), and the failures are written down plainly (Trip Journal “Save as a video” on the Galaxy S9+, the demo-mode subtitles hint, and Large playback controls). Not tested today: Chromecast, Beebo Auto in a car, the second home through Beebo Relay from the S24, shared-video playback in Campsite and guest Save, and TalkBack. The Oct 13 full device pass used test builds and stays in the history below. Earlier results are on <a href=\"whats-tested.html\">What’s new and what’s tested</a> and the release notes are on <a href=\"updates.html\">Updates</a>."
   },
   "historyNew": [
     {
@@ -3683,5 +3683,15 @@
       "tested": "Android 1.51-tester17 (build 67), installed over tester16 on a Samsung Galaxy S9+ (Android 10) by cable; home Wi-Fi only.",
       "happened": "Passed: the install over the older build kept the signed-in account; cold start to Home in under a second; all five tabs and search; the Connection route screen (home Wi-Fi, direct); play, pause, resume and seek forward and back; the floating picture-in-picture window when pressing Home during a film; the quality picker and the subtitle menu opening (the film tried had no built-in subtitles); audio kept playing with the screen off when the “Screen off” switch was turned on; progress kept after force-closing the app; Audio only mode with Home; no crash was logged. Did not pass: on this phone “Screen off” was Off when first seen, so audio stopped when the screen turned off until the switch was turned on; we could not tell whether that was an earlier choice or the default on a fresh install, so the new-install default is untested. Not run: rotating back to portrait, and the watchlist star (not reachable in the landscape dialog). Note: Surprise me starts a random film straight away rather than showing a title page. Not tested: the Galaxy S24 Ultra, a car, a TV, mobile data or Beebo Relay, and a fresh install."
     }
-  ]
+  ],
+  "currentRelease": {
+    "windows": "0.1.89",
+    "android": "1.51-tester24",
+    "androidBuild": 74,
+    "sourceSha": "f3714216169ff9eda5c487bf928dea86d889917f",
+    "publishedAtUtc": "2026-10-18T11:06:27.940Z",
+    "publishedAtEastern": "Oct 18, 2026, 7:06 AM Eastern",
+    "deviceChecks": "NOT tested on these exact release files yet",
+    "historicalEvidence": "Existing feature evidence, percentages and dates retain their original versions; no device coverage transferred."
+  }
 }
