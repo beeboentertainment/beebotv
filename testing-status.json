@@ -1,7 +1,7 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 19, 2026, 7:52 AM Eastern",
+    "updatedEastern": "Oct 19, 2026, 8:51 AM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 66 features are counted, including those that are only planned or paused.",
     "overall": {
       "codeDone": 91,
@@ -756,8 +756,8 @@
     "summary": "October 14 record: Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "Historical release comparison, not the new release: These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-19T07:52:00-04:00",
-  "updatedEastern": "Oct 19, 2026, 7:52 AM Eastern",
+  "updated": "2026-10-19T08:51:00-04:00",
+  "updatedEastern": "Oct 19, 2026, 8:51 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -842,7 +842,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -925,7 +926,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -1002,7 +1004,13 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": [],
+      "howTo": [
+        "Take a phone away from your home Wi-Fi (mobile data, or a friend's Wi-Fi) with Beebo signed in.",
+        "Open your library and play a film for a few minutes; the route card says which connection is used.",
+        "Switch the phone between Wi-Fi and mobile data while playing and check it carries on."
+      ]
     },
     {
       "group": "Android phone app",
@@ -1065,7 +1073,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -1119,7 +1128,13 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": [],
+      "howTo": [
+        "In a parked car, host a Car Party on one phone and note the code.",
+        "Join from a second phone with that code (or the QR) and check you see what is playing and who is in the car.",
+        "Repeat on camp Wi-Fi with no internet."
+      ]
     },
     {
       "group": "Android phone app",
@@ -1178,7 +1193,11 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": [],
+      "howTo": [
+        "On a phone, open Library health and look at the three states: all clear, a missing folder, and recovery after the computer is back."
+      ]
     },
     {
       "group": "Android phone app",
@@ -1247,7 +1266,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -1307,7 +1327,13 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": [],
+      "howTo": [
+        "Host Campsite on one phone and join from two other phones.",
+        "Stop the host and check the guest page now says the host has stopped.",
+        "Try a phone-hotspot route, and one guest on mobile data."
+      ]
     },
     {
       "group": "Android phone app",
@@ -1381,7 +1407,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -1435,7 +1462,12 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": [],
+      "howTo": [
+        "Play a real audiobook with sound across two chapters, close the app, reopen it and check it resumes in the right place.",
+        "Try Bookmark and the sleep timer."
+      ]
     },
     {
       "group": "Android phone app",
@@ -1477,7 +1509,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -1535,7 +1568,12 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": [],
+      "howTo": [
+        "Start a trip, take a few photos and clips, then finish the trip (\"We're home\") and open the recap.",
+        "Use Save as a video on an older phone (for example Android 10), then play the finished video from start to end."
+      ]
     },
     {
       "group": "Android phone app",
@@ -1599,7 +1637,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -1659,7 +1698,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -1707,7 +1747,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -1760,7 +1801,12 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": [],
+      "howTo": [
+        "On a phone that has never had Beebo, scan the Share the app QR from the host phone over the hotspot and install the app.",
+        "Wait 30 minutes (or switch sharing off) and check the same QR now says plainly that it has expired."
+      ]
     },
     {
       "group": "Android phone app",
@@ -1808,7 +1854,12 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": [],
+      "howTo": [
+        "Put your Windows PC to sleep.",
+        "On the phone, use Wake my PC and check the PC wakes up, then write down what happened."
+      ]
     },
     {
       "group": "Android phone app",
@@ -1876,7 +1927,12 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": [],
+      "howTo": [
+        "Cast a film from the phone to a real Chromecast TV and check picture and sound.",
+        "Try a converted film, a different kind of TV or receiver, and casting from mobile data."
+      ]
     },
     {
       "group": "Android phone app",
@@ -1925,7 +1981,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -1972,7 +2029,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -2020,7 +2078,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -2059,7 +2118,8 @@
       "codeDonePercent": 50,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -2102,7 +2162,8 @@
       "codeDonePercent": 0,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -2168,7 +2229,14 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": [],
+      "howTo": [
+        "On a real Android TV (and a Roku and a Samsung or LG TV if you have them): open Beebo on the TV and start Link a TV so a code shows.",
+        "On your phone, approve the code (the phone shows the TV name with Approve and Deny).",
+        "Check the TV shows your library, then check it is listed under Linked TVs on the phone.",
+        "Remove the TV from that list on the phone and check the TV can no longer get in."
+      ]
     },
     {
       "group": "Android phone app",
@@ -2245,7 +2313,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -2292,7 +2361,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -2337,7 +2407,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -2377,7 +2448,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -2417,7 +2489,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Android phone app",
@@ -2460,7 +2533,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2522,7 +2596,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2589,7 +2664,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2640,7 +2716,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2680,7 +2757,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2723,7 +2801,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2762,7 +2841,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2801,7 +2881,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2840,7 +2921,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2879,7 +2961,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2922,7 +3005,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -2969,7 +3053,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -3008,7 +3093,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -3055,7 +3141,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -3111,7 +3198,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -3177,7 +3265,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -3216,7 +3305,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -3261,7 +3351,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -3301,7 +3392,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Windows desktop app",
@@ -3342,7 +3434,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Other systems",
@@ -3385,7 +3478,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Other systems",
@@ -3428,7 +3522,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Other systems",
@@ -3481,7 +3576,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3520,7 +3616,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3589,7 +3686,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3632,7 +3730,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3672,7 +3771,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3715,7 +3815,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3754,7 +3855,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3797,7 +3899,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3846,7 +3949,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3900,7 +4004,9 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": [],
+      "scoreNote": "Four of the five checks are ticked, which would be 80%, but this feature has been scored 55% since Oct 9, 2026. Our records do not say why. The owner needs to decide whether the score or the ticks should change; until then the number is shown as published."
     },
     {
       "group": "Services and website",
@@ -3944,7 +4050,8 @@
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -3991,7 +4098,8 @@
       "codeDonePercent": 0,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -4038,7 +4146,8 @@
       "codeDonePercent": 0,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -4081,7 +4190,8 @@
       "codeDonePercent": 0,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     },
     {
       "group": "Services and website",
@@ -4128,7 +4238,8 @@
       "codeDonePercent": 0,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": []
     }
   ],
   "statusLabels": [
@@ -4138,7 +4249,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 19, 2026, 7:49 AM Eastern",
+  "previousUpdatedEastern": "Oct 19, 2026, 7:52 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 14 update record",
@@ -4206,5 +4317,481 @@
     "found": "Problems found (fixes in progress): the list says \"No TVs linked yet\" for a few seconds after Approve; the older-style approval text wrongly says \"until you remove it under Linked TVs\"; status messages linger; the hyphen in the code field may move the cursor.",
     "notTested": "Not tested: a real TV, Play on TV, away from home, members other than the owner, the 90-day idle unlink, other phones, Windows 0.1.93.",
     "effect": "Tested on: Google Pixel 3 only. These are limited checks, not proof that everything works. No percentage changed and no Real device or Real-world check was ticked for Link a TV, because no real TV was used."
+  },
+  "checkDefinitions": {
+    "Built": "The code exists and works in the build.",
+    "Automated tests": "The test suite for it passes.",
+    "Real device": "We ran it on a real phone, PC or TV and it worked.",
+    "Real-world check": "It was used in a real situation: away from home, with real family, in a car, on a real TV, or with several devices.",
+    "Ready to call Available": "An independent review or sign-off of the final build exists and no known problem remains."
+  },
+  "ownerTestsNote": "When Nick tests something himself, it is recorded here with the date, the device and the result; a check is only ticked if it passed.",
+  "ownerTestsSchema": "features[].ownerTests is a list of {date (\"Oct 20, 2026, 3:00 PM Eastern\"), device, did, result (\"PASS\" or \"FAIL\"), notes, ticks (only on PASS; any of Real device, Real-world check, Ready to call Available)}. A Real device, Real-world check or Ready to call Available tick that is not in checksBaseline must be backed by a PASS ownerTests entry that lists it. Add entries with tools/add-owner-test.mjs, never by editing checks by hand.",
+  "checksBaseline": {
+    "asOf": "Oct 19, 2026",
+    "features": {
+      "Opening the app and the five tabs": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Playing films, seeking, picture-in-picture": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Away from home (direct, then relay)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Watch Together": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Car party (host and passengers)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Library health": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Surprise me, playlists, watchlist, favourites": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Campsite host start and stop": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Podcasts and radio": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Audiobooks": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Pack for a trip (download planner)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Trip Journal (trips, recap, video export)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Campsite games": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Shared photos and videos": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Wireless speakers": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Share the app (QR over the hotspot)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Wake my PC": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Chromecast": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Beebo Auto (Android Auto)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Android TV and Fire TV screens": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Google Play version": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Phone Help (show your screen to another phone)": {
+        "Built": false,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Stream from my PC (old button)": {
+        "Built": false,
+        "Automated tests": false,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Link a TV": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Accessibility choices (large text, high contrast, reduced motion, TalkBack)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Music on the phone (albums, songs, player, sleep timer)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Family Dashboard, Camp Jobs and Star Chart": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Packing List (shared between phones)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Family Recipes and shopping list": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Collections and Request a title": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Installer and self-update": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Library, player and web player": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Update modes and start with Windows": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Converter and quality / speed settings": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Live TV (tuner and own playlist)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Story Studio": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Movie Night": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Jellyfin-compatible mode": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Parental controls and household profiles": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Keyboard and screen-reader support": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Languages (5 translated with machine help, 3 previews)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Posters and info (TMDB)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Remote Desktop (see and control the PC)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Space Saver": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Library sharing with another household": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Strong volume leveler": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Phone speakers (phones play the film's sound)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Music on the PC (library, mixes, desktop player)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Home layouts and Customize layout (desktop)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Linux server (headless, Docker)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Linux desktop app": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "macOS desktop": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Our own servers and DNS": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Beebo Relay (fallback connection)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Website and browser games": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Password reset and email verification": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Online games (play with others)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Walkie-talkie from anywhere": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Portrait Party (turn a photo into a card)": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Trip Journal link away from home": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "BeeboVPN": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": true,
+        "Real-world check": true,
+        "Ready to call Available": false
+      },
+      "Rewards, ads and credit": {
+        "Built": true,
+        "Automated tests": true,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Beebo Play (hosted game servers)": {
+        "Built": false,
+        "Automated tests": false,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Managed hosting": {
+        "Built": false,
+        "Automated tests": false,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "3D characters and story videos": {
+        "Built": false,
+        "Automated tests": false,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      },
+      "Google Assistant and Alexa": {
+        "Built": false,
+        "Automated tests": false,
+        "Real device": false,
+        "Real-world check": false,
+        "Ready to call Available": false
+      }
+    }
   }
 }
