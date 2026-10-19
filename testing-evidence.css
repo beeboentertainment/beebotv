@@ -404,6 +404,38 @@ html[data-aurora][data-theme="light"] .cs-finishing { color: #8a6100; }
 .cs-lists ul { columns: 2; column-gap: 28px; margin: 10px 0 4px; }
 .cs-cta { margin-top: 16px; padding: 12px 16px; border-radius: 10px; border: 2px solid rgba(110,80,220,.7); background: rgba(110,80,220,.08); }
 .cs-cta .evidence-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.feature-progress-table thead th:nth-child(3) { width: 17%; }
 .code-vs-human-table td .cs-badge { font-size: .8em; }
 @media (max-width: 860px) { .cs-meters { grid-template-columns: 1fr; } .cs-lists ul { columns: 1; } }
+
+/* Open code items on each card (Oct 19, 2026): visible by default, every tag is a word. */
+.cs-open { margin: 8px 0 6px; padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(230,168,20,.7); background: rgba(230,168,20,.10); }
+.cs-open-h, .cs-open-none { margin: 0 0 4px; }
+.cs-open-none { margin: 8px 0 6px; }
+.cs-open ul { margin: 4px 0 0; padding-left: 1.1em; }
+.cs-open li { margin: 5px 0; overflow-wrap: anywhere; }
+.cs-tag { display: inline-block; margin-right: 4px; padding: 0 7px; border-radius: 6px; border: 1px solid currentColor; font-size: .78em; font-weight: 700; line-height: 1.5; white-space: nowrap; }
+.cs-tag-review { color: #5a3fc4; } .cs-tag-test { color: #1f56b3; } .cs-tag-fix { color: #8a3b00; } .cs-tag-build { color: #1c7a3d; } .cs-tag-check { color: #5c6062; }
+html[data-aurora] .cs-tag-review, html[data-beebo-corporate-dark] .cs-tag-review { color: #c3b2ff; }
+html[data-aurora] .cs-tag-test, html[data-beebo-corporate-dark] .cs-tag-test { color: #8fc0ff; }
+html[data-aurora] .cs-tag-fix, html[data-beebo-corporate-dark] .cs-tag-fix { color: #ffb27a; }
+html[data-aurora] .cs-tag-build, html[data-beebo-corporate-dark] .cs-tag-build { color: #6fe29a; }
+html[data-aurora] .cs-tag-check, html[data-beebo-corporate-dark] .cs-tag-check { color: #c9ced1; }
+html[data-aurora][data-theme="light"] .cs-tag-review { color: #5a3fc4; }
+html[data-aurora][data-theme="light"] .cs-tag-test { color: #1f56b3; }
+html[data-aurora][data-theme="light"] .cs-tag-fix { color: #8a3b00; }
+html[data-aurora][data-theme="light"] .cs-tag-build { color: #1c7a3d; }
+html[data-aurora][data-theme="light"] .cs-tag-check { color: #5c6062; }
+@media (prefers-color-scheme: dark) {
+  .cs-tag-review { color: #c3b2ff; } .cs-tag-test { color: #8fc0ff; } .cs-tag-fix { color: #ffb27a; } .cs-tag-build { color: #6fe29a; } .cs-tag-check { color: #c9ced1; }
+}
+.cs-device { margin: 6px 0 0; font-size: .9em; }
+.cs-device summary { cursor: pointer; }
+.cs-device ul { margin: 4px 0 0; padding-left: 1.1em; }
+.cs-device li { margin: 3px 0; overflow-wrap: anywhere; }
+.feature-progress-table thead th:nth-child(1) { width: 12%; }
+.feature-progress-table thead th:nth-child(2) { width: 8%; }
+.feature-progress-table thead th:nth-child(3) { width: 21%; }
+.feature-progress-table thead th:nth-child(4) { width: 10%; }
+.feature-progress-table thead th:nth-child(5) { width: 14%; }
+.feature-progress-table thead th:nth-child(6) { width: 9%; }
+.feature-progress-table thead th:nth-child(7) { width: 26%; }
