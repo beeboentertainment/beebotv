@@ -1,17 +1,17 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 19, 2026, 7:49 AM Eastern",
+    "updatedEastern": "Oct 19, 2026, 7:52 AM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 66 features are counted, including those that are only planned or paused.",
     "overall": {
       "codeDone": 91,
       "humanTestingDone": 28,
       "features": 66,
-      "codeItemsLeft": 32,
+      "codeItemsLeft": 33,
       "counts": {
         "confirmed-on-real-devices": 0,
-        "code-complete-needs-real-world-testing": 33,
-        "code-still-being-finished": 33
+        "code-complete-needs-real-world-testing": 32,
+        "code-still-being-finished": 34
       }
     },
     "groups": [
@@ -20,15 +20,15 @@
         "codeDone": 95,
         "humanTestingLeft": 63,
         "remaining": {
-          "CODE": 4,
+          "CODE": 5,
           "DEVICE": 44,
           "NICK": 5,
           "BLOCKED": 28
         },
         "counts": {
           "confirmed-on-real-devices": 0,
-          "code-complete-needs-real-world-testing": 25,
-          "code-still-being-finished": 5
+          "code-complete-needs-real-world-testing": 24,
+          "code-still-being-finished": 6
         },
         "features": [
           {
@@ -196,8 +196,8 @@
             "name": "Link a TV",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 0,
-            "realWorldStatus": "code-complete-needs-real-world-testing"
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
@@ -756,8 +756,8 @@
     "summary": "October 14 record: Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "Historical release comparison, not the new release: These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-19T07:49:00-04:00",
-  "updatedEastern": "Oct 19, 2026, 7:49 AM Eastern",
+  "updated": "2026-10-19T07:52:00-04:00",
+  "updatedEastern": "Oct 19, 2026, 7:52 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -788,6 +788,10 @@
       "changeNote": "Oct 14: on the published Android 1.51-tester23, all five tabs (Home, Browse, Library, Play, More) opened with content on four phones: Galaxy S9+ (7:14 AM), Pixel 3, Galaxy S24 Ultra and Galaxy S25 (evening). Updating over the older app kept the sign-in on the Pixel 3 and S25. The Back button rule held on the screens tried: from a tab or the player, one or two presses; from a title page, three presses to leave (Browse, Home, out); the story reader is the exception (4 to 5 presses from a later page to reach Home). No crash was logged on any of the four phones. The percentage did not change: Real device was already ticked and now also rests on the exact published file. TalkBack was not run and no review of this build exists.",
       "changeHistory": [
         {
+          "changedEastern": "Oct 19, 2026, 7:50 AM Eastern",
+          "changeNote": "Limited smoke check of the published Android 1.51-tester28 on one Google Pixel 3 (Android 12): all five tabs opened with content, bottom bar on one row, Back worked, no crash logged. The percentage did not change."
+        },
+        {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "Oct 13 full device pass: all five tabs (Home, Browse, Library, Play, More) opened with content on a Galaxy S24 Ultra and a Galaxy S9+, with no crash logged. This was a test build of the current code, not the published download, so the percentage did not change. Tested on: Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
         },
@@ -814,7 +818,8 @@
           "Oct 12, 2026: Galaxy S24 Ultra on the published tester22 build: cold start and restart passed again.",
           "Oct 13, 2026, test build: all five tabs opened with content on both phones (S24 Ultra and S9+), no crash logged.",
           "Oct 14, 2026, published tester23 (build 73): all five tabs opened with content and no crash was logged on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25; Back leaves the app in at most three presses from the screens tried (the story reader needs 4 to 5).",
-          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): six new automated tests check that tapping a tab always replaces the screen instead of restoring an old one, that all five tabs and the old routes are registered, and that an error screen never owns a tab."
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): six new automated tests check that tapping a tab always replaces the screen instead of restoring an old one, that all five tabs and the old routes are registered, and that an error screen never owns a tab.",
+          "Limited check, Oct 19, 2026, 7:37 to 7:50 AM Eastern: the published Android 1.51-tester28 (build 78, installed over tester27) on a Google Pixel 3 (Android 12), home Wi-Fi direct route, signed in as the owner: cold start and all five tabs (Home, Browse, Library, Play, More) opened with content, the bottom bar stayed on one row, the Back button worked and no crash appeared in the log before or after. Percentage unchanged; other phones and TalkBack were not part of this check."
         ],
         "remaining": [
           {
@@ -2120,7 +2125,8 @@
           "Built and tests pass.",
           "Oct 12, 2026: A wrong TV code was refused with a plain message. A real code could not be tried because TV pairing is switched off on the server, so no check changes.",
           "Oct 13, 2026: the Link a TV switch on the live server was read as on.",
-          "Code, Oct 19, 2026 (released in Windows 0.1.93 and Android 1.51-tester28, published Oct 19, 2026, 7:32 AM Eastern; the server part is live): a TV link now stays until you remove it (no 12-hour re-link), the phone has a Linked TVs list with Remove, a linked TV renews its pass with its own secret, and unused links end after 90 days; automated tests cover it. Not tried on a real TV."
+          "Code, Oct 19, 2026 (released in Windows 0.1.93 and Android 1.51-tester28, published Oct 19, 2026, 7:32 AM Eastern; the server part is live): a TV link now stays until you remove it (no 12-hour re-link), the phone has a Linked TVs list with Remove, a linked TV renews its pass with its own secret, and unused links end after 90 days; automated tests cover it. Not tried on a real TV.",
+          "Limited checks, Oct 19, 2026, 7:37 to 7:50 AM Eastern: the published Android 1.51-tester28 (build 78, installed over tester27) on a Google Pixel 3 (Android 12), home Wi-Fi, signed in as the owner, against the live server with a script standing in for the TV (no real TV). A code start worked; the phone showed the TV name with Approve and Deny; approving gave the TV a permanent link; the Linked TVs list showed it with \"Linked\" and \"Last used\" times; renewing gave a fresh pass for the same link; after Remove on the phone a renew was refused (401, link revoked) and the old pass was refused; an older-style pairing created no list entry and lasted 12 hours. Problems found (fixes in progress): the list says \"No TVs linked yet\" for a few seconds after Approve; the older-style approval text wrongly says \"until you remove it under Linked TVs\"; status messages linger; the hyphen in the code field may move the cursor. Not tested: a real TV, Play on TV, away from home, members other than the owner, the 90-day idle unlink. No check was ticked."
         ],
         "remaining": [
           {
@@ -2134,6 +2140,10 @@
           {
             "kind": "BLOCKED",
             "text": "No TV or TV-app pairing result exists, so the feature is not tried even though the server switch is on."
+          },
+          {
+            "kind": "CODE",
+            "text": "Fix the four small screen problems found on the Pixel 3 on Oct 19: the Linked TVs list stays empty for a few seconds after Approve, the older-style approval text wrongly mentions the Linked TVs list, status messages linger, and the hyphen in the code field may move the cursor."
           }
         ]
       },
@@ -2141,6 +2151,10 @@
       "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
       "changeNote": "Oct 13: a read-only check of the live server settings found the Link a TV switch is ON (earlier notes said it was off). Real pairing with a TV was not tried (it needs a TV app showing a code). Percentage unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 19, 2026, 7:50 AM Eastern",
+          "changeNote": "Limited checks of the published Android 1.51-tester28 on one Google Pixel 3 against the live server, with a script standing in for the TV (no real TV): link, Linked TVs list, renew and Remove behaved as designed; four small screen problems found. No percentage changed and no check was ticked."
+        },
         {
           "changedEastern": "Oct 12, 2026, 12:00 PM Eastern",
           "changeNote": "A wrong TV code was refused with a plain message. A real code could not be tried because TV pairing is switched off on the server, so no check changes."
@@ -2153,8 +2167,8 @@
       "testedOn": "Server settings read only; no phone or TV was used for pairing.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
-      "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing"
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Android phone app",
@@ -4124,7 +4138,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 19, 2026, 7:24 AM Eastern",
+  "previousUpdatedEastern": "Oct 19, 2026, 7:49 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 14 update record",
@@ -4182,5 +4196,15 @@
     "confirmed-on-real-devices": "Confirmed working on real devices",
     "code-complete-needs-real-world-testing": "Code complete — needs more real-world testing to confirm",
     "code-still-being-finished": "Code still being finished"
+  },
+  "limitedChecksOct19": {
+    "recordedEastern": "Oct 19, 2026, 7:50 AM Eastern",
+    "recordedIso": "2026-10-19T07:50:00-04:00",
+    "title": "Android 1.51-tester28: limited checks on one Google Pixel 3.",
+    "pass": "The published Android 1.51-tester28 (build 78; file hash starts 4693040d and ends 6f70) was installed over tester27 on a Google Pixel 3 (Android 12) on home Wi-Fi (direct route), signed in as the owner, between 7:37 and 7:50 AM Eastern. Cold start and all five tabs (Home, Browse, Library, Play, More) opened with content, the bottom bar stayed on one row, the Back button worked, and no crash appeared in the log before or after.",
+    "linkTv": "\"Link a TV\" (Beta) was tried against the live server with a script standing in for the TV (no real TV): a code start worked; the phone showed the TV name with Approve and Deny; approval gave the TV a permanent link; the Linked TVs list showed it with \"Linked\" and \"Last used\" times; renewing gave a fresh pass for the same link; after Remove on the phone, a renew attempt was refused (401, link revoked) and the old pass was refused; an older-style pairing created no list entry and lasted 12 hours.",
+    "found": "Problems found (fixes in progress): the list says \"No TVs linked yet\" for a few seconds after Approve; the older-style approval text wrongly says \"until you remove it under Linked TVs\"; status messages linger; the hyphen in the code field may move the cursor.",
+    "notTested": "Not tested: a real TV, Play on TV, away from home, members other than the owner, the 90-day idle unlink, other phones, Windows 0.1.93.",
+    "effect": "Tested on: Google Pixel 3 only. These are limited checks, not proof that everything works. No percentage changed and no Real device or Real-world check was ticked for Link a TV, because no real TV was used."
   }
 }
