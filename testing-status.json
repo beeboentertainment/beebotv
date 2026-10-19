@@ -1,17 +1,17 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 19, 2026, 8:51 AM Eastern",
+    "updatedEastern": "Oct 19, 2026, 9:25 AM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 66 features are counted, including those that are only planned or paused.",
     "overall": {
       "codeDone": 91,
       "humanTestingDone": 28,
       "features": 66,
-      "codeItemsLeft": 33,
+      "codeItemsLeft": 35,
       "counts": {
         "confirmed-on-real-devices": 0,
-        "code-complete-needs-real-world-testing": 32,
-        "code-still-being-finished": 34
+        "code-complete-needs-real-world-testing": 30,
+        "code-still-being-finished": 36
       }
     },
     "groups": [
@@ -20,15 +20,15 @@
         "codeDone": 95,
         "humanTestingLeft": 63,
         "remaining": {
-          "CODE": 5,
+          "CODE": 7,
           "DEVICE": 44,
           "NICK": 5,
           "BLOCKED": 28
         },
         "counts": {
           "confirmed-on-real-devices": 0,
-          "code-complete-needs-real-world-testing": 24,
-          "code-still-being-finished": 6
+          "code-complete-needs-real-world-testing": 22,
+          "code-still-being-finished": 8
         },
         "features": [
           {
@@ -105,8 +105,8 @@
             "name": "Pack for a trip (download planner)",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 0,
-            "realWorldStatus": "code-complete-needs-real-world-testing"
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Trip Journal (trips, recap, video export)",
@@ -119,8 +119,8 @@
             "name": "Campsite games",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 0,
-            "realWorldStatus": "code-complete-needs-real-world-testing"
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Shared photos and videos",
@@ -756,8 +756,8 @@
     "summary": "October 14 record: Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "Historical release comparison, not the new release: These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-19T08:51:00-04:00",
-  "updatedEastern": "Oct 19, 2026, 8:51 AM Eastern",
+  "updated": "2026-10-19T09:25:00-04:00",
+  "updatedEastern": "Oct 19, 2026, 9:25 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -843,7 +843,17 @@
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PASS",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. Home, Browse, Library, Play and More opened with content and the Back button rules held. Not tested in this run: Chromecast, large text, high contrast, reduce motion, Trip Journal video export, pressing Wake my PC, Wireless speakers, podcast downloads and queue editing. One observation, not confirmed as an app fault: tapping a poster's link icon opened the YouTube app with a sign-in or load problem (possibly this phone's setup)."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -927,7 +937,17 @@
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PASS",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. Film and episode playback: the resume dialog, pause and resume, picture-in-picture and back, and the quality, audio and subtitle picker all worked. Seeking forward worked and the seek bar changed the position (a seek-bar tap or drag was checked only from the on-screen time). Video sound pauses with the screen off, which is the expected default. Five starts reached the first picture in 601 ms to 1.8 s (from the start-timing log). Sound heard by a person was not part of this run."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -1010,6 +1030,16 @@
         "Take a phone away from your home Wi-Fi (mobile data, or a friend's Wi-Fi) with Beebo signed in.",
         "Open your library and play a film for a few minutes; the route card says which connection is used.",
         "Switch the phone between Wi-Fi and mobile data while playing and check it carries on."
+      ],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PASS",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. The Account and Connection route card screens opened without error on home Wi-Fi (direct route). Nothing away from home was tested in this run."
+        }
       ]
     },
     {
@@ -1197,6 +1227,16 @@
       "ownerTests": [],
       "howTo": [
         "On a phone, open Library health and look at the three states: all clear, a missing folder, and recovery after the computer is back."
+      ],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PASS",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. The wording was clear for the state it showed (123 items need attention, 64 missing posters, 59 unmatched). Only this one state was seen: a ready library, a missing folder and a recovery were not."
+        }
       ]
     },
     {
@@ -1267,7 +1307,17 @@
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PASS",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. Surprise me, a smart playlist and turning a favourite on and off all worked. Several playlists, a retry and the watchlist were not all repeated."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -1408,7 +1458,17 @@
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. A podcast played and kept playing with the screen off; radio played and survived the screen going off; following and then unfollowing a public podcast worked. Opening Radio from Browse took about 10 seconds, which is slow. Podcast downloads and queue editing were not tested."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -1467,6 +1527,16 @@
       "howTo": [
         "Play a real audiobook with sound across two chapters, close the app, reopen it and check it resumes in the right place.",
         "Try Bookmark and the sleep timer."
+      ],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PASS",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. An audiobook played, paused and kept its position. Chapters across an app restart, Bookmark and the sleep timer were not part of this run."
+        }
       ]
     },
     {
@@ -1500,6 +1570,10 @@
           {
             "kind": "BLOCKED",
             "text": "The smaller-size behaviour is still unresolved."
+          },
+          {
+            "kind": "CODE",
+            "text": "On the first visit to Pack for a trip the size choice and Start packing controls are missing and only appear after reopening the screen; fix in progress (found on the Pixel 3, Oct 19)."
           }
         ]
       },
@@ -1508,9 +1582,19 @@
       "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
-      "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": [],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. The screen opened and the estimate said \"space needed isn't known yet\". BUG: on the first visit the size choice and Start packing controls were missing and only appeared after reopening the screen. Packing was not started, so a real download was not tested."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -1573,6 +1657,16 @@
       "howTo": [
         "Start a trip, take a few photos and clips, then finish the trip (\"We're home\") and open the recap.",
         "Use Save as a video on an older phone (for example Android 10), then play the finished video from start to end."
+      ],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. Trip Journal opened and the recap card showed. Video export was NOT tested because there was no saved trip."
+        }
       ]
     },
     {
@@ -1609,6 +1703,10 @@
           {
             "kind": "BLOCKED",
             "text": "Only one game has a recorded phone result."
+          },
+          {
+            "kind": "CODE",
+            "text": "The solo Patience puzzle's status line shows a literal \"null\"; fix in progress (found on the Pixel 3, Oct 19)."
           }
         ]
       },
@@ -1636,9 +1734,19 @@
       "testedOn": "Published Android 1.51-tester23 (build 73): Samsung Galaxy S9+ (Android 10) as host, a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests in Chrome, all on the same home Wi-Fi.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
-      "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished",
+      "ownerTests": [],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. Crazy Eights against the computer and the solo Patience puzzle were played. BUG: the Patience status line shows a literal \"null\". Only these two games were played, and Wireless speakers were NOT tested."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -1806,6 +1914,16 @@
       "howTo": [
         "On a phone that has never had Beebo, scan the Share the app QR from the host phone over the hotspot and install the app.",
         "Wait 30 minutes (or switch sharing off) and check the same QR now says plainly that it has expired."
+      ],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PASS",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. The Share the app QR page opened. This needed Campsite hosting to be started briefly; it was then stopped and nothing was left listening. Installing on a phone that never had Beebo was not part of this run."
+        }
       ]
     },
     {
@@ -1859,6 +1977,16 @@
       "howTo": [
         "Put your Windows PC to sleep.",
         "On the phone, use Wake my PC and check the PC wakes up, then write down what happened."
+      ],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. The screen text and button were seen. Wake was not pressed and the error and retry messages were NOT tested."
+        }
       ]
     },
     {
@@ -2236,6 +2364,16 @@
         "On your phone, approve the code (the phone shows the TV name with Approve and Deny).",
         "Check the TV shows your library, then check it is listed under Linked TVs on the phone.",
         "Remove the TV from that list on the phone and check the TV can no longer get in."
+      ],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. The Linked TVs screen opened and its list was empty (no TV was linked in this run). No real TV was used."
+        }
       ]
     },
     {
@@ -2314,7 +2452,17 @@
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "deviceTests": [
+        {
+          "tester": "Claude (AI helper)",
+          "device": "Google Pixel 3 (Android 12), home Wi-Fi",
+          "build": "published Android 1.51-tester28 (build 78)",
+          "date": "Oct 19, 2026, 9:23 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. The Accessibility screen opened without error. Large text, high contrast and reduce motion were NOT tested in this run. The phone app has no screen called Appearance."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -4249,7 +4397,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 19, 2026, 7:52 AM Eastern",
+  "previousUpdatedEastern": "Oct 19, 2026, 8:51 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 14 update record",
@@ -4316,7 +4464,8 @@
     "linkTv": "\"Link a TV\" (Beta) was tried against the live server with a script standing in for the TV (no real TV): a code start worked; the phone showed the TV name with Approve and Deny; approval gave the TV a permanent link; the Linked TVs list showed it with \"Linked\" and \"Last used\" times; renewing gave a fresh pass for the same link; after Remove on the phone, a renew attempt was refused (401, link revoked) and the old pass was refused; an older-style pairing created no list entry and lasted 12 hours.",
     "found": "Problems found (fixes in progress): the list says \"No TVs linked yet\" for a few seconds after Approve; the older-style approval text wrongly says \"until you remove it under Linked TVs\"; status messages linger; the hyphen in the code field may move the cursor.",
     "notTested": "Not tested: a real TV, Play on TV, away from home, members other than the owner, the 90-day idle unlink, other phones, Windows 0.1.93.",
-    "effect": "Tested on: Google Pixel 3 only. These are limited checks, not proof that everything works. No percentage changed and no Real device or Real-world check was ticked for Link a TV, because no real TV was used."
+    "effect": "Tested on: Google Pixel 3 only. These are limited checks, not proof that everything works. No percentage changed and no Real device or Real-world check was ticked for Link a TV, because no real TV was used.",
+    "fullRun": "A full single-phone run of the same published build followed on the same Pixel 3 (Oct 19, 2026, 8:46 to 9:23 AM Eastern, run by Claude, our AI helper). No crash appeared in the phone log after any section. Each result is listed under the matching feature in \"Everything we have tested\". Two bugs were found and fixes are in progress: on the first visit to Pack for a trip the size choice and Start packing controls were missing until the screen was reopened, and the solo Patience puzzle's status line showed a literal \"null\". Not tested: Chromecast, large text, high contrast, reduce motion, Trip Journal video export, pressing Wake my PC, Wireless speakers, podcast downloads and queue editing. No Real device check was ticked from this run, because every feature it covered either already had that tick or still has device items that this run did not pass."
   },
   "checkDefinitions": {
     "Built": "The code exists and works in the build.",
@@ -4793,5 +4942,6 @@
         "Ready to call Available": false
       }
     }
-  }
+  },
+  "deviceTestsSchema": "features[].deviceTests is a list of {tester, device, build, date (\"Oct 19, 2026, 9:23 AM Eastern\"), result (\"PASS\", \"PARTIAL\" or \"FAIL\"), evidence, ticks}. It records a test a helper ran on a real device. ticks may only be [\"Real device\"], only on a PASS, and only if every single-phone device item listed for the feature passed. A Real device tick after Oct 19, 2026 needs a PASS deviceTests or ownerTests record that lists it. Real-world check and Ready to call Available can only be ticked through ownerTests."
 }
