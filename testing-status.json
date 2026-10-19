@@ -1,17 +1,17 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 19, 2026, 7:24 AM Eastern",
+    "updatedEastern": "Oct 19, 2026, 7:49 AM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 66 features are counted, including those that are only planned or paused.",
     "overall": {
       "codeDone": 91,
       "humanTestingDone": 28,
       "features": 66,
-      "codeItemsLeft": 36,
+      "codeItemsLeft": 32,
       "counts": {
         "confirmed-on-real-devices": 0,
-        "code-complete-needs-real-world-testing": 29,
-        "code-still-being-finished": 37
+        "code-complete-needs-real-world-testing": 33,
+        "code-still-being-finished": 33
       }
     },
     "groups": [
@@ -20,15 +20,15 @@
         "codeDone": 95,
         "humanTestingLeft": 63,
         "remaining": {
-          "CODE": 7,
-          "DEVICE": 43,
+          "CODE": 4,
+          "DEVICE": 44,
           "NICK": 5,
           "BLOCKED": 28
         },
         "counts": {
           "confirmed-on-real-devices": 0,
-          "code-complete-needs-real-world-testing": 22,
-          "code-still-being-finished": 8
+          "code-complete-needs-real-world-testing": 25,
+          "code-still-being-finished": 5
         },
         "features": [
           {
@@ -49,8 +49,8 @@
             "name": "Away from home (direct, then relay)",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1,
-            "realWorldStatus": "code-still-being-finished"
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Watch Together",
@@ -63,8 +63,8 @@
             "name": "Car party (host and passengers)",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1,
-            "realWorldStatus": "code-still-being-finished"
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Library health",
@@ -154,8 +154,8 @@
             "name": "Chromecast",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1,
-            "realWorldStatus": "code-still-being-finished"
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Beebo Auto (Android Auto)",
@@ -438,15 +438,15 @@
         "codeDone": 71,
         "humanTestingLeft": 76,
         "remaining": {
-          "CODE": 12,
+          "CODE": 11,
           "DEVICE": 15,
           "NICK": 12,
           "BLOCKED": 4
         },
         "counts": {
           "confirmed-on-real-devices": 0,
-          "code-complete-needs-real-world-testing": 2,
-          "code-still-being-finished": 12
+          "code-complete-needs-real-world-testing": 3,
+          "code-still-being-finished": 11
         },
         "features": [
           {
@@ -474,8 +474,8 @@
             "name": "Password reset and email verification",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1,
-            "realWorldStatus": "code-still-being-finished"
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Online games (play with others)",
@@ -756,8 +756,8 @@
     "summary": "October 14 record: Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "Historical release comparison, not the new release: These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-19T07:24:00-04:00",
-  "updatedEastern": "Oct 19, 2026, 7:24 AM Eastern",
+  "updated": "2026-10-19T07:49:00-04:00",
+  "updatedEastern": "Oct 19, 2026, 7:49 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -944,13 +944,10 @@
           "The owner reported a direct connection on mobile data (5G) earlier; on Oct 3 sign-in and Continue watching worked through the new server.",
           "Oct 12, 2026, two homes on two different networks, with the published Android 1.51-tester22: a direct connection to a home PC worked, a phone on 5G played through Beebo Relay once it was switched on (first picture in about 3 seconds), and the phone browser on 5G played too. Two viewers watched at once from one home PC and both connected directly in about a second. The phone app kept playing across Wi-Fi to 5G to Wi-Fi switches and 24 seconds of airplane mode.",
           "Oct 13, 2026, S24 Ultra on 5G with Wi-Fi off: library, route card and a film worked; the route card updated by itself when Wi-Fi returned.",
-          "Oct 14, 2026, published tester23 on a Galaxy S24 Ultra on 5G with Wi-Fi off, home computer on desktop 0.1.88: library loaded, an episode played about 90 seconds, the route card said direct over the internet and counted 90 MB, and it went back to the home Wi-Fi wording after Wi-Fi returned."
+          "Oct 14, 2026, published tester23 on a Galaxy S24 Ultra on 5G with Wi-Fi off, home computer on desktop 0.1.88: library loaded, an episode played about 90 seconds, the route card said direct over the internet and counted 90 MB, and it went back to the home Wi-Fi wording after Wi-Fi returned.",
+          "Code, Oct 19, 2026: a new <name>.beebo.tv can now claim itself and get its secure certificate (a new claim route; at most 5 new names per account a week, with site-wide and per-address limits); automated tests cover the server, the certificate check and the desktop agent. The server part is live (deployed Oct 19); the desktop agent part is merged and ships in the next Windows release (not in 0.1.93)."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "A new home name could not get its secure certificate until it was registered by hand. Still open."
-          },
           {
             "kind": "DEVICE",
             "text": "Test two people watching through Beebo Relay at once."
@@ -962,6 +959,10 @@
           {
             "kind": "NICK",
             "text": "Decide the Relay price."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Register a brand-new home name with the next Windows release and confirm its secure certificate arrives without any manual step."
           }
         ],
         "hist": [
@@ -995,8 +996,8 @@
       "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.88; the route screen was also read on the home Wi-Fi on a Galaxy S9+, Pixel 3 and Galaxy S25.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
-      "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1074,7 +1075,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 13, 2026 (host and one passenger phone, home Wi-Fi)",
-      "leftToReach100": "Test in a real parked car and on camp Wi-Fi with no internet; deploy and re-test the automatic guest name; test a passenger watching what is playing.",
+      "leftToReach100": "Test in a real parked car and on camp Wi-Fi with no internet; re-test the automatic guest name on the live page; test a passenger watching what is playing.",
       "roadTo100": {
         "means": "A host phone and passengers play together in a real car and on camp Wi-Fi, and recover from a lost connection.",
         "done": [
@@ -1082,7 +1083,8 @@
           "Host, guest and recovery tests pass.",
           "The join-code hint and no-internet behaviour were fixed on Oct 3 (not yet re-tested on a phone).",
           "Oct 13, 2026, two real phones on home Wi-Fi: host start with code and QR, passenger joined and saw now playing and who is in the car, left cleanly.",
-          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): ten new automated tests cover the join-code field and hint (six digits; scan-or-read-out hint) and the passenger page being unreachable or switched off. They also found a real bug that was fixed: codes typed with digits from other writing systems (for example Arabic-Indic or full-width) are now turned into plain digits, in the phone app and in Beebo Auto."
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): ten new automated tests cover the join-code field and hint (six digits; scan-or-read-out hint) and the passenger page being unreachable or switched off. They also found a real bug that was fixed: codes typed with digits from other writing systems (for example Arabic-Indic or full-width) are now turned into plain digits, in the phone app and in Beebo Auto.",
+          "Code: a blank Car Party nickname gets the next generated name (\"Guest 1\", \"Guest 2\") in the code since Oct 14, with an automated test. The project coordinator reports the live page no longer refuses a blank name; this page has not re-checked that on the live server."
         ],
         "remaining": [
           {
@@ -1096,10 +1098,6 @@
           {
             "kind": "BLOCKED",
             "text": "No real-car or passenger result is recorded for the newest build."
-          },
-          {
-            "kind": "CODE",
-            "text": "The automatic \"Guest 1\" name for a blank nickname is fixed in the code but not on the live server; the live page still refuses a blank name."
           }
         ]
       },
@@ -1115,8 +1113,8 @@
       "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (passenger page in the phone browser) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download. Not in a car.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
-      "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1841,7 +1839,8 @@
           "On the S24 Ultra the Living Room TV was found, connected, accepted pause, resume and fast-forward, and disconnected.",
           "Oct 11, 2026, tester22 build 72: Original and converted 480p files both cast to the Living Room TV with picture and sound confirmed by the owner; stopping the cast returned control to the phone.",
           "Oct 13, 2026, a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop casting, from both phones.",
-          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): 12 new tests cover converted films and quality choices when casting (the full away-from-home decision table, playlist limits, redirect and key-line rules, the quality-change reload); a rule that let a stray \"METHOD=NONE\" text pass an encrypted-stream key line was fixed."
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): 12 new tests cover converted films and quality choices when casting (the full away-from-home decision table, playlist limits, redirect and key-line rules, the quality-change reload); a rule that let a stray \"METHOD=NONE\" text pass an encrypted-stream key line was fixed.",
+          "Oct 19, 2026: checked, nothing to build. No public page claims the phone volume keys control the TV volume, and the what-we-offer page says plainly that they do not. Phone-volume control stays an idea, not a feature."
         ],
         "remaining": [
           {
@@ -1855,10 +1854,6 @@
           {
             "kind": "BLOCKED",
             "text": "Away-from-home casting and broader receiver testing remain unverified on this build."
-          },
-          {
-            "kind": "CODE",
-            "text": "Phone volume buttons do not change the TV volume while casting; do not claim it (logged as an idea)."
           }
         ],
         "hist": [
@@ -1875,8 +1870,8 @@
       "testedOn": "A real Chromecast on the Living Room TV (a normal Chromecast), cast from the Samsung Galaxy S24 Ultra and the Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; a person watched the TV.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
-      "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -2125,7 +2120,7 @@
           "Built and tests pass.",
           "Oct 12, 2026: A wrong TV code was refused with a plain message. A real code could not be tried because TV pairing is switched off on the server, so no check changes.",
           "Oct 13, 2026: the Link a TV switch on the live server was read as on.",
-          "Code, Oct 19, 2026 (in the code, not yet in a published download): a TV link now stays until you remove it (no 12-hour re-link), the phone has a Linked TVs list with Remove, a linked TV renews its pass with its own secret, and unused links end after 90 days; automated tests cover it. Not tried on a real TV."
+          "Code, Oct 19, 2026 (released in Windows 0.1.93 and Android 1.51-tester28, published Oct 19, 2026, 7:32 AM Eastern; the server part is live): a TV link now stays until you remove it (no 12-hour re-link), the phone has a Linked TVs list with Remove, a linked TV renews its pass with its own secret, and unused links end after 90 days; automated tests cover it. Not tried on a real TV."
         ],
         "remaining": [
           {
@@ -3537,7 +3532,8 @@
           "Oct 12, 2026: A phone on 5G played through Beebo Relay once it was switched on; the first picture came in about 3 seconds. Two people on the relay at once were not tested.",
           "Oct 13, 2026, S24 Ultra on 5G: a film played through Beebo Relay after the account switch was turned on; the usage counter moved with a delay.",
           "Oct 14, 2026, published tester23 on a Galaxy S24 Ultra on 5G with “Always use Beebo Relay” forced on, home computer on desktop 0.1.88: the route screen and app log showed Beebo Relay and a film played (30 MB). A forced test, not the natural fallback.",
-          "Code, Oct 14, 2026 (in Windows 0.1.89, published Oct 18): the desktop Connection screen can switch on the one-month Beebo Relay trial for the owner's own account. It stays hidden until the server switch is turned on, which has not been done."
+          "Code, Oct 14, 2026 (in Windows 0.1.89, published Oct 18): the desktop Connection screen can switch on the one-month Beebo Relay trial for the owner's own account. It stays hidden until the server switch is turned on, which has not been done.",
+          "Code, Oct 19, 2026 (merged; ships in the next release; hidden until the server switch is turned on): Settings > Connection gets the owner's Beebo Relay switch card (Beta) with the first free month, the free tier after it and no purchase; after review it also shows the server's dates, retries and a running month is never shown as used; automated tests cover it."
         ],
         "remaining": [
           {
@@ -3642,7 +3638,8 @@
         "means": "People can reset a password and verify their email with real messages arriving, with expiry and abuse limits tested.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Built and tests pass; switched off."
+          "Built and tests pass; switched off.",
+          "Code, Oct 19, 2026 (merged; ships in the next release; both features stay switched off until mail works): one mail a minute and a daily cap per mailbox (with a rescue send so a stranger cannot lock the owner out), the same work for an existing and a missing account, the verification token kept in the link's # part so it never reaches server logs, and a timed send; automated tests cover it."
         ],
         "remaining": [
           {
@@ -3652,10 +3649,6 @@
           {
             "kind": "DEVICE",
             "text": "Test reset, expiry, delivery and verification with real mail clients."
-          },
-          {
-            "kind": "CODE",
-            "text": "Safe delivery and abuse-limit fixes."
           }
         ]
       },
@@ -3664,8 +3657,8 @@
       "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
-      "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished"
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Services and website",
@@ -3908,12 +3901,13 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Nick decides the policy and whether to switch it on; then app screens are checked with real data and fraud rules are reviewed.",
+      "leftToReach100": "Nick decides the policy and whether to switch it on; the five suspected low-severity bugs recorded by the new fraud tests are looked into; then app screens are checked with real data.",
       "roadTo100": {
         "means": "Rewards, ads and credit work with real data, fraud is blocked, and Nick has approved turning it on.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Ledger and reward tests pass; switched off."
+          "Ledger and reward tests pass; switched off.",
+          "Code, Oct 19, 2026 (merged, tests only; nothing switched on): 110 new fraud and ledger tests for rewards, credit, AdMob verification and the wallet (double spend, tampering, caps, cross-user)."
         ],
         "remaining": [
           {
@@ -3926,7 +3920,7 @@
           },
           {
             "kind": "CODE",
-            "text": "More fraud and ledger tests, after a careful review."
+            "text": "Look into five suspected low-severity bugs that the new fraud tests record as to-do tests."
           }
         ]
       },
@@ -4130,7 +4124,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 19, 2026, 7:16 AM Eastern",
+  "previousUpdatedEastern": "Oct 19, 2026, 7:24 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 14 update record",

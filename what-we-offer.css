@@ -93,3 +93,13 @@
   .wwo-table th, .wwo-table td { border: 0; padding: 2px 0; }
   .wwo-table td[data-label]::before { content: attr(data-label) ": "; color: var(--wwo-text); font-weight: 600; }
 }
+
+/* Where the code is at (Oct 19, 2026): compact summary linking to release-evidence.html#code-status. */
+.wwo-code-status { margin: 14px 0; padding: 14px 16px; border: 1px solid var(--wwo-line); border-radius: 10px; background: var(--wwo-panel); }
+.wwo-code-status h4 { margin: 0 0 6px; }
+.wwo-code-status p { margin: 6px 0; }
+.wwo-cs-meter { margin: 10px 0; }
+.wwo-cs-label { display: flex; justify-content: space-between; gap: 12px; }
+.wwo-cs-bar { display: block; height: 10px; margin-top: 6px; overflow: hidden; border-radius: 999px; background: rgba(128,128,128,.28); }
+.wwo-cs-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #2a6fd6, #57a5ff); }
+.wwo-cs-bar2 i { background: linear-gradient(90deg, #1f8f4c, #63d68c); }
