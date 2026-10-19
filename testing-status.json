@@ -1,278 +1,551 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 11, 2026, 7:25 AM Eastern",
-    "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the rounded average of their features. Remaining counts are open road-to-100 items.",
+    "updatedEastern": "Oct 19, 2026, 7:16 AM Eastern",
+    "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 66 features are counted, including those that are only planned or paused.",
+    "overall": {
+      "codeDone": 91,
+      "humanTestingDone": 28,
+      "features": 66,
+      "codeItemsLeft": 36,
+      "counts": {
+        "confirmed-on-real-devices": 0,
+        "code-complete-needs-real-world-testing": 29,
+        "code-still-being-finished": 37
+      }
+    },
     "groups": [
       {
         "name": "Android phone app",
-        "codeDone": 94,
-        "humanTestingLeft": 67,
+        "codeDone": 95,
+        "humanTestingLeft": 63,
         "remaining": {
-          "CODE": 19,
-          "DEVICE": 34,
+          "CODE": 7,
+          "DEVICE": 43,
           "NICK": 5,
-          "BLOCKED": 29
+          "BLOCKED": 28
+        },
+        "counts": {
+          "confirmed-on-real-devices": 0,
+          "code-complete-needs-real-world-testing": 22,
+          "code-still-being-finished": 8
         },
         "features": [
           {
             "name": "Opening the app and the five tabs",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Playing films, seeking, picture-in-picture",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Away from home (direct, then relay)",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 0
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Watch Together",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Car party (host and passengers)",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Library health",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Surprise me, playlists, watchlist, favourites",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Campsite host start and stop",
             "codeDone": 100,
-            "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "humanTestingLeft": 33,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Podcasts and radio",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Audiobooks",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Pack for a trip (download planner)",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 2
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Trip Journal (trips, recap, video export)",
             "codeDone": 100,
-            "humanTestingLeft": 100,
-            "codeItemsLeft": 0
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
-            "name": "Campsite games (43)",
+            "name": "Campsite games",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Shared photos and videos",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 0
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Wireless speakers",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Share the app (QR over the hotspot)",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Wake my PC",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Chromecast",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Beebo Auto (Android Auto)",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Android TV and Fire TV screens",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 0
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Google Play version",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 0
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Phone Help (show your screen to another phone)",
             "codeDone": 50,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 0
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Stream from my PC (old button)",
             "codeDone": 0,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Link a TV",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 0
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
             "codeDone": 100,
-            "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Music on the phone (albums, songs, player, sleep timer)",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
+          },
+          {
+            "name": "Family Dashboard, Camp Jobs and Star Chart",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Packing List (shared between phones)",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
+          },
+          {
+            "name": "Family Recipes and shopping list",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
+          },
+          {
+            "name": "Collections and Request a title",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           }
         ]
       },
       {
         "name": "Windows desktop app",
         "codeDone": 100,
-        "humanTestingLeft": 85,
+        "humanTestingLeft": 77,
         "remaining": {
-          "CODE": 12,
-          "DEVICE": 25,
+          "CODE": 14,
+          "DEVICE": 30,
           "NICK": 4,
-          "BLOCKED": 1
+          "BLOCKED": 2
+        },
+        "counts": {
+          "confirmed-on-real-devices": 0,
+          "code-complete-needs-real-world-testing": 5,
+          "code-still-being-finished": 14
         },
         "features": [
           {
             "name": "Installer and self-update",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Library, player and web player",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Update modes and start with Windows",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Converter and quality / speed settings",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 0
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Live TV (tuner and own playlist)",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Story Studio",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 0
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Movie Night",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Jellyfin-compatible mode",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Parental controls and household profiles",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Keyboard and screen-reader support",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Languages (5 translated with machine help, 3 previews)",
             "codeDone": 100,
-            "humanTestingLeft": 100,
-            "codeItemsLeft": 0
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Posters and info (TMDB)",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 0
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Remote Desktop (see and control the PC)",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Space Saver",
             "codeDone": 100,
-            "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Library sharing with another household",
             "codeDone": 100,
-            "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "humanTestingLeft": 33,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Strong volume leveler",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Phone speakers (phones play the film's sound)",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Music on the PC (library, mixes, desktop player)",
+            "codeDone": 100,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Home layouts and Customize layout (desktop)",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
+          }
+        ]
+      },
+      {
+        "name": "Other systems",
+        "codeDone": 100,
+        "humanTestingLeft": 89,
+        "remaining": {
+          "CODE": 3,
+          "DEVICE": 6,
+          "NICK": 1,
+          "BLOCKED": 0
+        },
+        "counts": {
+          "confirmed-on-real-devices": 0,
+          "code-complete-needs-real-world-testing": 0,
+          "code-still-being-finished": 3
+        },
+        "features": [
+          {
+            "name": "Linux server (headless, Docker)",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Linux desktop app",
+            "codeDone": 100,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "macOS desktop",
+            "codeDone": 100,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          }
+        ]
+      },
+      {
+        "name": "Services and website",
+        "codeDone": 71,
+        "humanTestingLeft": 76,
+        "remaining": {
+          "CODE": 12,
+          "DEVICE": 15,
+          "NICK": 12,
+          "BLOCKED": 4
+        },
+        "counts": {
+          "confirmed-on-real-devices": 0,
+          "code-complete-needs-real-world-testing": 2,
+          "code-still-being-finished": 12
+        },
+        "features": [
+          {
+            "name": "Our own servers and DNS",
+            "codeDone": 100,
+            "humanTestingLeft": 33,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
+          },
+          {
+            "name": "Beebo Relay (fallback connection)",
+            "codeDone": 100,
+            "humanTestingLeft": 33,
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
+          },
+          {
+            "name": "Website and browser games",
+            "codeDone": 100,
+            "humanTestingLeft": 33,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Password reset and email verification",
+            "codeDone": 100,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Online games (play with others)",
+            "codeDone": 100,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Walkie-talkie from anywhere",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Portrait Party (turn a photo into a card)",
+            "codeDone": 100,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Trip Journal link away from home",
+            "codeDone": 100,
+            "humanTestingLeft": 67,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "BeeboVPN",
+            "codeDone": 100,
+            "humanTestingLeft": 33,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Rewards, ads and credit",
+            "codeDone": 100,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Beebo Play (hosted game servers)",
+            "codeDone": 0,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Managed hosting",
+            "codeDone": 0,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "3D characters and story videos",
+            "codeDone": 0,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
+          },
+          {
+            "name": "Google Assistant and Alexa",
+            "codeDone": 0,
+            "humanTestingLeft": 100,
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           }
         ]
       }
@@ -483,8 +756,8 @@
     "summary": "October 14 record: Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "Historical release comparison, not the new release: These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-14T21:44:00-04:00",
-  "updatedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+  "updated": "2026-10-19T07:16:00-04:00",
+  "updatedEastern": "Oct 19, 2026, 7:16 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -540,13 +813,10 @@
           "Oct 11, 2026, tester22 build 72: Cold launch and all five bottom tabs passed on both the Galaxy S9+ and S24 Ultra, with no crashes logged.",
           "Oct 12, 2026: Galaxy S24 Ultra on the published tester22 build: cold start and restart passed again.",
           "Oct 13, 2026, test build: all five tabs opened with content on both phones (S24 Ultra and S9+), no crash logged.",
-          "Oct 14, 2026, published tester23 (build 73): all five tabs opened with content and no crash was logged on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25; Back leaves the app in at most three presses from the screens tried (the story reader needs 4 to 5)."
+          "Oct 14, 2026, published tester23 (build 73): all five tabs opened with content and no crash was logged on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25; Back leaves the app in at most three presses from the screens tried (the story reader needs 4 to 5).",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): six new automated tests check that tapping a tab always replaces the screen instead of restoring an old one, that all five tabs and the old routes are registered, and that an error screen never owns a tab."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Add a test for returning to a tab after the app is restored or hits an error, if review finds a gap."
-          },
           {
             "kind": "DEVICE",
             "text": "Walk the five tabs with TalkBack (the screen reader) and check labels and focus order."
@@ -563,7 +833,11 @@
           }
         ]
       },
-      "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)"
+      "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -578,7 +852,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23 on four phones); Oct 13, 2026 (test build)",
-      "leftToReach100": "Fix audio stopping when the screen turns off (or Nick decides the default), find out why one episode took about 50 seconds to start on the S24, then re-test rotation and subtitles on a film that has them, and have a person listen on the published download.",
+      "leftToReach100": "Nick decides whether Screen off should stop or keep the audio by default; read the new start-timing line to find why one episode took about 50 seconds to start on the S24; re-test rotation and subtitles on a film that has them, and have a person listen on the published download.",
       "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
       "changeNote": "Oct 14: on the published tester23 a title played, paused and seeked on all four phones. Galaxy S9+: resume prompt worked, +15 and -5 skips moved the position, Pause held it, the quality menu (Auto, 480p, Audio only) worked, the floating picture-in-picture player kept playing and returned to full screen, and with the “Screen off: On” option (already on) the film kept playing with the screen off. Pixel 3: resume, +15 and a drag on the bar moved the position. Galaxy S24 Ultra: an episode played, skipped +15 and -5 and paused, at home and on 5G. Galaxy S25: resume, play and pause held its position. Things to know: on the S24 at home the episode opened paused with a spinner for about 50 seconds before a tap on Play started it (not explained); the reports record the player state and position, not sound heard by a person; and the films tried had no subtitles, so the subtitles menu was not seen (on the Pixel 3 the gear menu showed only Speed and Audio). Percentage unchanged.",
       "previousPercent": 80,
@@ -609,13 +883,11 @@
           "Oct 11, 2026, tester22 build 72: Pause, resume, skip, seek and converted 480p playback passed. Both phones were muted.",
           "Oct 12, 2026: Galaxy S24 Ultra: seek, pause (a 63-second pause held its exact position), quality switching to 480p and 720p, 24 seconds of airplane mode while playing, and Wi-Fi to 5G to Wi-Fi switches all passed. Found: the app’s own picture-in-picture window did not close properly; fixed in the code, not yet in a published download.",
           "Oct 13, 2026, test build on the S24 Ultra and S9+: resume, play, pause, skip, quality menu, picture-in-picture (S9+), 480p kept playing, 2x speed applied. The sound stops with the screen off by default; the Screen off: On option kept playing for 30 seconds (S9+).",
-          "Oct 14, 2026, published tester23 on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25: resume, play, pause, skip and seek worked; on the S9+ the quality menu, the floating picture-in-picture player and playing with the screen off (Screen off: On) worked. One episode took about 50 seconds to start on the S24."
+          "Oct 14, 2026, published tester23 on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25: resume, play, pause, skip and seek worked; on the S9+ the quality menu, the floating picture-in-picture player and playing with the screen off (Screen off: On) worked. One episode took about 50 seconds to start on the S24.",
+          "Code, Oct 12 and Oct 18, 2026: a code review found that sound stopping with the screen off is the intended default (Screen off stays Off until you turn it on) and that Audio only keeps playing with the screen off; tests were added. In Android 1.51-tester27 a film that is still loading or buffering is also paused when the screen goes off with Screen off set to Off (before, only a film already playing was paused); new automated tests cover it. Not yet confirmed by ear on a phone.",
+          "Code, Oct 18, 2026 (Android 1.51-tester27): the app now writes one timing line each time a film starts, with how long each preparation try took, so the cause of a slow start can be read from the phone log. The cause of the 50-second start on the S24 has NOT been found yet."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Find and fix why audio stops about five seconds after the screen turns off, and add a test for it."
-          },
           {
             "kind": "DEVICE",
             "text": "Re-test rotating back to portrait and the subtitle menu on a film that has subtitles."
@@ -633,8 +905,8 @@
             "text": "Two competing screen-off changes are waiting for review and disagree about what the test should expect."
           },
           {
-            "kind": "CODE",
-            "text": "On the S24 at home an episode opened paused with a spinner for about 50 seconds before a tap on Play started it; find out why."
+            "kind": "DEVICE",
+            "text": "Read the new start-timing line the next time an episode starts slowly (for example on the Galaxy S24 at home), then fix the cause."
           }
         ],
         "hist": [
@@ -644,7 +916,11 @@
           }
         ]
       },
-      "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)"
+      "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -716,7 +992,11 @@
           "changeNote": "Fixed the browser page so a recent reload can keep a signed-in away-from-home session; automated tests were added."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.88; the route screen was also read on the home Wi-Fi on a Galaxy S9+, Pixel 3 and Galaxy S25."
+      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.88; the route screen was also read on the home Wi-Fi on a Galaxy S9+, Pixel 3 and Galaxy S25.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Android phone app",
@@ -747,13 +1027,10 @@
           "Checks passed: Built, Automated tests, Real device.",
           "Join and leave tests pass, including the 'room is full' notice.",
           "Leaving a room no longer counts toward the open-room limit (automated tests only).",
-          "Oct 13, 2026, two real phones on home Wi-Fi: host, join as viewer, the viewer followed a 45-second skip within 8 seconds, leave and rejoin within 1 second."
+          "Oct 13, 2026, two real phones on home Wi-Fi: host, join as viewer, the viewer followed a 45-second skip within 8 seconds, leave and rejoin within 1 second.",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): four new automated tests cover tapping Host again after the system closed the app (it starts from the new room, not the dead one), the \"ended on this device\" notice showing each time, and no stale notice after a deliberate Leave."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Add a test for rejoining after the system closes the app, if it is missing."
-          },
           {
             "kind": "DEVICE",
             "text": "Close and re-open the guest app and confirm it rejoins."
@@ -778,7 +1055,11 @@
           }
         ]
       },
-      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (viewer) on home Wi-Fi, both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (viewer) on home Wi-Fi, both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -800,13 +1081,10 @@
           "Checks passed: Built, Automated tests, Real device.",
           "Host, guest and recovery tests pass.",
           "The join-code hint and no-internet behaviour were fixed on Oct 3 (not yet re-tested on a phone).",
-          "Oct 13, 2026, two real phones on home Wi-Fi: host start with code and QR, passenger joined and saw now playing and who is in the car, left cleanly."
+          "Oct 13, 2026, two real phones on home Wi-Fi: host start with code and QR, passenger joined and saw now playing and who is in the car, left cleanly.",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): ten new automated tests cover the join-code field and hint (six digits; scan-or-read-out hint) and the passenger page being unreachable or switched off. They also found a real bug that was fixed: codes typed with digits from other writing systems (for example Arabic-Indic or full-width) are now turned into plain digits, in the phone app and in Beebo Auto."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Add focused tests for the join-code hint and for using the page offline."
-          },
           {
             "kind": "DEVICE",
             "text": "Parked car: host a party and join from passenger phones."
@@ -834,7 +1112,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (passenger page in the phone browser) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download. Not in a car."
+      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (passenger page in the phone browser) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download. Not in a car.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Android phone app",
@@ -849,7 +1131,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (test build)",
-      "leftToReach100": "Improve the wording of the Ready tile and the host-folder message, then show all three states on a phone.",
+      "leftToReach100": "Show all three states (ready, a missing folder, a recovery) on a phone and get the new wording signed off.",
       "roadTo100": {
         "means": "Ready, missing-folder and recovery states all show clear wording on a real phone and pass tests and review.",
         "done": [
@@ -858,13 +1140,10 @@
           "Checked on a real phone earlier.",
           "Oct 12, 2026: The screen opened on a real phone. Found: a misleading counter and a stale “cannot be reached” line; fixed in the code, not yet in a published download.",
           "Oct 13, 2026, S24 Ultra: Library health showed real numbers from a real library; nothing was changed.",
-          "Oct 14, 2026, published tester23 on a Galaxy S9+ (non-owner profile): the screen opened with 59 titles needing attention and nothing was changed."
+          "Oct 14, 2026, published tester23 on a Galaxy S9+ (non-owner profile): the screen opened with 59 titles needing attention and nothing was changed.",
+          "Code, Oct 12 and Oct 18, 2026 (Android 1.51-tester23 and tester26): the Ready tile now reads Overall / All clear / Needs review / Not fully checked and never says all clear when a check did not run; the host-folder messages say who could not reach what; wording tests and six-language strings were added."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Make the Ready tile and the host-folder message clearer and add tests for the wording."
-          },
           {
             "kind": "DEVICE",
             "text": "Show a ready library, a missing folder and a recovery on a phone."
@@ -892,7 +1171,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.87, signed in as a non-owner profile."
+      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.87, signed in as a non-owner profile.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -907,7 +1190,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (test build)",
-      "leftToReach100": "Settle how Surprise me should behave (title page first or play at once), fix its error handling, then test stars and playlists on a phone.",
+      "leftToReach100": "Settle how Surprise me should behave (title page first or play at once), then test stars and playlists on a phone.",
       "previousPercent": 60,
       "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
       "changeNote": "Oct 14: on the published tester23 (Galaxy S9+): a playlist was created, a title was added to it from its details page, and the playlist was deleted (“The titles stay in your library; only the playlist goes”). The Watchlist and Favourite buttons on a details page put the title into Library > Watchlist and Favourites, and removing it emptied both. The Surprise me chooser opened and “Play a random film” started a film that the player reported playing. Still open: whether Surprise me should show a title page first (Nick's decision) and its error handling. Muted; no person used it for real. Percentage unchanged.",
@@ -933,13 +1216,10 @@
           "A change that shows the title before playing is waiting on review.",
           "Oct 12, 2026: Adding and removing favourites and watchlist titles, and playlists, worked on a real phone.",
           "Oct 13, 2026, S24 Ultra: Surprise me chooser opened; playlist created and deleted; watchlist add and remove worked.",
-          "Oct 14, 2026, published tester23 on a Galaxy S9+: playlist created, filled and deleted; watchlist and favourite added and removed; the Surprise me chooser opened and started a film."
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: playlist created, filled and deleted; watchlist and favourite added and removed; the Surprise me chooser opened and started a film.",
+          "Code, Oct 12 and Oct 18, 2026 (Android 1.51-tester23 and tester26): Surprise me no longer shows or counts an older choice's lists, says when the year list fails, passes a cancelled request on correctly, and shows a plain message with Try again for an unusable pick or an unreachable computer; automated tests were added."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Fix the Surprise me error-handling and stale-filter problems found in review."
-          },
           {
             "kind": "DEVICE",
             "text": "On a phone: use several playlists, go back and retry (on Oct 14 one playlist, one watchlist and one favourite each worked once on the S9+)."
@@ -960,7 +1240,11 @@
           }
         ]
       },
-      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), home Wi-Fi, connected to a home computer running the Beebo desktop app 0.1.87."
+      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), home Wi-Fi, connected to a home computer running the Beebo desktop app 0.1.87.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -975,7 +1259,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+ host); Oct 13, 2026 (test build)",
-      "leftToReach100": "Test guest leave and reconnect and start/stop error cases, make the guest page say plainly when the host has stopped, and test a phone-hotspot route and a guest on mobile data. The guest page only loaded after mobile data was switched off on the guest phone.",
+      "leftToReach100": "Check on two phones that the guest page now says the host has stopped, and test a phone-hotspot route and a guest on mobile data. The guest page only loaded after mobile data was switched off on the guest phone.",
       "roadTo100": {
         "means": "A host phone starts and stops Campsite and real guests join, leave and reconnect cleanly.",
         "done": [
@@ -984,20 +1268,18 @@
           "Tried on a real phone as host.",
           "Oct 11, 2026, tester22 build 72: The S24 guest joined the S9+ host over the temporary Wi-Fi; the host showed \"1 guest connected\". Stopping hosting and switching Wi-Fi off passed.",
           "Oct 13, 2026, home Wi-Fi route: host start, blank-name guest named \"Guest 1\", a guest reconnected after 15 seconds offline, and host stop closed the guest address.",
-          "Oct 14, 2026, published tester23, same-Wi-Fi route: a Galaxy S9+ hosted, a Pixel 3 and a Galaxy S24 Ultra joined as guests (“2 guests connected”), and Stop returned the host to its start screen and closed the guest address."
+          "Oct 14, 2026, published tester23, same-Wi-Fi route: a Galaxy S9+ hosted, a Pixel 3 and a Galaxy S24 Ultra joined as guests (“2 guests connected”), and Stop returned the host to its start screen and closed the guest address.",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): the host start/stop error and retry cases are listed and tested: port already in use then retry, starting or stopping twice, a failed start with Beebo Wi-Fi chosen, the service restarted by Android, and the idle stop.",
+          "Code, Oct 18, 2026 (Android 1.51-tester27): the Campsite guest pages now say plainly, in six languages, when the host has stopped, instead of \"Reconnecting...\" for ever; the walkie-talkie guest page does the same with a Reload button."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "List host start/stop error and retry cases and add missing tests."
-          },
           {
             "kind": "DEVICE",
             "text": "Test a phone-hotspot route and a guest on mobile data; follow the help text if the guest page does not load."
           },
           {
-            "kind": "CODE",
-            "text": "After the host stops, the guest page keeps saying “Reconnecting... held for 90 seconds” for at least two minutes and never says the host stopped; make it say so."
+            "kind": "DEVICE",
+            "text": "On two phones, stop the host and confirm the guest page now says the host has stopped (new in tester27)."
           }
         ]
       },
@@ -1018,7 +1300,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S9+ (Android 10) as host, with a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests in Chrome, all on the same home Wi-Fi, running the published Android 1.51-tester23 (build 73)."
+      "testedOn": "Samsung Galaxy S9+ (Android 10) as host, with a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests in Chrome, all on the same home Wi-Fi, running the published Android 1.51-tester23 (build 73).",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1033,7 +1319,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+: radio played, Follow still FAILING); Oct 13, 2026 (test build)",
-      "leftToReach100": "Fix and re-test Follow on a new podcast (it failed on Oct 13), then test screen-off listening, downloads and the queue.",
+      "leftToReach100": "Re-test Follow on a new podcast (fixed in the code; it failed on Oct 13), then test screen-off listening, downloads and the queue.",
       "previousPercent": 60,
       "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
       "changeNote": "Oct 14 (Galaxy S9+, published tester23, home computer on desktop 0.1.87 that morning): a live radio station reached playing within about 8 seconds and pause and stop worked; searching for podcasts listed real shows with cover art. Follow on a new show STILL FAILED with the same “Your Beebo computer had a problem. Try again in a moment.” as on Oct 13; the report marks it as needing a newer desktop, and it was not retried on desktop 0.1.88. Podcast episode playback and screen-off listening were not tested. Percentage unchanged.",
@@ -1059,20 +1345,18 @@
           "Radio playlists with spaces or relative entries now play (automated tests only).",
           "Oct 12, 2026: The radio and podcast screens opened and could be browsed on a real phone. Playback was not checked in this run.",
           "Oct 13, 2026, S24 Ultra: a live radio station and a podcast episode played; podcast search found real shows.",
-          "Oct 14, 2026, published tester23 on a Galaxy S9+: a live radio station played, paused and stopped; podcast search listed real shows. Follow on a new show still failed (desktop 0.1.87)."
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: a live radio station played, paused and stopped; podcast search listed real shows. Follow on a new show still failed (desktop 0.1.87).",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): a review found that podcasts and radio ignore the film Screen off setting; a real bug was fixed (a podcast saved the wrong place when another sound took over the audio service) and tests were added for the resume place and the radio relay-release rule.",
+          "Code, Oct 13 and Oct 18, 2026: the cause was a podcast feed too big to read (the limit was raised to 32 MB on Oct 13; published in Windows 0.1.89 and Android 1.51-tester24). Since Android 1.51-tester26 Follow also says why when a feed is too big or does not answer, instead of \"Your Beebo computer had a problem\"."
         ],
         "remaining": [
           {
-            "kind": "CODE",
-            "text": "Add tests for screen-off and resume edge cases."
-          },
-          {
-            "kind": "CODE",
-            "text": "Following a new podcast from a phone failed on Oct 13 (\"Your Beebo computer had a problem\"); find the cause and fix it."
+            "kind": "DEVICE",
+            "text": "Play radio and a podcast with the screen off, download an episode and edit the queue."
           },
           {
             "kind": "DEVICE",
-            "text": "Play radio and a podcast with the screen off, download an episode and edit the queue."
+            "text": "Re-test Follow on a new podcast on a phone with the newer builds."
           }
         ],
         "hist": [
@@ -1090,7 +1374,11 @@
           }
         ]
       },
-      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.87."
+      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.87.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1105,7 +1393,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (a computer-made 3-chapter test book)",
-      "leftToReach100": "Play a real audiobook on a phone across chapters and an app restart; the queued test run is still to be done.",
+      "leftToReach100": "Play a real audiobook on a phone across chapters and an app restart.",
       "roadTo100": {
         "means": "A real audiobook plays on a phone, changes chapters, keeps bookmarks, and resumes after the app restarts.",
         "done": [
@@ -1113,13 +1401,10 @@
           "Chapter, bookmark and resume tests exist and pass.",
           "Tried on a real phone earlier.",
           "Oct 13, 2026, S24 Ultra: test book listed, chapters and start times correct, chapter jump, speed 0.75x to 2x and automatic next chapter worked (sound not heard).",
-          "Oct 14, 2026, published tester23 on a Galaxy S9+: the test book showed its chapters and a chapter tap started it in the right place (sound not heard)."
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: the test book showed its chapters and a chapter tap started it in the right place (sound not heard).",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): the audiobook test group was run and its coverage listed: 141 tests (21 new) covering speed, chapters, the sleep timer, resume, bookmarks, saved positions and the server calls. The run also fixed an \"end of chapter\" sleep-timer bug and duplicate bookmarks, and added spoken words for the seek bar and speed slider."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Run the queued audiobook test group and list what it covers."
-          },
           {
             "kind": "BLOCKED",
             "text": "No full current-device record exists."
@@ -1143,7 +1428,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.87."
+      "testedOn": "Samsung Galaxy S9+ (Android 10), the published Android 1.51-tester23 (build 73), connected to a home computer running the Beebo desktop app 0.1.87.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1158,23 +1447,17 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 5, 2026",
-      "leftToReach100": "Fix the smaller-size choice, show a space and time estimate before downloading, and do a full real download on a phone.",
+      "leftToReach100": "Do a full real download on a phone with limited free space, to check the smaller-size choice and the estimate.",
       "roadTo100": {
         "means": "The planner shows honest size and time estimates, offers smaller sizes that really work, and completes a real download when space is tight.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Planner, size and error tests pass.",
-          "Tried on a real phone earlier."
+          "Tried on a real phone earlier.",
+          "Code, Oct 12 and Oct 18, 2026 (Android 1.51-tester23 and tester26): the smaller-size choice now only offers a size that really shrinks a film (a 576p film asked for 720p used to come back bigger), keeps each film's own size when retried and restarts a failed zero-byte download at the newly chosen size; 25 new automated tests. Its controls keep a 48 dp touch target.",
+          "Code, Oct 12 and Oct 18, 2026 (Android 1.51-tester23 and tester26): the up-front space and time estimate follows the size each film really gets and, since tester26, counts only what is left of half-saved films; tests were added."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Fix the smaller-size choice and add a test."
-          },
-          {
-            "kind": "CODE",
-            "text": "Show a space and time estimate up front and test it."
-          },
           {
             "kind": "DEVICE",
             "text": "Run a full real download with limited free space."
@@ -1187,7 +1470,11 @@
       },
       "previousPercent": 60,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1202,7 +1489,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23: made a video on the S24 Ultra and Pixel 3, FAILED on the Galaxy S9+); Oct 13, 2026 (test build)",
-      "leftToReach100": "Find and fix why the video export times out on the Galaxy S9+ (Android 10), play a finished video by eye, record a real trip with real photos, and review sharing and privacy.",
+      "leftToReach100": "Re-run the video export on the Galaxy S9+ with tester27, play a finished video by eye, record a real trip with real photos, and review sharing and privacy.",
       "roadTo100": {
         "means": "A real trip is captured on a phone, a recap is made and a video exported, and the sharing and privacy behaviour has been reviewed.",
         "done": [
@@ -1210,7 +1497,8 @@
           "Recap and export code exists and automated tests pass.",
           "Oct 13, 2026, S24 Ultra: start trip, \"We're home\", recap card and Present worked.",
           "Oct 13, 2026: \"Save as a video\" failed on the test build; with the fix it made 5-second and 13-second videos on the S24 (fix not yet in a published download; the videos were not played back).",
-          "Oct 14, 2026, published tester23: “Save as a video” made a 17-second video from 3 photos on a Galaxy S24 Ultra and a Pixel 3 (not played back by eye). It FAILED on a Galaxy S9+ (Android 10) at 1080p, 720p and cards-only with a muxing timeout (error 7002)."
+          "Oct 14, 2026, published tester23: “Save as a video” made a 17-second video from 3 photos on a Galaxy S24 Ultra and a Pixel 3 (not played back by eye). It FAILED on a Galaxy S9+ (Android 10) at 1080p, 720p and cards-only with a muxing timeout (error 7002).",
+          "Code, Oct 18, 2026 (Android 1.51-tester27): the video export now allows a muxing stall of a minute (the default was 10 seconds), keeps the screen on, holds a 30-minute wake lock, starts on 720p on Android 10 and older and shows a \"taking longer\" note; new automated tests cover it. NOT yet re-run on the Galaxy S9+."
         ],
         "remaining": [
           {
@@ -1218,12 +1506,12 @@
             "text": "Sharing guest photos and video in an export needs a careful privacy review first."
           },
           {
-            "kind": "CODE",
-            "text": "The Trip Journal “Save as a video” export fails on the Galaxy S9+ (Android 10) on the published tester23 (muxing timeout, error 7002, also with cards only); find the cause and fix it. It works on the Galaxy S24 Ultra and the Pixel 3."
+            "kind": "DEVICE",
+            "text": "Play a finished trip video by eye, and record a real trip with real photos and clips."
           },
           {
             "kind": "DEVICE",
-            "text": "Play a finished trip video by eye, and record a real trip with real photos and clips."
+            "text": "Re-run \"Save as a video\" on the Galaxy S9+ (Android 10) with tester27."
           }
         ]
       },
@@ -1240,7 +1528,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Published Android 1.51-tester23 (build 73) on a Samsung Galaxy S24 Ultra and a Google Pixel 3 (video made) and on a Samsung Galaxy S9+ (Android 10) (video failed), with three test photos."
+      "testedOn": "Published Android 1.51-tester23 (build 73) on a Samsung Galaxy S24 Ultra and a Google Pixel 3 (video made) and on a Samsung Galaxy S9+ (Android 10) (video failed), with three test photos.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1265,13 +1557,10 @@
           "Oct 11, 2026, tester22 build 72: Tic-Tac-Toe against the computer opponent ran on the guest web page over the temporary Wi-Fi.",
           "Oct 12, 2026: Campsite game-room coverage ran with scripted guests; no other game is claimed as hand-played.",
           "Oct 13, 2026, home Wi-Fi: 42 of 42 games opened, 41 started with a computer opponent; Crazy Eights played by hand against the computer.",
-          "Oct 14, 2026, published tester23: Reversi between two guest phones (roster, start, and a move shown on the other phone); Tic-Tac-Toe and Crazy Eights against the computer on the S9+."
+          "Oct 14, 2026, published tester23: Reversi between two guest phones (roster, start, and a move shown on the other phone); Tic-Tac-Toe and Crazy Eights against the computer on the S9+.",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): the full list of games with the test for each was written (the code holds 42 guest games and 4 solo puzzles) and 51 new rule tests were added for Tic-Tac-Toe, Drop Four, Car Bingo, Snakes and Ladders, Ludo and Nine Men's Morris."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Write a list of all Campsite games with their tests and add missing basic checks."
-          },
           {
             "kind": "DEVICE",
             "text": "Play all Campsite games with real human guests; check game sound, hiding bars and a second human guest."
@@ -1303,7 +1592,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Published Android 1.51-tester23 (build 73): Samsung Galaxy S9+ (Android 10) as host, a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests in Chrome, all on the same home Wi-Fi."
+      "testedOn": "Published Android 1.51-tester23 (build 73): Samsung Galaxy S9+ (Android 10) as host, a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests in Chrome, all on the same home Wi-Fi.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1359,7 +1652,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Published Android 1.51-tester23 (build 73): Samsung Galaxy S9+ (Android 10) as host, a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests, same home Wi-Fi; access checks run from a PC against the host."
+      "testedOn": "Published Android 1.51-tester23 (build 73): Samsung Galaxy S9+ (Android 10) as host, a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests, same home Wi-Fi; access checks run from a PC against the host.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Android phone app",
@@ -1374,19 +1671,16 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 13, 2026",
-      "leftToReach100": "Test a real speaker group, with guest trim and off controls; add tests for the group limits.",
+      "leftToReach100": "Test a real speaker group, with guest trim and off controls.",
       "roadTo100": {
         "means": "Real phones act as a speaker group, and guest volume trim and off controls work.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Built, tests pass, tried on a real phone.",
-          "Oct 13, 2026, S9+ appeared on the S24 host as a speaker with position, timing nudge and group test (one speaker only; nothing listened for)."
+          "Oct 13, 2026, S9+ appeared on the S24 host as a speaker with position, timing nudge and group test (one speaker only; nothing listened for).",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): tests cover the speaker-group size (32 phones, the 33rd is refused), trim and off limits; they found and fixed three real bugs (an extreme saved trim flipping to the opposite sign, a phone in a full group being refused when it reconnected, and the newest phone's settings not being remembered after 64 phones)."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Add tests for group size, trim and off limits."
-          },
           {
             "kind": "DEVICE",
             "text": "Set up a real speaker group and use the guest page trim and off controls."
@@ -1406,7 +1700,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest speaker) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "Samsung Galaxy S24 Ultra (host) and Samsung Galaxy S9+ (Android 10) (guest speaker) on home Wi-Fi, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1421,20 +1719,17 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+ host); Oct 13, 2026 (QR scanned; installed over the same build)",
-      "leftToReach100": "Install the app through the QR on a phone that never had Beebo, and test bad or expired codes and the 30-minute auto-off.",
+      "leftToReach100": "Install the app through the QR on a phone that never had Beebo, and test the 30-minute auto-off on a phone.",
       "roadTo100": {
         "means": "A second phone installs the app by scanning the QR over the hotspot, and bad codes are handled.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Built, tests pass, QR page served from a phone.",
           "Oct 13, 2026, real QR scan by a person on a second phone: page, download (checksum matched) and install over the same build worked; \"Turn off sharing\" closed the address.",
-          "Oct 14, 2026, published tester23 on a Galaxy S9+: the shared file matched the published APK byte for byte and “Turn off sharing” closed the address."
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: the shared file matched the published APK byte for byte and “Turn off sharing” closed the address.",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): real-HTTP tests cover an expired or invalid QR page (a plain refusal with no installer bytes, also for a resumed download, and it works again when sharing is turned back on); a real bug was fixed where a refusal to a HEAD request still sent a body."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Add a test for an invalid or expired QR page."
-          },
           {
             "kind": "BLOCKED",
             "text": "No second-phone install is recorded."
@@ -1458,7 +1753,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S9+ (Android 10) as the Campsite host on the same home Wi-Fi, running the published Android 1.51-tester23 (build 73); the file was downloaded from a PC."
+      "testedOn": "Samsung Galaxy S9+ (Android 10) as the Campsite host on the same home Wi-Fi, running the published Android 1.51-tester23 (build 73); the file was downloaded from a PC.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1473,19 +1772,16 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 13, 2026 (button and message only)",
-      "leftToReach100": "Wake a real sleeping PC from the phone, and test the error and retry messages.",
+      "leftToReach100": "Wake a real sleeping PC from the phone.",
       "roadTo100": {
         "means": "The phone wakes a properly set-up sleeping PC and explains clearly if it cannot.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Wake-packet and error tests pass; tried on a phone earlier.",
-          "Oct 13, 2026, S24 Ultra: the Wake my PC button and its message worked on an awake PC (no real wake from sleep)."
+          "Oct 13, 2026, S24 Ultra: the Wake my PC button and its message worked on an awake PC (no real wake from sleep).",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): Wake my PC now has tests for send failures and limits (at most four sends per saved computer; a refused send does not stop the others) and two real bugs were fixed (a possible crash when no network socket could be opened; a saved list longer than six computers)."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Test the error message and retry limits."
-          },
           {
             "kind": "DEVICE",
             "text": "Wake a real PC from sleep and record it."
@@ -1505,7 +1801,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1540,13 +1840,10 @@
           "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "On the S24 Ultra the Living Room TV was found, connected, accepted pause, resume and fast-forward, and disconnected.",
           "Oct 11, 2026, tester22 build 72: Original and converted 480p files both cast to the Living Room TV with picture and sound confirmed by the owner; stopping the cast returned control to the phone.",
-          "Oct 13, 2026, a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop casting, from both phones."
+          "Oct 13, 2026, a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop casting, from both phones.",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): 12 new tests cover converted films and quality choices when casting (the full away-from-home decision table, playlist limits, redirect and key-line rules, the quality-change reload); a rule that let a stray \"METHOD=NONE\" text pass an encrypted-stream key line was fixed."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Extend tests for converted films and quality choices where gaps remain."
-          },
           {
             "kind": "DEVICE",
             "text": "Try away-from-home casting over mobile data on a real phone."
@@ -1575,7 +1872,11 @@
           }
         ]
       },
-      "testedOn": "A real Chromecast on the Living Room TV (a normal Chromecast), cast from the Samsung Galaxy S24 Ultra and the Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; a person watched the TV."
+      "testedOn": "A real Chromecast on the Living Room TV (a normal Chromecast), cast from the Samsung Galaxy S24 Ultra and the Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; a person watched the TV.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Android phone app",
@@ -1596,7 +1897,8 @@
         "done": [
           "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "First real-car check passed for the listed items on one car on Oct 6.",
-          "Behaviour tests pass."
+          "Behaviour tests pass.",
+          "Code, Oct 12, 2026: the Android Auto error and offline cases were listed (13 rows) and tests added for the https-upgrade rule and the error kinds; two branches inside the car playback service cannot be unit-tested without Android and have no unit test."
         ],
         "remaining": [
           {
@@ -1612,10 +1914,6 @@
             "text": "Try a second car."
           },
           {
-            "kind": "CODE",
-            "text": "List Android Auto error and offline cases and add tests."
-          },
-          {
             "kind": "BLOCKED",
             "text": "One car is not enough to call it ready."
           }
@@ -1623,7 +1921,11 @@
       },
       "previousPercent": 80,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1666,7 +1968,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1687,7 +1993,8 @@
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Play-version policy tests pass; the Play build exists.",
-          "Oct 13, 2026, S9+: the offline demo worked (banner, three clips, title page, player, exit)."
+          "Oct 13, 2026, S9+: the offline demo worked (banner, three clips, title page, player, exit).",
+          "Code, Oct 18, 2026 (Android 1.51-tester24): the demo title page and explanation no longer promise a subtitles button; the words now say the demo player has none and that subtitles need your own Beebo server (new automated test)."
         ],
         "remaining": [
           {
@@ -1697,10 +2004,6 @@
           {
             "kind": "BLOCKED",
             "text": "Not submitted to Google Play; that waits for Nick's go-ahead."
-          },
-          {
-            "kind": "CODE",
-            "text": "The demo title page promises a subtitles button the demo player does not show; fix the button or the wording."
           }
         ]
       },
@@ -1713,7 +2016,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S9+ (Android 10), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download."
+      "testedOn": "Samsung Galaxy S9+ (Android 10), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1748,7 +2055,11 @@
       },
       "previousPercent": 20,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 50,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Android phone app",
@@ -1787,7 +2098,11 @@
       },
       "previousPercent": 0,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 0,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Android phone app",
@@ -1809,7 +2124,8 @@
           "Checks passed: Built, Automated tests.",
           "Built and tests pass.",
           "Oct 12, 2026: A wrong TV code was refused with a plain message. A real code could not be tried because TV pairing is switched off on the server, so no check changes.",
-          "Oct 13, 2026: the Link a TV switch on the live server was read as on."
+          "Oct 13, 2026: the Link a TV switch on the live server was read as on.",
+          "Code, Oct 19, 2026 (in the code, not yet in a published download): a TV link now stays until you remove it (no 12-hour re-link), the phone has a Linked TVs list with Remove, a linked TV renews its pass with its own secret, and unused links end after 90 days; automated tests cover it. Not tried on a real TV."
         ],
         "remaining": [
           {
@@ -1839,7 +2155,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Server settings read only; no phone or TV was used for pairing."
+      "testedOn": "Server settings read only; no phone or TV was used for pairing.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1854,7 +2174,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23; Large playback controls FAILED, low confidence); Oct 13, 2026 (test build)",
-      "leftToReach100": "Run a full TalkBack and 200% font pass on a phone, fix the Large playback controls so they are visibly bigger and fit on screen, then a review.",
+      "leftToReach100": "Run a full TalkBack and 200% font pass on a phone, re-check the Large playback controls (changed in tester26), then a review. At 150% text the Caregiver view game cards still squeeze their description into a narrow column (cosmetic).",
       "previousPercent": 60,
       "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
       "changeNote": "Oct 14: on the published tester23 (Galaxy S9+) High contrast (black with yellow headings, readable), Reduce motion, Simple Mode (it visibly hid Stories on Play and the Tools group on More), Large playback controls and Prefer captions each switched on and off without a crash, and Caregiver view turned on high contrast and the largest text (the bottom tab bar then wrapped to two rows) and turning it off put everything back. Text size 1.3: Home, Browse, Library, Play and More showed no clipped text on the S9+ and the Pixel 3, nor did the Music and More screens on the S24 Ultra, and Beebo's own Larger text 130% opened all five tabs on the S25 (its Library chip row scrolls sideways, so Favourites and Playlists need a scroll). FAILED (low confidence): Large playback controls. With it on, the skip and pause buttons were the same size as with it off and the top button row ran off the right edge (“BAD Q” cut off). Also at 150% text the bottom tab bar wraps to two rows. Prefer captions could not be checked (no film with subtitles). TalkBack was not run. Percentage unchanged.",
@@ -1879,13 +2199,11 @@
           "Preference tests pass; some large-text checks were done on a phone.",
           "Oct 12, 2026: The accessibility switches were tried on and off on a real phone. Found: some text was clipped at 150% text size; fixed in the code, not yet in a published download. A screen reader (TalkBack) was not tried, so no check changes.",
           "Oct 13, 2026, S24 Ultra: 150% text, High contrast, Simple Mode, Reduce motion, Large playback controls, Prefer captions and Caregiver view (on and off) all switched without a crash; 150% text and High contrast looked right.",
-          "Oct 14, 2026, published tester23: the accessibility switches and Caregiver view worked on a Galaxy S9+; text size 1.3 showed no clipped text on three phones. Large playback controls looked the same size as off (low confidence)."
+          "Oct 14, 2026, published tester23: the accessibility switches and Caregiver view worked on a Galaxy S9+; text size 1.3 showed no clipped text on three phones. Large playback controls looked the same size as off (low confidence).",
+          "Code, Oct 12, 2026 (in the published Android 1.51-tester23): an accessibility audit added tests and fixes: Reduce motion now applies to the Pick Next wheel, the photo slideshow and the trip presentation; the audiobook seek bar and speed slider are announced in words; the playing chapter and four tappable rows are announced properly.",
+          "Code, Oct 18, 2026 (Android 1.51-tester26 and tester27): Large playback controls now resize the centre and bottom-bar buttons and the top row scrolls sideways so it fits; Play tabs stay on one line at large text (tester26); the bottom bar stays on one row at large text (tester27); automated tests cover them. Not yet re-checked on a phone."
         ],
         "remaining": [
-          {
-            "kind": "CODE",
-            "text": "Add tests for any preference or error state the review finds untested."
-          },
           {
             "kind": "DEVICE",
             "text": "Do a full TalkBack pass."
@@ -1903,8 +2221,8 @@
             "text": "At 150% text the Caregiver view game cards squeeze their description into a narrow column (cosmetic)."
           },
           {
-            "kind": "CODE",
-            "text": "With Large playback controls on, the skip and pause buttons looked the same size as with it off and the top button row ran off the right edge (“BAD Q” cut off) on the Galaxy S9+; at 150% text the bottom tab bar wraps to two rows."
+            "kind": "DEVICE",
+            "text": "Re-check on a phone that Large playback controls are visibly bigger and fit on screen, and that the bottom bar stays on one row at 150% text."
           }
         ],
         "hist": [
@@ -1914,7 +2232,11 @@
           }
         ]
       },
-      "testedOn": "Published Android 1.51-tester23 (build 73) on a Samsung Galaxy S9+ (switches, Caregiver view, text size), a Google Pixel 3 and a Samsung Galaxy S24 Ultra (text size 1.3) and a Samsung Galaxy S25 (in-app Larger text 130%)."
+      "testedOn": "Published Android 1.51-tester23 (build 73) on a Samsung Galaxy S9+ (switches, Caregiver view, text size), a Google Pixel 3 and a Samsung Galaxy S24 Ultra (text size 1.3) and a Samsung Galaxy S25 (in-app Larger text 130%).",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Android phone app",
@@ -1957,7 +2279,11 @@
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "New row. Oct 13: three computer-made sample songs from the home computer showed as an album on both phones; play, next, previous, pause, the full player and the sleep timer (\"End of track\" paused when the song ended) worked, and a Music streaming-quality choice was saved. Nobody listened (phone sound was muted), so \"plays\" means the app reported playing with the position moving. Found: the Albums / Artists / Songs buttons sit on top of the \"Mixes and radio\" heading on both phones. Tested on: Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
         }
-      ]
+      ],
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -1972,7 +2298,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 13, 2026",
-      "leftToReach100": "Use it with a real family for a few days, fix the Add button hiding behind the keyboard, and test Games together.",
+      "leftToReach100": "Use it with a real family for a few days, check that Add is reachable with the keyboard open (fixed in the code), make the Enter key add a name, and test Games together.",
       "previousPercent": null,
       "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
       "changeNote": "New row. Oct 13: the Family Dashboard cards (Continue Watching, Downloads, Watchlist, Camp Jobs and Star Chart, Trip Journal, Games together) showed numbers that matched the other screens. Camp Jobs worked end to end on one phone: two names added and kept after leaving the screen, \"Spin the wheel\" shared 7 jobs between them, ticking a job gave a star, and Remove deleted both names. Cosmetic: the Add button hides behind the keyboard until it is closed.",
@@ -1981,19 +2307,28 @@
         "means": "A real family uses the dashboard and Camp Jobs on their phones for several days and a reviewer signs off.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
-          "Oct 13, 2026, S24 Ultra: Family Dashboard cards matched the other screens; Camp Jobs add, spin, tick, star and remove all worked."
+          "Oct 13, 2026, S24 Ultra: Family Dashboard cards matched the other screens; Camp Jobs add, spin, tick, star and remove all worked.",
+          "Code, Oct 18, 2026 (Android 1.51-tester24 and tester25): the Camp Jobs screen now shrinks to the room above the keyboard so the Add button can be reached (a source-guard test, and the app asks Android to resize for the keyboard). Not yet re-checked on a phone."
         ],
         "remaining": [
           {
             "kind": "CODE",
-            "text": "The Add button hides behind the keyboard until it is closed, and the Enter key does not add a name."
+            "text": "In Camp Jobs the Enter key on the keyboard does not add a name (the Add button is reachable now)."
           },
           {
             "kind": "DEVICE",
             "text": "Use it with a real family; test Games together."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Re-check on a phone that the Add button is reachable with the keyboard open."
           }
         ]
-      }
+      },
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Android phone app",
@@ -2029,7 +2364,11 @@
             "text": "No readiness review of the published download."
           }
         ]
-      }
+      },
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -2065,7 +2404,11 @@
             "text": "Sharing a recipe sends data out and was left untested."
           }
         ]
-      }
+      },
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Android phone app",
@@ -2104,7 +2447,11 @@
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "New row. Oct 13: Collections listed 101 collections with posters and counts; search narrowed 101 to 1 for \"alien\", the Missing films filter kept it, and the Alien Collection showed \"2 of 4 in your library\" with the two missing films dimmed and a \"Look this up\" button. The Request a title screen opened. Sending a request, the Complete filter and the trailer buttons were not tried. Tested on: Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
         }
-      ]
+      ],
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Windows desktop app",
@@ -2162,7 +2509,11 @@
           }
         ]
       },
-      "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published)."
+      "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published).",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2225,7 +2576,11 @@
           }
         ]
       },
-      "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with Chrome on the same PC."
+      "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with Chrome on the same PC.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2272,7 +2627,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published)."
+      "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published).",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2308,7 +2667,11 @@
       },
       "previousPercent": 60,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Windows desktop app",
@@ -2347,7 +2710,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2382,7 +2749,11 @@
       },
       "previousPercent": 60,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Windows desktop app",
@@ -2417,7 +2788,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2452,7 +2827,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2487,7 +2866,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2526,7 +2909,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2569,7 +2956,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published) (English and Spanish); Samsung Galaxy S24 Ultra running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download (six languages, Home and tabs only)."
+      "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published) (English and Spanish); Samsung Galaxy S24 Ultra running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download (six languages, Home and tabs only).",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Windows desktop app",
@@ -2604,7 +2995,11 @@
       },
       "previousPercent": 60,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Windows desktop app",
@@ -2647,7 +3042,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2699,7 +3098,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Published Android 1.51-tester23 (build 73): a Samsung Galaxy S9+ (Android 10, camera backup to a home computer running the Beebo desktop app 0.1.87) and a Google Pixel 3 and Samsung Galaxy S24 Ultra (the screen only)."
+      "testedOn": "Published Android 1.51-tester23 (build 73): a Samsung Galaxy S9+ (Android 10, camera backup to a home computer running the Beebo desktop app 0.1.87) and a Google Pixel 3 and Samsung Galaxy S24 Ultra (the screen only).",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2761,7 +3164,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download (screens only; nothing was signed in to or sent)."
+      "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download (screens only; nothing was signed in to or sent).",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2796,7 +3203,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2811,7 +3222,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 13, 2026 (two phones as a stereo pair; alignment not proven)",
-      "leftToReach100": "Measure real alignment (a recording of both speakers), fix the false Bluetooth warning, the PC speaker seat and the Add output button, and test surround, more than two phones, a late joiner and seeking.",
+      "leftToReach100": "Measure real alignment (a recording of both speakers), fix the PC speaker seat, the Add output button and the extra player windows, and test surround, more than two phones, a late joiner and seeking.",
       "previousPercent": null,
       "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
       "changeNote": "New row. Oct 13, early morning: with the PC showing a 51-second film, the S24 Ultra joined as Stereo left and the S9+ as Stereo right (link opened by hand, not scanned). Both showed \"in sync\" within about 3 to 5 ms, Nick heard the beeps and said the film \"sounds so cool\", and one phone \"sounded off a tiny bit\". The recorded drift averaged 2.3 ms (S24) and 1.2 ms (S9). It does not prove the two speakers are truly aligned: the numbers are the phones' own estimates. Found: both pages warned about Bluetooth delay although neither phone used Bluetooth; over plain HTTP a phone cannot use its microphone, so \"map the room\" cannot work; with a USB speaker as centre in Surround layout the PC speaker played nothing until Watch together was pressed, and the \"Add\" button for a second output did nothing; repeated clicks left extra player windows open.",
@@ -2820,12 +3231,13 @@
         "means": "Phones play the film's sound in true alignment as a stereo pair and surround group, with clear wording and a reviewer sign-off.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
-          "Oct 13, 2026, PC and two real phones: join, seats, in-sync readout, beeps heard, film played through the phones."
+          "Oct 13, 2026, PC and two real phones: join, seats, in-sync readout, beeps heard, film played through the phones.",
+          "Code, Oct 18, 2026 (Windows 0.1.91): the false \"Bluetooth\" warning is gone (the notes no longer guess Bluetooth from a phone's reported delay, in all six languages); the panel now says why a ticked PC speaker box is silent; automated tests were added."
         ],
         "remaining": [
           {
             "kind": "CODE",
-            "text": "Remove the false \"Bluetooth\" warning, fix the PC speaker seat and the Add output button that does nothing, and close extra player windows."
+            "text": "Fix the PC speaker seat and the Add output button that does nothing (Oct 18 added an explanation of why a ticked PC speaker box is silent and a name for the button), and close extra player windows."
           },
           {
             "kind": "DEVICE",
@@ -2836,7 +3248,11 @@
             "text": "Phone microphones need a secure page, so automatic line-up needs a design decision."
           }
         ]
-      }
+      },
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2872,7 +3288,11 @@
             "text": "Re-test in the real desktop window and confirm sound by ear."
           }
         ]
-      }
+      },
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Windows desktop app",
@@ -2887,7 +3307,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 13, 2026",
-      "leftToReach100": "Test row dragging, keyboard row moves, Comfortable density and layout share and import; fix the layout list covering the top picture.",
+      "leftToReach100": "Test row dragging, keyboard row moves, Comfortable density and layout share and import; re-check that the layout list closes after each choice (fixed in the code).",
       "previousPercent": null,
       "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
       "changeNote": "New row. Oct 13: all five Home layouts (Gallery Flow, Focus and Queue, Studio Canvas, Command Deck, High-Impact Theater) opened with real content and no blank screen. In Customize layout, Cancel discarded a hidden row and the Compact density, Save applied them, and Reset to default plus Save brought everything back. Dragging a row, Alt+Up/Down, the Comfortable density, and sharing or importing a layout were not tested; the layout list stays open over part of the top picture after each choice.",
@@ -2896,7 +3316,8 @@
         "means": "Every layout and customization option works on a real PC with a real library, with a reviewer sign-off.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
-          "Oct 13, 2026, dev PC: all five layouts opened; Customize layout cancel, save and reset worked."
+          "Oct 13, 2026, dev PC: all five layouts opened; Customize layout cancel, save and reset worked.",
+          "Code, Oct 18, 2026 (Windows 0.1.91): the Layout list now closes after a choice, on Escape and on an outside click, so it no longer covers the top picture, and keyboard focus stays put after choosing a layout; automated behaviour tests were added."
         ],
         "remaining": [
           {
@@ -2904,11 +3325,15 @@
             "text": "Test dragging a row, Alt+Up/Down, Comfortable density and layout share and import."
           },
           {
-            "kind": "CODE",
-            "text": "The layout list stays open over part of the top picture after each choice."
+            "kind": "DEVICE",
+            "text": "Re-check on a real PC that the Layout list closes after each choice."
           }
         ]
-      }
+      },
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Other systems",
@@ -2947,7 +3372,11 @@
       },
       "previousPercent": 60,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Other systems",
@@ -2986,7 +3415,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Other systems",
@@ -3035,7 +3468,11 @@
             "text": "Fix and test any fault found."
           }
         ]
-      }
+      },
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3070,7 +3507,11 @@
       },
       "previousPercent": 80,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Services and website",
@@ -3095,7 +3536,8 @@
           "Sep 17-18, 2026 (older builds): away from home through Beebo Relay proven at a friend's house (recorded in the project log).",
           "Oct 12, 2026: A phone on 5G played through Beebo Relay once it was switched on; the first picture came in about 3 seconds. Two people on the relay at once were not tested.",
           "Oct 13, 2026, S24 Ultra on 5G: a film played through Beebo Relay after the account switch was turned on; the usage counter moved with a delay.",
-          "Oct 14, 2026, published tester23 on a Galaxy S24 Ultra on 5G with “Always use Beebo Relay” forced on, home computer on desktop 0.1.88: the route screen and app log showed Beebo Relay and a film played (30 MB). A forced test, not the natural fallback."
+          "Oct 14, 2026, published tester23 on a Galaxy S24 Ultra on 5G with “Always use Beebo Relay” forced on, home computer on desktop 0.1.88: the route screen and app log showed Beebo Relay and a film played (30 MB). A forced test, not the natural fallback.",
+          "Code, Oct 14, 2026 (in Windows 0.1.89, published Oct 18): the desktop Connection screen can switch on the one-month Beebo Relay trial for the owner's own account. It stays hidden until the server switch is turned on, which has not been done."
         ],
         "remaining": [
           {
@@ -3109,10 +3551,6 @@
           {
             "kind": "NICK",
             "text": "Decide pricing and who gets Relay."
-          },
-          {
-            "kind": "CODE",
-            "text": "No screen lets a customer switch Beebo Relay on for their own account; the fix is written but not merged."
           }
         ]
       },
@@ -3137,7 +3575,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running the published Android 1.51-tester23 (build 73) with “Always use Beebo Relay” switched on for the test, through Beebo Relay on our own server to a home computer running the Beebo desktop app 0.1.88. Earlier record (Oct 12, 2026): the phone browser of a Samsung Galaxy S24 Ultra on 5G to a 4-core Windows PC at a friend's house running the published desktop 0.1.87, through Beebo Relay on our own server (the phone also had the published Android 1.51-tester22 installed)."
+      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running the published Android 1.51-tester23 (build 73) with “Always use Beebo Relay” switched on for the test, through Beebo Relay on our own server to a home computer running the Beebo desktop app 0.1.88. Earlier record (Oct 12, 2026): the phone browser of a Samsung Galaxy S24 Ultra on 5G to a 4-core Windows PC at a friend's house running the published desktop 0.1.87, through Beebo Relay on our own server (the phone also had the published Android 1.51-tester22 installed).",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing"
     },
     {
       "group": "Services and website",
@@ -3176,7 +3618,11 @@
       },
       "previousPercent": 80,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3215,7 +3661,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3254,7 +3704,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3289,7 +3743,11 @@
       },
       "previousPercent": 60,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3328,7 +3786,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3350,7 +3812,8 @@
           "Checks passed: Built, Automated tests, Real device.",
           "Server link code and tests pass; switched off.",
           "Oct 13, 2026, S24 Ultra on 5G: a trip link opened with a photo and a clip that played to the end (first real out-of-home test).",
-          "Oct 13, 2026: the older home-address link failed from outside the home (the router did not let it in); it works on home Wi-Fi only."
+          "Oct 13, 2026: the older home-address link failed from outside the home (the router did not let it in); it works on home Wi-Fi only.",
+          "Code, Oct 18, 2026 (Android 1.51-tester24): the trip link card now says the link opens on your home Wi-Fi while your computer is on, and only opens from anywhere if your router lets it in (try it on mobile data before you send it); tests were added."
         ],
         "remaining": [
           {
@@ -3360,10 +3823,6 @@
           {
             "kind": "DEVICE",
             "text": "Open a link from another person's phone away from home; test expiry and revoke away from home."
-          },
-          {
-            "kind": "CODE",
-            "text": "The trip link card says \"Can be opened from anywhere the internet reaches your computer\" before its router warning; reword so it does not mislead."
           }
         ]
       },
@@ -3376,7 +3835,11 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; the link was served from a home computer running the published desktop 0.1.87 through Beebo's server."
+      "testedOn": "Samsung Galaxy S24 Ultra on 5G mobile data (Wi-Fi off), running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; the link was served from a home computer running the published desktop 0.1.87 through Beebo's server.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 33,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3426,7 +3889,11 @@
             "text": "Safe follow-up fixes after a careful security review."
           }
         ]
-      }
+      },
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 67,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3465,7 +3932,11 @@
       },
       "previousPercent": 40,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 100,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3508,7 +3979,11 @@
       },
       "previousPercent": 0,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 0,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3551,7 +4026,11 @@
       },
       "previousPercent": 0,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 0,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3590,7 +4069,11 @@
       },
       "previousPercent": 0,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 0,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     },
     {
       "group": "Services and website",
@@ -3633,7 +4116,11 @@
       },
       "previousPercent": 0,
       "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "codeDonePercent": 0,
+      "realWorldDonePercent": 0,
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished"
     }
   ],
   "statusLabels": [
@@ -3643,7 +4130,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 14, 2026, 10:48 AM Eastern",
+  "previousUpdatedEastern": "Oct 14, 2026, 9:44 PM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 14 update record",
@@ -3696,5 +4183,10 @@
     "deviceCheckedAtUtc": "2026-10-18T11:23:00Z",
     "deviceCheckedAtEastern": "Oct 18, 2026, 7:23 AM Eastern",
     "deviceEvidenceUrl": "/release-evidence.html#release-checks-oct18"
+  },
+  "realWorldStatusLabels": {
+    "confirmed-on-real-devices": "Confirmed working on real devices",
+    "code-complete-needs-real-world-testing": "Code complete — needs more real-world testing to confirm",
+    "code-still-being-finished": "Code still being finished"
   }
 }

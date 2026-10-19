@@ -370,3 +370,40 @@ html .rl-table .tag { max-width: 100%; white-space: normal; overflow-wrap: anywh
 @media (max-width: 860px) { .code-vs-human-groups { grid-template-columns: 1fr; } }
 
 .tested-on { margin: 0 0 6px; font-size: .9em; }
+
+/* Code status and real-world status (Oct 19, 2026). Every badge carries words as well as colour. */
+.cs-badge { display: inline-flex; align-items: baseline; gap: 6px; padding: 3px 11px; border-radius: 999px; border: 1px solid currentColor; font-weight: 700; font-size: .86em; line-height: 1.35; }
+.cs-badge .cs-icon { font-size: 1em; }
+.cs-confirmed { color: #1c7a3d; background: rgba(34,160,80,.14); }
+.cs-complete { color: #1f56b3; background: rgba(42,111,214,.13); }
+.cs-finishing { color: #8a6100; background: rgba(230,168,20,.18); }
+html[data-aurora] .cs-confirmed, html[data-beebo-corporate-dark] .cs-confirmed { color: #6fe29a; }
+html[data-aurora] .cs-complete, html[data-beebo-corporate-dark] .cs-complete { color: #8fc0ff; }
+html[data-aurora] .cs-finishing, html[data-beebo-corporate-dark] .cs-finishing { color: #ffd166; }
+html[data-aurora][data-theme="light"] .cs-confirmed { color: #1c7a3d; }
+html[data-aurora][data-theme="light"] .cs-complete { color: #1f56b3; }
+html[data-aurora][data-theme="light"] .cs-finishing { color: #8a6100; }
+@media (prefers-color-scheme: dark) {
+  .cs-confirmed { color: #6fe29a; } .cs-complete { color: #8fc0ff; } .cs-finishing { color: #ffd166; }
+}
+.cs-cell { white-space: normal; min-width: 0; }
+.cs-cell .cs-badge { margin: 4px 0; }
+.cs-sub { font-size: .82em; opacity: .85; }
+.cs-note { padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(128,128,128,.4); background: rgba(128,128,128,.07); }
+.cs-summary-counts { display: block; margin-top: 4px; font-size: .82rem; font-weight: 500; opacity: .9; }
+.cs-counts { font-size: 1.05em; }
+.code-status-summary { border: 1px solid rgba(128,128,128,.45); border-radius: 14px; padding: 22px 20px; background: rgba(128,128,128,.06); }
+.code-status-summary .cs-lead { font-size: 1.05em; }
+.cs-meters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; margin: 12px 0; }
+.cs-legend { margin: 16px 0; padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(128,128,128,.4); }
+.cs-legend h3 { margin-top: 0; }
+.cs-legend ul { list-style: none; padding: 0; margin: 8px 0; }
+.cs-legend li { margin: 10px 0; }
+.cs-lists details { margin: 8px 0; padding: 8px 12px; border: 1px solid rgba(128,128,128,.35); border-radius: 10px; }
+.cs-lists summary { cursor: pointer; }
+.cs-lists ul { columns: 2; column-gap: 28px; margin: 10px 0 4px; }
+.cs-cta { margin-top: 16px; padding: 12px 16px; border-radius: 10px; border: 2px solid rgba(110,80,220,.7); background: rgba(110,80,220,.08); }
+.cs-cta .evidence-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.feature-progress-table thead th:nth-child(3) { width: 17%; }
+.code-vs-human-table td .cs-badge { font-size: .8em; }
+@media (max-width: 860px) { .cs-meters { grid-template-columns: 1fr; } .cs-lists ul { columns: 1; } }
