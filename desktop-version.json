@@ -1,12 +1,12 @@
 {
-    "version": "0.1.95",
-    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.95/Beebo.Entertainment.Setup.0.1.95.exe",
-    "sha256": "4b7729c16d4869e658b58c399ea5e460cbb9c5be8cb7d7a4b08de3e6ae38e901",
-    "size": 258057024,
-    "notes": "What's new in 0.1.95:\r\n- Radio opens much faster. Beebo remembers the list of radio directory servers and tries several at once, so a slow one no longer holds you up.\r\n- Not yet checked: the faster Radio on a range of internet connections, and the final installed Windows upgrade and in-app update.\r\n- Release source commit c824e98bf6f28c85dd4eed886379e2ac9231bd81.\r\n- Published: Oct 19, 2026, 11:17 AM Eastern.\r\n",
-    "sourceSha": "c824e98bf6f28c85dd4eed886379e2ac9231bd81",
-    "builtAtUtc": "2026-10-19T15:12:21.000Z",
-    "builtAtEastern": "Oct 19, 2026, 11:12 AM Eastern",
-    "publishedAtUtc": "2026-10-19T15:17:00.000Z",
-    "publishedAtEastern": "Oct 19, 2026, 11:17 AM Eastern"
+    "version": "0.1.96",
+    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.96/Beebo.Entertainment.Setup.0.1.96.exe",
+    "sha256": "9d6e08eabc849fde10da9615dbe5d9533560524903523aa2ede08e2c19d53c78",
+    "size": 258065104,
+    "notes": "What's new in 0.1.96:\r\n- Safer updates: Beebo now checks that an update installer is signed by the Beebo publisher before installing it. Older versions keep checking the file checksum until they update to this one.\r\n- The installer is copied to a protected folder before it runs, and a failed update is no longer retried over and over.\r\n- If an update cannot be verified, the message is clearer and there is an Open download page button.\r\n- The Phone speakers button no longer leaves extra player windows behind.\r\n- Security improvements for Remote Desktop, which is still in development and off by default.\r\n- Not yet checked: the full in-app update from an older version to this one on a real PC, and this exact installer and its uninstaller on a real PC (the build now signs the small uninstaller helper too).\r\n- Release source commit 6c1cd89cf.\r\n- Published: Oct 19, 2026, 3:06 PM Eastern.\r\n",
+    "sourceSha": "6c1cd89cf",
+    "builtAtUtc": "2026-10-19T19:06:01.000Z",
+    "builtAtEastern": "Oct 19, 2026, 3:06 PM Eastern",
+    "publishedAtUtc": "2026-10-19T19:06:00.000Z",
+    "publishedAtEastern": "Oct 19, 2026, 3:06 PM Eastern"
 }
