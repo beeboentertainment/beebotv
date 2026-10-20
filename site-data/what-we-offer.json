@@ -1,9 +1,9 @@
 {
   "meta": {
-    "updatedEastern": "Oct 14, 2026, 9:12 AM Eastern",
-    "updatedIso": "2026-10-14T09:12:00-04:00",
+    "updatedEastern": "Oct 20, 2026, 10:20 AM Eastern",
+    "updatedIso": "2026-10-20T10:20:00-04:00",
     "title": "Everything Beebo Entertainment is and offers",
-    "how": "One row per feature. status is one of Available, Beta, In development, Planned. The mapping to features on the testing evidence page is in site-data/evidence-map.json. For every mapped row the build script reads the label, the percentage and the Tested on text from testing-status.json, and if the two labels differ the stricter (less Available) one is shown. Run site-data/build-what-we-offer.js to rebuild the home section, the page and llms.txt. Download versions are read from the three feed files.",
+    "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
       "Available": "In a current download and usable today, and a person has run the main use on a real device or PC (the evidence line says what).",
       "Beta": "In a current download or switchable today, but new, tested by automatic tests only, or with real problems found.",
@@ -279,7 +279,7 @@
       "area": "windows",
       "name": "Remote Desktop (see and control the PC from a phone)",
       "status": "In development",
-      "evidence": "Off by default, owner only, and the person at the PC must approve. Automatic tests only; never tried on a real screen from a real phone.",
+      "evidence": "Off by default and never run on a real PC. The keyboard helper change is next-release work. What is left: real keyboard, mouse, viewing, approval, disconnect and revoke checks.",
       "realTest": "no"
     },
     {
@@ -389,9 +389,9 @@
     {
       "id": "p-browse",
       "area": "android",
-      "name": "Browse, search, collections and Request a title",
-      "status": "Available",
-      "evidence": "Oct 5 and Oct 13 on the S24 Ultra: films, shows and music filters, search, 101 collections and the request screen opened. Sending a request was not tried.",
+      "name": "Browse, search and collections",
+      "status": "Beta",
+      "evidence": "Earlier phone checks opened films, shows, music, search and collections. Media requests and a wishlist are Planned, being built and not merged; sending a request is not claimed as a released feature.",
       "realTest": "yes"
     },
     {
@@ -414,8 +414,8 @@
       "id": "p-access",
       "area": "android",
       "name": "Accessibility choices: larger text, high contrast, reduce motion, Simple Mode, Caregiver view, captions",
-      "status": "Available",
-      "evidence": "Oct 13 on the S24 Ultra: each was switched on and off. 150% text and high contrast were readable on Home and Browse. TalkBack and 200% text are not tested.",
+      "status": "In development",
+      "evidence": "Earlier checks tried some accessibility switches at 150% text. In the next release: another Android accessibility and layout pass. What is left: TalkBack, 200% text, landscape and large controls on real phones.",
       "realTest": "partly"
     },
     {
@@ -541,10 +541,10 @@
     {
       "id": "auto-core",
       "area": "tvauto",
-      "name": "Beebo Auto: sign-in, video list, playback and steering-wheel buttons",
+      "name": "Beebo Auto sideload download (never tested in a real car)",
       "status": "Available",
-      "evidence": "One real car check on Oct 6, 2026 (a 2021 Audi SQ5 with Android Auto) passed for sign-in, the movie and show lists, playback with sound through the car speakers and the steering-wheel buttons. That check did not record which build was used. Use only when parked.",
-      "realTest": "partly"
+      "evidence": "Available as a sideload download: 1.18 (build 19), built Oct 7, 2026, 2:03 AM Eastern. Never tested in a real car. What is left: first real-head-unit checks of sign-in, lists, sound, controls and reconnect.",
+      "realTest": "no"
     },
     {
       "id": "auto-music",
@@ -566,8 +566,8 @@
       "id": "auto-party",
       "area": "tvauto",
       "name": "Car Party (host in the car, passengers join on a web page)",
-      "status": "Beta",
-      "evidence": "Oct 13 on two phones: the host started a party with a code and QR, a passenger joined and saw what was playing and who was in the car, then left. A blank name does not yet get an automatic guest name on the live server. Not tried in a real car.",
+      "status": "In development",
+      "evidence": "Earlier home-phone checks do not prove car use. In the next release, Car Party controls stay usable, typing is blocked while projecting, and saved sign-in is kept in encrypted storage. What is left: check those changes on real phones and a real car head unit.",
       "realTest": "partly"
     },
     {
@@ -653,9 +653,9 @@
     {
       "id": "c-linux",
       "area": "computers",
-      "name": "Linux desktop (AppImage and .deb, version 0.1.82)",
+      "name": "Linux desktop (older AppImage and .deb beta)",
       "status": "Beta",
-      "evidence": "Starts and answers on its web address in an automatic headless check. Not run on a real Linux desktop by a person; not code-signed; one release behind Windows.",
+      "evidence": "Starts and answers on its web address in an automatic headless check. Not run on a real Linux desktop by a person; not code-signed; an older beta without automatic updates.",
       "realTest": "no"
     },
     {
@@ -727,7 +727,7 @@
       "area": "campsite",
       "name": "Shared downloaded videos play in a guest's browser",
       "status": "Beta",
-      "evidence": "Oct 4 and Oct 13: a downloaded episode was listed and played on a guest phone. On Oct 13 one shared episode looked silent on one guest phone and the cause is unexplained.",
+      "evidence": "Earlier guest playback had a silent-video finding. In development, in the next release: an H.264/AAC guest copy when the original audio will not play in a browser. What is left: hear sound, seek and save on real guest phones after release.",
       "realTest": "partly"
     },
     {
@@ -743,7 +743,7 @@
       "area": "campsite",
       "name": "A guest saves a shared video to their own phone (host approves)",
       "status": "In development",
-      "evidence": "Worked on a test build on Oct 13 (a 1.6 GB file arrived after the host approved). Not in a download yet; the saved file was not played back.",
+      "evidence": "In the next release: host approval no longer cuts a running guest download. Earlier test-build transfers do not prove the saved copy plays. What is left: a real guest download during approval, followed by picture and audible-sound checks.",
       "realTest": "partly"
     },
     {
@@ -823,7 +823,7 @@
       "area": "campsite",
       "name": "Walkie-talkie from anywhere",
       "status": "In development",
-      "evidence": "The server side is switched on. Joining a real room from two networks is not tested.",
+      "evidence": "Code complete, off and in the next release: every guest needs host approval, Android has a host panel without a microphone, and each guest has message limits. What is left: real host and guest phones on unrelated networks; never tested on real phones.",
       "realTest": "no"
     },
     {
@@ -839,7 +839,7 @@
       "area": "campsite",
       "name": "Campsite guests who are not on the same Wi-Fi (invite link)",
       "status": "In development",
-      "evidence": "Server side only so far; the phone host part is not built.",
+      "evidence": "The walkie-talkie invitation and host controls are code complete, off and unreleased. This does not make remote Campsite video or games Available. What is left: release and real-device testing of each supported flow.",
       "realTest": "no"
     },
     {
@@ -975,7 +975,7 @@
       "area": "away",
       "name": "First-run setup and Test my connection",
       "status": "In development",
-      "evidence": "Written, with open review findings.",
+      "evidence": "First-run connection test card for Windows: next-release work. What is left: check it on a real PC and different home routers, including failed and unavailable connections.",
       "realTest": "no"
     },
     {
@@ -1053,9 +1053,9 @@
     {
       "id": "m-podimport",
       "area": "music",
-      "name": "Bring the podcasts you already follow elsewhere",
+      "name": "Import podcasts from an OPML file or a pasted link/name",
       "status": "In development",
-      "evidence": "Being built; not merged.",
+      "evidence": "Next-release work. What is left: real OPML files, pasted links and names, duplicates, failed imports and subsequent playback on the released build.",
       "realTest": "no"
     },
     {
@@ -1127,7 +1127,7 @@
       "area": "household",
       "name": "Parental limits and ratings",
       "status": "Beta",
-      "evidence": "Automatic tests only; not tried on a restricted profile on a real device.",
+      "evidence": "Existing controls have automated checks. In development, in the next release: a Live TV link stops when its profile is restricted and a Movie Night room removes blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice. What is left: restricted and normal profiles on a real PC.",
       "realTest": "no"
     },
     {
@@ -1199,7 +1199,7 @@
       "area": "online",
       "name": "Online games with people in other homes (private tables with a code)",
       "status": "In development",
-      "evidence": "On Oct 12 the lobby page loaded; playing with people in other homes was not tested.",
+      "evidence": "Online browser-games page connection work is merged, off and unreleased. What is left: real players on different networks, reconnect and host controls. The separate games already on this website keep their own status.",
       "realTest": "no"
     },
     {
@@ -1207,8 +1207,8 @@
       "area": "online",
       "name": "BeeboVPN",
       "status": "In development",
-      "evidence": "Invite-only test, not offered to the public.",
-      "realTest": "no"
+      "evidence": "The owner connected one phone with the standard WireGuard app and it worked. A BeeboVPN Android app has not been started, and public sale is not available. What is left: supported-device and connection testing before any availability claim.",
+      "realTest": "partly"
     },
     {
       "id": "s-rewards",
@@ -1249,6 +1249,22 @@
       "status": "Planned",
       "realTest": "no",
       "evidence": "A plan only."
+    },
+    {
+      "id": "h-next-parental",
+      "area": "household",
+      "name": "Live TV and Movie Night parental fixes (next release)",
+      "status": "In development",
+      "realTest": "no",
+      "evidence": "The fixes are merged but not in the current downloads: restricted Live TV links stop, and Movie Night removes blocked titles when limits tighten. If a parental check fails, viewing continues by the owner’s choice. What is left: real-PC checks after release."
+    },
+    {
+      "id": "auto-next-hardening",
+      "area": "tvauto",
+      "name": "Beebo Auto projection, saved sign-in and Car Party fixes (next release)",
+      "status": "In development",
+      "realTest": "no",
+      "evidence": "Typing is blocked while projecting to the car, saved sign-in is encrypted, and Car Party controls stay usable. Not in the current download. What is left: release and the first real-car test."
     }
   ],
   "notCounted": [
@@ -1275,19 +1291,18 @@
   ],
   "workingOn": [
     "Making Campsite game rooms clear when players leave, so the lead passes to someone who is still there and the host can end a game.",
-    "Fixing bottom sheets that sit under the phone's navigation bar, and screens that are cramped in landscape.",
-    "Letting a Campsite guest save a shared video to their own phone, with the host approving each request.",
     "Letting a passenger in a Car Party watch what is playing, and joining with a blank name.",
-    "A first-run setup and a Test my connection screen, and an Ask the owner button for a viewer who cannot connect.",
     "A self-serve switch to turn Beebo Relay on for your own account, plus a usage line on the phone.",
     "Family Watch Together: face tiles beside the film so far-away family can watch along.",
     "Saving a Trip Journal as a video on every phone, and trip links opened from the desktop app.",
-    "Bringing the podcasts you already follow into Beebo, and fixing following a new podcast.",
     "Phone speakers: automatic line-up, keeping the room between videos, and a movable panel.",
     "Android TV focus and readability polish, and finishing Link a TV.",
-    "Letting Campsite guests who are not on the same Wi-Fi join by invite link.",
     "The Windows app's music player window, which stayed silent in a test.",
-    "More real-device tests: a real car, a real TV, a real tuner, a real Mac, a real Linux desktop and a NAS."
+    "More real-device tests: a real car, a real TV, a real tuner, a real Mac, a real Linux desktop and a NAS.",
+    "In development, next release: first-run Windows connection test and podcast import from an OPML file or a pasted link/name.",
+    "In development, next release: parental-control fixes, guest video compatibility and download continuity, Android accessibility and layout, and Beebo Auto hardening.",
+    "In development, off and next release: walkie-talkie host controls and online browser-games page connection.",
+    "In development, off by default: Remote Desktop keyboard helper; never run on a real PC."
   ],
   "knownProblems": [
     "On a phone, sound stops when the screen turns off unless the player's Screen off option is on.",
@@ -1299,169 +1314,7 @@
     "An ordinary trip link opens only on the home Wi-Fi unless away links are switched on.",
     "The demo player has no subtitles button although the title page mentions one."
   ],
-  "ideas": [
-    {
-      "title": "Old-phone doorbell",
-      "line": "An old phone at the door becomes a doorbell button; the owner gets a notification, sees the camera and can talk back."
-    },
-    {
-      "title": "Phone as mouse or touchpad",
-      "line": "Use the phone as a touchpad or mouse for the PC or TV."
-    },
-    {
-      "title": "Home intercom and baby monitor",
-      "line": "Old phones or webcams become room monitors or intercoms that only allowed profiles can watch."
-    },
-    {
-      "title": "Door camera and intercom",
-      "line": "Connect open-standard IP doorbells and cameras with no subscription."
-    },
-    {
-      "title": "Couch watch parties with voice",
-      "line": "Watch together with synced play and pause, plus live voice chat."
-    },
-    {
-      "title": "Dashcam and travel auto-sync",
-      "line": "After a trip, dashcam video and the Trip Journal copy to the home PC when you park."
-    },
-    {
-      "title": "Home dashboard screen",
-      "line": "A wall tablet or desktop screen showing several live camera streams."
-    },
-    {
-      "title": "Local camera recorder",
-      "line": "A private home recorder that spots people or pets on your own PC and never uses a cloud."
-    },
-    {
-      "title": "Family moments feed",
-      "line": "A daily nudge to share a quick photo or clip into a private household feed on the home PC."
-    },
-    {
-      "title": "Kitchen announcements",
-      "line": "A short voice message that plays at once on chosen household phones or speakers."
-    },
-    {
-      "title": "Family tech help",
-      "line": "The owner can see a family member's Beebo screen and talk them through a problem."
-    },
-    {
-      "title": "Media requests and wishlist",
-      "line": "Guests and limited profiles ask for a title and the owner is notified.",
-      "partly": true
-    },
-    {
-      "title": "Campsite emergency hub",
-      "line": "An offline emergency screen over the camp hotspot with map markers, alerts and saved first-aid pages."
-    },
-    {
-      "title": "Sleep sounds and smart alarm",
-      "line": "A bedroom companion with white noise, a sound alert for a baby's room and a chosen wake-up sound."
-    },
-    {
-      "title": "Multi-room music sync",
-      "line": "The same music in step on phones, tablets and TVs around the house.",
-      "partly": true
-    },
-    {
-      "title": "Time capsule",
-      "line": "Lock family videos, photos and journals until a future date."
-    },
-    {
-      "title": "Family achievements",
-      "line": "Fun badges and household leaderboards from what people watch and play, all on the home PC."
-    },
-    {
-      "title": "Old-device control deck",
-      "line": "An old tablet becomes a small dashboard and button pad for the PC."
-    },
-    {
-      "title": "Multi-camera live studio",
-      "line": "Use several old phones as wireless cameras and switch between them from the PC."
-    },
-    {
-      "title": "Hand playback to a nearby device",
-      "line": "Start on your phone, walk into the room and it moves to the TV or speaker nearby at the same position.",
-      "partly": true
-    },
-    {
-      "title": "Spare-phone backup node",
-      "line": "Keep an extra encrypted copy of Beebo's settings and journals on old phones around the house."
-    },
-    {
-      "title": "Remote Desktop controller pad",
-      "line": "A phone or tablet becomes a touchpad, keyboard and game pad for the PC."
-    },
-    {
-      "title": "Spare-phone video conversion helpers",
-      "line": "Idle old phones help the PC convert video."
-    },
-    {
-      "title": "Surround sound from old phones",
-      "line": "Spread a movie's surround channels across several phones used as room speakers.",
-      "partly": true
-    },
-    {
-      "title": "Offline reference library for camping",
-      "line": "Save web pages such as recipes and trail guides to the PC so they open in Campsite Mode with no internet."
-    },
-    {
-      "title": "PC keyboard and mouse on a spare tablet",
-      "line": "Move your PC mouse and keyboard over to an old tablet next to it."
-    },
-    {
-      "title": "Home sound and movement alarm",
-      "line": "An old phone listens for glass breaking or movement and alerts the owner."
-    },
-    {
-      "title": "Private home voice assistant",
-      "line": "Old phones answer a wake word and talk to an assistant that runs on the home PC with nothing sent to a cloud."
-    },
-    {
-      "title": "Digital picture frame and info board",
-      "line": "Old tablets and TVs show a photo slideshow and family notices from the home PC."
-    },
-    {
-      "title": "Family sign-in code vault",
-      "line": "A private household place on the home PC to keep sign-in codes for other services."
-    },
-    {
-      "title": "Home network traffic viewer",
-      "line": "An old device shows which devices use how much of the home internet."
-    },
-    {
-      "title": "Paper scanner with offline text search",
-      "line": "Photograph a document, save it to the home PC and search its words with no cloud."
-    },
-    {
-      "title": "Campsite team tracker",
-      "line": "Everyone's phone shows where the group is on an offline map over the camp hotspot."
-    },
-    {
-      "title": "Run and ride safety companion",
-      "line": "A phone watches a heart-rate band, detects a crash and opens an audio link to family at home."
-    },
-    {
-      "title": "Sports replay booth",
-      "line": "An old phone films a rolling clip and one tap replays the last moments in slow motion."
-    },
-    {
-      "title": "Beebo Auto trail guide",
-      "line": "Beebo Auto shows saved trip checkpoints and plays offline audiobooks and music together.",
-      "partly": true
-    },
-    {
-      "title": "Ghost runner for indoor workouts",
-      "line": "A virtual ghost on a TV races your past times on a treadmill or bike."
-    },
-    {
-      "title": "TV volume from the phone while casting",
-      "line": "The phone's volume keys and an on-screen slider turn the TV sound up and down."
-    },
-    {
-      "title": "Poster made from the video itself",
-      "line": "When a home video has no poster, Beebo uses a picture taken from the video."
-    }
-  ],
+  "ideas": [],
   "faq": [
     {
       "q": "What is Beebo Entertainment?",
@@ -1489,7 +1342,7 @@
     },
     {
       "q": "What is not finished?",
-      "a": "Many things. The full list on this page says exactly which features are Available, Beta, In development or Planned, what was tested on real devices and when, and what nobody has tested yet. Examples: TV apps on real TVs, a real tuner, a real Mac, a real Linux desktop, and most of Beebo Auto beyond one real car check."
+      "a": "Many things. The full list on this page says exactly which features are Available, Beta, In development or Planned, what was tested on real devices and when, and what nobody has tested yet. Examples: TV apps on real TVs, a real tuner, a real Mac, a real Linux desktop, and Beebo Auto in a real car."
     },
     {
       "q": "How is the completion percentage worked out?",
@@ -1501,7 +1354,7 @@
     },
     {
       "q": "Do you test on real devices?",
-      "a": "Yes, on our own devices: a Galaxy S24 Ultra, a Galaxy S9+, a Chromecast TV, Windows PCs and one real car on one drive. These are our own checks, not a broad beta. Every line says what was tried and what was not."
+      "a": "Yes, on our own devices: a Galaxy S24 Ultra, a Galaxy S9+, a Chromecast TV, Windows PCs. Beebo Auto has never been tested in a real car. These are our own checks, not a broad beta. Every line says what was tried and what was not."
     }
   ]
 }

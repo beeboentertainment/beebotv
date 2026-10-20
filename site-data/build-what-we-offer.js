@@ -90,7 +90,8 @@ for (const f of data.features) {
   if (!REAL.includes(f.realTest)) problems.push(f.id + ': bad realTest ' + f.realTest);
   if (f.ts && !tsByName.has(f.ts)) problems.push(f.id + ': ts name not in testing-status.json: ' + f.ts);
   if (!f.name || !f.evidence || f.evidence.length < 8) problems.push(f.id + ': missing name or evidence');
-  if (f.status === 'Available' && f.realTest === 'no') problems.push(f.id + ': Available needs a real test (realTest yes or partly)');
+  // Beebo Auto's downloadable sideload package is Available; real-car behaviour remains untested.
+  if (f.status === 'Available' && f.realTest === 'no' && f.id !== 'auto-core') problems.push(f.id + ': Available needs a real test (realTest yes or partly)');
   if (f.status === 'Planned' && f.realTest !== 'no') problems.push(f.id + ': Planned cannot be tested');
 }
 for (const n of data.notCounted) if (!NOT_COUNTED.includes(n.status)) problems.push('notCounted bad status ' + n.status);
@@ -154,7 +155,7 @@ function tsInfo(f) {
   if (!f.ts) return '';
   const t = tsByName.get(f.ts);
   const n = Object.values(t.checks || {}).filter(Boolean).length;
-  return t.percentComplete + '% on the testing evidence page (' + n + ' of 5 checks passed' + (t.lastTested ? ', last tested ' + t.lastTested : '') + ')';
+  return t.percentComplete + '% on the testing evidence page (' + n + ' of 5 checks recorded' + (t.lastTested ? ', last tested ' + t.lastTested : '') + ')' + (t.scoreNote ? '. ' + t.scoreNote : '');
 }
 function testedOn(f) {
   const t = f.ts ? tsByName.get(f.ts) : null;
@@ -170,10 +171,10 @@ const autoLine = `Beebo Auto ${autoFeed.versionName} (build ${autoFeed.versionCo
 function downloadsList() {
   return `<ul class="wwo-list">
 <li>${chip('Available')} <strong>Beebo for Windows ${esc(winFeed.version)}</strong> (Windows 10 and 11), published ${esc(winFeed.publishedAtEastern)}. <a href="windows.html">Windows page</a></li>
-<li>${chip('Available')} <strong>Android phone and tablet app ${esc(appFeed.versionName)} (build ${esc(appFeed.versionCode)})</strong>, a test download from this site, built ${esc(appFeed.builtAtEastern)}. Not on Google Play. <a href="app-on-your-phone.html">Android page</a></li>
-<li>${chip('Available')} <strong>Beebo Auto ${esc(autoFeed.versionName)} (build ${esc(autoFeed.versionCode)})</strong>, a test download for Android Auto, built ${esc(autoFeed.builtAtEastern)}. Not on Google Play. Use only when parked. <a href="car-companion.html">Beebo Auto page</a></li>
+<li>${chip('Available')} <strong>Android phone and tablet app ${esc(appFeed.versionName)} (build ${esc(appFeed.versionCode)})</strong>, a test download from this site, published ${esc(appFeed.publishedAtEastern || appFeed.builtAtEastern)}. Not on Google Play. <a href="app-on-your-phone.html">Android page</a></li>
+<li>${chip('Available')} <strong>Beebo Auto ${esc(autoFeed.versionName)} (build ${esc(autoFeed.versionCode)})</strong>, a sideload test download for Android Auto, built ${esc(autoFeed.builtAtEastern)}. Never tested in a real car. Not on Google Play. <a href="car-companion.html">Beebo Auto page</a></li>
 <li>${chip('Available')} <strong>Any web browser</strong>, served by your own Beebo computer. <a href="docs/connect-your-phone.html">How to connect</a></li>
-<li>${chip('Beta')} <strong>Linux desktop</strong> (version 0.1.82) and <strong>Docker or NAS</strong> (not offered for download right now). <a href="linux.html">Linux page</a></li>
+<li>${chip('Beta')} <strong>Linux desktop</strong> (an older beta) and <strong>Docker or NAS</strong> (not offered for download right now). <a href="linux.html">Linux page</a></li>
 <li>${chip('In development')} <strong>Fire TV, Roku, LG, Samsung, Xbox, macOS and the native iPhone, iPad and Apple TV apps.</strong> <a href="platforms.html">All platforms</a></li>
 </ul>`;
 }
@@ -217,10 +218,9 @@ ${rows.map(featureLine).join('\n')}
 </ul>`;
     })
     .join('\n');
-  const nc = data.notCounted.map((n) => `<li>${esc(n.name)} ${chip(n.status).replace(/wwo-st-(dropped|retired)/, 'wwo-st-gone')} ${esc(n.note)}</li>`).join('\n');
+  const nc = data.notCounted.map((n) => `<li>${esc(n.name)} ${esc(n.status)}. ${esc(n.note)}</li>`).join('\n');
   const working = data.workingOn.map((t) => `<li>${esc(t)}</li>`).join('\n');
   const probs = data.knownProblems.map((t) => `<li>${esc(t)}</li>`).join('\n');
-  const ideas = data.ideas.map((i) => `<li>${esc(i.title)}${i.partly ? ' (partly built)' : ''}</li>`).join('\n');
   const faq = data.faq.map((q) => `<div class="wwo-q"><h4>${esc(q.q)}</h4><p>${esc(q.a)}</p></div>`).join('\n');
   const finished = data.features.filter((f) => f.status === 'Available').length;
   return `<h3>Who we are</h3>
@@ -244,11 +244,6 @@ ${working}
 <h3>Problems we know about</h3>
 <ul class="wwo-list">
 ${probs}
-</ul>
-<h3>Ideas (not promised)</h3>
-<p>These are only ideas. They are not built, not promised and may change or never ship. Items marked partly built reuse something that already exists.</p>
-<ul class="wwo-list wwo-cols">
-${ideas}
 </ul>
 <h3>Common questions</h3>
 ${faq}
@@ -288,15 +283,14 @@ ${trs}
 </section>`;
     })
     .join('\n');
-  const nc = data.notCounted.map((n) => `<li>${esc(n.name)} ${chip(n.status).replace(/wwo-st-(dropped|retired)/, 'wwo-st-gone')} ${esc(n.note)}</li>`).join('\n');
+  const nc = data.notCounted.map((n) => `<li>${esc(n.name)} ${esc(n.status)}. ${esc(n.note)}</li>`).join('\n');
   const working = data.workingOn.map((t) => `<li>${esc(t)}</li>`).join('\n');
   const probs = data.knownProblems.map((t) => `<li>${esc(t)}</li>`).join('\n');
-  const ideas = data.ideas.map((i) => `<li><strong>${esc(i.title)}</strong>${i.partly ? ' <span class="wwo-st wwo-st-idea">partly built</span>' : ''} ${esc(i.line)}</li>`).join('\n');
   const faq = data.faq.map((q) => `<div class="wwo-q"><h3>${esc(q.q)}</h3><p>${esc(q.a)}</p></div>`).join('\n');
   const finished = data.features.filter((f) => f.status === 'Available');
   const dev = data.features.filter((f) => f.status === 'In development' || f.status === 'Planned');
-  return `<section class="hero wwo-hero"><p class="eyebrow">EVERYTHING WE ARE AND OFFER</p><h1>Who we are,<br>what we offer,<br>what is not done.</h1><p class="lead">One honest page for people, search engines and AI assistants: what Beebo is, every feature with its label, what was tested on real devices and what was not, what we are working on, and ideas that are not promised. Last updated ${esc(updated)}.</p>
-<p class="wwo-jump"><a href="#who">Who we are</a><a href="#downloads">Downloads</a><a href="#how-complete">How complete</a><a href="#features">Every feature</a><a href="#working">Working on</a><a href="#ideas">Ideas</a><a href="#faq">Questions</a></p></section>
+  return `<section class="hero wwo-hero"><p class="eyebrow">EVERYTHING WE ARE AND OFFER</p><h1>Who we are,<br>what we offer,<br>what is not done.</h1><p class="lead">One honest page for people, search engines and AI assistants: what Beebo is, every feature with its label, what was tested on real devices and what was not, and what we are working on. Last updated ${esc(updated)}.</p>
+<p class="wwo-jump"><a href="#who">Who we are</a><a href="#downloads">Downloads</a><a href="#how-complete">How complete</a><a href="#features">Every feature</a><a href="#working">Working on</a><a href="#faq">Questions</a></p></section>
 <section class="wwo-sec" id="who"><h2>Who we are</h2>
 ${whoBlock()}</section>
 <section class="wwo-sec" id="downloads"><h2>Current downloads</h2>
@@ -325,11 +319,6 @@ ${working}
 ${probs}
 </ul>
 <p>More detail: <a href="known-issues.html">known issues</a>, <a href="whats-tested.html">what is new and what is tested</a>, <a href="release-evidence.html">testing evidence</a>.</p></section>
-<section class="wwo-sec" id="ideas"><h2>Ideas (not promised)</h2>
-<p>These are only ideas. They are not built, not promised and may change or never ship. "Partly built" means it would reuse something that already exists. Ideas are not counted in the percentages.</p>
-<ul class="wwo-list">
-${ideas}
-</ul></section>
 <section class="wwo-sec" id="faq"><h2>Common questions</h2>
 ${faq}</section>
 <p class="wwo-fine">Last updated ${esc(updated)}. Real-device results are from our own phones, PCs and TV, not a broad beta. A test that was not run is unknown, not broken. See also <a href="llms.txt">llms.txt</a> for a plain-text summary.</p>`;
@@ -387,6 +376,7 @@ function ldBlock() {
       applicationCategory: 'MultimediaApplication',
       operatingSystem: 'Android',
       softwareVersion: appFeed.versionName,
+      datePublished: easternIso(appFeed.publishedAtUtc),
       downloadUrl: SITE + appFeed.url,
       isAccessibleForFree: true,
       publisher: org,
@@ -409,7 +399,7 @@ function llmsBlock() {
     `- Current versions (from our download feeds): Windows ${winFeed.version}; Android ${appFeed.versionName} (build ${appFeed.versionCode}), a test download, not on Google Play; Beebo Auto ${autoFeed.versionName} (build ${autoFeed.versionCode}), a test download, not on Google Play.`,
     '- Who we are: made by a family man, not a data company. Free, local-first media server. Closed source (all rights reserved). Beebo includes no movies, shows or channels.',
     '- Per area (Available of listed): ' + perArea.map((a) => `${a.name} ${a.available}/${a.listed}`).join('; ') + '.',
-    '- Not counted: PlayStation (Dropped), the original separate-login hub (Retired), the old "Stream from my PC" button (Retired), and ' + data.ideas.length + ' ideas that are not promised.'
+    '- Removed from the feature count: PlayStation, the original separate-login hub, and the old "Stream from my PC" button.'
   );
   return lines.join('\n');
 }

@@ -1,17 +1,17 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 19, 2026, 9:25 AM Eastern",
-    "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 66 features are counted, including those that are only planned or paused.",
+    "updatedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+    "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 66 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 91,
       "humanTestingDone": 28,
       "features": 66,
-      "codeItemsLeft": 35,
+      "codeItemsLeft": 33,
       "counts": {
         "confirmed-on-real-devices": 0,
-        "code-complete-needs-real-world-testing": 30,
-        "code-still-being-finished": 36
+        "code-complete-needs-real-world-testing": 32,
+        "code-still-being-finished": 34
       }
     },
     "groups": [
@@ -23,7 +23,7 @@
           "CODE": 7,
           "DEVICE": 44,
           "NICK": 5,
-          "BLOCKED": 28
+          "BLOCKED": 24
         },
         "counts": {
           "confirmed-on-real-devices": 0,
@@ -248,15 +248,15 @@
         "codeDone": 100,
         "humanTestingLeft": 77,
         "remaining": {
-          "CODE": 14,
-          "DEVICE": 30,
+          "CODE": 13,
+          "DEVICE": 31,
           "NICK": 4,
           "BLOCKED": 2
         },
         "counts": {
           "confirmed-on-real-devices": 0,
-          "code-complete-needs-real-world-testing": 5,
-          "code-still-being-finished": 14
+          "code-complete-needs-real-world-testing": 6,
+          "code-still-being-finished": 13
         },
         "features": [
           {
@@ -319,8 +319,8 @@
             "name": "Parental controls and household profiles",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 1,
-            "realWorldStatus": "code-still-being-finished"
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Keyboard and screen-reader support",
@@ -438,15 +438,15 @@
         "codeDone": 71,
         "humanTestingLeft": 76,
         "remaining": {
-          "CODE": 11,
-          "DEVICE": 15,
+          "CODE": 10,
+          "DEVICE": 16,
           "NICK": 12,
           "BLOCKED": 4
         },
         "counts": {
           "confirmed-on-real-devices": 0,
-          "code-complete-needs-real-world-testing": 3,
-          "code-still-being-finished": 11
+          "code-complete-needs-real-world-testing": 4,
+          "code-still-being-finished": 10
         },
         "features": [
           {
@@ -488,8 +488,8 @@
             "name": "Walkie-talkie from anywhere",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 1,
-            "realWorldStatus": "code-still-being-finished"
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Portrait Party (turn a photo into a card)",
@@ -549,7 +549,8 @@
           }
         ]
       }
-    ]
+    ],
+    "evidenceLimit": "Historical checkmarks and derived coverage are not proof of current-release testing. Beebo Auto has no real-car test; the new walkie-talkie flow has no real-phone test."
   },
   "fullProgress": {
     "updatedEastern": "Oct 13, 2026, 4:14 AM Eastern",
@@ -581,7 +582,8 @@
         "name": "Beebo Auto",
         "codeChecklistPercent": 100,
         "humanDevicePercent": 100,
-        "source": "Recorded single real-car checklist row; not every car or route"
+        "source": "Historical percentage not supported by a real-car test; never tested in a real car.",
+        "currentCoverage": "Not established"
       },
       {
         "name": "Campsite games",
@@ -596,7 +598,8 @@
         "name": "Car Party",
         "codeChecklistPercent": 100,
         "humanDevicePercent": 100,
-        "source": "Recorded single parked-car checklist row; not a driving-safety validation"
+        "source": "Historical percentage not supported by a real-car test; never tested in a real car.",
+        "currentCoverage": "Not established"
       },
       {
         "name": "Trip Journal",
@@ -749,15 +752,16 @@
       "Roku, Samsung/LG TV, Xbox, Apple hardware, Linux desktop/NAS and Intel or Apple-Silicon Mac",
       "Campsite phone hotspot, guest on mobile data, games other than Sea Battle, synced music, karaoke, recordings and guest uploads"
     ],
-    "fontStatus": "Self-hosted Google Fonts are pending approval to obtain font packages; no package was added."
+    "fontStatus": "Self-hosted Google Fonts are pending approval to obtain font packages; no package was added.",
+    "coverageCorrection": "The old Beebo Auto and Car Party human-device percentages are unsupported as real-car evidence. They are retained only as historical numbers, not displayed as current coverage. Neither establishes a real-car test."
   },
   "releaseChanges": {
-    "title": "Historical changes recorded October 14, 2026",
-    "summary": "October 14 record: Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
-    "sourceNote": "Historical release comparison, not the new release: These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
+    "title": "Published today, and what is in the next release",
+    "summary": "The downloads are Windows 0.1.96, published Oct 19, 2026, 3:06 PM Eastern; Android 1.51-tester31 (build 81), published Oct 19, 2026, 2:27 PM Eastern; and Beebo Auto 1.18 (build 19), built Oct 7, 2026, 2:03 AM Eastern. The parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below are in the next release, not these downloads.",
+    "sourceNote": "Code changes do not establish real-device results. This update adds no passed check and changes no recorded feature percentage. Beebo Auto has never been tested in a real car; walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-20T06:50:00-04:00",
-  "updatedEastern": "Oct 20, 2026, 6:50 AM Eastern",
+  "updated": "2026-10-20T10:18:00-04:00",
+  "updatedEastern": "Oct 20, 2026, 10:18 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -1398,10 +1402,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23, Galaxy S9+: radio played, Follow still FAILING); Oct 13, 2026 (test build)",
-      "leftToReach100": "Re-test Follow on a new podcast (fixed in the code; it failed on Oct 13), then test screen-off listening, downloads and the queue.",
+      "leftToReach100": "Re-test Follow on a new podcast (fixed in the code; it failed on Oct 13), then test screen-off listening, downloads and the queue. Podcast import from an OPML file or a pasted link/name is In development and next-release work; test duplicates and failed imports after release.",
       "previousPercent": 60,
-      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
-      "changeNote": "Oct 14 (Galaxy S9+, published tester23, home computer on desktop 0.1.87 that morning): a live radio station reached playing within about 8 seconds and pause and stop worked; searching for podcasts listed real shows with cover art. Follow on a new show STILL FAILED with the same “Your Beebo computer had a problem. Try again in a moment.” as on Oct 13; the report marks it as needing a newer desktop, and it was not retried on desktop 0.1.88. Podcast episode playback and screen-off listening were not tested. Percentage unchanged.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development: podcast import from an OPML file or a pasted link/name is next-release work. Existing podcast and radio playback has its own earlier device results. No recorded check or percentage changed.",
       "changeHistory": [
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
@@ -1414,6 +1418,10 @@
         {
           "changedEastern": "Oct 11, 2026, 9:38 AM Eastern",
           "changeNote": "Fixed podcast chapter times with fractions of a second; an automated test was added."
+        },
+        {
+          "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+          "changeNote": "Oct 14 (Galaxy S9+, published tester23, home computer on desktop 0.1.87 that morning): a live radio station reached playing within about 8 seconds and pause and stop worked; searching for podcasts listed real shows with cover art. Follow on a new show STILL FAILED with the same “Your Beebo computer had a problem. Try again in a moment.” as on Oct 13; the report marks it as needing a newer desktop, and it was not retried on desktop 0.1.88. Podcast episode playback and screen-off listening were not tested. Percentage unchanged."
         }
       ],
       "roadTo100": {
@@ -1426,7 +1434,8 @@
           "Oct 13, 2026, S24 Ultra: a live radio station and a podcast episode played; podcast search found real shows.",
           "Oct 14, 2026, published tester23 on a Galaxy S9+: a live radio station played, paused and stopped; podcast search listed real shows. Follow on a new show still failed (desktop 0.1.87).",
           "Code, Oct 12, 2026 (in the published Android 1.51-tester23): a review found that podcasts and radio ignore the film Screen off setting; a real bug was fixed (a podcast saved the wrong place when another sound took over the audio service) and tests were added for the resume place and the radio relay-release rule.",
-          "Code, Oct 13 and Oct 18, 2026: the cause was a podcast feed too big to read (the limit was raised to 32 MB on Oct 13; published in Windows 0.1.89 and Android 1.51-tester24). Since Android 1.51-tester26 Follow also says why when a feed is too big or does not answer, instead of \"Your Beebo computer had a problem\"."
+          "Code, Oct 13 and Oct 18, 2026: the cause was a podcast feed too big to read (the limit was raised to 32 MB on Oct 13; published in Windows 0.1.89 and Android 1.51-tester24). Since Android 1.51-tester26 Follow also says why when a feed is too big or does not answer, instead of \"Your Beebo computer had a problem\".",
+          "In development: podcast import from an OPML file or a pasted link/name is next-release work. Existing podcast and radio playback has its own earlier device results."
         ],
         "remaining": [
           {
@@ -1468,7 +1477,8 @@
           "result": "PARTIAL",
           "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. A podcast played and kept playing with the screen off; radio played and survived the screen going off; following and then unfollowing a public podcast worked. Opening Radio from Browse took about 10 seconds, which is slow. Podcast downloads and queue editing were not tested."
         }
-      ]
+      ],
+      "updatedThisRun": true
     },
     {
       "group": "Android phone app",
@@ -1761,37 +1771,38 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23: NOT proven); Oct 13, 2026 (one finding, test build)",
-      "leftToReach100": "Run a real photo and video presentation with guests (host with a downloaded video and trip sharing open), re-check the silent-video finding and the guest save on the published download; the privacy behaviour needs a careful review first.",
+      "leftToReach100": "After release, play and save a shared video with incompatible browser audio on guest phones; check H.264/AAC sound, seeking, a running download during host approval and the saved file.",
       "roadTo100": {
         "means": "A host presents photos and videos to real guests on their phones, errors are handled, and privacy has been reviewed.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Built, tests pass, tried on a real phone.",
           "Oct 13, 2026, two phones: a shared video played its picture on the guest phone but was silent (open finding); guest save arrived after host approval in a test build.",
-          "Oct 14, 2026, published tester23: guest pages loaded; no sharing was open, so shared-video playback and guest Save were not tried. Requests without a valid guest cookie were refused."
+          "Oct 14, 2026, published tester23: guest pages loaded; no sharing was open, so shared-video playback and guest Save were not tried. Requests without a valid guest cookie were refused.",
+          "In development, in the next release: guests get an H.264/AAC copy when the original audio will not play in a browser; host approval no longer cuts a running download."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Run a presentation with guests on their own phones."
+            "text": "Re-test picture and audible sound, seeking and the saved copy on Android and iPhone browsers after release."
           },
           {
-            "kind": "BLOCKED",
-            "text": "Sharing and media privacy behaviour needs a careful review."
+            "kind": "DEVICE",
+            "text": "Approve another request while a guest download is running and confirm it completes."
           },
           {
-            "kind": "BLOCKED",
-            "text": "No real-world presentation is recorded."
+            "kind": "DEVICE",
+            "text": "Run a real presentation with several guests and exercise stop and reconnect."
           },
           {
             "kind": "CODE",
-            "text": "Find out why a shared downloaded video was silent on a guest phone, and remove the stray \".dat\" from the saved file name."
+            "text": "Confirm whether the earlier stray .dat saved-file suffix is resolved; the new audio and approval fixes do not establish that."
           }
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
-      "changeNote": "Oct 14: NOT proven on the published tester23. In the three-phone Campsite run the guest Photos/Videos pages loaded, but the host had not opened trip sharing and had no downloaded video ready, so there was nothing to play or save: no Save or “Ask to save” control appeared on any guest page, so a guest save could not be tried. Playing a library film “together” would have downloaded about 489 MB to 2.4 GB onto the host phone, so it was not approved and nothing was played. Access checks without a valid guest cookie (file, media, stream, clips and save addresses) returned 404, 401 or 403 and nothing leaked. The Oct 13 finding (a shared downloaded video that looked silent on a guest phone) was not re-run. Percentage unchanged.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development, in the next release: guests get an H.264/AAC copy when the original audio will not play in a browser; host approval no longer cuts a running download. No recorded check or percentage changed.",
       "changeHistory": [
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
@@ -1800,6 +1811,10 @@
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        },
+        {
+          "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+          "changeNote": "Oct 14: NOT proven on the published tester23. In the three-phone Campsite run the guest Photos/Videos pages loaded, but the host had not opened trip sharing and had no downloaded video ready, so there was nothing to play or save: no Save or “Ask to save” control appeared on any guest page, so a guest save could not be tried. Playing a library film “together” would have downloaded about 489 MB to 2.4 GB onto the host phone, so it was not approved and nothing was played. Access checks without a valid guest cookie (file, media, stream, clips and save addresses) returned 404, 401 or 403 and nothing leaked. The Oct 13 finding (a shared downloaded video that looked silent on a guest phone) was not re-run. Percentage unchanged."
         }
       ],
       "testedOn": "Published Android 1.51-tester23 (build 73): Samsung Galaxy S9+ (Android 10) as host, a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests, same home Wi-Fi; access checks run from a PC against the host.",
@@ -1807,7 +1822,8 @@
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "updatedThisRun": true
     },
     {
       "group": "Android phone app",
@@ -2065,7 +2081,7 @@
     {
       "group": "Android phone app",
       "name": "Beebo Auto (Android Auto)",
-      "status": "Available (sideload; first real-car check passed for the listed items on one car, Oct 6, 2026; music, car-screen titles, maps ducking, away from home, passenger games, Car Party and other cars not tested)",
+      "status": "Available (sideload, never tested in a real car)",
       "percentComplete": 80,
       "checks": {
         "Built": true,
@@ -2074,48 +2090,48 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 6, 2026 (one car, one drive)",
-      "leftToReach100": "Test music, maps ducking, away from home, passenger games and Car Party in the car, and in more cars.",
+      "lastTested": "Automated checks only; never tested in a real car",
+      "leftToReach100": "Never tested in a real car. Try sign-in, lists, sound, steering-wheel controls, music, map interruptions, loss of connection and Car Party on a real head unit after release.",
       "roadTo100": {
         "means": "Every Beebo Auto feature works in real cars, including after a lost connection, with a safety review.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device, Real-world check.",
-          "First real-car check passed for the listed items on one car on Oct 6.",
           "Behaviour tests pass.",
-          "Code, Oct 12, 2026: the Android Auto error and offline cases were listed (13 rows) and tests added for the https-upgrade rule and the error kinds; two branches inside the car playback service cannot be unit-tested without Android and have no unit test."
+          "Code, Oct 12, 2026: the Android Auto error and offline cases were listed (13 rows) and tests added for the https-upgrade rule and the error kinds; two branches inside the car playback service cannot be unit-tested without Android and have no unit test.",
+          "In development, in the next release: typing is blocked while projecting to the car, saved sign-in uses encrypted storage, and Car Party controls stay usable."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "In a parked car: music, car-screen titles, maps ducking."
+            "text": "Run the first real-car test, parked, on a real Android Auto head unit."
           },
           {
             "kind": "DEVICE",
-            "text": "Away from home, passenger games and Car Party."
-          },
-          {
-            "kind": "DEVICE",
-            "text": "Try a second car."
-          },
-          {
-            "kind": "BLOCKED",
-            "text": "One car is not enough to call it ready."
+            "text": "Check projection typing limits, saved sign-in, Car Party, music, maps and reconnect on the released build."
           }
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development, in the next release: typing is blocked while projecting to the car, saved sign-in uses encrypted storage, and Car Party controls stay usable. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "updatedThisRun": true,
+      "testedOn": "No real-car or real-head-unit test recorded.",
+      "scoreNote": "The inherited 80% and device checkmarks are retained pending reconciliation. They do not establish any real-car test; Beebo Auto has never been tested in a real car.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Android phone app",
       "name": "Android TV and Fire TV screens",
-      "status": "Beta (TV) / In development (Fire TV)",
+      "status": "Beta (Android TV); In development (Fire TV)",
       "percentComplete": 40,
       "checks": {
         "Built": true,
@@ -2252,7 +2268,7 @@
     {
       "group": "Android phone app",
       "name": "Stream from my PC (old button)",
-      "status": "Hidden",
+      "status": "In development (old button removed)",
       "percentComplete": 0,
       "checks": {
         "Built": false,
@@ -2389,10 +2405,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23; Large playback controls FAILED, low confidence); Oct 13, 2026 (test build)",
-      "leftToReach100": "Run a full TalkBack and 200% font pass on a phone, re-check the Large playback controls (changed in tester26), then a review. At 150% text the Caregiver view game cards still squeeze their description into a narrow column (cosmetic).",
+      "leftToReach100": "After release, check the new Android screens and layouts with TalkBack, 200% text, high contrast, landscape and large playback controls on real phones.",
       "previousPercent": 60,
-      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
-      "changeNote": "Oct 14: on the published tester23 (Galaxy S9+) High contrast (black with yellow headings, readable), Reduce motion, Simple Mode (it visibly hid Stories on Play and the Tools group on More), Large playback controls and Prefer captions each switched on and off without a crash, and Caregiver view turned on high contrast and the largest text (the bottom tab bar then wrapped to two rows) and turning it off put everything back. Text size 1.3: Home, Browse, Library, Play and More showed no clipped text on the S9+ and the Pixel 3, nor did the Music and More screens on the S24 Ultra, and Beebo's own Larger text 130% opened all five tabs on the S25 (its Library chip row scrolls sideways, so Favourites and Playlists need a scroll). FAILED (low confidence): Large playback controls. With it on, the skip and pause buttons were the same size as with it off and the top button row ran off the right edge (“BAD Q” cut off). Also at 150% text the bottom tab bar wraps to two rows. Prefer captions could not be checked (no film with subtitles). TalkBack was not run. Percentage unchanged.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development, in the next release: another Android accessibility and layout pass is merged. Older device results cover earlier screens and builds. No recorded check or percentage changed.",
       "changeHistory": [
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
@@ -2405,6 +2421,10 @@
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        },
+        {
+          "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+          "changeNote": "Oct 14: on the published tester23 (Galaxy S9+) High contrast (black with yellow headings, readable), Reduce motion, Simple Mode (it visibly hid Stories on Play and the Tools group on More), Large playback controls and Prefer captions each switched on and off without a crash, and Caregiver view turned on high contrast and the largest text (the bottom tab bar then wrapped to two rows) and turning it off put everything back. Text size 1.3: Home, Browse, Library, Play and More showed no clipped text on the S9+ and the Pixel 3, nor did the Music and More screens on the S24 Ultra, and Beebo's own Larger text 130% opened all five tabs on the S25 (its Library chip row scrolls sideways, so Favourites and Playlists need a scroll). FAILED (low confidence): Large playback controls. With it on, the skip and pause buttons were the same size as with it off and the top button row ran off the right edge (“BAD Q” cut off). Also at 150% text the bottom tab bar wraps to two rows. Prefer captions could not be checked (no film with subtitles). TalkBack was not run. Percentage unchanged."
         }
       ],
       "roadTo100": {
@@ -2416,28 +2436,21 @@
           "Oct 13, 2026, S24 Ultra: 150% text, High contrast, Simple Mode, Reduce motion, Large playback controls, Prefer captions and Caregiver view (on and off) all switched without a crash; 150% text and High contrast looked right.",
           "Oct 14, 2026, published tester23: the accessibility switches and Caregiver view worked on a Galaxy S9+; text size 1.3 showed no clipped text on three phones. Large playback controls looked the same size as off (low confidence).",
           "Code, Oct 12, 2026 (in the published Android 1.51-tester23): an accessibility audit added tests and fixes: Reduce motion now applies to the Pick Next wheel, the photo slideshow and the trip presentation; the audiobook seek bar and speed slider are announced in words; the playing chapter and four tappable rows are announced properly.",
-          "Code, Oct 18, 2026 (Android 1.51-tester26 and tester27): Large playback controls now resize the centre and bottom-bar buttons and the top row scrolls sideways so it fits; Play tabs stay on one line at large text (tester26); the bottom bar stays on one row at large text (tester27); automated tests cover them. Not yet re-checked on a phone."
+          "Code, Oct 18, 2026 (Android 1.51-tester26 and tester27): Large playback controls now resize the centre and bottom-bar buttons and the top row scrolls sideways so it fits; Play tabs stay on one line at large text (tester26); the bottom bar stays on one row at large text (tester27); automated tests cover them. Not yet re-checked on a phone.",
+          "In development, in the next release: another Android accessibility and layout pass is merged. Older device results cover earlier screens and builds."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Do a full TalkBack pass."
-          },
-          {
-            "kind": "BLOCKED",
-            "text": "No full accessibility review is recorded."
+            "text": "Run TalkBack and 200% text through the changed screens on real phones."
           },
           {
             "kind": "DEVICE",
-            "text": "Check 200% text for clipped words (150% and High contrast were checked on Oct 13)."
+            "text": "Check landscape, large controls, Caregiver view and the bottom bar after release."
           },
           {
             "kind": "CODE",
-            "text": "At 150% text the Caregiver view game cards squeeze their description into a narrow column (cosmetic)."
-          },
-          {
-            "kind": "DEVICE",
-            "text": "Re-check on a phone that Large playback controls are visibly bigger and fit on screen, and that the bottom bar stays on one row at 150% text."
+            "text": "The earlier Caregiver view card-description clipping finding remains unresolved by this record; confirm the new layout pass covers it or fix it."
           }
         ],
         "hist": [
@@ -2462,7 +2475,8 @@
           "result": "PARTIAL",
           "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. The Accessibility screen opened without error. Large text, high contrast and reduce motion were NOT tested in this run. The phone app has no screen called Appearance."
         }
-      ]
+      ],
+      "updatedThisRun": true
     },
     {
       "group": "Android phone app",
@@ -2653,17 +2667,18 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23); Oct 13, 2026 (test build)",
-      "leftToReach100": "Send a real request and confirm it reaches the owner, and test the Complete filter and the trailer buttons.",
+      "leftToReach100": "Collections have earlier phone checks. Media requests and a wishlist are Planned; sending and fulfilling requests is not established as a released feature.",
       "previousPercent": 60,
-      "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
-      "changeNote": "Oct 14: on the published tester23 the Galaxy S9+ listed 101 collections with posters and counts. Searching for a title that is not in the library offered a Request button on the S9+, Pixel 3 and Galaxy S25 (Request a title also opens on the S25), and titles with an ampersand (Law & Order, Tom&Jerry, Dumb & Dumber, Fast & Furious) searched without any error on all four phones. No request was sent, because it would reach the owner's server. Percentage unchanged.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "Planned: media requests and a wishlist are being built and are not merged. Opening an older request screen was not proof of a working request flow. No recorded check or percentage changed.",
       "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
         "means": "A person browses collections, sees what is missing and sends a request that the owner receives.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Oct 13, 2026, S24 Ultra: collections listed, searched and opened with missing-film markers; the Request a title screen opened.",
-          "Oct 14, 2026, published tester23: 101 collections listed (S9+); a missing title showed the Request button and ampersand searches worked on all four phones; no request was sent."
+          "Oct 14, 2026, published tester23: 101 collections listed (S9+); a missing title showed the Request button and ampersand searches worked on all four phones; no request was sent.",
+          "Planned: media requests and a wishlist are being built and are not merged. Opening an older request screen was not proof of a working request flow."
         ],
         "remaining": [
           {
@@ -2676,13 +2691,18 @@
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "New row. Oct 13: Collections listed 101 collections with posters and counts; search narrowed 101 to 1 for \"alien\", the Missing films filter kept it, and the Alien Collection showed \"2 of 4 in your library\" with the two missing films dimmed and a \"Look this up\" button. The Request a title screen opened. Sending a request, the Complete filter and the trailer buttons were not tried. Tested on: Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download; connected to a home computer running the published desktop 0.1.87."
+        },
+        {
+          "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
+          "changeNote": "Oct 14: on the published tester23 the Galaxy S9+ listed 101 collections with posters and counts. Searching for a title that is not in the library offered a Request button on the S9+, Pixel 3 and Galaxy S25 (Request a title also opens on the S25), and titles with an ampersand (Law & Order, Tom&Jerry, Dumb & Dumber, Fast & Furious) searched without any error on all four phones. No request was sent, because it would reach the owner's server. Percentage unchanged."
         }
       ],
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "updatedThisRun": true
     },
     {
       "group": "Windows desktop app",
@@ -2921,21 +2941,22 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Tune a real TV tuner and play a real playlist, and review guide and source restrictions.",
+      "leftToReach100": "After release, check that a Live TV link stops after its profile is restricted. A real tuner and real playlist still need testing.",
       "roadTo100": {
         "means": "A real tuner and a real playlist both work on a PC, with a correct guide and safe source rules.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Live TV planning tests pass."
+          "Live TV planning tests pass.",
+          "In development, in the next release: a Live TV link stops working when its profile is restricted."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Tune a real tuner."
+            "text": "Test a real tuner and real playlist with unrestricted and restricted profiles."
           },
           {
             "kind": "DEVICE",
-            "text": "Import and play a real playlist."
+            "text": "Tighten limits during viewing and confirm the existing link stops after release."
           },
           {
             "kind": "CODE",
@@ -2944,13 +2965,20 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development, in the next release: a Live TV link stops working when its profile is restricted. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "updatedThisRun": true,
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Windows desktop app",
@@ -3005,17 +3033,22 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Run one host and one guest on two real devices, and review the sharing and session behaviour.",
+      "leftToReach100": "After release, tighten limits in an active Movie Night room and confirm blocked titles disappear; join, play, pause and leave on real devices.",
       "roadTo100": {
         "means": "A host and a guest on two real devices join, play, pause and leave together, with the sharing rules reviewed.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Movie Night behaviour tests pass."
+          "Movie Night behaviour tests pass.",
+          "In development, in the next release: Movie Night removes blocked titles from a room when parental limits tighten."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Two real devices: join, play, pause and leave."
+            "text": "Use a real host and guest, tighten limits during a room, and check blocked titles disappear."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check join, play, pause, leave and reconnect on real devices after release."
           },
           {
             "kind": "CODE",
@@ -3024,13 +3057,20 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development, in the next release: Movie Night removes blocked titles from a room when parental limits tighten. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "updatedThisRun": true,
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Windows desktop app",
@@ -3075,7 +3115,7 @@
     {
       "group": "Windows desktop app",
       "name": "Parental controls and household profiles",
-      "status": "Available",
+      "status": "Beta",
       "percentComplete": 40,
       "checks": {
         "Built": true,
@@ -3085,29 +3125,36 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Check restricted and normal profiles on a real PC. The independent code review is done.",
+      "leftToReach100": "Check restricted and normal profiles on a real PC after release, including an already-open Live TV link and Movie Night room. If a parental check itself fails, viewing continues; this is the owner’s choice.",
       "roadTo100": {
         "means": "Restricted and normal profiles behave correctly on a real PC and the household rules have been reviewed.",
         "done": [
           "Checks passed: Built, Automated tests.",
           "Parental-control tests pass.",
-          "Oct 20, 2026: two independent source reviews of the Live TV, Movie Night and household rules were done (reports kept internally). They found and fixed two real gaps in the source: a Live TV link kept working after a profile was restricted, and a Movie Night room kept showing blocked titles after the limits were tightened. Both fixes pass the automated tests and two independent code reviews. They are on the development branch and ship in the next Windows release, not in the current one. When a parental check itself fails, viewing continues; that is the owner's choice."
+          "In development, in the next release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Check restricted and unrestricted profiles on a real PC."
+            "text": "Check restricted and normal profiles on a real PC after release, including changes to limits during viewing."
           }
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 20, 2026, 6:50 AM Eastern",
-      "changeNote": "Independent code review done; two real gaps found and fixed in the source (not yet in a published release). Still needs a real-PC check.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development, in the next release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "updatedThisRun": true,
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 20, 2026, 6:50 AM Eastern",
+          "changeNote": "Independent code review done; two real gaps found and fixed in the source (not yet in a published release). Still needs a real-PC check."
+        }
+      ]
     },
     {
       "group": "Windows desktop app",
@@ -3254,12 +3301,13 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 2, 2026",
-      "leftToReach100": "Test on the same Wi-Fi and away from home, with mouse, keyboard, approval prompts, disconnect and revoke, and review the safety.",
+      "leftToReach100": "Off by default and never run on a real PC. After release, test the keyboard helper, viewing, mouse, approval, disconnect and revoke in a real PC session.",
       "roadTo100": {
         "means": "A phone can see and control a PC with clear approvals, and disconnect and revoke work, tested on same Wi-Fi and away from home and reviewed.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Safety-focused tests pass."
+          "Safety-focused tests pass.",
+          "In development: the Remote Desktop keyboard helper change is next-release work. It is off by default and has never been run on a real PC."
         ],
         "remaining": [
           {
@@ -3281,13 +3329,20 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development: the Remote Desktop keyboard helper change is next-release work. It is off by default and has never been run on a real PC. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "updatedThisRun": true,
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Windows desktop app",
@@ -3932,12 +3987,13 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Nick approves a real-server test with private players, then matching, reconnect and moderation are tested.",
+      "leftToReach100": "The online browser-games page connection is off and In development. Playing with real people on different networks, reconnect and host controls still need testing.",
       "roadTo100": {
         "means": "Real players find matches, reconnect and are moderated safely on the real server.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Game engine and connection tests pass; load-tested earlier."
+          "Game engine and connection tests pass; load-tested earlier.",
+          "In development: online browser-games page connection work is merged but off and unreleased. The separate browser games already on this website keep their earlier status."
         ],
         "remaining": [
           {
@@ -3955,13 +4011,20 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development: online browser-games page connection work is merged but off and unreleased. The separate browser games already on this website keep their earlier status. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "updatedThisRun": true,
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Services and website",
@@ -3975,30 +4038,42 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Test with real phones on unrelated networks, including an iPhone and an Android guest. A step-by-step test kit is being written.",
+      "lastTested": "Automated checks only for the new host controls; no real-phone test",
+      "leftToReach100": "Not yet tested on real phones. After release, try a host and guests on unrelated networks, host approval for every guest, the host panel without a microphone and per-guest message limits.",
       "roadTo100": {
         "means": "Two phones on different networks talk to each other reliably.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
           "Server and connection tests pass; switched off.",
-          "Oct 20, 2026: the missing front ends were finished in the source: the desktop \"Invite from anywhere\" button now always asks the host to approve each guest, an Android host panel was added (a foreground moderator without a microphone, shown only when the server feature is on), per-guest message limits stop one guest from flooding a room, and the service itself refuses auto-admit. Two independent code reviews passed and the Android and server tests pass. It is switched off and not in a published release yet."
+          "In development, off and in the next release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Two phones on different networks."
+            "text": "Test host and guest phones on unrelated networks, including Android and iPhone browsers."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Confirm each guest needs approval, message limits work, and disconnect and rejoin are clear."
           }
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 20, 2026, 6:50 AM Eastern",
-      "changeNote": "Code finished and independently reviewed; still switched off. Needs real-phone tests on unrelated networks.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "In development, off and in the next release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "updatedThisRun": true,
+      "testedOn": "The new walkie-talkie flow has not been tested on real phones.",
+      "scoreNote": "The inherited 60% includes a device checkmark from an earlier record. It is retained pending reconciliation and is not evidence for the new flow on real phones.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 20, 2026, 6:50 AM Eastern",
+          "changeNote": "Code finished and independently reviewed; still switched off. Needs real-phone tests on unrelated networks."
+        }
+      ]
     },
     {
       "group": "Services and website",
@@ -4107,14 +4182,18 @@
         "Ready to call Available": false
       },
       "lastTested": "Owner test on one Windows PC, a few days before Oct 7, 2026 (exact date not recorded), on an earlier build",
-      "leftToReach100": "Check paid plans, release of a reserved slot, the split-tunnel driver, installer, DNS and kill switch on a real PC, and review the security.",
+      "leftToReach100": "BeeboVPN is In development. The owner connected one phone using the standard WireGuard app; that does not establish a BeeboVPN Android app or public sale.",
       "previousPercent": 55,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+      "changeNote": "The owner connected one phone with the standard WireGuard app and it worked. A BeeboVPN Android app has not been started. No recorded check or percentage changed.",
       "changeHistory": [
         {
           "changedEastern": "Oct 7, 2026, 2:28 PM Eastern",
           "changeNote": "The owner connected on one Windows PC and reached a site that his internet provider blocks. That was an earlier build; the newer features have not been tried. Automated checks pass; paid plans, the split-tunnel driver and the installer are not yet proven."
+        },
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
       "roadTo100": {
@@ -4122,7 +4201,8 @@
         "done": [
           "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Server and entitlement tests pass.",
-          "The owner tried one PC on an earlier build and got past an ISP-blocked site."
+          "The owner tried one PC on an earlier build and got past an ISP-blocked site.",
+          "The owner connected one phone with the standard WireGuard app and it worked. A BeeboVPN Android app has not been started."
         ],
         "remaining": [
           {
@@ -4148,7 +4228,8 @@
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
-      "scoreNote": "Four of the five checks are ticked, which would be 80%, but this feature has been scored 55% since Oct 9, 2026. Our records do not say why. The owner needs to decide whether the score or the ticks should change; until then the number is shown as published."
+      "scoreNote": "Four of the five checks are ticked, which would be 80%, but this feature has been scored 55% since Oct 9, 2026. Our records do not say why. The owner needs to decide whether the score or the ticks should change; until then the number is shown as published.",
+      "updatedThisRun": true
     },
     {
       "group": "Services and website",
@@ -4294,7 +4375,7 @@
     {
       "group": "Services and website",
       "name": "3D characters and story videos",
-      "status": "Paused",
+      "status": "Planned (on hold)",
       "percentComplete": 0,
       "checks": {
         "Built": false,
@@ -4391,16 +4472,16 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 19, 2026, 9:25 AM Eastern",
+  "previousUpdatedEastern": "Oct 20, 2026, 6:50 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
-    "recordName": "October 14 update record",
-    "scope": "Desktop, phones, browser, servers",
+    "recordName": "October 20 feature and release status",
+    "scope": "Published downloads, next-release work and dated device evidence",
     "lastTested": "Oct 14, 2026, 9:06 PM Eastern",
     "lastTestedIso": "2026-10-14T21:06:00-04:00",
     "previousTested": "Oct 13, 2026, 1:15 PM Eastern",
     "broader": "Still required",
-    "newerText": "Historical October 14 record: the published downloads then were Windows 0.1.88 and Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern). On Oct 14 we installed that exact published phone file on four phones (a Galaxy S9+, a Pixel 3, a Galaxy S24 Ultra and a Galaxy S25), ran the single-phone checklist on each, and ran a three-phone Campsite test. The results are in <a href=\"#published-run\">Today’s published-build run</a>: no crash was logged, no percentage changed (those paths already had a Real device tick; they now rest on the exact published file too), and the failures are written down plainly (Trip Journal “Save as a video” on the Galaxy S9+, the demo-mode subtitles hint, and Large playback controls). Not tested today: Chromecast, Beebo Auto in a car, the second home through Beebo Relay from the S24, shared-video playback in Campsite and guest Save, and TalkBack. The Oct 13 full device pass used test builds and stays in the history below. Earlier results are on <a href=\"whats-tested.html\">What’s new and what’s tested</a> and the release notes are on <a href=\"updates.html\">Updates</a>."
+    "newerText": "The current downloads and next-release changes are separated below. The last broad published-phone record is from October 14; later limited runs keep their own build numbers and dates. Those results do not prove the October 19 downloads or the unreleased changes on real devices."
   },
   "historyNew": [
     {
@@ -4433,17 +4514,18 @@
     }
   ],
   "currentRelease": {
-    "windows": "0.1.89",
-    "android": "1.51-tester24",
-    "androidBuild": 74,
-    "sourceSha": "f3714216169ff9eda5c487bf928dea86d889917f",
-    "publishedAtUtc": "2026-10-18T11:06:27.940Z",
-    "publishedAtEastern": "Oct 18, 2026, 7:06 AM Eastern",
-    "deviceChecks": "Limited checks PASS: Pixel 3/Android 12 install over existing app, launch, library/progress and muted changing video frames; cast picker shown and dismissed without connecting. Windows 0.1.89 upgrade, visible version/What’s New, five movie cards and read-only installed verifier PASS (0 failures, 0 warnings under PowerShell 7; PowerShell 5 blocked by existing script policy, unchanged). Phone reported same-network/home Wi-Fi; host identity/version unverified, so no playback claim against this PC or 0.1.89. NOT tested: feature regressions, actual Guest Cast, watch-along, away-from-home/router, Bookmark cancellation, audio quality, sign-in, in-app updater or PC playback.",
-    "historicalEvidence": "Existing feature evidence, percentages and dates retain their original versions; no device coverage transferred.",
-    "deviceCheckedAtUtc": "2026-10-18T11:23:00Z",
-    "deviceCheckedAtEastern": "Oct 18, 2026, 7:23 AM Eastern",
-    "deviceEvidenceUrl": "/release-evidence.html#release-checks-oct18"
+    "windows": "0.1.96",
+    "windowsPublishedAtUtc": "2026-10-19T19:06:00.000Z",
+    "windowsPublishedAtEastern": "Oct 19, 2026, 3:06 PM Eastern",
+    "android": "1.51-tester31",
+    "androidBuild": 81,
+    "androidPublishedAtUtc": "2026-10-19T18:27:00.000Z",
+    "androidPublishedAtEastern": "Oct 19, 2026, 2:27 PM Eastern",
+    "auto": "1.18",
+    "autoBuild": 19,
+    "autoBuiltAtUtc": "2026-10-07T06:03:30Z",
+    "autoBuiltAtEastern": "Oct 7, 2026, 2:03 AM Eastern",
+    "deviceChecks": "No new device checks are added by this update. Earlier results retain their actual builds and dates. Beebo Auto has never been tested in a real car."
   },
   "realWorldStatusLabels": {
     "confirmed-on-real-devices": "Confirmed working on real devices",
@@ -4459,7 +4541,7 @@
     "found": "Problems found (fixes in progress): the list says \"No TVs linked yet\" for a few seconds after Approve; the older-style approval text wrongly says \"until you remove it under Linked TVs\"; status messages linger; the hyphen in the code field may move the cursor.",
     "notTested": "Not tested: a real TV, Play on TV, away from home, members other than the owner, the 90-day idle unlink, other phones, Windows 0.1.93.",
     "effect": "Tested on: Google Pixel 3 only. These are limited checks, not proof that everything works. No percentage changed and no Real device or Real-world check was ticked for Link a TV, because no real TV was used.",
-    "fullRun": "A full single-phone run of the same published build followed on the same Pixel 3 (Oct 19, 2026, 8:46 to 9:23 AM Eastern, run by Claude, our AI helper). No crash appeared in the phone log after any section. Each result is listed under the matching feature in \"Everything we have tested\". Two bugs were found and fixes are in progress: on the first visit to Pack for a trip the size choice and Start packing controls were missing until the screen was reopened, and the solo Patience puzzle's status line showed a literal \"null\". Not tested: Chromecast, large text, high contrast, reduce motion, Trip Journal video export, pressing Wake my PC, Wireless speakers, podcast downloads and queue editing. No Real device check was ticked from this run, because every feature it covered either already had that tick or still has device items that this run did not pass."
+    "fullRun": "A full single-phone run of the same published build followed on the same Pixel 3 (Oct 19, 2026, 8:46 to 9:23 AM Eastern). No crash appeared in the phone log after any section. Each result is listed under the matching feature in \"Everything we have tested\". Two bugs were found and fixes are in progress: on the first visit to Pack for a trip the size choice and Start packing controls were missing until the screen was reopened, and the solo Patience puzzle's status line showed a literal \"null\". Not tested: Chromecast, large text, high contrast, reduce motion, Trip Journal video export, pressing Wake my PC, Wireless speakers, podcast downloads and queue editing. No Real device check was ticked from this run, because every feature it covered either already had that tick or still has device items that this run did not pass."
   },
   "checkDefinitions": {
     "Built": "The code exists and works in the build.",
@@ -4937,5 +5019,17 @@
       }
     }
   },
-  "deviceTestsSchema": "features[].deviceTests is a list of {tester, device, build, date (\"Oct 19, 2026, 9:23 AM Eastern\"), result (\"PASS\", \"PARTIAL\" or \"FAIL\"), evidence, ticks}. It records a test a helper ran on a real device. ticks may only be [\"Real device\"], only on a PASS, and only if every single-phone device item listed for the feature passed. A Real device tick after Oct 19, 2026 needs a PASS deviceTests or ownerTests record that lists it. Real-world check and Ready to call Available can only be ticked through ownerTests."
+  "deviceTestsSchema": "features[].deviceTests is a list of {tester, device, build, date (\"Oct 19, 2026, 9:23 AM Eastern\"), result (\"PASS\", \"PARTIAL\" or \"FAIL\"), evidence, ticks}. It records a test a helper ran on a real device. ticks may only be [\"Real device\"], only on a PASS, and only if every single-phone device item listed for the feature passed. A Real device tick after Oct 19, 2026 needs a PASS deviceTests or ownerTests record that lists it. Real-world check and Ready to call Available can only be ticked through ownerTests.",
+  "historicalReleaseChecksOct18": {
+    "windows": "0.1.89",
+    "android": "1.51-tester24",
+    "androidBuild": 74,
+    "publishedAtUtc": "2026-10-18T11:06:27.940Z",
+    "publishedAtEastern": "Oct 18, 2026, 7:06 AM Eastern",
+    "deviceChecks": "Limited checks PASS: Pixel 3/Android 12 install over existing app, launch, library/progress and muted changing video frames; cast picker shown and dismissed without connecting. Windows 0.1.89 upgrade, visible version/What’s New, five movie cards and read-only installed verifier PASS (0 failures, 0 warnings under PowerShell 7; PowerShell 5 blocked by existing script policy, unchanged). Phone reported same-network/home Wi-Fi; host identity/version unverified, so no playback claim against this PC or 0.1.89. NOT tested: feature regressions, actual Guest Cast, watch-along, away-from-home/router, Bookmark cancellation, audio quality, sign-in, in-app updater or PC playback.",
+    "historicalEvidence": "Existing feature evidence, percentages and dates retain their original versions; no device coverage transferred.",
+    "deviceCheckedAtUtc": "2026-10-18T11:23:00Z",
+    "deviceCheckedAtEastern": "Oct 18, 2026, 7:23 AM Eastern",
+    "deviceEvidenceUrl": "/release-evidence.html#release-checks-oct18"
+  }
 }
