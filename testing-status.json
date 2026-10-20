@@ -1,7 +1,7 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+    "updatedEastern": "Oct 20, 2026, 12:40 PM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 66 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 91,
@@ -550,7 +550,7 @@
         ]
       }
     ],
-    "evidenceLimit": "Historical checkmarks and derived coverage are not proof of current-release testing. Beebo Auto has no real-car test; the new walkie-talkie flow has no real-phone test."
+    "evidenceLimit": "Historical checkmarks are not proof of current-release testing. Beebo Auto 1.18 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026); the new walkie-talkie flow has no real-phone test."
   },
   "fullProgress": {
     "updatedEastern": "Oct 13, 2026, 4:14 AM Eastern",
@@ -582,8 +582,7 @@
         "name": "Beebo Auto",
         "codeChecklistPercent": 100,
         "humanDevicePercent": 100,
-        "source": "Historical percentage not supported by a real-car test; never tested in a real car.",
-        "currentCoverage": "Not established"
+        "source": "Recorded single real-car checklist row; not every car or route"
       },
       {
         "name": "Campsite games",
@@ -598,8 +597,7 @@
         "name": "Car Party",
         "codeChecklistPercent": 100,
         "humanDevicePercent": 100,
-        "source": "Historical percentage not supported by a real-car test; never tested in a real car.",
-        "currentCoverage": "Not established"
+        "source": "Recorded single parked-car checklist row; not a driving-safety validation"
       },
       {
         "name": "Trip Journal",
@@ -752,16 +750,15 @@
       "Roku, Samsung/LG TV, Xbox, Apple hardware, Linux desktop/NAS and Intel or Apple-Silicon Mac",
       "Campsite phone hotspot, guest on mobile data, games other than Sea Battle, synced music, karaoke, recordings and guest uploads"
     ],
-    "fontStatus": "Self-hosted Google Fonts are pending approval to obtain font packages; no package was added.",
-    "coverageCorrection": "The old Beebo Auto and Car Party human-device percentages are unsupported as real-car evidence. They are retained only as historical numbers, not displayed as current coverage. Neither establishes a real-car test."
+    "fontStatus": "Self-hosted Google Fonts are pending approval to obtain font packages; no package was added."
   },
   "releaseChanges": {
-    "title": "Published today, and what is in the next release",
+    "title": "Current downloads, and what is in the next release",
     "summary": "The downloads are Windows 0.1.96, published Oct 19, 2026, 3:06 PM Eastern; Android 1.51-tester31 (build 81), published Oct 19, 2026, 2:27 PM Eastern; and Beebo Auto 1.18 (build 19), built Oct 7, 2026, 2:03 AM Eastern. The parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below are in the next release, not these downloads.",
-    "sourceNote": "Code changes do not establish real-device results. This update adds no passed check and changes no recorded feature percentage. Beebo Auto has never been tested in a real car; walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
+    "sourceNote": "Code changes do not establish real-device results. This update adds no passed check and changes no recorded feature percentage. Beebo Auto 1.18 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-20T10:18:00-04:00",
-  "updatedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+  "updated": "2026-10-20T12:40:00-04:00",
+  "updatedEastern": "Oct 20, 2026, 12:40 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -2081,7 +2078,7 @@
     {
       "group": "Android phone app",
       "name": "Beebo Auto (Android Auto)",
-      "status": "Available (sideload, never tested in a real car)",
+      "status": "Available (sideload; 1.18 not yet tested in a real car; an earlier build had one first check in one car, Oct 6, 2026)",
       "percentComplete": 80,
       "checks": {
         "Built": true,
@@ -2090,11 +2087,13 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Automated checks only; never tested in a real car",
-      "leftToReach100": "Never tested in a real car. Try sign-in, lists, sound, steering-wheel controls, music, map interruptions, loss of connection and Car Party on a real head unit after release.",
+      "lastTested": "Oct 6, 2026 (one car, one drive, an earlier build than 1.18)",
+      "leftToReach100": "Beebo Auto 1.18 has not been tested in a real car. Test it parked on a real head unit (sign-in, lists, sound, controls), then video on the car screen, music, car-screen titles, maps ducking, away from home, passenger games, Car Party, reconnect, and more cars.",
       "roadTo100": {
         "means": "Every Beebo Auto feature works in real cars, including after a lost connection, with a safety review.",
         "done": [
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "First real-car check on Oct 6, 2026, on an earlier build than 1.18, in one car (2021 Audi SQ5 with Android Auto): Android Auto offered to enable Beebo Auto, sign-in worked, the video list showed, sound played through the car speakers and fast-forward had no lag.",
           "Behaviour tests pass.",
           "Code, Oct 12, 2026: the Android Auto error and offline cases were listed (13 rows) and tests added for the https-upgrade rule and the error kinds; two branches inside the car playback service cannot be unit-tested without Android and have no unit test.",
           "In development, in the next release: typing is blocked while projecting to the car, saved sign-in uses encrypted storage, and Car Party controls stay usable."
@@ -2102,11 +2101,23 @@
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Run the first real-car test, parked, on a real Android Auto head unit."
+            "text": "Test Beebo Auto 1.18 (and the next release) in a parked car on a real Android Auto head unit."
           },
           {
             "kind": "DEVICE",
-            "text": "Check projection typing limits, saved sign-in, Car Party, music, maps and reconnect on the released build."
+            "text": "In a parked car: video on the car screen, music, car-screen titles, maps ducking."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Away from home, passenger games, Car Party and reconnect after a lost connection."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Try a second car."
+          },
+          {
+            "kind": "BLOCKED",
+            "text": "One car is not enough to call it ready."
           }
         ]
       },
@@ -2119,8 +2130,8 @@
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "updatedThisRun": true,
-      "testedOn": "No real-car or real-head-unit test recorded.",
-      "scoreNote": "The inherited 80% and device checkmarks are retained pending reconciliation. They do not establish any real-car test; Beebo Auto has never been tested in a real car.",
+      "testedOn": "One car (a 2021 Audi SQ5 with Android Auto), one person, one drive, on Oct 6, 2026, using an earlier build than 1.18. Beebo Auto 1.18 itself has not been in a car.",
+      "scoreNote": "The 80% comes from the Oct 6, 2026 first car check on an earlier build. Beebo Auto 1.18 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested.",
       "changeHistory": [
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
@@ -2268,7 +2279,7 @@
     {
       "group": "Android phone app",
       "name": "Stream from my PC (old button)",
-      "status": "In development (old button removed)",
+      "status": "Retired (old button removed Oct 3, 2026)",
       "percentComplete": 0,
       "checks": {
         "Built": false,
@@ -2667,10 +2678,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23); Oct 13, 2026 (test build)",
-      "leftToReach100": "Collections have earlier phone checks. Media requests and a wishlist are Planned; sending and fulfilling requests is not established as a released feature.",
+      "leftToReach100": "Send a real request and confirm it reaches the owner, and test the Complete filter and the trailer buttons. A fuller media-requests and wishlist feature is only an idea.",
       "previousPercent": 60,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "Planned: media requests and a wishlist are being built and are not merged. Opening an older request screen was not proof of a working request flow. No recorded check or percentage changed.",
+      "changedEastern": "Oct 20, 2026, 12:40 PM Eastern",
+      "changeNote": "Sending a request was never tried. A fuller media-requests and wishlist feature is only an idea, not promised; work on it has started but is not merged and is not in any download. No recorded check or percentage changed.",
       "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
         "means": "A person browses collections, sees what is missing and sends a request that the owner receives.",
@@ -2678,7 +2689,7 @@
           "Checks passed: Built, Automated tests, Real device.",
           "Oct 13, 2026, S24 Ultra: collections listed, searched and opened with missing-film markers; the Request a title screen opened.",
           "Oct 14, 2026, published tester23: 101 collections listed (S9+); a missing title showed the Request button and ampersand searches worked on all four phones; no request was sent.",
-          "Planned: media requests and a wishlist are being built and are not merged. Opening an older request screen was not proof of a working request flow."
+          "Sending a request was never tried. A fuller media-requests and wishlist feature is only an idea, not promised; work on it has started but is not merged and is not in any download."
         ],
         "remaining": [
           {
@@ -4038,12 +4049,13 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Automated checks only for the new host controls; no real-phone test",
+      "lastTested": "Oct 1, 2026 (an earlier version on one phone); the new host controls have automated checks only",
       "leftToReach100": "Not yet tested on real phones. After release, try a host and guests on unrelated networks, host approval for every guest, the host panel without a microphone and per-guest message limits.",
       "roadTo100": {
         "means": "Two phones on different networks talk to each other reliably.",
         "done": [
-          "Server and connection tests pass; switched off.",
+          "Checks passed: Built, Automated tests, Real device (an earlier version, Oct 1, 2026).",
+          "Server and connection tests pass. The server part is on; no released app uses it yet.",
           "In development, off and in the next release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains."
         ],
         "remaining": [
@@ -4058,16 +4070,16 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development, off and in the next release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains. No recorded check or percentage changed.",
+      "changedEastern": "Oct 20, 2026, 12:40 PM Eastern",
+      "changeNote": "In development, off and in the next release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains. The server part is on; no released app uses it yet. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "updatedThisRun": true,
-      "testedOn": "The new walkie-talkie flow has not been tested on real phones.",
-      "scoreNote": "The inherited 60% includes a device checkmark from an earlier record. It is retained pending reconciliation and is not evidence for the new flow on real phones.",
+      "testedOn": "The new invite-from-anywhere flow has not been tested on real phones. The Real device tick comes from an earlier version tried on Oct 1, 2026.",
+      "scoreNote": "The 60% includes a Real device check from an earlier version (Oct 1, 2026). It is not evidence for the new flow on real phones. The server part is on; no released app uses it yet.",
       "changeHistory": [
         {
           "changedEastern": "Oct 20, 2026, 6:50 AM Eastern",
@@ -4228,7 +4240,7 @@
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
-      "scoreNote": "Four of the five checks are ticked, which would be 80%, but this feature has been scored 55% since Oct 9, 2026. Our records do not say why. The owner needs to decide whether the score or the ticks should change; until then the number is shown as published.",
+      "scoreNote": "Four of the five checks are ticked, which would normally be 80%. We show the lower 55% score, unchanged since Oct 9, 2026; the ticks come from one PC on an earlier build.",
       "updatedThisRun": true
     },
     {
@@ -4525,7 +4537,7 @@
     "autoBuild": 19,
     "autoBuiltAtUtc": "2026-10-07T06:03:30Z",
     "autoBuiltAtEastern": "Oct 7, 2026, 2:03 AM Eastern",
-    "deviceChecks": "No new device checks are added by this update. Earlier results retain their actual builds and dates. Beebo Auto has never been tested in a real car."
+    "deviceChecks": "No new device checks are added by this update. Earlier results retain their actual builds and dates. Beebo Auto 1.18 has not been tested in a real car; an earlier build had one first check in one car on Oct 6, 2026."
   },
   "realWorldStatusLabels": {
     "confirmed-on-real-devices": "Confirmed working on real devices",

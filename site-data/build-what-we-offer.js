@@ -90,8 +90,7 @@ for (const f of data.features) {
   if (!REAL.includes(f.realTest)) problems.push(f.id + ': bad realTest ' + f.realTest);
   if (f.ts && !tsByName.has(f.ts)) problems.push(f.id + ': ts name not in testing-status.json: ' + f.ts);
   if (!f.name || !f.evidence || f.evidence.length < 8) problems.push(f.id + ': missing name or evidence');
-  // Beebo Auto's downloadable sideload package is Available; real-car behaviour remains untested.
-  if (f.status === 'Available' && f.realTest === 'no' && f.id !== 'auto-core') problems.push(f.id + ': Available needs a real test (realTest yes or partly)');
+  if (f.status === 'Available' && f.realTest === 'no') problems.push(f.id + ': Available needs a real test (realTest yes or partly)');
   if (f.status === 'Planned' && f.realTest !== 'no') problems.push(f.id + ': Planned cannot be tested');
 }
 for (const n of data.notCounted) if (!NOT_COUNTED.includes(n.status)) problems.push('notCounted bad status ' + n.status);
@@ -172,9 +171,9 @@ function downloadsList() {
   return `<ul class="wwo-list">
 <li>${chip('Available')} <strong>Beebo for Windows ${esc(winFeed.version)}</strong> (Windows 10 and 11), published ${esc(winFeed.publishedAtEastern)}. <a href="windows.html">Windows page</a></li>
 <li>${chip('Available')} <strong>Android phone and tablet app ${esc(appFeed.versionName)} (build ${esc(appFeed.versionCode)})</strong>, a test download from this site, published ${esc(appFeed.publishedAtEastern || appFeed.builtAtEastern)}. Not on Google Play. <a href="app-on-your-phone.html">Android page</a></li>
-<li>${chip('Available')} <strong>Beebo Auto ${esc(autoFeed.versionName)} (build ${esc(autoFeed.versionCode)})</strong>, a sideload test download for Android Auto, built ${esc(autoFeed.builtAtEastern)}. Never tested in a real car. Not on Google Play. <a href="car-companion.html">Beebo Auto page</a></li>
+<li>${chip('Available')} <strong>Beebo Auto ${esc(autoFeed.versionName)} (build ${esc(autoFeed.versionCode)})</strong>, a sideload test download for Android Auto, built ${esc(autoFeed.builtAtEastern)}. Not tested in a real car yet; an earlier build had one first check in one car on Oct 6, 2026. Not on Google Play. Use only when parked. <a href="car-companion.html">Beebo Auto page</a></li>
 <li>${chip('Available')} <strong>Any web browser</strong>, served by your own Beebo computer. <a href="docs/connect-your-phone.html">How to connect</a></li>
-<li>${chip('Beta')} <strong>Linux desktop</strong> (an older beta) and <strong>Docker or NAS</strong> (not offered for download right now). <a href="linux.html">Linux page</a></li>
+<li>${chip('Beta')} <strong>Linux desktop</strong> (version 0.1.82) and <strong>Docker or NAS</strong> (not offered for download right now). <a href="linux.html">Linux page</a></li>
 <li>${chip('In development')} <strong>Fire TV, Roku, LG, Samsung, Xbox, macOS and the native iPhone, iPad and Apple TV apps.</strong> <a href="platforms.html">All platforms</a></li>
 </ul>`;
 }
@@ -190,6 +189,7 @@ function percentBlock(headingTag) {
   const o = overall;
   return `<${h} id="${h === 'h2' ? 'how-complete' : 'wwo-how-complete'}">How complete are we?</${h}>
 <p class="wwo-big"><strong>${o.pctAvailable}%</strong> of the ${o.listed} features we list are <em>Available</em>, <strong>${o.pctAvailableOrBeta}%</strong> are Available or Beta.</p>
+${codeStatusBlock(h === 'h2' ? 'h3' : 'h4')}
 <p>The testing percentages on this page come from our <a href="release-evidence.html#features">testing evidence page</a> (release-evidence.html), and its overall figure is <strong>${ts.overallAveragePercent}%</strong>: each of its ${ts.featureCount} features has 5 checks worth 20% each (Built, Automated tests, Real device, Real-world check, and Ready to call Available, which is ticked only once the exact published download has been tested). By group: ${Object.entries(ts.groupAveragePercent).map(([k, v]) => esc(k) + ' ' + v + '%').join(', ')}. When a feature is on both lists, its label, percentage and Tested on note are read from that page, and if the two labels differ the stricter one is shown. The last column below averages that page's numbers for the features that appear on both lists.</p>
 <p>By status: ${o.byStatus.Available} Available, ${o.byStatus.Beta} Beta, ${o.byStatus['In development']} In development, ${o.byStatus.Planned} Planned.</p>
 <p class="wwo-fine"><strong>How to read this.</strong> These percentages are share-of-list counts, not a promise or an audit. Every feature we list counts once, whether it is big or small, so a long list of small Beta items can move the number as much as one big feature. Features that were dropped or retired, and ideas, are not counted. Available means it is in a current download and a person has run its main use on a real device or PC. Beta means it is in a download or switchable today but is new, tested only by automatic tests, or had real problems. In development means it is being built, switched off, not in a download, or never tried on the real equipment it needs. Planned means intended, not built. The data file is <a href="site-data/what-we-offer.json">site-data/what-we-offer.json</a>; a script calculates the label counts from it and reads the testing numbers from <a href="testing-status.json">testing-status.json</a>.</p>
@@ -197,6 +197,19 @@ function percentBlock(headingTag) {
 ${rows}
 <tr class="wwo-total"><th scope="row">All areas</th><td data-label="Listed">${o.listed}</td><td data-label="Available">${o.available} (${o.pctAvailable}%)</td><td data-label="Available or Beta">${o.availableOrBeta} (${o.pctAvailableOrBeta}%)</td><td data-label="Testing evidence page, average of matched features">${evCell(o)}</td></tr>
 </tbody></table></div>`;
+}
+
+/* "Where the code is at" (first added Oct 19, 2026): read from testing-status.json codeVsHuman.overall, so it
+   cannot drift from the testing evidence page. */
+function codeStatus() {
+  const c = ts.codeVsHuman && ts.codeVsHuman.overall;
+  if (!c || !c.counts) throw new Error('testing-status.json codeVsHuman.overall is missing');
+  return { code: c.codeDone, human: c.humanTestingDone, n: c.features, confirmed: c.counts['confirmed-on-real-devices'], waiting: c.counts['code-complete-needs-real-world-testing'], building: c.counts['code-still-being-finished'], updated: ts.codeVsHuman.updatedEastern };
+}
+function codeStatusBlock(tag) {
+  const c = codeStatus();
+  const meter = (label, p, cls) => `<div class="wwo-cs-meter" role="img" aria-label="${label}: ${p}%"><span class="wwo-cs-label"><strong>${label}</strong><span>${p}%</span></span><span class="wwo-cs-bar${cls}" aria-hidden="true"><i style="width:${p}%"></i></span></div>`;
+  return `<div class="wwo-code-status" role="group" aria-labelledby="wwo-code-status-title"><${tag} id="wwo-code-status-title">Where the code is at</${tag}><p>The code is about <strong>${c.code}%</strong> built and passing its automated tests, and about <strong>${c.human}%</strong> of our real-device and real-world checks have passed. Most of what is left is real-world testing. ${c.n} features: ${c.confirmed} confirmed working on real devices, ${c.waiting} code complete and waiting for real-world testing, ${c.building} code still being finished.</p>${meter('Code built and passing automated tests', c.code, '')}${meter('Tested on real devices', c.human, ' wwo-cs-bar2')}<p class="wwo-fine">These percentages measure our own checklist, not that nothing can go wrong. Updated ${esc(c.updated)}. <a href="release-evidence.html#code-status">See every feature and what is left to do</a>.</p></div>`;
 }
 
 function whoBlock() {
@@ -221,6 +234,7 @@ ${rows.map(featureLine).join('\n')}
   const nc = data.notCounted.map((n) => `<li>${esc(n.name)} ${esc(n.status)}. ${esc(n.note)}</li>`).join('\n');
   const working = data.workingOn.map((t) => `<li>${esc(t)}</li>`).join('\n');
   const probs = data.knownProblems.map((t) => `<li>${esc(t)}</li>`).join('\n');
+  const ideas = data.ideas.map((i) => `<li>${esc(i.title)}${i.partly ? ' (partly built)' : ''}</li>`).join('\n');
   const faq = data.faq.map((q) => `<div class="wwo-q"><h4>${esc(q.q)}</h4><p>${esc(q.a)}</p></div>`).join('\n');
   const finished = data.features.filter((f) => f.status === 'Available').length;
   return `<h3>Who we are</h3>
@@ -244,6 +258,11 @@ ${working}
 <h3>Problems we know about</h3>
 <ul class="wwo-list">
 ${probs}
+</ul>
+<h3>Ideas (not promised)</h3>
+<p>These are only ideas. They are not built, not promised and may change or never ship. Items marked partly built reuse something that already exists.</p>
+<ul class="wwo-list wwo-cols">
+${ideas}
 </ul>
 <h3>Common questions</h3>
 ${faq}
@@ -286,11 +305,12 @@ ${trs}
   const nc = data.notCounted.map((n) => `<li>${esc(n.name)} ${esc(n.status)}. ${esc(n.note)}</li>`).join('\n');
   const working = data.workingOn.map((t) => `<li>${esc(t)}</li>`).join('\n');
   const probs = data.knownProblems.map((t) => `<li>${esc(t)}</li>`).join('\n');
+  const ideas = data.ideas.map((i) => `<li><strong>${esc(i.title)}</strong>${i.partly ? ' <span class="wwo-st wwo-st-idea">partly built</span>' : ''} ${esc(i.line)}</li>`).join('\n');
   const faq = data.faq.map((q) => `<div class="wwo-q"><h3>${esc(q.q)}</h3><p>${esc(q.a)}</p></div>`).join('\n');
   const finished = data.features.filter((f) => f.status === 'Available');
   const dev = data.features.filter((f) => f.status === 'In development' || f.status === 'Planned');
-  return `<section class="hero wwo-hero"><p class="eyebrow">EVERYTHING WE ARE AND OFFER</p><h1>Who we are,<br>what we offer,<br>what is not done.</h1><p class="lead">One honest page for people, search engines and AI assistants: what Beebo is, every feature with its label, what was tested on real devices and what was not, and what we are working on. Last updated ${esc(updated)}.</p>
-<p class="wwo-jump"><a href="#who">Who we are</a><a href="#downloads">Downloads</a><a href="#how-complete">How complete</a><a href="#features">Every feature</a><a href="#working">Working on</a><a href="#faq">Questions</a></p></section>
+  return `<section class="hero wwo-hero"><p class="eyebrow">EVERYTHING WE ARE AND OFFER</p><h1>Who we are,<br>what we offer,<br>what is not done.</h1><p class="lead">One honest page for people, search engines and AI assistants: what Beebo is, every feature with its label, what was tested on real devices and what was not, what we are working on, and ideas that are not promised. Last updated ${esc(updated)}.</p>
+<p class="wwo-jump"><a href="#who">Who we are</a><a href="#downloads">Downloads</a><a href="#how-complete">How complete</a><a href="#features">Every feature</a><a href="#working">Working on</a><a href="#ideas">Ideas</a><a href="#faq">Questions</a></p></section>
 <section class="wwo-sec" id="who"><h2>Who we are</h2>
 ${whoBlock()}</section>
 <section class="wwo-sec" id="downloads"><h2>Current downloads</h2>
@@ -319,6 +339,11 @@ ${working}
 ${probs}
 </ul>
 <p>More detail: <a href="known-issues.html">known issues</a>, <a href="whats-tested.html">what is new and what is tested</a>, <a href="release-evidence.html">testing evidence</a>.</p></section>
+<section class="wwo-sec" id="ideas"><h2>Ideas (not promised)</h2>
+<p>These are only ideas. They are not built, not promised and may change or never ship. "Partly built" means it would reuse something that already exists. Ideas are not counted in the percentages.</p>
+<ul class="wwo-list">
+${ideas}
+</ul></section>
 <section class="wwo-sec" id="faq"><h2>Common questions</h2>
 ${faq}</section>
 <p class="wwo-fine">Last updated ${esc(updated)}. Real-device results are from our own phones, PCs and TV, not a broad beta. A test that was not run is unknown, not broken. See also <a href="llms.txt">llms.txt</a> for a plain-text summary.</p>`;
@@ -395,11 +420,11 @@ function llmsBlock() {
   lines.push('## Everything we are and offer (updated ' + updated + ')');
   lines.push(
     `- Full page with every feature, its label, what was tested on real devices and what was not: ${SITE}/what-we-offer.html (data file: ${SITE}/site-data/what-we-offer.json)`,
-    `- Share-of-list counts, not a promise or an audit: ${o.listed} features listed; ${o.byStatus.Available} Available (${o.pctAvailable}%), ${o.byStatus.Beta} Beta, ${o.byStatus['In development']} In development, ${o.byStatus.Planned} Planned; ${o.availableOrBeta} Available or Beta (${o.pctAvailableOrBeta}%); testing is measured on ${SITE}/release-evidence.html#features (overall average ${ts.overallAveragePercent}% across ${ts.featureCount} features; 5 checks worth 20% each).`,
+    `- Share-of-list counts, not a promise or an audit: ${o.listed} features listed; ${o.byStatus.Available} Available (${o.pctAvailable}%), ${o.byStatus.Beta} Beta, ${o.byStatus['In development']} In development, ${o.byStatus.Planned} Planned; ${o.availableOrBeta} Available or Beta (${o.pctAvailableOrBeta}%); testing is measured on ${SITE}/release-evidence.html#features (overall average ${ts.overallAveragePercent}% across ${ts.featureCount} features; 5 checks worth 20% each; code built and passing automated tests about ${codeStatus().code}%; real-device and real-world checks passed about ${codeStatus().human}%; ${codeStatus().confirmed} features confirmed on real devices, ${codeStatus().waiting} code complete and waiting for real-world testing, ${codeStatus().building} code still being finished; updated ${codeStatus().updated}; details at ${SITE}/release-evidence.html#code-status).`,
     `- Current versions (from our download feeds): Windows ${winFeed.version}; Android ${appFeed.versionName} (build ${appFeed.versionCode}), a test download, not on Google Play; Beebo Auto ${autoFeed.versionName} (build ${autoFeed.versionCode}), a test download, not on Google Play.`,
     '- Who we are: made by a family man, not a data company. Free, local-first media server. Closed source (all rights reserved). Beebo includes no movies, shows or channels.',
     '- Per area (Available of listed): ' + perArea.map((a) => `${a.name} ${a.available}/${a.listed}`).join('; ') + '.',
-    '- Removed from the feature count: PlayStation, the original separate-login hub, and the old "Stream from my PC" button.'
+    '- Not counted: PlayStation (Dropped), the original separate-login hub (Retired), the old "Stream from my PC" button (Retired), and ' + data.ideas.length + ' ideas that are not promised.'
   );
   return lines.join('\n');
 }
