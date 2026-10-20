@@ -756,8 +756,8 @@
     "summary": "October 14 record: Since the last release, 80 fixes and 276 new automated tests were added. The 8 language options are unchanged.",
     "sourceNote": "Historical release comparison, not the new release: These counts come from the recorded changes between the last two releases: fix and feature changes, and newly written test cases."
   },
-  "updated": "2026-10-19T09:25:00-04:00",
-  "updatedEastern": "Oct 19, 2026, 9:25 AM Eastern",
+  "updated": "2026-10-20T06:50:00-04:00",
+  "updatedEastern": "Oct 20, 2026, 6:50 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -3085,31 +3085,28 @@
         "Ready to call Available": false
       },
       "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Check restricted and normal profiles on a real PC, and review the household rules.",
+      "leftToReach100": "Check restricted and normal profiles on a real PC. The independent code review is done.",
       "roadTo100": {
         "means": "Restricted and normal profiles behave correctly on a real PC and the household rules have been reviewed.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Parental-control tests pass."
+          "Parental-control tests pass.",
+          "Oct 20, 2026: two independent source reviews of the Live TV, Movie Night and household rules were done (reports kept internally). They found and fixed two real gaps in the source: a Live TV link kept working after a profile was restricted, and a Movie Night room kept showing blocked titles after the limits were tightened. Both fixes pass the automated tests and two independent code reviews. They are on the development branch and ship in the next Windows release, not in the current one. When a parental check itself fails, viewing continues; that is the owner's choice."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
             "text": "Check restricted and unrestricted profiles on a real PC."
-          },
-          {
-            "kind": "CODE",
-            "text": "Independent review of the parental and household rules."
           }
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 20, 2026, 6:50 AM Eastern",
+      "changeNote": "Independent code review done; two real gaps found and fixed in the source (not yet in a published release). Still needs a real-PC check.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
-      "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished",
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": []
     },
     {
@@ -3979,31 +3976,28 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Test with two real phones on unrelated networks.",
+      "leftToReach100": "Test with real phones on unrelated networks, including an iPhone and an Android guest. A step-by-step test kit is being written.",
       "roadTo100": {
         "means": "Two phones on different networks talk to each other reliably.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
-          "Server and connection tests pass; switched off."
+          "Server and connection tests pass; switched off.",
+          "Oct 20, 2026: the missing front ends were finished in the source: the desktop \"Invite from anywhere\" button now always asks the host to approve each guest, an Android host panel was added (a foreground moderator without a microphone, shown only when the server feature is on), per-guest message limits stop one guest from flooding a room, and the service itself refuses auto-admit. Two independent code reviews passed and the Android and server tests pass. It is switched off and not in a published release yet."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
             "text": "Two phones on different networks."
-          },
-          {
-            "kind": "CODE",
-            "text": "Fix and test any fault found."
           }
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 20, 2026, 6:50 AM Eastern",
+      "changeNote": "Code finished and independently reviewed; still switched off. Needs real-phone tests on unrelated networks.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
-      "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished",
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": []
     },
     {
@@ -4397,7 +4391,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 19, 2026, 8:51 AM Eastern",
+  "previousUpdatedEastern": "Oct 19, 2026, 9:25 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 14 update record",
