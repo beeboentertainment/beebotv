@@ -415,7 +415,7 @@
       "area": "android",
       "name": "Accessibility choices: larger text, high contrast, reduce motion, Simple Mode, Caregiver view, captions",
       "status": "In development",
-      "evidence": "Oct 13 on the S24 Ultra: each was switched on and off. 150% text and high contrast were readable on Home and Browse. TalkBack and 200% text are not tested. In the next release: another Android accessibility and layout pass, which still needs TalkBack, 200% text, landscape and large-controls checks on real phones.",
+      "evidence": "Oct 13 on the S24 Ultra: each was switched on and off. 150% text and high contrast were readable on Home and Browse. TalkBack and 200% text are not tested. In the Oct 21, 2026 release: another Android accessibility and layout pass, which still needs TalkBack, 200% text, landscape and large-controls checks on real phones.",
       "realTest": "partly"
     },
     {
@@ -543,7 +543,7 @@
       "area": "tvauto",
       "name": "Beebo Auto: sign-in, video list, sound and fast-forward",
       "status": "Available",
-      "evidence": "Beebo Auto 1.18 (build 19) has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (a 2021 Audi SQ5 with Android Auto): sign-in, the video list, sound through the car speakers and fast-forward worked. Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Use only when parked.",
+      "evidence": "Beebo Auto 1.19 (build 20) has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (a 2021 Audi SQ5 with Android Auto): sign-in, the video list, sound through the car speakers and fast-forward worked. Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Use only when parked.",
       "realTest": "partly"
     },
     {
@@ -567,7 +567,7 @@
       "area": "tvauto",
       "name": "Car Party (host in the car, passengers join on a web page)",
       "status": "In development",
-      "evidence": "Oct 13 on two phones at home: the host started a party with a code and QR, a passenger joined and saw what was playing and who was in the car, then left. In a real parked car a guest could follow along and send reactions, but a passenger could not watch the movie and a blank name blocked a guest. That was not a driving test. In the next release, Car Party controls stay usable while projecting; those fixes still need real phones and a real car.",
+      "evidence": "Oct 13 on two phones at home: the host started a party with a code and QR, a passenger joined and saw what was playing and who was in the car, then left. In a real parked car a guest could follow along and send reactions, but a passenger could not watch the movie and a blank name blocked a guest. That was not a driving test. In the Oct 21, 2026 release, Car Party controls stay usable while projecting; those fixes still need real phones and a real car.",
       "realTest": "partly"
     },
     {
@@ -727,7 +727,7 @@
       "area": "campsite",
       "name": "Shared downloaded videos play in a guest's browser",
       "status": "Beta",
-      "evidence": "Earlier guest playback had a silent-video finding. In development, in the next release: an H.264/AAC guest copy when the original audio will not play in a browser. What is left: hear sound, seek and save on real guest phones after release.",
+      "evidence": "Earlier guest playback had a silent-video finding. In development, in the Oct 21, 2026 release: an H.264/AAC guest copy when the original audio will not play in a browser. What is left: hear sound, seek and save on real guest phones after release.",
       "realTest": "partly"
     },
     {
@@ -743,7 +743,7 @@
       "area": "campsite",
       "name": "A guest saves a shared video to their own phone (host approves)",
       "status": "In development",
-      "evidence": "In the next release: host approval no longer cuts a running guest download. Earlier test-build transfers do not prove the saved copy plays. What is left: a real guest download during approval, followed by picture and audible-sound checks.",
+      "evidence": "In the Oct 21, 2026 release: host approval no longer cuts a running guest download. Earlier test-build transfers do not prove the saved copy plays. What is left: a real guest download during approval, followed by picture and audible-sound checks.",
       "realTest": "partly"
     },
     {
@@ -823,7 +823,7 @@
       "area": "campsite",
       "name": "Walkie-talkie from anywhere",
       "status": "In development",
-      "evidence": "The server part is on; no released app uses it yet. Code complete, off and in the next release: every guest needs host approval, Android has a host panel without a microphone, and each guest has message limits. What is left: real host and guest phones on unrelated networks; the new flow has not been tested on real phones.",
+      "evidence": "The server part is on; the Oct 21, 2026 release is the first app release that uses it. Code complete, off and in the Oct 21, 2026 release: every guest needs host approval, Android has a host panel without a microphone, and each guest has message limits. What is left: real host and guest phones on unrelated networks; the new flow has not been tested on real phones.",
       "realTest": "no"
     },
     {
@@ -1127,7 +1127,7 @@
       "area": "household",
       "name": "Parental limits and ratings",
       "status": "Beta",
-      "evidence": "Existing controls have automated checks. In development, in the next release: a Live TV link stops when its profile is restricted and a Movie Night room removes blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice. What is left: restricted and normal profiles on a real PC.",
+      "evidence": "Existing controls have automated checks. In development, in the Oct 21, 2026 release: a Live TV link stops when its profile is restricted and a Movie Night room removes blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice. What is left: restricted and normal profiles on a real PC.",
       "realTest": "no"
     },
     {
@@ -1253,7 +1253,7 @@
     {
       "id": "h-next-parental",
       "area": "household",
-      "name": "Live TV and Movie Night parental fixes (next release)",
+      "name": "Live TV and Movie Night parental fixes (Oct 21, 2026 release)",
       "status": "In development",
       "realTest": "no",
       "evidence": "The fixes are merged but not in the current downloads: restricted Live TV links stop, and Movie Night removes blocked titles when limits tighten. If a parental check fails, viewing continues by the owner’s choice. What is left: real-PC checks after release."
@@ -1261,7 +1261,7 @@
     {
       "id": "auto-next-hardening",
       "area": "tvauto",
-      "name": "Beebo Auto projection, saved sign-in and Car Party fixes (next release)",
+      "name": "Beebo Auto projection, saved sign-in and Car Party fixes (Oct 21, 2026 release)",
       "status": "In development",
       "realTest": "no",
       "evidence": "Typing is blocked while projecting to the car, saved sign-in is encrypted, and Car Party controls stay usable. Not in the current download. What is left: release and a real-car test of these changes."
@@ -1299,8 +1299,8 @@
     "Android TV focus and readability polish, and finishing Link a TV.",
     "The Windows app's music player window, which stayed silent in a test.",
     "More real-device tests: a real car, a real TV, a real tuner, a real Mac, a real Linux desktop and a NAS.",
-    "In development, next release: first-run Windows connection test and podcast import from an OPML file or a pasted link/name.",
-    "In development, next release: parental-control fixes, guest video compatibility and download continuity, Android accessibility and layout, and Beebo Auto hardening.",
+    "In development, in the Oct 21, 2026 release: first-run Windows connection test and podcast import from an OPML file or a pasted link/name.",
+    "In development, in the Oct 21, 2026 release: parental-control fixes, guest video compatibility and download continuity, Android accessibility and layout, and Beebo Auto hardening.",
     "In development, off and next release: walkie-talkie host controls and online browser-games page connection.",
     "In development, off by default: Remote Desktop keyboard helper; never run on a real PC."
   ],

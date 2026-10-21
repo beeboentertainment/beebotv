@@ -550,7 +550,7 @@
         ]
       }
     ],
-    "evidenceLimit": "Historical checkmarks are not proof of current-release testing. Beebo Auto 1.18 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026); the new walkie-talkie flow has no real-phone test."
+    "evidenceLimit": "Historical checkmarks are not proof of current-release testing. Beebo Auto 1.19 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026); the new walkie-talkie flow has no real-phone test."
   },
   "fullProgress": {
     "updatedEastern": "Oct 13, 2026, 4:14 AM Eastern",
@@ -753,12 +753,12 @@
     "fontStatus": "Self-hosted Google Fonts are pending approval to obtain font packages; no package was added."
   },
   "releaseChanges": {
-    "title": "Current downloads, and what is in the next release",
-    "summary": "The downloads are Windows 0.1.96, published Oct 19, 2026, 3:06 PM Eastern; Android 1.51-tester31 (build 81), published Oct 19, 2026, 2:27 PM Eastern; and Beebo Auto 1.18 (build 19), built Oct 7, 2026, 2:03 AM Eastern. The parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below are in the next release, not these downloads.",
-    "sourceNote": "Code changes do not establish real-device results. This update adds no passed check and changes no recorded feature percentage. Beebo Auto 1.18 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
+    "title": "Current downloads, and what is new in them",
+    "summary": "The downloads are Windows 0.1.97, Android 1.51-tester32 (build 82) and Beebo Auto 1.19 (build 20), all published Oct 21, 2026, 3:43 AM Eastern. The parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below are in these downloads and have not yet been tried on real devices.",
+    "sourceNote": "Code changes do not establish real-device results. This release adds no passed check and changes no recorded feature percentage. Beebo Auto 1.19 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-20T12:40:00-04:00",
-  "updatedEastern": "Oct 20, 2026, 12:40 PM Eastern",
+  "updated": "2026-10-21T03:43:00-04:00",
+  "updatedEastern": "Oct 21, 2026, 3:43 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -1776,7 +1776,7 @@
           "Built, tests pass, tried on a real phone.",
           "Oct 13, 2026, two phones: a shared video played its picture on the guest phone but was silent (open finding); guest save arrived after host approval in a test build.",
           "Oct 14, 2026, published tester23: guest pages loaded; no sharing was open, so shared-video playback and guest Save were not tried. Requests without a valid guest cookie were refused.",
-          "In development, in the next release: guests get an H.264/AAC copy when the original audio will not play in a browser; host approval no longer cuts a running download."
+          "In development, in the Oct 21, 2026 release: guests get an H.264/AAC copy when the original audio will not play in a browser; host approval no longer cuts a running download."
         ],
         "remaining": [
           {
@@ -1798,8 +1798,8 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development, in the next release: guests get an H.264/AAC copy when the original audio will not play in a browser; host approval no longer cuts a running download. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
+      "changeNote": "In development, in the Oct 21, 2026 release: guests get an H.264/AAC copy when the original audio will not play in a browser; host approval no longer cuts a running download. No recorded check or percentage changed.",
       "changeHistory": [
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
@@ -2078,7 +2078,7 @@
     {
       "group": "Android phone app",
       "name": "Beebo Auto (Android Auto)",
-      "status": "Available (sideload; 1.18 not yet tested in a real car; an earlier build had one first check in one car, Oct 6, 2026)",
+      "status": "Available (sideload; 1.19 not yet tested in a real car; an earlier build had one first check in one car, Oct 6, 2026)",
       "percentComplete": 80,
       "checks": {
         "Built": true,
@@ -2088,7 +2088,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 6, 2026 (one car, one drive, an earlier build than 1.18)",
-      "leftToReach100": "Beebo Auto 1.18 has not been tested in a real car. Test it parked on a real head unit (sign-in, lists, sound, controls), then video on the car screen, music, car-screen titles, maps ducking, away from home, passenger games, Car Party, reconnect, and more cars.",
+      "leftToReach100": "Beebo Auto 1.19 has not been tested in a real car. Test it parked on a real head unit (sign-in, lists, sound, controls), then video on the car screen, music, car-screen titles, maps ducking, away from home, passenger games, Car Party, reconnect, and more cars.",
       "roadTo100": {
         "means": "Every Beebo Auto feature works in real cars, including after a lost connection, with a safety review.",
         "done": [
@@ -2096,12 +2096,12 @@
           "First real-car check on Oct 6, 2026, on an earlier build than 1.18, in one car (2021 Audi SQ5 with Android Auto): Android Auto offered to enable Beebo Auto, sign-in worked, the video list showed, sound played through the car speakers and fast-forward had no lag.",
           "Behaviour tests pass.",
           "Code, Oct 12, 2026: the Android Auto error and offline cases were listed (13 rows) and tests added for the https-upgrade rule and the error kinds; two branches inside the car playback service cannot be unit-tested without Android and have no unit test.",
-          "In development, in the next release: typing is blocked while projecting to the car, saved sign-in uses encrypted storage, and Car Party controls stay usable."
+          "In development, in the Oct 21, 2026 release: typing is blocked while projecting to the car, saved sign-in uses encrypted storage, and Car Party controls stay usable."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Test Beebo Auto 1.18 (and the next release) in a parked car on a real Android Auto head unit."
+            "text": "Test Beebo Auto 1.19 in a parked car on a real Android Auto head unit."
           },
           {
             "kind": "DEVICE",
@@ -2122,16 +2122,16 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development, in the next release: typing is blocked while projecting to the car, saved sign-in uses encrypted storage, and Car Party controls stay usable. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
+      "changeNote": "In development, in the Oct 21, 2026 release: typing is blocked while projecting to the car, saved sign-in uses encrypted storage, and Car Party controls stay usable. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "updatedThisRun": true,
-      "testedOn": "One car (a 2021 Audi SQ5 with Android Auto), one person, one drive, on Oct 6, 2026, using an earlier build than 1.18. Beebo Auto 1.18 itself has not been in a car.",
-      "scoreNote": "The 80% comes from the Oct 6, 2026 first car check on an earlier build. Beebo Auto 1.18 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested.",
+      "testedOn": "One car (a 2021 Audi SQ5 with Android Auto), one person, one drive, on Oct 6, 2026, using an earlier build than 1.18. Beebo Auto 1.19 itself has not been in a car.",
+      "scoreNote": "The 80% comes from the Oct 6, 2026 first car check on an earlier build. Beebo Auto 1.19 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested.",
       "changeHistory": [
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
@@ -2418,8 +2418,8 @@
       "lastTested": "Oct 14, 2026 (published tester23; Large playback controls FAILED, low confidence); Oct 13, 2026 (test build)",
       "leftToReach100": "After release, check the new Android screens and layouts with TalkBack, 200% text, high contrast, landscape and large playback controls on real phones.",
       "previousPercent": 60,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development, in the next release: another Android accessibility and layout pass is merged. Older device results cover earlier screens and builds. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
+      "changeNote": "In development, in the Oct 21, 2026 release: another Android accessibility and layout pass is merged. Older device results cover earlier screens and builds. No recorded check or percentage changed.",
       "changeHistory": [
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
@@ -2448,7 +2448,7 @@
           "Oct 14, 2026, published tester23: the accessibility switches and Caregiver view worked on a Galaxy S9+; text size 1.3 showed no clipped text on three phones. Large playback controls looked the same size as off (low confidence).",
           "Code, Oct 12, 2026 (in the published Android 1.51-tester23): an accessibility audit added tests and fixes: Reduce motion now applies to the Pick Next wheel, the photo slideshow and the trip presentation; the audiobook seek bar and speed slider are announced in words; the playing chapter and four tappable rows are announced properly.",
           "Code, Oct 18, 2026 (Android 1.51-tester26 and tester27): Large playback controls now resize the centre and bottom-bar buttons and the top row scrolls sideways so it fits; Play tabs stay on one line at large text (tester26); the bottom bar stays on one row at large text (tester27); automated tests cover them. Not yet re-checked on a phone.",
-          "In development, in the next release: another Android accessibility and layout pass is merged. Older device results cover earlier screens and builds."
+          "In development, in the Oct 21, 2026 release: another Android accessibility and layout pass is merged. Older device results cover earlier screens and builds."
         ],
         "remaining": [
           {
@@ -2958,7 +2958,7 @@
         "done": [
           "Checks passed: Built, Automated tests.",
           "Live TV planning tests pass.",
-          "In development, in the next release: a Live TV link stops working when its profile is restricted."
+          "In development, in the Oct 21, 2026 release: a Live TV link stops working when its profile is restricted."
         ],
         "remaining": [
           {
@@ -2976,8 +2976,8 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development, in the next release: a Live TV link stops working when its profile is restricted. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
+      "changeNote": "In development, in the Oct 21, 2026 release: a Live TV link stops working when its profile is restricted. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
@@ -3050,7 +3050,7 @@
         "done": [
           "Checks passed: Built, Automated tests.",
           "Movie Night behaviour tests pass.",
-          "In development, in the next release: Movie Night removes blocked titles from a room when parental limits tighten."
+          "In development, in the Oct 21, 2026 release: Movie Night removes blocked titles from a room when parental limits tighten."
         ],
         "remaining": [
           {
@@ -3068,8 +3068,8 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development, in the next release: Movie Night removes blocked titles from a room when parental limits tighten. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
+      "changeNote": "In development, in the Oct 21, 2026 release: Movie Night removes blocked titles from a room when parental limits tighten. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
@@ -3142,7 +3142,7 @@
         "done": [
           "Checks passed: Built, Automated tests.",
           "Parental-control tests pass.",
-          "In development, in the next release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice."
+          "In development, in the Oct 21, 2026 release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice."
         ],
         "remaining": [
           {
@@ -3152,8 +3152,8 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development, in the next release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
+      "changeNote": "In development, in the Oct 21, 2026 release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
@@ -4055,8 +4055,8 @@
         "means": "Two phones on different networks talk to each other reliably.",
         "done": [
           "Checks passed: Built, Automated tests, Real device (an earlier version, Oct 1, 2026).",
-          "Server and connection tests pass. The server part is on; no released app uses it yet.",
-          "In development, off and in the next release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains."
+          "Server and connection tests pass. The server part is on; the Oct 21, 2026 release is the first app release that uses it.",
+          "In development, off and in the Oct 21, 2026 release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains."
         ],
         "remaining": [
           {
@@ -4070,8 +4070,8 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 20, 2026, 12:40 PM Eastern",
-      "changeNote": "In development, off and in the next release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains. The server part is on; no released app uses it yet. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
+      "changeNote": "In development, off and in the Oct 21, 2026 release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains. The server part is on; the Oct 21, 2026 release is the first app release that uses it. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
@@ -4079,7 +4079,7 @@
       "ownerTests": [],
       "updatedThisRun": true,
       "testedOn": "The new invite-from-anywhere flow has not been tested on real phones. The Real device tick comes from an earlier version tried on Oct 1, 2026.",
-      "scoreNote": "The 60% includes a Real device check from an earlier version (Oct 1, 2026). It is not evidence for the new flow on real phones. The server part is on; no released app uses it yet.",
+      "scoreNote": "The 60% includes a Real device check from an earlier version (Oct 1, 2026). It is not evidence for the new flow on real phones. The server part is on; the Oct 21, 2026 release is the first app release that uses it.",
       "changeHistory": [
         {
           "changedEastern": "Oct 20, 2026, 6:50 AM Eastern",
@@ -4484,7 +4484,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 20, 2026, 6:50 AM Eastern",
+  "previousUpdatedEastern": "Oct 20, 2026, 12:40 PM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 20 feature and release status",
@@ -4493,7 +4493,7 @@
     "lastTestedIso": "2026-10-14T21:06:00-04:00",
     "previousTested": "Oct 13, 2026, 1:15 PM Eastern",
     "broader": "Still required",
-    "newerText": "The current downloads and next-release changes are separated below. The last broad published-phone record is from October 14; later limited runs keep their own build numbers and dates. Those results do not prove the October 19 downloads or the unreleased changes on real devices."
+    "newerText": "The current downloads and next-release changes are separated below. The last broad published-phone record is from October 14; later limited runs keep their own build numbers and dates. Those results do not prove the October 21 downloads on real devices."
   },
   "historyNew": [
     {
@@ -4526,18 +4526,18 @@
     }
   ],
   "currentRelease": {
-    "windows": "0.1.96",
-    "windowsPublishedAtUtc": "2026-10-19T19:06:00.000Z",
-    "windowsPublishedAtEastern": "Oct 19, 2026, 3:06 PM Eastern",
-    "android": "1.51-tester31",
-    "androidBuild": 81,
-    "androidPublishedAtUtc": "2026-10-19T18:27:00.000Z",
-    "androidPublishedAtEastern": "Oct 19, 2026, 2:27 PM Eastern",
-    "auto": "1.18",
-    "autoBuild": 19,
-    "autoBuiltAtUtc": "2026-10-07T06:03:30Z",
-    "autoBuiltAtEastern": "Oct 7, 2026, 2:03 AM Eastern",
-    "deviceChecks": "No new device checks are added by this update. Earlier results retain their actual builds and dates. Beebo Auto 1.18 has not been tested in a real car; an earlier build had one first check in one car on Oct 6, 2026."
+    "windows": "0.1.97",
+    "windowsPublishedAtUtc": "2026-10-21T07:43:00.000Z",
+    "windowsPublishedAtEastern": "Oct 21, 2026, 3:43 AM Eastern",
+    "android": "1.51-tester32",
+    "androidBuild": 82,
+    "androidPublishedAtUtc": "2026-10-21T07:43:00.000Z",
+    "androidPublishedAtEastern": "Oct 21, 2026, 3:43 AM Eastern",
+    "auto": "1.19",
+    "autoBuild": 20,
+    "deviceChecks": "No new device checks are added by this update. Earlier results retain their actual builds and dates. Beebo Auto 1.19 has not been tested in a real car; an earlier build had one first check in one car on Oct 6, 2026.",
+    "autoPublishedAtUtc": "2026-10-21T07:43:00.000Z",
+    "autoPublishedAtEastern": "Oct 21, 2026, 3:43 AM Eastern"
   },
   "realWorldStatusLabels": {
     "confirmed-on-real-devices": "Confirmed working on real devices",
