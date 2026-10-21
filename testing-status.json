@@ -754,11 +754,11 @@
   },
   "releaseChanges": {
     "title": "Current downloads, and what is new in them",
-    "summary": "The downloads are Windows 0.1.98, Android 1.51-tester33 (build 83) and Beebo Auto 1.20 (build 21), all published Oct 21, 2026, 6:52 AM Eastern. They add Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
-    "sourceNote": "Code changes do not establish real-device results. This release adds no passed check and changes no recorded feature percentage. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
+    "summary": "Windows 0.1.98, Android 1.51-tester33 (build 83) and Beebo Auto 1.20 (build 21), all published Oct 21, 2026, 6:52 AM Eastern. Picture frame — In development. In Windows 0.1.98, off until the owner turns it on. Chosen photos, a clock and a household note from the home PC can be shown on a wall tablet or supported browser on home Wi-Fi. It uses plain HTTP on that home network; real tablet/TV testing is still needed. Family achievements — In development. In tester33, off until the host enables it. Each person opts in; milestones stay on that phone. The owner profile on the phone is the host and chooses retention and nicknames, with each person also agreeing to keep nicknames. No badges or leaderboards. Real-phone testing is still needed. Library sharing — Beta. The phone part of early guest-pass renewal is in tester33; guests can renew early within the allowed sign-in window. Windows 0.1.98 and the live server supply the other parts. End-to-end real-device renewal still needs a recorded retest. Live TV playlist addresses — Beta. Private, home-network or unusual hosts need the owner's confirmation. Real playlists and a tuner still need checks. Phone language and large text — Beta. Numbers follow the app language, including decimal commas; the Browse switch no longer clips at large text. The exact tester33 screens still need real-phone checks. Beebo Auto — In development for these changes. Typing is allowed while waiting for the first Android Auto answer; video stays off. Once projection is confirmed, or its state cannot be read, the typing lock applies. Beebo Auto 1.20 has never been tested in a real car or on a real Android Auto screen. An earlier build has a dated one-car record from Oct 6; it does not test 1.20. Video on the car screen stays off.",
+    "sourceNote": "The release #10 Pixel and Windows retests were attempted on Oct 21. Version and passive diagnostic evidence was collected, but no complete functional feature check was executed. The Pixel run stopped before its permitted server connection was established; Windows testing lacked supported UI access and the selected-photo fixture. Both runs ended with functional retesting blocked and pending. These are testing prerequisites, not newly confirmed app defects. No feature percentage or passed check changed. Live TV parental-check errors — Beta, merged for release #11. A check error follows the existing allow-on-error rule across the app/API, browser and signed stream links. A successful answer saying a profile is restricted still blocks it. Real-device restriction and error-path checks remain. Linux converter — Beta, merged for release #11. The real Linux run found that conversion needed libx264 when OpenH264 was missing; the fallback fix is merged. No release #11 installer, Linux package or Docker image is announced. Screen-off audio switch — In development. The intended Quality & audio sheet switch defaults off. Its branch is still unmerged in the current source snapshot, so it is not listed as a merged release #11 change. The older player Screen off option keeps its dated evidence. Surprise me — Beta for the current retest. It already starts the chosen item straight away; Nick chose to keep that behavior. This is an existing behavior and decision, not a newly shipped release #11 feature. The current build still needs a recorded end-to-end check."
   },
-  "updated": "2026-10-21T06:52:00-04:00",
-  "updatedEastern": "Oct 21, 2026, 6:52 AM Eastern",
+  "updated": "2026-10-21T07:59:45-04:00",
+  "updatedEastern": "Oct 21, 2026, 7:59 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -2096,7 +2096,7 @@
           "First real-car check on Oct 6, 2026, on an earlier build than 1.18, in one car (2021 Audi SQ5 with Android Auto): Android Auto offered to enable Beebo Auto, sign-in worked, the video list showed, sound played through the car speakers and fast-forward had no lag.",
           "Behaviour tests pass.",
           "Code, Oct 12, 2026: the Android Auto error and offline cases were listed (13 rows) and tests added for the https-upgrade rule and the error kinds; two branches inside the car playback service cannot be unit-tested without Android and have no unit test.",
-          "In development, in the Oct 21, 2026 release: typing is blocked while projecting to the car, saved sign-in uses encrypted storage, and Car Party controls stay usable."
+          "In development, in the Oct 21, 2026 release: typing is allowed before the first Android Auto answer with video off; projection then applies the typing lock. Saved sign-in uses encrypted storage, and Car Party controls stay usable."
         ],
         "remaining": [
           {
@@ -2122,8 +2122,8 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
-      "changeNote": "In development, in the Oct 21, 2026 release: typing is blocked while projecting to the car, saved sign-in uses encrypted storage, and Car Party controls stay usable. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 7:59 AM Eastern",
+      "changeNote": "In development, in Beebo Auto 1.20: typing is allowed before the first Android Auto answer; video stays off. Once projection is confirmed, or its state cannot be read, typing stays locked. Sign-in storage fixes are included. Beebo Auto 1.20 has never been tested in a real car or on a real Android Auto screen. An earlier build has a dated one-car record from Oct 6; it does not test 1.20. Video on the car screen stays off. No recorded percentage or check changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
@@ -3142,7 +3142,7 @@
         "done": [
           "Checks passed: Built, Automated tests.",
           "Parental-control tests pass.",
-          "In development, in the Oct 21, 2026 release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice."
+          "In development, in the Oct 21, 2026 release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. Consistent handling of parental-check errors is merged for release #11, not the published release #10 source; an evaluated restriction still blocks."
         ],
         "remaining": [
           {
@@ -3152,8 +3152,8 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
-      "changeNote": "In development, in the Oct 21, 2026 release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 7:59 AM Eastern",
+      "changeNote": "In development, in the Oct 21, 2026 release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. Consistent handling of parental-check errors is merged for release #11, not the published release #10 source; an evaluated restriction still blocks. No recorded check or percentage changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
@@ -3318,7 +3318,7 @@
         "done": [
           "Checks passed: Built, Automated tests.",
           "Safety-focused tests pass.",
-          "In development: the Remote Desktop keyboard helper change is next-release work. It is off by default and has never been run on a real PC."
+          "In development: the Remote Desktop keyboard helper is in Windows 0.1.97 and later. It is off by default and has never been run on a real PC."
         ],
         "remaining": [
           {
@@ -3340,8 +3340,8 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development: the Remote Desktop keyboard helper change is next-release work. It is off by default and has never been run on a real PC. No recorded check or percentage changed.",
+      "changedEastern": "Oct 21, 2026, 7:59 AM Eastern",
+      "changeNote": "In development: the keyboard helper is in Windows 0.1.97 and later, off by default and never functionally checked on a real PC. Remote desktop from anywhere has a written plan; its first lane is at preflight/contract coordination, with no new approval protocol or mailbox authored. Not usable yet. No recorded percentage or check changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
@@ -3684,8 +3684,8 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 21, 2026, 7:59 AM Eastern",
+      "changeNote": "Tested on real Linux (Ubuntu in WSL) and an emulated ARM run on Oct 21, 2026. One conversion fault was found and fixed in the source: use libx264 when OpenH264 is missing. Not tested on a Raspberry Pi, a real NAS or the Docker image. The fix is merged for the next release; this is not a new Linux package or Docker release. No recorded percentage or check changed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
@@ -4484,18 +4484,25 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 20, 2026, 12:40 PM Eastern",
+  "previousUpdatedEastern": "Oct 21, 2026, 6:52 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
-    "recordName": "October 20 feature and release status",
-    "scope": "Published downloads, next-release work and dated device evidence",
+    "recordName": "October 21 project status and blocked functional retests",
+    "scope": "Current downloads, merged next-release source, partial builds and dated device evidence",
     "lastTested": "Oct 14, 2026, 9:06 PM Eastern",
     "lastTestedIso": "2026-10-14T21:06:00-04:00",
     "previousTested": "Oct 13, 2026, 1:15 PM Eastern",
     "broader": "Still required",
-    "newerText": "The current downloads and next-release changes are separated below. The last broad published-phone record is from October 14; later limited runs keep their own build numbers and dates. Those results do not prove the October 21 downloads on real devices."
+    "newerText": "The release #10 Pixel and Windows retests were attempted on Oct 21. Version and passive diagnostic evidence was collected, but no complete functional feature check was executed. The Pixel run stopped before its permitted server connection was established; Windows testing lacked supported UI access and the selected-photo fixture. Both runs ended with functional retesting blocked and pending. These are testing prerequisites, not newly confirmed app defects. No feature percentage or passed check changed. Tested on real Linux (Ubuntu in WSL) and an emulated ARM run on Oct 21, 2026. One conversion fault was found and fixed in the source: use libx264 when OpenH264 is missing. Not tested on a Raspberry Pi, a real NAS or the Docker image. The fix is merged for the next release; this is not a new Linux package or Docker release. Remote desktop from anywhere is In development: plan written, first lane at preflight/coordination, not usable; no new protocol/mailbox authored. Dashboard and owner-only Family moments are partial core/metadata work, not usable products."
   },
   "historyNew": [
+    {
+      "iso": "2026-10-21",
+      "date": "Oct 21, 2026 (Eastern)",
+      "headline": "Release #10 retests attempted; passive evidence collected, functional testing blocked and pending",
+      "tested": "Pixel 3 with installed Android 1.51-tester33/build 83 and Windows with running Beebo 0.1.98, on Oct 21, 2026. Passive version/diagnostic collection only; no complete functional feature retest.",
+      "happened": "Pixel: installed build verified and passive logs collected; permitted server binding was not established, so functional checks did not start. Windows: running version and valid Nicholas Will installer signature verified; local health response collected. Supported UI access and selected photos were missing; all nine top-level checks remained blocked. Zero completed functional feature checks on either platform; no recorded percentage or check changed. Beebo Auto 1.20 has never been tested in a real car or on a real Android Auto screen. An earlier build has a dated one-car record from Oct 6; it does not test 1.20. Video on the car screen stays off."
+    },
     {
       "iso": "2026-10-14",
       "date": "Oct 14, 2026 (Eastern)",
@@ -4535,7 +4542,7 @@
     "androidPublishedAtEastern": "Oct 21, 2026, 6:52 AM Eastern",
     "auto": "1.20",
     "autoBuild": 21,
-    "deviceChecks": "No new device checks are added by this update. Earlier results retain their actual builds and dates. Beebo Auto 1.20 has not been tested in a real car; an earlier build had one first check in one car on Oct 6, 2026.",
+    "deviceChecks": "The release #10 Pixel and Windows retests were attempted on Oct 21. Version and passive diagnostic evidence was collected, but no complete functional feature check was executed. The Pixel run stopped before its permitted server connection was established; Windows testing lacked supported UI access and the selected-photo fixture. Both runs ended with functional retesting blocked and pending. These are testing prerequisites, not newly confirmed app defects. No feature percentage or passed check changed. Beebo Auto 1.20 has never been tested in a real car or on a real Android Auto screen. An earlier build has a dated one-car record from Oct 6; it does not test 1.20. Video on the car screen stays off.",
     "autoPublishedAtUtc": "2026-10-21T10:52:00.000Z",
     "autoPublishedAtEastern": "Oct 21, 2026, 6:52 AM Eastern"
   },
