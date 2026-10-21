@@ -550,7 +550,7 @@
         ]
       }
     ],
-    "evidenceLimit": "Historical checkmarks are not proof of current-release testing. Beebo Auto 1.19 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026); the new walkie-talkie flow has no real-phone test."
+    "evidenceLimit": "Historical checkmarks are not proof of current-release testing. Beebo Auto 1.20 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026); the new walkie-talkie flow has no real-phone test."
   },
   "fullProgress": {
     "updatedEastern": "Oct 13, 2026, 4:14 AM Eastern",
@@ -754,11 +754,11 @@
   },
   "releaseChanges": {
     "title": "Current downloads, and what is new in them",
-    "summary": "The downloads are Windows 0.1.97, Android 1.51-tester32 (build 82) and Beebo Auto 1.19 (build 20), all published Oct 21, 2026, 3:43 AM Eastern. The parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below are in these downloads and have not yet been tried on real devices.",
-    "sourceNote": "Code changes do not establish real-device results. This release adds no passed check and changes no recorded feature percentage. Beebo Auto 1.19 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
+    "summary": "The downloads are Windows 0.1.98, Android 1.51-tester33 (build 83) and Beebo Auto 1.20 (build 21), all published Oct 21, 2026, 6:52 AM Eastern. They add Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
+    "sourceNote": "Code changes do not establish real-device results. This release adds no passed check and changes no recorded feature percentage. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-21T03:43:00-04:00",
-  "updatedEastern": "Oct 21, 2026, 3:43 AM Eastern",
+  "updated": "2026-10-21T06:52:00-04:00",
+  "updatedEastern": "Oct 21, 2026, 6:52 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 54,
@@ -2078,7 +2078,7 @@
     {
       "group": "Android phone app",
       "name": "Beebo Auto (Android Auto)",
-      "status": "Available (sideload; 1.19 not yet tested in a real car; an earlier build had one first check in one car, Oct 6, 2026)",
+      "status": "Available (sideload; 1.20 not yet tested in a real car; an earlier build had one first check in one car, Oct 6, 2026)",
       "percentComplete": 80,
       "checks": {
         "Built": true,
@@ -2088,7 +2088,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 6, 2026 (one car, one drive, an earlier build than 1.18)",
-      "leftToReach100": "Beebo Auto 1.19 has not been tested in a real car. Test it parked on a real head unit (sign-in, lists, sound, controls), then video on the car screen, music, car-screen titles, maps ducking, away from home, passenger games, Car Party, reconnect, and more cars.",
+      "leftToReach100": "Beebo Auto 1.20 has not been tested in a real car. Test it parked on a real head unit (sign-in, lists, sound, controls), then video on the car screen, music, car-screen titles, maps ducking, away from home, passenger games, Car Party, reconnect, and more cars.",
       "roadTo100": {
         "means": "Every Beebo Auto feature works in real cars, including after a lost connection, with a safety review.",
         "done": [
@@ -2101,7 +2101,7 @@
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Test Beebo Auto 1.19 in a parked car on a real Android Auto head unit."
+            "text": "Test Beebo Auto 1.20 in a parked car on a real Android Auto head unit."
           },
           {
             "kind": "DEVICE",
@@ -2130,8 +2130,8 @@
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "updatedThisRun": true,
-      "testedOn": "One car (a 2021 Audi SQ5 with Android Auto), one person, one drive, on Oct 6, 2026, using an earlier build than 1.18. Beebo Auto 1.19 itself has not been in a car.",
-      "scoreNote": "The 80% comes from the Oct 6, 2026 first car check on an earlier build. Beebo Auto 1.19 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested.",
+      "testedOn": "One car (a 2021 Audi SQ5 with Android Auto), one person, one drive, on Oct 6, 2026, using an earlier build than 1.18. Beebo Auto 1.20 itself has not been in a car.",
+      "scoreNote": "The 80% comes from the Oct 6, 2026 first car check on an earlier build. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested.",
       "changeHistory": [
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
@@ -4526,18 +4526,18 @@
     }
   ],
   "currentRelease": {
-    "windows": "0.1.97",
-    "windowsPublishedAtUtc": "2026-10-21T07:43:00.000Z",
-    "windowsPublishedAtEastern": "Oct 21, 2026, 3:43 AM Eastern",
-    "android": "1.51-tester32",
-    "androidBuild": 82,
-    "androidPublishedAtUtc": "2026-10-21T07:43:00.000Z",
-    "androidPublishedAtEastern": "Oct 21, 2026, 3:43 AM Eastern",
-    "auto": "1.19",
-    "autoBuild": 20,
-    "deviceChecks": "No new device checks are added by this update. Earlier results retain their actual builds and dates. Beebo Auto 1.19 has not been tested in a real car; an earlier build had one first check in one car on Oct 6, 2026.",
-    "autoPublishedAtUtc": "2026-10-21T07:43:00.000Z",
-    "autoPublishedAtEastern": "Oct 21, 2026, 3:43 AM Eastern"
+    "windows": "0.1.98",
+    "windowsPublishedAtUtc": "2026-10-21T10:52:00.000Z",
+    "windowsPublishedAtEastern": "Oct 21, 2026, 6:52 AM Eastern",
+    "android": "1.51-tester33",
+    "androidBuild": 83,
+    "androidPublishedAtUtc": "2026-10-21T10:52:00.000Z",
+    "androidPublishedAtEastern": "Oct 21, 2026, 6:52 AM Eastern",
+    "auto": "1.20",
+    "autoBuild": 21,
+    "deviceChecks": "No new device checks are added by this update. Earlier results retain their actual builds and dates. Beebo Auto 1.20 has not been tested in a real car; an earlier build had one first check in one car on Oct 6, 2026.",
+    "autoPublishedAtUtc": "2026-10-21T10:52:00.000Z",
+    "autoPublishedAtEastern": "Oct 21, 2026, 6:52 AM Eastern"
   },
   "realWorldStatusLabels": {
     "confirmed-on-real-devices": "Confirmed working on real devices",
