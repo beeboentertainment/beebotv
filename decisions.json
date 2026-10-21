@@ -1,16 +1,17 @@
 {
   "title": "Decisions made",
-  "updatedEastern": "Oct 21, 2026, 6:53 AM Eastern",
-  "updatedIso": "2026-10-21T06:53:00-04:00",
+  "updatedEastern": "Oct 21, 2026, 9:44 AM Eastern",
+  "updatedIso": "2026-10-21T09:44:00-04:00",
+  "heroStatus": "Picture frame is In development in Windows 0.1.98, and Family achievements is In development in Android tester33 (build 83), both in release #10. They are off until enabled and still need functional real-device tests. Home dashboard and owner-only Family moments are In development, with partial work only and no usable feature yet. Home intercom, Time capsule and Phone as mouse or touchpad remain Planned.",
   "decisions": [
     {
       "id": "D1",
       "status": "DECIDED",
       "answer": "C",
-      "answerText": "Keep today's pause default; an easy switch is being built.",
+      "answerText": "Keep today's pause default and add an easy switch in the player so people choose each time.",
       "title": "Screen-off audio on the phone app",
-      "area": "Android phone app (test download)",
-      "why": "When the phone screen turns off while a film is playing, should the sound stop or keep going? Today's pause default stays while the switch is being built.",
+      "area": "Android phone app: In development, next release",
+      "why": "Screen-off still pauses a film by default. The switch in Quality & audio is merged for the next phone release, default off and hidden on TV. It is absent from tester33 (build 83); a functional real-phone retest is still pending.",
       "options": [
         { "key": "A", "text": "Keep it as it is: turning the screen off pauses the video." },
         { "key": "B", "text": "The sound keeps playing when the screen turns off." },
@@ -22,10 +23,10 @@
       "id": "D2",
       "status": "DECIDED",
       "answer": "C",
-      "answerText": "Home dashboard on the picture frame: Planned, being built, not released.",
+      "answerText": "Home dashboard on the picture frame: In development, core preparation only; integration incomplete.",
       "title": "Which new idea to build first",
-      "area": "Planned, being built, not released",
-      "why": "Four ideas were written down as designs. The home dashboard is being built; the others wait. None of them is in any download.",
+      "area": "Home dashboard: In development, partial preparation, not usable",
+      "why": "I chose the home dashboard first. Core preparation exists, but frame integration, settings and trusted sources are incomplete. There is no usable dashboard yet. The other ideas remain Planned.",
       "options": [
         { "key": "A", "text": "Home intercom and baby monitor: listen or talk between your own devices." },
         { "key": "B", "text": "Time capsule: photos and messages sealed until a date you choose." },
@@ -41,7 +42,7 @@
       "answerText": "Tested on real Linux (Ubuntu in WSL) and an emulated ARM run on Oct 21, 2026; one fault found and fixed (video conversion on a Linux ffmpeg without OpenH264). Not yet tested on a Raspberry Pi, a real NAS, or the Docker image.",
       "title": "How we word the Linux server status",
       "area": "Linux server (headless, Docker): Beta",
-      "why": "The Linux server is listed as Beta. Its code is done and its automated tests pass. A recent test on real Linux (Ubuntu) ran it from first setup through video conversion and found one fault; a fix is written but is not in any download yet. A virtual ARM run also worked. It has not been tested on a Raspberry Pi or on a real NAS, and we will not say that it has.",
+      "why": "The Linux server remains Beta. Testing on Ubuntu in WSL and an emulated ARM run on Oct 21 found one conversion fault. The libx264 fallback fix for Linux ffmpeg without OpenH264 is merged for the next release; it is not in a newly published Linux package. Raspberry Pi, real NAS and Docker-image checks remain missing.",
       "options": [
         { "key": "A", "text": "Say it plainly: tested on real Linux and in a virtual ARM run, not yet on a Raspberry Pi or a NAS." },
         { "key": "B", "text": "Leave the wording as it is." },
@@ -55,7 +56,7 @@
       "answerText": "Skip it for now; the Linux server stays Beta.",
       "title": "Raspberry Pi or NAS test",
       "area": "Linux server (headless, Docker): Beta",
-      "why": "The last piece of evidence for the Linux server is a run on real hardware. A one-command test can be prepared and its results read, but someone has to have the hardware.",
+      "why": "Real Raspberry Pi, real NAS and Docker-image checks are still missing. I chose to skip those for now and keep the Linux server Beta. The WSL and emulated ARM runs do not replace those checks.",
       "options": [
         { "key": "A", "text": "I buy a Raspberry Pi and run the test when it arrives." },
         { "key": "B", "text": "I borrow a NAS or a Raspberry Pi from someone." },
@@ -68,8 +69,8 @@
       "answer": "A",
       "answerText": "Accept plain HTTP for v1 and say so plainly in the guide.",
       "title": "Picture frame over plain HTTP",
-      "area": "Picture frame: Planned, not released",
-      "why": "The picture frame is an idea that is not released. An old tablet or TV on the wall would show photos you picked, from your home PC. In a first version it would talk to your PC over your home Wi-Fi without encryption (plain HTTP). The link is meant to work only on your home network. The trade-off is that someone on that same Wi-Fi who had the link could see the chosen photos.",
+      "area": "Picture frame: In development, in Windows 0.1.98, off until enabled",
+      "why": "Windows 0.1.98 includes the picture frame as In development, off until the owner enables it. It is designed to show the owner's chosen photos on a wall tablet or supported browser over home Wi-Fi, using unencrypted plain HTTP. Someone on that same Wi-Fi who has the link can see those chosen photos. Functional device verification is still pending.",
       "options": [
         { "key": "A", "text": "Accept this for the first version, and say it plainly in the guide." },
         { "key": "B", "text": "Require an encrypted connection even at home. It is safer, but takes more setup." },
@@ -82,8 +83,8 @@
       "answer": "C",
       "answerText": "Only the owner sees it.",
       "title": "Family moments: who sees which photos",
-      "area": "Family moments: Planned, not released",
-      "why": "Family moments would be a private feed of recent family photos, grouped by day, on your own home PC. It is not released. Safe starting rules are written down, but who sees what is the owner’s call.",
+      "area": "Family moments: In development, owner-only, not usable",
+      "why": "Only the owner may see the intended Family moments feed. Core access and metadata work exists, but the product UI, owner switch and photo-viewing integration are incomplete. It is not a usable or released feed.",
       "options": [
         { "key": "A", "text": "Use the starting rules: guests see nothing, limited profiles see only folders already allowed for them, and private profiles are never shown." },
         { "key": "B", "text": "Let the owner choose, profile by profile, who sees the feed." },
@@ -96,8 +97,8 @@
       "answer": "A",
       "answerText": "The owner profile on that phone is the host.",
       "title": "Family achievements: who is the host",
-      "area": "Family achievements: Planned, not released",
-      "why": "Family achievements would be fun badges for what a household watches and plays. It is not released. The host decides how long milestones are kept and whether nicknames are allowed. In the current design the host is the owner profile signed in on that phone.",
+      "area": "Family achievements: In development, in tester33, off until enabled",
+      "why": "Family achievements is In development in tester33. After the host enables it, each person opts in to milestones kept only on that phone. The owner profile on that phone is the host and chooses retention and whether nicknames are allowed; each person must also agree to keep nicknames. There are no badges or leaderboards. Functional real-phone testing is still pending.",
       "options": [
         { "key": "A", "text": "Keep it: the owner profile on that phone is the host." },
         { "key": "B", "text": "Any adult profile can be the host." },
@@ -111,7 +112,7 @@
       "answerText": "Publish the guides only after release #10 is live and the new items have been tested on real devices.",
       "title": "When to publish the how-to guides",
       "area": "Guides: written, not published",
-      "why": "Guides are written for the picture frame, kitchen announcements, Campsite guest downloads and family achievements. They are not published, because those features are not released. When should they go up?",
+      "why": "Release #10 is live. The new how-to guides remain staged because complete functional real-device retests are still blocked and pending. Version checks and passive diagnostics do not meet the real-device gate.",
       "options": [
         { "key": "A", "text": "After release #10 is live and the new items have been tested on real devices." },
         { "key": "B", "text": "Right after the next release is live." },
@@ -125,7 +126,7 @@
       "answerText": "Make the notes full width on wide screens too.",
       "title": "Testing status page: how wide the notes are",
       "area": "This website",
-      "why": "On the testing status page the notes now sit under each feature row. On a wide screen they use only about two thirds of the width. Should that change?",
+      "why": "The notes already sit below each feature row. I chose full-width notes on wide screens too. That update is prepared but is not yet merged into the current website source; its publication has not been verified.",
       "options": [
         { "key": "A", "text": "Leave it as it is." },
         { "key": "B", "text": "Show the notes in two columns on wide screens." },
