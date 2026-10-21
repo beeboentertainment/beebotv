@@ -1,108 +1,134 @@
 {
-  "title": "Decisions waiting",
-  "updatedEastern": "Oct 21, 2026, 6:30 AM Eastern",
-  "updatedIso": "2026-10-21T06:30:00-04:00",
-  "suggestedLabel": "Claude’s suggested pick",
+  "title": "Decisions made",
+  "updatedEastern": "Oct 21, 2026, 6:53 AM Eastern",
+  "updatedIso": "2026-10-21T06:53:00-04:00",
   "decisions": [
     {
       "id": "D1",
+      "status": "DECIDED",
+      "answer": "C",
+      "answerText": "Keep today's pause default; an easy switch is being built.",
       "title": "Screen-off audio on the phone app",
       "area": "Android phone app (test download)",
-      "why": "When the phone screen turns off while a film is playing, should the sound stop or keep going? This has been waiting since Oct 18, 2026.",
+      "why": "When the phone screen turns off while a film is playing, should the sound stop or keep going? Today's pause default stays while the switch is being built.",
       "options": [
         { "key": "A", "text": "Keep it as it is: turning the screen off pauses the video." },
         { "key": "B", "text": "The sound keeps playing when the screen turns off." },
         { "key": "C", "text": "Keep it as it is, but add an easy switch in the player so people choose each time." },
-        { "key": "D", "text": "The sound keeps playing only when headphones or Bluetooth are connected.", "suggested": true }
+        { "key": "D", "text": "The sound keeps playing only when headphones or Bluetooth are connected." }
       ]
     },
     {
       "id": "D2",
+      "status": "DECIDED",
+      "answer": "C",
+      "answerText": "Home dashboard on the picture frame: Planned, being built, not released.",
       "title": "Which new idea to build first",
-      "area": "Planned, not built yet",
-      "why": "Four ideas are written down as designs only. None of them is built, and none is in any download. Which one should we start on? The others wait.",
+      "area": "Planned, being built, not released",
+      "why": "Four ideas were written down as designs. The home dashboard is being built; the others wait. None of them is in any download.",
       "options": [
         { "key": "A", "text": "Home intercom and baby monitor: listen or talk between your own devices." },
         { "key": "B", "text": "Time capsule: photos and messages sealed until a date you choose." },
-        { "key": "C", "text": "Home dashboard on the picture frame: what is playing now and reminders.", "suggested": true },
+        { "key": "C", "text": "Home dashboard on the picture frame: what is playing now and reminders." },
         { "key": "D", "text": "Phone as a mouse or touchpad for the PC." },
         { "key": "E", "text": "None yet. Finish and test what is already built first." }
       ]
     },
     {
       "id": "D3",
+      "status": "DECIDED",
+      "answer": "A",
+      "answerText": "Tested on real Linux (Ubuntu in WSL) and an emulated ARM run on Oct 21, 2026; one fault found and fixed (video conversion on a Linux ffmpeg without OpenH264). Not yet tested on a Raspberry Pi, a real NAS, or the Docker image.",
       "title": "How we word the Linux server status",
       "area": "Linux server (headless, Docker): Beta",
       "why": "The Linux server is listed as Beta. Its code is done and its automated tests pass. A recent test on real Linux (Ubuntu) ran it from first setup through video conversion and found one fault; a fix is written but is not in any download yet. A virtual ARM run also worked. It has not been tested on a Raspberry Pi or on a real NAS, and we will not say that it has.",
       "options": [
-        { "key": "A", "text": "Say it plainly: tested on real Linux and in a virtual ARM run, not yet on a Raspberry Pi or a NAS.", "suggested": true },
+        { "key": "A", "text": "Say it plainly: tested on real Linux and in a virtual ARM run, not yet on a Raspberry Pi or a NAS." },
         { "key": "B", "text": "Leave the wording as it is." },
         { "key": "C", "text": "Change nothing until a real Raspberry Pi or NAS test is done." }
       ]
     },
     {
       "id": "D4",
+      "status": "DECIDED",
+      "answer": "C",
+      "answerText": "Skip it for now; the Linux server stays Beta.",
       "title": "Raspberry Pi or NAS test",
       "area": "Linux server (headless, Docker): Beta",
       "why": "The last piece of evidence for the Linux server is a run on real hardware. A one-command test can be prepared and its results read, but someone has to have the hardware.",
       "options": [
         { "key": "A", "text": "I buy a Raspberry Pi and run the test when it arrives." },
         { "key": "B", "text": "I borrow a NAS or a Raspberry Pi from someone." },
-        { "key": "C", "text": "Skip it for now and keep the Linux server as Beta.", "suggested": true }
+        { "key": "C", "text": "Skip it for now and keep the Linux server as Beta." }
       ]
     },
     {
       "id": "D5",
+      "status": "DECIDED",
+      "answer": "A",
+      "answerText": "Accept plain HTTP for v1 and say so plainly in the guide.",
       "title": "Picture frame over plain HTTP",
       "area": "Picture frame: Planned, not released",
       "why": "The picture frame is an idea that is not released. An old tablet or TV on the wall would show photos you picked, from your home PC. In a first version it would talk to your PC over your home Wi-Fi without encryption (plain HTTP). The link is meant to work only on your home network. The trade-off is that someone on that same Wi-Fi who had the link could see the chosen photos.",
       "options": [
-        { "key": "A", "text": "Accept this for the first version, and say it plainly in the guide.", "suggested": true },
+        { "key": "A", "text": "Accept this for the first version, and say it plainly in the guide." },
         { "key": "B", "text": "Require an encrypted connection even at home. It is safer, but takes more setup." },
         { "key": "C", "text": "Accept it for now, and build the encrypted option next." }
       ]
     },
     {
       "id": "D6",
+      "status": "DECIDED",
+      "answer": "C",
+      "answerText": "Only the owner sees it.",
       "title": "Family moments: who sees which photos",
       "area": "Family moments: Planned, not released",
       "why": "Family moments would be a private feed of recent family photos, grouped by day, on your own home PC. It is not released. Safe starting rules are written down, but who sees what is the owner’s call.",
       "options": [
-        { "key": "A", "text": "Use the starting rules: guests see nothing, limited profiles see only folders already allowed for them, and private profiles are never shown.", "suggested": true },
+        { "key": "A", "text": "Use the starting rules: guests see nothing, limited profiles see only folders already allowed for them, and private profiles are never shown." },
         { "key": "B", "text": "Let the owner choose, profile by profile, who sees the feed." },
         { "key": "C", "text": "Only the owner sees it." }
       ]
     },
     {
       "id": "D7",
+      "status": "DECIDED",
+      "answer": "A",
+      "answerText": "The owner profile on that phone is the host.",
       "title": "Family achievements: who is the host",
       "area": "Family achievements: Planned, not released",
       "why": "Family achievements would be fun badges for what a household watches and plays. It is not released. The host decides how long milestones are kept and whether nicknames are allowed. In the current design the host is the owner profile signed in on that phone.",
       "options": [
-        { "key": "A", "text": "Keep it: the owner profile on that phone is the host.", "suggested": true },
+        { "key": "A", "text": "Keep it: the owner profile on that phone is the host." },
         { "key": "B", "text": "Any adult profile can be the host." },
         { "key": "C", "text": "Use a separate host PIN." }
       ]
     },
     {
       "id": "D8",
+      "status": "DECIDED",
+      "answer": "A",
+      "answerText": "Publish the guides only after release #10 is live and the new items have been tested on real devices.",
       "title": "When to publish the how-to guides",
       "area": "Guides: written, not published",
       "why": "Guides are written for the picture frame, kitchen announcements, Campsite guest downloads and family achievements. They are not published, because those features are not released. When should they go up?",
       "options": [
-        { "key": "A", "text": "After the next release is live and the new items have been tested on real devices.", "suggested": true },
+        { "key": "A", "text": "After release #10 is live and the new items have been tested on real devices." },
         { "key": "B", "text": "Right after the next release is live." },
         { "key": "C", "text": "Hold them until I have used each feature myself." }
       ]
     },
     {
       "id": "D9",
+      "status": "DECIDED",
+      "answer": "C",
+      "answerText": "Make the notes full width on wide screens too.",
       "title": "Testing status page: how wide the notes are",
       "area": "This website",
       "why": "On the testing status page the notes now sit under each feature row. On a wide screen they use only about two thirds of the width. Should that change?",
       "options": [
         { "key": "A", "text": "Leave it as it is." },
-        { "key": "B", "text": "Show the notes in two columns on wide screens.", "suggested": true },
+        { "key": "B", "text": "Show the notes in two columns on wide screens." },
         { "key": "C", "text": "Make the notes full width on wide screens too." }
       ]
     }
