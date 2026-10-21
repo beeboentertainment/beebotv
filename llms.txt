@@ -1,7 +1,7 @@
 # Beebo Entertainment
 > Free, local-first media server and apps: your own movies, TV, music, photos, audiobooks and live TV, streamed from your own computer to phones, TVs, cars and browsers, with camp and road-trip features. Beebo includes no movies or shows; you bring your own files. Video goes straight from your own computer to the viewer whenever possible; Beebo's servers carry only small text such as sign-in and connection set-up.
 
-Status words used on this site: Available (in the current downloads and usable today), Beta (you can try it, still being tested on real equipment), In development (being built, not released), Planned (intended, no date). We never claim a flat "100% working".
+Status words used on this site: Available (in the current downloads and usable today), Beta (you can try it, still being tested on real equipment), In development (being built, off, incomplete or unverified on its real equipment), Planned (intended, no date). We never claim a flat "100% working".
 
 ## Current downloads
 - Windows server 0.1.98: Available. Published Oct 21, 2026, 6:52 AM Eastern. Windows 10 and 11. Windows SmartScreen may show a warning the first time. https://www.beeboentertainment.com/windows.html
@@ -21,7 +21,7 @@ Status words used on this site: Available (in the current downloads and usable t
 - PlayStation: no app and none planned (Sony has no open app store for apps like Beebo, and the console browsers cannot run Beebo's player).
 
 ## Services
-- Beebo Relay: Beta. A backup route for watching away from home when a direct connection cannot be made. Direct, automatic router set-up (UPnP) and your own relay are free and always tried first. Relay is not something you can buy yet. Planned prices are listed on one page only: https://www.beeboentertainment.com/subscribe.html . Relay details: https://www.beeboentertainment.com/beebo-relay.html
+- Beebo Relay: Beta. A backup route for watching away from home when a direct connection cannot be made. Direct, automatic router set-up (UPnP) and your own relay are free and always tried first. Relay is not something you can buy yet. Relay details: https://www.beeboentertainment.com/beebo-relay.html
 - BeeboVPN: In development, invite-only test, not offered to the public. https://www.beeboentertainment.com/beebovpn.html
 - Your own address: every Beebo gets a free yourname.beebo.tv address for watching away from home.
 
@@ -41,7 +41,7 @@ Status words used on this site: Available (in the current downloads and usable t
 - Current versions (from our download feeds): Windows 0.1.98; Android 1.51-tester33 (build 83), a test download, not on Google Play; Beebo Auto 1.20 (build 21), a test download, not on Google Play.
 - Who we are: made by a family man, not a data company. Free, local-first media server. Closed source (all rights reserved). Beebo includes no movies, shows or channels.
 - Per area (Available of listed): Windows server 6/32; Android phone 6/22; Android TV and Beebo Auto 1/9; Other TV and Apple platforms 0/8; Computers, browsers and NAS 1/4; Campsite Mode 3/24; Trip Journal 0/5; Away from home 2/11; Music, audiobooks, podcasts and radio 0/10; Live TV 1/5; Parental controls and household 1/10; Online services 1/9.
-- Not counted: PlayStation (Dropped), the original separate-login hub (Retired), the old "Stream from my PC" button (Retired), and 40 ideas that are not promised.
+- Not counted: PlayStation (Dropped), the original separate-login hub (Retired), the old "Stream from my PC" button (Retired), and separately listed ideas / development work that are not promised.
 # WWO:LLMS:END
 
 ## Testing and progress
@@ -58,3 +58,15 @@ Your files stay on your own computer. Beebo keeps basic connection records, incl
 
 ## Honesty note
 Percentages are checks passed out of checks planned. Untested paths are listed as not tested.
+
+## Current project status — last updated Oct 21, 2026, 7:59 AM Eastern
+Release #10: Windows 0.1.98, Android 1.51-tester33/build 83 and Beebo Auto 1.20/build 21, published Oct 21, 2026, 6:52 AM Eastern. Server fixes deployed 5:46 AM Eastern; evidence layout updated 6:20 AM Eastern.
+The release #10 Pixel and Windows retests were attempted on Oct 21. Version and passive diagnostic evidence was collected, but no complete functional feature check was executed. The Pixel run stopped before its permitted server connection was established; Windows testing lacked supported UI access and the selected-photo fixture. Both runs ended with functional retesting blocked and pending. These are testing prerequisites, not newly confirmed app defects. No feature percentage or passed check changed.
+Tested on real Linux (Ubuntu in WSL) and an emulated ARM run on Oct 21, 2026. One conversion fault was found and fixed in the source: use libx264 when OpenH264 is missing. Not tested on a Raspberry Pi, a real NAS or the Docker image. The fix is merged for the next release; this is not a new Linux package or Docker release.
+Beebo Auto 1.20 has never been tested in a real car or on a real Android Auto screen. An earlier build has a dated one-car record from Oct 6; it does not test 1.20. Video on the car screen stays off.
+In development: Picture frame (owner enables it; plain HTTP on home Wi-Fi), Family achievements (opt-in per person, phone-local, host retention/nicknames; no badges or leaderboards), dashboard (partial preparation), owner-only Family moments (core/metadata only), Emergency card and Reference library (core only), accessibility/translations/TV work. Remote desktop from anywhere: plan written, first lane at preflight and contract coordination; no new protocol/mailbox authored, not usable, intended phone-approved own-PC control from phone/browser, sign-in-screen later.
+Merged next-release source: Live TV parental-check error handling (restricted answers still block), Linux libx264 fallback, screen-off audio switch and tests pinning the existing Surprise me behavior. Screen-off audio Quality & audio switch: merged for the next phone release, default off, hidden on TV, not in tester33. Surprise me: existing immediate start kept by owner decision; guard tests merged, with no behavior change or device result.
+Planned, designs only: Home intercom/baby monitor, Time capsule, Phone as mouse/touchpad. New guides stay staged pending real-device results.
+Current status: https://www.beeboentertainment.com/progress-update.html
+Roadmap: https://www.beeboentertainment.com/next-features.html
+Recorded tests and limits: https://www.beeboentertainment.com/whats-tested.html

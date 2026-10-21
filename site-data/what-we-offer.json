@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 20, 2026, 12:40 PM Eastern",
-    "updatedIso": "2026-10-20T12:40:00-04:00",
+    "updatedEastern": "Oct 21, 2026, 7:59 AM Eastern",
+    "updatedIso": "2026-10-21T07:59:45-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -279,7 +279,7 @@
       "area": "windows",
       "name": "Remote Desktop (see and control the PC from a phone)",
       "status": "In development",
-      "evidence": "Off by default and never run on a real PC. The keyboard helper change is next-release work. What is left: real keyboard, mouse, viewing, approval, disconnect and revoke checks.",
+      "evidence": "Off by default and never run on a real PC. The keyboard helper is in Windows 0.1.97 and later. The separate anywhere plan is not usable. What is left: real keyboard, mouse, viewing, approval, disconnect and revoke checks.",
       "realTest": "no"
     },
     {
@@ -303,7 +303,7 @@
       "area": "windows",
       "name": "Read It To Me",
       "status": "In development",
-      "evidence": "Merged after the current Windows download was built, so it is not in a download yet.",
+      "evidence": "The October 13 record described this as merged source. Functional acceptance on Windows 0.1.98 remains unrecorded.",
       "realTest": "no"
     },
     {
@@ -311,7 +311,7 @@
       "area": "windows",
       "name": "Guest upload requests (a guest asks, you approve)",
       "status": "In development",
-      "evidence": "Merged after the current Windows download was built, so it is not in a download yet.",
+      "evidence": "The October 13 record described this as merged source. Functional acceptance on Windows 0.1.98 remains unrecorded.",
       "realTest": "no"
     },
     {
@@ -359,7 +359,7 @@
       "area": "android",
       "name": "Keeping sound going with the screen off",
       "status": "Beta",
-      "evidence": "Oct 13 on the S9+: with the default setting the sound stopped when the screen turned off. With the player's Screen off option on, it kept playing. Making it the default is undecided.",
+      "evidence": "Oct 13 on the S9+: with the default setting the sound stopped when the screen turned off. With the player's Screen off option on, it kept playing. The default remains off. The Quality & audio switch is merged for the next phone release, not in tester33; a real-phone retest remains.",
       "realTest": "partly"
     },
     {
@@ -1307,8 +1307,8 @@
   "knownProblems": [
     "On a phone, sound stops when the screen turns off unless the player's Screen off option is on.",
     "Following a new podcast from the phone failed in a test on Oct 13.",
-    "Saving a Trip Journal as a video failed in the published phone build; the fix is not in a download yet.",
-    "The Windows app's own music window stayed silent in a test; a fix is written and not in a download yet.",
+    "Trip Journal export failed on the Galaxy S9+ in the dated tester23 run; current tester33 still needs a functional retest.",
+    "The Windows music window stayed silent in the October 13 test; current Windows 0.1.98 still needs a functional playback retest.",
     "The Music screen's Albums, Artists and Songs buttons overlap a heading on two phones.",
     "The phone's volume keys do not change the TV volume while casting.",
     "An ordinary trip link opens only on the home Wi-Fi unless away links are switched on.",
@@ -1320,12 +1320,12 @@
       "line": "An old phone at the door becomes a doorbell button; the owner gets a notification, sees the camera and can talk back."
     },
     {
-      "title": "Phone as mouse or touchpad",
-      "line": "Use the phone as a touchpad or mouse for the PC or TV."
+      "title": "Phone as mouse or touchpad (Planned)",
+      "line": "Design only; a phone touchpad or mouse for a PC or TV, not a usable feature."
     },
     {
-      "title": "Home intercom and baby monitor",
-      "line": "Old phones or webcams become room monitors or intercoms that only allowed profiles can watch."
+      "title": "Home intercom and baby monitor (Planned)",
+      "line": "Design only; no usable intercom or monitor yet."
     },
     {
       "title": "Door camera and intercom",
@@ -1348,25 +1348,25 @@
       "line": "A private home recorder that spots people or pets on your own PC and never uses a cloud."
     },
     {
-      "title": "Family moments feed",
-      "line": "A daily nudge to share a quick photo or clip into a private household feed on the home PC."
+      "title": "Family moments feed (In development)",
+      "line": "Owner-only core access and metadata work; the feed UI, visible owner switch and photo-viewing integration are incomplete. Not usable yet."
     },
     {
-      "title": "Kitchen announcements",
-      "line": "A short voice message that plays at once on chosen household phones or speakers. Work on this has started; it is not merged and is not in any download."
+      "title": "Kitchen announcements (In development)",
+      "line": "Included since Windows 0.1.97, off by default. Functional checks on the current download remain pending."
     },
     {
       "title": "Family tech help",
       "line": "The owner can see a family member's Beebo screen and talk them through a problem."
     },
     {
-      "title": "Media requests and wishlist",
-      "line": "Guests and limited profiles ask for a title and the owner is notified. Work on this has started; it is not merged and is not in any download.",
+      "title": "Media requests and wishlist (In development)",
+      "line": "Windows 0.1.97 and later include Requests status and owner notes in the browser. Guest requests stay off unless enabled; current functional retesting remains pending.",
       "partly": true
     },
     {
-      "title": "Campsite emergency hub",
-      "line": "An offline emergency screen over the camp hotspot with map markers, alerts and saved first-aid pages."
+      "title": "Emergency card (In development)",
+      "line": "Core code only; the complete product UI and real-device acceptance checks remain."
     },
     {
       "title": "Sleep sounds and smart alarm",
@@ -1378,12 +1378,12 @@
       "partly": true
     },
     {
-      "title": "Time capsule",
-      "line": "Lock family videos, photos and journals until a future date."
+      "title": "Time capsule (Planned)",
+      "line": "Design only; a future way to keep selected memories until a chosen date. Not usable yet."
     },
     {
-      "title": "Family achievements",
-      "line": "Fun badges and household leaderboards from what people watch and play, all on the home PC."
+      "title": "Family achievements (In development)",
+      "line": "In tester33, off until the host enables it. Each person opts in to milestones kept on that phone. The owner profile on the phone is host and chooses retention and nicknames, with each person also agreeing to keep nicknames. No badges or leaderboards; real-phone testing remains."
     },
     {
       "title": "Old-device control deck",
@@ -1416,8 +1416,8 @@
       "partly": true
     },
     {
-      "title": "Offline reference library for camping",
-      "line": "Save web pages such as recipes and trail guides to the PC so they open in Campsite Mode with no internet."
+      "title": "Reference library (In development)",
+      "line": "Core code only; complete screens and real-device acceptance checks remain."
     },
     {
       "title": "PC keyboard and mouse on a spare tablet",
@@ -1432,8 +1432,8 @@
       "line": "Old phones answer a wake word and talk to an assistant that runs on the home PC with nothing sent to a cloud."
     },
     {
-      "title": "Digital picture frame and info board",
-      "line": "Old tablets and TVs show a photo slideshow and family notices from the home PC."
+      "title": "Digital picture frame and info board (In development)",
+      "line": "In Windows 0.1.98, off until enabled by the owner. Chosen photos, a clock and a household note from the home PC on a wall tablet or browser on home Wi-Fi. Uses plain HTTP on that network. Real-device testing remains."
     },
     {
       "title": "Family sign-in code vault",
@@ -1479,6 +1479,14 @@
     {
       "title": "Start a film on your home TV while you are away",
       "line": "Your phone, away from home, asks your home computer to play a film on the TV at home. A design was written on Oct 20, 2026; nothing is built. This is different from casting to a TV near you while you are away, which is in Beta."
+    },
+    {
+      "title": "Home dashboard on the picture frame (In development)",
+      "line": "Core preparation only; frame integration, trusted sources and settings remain incomplete. Not usable yet."
+    },
+    {
+      "title": "Remote desktop from anywhere (In development)",
+      "line": "Plan written; first build lane at preflight and contract coordination. New protocol/mailbox not authored yet. Intended own-PC control from phone or browser, phone approval every connection, sign-in-screen access later. Not usable yet."
     }
   ],
   "faq": [
