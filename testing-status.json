@@ -1,13 +1,13 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+    "updatedEastern": "Oct 22, 2026, 6:38 AM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
       "humanTestingDone": 26,
       "features": 70,
-      "codeItemsLeft": 38,
+      "codeItemsLeft": 37,
       "counts": {
         "confirmed-on-real-devices": 0,
         "code-complete-needs-real-world-testing": 34,
@@ -262,8 +262,8 @@
         "codeDone": 100,
         "humanTestingLeft": 81,
         "remaining": {
-          "CODE": 15,
-          "DEVICE": 37,
+          "CODE": 14,
+          "DEVICE": 38,
           "NICK": 4,
           "BLOCKED": 4
         },
@@ -319,7 +319,7 @@
             "name": "Movie Night",
             "codeDone": 100,
             "humanTestingLeft": 100,
-            "codeItemsLeft": 2,
+            "codeItemsLeft": 1,
             "realWorldStatus": "code-still-being-finished"
           },
           {
@@ -581,12 +581,12 @@
     "evidenceLimit": "Historical checkmarks are not proof of current-release testing. Beebo Auto 1.20 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026); the new walkie-talkie flow has no real-phone test. Every phone run on Oct 22, 2026 was muted, so nobody has heard sound on a phone; some fixes for what was found that night are merged in the code and the rest are still in testing; none is released or retested."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+    "updatedEastern": "Oct 22, 2026, 6:38 AM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Human testing done is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
       "baseline": "The same method applied to the Oct 21, 2026, 3:46 PM Eastern data",
-      "current": "Oct 22, 2026, 6:25 AM Eastern data and the dated device runs of Oct 21 and 22, 2026"
+      "current": "Oct 22, 2026, 6:38 AM Eastern data and the dated device runs of Oct 21 and 22, 2026"
     },
     "areas": [
       {
@@ -1009,8 +1009,8 @@
     "summary": "The downloads are Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.99 and Android 1.51-tester34 add audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-22T06:25:00-04:00",
-  "updatedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+  "updated": "2026-10-22T06:38:00-04:00",
+  "updatedEastern": "Oct 22, 2026, 6:38 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 53,
@@ -1037,7 +1037,7 @@
       "lastTested": "Oct 22, 2026 (tester34 on four phones); Oct 14, 2026 (published tester23 on four phones)",
       "leftToReach100": "Run a TalkBack (screen reader) pass and get a final review of the newest build; the Oct 14 runs covered the published tester23 on four phones, without TalkBack.",
       "previousPercent": 80,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: the Android 1.51-tester34 (build 84) started and showed all five tabs (Home, Browse, Library, Play, More) with content on a Google Pixel 3, a Samsung Galaxy S24 Ultra, a Samsung Galaxy S25 and a Samsung Galaxy S9+ (child profile). No crash appeared in any phone's crash log. The percentage did not change: TalkBack and a final review of the newest build are still open.",
       "changeHistory": [
         {
@@ -1135,7 +1135,7 @@
       },
       "lastTested": "Oct 22, 2026 (tester34 on four phones, muted; subtitle and version pickers FAILED on the S25); Oct 14, 2026 (published tester23 on four phones)",
       "leftToReach100": "Retest the subtitle menu, the version picker and Next on downloaded episodes after their fixes are released (the picker fix is merged in the code; the Next fix is still in testing). Nick decides whether Screen off should stop or keep the audio by default; read the new start-timing line to find why one episode took about 50 seconds to start on the S24; re-test rotation and subtitles on a film that has them, and have a person listen on the published download.",
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: on tester34, films played, paused and seeked, and the Original and 720p choices worked, on a Pixel 3, a Galaxy S25, a Galaxy S24 Ultra and a Galaxy S9+ (all muted, so nobody heard sound on a phone). Problems found: on the S25 the player had no way to choose a film's embedded subtitles, did not show a film's sidecar subtitle files, and had no version picker for a film with two files; on the S9+ child profile a film with embedded subtitles sat at 0:00 for 20 seconds while saying it was playing; Next on a downloaded episode worked in airplane mode and in one online Pixel 3 run with two saved episodes in a row, but when an episode in between was missing it skipped the saved one while online (S25 and a Pixel 3 run), and in a later Pixel 3 run it did not move on (the runs disagree); the top bar is cut off at 150% text. The fix for the subtitle and version pickers is fixed in the code and merged for the next release; it is not released and has not been retested on a device; the fix for Next and for the slow-starting subtitle film is written and still in testing, not yet in the code; it is not released and has not been retested on a device. The percentage did not change.",
       "previousPercent": 80,
       "changeHistory": [
@@ -1172,7 +1172,7 @@
           "Oct 14, 2026, published tester23 on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25: resume, play, pause, skip and seek worked; on the S9+ the quality menu, the floating picture-in-picture player and playing with the screen off (Screen off: On) worked. One episode took about 50 seconds to start on the S24.",
           "Code, Oct 12 and Oct 18, 2026: a code review found that sound stopping with the screen off is the intended default (Screen off stays Off until you turn it on) and that Audio only keeps playing with the screen off; tests were added. In Android 1.51-tester27 a film that is still loading or buffering is also paused when the screen goes off with Screen off set to Off (before, only a film already playing was paused); new automated tests cover it. Not yet confirmed by ear on a phone.",
           "Code, Oct 18, 2026 (Android 1.51-tester27): the app now writes one timing line each time a film starts, with how long each preparation try took, so the cause of a slow start can be read from the phone log. The cause of the 50-second start on the S24 has NOT been found yet.",
-          "Oct 22, 2026, tester34 (muted): Original and 720p played and switched without a stall on the Pixel 3 and the S25; the chapter list and chapter jumps worked on the S25; picture-in-picture opened on the S24 Ultra and the Pixel 3; the \"Up next\" card moved to the next episode by itself; the screen-off switch is now inside the Quality & audio sheet (off by default) and flipped on the S25, the Pixel 3 and the S24 Ultra (real screen-off sound was not tested); the Cast button opened the picker on all four phones."
+          "Oct 22, 2026, tester34 (muted): Original and 720p played and switched without a stall on the Pixel 3 and the S25; the chapter list and chapter jumps worked on the S25; picture-in-picture opened on the S24 Ultra and the Pixel 3; the \"Up next\" card moved to the next episode by itself; the screen-off switch is now inside the Quality & audio sheet (off by default) and flipped on and off on the S25 and the Pixel 3 and seen on the S24 Ultra (already on there); one later Pixel 3 run did not find it (real screen-off sound was not tested); the Cast button opened the picker on all four phones."
         ],
         "remaining": [
           {
@@ -1356,7 +1356,7 @@
       "lastTested": "Oct 22, 2026 (tester34, two phones on one home Wi-Fi); Oct 13, 2026 (two real phones on home Wi-Fi)",
       "leftToReach100": "Close and reopen the app to confirm it rejoins, try chat and reactions and a phone on mobile data, then run a readiness review on the published download.",
       "previousPercent": 60,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: on tester34, a Galaxy S25 hosted and a Galaxy S9+ (child profile) joined as viewer on one home Wi-Fi. Play, a seek, pause and a seek back were followed within about 1 to 3 seconds; resume took about 5 seconds, slower than our 3-second goal. The room list showed both people and cleared when the viewer left and when the host left. The phones were muted. The label changed from In development to Beta: it is in the download and has now worked on two real phones in several runs (Oct 2, Oct 3, Oct 13 and Oct 22). Rejoining after closing the app, chat, reactions and a phone on mobile data were not tested. The percentage did not change.",
       "changeHistory": [
         {
@@ -1416,7 +1416,7 @@
           "build": "Android 1.51-tester34 (build 84; version read from the phone, installed file not compared with the download)",
           "date": "Oct 22, 2026, 4:34 AM Eastern",
           "result": "PASS",
-          "evidence": "Host started a 30-second film; the viewer started about 2 seconds later; seek to 10 s was followed in about 2 s; pause within 1 s; seek back to 5 s in about 3 s; resume went to buffering and then playing about 5 s later (slower than the 3 s goal); the room list showed both people and cleared correctly when each left. The phone was muted, so nobody heard sound. Not run: rejoin after closing the app, chat, reactions, mobile data."
+          "evidence": "Host started a 30-second film; the viewer started about 2 seconds later; seek to 10 s was followed in about 2 s; pause within 1 s; seek back to 5 s in about 3 s; resume went to buffering and then playing about 5 s later (slower than the 3 s goal); the room list showed both people and cleared correctly when each left. The phone was muted, so nobody heard sound. Not run: rejoin after closing the app (known not to work, not retested), chat, reactions, mobile data."
         }
       ]
     },
@@ -1568,7 +1568,7 @@
       "lastTested": "Oct 22, 2026 (Surprise me on the S25 and Pixel 3); Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (test build)",
       "leftToReach100": "Settle how Surprise me should behave (title page first or play at once), then test stars and playlists on a phone.",
       "previousPercent": 60,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: on tester34, Home \"Surprise me\" opens the Surprise screen first, and its \"Play a random film\" button starts a film within about 1.5 seconds (Galaxy S25 and Pixel 3, muted). Favourite, Watchlist and Watched were switched on and off once on the S9+ child profile. Playlists were not tested in these runs. Whether Surprise me should start straight from Home is still Nick's decision. The percentage did not change.",
       "changeHistory": [
         {
@@ -1676,7 +1676,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: on tester34 a Galaxy S25 started Campsite and a Galaxy S9+ joined as a guest in Chrome; the guest reached the library and finished a Tic-Tac-Toe game with the host. The host's Stop worked (it asks first, and the server closed at once). The guest page then FAILED the \"host stopped\" check: it stayed on the old library for over a minute, and tapping Movies showed the browser's own \"Check your Internet connection\" page, with no Beebo message. The fix is fixed in the code and merged for the next release; it is not released and has not been retested on a device. The percentage did not change.",
       "changeHistory": [
         {
@@ -1733,7 +1733,7 @@
       "lastTested": "Oct 22, 2026 (Pixel 3: radio started in 2 seconds, podcast search listed shows; Follow not tried); Oct 14, 2026 (published tester23, Galaxy S9+: radio played, Follow still FAILING)",
       "leftToReach100": "Re-test Follow on a new podcast (fixed in the code; it failed on Oct 13), then test screen-off listening, downloads and the queue. Podcast import from an OPML file or a pasted link/name is In development and next-release work; test duplicates and failed imports after release.",
       "previousPercent": 60,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: on tester34 a Pixel 3 (Windows 0.1.99 test PC) started Radio Paradise within 2 seconds (muted) and the Podcasts search listed real shows. Following a new podcast was not tried, so the failed Follow check from Oct 14 is still open. The percentage did not change.",
       "changeHistory": [
         {
@@ -1857,8 +1857,8 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
-      "changeNote": "Oct 22: on tester34 (Windows 0.1.99 test PC), a Pixel 3 and a Galaxy S25 played a made-up 3-chapter book: the chapter list showed three chapters and jumps landed on the right one; speed 1.5x was kept after a restart; a sleep timer counted down; after the app was force-stopped and reopened the book offered to resume at the saved place (0:38 on the Pixel 3, 0:27 on the S25). That is the 0.1.99 resume fix working on phones. Bookmark was tapped but no confirmation was seen and the bookmark list was not opened; a second book was not tried; nobody heard it (muted). A child profile on the S9+ could not see audiobooks. The Windows app's own audiobook resume failed on 0.1.98 and was not re-run on 0.1.99. The percentage did not change.",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
+      "changeNote": "Oct 22: on tester34 (Windows 0.1.99 test PC), a Pixel 3 and a Galaxy S25 played a made-up 3-chapter book: the chapter list showed three chapters and jumps landed on the right one; speed 1.5x was kept after a restart; a sleep timer counted down; after the app was force-stopped and reopened the book offered to resume at the saved place (0:38 on the Pixel 3, 0:27 on the S25). Bookmark was tapped but no confirmation was seen and the bookmark list was not opened; a second book was not tried; nobody heard it (muted). A child profile on the S9+ could not see audiobooks. The Windows app's own audiobook resume failed on 0.1.98 and was not re-run on 0.1.99. The percentage did not change.",
       "changeHistory": [
         {
           "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
@@ -2075,7 +2075,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: on tester34 a Galaxy S25 host and a Galaxy S9+ guest in Chrome finished a Tic-Tac-Toe game, shown on both phones (one tester drove both phones). That makes three games finished on two real phones: Sea Battle (two people, Oct 13), Reversi (two guest phones, Oct 14) and Tic-Tac-Toe (Oct 22). The other games in the list were not played to the end by people. The percentage did not change.",
       "changeHistory": [
         {
@@ -2385,8 +2385,8 @@
       "lastTested": "Oct 22, 2026 (S25 cast controls passed; TV picture and sound not confirmed); Oct 13, 2026 (a person watched the TV)",
       "leftToReach100": "Try other TVs and receivers, converted films, subtitles while casting and a second sender; phone volume buttons do not control the TV volume and are not claimed.",
       "previousPercent": 80,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
-      "changeNote": "Oct 22: on tester34 a Galaxy S25 found the Living Room Chromecast TV and cast a 12-second film. Pause, play, seek, the TV volume slider (100% to 50% and back) and the quality label all responded on the phone, and stopping the cast worked. The tester could not see the TV, so picture and sound on the TV were not confirmed this time. The TV was checked idle before, during and after, and nobody else was using it. The percentage did not change.",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
+      "changeNote": "Oct 22: on tester34 a Galaxy S25 found the Living Room Chromecast TV and cast a 12-second film. Pause, play, seek, the on-screen TV volume slider (100% to 50% and back) and the quality label all responded on the phone, and stopping the cast worked. The phone's volume keys were not tried and are not claimed. The tester could not see the TV, so picture and sound on the TV were not confirmed this time. The TV was checked idle before, during and after, and nobody else was using it. The percentage did not change.",
       "changeHistory": [
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
@@ -2504,7 +2504,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: the label changed from Available to Beta. Nothing new was tested: Beebo Auto 1.20 has not been in a car, and the one check on Oct 6, 2026 used an earlier build in one car. The five-check percentage is unchanged because its Real device and Real-world ticks come from that earlier-build check, not from 1.20.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
@@ -2803,7 +2803,7 @@
       "lastTested": "Oct 22, 2026 (tester34: clipping at 150% text on four phones); Oct 14, 2026 (published tester23; Large playback controls FAILED, low confidence)",
       "leftToReach100": "After release, check the new Android screens and layouts with TalkBack, 200% text, high contrast, landscape and large playback controls on real phones.",
       "previousPercent": 60,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: large-text checks on tester34 found clipping. At 150% text the player's top bar is cut off (\"BAD QUALITY\" is partly out of view until you swipe) on a Pixel 3, a Galaxy S25, a Galaxy S24 Ultra and a Galaxy S9+; the title page \"Download\" button is cut off on the S9+ and the Pixel 3; German \"Willkommen zurück\" breaks into pieces on the Pixel 3; at 130% the Music \"Album radio\" button and the audiobook \"Chapters\" button are cut on the Pixel 3; the Photos chips are cut on the S25. Browse and Home were fine at 130%. The fix for the large-text clipping is fixed in the code and merged for the next release; it is not released and has not been retested on a device. TalkBack has still not been run. The percentage did not change.",
       "changeHistory": [
         {
@@ -2904,7 +2904,7 @@
       "lastTested": "Oct 22, 2026 (tester34: Pixel 3 and Galaxy S25, muted); Oct 14, 2026 (published tester23, four phones)",
       "leftToReach100": "Have a person listen to real music on the phone and test crossfade, gapless, the queue and album and artist radio.",
       "previousPercent": 60,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: on tester34 a Pixel 3 (Windows 0.1.99 test PC) played an album, went to the next and previous song, shuffled, showed the queue, ran a sleep timer, kept playing with the screen off (Android's media state stayed on PLAYING), used the notification-shade controls, and played a compilation with each song's own artist and a 24-bit FLAC. A Galaxy S25 showed synced lyrics, played an Opus album and a FLAC album, and moved between two tracks with no gap in the player state (sampled every 0.19 seconds). Everything was muted: nobody has heard it. The percentage did not change.",
       "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
@@ -3143,7 +3143,7 @@
       "lastTested": "Oct 22, 2026 (tester34: normal test member passed, child test profile FAILED); Oct 21, 2026 (Windows 0.1.98 test library)",
       "leftToReach100": "Fix the pictures not loading for a child profile and retest; try the photo map, the removal step, a real two-finger pinch and a full phone folder.",
       "previousPercent": null,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "New row, Oct 22, 2026: added because photos now have dated device evidence. On tester34 a Galaxy S25 (normal member) showed the timeline, albums, full-screen viewer and a correctly turned photo; a Galaxy S9+ child profile listed the same photos but every picture was blank and the full-screen view showed a broken-picture icon (four tries). The server-refusal fix is merged in the code and a thumbnail fix is still in testing; neither is released or retested. There is no Map tab in the phone Photos screen. Real device is not ticked because the child-profile run failed and the map and removal step were not tried.",
       "changeHistory": [],
       "roadTo100": {
@@ -3209,7 +3209,7 @@
       "lastTested": "Oct 21, 2026 (tester33: opt-in preview text and the two confirmation dialogs; recording a milestone not run)",
       "leftToReach100": "Turn it on as a host, opt in as a person, record a Camp Jobs and a time-together milestone, clear them and check the keep-for choices on real phones.",
       "previousPercent": null,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "New row, Oct 22, 2026: added because it is in the downloads and has one dated device run. On the tester33 a Pixel 3 showed the opt-in preview text and both \"cannot be undone\" dialogs correctly. No milestone was recorded, so the main use is untested. The Oct 21 run noticed that the \"let people record time together themselves\" switch was already on when the host turned achievements on; whether that is the default was not checked.",
       "changeHistory": [],
       "roadTo100": {
@@ -3242,7 +3242,7 @@
           "build": "Android 1.51-tester33 (build 83)",
           "date": "Oct 21, 2026, 8:11 AM Eastern",
           "result": "PARTIAL",
-          "evidence": "Preview text and the two \"cannot be undone\" dialogs passed. Not run: turning on for a person, recording a milestone, clearing them. One accidental first tap turned the host switch on; it was turned back off with nothing saved."
+          "evidence": "Preview text and the two \"cannot be undone\" dialogs passed. Not run: turning on for a person, recording a milestone, clearing them."
         }
       ],
       "codeDonePercent": 100,
@@ -3265,7 +3265,7 @@
       "lastTested": "Oct 22, 2026 (0.1.98 to 0.1.99 on one PC); Oct 13, 2026 (update check only)",
       "leftToReach100": "Install over an older version by a person, see the low-disk warning on a real PC, check uninstall removes the start-at-boot task, and get an update-safety review.",
       "previousPercent": 80,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: a Windows test PC updated itself from 0.1.98 to 0.1.99 through the app's own update at about 2:34 AM Eastern, and the new version started and kept logging and saving normally. The percentage did not change: an update over an older version on a second PC, the low-disk warning and the uninstall check are still open.",
       "changeHistory": [
         {
@@ -3333,7 +3333,7 @@
       "lastTested": "Oct 22, 2026 (browser could not open a film via the away address: FAILED); Oct 21, 2026 (Windows 0.1.98 test library); Oct 13, 2026 (all 27 desktop pages; signed-in browser player)",
       "leftToReach100": "Retest opening a film in a browser through the away address after its fix is released, find why the folders' own poster and NFO files are not used, and test Safari, Firefox and a phone browser. Test subtitles, the 5.1 audio track, Safari and Firefox, and a phone browser; get a review of the final screens.",
       "previousPercent": 80,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: the label changed from Available to Beta and the Real-world check was withdrawn (80% to 60%). A browser test on Oct 22 (5:08 to 5:12 AM Eastern, Chrome on a Windows 10 PC, a second test home reached by its away address) could not open a film: clicking a poster, title or episode reset the page to the top and no player opened; search, music and TV Shows lists worked. The cause was traced the same morning: playback starts and then the page reloads and discards the player. A fix is written and still in testing, not yet in the code; it is not released and has not been retested on a device. Also, on Oct 21 on Windows 0.1.98, the five test folder types were found exactly as expected and embedded subtitles, a sidecar subtitle, three audio tracks and chapters worked in the player; the folders' own poster, fanart and NFO files were not used (see Posters and info), and the page heading still said 1080p after the 720p version was chosen (the 0.1.99 release notes list a version-heading fix; not rechecked). The earlier Real-world tick rested on the Oct 12 phone-browser test on 5G.",
       "changeHistory": [
         {
@@ -3547,7 +3547,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 21: on Windows 0.1.98, a private-network playlist address asked \"Allow these addresses?\" and Cancel added nothing; a small local playlist with one public test stream loaded, played and was removed. No tuner was available, so a real tuner is still untested, and the confirm-for-real path was not run. The percentage did not change.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -3650,17 +3650,17 @@
             "text": "Independent review of the sharing and session rules."
           },
           {
-            "kind": "CODE",
-            "text": "The phone's Movie Night page showed raw error text on Oct 22, 2026; no fix is recorded yet."
+            "kind": "DEVICE",
+            "text": "Retest the phone's Movie Night page (it showed raw error text on Oct 22, 2026) once the merged fix is released: the fix is merged in the code for the next release; it is not released and has not been retested on a device."
           }
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
-      "changeNote": "Oct 22: on tester34, the phone's More > Watching & listening > Movie Night page showed raw error text (a \"not_found\" message) instead of a page, on a Galaxy S9+ child profile, twice. No fix is recorded yet. Movie Night has still not been tried on a real TV with phones. The percentage did not change.",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
+      "changeNote": "Oct 22: on tester34, the phone's More > Watching & listening > Movie Night page showed raw error text (a \"not_found\" message) instead of a page, on a Galaxy S9+ child profile, twice. The fix is merged in the code for the next release; it is not released and has not been retested on a device. Movie Night has still not been tried on a real TV with phones. The percentage did not change.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
-      "codeItemsLeft": 2,
+      "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
@@ -3753,8 +3753,8 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
-      "changeNote": "Oct 22: a child test profile (ages 7 to 12) on a Galaxy S9+ (tester34, Windows 0.1.99 test PC) saw only the four films rated G or PG in Home, Browse, Search and Library; films with no rating never appeared, and searching for them by name found nothing. An allowed film played. The child could not change limits or reach the owner's admin pages, but could open the player's Markers menu and Library health. Problems: a film with embedded subtitles sat at 0:00 for 20 seconds, the Movie Night page showed a raw error, TV shows and audiobooks were not visible to the child (probably the test setup, not checked), and photo pictures did not load (see Photos). No restricted profile has been tested on the PC itself. In Campsite, an anonymous guest page with the host's whole-library switch on listed 16 titles, more than the 4 films the child profile sees in its own app; that guest page shows what the host shares and was not checked against ratings. The percentage did not change.",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
+      "changeNote": "Oct 22: a child test profile (ages 7 to 12) on a Galaxy S9+ (tester34, Windows 0.1.99 test PC) saw only the four films rated G or PG in Home, Browse, Search and Library; films with no rating never appeared, and searching for them by name found nothing. An allowed film played. The child could not change limits or reach the owner's admin pages, but could open the player's Markers menu and Library health. Problems: a film with embedded subtitles sat at 0:00 for 20 seconds, the Movie Night page showed a raw error, TV shows and audiobooks were not visible to the child (probably the test setup, not checked), and photo pictures did not load (see Photos). No restricted profile has been tested on the PC itself. The percentage did not change.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
@@ -3858,7 +3858,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 22: on tester34, genre names switched to French, German and Spanish on a Pixel 3 and a Galaxy S25 (Browse chips, title details, and a translated chip filtered the list); Spanish and Italian screens fit at normal size on the Pixel 3. Still in English in French, German and Spanish: parts of the player top bar (WATCH TOGETHER, PREV, NEXT, BAD QUALITY, PIP); German \"Willkommen zurück\" wraps badly at 150% text on the Pixel 3. On Oct 21 the Windows 0.1.98 Settings, Library Health and Announce panel were read in French and German with no missing words (a few status messages keep the old language until reopened). No native speaker has read any of it. The percentage did not change.",
       "changeHistory": [
         {
@@ -3923,7 +3923,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 21: the label changed from Available to Beta. On Windows 0.1.98 with a test library (a PC with no TMDB key), every test film showed \"No poster\" and \"No description available for this file yet\" even though each folder held its own poster, fanart and a Kodi-style NFO file. The cause is not found yet. The percentage did not change: its Real device tick rests on the Oct 5 check that titles, ratings and descriptions appeared with a trailer button.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -4227,7 +4227,7 @@
       "lastTested": "Oct 21, 2026 (Windows 0.1.98: mix of 23 songs advanced; muted); Oct 13, 2026 (the desktop player FAILED to play)",
       "leftToReach100": "Hear the music in the real desktop window and confirm sound by ear, then test queue, gapless and radio.",
       "previousPercent": 40,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "Oct 21: the Oct 13 failure is not reproduced. On Windows 0.1.98 the \"Recently added\" mix played 23 songs one after another with title and artist shown, and Opus, M4A, Ogg, FLAC and a 24-bit FLAC each loaded and started. The fix for mixes loading their songs in the desktop window shipped in Windows 0.1.94. The PC was muted, so nobody heard it; gapless and loudness levelling were not run. The percentage did not change because a person still has to hear the sound in the desktop window.",
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with three computer-made sample songs.",
       "roadTo100": {
@@ -4323,7 +4323,7 @@
       "lastTested": "Oct 21, 2026 (Windows 0.1.98, PC browser: 10 checks passed, 1 not run)",
       "leftToReach100": "Try it on a real tablet, phone or TV browser with a QR scanned by a camera, plus link expiry, \"always off\" and \"only when someone is home\".",
       "previousPercent": null,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "New row, Oct 22, 2026: added because it is in the downloads and has one dated PC run. Ten checks passed and one was not run on Windows 0.1.98 with the wall page opened in the PC's own browser. It has not been tried on a tablet, phone or TV, and has not been repeated on 0.1.99. Small things seen: with no photos the \"Create frame link\" button stays off with its reason shown far above it, and the wall controls only appear when you tap the screen.",
       "changeHistory": [],
       "roadTo100": {
@@ -4360,7 +4360,7 @@
           "build": "Windows 0.1.98",
           "date": "Oct 21, 2026, 8:20 AM Eastern",
           "result": "PARTIAL",
-          "evidence": "10 checks passed and 1 was not run (link expiry). Wall page opened in the PC's built-in browser only. \"Always off\" and \"only when someone is home\" were not tried. The Downloads folder was added as a photo folder by mistake for a few seconds and removed again; nothing in it was changed."
+          "evidence": "10 checks passed and 1 was not run (link expiry). Wall page opened in the PC's built-in browser only. \"Always off\" and \"only when someone is home\" were not tried."
         }
       ],
       "codeDonePercent": 100,
@@ -4383,7 +4383,7 @@
       "lastTested": "Oct 21, 2026 (Windows 0.1.98: the panel was opened read-only in English, French and German; nothing was sent)",
       "leftToReach100": "Send a real message and see it on phones and in a browser, then try Listen, quiet hours and that guests are left out.",
       "previousPercent": null,
-      "changedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+      "changedEastern": "Oct 22, 2026, 6:38 AM Eastern",
       "changeNote": "New row, Oct 22, 2026: added because it is in the downloads. The only dated run opened the panel read-only on Windows 0.1.98; no message was sent, so the main use is untested.",
       "changeHistory": [],
       "roadTo100": {
