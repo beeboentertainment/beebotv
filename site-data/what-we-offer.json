@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 22, 2026, 6:30 AM Eastern",
-    "updatedIso": "2026-10-22T06:30:00-04:00",
+    "updatedEastern": "Oct 22, 2026, 6:25 AM Eastern",
+    "updatedIso": "2026-10-22T06:25:00-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -855,7 +855,7 @@
       "area": "campsite",
       "name": "Walkie-talkie from anywhere",
       "status": "In development",
-      "evidence": "The server part is on; the Oct 21, 2026 release is the first app release that uses it. Code complete, off and in the Oct 21, 2026 release: every guest needs host approval, Android has a host panel without a microphone, and each guest has message limits. What is left: real host and guest phones on unrelated networks; the new flow has not been tested on real phones.",
+      "evidence": "The server part is on; the Oct 21, 2026 release is the first app release that uses it. Code complete, off and in the Oct 21, 2026 release: every guest needs host approval, Android has a host panel without a microphone, and each guest has message limits. What is left: real host and guest phones on unrelated networks; the new flow has not been tested on real phones. The server switch being on does not mean it works: nobody has talked through it on real phones.",
       "realTest": "no"
     },
     {
@@ -1007,7 +1007,7 @@
       "area": "away",
       "name": "First-run setup and Test my connection",
       "status": "In development",
-      "evidence": "First-run connection test card for Windows: next-release work. What is left: check it on a real PC and different home routers, including failed and unavailable connections.",
+      "evidence": "First-run connection test card for Windows: in Windows 0.1.97 (Get Started shows a background connection test). What is left: check it on a real PC and different home routers, including failed and unavailable connections.",
       "realTest": "no"
     },
     {
@@ -1087,7 +1087,7 @@
       "area": "music",
       "name": "Import podcasts from an OPML file or a pasted link/name",
       "status": "In development",
-      "evidence": "Next-release work. What is left: real OPML files, pasted links and names, duplicates, failed imports and subsequent playback on the released build.",
+      "evidence": "In the downloads (Windows 0.1.88 and later; fixes in 0.1.97). What is left: real OPML files, pasted links and names, duplicates, failed imports and subsequent playback.",
       "realTest": "no"
     },
     {
