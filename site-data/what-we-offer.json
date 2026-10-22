@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 22, 2026, 6:47 AM Eastern",
-    "updatedIso": "2026-10-22T06:47:00-04:00",
+    "updatedEastern": "Oct 22, 2026, 3:48 PM Eastern",
+    "updatedIso": "2026-10-22T15:48:00-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -87,7 +87,7 @@
       "area": "windows",
       "name": "Library folders, scanning and matching",
       "status": "Available",
-      "evidence": "Oct 21 on Windows 0.1.98 with a test library: the five folder types (photos, movies, TV, music, audiobooks) were found exactly as expected and scans finished in seconds. Oct 13: all 27 desktop pages opened with content or a clear empty state. This row is shown with the same label as the testing page's combined library, player and web player row, which is Beta because opening a film in a browser through the away address failed on Oct 22.",
+      "evidence": "Oct 22 test-build update: The browser repair has split delivery: the server portion is reported deployed at 6:49 AM Eastern on October 22, with a further TV-browser server repair at 7:24 AM; the desktop-player portion is in unpublished Windows 0.1.100. The affected PC and combined away-route repair still need retesting. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass. The reviewed web-player Next/Full screen work is not in public downloads. Pages that suppress referrer information and a modeled cross-tab edge case remain qualified. Android version-picker results do not verify the separate desktop version-heading issue.",
       "realTest": "yes"
     },
     {
@@ -207,7 +207,7 @@
       "area": "windows",
       "name": "Photos and phone backups: timeline, albums, map",
       "status": "Beta",
-      "evidence": "Oct 12: three files were uploaded from a phone to a PC. Oct 21 on Windows 0.1.98: 3 albums and 12 photos were found and grouped by month. Oct 22 on the phone app: a normal member saw the timeline, albums, full-screen photos and a correctly turned photo; a child profile saw the lists but every picture was blank (the fixes are merged in the code; not released or retested). There is no map on the phone; the PC map was not tried.",
+      "evidence": "Oct 22 test-build update: One desktop access-check repair covers both child-profile thumbnails and full pictures; separate Android changes cover wording, month-language updates and chip layout. RETEST-1: the S9+ child saw real thumbnails and full pictures, swiped between pictures, saw empty Videos wording, immediate Spanish month headings and fitting chips at 1.3 text size. These narrow passes on tester35 with Windows 0.1.100 supersede the earlier blank-picture failure for that setup. Map, removal, real pinch, full folder, backup/privacy and other devices remain unverified; Real device stays false.",
       "realTest": "partly"
     },
     {
@@ -351,7 +351,7 @@
       "area": "android",
       "name": "Opening the app and the five tabs (Home, Browse, Library, Play, More)",
       "status": "Available",
-      "evidence": "Oct 11 and Oct 13 on a Galaxy S24 Ultra and a Galaxy S9+: all five tabs opened with content and no crash was logged. Oct 22 on tester34: all five tabs opened with content and no crash was logged on a Pixel 3, a Galaxy S24 Ultra, a Galaxy S25 and a Galaxy S9+.",
+      "evidence": "Oct 22 test-build update: RETEST-1 reports no crash-log entries and retained sign-in on the three named phones using tester35 with Windows 0.1.100. This is not a new full five-tab or TalkBack pass. Historical ticks stay unchanged.",
       "realTest": "yes"
     },
     {
@@ -359,7 +359,7 @@
       "area": "android",
       "name": "Playing films: resume, seek, pause and the quality menu",
       "status": "Available",
-      "evidence": "Oct 3: the owner's own hand test passed seeking and sound with the screen off during a video. Oct 13 on both phones: resume prompt, play, skip forward and back, pause, and the Auto, original and 480p choices worked (phones were muted that day, so sound was not heard). Oct 22 on tester34 (muted): Original and 720p played and switched on the Pixel 3 and S25. Not working yet: choosing embedded subtitles, seeing sidecar subtitles and a version picker on the S25; Next on a saved episode while online skipped over a saved episode when one in between was missing. Fixes for the pickers, large text and Next are merged in the code; none is released.",
+      "evidence": "Oct 22 test-build update: RETEST-1 on tester35 with Windows 0.1.100: the S9+ Subtitle Test started promptly and played the 30-second clip twice; the landscape subtitle sheet and English/Spanish selection worked. On the S25, version selection between 1080p and 720p worked and 720p stayed selected. FAIL: listed/selected English and Spanish sidecar files drew no subtitle text. PARTIAL: online Next jumped to the next season once, then the expected same-season episode on three later tries; offline Next passed with existing downloads. Earlier unexplained Pixel Next behavior remains open; a stale queue is a hypothesis. The screen-off switch kept Android’s PLAYING state, not sound heard by a person. French player labels appeared on the Pixel.",
       "realTest": "yes"
     },
     {
@@ -431,7 +431,7 @@
       "area": "android",
       "name": "Accessibility choices: larger text, high contrast, reduce motion, Simple Mode, Caregiver view, captions",
       "status": "In development",
-      "evidence": "Oct 13 on the S24 Ultra: each was switched on and off. 150% text and high contrast were readable on Home and Browse. TalkBack and 200% text are not tested. In the Oct 21, 2026 release: another Android accessibility and layout pass, which still needs TalkBack, 200% text, landscape and large-controls checks on real phones. Oct 22 on tester34: at 150% text the player top bar is cut off on four phones and some buttons are clipped; the fix is merged in the code, not released or retested.",
+      "evidence": "Oct 22 test-build update: RETEST-1 on tester35: S9+ checks at 1.5 text size passed for scrolling player tools, visible Download/Watched controls and an unbroken German Home heading. Pixel music/audiobook checks passed at 1.3 text size. These are bounded observations, not 2.0 text size, TalkBack, high contrast, reduced motion or every landscape screen.",
       "realTest": "partly"
     },
     {
@@ -663,7 +663,7 @@
       "area": "computers",
       "name": "Any web browser: library and player, served by your own Beebo computer",
       "status": "Beta",
-      "evidence": "Oct 13 in Chrome on a PC: 17 of 17 pages answered, a film played with sound, and quality switches worked. Oct 22 in Chrome on a Windows 10 PC through a second test home's away address: opening a film (and an episode) failed because the page reloaded and discarded the player; search, music and page zoom worked. A fix is merged in the code (the server part is being deployed, the app part ships with the next Windows release); not released or retested. Subtitles, Safari, Firefox and phone browsers were not tried.",
+      "evidence": "Oct 22 test-build update: The browser repair has split delivery: the server portion is reported deployed at 6:49 AM Eastern on October 22, with a further TV-browser server repair at 7:24 AM; the desktop-player portion is in unpublished Windows 0.1.100. The affected PC and combined away-route repair still need retesting. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass. The reviewed web-player Next/Full screen work is not in public downloads. Pages that suppress referrer information and a modeled cross-tab edge case remain qualified. Android version-picker results do not verify the separate desktop version-heading issue.",
       "realTest": "partly"
     },
     {
@@ -863,7 +863,7 @@
       "area": "campsite",
       "name": "Movie Night (TV-led party games, phones join)",
       "status": "Beta",
-      "evidence": "Automatic tests only; not tried on a real TV with phones. Oct 22: on a Galaxy S9+ child profile the phone's Movie Night page showed a raw error twice; the fix is merged in the code for the next release, not released or retested.",
+      "evidence": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed a friendly cloud-address explanation and Try again rather than the raw error. It directs the user to the computer’s direct address. This does not test host/create/join/play, a real family session or the full feature; Real device and Real-world remain false.",
       "realTest": "no"
     },
     {
@@ -935,7 +935,7 @@
       "area": "away",
       "name": "Direct connection away from home",
       "status": "Available",
-      "evidence": "Oct 13 on a phone with Wi-Fi off (5G): the library loaded and a film played; Oct 12 in a two-home test two viewers watched at once from one home PC.",
+      "evidence": "Oct 22 test-build update: RETEST-1 wording was PARTIAL: the Pixel in real airplane mode showed No internet connection on this phone; the S25 with app networking blocked showed Couldn’t reach Beebo from here. The S25 airplane setting alone had left Wi-Fi up. This does not establish a new away-route, direct-versus-relay or server-failure pass.",
       "realTest": "yes"
     },
     {
@@ -1023,7 +1023,7 @@
       "area": "music",
       "name": "Music on the phone: albums, artists, songs, queue, shuffle, sleep timer",
       "status": "Beta",
-      "evidence": "Oct 13 on two phones with synthetic test songs: play, next, previous, pause and the sleep timer worked. Phones were muted, so no person heard the sound. The Albums/Artists/Songs buttons overlap a heading. Oct 22 on tester34 (muted): a Pixel 3 and a Galaxy S25 played albums, queue, shuffle, sleep timer, screen-off playback, lyrics and a 24-bit file; nobody heard it.",
+      "evidence": "Oct 22 test-build update: RETEST-1: at 1.3 text size on the Pixel with tester35, the song title no longer overlapped the cover and Album radio stayed on one line. Layout only: no new sound, crossfade, gapless, queue or sleep-timer pass.",
       "realTest": "partly"
     },
     {
@@ -1063,7 +1063,7 @@
       "area": "music",
       "name": "Audiobooks: books, chapters, speed, sleep timer, bookmarks",
       "status": "Beta",
-      "evidence": "Oct 13 with a made-up 3-chapter book: chapter jump and speeds from 0.75x to 2x worked, and the book moved on to the next chapter by itself. Bookmarks and the book's sleep timer were not tried. Oct 22 on tester34 (muted): chapter jumps, 1.5x speed, a sleep timer and resume after a force-stop worked on a Pixel 3 and a Galaxy S25. The bookmark list and a second book were not checked.",
+      "evidence": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed Chapters at 1.3 text size, a bookmark confirmation for about three seconds, and a bookmark list whose 0:22 entry jumped to 0:22. This is not a full current-build listening, restart/resume or sleep-timer pass.",
       "realTest": "partly"
     },
     {
@@ -1071,7 +1071,7 @@
       "area": "music",
       "name": "Podcasts: find, play and sleep timer",
       "status": "Beta",
-      "evidence": "Oct 13: a real episode played and paused, and searching the public directory listed real shows. Oct 22 on tester34: a Pixel 3 searched the public directory and listed real shows.",
+      "evidence": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed the Spanish Radio en directo label. This is wording evidence only; Follow, podcast downloads, queue and sound remain open.",
       "realTest": "partly"
     },
     {
@@ -1095,7 +1095,7 @@
       "area": "music",
       "name": "Internet radio: browse, favourites and play",
       "status": "Beta",
-      "evidence": "Oct 13 on the S24 Ultra: a live station reached PLAYING within 10 seconds, and pause and stop worked. The phone was muted, so no person has heard it; playing with the screen off is not tested. Oct 22 on tester34 (muted): a Pixel 3 started a station within 2 seconds.",
+      "evidence": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed the Spanish Radio en directo label. This is wording evidence only; Follow, podcast downloads, queue and sound remain open.",
       "realTest": "partly"
     },
     {
@@ -1143,7 +1143,7 @@
       "area": "household",
       "name": "Household profiles with their own progress",
       "status": "Available",
-      "evidence": "Oct 3 and Oct 5: phones signed in as different profiles kept separate Continue watching lists.",
+      "evidence": "Oct 22 test-build update: RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision.",
       "realTest": "yes"
     },
     {
@@ -1159,7 +1159,7 @@
       "area": "household",
       "name": "Parental limits and ratings",
       "status": "Beta",
-      "evidence": "Existing controls have automated checks. Oct 22 on a Galaxy S9+ with a child profile (ages 7 to 12): only the four G and PG films appeared in Home, Browse, Search and Library, and unrated films never appeared. The child could not change limits. No restricted profile has been tried on the PC itself. In development, in the Oct 21, 2026 release: a Live TV link stops when its profile is restricted and a Movie Night room removes blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner's choice.",
+      "evidence": "Oct 22 test-build update: RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision.",
       "realTest": "partly"
     },
     {
