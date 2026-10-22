@@ -7,7 +7,7 @@
       "codeDone": 92,
       "humanTestingDone": 26,
       "features": 70,
-      "codeItemsLeft": 41,
+      "codeItemsLeft": 40,
       "counts": {
         "confirmed-on-real-devices": 0,
         "code-complete-needs-real-world-testing": 33,
@@ -262,8 +262,8 @@
         "codeDone": 100,
         "humanTestingLeft": 81,
         "remaining": {
-          "CODE": 16,
-          "DEVICE": 36,
+          "CODE": 15,
+          "DEVICE": 37,
           "NICK": 4,
           "BLOCKED": 4
         },
@@ -284,7 +284,7 @@
             "name": "Library, player and web player",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 3,
+            "codeItemsLeft": 2,
             "realWorldStatus": "code-still-being-finished"
           },
           {
@@ -3110,7 +3110,7 @@
       "leftToReach100": "Retest opening a film in a browser through the away address after its fix is released, find why the folders' own poster and NFO files are not used, and test Safari, Firefox and a phone browser. Test subtitles, the 5.1 audio track, Safari and Firefox, and a phone browser; get a review of the final screens.",
       "previousPercent": 80,
       "changedEastern": "Oct 22, 2026, 6:30 AM Eastern",
-      "changeNote": "Oct 22: the label changed from Available to Beta and the Real-world check was withdrawn (80% to 60%). A browser test on Oct 22 (5:08 to 5:12 AM Eastern, Chrome on a Windows 10 PC, a second test home reached by its away address) could not open a film: clicking a poster, title or episode reset the page to the top and no player opened; search, music and TV Shows lists worked. The cause was traced the same morning: playback starts and then the page reloads and discards the player. A fix is written and in review; it is not merged or released and has not been retested on a device. Also, on Oct 21 on Windows 0.1.98, the five test folder types were found exactly as expected and embedded subtitles, a sidecar subtitle, three audio tracks and chapters worked in the player; the folders' own poster, fanart and NFO files were not used (see Posters and info), and the page heading still said 1080p after the 720p version was chosen. The earlier Real-world tick rested on the Oct 12 phone-browser test on 5G.",
+      "changeNote": "Oct 22: the label changed from Available to Beta and the Real-world check was withdrawn (80% to 60%). A browser test on Oct 22 (5:08 to 5:12 AM Eastern, Chrome on a Windows 10 PC, a second test home reached by its away address) could not open a film: clicking a poster, title or episode reset the page to the top and no player opened; search, music and TV Shows lists worked. The cause was traced the same morning: playback starts and then the page reloads and discards the player. A fix is written and in review; it is not merged or released and has not been retested on a device. Also, on Oct 21 on Windows 0.1.98, the five test folder types were found exactly as expected and embedded subtitles, a sidecar subtitle, three audio tracks and chapters worked in the player; the folders' own poster, fanart and NFO files were not used (see Posters and info), and the page heading still said 1080p after the 720p version was chosen (the 0.1.99 release notes list a version-heading fix; not rechecked). The earlier Real-world tick rested on the Oct 12 phone-browser test on 5G.",
       "changeHistory": [
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
@@ -3153,8 +3153,8 @@
             "text": "Fix for the browser player being discarded when a film is opened (page reloads after playback starts): written and in review; it is not merged or released and has not been retested on a device."
           },
           {
-            "kind": "CODE",
-            "text": "The page heading still says 1080p after the 720p version is chosen (seen Oct 21, 2026 on Windows 0.1.98); no fix is recorded yet."
+            "kind": "DEVICE",
+            "text": "The page heading still said 1080p after the 720p version was chosen (seen Oct 21, 2026 on Windows 0.1.98). The Windows 0.1.99 release notes list a version-heading fix; it has not been rechecked."
           }
         ],
         "hist": [
@@ -3171,7 +3171,7 @@
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with Chrome on the same PC.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
-      "codeItemsLeft": 3,
+      "codeItemsLeft": 2,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
@@ -4175,7 +4175,7 @@
           },
           {
             "kind": "DEVICE",
-            "text": "Two cosmetic findings from Windows 0.1.98 (panel labels ran together, for example \"Quiet hoursFrom\", and the panel said \"Ask the owner to enable them\" while signed in as the owner) have not been rechecked on 0.1.99."
+            "text": "Two cosmetic findings from Windows 0.1.98 (panel labels ran together, for example \"Quiet hoursFrom\", and the panel said \"Ask the owner to enable them\" while signed in as the owner) have not been rechecked on 0.1.99, whose release notes list clearer Kitchen announcements wording."
           },
           {
             "kind": "BLOCKED",

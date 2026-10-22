@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 20, 2026, 12:40 PM Eastern",
-    "updatedIso": "2026-10-20T12:40:00-04:00",
+    "updatedEastern": "Oct 22, 2026, 6:30 AM Eastern",
+    "updatedIso": "2026-10-22T06:30:00-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -79,7 +79,7 @@
       "area": "windows",
       "name": "Installer and updates",
       "status": "Available",
-      "evidence": "A PC updated itself from 0.1.78 to 0.1.79 while idle on Oct 5; on Oct 13 the update check on a newer test build said up to date. Not tried: updating over an older version on a second PC. Windows may show a SmartScreen warning the first time.",
+      "evidence": "A PC updated itself from 0.1.78 to 0.1.79 while idle on Oct 5; on Oct 13 the update check on a newer test build said up to date. Not tried: updating over an older version on a second PC. Windows may show a SmartScreen warning the first time. Oct 22: a Windows test PC updated itself from 0.1.98 to 0.1.99 and the app started normally.",
       "realTest": "yes"
     },
     {
@@ -87,7 +87,7 @@
       "area": "windows",
       "name": "Library folders, scanning and matching",
       "status": "Available",
-      "evidence": "Oct 5 on 0.1.79: the chosen folders and what each scan found were shown. Oct 13: all 27 desktop pages opened with content or a clear empty state on a small test library.",
+      "evidence": "Oct 21 on Windows 0.1.98 with a test library: the five folder types (photos, movies, TV, music, audiobooks) were found exactly as expected and scans finished in seconds. Oct 13: all 27 desktop pages opened with content or a clear empty state. This row is shown with the same label as the testing page's combined library, player and web player row, which is Beta because opening a film in a browser through the away address failed on Oct 22.",
       "realTest": "yes"
     },
     {
@@ -95,7 +95,7 @@
       "area": "windows",
       "name": "Posters, details and cast (you add your own TMDB key)",
       "status": "Beta",
-      "evidence": "Oct 5: titles, ratings and descriptions were shown with a trailer button (one check). A new PC with no key shows placeholder posters (seen Oct 13). Beebo does not include a shared key.",
+      "evidence": "Oct 5: titles, ratings and descriptions were shown with a trailer button (one check). A new PC with no key shows placeholder posters (seen Oct 13). Beebo does not include a shared key. Oct 21 on Windows 0.1.98 (a PC with no TMDB key): a folder's own poster, fanart and NFO files were not used, so test films showed \"No poster\"; the cause is not found yet.",
       "realTest": "partly"
     },
     {
@@ -135,7 +135,7 @@
       "area": "windows",
       "name": "Audio tracks and sound modes (stereo mix-down, dialogue focus, night mode)",
       "status": "Beta",
-      "evidence": "Oct 13: two audio tracks and the sound modes were listed in the browser player. Nobody has listened to them.",
+      "evidence": "Oct 13: two audio tracks and the sound modes were listed in the browser player. Nobody has listened to them. Oct 21 (Windows 0.1.98) and Oct 22 (Galaxy S25) lists of three audio tracks (two stereo, one 5.1) could be chosen; both runs were muted.",
       "realTest": "no"
     },
     {
@@ -143,16 +143,16 @@
       "area": "windows",
       "name": "Subtitles: embedded, image subtitles and online search with your own key",
       "status": "Beta",
-      "evidence": "Automatic tests only. The test clips have no subtitles, so nobody has tried them on a real film.",
-      "realTest": "no"
+      "evidence": "Oct 21 on Windows 0.1.98: embedded English and Spanish tracks switched, and a sidecar English file showed its text, in the Beebo player on a test film. Oct 22 on the Galaxy S25 phone app: the player offered no way to choose embedded subtitles and did not show sidecar files. A fix is written and in review; it is not released. Online search was not tried.",
+      "realTest": "partly"
     },
     {
       "id": "w-chapters",
       "area": "windows",
       "name": "Chapters, seek previews, skip intro and credits",
       "status": "Beta",
-      "evidence": "Automatic tests only.",
-      "realTest": "no"
+      "evidence": "Oct 21 on Windows 0.1.98: the chapter list showed four chapters and a jump to chapter 3 landed at 17 seconds. Oct 22 on the Galaxy S25 phone app: chapter buttons, a chapter list and tick marks worked. Seek previews and skip intro and credits were not tried.",
+      "realTest": "partly"
     },
     {
       "id": "w-lists",
@@ -174,7 +174,7 @@
       "id": "w-layouts",
       "area": "windows",
       "name": "Home layouts, 11 layout packs and 8 colour themes",
-      "status": "Available",
+      "status": "Beta",
       "evidence": "Oct 13: all five Home layouts opened with real content; Customize layout save, cancel and reset worked. Oct 5: 11 layouts and 8 themes were offered.",
       "realTest": "yes"
     },
@@ -183,7 +183,7 @@
       "area": "windows",
       "name": "Languages: English plus Spanish, French, German, Portuguese (Brazil) and Italian",
       "status": "Beta",
-      "evidence": "The five translations were made with a machine's help; three more are previews. Oct 13: switching English to Spanish and back changed the whole app at once. No native speaker has read the wording.",
+      "evidence": "The five translations were made with a machine's help; three more are previews. Oct 13: switching English to Spanish and back changed the whole app at once. No native speaker has read the wording. Oct 22: genre names switched to French, German and Spanish on two phones; parts of the phone player bar stay English in those languages.",
       "realTest": "partly"
     },
     {
@@ -207,8 +207,24 @@
       "area": "windows",
       "name": "Photos and phone backups: timeline, albums, map",
       "status": "Beta",
-      "evidence": "Oct 12: three files were uploaded from a phone to a PC. Oct 13: the PC screens opened on an empty test library. Deleting and the private folder were not tried.",
+      "evidence": "Oct 12: three files were uploaded from a phone to a PC. Oct 21 on Windows 0.1.98: 3 albums and 12 photos were found and grouped by month. Oct 22 on the phone app: a normal member saw the timeline, albums, full-screen photos and a correctly turned photo; a child profile saw the lists but every picture was blank (a fix is written and in review, not released). There is no map on the phone; the PC map was not tried.",
       "realTest": "partly"
+    },
+    {
+      "id": "w-pictureframe",
+      "area": "windows",
+      "name": "Picture frame (a photo wall for a tablet or TV)",
+      "status": "In development",
+      "evidence": "In Windows 0.1.98 and later, off until you turn it on. Oct 21 on Windows 0.1.98, with the wall page opened in the PC's own browser: 10 checks passed and 1 (link expiry) was not run. Not tried on a tablet, phone or TV, and not repeated on 0.1.99.",
+      "realTest": "partly"
+    },
+    {
+      "id": "w-announce",
+      "area": "windows",
+      "name": "Kitchen announcements (messages to phones)",
+      "status": "In development",
+      "evidence": "In Windows 0.1.97 and later, off by default. The Announce panel was opened read-only in English, French and German on Windows 0.1.98; no message was sent.",
+      "realTest": "no"
     },
     {
       "id": "w-spacesaver",
@@ -279,7 +295,7 @@
       "area": "windows",
       "name": "Remote Desktop (see and control the PC from a phone)",
       "status": "In development",
-      "evidence": "Off by default and never run on a real PC. The keyboard helper change is next-release work. What is left: real keyboard, mouse, viewing, approval, disconnect and revoke checks.",
+      "evidence": "Off by default and never run on a real PC. The keyboard helper change is in Windows 0.1.97. What is left: real keyboard, mouse, viewing, approval, disconnect and revoke checks.",
       "realTest": "no"
     },
     {
@@ -303,7 +319,7 @@
       "area": "windows",
       "name": "Read It To Me",
       "status": "In development",
-      "evidence": "Merged after the current Windows download was built, so it is not in a download yet.",
+      "evidence": "In the Windows download; since Windows 0.1.88 (Oct 14, 2026) it can use a voice from the computer. Not tried by a person on a real PC.",
       "realTest": "no"
     },
     {
@@ -311,7 +327,7 @@
       "area": "windows",
       "name": "Guest upload requests (a guest asks, you approve)",
       "status": "In development",
-      "evidence": "Merged after the current Windows download was built, so it is not in a download yet.",
+      "evidence": "In Windows 0.1.88 and later (Oct 14, 2026): phones can send videos to the computer, and a guest can ask to add a video that the owner approves. Not tried by a person on real phones.",
       "realTest": "no"
     },
     {
@@ -335,7 +351,7 @@
       "area": "android",
       "name": "Opening the app and the five tabs (Home, Browse, Library, Play, More)",
       "status": "Available",
-      "evidence": "Oct 11 and Oct 13 on a Galaxy S24 Ultra and a Galaxy S9+: all five tabs opened with content and no crash was logged.",
+      "evidence": "Oct 11 and Oct 13 on a Galaxy S24 Ultra and a Galaxy S9+: all five tabs opened with content and no crash was logged. Oct 22 on the published tester34: all five tabs opened with content and no crash was logged on a Pixel 3, a Galaxy S24 Ultra, a Galaxy S25 and a Galaxy S9+.",
       "realTest": "yes"
     },
     {
@@ -343,7 +359,7 @@
       "area": "android",
       "name": "Playing films: resume, seek, pause and the quality menu",
       "status": "Available",
-      "evidence": "Oct 3: the owner's own hand test passed seeking and sound with the screen off during a video. Oct 13 on both phones: resume prompt, play, skip forward and back, pause, and the Auto, original and 480p choices worked (phones were muted that day, so sound was not heard).",
+      "evidence": "Oct 3: the owner's own hand test passed seeking and sound with the screen off during a video. Oct 13 on both phones: resume prompt, play, skip forward and back, pause, and the Auto, original and 480p choices worked (phones were muted that day, so sound was not heard). Oct 22 on tester34 (muted): Original and 720p played and switched on the Pixel 3 and S25. Not working yet: choosing embedded subtitles, seeing sidecar subtitles and a version picker on the S25; Next on a saved episode while online skipped over a saved episode when one in between was missing. Fixes are written and in review, not released.",
       "realTest": "yes"
     },
     {
@@ -351,7 +367,7 @@
       "area": "android",
       "name": "Picture-in-picture",
       "status": "Available",
-      "evidence": "Oct 3: the owner's own hand test passed picture-in-picture on both phones. Oct 13 on the Galaxy S9+: the film floated over Home, kept playing, and tapping it returned to the full player.",
+      "evidence": "Oct 3: the owner's own hand test passed picture-in-picture on both phones. Oct 13 on the Galaxy S9+: the film floated over Home, kept playing, and tapping it returned to the full player. Oct 22 on tester34: picture-in-picture opened on the Galaxy S24 Ultra and the Pixel 3.",
       "realTest": "yes"
     },
     {
@@ -359,7 +375,7 @@
       "area": "android",
       "name": "Keeping sound going with the screen off",
       "status": "Beta",
-      "evidence": "Oct 13 on the S9+: with the default setting the sound stopped when the screen turned off. With the player's Screen off option on, it kept playing. Making it the default is undecided.",
+      "evidence": "Oct 13 on the S9+: with the default setting the sound stopped when the screen turned off; with the Screen off option on, it kept playing. Oct 22 on tester34: the switch moved into the Quality & audio sheet (off by default) and flipped on three phones; one later Pixel 3 run did not find it. Real screen-off sound with the switch on has not been tested on tester34. Making it the default is undecided.",
       "realTest": "partly"
     },
     {
@@ -367,7 +383,7 @@
       "area": "android",
       "name": "Downloads for offline viewing, with delete",
       "status": "Available",
-      "evidence": "Oct 13 on the S9+: a 1.6 GB episode downloaded on Wi-Fi and was deleted, freeing the space. Oct 5: a downloaded episode played with Wi-Fi off. Smaller sizes were not offered for that file.",
+      "evidence": "Oct 13 on the S9+: a 1.6 GB episode downloaded on Wi-Fi and was deleted, freeing the space. Oct 5: a downloaded episode played with Wi-Fi off. Smaller sizes were not offered for that file. Oct 22 on tester34: small test episodes downloaded in seconds and played with the phone offline. Next on a saved episode worked offline.",
       "realTest": "yes"
     },
     {
@@ -383,7 +399,7 @@
       "area": "android",
       "name": "Casting to a Chromecast TV",
       "status": "Beta",
-      "evidence": "Oct 13 to a real Chromecast TV from two phones: a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop. The phone's volume keys do not change the TV volume. Converted films and other TVs are not tested.",
+      "evidence": "Oct 13 to a real Chromecast TV from two phones: a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop. The phone's volume keys do not change the TV volume. Converted films and other TVs are not tested. Oct 22 on tester34 from a Galaxy S25: the cast controls and the TV volume slider responded on the phone; picture and sound on the TV were not confirmed by the tester.",
       "realTest": "partly"
     },
     {
@@ -399,7 +415,7 @@
       "area": "android",
       "name": "Watchlist, favourites, playlists and Surprise me",
       "status": "Available",
-      "evidence": "Oct 13: playlist made and deleted, watchlist add and remove, and the Surprise me chooser opened. Surprise me was not played through; favourites were not tapped.",
+      "evidence": "Oct 13: playlist made and deleted, watchlist add and remove, and the Surprise me chooser opened. Surprise me was not played through; favourites were not tapped. Oct 22: Surprise me opens its own screen first, then starts a film within about 1.5 seconds.",
       "realTest": "partly"
     },
     {
@@ -415,7 +431,7 @@
       "area": "android",
       "name": "Accessibility choices: larger text, high contrast, reduce motion, Simple Mode, Caregiver view, captions",
       "status": "In development",
-      "evidence": "Oct 13 on the S24 Ultra: each was switched on and off. 150% text and high contrast were readable on Home and Browse. TalkBack and 200% text are not tested. In the Oct 21, 2026 release: another Android accessibility and layout pass, which still needs TalkBack, 200% text, landscape and large-controls checks on real phones.",
+      "evidence": "Oct 13 on the S24 Ultra: each was switched on and off. 150% text and high contrast were readable on Home and Browse. TalkBack and 200% text are not tested. In the Oct 21, 2026 release: another Android accessibility and layout pass, which still needs TalkBack, 200% text, landscape and large-controls checks on real phones. Oct 22 on tester34: at 150% text the player top bar is cut off on four phones and some buttons are clipped; a fix is written and in review, not released.",
       "realTest": "partly"
     },
     {
@@ -472,6 +488,14 @@
       "name": "Family Dashboard",
       "status": "Beta",
       "evidence": "Oct 13 (one check): its cards matched the numbers on the other screens.",
+      "realTest": "partly"
+    },
+    {
+      "id": "p-achieve",
+      "area": "android",
+      "name": "Family achievements (opt-in milestones)",
+      "status": "In development",
+      "evidence": "In Android 1.51-tester33 and later, off until the host turns it on. Oct 21 on tester33 (a Pixel 3): the opt-in preview text and the two \"cannot be undone\" dialogs were correct. No milestone was recorded.",
       "realTest": "partly"
     },
     {
@@ -542,8 +566,8 @@
       "id": "auto-core",
       "area": "tvauto",
       "name": "Beebo Auto: sign-in, video list, sound and fast-forward",
-      "status": "Available",
-      "evidence": "Beebo Auto 1.20 (build 21) has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (a 2021 Audi SQ5 with Android Auto): sign-in, the video list, sound through the car speakers and fast-forward worked. Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Use only when parked.",
+      "status": "Beta",
+      "evidence": "Beebo Auto 1.20 (build 21) has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (a 2021 Audi SQ5 with Android Auto): sign-in, the video list, sound through the car speakers and fast-forward worked. Video on the car screen, music, car-screen titles, Maps voice ducking, away from home, passenger games, Car Party and other cars are not tested. Labelled Beta because the only car check used an earlier build.",
       "realTest": "partly"
     },
     {
@@ -638,9 +662,9 @@
       "id": "c-browser",
       "area": "computers",
       "name": "Any web browser: library and player, served by your own Beebo computer",
-      "status": "Available",
-      "evidence": "Oct 13 in Chrome on a PC: 17 of 17 pages answered, a film played with sound, and quality switches worked with no page errors. Subtitles, Safari, Firefox and phone browsers were not tried.",
-      "realTest": "yes"
+      "status": "Beta",
+      "evidence": "Oct 13 in Chrome on a PC: 17 of 17 pages answered, a film played with sound, and quality switches worked. Oct 22 in Chrome on a Windows 10 PC through a second test home's away address: opening a film (and an episode) failed because the page reloaded and discarded the player; search, music and page zoom worked. A fix is written and in review, not released. Subtitles, Safari, Firefox and phone browsers were not tried.",
+      "realTest": "partly"
     },
     {
       "id": "c-iosweb",
@@ -671,7 +695,7 @@
       "area": "campsite",
       "name": "Host start and stop; a guest joins by QR with no account (same Wi-Fi)",
       "status": "Available",
-      "evidence": "Oct 13 on two phones: host start, join, and Stop with a confirmation worked; the guest address stopped answering after Stop.",
+      "evidence": "Oct 13 on two phones: host start, join, and Stop with a confirmation worked; the guest address stopped answering after Stop. Oct 22 on tester34: a Galaxy S25 hosted and a Galaxy S9+ joined in Chrome; but after the host stopped, the guest page said nothing about it (a fix is written and in review, not released).",
       "realTest": "yes"
     },
     {
@@ -687,16 +711,24 @@
       "area": "campsite",
       "name": "Guests browse the host's library; a guest asks, the host approves",
       "status": "Available",
-      "evidence": "Oct 13: a guest saw the host's library, asked to watch one and the host approved it. A film played with sound on the guest phone.",
+      "evidence": "Oct 13: a guest saw the host's library, asked to watch one and the host approved it. A film played with sound on the guest phone. Oct 22: with the host's whole-library switch on, an anonymous guest listed 16 titles, more than the 4 films a child profile sees in its own app.",
       "realTest": "partly"
     },
     {
       "id": "cs-games",
       "area": "campsite",
-      "name": "Campsite games (42 in the list)",
-      "status": "Available",
-      "evidence": "Oct 13: all 42 opened from a guest phone and 41 started against a computer opponent (the 42nd asks the host to pick a list). Sea Battle was finished by two people on Oct 13; Crazy Eights was played by hand. The other games were not played to the end by people.",
+      "name": "Campsite games (the 42 in the list)",
+      "status": "Beta",
+      "evidence": "Oct 13: all 42 opened from a guest phone and 41 started against a computer opponent (the 42nd asks the host to pick a list). Only three have been finished by two phones (see the next row); Crazy Eights was played by hand. The other games were not played to the end by people.",
       "realTest": "partly"
+    },
+    {
+      "id": "cs-games-played",
+      "area": "campsite",
+      "name": "Campsite games finished on two phones: Sea Battle, Reversi and Tic-Tac-Toe",
+      "status": "Available",
+      "evidence": "Sea Battle was finished by two people on Oct 13 over a direct Wi-Fi link. Reversi was finished between two guest phones on Oct 14. Tic-Tac-Toe was finished between a Galaxy S25 host and a Galaxy S9+ guest on Oct 22 (one tester drove both phones). Each worked on the routes named. A phone hotspot and a guest on mobile data are not tested.",
+      "realTest": "yes"
     },
     {
       "id": "cs-offline",
@@ -831,7 +863,7 @@
       "area": "campsite",
       "name": "Movie Night (TV-led party games, phones join)",
       "status": "Beta",
-      "evidence": "Automatic tests only; not tried on a real TV with phones.",
+      "evidence": "Automatic tests only; not tried on a real TV with phones. Oct 22: on a Galaxy S9+ child profile the phone's Movie Night page showed a raw error twice; no fix is recorded yet.",
       "realTest": "no"
     },
     {
@@ -959,7 +991,7 @@
       "area": "away",
       "name": "Watch Together (host and viewers in step)",
       "status": "Beta",
-      "evidence": "Oct 13 on two phones: host, join as viewer, the viewer followed a 45-second skip within 8 seconds, and left and rejoined within 1 second. Chat, reactions, closing the app and a phone on mobile data are not tested.",
+      "evidence": "Oct 13 on two phones: host, join as viewer, the viewer followed a 45-second skip within 8 seconds, and left and rejoined within 1 second. Chat, reactions, closing the app and a phone on mobile data are not tested. Oct 22 on tester34: a Galaxy S25 host and a Galaxy S9+ viewer followed play, seek and pause within 1 to 3 seconds; resume took about 5 seconds.",
       "realTest": "partly"
     },
     {
@@ -991,7 +1023,7 @@
       "area": "music",
       "name": "Music on the phone: albums, artists, songs, queue, shuffle, sleep timer",
       "status": "Beta",
-      "evidence": "Oct 13 on two phones with synthetic test songs: play, next, previous, pause and the sleep timer worked. Phones were muted, so no person heard the sound. The Albums/Artists/Songs buttons overlap a heading.",
+      "evidence": "Oct 13 on two phones with synthetic test songs: play, next, previous, pause and the sleep timer worked. Phones were muted, so no person heard the sound. The Albums/Artists/Songs buttons overlap a heading. Oct 22 on tester34 (muted): a Pixel 3 and a Galaxy S25 played albums, queue, shuffle, sleep timer, screen-off playback, lyrics and a 24-bit file; nobody heard it.",
       "realTest": "partly"
     },
     {
@@ -999,8 +1031,8 @@
       "area": "music",
       "name": "Music inside the Windows app window",
       "status": "In development",
-      "evidence": "On Oct 13 the player stayed at 0:00. The cause was found and a fix written; it is not in a download yet.",
-      "realTest": "no"
+      "evidence": "On Oct 13 the player stayed at 0:00. The fix shipped in Windows 0.1.94. On Oct 21 on Windows 0.1.98 the \"Recently added\" mix played 23 songs one after another and five file formats started (muted). Nobody has heard it in the desktop window.",
+      "realTest": "partly"
     },
     {
       "id": "m-mixes",
@@ -1015,8 +1047,8 @@
       "area": "music",
       "name": "Lyrics, gapless playback, crossfade and loudness levelling",
       "status": "Beta",
-      "evidence": "Automatic tests only; there was no real music library to listen to.",
-      "realTest": "no"
+      "evidence": "Oct 22 on a Galaxy S25: synced lyrics showed and the player state carried from one track to the next with no gap (sampled every 0.19 seconds; muted). Oct 21 on Windows 0.1.98: gapless and loudness levelling were not run. Nobody has listened.",
+      "realTest": "partly"
     },
     {
       "id": "m-quality",
@@ -1031,7 +1063,7 @@
       "area": "music",
       "name": "Audiobooks: books, chapters, speed, sleep timer, bookmarks",
       "status": "Beta",
-      "evidence": "Oct 13 with a made-up 3-chapter book: chapter jump and speeds from 0.75x to 2x worked, and the book moved on to the next chapter by itself. Bookmarks and the book's sleep timer were not tried.",
+      "evidence": "Oct 13 with a made-up 3-chapter book: chapter jump and speeds from 0.75x to 2x worked, and the book moved on to the next chapter by itself. Bookmarks and the book's sleep timer were not tried. Oct 22 on tester34 (muted): chapter jumps, 1.5x speed, a sleep timer and resume after a force-stop worked on a Pixel 3 and a Galaxy S25. The bookmark list and a second book were not checked.",
       "realTest": "partly"
     },
     {
@@ -1039,7 +1071,7 @@
       "area": "music",
       "name": "Podcasts: find, play and sleep timer",
       "status": "Beta",
-      "evidence": "Oct 13: a real episode played and paused, and searching the public directory listed real shows.",
+      "evidence": "Oct 13: a real episode played and paused, and searching the public directory listed real shows. Oct 22 on tester34: a Pixel 3 searched the public directory and listed real shows.",
       "realTest": "partly"
     },
     {
@@ -1063,7 +1095,7 @@
       "area": "music",
       "name": "Internet radio: browse, favourites and play",
       "status": "Beta",
-      "evidence": "Oct 13 on the S24 Ultra: a live station reached PLAYING within 10 seconds, and pause and stop worked. The phone was muted, so no person has heard it; playing with the screen off is not tested.",
+      "evidence": "Oct 13 on the S24 Ultra: a live station reached PLAYING within 10 seconds, and pause and stop worked. The phone was muted, so no person has heard it; playing with the screen off is not tested. Oct 22 on tester34 (muted): a Pixel 3 started a station within 2 seconds.",
       "realTest": "partly"
     },
     {
@@ -1079,8 +1111,8 @@
       "area": "livetv",
       "name": "Your own M3U or IPTV playlist",
       "status": "Beta",
-      "evidence": "Automatic tests only; not tried with a real playlist.",
-      "realTest": "no"
+      "evidence": "Oct 21 on Windows 0.1.98: a private-network address asked \"Allow these addresses?\" and Cancel added nothing; a small local playlist with one public test stream loaded, played and was removed. A real IPTV playlist and the confirm-for-real step were not tried.",
+      "realTest": "partly"
     },
     {
       "id": "l-phone",
@@ -1127,8 +1159,8 @@
       "area": "household",
       "name": "Parental limits and ratings",
       "status": "Beta",
-      "evidence": "Existing controls have automated checks. In development, in the Oct 21, 2026 release: a Live TV link stops when its profile is restricted and a Movie Night room removes blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice. What is left: restricted and normal profiles on a real PC.",
-      "realTest": "no"
+      "evidence": "Existing controls have automated checks. Oct 22 on a Galaxy S9+ with a child profile (ages 7 to 12): only the four G and PG films appeared in Home, Browse, Search and Library, and unrated films never appeared. The child could not change limits. No restricted profile has been tried on the PC itself. In development, in the Oct 21, 2026 release: a Live TV link stops when its profile is restricted and a Movie Night room removes blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner's choice.",
+      "realTest": "partly"
     },
     {
       "id": "h-modes",
@@ -1256,7 +1288,7 @@
       "name": "Live TV and Movie Night parental fixes (Oct 21, 2026 release)",
       "status": "In development",
       "realTest": "no",
-      "evidence": "The fixes are merged but not in the current downloads: restricted Live TV links stop, and Movie Night removes blocked titles when limits tighten. If a parental check fails, viewing continues by the owner’s choice. What is left: real-PC checks after release."
+      "evidence": "In the Oct 21, 2026 downloads (Windows 0.1.97 to 0.1.99): restricted Live TV links stop, and Movie Night removes blocked titles when limits tighten. If a parental check fails, viewing continues by the owner's choice. Not tried on a real PC. What is left: real-PC checks."
     },
     {
       "id": "auto-next-hardening",
@@ -1264,7 +1296,7 @@
       "name": "Beebo Auto projection, saved sign-in and Car Party fixes (Oct 21, 2026 release)",
       "status": "In development",
       "realTest": "no",
-      "evidence": "Typing is blocked while projecting to the car, saved sign-in is encrypted, and Car Party controls stay usable. Not in the current download. What is left: release and a real-car test of these changes."
+      "evidence": "In Beebo Auto 1.19 and 1.20 (Oct 21, 2026): typing is blocked while projecting to the car, saved sign-in is encrypted, and Car Party controls stay usable. Not tried in a real car. What is left: a real-car test of these changes."
     }
   ],
   "notCounted": [
@@ -1291,13 +1323,13 @@
   ],
   "workingOn": [
     "Making Campsite game rooms clear when players leave, so the lead passes to someone who is still there and the host can end a game.",
+    "Fixes for what the Oct 21 and Oct 22 device runs found: the subtitle and version pickers, Next on downloaded episodes, large-text clipping, the guest \"host stopped\" page, child-profile photos and opening a film in a browser through the away address. Written and in review; not released.",
     "Letting a passenger in a Car Party watch what is playing, and joining with a blank name.",
     "A self-serve switch to turn Beebo Relay on for your own account, plus a usage line on the phone.",
     "Family Watch Together: face tiles beside the film so far-away family can watch along.",
     "Saving a Trip Journal as a video on every phone, and trip links opened from the desktop app.",
     "Phone speakers: automatic line-up, keeping the room between videos, and a movable panel.",
     "Android TV focus and readability polish, and finishing Link a TV.",
-    "The Windows app's music player window, which stayed silent in a test.",
     "More real-device tests: a real car, a real TV, a real tuner, a real Mac, a real Linux desktop and a NAS.",
     "In development, in the Oct 21, 2026 release: first-run Windows connection test and podcast import from an OPML file or a pasted link/name.",
     "In development, in the Oct 21, 2026 release: parental-control fixes, guest video compatibility and download continuity, Android accessibility and layout, and Beebo Auto hardening.",
@@ -1305,12 +1337,16 @@
     "In development, off by default: Remote Desktop keyboard helper; never run on a real PC."
   ],
   "knownProblems": [
-    "On a phone, sound stops when the screen turns off unless the player's Screen off option is on.",
-    "Following a new podcast from the phone failed in a test on Oct 13.",
-    "Saving a Trip Journal as a video failed in the published phone build; the fix is not in a download yet.",
-    "The Windows app's own music window stayed silent in a test; a fix is written and not in a download yet.",
-    "The Music screen's Albums, Artists and Songs buttons overlap a heading on two phones.",
-    "The phone's volume keys do not change the TV volume while casting.",
+    "On a phone, sound stops when the screen turns off unless the \"Keep playing when the screen turns off\" switch (in the Quality & audio sheet) is on; real screen-off sound with the switch on has not been tested.",
+    "Following a new podcast from the phone failed on Oct 13 and again on Oct 14; a fix is in the code and has not been retested.",
+    "Saving a Trip Journal as a video failed on a Galaxy S9+ on Android tester23 (it worked on the S24 Ultra and Pixel 3). A fix is in later downloads and has not been retested on the S9+.",
+    "Oct 22, tester34: the phone player has no way to choose a film's embedded subtitles, does not show sidecar subtitle files and has no version picker for a film with two files (Galaxy S25).",
+    "Oct 22, tester34: Next on a downloaded episode skipped a saved episode while online when one in between was missing; another run did not move on at all.",
+    "Oct 22, tester34: text is cut off at 150% text on four phones (the player top bar, the title-page Download button and some other buttons).",
+    "Oct 22, tester34: after a Campsite host stops, the guest page says nothing about it; photo pictures do not load for a child profile; a child profile's Movie Night page showed a raw error.",
+    "Oct 22: opening a film in a browser through the away address failed (the player is discarded when the page reloads). On Windows 0.1.98 a folder's own poster and NFO files were not used.",
+    "The fixes for the Oct 22 findings are written and in review. They are not released and have not been retested on a device.",
+    "The phone's TV volume slider while casting responded on Oct 22, but whether the TV volume really changed was not confirmed.",
     "An ordinary trip link opens only on the home Wi-Fi unless away links are switched on.",
     "The demo player has no subtitles button although the title page mentions one."
   ],

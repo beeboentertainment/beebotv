@@ -1,74 +1,74 @@
 {
-  "updatedEastern": "Oct 20, 2026, 12:40 PM Eastern",
-  "updatedIso": "2026-10-20T12:40:00-04:00",
+  "updatedEastern": "Oct 22, 2026, 6:30 AM Eastern",
+  "updatedIso": "2026-10-22T06:30:00-04:00",
   "versions": {
     "windows": "0.1.99",
     "android": "1.51-tester34 (build 84)",
     "auto": "1.20 (build 21)"
   },
   "overall": {
-    "listed": 149,
+    "listed": 153,
     "byStatus": {
-      "Available": 22,
-      "Beta": 75,
-      "In development": 47,
+      "Available": 20,
+      "Beta": 79,
+      "In development": 49,
       "Planned": 5
     },
-    "available": 22,
-    "availableOrBeta": 97,
-    "pctAvailable": 15,
+    "available": 20,
+    "availableOrBeta": 99,
+    "pctAvailable": 13,
     "pctAvailableOrBeta": 65,
-    "evidenceFeatures": 64,
-    "evidenceAvg": 55
+    "evidenceFeatures": 68,
+    "evidenceAvg": 54
   },
   "areas": [
     {
       "id": "windows",
       "name": "Windows server",
-      "listed": 32,
+      "listed": 34,
       "byStatus": {
-        "Available": 6,
-        "Beta": 19,
-        "In development": 7,
+        "Available": 5,
+        "Beta": 20,
+        "In development": 9,
         "Planned": 0
       },
-      "available": 6,
+      "available": 5,
       "availableOrBeta": 25,
-      "pctAvailable": 19,
-      "pctAvailableOrBeta": 78,
-      "evidenceFeatures": 13,
-      "evidenceAvg": 55
+      "pctAvailable": 15,
+      "pctAvailableOrBeta": 74,
+      "evidenceFeatures": 16,
+      "evidenceAvg": 51
     },
     {
       "id": "android",
       "name": "Android phone",
-      "listed": 22,
+      "listed": 23,
       "byStatus": {
         "Available": 6,
         "Beta": 12,
-        "In development": 4,
+        "In development": 5,
         "Planned": 0
       },
       "available": 6,
       "availableOrBeta": 18,
-      "pctAvailable": 27,
-      "pctAvailableOrBeta": 82,
-      "evidenceFeatures": 15,
-      "evidenceAvg": 63
+      "pctAvailable": 26,
+      "pctAvailableOrBeta": 78,
+      "evidenceFeatures": 16,
+      "evidenceAvg": 61
     },
     {
       "id": "tvauto",
       "name": "Android TV and Beebo Auto",
       "listed": 9,
       "byStatus": {
-        "Available": 1,
-        "Beta": 4,
+        "Available": 0,
+        "Beta": 5,
         "In development": 4,
         "Planned": 0
       },
-      "available": 1,
+      "available": 0,
       "availableOrBeta": 5,
-      "pctAvailable": 11,
+      "pctAvailable": 0,
       "pctAvailableOrBeta": 56,
       "evidenceFeatures": 4,
       "evidenceAvg": 55
@@ -95,32 +95,32 @@
       "name": "Computers, browsers and NAS",
       "listed": 4,
       "byStatus": {
-        "Available": 1,
-        "Beta": 3,
+        "Available": 0,
+        "Beta": 4,
         "In development": 0,
         "Planned": 0
       },
-      "available": 1,
+      "available": 0,
       "availableOrBeta": 4,
-      "pctAvailable": 25,
+      "pctAvailable": 0,
       "pctAvailableOrBeta": 100,
-      "evidenceFeatures": 2,
-      "evidenceAvg": 50
+      "evidenceFeatures": 3,
+      "evidenceAvg": 53
     },
     {
       "id": "campsite",
       "name": "Campsite Mode",
-      "listed": 24,
+      "listed": 25,
       "byStatus": {
-        "Available": 3,
+        "Available": 4,
         "Beta": 12,
         "In development": 8,
         "Planned": 1
       },
-      "available": 3,
-      "availableOrBeta": 15,
-      "pctAvailable": 13,
-      "pctAvailableOrBeta": 63,
+      "available": 4,
+      "availableOrBeta": 16,
+      "pctAvailable": 16,
+      "pctAvailableOrBeta": 64,
       "evidenceFeatures": 9,
       "evidenceAvg": 58
     },
@@ -147,14 +147,14 @@
       "listed": 11,
       "byStatus": {
         "Available": 2,
-        "Beta": 4,
-        "In development": 5,
+        "Beta": 5,
+        "In development": 4,
         "Planned": 0
       },
       "available": 2,
-      "availableOrBeta": 6,
+      "availableOrBeta": 7,
       "pctAvailable": 18,
-      "pctAvailableOrBeta": 55,
+      "pctAvailableOrBeta": 64,
       "evidenceFeatures": 3,
       "evidenceAvg": 73
     },
@@ -228,27 +228,20 @@
     }
   ],
   "evidencePage": {
-    "updatedEastern": "Oct 21, 2026, 3:46 PM Eastern",
-    "overallAveragePercent": 54,
-    "featureCount": 66,
+    "updatedEastern": "Oct 22, 2026, 6:30 AM Eastern",
+    "overallAveragePercent": 53,
+    "featureCount": 70,
     "groupAveragePercent": {
-      "Android phone app": 60,
-      "Windows desktop app": 54,
+      "Android phone app": 59,
+      "Windows desktop app": 51,
       "Other systems": 47,
       "Services and website": 41
     }
   },
   "labelDecisions": [
     {
-      "id": "w-posters",
-      "name": "Posters, details and cast (you add your own TMDB key)",
-      "ours": "Beta",
-      "evidencePage": "Available",
-      "shown": "Beta"
-    },
-    {
-      "id": "w-layouts",
-      "name": "Home layouts, 11 layout packs and 8 colour themes",
+      "id": "w-library",
+      "name": "Library folders, scanning and matching",
       "ours": "Available",
       "evidencePage": "Beta",
       "shown": "Beta"
@@ -263,13 +256,6 @@
     {
       "id": "cs-host",
       "name": "Host start and stop; a guest joins by QR with no account (same Wi-Fi)",
-      "ours": "Available",
-      "evidencePage": "Beta",
-      "shown": "Beta"
-    },
-    {
-      "id": "cs-games",
-      "name": "Campsite games (42 in the list)",
       "ours": "Available",
       "evidencePage": "Beta",
       "shown": "Beta"
@@ -329,13 +315,6 @@
       "ours": "Available",
       "evidencePage": "Beta",
       "shown": "Beta"
-    },
-    {
-      "id": "a-watch",
-      "name": "Watch Together (host and viewers in step)",
-      "ours": "Beta",
-      "evidencePage": "In development",
-      "shown": "In development"
     },
     {
       "id": "m-audiobooks",
