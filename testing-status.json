@@ -1009,7 +1009,7 @@
     "summary": "The downloads are Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.99 and Android 1.51-tester34 add audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-22T15:48:00-04:00",
+  "updated": "2026-10-22T18:51:00-04:00",
   "updatedEastern": "Oct 22, 2026, 3:48 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete = checks passed out of 5 checks, 20 percent each: Built, Automated tests, Real device, Real-world check, Ready to call Available. It measures how much of our test list has passed, not how finished or bug-free a feature is. 100 means all five checks passed. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
@@ -2119,8 +2119,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 22, 2026 (Tic-Tac-Toe finished on two phones); Oct 14, 2026 (published tester23: Reversi by two guests); Oct 13, 2026 (Sea Battle by two people)",
-      "leftToReach100": "Play the games other than Sea Battle and Reversi with real guests on phones; a phone hotspot and a guest on mobile data are not tested.",
+      "lastTested": "Oct 22, 2026 (Tic-Tac-Toe finished on two phones); Oct 14, 2026 (published tester23: Reversi start and move synchronization by two guests); Oct 13, 2026 (Sea Battle by two people)",
+      "leftToReach100": "Finish Reversi and the games other than Sea Battle and Tic-Tac-Toe with real guests on phones; a phone hotspot and a guest on mobile data are not tested.",
       "roadTo100": {
         "means": "Every shipped game has a basic test and has been played on phones with real guests.",
         "done": [
@@ -2141,7 +2141,7 @@
           },
           {
             "kind": "BLOCKED",
-            "text": "Only one game has a recorded phone result."
+            "text": "Only Sea Battle and Tic-Tac-Toe have recorded two-phone completions; the Reversi report records start and move synchronization only."
           },
           {
             "kind": "CODE",
@@ -2151,7 +2151,7 @@
       },
       "previousPercent": 60,
       "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
-      "changeNote": "Oct 22: on tester34 a Galaxy S25 host and a Galaxy S9+ guest in Chrome finished a Tic-Tac-Toe game, shown on both phones (one tester drove both phones). That makes three games finished on two real phones: Sea Battle (two people, Oct 13), Reversi (two guest phones, Oct 14) and Tic-Tac-Toe (Oct 22). The other games in the list were not played to the end by people. The percentage did not change.",
+      "changeNote": "Oct 22: on tester34 a Galaxy S25 host and a Galaxy S9+ guest in Chrome finished a Tic-Tac-Toe game, shown on both phones (one tester drove both phones). The recorded two-phone completions are Sea Battle (two people, Oct 13) and Tic-Tac-Toe (Oct 22). Reversi (Oct 14) has start and move-synchronization evidence, without a recorded finished round. The other games lack recorded two-phone completions. The percentage did not change.",
       "changeHistory": [
         {
           "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
@@ -2187,7 +2187,7 @@
           "build": "Android 1.51-tester34 (build 84; version read from the phone, installed file not compared with the download)",
           "date": "Oct 22, 2026, 4:34 AM Eastern",
           "result": "PARTIAL",
-          "evidence": "One game, Tic-Tac-Toe, was played to the end by the two phones. Sea Battle and Reversi (checked on earlier dates) are the only other games with a finished two-phone result. The rest were not played to the end."
+          "evidence": "One game, Tic-Tac-Toe, was played to the end by the two phones. Sea Battle (Oct 13) has a separate recorded two-person completion. Reversi (Oct 14) has start and move-synchronization evidence only. The remaining games lack recorded two-phone completions."
         },
         {
           "tester": "Claude (AI helper)",
