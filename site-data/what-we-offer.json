@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 22, 2026, 6:38 AM Eastern",
-    "updatedIso": "2026-10-22T06:38:00-04:00",
+    "updatedEastern": "Oct 22, 2026, 6:47 AM Eastern",
+    "updatedIso": "2026-10-22T06:47:00-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -207,7 +207,7 @@
       "area": "windows",
       "name": "Photos and phone backups: timeline, albums, map",
       "status": "Beta",
-      "evidence": "Oct 12: three files were uploaded from a phone to a PC. Oct 21 on Windows 0.1.98: 3 albums and 12 photos were found and grouped by month. Oct 22 on the phone app: a normal member saw the timeline, albums, full-screen photos and a correctly turned photo; a child profile saw the lists but every picture was blank (part of the fix is merged in the code and part is still in testing; not released or retested). There is no map on the phone; the PC map was not tried.",
+      "evidence": "Oct 12: three files were uploaded from a phone to a PC. Oct 21 on Windows 0.1.98: 3 albums and 12 photos were found and grouped by month. Oct 22 on the phone app: a normal member saw the timeline, albums, full-screen photos and a correctly turned photo; a child profile saw the lists but every picture was blank (the fixes are merged in the code; not released or retested). There is no map on the phone; the PC map was not tried.",
       "realTest": "partly"
     },
     {
@@ -359,7 +359,7 @@
       "area": "android",
       "name": "Playing films: resume, seek, pause and the quality menu",
       "status": "Available",
-      "evidence": "Oct 3: the owner's own hand test passed seeking and sound with the screen off during a video. Oct 13 on both phones: resume prompt, play, skip forward and back, pause, and the Auto, original and 480p choices worked (phones were muted that day, so sound was not heard). Oct 22 on tester34 (muted): Original and 720p played and switched on the Pixel 3 and S25. Not working yet: choosing embedded subtitles, seeing sidecar subtitles and a version picker on the S25; Next on a saved episode while online skipped over a saved episode when one in between was missing. Fixes for the pickers and large text are merged in the code and the fix for Next is still in testing; none is released.",
+      "evidence": "Oct 3: the owner's own hand test passed seeking and sound with the screen off during a video. Oct 13 on both phones: resume prompt, play, skip forward and back, pause, and the Auto, original and 480p choices worked (phones were muted that day, so sound was not heard). Oct 22 on tester34 (muted): Original and 720p played and switched on the Pixel 3 and S25. Not working yet: choosing embedded subtitles, seeing sidecar subtitles and a version picker on the S25; Next on a saved episode while online skipped over a saved episode when one in between was missing. Fixes for the pickers, large text and Next are merged in the code; none is released.",
       "realTest": "yes"
     },
     {
@@ -399,7 +399,7 @@
       "area": "android",
       "name": "Casting to a Chromecast TV",
       "status": "Beta",
-      "evidence": "Oct 13 to a real Chromecast TV from two phones: a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop. The phone's volume keys do not change the TV volume. Converted films and other TVs are not tested. Oct 22 on tester34 from a Galaxy S25: the cast controls and the on-screen TV volume slider responded on the phone; picture and sound on the TV were not confirmed by the tester, and the phone volume keys were not retested.",
+      "evidence": "Oct 13 to a real Chromecast TV from two phones: a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop. The phone's volume keys do not change the TV volume. Converted films and other TVs are not tested. Oct 22 on tester34 from a Galaxy S25: the cast controls and the on-screen TV volume slider responded on the phone; picture and sound on the TV were not confirmed by the tester, and the phone volume keys were not retested. Owner-reported, not a helper run: on Oct 22 Nick watched House season 4 episode 2 on a 70-inch Samsung smart TV through a Google Chromecast (details still being confirmed; no label or percentage changed).",
       "realTest": "partly"
     },
     {
@@ -663,7 +663,7 @@
       "area": "computers",
       "name": "Any web browser: library and player, served by your own Beebo computer",
       "status": "Beta",
-      "evidence": "Oct 13 in Chrome on a PC: 17 of 17 pages answered, a film played with sound, and quality switches worked. Oct 22 in Chrome on a Windows 10 PC through a second test home's away address: opening a film (and an episode) failed because the page reloaded and discarded the player; search, music and page zoom worked. A fix is still in testing and is not in the code yet; not released. Subtitles, Safari, Firefox and phone browsers were not tried.",
+      "evidence": "Oct 13 in Chrome on a PC: 17 of 17 pages answered, a film played with sound, and quality switches worked. Oct 22 in Chrome on a Windows 10 PC through a second test home's away address: opening a film (and an episode) failed because the page reloaded and discarded the player; search, music and page zoom worked. A fix is merged in the code (the server part is being deployed, the app part ships with the next Windows release); not released or retested. Subtitles, Safari, Firefox and phone browsers were not tried.",
       "realTest": "partly"
     },
     {
@@ -1323,7 +1323,7 @@
   ],
   "workingOn": [
     "Making Campsite game rooms clear when players leave, so the lead passes to someone who is still there and the host can end a game.",
-    "Fixes for what the Oct 21 and Oct 22 device runs found: the subtitle and version pickers, Next on downloaded episodes, large-text clipping, the guest \"host stopped\" page, child-profile photos and opening a film in a browser through the away address. Some are merged in the code and the rest are still in testing; none is released.",
+    "Fixes for what the Oct 21 and Oct 22 device runs found: the subtitle and version pickers, Next on downloaded episodes, large-text clipping, the guest \"host stopped\" page, child-profile photos and opening a film in a browser through the away address. All are merged in the code except the folder poster and NFO problem; none is released.",
     "Letting a passenger in a Car Party watch what is playing, and joining with a blank name.",
     "A self-serve switch to turn Beebo Relay on for your own account, plus a usage line on the phone.",
     "Family Watch Together: face tiles beside the film so far-away family can watch along.",
@@ -1343,9 +1343,9 @@
     "Oct 22, tester34: the phone player has no way to choose a film's embedded subtitles, does not show sidecar subtitle files and has no version picker for a film with two files (Galaxy S25).",
     "Oct 22, tester34: Next on a downloaded episode skipped a saved episode while online when one in between was missing; another run did not move on at all.",
     "Oct 22, tester34: text is cut off at 150% text on four phones (the player top bar, the title-page Download button and some other buttons).",
-    "Oct 22, tester34: after a Campsite host stops, the guest page says nothing about it; photo pictures do not load for a child profile; a child profile's Movie Night page showed a raw error. The host-stopped and Movie Night fixes are merged in the code, and the photo fix is partly merged and partly in testing; none is released or retested.",
+    "Oct 22, tester34: after a Campsite host stops, the guest page says nothing about it; photo pictures do not load for a child profile; a child profile's Movie Night page showed a raw error. The host-stopped, Movie Night, photo and Next fixes are merged in the code; none is released or retested.",
     "Oct 22: opening a film in a browser through the away address failed (the player is discarded when the page reloads). On Windows 0.1.98 a folder's own poster and NFO files were not used.",
-    "Some fixes for the Oct 22 findings are merged in the code and the rest are still in testing. None is released or retested on a device.",
+    "The fixes for the Oct 22 findings are merged in the code (none is recorded yet for the folder poster and NFO problem). None is released or retested on a device.",
     "The phone's volume keys do not change the TV volume while casting (not retested since tester32 added an on-screen slider; the slider moved on Oct 22 but whether the TV volume changed was not confirmed).",
     "An ordinary trip link opens only on the home Wi-Fi unless away links are switched on.",
     "The demo player has no subtitles button although the title page mentions one."
