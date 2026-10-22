@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Progress and real-device testing — Beebo Entertainment</title>
-  <meta name="description" content="A dated, plain-English record of Beebo code checklist progress, real-device testing, what changed on October 12–13, and what is still untested.">
+  <meta name="description" content="A dated, plain-English record of Beebo code checklist progress and real-device testing through October 22, 2026, with every failure and what is still untested.">
   <link rel="canonical" href="https://www.beeboentertainment.com/progress-update.html">
   <link rel="icon" href="assets/favicon-32.png">
   <link rel="stylesheet" href="testing-evidence.css?v=20261013">
@@ -25,53 +25,334 @@
   <main class="progress-shell" id="progress" tabindex="-1">
 
 
-    <p class="evidence-kicker">TEST RECORD · OCT 13, 2026, 4:14 AM EASTERN</p>
+    <p class="evidence-kicker">TEST RECORD · OCT 22, 2026, 6:30 AM EASTERN</p>
     <h1>Progress, real-device testing, and what is still unknown.</h1>
-<aside class="catalog-note" data-release-notice="tester34-0.1.99"><p><strong>Current downloads:</strong> Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern.</p><p><strong>Device checks: NOT yet tested on these exact new builds.</strong> Checks made after publishing will be recorded in the <a href="release-evidence.html">release evidence</a>. Earlier device results remain historical and belong to the builds they name; no feature percentage changes. <a href="release-history.html">Read the release notes and limits</a>.</p></aside>
+<aside class="catalog-note" data-release-notice="tester34-0.1.99"><p><strong>Current downloads:</strong> Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern.</p><p><strong>Device checks:</strong> Android tester34 was tried on four phones on Oct 22, 2026 and Windows 0.1.98 on a PC on Oct 21. They found failures, listed in the <a href="release-evidence.html#oct22-runs">release evidence</a>; the fixes are written and in review, not released or retested. Every phone was muted. Windows 0.1.99 has had one self-update and no other hands-on run, and Beebo Auto 1.20 has not been in a car. <a href="release-history.html">Read the release notes and limits</a>.</p></aside>
     <p class="progress-intro">This is the full, dated picture behind our status pages. It separates checked code from a person using a real device. It does not mean every path works, and it does not turn an untested path into a pass.</p>
-    <div class="progress-note"><strong>How to read the percentages.</strong> “Code checklist” is the share of the listed feature rows where both <em>Built</em> and <em>Automated tests</em> are checked. “Human-device” is the share where the separate <em>Real device</em> check is recorded. These are checklist measures, not a claim of bug-free software. Areas overlap when a feature belongs to both a platform and a named slice. If we have no comparable checklist rows, the page says <strong>not measured yet</strong>.</div>
+    <div class="progress-note"><strong>How to read the percentages.</strong> Since Oct 22, 2026, 6:30 AM Eastern this table uses the same method as the <a href="release-evidence.html#code-status">release evidence page</a>, so the two pages agree. Each area is the average of its feature rows there. “Code checklist” is the share of the two code checks (<em>Built</em> and <em>Automated tests</em>) that passed; <strong>100% there does not mean no code is left</strong>, and the open code items are counted under each figure. “Human testing done” is the share of the three human checks (<em>Real device</em>, <em>Real-world check</em> and <em>Ready to call Available</em>) that passed; the small print under it says on how many rows the Real device check is ticked and how many rows are confirmed on real devices. <strong>No row is confirmed on real devices yet.</strong> The older table showed “Human-device 100%” for seven single-row areas because it counted only the Real device tick; that is why those numbers fell. These are checklist measures, not a claim of bug-free software. Areas overlap when a feature belongs to both a platform and a named slice. If we have no comparable checklist rows, the page says <strong>not measured yet</strong>.</div>
 
     <section class="progress-section" aria-labelledby="area-title">
       <p class="evidence-kicker">CHECKLIST PROGRESS</p>
       <h2 id="area-title">Progress by area.</h2>
-      <p>Changes compare the public October 11, 7:25 AM Eastern snapshot with the October 12 dated test record. The Android code estimate is separately marked because the overnight review counted code gaps, not device tests.</p>
+      <p>“Movement” compares the new numbers with the same method applied to the Oct 21, 3:46 PM Eastern data, in percentage points. Four rows were added on Oct 22 (Photos and phone backups, Family achievements, Picture frame, Kitchen announcements), which also moves the two big platform averages.</p>
       <div class="progress-table-wrap" role="region" aria-label="Progress by product area" tabindex="0">
         <table class="progress-table">
-          <thead><tr><th scope="col">Area</th><th scope="col">Code checklist</th><th scope="col">Human-device</th><th scope="col">Movement</th><th scope="col">What the record establishes — and does not</th></tr></thead>
+          <thead><tr><th scope="col">Area</th><th scope="col">Code checklist</th><th scope="col">Human testing done</th><th scope="col">Movement</th><th scope="col">What the record establishes — and does not</th></tr></thead>
           <tbody>
-            <tr><td data-label="Area"><strong>Windows desktop</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">44%</span></td><td data-label="Movement"><strong>0 / +13 points</strong><small>Two of 16 desktop rows gained a recorded device check on Oct 12.</small></td><td data-label="Evidence"><span class="status-plain">About 35 screens</span> were opened on a Windows 0.1.88 test build; a phone backup and two-home library share were also tried. Sign-out, signed-in browser playback, subtitles and keyboard-only use are still not tested in that run.</td></tr>
-            <tr><td data-label="Area"><strong>Android phone</strong></td><td data-label="Code checklist"><span class="metric">About 97%</span><small>The published checklist was 94%; an overnight code-gap review estimated about 90% before its merges and about 97% after.</small></td><td data-label="Human-device"><span class="metric">76%</span></td><td data-label="Movement"><strong>About +3 / +7 code points</strong><small>+3 from the Oct 11 published 94% checkpoint; +7 from the Oct 12 morning estimate. Device coverage was not recomputed by the code merges.</small></td><td data-label="Evidence">S24 Ultra and S9+ walks, playback, network changes, Campsite, browser and two-home checks were recorded. TalkBack, a fresh install, every route and many exact newest-build retests remain open.</td></tr>
-            <tr><td data-label="Area"><strong>Beebo Auto</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>One checklist row, not every car or route.</small></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">One real-car check on Oct 6, 2026, on an earlier build than 1.18, covered sign-in, lists, sound and steering-wheel controls. Beebo Auto 1.20 itself has not been tested in a real car. Music, car-screen artwork, away-from-home use, passenger games, Car Party and other cars are not tested.</td></tr>
-            <tr><td data-label="Area"><strong>Campsite games</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">2%</span><small>1 of 41 games: Sea Battle.</small></td><td data-label="Movement"><strong>0 / +2 points</strong><small>One documented two-person game was added on Oct 13; the other games remain scripted-guest coverage only.</small></td><td data-label="Evidence">An S9+ host and S24 browser guest exercised join, library, music and 41 game rooms on the same-Wi-Fi route on Oct 12. On Oct 13, Nick and a friend completed Sea Battle via DIRECT-BeeboTV Wi-Fi on a Samsung S20—the first real-person result on that route. A phone hotspot and a guest on mobile data, other hand-played games, karaoke, recordings and guest uploads are not tested.</td></tr>
-            <tr><td data-label="Area"><strong>Car Party</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>One checklist row.</small></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">Nick tested it in a real parked car: a guest could follow and send reactions. A passenger could not watch the movie, and a guest had to type a name. Those two fixes are <strong>not in the main snapshot</strong> used here.</td></tr>
-            <tr><td data-label="Area"><strong>Trip Journal</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">No recorded real trip, recap or video-export device run.</td></tr>
-            <tr><td data-label="Area"><strong>Live TV</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">A real tuner and a real playlist still need a device run.</td></tr>
-            <tr><td data-label="Area"><strong>Away from home / Relay</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>Two related checklist rows.</small></td><td data-label="Movement"><strong>No score change</strong><small>Oct 12 added a two-home replay.</small></td><td data-label="Evidence">A phone on 5G played directly and through Beebo Relay; two direct viewers connected at once. Two people on Relay at once remains untested.</td></tr>
-            <tr><td data-label="Area"><strong>Chromecast</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">An earlier home-TV cast is recorded. A browser cast to a friend's TV, other receivers and away-from-home casting are not tested.</td></tr>
-            <tr><td data-label="Area"><strong>Jellyfin API</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">More Jellyfin apps still need real-client checks.</td></tr>
-            <tr><td data-label="Area"><strong>Web player / browser</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>Two related checklist rows.</small></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">A signed-in desktop browser run covered 17 pages and playback. Subtitles, audio tracks, Cast, AirPlay, PiP, fullscreen, keyboard-only use and other browsers are still untested.</td></tr>
-            <tr><td data-label="Area"><strong>Photos and backup</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span></td><td data-label="Movement"><strong>0 / +50 points</strong><small>The phone-to-PC backup row gained its real-device check on Oct 12.</small></td><td data-label="Evidence">Three phone files arrived on a home PC. The removal step and broader photo/video sharing paths were not tested.</td></tr>
-            <tr><td data-label="Area"><strong>Music / Podcasts / Audiobooks</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">100%</span><small>Two recorded phone rows.</small></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">Radio and podcast browsing was observed; the October 12 run did not check their playback. Audiobook chapter/restart and screen-off runs remain needed.</td></tr>
-            <tr><td data-label="Area"><strong>Recipes / Family</strong></td><td data-label="Code checklist"><span class="metric-muted">Not measured yet</span></td><td data-label="Human-device"><span class="metric-muted">Not measured yet</span></td><td data-label="Movement"><strong>Not measured</strong></td><td data-label="Evidence">Servings and per-person shopping-list work was merged into the code, but this public checklist has no comparable Recipes/Family row and no recorded device acceptance run.</td></tr>
-            <tr><td data-label="Area"><strong>Read It To Me</strong></td><td data-label="Code checklist"><span class="metric-muted">Not measured yet</span></td><td data-label="Human-device"><span class="metric-muted">Not measured yet</span></td><td data-label="Movement"><strong>Not measured</strong></td><td data-label="Evidence">Home-computer voice selection and related fixes were merged into the code. A real-device acceptance run is not recorded.</td></tr>
-            <tr><td data-label="Area"><strong>Parental controls</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">Restricted and normal profile behaviour still needs a careful real-PC run.</td></tr>
-            <tr><td data-label="Area"><strong>Accessibility</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">Some large-text controls were tried and a clipping issue was found, but the formal accessibility rows do not yet have their recorded device checks. TalkBack, Windows screen reader and high contrast remain untested.</td></tr>
-            <tr><td data-label="Area"><strong>Languages</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">0%</span></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">A language picker was merged. Native-speaker review, long text and right-to-left layouts have not been recorded on devices.</td></tr>
-            <tr><td data-label="Area"><strong>Server / accounts</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">50%</span></td><td data-label="Movement"><strong>No score change</strong></td><td data-label="Evidence">The own-server row has a recorded device check. Reset and email verification remain switched off and lack a real-email test.</td></tr>
-            <tr><td data-label="Area"><strong>TV platforms: Roku, Samsung/LG, Xbox, Apple, Fire TV</strong></td><td data-label="Code checklist"><span class="metric-muted">Not measured yet</span></td><td data-label="Human-device"><span class="metric-muted">Not measured yet</span></td><td data-label="Movement"><strong>Not measured</strong></td><td data-label="Evidence">There is no like-for-like checklist across these platforms. The Android TV / Fire TV row has no recorded real-device check; the other named platforms have no recorded real-hardware run here.</td></tr>
-            <tr><td data-label="Area"><strong>Linux / macOS / Docker</strong></td><td data-label="Code checklist"><span class="metric">100%</span></td><td data-label="Human-device"><span class="metric">33%</span><small>Three existing rows.</small></td><td data-label="Movement"><strong>No measured change</strong></td><td data-label="Evidence">The record includes server and build checks, not a broad hardware run. A real Linux desktop, NAS or Raspberry Pi, and Intel and Apple-Silicon Macs remain untested.</td></tr>
+            <tr>
+<td data-label="Area">
+<strong>Windows desktop</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>21 rows; 15 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">19%</span><small>Real device ticked on 10 of 21; confirmed on real devices: 0 of 21.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / −4 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data; the area went from 19 to 21 rows.</small>
+</td>
+<td data-label="Evidence">Oct 21 and 22: a hands-on run on Windows 0.1.98 (nine areas, no failures; the picture frame passed 10 of 11 checks) and a test-library run (29 passed, 3 failed, 6 blocked, 3 not run). A Windows test PC updated itself from 0.1.98 to 0.1.99 at about 2:34 AM Eastern on Oct 22. In the browser, opening a film through the away address failed (the fix is in review, not released). Not tested: a second PC, sound heard by a person, a restricted profile on the PC itself, the signed-in web library.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Android phone</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">95%</span><small>32 rows; 12 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">34%</span><small>Real device ticked on 26 of 32; confirmed on real devices: 0 of 32.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / −3 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data; the area went from 30 to 32 rows.</small>
+</td>
+<td data-label="Evidence">Oct 22: Android tester34 on four phones (muted). Tried: five tabs, playback, Watch Together, Campsite, cast controls, music, audiobooks, photos and a child profile; no crash. Failures (fixes in review, not released): subtitle and version pickers missing, Next on a saved episode online, text cut off at 150% text, the guest page after the host stops, child-profile photos. Not tested: sound heard by a person, TalkBack, Chromecast TV picture and sound, mobile data.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Beebo Auto</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>1 row; 0 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">67%</span><small>Real device ticked on 1 of 1; confirmed on real devices: 0 of 1.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Unchanged. One real-car check on Oct 6, 2026, on an earlier build: sign-in, lists, sound and steering-wheel controls. Beebo Auto 1.20 has not been tested in a real car, so the label is Beta. Music, car-screen artwork, away-from-home use, passenger games, Car Party and other cars are not tested.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Campsite games</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>1 row; 1 code item still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">33%</span><small>Real device ticked on 1 of 1; confirmed on real devices: 0 of 1. 3 of 42 games finished on real phones (7%).</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Three of the 42 games have been finished on two real phones: Sea Battle (two people, Oct 13), Reversi (Oct 14) and Tic-Tac-Toe (Oct 22; one tester drove both phones). The other games have scripted-guest coverage only. A phone hotspot and a guest on mobile data are not tested.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Car Party</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>1 row; 0 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">33%</span><small>Real device ticked on 1 of 1; confirmed on real devices: 0 of 1.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">One real parked-car check: a guest could follow and send reactions, a passenger could not watch the movie and a blank guest name blocked a guest. Both fixes are untested on a device. Label: In development. Not a driving-safety validation.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Trip Journal</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>2 rows; 1 code item still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">33%</span><small>Real device ticked on 2 of 2; confirmed on real devices: 0 of 2.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Oct 14: a Galaxy S24 Ultra and a Pixel 3 made videos; a Galaxy S9+ failed. One link opened on 5G. Not run on Oct 21 or 22.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Live TV</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>1 row; 1 code item still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">0%</span><small>Real device ticked on 0 of 1; confirmed on real devices: 0 of 1.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Oct 21 on Windows 0.1.98: the own-playlist address check and a small local test playlist worked. A real tuner is not tested.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Away from home and Relay</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>2 rows; 0 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">67%</span><small>Real device ticked on 2 of 2; confirmed on real devices: 0 of 2.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Unchanged since Oct 12 to 14: a phone on 5G played directly and through Beebo Relay; two direct viewers connected at once. Two people on Relay at once is untested. Not repeated on Oct 22.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Chromecast</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>1 row; 0 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">67%</span><small>Real device ticked on 1 of 1; confirmed on real devices: 0 of 1.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Oct 13: a person watched the TV. Oct 22: a Galaxy S25 cast a short film and the phone's controls and TV volume slider responded; picture and sound on the TV were not confirmed.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Jellyfin API</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>1 row; 1 code item still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">0%</span><small>Real device ticked on 0 of 1; confirmed on real devices: 0 of 1.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">No real Jellyfin app has been tried.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Web player and browser</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>2 rows; 2 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">33%</span><small>Real device ticked on 2 of 2; confirmed on real devices: 0 of 2.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / −17 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Oct 13: Chrome at home opened 17 pages and played a film. Oct 22: opening a film through the away address failed (fix in review, not released); the Real-world check on the library, player and web player row was withdrawn. Windows 0.1.98: subtitles, audio tracks and chapters worked in the player. Not tested: Safari, Firefox, phone browsers.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Photos and backup</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>1 row; 2 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">0%</span><small>Real device ticked on 0 of 1; confirmed on real devices: 0 of 1.</small>
+</td>
+<td data-label="Movement">
+<strong>Old table 100%, now 0%</strong><small>The old 100% rested on one phone-backup check on Oct 12 that was not a ticked row on the evidence page. This area is now its own row there, with no Real device tick because the Oct 22 child-profile run failed.</small>
+</td>
+<td data-label="Evidence">Oct 22: a normal member saw photos on a Galaxy S25; every picture was blank for a child profile on a Galaxy S9+ (fix in review). Oct 12: three files went from a phone to a PC. The photo map and the removal step were not tried.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Music, podcasts and audiobooks</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>4 rows; 0 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">25%</span><small>Real device ticked on 3 of 4; confirmed on real devices: 0 of 4.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Oct 22 (muted): music, queue, sleep timer, screen-off playback, lyrics, audiobook resume after a force-stop, Radio and podcast search worked on a Pixel 3 and a Galaxy S25; nobody heard them. Following a podcast failed on Oct 14 and was not retried. Windows 0.1.98: a 23-song mix advanced (muted).</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Recipes and family</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>4 rows; 1 code item still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">25%</span><small>Real device ticked on 3 of 4; confirmed on real devices: 0 of 4.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / −8 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data; the area went from 3 to 4 rows.</small>
+</td>
+<td data-label="Evidence">Oct 13: packing list, jobs and recipes were tried on two phones. Oct 21: the achievements preview text and dialogs were correct on a Pixel 3; no milestone was recorded.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Parental controls</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>1 row; 0 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">0%</span><small>Real device ticked on 0 of 1; confirmed on real devices: 0 of 1.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Oct 22: a child profile on a Galaxy S9+ saw only G and PG films. A restricted profile has not been tried on the PC itself. If a parental check itself fails, viewing continues: that is the owner's choice.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Accessibility</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>2 rows; 3 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">17%</span><small>Real device ticked on 1 of 2; confirmed on real devices: 0 of 2.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Oct 22: text is cut off at 150% text on four phones (fix in review, not released). TalkBack, a Windows screen reader and high contrast are not tested.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Languages</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>1 row; 0 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">33%</span><small>Real device ticked on 1 of 1; confirmed on real devices: 0 of 1.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Oct 22: genre names switched to French, German and Spanish on two phones; some player words stay English. Oct 21: Windows Settings, Library Health and Announce were read in French and German. No native speaker has read them.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Server and accounts</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>2 rows; 0 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">33%</span><small>Real device ticked on 1 of 2; confirmed on real devices: 0 of 2.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">The own-server row has a recorded device check. Password reset and email verification stay switched off and have no real-email test.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>Linux, Mac and Docker</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>3 rows; 3 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">11%</span><small>Real device ticked on 1 of 3; confirmed on real devices: 0 of 3.</small>
+</td>
+<td data-label="Movement">
+<strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
+</td>
+<td data-label="Evidence">Server and build checks only. A real Linux desktop, a NAS or Raspberry Pi, and Intel and Apple-Silicon Macs are untested.</td>
+</tr>
+            <tr>
+<td data-label="Area">
+<strong>New features: picture frame, Kitchen announcements, Family achievements</strong>
+</td>
+<td data-label="Code checklist">
+<span class="metric">100%</span><small>3 rows; 0 code items still listed.</small>
+</td>
+<td data-label="Human testing done">
+<span class="metric">0%</span><small>Real device ticked on 0 of 3; confirmed on real devices: 0 of 3.</small>
+</td>
+<td data-label="Movement">
+<strong>New area</strong><small>All of its rows are new on this page.</small>
+</td>
+<td data-label="Evidence">Picture frame: 10 of 11 checks passed on Windows 0.1.98 in the PC's own browser (not on a tablet or TV). Kitchen announcements: the panel was opened read-only; nothing was sent. Family achievements: preview text and dialogs only. All three are In development and off until turned on.</td>
+</tr>
+<tr><td data-label="Area"><strong>Read It To Me</strong></td><td data-label="Code checklist"><span class="metric-muted">Not measured yet</span></td><td data-label="Human-device"><span class="metric-muted">Not measured yet</span></td><td data-label="Movement"><strong>Not measured</strong></td><td data-label="Evidence">Home-computer voice selection and related fixes were merged into the code. A real-device acceptance run is not recorded.</td></tr>
+<tr><td data-label="Area"><strong>TV platforms: Roku, Samsung/LG, Xbox, Apple, Fire TV</strong></td><td data-label="Code checklist"><span class="metric-muted">Not measured yet</span></td><td data-label="Human-device"><span class="metric-muted">Not measured yet</span></td><td data-label="Movement"><strong>Not measured</strong></td><td data-label="Evidence">There is no like-for-like checklist across these platforms. The Android TV / Fire TV row has no recorded real-device check; the other named platforms have no recorded real-hardware run here.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
-<details class="release-update"><summary>Next-release changes and what still needs testing · Oct 20, 2026, 12:40 PM Eastern</summary><!-- OCT20-STATUS:START --><section class="release-update" id="next-release-status" aria-labelledby="next-release-title"><h2 id="next-release-title">In development · next-release changes</h2><p><strong>Updated Oct 21, 2026, 3:46 PM Eastern.</strong> Windows <strong>0.1.99</strong> and Android <strong>1.51-tester34 (build 84)</strong>, published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto <strong>1.20 (build 21)</strong>, published Oct 21, 2026, 6:52 AM Eastern. Not yet tested on real devices.</p><p>New in Windows 0.1.99 and Android 1.51-tester34 (published Oct 21, 2026, 3:46 PM Eastern; not yet tried on real devices): audiobooks keep your place when the player closes and books that showed &quot;[object Object]&quot; are read again, hidden files such as Mac &quot;._&quot; copies are skipped in every library scan, sidebar Movies and TV Shows counts update when a folder is added or removed, Live TV handles a failed parental check the same way everywhere, the converter can use libx264 when ffmpeg has no OpenH264, Next and Previous work on downloaded episodes (also offline), the screen-off switch moved into Quality &amp; audio, genre names follow the app language, and more screens are translated. Beebo Auto is unchanged at 1.20. <a href="release-history.html">Full release notes</a>.</p><p>Earlier the same day (Oct 21, 2026, 6:52 AM Eastern), Windows 0.1.98, Android 1.51-tester33 and Beebo Auto 1.20 added (In development where marked; not yet tried on real devices): Picture frame and Family achievements (both off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes, and Beebo Auto sign-in storage fixes. <a href="release-history.html">Full release notes</a>.</p><p>The changes below are in those downloads unless a card says otherwise. No new device test or passed check is added by this website update. <a href="/release-evidence.html#features">Recorded feature percentages and device limits</a> remain separate.</p><div class="feature"><h3>Parental limits in Live TV and Movie Night · In development</h3><p>In the Oct 21, 2026 release: a Live TV link stops when its profile is restricted, and a Movie Night room removes blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice.</p><p><strong>What is left to reach 100%:</strong> Check restricted and normal profiles on a real PC after release, including changes during viewing.</p></div>
+<details class="release-update"><summary>Next-release changes and what still needs testing · Oct 22, 2026, 6:30 AM Eastern</summary><!-- OCT20-STATUS:START --><section class="release-update" id="next-release-status" aria-labelledby="next-release-title"><h2 id="next-release-title">In development · next-release changes</h2><p><strong>Updated Oct 22, 2026, 6:30 AM Eastern.</strong> Windows <strong>0.1.99</strong> and Android <strong>1.51-tester34 (build 84)</strong>, published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto <strong>1.20 (build 21)</strong>, published Oct 21, 2026, 6:52 AM Eastern. Device runs after publishing are recorded in the <a href="release-evidence.html#oct22-runs">release evidence</a>; most of the changes below have still not been tried by a person.</p><p>New in Windows 0.1.99 and Android 1.51-tester34 (published Oct 21, 2026, 3:46 PM Eastern; not yet tried on real devices): audiobooks keep your place when the player closes and books that showed &quot;[object Object]&quot; are read again, hidden files such as Mac &quot;._&quot; copies are skipped in every library scan, sidebar Movies and TV Shows counts update when a folder is added or removed, Live TV handles a failed parental check the same way everywhere, the converter can use libx264 when ffmpeg has no OpenH264, Next and Previous work on downloaded episodes (also offline), the screen-off switch moved into Quality &amp; audio, genre names follow the app language, and more screens are translated. Beebo Auto is unchanged at 1.20. <a href="release-history.html">Full release notes</a>.</p><p>Earlier the same day (Oct 21, 2026, 6:52 AM Eastern), Windows 0.1.98, Android 1.51-tester33 and Beebo Auto 1.20 added (In development where marked; not yet tried on real devices): Picture frame and Family achievements (both off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes, and Beebo Auto sign-in storage fixes. <a href="release-history.html">Full release notes</a>.</p><p>The changes below are in those downloads unless a card says otherwise. The Oct 22 device runs added no passed check; they found failures that are listed on the release evidence page. <a href="/release-evidence.html#features">Recorded feature percentages and device limits</a> remain separate.</p><div class="feature"><h3>Parental limits in Live TV and Movie Night · In development</h3><p>In the Oct 21, 2026 release: a Live TV link stops when its profile is restricted, and a Movie Night room removes blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice.</p><p><strong>What is left to reach 100%:</strong> Check restricted and normal profiles on a real PC after release, including changes during viewing.</p></div>
 <div class="feature"><h3>Guest-safe Campsite video downloads · In development</h3><p>In the Oct 21, 2026 release: guests get an H.264/AAC copy when the original audio will not play in a browser, and host approval no longer cuts a running download.</p><p><strong>What is left to reach 100%:</strong> Play and save on real guest phones, hear the sound, seek, and approve another request during a running download.</p></div>
 <div class="feature"><h3>Walkie-talkie from anywhere · In development</h3><p>Off and in the Oct 21, 2026 release: Invite from anywhere always asks the host to approve each guest, Android has a host panel without a microphone, and each guest has message limits. Code is complete; it has not been tested on real phones. The server part is on; the Oct 21, 2026 release is the first app release that uses it.</p><p><strong>What is left to reach 100%:</strong> Use a host and guests on unrelated networks; check approvals, message limits, disconnect and rejoin.</p></div>
 <div class="feature"><h3>Android accessibility and layouts · In development</h3><p>Another accessibility and layout pass is in Android 1.51-tester32 (Oct 21, 2026, 3:43 AM Eastern). Earlier phone tests cover the earlier screens and builds only.</p><p><strong>What is left to reach 100%:</strong> Try TalkBack, 200% text, high contrast, landscape and large playback controls on real phones after release.</p></div>
 <div class="feature"><h3>Beebo Auto hardening · In development</h3><p>In the Oct 21, 2026 release: typing is blocked while projecting to the car, saved sign-in is kept in encrypted storage, and Car Party controls stay usable. Beebo Auto 1.20 has not been tested in a real car; an earlier build had one first check in one car on Oct 6, 2026.</p><p><strong>What is left to reach 100%:</strong> Run the first real-car and head-unit tests, parked, including sound, controls, sign-in, maps and reconnect.</p></div>
-<div class="feature"><h3>Windows first-run connection test · In development</h3><p>A first-run connection test card is next-release work. It is not a promise that every router or away-from-home route will connect.</p><p><strong>What is left to reach 100%:</strong> Check a real PC and different routers, including failed and unavailable connections.</p></div>
-<div class="feature"><h3>Podcast import · In development</h3><p>Import from an OPML file or a pasted podcast link/name is next-release work. Existing podcast playback keeps its earlier status.</p><p><strong>What is left to reach 100%:</strong> Try real files, links and names, duplicates, failed imports and playback after release.</p></div>
-<div class="feature"><h3>Remote Desktop keyboard helper · In development</h3><p>Off by default. The keyboard helper change is next-release work; Remote Desktop has never been run on a real PC.</p><p><strong>What is left to reach 100%:</strong> Use a real PC and phone to check keyboard, mouse, viewing, approval, disconnect and revoke.</p></div>
+<div class="feature"><h3>Windows first-run connection test · In development</h3><p>A first-run connection test card is in Windows 0.1.97 (Get Started shows a background connection test). It is not a promise that every router or away-from-home route will connect.</p><p><strong>What is left to reach 100%:</strong> Check a real PC and different routers, including failed and unavailable connections.</p></div>
+<div class="feature"><h3>Podcast import · In development</h3><p>Podcast import from an OPML list file or a public feed link is in the downloads (Windows 0.1.88 and later; fixes in 0.1.97). Existing podcast playback keeps its earlier status.</p><p><strong>What is left to reach 100%:</strong> Try real files, links and names, duplicates, failed imports and playback after release.</p></div>
+<div class="feature"><h3>Remote Desktop keyboard helper · In development</h3><p>Off by default. The keyboard helper change is in Windows 0.1.97; Remote Desktop has never been run on a real PC.</p><p><strong>What is left to reach 100%:</strong> Use a real PC and phone to check keyboard, mouse, viewing, approval, disconnect and revoke.</p></div>
 <div class="feature"><h3>Online browser games · In development</h3><p>The online browser-games page connection is merged, off and unreleased. The separate browser games already on this website keep their own status.</p><p><strong>What is left to reach 100%:</strong> Play with real people on different networks; check reconnect and host controls.</p></div>
 <div class="feature"><h3>BeeboVPN · In development</h3><p>The owner connected one phone with the standard WireGuard app and it worked. A BeeboVPN Android app has not been started. BeeboVPN is not offered for public sale.</p><p><strong>What is left to reach 100%:</strong> Verify supported devices and connection behaviour before calling the service Available.</p></div><p><strong>Ideas, not promised:</strong> starting a film on your home TV from your phone while you are away (a design only; nothing is built), a fuller wishlist. TV volume from the phone while casting, media requests and kitchen announcements are now in the downloads (In development where marked). Casting to a TV near you while you are away from home is a different, existing Beta feature (Windows 0.1.85 and later).</p><p>Roku, Samsung, LG, Xbox and Apple TV apps still need real hardware. Beebo Auto 1.20 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026), walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC.</p></section><!-- OCT20-STATUS:END --></details>
 
@@ -79,6 +360,18 @@
       <p class="evidence-kicker">REAL PEOPLE, REAL DEVICES</p>
       <h2 id="hand-title">What was hand tested.</h2>
       <div class="hand-grid">
+        <article class="hand-card">
+<h3>Oct 22 · Four phones on Android tester34 (muted)</h3>
+<p>
+<strong>Passed:</strong> the five tabs on a Pixel 3, a Galaxy S24 Ultra, a Galaxy S25 and a Galaxy S9+ with no crash logged; playback with Original and 720p; Watch Together between a Galaxy S25 and a Galaxy S9+ (play, seek and pause followed within 1 to 3 seconds); Campsite join and a finished Tic-Tac-Toe game; cast controls to a real Chromecast TV; music, audiobook resume after a force-stop, Radio and podcast search; genre names in French, German and Spanish; photos for a normal member; a child profile that saw only G and PG films.</p>
+<p><strong>Failed:</strong> no way to choose embedded subtitles, no sidecar subtitles and no version picker on the Galaxy S25; Next on a saved episode online skipped a saved episode when one in between was missing; text cut off at 150% text on all four phones; the Campsite guest page said nothing after the host stopped; pictures did not load for a child profile; a child profile&rsquo;s Movie Night page showed a raw error. The fixes are written and in review, not released. <strong>Not tested:</strong> any sound heard by a person, real screen-off sound, picture and sound on the TV, TalkBack, mobile data, Italian and Portuguese.</p>
+</article>
+        <article class="hand-card">
+<h3>Oct 21 and 22 · Windows 0.1.98 and a browser through the away address</h3>
+<p>
+<strong>Passed:</strong> a hands-on run on Windows 0.1.98 (nine areas, no failures, including 10 of 11 picture-frame checks); a test library run (29 passed): the five folder types, embedded and sidecar subtitles, three audio tracks, chapters and a version picker; a Windows test PC updated itself to 0.1.99 on Oct 22 and ran normally.</p>
+<p><strong>Failed:</strong> a folder&rsquo;s own poster and NFO files were not used; audiobook resume and an audiobook description showing &ldquo;[object Object]&rdquo; (both fixed in 0.1.99, not re-run); and on Oct 22 a browser could not open a film through the away address (the player is discarded when the page reloads; the fix is in review, not released). <strong>Not tested:</strong> a second PC, sound by ear, the web library signed in, a restricted profile on the PC itself, the picture frame on a tablet or TV.</p>
+</article>
         <article class="hand-card"><h3>Oct 12 · Two homes and a phone on 5G</h3><p><strong>Passed:</strong> direct and Relay playback, network switching, two direct viewers, library sharing from invite through stopping access, phone backup, browse, favourites, playlists, radio, podcasts, Campsite host/guest setup, landscape and restart.</p><p><strong>Not tested:</strong> two people on Relay, a friend's Chromecast, Beebo Auto in a car, a real TV pairing code, TalkBack and the newest fixes on real devices.</p></article>
         <article class="hand-card"><h3>Oct 12 · Windows desktop walk</h3><p><strong>Passed:</strong> about 35 screens were opened and looked right on the unpublished 0.1.88 test build, including media areas, admin screens and all eight Settings pages.</p><p><strong>Found:</strong> settings search missed the intro/skip section, and the window did not stay maximized when brought forward. <strong>Not tested:</strong> sign-out, signed-in browser player, subtitles, track switching, PiP, keyboard-only use, high contrast and 150% scaling.</p></article>
         <article class="hand-card"><h3>Oct 12 · Signed-in browser</h3><p><strong>Passed:</strong> sign-in and reload, 17 pages, clip and film playback, seeking, pause/resume and switching quality.</p><p><strong>Found:</strong> old browser pages chose the wrong automatic quality, lacked a reconnect action after idle, had a nearly blank Suggestions page and showed empty-image icons. <strong>Not tested:</strong> subtitles, audio tracks, Cast, AirPlay, PiP, fullscreen, touch layout, keyboard-only use and Firefox, Edge or Safari.</p></article>
@@ -121,6 +414,7 @@
       <p class="evidence-kicker">PLAINLY UNTESTED</p>
       <h2 id="unknown-title">What remains untested.</h2>
       <ul class="source-list">
+        <li>Sound heard by a person on a phone (every phone run on Oct 19 to 22 was muted), real screen-off sound, and picture and sound on the Chromecast TV.</li>
         <li>Two people watching through Beebo Relay at once; broad browser-to-TV casting; and a fresh-install Android run.</li>
         <li>TalkBack, Windows screen-reader and high-contrast journeys, native-speaker review of translations, and long or right-to-left layouts.</li>
         <li>Real tuner and playlist use for Live TV; broad Jellyfin-client testing; a real trip and export; and a careful parental-controls device run.</li>

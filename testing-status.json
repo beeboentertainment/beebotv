@@ -581,117 +581,341 @@
     "evidenceLimit": "Historical checkmarks are not proof of current-release testing. Beebo Auto 1.20 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026); the new walkie-talkie flow has no real-phone test. Every phone run on Oct 22, 2026 was muted, so nobody has heard sound on a phone; the fixes found that night are written and in review but not released or retested."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 13, 2026, 4:14 AM Eastern",
+    "updatedEastern": "Oct 22, 2026, 6:30 AM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
-    "method": "Code checklist is the recorded built-and-automated-test progress. Human-device is a strict percentage of the recorded real-device checks for the named area. A percentage is evidence coverage, not a promise that every device, route or situation works.",
+    "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Human testing done is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
-      "baseline": "Oct 11, 2026, 7:25 AM Eastern published checkpoint",
-      "current": "Oct 13, 2026 source snapshot and dated hand-test records",
-      "androidCode": "The published Android checkpoint was 94%. The Oct 12 code-gap review recorded about 90% before its merges and about 97% after them. Device coverage was not recomputed by those merges."
+      "baseline": "The same method applied to the Oct 21, 2026, 3:46 PM Eastern data",
+      "current": "Oct 22, 2026, 6:30 AM Eastern data and the dated device runs of Oct 21 and 22, 2026"
     },
     "areas": [
       {
         "name": "Windows desktop",
+        "rows": 21,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 44,
-        "codeChangePoints": 0,
-        "humanDeviceChangePoints": 13,
-        "source": "Oct 11 checkpoint and Oct 12 Windows/two-home records"
+        "humanTestingDonePercent": 19,
+        "realDeviceTickedRows": 10,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 23,
+        "rowNames": [
+          "Installer and self-update",
+          "Library, player and web player",
+          "Update modes and start with Windows",
+          "Converter and quality / speed settings",
+          "Live TV (tuner and own playlist)",
+          "Story Studio",
+          "Movie Night",
+          "Jellyfin-compatible mode",
+          "Parental controls and household profiles",
+          "Keyboard and screen-reader support",
+          "Languages (5 translated with machine help, 3 previews)",
+          "Posters and info (TMDB)",
+          "Remote Desktop (see and control the PC)",
+          "Space Saver",
+          "Library sharing with another household",
+          "Strong volume leveler",
+          "Phone speakers (phones play the film's sound)",
+          "Music on the PC (library, mixes, desktop player)",
+          "Home layouts and Customize layout (desktop)",
+          "Picture frame (photo wall for a tablet or TV)",
+          "Kitchen announcements (messages to phones)"
+        ]
       },
       {
         "name": "Android phone",
-        "codeChecklistPercent": 97,
-        "humanDevicePercent": 76,
-        "codeChangePoints": 3,
-        "codeChangeFromOct12MorningPoints": 7,
-        "source": "Oct 11 checkpoint, Oct 12 code-gap review and phone records"
+        "rows": 32,
+        "codeChecklistPercent": 95,
+        "humanTestingDonePercent": 34,
+        "realDeviceTickedRows": 26,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 95,
+        "wasHumanTestingDonePercent": 37,
+        "rowNames": [
+          "Opening the app and the five tabs",
+          "Playing films, seeking, picture-in-picture",
+          "Away from home (direct, then relay)",
+          "Watch Together",
+          "Car party (host and passengers)",
+          "Library health",
+          "Surprise me, playlists, watchlist, favourites",
+          "Campsite host start and stop",
+          "Podcasts and radio",
+          "Audiobooks",
+          "Pack for a trip (download planner)",
+          "Trip Journal (trips, recap, video export)",
+          "Campsite games",
+          "Shared photos and videos",
+          "Wireless speakers",
+          "Share the app (QR over the hotspot)",
+          "Wake my PC",
+          "Chromecast",
+          "Beebo Auto (Android Auto)",
+          "Android TV and Fire TV screens",
+          "Google Play version",
+          "Phone Help (show your screen to another phone)",
+          "Stream from my PC (old button)",
+          "Link a TV",
+          "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+          "Music on the phone (albums, songs, player, sleep timer)",
+          "Family Dashboard, Camp Jobs and Star Chart",
+          "Packing List (shared between phones)",
+          "Family Recipes and shopping list",
+          "Collections and Request a title",
+          "Photos and phone backups (timeline, albums, viewer)",
+          "Family achievements (opt-in milestones)"
+        ]
       },
       {
         "name": "Beebo Auto",
+        "rows": 1,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 100,
-        "source": "Recorded single real-car checklist row; not every car or route"
+        "humanTestingDonePercent": 67,
+        "realDeviceTickedRows": 1,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 67,
+        "rowNames": [
+          "Beebo Auto (Android Auto)"
+        ]
       },
       {
         "name": "Campsite games",
+        "rows": 1,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 2,
-        "humanTestedGames": 1,
-        "totalGames": 41,
-        "humanDeviceChangePoints": 2,
-        "source": "Oct 13 two-person Sea Battle record; other games have scripted-guest coverage only"
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 1,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 33,
+        "humanTestedGames": 3,
+        "totalGames": 42,
+        "rowNames": [
+          "Campsite games"
+        ]
       },
       {
         "name": "Car Party",
+        "rows": 1,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 100,
-        "source": "Recorded single parked-car checklist row; not a driving-safety validation"
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 1,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 33,
+        "rowNames": [
+          "Car party (host and passengers)"
+        ]
       },
       {
         "name": "Trip Journal",
+        "rows": 2,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 0
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 2,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 33,
+        "rowNames": [
+          "Trip Journal (trips, recap, video export)",
+          "Trip Journal link away from home"
+        ]
       },
       {
         "name": "Live TV",
+        "rows": 1,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 0
+        "humanTestingDonePercent": 0,
+        "realDeviceTickedRows": 0,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 0,
+        "rowNames": [
+          "Live TV (tuner and own playlist)"
+        ]
       },
       {
         "name": "Away from home and Relay",
+        "rows": 2,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 100
+        "humanTestingDonePercent": 67,
+        "realDeviceTickedRows": 2,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 67,
+        "rowNames": [
+          "Away from home (direct, then relay)",
+          "Beebo Relay (fallback connection)"
+        ]
       },
       {
         "name": "Chromecast",
+        "rows": 1,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 100
+        "humanTestingDonePercent": 67,
+        "realDeviceTickedRows": 1,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 67,
+        "rowNames": [
+          "Chromecast"
+        ]
       },
       {
         "name": "Jellyfin API",
+        "rows": 1,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 0
+        "humanTestingDonePercent": 0,
+        "realDeviceTickedRows": 0,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 0,
+        "rowNames": [
+          "Jellyfin-compatible mode"
+        ]
       },
       {
         "name": "Web player and browser",
+        "rows": 2,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 100
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 2,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 50,
+        "rowNames": [
+          "Library, player and web player",
+          "Converter and quality / speed settings"
+        ]
       },
       {
         "name": "Photos and backup",
+        "rows": 1,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 100,
-        "humanDeviceChangePoints": 50
+        "humanTestingDonePercent": 0,
+        "realDeviceTickedRows": 0,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": null,
+        "wasHumanTestingDonePercent": null,
+        "rowNames": [
+          "Photos and phone backups (timeline, albums, viewer)"
+        ]
       },
       {
-        "name": "Music, Pod and Audiobooks",
+        "name": "Music, podcasts and audiobooks",
+        "rows": 4,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 100
+        "humanTestingDonePercent": 25,
+        "realDeviceTickedRows": 3,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 25,
+        "rowNames": [
+          "Music on the phone (albums, songs, player, sleep timer)",
+          "Podcasts and radio",
+          "Audiobooks",
+          "Music on the PC (library, mixes, desktop player)"
+        ]
+      },
+      {
+        "name": "Recipes and family",
+        "rows": 4,
+        "codeChecklistPercent": 100,
+        "humanTestingDonePercent": 25,
+        "realDeviceTickedRows": 3,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 33,
+        "rowNames": [
+          "Family Recipes and shopping list",
+          "Family Dashboard, Camp Jobs and Star Chart",
+          "Packing List (shared between phones)",
+          "Family achievements (opt-in milestones)"
+        ]
       },
       {
         "name": "Parental controls",
+        "rows": 1,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 0
+        "humanTestingDonePercent": 0,
+        "realDeviceTickedRows": 0,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 0,
+        "rowNames": [
+          "Parental controls and household profiles"
+        ]
       },
       {
         "name": "Accessibility",
+        "rows": 2,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 0
+        "humanTestingDonePercent": 17,
+        "realDeviceTickedRows": 1,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 17,
+        "rowNames": [
+          "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+          "Keyboard and screen-reader support"
+        ]
       },
       {
         "name": "Languages",
+        "rows": 1,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 0
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 1,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 33,
+        "rowNames": [
+          "Languages (5 translated with machine help, 3 previews)"
+        ]
       },
       {
         "name": "Server and accounts",
+        "rows": 2,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 50
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 1,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 33,
+        "rowNames": [
+          "Our own servers and DNS",
+          "Password reset and email verification"
+        ]
       },
       {
         "name": "Linux, Mac and Docker",
+        "rows": 3,
         "codeChecklistPercent": 100,
-        "humanDevicePercent": 33
+        "humanTestingDonePercent": 11,
+        "realDeviceTickedRows": 1,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": 100,
+        "wasHumanTestingDonePercent": 11,
+        "rowNames": [
+          "Linux server (headless, Docker)",
+          "Linux desktop app",
+          "macOS desktop"
+        ]
+      },
+      {
+        "name": "New features: picture frame, Kitchen announcements, Family achievements",
+        "rows": 3,
+        "codeChecklistPercent": 100,
+        "humanTestingDonePercent": 0,
+        "realDeviceTickedRows": 0,
+        "confirmedOnRealDevices": 0,
+        "wasCodeChecklistPercent": null,
+        "wasHumanTestingDonePercent": null,
+        "rowNames": [
+          "Picture frame (photo wall for a tablet or TV)",
+          "Kitchen announcements (messages to phones)",
+          "Family achievements (opt-in milestones)"
+        ]
       }
     ],
     "handTesting": [
