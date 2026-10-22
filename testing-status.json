@@ -7,11 +7,11 @@
       "codeDone": 92,
       "humanTestingDone": 26,
       "features": 70,
-      "codeItemsLeft": 40,
+      "codeItemsLeft": 38,
       "counts": {
         "confirmed-on-real-devices": 0,
-        "code-complete-needs-real-world-testing": 33,
-        "code-still-being-finished": 37
+        "code-complete-needs-real-world-testing": 34,
+        "code-still-being-finished": 36
       }
     },
     "groups": [
@@ -20,15 +20,15 @@
         "codeDone": 95,
         "humanTestingLeft": 66,
         "remaining": {
-          "CODE": 12,
-          "DEVICE": 50,
+          "CODE": 10,
+          "DEVICE": 52,
           "NICK": 5,
           "BLOCKED": 26
         },
         "counts": {
           "confirmed-on-real-devices": 0,
-          "code-complete-needs-real-world-testing": 21,
-          "code-still-being-finished": 11
+          "code-complete-needs-real-world-testing": 22,
+          "code-still-being-finished": 10
         },
         "features": [
           {
@@ -84,8 +84,8 @@
             "name": "Campsite host start and stop",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1,
-            "realWorldStatus": "code-still-being-finished"
+            "codeItemsLeft": 0,
+            "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Podcasts and radio",
@@ -203,7 +203,7 @@
             "name": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 2,
+            "codeItemsLeft": 1,
             "realWorldStatus": "code-still-being-finished"
           },
           {
@@ -578,7 +578,7 @@
         ]
       }
     ],
-    "evidenceLimit": "Historical checkmarks are not proof of current-release testing. Beebo Auto 1.20 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026); the new walkie-talkie flow has no real-phone test. Every phone run on Oct 22, 2026 was muted, so nobody has heard sound on a phone; the fixes found that night are written and in review but not released or retested."
+    "evidenceLimit": "Historical checkmarks are not proof of current-release testing. Beebo Auto 1.20 has not been tested in a real car (an earlier build had one first check in one car on Oct 6, 2026); the new walkie-talkie flow has no real-phone test. Every phone run on Oct 22, 2026 was muted, so nobody has heard sound on a phone; some fixes for what was found that night are merged in the code and the rest are still in testing; none is released or retested."
   },
   "fullProgress": {
     "updatedEastern": "Oct 22, 2026, 6:30 AM Eastern",
@@ -1134,9 +1134,9 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 22, 2026 (tester34 on four phones, muted; subtitle and version pickers FAILED on the S25); Oct 14, 2026 (published tester23 on four phones)",
-      "leftToReach100": "Retest the subtitle menu, the version picker and Next on downloaded episodes after their fixes are released (the fixes are written and in review). Nick decides whether Screen off should stop or keep the audio by default; read the new start-timing line to find why one episode took about 50 seconds to start on the S24; re-test rotation and subtitles on a film that has them, and have a person listen on the published download.",
+      "leftToReach100": "Retest the subtitle menu, the version picker and Next on downloaded episodes after their fixes are released (the picker fix is merged in the code; the Next fix is still in testing). Nick decides whether Screen off should stop or keep the audio by default; read the new start-timing line to find why one episode took about 50 seconds to start on the S24; re-test rotation and subtitles on a film that has them, and have a person listen on the published download.",
       "changedEastern": "Oct 22, 2026, 6:30 AM Eastern",
-      "changeNote": "Oct 22: on tester34, films played, paused and seeked, and the Original and 720p choices worked, on a Pixel 3, a Galaxy S25, a Galaxy S24 Ultra and a Galaxy S9+ (all muted, so nobody heard sound on a phone). Problems found: on the S25 the player had no way to choose a film's embedded subtitles, did not show a film's sidecar subtitle files, and had no version picker for a film with two files; on the S9+ child profile a film with embedded subtitles sat at 0:00 for 20 seconds while saying it was playing; Next on a downloaded episode worked in airplane mode and in one online Pixel 3 run with two saved episodes in a row, but when an episode in between was missing it skipped the saved one while online (S25 and a Pixel 3 run), and in a later Pixel 3 run it did not move on (the runs disagree); the top bar is cut off at 150% text. A fix for the subtitle and version pickers and for Next is written and in review; it is not merged or released and has not been retested on a device. The percentage did not change.",
+      "changeNote": "Oct 22: on tester34, films played, paused and seeked, and the Original and 720p choices worked, on a Pixel 3, a Galaxy S25, a Galaxy S24 Ultra and a Galaxy S9+ (all muted, so nobody heard sound on a phone). Problems found: on the S25 the player had no way to choose a film's embedded subtitles, did not show a film's sidecar subtitle files, and had no version picker for a film with two files; on the S9+ child profile a film with embedded subtitles sat at 0:00 for 20 seconds while saying it was playing; Next on a downloaded episode worked in airplane mode and in one online Pixel 3 run with two saved episodes in a row, but when an episode in between was missing it skipped the saved one while online (S25 and a Pixel 3 run), and in a later Pixel 3 run it did not move on (the runs disagree); the top bar is cut off at 150% text. The fix for the subtitle and version pickers is fixed in the code and merged for the next release; it is not released and has not been retested on a device; the fix for Next and for the slow-starting subtitle film is written and still in testing, not yet in the code; it is not released and has not been retested on a device. The percentage did not change.",
       "previousPercent": 80,
       "changeHistory": [
         {
@@ -1196,8 +1196,12 @@
             "text": "Read the new start-timing line the next time an episode starts slowly (for example on the Galaxy S24 at home), then fix the cause."
           },
           {
+            "kind": "DEVICE",
+            "text": "Retest the subtitle menu and the version picker on a real phone once the merged fix is released: fixed in the code and merged for the next release; it is not released and has not been retested on a device."
+          },
+          {
             "kind": "CODE",
-            "text": "Fix for the missing subtitle and version pickers on the phone and for Next skipping a saved episode while online: written and in review; it is not merged or released and has not been retested on a device."
+            "text": "Fix for Next skipping a saved episode while online, and for a film with embedded subtitles that sat at 0:00 for 20 seconds: written and still in testing, not yet in the code; it is not released and has not been retested on a device."
           },
           {
             "kind": "DEVICE",
@@ -1668,16 +1672,12 @@
           {
             "kind": "DEVICE",
             "text": "On two phones, stop the host and confirm the guest page says the host has stopped (it failed on Oct 22, 2026; retest after the fix is released)."
-          },
-          {
-            "kind": "CODE",
-            "text": "Fix for the guest page not saying the host has stopped: written and in review; it is not merged or released and has not been retested on a device."
           }
         ]
       },
       "previousPercent": 80,
       "changedEastern": "Oct 22, 2026, 6:30 AM Eastern",
-      "changeNote": "Oct 22: on tester34 a Galaxy S25 started Campsite and a Galaxy S9+ joined as a guest in Chrome; the guest reached the library and finished a Tic-Tac-Toe game with the host. The host's Stop worked (it asks first, and the server closed at once). The guest page then FAILED the \"host stopped\" check: it stayed on the old library for over a minute, and tapping Movies showed the browser's own \"Check your Internet connection\" page, with no Beebo message. A fix is written and in review; it is not merged or released and has not been retested on a device. The percentage did not change.",
+      "changeNote": "Oct 22: on tester34 a Galaxy S25 started Campsite and a Galaxy S9+ joined as a guest in Chrome; the guest reached the library and finished a Tic-Tac-Toe game with the host. The host's Stop worked (it asks first, and the server closed at once). The guest page then FAILED the \"host stopped\" check: it stayed on the old library for over a minute, and tapping Movies showed the browser's own \"Check your Internet connection\" page, with no Beebo message. The fix is fixed in the code and merged for the next release; it is not released and has not been retested on a device. The percentage did not change.",
       "changeHistory": [
         {
           "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
@@ -1699,8 +1699,8 @@
       "testedOn": "Samsung Galaxy S9+ (Android 10) as host, with a Google Pixel 3 and a Samsung Galaxy S24 Ultra as guests in Chrome, all on the same home Wi-Fi, running the published Android 1.51-tester23 (build 73).",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
-      "codeItemsLeft": 1,
-      "realWorldStatus": "code-still-being-finished",
+      "codeItemsLeft": 0,
+      "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "howTo": [
         "Host Campsite on one phone and join from two other phones.",
@@ -2804,7 +2804,7 @@
       "leftToReach100": "After release, check the new Android screens and layouts with TalkBack, 200% text, high contrast, landscape and large playback controls on real phones.",
       "previousPercent": 60,
       "changedEastern": "Oct 22, 2026, 6:30 AM Eastern",
-      "changeNote": "Oct 22: large-text checks on tester34 found clipping. At 150% text the player's top bar is cut off (\"BAD QUALITY\" is partly out of view until you swipe) on a Pixel 3, a Galaxy S25, a Galaxy S24 Ultra and a Galaxy S9+; the title page \"Download\" button is cut off on the S9+ and the Pixel 3; German \"Willkommen zurück\" breaks into pieces on the Pixel 3; at 130% the Music \"Album radio\" button and the audiobook \"Chapters\" button are cut on the Pixel 3; the Photos chips are cut on the S25. Browse and Home were fine at 130%. A fix for the large-text clipping is written and in review; it is not merged or released and has not been retested on a device. TalkBack has still not been run. The percentage did not change.",
+      "changeNote": "Oct 22: large-text checks on tester34 found clipping. At 150% text the player's top bar is cut off (\"BAD QUALITY\" is partly out of view until you swipe) on a Pixel 3, a Galaxy S25, a Galaxy S24 Ultra and a Galaxy S9+; the title page \"Download\" button is cut off on the S9+ and the Pixel 3; German \"Willkommen zurück\" breaks into pieces on the Pixel 3; at 130% the Music \"Album radio\" button and the audiobook \"Chapters\" button are cut on the Pixel 3; the Photos chips are cut on the S25. Browse and Home were fine at 130%. The fix for the large-text clipping is fixed in the code and merged for the next release; it is not released and has not been retested on a device. TalkBack has still not been run. The percentage did not change.",
       "changeHistory": [
         {
           "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
@@ -2853,8 +2853,8 @@
             "text": "The earlier Caregiver view card-description clipping finding remains unresolved by this record; confirm the new layout pass covers it or fix it."
           },
           {
-            "kind": "CODE",
-            "text": "Fix for text that is cut off at large text sizes (player top bar, title-page Download button, some music and Photos buttons): written and in review; it is not merged or released and has not been retested on a device."
+            "kind": "DEVICE",
+            "text": "Retest text that was cut off at large text sizes (player top bar, title-page Download button, some music and Photos buttons) once the merged fix is released: fixed in the code and merged for the next release; it is not released and has not been retested on a device."
           }
         ],
         "hist": [
@@ -2867,7 +2867,7 @@
       "testedOn": "Published Android 1.51-tester23 (build 73) on a Samsung Galaxy S9+ (switches, Caregiver view, text size), a Google Pixel 3 and a Samsung Galaxy S24 Ultra (text size 1.3) and a Samsung Galaxy S25 (in-app Larger text 130%).",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
-      "codeItemsLeft": 2,
+      "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
@@ -3144,7 +3144,7 @@
       "leftToReach100": "Fix the pictures not loading for a child profile and retest; try the photo map, the removal step, a real two-finger pinch and a full phone folder.",
       "previousPercent": null,
       "changedEastern": "Oct 22, 2026, 6:30 AM Eastern",
-      "changeNote": "New row, Oct 22, 2026: added because photos now have dated device evidence. On tester34 a Galaxy S25 (normal member) showed the timeline, albums, full-screen viewer and a correctly turned photo; a Galaxy S9+ child profile listed the same photos but every picture was blank and the full-screen view showed a broken-picture icon (four tries). A fix is written and in review; it is not merged or released and has not been retested on a device. There is no Map tab in the phone Photos screen. Real device is not ticked because the child-profile run failed and the map and removal step were not tried.",
+      "changeNote": "New row, Oct 22, 2026: added because photos now have dated device evidence. On tester34 a Galaxy S25 (normal member) showed the timeline, albums, full-screen viewer and a correctly turned photo; a Galaxy S9+ child profile listed the same photos but every picture was blank and the full-screen view showed a broken-picture icon (four tries). The server-refusal fix is merged in the code and a thumbnail fix is still in testing; neither is released or retested. There is no Map tab in the phone Photos screen. Real device is not ticked because the child-profile run failed and the map and removal step were not tried.",
       "changeHistory": [],
       "roadTo100": {
         "means": "Photos show on the phone and the PC for every kind of profile, with the timeline, albums and full-screen viewer working, phone backups arriving on the PC and the privacy choices respected.",
@@ -3157,7 +3157,7 @@
         "remaining": [
           {
             "kind": "CODE",
-            "text": "Photo pictures did not load for the child test profile (every thumbnail blank, full screen showed a broken-picture icon, tried four times): the fix for the server refusing a child profile's picture requests is written and in review; it is not merged or released and has not been retested on a device."
+            "text": "Photo pictures did not load for the child test profile (every thumbnail blank, full screen showed a broken-picture icon, tried four times): the fix for the server refusing a child profile's picture requests is merged in the code, and a separate fix for the thumbnails is still in testing; neither is released or retested on a device."
           },
           {
             "kind": "DEVICE",
@@ -3334,7 +3334,7 @@
       "leftToReach100": "Retest opening a film in a browser through the away address after its fix is released, find why the folders' own poster and NFO files are not used, and test Safari, Firefox and a phone browser. Test subtitles, the 5.1 audio track, Safari and Firefox, and a phone browser; get a review of the final screens.",
       "previousPercent": 80,
       "changedEastern": "Oct 22, 2026, 6:30 AM Eastern",
-      "changeNote": "Oct 22: the label changed from Available to Beta and the Real-world check was withdrawn (80% to 60%). A browser test on Oct 22 (5:08 to 5:12 AM Eastern, Chrome on a Windows 10 PC, a second test home reached by its away address) could not open a film: clicking a poster, title or episode reset the page to the top and no player opened; search, music and TV Shows lists worked. The cause was traced the same morning: playback starts and then the page reloads and discards the player. A fix is written and in review; it is not merged or released and has not been retested on a device. Also, on Oct 21 on Windows 0.1.98, the five test folder types were found exactly as expected and embedded subtitles, a sidecar subtitle, three audio tracks and chapters worked in the player; the folders' own poster, fanart and NFO files were not used (see Posters and info), and the page heading still said 1080p after the 720p version was chosen (the 0.1.99 release notes list a version-heading fix; not rechecked). The earlier Real-world tick rested on the Oct 12 phone-browser test on 5G.",
+      "changeNote": "Oct 22: the label changed from Available to Beta and the Real-world check was withdrawn (80% to 60%). A browser test on Oct 22 (5:08 to 5:12 AM Eastern, Chrome on a Windows 10 PC, a second test home reached by its away address) could not open a film: clicking a poster, title or episode reset the page to the top and no player opened; search, music and TV Shows lists worked. The cause was traced the same morning: playback starts and then the page reloads and discards the player. A fix is written and still in testing, not yet in the code; it is not released and has not been retested on a device. Also, on Oct 21 on Windows 0.1.98, the five test folder types were found exactly as expected and embedded subtitles, a sidecar subtitle, three audio tracks and chapters worked in the player; the folders' own poster, fanart and NFO files were not used (see Posters and info), and the page heading still said 1080p after the 720p version was chosen (the 0.1.99 release notes list a version-heading fix; not rechecked). The earlier Real-world tick rested on the Oct 12 phone-browser test on 5G.",
       "changeHistory": [
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
@@ -3374,7 +3374,7 @@
           },
           {
             "kind": "CODE",
-            "text": "Fix for the browser player being discarded when a film is opened (page reloads after playback starts): written and in review; it is not merged or released and has not been retested on a device."
+            "text": "Fix for the browser player being discarded when a film is opened (page reloads after playback starts): written and still in testing, not yet in the code; it is not released and has not been retested on a device."
           },
           {
             "kind": "DEVICE",
@@ -3405,7 +3405,7 @@
           "build": "Windows version of that server not recorded",
           "date": "Oct 22, 2026, 5:08 AM Eastern",
           "result": "FAIL",
-          "evidence": "Opening a film from its card (poster, title, double-click, Enter) reset the page and opened no player; opening an episode failed the same way twice. Passed: search (\"bunny\" found 1; a typo found 0), music (album pop-up, play bar advanced), page zoom 150% and 200% on the library and music pages. Blocked: quality picker (no film played), language (no control found). No console errors. Later traced to the player being discarded by a page reload; fix in review."
+          "evidence": "Opening a film from its card (poster, title, double-click, Enter) reset the page and opened no player; opening an episode failed the same way twice. Passed: search (\"bunny\" found 1; a typo found 0), music (album pop-up, play bar advanced), page zoom 150% and 200% on the library and music pages. Blocked: quality picker (no film played), language (no control found). No console errors. Later traced to the player being discarded by a page reload; the fix is still in testing and not released."
         },
         {
           "tester": "Claude (AI helper)",
@@ -5266,7 +5266,7 @@
     "lastTestedIso": "2026-10-22T05:40:00-04:00",
     "previousTested": "Oct 14, 2026, 9:06 PM Eastern",
     "broader": "Still required",
-    "newerText": "Windows {desktop} and Android {android} are the current downloads. On Oct 22, 2026 Android tester34 was tried on four phones, and Windows 0.1.98 on a PC on Oct 21; both are recorded below with their failures. All phones were muted, and the fixes for what failed are written and in review, not released or retested."
+    "newerText": "Windows {desktop} and Android {android} are the current downloads. On Oct 22, 2026 Android tester34 was tried on four phones, and Windows 0.1.98 on a PC on Oct 21; both are recorded below with their failures. All phones were muted, and some fixes for what failed are merged in the code and the rest are still in testing; none is released or retested."
   },
   "historyNew": [
     {
@@ -5308,7 +5308,7 @@
     "androidPublishedAtEastern": "Oct 21, 2026, 3:46 PM Eastern",
     "auto": "1.20",
     "autoBuild": 21,
-    "deviceChecks": "Device runs on the Android 1.51-tester34 and on Windows 0.1.98 are recorded on this page (Oct 21 and Oct 22, 2026). They found failures, which are listed; the fixes are written and in review, not released. Beebo Auto 1.20 has not been tested in a real car; an earlier build had one first check in one car on Oct 6, 2026.",
+    "deviceChecks": "Device runs on the Android 1.51-tester34 and on Windows 0.1.98 are recorded on this page (Oct 21 and Oct 22, 2026). They found failures, which are listed; some fixes are merged in the code and the rest are still in testing; none is released. Beebo Auto 1.20 has not been tested in a real car; an earlier build had one first check in one car on Oct 6, 2026.",
     "autoPublishedAtUtc": "2026-10-21T10:52:00.000Z",
     "autoPublishedAtEastern": "Oct 21, 2026, 6:52 AM Eastern"
   },
@@ -5822,6 +5822,6 @@
     "date": "Oct 22, 2026 (Eastern)",
     "headline": "Android 1.51-tester34 on four phones and Windows 0.1.98 on a PC: no crash logged, failures written down, one tick withdrawn, no tick added",
     "tested": "The Android 1.51-tester34 (build 84) on a Google Pixel 3 (2:59 to 3:28 AM Eastern, and again about 4:00 to 4:26 AM), a Samsung Galaxy S24 Ultra (3:00 to 3:16 AM, stopped early because the phone was in use; again 3:58 to 4:28 AM), a Samsung Galaxy S25 (3:54 to 4:29 AM) and a Samsung Galaxy S9+ on a child test profile (3:57 to 4:26 AM), then a Pixel 3 on a Windows 0.1.99 test PC (4:35 to 5:22 AM), a two-phone Watch Together, Campsite and Chromecast run (4:34 to 4:52 AM), a Photos run on two phones (about 5:25 to 5:40 AM) and a browser run on a second test home (5:08 to 5:12 AM). On Oct 21 Windows 0.1.98 was tried by hand on a Windows PC (8:11 to 8:29 AM and 10:45 to 11:00 AM) and a Pixel 3 ran tester33 (8:11 to 9:20 AM). All phones were muted, so nobody heard sound on a phone.",
-    "happened": "No crash appeared in any phone crash log. Passed: the five tabs, playback and quality choices, Watch Together on two phones, Campsite join and a finished Tic-Tac-Toe game, cast controls to a real Chromecast TV (picture and sound on the TV not confirmed), music, audiobook resume after a force-stop, genre names in French, German and Spanish, photos for a normal member, and on Windows the picture frame (10 of 11 checks) and the five library folder types. Failed: no way to choose embedded subtitles or sidecar subtitle files, and no version picker, on the phone; Next on a downloaded episode online skipped a saved episode (results disagree between runs); text cut off at 150% text size; the guest page did not say the host had stopped; photo pictures did not load for a child profile; a Movie Night page showed a raw error; a browser could not open a film through the away address; the folders' own posters and NFO files were not used on Windows 0.1.98. The fixes are written and in review; none is released or retested. The Real-world check on Library, player and web player was withdrawn; no tick was added; Watch Together, Posters and info, Beebo Auto and Library, player and web player changed labels."
+    "happened": "No crash appeared in any phone crash log. Passed: the five tabs, playback and quality choices, Watch Together on two phones, Campsite join and a finished Tic-Tac-Toe game, cast controls to a real Chromecast TV (picture and sound on the TV not confirmed), music, audiobook resume after a force-stop, genre names in French, German and Spanish, photos for a normal member, and on Windows the picture frame (10 of 11 checks) and the five library folder types. Failed: no way to choose embedded subtitles or sidecar subtitle files, and no version picker, on the phone; Next on a downloaded episode online skipped a saved episode (results disagree between runs); text cut off at 150% text size; the guest page did not say the host had stopped; photo pictures did not load for a child profile; a Movie Night page showed a raw error; a browser could not open a film through the away address; the folders' own posters and NFO files were not used on Windows 0.1.98. Some fixes are merged in the code and the rest are still in testing; none is released or retested on a device. The Real-world check on Library, player and web player was withdrawn; no tick was added; Watch Together, Posters and info, Beebo Auto and Library, player and web player changed labels."
   }
 }

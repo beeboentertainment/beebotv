@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html data-beebo-corporate-dark data-aurora lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,10 +7,15 @@
   <meta name="description" content="A dated, plain-English record of Beebo code checklist progress and real-device testing through October 22, 2026, with every failure and what is still untested.">
   <link rel="canonical" href="https://www.beeboentertainment.com/progress-update.html">
   <link rel="icon" href="assets/favicon-32.png">
+  <link rel="stylesheet" href="corporate-content.css?v=1">
+  <link rel="stylesheet" href="beebo-testers.css?v=2">
+  <link rel="stylesheet" href="corporate-supporting-dark.css?v=20261003b">
+  <link rel="stylesheet" href="rectangular-buttons.css?v=20260926">
+  <link rel="stylesheet" href="aurora-editorial.css?v=20261003b">
   <link rel="stylesheet" href="testing-evidence.css?v=20261013">
   <link rel="stylesheet" href="website-shell.css?v=20260926">
   <style>
-    .progress-shell{max-width:1180px;margin:0 auto;padding:48px 22px 72px}.progress-shell h1{max-width:18ch}.progress-intro{max-width:76ch;font-size:1.08rem;line-height:1.7}.progress-note{border-left:4px solid #c9a45a;padding:16px 18px;margin:24px 0;background:#1b2630;border-radius:0 10px 10px 0}.progress-section{margin-top:54px}.progress-section h2{margin-bottom:10px}.progress-table-wrap{overflow-x:auto;border:1px solid #39505c;border-radius:12px}.progress-table{width:100%;border-collapse:collapse;min-width:920px}.progress-table th,.progress-table td{padding:14px 12px;vertical-align:top;text-align:left;border-bottom:1px solid #30424c;line-height:1.45}.progress-table th{background:#18232b}.progress-table tr:last-child td{border-bottom:0}.metric{font-weight:750;white-space:nowrap}.metric-muted{color:#b6c2c9;font-weight:650}.progress-table small{display:block;margin-top:6px;color:#c3ced3}.hand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}.hand-card{border:1px solid #39505c;border-radius:12px;padding:20px;background:#172129}.hand-card h3{margin-top:0}.hand-card p{line-height:1.58}.hand-card ul{padding-left:20px;line-height:1.55}.change-list{padding-left:22px;line-height:1.65}.change-list li{margin:10px 0}.older-history{margin-top:20px;border:1px solid #39505c;border-radius:12px;padding:0 18px;background:#172129}.older-history>summary{padding:16px 0;font-weight:750;cursor:pointer}.older-history[open]>summary{border-bottom:1px solid #39505c}.older-history .hand-grid{padding:18px 0}.source-list{line-height:1.65}.source-list li{margin:7px 0}.status-plain{font-weight:700}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:5;background:#fff;color:#000;padding:10px}.progress-footer{margin-top:56px;padding-top:24px;border-top:1px solid #39505c}@media(max-width:720px){.progress-shell{padding:30px 16px 52px}.progress-table{min-width:0}.progress-table thead{display:none}.progress-table,.progress-table tbody,.progress-table tr,.progress-table td{display:block;width:100%}.progress-table tr{padding:12px 0;border-bottom:1px solid #39505c}.progress-table td{border:0;padding:6px 14px}.progress-table td::before{content:attr(data-label);display:block;font-size:.8rem;font-weight:750;color:#c9d5db;margin-bottom:2px}.progress-table td:first-child{padding-top:12px}.progress-table tr:last-child{border-bottom:0}.progress-note{padding:14px}.older-history{padding:0 14px}}
+    .progress-shell{max-width:1180px;margin:0 auto;padding:48px 22px 72px}.progress-shell h1{max-width:18ch}.progress-intro{max-width:76ch;font-size:1.08rem;line-height:1.7}.progress-note{border-left:4px solid #c9a45a;padding:16px 18px;margin:24px 0;background:#1b2630;border-radius:0 10px 10px 0}.progress-section{margin-top:54px}.progress-section h2{margin-bottom:10px}.progress-table-wrap{overflow-x:auto;border:1px solid #39505c;border-radius:12px}.progress-table{width:100%;border-collapse:collapse;min-width:920px}.progress-table th,.progress-table td{padding:14px 12px;vertical-align:top;text-align:left;border-bottom:1px solid #30424c;line-height:1.45}.progress-table th{background:#18232b}.progress-table tr:last-child td{border-bottom:0}.metric{font-weight:750;white-space:nowrap}.metric-muted{color:#b6c2c9;font-weight:650}.progress-table small{display:block;margin-top:6px;color:#c3ced3}.hand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}.hand-card{border:1px solid #39505c;border-radius:12px;padding:20px;background:#172129}.hand-card h3{margin-top:0}.hand-card p{line-height:1.58}.hand-card ul{padding-left:20px;line-height:1.55}.change-list{padding-left:22px;line-height:1.65}.change-list li{margin:10px 0}.older-history{margin-top:20px;border:1px solid #39505c;border-radius:12px;padding:0 18px;background:#172129}.older-history>summary{padding:16px 0;font-weight:750;cursor:pointer}.older-history[open]>summary{border-bottom:1px solid #39505c}.older-history .hand-grid{padding:18px 0}.source-list{line-height:1.65}.source-list li{margin:7px 0}.status-plain{font-weight:700}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:5;background:#fff;color:#000;padding:10px}.progress-footer{margin-top:56px;padding-top:24px;border-top:1px solid #39505c}@media(max-width:720px){.progress-shell{padding:30px 16px 52px}.progress-table{min-width:0}.progress-table thead{display:none}.progress-table,.progress-table tbody,.progress-table tr,.progress-table td{display:block;width:100%}.progress-table tr{padding:12px 0;border-bottom:1px solid #39505c}.progress-table td{border:0;padding:6px 14px;box-sizing:border-box}.progress-table td::before{content:attr(data-label);display:block;font-size:.8rem;font-weight:750;color:#c9d5db;margin-bottom:2px}.progress-table td:first-child{padding-top:12px}.progress-table tr:last-child{border-bottom:0}.progress-note{padding:14px}.older-history{padding:0 14px}}
   </style>
 </head>
 <body>
@@ -27,7 +32,7 @@
 
     <p class="evidence-kicker">TEST RECORD · OCT 22, 2026, 6:30 AM EASTERN</p>
     <h1>Progress, real-device testing, and what is still unknown.</h1>
-<aside class="catalog-note" data-release-notice="tester34-0.1.99"><p><strong>Current downloads:</strong> Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern.</p><p><strong>Device checks:</strong> Android tester34 was tried on four phones on Oct 22, 2026 and Windows 0.1.98 on a PC on Oct 21. They found failures, listed in the <a href="release-evidence.html#oct22-runs">release evidence</a>; the fixes are written and in review, not released or retested. Every phone was muted. Windows 0.1.99 has had one self-update and no other hands-on run, and Beebo Auto 1.20 has not been in a car. <a href="release-history.html">Read the release notes and limits</a>.</p></aside>
+<aside class="catalog-note" data-release-notice="tester34-0.1.99"><p><strong>Current downloads:</strong> Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern.</p><p><strong>Device checks:</strong> Android tester34 was tried on four phones on Oct 22, 2026 and Windows 0.1.98 on a PC on Oct 21. They found failures, listed in the <a href="release-evidence.html#oct22-runs">release evidence</a>; some fixes are merged in the code and the rest are still in testing; none is released or retested. Every phone was muted. Windows 0.1.99 has had one self-update and no other hands-on run, and Beebo Auto 1.20 has not been in a car. <a href="release-history.html">Read the release notes and limits</a>.</p></aside>
     <p class="progress-intro">This is the full, dated picture behind our status pages. It separates checked code from a person using a real device. It does not mean every path works, and it does not turn an untested path into a pass.</p>
     <div class="progress-note"><strong>How to read the percentages.</strong> Since Oct 22, 2026, 6:30 AM Eastern this table uses the same method as the <a href="release-evidence.html#code-status">release evidence page</a>, so the two pages agree. Each area is the average of its feature rows there. “Code checklist” is the share of the two code checks (<em>Built</em> and <em>Automated tests</em>) that passed; <strong>100% there does not mean no code is left</strong>, and the open code items are counted under each figure. “Human testing done” is the share of the three human checks (<em>Real device</em>, <em>Real-world check</em> and <em>Ready to call Available</em>) that passed; the small print under it says on how many rows the Real device check is ticked and how many rows are confirmed on real devices. <strong>No row is confirmed on real devices yet.</strong> The older table showed “Human-device 100%” for seven single-row areas because it counted only the Real device tick; that is why those numbers fell. These are checklist measures, not a claim of bug-free software. Areas overlap when a feature belongs to both a platform and a named slice. If we have no comparable checklist rows, the page says <strong>not measured yet</strong>.</div>
 
@@ -52,14 +57,14 @@
 <td data-label="Movement">
 <strong>0 code / −4 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data; the area went from 19 to 21 rows.</small>
 </td>
-<td data-label="Evidence">Oct 21 and 22: a hands-on run on Windows 0.1.98 (nine areas, no failures; the picture frame passed 10 of 11 checks) and a test-library run (29 passed, 3 failed, 6 blocked, 3 not run). A Windows test PC updated itself from 0.1.98 to 0.1.99 at about 2:34 AM Eastern on Oct 22. In the browser, opening a film through the away address failed (the fix is in review, not released). Not tested: a second PC, sound heard by a person, a restricted profile on the PC itself, the signed-in web library.</td>
+<td data-label="Evidence">Oct 21 and 22: a hands-on run on Windows 0.1.98 (nine areas, no failures; the picture frame passed 10 of 11 checks) and a test-library run (29 passed, 3 failed, 6 blocked, 3 not run). A Windows test PC updated itself from 0.1.98 to 0.1.99 at about 2:34 AM Eastern on Oct 22. In the browser, opening a film through the away address failed (the fix is still in testing and not released). Not tested: a second PC, sound heard by a person, a restricted profile on the PC itself, the signed-in web library.</td>
 </tr>
             <tr>
 <td data-label="Area">
 <strong>Android phone</strong>
 </td>
 <td data-label="Code checklist">
-<span class="metric">95%</span><small>32 rows; 12 code items still listed.</small>
+<span class="metric">95%</span><small>32 rows; 10 code items still listed.</small>
 </td>
 <td data-label="Human testing done">
 <span class="metric">34%</span><small>Real device ticked on 26 of 32; confirmed on real devices: 0 of 32.</small>
@@ -67,7 +72,7 @@
 <td data-label="Movement">
 <strong>0 code / −3 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data; the area went from 30 to 32 rows.</small>
 </td>
-<td data-label="Evidence">Oct 22: Android tester34 on four phones (muted). Tried: five tabs, playback, Watch Together, Campsite, cast controls, music, audiobooks, photos and a child profile; no crash. Failures (fixes in review, not released): subtitle and version pickers missing, Next on a saved episode online, text cut off at 150% text, the guest page after the host stops, child-profile photos. Not tested: sound heard by a person, TalkBack, Chromecast TV picture and sound, mobile data.</td>
+<td data-label="Evidence">Oct 22: Android tester34 on four phones (muted). Tried: five tabs, playback, Watch Together, Campsite, cast controls, music, audiobooks, photos and a child profile; no crash. Failures (fixes merged in the code or still in testing, none released): subtitle and version pickers missing, Next on a saved episode online, text cut off at 150% text, the guest page after the host stops, child-profile photos. Not tested: sound heard by a person, TalkBack, Chromecast TV picture and sound, mobile data.</td>
 </tr>
             <tr>
 <td data-label="Area">
@@ -202,7 +207,7 @@
 <td data-label="Movement">
 <strong>0 code / −17 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
 </td>
-<td data-label="Evidence">Oct 13: Chrome at home opened 17 pages and played a film. Oct 22: opening a film through the away address failed (fix in review, not released); the Real-world check on the library, player and web player row was withdrawn. Windows 0.1.98: subtitles, audio tracks and chapters worked in the player. Not tested: Safari, Firefox, phone browsers.</td>
+<td data-label="Evidence">Oct 13: Chrome at home opened 17 pages and played a film. Oct 22: opening a film through the away address failed (fix still in testing, not released); the Real-world check on the library, player and web player row was withdrawn. Windows 0.1.98: subtitles, audio tracks and chapters worked in the player. Not tested: Safari, Firefox, phone browsers.</td>
 </tr>
             <tr>
 <td data-label="Area">
@@ -217,7 +222,7 @@
 <td data-label="Movement">
 <strong>Old table 100%, now 0%</strong><small>The old 100% rested on one phone-backup check on Oct 12 that was not a ticked row on the evidence page. This area is now its own row there, with no Real device tick because the Oct 22 child-profile run failed.</small>
 </td>
-<td data-label="Evidence">Oct 22: a normal member saw photos on a Galaxy S25; every picture was blank for a child profile on a Galaxy S9+ (fix in review). Oct 12: three files went from a phone to a PC. The photo map and the removal step were not tried.</td>
+<td data-label="Evidence">Oct 22: a normal member saw photos on a Galaxy S25; every picture was blank for a child profile on a Galaxy S9+ (fix partly merged, partly in testing; not released). Oct 12: three files went from a phone to a PC. The photo map and the removal step were not tried.</td>
 </tr>
             <tr>
 <td data-label="Area">
@@ -269,7 +274,7 @@
 <strong>Accessibility</strong>
 </td>
 <td data-label="Code checklist">
-<span class="metric">100%</span><small>2 rows; 3 code items still listed.</small>
+<span class="metric">100%</span><small>2 rows; 2 code items still listed.</small>
 </td>
 <td data-label="Human testing done">
 <span class="metric">17%</span><small>Real device ticked on 1 of 2; confirmed on real devices: 0 of 2.</small>
@@ -277,7 +282,7 @@
 <td data-label="Movement">
 <strong>0 code / 0 human points</strong><small>Against the same method on the Oct 21, 3:46 PM Eastern data.</small>
 </td>
-<td data-label="Evidence">Oct 22: text is cut off at 150% text on four phones (fix in review, not released). TalkBack, a Windows screen reader and high contrast are not tested.</td>
+<td data-label="Evidence">Oct 22: text is cut off at 150% text on four phones (fix merged in the code, not released). TalkBack, a Windows screen reader and high contrast are not tested.</td>
 </tr>
             <tr>
 <td data-label="Area">
@@ -364,13 +369,13 @@
 <h3>Oct 22 · Four phones on Android tester34 (muted)</h3>
 <p>
 <strong>Passed:</strong> the five tabs on a Pixel 3, a Galaxy S24 Ultra, a Galaxy S25 and a Galaxy S9+ with no crash logged; playback with Original and 720p; Watch Together between a Galaxy S25 and a Galaxy S9+ (play, seek and pause followed within 1 to 3 seconds); Campsite join and a finished Tic-Tac-Toe game; cast controls to a real Chromecast TV; music, audiobook resume after a force-stop, Radio and podcast search; genre names in French, German and Spanish; photos for a normal member; a child profile that saw only G and PG films.</p>
-<p><strong>Failed:</strong> no way to choose embedded subtitles, no sidecar subtitles and no version picker on the Galaxy S25; Next on a saved episode online skipped a saved episode when one in between was missing; text cut off at 150% text on all four phones; the Campsite guest page said nothing after the host stopped; pictures did not load for a child profile; a child profile&rsquo;s Movie Night page showed a raw error. The fixes are written and in review, not released. <strong>Not tested:</strong> any sound heard by a person, real screen-off sound, picture and sound on the TV, TalkBack, mobile data, Italian and Portuguese.</p>
+<p><strong>Failed:</strong> no way to choose embedded subtitles, no sidecar subtitles and no version picker on the Galaxy S25; Next on a saved episode online skipped a saved episode when one in between was missing; text cut off at 150% text on all four phones; the Campsite guest page said nothing after the host stopped; pictures did not load for a child profile; a child profile&rsquo;s Movie Night page showed a raw error. Some fixes are merged in the code and the rest are still in testing; none is released or retested. <strong>Not tested:</strong> any sound heard by a person, real screen-off sound, picture and sound on the TV, TalkBack, mobile data, Italian and Portuguese.</p>
 </article>
         <article class="hand-card">
 <h3>Oct 21 and 22 · Windows 0.1.98 and a browser through the away address</h3>
 <p>
 <strong>Passed:</strong> a hands-on run on Windows 0.1.98 (nine areas, no failures, including 10 of 11 picture-frame checks); a test library run (29 passed): the five folder types, embedded and sidecar subtitles, three audio tracks, chapters and a version picker; a Windows test PC updated itself to 0.1.99 on Oct 22 and ran normally.</p>
-<p><strong>Failed:</strong> a folder&rsquo;s own poster and NFO files were not used; audiobook resume and an audiobook description showing &ldquo;[object Object]&rdquo; (both fixed in 0.1.99, not re-run); and on Oct 22 a browser could not open a film through the away address (the player is discarded when the page reloads; the fix is in review, not released). <strong>Not tested:</strong> a second PC, sound by ear, the web library signed in, a restricted profile on the PC itself, the picture frame on a tablet or TV.</p>
+<p><strong>Failed:</strong> a folder&rsquo;s own poster and NFO files were not used; audiobook resume and an audiobook description showing &ldquo;[object Object]&rdquo; (both fixed in 0.1.99, not re-run); and on Oct 22 a browser could not open a film through the away address (the player is discarded when the page reloads; the fix is still in testing and not released). <strong>Not tested:</strong> a second PC, sound by ear, the web library signed in, a restricted profile on the PC itself, the picture frame on a tablet or TV.</p>
 </article>
         <article class="hand-card"><h3>Oct 12 · Two homes and a phone on 5G</h3><p><strong>Passed:</strong> direct and Relay playback, network switching, two direct viewers, library sharing from invite through stopping access, phone backup, browse, favourites, playlists, radio, podcasts, Campsite host/guest setup, landscape and restart.</p><p><strong>Not tested:</strong> two people on Relay, a friend's Chromecast, Beebo Auto in a car, a real TV pairing code, TalkBack and the newest fixes on real devices.</p></article>
         <article class="hand-card"><h3>Oct 12 · Windows desktop walk</h3><p><strong>Passed:</strong> about 35 screens were opened and looked right on the unpublished 0.1.88 test build, including media areas, admin screens and all eight Settings pages.</p><p><strong>Found:</strong> settings search missed the intro/skip section, and the window did not stay maximized when brought forward. <strong>Not tested:</strong> sign-out, signed-in browser player, subtitles, track switching, PiP, keyboard-only use, high contrast and 150% scaling.</p></article>
