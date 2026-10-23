@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 22, 2026, 3:48 PM Eastern",
-    "updatedIso": "2026-10-22T15:48:00-04:00",
+    "updatedEastern": "Oct 22, 2026, 8:22 PM Eastern",
+    "updatedIso": "2026-10-22T20:22:00-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -359,7 +359,7 @@
       "area": "android",
       "name": "Playing films: resume, seek, pause and the quality menu",
       "status": "Available",
-      "evidence": "Oct 22 test-build update: RETEST-1 on tester35 with Windows 0.1.100: the S9+ Subtitle Test started promptly and played the 30-second clip twice; the landscape subtitle sheet and English/Spanish selection worked. On the S25, version selection between 1080p and 720p worked and 720p stayed selected. FAIL: listed/selected English and Spanish sidecar files drew no subtitle text. PARTIAL: online Next jumped to the next season once, then the expected same-season episode on three later tries; offline Next passed with existing downloads. Earlier unexplained Pixel Next behavior remains open; a stale queue is a hypothesis. The screen-off switch kept Android’s PLAYING state, not sound heard by a person. French player labels appeared on the Pixel.",
+      "evidence": "Oct 22 test-build update: RETEST-1 on tester35 with Windows 0.1.100: the S9+ Subtitle Test started promptly and played the 30-second clip twice; the landscape subtitle sheet listed English and Spanish, and the button labels followed those choices. That item does not establish that the chosen language appeared in the picture. On the S25, version selection between 1080p and 720p worked and 720p stayed selected. FAIL: listed/selected English and Spanish sidecar files drew no subtitle text. PARTIAL: online Next jumped to the next season once, then the expected same-season episode on three later tries; offline Next passed with existing downloads. Earlier unexplained Pixel Next behavior remains open; a stale queue is a hypothesis. The screen-off switch kept Android’s PLAYING state, not sound heard by a person. French player labels appeared on the Pixel.",
       "realTest": "yes"
     },
     {
