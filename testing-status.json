@@ -1,7 +1,7 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+    "updatedEastern": "Oct 23, 2026, 11:05 AM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. The separate Human testing done figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
@@ -581,7 +581,7 @@
     "evidenceLimit": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+    "updatedEastern": "Oct 23, 2026, 11:05 AM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Human testing done is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
@@ -1009,8 +1009,8 @@
     "summary": "The downloads are Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.99 and Android 1.51-tester34 add audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-23T09:49:00-04:00",
-  "updatedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+  "updated": "2026-10-23T11:05:00-04:00",
+  "updatedEastern": "Oct 23, 2026, 11:05 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Our test process uses AI testers on real devices for that check. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 64,
@@ -1037,7 +1037,7 @@
       "lastTested": "Oct 22, 2026 (tester34 on four phones); Oct 14, 2026 (published tester23 on four phones)",
       "leftToReach100": "Run a TalkBack (screen reader) pass and get a final review of the newest build; the Oct 14 runs covered the published tester23 on four phones, without TalkBack.",
       "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
         {
@@ -1157,7 +1157,7 @@
       },
       "lastTested": "Oct 22, 2026 (tester34 on four phones, muted; subtitle and version pickers FAILED on the S25); Oct 14, 2026 (published tester23 on four phones)",
       "leftToReach100": "Open known issues (they cap the score at 90%): sidecar subtitles can be selected but no text appears, and the first online Next jump goes to the next season. Repair sidecar subtitle rendering; reproduce intermittent online Next and earlier Pixel behavior. Retest clean/current builds, rotation and sound heard by a person. Narrow tester35 selection/start passes do not close the whole feature.",
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 2 open known issues cap the score at 90%.",
       "previousPercent": 85,
       "changeHistory": [
@@ -1349,7 +1349,7 @@
         ]
       },
       "previousPercent": 85,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 2 open known issues cap the score at 90%.",
       "changeHistory": [
         {
@@ -1424,7 +1424,7 @@
       "lastTested": "Oct 22, 2026 (tester34, two phones on one home Wi-Fi); Oct 13, 2026 (two real phones on home Wi-Fi)",
       "leftToReach100": "Close and reopen the app to confirm it rejoins, try chat and reactions and a phone on mobile data, then run a readiness review on the published download.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -1536,7 +1536,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -1601,7 +1601,7 @@
         ]
       },
       "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
         {
@@ -1660,7 +1660,7 @@
       "lastTested": "Oct 22, 2026 (Surprise me on the S25 and Pixel 3); Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (test build)",
       "leftToReach100": "Settle how Surprise me should behave (title page first or play at once), then test stars and playlists on a phone.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -1776,7 +1776,7 @@
         ]
       },
       "previousPercent": 85,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 2 open known issues cap the score at 90%.",
       "changeHistory": [
         {
@@ -1842,7 +1842,7 @@
       "lastTested": "Oct 22, 2026 (Pixel 3: radio started in 2 seconds, podcast search listed shows; Follow not tried); Oct 14, 2026 (published tester23, Galaxy S9+: radio played, Follow still FAILING)",
       "leftToReach100": "Re-test Follow on a new podcast (fixed in the code; it failed on Oct 13), then test screen-off listening, downloads and the queue. Podcast import from an OPML file or a pasted link/name is In development and next-release work; test duplicates and failed imports after release.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -1989,7 +1989,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -2094,7 +2094,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -2162,7 +2162,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -2246,7 +2246,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -2346,7 +2346,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -2411,7 +2411,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -2469,7 +2469,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -2544,7 +2544,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -2596,7 +2596,7 @@
       "lastTested": "Oct 22, 2026 (S25 cast controls passed; TV picture and sound not confirmed); Oct 13, 2026 (a person watched the TV)",
       "leftToReach100": "Try other TVs and receivers, converted films, subtitles while casting and a second sender; phone volume buttons do not control the TV volume and are not claimed.",
       "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
         {
@@ -2727,7 +2727,7 @@
         ]
       },
       "previousPercent": 85,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score stays at 85%; its record limit is unchanged. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
@@ -2796,7 +2796,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -2844,7 +2844,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -2899,7 +2899,7 @@
         ]
       },
       "previousPercent": 20,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 20% to 25%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 50,
       "realWorldDonePercent": 0,
@@ -3001,7 +3001,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -3059,7 +3059,7 @@
       "lastTested": "Oct 22, 2026 (tester34: clipping at 150% text on four phones); Oct 14, 2026 (published tester23; Large playback controls FAILED, low confidence)",
       "leftToReach100": "After release, check the new Android screens and layouts with TalkBack, 200% text, high contrast, landscape and large playback controls on real phones.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -3182,7 +3182,7 @@
       "lastTested": "Oct 22, 2026 (tester34: Pixel 3 and Galaxy S25, muted); Oct 14, 2026 (published tester23, four phones)",
       "leftToReach100": "Have a person listen to real music on the phone and test crossfade, gapless, the queue and album and artist radio.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
@@ -3266,7 +3266,7 @@
       "lastTested": "Oct 13, 2026",
       "leftToReach100": "Use it with a real family for a few days, check that Add is reachable with the keyboard open (fixed in the code), make the Enter key add a name, and test Games together.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
       "roadTo100": {
@@ -3322,7 +3322,7 @@
       "lastTested": "Oct 13, 2026 (two real phones)",
       "leftToReach100": "Test ticking items off offline and syncing later, then use it on a real trip and get a readiness review on the published download.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download, on home Wi-Fi.",
       "roadTo100": {
@@ -3373,7 +3373,7 @@
       "lastTested": "Oct 13, 2026",
       "leftToReach100": "Test adding and duplicating a recipe, scaling real amounts and a list across recipes.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
       "roadTo100": {
@@ -3424,7 +3424,7 @@
       "lastTested": "Oct 14, 2026 (published tester23); Oct 13, 2026 (test build)",
       "leftToReach100": "Send a real request and confirm it reaches the owner, and test the Complete filter and the trailer buttons. A fuller media-requests and wishlist feature is only an idea.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
@@ -3481,7 +3481,7 @@
       "lastTested": "Oct 22, 2026 (tester34: normal test member passed, child test profile FAILED); Oct 21, 2026 (Windows 0.1.98 test library)",
       "leftToReach100": "Keep the narrow S9+ child-picture pass; check map/privacy, removal, real pinch, a full phone folder and backup behavior on current builds.",
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -3566,7 +3566,7 @@
       "lastTested": "Oct 21, 2026 (tester33: opt-in preview text and the two confirmation dialogs; recording a milestone not run)",
       "leftToReach100": "Turn it on as a host, opt in as a person, record a Camp Jobs and a time-together milestone, clear them and check the keep-for choices on real phones.",
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -3627,7 +3627,7 @@
       "lastTested": "Oct 22, 2026 (0.1.98 to 0.1.99 on one PC); Oct 13, 2026 (update check only)",
       "leftToReach100": "Install over an older version by a person, see the low-disk warning on a real PC, check uninstall removes the start-at-boot task, and get an update-safety review.",
       "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
         {
@@ -3703,7 +3703,7 @@
       "lastTested": "Oct 22, 2026 (browser could not open a film via the away address: FAILED); Oct 21, 2026 (Windows 0.1.98 test library); Oct 13, 2026 (all 27 desktop pages; signed-in browser player)",
       "leftToReach100": "Retest the combined server/unpublished-desktop repair on the affected PC and Samsung browser. Confirm TV/browser/served-build details, navigation without Reconnect each click, Up next/Next, subtitles, audio and other browsers. Folder poster/NFO and desktop version-heading checks remain open.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -3837,7 +3837,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -3889,7 +3889,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -3944,7 +3944,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -4008,7 +4008,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -4068,7 +4068,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -4145,7 +4145,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -4193,7 +4193,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -4274,7 +4274,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -4321,7 +4321,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -4394,7 +4394,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -4467,7 +4467,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -4523,7 +4523,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -4598,7 +4598,7 @@
         ]
       },
       "previousPercent": 85,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 3 open known issues cap the score at 90%.",
       "changeHistory": [
         {
@@ -4658,7 +4658,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -4687,7 +4687,7 @@
       "lastTested": "Oct 13, 2026 (two phones as a stereo pair; alignment not proven)",
       "leftToReach100": "Measure real alignment (a recording of both speakers), fix the PC speaker seat, the Add output button and the extra player windows, and test surround, more than two phones, a late joiner and seeking.",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published); Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both opened in the phone browser on home Wi-Fi (no app needed).",
       "roadTo100": {
@@ -4743,7 +4743,7 @@
       "lastTested": "Oct 21, 2026 (Windows 0.1.98: mix of 23 songs advanced; muted); Oct 13, 2026 (the desktop player FAILED to play)",
       "leftToReach100": "Hear the music in the real desktop window and confirm sound by ear, then test queue, gapless and radio.",
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with three computer-made sample songs.",
       "roadTo100": {
@@ -4801,7 +4801,7 @@
       "lastTested": "Oct 13, 2026",
       "leftToReach100": "Test row dragging, keyboard row moves, Comfortable density and layout share and import; re-check that the layout list closes after each choice (fixed in the code).",
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with a small sample library.",
       "roadTo100": {
@@ -4853,7 +4853,7 @@
       "lastTested": "Oct 21, 2026 (Windows 0.1.98, PC browser: 10 checks passed, 1 not run)",
       "leftToReach100": "Try it on a real tablet, phone or TV browser with a QR scanned by a camera, plus link expiry, \"always off\" and \"only when someone is home\".",
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -4918,7 +4918,7 @@
       "lastTested": "Oct 21, 2026 (Windows 0.1.98: the panel was opened read-only in English, French and German; nothing was sent)",
       "leftToReach100": "Send a real message and see it on phones and in a browser, then try Listen, quiet hours and that guests are left out.",
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -5000,7 +5000,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -5054,7 +5054,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -5083,7 +5083,7 @@
       "lastTested": "Automated tests only, run on Windows (Oct 9, 2026). Never run on a Mac.",
       "leftToReach100": "Run on Intel and Apple Silicon Macs, and Nick decides about signing.",
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -5158,7 +5158,7 @@
         ]
       },
       "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
@@ -5219,7 +5219,7 @@
         ]
       },
       "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
         {
@@ -5290,7 +5290,7 @@
         ]
       },
       "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
@@ -5341,7 +5341,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -5392,7 +5392,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -5443,7 +5443,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -5503,7 +5503,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -5552,7 +5552,7 @@
         ]
       },
       "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -5590,7 +5590,7 @@
       "lastTested": "Owner test on one Windows PC, a few days before Oct 7, 2026 (exact date not recorded), on an earlier build",
       "leftToReach100": "BeeboVPN is In development. The owner connected one phone using the standard WireGuard app; that does not establish a BeeboVPN Android app or public sale.",
       "previousPercent": 55,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score stays at 55%; its record limit is unchanged. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
         {
@@ -5678,7 +5678,7 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
       "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
@@ -5901,8 +5901,8 @@
   },
   "historyNew": [
     {
-      "iso": "2026-10-23T09:49:00-04:00",
-      "date": "Oct 23, 2026, 9:49 AM Eastern",
+      "iso": "2026-10-23T11:05:00-04:00",
+      "date": "Oct 23, 2026, 11:05 AM Eastern",
       "headline": "New scoring: 99% means tested and working; the last 1% is a human look",
       "tested": "No new feature test was run. This update changes the score weights and explanation. All feature checks, open-issue counts, test dates and recorded evidence are unchanged.",
       "happened": "Built counts 24, Automated tests 25, Real device 25 and Real-world check 25. These add up to 99. Only Nick records the last point after he or a tester has looked and said Ready. Open known errors cap a score at 90%; existing lower record limits remain. 7 features reach 99% under the existing checks, with no open known error recorded. Their individual evidence limits remain visible. No feature is at 100%. The overall average moves from 56% to 64%. Android phone app: 63% to 71%; Windows desktop app: 54% to 63%; Other systems: 48% to 57%; Services and website: 44% to 50%. This is a scoring change, not new evidence or an availability change."
