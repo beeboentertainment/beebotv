@@ -1009,8 +1009,8 @@
     "summary": "The downloads are Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.99 and Android 1.51-tester34 add audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-23T09:15:00-04:00",
-  "updatedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+  "updated": "2026-10-23T09:21:00-04:00",
+  "updatedEastern": "Oct 23, 2026, 9:21 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "percentComplete adds up five checks: Built 20, Automated tests 20, Real device 25, Real-world check 25 and Ready to call Available 10. The first four add up to 90. The last 10 are Nick's: only he can say a feature is Ready. 90% means the code is built, it passed the phone or PC test and no error is known; the only thing left is Nick saying Ready. A feature can reach 90 only when all four of those checks passed and it has no open known problem (openIssues is 0). With an open known problem it stays at 85 or below. At exactly 90 the label is \"Built and fully tested, waiting for Nick\". At 100 it is \"Ready\". The score measures how much of our test list has passed. It does not mean a feature is bug-free. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 56,
@@ -1037,7 +1037,7 @@
       "lastTested": "Oct 22, 2026 (tester34 on four phones); Oct 14, 2026 (published tester23 on four phones)",
       "leftToReach100": "Run a TalkBack (screen reader) pass and get a final review of the newest build; the Oct 14 runs covered the published tester23 on four phones, without TalkBack.",
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
       "changeHistory": [
         {
@@ -1153,7 +1153,7 @@
       },
       "lastTested": "Oct 22, 2026 (tester34 on four phones, muted; subtitle and version pickers FAILED on the S25); Oct 14, 2026 (published tester23 on four phones)",
       "leftToReach100": "Open known issues (they cap the score at 85%): sidecar subtitles can be selected but no text appears, and the first online Next jump goes to the next season. Repair sidecar subtitle rendering; reproduce intermittent online Next and earlier Pixel behavior. Retest clean/current builds, rotation and sound heard by a person. Narrow tester35 selection/start passes do not close the whole feature.",
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 2 open known issues cap it at 85%.",
       "previousPercent": 80,
       "changeHistory": [
@@ -1341,7 +1341,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 2 open known issues cap it at 85%.",
       "changeHistory": [
         {
@@ -1412,7 +1412,7 @@
       "lastTested": "Oct 22, 2026 (tester34, two phones on one home Wi-Fi); Oct 13, 2026 (two real phones on home Wi-Fi)",
       "leftToReach100": "Close and reopen the app to confirm it rejoins, try chat and reactions and a phone on mobile data, then run a readiness review on the published download.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -1520,7 +1520,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -1581,7 +1581,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
       "changeHistory": [
         {
@@ -1636,7 +1636,7 @@
       "lastTested": "Oct 22, 2026 (Surprise me on the S25 and Pixel 3); Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (test build)",
       "leftToReach100": "Settle how Surprise me should behave (title page first or play at once), then test stars and playlists on a phone.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -1748,7 +1748,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 2 open known issues cap it at 85%.",
       "changeHistory": [
         {
@@ -1810,7 +1810,7 @@
       "lastTested": "Oct 22, 2026 (Pixel 3: radio started in 2 seconds, podcast search listed shows; Follow not tried); Oct 14, 2026 (published tester23, Galaxy S9+: radio played, Follow still FAILING)",
       "leftToReach100": "Re-test Follow on a new podcast (fixed in the code; it failed on Oct 13), then test screen-off listening, downloads and the queue. Podcast import from an OPML file or a pasted link/name is In development and next-release work; test duplicates and failed imports after release.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -1953,7 +1953,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -2054,7 +2054,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -2118,7 +2118,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -2198,7 +2198,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -2294,7 +2294,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -2355,7 +2355,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -2409,7 +2409,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -2480,7 +2480,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -2528,7 +2528,7 @@
       "lastTested": "Oct 22, 2026 (S25 cast controls passed; TV picture and sound not confirmed); Oct 13, 2026 (a person watched the TV)",
       "leftToReach100": "Try other TVs and receivers, converted films, subtitles while casting and a second sender; phone volume buttons do not control the TV volume and are not claimed.",
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
       "changeHistory": [
         {
@@ -2655,7 +2655,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. It is capped at 85%; see the record limit.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
@@ -2762,7 +2762,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -2963,7 +2963,7 @@
       "lastTested": "Oct 22, 2026 (tester34: clipping at 150% text on four phones); Oct 14, 2026 (published tester23; Large playback controls FAILED, low confidence)",
       "leftToReach100": "After release, check the new Android screens and layouts with TalkBack, 200% text, high contrast, landscape and large playback controls on real phones.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -3082,7 +3082,7 @@
       "lastTested": "Oct 22, 2026 (tester34: Pixel 3 and Galaxy S25, muted); Oct 14, 2026 (published tester23, four phones)",
       "leftToReach100": "Have a person listen to real music on the phone and test crossfade, gapless, the queue and album and artist radio.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
@@ -3162,7 +3162,7 @@
       "lastTested": "Oct 13, 2026",
       "leftToReach100": "Use it with a real family for a few days, check that Add is reachable with the keyboard open (fixed in the code), make the Enter key add a name, and test Games together.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
       "roadTo100": {
@@ -3214,7 +3214,7 @@
       "lastTested": "Oct 13, 2026 (two real phones)",
       "leftToReach100": "Test ticking items off offline and syncing later, then use it on a real trip and get a readiness review on the published download.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "testedOn": "Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download, on home Wi-Fi.",
       "roadTo100": {
@@ -3261,7 +3261,7 @@
       "lastTested": "Oct 13, 2026",
       "leftToReach100": "Test adding and duplicating a recipe, scaling real amounts and a list across recipes.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
       "roadTo100": {
@@ -3308,7 +3308,7 @@
       "lastTested": "Oct 14, 2026 (published tester23); Oct 13, 2026 (test build)",
       "leftToReach100": "Send a real request and confirm it reaches the owner, and test the Complete filter and the trailer buttons. A fuller media-requests and wishlist feature is only an idea.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
@@ -3498,7 +3498,7 @@
       "lastTested": "Oct 22, 2026 (0.1.98 to 0.1.99 on one PC); Oct 13, 2026 (update check only)",
       "leftToReach100": "Install over an older version by a person, see the low-disk warning on a real PC, check uninstall removes the start-at-boot task, and get an update-safety review.",
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
       "changeHistory": [
         {
@@ -3570,7 +3570,7 @@
       "lastTested": "Oct 22, 2026 (browser could not open a film via the away address: FAILED); Oct 21, 2026 (Windows 0.1.98 test library); Oct 13, 2026 (all 27 desktop pages; signed-in browser player)",
       "leftToReach100": "Retest the combined server/unpublished-desktop repair on the affected PC and Samsung browser. Confirm TV/browser/served-build details, navigation without Reconnect each click, Up next/Next, subtitles, audio and other browsers. Folder poster/NFO and desktop version-heading checks remain open.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -3748,7 +3748,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -3859,7 +3859,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -4148,7 +4148,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -4217,7 +4217,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -4338,7 +4338,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
@@ -4409,7 +4409,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 3 open known issues cap it at 85%.",
       "changeHistory": [
         {
@@ -4488,7 +4488,7 @@
       "lastTested": "Oct 13, 2026 (two phones as a stereo pair; alignment not proven)",
       "leftToReach100": "Measure real alignment (a recording of both speakers), fix the PC speaker seat, the Add output button and the extra player windows, and test surround, more than two phones, a late joiner and seeking.",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published); Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both opened in the phone browser on home Wi-Fi (no app needed).",
       "roadTo100": {
@@ -4594,7 +4594,7 @@
       "lastTested": "Oct 13, 2026",
       "leftToReach100": "Test row dragging, keyboard row moves, Comfortable density and layout share and import; re-check that the layout list closes after each choice (fixed in the code).",
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with a small sample library.",
       "roadTo100": {
@@ -4779,7 +4779,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -4923,7 +4923,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
@@ -4980,7 +4980,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
       "changeHistory": [
         {
@@ -5047,7 +5047,7 @@
         ]
       },
       "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
@@ -5186,7 +5186,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
@@ -5285,7 +5285,7 @@
         ]
       },
       "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:15 AM Eastern",
+      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
       "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
       "changeHistory": [
         {
