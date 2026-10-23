@@ -1,34 +1,34 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+    "updatedEastern": "Oct 23, 2026, 7:54 PM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. The separate Human testing done figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
-      "humanTestingDone": 29,
+      "humanTestingDone": 31,
       "features": 70,
-      "codeItemsLeft": 37,
+      "codeItemsLeft": 39,
       "counts": {
         "confirmed-on-real-devices": 0,
-        "code-complete-needs-real-world-testing": 33,
-        "code-still-being-finished": 37
+        "code-complete-needs-real-world-testing": 31,
+        "code-still-being-finished": 39
       }
     },
     "groups": [
       {
         "name": "Android phone app",
         "codeDone": 95,
-        "humanTestingLeft": 61,
+        "humanTestingLeft": 56,
         "remaining": {
-          "CODE": 10,
-          "DEVICE": 51,
+          "CODE": 12,
+          "DEVICE": 52,
           "NICK": 5,
-          "BLOCKED": 26
+          "BLOCKED": 18
         },
         "counts": {
           "confirmed-on-real-devices": 0,
-          "code-complete-needs-real-world-testing": 22,
-          "code-still-being-finished": 10
+          "code-complete-needs-real-world-testing": 20,
+          "code-still-being-finished": 12
         },
         "features": [
           {
@@ -56,8 +56,8 @@
             "name": "Watch Together",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 0,
-            "realWorldStatus": "code-complete-needs-real-world-testing"
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Car party (host and passengers)",
@@ -76,7 +76,7 @@
           {
             "name": "Surprise me, playlists, watchlist, favourites",
             "codeDone": 100,
-            "humanTestingLeft": 67,
+            "humanTestingLeft": 33,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           },
@@ -90,7 +90,7 @@
           {
             "name": "Podcasts and radio",
             "codeDone": 100,
-            "humanTestingLeft": 67,
+            "humanTestingLeft": 33,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           },
@@ -98,8 +98,8 @@
             "name": "Audiobooks",
             "codeDone": 100,
             "humanTestingLeft": 67,
-            "codeItemsLeft": 0,
-            "realWorldStatus": "code-complete-needs-real-world-testing"
+            "codeItemsLeft": 1,
+            "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Pack for a trip (download planner)",
@@ -132,7 +132,7 @@
           {
             "name": "Wireless speakers",
             "codeDone": 100,
-            "humanTestingLeft": 67,
+            "humanTestingLeft": 33,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           },
@@ -237,7 +237,7 @@
           {
             "name": "Collections and Request a title",
             "codeDone": 100,
-            "humanTestingLeft": 67,
+            "humanTestingLeft": 33,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           },
@@ -251,7 +251,7 @@
           {
             "name": "Family achievements (opt-in milestones)",
             "codeDone": 100,
-            "humanTestingLeft": 100,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           }
@@ -581,12 +581,12 @@
     "evidenceLimit": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+    "updatedEastern": "Oct 23, 2026, 7:54 PM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Human testing done is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
       "baseline": "The same method applied to the Oct 21, 2026, 3:46 PM Eastern data",
-      "current": "Oct 23, 2026 L3 Round 1 phone ledger, report assembled 12:19 PM Eastern; new ticks only for fully passed named automatable sets; all other groups retain their evidence."
+      "current": "Oct 23, 2026 L3 Round 3 ledger, updated 6:47 PM Eastern: ten passed Android A scopes, exact Last PASS builds/times and carried checks; six proven device bugs remain open. Non-Android feature evidence is unchanged."
     },
     "areas": [
       {
@@ -626,8 +626,8 @@
         "name": "Android phone",
         "rows": 32,
         "codeChecklistPercent": 95,
-        "humanTestingDonePercent": 39,
-        "realDeviceTickedRows": 26,
+        "humanTestingDonePercent": 44,
+        "realDeviceTickedRows": 27,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 95,
         "wasHumanTestingDonePercent": 37,
@@ -805,7 +805,7 @@
         "name": "Music, podcasts and audiobooks",
         "rows": 4,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 33,
+        "humanTestingDonePercent": 42,
         "realDeviceTickedRows": 3,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
@@ -821,8 +821,8 @@
         "name": "Recipes and family",
         "rows": 4,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 50,
-        "realDeviceTickedRows": 3,
+        "humanTestingDonePercent": 59,
+        "realDeviceTickedRows": 4,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
         "wasHumanTestingDonePercent": 33,
@@ -906,8 +906,8 @@
         "name": "New features: picture frame, Kitchen announcements, Family achievements",
         "rows": 3,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 0,
-        "realDeviceTickedRows": 0,
+        "humanTestingDonePercent": 11,
+        "realDeviceTickedRows": 1,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": null,
         "wasHumanTestingDonePercent": null,
@@ -1009,13 +1009,13 @@
     "summary": "The downloads are Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.99 and Android 1.51-tester34 add audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-23T13:35:17-04:00",
-  "updatedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+  "updated": "2026-10-23T19:54:38-04:00",
+  "updatedEastern": "Oct 23, 2026, 7:54 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Our test process uses AI testers on real devices for that check. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
-  "overallAveragePercent": 65,
+  "overallAveragePercent": 67,
   "groupAveragePercent": {
-    "Android phone app": 74,
+    "Android phone app": 78,
     "Windows desktop app": 63,
     "Other systems": 57,
     "Services and website": 50
@@ -1034,12 +1034,16 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Open known issue (one; score capped at 90%): warm pairing on tester35 did not update Home, although cold pairing worked. Protected pairing review and a mapped fixed-build retry are needed; the S24 retry was blocked to preserve its real sign-in. Human look: listen with TalkBack across all five tabs and have Nick record Ready.",
-      "previousPercent": 99,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 3 PASS, 1 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "lastTested": "Oct 23, 2026, 6:47 PM Eastern (Round 3 ledger update; individual retest times are in the source evidence)",
+      "leftToReach100": "Open known issue P-PAIR-01 (one; score capped at 90%): tester36 still keeps the old Home after a valid warm Setup link; the same cold link with Continue works. Obtain the protected pairing repair and a compatible installed-build retry. Human look: TalkBack across the five tabs; Nick alone records Ready.",
+      "previousPercent": 90,
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "Known-issue reconciliation from L3 Round 3, ledger updated Oct 23, 2026, 6:47 PM Eastern. Tester36/code86 retains P-PAIR-01. No device/real-world tick, Built, Automated tests, Ready or status label changed.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 3 PASS, 1 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply."
@@ -1095,7 +1099,8 @@
           "Limited check, Oct 19, 2026, 7:37 to 7:50 AM Eastern: the published Android 1.51-tester28 (build 78, installed over tester27) on a Google Pixel 3 (Android 12), home Wi-Fi direct route, signed in as the owner: cold start and all five tabs (Home, Browse, Library, Play, More) opened with content, the bottom bar stayed on one row, the Back button worked and no crash appeared in the log before or after. Percentage unchanged; other phones and TalkBack were not part of this check.",
           "Oct 22, 2026, tester34 (build 84): cold start and all five tabs opened with content on a Pixel 3, a Galaxy S24 Ultra, a Galaxy S25 and a Galaxy S9+; the crash log was empty on each. The phones were muted.",
           "RETEST-1 reports no crash-log entries and retained sign-in on the three named phones using tester35 with Windows 0.1.100. This is not a new full five-tab or TalkBack pass. Historical ticks stay unchanged.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ and Pixel 3 opened all five tabs; S24 opened the real library read only. Warm pairing did not update Home; the same link paired after a cold launch. S24 pairing retry was blocked to preserve its real sign-in. 3 PASS / 1 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ and Pixel 3 opened all five tabs; S24 opened the real library read only. Warm pairing did not update Home; the same link paired after a cold launch. S24 pairing retry was blocked to preserve its real sign-in. 3 PASS / 1 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "L3 Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issue P-PAIR-01 (one; score capped at 90%): tester36 still keeps the old Home after a valid warm Setup link; the same cold link with Continue works. Obtain the protected pairing repair and a compatible installed-build retry. Human look: TalkBack across the five tabs; Nick alone records Ready."
         ],
         "remaining": [
           {
@@ -1118,13 +1123,22 @@
           }
         ]
       },
-      "testedOn": "Galaxy S9+, Pixel 3 and Galaxy S24 Ultra (S24 read only); Beebo Android 1.51-tester35 (code 85). S9+ and Pixel 3 opened all five tabs; S24 opened the real library read only. Warm pairing did not update Home; the same link paired after a cold launch. S24 pairing retry was blocked to preserve its real sign-in. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "Pixel 3; S9+; S24 read only; installed Android 1.51-tester36 (code 86) for the failed retests, with older passes carried separately. Both compatible installed APK identities/hashes verified on tester36. Five-tab passes carried. P-PAIR-01 still reproduces on36. Installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782; coordinator-supplied source 78803a9f1bddd222c7da366b543803846f72e9c3, independent bytecode-to-source equivalence not proved. docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743. This entry preserves an open issue, not a new whole-feature PASS.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; failed real-phone retest)",
+          "device": "Pixel 3, S9+, S24 read only",
+          "build": "installed Android 1.51-tester36 (code 86)",
+          "date": "Oct 23, 2026, 6:47 PM Eastern",
+          "result": "FAIL",
+          "evidence": "Ledger update time only, not one timestamp for all retests. R3-F01-pair: PROVEN BUG P-PAIR-01; tester36 Pixel normal Setup: cold canonical47933 accepted. Valid warm alias47935 keeps47933; identical cold alias plus normal Continue fills47935. Canonical pinned Home and own testl31 sign-in restored. Evidence: round3/pairing/strict-field-comparison.json, round3/pairing/pixel-warm-alias.xml, round3/pairing/pixel-cold-alias.xml, round3/pairing/pixel-restored-member-home.xml. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Galaxy S9+, Pixel 3 and Galaxy S24 Ultra (S24 read only)",
@@ -1174,12 +1188,16 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Open known issues (two; score capped at 90%): selected sidecar subtitles show no text, and the earlier first online Next jump to the next season remains open. Retest a mapped fixed build; L3 reproduced the subtitle failure, and S24 had no cue fixture. Human look: sound, captions and rotation on the final build; Nick records Ready.",
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 3 PASS, 1 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "lastTested": "Oct 23, 2026, 6:47 PM Eastern (Round 3 ledger update; individual retest times are in the source evidence)",
+      "leftToReach100": "Open known issues (two; score capped at 90%): P-SUB-01 selected English sidecar captions remain absent, and online Next still skips an earlier phone-saved episode for the next season on tester36. Merge actual repairs and supply a compatible build before retest; an unmerged fix is not installed clearance. Human look: captions, sound and rotation; Nick alone records Ready.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "Known-issue reconciliation from L3 Round 3, ledger updated Oct 23, 2026, 6:47 PM Eastern. Tester36/code86 retains P-SUB-01 and online Next (existing issue). No device/real-world tick, Built, Automated tests, Ready or status label changed.",
       "previousPercent": 90,
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 3 PASS, 1 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 2 open known issues cap the score at 90%."
@@ -1231,7 +1249,8 @@
           "Code, Oct 18, 2026 (Android 1.51-tester27): the app now writes one timing line each time a film starts, with how long each preparation try took, so the cause of a slow start can be read from the phone log. The cause of the 50-second start on the S24 has NOT been found yet.",
           "Oct 22, 2026, tester34 (muted): Original and 720p played and switched without a stall on the Pixel 3 and the S25; the chapter list and chapter jumps worked on the S25; picture-in-picture opened on the S24 Ultra and the Pixel 3; the \"Up next\" card moved to the next episode by itself; the screen-off switch is now inside the Quality & audio sheet (off by default) and flipped on and off on the S25 and the Pixel 3 and seen on the S24 Ultra (already on there); one later Pixel 3 run did not find it (real screen-off sound was not tested); the Cast button opened the picker on all four phones.",
           "RETEST-1 on tester35 with Windows 0.1.100: the S9+ Subtitle Test started promptly and played the 30-second clip twice; the landscape subtitle sheet listed English and Spanish, and the button labels followed those choices. That item does not establish that the chosen language appeared in the picture. On the S25, version selection between 1080p and 720p worked and 720p stayed selected. FAIL: listed/selected English and Spanish sidecar files drew no subtitle text. PARTIAL: online Next jumped to the next season once, then the expected same-season episode on three later tries; offline Next passed with existing downloads. Earlier unexplained Pixel Next behavior remains open; a stale queue is a hypothesis. The screen-off switch kept Android’s PLAYING state, not sound heard by a person. French player labels appeared on the Pixel.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 displayed the synthetic film, paused, sought and entered picture-in-picture. English sidecar subtitles were selected but showed no cue at two known cue times. S24 lacked the cue fixture, so that retry was blocked. Muted. 3 PASS / 1 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 displayed the synthetic film, paused, sought and entered picture-in-picture. English sidecar subtitles were selected but showed no cue at two known cue times. S24 lacked the cue fixture, so that retry was blocked. Muted. 3 PASS / 1 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "L3 Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issues (two; score capped at 90%): P-SUB-01 selected English sidecar captions remain absent, and online Next still skips an earlier phone-saved episode for the next season on tester36. Merge actual repairs and supply a compatible build before retest; an unmerged fix is not installed clearance. Human look: captions, sound and rotation; Nick alone records Ready."
         ],
         "remaining": [
           {
@@ -1274,13 +1293,22 @@
           }
         ]
       },
-      "testedOn": "Pixel 3; Galaxy S24 Ultra fixture check only; Beebo Android 1.51-tester35 (code 85). Pixel 3 displayed the synthetic film, paused, sought and entered picture-in-picture. English sidecar subtitles were selected but showed no cue at two known cue times. S24 lacked the cue fixture, so that retry was blocked. Muted. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "Pixel 3; S9+; S24 controlled fixture blocked; installed Android 1.51-tester36 (code 86) for the failed retests, with older passes carried separately. On36, selected sidecar still has no cue and first online Next skips phone-saved S1E4 for S2E1. Earlier picture/seek/PiP passes carried. Installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782; coordinator-supplied source 78803a9f1bddd222c7da366b543803846f72e9c3, independent bytecode-to-source equivalence not proved. docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743. This entry preserves an open issue, not a new whole-feature PASS.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 2,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; failed real-phone retest)",
+          "device": "Pixel 3, S9+, S24 controlled fixture blocked",
+          "build": "installed Android 1.51-tester36 (code 86)",
+          "date": "Oct 23, 2026, 6:47 PM Eastern",
+          "result": "FAIL",
+          "evidence": "Ledger update time only, not one timestamp for all retests. R3-F02-cue: PROVEN BUG P-SUB-01; tester36 Pixel: English subtitle-file track selected, burned8.875 inside the8.267–10.667 English cue; caption absent with controls hidden. Existing P-SUB-01 reproduced. Evidence: round3/subtitles/pixel-track-chooser.xml, round3/subtitles/pixel-active-cue-tester36.png, round3/subtitles/pixel-active-cue-position.xml; R3-F02-online-next: PROVEN BUG online Next (existing issue); tester36 S9+: S1E4 saved locally, S1E2 not saved. Own server S1E4 held temporarily, API Next=S2E1. Stream S1E2 paused00:00; first Next episode opens S2E1 instead of phone-saved S1E4. Synthetic E2 extended to180s to remove automatic-end race. Original owned files restored/hash-verified. Evidence: round3/online-next/s9-stream-prerequisite.xml, round3/online-next/s9-online-current-player.xml, round3/online-next/s9-first-next-target.xml, round3/online-next/server-held.json, round3/online-next/fixture-restored.json. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Pixel 3; Galaxy S24 Ultra fixture check only",
@@ -1468,12 +1496,16 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "FAIL / compatibility unresolved: the legacy two-phone flow did not synchronize host pause/seek, and tester35 lacked the newer room UI. No proven current-source bug is counted from that observation alone. Map the installed build and run a valid room, rejoin, chat and reactions before adding a Real-world check. Human look: two people, including mobile data; Nick records Ready.",
+      "lastTested": "Oct 23, 2026, 6:47 PM Eastern (Round 3 ledger update; individual retest times are in the source evidence)",
+      "leftToReach100": "Open known issue P-WT-LAYOUT-01 (one; score capped at 90%): normal-density tester36 Start/Join controls are clipped and scrolling does not expose them. Repair and retest the layout. Earlier local sync/chat/reconnect/end passes used a density workaround; they do not close this bug. The generic legacy-sync inference was HARNESS/COMPAT and is withdrawn, not counted as another bug. Mobile-data timing and the human look remain; Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 0 PASS, 1 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Compatibility/setup FAIL remains unconfirmed as a product bug. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "Known-issue reconciliation from L3 Round 3, ledger updated Oct 23, 2026, 6:47 PM Eastern. Tester36/code86 retains P-WT-LAYOUT-01. The earlier generic legacy-sync bug inference is withdrawn as HARNESS/COMPAT; the distinct ordinary-density layout bug is proven. No device/real-world tick, Built, Automated tests, Ready or status label changed.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 0 PASS, 1 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Compatibility/setup FAIL remains unconfirmed as a product bug. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -1504,20 +1536,17 @@
           "Oct 13, 2026, two real phones on home Wi-Fi: host, join as viewer, the viewer followed a 45-second skip within 8 seconds, leave and rejoin within 1 second.",
           "Code, Oct 12, 2026 (in the published Android 1.51-tester23): four new automated tests cover tapping Host again after the system closed the app (it starts from the new room, not the dead one), the \"ended on this device\" notice showing each time, and no stale notice after a deliberate Leave.",
           "Oct 22, 2026, tester34: Galaxy S25 host and Galaxy S9+ viewer on one home Wi-Fi followed play, seek, pause and seek back within about 1 to 3 seconds; resume took about 5 seconds; the room list was correct when the viewer and when the host left (muted).",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 host and S9+ viewer entered the legacy session, but host pause/seek did not establish viewer synchronization. The newer room controls were absent on tester35; rejoin, chat and reactions were blocked. Compatibility/setup cause is unconfirmed. 0 PASS / 1 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 host and S9+ viewer entered the legacy session, but host pause/seek did not establish viewer synchronization. The newer room controls were absent on tester35; rejoin, chat and reactions were blocked. Compatibility/setup cause is unconfirmed. 0 PASS / 1 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "L3 Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issue P-WT-LAYOUT-01 (one; score capped at 90%): normal-density tester36 Start/Join controls are clipped and scrolling does not expose them. Repair and retest the layout. Earlier local sync/chat/reconnect/end passes used a density workaround; they do not close this bug. The generic legacy-sync inference was HARNESS/COMPAT and is withdrawn, not counted as another bug. Mobile-data timing and the human look remain; Nick alone records Ready."
         ],
         "remaining": [
           {
-            "kind": "DEVICE",
-            "text": "Close and re-open the guest app and confirm it rejoins."
-          },
-          {
-            "kind": "BLOCKED",
-            "text": "No readiness review is recorded, and the two-phone result is from a test build, not the published download."
+            "kind": "CODE",
+            "text": "Repair P-WT-LAYOUT-01 normal-density clipped Start/Join controls; density-workaround sync passes do not close it."
           },
           {
             "kind": "DEVICE",
-            "text": "Chat and reactions, and a phone on mobile data."
+            "text": "Retest repaired layout on a compatible installed build, then obtain mobile-data timing and a human look."
           }
         ],
         "hist": [
@@ -1531,13 +1560,22 @@
           }
         ]
       },
-      "testedOn": "Pixel 3 host and Galaxy S9+ viewer; Beebo Android 1.51-tester35 (code 85). Pixel 3 host and S9+ viewer entered the legacy session, but host pause/seek did not establish viewer synchronization. The newer room controls were absent on tester35; rejoin, chat and reactions were blocked. Compatibility/setup cause is unconfirmed. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "Pixel 3; S9+; installed Android 1.51-tester36 (code 86) for the failed retests, with older passes carried separately. P-WT-LAYOUT-01 still clips normal-density Start/Join on36; scroll does not expose them. Earlier local sync/chat/reconnect/end passes remain qualified by the old density workaround. Installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782; coordinator-supplied source 78803a9f1bddd222c7da366b543803846f72e9c3, independent bytecode-to-source equivalence not proved. docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743. This entry preserves an open issue, not a new whole-feature PASS.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
-      "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; failed real-phone retest)",
+          "device": "Pixel 3, S9+",
+          "build": "installed Android 1.51-tester36 (code 86)",
+          "date": "Oct 23, 2026, 6:47 PM Eastern",
+          "result": "FAIL",
+          "evidence": "Ledger update time only, not one timestamp for all retests. R3-F04-layout: PROVEN BUG P-WT-LAYOUT-01; tester36 Pixel original physical440dpi/font1.0: Open room shows Start for this title / Join a room but Start room and Join room buttons have no visible or semantic label. Fresh screenshot inspected; swipe on observed ScrollView leaves same clipped layout. No room created and no density workaround repeated. Evidence: round3/watch-together/pixel-room-normal-density-tester36.png, round3/watch-together/pixel-room-normal-density-tester36.xml, round3/watch-together/pixel-after-room-scroll-tester36.xml. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Pixel 3 host and Galaxy S9+ viewer",
@@ -1555,7 +1593,8 @@
           "result": "PASS",
           "evidence": "Host started a 30-second film; the viewer started about 2 seconds later; seek to 10 s was followed in about 2 s; pause within 1 s; seek back to 5 s in about 3 s; resume went to buffering and then playing about 5 s later (slower than the 3 s goal); the room list showed both people and cleared correctly when each left. The phone was muted, so nobody heard sound. Not run: rejoin after closing the app (known not to work, not retested), chat, reactions, mobile data."
         }
-      ]
+      ],
+      "openIssues": 1
     },
     {
       "group": "Android phone app",
@@ -1740,20 +1779,24 @@
       "group": "Android phone app",
       "name": "Surprise me, playlists, watchlist, favourites",
       "status": "Available (test download)",
-      "percentComplete": 74,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
-        "Real-world check": false,
+        "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "BLOCKED / installed-build compatibility unresolved: title details, favourite/watchlist toggles and phone add-to-playlist were not reached. Two fixture-populated playlists did play correctly. Map the build and finish those automatable controls. Nick decides whether Surprise me opens details or plays immediately, then gives the human look and records Ready.",
+      "lastTested": "Oct 23, 2026, 6:34:08 PM Eastern (Last PASS: Pixel 3; tester36/code86 changed controls, earlier tester35 passes carried)",
+      "leftToReach100": "Human look: Nick settles whether Surprise me plays immediately or opens details, then reviews the named list and title controls on the final build. Loading/error-poster behavior, real artwork matching and a fresh target-specific Play result were not part of these passes; no broader clearance is claimed. Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 3 PASS, 0 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 8 PASS, 0 FAIL, 0 BLOCKED in the named A scope. Changed title controls passed on tester36; earlier unchanged scope retains its tester35 evidence. Real-world is recorded true for the stated passed control scope only, under the existing AI-tester definition. Built, Automated tests, Ready and status labels are unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 3 PASS, 0 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -1794,36 +1837,48 @@
           "Oct 14, 2026, published tester23 on a Galaxy S9+: playlist created, filled and deleted; watchlist and favourite added and removed; the Surprise me chooser opened and started a film.",
           "Code, Oct 12 and Oct 18, 2026 (Android 1.51-tester23 and tester26): Surprise me no longer shows or counts an older choice's lists, says when the year list fails, passes a cancelled request on correctly, and shows a plain message with Try again for an unusable pick or an unreachable computer; automated tests were added.",
           "Oct 22, 2026, tester34: Surprise me opened its own screen first, then started a random film within about 1.5 seconds on a Galaxy S25 and a Pixel 3 (muted).",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 Surprise me started a synthetic film. Manual and smart playlists were created; two API-populated disposable playlists played the expected titles and retained their contents. Installed title-details, favourite/watchlist toggles and phone add-to-playlist controls were not reached; build/source compatibility is unconfirmed. 3 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 Surprise me started a synthetic film. Manual and smart playlists were created; two API-populated disposable playlists played the expected titles and retained their contents. Installed title-details, favourite/watchlist toggles and phone add-to-playlist controls were not reached; build/source compatibility is unconfirmed. 3 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 6:34:08 PM Eastern: L3 recorded the F07 Last PASS. Surprise me started a synthetic film; favourite/watchlist persistence and native add-to-playlist passed on tester35. On tester36, the changed title actions measured 48 dp, Download opened/cancelled its chooser, and the absent-poster fallback rendered at 200% text with high contrast and reduced motion. No new target-specific Play success or real artwork matching is claimed."
         ],
         "remaining": [
           {
-            "kind": "DEVICE",
-            "text": "On a phone: use several playlists, go back and retry (on Oct 14 one playlist, one watchlist and one favourite each worked once on the S9+)."
-          },
-          {
             "kind": "NICK",
-            "text": "Decide whether Surprise me should start a film straight away or open the title page first."
+            "text": "Choose whether Surprise me plays immediately or opens details and give the final human look."
           },
           {
-            "kind": "BLOCKED",
-            "text": "The review of the title-first change found gaps that are not yet fixed."
+            "kind": "DEVICE",
+            "text": "Review loading/error-poster and real-artwork behavior separately; no new target-specific Play pass was recorded."
           }
         ],
         "hist": [
           {
             "changedEastern": "Oct 9, 2026, 6:30 AM Eastern",
             "changeNote": "Android tester16 (build 66), Oct 9, Samsung S9+: Surprise me was tried and FAILED the checklist item. It started playing a film immediately instead of opening a title page first. The watchlist star was not tried, and Surprise me was not tried on the S24 Ultra. Percentage unchanged."
+          },
+          {
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: DEVICE: On a phone: use several playlists, go back and retry (on Oct 14 one playlist, one watchlist and one favourite each worked once on the S9+).; NICK: Decide whether Surprise me should start a film straight away or open the title page first.; BLOCKED: The review of the title-first change found gaps that are not yet fixed."
           }
         ]
       },
-      "testedOn": "Pixel 3; Beebo Android 1.51-tester35 (code 85). Pixel 3 Surprise me started a synthetic film. Manual and smart playlists were created; two API-populated disposable playlists played the expected titles and retained their contents. Installed title-details, favourite/watchlist toggles and phone add-to-playlist controls were not reached; build/source compatibility is unconfirmed. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "Pixel 3; installed Android 1.51-tester36 (code 86), plus unchanged tester35/code85 passes carried. Last PASS: Oct 23, 2026, 6:34:08 PM Eastern. Surprise me started a synthetic film; favourite/watchlist persistence and native add-to-playlist passed on tester35. On tester36, the changed title actions measured 48 dp, Download opened/cancelled its chooser, and the absent-poster fallback rendered at 200% text with high contrast and reduced motion. No new target-specific Play success or real artwork matching is claimed. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F07.",
       "codeDonePercent": 100,
-      "realWorldDonePercent": 33,
+      "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "Pixel 3",
+          "build": "installed Android 1.51-tester36 (code 86), plus unchanged tester35/code85 passes carried",
+          "date": "Oct 23, 2026, 6:34:08 PM Eastern",
+          "result": "PASS",
+          "evidence": "Surprise me started a synthetic film; favourite/watchlist persistence and native add-to-playlist passed on tester35. On tester36, the changed title actions measured 48 dp, Download opened/cancelled its chooser, and the absent-poster fallback rendered at 200% text with high contrast and reduced motion. No new target-specific Play success or real artwork matching is claimed. Last PASS from the evidence table: Pixel 3; tester36/code86; 2026-10-23 06:34:08 PM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. F07-surprise-play PASS (Round1 carried): lists/pixel-surprise.xml, lists/pixel-surprise-played.xml; F07-ui-create PASS (Round1 carried): lists/pixel-new-playlist-form.xml, lists/pixel-playlist-created.xml, lists/pixel-ready-made-result.xml; F07-two-playlists PASS (Round1 carried): l3-server/playlist-fixture-setup.json, lists/pixel-fixture-populated-first.xml, lists/pixel-first-playlist-playing.xml, lists/pixel-second-playlist-playing.xml, lists/pixel-returned-to-first.xml; R2-F07-controls PASS (Round2): round2/lists/pixel-title-actions-visible.png, round2/lists/pixel-title-details.xml; R2-F07-personal-lists PASS (Round2): round2/lists/pixel-favourites-actual.xml, round2/lists/pixel-watchlist-actual.xml, round2/lists/pixel-favourite-after-restart.xml; R2-F07-native-playlist-add PASS (Round2): round2/lists/pixel-native-playlist-add.xml, round2/lists/pixel-playlist-two-items-native.xml; R3-F07-title-actions PASS (Round3): round3/changed-controls/action-targets.json, round3/changed-controls/pixel-title-actions-tester36.xml, round3/changed-controls/pixel-download-action-tester36.xml; R3-F07-poster-fallback PASS (Round3): round3/changed-controls/no-poster-fixture-before-marker.json, round3/changed-controls/pixel-fallback-visible-200-contrast-tester36.png, round3/changed-controls/pixel-fallback-visible-200-contrast-tester36.xml. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": [
+            "Real-world check"
+          ]
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Pixel 3",
@@ -1855,8 +1910,8 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Open known issues (two; score capped at 90%): retain the earlier guest host-stopped failure and guest routing that required mobile data off. The Oct 23 Pixel-host/S9+ Wi-Fi guest-stop pass covers one route only. Retest both reported cases on a mapped fixed build. Person/place check: phone hotspot and guest mobile data; human look and Nick's Ready remain.",
+      "lastTested": "Oct 23, 2026, 6:47 PM Eastern (Round 3 ledger update; individual retest times are in the source evidence)",
+      "leftToReach100": "Open known issues remain (two; score capped at 90%): the historical guest-stop route and Campsite guest routing that required mobile data off have no complete matching closure. Round 3 observed an eventual stopped/unreachable-host notice on existing Wi-Fi, absent at the first five-second sample; no immediate-detection or mobile-data pass is claimed. An approved cellular guest/SIM and phone hotspot are still needed. Nick alone records Ready after the human look.",
       "roadTo100": {
         "means": "A host phone starts and stops Campsite and real guests join, leave and reconnect cleanly.",
         "done": [
@@ -1868,7 +1923,8 @@
           "Oct 14, 2026, published tester23, same-Wi-Fi route: a Galaxy S9+ hosted, a Pixel 3 and a Galaxy S24 Ultra joined as guests (“2 guests connected”), and Stop returned the host to its start screen and closed the guest address.",
           "Code, Oct 12, 2026 (in the published Android 1.51-tester23): the host start/stop error and retry cases are listed and tested: port already in use then retry, starting or stopping twice, a failed start with Beebo Wi-Fi chosen, the service restarted by Android, and the idle stop.",
           "Code, Oct 18, 2026 (Android 1.51-tester27): the Campsite guest pages now say plainly, in six languages, when the host has stopped, instead of \"Reconnecting...\" for ever; the walkie-talkie guest page does the same with a Reload button.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 hosted over existing Wi-Fi. S9+ browser joined as Guest 1, saw the shared synthetic title, and showed the host-stopped message within five seconds after Stop. This route does not close the different Oct 22 guest failure or mobile-data routing issue. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 hosted over existing Wi-Fi. S9+ browser joined as Guest 1, saw the shared synthetic title, and showed the host-stopped message within five seconds after Stop. This route does not close the different Oct 22 guest failure or mobile-data routing issue. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "L3 Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issues remain (two; score capped at 90%): the historical guest-stop route and Campsite guest routing that required mobile data off have no complete matching closure. Round 3 observed an eventual stopped/unreachable-host notice on existing Wi-Fi, absent at the first five-second sample; no immediate-detection or mobile-data pass is claimed. An approved cellular guest/SIM and phone hotspot are still needed. Nick alone records Ready after the human look."
         ],
         "remaining": [
           {
@@ -1882,9 +1938,13 @@
         ]
       },
       "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "Known-issue reconciliation from L3 Round 3, ledger updated Oct 23, 2026, 6:47 PM Eastern. Campsite mobile-data and the unmatched historical guest-stop route remain open; an eventual existing-Wi-Fi notice is not a whole-row clearance. No device/real-world tick, Built, Automated tests, Ready or status label changed.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 2 open known issues cap the score at 90%."
@@ -1914,7 +1974,7 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Pixel 3 host and Galaxy S9+ browser guest; Beebo Android 1.51-tester35 (code 85). Pixel 3 hosted over existing Wi-Fi. S9+ browser joined as Guest 1, saw the shared synthetic title, and showed the host-stopped message within five seconds after Stop. This route does not close the different Oct 22 guest failure or mobile-data routing issue. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "Pixel 3 host; S9+ guest; installed Android 1.51-tester36 (code 86) for the failed retests, with older passes carried separately. On36, Pixel host stops and S9 guest eventually shows the stopped/unreachable-host notice; absent at first5s sample. Known mobile-data route problem remains uncleared. Installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782; coordinator-supplied source 78803a9f1bddd222c7da366b543803846f72e9c3, independent bytecode-to-source equivalence not proved. docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743. This entry preserves an open issue, not a new whole-feature PASS.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
@@ -1950,20 +2010,24 @@
       "group": "Android phone app",
       "name": "Podcasts and radio",
       "status": "Available (test download)",
-      "percentComplete": 74,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
-        "Real-world check": false,
+        "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "BLOCKED fixture: provide a safe working podcast feed, then pass new Follow, episodes, queue edits, episode copying/download, screen-off podcast state and radio interruption/recovery. Empty lists and one muted radio station do not cover those checks. Human look: listen to podcast/radio and review import duplicates/failures; Nick records Ready.",
+      "lastTested": "Oct 23, 2026, 1:44:57 PM Eastern (Last PASS: Pixel 3; tester35/code85 carried pass; not rerun on tester36)",
+      "leftToReach100": "Human look: listen to podcast and radio audio with the screen off. The passed feed/queue/computer-copy scope uses synthetic media and carried tester35 results; radio interruption/recovery was not retested. Import/OPML duplicate and failure handling remains In development and needs its own release acceptance. Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 6 PASS, 0 FAIL, 0 BLOCKED in the named A scope. The named tester35 passes are carried; no repeat phone run or new tester36 pass is inferred. Real-world is recorded true for the stated passed control scope only, under the existing AI-tester definition. Built, Automated tests, Ready and status labels are unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -2014,16 +2078,17 @@
           "Code, Oct 13 and Oct 18, 2026: the cause was a podcast feed too big to read (the limit was raised to 32 MB on Oct 13; published in Windows 0.1.89 and Android 1.51-tester24). Since Android 1.51-tester26 Follow also says why when a feed is too big or does not answer, instead of \"Your Beebo computer had a problem\".",
           "In development: podcast import from an OPML file or a pasted link/name is next-release work. Existing podcast and radio playback has its own earlier device results.",
           "RETEST-1: the Pixel with tester35 showed the Spanish Radio en directo label. This is wording evidence only; Follow, podcast downloads, queue and sound remain open.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ showed honest empty podcast lists and queue. A radio station reached Live/Pause and a playing MediaSession with the screen off, then stopped. A safe working podcast feed was absent, blocking Follow, episode copying and queue positives. Muted. 2 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ showed honest empty podcast lists and queue. A radio station reached Live/Pause and a playing MediaSession with the screen off, then stopped. A safe working podcast feed was absent, blocking Follow, episode copying and queue positives. Muted. 2 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 1:44:57 PM Eastern: L3 recorded the F09 Last PASS. The synthetic podcast feed followed normally, listed two episodes, retained a queue entry, kept an actual copy on the test computer, and continued its playback state with the screen off. Radio reached Live and stopped. These tester35 passes are carried; the phones were muted. Future import/OPML duplicate and failure acceptance is outside this pass."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Play radio and a podcast with the screen off, download an episode and edit the queue."
+            "text": "Listen to podcast/radio audio and check radio interruption/recovery."
           },
           {
             "kind": "DEVICE",
-            "text": "Re-test Follow on a new podcast on a phone with the newer builds."
+            "text": "Run import/OPML duplicate/failure acceptance when that In development release is supplied."
           }
         ],
         "hist": [
@@ -2038,16 +2103,31 @@
           {
             "changedEastern": "Oct 7, 2026, 11:30 AM Eastern",
             "changeNote": "Windows 0.1.82: internet radio playlists with relative entries or spaces now play. Automated tests only; not tried with a real station on a phone."
+          },
+          {
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: DEVICE: Play radio and a podcast with the screen off, download an episode and edit the queue.; DEVICE: Re-test Follow on a new podcast on a phone with the newer builds."
           }
         ]
       },
-      "testedOn": "Galaxy S9+; Beebo Android 1.51-tester35 (code 85). S9+ showed honest empty podcast lists and queue. A radio station reached Live/Pause and a playing MediaSession with the screen off, then stopped. A safe working podcast feed was absent, blocking Follow, episode copying and queue positives. Muted. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "Pixel 3 and S9+; Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36. Last PASS: Oct 23, 2026, 1:44:57 PM Eastern. The synthetic podcast feed followed normally, listed two episodes, retained a queue entry, kept an actual copy on the test computer, and continued its playback state with the screen off. Radio reached Live and stopped. These tester35 passes are carried; the phones were muted. Future import/OPML duplicate and failure acceptance is outside this pass. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F09.",
       "codeDonePercent": 100,
-      "realWorldDonePercent": 33,
+      "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "Pixel 3, S9+",
+          "build": "Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36",
+          "date": "Oct 23, 2026, 1:44:57 PM Eastern",
+          "result": "PASS",
+          "evidence": "The synthetic podcast feed followed normally, listed two episodes, retained a queue entry, kept an actual copy on the test computer, and continued its playback state with the screen off. Radio reached Live and stopped. These tester35 passes are carried; the phones were muted. Future import/OPML duplicate and failure acceptance is outside this pass. Last PASS from the evidence table: Pixel 3; tester35/code85; 2026-10-23 01:44:57 PM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. F09-empty-queue PASS (Round1 carried): podcasts-radio/s9-podcasts-initial.xml, podcasts-radio/s9-empty-queue.xml; F09-radio-muted PASS (Round1 carried): podcasts-radio/s9-station-attempt.xml, podcasts-radio/s9-station-media.txt, podcasts-radio/s9-station-screenoff-media.txt, podcasts-radio/s9-station-stopped.xml; R2-F09-follow PASS (Round2): round2/podcasts/pixel-follow-result.xml; R2-F09-queue PASS (Round2): round2/podcasts/pixel-queue-persisted.xml, round2/podcasts/server-confirmation.json; R2-F09-copy PASS (Round2): round2/podcasts/pixel-queued-and-downloaded.xml, round2/podcasts/server-confirmation.json; R2-F09-screenoff PASS (Round2): round2/podcasts/screen-off-session.txt, round2/podcasts/pixel-screen-off-return.xml. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": [
+            "Real-world check"
+          ]
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Galaxy S9+",
@@ -2096,8 +2176,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "FAIL observation retained: force-stop after a paused seek reopened at 0:00; ordinary played-reading resume passed at 0:20 and the bookmark survived. The expected paused-seek checkpoint contract/current-source cause is unconfirmed, so no new proven bug is counted yet. Resolve that case and test background/sleep-timer behavior before a new Real-world tick. Human look: listen across chapters and resume; Nick records Ready.",
+      "lastTested": "Oct 23, 2026, 6:47 PM Eastern (Round 3 ledger update; individual retest times are in the source evidence)",
+      "leftToReach100": "Open known issue P-BOOK-PAUSED-01 (one; score capped at 90%): on tester36, a paused chapter seek to 0:16 is lost after normal leave/restart and resumes the earlier played 0:02 checkpoint. The earlier played-position and bookmark passes do not close it. Merge the paused-checkpoint repair and retest a compatible build. Human look: listen across chapters, resume, speed and sleep; Nick alone records Ready.",
       "roadTo100": {
         "means": "A real audiobook plays on a phone, changes chapters, keeps bookmarks, and resumes after the app restarts.",
         "done": [
@@ -2109,23 +2189,28 @@
           "Code, Oct 12, 2026 (in the published Android 1.51-tester23): the audiobook test group was run and its coverage listed: 141 tests (21 new) covering speed, chapters, the sleep timer, resume, bookmarks, saved positions and the server calls. The run also fixed an \"end of chapter\" sleep-timer bug and duplicate bookmarks, and added spoken words for the seek bar and speed slider.",
           "Oct 22, 2026, tester34 (muted): chapters, jumps, speed 1.5x, sleep timer and resume after a force-stop worked on a Pixel 3 and a Galaxy S25. Bookmark and a second book were not checked.",
           "RETEST-1: the Pixel with tester35 showed Chapters at 1.3 text size, a bookmark confirmation for about three seconds, and a bookmark list whose 0:22 entry jumped to 0:22. This is not a full current-build listening, restart/resume or sleep-timer pass.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ played synthetic audiobook tones, changed chapter and retained a bookmark. Played reading resumed at 0:20 after Home/restart. Force-stop after a paused seek to 0:16 reopened at 0:00; this narrow checkpoint observation does not establish ordinary reading-resume failure. Muted. 3 PASS / 1 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ played synthetic audiobook tones, changed chapter and retained a bookmark. Played reading resumed at 0:20 after Home/restart. Force-stop after a paused seek to 0:16 reopened at 0:00; this narrow checkpoint observation does not establish ordinary reading-resume failure. Muted. 3 PASS / 1 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "L3 Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issue P-BOOK-PAUSED-01 (one; score capped at 90%): on tester36, a paused chapter seek to 0:16 is lost after normal leave/restart and resumes the earlier played 0:02 checkpoint. The earlier played-position and bookmark passes do not close it. Merge the paused-checkpoint repair and retest a compatible build. Human look: listen across chapters, resume, speed and sleep; Nick alone records Ready."
         ],
         "remaining": [
           {
-            "kind": "BLOCKED",
-            "text": "No full current-device record exists."
+            "kind": "CODE",
+            "text": "Repair P-BOOK-PAUSED-01: a paused chapter seek is lost after normal leave/restart on tester36."
           },
           {
             "kind": "DEVICE",
-            "text": "Play a real book with sound, background the app, restart and resume; try Bookmark and the book sleep timer."
+            "text": "Retest a compatible repaired build and listen across chapters, resume, speed and sleep."
           }
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 3 PASS, 1 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Paused-seek FAIL remains a narrow contract observation, not a proven ordinary-resume bug. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "Known-issue reconciliation from L3 Round 3, ledger updated Oct 23, 2026, 6:47 PM Eastern. Tester36/code86 retains P-BOOK-PAUSED-01. The paused-seek observation is now a proven normal-leave/restart checkpoint bug, not merely force-stop uncertainty. No device/real-world tick, Built, Automated tests, Ready or status label changed.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 3 PASS, 1 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Paused-seek FAIL remains a narrow contract observation, not a proven ordinary-resume bug. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -2155,17 +2240,26 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Galaxy S9+; Beebo Android 1.51-tester35 (code 85). S9+ played synthetic audiobook tones, changed chapter and retained a bookmark. Played reading resumed at 0:20 after Home/restart. Force-stop after a paused seek to 0:16 reopened at 0:00; this narrow checkpoint observation does not establish ordinary reading-resume failure. Muted. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "S9+; installed Android 1.51-tester36 (code 86) for the failed retests, with older passes carried separately. P-BOOK-PAUSED-01 persists on36: play/pause0:02, paused Next chapter0:16, restart resumes0:02. Earlier played checkpoint/bookmark passes carried. Installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782; coordinator-supplied source 78803a9f1bddd222c7da366b543803846f72e9c3, independent bytecode-to-source equivalence not proved. docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743. This entry preserves an open issue, not a new whole-feature PASS.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
-      "codeItemsLeft": 0,
-      "realWorldStatus": "code-complete-needs-real-world-testing",
+      "codeItemsLeft": 1,
+      "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "howTo": [
         "Play a real audiobook with sound across two chapters, close the app, reopen it and check it resumes in the right place.",
         "Try Bookmark and the sleep timer."
       ],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; failed real-phone retest)",
+          "device": "S9+",
+          "build": "installed Android 1.51-tester36 (code 86)",
+          "date": "Oct 23, 2026, 6:47 PM Eastern",
+          "result": "FAIL",
+          "evidence": "Ledger update time only, not one timestamp for all retests. R3-F10-paused-seek: PROVEN BUG P-BOOK-PAUSED-01; tester36 S9+ fresh owned46s chaptered copy (embedded album title The Lantern Road, leftmost All books card initially Play/unstarted): play/pause0:02, Next chapter while paused0:16, wait/Home/wait/force-stop/reopen same card resumes0:02. Paused chapter seek not checkpointed. Initial0:00 control also retained, not separately counted. Evidence: round3/audiobook/s9-fresh-book-tester36.xml, round3/audiobook/s9-strict-play-pause-tester36.xml, round3/audiobook/s9-strict-paused-chapter-tester36.xml, round3/audiobook/s9-strict-restart-paused-chapter-tester36.xml. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Galaxy S9+",
@@ -2200,7 +2294,8 @@
           "result": "PASS",
           "evidence": "Full single-phone run, Oct 19, 2026, 8:46 to 9:23 AM Eastern. No crash appeared in the phone log after any section. An audiobook played, paused and kept its position. Chapters across an app restart, Bookmark and the sleep timer were not part of this run."
         }
-      ]
+      ],
+      "openIssues": 1
     },
     {
       "group": "Android phone app",
@@ -2214,8 +2309,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Missing automatable coverage: a smaller-copy choice, estimate accuracy, first-visit planner controls and a safely limited-space download were not proved by packing the tiny original. The earlier first-visit controls code item remains open. Person/place check: use an approved spare phone with safely limited storage; human look and Nick's Ready remain.",
+      "lastTested": "Oct 23, 2026, 11:08:10 AM Eastern (Last PASS: Pixel 3; tester35/code85 carried pass; not rerun on tester36)",
+      "leftToReach100": "Missing coverage keeps this row below 99%: test a smaller copy with safely limited free space, compare the estimate with finished bytes, and settle the earlier first-visit planner-controls code item. Only the tiny original and offline picture passed. An approved spare phone and a human look remain; Nick alone records Ready.",
       "roadTo100": {
         "means": "The planner shows honest size and time estimates, offers smaller sizes that really work, and completes a real download when space is tight.",
         "done": [
@@ -2224,32 +2319,44 @@
           "Tried on a real phone earlier.",
           "Code, Oct 12 and Oct 18, 2026 (Android 1.51-tester23 and tester26): the smaller-size choice now only offers a size that really shrinks a film (a 576p film asked for 720p used to come back bigger), keeps each film's own size when retried and restarts a failed zero-byte download at the newly chosen size; 25 new automated tests. Its controls keep a 48 dp touch target.",
           "Code, Oct 12 and Oct 18, 2026 (Android 1.51-tester23 and tester26): the up-front space and time estimate follows the size each film really gets and, since tester26, counts only what is left of half-saved films; tests were added.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 packed the tiny synthetic film to 1/1 ready and played its downloaded picture offline. The tiny original did not exercise a smaller copy, limited free space or estimate accuracy. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 packed the tiny synthetic film to 1/1 ready and played its downloaded picture offline. The tiny original did not exercise a smaller copy, limited free space or estimate accuracy. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 11:08:10 AM Eastern: L3 recorded the F11 Last PASS. Pixel packed the tiny original synthetic film and displayed its downloaded picture offline on tester35. This is a carried pass for the tiny-original planner/offline scope only; no smaller-copy choice, low-space estimate or first-visit-controls repair is proved."
         ],
         "remaining": [
           {
-            "kind": "DEVICE",
-            "text": "Run a full real download with limited free space."
-          },
-          {
-            "kind": "BLOCKED",
-            "text": "The smaller-size behaviour is still unresolved."
-          },
-          {
             "kind": "CODE",
-            "text": "On the first visit to Pack for a trip the size choice and Start packing controls are missing and only appear after reopening the screen; fix in progress (found on the Pixel 3, Oct 19)."
+            "text": "The earlier first-visit planner-controls issue is not closed by the tiny-original pass; confirm or repair it."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Use safely limited free space, choose a smaller copy and compare estimated and finished bytes."
+          }
+        ],
+        "hist": [
+          {
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: DEVICE: Run a full real download with limited free space.; BLOCKED: The smaller-size behaviour is still unresolved.; CODE: On the first visit to Pack for a trip the size choice and Start packing controls are missing and only appear after reopening the screen; fix in progress (found on the Pixel 3, Oct 19)."
           }
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 2 PASS, 0 FAIL, 0 BLOCKED in the named A scope. The named tester35 passes are carried; no repeat phone run or new tester36 pass is inferred. The tiny-original pass does not close smaller-copy, low-space or first-visit-controls coverage; the Real-world tick stays false. Built, Automated tests, Ready and status labels are unchanged.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "Pixel 3",
+          "build": "Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36",
+          "date": "Oct 23, 2026, 11:08:10 AM Eastern",
+          "result": "PASS",
+          "evidence": "Pixel packed the tiny original synthetic film and displayed its downloaded picture offline on tester35. This is a carried pass for the tiny-original planner/offline scope only; no smaller-copy choice, low-space estimate or first-visit-controls repair is proved. Last PASS from the evidence table: Pixel 3; tester35/code85; 2026-10-23 11:08:10 AM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. F11-planner-download PASS (Round1 carried): trip-download/pixel-tiny-added.xml, trip-download/pixel-packing-started.xml, trip-download/pixel-downloads.xml; F11-offline-video PASS (Round1 carried): trip-download/pixel-offline-tiny-frame.xml, trip-download/pixel-offline-tiny-frame.png. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Pixel 3",
@@ -2270,6 +2377,10 @@
       ],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
+        {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
         },
@@ -2282,7 +2393,7 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Pixel 3; Beebo Android 1.51-tester35 (code 85). Pixel 3 packed the tiny synthetic film to 1/1 ready and played its downloaded picture offline. The tiny original did not exercise a smaller copy, limited free space or estimate accuracy. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check."
+      "testedOn": "Pixel 3; Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36. Last PASS: Oct 23, 2026, 11:08:10 AM Eastern. Pixel packed the tiny original synthetic film and displayed its downloaded picture offline on tester35. This is a carried pass for the tiny-original planner/offline scope only; no smaller-copy choice, low-space estimate or first-visit-controls repair is proved. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F11."
     },
     {
       "group": "Android phone app",
@@ -2296,8 +2407,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Open known issue (one; score capped at 90%): S9+ tester35 silent 720p export timed out at 0% with two cards and no clips/photos. A protected export/file-writing/privacy review, fix and finished-MP4 retry are needed; no current-source root cause is claimed. Human look: real outing, selected photos and finished video/privacy review; Nick records Ready.",
+      "lastTested": "Oct 23, 2026, 6:47 PM Eastern (Round 3 ledger update; individual retest times are in the source evidence)",
+      "leftToReach100": "Open known issue P-TRIP-01 (one; score capped at 90%): tester36 S9+ minimal silent 720p export, 11 seconds/two cards/no photos or clips, still times out with muxer error 7002 and no finished MP4. The separate recovery repair was not installed. Obtain a reviewed compatible repair and finished export. Human look: real outing, selected media, finished video and privacy; Nick alone records Ready.",
       "roadTo100": {
         "means": "A real trip is captured on a phone, a recap is made and a video exported, and the sharing and privacy behaviour has been reviewed.",
         "done": [
@@ -2307,7 +2418,8 @@
           "Oct 13, 2026: \"Save as a video\" failed on the test build; with the fix it made 5-second and 13-second videos on the S24 (fix not yet in a published download; the videos were not played back).",
           "Oct 14, 2026, published tester23: “Save as a video” made a 17-second video from 3 photos on a Galaxy S24 Ultra and a Pixel 3 (not played back by eye). It FAILED on a Galaxy S9+ (Android 10) at 1080p, 720p and cards-only with a muxing timeout (error 7002).",
           "Code, Oct 18, 2026 (Android 1.51-tester27): the video export now allows a muxing stall of a minute (the default was 10 seconds), keeps the screen on, holds a 30-minute wake lock, starts on 720p on Android 10 and older and shows a \"taking longer\" note; new automated tests cover it. NOT yet re-run on the Galaxy S9+.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ created, started and finished a disposable trip. A silent 720p, 11-second export with two cards and no photos/clips stayed at 0% and ended with the app step-timeout error. No finished MP4 exists. 1 PASS / 1 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ created, started and finished a disposable trip. A silent 720p, 11-second export with two cards and no photos/clips stayed at 0% and ended with the app step-timeout error. No finished MP4 exists. 1 PASS / 1 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "L3 Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issue P-TRIP-01 (one; score capped at 90%): tester36 S9+ minimal silent 720p export, 11 seconds/two cards/no photos or clips, still times out with muxer error 7002 and no finished MP4. The separate recovery repair was not installed. Obtain a reviewed compatible repair and finished export. Human look: real outing, selected media, finished video and privacy; Nick alone records Ready."
         ],
         "remaining": [
           {
@@ -2329,9 +2441,13 @@
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 1 PASS, 1 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "Known-issue reconciliation from L3 Round 3, ledger updated Oct 23, 2026, 6:47 PM Eastern. Tester36/code86 retains P-TRIP-01. No device/real-world tick, Built, Automated tests, Ready or status label changed.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 1 PASS, 1 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -2353,7 +2469,7 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Galaxy S9+; Beebo Android 1.51-tester35 (code 85). S9+ created, started and finished a disposable trip. A silent 720p, 11-second export with two cards and no photos/clips stayed at 0% and ended with the app step-timeout error. No finished MP4 exists. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "S9+; installed Android 1.51-tester36 (code 86) for the failed retests, with older passes carried separately. P-TRIP-01 persists on36: own11s/2cards/0media,720p/silent, muxer7002 after about61s; no finished MP4. F2 repair is not installed. Installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782; coordinator-supplied source 78803a9f1bddd222c7da366b543803846f72e9c3, independent bytecode-to-source equivalence not proved. docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743. This entry preserves an open issue, not a new whole-feature PASS.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
@@ -2364,6 +2480,15 @@
         "Use Save as a video on an older phone (for example Android 10), then play the finished video from start to end."
       ],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; failed real-phone retest)",
+          "device": "S9+",
+          "build": "installed Android 1.51-tester36 (code 86)",
+          "date": "Oct 23, 2026, 6:47 PM Eastern",
+          "result": "FAIL",
+          "evidence": "Ledger update time only, not one timestamp for all retests. R3-F12-export: PROVEN BUG P-TRIP-01; tester36 S9+: own L3 Test Loop11s/2cards/0photos/0clips,720p checked, no ambience/names. No UI polling first52s. At roughly61s process logs ERROR_CODE_MUXING_TIMEOUT7002; final UI says Try720p or fewer clips despite selected720p and0clips. No finished MP4. F2 repair branch is not the installed main. Evidence: round3/export/s9-options-tester36.xml, round3/export/selected-options.json, round3/export/start-time.json, round3/export/encoder-diagnostics.txt, round3/export/s9-final-tester36.xml. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Galaxy S9+",
@@ -2592,16 +2717,16 @@
       "group": "Android phone app",
       "name": "Wireless speakers",
       "status": "In development",
-      "percentComplete": 74,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
-        "Real-world check": false,
+        "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "BLOCKED setup: no second sound-enabled guest joined; empty controls do not pass group sync, trim or off. Exercise the automatable group controls with approved outputs. Human look: listen to clicks/music on a real speaker group; Nick records Ready.",
+      "lastTested": "Oct 23, 2026, 3:24:20 PM Eastern (Last PASS: S9+; tester35/code85 carried pass; not rerun on tester36)",
+      "leftToReach100": "Human look: use real speakers to hear the four clicks and music, then check acoustic delay and Bluetooth behavior. The passed scope is phone-host browser registration, trim, Off/On, placement and command dispatch only; it does not clear PC acoustic mapping or audible synchrony. Nick alone records Ready.",
       "roadTo100": {
         "means": "Real phones act as a speaker group, and guest volume trim and off controls work.",
         "done": [
@@ -2609,23 +2734,30 @@
           "Built, tests pass, tried on a real phone.",
           "Oct 13, 2026, S9+ appeared on the S24 host as a speaker with position, timing nudge and group test (one speaker only; nothing listened for).",
           "Code, Oct 12, 2026 (in the published Android 1.51-tester23): tests cover the speaker-group size (32 phones, the 33rd is refused), trim and off limits; they found and fixed three real bugs (an extreme saved trim flipping to the opposite sign, a phone in a full group being refused when it reconnected, and the newest phone's settings not being remembered after 64 phones).",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 showed speaker timing controls and the honest No speakers yet state. No sound-enabled second guest joined, so group sync, trim and off controls were blocked. 1 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 showed speaker timing controls and the honest No speakers yet state. No sound-enabled second guest joined, so group sync, trim and off controls were blocked. 1 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 3:24:20 PM Eastern: L3 recorded the F15 Last PASS. Two real phone browser outputs joined and used the normal enable-audio gesture. Guest/host trim, host Off/On, placement and quick-click command dispatch passed on tester35. Muted outputs do not prove audible synchrony, Bluetooth delay or acoustic quality; Android hosting did not exercise the new PC acoustic map."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Set up a real speaker group and use the guest page trim and off controls."
-          },
+            "text": "Listen to real clicks/music and assess acoustic/Bluetooth delay; PC acoustic mapping is a separate scope."
+          }
+        ],
+        "hist": [
           {
-            "kind": "BLOCKED",
-            "text": "No group result is recorded."
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: DEVICE: Set up a real speaker group and use the guest page trim and off controls.; BLOCKED: No group result is recorded."
           }
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 1 PASS, 0 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 4 PASS, 0 FAIL, 0 BLOCKED in the named A scope. The named tester35 passes are carried; no repeat phone run or new tester36 pass is inferred. Real-world is recorded true for the stated passed control scope only, under the existing AI-tester definition. Built, Automated tests, Ready and status labels are unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 1 PASS, 0 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -2643,13 +2775,24 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Pixel 3; Beebo Android 1.51-tester35 (code 85). Pixel 3 showed speaker timing controls and the honest No speakers yet state. No sound-enabled second guest joined, so group sync, trim and off controls were blocked. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "S9+ host/browser and Pixel 3 browser; Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36. Last PASS: Oct 23, 2026, 3:24:20 PM Eastern. Two real phone browser outputs joined and used the normal enable-audio gesture. Guest/host trim, host Off/On, placement and quick-click command dispatch passed on tester35. Muted outputs do not prove audible synchrony, Bluetooth delay or acoustic quality; Android hosting did not exercise the new PC acoustic map. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F15.",
       "codeDonePercent": 100,
-      "realWorldDonePercent": 33,
+      "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "S9+ host/browser, Pixel 3 browser",
+          "build": "Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36",
+          "date": "Oct 23, 2026, 3:24:20 PM Eastern",
+          "result": "PASS",
+          "evidence": "Two real phone browser outputs joined and used the normal enable-audio gesture. Guest/host trim, host Off/On, placement and quick-click command dispatch passed on tester35. Muted outputs do not prove audible synchrony, Bluetooth delay or acoustic quality; Android hosting did not exercise the new PC acoustic map. Last PASS from the evidence table: S9+; tester35/code85; 2026-10-23 03:24:20 PM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. F15-speaker-empty PASS (Round1 carried): speakers/pixel-speaker-controls.xml; R2-F15-two-registered PASS (Round2): round2/speaker-group/s9-two-speaker-controls.xml, round2/speaker-group/pixel-guest-unlocked.xml, round2/speaker-group/s9-host-phone-music-page.xml; R2-F15-trim-off-placement PASS (Round2): round2/speaker-group/pixel-guest-trim-plus10.xml, round2/speaker-group/s9-guest-five-off.xml, round2/speaker-group/s9-host-guest-five-trim.xml, round2/speaker-group/s9-host-placement-left.xml; R2-F15-click-dispatch PASS (Round2): round2/speaker-group/s9-quick-test-dispatched.xml. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": [
+            "Real-world check"
+          ]
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Pixel 3",
@@ -3561,12 +3704,12 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Human look: listen to real music, crossfade/gapless transitions, lyrics and album/artist radio. L3 passed its automatable album/player/queue/screen-off/end-of-track-sleep checks with muted synthetic tones on S9+; those checks do not certify sound. Nick alone records Ready after that look.",
-      "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 3 PASS, 0 FAIL, 0 BLOCKED. Real device and Real-world check are recorded true for the fully passed named automatable set under Nick's AI-tester definition. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
-      "testedOn": "Galaxy S9+; Beebo Android 1.51-tester35 (code 85). S9+ browsed synthetic albums/tracks, played and paused, used Next/Previous and queue/radio controls, and retained a playing MediaSession with the screen off. End-of-track sleep paused the next track and cleared the timer. Muted synthetic tones; no listening claim. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "lastTested": "Oct 23, 2026, 11:05:34 AM Eastern (Last PASS: S9+; tester35/code85 carried pass; not rerun on tester36)",
+      "leftToReach100": "Human look: listen to real music, crossfade/gapless transitions and album/artist radio. The carried tester35 pass covers synthetic album/player/queue/screen-off/sleep controls, with muted sound. Lyrics and broader listening quality are not established. Nick alone records Ready.",
+      "previousPercent": 99,
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 3 PASS, 0 FAIL, 0 BLOCKED in the named A scope. The named tester35 passes are carried; no repeat phone run or new tester36 pass is inferred. The existing device/real-world ticks are retained for the stated control scope. Built, Automated tests, Ready and status labels are unchanged.",
+      "testedOn": "S9+; Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36. Last PASS: Oct 23, 2026, 11:05:34 AM Eastern. S9+ browsed synthetic albums/tracks, used play/pause, Next/Previous and the queue/radio controls, retained a playing state with the screen off, and paused the next track with the end-of-track sleep timer. These muted tester35 control passes are carried; no listening or sound-quality result is claimed. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F26.",
       "roadTo100": {
         "means": "Real music plays on a phone with sound, crossfade, gapless playback, queue and radio working, and a reviewer signs off.",
         "done": [
@@ -3574,20 +3717,27 @@
           "Oct 13, 2026, S24 Ultra and S9+: sample album listed, play, next, previous, pause, full player, sleep timer and the quality choice worked (sound not heard).",
           "Oct 14, 2026, published tester23: the Music header overlap is gone on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25; the sample album played and paused on the S9+ (sound not heard).",
           "RETEST-1: at 1.3 text size on the Pixel with tester35, the song title no longer overlapped the cover and Album radio stayed on one line. Layout only: no new sound, crossfade, gapless, queue or sleep-timer pass.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ browsed synthetic albums/tracks, played and paused, used Next/Previous and queue/radio controls, and retained a playing MediaSession with the screen off. End-of-track sleep paused the next track and cleared the timer. Muted synthetic tones; no listening claim. 3 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ browsed synthetic albums/tracks, played and paused, used Next/Previous and queue/radio controls, and retained a playing MediaSession with the screen off. End-of-track sleep paused the next track and cleared the timer. Muted synthetic tones; no listening claim. 3 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 11:05:34 AM Eastern: L3 recorded the F26 Last PASS. S9+ browsed synthetic albums/tracks, used play/pause, Next/Previous and the queue/radio controls, retained a playing state with the screen off, and paused the next track with the end-of-track sleep timer. These muted tester35 control passes are carried; no listening or sound-quality result is claimed."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Listen to real music; test crossfade, gapless, queue, lyrics and album and artist radio."
-          },
+            "text": "Listen to real music, crossfade/gapless and album/artist radio; lyrics remain outside the passed control scope."
+          }
+        ],
+        "hist": [
           {
-            "kind": "BLOCKED",
-            "text": "No recording with real music or sound heard by a person exists."
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: DEVICE: Listen to real music; test crossfade, gapless, queue, lyrics and album and artist radio.; BLOCKED: No recording with real music or sound heard by a person exists."
           }
         ]
       },
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 3 PASS, 0 FAIL, 0 BLOCKED. Real device and Real-world check are recorded true for the fully passed named automatable set under Nick's AI-tester definition. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -3619,6 +3769,15 @@
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "S9+",
+          "build": "Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36",
+          "date": "Oct 23, 2026, 11:05:34 AM Eastern",
+          "result": "PASS",
+          "evidence": "S9+ browsed synthetic albums/tracks, used play/pause, Next/Previous and the queue/radio controls, retained a playing state with the screen off, and paused the next track with the end-of-track sleep timer. These muted tester35 control passes are carried; no listening or sound-quality result is claimed. Last PASS from the evidence table: S9+; tester35/code85; 2026-10-23 11:05:34 AM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. F26-library-player PASS (Round1 carried): music/s9-paused-track.xml, music/s9-next-song.xml, music/s9-end-track-armed.xml; F26-queue-radio PASS (Round1 carried): music/s9-queue.xml, music/s9-start-radio.xml; F26-sleep-screenoff PASS (Round1 carried): music/s9-screen-off-media.txt, music/s9-after-track-sleep.xml. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Galaxy S9+",
@@ -3662,24 +3821,31 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Human look: use the jobs and stars with a real family for several days and play Games together with people. Keyboard Enter/Add, local assignment, one star and dashboard/game links passed on the named phones. No code fix remains from the earlier Enter/Add finding in this run; Nick alone records Ready.",
-      "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 6 PASS, 0 FAIL, 0 BLOCKED. Real device and Real-world check are recorded true for the fully passed named automatable set under Nick's AI-tester definition. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
-      "testedOn": "Galaxy S9+ and Pixel 3; Beebo Android 1.51-tester35 (code 85). S9+ and Pixel 3 added disposable aliases with keyboard Enter while Add stayed reachable, spun jobs, and retained local assignments. Completing one S9+ job awarded one star. Dashboard links and Games together opened. No real family-duration claim. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "lastTested": "Oct 23, 2026, 11:51:29 AM Eastern (Last PASS: S9+; tester35/code85 carried pass; not rerun on tester36)",
+      "leftToReach100": "Human look: use jobs and stars with a real family for several days and play Games together with people. The passed Enter/Add, local jobs/star and dashboard/link checks are carried tester35 evidence, not a new tester36 family run or proof of every game. Nick alone records Ready.",
+      "previousPercent": 99,
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 6 PASS, 0 FAIL, 0 BLOCKED in the named A scope. The named tester35 passes are carried; no repeat phone run or new tester36 pass is inferred. The existing device/real-world ticks are retained for the stated control scope. Built, Automated tests, Ready and status labels are unchanged.",
+      "testedOn": "Pixel 3 and S9+; Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36. Last PASS: Oct 23, 2026, 11:51:29 AM Eastern. Pixel 3 and S9+ added disposable aliases with keyboard Enter while Add stayed reachable, spun local jobs, awarded a star and opened the dashboard/game links on tester35. These passes are carried. Six-job milestone evidence belongs to the achievements scope; a Games together link is not every-game or real-family coverage. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F27.",
       "roadTo100": {
         "means": "A real family uses the dashboard and Camp Jobs on their phones for several days and a reviewer signs off.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Oct 13, 2026, S24 Ultra: Family Dashboard cards matched the other screens; Camp Jobs add, spin, tick, star and remove all worked.",
           "Code, Oct 18, 2026 (Android 1.51-tester24 and tester25): the Camp Jobs screen now shrinks to the room above the keyboard so the Add button can be reached (a source-guard test, and the app asks Android to resize for the keyboard). Not yet re-checked on a phone.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ and Pixel 3 added disposable aliases with keyboard Enter while Add stayed reachable, spun jobs, and retained local assignments. Completing one S9+ job awarded one star. Dashboard links and Games together opened. No real family-duration claim. 6 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ and Pixel 3 added disposable aliases with keyboard Enter while Add stayed reachable, spun jobs, and retained local assignments. Completing one S9+ job awarded one star. Dashboard links and Games together opened. No real family-duration claim. 6 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 11:51:29 AM Eastern: L3 recorded the F27 Last PASS. Pixel 3 and S9+ added disposable aliases with keyboard Enter while Add stayed reachable, spun local jobs, awarded a star and opened the dashboard/game links on tester35. These passes are carried. Six-job milestone evidence belongs to the achievements scope; a Games together link is not every-game or real-family coverage."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Use it with a real family; test Games together."
+            "text": "Use the jobs/stars with a family for several days and Games together with real people."
+          }
+        ],
+        "hist": [
+          {
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: DEVICE: Use it with a real family; test Games together."
           }
         ]
       },
@@ -3689,6 +3855,10 @@
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 6 PASS, 0 FAIL, 0 BLOCKED. Real device and Real-world check are recorded true for the fully passed named automatable set under Nick's AI-tester definition. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -3703,6 +3873,15 @@
         }
       ],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "Pixel 3, S9+",
+          "build": "Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36",
+          "date": "Oct 23, 2026, 11:51:29 AM Eastern",
+          "result": "PASS",
+          "evidence": "Pixel 3 and S9+ added disposable aliases with keyboard Enter while Add stayed reachable, spun local jobs, awarded a star and opened the dashboard/game links on tester35. These passes are carried. Six-job milestone evidence belongs to the achievements scope; a Games together link is not every-game or real-family coverage. Last PASS from the evidence table: S9+; tester35/code85; 2026-10-23 11:51:29 AM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. F27-keyboard-s9 PASS (Round1 carried): family/s9-jobs-keyboard.png, family/s9-jobs-enter.xml; F27-keyboard-pixel PASS (Round1 carried): family/pixel-jobs-keyboard.png, family/pixel-jobs-enter.xml; F27-jobs-spin PASS (Round1 carried): family/s9-jobs-final-spin.xml, family/pixel-jobs-final-spin.xml; F27-one-star PASS (Round1 carried): family/s9-jobs-assignment-actions.xml, family/s9-one-star.xml; F27-dashboard PASS (Round1 carried): family/s9-dashboard-current.xml, family/s9-dashboard-lower-1.xml; F27-games-link PASS (Round1 carried): family/s9-games-together-link.xml. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Galaxy S9+ and Pixel 3",
@@ -3729,23 +3908,30 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Human look: use the shared list while packing a real bag on a real trip and review the final build. Two-phone additions, offline ticking and reconnect synchronization passed in the original saved-house sessions; this is not isolated-server evidence. Nick alone records Ready.",
-      "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 0 BLOCKED. Real device and Real-world check are recorded true for the fully passed named automatable set under Nick's AI-tester definition. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
-      "testedOn": "Galaxy S9+ and Pixel 3; Beebo Android 1.51-tester35 (code 85). S9+ and Pixel 3 exchanged packing items in their original saved-house sessions. S9+ edited offline; after reconnect the Pixel received 2/2, then ticks were restored to 0/2. The initial pre-settle 1/2 capture is retained. These were not isolated-server identities. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "lastTested": "Oct 23, 2026, 9:44:31 AM Eastern (Last PASS: Pixel 3; tester35/code85 carried pass; not rerun on tester36)",
+      "leftToReach100": "Human look: pack a real bag on a trip with the shared list and review the final build. Two-phone additions and offline/reconnect passed in earlier saved-house TEST sessions; no new isolated-server or real-trip result is claimed. Nick alone records Ready.",
+      "previousPercent": 99,
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 2 PASS, 0 FAIL, 0 BLOCKED in the named A scope. The named tester35 passes are carried; no repeat phone run or new tester36 pass is inferred. The existing device/real-world ticks are retained for the stated control scope. Built, Automated tests, Ready and status labels are unchanged.",
+      "testedOn": "Pixel 3 and S9+; Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36. Last PASS: Oct 23, 2026, 9:44:31 AM Eastern. The two phones exchanged packing items and synchronized an offline tick after reconnect on tester35. These carried passes used earlier saved-house TEST sessions, not the later isolated-server identity. Ticks were restored; no real trip is claimed. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F28.",
       "roadTo100": {
         "means": "Two or more phones share one packing list, including offline ticking that syncs later, and a reviewer signs off.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Oct 13, 2026, two real phones: add, tick and remove synced both ways (about 6 seconds).",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ and Pixel 3 exchanged packing items in their original saved-house sessions. S9+ edited offline; after reconnect the Pixel received 2/2, then ticks were restored to 0/2. The initial pre-settle 1/2 capture is retained. These were not isolated-server identities. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ and Pixel 3 exchanged packing items in their original saved-house sessions. S9+ edited offline; after reconnect the Pixel received 2/2, then ticks were restored to 0/2. The initial pre-settle 1/2 capture is retained. These were not isolated-server identities. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 9:44:31 AM Eastern: L3 recorded the F28 Last PASS. The two phones exchanged packing items and synchronized an offline tick after reconnect on tester35. These carried passes used earlier saved-house TEST sessions, not the later isolated-server identity. Ticks were restored; no real trip is claimed."
         ],
         "remaining": [
           {
-            "kind": "BLOCKED",
-            "text": "No readiness review of the published download."
+            "kind": "DEVICE",
+            "text": "Use the earlier-session shared list while packing a real bag on a trip and review the final build."
+          }
+        ],
+        "hist": [
+          {
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: BLOCKED: No readiness review of the published download."
           }
         ]
       },
@@ -3755,6 +3941,10 @@
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 0 BLOCKED. Real device and Real-world check are recorded true for the fully passed named automatable set under Nick's AI-tester definition. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -3769,6 +3959,15 @@
         }
       ],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "Pixel 3, S9+",
+          "build": "Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36",
+          "date": "Oct 23, 2026, 9:44:31 AM Eastern",
+          "result": "PASS",
+          "evidence": "The two phones exchanged packing items and synchronized an offline tick after reconnect on tester35. These carried passes used earlier saved-house TEST sessions, not the later isolated-server identity. Ticks were restored; no real trip is claimed. Last PASS from the evidence table: Pixel 3; tester35/code85; 2026-10-23 09:44:31 AM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. F28-two-way-add PASS (Round1 carried): packing/pixel-first-shared.xml, packing/s9-second-phone-added.xml; F28-offline-edit PASS (Round1 carried): packing/s9-offline-ticked.xml, packing/pixel-settled-after-reconnect.xml, packing/s9-settled-after-reconnect.xml, packing/*-ticks-restored.xml. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Galaxy S9+ and Pixel 3",
@@ -3795,23 +3994,34 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Human look: cook or plan a real meal using scaled amounts and the combined shopping list. Recipe create/duplicate/scale/list checks passed on S9+. Outgoing recipe sharing remains untested and needs a separate approved sharing check; this score covers the named recipe/shopping checks. Nick alone records Ready.",
-      "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 5 PASS, 0 FAIL, 0 BLOCKED. Real device and Real-world check are recorded true for the fully passed named automatable set under Nick's AI-tester definition. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
-      "testedOn": "Galaxy S9+; Beebo Android 1.51-tester35 (code 85). S9+ validated an empty recipe, saved two disposable recipes, scaled 2 to 4 people, combined 6 cups flour and 1 tsp salt, ticked shopping items, and saved/reopened a renamed copy of a built-in recipe. Local/original-session context; no outgoing recipe-sharing result. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "lastTested": "Oct 23, 2026, 11:11:59 AM Eastern (Last PASS: S9+; tester35/code85 carried pass; not rerun on tester36)",
+      "leftToReach100": "Human look: cook or plan a real meal using the scaled amounts and combined list. The passed recipe/shopping checks used synthetic local recipes on tester35. Outgoing recipe sharing remains untested and outside this passed scope. Nick alone records Ready.",
+      "previousPercent": 99,
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 5 PASS, 0 FAIL, 0 BLOCKED in the named A scope. The named tester35 passes are carried; no repeat phone run or new tester36 pass is inferred. The existing device/real-world ticks are retained for the stated control scope. Built, Automated tests, Ready and status labels are unchanged.",
+      "testedOn": "S9+; Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36. Last PASS: Oct 23, 2026, 11:11:59 AM Eastern. S9+ validated and created synthetic recipes, scaled amounts, duplicated a built-in recipe, and combined/ticked the multi-recipe shopping list on tester35. These passes are carried. They do not prove practical cooking quantities or outgoing recipe sharing. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F29.",
       "roadTo100": {
         "means": "A real family adds recipes, scales amounts, builds a shopping list across recipes and shares it.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Oct 13, 2026, S24 Ultra: starter recipes opened, the people counter reached the shopping list, and ticking worked.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ validated an empty recipe, saved two disposable recipes, scaled 2 to 4 people, combined 6 cups flour and 1 tsp salt, ticked shopping items, and saved/reopened a renamed copy of a built-in recipe. Local/original-session context; no outgoing recipe-sharing result. 5 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ validated an empty recipe, saved two disposable recipes, scaled 2 to 4 people, combined 6 cups flour and 1 tsp salt, ticked shopping items, and saved/reopened a renamed copy of a built-in recipe. Local/original-session context; no outgoing recipe-sharing result. 5 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 11:11:59 AM Eastern: L3 recorded the F29 Last PASS. S9+ validated and created synthetic recipes, scaled amounts, duplicated a built-in recipe, and combined/ticked the multi-recipe shopping list on tester35. These passes are carried. They do not prove practical cooking quantities or outgoing recipe sharing."
         ],
         "remaining": [
           {
+            "kind": "DEVICE",
+            "text": "Cook or plan a real meal and assess practical scaled quantities."
+          },
+          {
             "kind": "BLOCKED",
-            "text": "Sharing a recipe sends data out and was left untested."
+            "text": "Outgoing recipe sharing remains untested and outside the passed recipe/shopping scope."
+          }
+        ],
+        "hist": [
+          {
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: BLOCKED: Sharing a recipe sends data out and was left untested."
           }
         ]
       },
@@ -3821,6 +4031,10 @@
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 5 PASS, 0 FAIL, 0 BLOCKED. Real device and Real-world check are recorded true for the fully passed named automatable set under Nick's AI-tester definition. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -3835,6 +4049,15 @@
         }
       ],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "S9+",
+          "build": "Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36",
+          "date": "Oct 23, 2026, 11:11:59 AM Eastern",
+          "result": "PASS",
+          "evidence": "S9+ validated and created synthetic recipes, scaled amounts, duplicated a built-in recipe, and combined/ticked the multi-recipe shopping list on tester35. These passes are carried. They do not prove practical cooking quantities or outgoing recipe sharing. Last PASS from the evidence table: S9+; tester35/code85; 2026-10-23 11:11:59 AM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. F29-validation-save PASS (Round1 carried): recipes/s9-blank-validation.png, recipes/s9-recipe-a-details.xml; F29-scale PASS (Round1 carried): recipes/s9-fresh-current.xml, recipes/s9-recipe-a-scaled-four.png; F29-shopping-tick PASS (Round1 carried): recipes/s9-fresh-shopping-a.xml, recipes/s9-fresh-shopping-ticked.xml; F29-two-recipe-sum PASS (Round1 carried): recipes/s9-combined-form.xml, recipes/s9-combined-four.xml; F29-duplicate PASS (Round1 carried): recipes/s9-duplicate-form.xml, recipes/s9-duplicate-saved.xml. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": []
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Galaxy S9+",
@@ -3853,20 +4076,20 @@
       "group": "Android phone app",
       "name": "Collections and Request a title",
       "status": "Beta",
-      "percentComplete": 74,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
-        "Real-world check": false,
+        "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "Missing automatable fixtures/coverage: supply real synthetic collection membership and safe trailer media, then verify positive Complete filtering and trailer controls. The empty filter and owner-confirmed disposable request pass only their narrow checks. Human look: confirm a requested title and watch/listen to trailers; Nick records Ready.",
+      "lastTested": "Oct 23, 2026, 6:29:17 PM Eastern (Last PASS: Pixel 3; tester36/code86 changed controls, earlier tester35 passes carried)",
+      "leftToReach100": "Human look: check a real title request and watch/listen to the matching real trailer. Synthetic collection membership/filtering, owner delivery and handler dispatch passed; a handler opening is not trailer playback or real metadata-matching proof. Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
-      "testedOn": "Pixel 3; Beebo Android 1.51-tester35 (code 85). Pixel 3 selected Complete on an honestly empty collection list and sent a disposable title request; the normal owner API confirmed the exact title. Positive collection filtering and trailers lacked fixtures. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 6 PASS, 0 FAIL, 0 BLOCKED in the named A scope. Changed title controls passed on tester36; earlier unchanged scope retains its tester35 evidence. Real-world is recorded true for the stated passed control scope only, under the existing AI-tester definition. Built, Automated tests, Ready and status labels are unchanged.",
+      "testedOn": "Pixel 3; installed Android 1.51-tester36 (code 86), plus unchanged tester35/code85 passes carried. Last PASS: Oct 23, 2026, 6:29:17 PM Eastern. Populated synthetic collection filters and the owner-confirmed disposable request passed on tester35. On tester36, the changed 48 dp trailer control dispatched the intended public synthetic video to the normal handler. No real title/trailer match, trailer picture, sound or external account flow is claimed. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F30.",
       "roadTo100": {
         "means": "A person browses collections, sees what is missing and sends a request that the owner receives.",
         "done": [
@@ -3874,16 +4097,27 @@
           "Oct 13, 2026, S24 Ultra: collections listed, searched and opened with missing-film markers; the Request a title screen opened.",
           "Oct 14, 2026, published tester23: 101 collections listed (S9+); a missing title showed the Request button and ampersand searches worked on all four phones; no request was sent.",
           "Sending a request was never tried. A fuller media-requests and wishlist feature is only an idea, not promised; work on it has started but is not merged and is not in any download.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 selected Complete on an honestly empty collection list and sent a disposable title request; the normal owner API confirmed the exact title. Positive collection filtering and trailers lacked fixtures. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 selected Complete on an honestly empty collection list and sent a disposable title request; the normal owner API confirmed the exact title. Positive collection filtering and trailers lacked fixtures. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 6:29:17 PM Eastern: L3 recorded the F30 Last PASS. Populated synthetic collection filters and the owner-confirmed disposable request passed on tester35. On tester36, the changed 48 dp trailer control dispatched the intended public synthetic video to the normal handler. No real title/trailer match, trailer picture, sound or external account flow is claimed."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Send a request and see it arrive on the owner side."
+            "text": "Watch/listen to a real matching trailer and confirm a real request; dispatch and synthetic metadata are bounded evidence."
+          }
+        ],
+        "hist": [
+          {
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: DEVICE: Send a request and see it arrive on the owner side."
           }
         ]
       },
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 2 PASS, 0 FAIL, 0 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -3906,11 +4140,22 @@
         }
       ],
       "codeDonePercent": 100,
-      "realWorldDonePercent": 33,
+      "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "Pixel 3",
+          "build": "installed Android 1.51-tester36 (code 86), plus unchanged tester35/code85 passes carried",
+          "date": "Oct 23, 2026, 6:29:17 PM Eastern",
+          "result": "PASS",
+          "evidence": "Populated synthetic collection filters and the owner-confirmed disposable request passed on tester35. On tester36, the changed 48 dp trailer control dispatched the intended public synthetic video to the normal handler. No real title/trailer match, trailer picture, sound or external account flow is claimed. Last PASS from the evidence table: Pixel 3; tester36/code86; 2026-10-23 06:29:17 PM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. F30-complete-empty PASS (Round1 carried): collections/pixel-initial.xml, collections/pixel-complete-filter.xml; F30-request-owner PASS (Round1 carried): collections/pixel-request-submit-dialog.xml, collections/pixel-submitted-request.xml, l3-server/owner-request-confirmation.json; R2-F30-populated-filters PASS (Round2): round2/collections/pixel-populated-all.xml, round2/collections/pixel-missing-one.xml, round2/collections/pixel-complete-one.xml, round2/collections/pixel-owned-parts.xml; R2-F30-trailer-negative PASS (Round2): round2/collections/pixel-no-trailer-toast.png, round2/collections/pixel-negative-trailer-remains-in-app.xml; R2-F30-trailer-dispatch PASS (Round2): round2/collections/trailer-dispatch.json; R3-F30-title-trailer PASS (Round3): round3/changed-controls/action-targets.json, round3/changed-controls/trailer-dispatch.json, round3/navigation/pixel-normal-return-after-back.xml. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": [
+            "Real-world check"
+          ]
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Pixel 3",
@@ -4025,20 +4270,24 @@
       "group": "Android phone app",
       "name": "Family achievements (opt-in milestones)",
       "status": "In development (off until the host turns it on)",
-      "percentComplete": 49,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026 (L3 phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "BLOCKED setup: local disposable-phone host enablement is absent, so no opt-in, Camp Jobs/time-together milestone, retention or clearing check ran. Prepare that local host safely and pass those automatable checks on two phones. Human look: spend time together and review opt-in/retention; Nick records Ready.",
+      "lastTested": "Oct 23, 2026, 1:52:50 PM Eastern (Last PASS: S9+; tester35/code85 carried pass; not rerun on tester36)",
+      "leftToReach100": "Missing elapsed-retention coverage keeps this row below 99%: verify that the chosen keep-for period actually expires the intended test milestones. Warning/Cancel is not expiry proof. Human look: spend real family time and review opt-in, milestones and retention. Synthetic milestones and carried tester35 passes are explicit; Nick alone records Ready.",
       "previousPercent": 49,
-      "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
-      "changeNote": "L3 Round 1 evidence: 0 PASS, 0 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below.",
+      "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+      "changeNote": "L3 Round 3 ledger: 7 PASS, 0 FAIL, 0 BLOCKED in the named A scope. The named tester35 passes are carried; no repeat phone run or new tester36 pass is inferred. Real device is now recorded true; Real-world stays false because retention expiry is not proved. Built, Automated tests, Ready and status labels are unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+          "changeNote": "L3 Round 1 evidence: 0 PASS, 0 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
@@ -4053,26 +4302,40 @@
         "done": [
           "Checks passed: Built, Automated tests.",
           "Oct 21, 2026, tester33 on a Pixel 3 (the owner's home server): at More > Tools > Family Dashboard > Achievements the per-person preview says only the kind of milestone and when you saved it are kept, and the two \"Remove milestones for everyone?\" dialogs say \"This cannot be undone\" and show no counts. The nickname line appears only when the host chooses to keep nicknames.",
-          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ Family Dashboard had no Achievements card. Local disposable-phone host enablement was absent; PC owner setup cannot substitute. No opt-in, milestone, retention or clearing operation ran. 0 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths."
+          "L3 Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ Family Dashboard had no Achievements card. Local disposable-phone host enablement was absent; PC owner setup cannot substitute. No opt-in, milestone, retention or clearing operation ran. 0 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
+          "Oct 23, 2026, 1:52:50 PM Eastern: L3 recorded the F32 Last PASS. A disposable S9+ host enabled achievements and a test identity opted in on tester35. Synthetic time/jobs milestones, duplicate rejection, reopening, own Clear/Cancel, retention warning/Cancel, opt-out and host-off restoration passed. These passes are carried. No real family duration or elapsed retention expiry is proved."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Turn achievements on as a host, opt in as a person, record a Camp Jobs milestone and a time-together milestone, then clear them (not run: the Oct 21 run used the owner's real account, where recording cannot be undone)."
+            "text": "Verify actual keep-for expiry on a disposable test ledger; the retention warning/Cancel pass does not prove expiry."
           },
           {
             "kind": "DEVICE",
-            "text": "Check the keep-for choice on two phones."
-          },
+            "text": "Spend real family time and review opt-in, milestones and retention by hand."
+          }
+        ],
+        "hist": [
           {
-            "kind": "BLOCKED",
-            "text": "No readiness review is recorded for the final build."
+            "changedEastern": "Oct 23, 2026, 7:54 PM Eastern",
+            "changeNote": "Round 3 scope reconciliation; previous remaining list retained as history: DEVICE: Turn achievements on as a host, opt in as a person, record a Camp Jobs milestone and a time-together milestone, then clear them (not run: the Oct 21 run used the owner's real account, where recording cannot be undone).; DEVICE: Check the keep-for choice on two phones.; BLOCKED: No readiness review is recorded for the final build."
           }
         ]
       },
-      "testedOn": "Galaxy S9+; Beebo Android 1.51-tester35 (code 85). S9+ Family Dashboard had no Achievements card. Local disposable-phone host enablement was absent; PC owner setup cannot substitute. No opt-in, milestone, retention or clearing operation ran. L3 report docs/qa/REALWORLD-PHONE-RUN-2026-10-23.md at 5505cd9251c1cb6a752427dc3d5afcd8427ef2df, assembled Oct 23, 2026, 12:19 PM Eastern. This is the report time, not a claimed execution time for every check.",
+      "testedOn": "S9+; Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36. Last PASS: Oct 23, 2026, 1:52:50 PM Eastern. A disposable S9+ host enabled achievements and a test identity opted in on tester35. Synthetic time/jobs milestones, duplicate rejection, reopening, own Clear/Cancel, retention warning/Cancel, opt-out and host-off restoration passed. These passes are carried. No real family duration or elapsed retention expiry is proved. Current phone inventory is tester36/code86 on Pixel 3 and S9+; identical installed APK SHA-256 ec73e6ef4fc35d1cf999c604a9282a7c2b5137752a006c6b6c42b1274c872782, supplied main 78803a9f1bddd222c7da366b543803846f72e9c3. Installed identity/hash was verified; independent bytecode-to-source equivalence and older APK-source mapping were not proved. Evidence: docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743, F32.",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L3 (AI tester; automated real-phone checks)",
+          "device": "S9+",
+          "build": "Android 1.51-tester35 (code 85), carried because L3 found the tested code unchanged; not rerun on tester36",
+          "date": "Oct 23, 2026, 1:52:50 PM Eastern",
+          "result": "PASS",
+          "evidence": "A disposable S9+ host enabled achievements and a test identity opted in on tester35. Synthetic time/jobs milestones, duplicate rejection, reopening, own Clear/Cancel, retention warning/Cancel, opt-out and host-off restoration passed. These passes are carried. No real family duration or elapsed retention expiry is proved. Last PASS from the evidence table: S9+; tester35/code85; 2026-10-23 01:52:50 PM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. R2-F32-optin PASS (Round2): round2/achievements/s9-off-and-host-settings.xml, round2/achievements/s9-host-lower.xml, round2/achievements/s9-fresh-empty-ledger.xml; R2-F32-time-duplicate PASS (Round2): round2/achievements/s9-synthetic-time-saved.xml, round2/achievements/s9-duplicate-day.xml; R2-F32-reopen-cancel PASS (Round2): round2/achievements/s9-cancel-preserves-persisted.xml; R2-F32-jobs PASS (Round2): round2/achievements/s9-jobs-completed.xml, round2/achievements/s9-jobs-milestone-saved.xml; R2-F32-clear PASS (Round2): round2/achievements/s9-own-test-ledger-cleared.xml; R2-F32-retention PASS (Round2): round2/achievements/s9-retention-30-days.xml, round2/achievements/s9-retention-cancelled.xml; R2-F32-restore PASS (Round2): round2/achievements/s9-host-restored-off.xml. Paths are relative to the local Oct 23 L3 evidence root; no raw captures uploaded. Source docs/qa/PHONE-EVIDENCE-TABLE-2026-10-23.md at 2456058e29b3a6a1ac3c92527b3563645f286743.",
+          "ticks": [
+            "Real device"
+          ]
+        },
         {
           "tester": "L3 (AI tester; automated real-phone checks)",
           "device": "Galaxy S9+",
@@ -4092,7 +4355,7 @@
         }
       ],
       "codeDonePercent": 100,
-      "realWorldDonePercent": 0,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing"
     },
@@ -6372,16 +6635,16 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+  "previousUpdatedEastern": "Oct 23, 2026, 1:35 PM Eastern",
   "showChangeMarkers": true,
   "hero": {
-    "recordName": "October 22 test-build retest and owner TV observations",
-    "scope": "Published downloads, unpublished tester35/0.1.100 retest, and owner-reported Samsung browser observations",
-    "lastTested": "Oct 22, 2026, 8:20 AM Eastern",
-    "lastTestedIso": "2026-10-22T08:20:00-04:00",
-    "previousTested": "Oct 14, 2026, 9:06 PM Eastern",
+    "recordName": "October 23 real-phone evidence: L3 Round 3",
+    "scope": "Ten bounded Android phone scopes, current tester36 control checks and explicitly carried tester35 passes; six proven device bugs remain open",
+    "lastTested": "Oct 23, 2026, 6:34 PM Eastern",
+    "lastTestedIso": "2026-10-23T18:34:08-04:00",
+    "previousTested": "Oct 22, 2026, 8:20 AM Eastern",
     "broader": "Still required",
-    "newerText": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified."
+    "newerText": "Pixel 3 and Galaxy S9+ had Android 1.51-tester36 (code 86) installed, with matching independently verified APK hashes and coordinator-supplied main 78803a9f1. Two passed scopes include changed tester36 title controls; eight carry their actual tester35 pass times because the tested code was unchanged. Across all 32 Android rows L3 records 106 PASS, 11 FAIL and 12 BLOCKED assessments: 97 passes carried and nine Round 3 passes, including two installed-artifact inventory checks. This is not 106 fresh tests or release clearance. Pairing, sidecar captions, online Next, paused audiobook seeking, Trip export and Watch Together layout still fail. Campsite mobile data remains untested. Published download versions are read from the unchanged release feeds. No real TV, car, acoustic or Google Play clearance is added."
   },
   "historyNew": [
     {
