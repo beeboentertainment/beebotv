@@ -1,8 +1,8 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 22, 2026, 3:48 PM Eastern",
-    "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. Human testing done is the share of Real device, Real-world check and Ready to call Available that passed. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
+    "updatedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+    "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. The separate Human testing done figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
       "humanTestingDone": 26,
@@ -581,7 +581,7 @@
     "evidenceLimit": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 22, 2026, 3:48 PM Eastern",
+    "updatedEastern": "Oct 23, 2026, 9:49 AM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Human testing done is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
@@ -1009,16 +1009,16 @@
     "summary": "The downloads are Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.99 and Android 1.51-tester34 add audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-23T09:21:00-04:00",
-  "updatedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+  "updated": "2026-10-23T09:49:00-04:00",
+  "updatedEastern": "Oct 23, 2026, 9:49 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
-  "howToRead": "percentComplete adds up five checks: Built 20, Automated tests 20, Real device 25, Real-world check 25 and Ready to call Available 10. The first four add up to 90. The last 10 are Nick's: only he can say a feature is Ready. 90% means the code is built, it passed the phone or PC test and no error is known; the only thing left is Nick saying Ready. A feature can reach 90 only when all four of those checks passed and it has no open known problem (openIssues is 0). With an open known problem it stays at 85 or below. At exactly 90 the label is \"Built and fully tested, waiting for Nick\". At 100 it is \"Ready\". The score measures how much of our test list has passed. It does not mean a feature is bug-free. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
-  "overallAveragePercent": 56,
+  "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Our test process uses AI testers on real devices for that check. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
+  "overallAveragePercent": 64,
   "groupAveragePercent": {
-    "Android phone app": 63,
-    "Windows desktop app": 54,
-    "Other systems": 48,
-    "Services and website": 44
+    "Android phone app": 71,
+    "Windows desktop app": 63,
+    "Other systems": 57,
+    "Services and website": 50
   },
   "featureCount": 70,
   "features": [
@@ -1026,7 +1026,7 @@
       "group": "Android phone app",
       "name": "Opening the app and the five tabs",
       "status": "Available (test download)",
-      "percentComplete": 90,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1036,10 +1036,14 @@
       },
       "lastTested": "Oct 22, 2026 (tester34 on four phones); Oct 14, 2026 (published tester23 on four phones)",
       "leftToReach100": "Run a TalkBack (screen reader) pass and get a final review of the newest build; the Oct 14 runs covered the published tester23 on four phones, without TalkBack.",
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
+      "previousPercent": 90,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: RETEST-1 reports no crash-log entries and retained sign-in on the three named phones using tester35 with Windows 0.1.100. This is not a new full five-tab or TalkBack pass. Historical ticks stay unchanged."
@@ -1143,7 +1147,7 @@
       "group": "Android phone app",
       "name": "Playing films, seeking, picture-in-picture",
       "status": "Available (test download)",
-      "percentComplete": 85,
+      "percentComplete": 90,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1152,11 +1156,15 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 22, 2026 (tester34 on four phones, muted; subtitle and version pickers FAILED on the S25); Oct 14, 2026 (published tester23 on four phones)",
-      "leftToReach100": "Open known issues (they cap the score at 85%): sidecar subtitles can be selected but no text appears, and the first online Next jump goes to the next season. Repair sidecar subtitle rendering; reproduce intermittent online Next and earlier Pixel behavior. Retest clean/current builds, rotation and sound heard by a person. Narrow tester35 selection/start passes do not close the whole feature.",
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 2 open known issues cap it at 85%.",
-      "previousPercent": 80,
+      "leftToReach100": "Open known issues (they cap the score at 90%): sidecar subtitles can be selected but no text appears, and the first online Next jump goes to the next season. Repair sidecar subtitle rendering; reproduce intermittent online Next and earlier Pixel behavior. Retest clean/current builds, rotation and sound heard by a person. Narrow tester35 selection/start passes do not close the whole feature.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 2 open known issues cap the score at 90%.",
+      "previousPercent": 85,
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 2 open known issues cap it at 85%."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: RETEST-1 on tester35 with Windows 0.1.100: the S9+ Subtitle Test started promptly and played the 30-second clip twice; the landscape subtitle sheet listed English and Spanish, and the button labels followed those choices. That item does not establish that the chosen language appeared in the picture. On the S25, version selection between 1080p and 720p worked and 720p stayed selected. FAIL: listed/selected English and Spanish sidecar files drew no subtitle text. PARTIAL: online Next jumped to the next season once, then the expected same-season episode on three later tries; offline Next passed with existing downloads. Earlier unexplained Pixel Next behavior remains open; a stale queue is a hypothesis. The screen-off switch kept Android’s PLAYING state, not sound heard by a person. French player labels appeared on the Pixel."
@@ -1289,7 +1297,7 @@
       "group": "Android phone app",
       "name": "Away from home (direct, then relay)",
       "status": "Beta",
-      "percentComplete": 85,
+      "percentComplete": 90,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1298,7 +1306,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 14, 2026 (published tester23, Galaxy S24 Ultra on 5G with Wi-Fi off); Oct 13, 2026 (test build)",
-      "leftToReach100": "Open known issues (they cap the score at 85%): the web player froze after a phone switched from Wi-Fi to mobile data, and the home PC ran out of free ports after many sessions. Both are fixed in the code but not yet re-tested on real devices. Decide the Relay price, test two people on Beebo Relay at once, and re-test on real devices the fixes for the web player freezing after a phone switched from Wi-Fi to mobile data and for the home PC running out of free ports after many sessions (fixed in the code, not yet in a published download).",
+      "leftToReach100": "Open known issues (they cap the score at 90%): the web player froze after a phone switched from Wi-Fi to mobile data, and the home PC ran out of free ports after many sessions. Both are fixed in the code but not yet re-tested on real devices. Decide the Relay price, test two people on Beebo Relay at once, and re-test on real devices the fixes for the web player freezing after a phone switched from Wi-Fi to mobile data and for the home PC running out of free ports after many sessions (fixed in the code, not yet in a published download).",
       "roadTo100": {
         "means": "A current phone plays video from the home PC over mobile data, and again through Beebo Relay, with both results recorded and the Relay price approved.",
         "done": [
@@ -1340,10 +1348,14 @@
           }
         ]
       },
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 2 open known issues cap it at 85%.",
+      "previousPercent": 85,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 2 open known issues cap the score at 90%.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 2 open known issues cap it at 85%."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: RETEST-1 wording was PARTIAL: the Pixel in real airplane mode showed No internet connection on this phone; the S25 with app networking blocked showed Couldn’t reach Beebo from here. The S25 airplane setting alone had left Wi-Fi up. This does not establish a new away-route, direct-versus-relay or server-failure pass."
@@ -1401,7 +1413,7 @@
       "group": "Android phone app",
       "name": "Watch Together",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1411,10 +1423,14 @@
       },
       "lastTested": "Oct 22, 2026 (tester34, two phones on one home Wi-Fi); Oct 13, 2026 (two real phones on home Wi-Fi)",
       "leftToReach100": "Close and reopen the app to confirm it rejoins, try chat and reactions and a phone on mobile data, then run a readiness review on the published download.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: on tester34, a Galaxy S25 hosted and a Galaxy S9+ (child profile) joined as viewer on one home Wi-Fi. Play, a seek, pause and a seek back were followed within about 1 to 3 seconds; resume took about 5 seconds, slower than our 3-second goal. The room list showed both people and cleared when the viewer left and when the host left. The phones were muted. The label changed from In development to Beta: it is in the download and has now worked on two real phones in several runs (Oct 2, Oct 3, Oct 13 and Oct 22). Rejoining after closing the app, chat, reactions and a phone on mobile data were not tested. The percentage did not change."
@@ -1484,7 +1500,7 @@
       "group": "Android phone app",
       "name": "Car party (host and passengers)",
       "status": "In development",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1519,10 +1535,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "Oct 13: the host started a party (6-digit code and a QR code) and a passenger page opened on a second phone, joined with the code, showed what was playing and who was in the car, and left. With the nickname left blank the live page still said \"Pick a nickname first\": the automatic \"Guest 1\" name is fixed in the code but not on the live server. Passenger watching, reactions arriving on the host and a real parked car were not tested, so the percentage did not change."
@@ -1548,7 +1568,7 @@
       "group": "Android phone app",
       "name": "Library health",
       "status": "Available (test download)",
-      "percentComplete": 90,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1580,10 +1600,14 @@
           }
         ]
       },
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
+      "previousPercent": 90,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
+        },
         {
           "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
           "changeNote": "Oct 14: on the published tester23 the Library health screen opened on a Galaxy S9+ signed in as a profile that is not the owner. It listed 59 titles under “Needs attention” (all unmatched titles, with “Rename or match” and “Needs a look”) and said only the owner account can run the folder check. Nothing was deleted or changed. The ready, missing-folder and recovery states were not shown. Percentage unchanged."
@@ -1625,7 +1649,7 @@
       "group": "Android phone app",
       "name": "Surprise me, playlists, watchlist, favourites",
       "status": "Available (test download)",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1635,10 +1659,14 @@
       },
       "lastTested": "Oct 22, 2026 (Surprise me on the S25 and Pixel 3); Oct 14, 2026 (published tester23, Galaxy S9+); Oct 13, 2026 (test build)",
       "leftToReach100": "Settle how Surprise me should behave (title page first or play at once), then test stars and playlists on a phone.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: on tester34, Home \"Surprise me\" opens the Surprise screen first, and its \"Play a random film\" button starts a film within about 1.5 seconds (Galaxy S25 and Pixel 3, muted). Favourite, Watchlist and Watched were switched on and off once on the S9+ child profile. Playlists were not tested in these runs. Whether Surprise me should start straight from Home is still Nick's decision. The percentage did not change."
@@ -1714,7 +1742,7 @@
       "group": "Android phone app",
       "name": "Campsite host start and stop",
       "status": "Beta",
-      "percentComplete": 85,
+      "percentComplete": 90,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1723,7 +1751,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 22, 2026 (tester34: start and join passed, the guest \"host stopped\" page FAILED); Oct 14, 2026 (published tester23, Galaxy S9+ host)",
-      "leftToReach100": "Open known issues (they cap the score at 85%): the guest \"host stopped\" page failed on Oct 22, 2026, and the guest page only loaded after mobile data was switched off on the guest phone. Retest the guest \"host stopped\" message after its fix is released (it failed on Oct 22, 2026), and test a phone-hotspot route and a guest on mobile data. The guest page only loaded after mobile data was switched off on the guest phone.",
+      "leftToReach100": "Open known issues (they cap the score at 90%): the guest \"host stopped\" page failed on Oct 22, 2026, and the guest page only loaded after mobile data was switched off on the guest phone. Retest the guest \"host stopped\" message after its fix is released (it failed on Oct 22, 2026), and test a phone-hotspot route and a guest on mobile data. The guest page only loaded after mobile data was switched off on the guest phone.",
       "roadTo100": {
         "means": "A host phone starts and stops Campsite and real guests join, leave and reconnect cleanly.",
         "done": [
@@ -1747,10 +1775,14 @@
           }
         ]
       },
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 2 open known issues cap it at 85%.",
+      "previousPercent": 85,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 2 open known issues cap the score at 90%.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 2 open known issues cap it at 85%."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: on tester34 a Galaxy S25 started Campsite and a Galaxy S9+ joined as a guest in Chrome; the guest reached the library and finished a Tic-Tac-Toe game with the host. The host's Stop worked (it asks first, and the server closed at once). The guest page then FAILED the \"host stopped\" check: it stayed on the old library for over a minute, and tapping Movies showed the browser's own \"Check your Internet connection\" page, with no Beebo message. The fix is fixed in the code and merged for the next release; it is not released and has not been retested on a device. The percentage did not change."
@@ -1799,7 +1831,7 @@
       "group": "Android phone app",
       "name": "Podcasts and radio",
       "status": "Available (test download)",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1809,10 +1841,14 @@
       },
       "lastTested": "Oct 22, 2026 (Pixel 3: radio started in 2 seconds, podcast search listed shows; Follow not tried); Oct 14, 2026 (published tester23, Galaxy S9+: radio played, Follow still FAILING)",
       "leftToReach100": "Re-test Follow on a new podcast (fixed in the code; it failed on Oct 13), then test screen-off listening, downloads and the queue. Podcast import from an OPML file or a pasted link/name is In development and next-release work; test duplicates and failed imports after release.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed the Spanish Radio en directo label. This is wording evidence only; Follow, podcast downloads, queue and sound remain open."
@@ -1919,7 +1955,7 @@
       "group": "Android phone app",
       "name": "Audiobooks",
       "status": "Available (test download)",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -1952,10 +1988,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed Chapters at 1.3 text size, a bookmark confirmation for about three seconds, and a bookmark list whose 0:22 entry jumped to 0:22. This is not a full current-build listening, restart/resume or sleep-timer pass."
@@ -2019,7 +2059,7 @@
       "group": "Android phone app",
       "name": "Pack for a trip (download planner)",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2053,9 +2093,9 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
@@ -2073,6 +2113,10 @@
       ],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
+        {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
@@ -2082,7 +2126,7 @@
       "group": "Android phone app",
       "name": "Trip Journal (trips, recap, video export)",
       "status": "In development",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2117,10 +2161,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
           "changeNote": "Oct 14: on the published tester23, “Save as a video” worked on two phones and FAILED on one. It made a video on the Galaxy S24 Ultra (3 photos, about 10 seconds, a 17-second video, 2 MB, no sound; the owner was present and watching, per his statement) and on the Pixel 3 (3 photos, under 8 seconds, a 17-second video, 12 MB, no sound). On the Galaxy S9+ (Android 10) it FAILED at 1080p, at 720p and with cards only: “The video could not be made.” (the log shows a muxing timeout error 7002 about 10 seconds in). So the Oct 13 fix works on two phones and not on this older Samsung phone. No finished video was played back by eye on any phone, and only test photos were used, not a real trip. Also on the S9+: Back on the Save-as-a-video screen went straight to More in one press. Percentage unchanged: Real device stays ticked for the screens and the two phones where the export worked; the S9+ failure is recorded here."
@@ -2159,7 +2207,7 @@
       "group": "Android phone app",
       "name": "Campsite games",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2197,10 +2245,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: on tester34 a Galaxy S25 host and a Galaxy S9+ guest in Chrome finished a Tic-Tac-Toe game, shown on both phones (one tester drove both phones). The recorded two-phone completions are Sea Battle (two people, Oct 13) and Tic-Tac-Toe (Oct 22). Reversi (Oct 14) has start and move-synchronization evidence, without a recorded finished round. The other games lack recorded two-phone completions. The percentage did not change."
@@ -2255,7 +2307,7 @@
       "group": "Android phone app",
       "name": "Shared photos and videos",
       "status": "In development",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2293,10 +2345,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
           "changeNote": "In development, in the Oct 21, 2026 release: guests get an H.264/AAC copy when the original audio will not play in a browser; host approval no longer cuts a running download. No recorded check or percentage changed."
@@ -2325,7 +2381,7 @@
       "group": "Android phone app",
       "name": "Wireless speakers",
       "status": "In development",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2354,10 +2410,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "Oct 13: the S9+ opened the Campsite music page as a guest, tapped \"Tap to enable audio\" and appeared on the host as a speaker with an On switch, Left/Right/Centre/Rear positions, a timing nudge and a \"Quick group test\". The page warns that a wireless speaker adds delay the app cannot measure. Only one guest speaker was connected and nobody listened for the test clicks, so a real group is still untested. Percentage unchanged."
@@ -2378,7 +2438,7 @@
       "group": "Android phone app",
       "name": "Share the app (QR over the hotspot)",
       "status": "Available (test download)",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2408,10 +2468,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
           "changeNote": "Oct 14: on the published tester23 the Galaxy S9+ host showed the QR and the address and said sharing switches itself off in 30 minutes. The file downloaded from a PC (45,503,408 bytes, SHA-256 starting A04C7222) was byte-identical to the published APK. “Turn off sharing” said guests cannot download the app and the address then answered 404. Not tried: installing it on a second phone (the Oct 13 install was an update over the same build), bad or expired codes and the 30-minute auto-off. Percentage unchanged."
@@ -2450,7 +2514,7 @@
       "group": "Android phone app",
       "name": "Wake my PC",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2479,10 +2543,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "Oct 13: the button sent a wake signal and showed \"Wake signal sent. Give your computer a minute or two to start...\" The PC was awake, so a real wake from sleep was not tested. Percentage unchanged."
@@ -2517,7 +2585,7 @@
       "group": "Android phone app",
       "name": "Chromecast",
       "status": "Beta",
-      "percentComplete": 90,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2527,10 +2595,14 @@
       },
       "lastTested": "Oct 22, 2026 (S25 cast controls passed; TV picture and sound not confirmed); Oct 13, 2026 (a person watched the TV)",
       "leftToReach100": "Try other TVs and receivers, converted films, subtitles while casting and a second sender; phone volume buttons do not control the TV volume and are not claimed.",
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
+      "previousPercent": 90,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: on tester34 a Galaxy S25 found the Living Room Chromecast TV and cast a 12-second film. Pause, play, seek, the on-screen TV volume slider (100% to 50% and back) and the quality label all responded on the phone, and stopping the cast worked. The phone's volume keys were not tried and are not claimed. The tester could not see the TV, so picture and sound on the TV were not confirmed this time. The TV was checked idle before, during and after, and nobody else was using it. Owner-reported, not a helper run: on Oct 22, 2026 Nick watched House season 4 episode 2 on a 70-inch Samsung smart TV through a Google Chromecast (the exact cast source and details were still being confirmed). No tick or percentage changed: a tick needs the confirmed details. The percentage did not change."
@@ -2654,17 +2726,21 @@
           }
         ]
       },
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. It is capped at 85%; see the record limit.",
+      "previousPercent": 85,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score stays at 85%; its record limit is unchanged. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "testedOn": "One car (a 2021 Audi SQ5 with Android Auto), one person, one drive, on Oct 6, 2026, using an earlier build than 1.18. Beebo Auto 1.20 itself has not been in a car.",
-      "scoreNote": "Capped at 85%, not 90%: the car check was one drive in one car on an earlier build, and Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested.",
+      "scoreNote": "Capped at 85%, below the 99% mark: the car check was one drive in one car on an earlier build, and Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. It is capped at 85%; see the record limit."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: the label changed from Available to Beta. Nothing new was tested: Beebo Auto 1.20 has not been in a car, and the one check on Oct 6, 2026 used an earlier build in one car. The five-check percentage is unchanged because its Real device and Real-world ticks come from that earlier-build check, not from 1.20."
@@ -2684,7 +2760,7 @@
       "group": "Android phone app",
       "name": "Android TV and Fire TV screens",
       "status": "Beta (Android TV); In development (Fire TV)",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2720,19 +2796,25 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Android phone app",
       "name": "Google Play version",
       "status": "In development (not submitted)",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2761,10 +2843,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "Oct 13: the offline \"Look around with sample videos\" demo passed on the S9+: a demo banner, three sample clips, a title page, the player controls (speed 0.25x to 2x listed) and Exit demo back to the real library with no crash. Finding: the demo title page says English subtitles are included, but no subtitles button showed in the demo player. This is the normal app's demo, not a Google Play submission. Percentage unchanged."
@@ -2785,7 +2871,7 @@
       "group": "Android phone app",
       "name": "Phone Help (show your screen to another phone)",
       "status": "In development (switched off)",
-      "percentComplete": 20,
+      "percentComplete": 25,
       "checks": {
         "Built": false,
         "Automated tests": true,
@@ -2813,13 +2899,19 @@
         ]
       },
       "previousPercent": 20,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 20% to 25%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 50,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Android phone app",
@@ -2869,7 +2961,7 @@
       "group": "Android phone app",
       "name": "Link a TV",
       "status": "In development",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2909,9 +3001,13 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: a read-only check of the live server settings found the Link a TV switch is ON (earlier notes said it was off). Real pairing with a TV was not tried (it needs a TV app showing a code). Percentage unchanged.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: a read-only check of the live server settings found the Link a TV switch is ON (earlier notes said it was off). Real pairing with a TV was not tried (it needs a TV app showing a code). Percentage unchanged."
+        },
         {
           "changedEastern": "Oct 19, 2026, 7:50 AM Eastern",
           "changeNote": "Limited checks of the published Android 1.51-tester28 on one Google Pixel 3 against the live server, with a script standing in for the TV (no real TV): link, Linked TVs list, renew and Remove behaved as designed; four small screen problems found. No percentage changed and no check was ticked."
@@ -2952,7 +3048,7 @@
       "group": "Android phone app",
       "name": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
       "status": "In development",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -2962,10 +3058,14 @@
       },
       "lastTested": "Oct 22, 2026 (tester34: clipping at 150% text on four phones); Oct 14, 2026 (published tester23; Large playback controls FAILED, low confidence)",
       "leftToReach100": "After release, check the new Android screens and layouts with TalkBack, 200% text, high contrast, landscape and large playback controls on real phones.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: RETEST-1 on tester35: S9+ checks at 1.5 text size passed for scrolling player tools, visible Download/Watched controls and an unbroken German Home heading. Pixel music/audiobook checks passed at 1.3 text size. These are bounded observations, not 2.0 text size, TalkBack, high contrast, reduced motion or every landscape screen."
@@ -3071,7 +3171,7 @@
       "group": "Android phone app",
       "name": "Music on the phone (albums, songs, player, sleep timer)",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3081,9 +3181,9 @@
       },
       "lastTested": "Oct 22, 2026 (tester34: Pixel 3 and Galaxy S25, muted); Oct 14, 2026 (published tester23, four phones)",
       "leftToReach100": "Have a person listen to real music on the phone and test crossfade, gapless, the queue and album and artist radio.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
         "means": "Real music plays on a phone with sound, crossfade, gapless playback, queue and radio working, and a reviewer signs off.",
@@ -3105,6 +3205,10 @@
         ]
       },
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: RETEST-1: at 1.3 text size on the Pixel with tester35, the song title no longer overlapped the cover and Album radio stayed on one line. Layout only: no new sound, crossfade, gapless, queue or sleep-timer pass."
@@ -3151,7 +3255,7 @@
       "group": "Android phone app",
       "name": "Family Dashboard, Camp Jobs and Star Chart",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3161,9 +3265,9 @@
       },
       "lastTested": "Oct 13, 2026",
       "leftToReach100": "Use it with a real family for a few days, check that Add is reachable with the keyboard open (fixed in the code), make the Enter key add a name, and test Games together.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
       "roadTo100": {
         "means": "A real family uses the dashboard and Camp Jobs on their phones for several days and a reviewer signs off.",
@@ -3194,6 +3298,10 @@
       "ownerTests": [],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
+        {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "New row. Oct 13: the Family Dashboard cards (Continue Watching, Downloads, Watchlist, Camp Jobs and Star Chart, Trip Journal, Games together) showed numbers that matched the other screens. Camp Jobs worked end to end on one phone: two names added and kept after leaving the screen, \"Spin the wheel\" shared 7 jobs between them, ticking a job gave a star, and Remove deleted both names. Cosmetic: the Add button hides behind the keyboard until it is closed."
         }
@@ -3203,7 +3311,7 @@
       "group": "Android phone app",
       "name": "Packing List (shared between phones)",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3213,9 +3321,9 @@
       },
       "lastTested": "Oct 13, 2026 (two real phones)",
       "leftToReach100": "Test ticking items off offline and syncing later, then use it on a real trip and get a readiness review on the published download.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download, on home Wi-Fi.",
       "roadTo100": {
         "means": "Two or more phones share one packing list, including offline ticking that syncs later, and a reviewer signs off.",
@@ -3241,6 +3349,10 @@
       "ownerTests": [],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
+        {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "New row. Oct 13: an item added and ticked on the S24 Ultra appeared at once on the S9+ as packed, and removing it on the S9+ emptied the list on the S24 about 6 seconds later. Ticking items off with no connection and syncing later was not tested."
         }
@@ -3250,7 +3362,7 @@
       "group": "Android phone app",
       "name": "Family Recipes and shopping list",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3260,9 +3372,9 @@
       },
       "lastTested": "Oct 13, 2026",
       "leftToReach100": "Test adding and duplicating a recipe, scaling real amounts and a list across recipes.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "Samsung Galaxy S24 Ultra, running a test build of the current code made on Oct 13 (the published 1.51-tester22 plus some unmerged fixes; the app still shows 1.51-tester22), not the published download.",
       "roadTo100": {
         "means": "A real family adds recipes, scales amounts, builds a shopping list across recipes and shares it.",
@@ -3288,6 +3400,10 @@
       "ownerTests": [],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
+        {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "New row. Oct 13: four starter recipes opened with ingredients, steps and a \"Feeding how many?\" counter (4 changed to 6 and carried into the shopping list); the shopping list ticked (1 of 5) and unticked (0 of 5). Not proven: that amounts scale (the starter ingredients have no amounts), adding or duplicating a recipe, building a list across recipes, and Share."
         }
@@ -3297,7 +3413,7 @@
       "group": "Android phone app",
       "name": "Collections and Request a title",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3307,9 +3423,9 @@
       },
       "lastTested": "Oct 14, 2026 (published tester23); Oct 13, 2026 (test build)",
       "leftToReach100": "Send a real request and confirm it reaches the owner, and test the Complete filter and the trailer buttons. A fuller media-requests and wishlist feature is only an idea.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the published Android 1.51-tester23 (build 73, built Oct 14, 2026, 7:04 AM Eastern, installed from the website download) on a Samsung Galaxy S9+ (Android 10), a Google Pixel 3 (Android 12), a Samsung Galaxy S24 Ultra and a Samsung Galaxy S25 (Android 16), connected to a home computer running the Beebo desktop app (0.1.87 in the S9+ morning run, 0.1.88 in the S24 evening run)",
       "roadTo100": {
         "means": "A person browses collections, sees what is missing and sends a request that the owner receives.",
@@ -3327,6 +3443,10 @@
         ]
       },
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 20, 2026, 12:40 PM Eastern",
           "changeNote": "Sending a request was never tried. A fuller media-requests and wishlist feature is only an idea, not promised; work on it has started but is not merged and is not in any download. No recorded check or percentage changed."
@@ -3350,7 +3470,7 @@
       "group": "Android phone app",
       "name": "Photos and phone backups (timeline, albums, viewer)",
       "status": "Beta",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3361,9 +3481,13 @@
       "lastTested": "Oct 22, 2026 (tester34: normal test member passed, child test profile FAILED); Oct 21, 2026 (Windows 0.1.98 test library)",
       "leftToReach100": "Keep the narrow S9+ child-picture pass; check map/privacy, removal, real pinch, a full phone folder and backup behavior on current builds.",
       "previousPercent": 40,
-      "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
-      "changeNote": "Oct 22 test-build update: One desktop access-check repair covers both child-profile thumbnails and full pictures; separate Android changes cover wording, month-language updates and chip layout. RETEST-1: the S9+ child saw real thumbnails and full pictures, swiped between pictures, saw empty Videos wording, immediate Spanish month headings and fitting chips at 1.3 text size. These narrow passes on tester35 with Windows 0.1.100 supersede the earlier blank-picture failure for that setup. Map, removal, real pinch, full folder, backup/privacy and other devices remain unverified; Real device stays false.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
+          "changeNote": "Oct 22 test-build update: One desktop access-check repair covers both child-profile thumbnails and full pictures; separate Android changes cover wording, month-language updates and chip layout. RETEST-1: the S9+ child saw real thumbnails and full pictures, swiped between pictures, saw empty Videos wording, immediate Spanish month headings and fitting chips at 1.3 text size. These narrow passes on tester35 with Windows 0.1.100 supersede the earlier blank-picture failure for that setup. Map, removal, real pinch, full folder, backup/privacy and other devices remain unverified; Real device stays false."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "New row, Oct 22, 2026: added because photos now have dated device evidence. On tester34 a Galaxy S25 (normal member) showed the timeline, albums, full-screen viewer and a correctly turned photo; a Galaxy S9+ child profile listed the same photos but every picture was blank and the full-screen view showed a broken-picture icon (four tries). The server-refusal fix and a thumbnail fix are merged in the code; neither is released or retested. There is no Map tab in the phone Photos screen. Real device is not ticked because the child-profile run failed and the map and removal step were not tried."
@@ -3431,7 +3555,7 @@
       "group": "Android phone app",
       "name": "Family achievements (opt-in milestones)",
       "status": "In development (off until the host turns it on)",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3441,10 +3565,15 @@
       },
       "lastTested": "Oct 21, 2026 (tester33: opt-in preview text and the two confirmation dialogs; recording a milestone not run)",
       "leftToReach100": "Turn it on as a host, opt in as a person, record a Camp Jobs and a time-together milestone, clear them and check the keep-for choices on real phones.",
-      "previousPercent": null,
-      "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
-      "changeNote": "New row, Oct 22, 2026: added because it is in the downloads and has one dated device run. On the tester33 a Pixel 3 showed the opt-in preview text and both \"cannot be undone\" dialogs correctly. No milestone was recorded, so the main use is untested. The Oct 21 run noticed that the \"let people record time together themselves\" switch was already on when the host turned achievements on; whether that is the default was not checked.",
-      "changeHistory": [],
+      "previousPercent": 40,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
+          "changeNote": "New row, Oct 22, 2026: added because it is in the downloads and has one dated device run. On the tester33 a Pixel 3 showed the opt-in preview text and both \"cannot be undone\" dialogs correctly. No milestone was recorded, so the main use is untested. The Oct 21 run noticed that the \"let people record time together themselves\" switch was already on when the host turned achievements on; whether that is the default was not checked."
+        }
+      ],
       "roadTo100": {
         "means": "A host can turn achievements on, each person chooses to take part, milestones are kept only as described (no titles, photos or places), and clearing and the keep-for choice work, all on real phones.",
         "done": [
@@ -3487,7 +3616,7 @@
       "group": "Windows desktop app",
       "name": "Installer and self-update",
       "status": "Available",
-      "percentComplete": 90,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3497,10 +3626,14 @@
       },
       "lastTested": "Oct 22, 2026 (0.1.98 to 0.1.99 on one PC); Oct 13, 2026 (update check only)",
       "leftToReach100": "Install over an older version by a person, see the low-disk warning on a real PC, check uninstall removes the start-at-boot task, and get an update-safety review.",
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
+      "previousPercent": 90,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: a Windows test PC updated itself from 0.1.98 to 0.1.99 through the app's own update at about 2:34 AM Eastern, and the new version started and kept logging and saving normally. The percentage did not change: an update over an older version on a second PC, the low-disk warning and the uninstall check are still open."
@@ -3559,7 +3692,7 @@
       "group": "Windows desktop app",
       "name": "Library, player and web player",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3569,10 +3702,14 @@
       },
       "lastTested": "Oct 22, 2026 (browser could not open a film via the away address: FAILED); Oct 21, 2026 (Windows 0.1.98 test library); Oct 13, 2026 (all 27 desktop pages; signed-in browser player)",
       "leftToReach100": "Retest the combined server/unpublished-desktop repair on the affected PC and Samsung browser. Confirm TV/browser/served-build details, navigation without Reconnect each click, Up next/Next, subtitles, audio and other browsers. Folder poster/NFO and desktop version-heading checks remain open.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: The browser repair has split delivery: the server portion is reported deployed at 6:49 AM Eastern on October 22, with a further TV-browser server repair at 7:24 AM; the desktop-player portion is in unpublished Windows 0.1.100. The affected PC and combined away-route repair still need retesting. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass. The reviewed web-player Next/Full screen work is not in public downloads. Pages that suppress referrer information and a modeled cross-tab edge case remain qualified. Android version-picker results do not verify the separate desktop version-heading issue."
@@ -3667,7 +3804,7 @@
       "group": "Windows desktop app",
       "name": "Update modes and start with Windows",
       "status": "Beta",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3700,9 +3837,13 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
-      "changeNote": "Oct 13: the three update modes were shown on the dev PC and \"Check for updates\" worked, but no mode was exercised, no update was installed and Start with Windows was not tried. Percentage unchanged.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
+          "changeNote": "Oct 13: the three update modes were shown on the dev PC and \"Check for updates\" worked, but no mode was exercised, no update was installed and Start with Windows was not tried. Percentage unchanged."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
@@ -3719,7 +3860,7 @@
       "group": "Windows desktop app",
       "name": "Converter and quality / speed settings",
       "status": "Available",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3747,15 +3888,19 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
@@ -3766,7 +3911,7 @@
       "group": "Windows desktop app",
       "name": "Live TV (tuner and own playlist)",
       "status": "Beta",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3799,14 +3944,18 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
-      "changeNote": "Oct 21: on Windows 0.1.98, a private-network playlist address asked \"Allow these addresses?\" and Cancel added nothing; a small local playlist with one public test stream loaded, played and was removed. No tuner was available, so a real tuner is still untested, and the confirm-for-real path was not run. The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
+          "changeNote": "Oct 21: on Windows 0.1.98, a private-network playlist address asked \"Allow these addresses?\" and Cancel added nothing; a small local playlist with one public test stream loaded, played and was removed. No tuner was available, so a real tuner is still untested, and the confirm-for-real path was not run. The percentage did not change."
+        },
         {
           "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
           "changeNote": "In development, in the Oct 21, 2026 release: a Live TV link stops working when its profile is restricted. No recorded check or percentage changed."
@@ -3831,7 +3980,7 @@
       "group": "Windows desktop app",
       "name": "Story Studio",
       "status": "In development",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3858,15 +4007,19 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
@@ -3877,7 +4030,7 @@
       "group": "Windows desktop app",
       "name": "Movie Night",
       "status": "In development",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3915,14 +4068,18 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
-      "changeNote": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed a friendly cloud-address explanation and Try again rather than the raw error. It directs the user to the computer’s direct address. This does not test host/create/join/play, a real family session or the full feature; Real device and Real-world remain false.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
+          "changeNote": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed a friendly cloud-address explanation and Try again rather than the raw error. It directs the user to the computer’s direct address. This does not test host/create/join/play, a real family session or the full feature; Real device and Real-world remain false."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: on tester34, the phone's More > Watching & listening > Movie Night page showed raw error text (a \"not_found\" message) instead of a page, on a Galaxy S9+ child profile, twice. The fix is merged in the code for the next release; it is not released and has not been retested on a device. Movie Night has still not been tried on a real TV with phones. The percentage did not change."
@@ -3960,7 +4117,7 @@
       "group": "Windows desktop app",
       "name": "Jellyfin-compatible mode",
       "status": "Beta",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3988,19 +4145,25 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Windows desktop app",
       "name": "Parental controls and household profiles",
       "status": "Beta",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4030,14 +4193,18 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
-      "changeNote": "Oct 22 test-build update: RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
+          "changeNote": "Oct 22 test-build update: RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: a child test profile (ages 7 to 12) on a Galaxy S9+ (tester34, Windows 0.1.99 test PC) saw only the four films rated G or PG in Home, Browse, Search and Library; films with no rating never appeared, and searching for them by name found nothing. An allowed film played. The child could not change limits or reach the owner's admin pages, but could open the player's Markers menu and Library health. Problems: a film with embedded subtitles sat at 0:00 for 20 seconds, the Movie Night page showed a raw error, TV shows and audiobooks were not visible to the child (probably the test setup, not checked), and photo pictures did not load (see Photos). No restricted profile has been tested on the PC itself. The percentage did not change."
@@ -4075,7 +4242,7 @@
       "group": "Windows desktop app",
       "name": "Keyboard and screen-reader support",
       "status": "Available",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4107,19 +4274,25 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Windows desktop app",
       "name": "Languages (5 translated with machine help, 3 previews)",
       "status": "Beta (machine-assisted; 3 are previews)",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4147,10 +4320,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 22: on tester34, genre names switched to French, German and Spanish on a Pixel 3 and a Galaxy S25 (Browse chips, title details, and a translated chip filtered the list); Spanish and Italian screens fit at normal size on the Pixel 3. Still in English in French, German and Spanish: parts of the player top bar (WATCH TOGETHER, PREV, NEXT, BAD QUALITY, PIP); German \"Willkommen zurück\" wraps badly at 150% text on the Pixel 3. On Oct 21 the Windows 0.1.98 Settings, Library Health and Announce panel were read in French and German with no missing words (a few status messages keep the old language until reopened). No native speaker has read any of it. The percentage did not change."
@@ -4185,7 +4362,7 @@
       "group": "Windows desktop app",
       "name": "Posters and info (TMDB)",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4216,15 +4393,19 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 21: the label changed from Available to Beta. On Windows 0.1.98 with a test library (a PC with no TMDB key), every test film showed \"No poster\" and \"No description available for this file yet\" even though each folder held its own poster, fanart and a Kodi-style NFO file. The cause is not found yet. The percentage did not change: its Real device tick rests on the Oct 5 check that titles, ratings and descriptions appeared with a trailer button."
@@ -4249,7 +4430,7 @@
       "group": "Windows desktop app",
       "name": "Remote Desktop (see and control the PC)",
       "status": "In development",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4286,14 +4467,18 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development: the Remote Desktop keyboard helper change is next-release work. It is off by default and has never been run on a real PC. No recorded check or percentage changed.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+          "changeNote": "In development: the Remote Desktop keyboard helper change is next-release work. It is off by default and has never been run on a real PC. No recorded check or percentage changed."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
@@ -4304,7 +4489,7 @@
       "group": "Windows desktop app",
       "name": "Space Saver",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4337,10 +4522,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
           "changeNote": "Oct 14: on the published tester23 the Photos & backups screen opened with its four tabs (Library, Camera backup, Folders & cleanup, Private folder) on the Galaxy S9+, Pixel 3 and Galaxy S24 Ultra; nothing was copied or removed on the Pixel and S24. On the S9+ a new test photo put in the camera folder was uploaded by the automatic run within about 8 minutes (the count went from 3 to 4 files) and the page said “Up to date”. Not tried: the confirmed removal of phone copies, mobile data, the remove-location switch and held-back files. Percentage unchanged."
@@ -4365,7 +4554,7 @@
       "group": "Windows desktop app",
       "name": "Library sharing with another household",
       "status": "In development",
-      "percentComplete": 85,
+      "percentComplete": 90,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4374,7 +4563,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 13, 2026 (Shared with you screen only; the real share test was Oct 12)",
-      "leftToReach100": "Open known issues (they cap the score at 85%): the Oct 12 test found three problems (a guest dropped to a sign-in screen with no way back, a stopped share still looking active in the guest's list, a download button on a share with downloads off). They are fixed in the code but not yet re-tested. Re-test the fixes for three problems found in the test (a guest dropped to a sign-in screen with no way back, a stopped share still looking active in the guest's list, a download button on a share with downloads off; all fixed in the code, not yet in a published download), settle the sharing terms, and review readiness.",
+      "leftToReach100": "Open known issues (they cap the score at 90%): the Oct 12 test found three problems (a guest dropped to a sign-in screen with no way back, a stopped share still looking active in the guest's list, a download button on a share with downloads off). They are fixed in the code but not yet re-tested. Re-test the fixes for three problems found in the test (a guest dropped to a sign-in screen with no way back, a stopped share still looking active in the guest's list, a download button on a share with downloads off; all fixed in the code, not yet in a published download), settle the sharing terms, and review readiness.",
       "roadTo100": {
         "means": "A real second household accepts an invite and watches shared titles under approved terms.",
         "done": [
@@ -4408,10 +4597,14 @@
           }
         ]
       },
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 3 open known issues cap it at 85%.",
+      "previousPercent": 85,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 3 open known issues cap the score at 90%.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 3 open known issues cap it at 85%."
+        },
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "Oct 13: on the S24 Ultra the \"Shared with you\" screen opened and showed the test shared library with Watch, Leave and Report a problem; Watch asked for a sign-in before anything opened, and Enter an invite code, Find my shares and Report a problem opened and were cancelled. No invite was accepted, nothing was watched and no report was sent, so the Oct 12 two-home result stands and the percentage did not change."
@@ -4437,7 +4630,7 @@
       "group": "Windows desktop app",
       "name": "Strong volume leveler",
       "status": "In development",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4465,19 +4658,25 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Windows desktop app",
       "name": "Phone speakers (phones play the film's sound)",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4487,9 +4686,9 @@
       },
       "lastTested": "Oct 13, 2026 (two phones as a stereo pair; alignment not proven)",
       "leftToReach100": "Measure real alignment (a recording of both speakers), fix the PC speaker seat, the Add output button and the extra player windows, and test surround, more than two phones, a late joiner and seeking.",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published); Samsung Galaxy S24 Ultra and Samsung Galaxy S9+ (Android 10), both opened in the phone browser on home Wi-Fi (no app needed).",
       "roadTo100": {
         "means": "Phones play the film's sound in true alignment as a stereo pair and surround group, with clear wording and a reviewer sign-off.",
@@ -4520,6 +4719,10 @@
       "ownerTests": [],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
+        {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "New row. Oct 13, early morning: with the PC showing a 51-second film, the S24 Ultra joined as Stereo left and the S9+ as Stereo right (link opened by hand, not scanned). Both showed \"in sync\" within about 3 to 5 ms, Nick heard the beeps and said the film \"sounds so cool\", and one phone \"sounded off a tiny bit\". The recorded drift averaged 2.3 ms (S24) and 1.2 ms (S9). It does not prove the two speakers are truly aligned: the numbers are the phones' own estimates. Found: both pages warned about Bluetooth delay although neither phone used Bluetooth; over plain HTTP a phone cannot use its microphone, so \"map the room\" cannot work; with a USB speaker as centre in Surround layout the PC speaker played nothing until Watch together was pressed, and the \"Add\" button for a second output did nothing; repeated clicks left extra player windows open."
         }
@@ -4529,7 +4732,7 @@
       "group": "Windows desktop app",
       "name": "Music on the PC (library, mixes, desktop player)",
       "status": "In development",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4540,8 +4743,8 @@
       "lastTested": "Oct 21, 2026 (Windows 0.1.98: mix of 23 songs advanced; muted); Oct 13, 2026 (the desktop player FAILED to play)",
       "leftToReach100": "Hear the music in the real desktop window and confirm sound by ear, then test queue, gapless and radio.",
       "previousPercent": 40,
-      "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
-      "changeNote": "Oct 21: the Oct 13 failure is not reproduced. On Windows 0.1.98 the \"Recently added\" mix played 23 songs one after another with title and artist shown, and Opus, M4A, Ogg, FLAC and a 24-bit FLAC each loaded and started. The fix for mixes loading their songs in the desktop window shipped in Windows 0.1.94. The PC was muted, so nobody heard it; gapless and loudness levelling were not run. The percentage did not change because a person still has to hear the sound in the desktop window.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with three computer-made sample songs.",
       "roadTo100": {
         "means": "Music plays with sound in the desktop window, mixes start, and a reviewer signs off.",
@@ -4564,6 +4767,10 @@
       "ownerTests": [],
       "changeHistory": [
         {
+          "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
+          "changeNote": "Oct 21: the Oct 13 failure is not reproduced. On Windows 0.1.98 the \"Recently added\" mix played 23 songs one after another with title and artist shown, and Opus, M4A, Ogg, FLAC and a 24-bit FLAC each loaded and started. The fix for mixes loading their songs in the desktop window shipped in Windows 0.1.94. The PC was muted, so nobody heard it; gapless and loudness levelling were not run. The percentage did not change because a person still has to hear the sound in the desktop window."
+        },
+        {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "New row. Oct 13: the PC scanned three sample songs (\"3 songs, 1 album, 1 artist\") and the mixes turned Ready, but the music bar in the desktop window stayed at 0:00 and nothing played, so no sound could be confirmed (FAIL). A helper found the cause: the installed window gave the songs relative stream addresses it cannot load. The fix is on a branch, not merged and not in a published download, and was not re-tested in the real window. Real device is therefore not ticked."
         }
@@ -4583,7 +4790,7 @@
       "group": "Windows desktop app",
       "name": "Home layouts and Customize layout (desktop)",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4593,9 +4800,9 @@
       },
       "lastTested": "Oct 13, 2026",
       "leftToReach100": "Test row dragging, keyboard row moves, Comfortable density and layout share and import; re-check that the layout list closes after each choice (fixed in the code).",
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with a small sample library.",
       "roadTo100": {
         "means": "Every layout and customization option works on a real PC with a real library, with a reviewer sign-off.",
@@ -4622,6 +4829,10 @@
       "ownerTests": [],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
+        {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "New row. Oct 13: all five Home layouts (Gallery Flow, Focus and Queue, Studio Canvas, Command Deck, High-Impact Theater) opened with real content and no blank screen. In Customize layout, Cancel discarded a hidden row and the Compact density, Save applied them, and Reset to default plus Save brought everything back. Dragging a row, Alt+Up/Down, the Comfortable density, and sharing or importing a layout were not tested; the layout list stays open over part of the top picture after each choice."
         }
@@ -4631,7 +4842,7 @@
       "group": "Windows desktop app",
       "name": "Picture frame (photo wall for a tablet or TV)",
       "status": "In development (off until turned on)",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4641,10 +4852,15 @@
       },
       "lastTested": "Oct 21, 2026 (Windows 0.1.98, PC browser: 10 checks passed, 1 not run)",
       "leftToReach100": "Try it on a real tablet, phone or TV browser with a QR scanned by a camera, plus link expiry, \"always off\" and \"only when someone is home\".",
-      "previousPercent": null,
-      "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
-      "changeNote": "New row, Oct 22, 2026: added because it is in the downloads and has one dated PC run. Ten checks passed and one was not run on Windows 0.1.98 with the wall page opened in the PC's own browser. It has not been tried on a tablet, phone or TV, and has not been repeated on 0.1.99. Small things seen: with no photos the \"Create frame link\" button stays off with its reason shown far above it, and the wall controls only appear when you tap the screen.",
-      "changeHistory": [],
+      "previousPercent": 40,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
+          "changeNote": "New row, Oct 22, 2026: added because it is in the downloads and has one dated PC run. Ten checks passed and one was not run on Windows 0.1.98 with the wall page opened in the PC's own browser. It has not been tried on a tablet, phone or TV, and has not been repeated on 0.1.99. Small things seen: with no photos the \"Create frame link\" button stays off with its reason shown far above it, and the wall controls only appear when you tap the screen."
+        }
+      ],
       "roadTo100": {
         "means": "The owner makes a frame link once, a tablet or TV shows the photos, a note and a clock and nothing else, the schedule and pause work, and removing the link ends access, all on real devices.",
         "done": [
@@ -4691,7 +4907,7 @@
       "group": "Windows desktop app",
       "name": "Kitchen announcements (messages to phones)",
       "status": "In development (off by default)",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4701,10 +4917,15 @@
       },
       "lastTested": "Oct 21, 2026 (Windows 0.1.98: the panel was opened read-only in English, French and German; nothing was sent)",
       "leftToReach100": "Send a real message and see it on phones and in a browser, then try Listen, quiet hours and that guests are left out.",
-      "previousPercent": null,
-      "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
-      "changeNote": "New row, Oct 22, 2026: added because it is in the downloads. The only dated run opened the panel read-only on Windows 0.1.98; no message was sent, so the main use is untested.",
-      "changeHistory": [],
+      "previousPercent": 40,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
+          "changeNote": "New row, Oct 22, 2026: added because it is in the downloads. The only dated run opened the panel read-only on Windows 0.1.98; no message was sent, so the main use is untested."
+        }
+      ],
       "roadTo100": {
         "means": "The owner sends a message, family phones and browsers show it, quiet hours and the guest rule are respected, and Listen works, all on real devices.",
         "done": [
@@ -4747,7 +4968,7 @@
       "group": "Other systems",
       "name": "Linux server (headless, Docker)",
       "status": "Beta",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4778,15 +4999,19 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
@@ -4797,7 +5022,7 @@
       "group": "Other systems",
       "name": "Linux desktop app",
       "status": "Beta",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4829,19 +5054,25 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Other systems",
       "name": "macOS desktop",
       "status": "In development",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4852,9 +5083,13 @@
       "lastTested": "Automated tests only, run on Windows (Oct 9, 2026). Never run on a Mac.",
       "leftToReach100": "Run on Intel and Apple Silicon Macs, and Nick decides about signing.",
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        },
         {
           "changedEastern": "Oct 9, 2026, 4:50 AM Eastern",
           "changeNote": "20 automated checks for the Mac build now pass, plus a new Oct 8 check that the Mac download page refuses a link with a password in it. They cover the packaging settings, update rules and video-encoder choice, not a running Mac app. Nobody has opened it on a real Mac."
@@ -4895,7 +5130,7 @@
       "group": "Services and website",
       "name": "Our own servers and DNS",
       "status": "Available",
-      "percentComplete": 90,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4922,15 +5157,19 @@
           }
         ]
       },
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
+      "previousPercent": 90,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
@@ -4941,7 +5180,7 @@
       "group": "Services and website",
       "name": "Beebo Relay (fallback connection)",
       "status": "Beta",
-      "percentComplete": 90,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -4979,10 +5218,14 @@
           }
         ]
       },
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
+      "previousPercent": 90,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
+        },
         {
           "changedEastern": "Oct 14, 2026, 9:44 PM Eastern",
           "changeNote": "Oct 14 (evening): one forced-relay pass on the published builds. On a Galaxy S24 Ultra on 5G (Wi-Fi off) running the published Android 1.51-tester23, with “Always use Beebo Relay” switched on for the test (it was off before and was put back off), the route screen read “Beebo Relay (you chose Always use Beebo Relay)”, “Phone > Beebo Relay > your PC”, the app log showed the relay path, and a film played (“This connection: 30 MB”). The home computer was the one running desktop 0.1.88. The Relay usage counter did not move for those 30 MB (a counter delay seen before). The owner was present and watching, per his statement. This was a forced test on a home that can also be reached directly, so it is not the natural-fallback case this row still needs: a home PC behind a router that cannot make a direct connection, on the published builds. Not tested: the second (4-core) home through Beebo Relay from the S24 (the phone had no way to open it) and two people at once. Percentage unchanged at 80; Ready to call Available stays not yet; status stays Beta."
@@ -5015,7 +5258,7 @@
       "group": "Services and website",
       "name": "Website and browser games",
       "status": "Available",
-      "percentComplete": 90,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -5046,15 +5289,19 @@
           }
         ]
       },
-      "previousPercent": 80,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick.",
+      "previousPercent": 90,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
@@ -5065,7 +5312,7 @@
       "group": "Services and website",
       "name": "Password reset and email verification",
       "status": "In development (switched off)",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -5094,19 +5341,25 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
-      "ownerTests": []
+      "ownerTests": [],
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Services and website",
       "name": "Online games (play with others)",
       "status": "In development",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -5139,14 +5392,18 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "In development: online browser-games page connection work is merged but off and unreleased. The separate browser games already on this website keep their earlier status. No recorded check or percentage changed.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+          "changeNote": "In development: online browser-games page connection work is merged but off and unreleased. The separate browser games already on this website keep their earlier status. No recorded check or percentage changed."
+        },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
@@ -5157,7 +5414,7 @@
       "group": "Services and website",
       "name": "Walkie-talkie from anywhere",
       "status": "In development",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -5185,9 +5442,9 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
@@ -5196,6 +5453,10 @@
       "testedOn": "The new invite-from-anywhere flow has not been tested on real phones. The Real device tick comes from an earlier version tried on Oct 1, 2026.",
       "scoreNote": "The 60% includes a Real device check from an earlier version (Oct 1, 2026). It is not evidence for the new flow on real phones. The server part is on; the Oct 21, 2026 release is the first app release that uses it.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 21, 2026, 3:43 AM Eastern",
           "changeNote": "In development, off and in the Oct 21, 2026 release: Invite from anywhere always asks the host to approve each guest; Android has a host panel without a microphone; per-guest message limits are added. Code is complete; real-phone testing remains. The server part is on; the Oct 21, 2026 release is the first app release that uses it. No recorded check or percentage changed."
@@ -5210,7 +5471,7 @@
       "group": "Services and website",
       "name": "Portrait Party (turn a photo into a card)",
       "status": "Planned",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -5242,19 +5503,25 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Services and website",
       "name": "Trip Journal link away from home",
       "status": "In development",
-      "percentComplete": 65,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -5284,10 +5551,14 @@
           }
         ]
       },
-      "previousPercent": 60,
-      "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
-      "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn.",
+      "previousPercent": 65,
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
+          "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
+        },
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "Oct 13: after the owner switched on the server setting and ticked \"Let trip links work away from home\" on the home computer, a new trip link opened in Chrome on the S24 Ultra on 5G with Wi-Fi off: the trip page, the test photo and a clip that played to the end. This is the first real out-of-home test of a trip link, with one phone and one computer. A second person's phone, an iPhone, expiry, many viewers, a very large clip and the link while the home computer is off were not tested. The older home-address link (served straight from the home computer on a port) did NOT open from outside the home on 5G because the router did not let it in; it works on the home Wi-Fi only. Real device is ticked; Real-world check waits for another person's phone."
@@ -5319,9 +5590,13 @@
       "lastTested": "Owner test on one Windows PC, a few days before Oct 7, 2026 (exact date not recorded), on an earlier build",
       "leftToReach100": "BeeboVPN is In development. The owner connected one phone using the standard WireGuard app; that does not establish a BeeboVPN Android app or public sale.",
       "previousPercent": 55,
-      "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
-      "changeNote": "The owner connected one phone with the standard WireGuard app and it worked. A BeeboVPN Android app has not been started. No recorded check or percentage changed.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score stays at 55%; its record limit is unchanged. No feature check or test evidence changed. No new feature test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 20, 2026, 10:18 AM Eastern",
+          "changeNote": "The owner connected one phone with the standard WireGuard app and it worked. A BeeboVPN Android app has not been started. No recorded check or percentage changed."
+        },
         {
           "changedEastern": "Oct 7, 2026, 2:28 PM Eastern",
           "changeNote": "The owner connected on one Windows PC and reached a site that his internet provider blocks. That was an earlier build; the newer features have not been tried. Automated checks pass; paid plans, the split-tunnel driver and the installer are not yet proven."
@@ -5363,14 +5638,14 @@
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
-      "scoreNote": "Four of the five checks are ticked, which would normally be 80%. We show the lower 55% score, unchanged since Oct 9, 2026; the ticks come from one PC on an earlier build.",
+      "scoreNote": "Four of the five checks are ticked, which score 99% under the new weights before this record limit. We show the lower 55% score, unchanged since Oct 9, 2026; the ticks come from one PC on an earlier build.",
       "percentCap": 55
     },
     {
       "group": "Services and website",
       "name": "Rewards, ads and credit",
       "status": "Planned (switched off)",
-      "percentComplete": 40,
+      "percentComplete": 49,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -5403,13 +5678,19 @@
         ]
       },
       "previousPercent": 40,
-      "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
-      "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change.",
+      "changedEastern": "Oct 23, 2026, 9:49 AM Eastern",
+      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "changeHistory": [
+        {
+          "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
+          "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ]
     },
     {
       "group": "Services and website",
@@ -5607,7 +5888,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 22, 2026, 8:22 PM Eastern",
+  "previousUpdatedEastern": "Oct 23, 2026, 9:21 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 22 test-build retest and owner TV observations",
@@ -5619,6 +5900,13 @@
     "newerText": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified."
   },
   "historyNew": [
+    {
+      "iso": "2026-10-23T09:49:00-04:00",
+      "date": "Oct 23, 2026, 9:49 AM Eastern",
+      "headline": "New scoring: 99% means tested and working; the last 1% is a human look",
+      "tested": "No new feature test was run. This update changes the score weights and explanation. All feature checks, open-issue counts, test dates and recorded evidence are unchanged.",
+      "happened": "Built counts 24, Automated tests 25, Real device 25 and Real-world check 25. These add up to 99. Only Nick records the last point after he or a tester has looked and said Ready. Open known errors cap a score at 90%; existing lower record limits remain. 7 features reach 99% under the existing checks, with no open known error recorded. Their individual evidence limits remain visible. No feature is at 100%. The overall average moves from 56% to 64%. Android phone app: 63% to 71%; Windows desktop app: 54% to 63%; Other systems: 48% to 57%; Services and website: 44% to 50%. This is a scoring change, not new evidence or an availability change."
+    },
     {
       "iso": "2026-10-23",
       "date": "Oct 23, 2026 (Eastern)",
@@ -5696,8 +5984,8 @@
     "Built": "The code exists and works in the build.",
     "Automated tests": "The test suite for it passes.",
     "Real device": "We ran it on a real phone, PC or TV and it worked.",
-    "Real-world check": "It was used in a real situation: away from home, with real family, in a car, on a real TV, or with several devices.",
-    "Ready to call Available": "Nick has said it is Ready, after a review of the final build. Only Nick sets this check. It is worth the last 10 points."
+    "Real-world check": "Our test process uses AI testers on real devices in a realistic situation, such as away from home, in a car, on a real TV or with several devices. The dated evidence in each row records what was actually tried.",
+    "Ready to call Available": "Nick or a tester has looked with their own eyes and said Ready. Only Nick records this check. It is worth the last 1 point: a human look, not more building."
   },
   "ownerTestsNote": "When Nick tests something himself, it is recorded here with the date, the device and the result; a check is only ticked if it passed.",
   "ownerTestsSchema": "features[].ownerTests is a list of {date (\"Oct 20, 2026, 3:00 PM Eastern\"), device, did, result (\"PASS\" or \"FAIL\"), notes, ticks (only on PASS; any of Real device, Real-world check, Ready to call Available)}. A Real device, Real-world check or Ready to call Available tick that is not in checksBaseline must be backed by a PASS ownerTests entry that lists it. Add entries with tools/add-owner-test.mjs, never by editing checks by hand.",
@@ -6209,17 +6497,17 @@
   },
   "scoring": {
     "weights": {
-      "Built": 20,
-      "Automated tests": 20,
+      "Built": 24,
+      "Automated tests": 25,
       "Real device": 25,
       "Real-world check": 25,
-      "Ready to call Available": 10
+      "Ready to call Available": 1
     },
-    "openIssuesCap": 85,
-    "waitingPercent": 90,
-    "waitingLabel": "Built and fully tested, waiting for Nick",
+    "openIssuesCap": 90,
+    "waitingPercent": 99,
+    "waitingLabel": "Tested and working, waiting for a human look",
     "readyPercent": 100,
-    "readyLabel": "Ready",
+    "readyLabel": "Ready, a human confirmed",
     "tiers": [
       {
         "min": 80,
@@ -6240,6 +6528,7 @@
         "range": "0 to 39%"
       }
     ],
-    "rule": "percentComplete is worked out from features[].checks and features[].openIssues by site-data/progress-score.js: Built 20, Automated tests 20, Real device 25, Real-world check 25, Ready to call Available 10 (Nick only). The first four add up to 90. A feature with openIssues above 0 is capped at 85. An optional percentCap (explained by scoreNote) is a further explicit limit. Check with: node site-data/check-progress-score.js."
+    "rule": "percentComplete is worked out from features[].checks and features[].openIssues by site-data/progress-score.js: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready to call Available 1 (only Nick records it). The first four add up to 99. A feature reaches 99 only when all four are true and openIssues is 0 (omitted means 0). An open known error caps the score at 90. An optional percentCap, explained by scoreNote, is a further limit. Check with: node site-data/check-progress-score.js.",
+    "explanation": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Our test process uses AI testers on real devices for that check. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified."
   }
 }

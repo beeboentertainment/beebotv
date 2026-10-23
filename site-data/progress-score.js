@@ -4,7 +4,7 @@
  * testing-status.json is the single source of truth. It holds a "scoring" block (the weights, the cap, the
  * labels, the colour tiers) and, per feature, the five "checks" plus two optional numbers:
  *   openIssues   whole number, default 0. Known errors that are still open. Above 0 the score is capped
- *                (scoring.openIssuesCap, 85), so a feature with an open known error can never reach 90.
+ *                (scoring.openIssuesCap, 90), so a feature with an open known error can never reach 99.
  *   percentCap   optional whole number. An explicit upper limit that is explained by the feature's scoreNote.
  *
  * Works in Node (require) and in a browser (window.BeeboProgress). No dependencies.
@@ -31,7 +31,7 @@
     return p;
   }
 
-  // Label shown beside the bar. Only 90 and 100 get a special label; everything else shows its colour tier.
+  // Label shown beside the bar. Only 99 and 100 get a special label; everything else shows its colour tier.
   function labelFor(percent, scoring) {
     if (percent >= scoring.readyPercent) return { id: 'ready', text: scoring.readyLabel };
     if (percent === scoring.waitingPercent) return { id: 'waiting', text: scoring.waitingLabel };
