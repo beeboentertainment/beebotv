@@ -1,12 +1,12 @@
 {
-    "version": "0.1.99",
-    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.99/Beebo.Entertainment.Setup.0.1.99.exe",
-    "sha256": "b790c21f141ce81b556a58d704fbefc8f577b53be13cccc43f86f0adfcbf2191",
-    "size": 258105112,
-    "notes": "What's new in 0.1.99:\r\n- Audiobooks: closing the player keeps your place, and a book that showed \"[object Object]\" is read again on the next scan (progress and bookmarks kept).\r\n- Library scans skip hidden files such as Mac \"._\" copies, .DS_Store and Thumbs.db.\r\n- Sidebar Movies and TV Shows counts update as soon as you add or remove an extra folder; a changed Photos folder list no longer shows the old albums.\r\n- Live TV: a parental check that runs into an error is handled the same way everywhere (allowed, as before, and noted in the log). A restricted profile is still blocked.\r\n- Converter: a computer whose ffmpeg has libx264 but not OpenH264 can now convert videos. Windows with the built-in ffmpeg is unchanged.\r\n- Smaller fixes: version heading, messages follow a language switch, clearer Picture frame, Kitchen announcements and tuner hints.\r\n- Not yet checked: none of this has been tried on the installed app on a real PC. Automated tests and reviews only.\r\n- Release source commit c43f13d27.\r\n- Published: Oct 21, 2026, 3:46 PM Eastern.",
-    "sourceSha": "c43f13d27",
-    "builtAtUtc": "2026-10-21T19:40:00.000Z",
-    "builtAtEastern": "Oct 21, 2026, 3:40 PM Eastern",
-    "publishedAtUtc": "2026-10-21T19:46:00.000Z",
-    "publishedAtEastern": "Oct 21, 2026, 3:46 PM Eastern"
+    "version": "0.1.102",
+    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.102/Beebo.Entertainment.Setup.0.1.102.exe",
+    "sha256": "bc0bb6ad4da5fc845063c91a948cff0d01953b3dea8c4a7457c6d91d332529dc",
+    "size": 258136112,
+    "notes": "What's new in 0.1.102:\r\n- Beebo Relay: a new \"Use Beebo Relay\" button on Get Started and in Settings. You accept the terms first, and Beebo never turns Relay on by itself. The status is honest: if your permission has run out, or Relay is paused, over its monthly limit or unavailable, it says so instead of \"enabled\". Watching at home keeps working.\r\n- Away from home: a quality picked in the web player or on a phone can no longer go above your away-from-home quality limit.\r\n- Limited profiles: missing-sequel hints are hidden from limited viewers in the browser Sequels list and on the Up next card. A restricted profile that has \"See photos\" gets thumbnails and the viewer. A limited adult can delete their own account (a child profile still asks the owner).\r\n- Live TV: leftover stream cache folders in a custom time-shift folder are cleaned up (a link is never followed), and a stream that fails to start removes its own folder.\r\n- Web player and older TVs: the Up next card appears a minute before an episode ends, Next has a word, the TV full-screen button keeps the page buttons on screen, a lost connection is shown honestly, and the Quality, Cinema, install banner, Watch Together and speaker controls keep their spacing on older browsers.\r\n- Movie versions and Up next: the preferred file shows why it was chosen, follows this connection's limit and hides files the viewer may not see. Up next steps over a missing season to the next episode, and an embedded default subtitle no longer confuses the subtitle type.\r\n- Smaller fixes: ordinary logs no longer record private media details, a finished Music scan stays finished when an older answer arrives late, a failed Prepare Queue read says so instead of showing an empty list, and Campsite phone speakers fit the measured distance between a pair.\r\n- Not yet checked: none of this has been tried on the installed app on a real PC or on an old TV. Automated tests and reviews only.\r\n- Release source commit fbbfcc094.\r\n- Built: Oct 24, 2026, 12:58 PM Eastern.\r\n- Published: Oct 24, 2026, 1:05 PM Eastern.",
+    "sourceSha": "fbbfcc094",
+    "builtAtUtc": "2026-10-24T16:58:00.000Z",
+    "builtAtEastern": "Oct 24, 2026, 12:58 PM Eastern",
+    "publishedAtUtc": "2026-10-24T17:05:00.000Z",
+    "publishedAtEastern": "Oct 24, 2026, 1:05 PM Eastern"
 }
