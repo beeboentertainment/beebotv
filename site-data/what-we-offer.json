@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 24, 2026, 3:40 AM Eastern",
-    "updatedIso": "2026-10-24T03:40:44-04:00",
+    "updatedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+    "updatedIso": "2026-10-24T04:32:01-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -183,7 +183,7 @@
       "area": "windows",
       "name": "Languages: English plus Spanish, French, German, Portuguese (Brazil) and Italian",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 1:19:13 AM Eastern. Five library/navigation languages were checked in a PC browser at 1265 pixels and S24 Chrome at 384 pixels, without page overflow. English was restored on the phone. Exact Pixel layouts, native-speaker review, large text, all dialogs, right-to-left previews and installed-app layouts remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 1:19:13 AM Eastern (carried without rerun). Five library/navigation languages were checked in a PC browser at 1265 pixels and S24 Chrome at 384 pixels, without page overflow. English was restored on the phone. Exact Pixel layouts, native-speaker review, large text, all dialogs, right-to-left previews and installed-app layouts remain untested. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "partly"
     },
     {
@@ -207,7 +207,7 @@
       "area": "windows",
       "name": "Photos and phone backups: timeline, albums, map",
       "status": "Beta",
-      "evidence": "Oct 22 test-build update: One desktop access-check repair covers both child-profile thumbnails and full pictures; separate Android changes cover wording, month-language updates and chip layout. RETEST-1: the S9+ child saw real thumbnails and full pictures, swiped between pictures, saw empty Videos wording, immediate Spanish month headings and fitting chips at 1.3 text size. These narrow passes on tester35 with Windows 0.1.100 supersede the earlier blank-picture failure for that setup. Map, removal, real pinch, full folder, backup/privacy and other devices remain unverified; Real device stays false.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:16:25 AM Eastern. One owned synthetic photo uploaded from the native S9+ selected test album. The 47,304-byte PC copy independently matched the phone source hash; the original remained. Backup was turned off and album settings restored. The native map is still unavailable, so the earlier implementation-gap failure remains. Real map/location and pinch acceptance, restore, conflicts and broader backup behaviour are not proved. No original-file deletion was attempted. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -215,7 +215,7 @@
       "area": "windows",
       "name": "Picture frame (a photo wall for a tablet or TV)",
       "status": "In development",
-      "evidence": "Last PASS Oct 24, 2026, 1:09:58 AM Eastern. S24 and S9 browsers displayed decoded photos. S24 Next/Previous changed the actual picture and returned to the first. Revoking the test wall link on the PC hid both photos and showed the access-ended message. Actual one-day expiry, phone-presence integration and installed Windows setup screens remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 1:09:58 AM Eastern (carried without rerun). S24 and S9 browsers displayed decoded photos. S24 Next/Previous changed the actual picture and returned to the first. Revoking the test wall link on the PC hid both photos and showed the access-ended message. Actual one-day expiry, phone-presence integration and installed Windows setup screens remain untested. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "partly"
     },
     {
@@ -223,7 +223,7 @@
       "area": "windows",
       "name": "Kitchen announcements (messages to phones)",
       "status": "In development",
-      "evidence": "Last PASS Oct 24, 2026, 1:39:42 AM Eastern. The PC service sent a message to Pixel, S9 and S24 browser banners, which cleared after 15 seconds. Quiet hours suppressed the restricted test member; normal members still saw the message. A real test guest was refused. The installed sender panel, native notifications and a person hearing Listen remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 1:39:42 AM Eastern (carried without rerun). The PC service sent a message to Pixel, S9 and S24 browser banners, which cleared after 15 seconds. Quiet hours suppressed the restricted test member; normal members still saw the message. A real test guest was refused. The installed sender panel, native notifications and a person hearing Listen remain untested. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "no"
     },
     {
@@ -231,7 +231,7 @@
       "area": "windows",
       "name": "Space Saver: folder clean-up and encrypted private storage",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 2:16:25 AM Eastern. A real Galaxy S9+ running native Android tester36 (build 86) uploaded one newly created synthetic photo from its selected test album. The PC copy matched all 47,304 bytes and the original file hash. The phone showed Up to date; its original remained and backup was turned off afterward. This is backup integrity only. Full album backfill, freeing space, deletion, encrypted-storage acceptance, restore, conflicts, disk-full and NAS behaviour remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 2:16:25 AM Eastern (carried without rerun). A real Galaxy S9+ running native Android tester36 (build 86) uploaded one newly created synthetic photo from its selected test album. The PC copy matched all 47,304 bytes and the original file hash. The phone showed Up to date; its original remained and backup was turned off afterward. This is backup integrity only. Full album backfill, freeing space, deletion, encrypted-storage acceptance, restore, conflicts, disk-full and NAS behaviour remain untested. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "no"
     },
     {
@@ -247,7 +247,7 @@
       "area": "windows",
       "name": "Jellyfin-compatible mode (use Jellyfin apps with Beebo)",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 1:02:28 AM Eastern. The S24 browser used compatible media-client sign-in, library and playback endpoints, played the full 20-second clip, sought and paused. It used a separately copied recovery test server; that provenance is kept separate. Installed third-party media clients and reconnect remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 1:02:28 AM Eastern (carried without rerun). The S24 browser used compatible media-client sign-in, library and playback endpoints, played the full 20-second clip, sought and paused. It used a separately copied recovery test server; that provenance is kept separate. Installed third-party media clients and reconnect remain untested. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "no"
     },
     {
@@ -359,7 +359,7 @@
       "area": "android",
       "name": "Playing films: resume, seek, pause and the quality menu",
       "status": "Available",
-      "evidence": "Oct 22 test-build update: RETEST-1 on tester35 with Windows 0.1.100: the S9+ Subtitle Test started promptly and played the 30-second clip twice; the landscape subtitle sheet listed English and Spanish, and the button labels followed those choices. That item does not establish that the chosen language appeared in the picture. On the S25, version selection between 1080p and 720p worked and 720p stayed selected. FAIL: listed/selected English and Spanish sidecar files drew no subtitle text. PARTIAL: online Next jumped to the next season once, then the expected same-season episode on three later tries; offline Next passed with existing downloads. Earlier unexplained Pixel Next behavior remains open; a stale queue is a hypothesis. The screen-off switch kept Android’s PLAYING state, not sound heard by a person. French player labels appeared on the Pixel.",
+      "evidence": "Last PASS: Oct 23, 2026, 10:28:19 AM Eastern. The selected English sidecar cue was still absent on a second native phone while the picture time was inside the cue. Earlier seek and picture-in-picture passes are carried. Online Next remains a separate open problem. Repair and retest sidecar captions and online Next on a compatible installed build. A person still needs to hear the sound. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "yes"
     },
     {
@@ -391,7 +391,7 @@
       "area": "android",
       "name": "Pack for a trip (download planner)",
       "status": "Beta",
-      "evidence": "Oct 23, 2026, 11:08:10 AM Eastern, Pixel 3 on Android tester35 (build 85): a tiny planned download and actual offline picture passed. Smaller-copy choices, low-space estimates, first visit and finished-size comparison remain untested. This is not full planner acceptance.",
+      "evidence": "Last PASS: Oct 24, 2026, 1:12:22 AM Eastern. A smaller 720p download on the Pixel finished: the server copy changed from 35,062,092 to 5,598,915 bytes and the phone showed both items Ready. Earlier actual offline picture playback is carried. Low-space estimates, first-visit packing flow and independent final-copy measurement remain unproved. A safely limited spare device is needed; personal storage must not be filled. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -399,7 +399,7 @@
       "area": "android",
       "name": "Casting to a Chromecast TV",
       "status": "Beta",
-      "evidence": "Galaxy S9+, installed Android 1.51-tester36 (build 86), normal native Cast route to an idle real receiver. A synthetic film was allowed 93 seconds of normal preparation. The phone changed from Preparing to Casting, but four receiver polls still had no media session, picture position or content. This confirmed the media-loading bug; it is not explained by the isolated test-server certificate alone. Earlier connection, volume and stop passes remain historical. No TV captions, seek or working second-sender playback is cleared. Open known issue (one; score capped at 90%): native Chromecast media loading failed on the normal supported route after 93 seconds of preparation. Repair and retest actual media loading. Then check original/converted playback, pause, seek, captions and a working second sender. A person must see the TV picture/captions and hear sound. Historical checks remain, but the old 99% score no longer applies while this bug is open. The final phone-round table is pending; no new whole-feature pass is claimed. Nick alone records Ready.",
+      "evidence": "Last PASS: Oct 23, 2026, 10:01:16 PM Eastern. The confirmed normal native Cast route still connected without a receiver media session after patient preparation. The distinct silent Live TV route also connected without TV media after about 94 seconds. Earlier connection, volume and Stop passes are carried. Repair and retest the existing single media-loading bug on a compatible installed build. Then test actual picture, original/converted playback, pause, seek, captions and a working second sender. The Live TV attempt is not a second independently localized bug. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -407,7 +407,7 @@
       "area": "android",
       "name": "Browse, search, collections and Request a title",
       "status": "Beta",
-      "evidence": "Oct 5 and Oct 13 on the S24 Ultra: films, shows and music filters, search, 101 collections and the request screen opened. Sending a request was not tried. A fuller media-requests and wishlist feature is only an idea.",
+      "evidence": "Last PASS: Oct 23, 2026, 6:29:17 PM Eastern. Earlier collection, filter and request actions and the intended trailer-handler dispatch are carried. Actual matching trailer picture and sound were not newly established. Matching trailer picture and sound still need checking. Dispatch alone is not a new trailer-playback or whole-feature pass. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "yes"
     },
     {
@@ -415,7 +415,7 @@
       "area": "android",
       "name": "Watchlist, favourites, playlists and Surprise me",
       "status": "Available",
-      "evidence": "Oct 13: playlist made and deleted, watchlist add and remove, and the Surprise me chooser opened. Surprise me was not played through; favourites were not tapped. Oct 22: Surprise me opens its own screen first, then starts a film within about 1.5 seconds.",
+      "evidence": "Last PASS: Oct 23, 2026, 6:34:08 PM Eastern. Earlier list, favourite, watchlist, playlist and intended control/fallback passes are carried. This round adds no loading-error or artwork acceptance. Loading/error and artwork cases remain unproved. Nick still decides the intended Surprise behaviour. The existing 99% checklist is carried within its recorded action scope. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -423,7 +423,7 @@
       "area": "android",
       "name": "Library health",
       "status": "Available",
-      "evidence": "Oct 13: it showed real counts of missing posters, unmatched titles and unreachable files, and says nothing is deleted. Rename or match was not tried.",
+      "evidence": "Last PASS: Oct 23, 2026, 3:13:21 PM Eastern. The owner folder-check refusal was reclassified as the expected secure-connection policy. A command-line response is not phone acceptance. Older Library health passes remain historical. An approved, normally trusted secure test-owner connection and an owned missing-folder/recovery fixture are still required. No security workaround or fresh recovery clearance is claimed. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -431,7 +431,7 @@
       "area": "android",
       "name": "Accessibility choices: larger text, high contrast, reduce motion, Simple Mode, Caregiver view, captions",
       "status": "In development",
-      "evidence": "Oct 22 test-build update: RETEST-1 on tester35: S9+ checks at 1.5 text size passed for scrolling player tools, visible Download/Watched controls and an unbroken German Home heading. Pixel music/audiobook checks passed at 1.3 text size. These are bounded observations, not 2.0 text size, TalkBack, high contrast, reduced motion or every landscape screen.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:03:37 AM Eastern. Five native Pixel language layouts were inspected, and German Surprise text wrapped while remaining reachable. English was restored. Earlier large-text, contrast and reduced-motion samples are carried. A person still needs to traverse TalkBack by ear. Watch Together clipping remains open on ordinary density. These layout samples do not establish native-speaker or complete accessibility acceptance. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -439,7 +439,7 @@
       "area": "android",
       "name": "Phone app languages (English plus five)",
       "status": "Beta",
-      "evidence": "Oct 13: six languages switched live on Home and the tabs. Much of the app is still English, and no native speaker has read the wording.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:03:37 AM Eastern. Five native Pixel language layouts were inspected, and German Surprise text wrapped while remaining reachable. English was restored. Earlier large-text, contrast and reduced-motion samples are carried. A person still needs to traverse TalkBack by ear. Watch Together clipping remains open on ordinary density. These layout samples do not establish native-speaker or complete accessibility acceptance. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -463,7 +463,7 @@
       "area": "android",
       "name": "Family Recipes and shopping list",
       "status": "Beta",
-      "evidence": "Oct 13: four starter recipes opened, the people counter and a shopping list worked. Amounts, adding a recipe and sharing were not tried.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:42:46 AM Eastern. Cancelling native recipe creation returned without creating a recipe. Earlier synthetic validation, scaling, duplicate and shopping-total checks are carried. People still need to plan and cook a meal and judge practical quantities. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -471,7 +471,7 @@
       "area": "android",
       "name": "Packing list shared between phones",
       "status": "Beta",
-      "evidence": "Oct 13 on two phones (one check): add, tick and remove showed up on the other phone within about 6 seconds. Ticking offline was not tried.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:40:33 AM Eastern. A blank Add action preserved the two owned packing items and their unchecked state. Earlier two-way list and offline-reconnect passes retain their original saved-test-session qualification. A reconnecting banner is not a fresh shared-sync pass. Real bag and trip use remain a human check. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -479,7 +479,7 @@
       "area": "android",
       "name": "Camp Jobs and Star Chart",
       "status": "Beta",
-      "evidence": "Oct 13 (one check): names, a shared job wheel, ticking jobs for stars and removing names all worked. The Add button hides behind the keyboard until it is closed.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:44:18 AM Eastern. A blank native family alias was rejected without creating a person. Earlier dashboard, jobs and star actions are carried. A Games link does not prove every game. People still need to use jobs over days and play together. No broader game acceptance is added. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -487,7 +487,7 @@
       "area": "android",
       "name": "Family Dashboard",
       "status": "Beta",
-      "evidence": "Oct 13 (one check): its cards matched the numbers on the other screens.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:44:18 AM Eastern. A blank native family alias was rejected without creating a person. Earlier dashboard, jobs and star actions are carried. A Games link does not prove every game. People still need to use jobs over days and play together. No broader game acceptance is added. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -495,7 +495,7 @@
       "area": "android",
       "name": "Family achievements (opt-in milestones)",
       "status": "In development",
-      "evidence": "Oct 23, 2026, 1:52:50 PM Eastern, Galaxy S9+ on tester35 (build 85): scoped opt-in, milestone and saved-state checks passed. Actual elapsed retention expiry remains untested. In development; off until the host opts in.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:38:54 AM Eastern. The native owner enabled achievements, a normal member saw only personal opt-in controls, and personal-off then owner-off restoration succeeded. Earlier synthetic milestone, duplicate, restart and clear/cancel checks are carried. Actual time-based retention expiry remains an automatable missing check, not a human look. Real family use also remains. The row stays at 74%; synthetic milestones are labelled test data. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -591,7 +591,7 @@
       "area": "tvauto",
       "name": "Car Party (host in the car, passengers join on a web page)",
       "status": "In development",
-      "evidence": "Oct 13 on two phones at home: the host started a party with a code and QR, a passenger joined and saw what was playing and who was in the car, then left. In a real parked car a guest could follow along and send reactions, but a passenger could not watch the movie and a blank name blocked a guest. That was not a driving test. In the Oct 21, 2026 release, Car Party controls stay usable while projecting; those fixes still need real phones and a real car.",
+      "evidence": "Last PASS: No real-device PASS recorded. The old local-member sign-in refusal was reclassified as a missing central test-identity fixture. It is blocked, not a proven Car Party defect. No real Car Party pass is recorded here. A normally provisioned central test household and a passenger topology without internet are needed. The family owner cannot substitute for that fixture. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -663,7 +663,7 @@
       "area": "computers",
       "name": "Any web browser: library and player, served by your own Beebo computer",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 2:32:02 AM Eastern. The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. Development server 0.1.99; Pixel browser reporting Chrome 155. The installed Windows application was never launched. Final phone-ledger reconciliation remains pending; no status or checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 2:32:02 AM Eastern (carried without rerun). The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "partly"
     },
     {
@@ -695,7 +695,7 @@
       "area": "campsite",
       "name": "Host start and stop; a guest joins by QR with no account (same Wi-Fi)",
       "status": "Available",
-      "evidence": "Oct 13 on two phones: host start, join, and Stop with a confirmation worked; the guest address stopped answering after Stop. Oct 22 on tester34: a Galaxy S25 hosted and a Galaxy S9+ joined in Chrome; but after the host stopped, the guest page said nothing about it (a fix is merged in the code, not released or retested).",
+      "evidence": "Last PASS: Oct 24, 2026, 2:54:53 AM Eastern. A Pixel-created Wi-Fi Direct network admitted the S9+ normally without internet. Its downloaded 320 × 180 test picture advanced and ended. Normal host Stop returned the guest to home Wi-Fi. A SIM-equipped guest still needs the same temporary local-network test. Older mobile-data, hotspot and unmatched-stop issues are not broadly closed. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "yes"
     },
     {
@@ -719,15 +719,15 @@
       "area": "campsite",
       "name": "Campsite games (the 42 in the list)",
       "status": "Beta",
-      "evidence": "Oct 13: all 42 opened from a guest phone and 41 started against a computer opponent (the 42nd asks the host to pick a list). Only two have recorded completions on two phones (see the next row); Crazy Eights was played by hand. The other games were not played to the end by people.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:55:34 AM Eastern. The native S9+ host and Pixel/S24 browser guests recorded a complete Reversi match: 60 legal moves, 64 discs and a matching 45–19 result. An earlier completed Rock Paper Scissors match is carried. Other games, modes and routing variants remain untested. These matches do not clear every Campsite game or replace people playing together. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
       "id": "cs-games-played",
       "area": "campsite",
-      "name": "Campsite games finished on two phones: Sea Battle and Tic-Tac-Toe",
+      "name": "Campsite games with recorded multi-phone completions",
       "status": "Beta",
-      "evidence": "Two games have recorded completions on two real phones: Sea Battle (two people, Oct 13) and Tic-Tac-Toe (Oct 22; one tester drove both phones). The Oct 14 Reversi report supports a round starting and a move synchronizing between phones; it does not record a finished round. The remaining games lack recorded two-phone completions. A phone hotspot and a guest on mobile data are not tested.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:55:34 AM Eastern. The native S9+ host and Pixel/S24 browser guests recorded a complete Reversi match: 60 legal moves, 64 discs and a matching 45–19 result. An earlier completed Rock Paper Scissors match is carried. Other games, modes and routing variants remain untested. These matches do not clear every Campsite game or replace people playing together. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade. Oct 24, 2026, 12:55 AM Eastern: the native S9+ host and Pixel/S24 browser guests also recorded a full Reversi match, 60 legal moves and the matching 45–19 result. These are named completed games, not acceptance of every game or topology.",
       "realTest": "yes"
     },
     {
@@ -743,7 +743,7 @@
       "area": "campsite",
       "name": "Guests join over the host phone's own Wi-Fi or a direct Wi-Fi link",
       "status": "Beta",
-      "evidence": "Oct 11: a guest joined over a host phone's temporary Wi-Fi and played Tic-Tac-Toe. Oct 13: two people finished Sea Battle over a direct Wi-Fi. A guest on mobile data is not tested.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:54:53 AM Eastern. A Pixel-created Wi-Fi Direct network admitted the S9+ normally without internet. Its downloaded 320 × 180 test picture advanced and ended. Normal host Stop returned the guest to home Wi-Fi. A SIM-equipped guest still needs the same temporary local-network test. Older mobile-data, hotspot and unmatched-stop issues are not broadly closed. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -751,7 +751,7 @@
       "area": "campsite",
       "name": "Share the app by QR",
       "status": "Beta",
-      "evidence": "Oct 13: a real QR scan opened the page, the file matched the installed build byte for byte, and it installed over the existing app. A phone that never had Beebo and an iPhone are not tested.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:49:36 AM Eastern. The native S9+ sharing page served the actual installed-build APK, and its recorded file hash matched that installed artifact. Earlier sharing on/off controls are carried. A never-installed spare recipient and actual 30-minute link expiry remain untested. Serving an APK is not first-install acceptance. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -783,7 +783,7 @@
       "area": "campsite",
       "name": "Wireless speakers: guests' phones as music speakers",
       "status": "Beta",
-      "evidence": "Oct 13: one guest phone appeared as a speaker with positions and a timing nudge, and the page warns that wireless speakers add delay. A real group and the click test heard by a person are not tested.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:29:25 AM Eastern. The native group test created audio pulse nodes on Pixel/S24 browser guests. Host Stop showed connection loss; normal restart and manual refresh/rejoin recovered. Separate PC-film sound buffers reached Pixel/S9 browsers. Everything was muted. A person must check audible clicks, music, acoustic delay and Bluetooth. There is no automatic-reconnect or perceived-synchronization claim. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -791,7 +791,7 @@
       "area": "campsite",
       "name": "Phone speakers for a film (left, right and surround from phones)",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 1:50:01 AM Eastern. Two real Pixel/S9 browser guests enabled audio normally and received the stereo feeds in running 48 kHz WebAudio contexts. Actual PC picture play, seek and pause matched decoded buffer delivery and both phones returning Ready. Everything was muted. Software drift is not measured acoustic alignment. A person must hear timing; microphone mapping, calibration, surround, Bluetooth and physical PC speaker outputs remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 1:50:01 AM Eastern (carried without rerun). Two real Pixel/S9 browser guests enabled audio normally and received the stereo feeds in running 48 kHz WebAudio contexts. Actual PC picture play, seek and pause matched decoded buffer delivery and both phones returning Ready. Everything was muted. Software drift is not measured acoustic alignment. A person must hear timing; microphone mapping, calibration, surround, Bluetooth and physical PC speaker outputs remain untested. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "partly"
     },
     {
@@ -815,7 +815,7 @@
       "area": "campsite",
       "name": "Shared photo and video presentation",
       "status": "Beta",
-      "evidence": "Not tried with a real audience.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:25:08 AM Eastern. A native S9+ shared photo was actually saved on the Pixel. The recorded 6,294,550-byte file hash matched the source. A generic browser filename did not mean corruption. The H264 picture rendered, while ALAC audio was unsupported. Concurrent admission during an active transfer was not proved by the short gesture gap. Another available guest and supported/unsupported audio listening checks remain. The saved-device hash is carried from its recorded capture; no new device access is claimed. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "no"
     },
     {
@@ -863,7 +863,7 @@
       "area": "campsite",
       "name": "Movie Night (TV-led party games, phones join)",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 1:27:24 AM Eastern. Pixel and S9 browsers joined a real room, both saw a restricted title disappear, both submitted their actual votes, and the winning film played in the PC product browser player. The installed desktop host panel and a person checking a real group night remain. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 1:27:24 AM Eastern (carried without rerun). Pixel and S9 browsers joined a real room, both saw a restricted title disappear, both submitted their actual votes, and the winning film played in the PC product browser player. The installed desktop host panel and a person checking a real group night remain. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "no"
     },
     {
@@ -903,7 +903,7 @@
       "area": "trip",
       "name": "Save the trip as an MP4 video",
       "status": "In development",
-      "evidence": "Failed in the published phone build on Oct 13. The fix worked on a test build the same day (a 5-second and a 13-second video were made) but is not in a download yet, and the finished video was not played back by eye.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:21:37 AM Eastern. A minimal Pixel trip with two cards and no media reached Ready after a 720p export, showing 10 seconds and 907 KB. This is a separate device result from the S9+ timeout. The S9+ export timeout remains open. The Pixel app-cache video was not independently decoded. A completed S9+ export, exported-file playback and a real outing/privacy review are still needed. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -935,7 +935,7 @@
       "area": "away",
       "name": "Direct connection away from home",
       "status": "Available",
-      "evidence": "Oct 22 test-build update: RETEST-1 wording was PARTIAL: the Pixel in real airplane mode showed No internet connection on this phone; the S25 with app networking blocked showed Couldn’t reach Beebo from here. The S25 airplane setting alone had left Wi-Fi up. This does not establish a new away-route, direct-versus-relay or server-failure pass.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:39:33 AM Eastern. A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. The normal-link playback baseline and Wi-Fi-to-LTE recovery remain blocked after the S24 disconnected. Two approved central test users and a sustained relay/session test are still needed. Older independent away issues remain open. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "yes"
     },
     {
@@ -959,7 +959,7 @@
       "area": "away",
       "name": "Beebo Relay (optional fallback when a direct connection fails)",
       "status": "Beta",
-      "evidence": "Oct 13: after the account's relay switch was fixed on the server, a film played over the relay from a phone on 5G. Two people on the relay at once are not tested. Terms are not final.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:39:33 AM Eastern. A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. The normal-link playback baseline and Wi-Fi-to-LTE recovery remain blocked after the S24 disconnected. Two approved central test users and a sustained relay/session test are still needed. Older independent away issues remain open. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -991,7 +991,7 @@
       "area": "away",
       "name": "Watch Together (host and viewers in step)",
       "status": "Beta",
-      "evidence": "Oct 23, 2026, tester36 (build 86): ordinary-density Start and Join remain clipped. Earlier tester35 local pause/seek/chat/reaction/background/reconnect/end passes used a temporary density workaround. They do not close the layout bug. Mobile-data timing and a final human look remain.",
+      "evidence": "Last PASS: Oct 23, 2026, 2:06:59 PM Eastern. Start and Join were also clipped on the S9+ at its ordinary display density. Swiping the panel did not reveal the actions. Older sync, chat and reconnect passes keep their temporary-density qualification. Retest the reviewed layout repair on an installed build, then check ordinary two-user timing away from home. Opening the panel does not prove a working room. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -1023,7 +1023,7 @@
       "area": "music",
       "name": "Music on the phone: albums, artists, songs, queue, shuffle, sleep timer",
       "status": "Beta",
-      "evidence": "Oct 22 test-build update: RETEST-1: at 1.3 text size on the Pixel with tester35, the song title no longer overlapped the cover and Album radio stayed on one line. Layout only: no new sound, crossfade, gapless, queue or sleep-timer pass.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:50:19 AM Eastern. The native album-radio control started a real test track, its progress and six recommendations, then stopped. Existing queue, sleep and screen-off controls are carried. Later music-player and service changes are not installed on the tested phones. Those changed paths need an approved compatible build; listening and gapless/crossfade quality remain separate. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -1031,7 +1031,7 @@
       "area": "music",
       "name": "Music inside the Windows app window",
       "status": "In development",
-      "evidence": "On Oct 13 the player stayed at 0:00. The fix shipped in Windows 0.1.94. On Oct 21 on Windows 0.1.98 the \"Recently added\" mix played 23 songs one after another and five file formats started (muted). Nobody has heard it in the desktop window.",
+      "evidence": "Last PASS Oct 24, 2026, 1:13:23 AM Eastern (carried without rerun). The S24 browser played music from the PC, advanced with Next, started the similar-music radio queue and paused. Actual PC requests matched. Lyrics display and gapless/crossfade controls still need recorded client acceptance. A person must separately hear music and judge audible continuity. The installed desktop application was not launched. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "partly"
     },
     {
@@ -1039,7 +1039,7 @@
       "area": "music",
       "name": "Music mixes and radio from your own library",
       "status": "Beta",
-      "evidence": "Oct 13: a Recently added mix started and moved to the next song. Artist and album radio from the phone were not tried.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:50:19 AM Eastern. The native album-radio control started a real test track, its progress and six recommendations, then stopped. Existing queue, sleep and screen-off controls are carried. Later music-player and service changes are not installed on the tested phones. Those changed paths need an approved compatible build; listening and gapless/crossfade quality remain separate. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -1063,7 +1063,7 @@
       "area": "music",
       "name": "Audiobooks: books, chapters, speed, sleep timer, bookmarks",
       "status": "Beta",
-      "evidence": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed Chapters at 1.3 text size, a bookmark confirmation for about three seconds, and a bookmark list whose 0:22 entry jumped to 0:22. This is not a full current-build listening, restart/resume or sleep-timer pass.",
+      "evidence": "Last PASS: Oct 23, 2026, 2:12:28 PM Eastern. The paused chapter-position loss was reproduced on the Pixel as well as the S9+. A paused jump from about 1 second to the next chapter at 16 seconds returned to about 1 second after restart. Repair paused checkpoint saving and retest both devices. Played checkpoints and bookmarks remain separate earlier passes. Listening, speed and sleep checks still need a person. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -1071,7 +1071,7 @@
       "area": "music",
       "name": "Podcasts: find, play and sleep timer",
       "status": "Beta",
-      "evidence": "Oct 23, 2026, 1:44:57 PM Eastern: Pixel 3 and Galaxy S9+ on tester35 (build 85). Synthetic feed Follow, two episodes, queue, computer copy, screen-off playback state and radio Live state passed. Phones were muted. These are carried passes, not new tester36 checks. Listening, radio recovery and real import/OPML acceptance remain open.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:55:58 AM Eastern. A malformed podcast-import file produced a clear error without losing the episode list. Cancelling the picker was also observed. Earlier feed, queue, download, screen-off and radio controls are carried. Valid and duplicate-import acceptance still need the appropriate build and fixture. Listening to podcasts and radio remains a separate human check. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -1087,7 +1087,7 @@
       "area": "music",
       "name": "Import podcasts from an OPML file or a pasted link/name",
       "status": "In development",
-      "evidence": "In the downloads (Windows 0.1.88 and later; fixes in 0.1.97). What is left: real OPML files, pasted links and names, duplicates, failed imports and subsequent playback.",
+      "evidence": "Last PASS: Oct 24, 2026, 12:55:58 AM Eastern. A malformed podcast-import file produced a clear error without losing the episode list. Cancelling the picker was also observed. Earlier feed, queue, download, screen-off and radio controls are carried. Valid and duplicate-import acceptance still need the appropriate build and fixture. Listening to podcasts and radio remains a separate human check. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "no"
     },
     {
@@ -1119,7 +1119,7 @@
       "area": "livetv",
       "name": "Live TV on the phone",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 1:25:31 AM Eastern. The S24 played the real-time synthetic own-playlist channel for about 21.5 seconds, with a decoded picture, then paused. The PC matched the actual stream. TV playback and Stop through Chromecast are not proved. A real tuner and broader channel/restriction tests remain. Earlier static-input failures are unresolved input/pacing diagnostics, not a new proven bug. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 1:25:31 AM Eastern (carried without rerun). The earlier S24 real-time own-playlist playback and pause PASS is carried. A later native S9+ silent channel rendered on the phone and the PC delivered the stream, but the real TV still had no media session after about 94 seconds. Normal Stop returned the receiver to idle. The existing native Cast media-loading bug needs repair and a real-TV retest. No TV picture, captions, seek or sound pass is established. A real tuner and broader channel/restriction checks remain. This is the same Cast bug, not an additional independently localized Live TV issue. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "no"
     },
     {
@@ -1159,7 +1159,7 @@
       "area": "household",
       "name": "Parental limits and ratings",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 2:32:42 AM Eastern. The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Installed-PC enforcement and broader changes to active profile limits during Live TV and Movie Night remain separate acceptance checks. The existing child account-screen issue still needs its reviewed repair and fixed-build retest. Development server 0.1.99; Pixel browser reporting Chrome 155. The installed Windows application was never launched. Final phone-ledger reconciliation remains pending; no status or checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 2:32:42 AM Eastern (carried without rerun). The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Installed-PC enforcement and broader changes to active profile limits during Live TV and Movie Night remain separate acceptance checks. The existing child account-screen issue still needs its reviewed repair and fixed-build retest. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "partly"
     },
     {
@@ -1223,7 +1223,7 @@
       "area": "online",
       "name": "Browser games on this website (17 games, play a friend or Hopping Beebo)",
       "status": "Beta",
-      "evidence": "Oct 1 (one day): the first 8 game pages loaded at phone width with no errors and a full Drop Four round was played against Hopping Beebo. A script cross-checks that the site lists 17 browser games; the other nine have not been hand-tested, and real phones with touch were not tried.",
+      "evidence": "Oct 24, 2026, 4:09:28 AM Eastern: Real Windows Chrome 155.0.8059.85 showed correct hearts and spades matched-pair announcements on the published Memory Match page. All eight pairs in Solo 16 finished naturally in 15 moves; the session win and best score were retained. No hidden-card state was read or injected. The exact wording defect is resolved. Earlier named interactions in all 17 browser games and seven completed rounds are carried. This does not establish every mode, Safari, Firefox, phone touch or real online opponents.",
       "realTest": "partly"
     },
     {
@@ -1351,8 +1351,7 @@
     "The demo player has no subtitles button although the title page mentions one.",
     "Paused audiobook chapter seeking returns to the earlier checkpoint after restart on tester36.",
     "Watch Together Start and Join are clipped at ordinary display density on tester36.",
-    "Warm pairing can leave the old Home visible on tester36.",
-    "Memory Match displays heartss after a matching pair. Its wording repair is merged in development code, but a rendered browser acceptance check and public repair are still pending."
+    "Warm pairing can leave the old Home visible on tester36."
   ],
   "ideas": [
     {
