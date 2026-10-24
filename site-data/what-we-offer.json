@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 23, 2026, 9:32 PM Eastern",
-    "updatedIso": "2026-10-23T21:32:40-04:00",
+    "updatedEastern": "Oct 23, 2026, 10:27 PM Eastern",
+    "updatedIso": "2026-10-23T22:27:35-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -295,7 +295,7 @@
       "area": "windows",
       "name": "Remote Desktop (see and control the PC from a phone)",
       "status": "In development",
-      "evidence": "Off by default and never run on a real PC. The keyboard helper change is in Windows 0.1.97. What is left: real keyboard, mouse, viewing, approval, disconnect and revoke checks.",
+      "evidence": "In development, off by default. Phone approval is required for every connection. Three independent security reviews are complete. A real connection from away has not been made or tested end to end. Reviews do not prove the feature works.",
       "realTest": "no"
     },
     {
@@ -391,7 +391,7 @@
       "area": "android",
       "name": "Pack for a trip (download planner)",
       "status": "Beta",
-      "evidence": "Tried on a real phone on Oct 2; a full start-to-finish trip download still needs a real test.",
+      "evidence": "Oct 23, 2026, 11:08:10 AM Eastern, Pixel 3 on Android tester35 (build 85): a tiny planned download and actual offline picture passed. Smaller-copy choices, low-space estimates, first visit and finished-size comparison remain untested. This is not full planner acceptance.",
       "realTest": "partly"
     },
     {
@@ -399,7 +399,7 @@
       "area": "android",
       "name": "Casting to a Chromecast TV",
       "status": "Beta",
-      "evidence": "Oct 13 to a real Chromecast TV from two phones: a person watching the TV confirmed picture and sound, pause, play, skip forward and back, a quality change and stop. The phone's volume keys do not change the TV volume. Converted films and other TVs are not tested. Oct 22 on tester34 from a Galaxy S25: the cast controls and the on-screen TV volume slider responded on the phone; picture and sound on the TV were not confirmed by the tester, and the phone volume keys were not retested. Owner-reported, not a helper run: on Oct 22 Nick watched House season 4 episode 2 on a 70-inch Samsung smart TV through a Google Chromecast (details still being confirmed; no label or percentage changed).",
+      "evidence": "Oct 23, 2026: Pixel 3 and Galaxy S9+, Android 1.51-tester36 (build 86), and a real Chromecast receiver. On tester36, connection, the Pixel volume keys (100% to 95% and back) and ordinary Stop returning the receiver to idle passed. Original and requested converted 480p media did not load from the isolated test server. A second phone connected, but working second-sender playback/control, pause, seek and TV captions were BLOCKED because there was no media session. The compatibility cause is unproven. Last PASS: Pixel 3; tester36/code86; receiver Stop/control scope; 2026-10-23 10:01:16 PM Eastern. The existing 99% score comes from older dated casting evidence; this round adds no whole-feature clearance. Investigate media loading through the normal supported test route. Then check original and converted playback, pause, seek, captions and a second sender. A person must check the TV picture, captions and sound. The two failed load scenarios are one unresolved compatibility observation, not two proven code bugs. Nick alone records Ready.",
       "realTest": "partly"
     },
     {
@@ -495,7 +495,7 @@
       "area": "android",
       "name": "Family achievements (opt-in milestones)",
       "status": "In development",
-      "evidence": "In Android 1.51-tester33 and later, off until the host turns it on. Oct 21 on tester33 (a Pixel 3): the opt-in preview text and the two \"cannot be undone\" dialogs were correct. No milestone was recorded.",
+      "evidence": "Oct 23, 2026, 1:52:50 PM Eastern, Galaxy S9+ on tester35 (build 85): scoped opt-in, milestone and saved-state checks passed. Actual elapsed retention expiry remains untested. In development; off until the host opts in.",
       "realTest": "partly"
     },
     {
@@ -528,7 +528,7 @@
       "name": "Phone Help (show your screen to another phone)",
       "status": "In development",
       "realTest": "no",
-      "evidence": "Switched off and paused. Not available."
+      "evidence": "In development, off by default. Phone-to-phone screen help still needs real permission, viewing, disconnect and recovery checks. Not available."
     },
     {
       "id": "tv-layout",
@@ -991,7 +991,7 @@
       "area": "away",
       "name": "Watch Together (host and viewers in step)",
       "status": "Beta",
-      "evidence": "Oct 13 on two phones: host, join as viewer, the viewer followed a 45-second skip within 8 seconds, and left and rejoined within 1 second. Chat, reactions, closing the app and a phone on mobile data are not tested. Oct 22 on tester34: a Galaxy S25 host and a Galaxy S9+ viewer followed play, seek and pause within 1 to 3 seconds; resume took about 5 seconds.",
+      "evidence": "Oct 23, 2026, tester36 (build 86): ordinary-density Start and Join remain clipped. Earlier tester35 local pause/seek/chat/reaction/background/reconnect/end passes used a temporary density workaround. They do not close the layout bug. Mobile-data timing and a final human look remain.",
       "realTest": "partly"
     },
     {
@@ -1071,7 +1071,7 @@
       "area": "music",
       "name": "Podcasts: find, play and sleep timer",
       "status": "Beta",
-      "evidence": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed the Spanish Radio en directo label. This is wording evidence only; Follow, podcast downloads, queue and sound remain open.",
+      "evidence": "Oct 23, 2026, 1:44:57 PM Eastern: Pixel 3 and Galaxy S9+ on tester35 (build 85). Synthetic feed Follow, two episodes, queue, computer copy, screen-off playback state and radio Live state passed. Phones were muted. These are carried passes, not new tester36 checks. Listening, radio recovery and real import/OPML acceptance remain open.",
       "realTest": "partly"
     },
     {
@@ -1079,7 +1079,7 @@
       "area": "music",
       "name": "Following a new podcast from the phone",
       "status": "Beta",
-      "evidence": "Failed on Oct 13: the app said the computer had a problem and the show was not followed. Cause not yet found.",
+      "evidence": "Oct 23, 2026, 1:44:57 PM Eastern, Pixel 3/S9+ on tester35 (build 85): following the synthetic podcast feed, two episodes and queue checks passed. Older failures remain in the history; broader feeds, imports and listening by a person are still needed.",
       "realTest": "no"
     },
     {
@@ -1254,8 +1254,8 @@
       "id": "s-hosting",
       "area": "online",
       "name": "Managed hosting and server locations",
-      "status": "Planned",
-      "evidence": "A plan only.",
+      "status": "In development",
+      "evidence": "In development, off by default. Not for sale. Real server setup, operation and customer acceptance have not been proved.",
       "realTest": "no"
     },
     {
@@ -1322,7 +1322,7 @@
     }
   ],
   "workingOn": [
-    "Making Campsite game rooms clear when players leave, so the lead passes to someone who is still there and the host can end a game.",
+    "Repairing the phone problems found in the dated test record. Merged code is not an installed-device pass.",
     "Fixes for what the Oct 21 and Oct 22 device runs found: the subtitle and version pickers, Next on downloaded episodes, large-text clipping, the guest \"host stopped\" page, child-profile photos and opening a film in a browser through the away address. All are merged in the code except the folder poster and NFO problem; none is released.",
     "Letting a passenger in a Car Party watch what is playing, and joining with a blank name.",
     "A self-serve switch to turn Beebo Relay on for your own account, plus a usage line on the phone.",
@@ -1338,17 +1338,21 @@
   ],
   "knownProblems": [
     "On a phone, sound stops when the screen turns off unless the \"Keep playing when the screen turns off\" switch (in the Quality & audio sheet) is on; real screen-off sound with the switch on has not been tested.",
-    "Following a new podcast from the phone failed on Oct 13 and again on Oct 14; a fix is in the code and has not been retested.",
-    "Saving a Trip Journal as a video failed on a Galaxy S9+ on Android tester23 (it worked on the S24 Ultra and Pixel 3). A fix is in later downloads and has not been retested on the S9+.",
-    "Oct 22, tester34: the phone player has no way to choose a film's embedded subtitles, does not show sidecar subtitle files and has no version picker for a film with two files (Galaxy S25).",
-    "Oct 22, tester34: Next on a downloaded episode skipped a saved episode while online when one in between was missing; another run did not move on at all.",
+    "Earlier podcast Follow failures are recorded in the history. The Oct 23 synthetic feed Follow and queue checks passed; real imports and listening checks remain.",
+    "Oct 23, Android tester36 (build 86): a minimal 720p Trip Journal export on the Galaxy S9+ still times out without producing a video.",
+    "Oct 23, tester36: a sidecar subtitle can be selected, but its cue is still absent from the picture.",
+    "Oct 23, tester36: online Next still skips an earlier phone-downloaded episode.",
     "Oct 22, tester34: text is cut off at 150% text on four phones (the player top bar, the title-page Download button and some other buttons).",
-    "Oct 22, tester34: after a Campsite host stops, the guest page says nothing about it; photo pictures do not load for a child profile; a child profile's Movie Night page showed a raw error. The host-stopped, Movie Night, photo and Next fixes are merged in the code; none is released or retested.",
+    "The Oct 23 tested Campsite stopped-host notice passed on one local route. Older unmatched stop behaviour and mobile-data/hotspot use remain open. Earlier restricted-profile photo and Movie Night findings are not cleared by that test.",
     "Oct 22: opening a film in a browser through the away address failed (the player is discarded when the page reloads). On Windows 0.1.98 a folder's own poster and NFO files were not used.",
-    "The fixes for the Oct 22 findings are merged in the code (none is recorded yet for the folder poster and NFO problem). None is released or retested on a device.",
-    "The phone's volume keys do not change the TV volume while casting (not retested since tester32 added an on-screen slider; the slider moved on Oct 22 but whether the TV volume changed was not confirmed).",
+    "Repairs in code do not close installed-device problems. Warm pairing, sidecar captions, online Next, paused audiobook seeking, S9+ export and Watch Together button layout remain open on the tested build.",
+    "Oct 23, 9:51:02 PM Eastern, Pixel 3 tester36: phone volume keys changed the real Chromecast receiver from 100% to 95% and back. Isolated test-server media still did not load; TV playback, captions, seek and a working second sender are not cleared.",
     "An ordinary trip link opens only on the home Wi-Fi unless away links are switched on.",
-    "The demo player has no subtitles button although the title page mentions one."
+    "The demo player has no subtitles button although the title page mentions one.",
+    "Paused audiobook chapter seeking returns to the earlier checkpoint after restart on tester36.",
+    "Watch Together Start and Join are clipped at ordinary display density on tester36.",
+    "Warm pairing can leave the old Home visible on tester36.",
+    "Memory Match displays heartss after a matching pair. Its wording repair is merged in development code, but a rendered browser acceptance check and public repair are still pending."
   ],
   "ideas": [
     {
@@ -1435,16 +1439,8 @@
       "partly": true
     },
     {
-      "title": "Spare-phone backup node",
-      "line": "Keep an extra encrypted copy of Beebo's settings and journals on old phones around the house."
-    },
-    {
       "title": "Remote Desktop controller pad",
       "line": "A phone or tablet becomes a touchpad, keyboard and game pad for the PC."
-    },
-    {
-      "title": "Spare-phone video conversion helpers",
-      "line": "Idle old phones help the PC convert video."
     },
     {
       "title": "Surround sound from old phones",
@@ -1470,14 +1466,6 @@
     {
       "title": "Digital picture frame and info board",
       "line": "Old tablets and TVs show a photo slideshow and family notices from the home PC."
-    },
-    {
-      "title": "Family sign-in code vault",
-      "line": "A private household place on the home PC to keep sign-in codes for other services."
-    },
-    {
-      "title": "Home network traffic viewer",
-      "line": "An old device shows which devices use how much of the home internet."
     },
     {
       "title": "Paper scanner with offline text search",
