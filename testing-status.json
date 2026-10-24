@@ -1,13 +1,13 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 23, 2026, 7:57 PM Eastern",
+    "updatedEastern": "Oct 23, 2026, 9:32 PM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. The separate Human testing done figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
-      "humanTestingDone": 31,
+      "humanTestingDone": 35,
       "features": 70,
-      "codeItemsLeft": 39,
+      "codeItemsLeft": 40,
       "counts": {
         "confirmed-on-real-devices": 0,
         "code-complete-needs-real-world-testing": 31,
@@ -260,10 +260,10 @@
       {
         "name": "Windows desktop app",
         "codeDone": 100,
-        "humanTestingLeft": 81,
+        "humanTestingLeft": 68,
         "remaining": {
           "CODE": 14,
-          "DEVICE": 39,
+          "DEVICE": 49,
           "NICK": 4,
           "BLOCKED": 4
         },
@@ -304,7 +304,7 @@
           {
             "name": "Live TV (tuner and own playlist)",
             "codeDone": 100,
-            "humanTestingLeft": 100,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 1,
             "realWorldStatus": "code-still-being-finished"
           },
@@ -318,21 +318,21 @@
           {
             "name": "Movie Night",
             "codeDone": 100,
-            "humanTestingLeft": 100,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 1,
             "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Jellyfin-compatible mode",
             "codeDone": 100,
-            "humanTestingLeft": 100,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 1,
             "realWorldStatus": "code-still-being-finished"
           },
           {
             "name": "Parental controls and household profiles",
             "codeDone": 100,
-            "humanTestingLeft": 100,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 1,
             "realWorldStatus": "code-still-being-finished"
           },
@@ -381,7 +381,7 @@
           {
             "name": "Strong volume leveler",
             "codeDone": 100,
-            "humanTestingLeft": 100,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 1,
             "realWorldStatus": "code-still-being-finished"
           },
@@ -395,7 +395,7 @@
           {
             "name": "Music on the PC (library, mixes, desktop player)",
             "codeDone": 100,
-            "humanTestingLeft": 100,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           },
@@ -409,14 +409,14 @@
           {
             "name": "Picture frame (photo wall for a tablet or TV)",
             "codeDone": 100,
-            "humanTestingLeft": 100,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           },
           {
             "name": "Kitchen announcements (messages to phones)",
             "codeDone": 100,
-            "humanTestingLeft": 100,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           }
@@ -466,8 +466,8 @@
         "codeDone": 71,
         "humanTestingLeft": 76,
         "remaining": {
-          "CODE": 10,
-          "DEVICE": 16,
+          "CODE": 11,
+          "DEVICE": 18,
           "NICK": 12,
           "BLOCKED": 4
         },
@@ -495,7 +495,7 @@
             "name": "Website and browser games",
             "codeDone": 100,
             "humanTestingLeft": 33,
-            "codeItemsLeft": 1,
+            "codeItemsLeft": 2,
             "realWorldStatus": "code-still-being-finished"
           },
           {
@@ -581,20 +581,20 @@
     "evidenceLimit": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 23, 2026, 7:57 PM Eastern",
+    "updatedEastern": "Oct 23, 2026, 9:32 PM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Human testing done is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
       "baseline": "The same method applied to the Oct 21, 2026, 3:46 PM Eastern data",
-      "current": "Oct 23, 2026 L3 Round 3 ledger, updated 6:47 PM Eastern: ten passed Android A scopes, exact Last PASS builds/times and carried checks; six proven device bugs remain open. Non-Android feature evidence is unchanged."
+      "current": "L3 Round 3 real-phone evidence plus L5 October 23 named Windows source/API/browser subsets; exact carried/current source/time and remaining acceptance are recorded. No installed Windows or whole-feature upgrade is inferred."
     },
     "areas": [
       {
         "name": "Windows desktop",
         "rows": 21,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 19,
-        "realDeviceTickedRows": 10,
+        "humanTestingDonePercent": 32,
+        "realDeviceTickedRows": 18,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
         "wasHumanTestingDonePercent": 23,
@@ -725,8 +725,8 @@
         "name": "Live TV",
         "rows": 1,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 0,
-        "realDeviceTickedRows": 0,
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 1,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
         "wasHumanTestingDonePercent": 0,
@@ -765,8 +765,8 @@
         "name": "Jellyfin API",
         "rows": 1,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 0,
-        "realDeviceTickedRows": 0,
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 1,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
         "wasHumanTestingDonePercent": 0,
@@ -805,8 +805,8 @@
         "name": "Music, podcasts and audiobooks",
         "rows": 4,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 42,
-        "realDeviceTickedRows": 3,
+        "humanTestingDonePercent": 50,
+        "realDeviceTickedRows": 4,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
         "wasHumanTestingDonePercent": 25,
@@ -837,8 +837,8 @@
         "name": "Parental controls",
         "rows": 1,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 0,
-        "realDeviceTickedRows": 0,
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 1,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
         "wasHumanTestingDonePercent": 0,
@@ -906,8 +906,8 @@
         "name": "New features: picture frame, Kitchen announcements, Family achievements",
         "rows": 3,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 11,
-        "realDeviceTickedRows": 1,
+        "humanTestingDonePercent": 33,
+        "realDeviceTickedRows": 3,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": null,
         "wasHumanTestingDonePercent": null,
@@ -1009,16 +1009,16 @@
     "summary": "The downloads are Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.99 and Android 1.51-tester34 add audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-23T19:57:58-04:00",
-  "updatedEastern": "Oct 23, 2026, 7:57 PM Eastern",
+  "updated": "2026-10-23T21:32:40-04:00",
+  "updatedEastern": "Oct 23, 2026, 9:32 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Our test process uses AI testers on real devices for that check. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
-  "overallAveragePercent": 67,
+  "overallAveragePercent": 70,
   "groupAveragePercent": {
     "Android phone app": 78,
-    "Windows desktop app": 63,
+    "Windows desktop app": 72,
     "Other systems": 57,
-    "Services and website": 50
+    "Services and website": 49
   },
   "featureCount": 70,
   "features": [
@@ -4615,14 +4615,15 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Test on graphics cards from at least two makers, and Nick decides how to replace the bundled video converter for licence reasons.",
+      "lastTested": "Oct 23, 2026, 8:41:25 PM Eastern (Last PASS R2-PLAY-QUALITY-CAP; recorded scenario completion; named current scenario)",
+      "leftToReach100": "Passed scope only: Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. Still required: Repeat conversion on graphics cards from two makers and have Nick record the bundled-converter licensing decision. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
       "roadTo100": {
         "means": "Quality and speed settings convert correctly on at least two different graphics-card families, and the converter licence question is settled.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Planner and settings tests pass.",
-          "Tested with simulated converter runs."
+          "Tested with simulated converter runs.",
+          "Oct 23, 2026, 8:41:25 PM Eastern: L5 W04 passed subset. Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. Windows source headless server, package 0.1.99. Last PASS source 56d10a216675fc51cbbc97f56dd2fbca434d0c23. Current-source scenario; carried earlier scenarios keep 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
@@ -4632,18 +4633,26 @@
           {
             "kind": "NICK",
             "text": "Decide how to replace the bundled video converter for licence reasons."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Repeat conversion on graphics cards from two makers and have Nick record the bundled-converter licensing decision."
           }
         ]
       },
-      "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
+      "previousPercent": 74,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 3 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
+        },
         {
           "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
           "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
@@ -4652,28 +4661,41 @@
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
+      ],
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 56d10a216675fc51cbbc97f56dd2fbca434d0c23. Current-source scenario; carried earlier scenarios keep 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 8:41:25 PM Eastern (recorded scenario completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W04.",
+      "deviceTests": [
+        {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 8:41:25 PM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. Last PASS R2-PLAY-QUALITY-CAP at Oct 23, 2026, 8:41:25 PM Eastern (recorded scenario completion); this is not whole-feature acceptance. CARRY-W04 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:26:49 AM Eastern (carried); recorded check completion; Real Intel Quick Sync HLS encoding produced H.264/AAC segments, including a later segment timestamp. Speed and Quality each produced probed segments; default was tested separately. Browser fallback also completed a real background conversion, preserving the MPEG-4 original.; paths: .claude/device-tests/2026-10-23/windows/converter/hls-480p-segment-ffprobe-and-seek.json, .claude/device-tests/2026-10-23/windows/converter/speed-quality-settings-real-hls.json, .claude/device-tests/2026-10-23/windows/converter/background-output-and-original-preserved.json, .claude/device-tests/2026-10-23/windows/converter/background-output-ffprobe.json | HUMAN-W04 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json | R2-PLAY-TRANSCODE PASS; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 8:35:21 PM Eastern; Real HTTP negotiation Transcode and delivered media from copied synthetic sample; paths: .claude/device-tests/2026-10-23/windows/round2/checks.json | R2-PLAY-QUALITY-CAP PASS; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 8:41:25 PM Eastern; Three current-main software assertions for explicit1080p/720p/2160p requests respecting an away quality cap. No real away-network claim.; paths: .claude/device-tests/2026-10-23/windows/round2/focused/playback-away-cap-explicit-rung.test.js.tap. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": []
+        }
       ]
     },
     {
       "group": "Windows desktop app",
       "name": "Live TV (tuner and own playlist)",
       "status": "Beta",
-      "percentComplete": 49,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 21, 2026 (Windows 0.1.98: own playlist address check and a local test playlist); a real tuner is not yet tested",
-      "leftToReach100": "After release, check that a Live TV link stops after its profile is restricted. A real tuner and real playlist still need testing.",
+      "lastTested": "Oct 23, 2026, 10:08:16 AM Eastern (Last PASS CARRY-W05; recorded check completion; carried, not rerun)",
+      "leftToReach100": "Passed scope only: Imported an explicitly confirmed, self-generated local HLS playlist into the real server. One channel, watch response and generated Live TV playlist passed; stopping worked. Tightening the test profile made its already-issued link return 403. This finite local fixture is not a tuner or real provider playlist. Still required: Connect a real lawful tuner and own playlist, watch/switch/stop channels and repeat the already-open-link restriction check on real devices. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
       "roadTo100": {
         "means": "A real tuner and a real playlist both work on a PC, with a correct guide and safe source rules.",
         "done": [
           "Checks passed: Built, Automated tests.",
           "Live TV planning tests pass.",
-          "In development, in the Oct 21, 2026 release: a Live TV link stops working when its profile is restricted."
+          "In development, in the Oct 21, 2026 release: a Live TV link stops working when its profile is restricted.",
+          "Oct 23, 2026, 10:08:16 AM Eastern: L5 W05 passed subset. Imported an explicitly confirmed, self-generated local HLS playlist into the real server. One channel, watch response and generated Live TV playlist passed; stopping worked. Tightening the test profile made its already-issued link return 403. This finite local fixture is not a tuner or real provider playlist. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
@@ -4687,18 +4709,26 @@
           {
             "kind": "CODE",
             "text": "Independent review of the guide, path and source restrictions."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Connect a real lawful tuner and own playlist, watch/switch/stop channels and repeat the already-open-link restriction check on real devices."
           }
         ]
       },
-      "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "previousPercent": 49,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 1 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
       "codeDonePercent": 100,
-      "realWorldDonePercent": 0,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 21: on Windows 0.1.98, a private-network playlist address asked \"Allow these addresses?\" and Cancel added nothing; a small local playlist with one public test stream loaded, played and was removed. No tuner was available, so a real tuner is still untested, and the confirm-for-real path was not run. The percentage did not change."
@@ -4714,6 +4744,17 @@
       ],
       "deviceTests": [
         {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 10:08:16 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Imported an explicitly confirmed, self-generated local HLS playlist into the real server. One channel, watch response and generated Live TV playlist passed; stopping worked. Tightening the test profile made its already-issued link return 403. This finite local fixture is not a tuner or real provider playlist. Last PASS CARRY-W05 at Oct 23, 2026, 10:08:16 AM Eastern (recorded check completion); this is not whole-feature acceptance. CARRY-W05 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:08:16 AM Eastern (carried); recorded check completion; Imported an explicitly confirmed, self-generated local HLS playlist into the real server. One channel, watch response and generated Live TV playlist passed; stopping worked. Tightening the test profile made its already-issued link return 403. This finite local fixture is not a tuner or real provider playlist.; paths: .claude/device-tests/2026-10-23/windows/live-tv/confirmed-own-local-hls-playlist.json, .claude/device-tests/2026-10-23/windows/live-tv/confirmed-import.json, .claude/device-tests/2026-10-23/windows/live-tv/watch.json, .claude/device-tests/2026-10-23/windows/live-tv/live-playlist.json, .claude/device-tests/2026-10-23/windows/parental-profiles/already-open-livetv-link-policy-tightened.json | HUMAN-W05 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": [
+            "Real device"
+          ]
+        },
+        {
           "tester": "Claude (AI helper)",
           "device": "Windows dev PC (24 cores), Windows app 0.1.98",
           "build": "Windows 0.1.98",
@@ -4721,7 +4762,8 @@
           "result": "PARTIAL",
           "evidence": "The address-safety question appeared and Cancel added nothing; a local file with one public test stream loaded, played for about 10 seconds and was removed. Not run: a real tuner, a public playlist address, the confirm-for-real path, restricted profiles."
         }
-      ]
+      ],
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Imported an explicitly confirmed, self-generated local HLS playlist into the real server. One channel, watch response and generated Live TV playlist passed; stopping worked. Tightening the test profile made its already-issued link return 403. This finite local fixture is not a tuner or real provider playlist. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 10:08:16 AM Eastern (recorded check completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W05."
     },
     {
       "group": "Windows desktop app",
@@ -4777,23 +4819,24 @@
       "group": "Windows desktop app",
       "name": "Movie Night",
       "status": "In development",
-      "percentComplete": 49,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 22, 2026 (phone page showed a raw error on a Galaxy S9+); not yet tried on a real TV with phones",
-      "leftToReach100": "After release, tighten limits in an active Movie Night room and confirm blocked titles disappear; join, play, pause and leave on real devices.",
+      "lastTested": "Oct 23, 2026, 10:12:59 AM Eastern (Last PASS CARRY-W07; recorded check completion; carried, not rerun)",
+      "leftToReach100": "Passed scope only: Real HTTP room creation, guest join, starting a prepared vote, pause/resume, leave, close and old-room refusal passed. An active room was re-evaluated after its host profile was tightened; the R title vanished from guest suggestions while a G control remained. The smaller pool correctly made voting unavailable. Still required: Join from two real devices, start/play/pause/leave/end and tighten limits in an active room while checking that blocked titles disappear. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
       "roadTo100": {
         "means": "A host and a guest on two real devices join, play, pause and leave together, with the sharing rules reviewed.",
         "done": [
           "Checks passed: Built, Automated tests.",
           "Movie Night behaviour tests pass.",
           "In development, in the Oct 21, 2026 release: Movie Night removes blocked titles from a room when parental limits tighten.",
-          "RETEST-1: the Pixel with tester35 showed a friendly cloud-address explanation and Try again rather than the raw error. It directs the user to the computer’s direct address. This does not test host/create/join/play, a real family session or the full feature; Real device and Real-world remain false."
+          "RETEST-1: the Pixel with tester35 showed a friendly cloud-address explanation and Try again rather than the raw error. It directs the user to the computer’s direct address. This does not test host/create/join/play, a real family session or the full feature; Real device and Real-world remain false.",
+          "Oct 23, 2026, 10:12:59 AM Eastern: L5 W07 passed subset. Real HTTP room creation, guest join, starting a prepared vote, pause/resume, leave, close and old-room refusal passed. An active room was re-evaluated after its host profile was tightened; the R title vanished from guest suggestions while a G control remained. The smaller pool correctly made voting unavailable. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
@@ -4811,18 +4854,26 @@
           {
             "kind": "DEVICE",
             "text": "The Pixel tester35 friendly-error wording passed; the complete host/create/join/play flow, TV and family session still need tests."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Join from two real devices, start/play/pause/leave/end and tighten limits in an active room while checking that blocked titles disappear."
           }
         ]
       },
-      "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "previousPercent": 49,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 1 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
       "codeDonePercent": 100,
-      "realWorldDonePercent": 0,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed a friendly cloud-address explanation and Try again rather than the raw error. It directs the user to the computer’s direct address. This does not test host/create/join/play, a real family session or the full feature; Real device and Real-world remain false."
@@ -4842,6 +4893,17 @@
       ],
       "deviceTests": [
         {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 10:12:59 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Real HTTP room creation, guest join, starting a prepared vote, pause/resume, leave, close and old-room refusal passed. An active room was re-evaluated after its host profile was tightened; the R title vanished from guest suggestions while a G control remained. The smaller pool correctly made voting unavailable. Last PASS CARRY-W07 at Oct 23, 2026, 10:12:59 AM Eastern (recorded check completion); this is not whole-feature acceptance. CARRY-W07 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:12:59 AM Eastern (carried); recorded check completion; Real HTTP room creation, guest join, starting a prepared vote, pause/resume, leave, close and old-room refusal passed. An active room was re-evaluated after its host profile was tightened; the R title vanished from guest suggestions while a G control remained. The smaller pool correctly made voting unavailable.; paths: .claude/device-tests/2026-10-23/windows/movie-night/prepared-host-lifecycle-live-policy-refresh.json, .claude/device-tests/2026-10-23/windows/parental-profiles/prepared-guest-pool-after-profile-tightened.json | HUMAN-W07 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": [
+            "Real device"
+          ]
+        },
+        {
           "tester": "RETEST-1 helper report",
           "device": "See the named phone in the evidence",
           "build": "unpublished Android 1.51-tester35 (build 85), Windows 0.1.100 server",
@@ -4858,27 +4920,29 @@
           "result": "FAIL",
           "evidence": "More > Watching & listening > Movie Night opened a blank page showing a raw \"not_found\" error, seen twice."
         }
-      ]
+      ],
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Real HTTP room creation, guest join, starting a prepared vote, pause/resume, leave, close and old-room refusal passed. An active room was re-evaluated after its host profile was tightened; the R title vanished from guest suggestions while a G control remained. The smaller pool correctly made voting unavailable. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 10:12:59 AM Eastern (recorded check completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W07."
     },
     {
       "group": "Windows desktop app",
       "name": "Jellyfin-compatible mode",
       "status": "Beta",
-      "percentComplete": 49,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Not yet tested on a real device",
-      "leftToReach100": "Try more Jellyfin apps and fix whatever does not work.",
+      "lastTested": "Oct 23, 2026, 8:34:48 PM Eastern (Last PASS R2-JF-SESSION; recorded scenario completion; named current scenario)",
+      "leftToReach100": "Passed scope only: Current real HTTP compatibility requests: /emby and /mediabrowser discovery, TEST authentication, user/views, browse/page/search, item/PlaybackInfo, byte-range video, capability/playback reporting and cross-user refusal. No third-party client operated. Still required: Use real Jellyfin-compatible clients on approved test devices to browse, play, seek and reconnect with disposable accounts. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
       "roadTo100": {
         "means": "Several real Jellyfin apps connect and play, and anything unsupported is listed.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Compatibility tests exist and pass."
+          "Compatibility tests exist and pass.",
+          "Oct 23, 2026, 8:34:48 PM Eastern: L5 W08 passed subset. Current real HTTP compatibility requests: /emby and /mediabrowser discovery, TEST authentication, user/views, browse/page/search, item/PlaybackInfo, byte-range video, capability/playback reporting and cross-user refusal. No third-party client operated. Windows source headless server, package 0.1.99. Last PASS source 56d10a216675fc51cbbc97f56dd2fbca434d0c23. Current-source scenario; carried earlier scenarios keep 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
@@ -4888,21 +4952,43 @@
           {
             "kind": "CODE",
             "text": "Add a test for each incompatibility found."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Use real Jellyfin-compatible clients on approved test devices to browse, play, seek and reconnect with disposable accounts."
           }
         ]
       },
-      "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "previousPercent": 49,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 5 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
       "codeDonePercent": 100,
-      "realWorldDonePercent": 0,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
+        },
+        {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ],
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 56d10a216675fc51cbbc97f56dd2fbca434d0c23. Current-source scenario; carried earlier scenarios keep 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Current real HTTP compatibility requests: /emby and /mediabrowser discovery, TEST authentication, user/views, browse/page/search, item/PlaybackInfo, byte-range video, capability/playback reporting and cross-user refusal. No third-party client operated. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 8:34:48 PM Eastern (recorded scenario completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W08.",
+      "deviceTests": [
+        {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 8:34:48 PM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Current real HTTP compatibility requests: /emby and /mediabrowser discovery, TEST authentication, user/views, browse/page/search, item/PlaybackInfo, byte-range video, capability/playback reporting and cross-user refusal. No third-party client operated. Last PASS R2-JF-SESSION at Oct 23, 2026, 8:34:48 PM Eastern (recorded scenario completion); this is not whole-feature acceptance. CARRY-W08 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:00:15 AM Eastern (carried); recorded check completion; Compatibility off returned 404; enabling the correct switch allowed public discovery, real test-account authentication, two-film browse and PlaybackInfo. No third-party client was operated.; paths: .claude/device-tests/2026-10-23/windows/jellyfin/enabled-compat-real-http.json, .claude/device-tests/2026-10-23/windows/jellyfin/system-public.json, .claude/device-tests/2026-10-23/windows/jellyfin/items.json, .claude/device-tests/2026-10-23/windows/jellyfin/playback-info.json | HUMAN-W08 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json | R2-JF-PREFIX PASS; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 8:34:47 PM Eastern; Case-insensitive /emby and /mediabrowser public discovery; paths: .claude/device-tests/2026-10-23/windows/round2/checks.json | R2-JF-VIEWS PASS; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 8:34:47 PM Eastern; Jellyfin Web user, views, library browse, pagination and search contracts; paths: .claude/device-tests/2026-10-23/windows/round2/checks.json | R2-JF-ITEM PASS; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 8:34:48 PM Eastern; Item detail, PlaybackInfo media sources, subtitles and static byte-range playback; paths: .claude/device-tests/2026-10-23/windows/round2/checks.json | R2-JF-SESSION PASS; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 8:34:48 PM Eastern; Capabilities, playback start/progress/stop and tested-user isolation; paths: .claude/device-tests/2026-10-23/windows/round2/checks.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": [
+            "Real device"
+          ]
         }
       ]
     },
@@ -4910,23 +4996,24 @@
       "group": "Windows desktop app",
       "name": "Parental controls and household profiles",
       "status": "Beta",
-      "percentComplete": 49,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 22, 2026 (child profile on a Galaxy S9+, tester34); not yet tested on the PC itself",
-      "leftToReach100": "Check restricted and normal profiles on a real PC after release, including an already-open Live TV link and Movie Night room. If a parental check itself fails, viewing continues; this is the owner’s choice.",
+      "lastTested": "Oct 23, 2026, 9:00:14 PM Eastern (Last PASS R2-PARENTAL-SEQUELS; recorded scenario completion; named current scenario)",
+      "leftToReach100": "Passed scope only: Carried normal/restricted movie lists, blocked playback, old Live TV link403 and active Movie Night refilter keep0cf4497dd. Current real HTTP sequel-view fixture passed restricted/unrestricted neighbor filtering. Still required: On the installed PC and approved phones compare restricted and unrestricted profiles, then tighten only a disposable profile during Live TV and Movie Night. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
       "roadTo100": {
         "means": "Restricted and normal profiles behave correctly on a real PC and the household rules have been reviewed.",
         "done": [
           "Checks passed: Built, Automated tests.",
           "Parental-control tests pass.",
           "In development, in the Oct 21, 2026 release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice.",
-          "RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision."
+          "RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision.",
+          "Oct 23, 2026, 9:00:14 PM Eastern: L5 W09 passed subset. Carried normal/restricted movie lists, blocked playback, old Live TV link403 and active Movie Night refilter keep0cf4497dd. Current real HTTP sequel-view fixture passed restricted/unrestricted neighbor filtering. Windows source headless server, package 0.1.99. Last PASS source 56d10a216675fc51cbbc97f56dd2fbca434d0c23. Current-source scenario; carried earlier scenarios keep 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
@@ -4936,18 +5023,26 @@
           {
             "kind": "CODE",
             "text": "The tester35 child delete introduction/button remains visible without the expected explanatory note. A further screen/session repair needs protected review and a fixed-build retest; actual deletion was not attempted."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "On the installed PC and approved phones compare restricted and unrestricted profiles, then tighten only a disposable profile during Live TV and Movie Night."
           }
         ]
       },
-      "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "previousPercent": 49,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 2 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
       "codeDonePercent": 100,
-      "realWorldDonePercent": 0,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
+        },
         {
           "changedEastern": "Oct 22, 2026, 3:48 PM Eastern",
           "changeNote": "Oct 22 test-build update: RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision."
@@ -4967,6 +5062,17 @@
       ],
       "deviceTests": [
         {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 9:00:14 PM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Carried normal/restricted movie lists, blocked playback, old Live TV link403 and active Movie Night refilter keep0cf4497dd. Current real HTTP sequel-view fixture passed restricted/unrestricted neighbor filtering. Last PASS R2-PARENTAL-SEQUELS at Oct 23, 2026, 9:00:14 PM Eastern (recorded scenario completion); this is not whole-feature acceptance. CARRY-W09 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:30:59 AM Eastern (carried); recorded check completion; Normal test member saw two films; restricted test profile saw only the allowed G film and could not request the R playback info. Old Live TV link became 403 after tightening. Same-room guest suggestions excluded R and retained G after tightening. Policies restored; no parental-error injection. Focused live-recheck suite: 10 pass.; paths: .claude/device-tests/2026-10-23/windows/parental-profiles/http-normal-restricted-and-playback-refusal.json, .claude/device-tests/2026-10-23/windows/parental-profiles/already-open-livetv-link-policy-tightened.json, .claude/device-tests/2026-10-23/windows/parental-profiles/prepared-guest-pool-after-profile-tightened.json, .claude/device-tests/2026-10-23/windows/parental-profiles/parental-live-recheck.tap | HUMAN-W09 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json | R2-PARENTAL-SEQUELS PASS; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:00:14 PM Eastern; Current real loopback HTTP fixture compares API and rendered sequel cards: restricted profiles exclude blocked owned and missing R-rated neighbors; allowed controls and unrestricted viewing remain.; paths: .claude/device-tests/2026-10-23/windows/round2/changed-focused-results.json, .claude/device-tests/2026-10-23/windows/round2/focused/sequels-view-restricted.test.js.tap. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": [
+            "Real device"
+          ]
+        },
+        {
           "tester": "RETEST-1 helper report",
           "device": "Galaxy S9+ (child test profile)",
           "build": "unpublished Android 1.51-tester35 (build 85), Windows 0.1.100 server",
@@ -4983,7 +5089,8 @@
           "result": "PARTIAL",
           "evidence": "Checks 11: 5 passed, 3 passed with problems noted or only partly, 2 blocked, 1 failed. Passed: lists show only the four G/PG films, Campsite and cast pickers open, no crash, language correct. Failed: clipped text at 150% text. Blocked: TV shows (not visible to the child) and photos. Noted: a child can open Markers, Library health, Account security and Delete my account (password asked), and one stray \"Credits start\" marker may have been saved by an accidental tap."
         }
-      ]
+      ],
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 56d10a216675fc51cbbc97f56dd2fbca434d0c23. Current-source scenario; carried earlier scenarios keep 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Carried normal/restricted movie lists, blocked playback, old Live TV link403 and active Movie Night refilter keep0cf4497dd. Current real HTTP sequel-view fixture passed restricted/unrestricted neighbor filtering. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 9:00:14 PM Eastern (recorded scenario completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W09."
     },
     {
       "group": "Windows desktop app",
@@ -5244,15 +5351,16 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 14, 2026 (published tester23, camera backup on a Galaxy S9+; the screen opened on three phones); Oct 12, 2026 (phone upload to a home PC; 3 files arrived)",
-      "leftToReach100": "Back up a full real phone folder, check the copy, then do the confirmed removal and see the result on a PC.",
+      "lastTested": "Oct 23, 2026, 10:08:15 AM Eastern (Last PASS CARRY-W14; recorded check completion; carried, not rerun)",
+      "leftToReach100": "Passed scope only: Real multipart upload of a generated JPEG; before/after backup checks, exact byte/hash retrieval, range request and cross-profile refusal passed. Integrity/size/no-overwrite suites: 24 assertions pass. No phone removal occurred. Still required: Back up a full disposable phone folder, verify the PC copy, then confirm removal only of that test folder and inspect the result on the PC. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
       "roadTo100": {
         "means": "A real phone folder is backed up and verified, the confirmed removal works, and the delete steps have been reviewed.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Storage and photo tests pass.",
           "Oct 12, 2026: uploading from a real phone to a home PC with Space Saver backup worked; 3 files arrived.",
-          "Oct 14, 2026, published tester23 on a Galaxy S9+: a new photo was backed up to the home computer by the automatic run (3 to 4 files); the Photos & backups screen opened on three phones."
+          "Oct 14, 2026, published tester23 on a Galaxy S9+: a new photo was backed up to the home computer by the automatic run (3 to 4 files); the Photos & backups screen opened on three phones.",
+          "Oct 23, 2026, 10:08:15 AM Eastern: L5 W14 passed subset. Real multipart upload of a generated JPEG; before/after backup checks, exact byte/hash retrieval, range request and cross-profile refusal passed. Integrity/size/no-overwrite suites: 24 assertions pass. No phone removal occurred. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
@@ -5266,13 +5374,21 @@
           {
             "kind": "CODE",
             "text": "Independent review of the delete and overwrite steps."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Back up a full disposable phone folder, verify the PC copy, then confirm removal only of that test folder and inspect the result on the PC."
           }
         ]
       },
-      "previousPercent": 65,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run.",
+      "previousPercent": 74,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 1 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
+        },
         {
           "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
           "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 60% to 65%. No check was added or withdrawn."
@@ -5290,12 +5406,23 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Published Android 1.51-tester23 (build 73): a Samsung Galaxy S9+ (Android 10, camera backup to a home computer running the Beebo desktop app 0.1.87) and a Google Pixel 3 and Samsung Galaxy S24 Ultra (the screen only).",
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Real multipart upload of a generated JPEG; before/after backup checks, exact byte/hash retrieval, range request and cross-profile refusal passed. Integrity/size/no-overwrite suites: 24 assertions pass. No phone removal occurred. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 10:08:15 AM Eastern (recorded check completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W14.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": []
+      "ownerTests": [],
+      "deviceTests": [
+        {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 10:08:15 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Real multipart upload of a generated JPEG; before/after backup checks, exact byte/hash retrieval, range request and cross-profile refusal passed. Integrity/size/no-overwrite suites: 24 assertions pass. No phone removal occurred. Last PASS CARRY-W14 at Oct 23, 2026, 10:08:15 AM Eastern (recorded check completion); this is not whole-feature acceptance. CARRY-W14 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:08:15 AM Eastern (carried); recorded check completion; Real multipart upload of a generated JPEG; before/after backup checks, exact byte/hash retrieval, range request and cross-profile refusal passed. Integrity/size/no-overwrite suites: 24 assertions pass. No phone removal occurred.; paths: .claude/device-tests/2026-10-23/windows/space-saver/real-upload-check-hash-range-isolation.json, .claude/device-tests/2026-10-23/windows/space-saver/upload-response.json, .claude/device-tests/2026-10-23/windows/space-saver/space-saver-size-proof.tap, .claude/device-tests/2026-10-23/windows/space-saver/space-saver-hash-proof.tap, .claude/device-tests/2026-10-23/windows/space-saver/space-saver-no-overwrite.tap | HUMAN-W14 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": []
+        }
+      ]
     },
     {
       "group": "Windows desktop app",
@@ -5377,21 +5504,22 @@
       "group": "Windows desktop app",
       "name": "Strong volume leveler",
       "status": "In development",
-      "percentComplete": 49,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 3, 2026",
-      "leftToReach100": "Listen to a real film on real speakers in both modes and record what you hear.",
+      "lastTested": "Oct 23, 2026, 10:03:53 AM Eastern (Last PASS CARRY-W16; recorded check completion; carried, not rerun)",
+      "leftToReach100": "Passed scope only: Strong and Off each produced real HLS audio/video segments with the requested mode through the production server. FFprobe confirmed audio. No sound, dialogue intelligibility, clipping, pumping or sync was judged by ear. Still required: Listen to the same quiet/loud scenes of a real film through real speakers in Strong and Off at fixed comfortable volume and record what you hear. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
       "roadTo100": {
         "means": "On real speakers a real film sounds more even in both modes, with before and after notes.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Loudness tests pass; a test on Oct 3 flattened a 26 dB swing to about 1.5 dB."
+          "Loudness tests pass; a test on Oct 3 flattened a 26 dB swing to about 1.5 dB.",
+          "Oct 23, 2026, 10:03:53 AM Eastern: L5 W16 passed subset. Strong and Off each produced real HLS audio/video segments with the requested mode through the production server. FFprobe confirmed audio. No sound, dialogue intelligibility, clipping, pumping or sync was judged by ear. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
@@ -5401,21 +5529,43 @@
           {
             "kind": "CODE",
             "text": "Add a test if the listening finds a repeatable fault."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Listen to the same quiet/loud scenes of a real film through real speakers in Strong and Off at fixed comfortable volume and record what you hear."
           }
         ]
       },
-      "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "previousPercent": 49,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 1 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
       "codeDonePercent": 100,
-      "realWorldDonePercent": 0,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
+        },
+        {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ],
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Strong and Off each produced real HLS audio/video segments with the requested mode through the production server. FFprobe confirmed audio. No sound, dialogue intelligibility, clipping, pumping or sync was judged by ear. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 10:03:53 AM Eastern (recorded check completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W16.",
+      "deviceTests": [
+        {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 10:03:53 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Strong and Off each produced real HLS audio/video segments with the requested mode through the production server. FFprobe confirmed audio. No sound, dialogue intelligibility, clipping, pumping or sync was judged by ear. Last PASS CARRY-W16 at Oct 23, 2026, 10:03:53 AM Eastern (recorded check completion); this is not whole-feature acceptance. CARRY-W16 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:03:53 AM Eastern (carried); recorded check completion; Strong and Off each produced real HLS audio/video segments with the requested mode through the production server. FFprobe confirmed audio. No sound, dialogue intelligibility, clipping, pumping or sync was judged by ear.; paths: .claude/device-tests/2026-10-23/windows/volume-leveler/strong-and-off-real-hls.json, .claude/device-tests/2026-10-23/windows/volume-leveler/strong-start.json, .claude/device-tests/2026-10-23/windows/volume-leveler/off-start.json, .claude/device-tests/2026-10-23/windows/volume-leveler/strong-ffprobe.json, .claude/device-tests/2026-10-23/windows/volume-leveler/off-ffprobe.json | HUMAN-W16 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": [
+            "Real device"
+          ]
         }
       ]
     },
@@ -5479,40 +5629,49 @@
       "group": "Windows desktop app",
       "name": "Music on the PC (library, mixes, desktop player)",
       "status": "In development",
-      "percentComplete": 49,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 21, 2026 (Windows 0.1.98: mix of 23 songs advanced; muted); Oct 13, 2026 (the desktop player FAILED to play)",
-      "leftToReach100": "Hear the music in the real desktop window and confirm sound by ear, then test queue, gapless and radio.",
-      "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
-      "testedOn": "the Windows dev PC with the desktop 0.1.88 test build (not published), with three computer-made sample songs.",
+      "lastTested": "Oct 23, 2026, 10:23:52 AM Eastern (Last PASS CARRY-W18; recorded check completion; carried, not rerun)",
+      "leftToReach100": "Passed scope only: Six FLACs were scanned with real tags; three 31-second tracks qualified for mixes and three 3-second intros were correctly excluded. Real Chrome used Recently added, Next and radio controls; audio time progressed while muted. Initial direct-URL assignment omitted a media token and was corrected by using the actual UI. Still required: Hear music in the installed desktop window and test its queue, Next, sleep timer, gapless transitions and radio by ear. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
+      "previousPercent": 49,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 1 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Six FLACs were scanned with real tags; three 31-second tracks qualified for mixes and three 3-second intros were correctly excluded. Real Chrome used Recently added, Next and radio controls; audio time progressed while muted. Initial direct-URL assignment omitted a media token and was corrected by using the actual UI. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 10:23:52 AM Eastern (recorded check completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W18.",
       "roadTo100": {
         "means": "Music plays with sound in the desktop window, mixes start, and a reviewer signs off.",
         "done": [
           "Checks passed: Built, Automated tests.",
           "Oct 13, 2026, dev PC: library scan read titles, artist, album and track numbers; mixes became Ready.",
-          "Oct 21, 2026, Windows 0.1.98: the \"Recently added\" mix played 23 songs in order and five file formats started (muted)."
+          "Oct 21, 2026, Windows 0.1.98: the \"Recently added\" mix played 23 songs in order and five file formats started (muted).",
+          "Oct 23, 2026, 10:23:52 AM Eastern: L5 W18 passed subset. Six FLACs were scanned with real tags; three 31-second tracks qualified for mixes and three 3-second intros were correctly excluded. Real Chrome used Recently added, Next and radio controls; audio time progressed while muted. Initial direct-URL assignment omitted a media token and was corrected by using the actual UI. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
             "text": "Re-test in the real desktop window and confirm sound by ear."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Hear music in the installed desktop window and test its queue, Next, sleep timer, gapless transitions and radio by ear."
           }
         ]
       },
       "codeDonePercent": 100,
-      "realWorldDonePercent": 0,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "Oct 21: the Oct 13 failure is not reproduced. On Windows 0.1.98 the \"Recently added\" mix played 23 songs one after another with title and artist shown, and Opus, M4A, Ogg, FLAC and a 24-bit FLAC each loaded and started. The fix for mixes loading their songs in the desktop window shipped in Windows 0.1.94. The PC was muted, so nobody heard it; gapless and loudness levelling were not run. The percentage did not change because a person still has to hear the sound in the desktop window."
@@ -5523,6 +5682,17 @@
         }
       ],
       "deviceTests": [
+        {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 10:23:52 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Six FLACs were scanned with real tags; three 31-second tracks qualified for mixes and three 3-second intros were correctly excluded. Real Chrome used Recently added, Next and radio controls; audio time progressed while muted. Initial direct-URL assignment omitted a media token and was corrected by using the actual UI. Last PASS CARRY-W18 at Oct 23, 2026, 10:23:52 AM Eastern (recorded check completion); this is not whole-feature acceptance. CARRY-W18 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:23:52 AM Eastern (carried); recorded check completion; Six FLACs were scanned with real tags; three 31-second tracks qualified for mixes and three 3-second intros were correctly excluded. Real Chrome used Recently added, Next and radio controls; audio time progressed while muted. Initial direct-URL assignment omitted a media token and was corrected by using the actual UI.; paths: .claude/device-tests/2026-10-23/windows/music/mix-after-asynchronous-rescan-completes.json, .claude/device-tests/2026-10-23/windows/music/chrome-real-mix-controls-next-radio-muted.json, .claude/device-tests/2026-10-23/windows/music/tracks.json, .claude/device-tests/2026-10-23/windows/music/chrome-real-mix-player.png | HUMAN-W18 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": [
+            "Real device"
+          ]
+        },
         {
           "tester": "Claude (AI helper)",
           "device": "Windows dev PC (24 cores), Windows app 0.1.98, test library",
@@ -5589,20 +5759,24 @@
       "group": "Windows desktop app",
       "name": "Picture frame (photo wall for a tablet or TV)",
       "status": "In development (off until turned on)",
-      "percentComplete": 49,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 21, 2026 (Windows 0.1.98, PC browser: 10 checks passed, 1 not run)",
-      "leftToReach100": "Try it on a real tablet, phone or TV browser with a QR scanned by a camera, plus link expiry, \"always off\" and \"only when someone is home\".",
-      "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "lastTested": "Oct 23, 2026, 10:20:16 AM Eastern (Last PASS CARRY-W20; recorded check completion; carried, not rerun)",
+      "leftToReach100": "Passed scope only: Real owner APIs scanned two JPEGs, created a wall and served photos. Chrome rendered clock/note/photos; Next, Previous and an 11-second paused interval passed. Always off refused photos; simulated here/away reporting changed display; 1.5-second API expiry returned 401 without changing any clock; revocation returned 401. Still required: Scan a frame QR with an approved real phone/tablet/TV, use the controls and observe one-day UI expiry; real phone-presence integration remains unproven. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
+      "previousPercent": 49,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 1 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "New row, Oct 22, 2026: added because it is in the downloads and has one dated PC run. Ten checks passed and one was not run on Windows 0.1.98 with the wall page opened in the PC's own browser. It has not been tried on a tablet, phone or TV, and has not been repeated on 0.1.99. Small things seen: with no photos the \"Create frame link\" button stays off with its reason shown far above it, and the wall controls only appear when you tap the screen."
@@ -5612,7 +5786,8 @@
         "means": "The owner makes a frame link once, a tablet or TV shows the photos, a note and a clock and nothing else, the schedule and pause work, and removing the link ends access, all on real devices.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Oct 21, 2026, Windows 0.1.98 on a Windows PC, wall page in the PC's own browser: with two generated photos, the frame link was created and shown once with a QR code; the wall showed the photos and changed them every 10 seconds; it showed only the time, date and the owner's note; Pause and Play worked and a 105-second wait did not restart it; a weekly schedule turned the wall black within seconds and \"Always on\" brought it back; turning the feature off showed \"The picture frame is switched off\" and turning it back on restored the same frame; removing the link ended access within about 15 seconds; with no link the page shows only an instruction. 10 checks passed, 1 not run (link expiry)."
+          "Oct 21, 2026, Windows 0.1.98 on a Windows PC, wall page in the PC's own browser: with two generated photos, the frame link was created and shown once with a QR code; the wall showed the photos and changed them every 10 seconds; it showed only the time, date and the owner's note; Pause and Play worked and a 105-second wait did not restart it; a weekly schedule turned the wall black within seconds and \"Always on\" brought it back; turning the feature off showed \"The picture frame is switched off\" and turning it back on restored the same frame; removing the link ended access within about 15 seconds; with no link the page shows only an instruction. 10 checks passed, 1 not run (link expiry).",
+          "Oct 23, 2026, 10:20:16 AM Eastern: L5 W20 passed subset. Real owner APIs scanned two JPEGs, created a wall and served photos. Chrome rendered clock/note/photos; Next, Previous and an 11-second paused interval passed. Always off refused photos; simulated here/away reporting changed display; 1.5-second API expiry returned 401 without changing any clock; revocation returned 401. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
@@ -5630,12 +5805,27 @@
           {
             "kind": "BLOCKED",
             "text": "No readiness review is recorded for the final build."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Scan a frame QR with an approved real phone/tablet/TV, use the controls and observe one-day UI expiry; real phone-presence integration remains unproven."
           }
         ]
       },
-      "testedOn": "Windows dev PC (24 cores) with Windows 0.1.98, using the PC's built-in browser as the wall, Oct 21, 2026.",
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Real owner APIs scanned two JPEGs, created a wall and served photos. Chrome rendered clock/note/photos; Next, Previous and an 11-second paused interval passed. Always off refused photos; simulated here/away reporting changed display; 1.5-second API expiry returned 401 without changing any clock; revocation returned 401. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 10:20:16 AM Eastern (recorded check completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W20.",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 10:20:16 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Real owner APIs scanned two JPEGs, created a wall and served photos. Chrome rendered clock/note/photos; Next, Previous and an 11-second paused interval passed. Always off refused photos; simulated here/away reporting changed display; 1.5-second API expiry returned 401 without changing any clock; revocation returned 401. Last PASS CARRY-W20 at Oct 23, 2026, 10:20:16 AM Eastern (recorded check completion); this is not whole-feature acceptance. CARRY-W20 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:20:16 AM Eastern (carried); recorded check completion; Real owner APIs scanned two JPEGs, created a wall and served photos. Chrome rendered clock/note/photos; Next, Previous and an 11-second paused interval passed. Always off refused photos; simulated here/away reporting changed display; 1.5-second API expiry returned 401 without changing any clock; revocation returned 401.; paths: .claude/device-tests/2026-10-23/windows/picture-frame/create-wall-photo-always-off-presence.json, .claude/device-tests/2026-10-23/windows/picture-frame/short-expiry-no-clock-change.json, .claude/device-tests/2026-10-23/windows/picture-frame/wall-next-previous-pause-revoke.json, .claude/device-tests/2026-10-23/windows/picture-frame/chrome-wall.png, .claude/device-tests/2026-10-23/windows/picture-frame/wall-paused-controls.png | HUMAN-W20 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": [
+            "Real device"
+          ]
+        },
         {
           "tester": "Claude (AI helper)",
           "device": "Windows dev PC (24 cores), Windows app 0.1.98",
@@ -5646,7 +5836,7 @@
         }
       ],
       "codeDonePercent": 100,
-      "realWorldDonePercent": 0,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing"
     },
@@ -5654,20 +5844,24 @@
       "group": "Windows desktop app",
       "name": "Kitchen announcements (messages to phones)",
       "status": "In development (off by default)",
-      "percentComplete": 49,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
-        "Real device": false,
+        "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 21, 2026 (Windows 0.1.98: the panel was opened read-only in English, French and German; nothing was sent)",
-      "leftToReach100": "Send a real message and see it on phones and in a browser, then try Listen, quiet hours and that guests are left out.",
-      "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "lastTested": "Oct 23, 2026, 10:21:39 AM Eastern (Last PASS CARRY-W21; recorded check completion; carried, not rerun)",
+      "leftToReach100": "Passed scope only: Real owner send/member poll, guest refusal and quiet-hours suppression passed. Chrome showed a real banner from the server. Local voices were enumerated only; no one heard Listen and no native phone notification was checked. Still required: Send a message from the installed PC to approved phones and a browser, hear Listen, and check quiet hours and a real disposable share guest. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
+      "previousPercent": 49,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 1 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
+        },
         {
           "changedEastern": "Oct 22, 2026, 6:47 AM Eastern",
           "changeNote": "New row, Oct 22, 2026: added because it is in the downloads. The only dated run opened the panel read-only on Windows 0.1.98; no message was sent, so the main use is untested."
@@ -5677,7 +5871,8 @@
         "means": "The owner sends a message, family phones and browsers show it, quiet hours and the guest rule are respected, and Listen works, all on real devices.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Oct 21, 2026, Windows 0.1.98: the sidebar Announce panel opened read-only in English, French and German with all text translated; nothing was sent."
+          "Oct 21, 2026, Windows 0.1.98: the sidebar Announce panel opened read-only in English, French and German with all text translated; nothing was sent.",
+          "Oct 23, 2026, 10:21:39 AM Eastern: L5 W21 passed subset. Real owner send/member poll, guest refusal and quiet-hours suppression passed. Chrome showed a real banner from the server. Local voices were enumerated only; no one heard Listen and no native phone notification was checked. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
         ],
         "remaining": [
           {
@@ -5691,12 +5886,27 @@
           {
             "kind": "BLOCKED",
             "text": "No readiness review is recorded for the final build."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Send a message from the installed PC to approved phones and a browser, hear Listen, and check quiet hours and a real disposable share guest."
           }
         ]
       },
-      "testedOn": "Windows dev PC (24 cores) with Windows 0.1.98, Oct 21, 2026.",
+      "testedOn": "Windows PC; source server/API/media checks; Chrome 155.0.8059.85 where a browser was used. Windows source headless server, package 0.1.99. Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8. Carried earlier PASS; not rerun. Frozen tested source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; final fetched main 8ff483d89ed9ecbc9f73da45984aa7fd070bb166 has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only. Real owner send/member poll, guest refusal and quiet-hours suppression passed. Chrome showed a real banner from the server. Local voices were enumerated only; no one heard Listen and no native phone notification was checked. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 10:21:39 AM Eastern (recorded check completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, W21.",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, source headless runtime/API/media; installed application not launched",
+          "build": "0.1.99 source; Last PASS source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; frozen current source 56d10a216675fc51cbbc97f56dd2fbca434d0c23",
+          "date": "Oct 23, 2026, 10:21:39 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Real owner send/member poll, guest refusal and quiet-hours suppression passed. Chrome showed a real banner from the server. Local voices were enumerated only; no one heard Listen and no native phone notification was checked. Last PASS CARRY-W21 at Oct 23, 2026, 10:21:39 AM Eastern (recorded check completion); this is not whole-feature acceptance. CARRY-W21 PASS; source 0cf4497dd3f4267089f87d26a12c4d162d3992a8; Oct 23, 2026, 10:21:39 AM Eastern (carried); recorded check completion; Real owner send/member poll, guest refusal and quiet-hours suppression passed. Chrome showed a real banner from the server. Local voices were enumerated only; no one heard Listen and no native phone notification was checked.; paths: .claude/device-tests/2026-10-23/windows/announcements/send-receive-quiet-hours-guests.json, .claude/device-tests/2026-10-23/windows/announcements/chrome-banner-received.json, .claude/device-tests/2026-10-23/windows/announcements/send.json, .claude/device-tests/2026-10-23/windows/announcements/member-poll.json, .claude/device-tests/2026-10-23/windows/announcements/quiet-poll.json, .claude/device-tests/2026-10-23/windows/announcements/chrome-banner.png | HUMAN-W21 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths: .claude/device-tests/2026-10-23/windows/human-blocks.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": [
+            "Real device"
+          ]
+        },
         {
           "tester": "Claude (AI helper)",
           "device": "Windows dev PC (24 cores), Windows app 0.1.98",
@@ -5707,7 +5917,7 @@
         }
       ],
       "codeDonePercent": 100,
-      "realWorldDonePercent": 0,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing"
     },
@@ -5885,13 +6095,14 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 6, 2026",
-      "leftToReach100": "Nick approves removing the old Cloudflare leftovers, then DNS and secure-connection checks are repeated.",
+      "lastTested": "Oct 23, 2026, 8:42:32 PM Eastern (Last PASS R2-WEB-DNS-TLS; recorded scenario completion; named current scenario)",
+      "leftToReach100": "Public DNS resolution, verified HTTPS chain/hostname and HTTP availability passed at Oct 23, 2026, 8:42:32 PM Eastern. No DNS/server configuration changed. Nick approves removing the old Cloudflare leftovers, then DNS and secure-connection checks are repeated. This smaller network check does not clear infrastructure changes or a public build mapping. Nick alone records Ready.",
       "roadTo100": {
         "means": "Everything runs only on our own servers and name servers, with the leftovers removed and rechecked.",
         "done": [
           "Checks passed: Built, Automated tests, Real device, Real-world check.",
-          "Own servers and name servers are live; DNS tests pass."
+          "Own servers and name servers are live; DNS tests pass.",
+          "Oct 23, 2026, 8:42:32 PM Eastern: L5 S01 passed subset. Public DNS resolved; HTTPS certificate chain and hostname validated; site/game/script HTTP requests succeeded. No DNS change or server administration. Public website bytes, identified by L5 HTTP SHA-256 snapshots; deployed website commit unverified. The private main SHA is not a website build."
         ],
         "remaining": [
           {
@@ -5901,12 +6112,16 @@
           {
             "kind": "DEVICE",
             "text": "Repeat the DNS and secure-connection checks after removal."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Nick approves removing the old Cloudflare leftovers, then DNS and secure-connection checks are repeated."
           }
         ]
       },
-      "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
+      "previousPercent": 99,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 1 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Existing device/real-world ticks are retained; no whole-feature upgrade is asserted. Built, Automated tests, Ready and status labels are unchanged.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
@@ -5914,12 +6129,28 @@
       "ownerTests": [],
       "changeHistory": [
         {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply."
+        },
+        {
           "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
           "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
         },
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ],
+      "testedOn": "Windows PC; Chrome 155.0.8059.85 public website checks. Public website bytes, identified by L5 HTTP SHA-256 snapshots; deployed website commit unverified. The private main SHA is not a website build. Public DNS resolved; HTTPS certificate chain and hostname validated; site/game/script HTTP requests succeeded. No DNS change or server administration. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 8:42:32 PM Eastern (recorded scenario completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, S01.",
+      "deviceTests": [
+        {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, Chrome 155.0.8059.85, public HTTP bytes",
+          "build": "Public byte hashes; deployed commit unverified",
+          "date": "Oct 23, 2026, 8:42:32 PM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Public DNS resolved; HTTPS certificate chain and hostname validated; site/game/script HTTP requests succeeded. No DNS change or server administration. Last PASS R2-WEB-DNS-TLS at Oct 23, 2026, 8:42:32 PM Eastern (recorded scenario completion); this is not whole-feature acceptance. BLOCK-S01 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining external-network/person/hardware/product prerequisite; paths: .claude/device-tests/2026-10-23/windows/round2/live-testing-status.json, .claude/device-tests/2026-10-23/windows/round2/website-http.json | R2-WEB-DNS-TLS PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:42:32 PM Eastern; Public DNS resolved; HTTPS certificate chain and hostname validated; site/game/script HTTP requests succeeded. No DNS change or server administration.; paths: .claude/device-tests/2026-10-23/windows/round2/website-http.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": []
         }
       ]
     },
@@ -6005,7 +6236,7 @@
       "group": "Services and website",
       "name": "Website and browser games",
       "status": "Available",
-      "percentComplete": 99,
+      "percentComplete": 90,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -6013,13 +6244,31 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 1, 2026",
-      "leftToReach100": "Check on real phones with touch and in Safari and Firefox; online play stays off until Nick approves its scope.",
+      "lastTested": "Oct 23, 2026, 8:56:01 PM Eastern (Last PASS R2-GAME-memory-match; recorded scenario completion; named current scenario)",
+      "leftToReach100": "Open known issue L5-WEB-01 (issue #176; score capped at 90%): Memory Match says \"heartss\" after a matching pair. Repair and retest the real rendered announcement, including hearts and spades, while retaining functional completion. Chrome passes cover named interactions in 17 games and seven completed rounds, not every game/mode. Firefox was unavailable; Safari, phone touch, real online participants and broader modes remain untested. Nick alone records Ready.",
       "roadTo100": {
         "means": "The browser games work with touch, Safari and Firefox on real devices.",
         "done": [
           "Checks passed: Built, Automated tests, Real device, Real-world check.",
-          "Game logic tests pass; the games are live."
+          "Game logic tests pass; the games are live.",
+          "Oct 23, 2026, 8:56:01 PM Eastern: L5 S03 passed subset. Chrome:17 games with real UI interactions, seven completed rounds;20 public pages and31 linked scripts HTTP200; one cosmetic Memory Match announcement defect. All modes and Firefox are not cleared. Public website bytes, identified by L5 HTTP SHA-256 snapshots; deployed website commit unverified. The private main SHA is not a website build.",
+          "L5 Oct 23, 2026, 8:42:04 PM Eastern, R2-GAME-reversi: Two players; legal placement flips the bracketed gold disc. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:43:35 PM Eastern, R2-GAME-checkers: Two players; select Purple at row6 column1 and move to highlighted row5 column2. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:44:03 PM Eastern, R2-GAME-chess: Two players; f2-f3, e7-e5, g2-g4, Qd8-h4; checkmate and session score. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:44:21 PM Eastern, R2-GAME-dominoes: Against Hopping Beebo; hidden-hand reveal, legal 2–6 tile, choose left end; hand count falls from7 to6. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:44:34 PM Eastern, R2-GAME-mancala: Against Hopping Beebo; sow pit3 into the store and obtain the announced extra turn. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:45:11 PM Eastern, R2-GAME-nine-mens-morris: Two friends; handoff controls, mill at points1/2/3, capture opposing point4. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:45:54 PM Eastern, R2-GAME-five-dice: Solo; first die retained as5 across a reroll, then all13 categories scored to finish. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:48:52 PM Eastern, R2-GAME-ludo: Opening You rolled1 and AI rolled3; both remain in-yard, turn returns to You. One-turn guard/AI response only. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:49:04 PM Eastern, R2-GAME-crazy-eights: Played8 ofClubs, calledHearts through the suit picker; own hand drops7→6. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:49:20 PM Eastern, R2-GAME-go-fish: Asked for held rank4, received one card; own count7→8, opponent7→6 and another turn retained. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:49:46 PM Eastern, R2-GAME-war: Turned own card;7 beatsAI2, piles become27/25 and comparison counter1. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:53:27 PM Eastern, R2-GAME-snakes-and-ladders: Friends mode; real dice turns through ladders/snakes to exact home, winner and session score; no board-state injection. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:53:45 PM Eastern, R2-GAME-sea-battle: Ready is unavailable without fleet; Shuffle fleet enables start; A1 resolves asmiss and is disabled against repeat shots. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:54:38 PM Eastern, R2-GAME-dots-and-boxes: 3×3 boxes, two friends; all24 legal edges drawn, nine boxes awarded, final winner and score. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:56:01 PM Eastern, R2-GAME-memory-match: Solo12 cards; only visibly revealed faces used, all6 pairs matched in9moves, score1 and best count persisted for page session. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:40:27 PM Eastern, R2-GAME-tic-tac-toe: Two players; completed real round through visible controls; Player1 win, score increment and board locked. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
+          "L5 Oct 23, 2026, 8:41:47 PM Eastern, R2-GAME-drop-four: Two players; completed real round through visible controls; Player1 win, score increment and board locked. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified."
         ],
         "remaining": [
           {
@@ -6033,18 +6282,30 @@
           {
             "kind": "CODE",
             "text": "Fix any fault found."
+          },
+          {
+            "kind": "CODE",
+            "text": "L5-WEB-01 / issue #176: fix the rendered Memory Match heartss/spadess announcement and retain completion coverage."
+          },
+          {
+            "kind": "DEVICE",
+            "text": "Check on real phones with touch and in Safari and Firefox; online play stays off until Nick approves its scope."
           }
         ]
       },
-      "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
+      "previousPercent": 99,
+      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+      "changeNote": "L5 scoped evidence: 18 PASS, 1 FAIL, 2 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Existing device/real-world ticks are retained; no whole-feature upgrade is asserted. Built, Automated tests, Ready and status labels are unchanged. L5-WEB-01 is a proven cosmetic announcement bug; functional Memory Match completion still passed. One open issue is recorded; no repair is claimed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
-      "codeItemsLeft": 1,
+      "codeItemsLeft": 2,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply."
+        },
         {
           "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
           "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
@@ -6052,6 +6313,19 @@
         {
           "changedEastern": "Oct 9, 2026, 9:57 AM Eastern",
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
+        }
+      ],
+      "testedOn": "Windows PC; Chrome 155.0.8059.85 public website checks. Public website bytes, identified by L5 HTTP SHA-256 snapshots; deployed website commit unverified. The private main SHA is not a website build. Chrome:17 games with real UI interactions, seven completed rounds;20 public pages and31 linked scripts HTTP200; one cosmetic Memory Match announcement defect. All modes and Firefox are not cleared. Installed Beebo was not launched. Last PASS: Oct 23, 2026, 8:56:01 PM Eastern (recorded scenario completion). Source evidence: docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc, S03.",
+      "openIssues": 1,
+      "deviceTests": [
+        {
+          "tester": "L5 (AI tester; Windows PC/browser automation)",
+          "device": "Real Windows PC, Chrome 155.0.8059.85, public HTTP bytes",
+          "build": "Public byte hashes; deployed commit unverified",
+          "date": "Oct 23, 2026, 8:56:01 PM Eastern",
+          "result": "FAIL",
+          "evidence": "Chrome:17 games with real UI interactions, seven completed rounds;20 public pages and31 linked scripts HTTP200; one cosmetic Memory Match announcement defect. All modes and Firefox are not cleared. Last PASS R2-GAME-memory-match at Oct 23, 2026, 8:56:01 PM Eastern (recorded scenario completion); this is not whole-feature acceptance. BLOCK-S03 BLOCKED; source 56d10a216675fc51cbbc97f56dd2fbca434d0c23; Oct 23, 2026, 9:07:16 PM Eastern; Remaining external-network/person/hardware/product prerequisite; paths: .claude/device-tests/2026-10-23/windows/round2/live-testing-status.json, .claude/device-tests/2026-10-23/windows/round2/website-http.json, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/reversi.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/checkers.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/chess.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/dominoes.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/mancala.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/nine-mens-morris.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/five-dice.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/ludo.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/crazy-eights.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/go-fish.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/war.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/snakes-and-ladders.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/sea-battle.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/dots-and-boxes.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/memory-match.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/tic-tac-toe-win.txt, .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/drop-four-win.txt | R2-WEB-HTTP PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:42:32 PM Eastern; 20 public pages and31 linked scripts returned HTTP200, recorded SHA-256. Public deployed commit is not mapped to private main.; paths: .claude/device-tests/2026-10-23/windows/round2/website-http.json | R2-GAME-reversi PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:42:04 PM Eastern; Two players; legal placement flips the bracketed gold disc.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/reversi.txt | R2-GAME-checkers PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:43:35 PM Eastern; Two players; select Purple at row6 column1 and move to highlighted row5 column2.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/checkers.txt | R2-GAME-chess PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:44:03 PM Eastern; Two players; f2-f3, e7-e5, g2-g4, Qd8-h4; checkmate and session score.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/chess.txt | R2-GAME-dominoes PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:44:21 PM Eastern; Against Hopping Beebo; hidden-hand reveal, legal 2–6 tile, choose left end; hand count falls from7 to6.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/dominoes.txt | R2-GAME-mancala PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:44:34 PM Eastern; Against Hopping Beebo; sow pit3 into the store and obtain the announced extra turn.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/mancala.txt | R2-GAME-nine-mens-morris PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:45:11 PM Eastern; Two friends; handoff controls, mill at points1/2/3, capture opposing point4.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/nine-mens-morris.txt | R2-GAME-five-dice PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:45:54 PM Eastern; Solo; first die retained as5 across a reroll, then all13 categories scored to finish.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/five-dice.txt | R2-GAME-ludo PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:48:52 PM Eastern; Opening You rolled1 and AI rolled3; both remain in-yard, turn returns to You. One-turn guard/AI response only.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/ludo.txt | R2-GAME-crazy-eights PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:49:04 PM Eastern; Played8 ofClubs, calledHearts through the suit picker; own hand drops7→6.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/crazy-eights.txt | R2-GAME-go-fish PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:49:20 PM Eastern; Asked for held rank4, received one card; own count7→8, opponent7→6 and another turn retained.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/go-fish.txt | R2-GAME-war PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:49:46 PM Eastern; Turned own card;7 beatsAI2, piles become27/25 and comparison counter1.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/war.txt | R2-GAME-snakes-and-ladders PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:53:27 PM Eastern; Friends mode; real dice turns through ladders/snakes to exact home, winner and session score; no board-state injection.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/snakes-and-ladders.txt | R2-GAME-sea-battle PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:53:45 PM Eastern; Ready is unavailable without fleet; Shuffle fleet enables start; A1 resolves asmiss and is disabled against repeat shots.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/sea-battle.txt | R2-GAME-dots-and-boxes PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:54:38 PM Eastern; 3×3 boxes, two friends; all24 legal edges drawn, nine boxes awarded, final winner and score.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/dots-and-boxes.txt | R2-GAME-memory-match PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:56:01 PM Eastern; Solo12 cards; only visibly revealed faces used, all6 pairs matched in9moves, score1 and best count persisted for page session.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/memory-match.txt | R2-GAME-tic-tac-toe PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:40:27 PM Eastern; Two players; completed real round through visible controls; Player1 win, score increment and board locked.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/tic-tac-toe-win.txt | R2-GAME-drop-four PASS; source PUBLIC-BYTES (main context 56d10a216675fc51cbbc97f56dd2fbca434d0c23); Oct 23, 2026, 8:41:47 PM Eastern; Two players; completed real round through visible controls; Player1 win, score increment and board locked.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/game-checks.json, .claude/device-tests/2026-10-23/windows/round2/browser/drop-four-win.txt | BLOCK-FIREFOX BLOCKED; source PUBLIC-BYTES; Oct 23, 2026, 9:07:16 PM Eastern; Firefox website/game browser acceptance; paths: .claude/device-tests/2026-10-23/windows/round2/browser/environment.json | L5-WEB-01 FAIL; source Public index.html bytes SHA256 5e0ca03bc21331496042eaef7c7b31dd8df8a0d02181c9b7a9a50cbb3c495aa5; matching suspect source site-pages/play-games/memory-match/index.html:326; Oct 23, 2026, 8:56:01 PM Eastern; Match a normally revealed pair in real Chrome; read the visible/live result announcement.; paths: .claude/device-tests/2026-10-23/windows/round2/browser/memory-bug.json, .claude/device-tests/2026-10-23/windows/round2/browser/memory-bug.txt, .claude/device-tests/2026-10-23/windows/round2/browser/memory-bug-with-status.png, .claude/device-tests/2026-10-23/windows/round2/browser/memory-bug-source.json. Ledger docs/qa/WINDOWS-EVIDENCE-TABLE-2026-10-23.md at d7531f65e15fd05ac49b4f31f58c289c0f0c0afc. Raw captures/config/media remain private.",
+          "ticks": []
         }
       ]
     },
@@ -6635,16 +6909,16 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 23, 2026, 1:35 PM Eastern",
+  "previousUpdatedEastern": "Oct 23, 2026, 7:57 PM Eastern",
   "showChangeMarkers": true,
   "hero": {
-    "recordName": "October 23 real-phone evidence: L3 Round 3",
-    "scope": "Ten bounded Android phone scopes, current tester36 control checks and explicitly carried tester35 passes; six proven device bugs remain open",
-    "lastTested": "Oct 23, 2026, 6:34 PM Eastern",
-    "lastTestedIso": "2026-10-23T18:34:08-04:00",
-    "previousTested": "Oct 22, 2026, 8:20 AM Eastern",
+    "recordName": "October 23 real-phone and Windows/browser evidence",
+    "scope": "L3 phone scopes plus L5 Windows source/API/browser subsets; human, native-app and hardware acceptance remain explicit",
+    "lastTested": "Oct 23, 2026, 9:00 PM Eastern",
+    "lastTestedIso": "2026-10-23T21:00:14-04:00",
+    "previousTested": "Oct 23, 2026, 6:34 PM Eastern",
     "broader": "Still required",
-    "newerText": "Pixel 3 and Galaxy S9+ had Android 1.51-tester36 (code 86) installed, with matching independently verified APK hashes and coordinator-supplied main 78803a9f1. Two passed scopes include changed tester36 title controls; eight carry their actual tester35 pass times because the tested code was unchanged. Across all 32 Android rows L3 records 106 PASS, 11 FAIL and 12 BLOCKED assessments: 97 passes carried and nine Round 3 passes, including two installed-artifact inventory checks. This is not 106 fresh tests or release clearance. Pairing, sidecar captions, online Next, paused audiobook seeking, Trip export and Watch Together layout still fail. Campsite mobile data remains untested. Published download versions are read from the unchanged release feeds. No real TV, car, acoustic or Google Play clearance is added."
+    "newerText": "Pixel 3 and Galaxy S9+ had Android 1.51-tester36 (code 86) installed, with matching independently verified APK hashes and coordinator-supplied main 78803a9f1. Two passed scopes include changed tester36 title controls; eight carry their actual tester35 pass times because the tested code was unchanged. Across all 32 Android rows L3 records 106 PASS, 11 FAIL and 12 BLOCKED assessments: 97 passes carried and nine Round 3 passes, including two installed-artifact inventory checks. This is not 106 fresh tests or release clearance. Pairing, sidecar captions, online Next, paused audiobook seeking, Trip export and Watch Together layout still fail. Campsite mobile data remains untested. Published download versions are read from the unchanged release feeds. No real TV, car, acoustic or Google Play clearance is added. L5 adds 58 PASS, one cosmetic FAIL and 38 BLOCKED assessments across 35 Windows/services rows: 21 earlier passes carried and 37 new passed assessments. Windows evidence is package 0.1.99 source/server/browser execution, not installed-app use. Public website bytes have separate hashes and an unverified deployed SHA. Memory Match announcement bug L5-WEB-01 remains open; Firefox, screen reader, reboot, real tuner, native app and listening-by-ear acceptance remain unproved."
   },
   "historyNew": [
     {
