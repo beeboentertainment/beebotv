@@ -323,7 +323,7 @@ function after(ev) {
   var who = game.players.length === 1 ? 'You' : name;
   if (ev.stage === 1) announce(who + ' turned ' + faceName(ev.face) + '.');
   else if (ev.matched) {
-    announce(who + ' found a pair of ' + faceName(ev.face) + 's' + (ev.over ? '.' : (game.players.length === 1 ? '.' : ' and go' + (who === 'You' ? '' : 'es') + ' again.')));
+    announce(who + ' found a pair of ' + faceName(ev.face) + (ev.over ? '.' : (game.players.length === 1 ? '.' : ' and go' + (who === 'You' ? '' : 'es') + ' again.')));
   } else {
     announce(who + ' turned ' + faceName(ev.face) + '. No match.');
   }
