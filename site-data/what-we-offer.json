@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 23, 2026, 10:27 PM Eastern",
-    "updatedIso": "2026-10-23T22:27:35-04:00",
+    "updatedEastern": "Oct 24, 2026, 2:28 AM Eastern",
+    "updatedIso": "2026-10-24T02:28:29-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -183,7 +183,7 @@
       "area": "windows",
       "name": "Languages: English plus Spanish, French, German, Portuguese (Brazil) and Italian",
       "status": "Beta",
-      "evidence": "The five translations were made with a machine's help; three more are previews. Oct 13: switching English to Spanish and back changed the whole app at once. No native speaker has read the wording. Oct 22: genre names switched to French, German and Spanish on two phones; parts of the phone player bar stay English in those languages.",
+      "evidence": "Last PASS Oct 24, 2026, 1:19:13 AM Eastern. Five library/navigation languages were checked in a PC browser at 1265 pixels and S24 Chrome at 384 pixels, without page overflow. English was restored on the phone. Exact Pixel layouts, native-speaker review, large text, all dialogs, right-to-left previews and installed-app layouts remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -215,7 +215,7 @@
       "area": "windows",
       "name": "Picture frame (a photo wall for a tablet or TV)",
       "status": "In development",
-      "evidence": "In Windows 0.1.98 and later, off until you turn it on. Oct 21 on Windows 0.1.98, with the wall page opened in the PC's own browser: 10 checks passed and 1 (link expiry) was not run. Not tried on a tablet, phone or TV, and not repeated on 0.1.99.",
+      "evidence": "Last PASS Oct 24, 2026, 1:09:58 AM Eastern. S24 and S9 browsers displayed decoded photos. S24 Next/Previous changed the actual picture and returned to the first. Revoking the test wall link on the PC hid both photos and showed the access-ended message. Actual one-day expiry, phone-presence integration and installed Windows setup screens remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -223,7 +223,7 @@
       "area": "windows",
       "name": "Kitchen announcements (messages to phones)",
       "status": "In development",
-      "evidence": "In Windows 0.1.97 and later, off by default. The Announce panel was opened read-only in English, French and German on Windows 0.1.98; no message was sent.",
+      "evidence": "Last PASS Oct 24, 2026, 1:39:42 AM Eastern. The PC service sent a message to Pixel, S9 and S24 browser banners, which cleared after 15 seconds. Quiet hours suppressed the restricted test member; normal members still saw the message. A real test guest was refused. The installed sender panel, native notifications and a person hearing Listen remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "no"
     },
     {
@@ -231,7 +231,7 @@
       "area": "windows",
       "name": "Space Saver: folder clean-up and encrypted private storage",
       "status": "Beta",
-      "evidence": "Automatic tests only. It changes files, so it has not been tried on a real library.",
+      "evidence": "Last PASS Oct 24, 2026, 2:16:25 AM Eastern. A real Galaxy S9+ running native Android tester36 (build 86) uploaded one newly created synthetic photo from its selected test album. The PC copy matched all 47,304 bytes and the original file hash. The phone showed Up to date; its original remained and backup was turned off afterward. This is backup integrity only. Full album backfill, freeing space, deletion, encrypted-storage acceptance, restore, conflicts, disk-full and NAS behaviour remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "no"
     },
     {
@@ -247,7 +247,7 @@
       "area": "windows",
       "name": "Jellyfin-compatible mode (use Jellyfin apps with Beebo)",
       "status": "Beta",
-      "evidence": "Off by default. Automatic tests only; not every compatible app has been tried.",
+      "evidence": "Last PASS Oct 24, 2026, 1:02:28 AM Eastern. The S24 browser used compatible media-client sign-in, library and playback endpoints, played the full 20-second clip, sought and paused. It used a separately copied recovery test server; that provenance is kept separate. Installed third-party media clients and reconnect remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "no"
     },
     {
@@ -399,7 +399,7 @@
       "area": "android",
       "name": "Casting to a Chromecast TV",
       "status": "Beta",
-      "evidence": "Oct 23, 2026: Pixel 3 and Galaxy S9+, Android 1.51-tester36 (build 86), and a real Chromecast receiver. On tester36, connection, the Pixel volume keys (100% to 95% and back) and ordinary Stop returning the receiver to idle passed. Original and requested converted 480p media did not load from the isolated test server. A second phone connected, but working second-sender playback/control, pause, seek and TV captions were BLOCKED because there was no media session. The compatibility cause is unproven. Last PASS: Pixel 3; tester36/code86; receiver Stop/control scope; 2026-10-23 10:01:16 PM Eastern. The existing 99% score comes from older dated casting evidence; this round adds no whole-feature clearance. Investigate media loading through the normal supported test route. Then check original and converted playback, pause, seek, captions and a second sender. A person must check the TV picture, captions and sound. The two failed load scenarios are one unresolved compatibility observation, not two proven code bugs. Nick alone records Ready.",
+      "evidence": "Galaxy S9+, installed Android 1.51-tester36 (build 86), normal native Cast route to an idle real receiver. A synthetic film was allowed 93 seconds of normal preparation. The phone changed from Preparing to Casting, but four receiver polls still had no media session, picture position or content. This confirmed the media-loading bug; it is not explained by the isolated test-server certificate alone. Earlier connection, volume and stop passes remain historical. No TV captions, seek or working second-sender playback is cleared. Open known issue (one; score capped at 90%): native Chromecast media loading failed on the normal supported route after 93 seconds of preparation. Repair and retest actual media loading. Then check original/converted playback, pause, seek, captions and a working second sender. A person must see the TV picture/captions and hear sound. Historical checks remain, but the old 99% score no longer applies while this bug is open. The final phone-round table is pending; no new whole-feature pass is claimed. Nick alone records Ready.",
       "realTest": "partly"
     },
     {
@@ -663,7 +663,7 @@
       "area": "computers",
       "name": "Any web browser: library and player, served by your own Beebo computer",
       "status": "Beta",
-      "evidence": "Oct 22 test-build update: The browser repair has split delivery: the server portion is reported deployed at 6:49 AM Eastern on October 22, with a further TV-browser server repair at 7:24 AM; the desktop-player portion is in unpublished Windows 0.1.100. The affected PC and combined away-route repair still need retesting. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass. The reviewed web-player Next/Full screen work is not in public downloads. Pages that suppress referrer information and a modeled cross-tab edge case remain qualified. Android version-picker results do not verify the separate desktop version-heading issue.",
+      "evidence": "Last PASS Oct 24, 2026, 12:59:51 AM Eastern. Chrome and the in-app PC browser decoded direct, remuxed and converted media in labelled disposable test clients. The S24 also completed the named direct, remux and 480p conversion playback, seek and pause subsets. These clients are separate from the shipped player controls. Exact Pixel playback matrix and connected Edge/Firefox checks remain blocked. Repeat the affected installed-app and TV-browser navigation, Next, subtitles, sound, folder artwork and version-heading checks. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -791,7 +791,7 @@
       "area": "campsite",
       "name": "Phone speakers for a film (left, right and surround from phones)",
       "status": "Beta",
-      "evidence": "Oct 13: two phones played left and right for a film on a PC; the owner said it sounded great but one phone sounded a tiny bit off. Timing stayed within about 10 ms on average in a 75-second recording.",
+      "evidence": "Last PASS Oct 24, 2026, 1:50:01 AM Eastern. Two real Pixel/S9 browser guests enabled audio normally and received the stereo feeds in running 48 kHz WebAudio contexts. Actual PC picture play, seek and pause matched decoded buffer delivery and both phones returning Ready. Everything was muted. Software drift is not measured acoustic alignment. A person must hear timing; microphone mapping, calibration, surround, Bluetooth and physical PC speaker outputs remain untested. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -863,7 +863,7 @@
       "area": "campsite",
       "name": "Movie Night (TV-led party games, phones join)",
       "status": "Beta",
-      "evidence": "Oct 22 test-build update: RETEST-1: the Pixel with tester35 showed a friendly cloud-address explanation and Try again rather than the raw error. It directs the user to the computer’s direct address. This does not test host/create/join/play, a real family session or the full feature; Real device and Real-world remain false.",
+      "evidence": "Last PASS Oct 24, 2026, 1:27:24 AM Eastern. Pixel and S9 browsers joined a real room, both saw a restricted title disappear, both submitted their actual votes, and the winning film played in the PC product browser player. The installed desktop host panel and a person checking a real group night remain. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "no"
     },
     {
@@ -1119,7 +1119,7 @@
       "area": "livetv",
       "name": "Live TV on the phone",
       "status": "Beta",
-      "evidence": "Automatic tests only.",
+      "evidence": "Last PASS Oct 24, 2026, 1:25:31 AM Eastern. The S24 played the real-time synthetic own-playlist channel for about 21.5 seconds, with a decoded picture, then paused. The PC matched the actual stream. TV playback and Stop through Chromecast are not proved. A real tuner and broader channel/restriction tests remain. Earlier static-input failures are unresolved input/pacing diagnostics, not a new proven bug. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "no"
     },
     {
@@ -1159,7 +1159,7 @@
       "area": "household",
       "name": "Parental limits and ratings",
       "status": "Beta",
-      "evidence": "Oct 22 test-build update: RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision.",
+      "evidence": "Last PASS Oct 24, 2026, 1:15:29 AM Eastern. The S24 normal test member saw the synthetic title. The restricted member could not see it, and its direct watch link had no playable media. The PC matched the refusal. The exact Pixel scenario is still pending. Installed-PC enforcement, broader Live TV open-link changes and other protected-profile acceptance remain separate. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -1346,7 +1346,7 @@
     "The Oct 23 tested Campsite stopped-host notice passed on one local route. Older unmatched stop behaviour and mobile-data/hotspot use remain open. Earlier restricted-profile photo and Movie Night findings are not cleared by that test.",
     "Oct 22: opening a film in a browser through the away address failed (the player is discarded when the page reloads). On Windows 0.1.98 a folder's own poster and NFO files were not used.",
     "Repairs in code do not close installed-device problems. Warm pairing, sidecar captions, online Next, paused audiobook seeking, S9+ export and Watch Together button layout remain open on the tested build.",
-    "Oct 23, 9:51:02 PM Eastern, Pixel 3 tester36: phone volume keys changed the real Chromecast receiver from 100% to 95% and back. Isolated test-server media still did not load; TV playback, captions, seek and a working second sender are not cleared.",
+    "Oct 23 phone volume controls passed, but a later normal native Cast route failed to load media after 93 seconds on the Galaxy S9+ tester36 (build 86). One confirmed media-loading bug is open; TV captions, seek and working second-sender playback are blocked.",
     "An ordinary trip link opens only on the home Wi-Fi unless away links are switched on.",
     "The demo player has no subtitles button although the title page mentions one.",
     "Paused audiobook chapter seeking returns to the earlier checkpoint after restart on tester36.",
