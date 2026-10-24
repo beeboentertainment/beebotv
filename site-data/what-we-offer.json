@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 24, 2026, 2:28 AM Eastern",
-    "updatedIso": "2026-10-24T02:28:29-04:00",
+    "updatedEastern": "Oct 24, 2026, 3:36 AM Eastern",
+    "updatedIso": "2026-10-24T03:36:00-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -663,7 +663,7 @@
       "area": "computers",
       "name": "Any web browser: library and player, served by your own Beebo computer",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 12:59:51 AM Eastern. Chrome and the in-app PC browser decoded direct, remuxed and converted media in labelled disposable test clients. The S24 also completed the named direct, remux and 480p conversion playback, seek and pause subsets. These clients are separate from the shipped player controls. Exact Pixel playback matrix and connected Edge/Firefox checks remain blocked. Repeat the affected installed-app and TV-browser navigation, Next, subtitles, sound, folder artwork and version-heading checks. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 2:32:02 AM Eastern. The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. Development server 0.1.99; Pixel browser reporting Chrome 155. The installed Windows application was never launched. Final phone-ledger reconciliation remains pending; no status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -1159,7 +1159,7 @@
       "area": "household",
       "name": "Parental limits and ratings",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 1:15:29 AM Eastern. The S24 normal test member saw the synthetic title. The restricted member could not see it, and its direct watch link had no playable media. The PC matched the refusal. The exact Pixel scenario is still pending. Installed-PC enforcement, broader Live TV open-link changes and other protected-profile acceptance remain separate. Development server 0.1.99; installed Windows app never launched. Final phone-ledger reconciliation is pending; no status/checkmark upgrade.",
+      "evidence": "Last PASS Oct 24, 2026, 2:32:42 AM Eastern. The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Installed-PC enforcement and broader changes to active profile limits during Live TV and Movie Night remain separate acceptance checks. The existing child account-screen issue still needs its reviewed repair and fixed-build retest. Development server 0.1.99; Pixel browser reporting Chrome 155. The installed Windows application was never launched. Final phone-ledger reconciliation remains pending; no status or checkmark upgrade.",
       "realTest": "partly"
     },
     {

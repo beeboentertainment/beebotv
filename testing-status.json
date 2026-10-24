@@ -1,7 +1,7 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 24, 2026, 2:28 AM Eastern",
+    "updatedEastern": "Oct 24, 2026, 3:36 AM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. The separate Human testing done figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
@@ -581,12 +581,12 @@
     "evidenceLimit": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 24, 2026, 2:28 AM Eastern",
+    "updatedEastern": "Oct 24, 2026, 3:36 AM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Human testing done is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
       "baseline": "The same method applied to the Oct 21, 2026, 3:46 PM Eastern data",
-      "current": "Completed phone table through October 23 round four, plus October 24 PC-side scoped results and the later confirmed native Cast failure. Proposed positive checkmarks await final phone-ledger reconciliation."
+      "current": "Completed phone table through October 23 round four, plus October 24 PC-side results and matched Pixel browser subsets. The confirmed native Cast issue remains open; positive checkmarks await final phone-ledger reconciliation."
     },
     "areas": [
       {
@@ -1009,8 +1009,8 @@
     "summary": "The downloads are Windows 0.1.99 and Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.99 and Android 1.51-tester34 add audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. Public downloads remain Windows 0.1.99 and Android tester34. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-24T02:28:29-04:00",
-  "updatedEastern": "Oct 24, 2026, 2:28 AM Eastern",
+  "updated": "2026-10-24T03:36:00-04:00",
+  "updatedEastern": "Oct 24, 2026, 3:36 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Our test process uses AI testers on real devices for that check. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 70,
@@ -4519,12 +4519,16 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 24, 2026, 12:59:51 AM Eastern (Last PASS for this named subset)",
-      "leftToReach100": "Passed scope only: Chrome and the in-app PC browser decoded direct, remuxed and converted media in labelled disposable test clients. The S24 also completed the named direct, remux and 480p conversion playback, seek and pause subsets. These clients are separate from the shipped player controls. Still required: Exact Pixel playback matrix and connected Edge/Firefox checks remain blocked. Repeat the affected installed-app and TV-browser navigation, Next, subtitles, sound, folder artwork and version-heading checks. This subset does not finish the feature or add a real-world checkmark. Nick alone records Ready.",
+      "lastTested": "Oct 24, 2026, 2:32:02 AM Eastern (Last PASS for this named browser subset)",
+      "leftToReach100": "Passed scope only: The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Still required: Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. No whole-feature or real-world checkmark is added. Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 24, 2026, 2:28 AM Eastern",
-      "changeNote": "New PC-side campaign: 9 PASS, 0 FAIL and 2 blocked or pending assessments for this row. Chrome and the in-app PC browser decoded direct, remuxed and converted media in labelled disposable test clients. The S24 also completed the named direct, remux and 480p conversion playback, seek and pause subsets. These clients are separate from the shipped player controls. Existing checks, availability label and older evidence are retained. No whole-feature or installed-app clearance.",
+      "changedEastern": "Oct 24, 2026, 3:36 AM Eastern",
+      "changeNote": "The new Pixel browser subset passed. This row now records 10 PASS, 0 FAIL and 1 blocked or pending assessments in the ongoing PC campaign. The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Existing checks, score, availability label and open issues are retained; no installed-app or whole-feature clearance.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 2:28 AM Eastern",
+          "changeNote": "New PC-side campaign: 9 PASS, 0 FAIL and 2 blocked or pending assessments for this row. Chrome and the in-app PC browser decoded direct, remuxed and converted media in labelled disposable test clients. The S24 also completed the named direct, remux and 480p conversion playback, seek and pause subsets. These clients are separate from the shipped player controls. Existing checks, availability label and older evidence are retained. No whole-feature or installed-app clearance."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -4564,7 +4568,8 @@
           "Oct 13, 2026, dev PC: 27 desktop pages opened; browser player 17 of 17 pages, playback with sound, pause, and 720p/480p/Auto switching.",
           "Oct 21, 2026, Windows 0.1.98 test library: five folder types (photos, movies, TV, music, audiobooks) were found exactly as expected, scans finished in seconds; embedded English and Spanish subtitles switched, a sidecar English subtitle showed, three audio tracks were listed, chapters were listed and a jump to chapter 3 landed at 17 seconds (muted, so no sound heard).",
           "The browser repair has split delivery: the server portion is reported deployed at 6:49 AM Eastern on October 22, with a further TV-browser server repair at 7:24 AM; the desktop-player portion is in unpublished Windows 0.1.100. The affected PC and combined away-route repair still need retesting. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass. The reviewed web-player Next/Full screen work is not in public downloads. Pages that suppress referrer information and a modeled cross-tab edge case remain qualified. Android version-picker results do not verify the separate desktop version-heading issue.",
-          "Oct 24, 2026, 12:59:51 AM Eastern: Chrome and the in-app PC browser decoded direct, remuxed and converted media in labelled disposable test clients. The S24 also completed the named direct, remux and 480p conversion playback, seek and pause subsets. These clients are separate from the shipped player controls. Scoped PC report only; no whole-feature acceptance."
+          "Oct 24, 2026, 12:59:51 AM Eastern: Chrome and the in-app PC browser decoded direct, remuxed and converted media in labelled disposable test clients. The S24 also completed the named direct, remux and 480p conversion playback, seek and pause subsets. These clients are separate from the shipped player controls. Scoped PC report only; no whole-feature acceptance.",
+          "Oct 24, 2026, 2:32:02 AM Eastern: The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Browser subset only; no whole-feature acceptance."
         ],
         "remaining": [
           {
@@ -4589,7 +4594,7 @@
           },
           {
             "kind": "DEVICE",
-            "text": "Exact Pixel playback matrix and connected Edge/Firefox checks remain blocked. Repeat the affected installed-app and TV-browser navigation, Next, subtitles, sound, folder artwork and version-heading checks. Final matching phone-ledger reconciliation remains pending; the proposed checkmark has not been added."
+            "text": "Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. Final matching phone-ledger reconciliation remains pending; no checkmark added."
           }
         ],
         "hist": [
@@ -4603,13 +4608,22 @@
           }
         ]
       },
-      "testedOn": "Real Windows PC running a development server identified as version 0.1.99; Chrome 155.0.8059.85 and the in-app browser where named; S24 Chrome 155.0.8059.84 and Pixel/S9 browsers or the S9 native backup where named. Chrome and the in-app PC browser decoded direct, remuxed and converted media in labelled disposable test clients. The S24 also completed the named direct, remux and 480p conversion playback, seek and pause subsets. These clients are separate from the shipped player controls. Last PASS: Oct 24, 2026, 12:59:51 AM Eastern. The installed Windows application was never launched. The final phone ledger is still pending; this is a scoped PC-side result.",
+      "testedOn": "Real Pixel browser reporting Chrome 155 and a real Windows PC running development server 0.1.99. The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Last PASS: Oct 24, 2026, 2:32:02 AM Eastern. The installed Windows application was never launched. This is a matched browser subset; the final phone ledger and broader acceptance remain pending.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "AI tester (PC records matched to real phone browser observations)",
+          "device": "Google Pixel 3 browser and real Windows PC",
+          "build": "Development server 0.1.99; Pixel browser reporting Chrome 155; native APK and installed Windows application outside this scope",
+          "date": "Oct 24, 2026, 2:32:02 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. Actual Last PASS Oct 24, 2026, 2:32:02 AM Eastern; report assembled Oct 24, 2026, 3:00:34 AM Eastern. The final phone ledger remains pending.",
+          "ticks": []
+        },
         {
           "tester": "AI tester (automated PC checks matched to phone observations)",
           "device": "Real Windows PC and only the phone/browser devices named in the passed subset below",
@@ -5148,8 +5162,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 24, 2026, 1:15:29 AM Eastern (Last PASS for this named subset)",
-      "leftToReach100": "Passed scope only: The S24 normal test member saw the synthetic title. The restricted member could not see it, and its direct watch link had no playable media. The PC matched the refusal. Still required: The exact Pixel scenario is still pending. Installed-PC enforcement, broader Live TV open-link changes and other protected-profile acceptance remain separate. This subset does not finish the feature or add a real-world checkmark. Nick alone records Ready.",
+      "lastTested": "Oct 24, 2026, 2:32:42 AM Eastern (Last PASS for this named browser subset)",
+      "leftToReach100": "Passed scope only: The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Still required: Installed-PC enforcement and broader changes to active profile limits during Live TV and Movie Night remain separate acceptance checks. The existing child account-screen issue still needs its reviewed repair and fixed-build retest. No whole-feature or real-world checkmark is added. Nick alone records Ready.",
       "roadTo100": {
         "means": "Restricted and normal profiles behave correctly on a real PC and the household rules have been reviewed.",
         "done": [
@@ -5157,8 +5171,9 @@
           "Parental-control tests pass.",
           "In development, in the Oct 21, 2026 release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice.",
           "RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision.",
-          "Oct 23, 2026, 9:00:14 PM Eastern: Windows and web tests the recorded feature passed subset. Carried normal/restricted movie lists, blocked playback, old Live TV link403 and active Movie Night refilter keep0cf4497dd. Current real HTTP sequel-view fixture passed restricted/unrestricted neighbor filtering. Windows source headless server, package 0.1.99. Last PASS source the recorded build. Current-source scenario; carried earlier scenarios keep the recorded build. Frozen tested source the recorded build; final fetched development source the recorded build has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only.",
-          "Oct 24, 2026, 1:15:29 AM Eastern: The S24 normal test member saw the synthetic title. The restricted member could not see it, and its direct watch link had no playable media. The PC matched the refusal. Scoped PC report only; no whole-feature acceptance."
+          "Oct 23, 2026, 9:00:14 PM Eastern: Windows and web tests the recorded feature passed subset. Carried normal/restricted movie lists, blocked playback, old Live TV link403 and active Movie Night refilter retain their earlier source record. Current real HTTP sequel-view fixture passed restricted/unrestricted neighbor filtering. Windows source headless server, package 0.1.99. Last PASS source the recorded build. Current-source scenario; carried earlier scenarios keep the recorded build. Frozen tested source the recorded build; final fetched development source the recorded build has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only.",
+          "Oct 24, 2026, 1:15:29 AM Eastern: The S24 normal test member saw the synthetic title. The restricted member could not see it, and its direct watch link had no playable media. The PC matched the refusal. Scoped PC report only; no whole-feature acceptance.",
+          "Oct 24, 2026, 2:32:42 AM Eastern: The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Browser subset only; no whole-feature acceptance."
         ],
         "remaining": [
           {
@@ -5175,19 +5190,23 @@
           },
           {
             "kind": "DEVICE",
-            "text": "The exact Pixel scenario is still pending. Installed-PC enforcement, broader Live TV open-link changes and other protected-profile acceptance remain separate. Final matching phone-ledger reconciliation remains pending; the proposed checkmark has not been added."
+            "text": "Installed-PC enforcement and broader changes to active profile limits during Live TV and Movie Night remain separate acceptance checks. The existing child account-screen issue still needs its reviewed repair and fixed-build retest. Final matching phone-ledger reconciliation remains pending; no checkmark added."
           }
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 24, 2026, 2:28 AM Eastern",
-      "changeNote": "New PC-side campaign: 1 PASS, 0 FAIL and 1 blocked or pending assessments for this row. The S24 normal test member saw the synthetic title. The restricted member could not see it, and its direct watch link had no playable media. The PC matched the refusal. Existing checks, availability label and older evidence are retained. No whole-feature or installed-app clearance.",
+      "changedEastern": "Oct 24, 2026, 3:36 AM Eastern",
+      "changeNote": "The new Pixel browser subset passed. This row now records 2 PASS, 0 FAIL and 0 blocked or pending assessments in the ongoing PC campaign. The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Existing checks, score, availability label and open issues are retained; no installed-app or whole-feature clearance.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 2:28 AM Eastern",
+          "changeNote": "New PC-side campaign: 1 PASS, 0 FAIL and 1 blocked or pending assessments for this row. The S24 normal test member saw the synthetic title. The restricted member could not see it, and its direct watch link had no playable media. The PC matched the refusal. Existing checks, availability label and older evidence are retained. No whole-feature or installed-app clearance."
+        },
         {
           "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
           "changeNote": "Windows and web tests scoped evidence: 2 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged."
@@ -5215,6 +5234,15 @@
       ],
       "deviceTests": [
         {
+          "tester": "AI tester (PC records matched to real phone browser observations)",
+          "device": "Google Pixel 3 browser and real Windows PC",
+          "build": "Development server 0.1.99; Pixel browser reporting Chrome 155; native APK and installed Windows application outside this scope",
+          "date": "Oct 24, 2026, 2:32:42 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Installed-PC enforcement and broader changes to active profile limits during Live TV and Movie Night remain separate acceptance checks. The existing child account-screen issue still needs its reviewed repair and fixed-build retest. Actual Last PASS Oct 24, 2026, 2:32:42 AM Eastern; report assembled Oct 24, 2026, 3:00:34 AM Eastern. The final phone ledger remains pending.",
+          "ticks": []
+        },
+        {
           "tester": "AI tester (automated PC checks matched to phone observations)",
           "device": "Real Windows PC and only the phone/browser devices named in the passed subset below",
           "build": "Development server 0.1.99; named browser subsets, not installed native Windows UI; exact historical builds retained separately",
@@ -5229,7 +5257,7 @@
           "build": "0.1.99 source; Last PASS source the recorded build; frozen current source the recorded build",
           "date": "Oct 23, 2026, 9:00:14 PM Eastern",
           "result": "PARTIAL",
-          "evidence": "Carried normal/restricted movie lists, blocked playback, old Live TV link403 and active Movie Night refilter keep0cf4497dd. Current real HTTP sequel-view fixture passed restricted/unrestricted neighbor filtering. Last PASS R2-PARENTAL-SEQUELS at Oct 23, 2026, 9:00:14 PM Eastern (recorded scenario completion); this is not whole-feature acceptance. CARRY-the recorded feature PASS; source the recorded build; Oct 23, 2026, 10:30:59 AM Eastern (carried); recorded check completion; Normal test member saw two films; restricted test profile saw only the allowed G film and could not request the R playback info. Old Live TV link became 403 after tightening. Same-room guest suggestions excluded R and retained G after tightening. Policies restored; no parental-error injection. Focused live-recheck suite: 10 pass.; paths:.the reviewed development work,.the reviewed development work,.the reviewed development work,.the reviewed development work | HUMAN-the recorded feature BLOCKED; source the recorded build; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths:.the reviewed development work | R2-PARENTAL-SEQUELS PASS; source the recorded build; Oct 23, 2026, 9:00:14 PM Eastern; Current real loopback HTTP fixture compares API and rendered sequel cards: restricted profiles exclude blocked owned and missing R-rated neighbors; allowed controls and unrestricted viewing remain.; paths:.the reviewed development work,.the reviewed development work Raw captures/config/media remain private.",
+          "evidence": "Carried normal/restricted movie lists, blocked playback, old Live TV link403 and active Movie Night refilter retain their earlier source record. Current real HTTP sequel-view fixture passed restricted/unrestricted neighbor filtering. Last PASS R2-PARENTAL-SEQUELS at Oct 23, 2026, 9:00:14 PM Eastern (recorded scenario completion); this is not whole-feature acceptance. CARRY-the recorded feature PASS; source the recorded build; Oct 23, 2026, 10:30:59 AM Eastern (carried); recorded check completion; Normal test member saw two films; restricted test profile saw only the allowed G film and could not request the R playback info. Old Live TV link became 403 after tightening. Same-room guest suggestions excluded R and retained G after tightening. Policies restored; no parental-error injection. Focused live-recheck suite: 10 pass.; paths:.the reviewed development work,.the reviewed development work,.the reviewed development work,.the reviewed development work | HUMAN-the recorded feature BLOCKED; source the recorded build; Oct 23, 2026, 9:07:16 PM Eastern; Remaining person/hardware/native-app acceptance; paths:.the reviewed development work | R2-PARENTAL-SEQUELS PASS; source the recorded build; Oct 23, 2026, 9:00:14 PM Eastern; Current real loopback HTTP fixture compares API and rendered sequel cards: restricted profiles exclude blocked owned and missing R-rated neighbors; allowed controls and unrestricted viewing remain.; paths:.the reviewed development work,.the reviewed development work Raw captures/config/media remain private.",
           "ticks": [
             "Real device"
           ]
@@ -5252,7 +5280,7 @@
           "evidence": "Checks 11: 5 passed, 3 passed with problems noted or only partly, 2 blocked, 1 failed. Passed: lists show only the four G/PG films, Campsite and cast pickers open, no crash, language correct. Failed: clipped text at 150% text. Blocked: TV shows (not visible to the child) and photos. Noted: a child can open Markers, Library health, Account security and Delete my account (password asked), and one stray \"Credits start\" marker may have been saved by an accidental tap."
         }
       ],
-      "testedOn": "Real Windows PC running a development server identified as version 0.1.99; Chrome 155.0.8059.85 and the in-app browser where named; S24 Chrome 155.0.8059.84 and Pixel/S9 browsers or the S9 native backup where named. The S24 normal test member saw the synthetic title. The restricted member could not see it, and its direct watch link had no playable media. The PC matched the refusal. Last PASS: Oct 24, 2026, 1:15:29 AM Eastern. The installed Windows application was never launched. The final phone ledger is still pending; this is a scoped PC-side result."
+      "testedOn": "Real Pixel browser reporting Chrome 155 and a real Windows PC running development server 0.1.99. The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Last PASS: Oct 24, 2026, 2:32:42 AM Eastern. The installed Windows application was never launched. This is a matched browser subset; the final phone ledger and broader acceptance remain pending."
     },
     {
       "group": "Windows desktop app",
@@ -7181,16 +7209,16 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 23, 2026, 10:27 PM Eastern",
+  "previousUpdatedEastern": "Oct 24, 2026, 2:28 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 23–24 phone, PC and browser test record",
     "scope": "Completed PC-side subsets, carried phone evidence and one later confirmed Cast bug; final phone-round totals still pending",
-    "lastTested": "Oct 24, 2026, 2:16 AM Eastern",
-    "lastTestedIso": "2026-10-24T02:16:25-04:00",
-    "previousTested": "Oct 23, 2026, 10:01 PM Eastern",
+    "lastTested": "Oct 24, 2026, 2:32 AM Eastern",
+    "lastTestedIso": "2026-10-24T02:32:42-04:00",
+    "previousTested": "Oct 24, 2026, 2:16 AM Eastern",
     "broader": "Still required",
-    "newerText": "The October 24 PC-side report and its backup append add 25 PASS, no new FAIL and seven blocked or pending scopes. Earlier Windows/web 58 PASS, one cosmetic FAIL and 38 BLOCKED assessments are carried unchanged. Seven matched cross-device scenarios are candidates only until the final phone ledger and remaining scope gaps are reconciled; no new checkmark is added. The last completed 32-row phone table remains 110 PASS, 13 FAIL and 14 BLOCKED. A later normal native Chromecast test confirmed one media-loading bug, so its score is capped at 90%. That later finding is not folded into unfinished phone-round counts. Local browser decoding does not clear the separate away-playback baseline failure or LTE recovery. The installed Windows app was never launched; listening, screen reader, native clients and hardware gaps remain explicit."
+    "newerText": "The October 24 PC-side report and its Pixel append record 27 PASS, no new FAIL and five blocked or pending scopes. The Pixel playback and profile subsets add two passes; the previous 25 passes were carried without repeating them. Earlier Windows/web 58 PASS, one cosmetic FAIL and 38 BLOCKED assessments remain separate history. Seven other matched cross-device scenarios are still candidates only until the final phone ledger and remaining scope gaps are reconciled; no new checkmark is added. The last completed 32-row phone table remains 110 PASS, 13 FAIL and 14 BLOCKED. The confirmed normal native Chromecast media-loading bug keeps its score capped at 90%. Unfinished phone observations are not added to those totals. The earlier away-browser error is an observation with a possible test-navigation cause, pending a valid normal-link reproduction; it is not a new proven code bug or LTE pass. The installed Windows app was never launched. Listening, screen reader, native clients and hardware gaps remain explicit."
   },
   "historyNew": [
     {
