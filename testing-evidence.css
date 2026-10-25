@@ -551,3 +551,17 @@ html[data-theme="light"] .tier-tag.tier-purple, html[data-aurora][data-theme="li
   .evidence-table tr.feat.is-100 { animation: row100Glow 3s ease-in-out infinite; }
 }
 @keyframes row100Glow { 0%, 100% { box-shadow: inset 5px 0 0 #facc15, 0 0 0 1px rgba(250,204,21,.6), 0 0 12px rgba(250,204,21,.4); } 50% { box-shadow: inset 5px 0 0 #fde047, 0 0 0 1px rgba(253,224,71,.9), 0 0 24px rgba(253,224,71,.7); } }
+
+/* Folded report sections: collapsed by default so the percentages come first. Sections that show percentages are never folded. */
+.evidence-fold { margin: 0; border: 1px solid var(--aurora-hairline, rgba(128,128,128,.4)); border-radius: 10px; }
+.evidence-fold-inline { margin: 12px 0; }
+.evidence-fold > summary.evidence-fold-summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; cursor: pointer; padding: 12px 16px; list-style: none; }
+.evidence-fold > summary.evidence-fold-summary::-webkit-details-marker { display: none; }
+.evidence-fold > summary.evidence-fold-summary:hover { background: rgba(128,128,128,.1); }
+.evidence-fold > summary.evidence-fold-summary:focus-visible { outline: 3px solid var(--aurora-gold, #facc15); outline-offset: 3px; border-radius: 8px; }
+.evidence-fold-head { flex: 1 1 auto; min-width: 0; }
+.evidence-fold-head h2 { margin: 4px 0 0; font-size: 1.15rem; line-height: 1.35; }
+.evidence-fold-chip { flex: 0 0 auto; border: 1px solid currentColor; border-radius: 999px; padding: 4px 12px; font-size: .85rem; font-weight: 700; white-space: nowrap; }
+.evidence-fold-chip::before { content: "Show"; }
+.evidence-fold[open] > summary .evidence-fold-chip::before { content: "Hide"; }
+.evidence-fold-body { padding: 4px 16px 16px; }
