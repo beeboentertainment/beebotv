@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-    "updatedIso": "2026-10-24T04:32:01-04:00",
+    "updatedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+    "updatedIso": "2026-10-24T21:15:00-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -79,7 +79,7 @@
       "area": "windows",
       "name": "Installer and updates",
       "status": "Available",
-      "evidence": "A PC updated itself from 0.1.78 to 0.1.79 while idle on Oct 5; on Oct 13 the update check on a newer test build said up to date. Not tried: updating over an older version on a second PC. Windows may show a SmartScreen warning the first time. Oct 22: a Windows test PC updated itself from 0.1.98 to 0.1.99 and the app started normally.",
+      "evidence": "A PC updated itself from 0.1.78 to 0.1.79 while idle on Oct 5; on Oct 13 the update check on a newer test build said up to date. Not tried: updating over an older version on a second PC. Windows may show a SmartScreen warning the first time. Oct 22: a Windows test PC updated itself from 0.1.98 to 0.1.99 and the app started normally. Oct 24: Windows 0.1.102 was published (1:05 PM Eastern) and a second, older 4-core Windows PC updated itself to it from 0.1.99 (5:41 PM Eastern; hash and signature checks passed, installed in about a minute).",
       "realTest": "yes"
     },
     {
@@ -103,7 +103,7 @@
       "area": "windows",
       "name": "Direct play and on-demand conversion to 1080p, 720p and 480p",
       "status": "Available",
-      "evidence": "Oct 5 and Oct 13: the original file played; in the browser player 720p, 480p and Auto switched and kept playing from the same second. The desktop app opens films in the PC's own player; in-app playback is the phone app and the browser.",
+      "evidence": "Oct 5 and Oct 13: the original file played; in the browser player 720p, 480p and Auto switched and kept playing from the same second. The desktop app opens films in the PC's own player; in-app playback is the phone app and the browser. Oct 24: choosing a converted 720p quality failed twice on a second household’s old 4-core PC watched from a phone on 5G through Beebo Relay (the conversion session opened and stopped; the log did not say why), while the original file played there.",
       "realTest": "yes"
     },
     {
@@ -143,7 +143,7 @@
       "area": "windows",
       "name": "Subtitles: embedded, image subtitles and online search with your own key",
       "status": "Beta",
-      "evidence": "Oct 21 on Windows 0.1.98: embedded English and Spanish tracks switched, and a sidecar English file showed its text, in the Beebo player on a test film. Oct 22 on the Galaxy S25 phone app: the player offered no way to choose embedded subtitles and did not show sidecar files. A fix is merged in the code; it is not released or retested. Online search was not tried.",
+      "evidence": "Oct 21 on Windows 0.1.98: embedded English and Spanish tracks switched, and a sidecar English file showed its text, in the Beebo player on a test film. Oct 22 on the Galaxy S25 phone app: the player offered no way to choose embedded subtitles and did not show sidecar files. A fix is merged in the code; it is not released or retested. Online search was not tried. Oct 24 in the browser player on a phone over 5G through Beebo Relay: a separate subtitle file listed as “English (file)” and its three cues drew at the right times, also after seeking back. The Android app’s own captions fix is merged (test build 42) and has not yet been seen on a phone.",
       "realTest": "partly"
     },
     {
@@ -207,7 +207,7 @@
       "area": "windows",
       "name": "Photos and phone backups: timeline, albums, map",
       "status": "Beta",
-      "evidence": "Last PASS: Oct 24, 2026, 2:16:25 AM Eastern. One owned synthetic photo uploaded from the native S9+ selected test album. The 47,304-byte PC copy independently matched the phone source hash; the original remained. Backup was turned off and album settings restored. The native map is still unavailable, so the earlier implementation-gap failure remains. Real map/location and pinch acceptance, restore, conflicts and broader backup behaviour are not proved. No original-file deletion was attempted. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:16:25 AM Eastern. One owned synthetic photo uploaded from the native S9+ selected test album. The 47,304-byte PC copy independently matched the phone source hash; the original remained. Backup was turned off and album settings restored. The native map is built in a test build only (not merged, not released, not yet seen on a phone with geotagged photos), so the earlier implementation-gap failure remains. Real map/location and pinch acceptance, restore, conflicts and broader backup behaviour are not proved. No original-file deletion was attempted. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -279,7 +279,7 @@
       "area": "windows",
       "name": "Start with Windows and read-only library folders",
       "status": "Beta",
-      "evidence": "Opt-in. Automatic tests only; start with Windows has never been run through a real restart.",
+      "evidence": "Opt-in. On a second 4-core Windows PC the log shows Start with Windows launching the app three times (Oct 22 to Oct 24, 2026), and automatic update mode updated it from 0.1.99 to 0.1.102 (Oct 24, 2026, 5:41 PM Eastern). A deliberate restart watched by a person and the other two update modes are not recorded.",
       "realTest": "no"
     },
     {
@@ -359,7 +359,7 @@
       "area": "android",
       "name": "Playing films: resume, seek, pause and the quality menu",
       "status": "Available",
-      "evidence": "Last PASS: Oct 23, 2026, 10:28:19 AM Eastern. The selected English sidecar cue was still absent on a second native phone while the picture time was inside the cue. Earlier seek and picture-in-picture passes are carried. Online Next remains a separate open problem. Repair and retest sidecar captions and online Next on a compatible installed build. A person still needs to hear the sound. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
+      "evidence": "Last PASS: Oct 23, 2026, 10:28:19 AM Eastern. The selected English sidecar cue was still absent on a second native phone while the picture time was inside the cue. Earlier seek and picture-in-picture passes are carried. Online Next remains a separate open problem. Verify sidecar captions on a phone running the new build (test build 42; the fix is merged and no phone has shown it yet; the browser player drew a separate subtitle file correctly on Oct 24) and retest online Next on a compatible installed build. A person still needs to hear the sound. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "yes"
     },
     {
@@ -399,7 +399,7 @@
       "area": "android",
       "name": "Casting to a Chromecast TV",
       "status": "Beta",
-      "evidence": "Last PASS: Oct 23, 2026, 10:01:16 PM Eastern. The confirmed normal native Cast route still connected without a receiver media session after patient preparation. The distinct silent Live TV route also connected without TV media after about 94 seconds. Earlier connection, volume and Stop passes are carried. Repair and retest the existing single media-loading bug on a compatible installed build. Then test actual picture, original/converted playback, pause, seek, captions and a working second sender. The Live TV attempt is not a second independently localized bug. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
+      "evidence": "Last PASS: Oct 24, 2026, about 8:20 PM Eastern (a streamed film on the real Living Room TV, unpublished test build 42). The Oct 23 “no receiver media session” results describe the older routes tried that day. On Oct 24, in unpublished test builds, the cast controls (dimmed and untappable before a fix) worked by finger on the real TV and a streamed film cast with picture and sound on test build 42; casting a downloaded copy did not play. Earlier connection, volume and Stop passes are carried. The fixes are not in a published download. Not proven: the phone pass-through route, seeking by dragging, captions on the TV and a second sender. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -663,7 +663,7 @@
       "area": "computers",
       "name": "Any web browser: library and player, served by your own Beebo computer",
       "status": "Beta",
-      "evidence": "Last PASS Oct 24, 2026, 2:32:02 AM Eastern (carried without rerun). The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
+      "evidence": "Last PASS Oct 24, 2026, 2:32:02 AM Eastern (carried without rerun). The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark. Oct 24: Chrome on a PC passed playback, pause, arrow-key seeking and quality changes with no Beebo console errors. Failed (fixes written, not merged): Space and F need the video to have focus, a show page had no poster and low-contrast buttons, Suggestions loaded blank, and Media requests showed a household member owner-only controls.",
       "realTest": "partly"
     },
     {
@@ -711,7 +711,7 @@
       "area": "campsite",
       "name": "Guests browse the host's library; a guest asks, the host approves",
       "status": "Available",
-      "evidence": "Oct 13: a guest saw the host's library, asked to watch one and the host approved it. A film played with sound on the guest phone. Oct 22: with the host's \"Show my whole library to guests\" switch on, an anonymous guest saw the whole library (16 titles). That is by design and the guest is shown a notice; an anonymous guest is not a household profile, so a child profile's limits apply only inside the child's own app.",
+      "evidence": "Oct 13: a guest saw the host's library, asked to watch one and the host approved it. A film played with sound on the guest phone. Oct 22: with the host's \"Show my whole library to guests\" switch on, an anonymous guest saw the whole library (16 titles). That is by design and the guest is shown a notice; an anonymous guest is not a household profile, so a child profile's limits apply only inside the child's own app. Oct 24: a Galaxy S24 opened a Galaxy S9+ host’s address in Chrome (no app, no account), typed a name and joined; the host showed “1 guest connected” and the guest page showed the host’s library (644 titles) with Movies, Music and Games. On mobile data only, the same page said it could not reach the host. A guest game round and guest video were not tested.",
       "realTest": "partly"
     },
     {
@@ -903,7 +903,7 @@
       "area": "trip",
       "name": "Save the trip as an MP4 video",
       "status": "In development",
-      "evidence": "Last PASS: Oct 24, 2026, 2:21:37 AM Eastern. A minimal Pixel trip with two cards and no media reached Ready after a 720p export, showing 10 seconds and 907 KB. This is a separate device result from the S9+ timeout. The S9+ export timeout remains open. The Pixel app-cache video was not independently decoded. A completed S9+ export, exported-file playback and a real outing/privacy review are still needed. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
+      "evidence": "Last PASS: Oct 24, 2026, 2:21:37 AM Eastern. A minimal Pixel trip with two cards and no media reached Ready after a 720p export, showing 10 seconds and 907 KB. This is a separate device result from the S9+ timeout. The S9+ export timeout remains open. The Pixel app-cache video was not independently decoded. A completed S9+ export, exported-file playback and a real outing/privacy review are still needed. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade. Oct 24: “Save as a video” with 2 cards, 2 photos and 1 short clip on a Galaxy S9+ stayed at 0% and gave up after about 30 seconds on each size; the cause is not yet known.",
       "realTest": "partly"
     },
     {
@@ -935,7 +935,7 @@
       "area": "away",
       "name": "Direct connection away from home",
       "status": "Available",
-      "evidence": "Last PASS: Oct 24, 2026, 2:39:33 AM Eastern. A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. The normal-link playback baseline and Wi-Fi-to-LTE recovery remain blocked after the S24 disconnected. Two approved central test users and a sustained relay/session test are still needed. Older independent away issues remain open. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
+      "evidence": "Last PASS: Oct 24, 2026, about 1:30 PM Eastern (a Galaxy S24 on 5G reached the home server directly with no relay and played a TV episode; the route screen read “Direct over the internet, no relay”). A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. On Oct 24, 2026 a Galaxy S24 on 5G (an unpublished phone test build) reached the home server directly and through Beebo Relay and, at a second household, connected to a PC through Beebo Relay in about 2 seconds and played the original file of a film; a converted 720p quality failed twice on that old PC. Wi-Fi-to-LTE recovery, sessions over a few minutes and two people on Relay at once are still untested. Older independent away issues remain open. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "yes"
     },
     {
@@ -959,7 +959,7 @@
       "area": "away",
       "name": "Beebo Relay (optional fallback when a direct connection fails)",
       "status": "Beta",
-      "evidence": "Last PASS: Oct 24, 2026, 2:39:33 AM Eastern. A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. The normal-link playback baseline and Wi-Fi-to-LTE recovery remain blocked after the S24 disconnected. Two approved central test users and a sustained relay/session test are still needed. Older independent away issues remain open. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
+      "evidence": "Last PASS: Oct 24, 2026, about 8:05 PM Eastern (a second household’s PC through Beebo Relay, original file). A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. On Oct 24, 2026 a Galaxy S24 on 5G (an unpublished phone test build) reached the home server directly and through Beebo Relay and, at a second household, connected to a PC through Beebo Relay in about 2 seconds and played the original file of a film; a converted 720p quality failed twice on that old PC. Wi-Fi-to-LTE recovery, sessions over a few minutes and two people on Relay at once are still untested. Older independent away issues remain open. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -967,7 +967,7 @@
       "area": "away",
       "name": "Relay self-serve switch-on and usage line",
       "status": "In development",
-      "evidence": "No screen yet lets a person turn the relay on for their own account. Being built.",
+      "evidence": "Windows 0.1.102 (published Oct 24, 2026, 1:05 PM Eastern) adds a “Use Beebo Relay” button on the PC. On a second household’s PC, pressing it and accepting the terms moved the log from “relay beebo unavailable” to “relay beebo ready”. A usage line on the phone has not been tested. Still In development.",
       "realTest": "no"
     },
     {
@@ -991,7 +991,7 @@
       "area": "away",
       "name": "Watch Together (host and viewers in step)",
       "status": "Beta",
-      "evidence": "Last PASS: Oct 23, 2026, 2:06:59 PM Eastern. Start and Join were also clipped on the S9+ at its ordinary display density. Swiping the panel did not reveal the actions. Older sync, chat and reconnect passes keep their temporary-density qualification. Retest the reviewed layout repair on an installed build, then check ordinary two-user timing away from home. Opening the panel does not prove a working room. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
+      "evidence": "Last PASS: Oct 23, 2026, 2:06:59 PM Eastern. Start and Join were also clipped on the S9+ at its ordinary display density. Swiping the panel did not reveal the actions. Older sync, chat and reconnect passes keep their temporary-density qualification. Retest the reviewed layout repair on an installed build, then check ordinary two-user timing away from home. Opening the panel does not prove a working room. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade. Oct 24: with two phones signed in only to the home server, Host and Join looked connected but never joined (the party service needs a cloud sign-in). Test build 41 now shows “Watch Together could not connect. Sign in with your Beebo account to use it.” and stops retrying. That is an honest error, not a working room; making it work for anyone with access is designed, not built.",
       "realTest": "partly"
     },
     {
@@ -1207,7 +1207,7 @@
       "area": "household",
       "name": "Library sharing between households (invite-only)",
       "status": "In development",
-      "evidence": "Oct 12 between two real homes: invite, accept, play and stop sharing worked, and problems found are fixed in code but not in a download. The sharing terms are still a draft.",
+      "evidence": "Oct 12 between two real homes: invite, accept, play and stop sharing worked, and problems found are fixed in code but not in a download. The sharing terms are still a draft. Oct 24: a review of the new share-code route found limiter and lock problems; a repair is pushed but not cleared, merged or deployed, and the route is off.",
       "realTest": "partly"
     },
     {
@@ -1340,18 +1340,21 @@
     "On a phone, sound stops when the screen turns off unless the \"Keep playing when the screen turns off\" switch (in the Quality & audio sheet) is on; real screen-off sound with the switch on has not been tested.",
     "Earlier podcast Follow failures are recorded in the history. The Oct 23 synthetic feed Follow and queue checks passed; real imports and listening checks remain.",
     "Oct 23, Android tester36 (build 86): a minimal 720p Trip Journal export on the Galaxy S9+ still times out without producing a video.",
-    "Oct 23, tester36: a sidecar subtitle can be selected, but its cue is still absent from the picture.",
+    "Oct 23, tester36: a sidecar subtitle could be selected but its cue was absent from the picture. A fix is merged (test build 42) and has not yet been seen on a phone; the browser player drew a separate subtitle file correctly on Oct 24.",
     "Oct 23, tester36: online Next still skips an earlier phone-downloaded episode.",
     "Oct 22, tester34: text is cut off at 150% text on four phones (the player top bar, the title-page Download button and some other buttons).",
     "The Oct 23 tested Campsite stopped-host notice passed on one local route. Older unmatched stop behaviour and mobile-data/hotspot use remain open. Earlier restricted-profile photo and Movie Night findings are not cleared by that test.",
     "Oct 22: opening a film in a browser through the away address failed (the player is discarded when the page reloads). On Windows 0.1.98 a folder's own poster and NFO files were not used.",
     "Repairs in code do not close installed-device problems. Warm pairing, sidecar captions, online Next, paused audiobook seeking, S9+ export and Watch Together button layout remain open on the tested build.",
-    "Oct 23 phone volume controls passed, but a later normal native Cast route failed to load media after 93 seconds on the Galaxy S9+ tester36 (build 86). One confirmed media-loading bug is open; TV captions, seek and working second-sender playback are blocked.",
+    "Casting: the Oct 23 native routes connected without a receiver media session (older routes). On Oct 24, in unpublished test builds, the cast controls and a streamed film worked on the real TV, but casting a downloaded copy did not play; the fixes are not in a published download, and the phone pass-through route, TV captions, seeking by dragging and a second sender are not proven.",
     "An ordinary trip link opens only on the home Wi-Fi unless away links are switched on.",
     "The demo player has no subtitles button although the title page mentions one.",
     "Paused audiobook chapter seeking returns to the earlier checkpoint after restart on tester36.",
-    "Watch Together Start and Join are clipped at ordinary display density on tester36.",
-    "Warm pairing can leave the old Home visible on tester36."
+    "Watch Together Start and Join are clipped at ordinary display density on tester36. On Oct 24, phones signed in only to the home server could not join at all (test build 41 shows an honest error; making it work is designed, not built).",
+    "Warm pairing can leave the old Home visible on tester36.",
+    "Oct 24: a converted 720p quality failed twice on a second household’s old 4-core PC watched through Beebo Relay; the original file played.",
+    "Oct 24: in the web player Space and F need the video to have focus, a show page has no poster and low-contrast buttons, Suggestions loads blank, and Media requests shows a household member owner-only controls (fixes written, not merged).",
+    "Oct 24: Trip Journal “Save as a video” stayed at 0% on a Galaxy S9+ with 2 cards, 2 photos and 1 short clip (cause not yet known)."
   ],
   "ideas": [
     {

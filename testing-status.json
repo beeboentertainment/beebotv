@@ -1,8 +1,8 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-    "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. The separate Human testing done figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
+    "updatedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+    "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. The separate Device and real-world checks recorded figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
       "humanTestingDone": 35,
@@ -581,9 +581,9 @@
     "evidenceLimit": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. At that time the public downloads were Windows 0.1.99 and Android tester34; Windows 0.1.102 was published later (Oct 24, 2026, 1:05 PM Eastern) and tester35 was not. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+    "updatedEastern": "Oct 24, 2026, 9:15 PM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
-    "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Human testing done is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
+    "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Device and real-world checks recorded is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
       "baseline": "The same method applied to the Oct 21, 2026, 3:46 PM Eastern data",
       "current": "Final phone round five and final PC campaign are reconciled. Phone counts127 PASS/15 FAIL/16 BLOCKED and PC counts28 PASS/1 FAIL/4 BLOCKED describe separate scopes. Memory Match wording is resolved; no new phone/PC whole-feature checkmark is added."
@@ -1009,8 +1009,8 @@
     "summary": "The downloads are Windows 0.1.102, published Oct 24, 2026, 1:05 PM Eastern; Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.102 adds a Beebo Relay opt-in button with an honest status (Beebo never turns Relay on by itself), the away-from-home quality limit applied to the web player and phones, missing-sequel hints hidden from limited viewers and photo thumbnails for restricted profiles that have \"See photos\", Live TV stream-cache clean-up, web player fixes for older TVs and browsers, movie version and Up next fixes, and quieter logs. Windows 0.1.99 and Android 1.51-tester34 added audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. At that time the public downloads were Windows 0.1.99 and Android tester34; Windows 0.1.102 was published later (Oct 24, 2026, 1:05 PM Eastern) and tester35 was not. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-24T04:32:01-04:00",
-  "updatedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+  "updated": "2026-10-24T21:15:00-04:00",
+  "updatedEastern": "Oct 24, 2026, 9:15 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Our test process uses AI testers on real devices for that check. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 70,
@@ -1189,11 +1189,15 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 23, 2026, 10:28:19 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issues: 2; current score and cap retained. Recorded scope only: The selected English sidecar cue was still absent on a second native phone while the picture time was inside the cue. Earlier seek and picture-in-picture passes are carried. Online Next remains a separate open problem. Still required: Repair and retest sidecar captions and online Next on a compatible installed build. A person still needs to hear the sound. No new whole-feature checkmark is added. Nick alone records Ready.",
-      "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-      "changeNote": "Final phone table: 3 PASS, 3 FAIL and 1 BLOCKED assessments in this row. The selected English sidecar cue was still absent on a second native phone while the picture time was inside the cue. Earlier seek and picture-in-picture passes are carried. Online Next remains a separate open problem. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly.",
+      "leftToReach100": "Open known issues: 2; current score and cap retained. Recorded scope only: The selected English sidecar cue was still absent on a second native phone while the picture time was inside the cue. Earlier seek and picture-in-picture passes are carried. Online Next remains a separate open problem. Oct 24, 2026, about 8:25 PM Eastern: in the browser player (not the Android app) on a Galaxy S24 over 5G through Beebo Relay, a tiny synthetic test film with a separate subtitle file listed “English (file)” and drew its three cues at the right times. Still required: verify the sidecar-caption fix on a phone running the new build (test build 42; the fix was merged into the code line on Oct 24 and no phone has shown it yet) and retest online Next on a compatible installed build. A person still needs to hear the sound. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24 evening: in the browser player on a Galaxy S24 over 5G through Beebo Relay (home-server version 0.1.102), a separate subtitle file was listed as “English (file)” and its three cues drew at the right times, also after seeking back. That is the browser player, not the Android app’s own captions; the app’s sidecar-caption fix is merged and is in test build 42 but has not yet been seen on a phone. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "previousPercent": 90,
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+          "changeNote": "Final phone table: 3 PASS, 3 FAIL and 1 BLOCKED assessments in this row. The selected English sidecar cue was still absent on a second native phone while the picture time was inside the cue. Earlier seek and picture-in-picture passes are carried. Online Next remains a separate open problem. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
+        },
         {
           "changedEastern": "Oct 23, 2026, 7:57 PM Eastern",
           "changeNote": "Known-issue reconciliation from Phone tests Round 3, ledger updated Oct 23, 2026, 6:47 PM Eastern. Tester36/code86 retains sidecar-caption problem and online Next (existing issue). No device/real-world tick, Built, Automated tests, Ready or status label changed."
@@ -1254,7 +1258,8 @@
           "Oct 22, 2026, tester34 (muted): Original and 720p played and switched without a stall on the Pixel 3 and the S25; the chapter list and chapter jumps worked on the S25; picture-in-picture opened on the S24 Ultra and the Pixel 3; the \"Up next\" card moved to the next episode by itself; the screen-off switch is now inside the Quality & audio sheet (off by default) and flipped on and off on the S25 and the Pixel 3 and seen on the S24 Ultra (already on there); one later Pixel 3 run did not find it (real screen-off sound was not tested); the Cast button opened the picker on all four phones.",
           "RETEST-1 on tester35 with Windows 0.1.100: the S9+ Subtitle Test started promptly and played the 30-second clip twice; the landscape subtitle sheet listed English and Spanish, and the button labels followed those choices. That item does not establish that the chosen language appeared in the picture. On the S25, version selection between 1080p and 720p worked and 720p stayed selected. FAIL: listed/selected English and Spanish sidecar files drew no subtitle text. PARTIAL: online Next jumped to the next season once, then the expected same-season episode on three later tries; offline Next passed with existing downloads. Earlier unexplained Pixel Next behavior remains open; a stale queue is a hypothesis. The screen-off switch kept Android’s PLAYING state, not sound heard by a person. French player labels appeared on the Pixel.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 displayed the synthetic film, paused, sought and entered picture-in-picture. English sidecar subtitles were selected but showed no cue at two known cue times. S24 lacked the cue fixture, so that retry was blocked. Muted. 3 PASS / 1 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
-          "Phone tests Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issues (two; score capped at 90%): sidecar-caption problem selected English sidecar captions remain absent, and online Next still skips an earlier phone-saved episode for the next season on tester36. Merge actual repairs and supply a compatible build before retest; an unmerged fix is not installed clearance. Human look: captions, sound and rotation; Nick alone records Ready."
+          "Phone tests Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issues (two; score capped at 90%): sidecar-caption problem selected English sidecar captions remain absent, and online Next still skips an earlier phone-saved episode for the next season on tester36. Merge actual repairs and supply a compatible build before retest; an unmerged fix is not installed clearance. Human look: captions, sound and rotation; Nick alone records Ready.",
+          "Oct 24, 2026, about 8:25 PM Eastern, browser player on a Galaxy S24 over 5G through Beebo Relay (home-server version 0.1.102): a tiny synthetic test film with a separate subtitle file; the subtitle menu listed “English (file)” and three cues drew at the right times (4.3, 9.7 and 15.0 seconds) and again after seeking back. This is the browser player. Not tested: the Android app’s own captions (the fix was merged into the code line on Oct 24 and is in test build 42, not yet seen on a phone), burned-in captions on converted video, other formats."
         ],
         "remaining": [
           {
@@ -1267,7 +1272,7 @@
           },
           {
             "kind": "CODE",
-            "text": "Investigate sidecar subtitle rendering: tracks can be listed and selected but no text appeared in the tester35 retest."
+            "text": "Sidecar subtitle rendering in the Android app: a fix is merged into the code line (test build 42), but the tester35 and tester36 retests drew no text. The item stays listed until a phone shows the cue."
           },
           {
             "kind": "CODE",
@@ -1275,7 +1280,7 @@
           },
           {
             "kind": "DEVICE",
-            "text": "Repair and retest sidecar captions and online Next on a compatible installed build. A person still needs to hear the sound."
+            "text": "Verify sidecar captions on a phone running the new build (test build 42; fix merged, not yet seen on a phone) and retest online Next on a compatible installed build. A person still needs to hear the sound."
           }
         ],
         "hist": [
@@ -1296,6 +1301,15 @@
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "AI tester (automated real-phone checks)",
+          "ticks": [],
+          "device": "Galaxy S24 Chrome over 5G through Beebo Relay (browser player)",
+          "build": "Home-server Windows 0.1.102 browser player; the Android app’s own captions were not part of this test",
+          "date": "Oct 24, 2026, 8:25 PM Eastern",
+          "result": "PASS",
+          "evidence": "A tiny synthetic film with a separate subtitle file: the menu listed “English (file)”, three cues drew at 4.3, 9.7 and 15.0 seconds and again after seeking back. NOT tested: the Android app’s own captions (fix merged, in test build 42, not yet seen on a phone), burned-in captions, other formats."
+        },
         {
           "tester": "AI tester (automated real-phone checks)",
           "device": "S9",
@@ -1371,8 +1385,8 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 24, 2026, 2:39:33 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issues: 2; current score and cap retained. Recorded scope only: A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. Still required: The normal-link playback baseline and Wi-Fi-to-LTE recovery remain blocked after the S24 disconnected. Two approved central test users and a sustained relay/session test are still needed. Older independent away issues remain open. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "lastTested": "Oct 24, 2026, about 8:05 PM Eastern (Last PASS: a second household’s PC through Beebo Relay, original file; later failures and blocks are listed separately)",
+      "leftToReach100": "Open known issues: 2; current score and cap retained. Recorded scope only: on Oct 24, 2026 a Galaxy S24 on 5G mobile data reached the owner’s home server directly and through Beebo Relay, and reached a second household’s Windows PC through Beebo Relay and played the original file of a film. Choosing a converted 720p quality on that old 4-core PC failed twice. Still required: Wi-Fi to mobile-data hand-over, sessions longer than a few minutes, a converted quality that works on the second PC, a direct route to that PC, two people on Beebo Relay at once, and matching real-device closures for the older mobile-handoff freeze and exhausted-ports issues. No new whole-feature checkmark is added. Nick alone records Ready.",
       "roadTo100": {
         "means": "A current phone plays video from the home PC over mobile data, and again through Beebo Relay, with both results recorded and the Relay price approved.",
         "done": [
@@ -1386,7 +1400,13 @@
           "RETEST-1 wording was PARTIAL: the Pixel in real airplane mode showed No internet connection on this phone; the S25 with app networking blocked showed Couldn’t reach Beebo from here. The S25 airplane setting alone had left Wi-Fi up. This does not establish a new away-route, direct-versus-relay or server-failure pass.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+, Pixel 3 and S24 connection details confirmed the home Wi-Fi route. No away-from-home direct, Relay, mobile handoff or concurrent Relay playback was exercised. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Oct 23, 2026, 10:27 PM Eastern: The S24 has working cellular data, but the isolated test server had no approved external test route. Continuous Wi-Fi-to-mobile-data playback was BLOCKED, not passed. The last native route pass is older evidence.",
-          "Oct 24, 2026, 2:39:33 AM Eastern: A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. Named subset only; no new whole-feature checkmark."
+          "Oct 24, 2026, 2:39:33 AM Eastern: A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. Named subset only; no new whole-feature checkmark.",
+          "Oct 24, 2026, about 1:30 PM Eastern: a Galaxy S24 on 5G mobile data only (Wi-Fi off), running an unpublished phone test build, reached the owner’s home server directly with no relay and played a TV episode. The clock advanced 21 seconds in 20 seconds with no stall, and the route screen read “Direct over the internet, no relay”.",
+          "Oct 24, 2026, about 3:40 PM Eastern: the same phone with “always use Beebo Relay” switched on: the route screen read “Beebo Relay” and a film played over 5G. The clock advanced only 12 seconds in 20 seconds, slower than real time, and nothing longer was measured, so this is not a smooth-playback result.",
+          "Oct 24, 2026, about 7:50 to 8:05 PM Eastern, a real second household: a different Windows PC at another house (Beebo 0.1.102, which it had updated itself to that afternoon) had its household owner accept the relay terms with the new “Use Beebo Relay” button. The S24 on 5G signed in through that household’s Beebo address, browsed its library, connected through Beebo Relay in about 2 seconds and played the original file of a film with picture and sound (clock 0:51 to 1:32 in 40 seconds). Whether the phone’s “always use Beebo Relay” switch was on for this run is not recorded here.",
+          "FAILED in the same session, Oct 24, 2026: choosing a converted 720p quality on that old 4-core PC failed twice (“Playback interrupted”; the conversion session opened and then stopped, and the log did not say why). This is recorded as a failure, not a pass.",
+          "Oct 24, 2026: casting away from home on mobile data shows an honest “Casting needs Wi-Fi” message on the S24 instead of failing silently.",
+          "Not tested in these Oct 24 runs: Wi-Fi to mobile-data hand-over, sessions over a few minutes, a converted quality that works on the second PC, a direct route to the second PC, and two people on Beebo Relay at once."
         ],
         "remaining": [
           {
@@ -1395,7 +1415,7 @@
           },
           {
             "kind": "DEVICE",
-            "text": "The normal-link playback baseline and Wi-Fi-to-LTE recovery remain blocked after the S24 disconnected. Two approved central test users and a sustained relay/session test are still needed. Older independent away issues remain open."
+            "text": "Wi-Fi to mobile-data hand-over, sessions longer than a few minutes and two people on Beebo Relay at once are still untested. A converted quality has not yet worked on the second household’s old PC (it failed twice), and a direct route to that PC was not tested. The older mobile-handoff freeze and exhausted-ports issues have no matching real-device closure."
           }
         ],
         "hist": [
@@ -1414,9 +1434,13 @@
         ]
       },
       "previousPercent": 90,
-      "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-      "changeNote": "Final phone table: 3 PASS, 0 FAIL and 2 BLOCKED assessments in this row. A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly.",
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24 real-world checks: a Galaxy S24 on 5G mobile data reached the owner’s home server directly (about 1:30 PM) and through Beebo Relay (about 3:40 PM), and then, at a real second household (about 7:50 to 8:05 PM), reached a different Windows PC through Beebo Relay and played the original file of a film. Choosing a converted 720p quality on that old PC failed twice. Wi-Fi to mobile-data hand-over, sessions over a few minutes and a direct route to that PC were not tested. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+          "changeNote": "Final phone table: 3 PASS, 0 FAIL and 2 BLOCKED assessments in this row. A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
+        },
         {
           "changedEastern": "Oct 23, 2026, 10:27 PM Eastern",
           "changeNote": "Phone test round 4: 0 PASS, 0 FAIL, 1 BLOCKED new assessments. The S24 has working cellular data, but the isolated test server had no approved external test route. Continuous Wi-Fi-to-mobile-data playback was BLOCKED, not passed. The last native route pass is older evidence. No new whole-feature pass or checkmark. Known issues and historical checks are retained."
@@ -1454,7 +1478,7 @@
           "changeNote": "Fixed the browser page so a recent reload can keep a signed-in away-from-home session; automated tests were added."
         }
       ],
-      "testedOn": "Final phone record: Pixel 3/S9+ carried, S24 earlier native read-only / Round4 Chrome only, Pixel, S24 Chrome / Pixel / S9+. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. Last PASS: Oct 24, 2026, 2:39:33 AM Eastern. Later native source changes are not installed or accepted by this record.",
+      "testedOn": "Oct 24, 2026 evening: Galaxy S24 on 5G mobile data (an unpublished phone test build) to the owner’s home server, directly and through Beebo Relay, and to a second household’s old 4-core Windows PC (Beebo 0.1.102) through Beebo Relay. The earlier record follows. Final phone record: Pixel 3/S9+ carried, S24 earlier native read-only / Round4 Chrome only, Pixel, S24 Chrome / Pixel / S9+. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. A native Pixel test member used the home direct route and restored the original relay choice. The earlier embedded-viewer error is an observation with a possible test-navigation cause, not a newly proven code bug. Last PASS: Oct 24, 2026, 2:39:33 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
@@ -1466,6 +1490,15 @@
         "Switch the phone between Wi-Fi and mobile data while playing and check it carries on."
       ],
       "deviceTests": [
+        {
+          "tester": "AI tester (automated real-phone checks)",
+          "ticks": [],
+          "device": "Galaxy S24 on 5G (Wi-Fi off); second household Windows PC",
+          "build": "Unpublished phone test build; Windows 0.1.102 (published) on the second PC",
+          "date": "Oct 24, 2026, 8:05 PM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Direct then relay on the owner’s home server (about 1:30 and 3:40 PM Eastern); then a real second household’s PC through Beebo Relay, original file played with picture and sound (about 7:50 to 8:05 PM). FAILED: a converted 720p quality failed twice on that old PC. NOT tested: Wi-Fi to mobile-data hand-over, sessions over a few minutes, a converted quality that works on that PC, a direct route to that PC."
+        },
         {
           "tester": "AI tester (automated real-phone checks)",
           "device": "Pixel, S24 Chrome / Pixel / S9+",
@@ -1526,11 +1559,15 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 23, 2026, 2:06:59 PM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issues: 1; current score and cap retained. Recorded scope only: Start and Join were also clipped on the S9+ at its ordinary display density. Swiping the panel did not reveal the actions. Older sync, chat and reconnect passes keep their temporary-density qualification. Still required: Retest the reviewed layout repair on an installed build, then check ordinary two-user timing away from home. Opening the panel does not prove a working room. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Open known issues: 1; current score and cap retained. Recorded scope only: on Oct 24, 2026 two phones signed in only to the home server could not join a party (Host and Join looked connected but never joined; the party service needs a cloud sign-in); test build 41 now says so and stops retrying, which is an honest error and not a working room. The owner decided it should work for anyone with access; a design is written and nothing is built. No pass for two-person sync. Also: Start and Join were also clipped on the S9+ at its ordinary display density. Swiping the panel did not reveal the actions. Older sync, chat and reconnect passes keep their temporary-density qualification. Still required: Retest the reviewed layout repair on an installed build, then check ordinary two-user timing away from home. Opening the panel does not prove a working room. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-      "changeNote": "Final phone table: 7 PASS, 2 FAIL and 0 BLOCKED assessments in this row. Start and Join were also clipped on the S9+ at its ordinary display density. Swiping the panel did not reveal the actions. Older sync, chat and reconnect passes keep their temporary-density qualification. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly.",
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24: with two phones signed in only to the home server (household members), Host and Join looked connected but never joined, because the party service needs a cloud sign-in. A fix in test build 41 makes the screen say “Watch Together could not connect. Sign in with your Beebo account to use it.” and stop retrying. That is an honest error, not a working room. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+          "changeNote": "Final phone table: 7 PASS, 2 FAIL and 0 BLOCKED assessments in this row. Start and Join were also clipped on the S9+ at its ordinary display density. Swiping the panel did not reveal the actions. Older sync, chat and reconnect passes keep their temporary-density qualification. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
+        },
         {
           "changedEastern": "Oct 23, 2026, 7:57 PM Eastern",
           "changeNote": "Known-issue reconciliation from Phone tests Round 3, ledger updated Oct 23, 2026, 6:47 PM Eastern. Tester36/code86 retains Watch Together button-layout problem. The earlier generic legacy-sync bug inference is withdrawn as HARNESS/COMPAT; the distinct ordinary-density layout bug is proven. No device/real-world tick, Built, Automated tests, Ready or status label changed."
@@ -1570,12 +1607,13 @@
           "Code, Oct 12, 2026 (in the published Android 1.51-tester23): four new automated tests cover tapping Host again after the system closed the app (it starts from the new room, not the dead one), the \"ended on this device\" notice showing each time, and no stale notice after a deliberate Leave.",
           "Oct 22, 2026, tester34: Galaxy S25 host and Galaxy S9+ viewer on one home Wi-Fi followed play, seek, pause and seek back within about 1 to 3 seconds; resume took about 5 seconds; the room list was correct when the viewer and when the host left (muted).",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 host and S9+ viewer entered the legacy session, but host pause/seek did not establish viewer synchronization. The newer room controls were absent on tester35; rejoin, chat and reactions were blocked. Compatibility/setup cause is unconfirmed. 0 PASS / 1 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
-          "Phone tests Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issue Watch Together button-layout problem (one; score capped at 90%): normal-density tester36 Start/Join controls are clipped and scrolling does not expose them. Repair and retest the layout. Earlier local sync/chat/reconnect/end passes used a density workaround; they do not close this bug. The generic legacy-sync inference was HARNESS/COMPAT and is withdrawn, not counted as another bug. Mobile-data timing and the human look remain; Nick alone records Ready."
+          "Phone tests Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issue Watch Together button-layout problem (one; score capped at 90%): normal-density tester36 Start/Join controls are clipped and scrolling does not expose them. Repair and retest the layout. Earlier local sync/chat/reconnect/end passes used a density workaround; they do not close this bug. The generic legacy-sync inference was HARNESS/COMPAT and is withdrawn, not counted as another bug. Mobile-data timing and the human look remain; Nick alone records Ready.",
+          "FAILED, Oct 24, 2026: with two phones signed in only to the home server, Host and Join looked connected but never joined, because the party service needs a cloud sign-in. Fix merged into test build 41: the screen now says “Watch Together could not connect. Sign in with your Beebo account to use it.” and stops retrying. This is an honest error, not a working room. The owner decided to make it work for anyone with access; a design is written, nothing is built, and no two-person sync pass is claimed."
         ],
         "remaining": [
           {
             "kind": "CODE",
-            "text": "Repair Watch Together button-layout problem normal-density clipped Start/Join controls; density-workaround sync passes do not close it."
+            "text": "Repair Watch Together button-layout problem (normal-density clipped Start/Join controls; density-workaround sync passes do not close it). Also build the owner-decided design so it works for anyone with access to the home server; the honest error in test build 41 is not a working room."
           },
           {
             "kind": "DEVICE",
@@ -1604,6 +1642,15 @@
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "AI tester (automated real-phone checks)",
+          "ticks": [],
+          "device": "Two phones signed in to the home server only (household members)",
+          "build": "Android test build before 41 (failure); test build 41 (honest error message)",
+          "date": "Oct 24, 2026",
+          "result": "FAIL",
+          "evidence": "Host and Join looked connected but never joined because the party service needs a cloud sign-in. Test build 41 shows “Watch Together could not connect. Sign in with your Beebo account to use it.” and stops retrying: an honest error, not a working room. No two-person sync pass."
+        },
         {
           "tester": "AI tester (automated real-phone checks)",
           "device": "S9",
@@ -1999,7 +2046,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 2:54:53 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issues: 2; current score and cap retained. Recorded scope only: A Pixel-created Wi-Fi Direct network admitted the S9+ normally without internet. Its downloaded 320 × 180 test picture advanced and ended. Normal host Stop returned the guest to home Wi-Fi. Still required: A SIM-equipped guest still needs the same temporary local-network test. Older mobile-data, hotspot and unmatched-stop issues are not broadly closed. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Open known issues: 2; current score and cap retained. Recorded scope only: A Pixel-created Wi-Fi Direct network admitted the S9+ normally without internet. Its downloaded 320 × 180 test picture advanced and ended. Normal host Stop returned the guest to home Wi-Fi. Oct 24, 2026: a Galaxy S24 joined a Galaxy S9+ host’s Campsite from its browser (no app, no account) on home Wi-Fi; on mobile data only the same page gave an honest “can’t reach the host” message. Still required: A SIM-equipped guest still needs the same temporary local-network test. Older mobile-data, hotspot and unmatched-stop issues are not broadly closed. No new whole-feature checkmark is added. Nick alone records Ready.",
       "roadTo100": {
         "means": "A host phone starts and stops Campsite and real guests join, leave and reconnect cleanly.",
         "done": [
@@ -2014,7 +2061,8 @@
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 hosted over existing Wi-Fi. S9+ browser joined as Guest 1, saw the shared synthetic title, and showed the host-stopped message within five seconds after Stop. This route does not close the different Oct 22 guest failure or mobile-data routing issue. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Phone tests Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issues remain (two; score capped at 90%): the historical guest-stop route and Campsite guest routing that required mobile data off have no complete matching closure. Round 3 observed an eventual stopped/unreachable-host notice on existing Wi-Fi, absent at the first five-second sample; no immediate-detection or mobile-data pass is claimed. An approved cellular guest/SIM and phone hotspot are still needed. Nick alone records Ready after the human look.",
           "Oct 23, 2026, 10:27 PM Eastern: At 9:45:19 PM Eastern the S24 joined the Pixel test Campsite over Wi-Fi while mobile data was also on. Admission and the shared library passed. On cellular alone the local guest address was unreachable; guest playback over LTE was not proved.",
-          "Oct 24, 2026, 2:54:53 AM Eastern: A Pixel-created Wi-Fi Direct network admitted the S9+ normally without internet. Its downloaded 320 × 180 test picture advanced and ended. Normal host Stop returned the guest to home Wi-Fi. Named subset only; no new whole-feature checkmark."
+          "Oct 24, 2026, 2:54:53 AM Eastern: A Pixel-created Wi-Fi Direct network admitted the S9+ normally without internet. Its downloaded 320 × 180 test picture advanced and ended. Normal host Stop returned the guest to home Wi-Fi. Named subset only; no new whole-feature checkmark.",
+          "Oct 24, 2026 (time not recorded): a Galaxy S9+ hosted a Campsite on home Wi-Fi. A Galaxy S24 opened the host’s address in Chrome, typed a guest name and joined; the host showed “1 guest connected”; the guest page showed the host’s library (644 titles) with Movies, Music and Games. On mobile data only, the same page gave an honest “can’t reach the host” message. Not tested: a guest game round, guest video playback, a hotspot with a SIM guest."
         ],
         "remaining": [
           {
@@ -2030,9 +2078,13 @@
         ]
       },
       "previousPercent": 90,
-      "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-      "changeNote": "Final phone table: 4 PASS, 0 FAIL and 1 BLOCKED assessments in this row. A Pixel-created Wi-Fi Direct network admitted the S9+ normally without internet. Its downloaded 320 × 180 test picture advanced and ended. Normal host Stop returned the guest to home Wi-Fi. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly.",
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24: a Galaxy S9+ hosted a Campsite on home Wi-Fi and a Galaxy S24 joined from its browser with no app and no account; on mobile data only, the same page gave an honest “can’t reach the host” message. A guest game round, guest video playback and a hotspot with a SIM guest were not tested. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+          "changeNote": "Final phone table: 4 PASS, 0 FAIL and 1 BLOCKED assessments in this row. A Pixel-created Wi-Fi Direct network admitted the S9+ normally without internet. Its downloaded 320 × 180 test picture advanced and ended. Normal host Stop returned the guest to home Wi-Fi. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
+        },
         {
           "changedEastern": "Oct 23, 2026, 10:27 PM Eastern",
           "changeNote": "Phone test round 4: 1 PASS, 0 FAIL, 1 BLOCKED new assessments. At 9:45:19 PM Eastern the S24 joined the Pixel test Campsite over Wi-Fi while mobile data was also on. Admission and the shared library passed. On cellular alone the local guest address was unreachable; guest playback over LTE was not proved. No new whole-feature pass or checkmark. Known issues and historical checks are retained."
@@ -2086,6 +2138,15 @@
         "Try a phone-hotspot route, and one guest on mobile data."
       ],
       "deviceTests": [
+        {
+          "tester": "AI tester (automated real-phone checks)",
+          "ticks": [],
+          "device": "Galaxy S9+ host; Galaxy S24 guest (Chrome, no app, no account)",
+          "build": "Not recorded on the board summary",
+          "date": "Oct 24, 2026",
+          "result": "PARTIAL",
+          "evidence": "Guest joined by typing a name; host showed 1 guest connected; the guest page listed the host’s library (644 titles) with Movies, Music and Games. On mobile data only: honest “can’t reach the host” message. NOT tested: a guest game round, guest video playback, a hotspot with a SIM guest."
+        },
         {
           "tester": "AI tester (automated real-phone checks)",
           "device": "Pixel native host + S9 Chrome",
@@ -2577,7 +2638,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 2:21:37 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issues: 1; current score and cap retained. Recorded scope only: A minimal Pixel trip with two cards and no media reached Ready after a 720p export, showing 10 seconds and 907 KB. This is a separate device result from the S9+ timeout. Still required: The S9+ export timeout remains open. The Pixel app-cache video was not independently decoded. A completed S9+ export, exported-file playback and a real outing/privacy review are still needed. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Open known issues: 1; current score and cap retained. Recorded scope only: A minimal Pixel trip with two cards and no media reached Ready after a 720p export, showing 10 seconds and 907 KB. This is a separate device result from the S9+ timeout. FAILED, Oct 24, 2026: “Save as a video” with 2 cards, 2 photos and 1 short clip on a Galaxy S9+ stayed at 0% and gave up after about 30 seconds on each size tried; the cause is not yet known. Still required: The S9+ export timeout remains open. The Pixel app-cache video was not independently decoded. A completed S9+ export, exported-file playback and a real outing/privacy review are still needed. No new whole-feature checkmark is added. Nick alone records Ready.",
       "roadTo100": {
         "means": "A real trip is captured on a phone, a recap is made and a video exported, and the sharing and privacy behaviour has been reviewed.",
         "done": [
@@ -2589,7 +2650,8 @@
           "Code, Oct 18, 2026 (Android 1.51-tester27): the video export now allows a muxing stall of a minute (the default was 10 seconds), keeps the screen on, holds a 30-minute wake lock, starts on 720p on Android 10 and older and shows a \"taking longer\" note; new automated tests cover it. NOT yet re-run on the Galaxy S9+.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ created, started and finished a disposable trip. A silent 720p, 11-second export with two cards and no photos/clips stayed at 0% and ended with the app step-timeout error. No finished MP4 exists. 1 PASS / 1 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Phone tests Round 3 known-issue reconciliation (ledger updated Oct 23, 2026, 6:47 PM Eastern): Open known issue S9+ Trip export problem (one; score capped at 90%): tester36 S9+ minimal silent 720p export, 11 seconds/two cards/no photos or clips, still times out with muxer error 7002 and no finished MP4. The separate recovery repair was not installed. Obtain a reviewed compatible repair and finished export. Human look: real outing, selected media, finished video and privacy; Nick alone records Ready.",
-          "Oct 24, 2026, 2:21:37 AM Eastern: A minimal Pixel trip with two cards and no media reached Ready after a 720p export, showing 10 seconds and 907 KB. This is a separate device result from the S9+ timeout. Named subset only; no new whole-feature checkmark."
+          "Oct 24, 2026, 2:21:37 AM Eastern: A minimal Pixel trip with two cards and no media reached Ready after a 720p export, showing 10 seconds and 907 KB. This is a separate device result from the S9+ timeout. Named subset only; no new whole-feature checkmark.",
+          "FAILED, Oct 24, 2026 (time not recorded): “Save as a video” with 2 cards, 2 photos and 1 short clip on a Galaxy S9+: progress stayed at 0%, and the app retried a smaller size and gave up after about 30 seconds each time. The cause is not yet known and is being investigated. No pass is claimed."
         ],
         "remaining": [
           {
@@ -2598,7 +2660,7 @@
           },
           {
             "kind": "CODE",
-            "text": "Protected export review: S9+ tester35 720p card-only export timed out; identify/fix the cause and produce a finished MP4."
+            "text": "Protected export review: the S9+ 720p card-only export timed out, and on Oct 24 an export with 2 cards, 2 photos and 1 short clip stayed at 0% on every size. Identify and fix the cause, then produce a finished MP4."
           },
           {
             "kind": "DEVICE",
@@ -2613,9 +2675,13 @@
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-      "changeNote": "Final phone table: 2 PASS, 1 FAIL and 0 BLOCKED assessments in this row. A minimal Pixel trip with two cards and no media reached Ready after a 720p export, showing 10 seconds and 907 KB. This is a separate device result from the S9+ timeout. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly.",
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24: “Save as a video” with 2 cards, 2 photos and 1 short clip on a Galaxy S9+ failed: progress stayed at 0%, and the app retried a smaller size and gave up after about 30 seconds each time. The cause is not yet known and is being investigated. No pass is claimed. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+          "changeNote": "Final phone table: 2 PASS, 1 FAIL and 0 BLOCKED assessments in this row. A minimal Pixel trip with two cards and no media reached Ready after a 720p export, showing 10 seconds and 907 KB. This is a separate device result from the S9+ timeout. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
+        },
         {
           "changedEastern": "Oct 23, 2026, 7:57 PM Eastern",
           "changeNote": "Known-issue reconciliation from Phone tests Round 3, ledger updated Oct 23, 2026, 6:47 PM Eastern. Tester36/code86 retains S9+ Trip export problem. No device/real-world tick, Built, Automated tests, Ready or status label changed."
@@ -3246,12 +3312,16 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 23, 2026, 10:01:16 PM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issues: 1; current score and cap retained. Recorded scope only: The confirmed normal native Cast route still connected without a receiver media session after patient preparation. The distinct silent Live TV route also connected without TV media after about 94 seconds. Earlier connection, volume and Stop passes are carried. Still required: Repair and retest the existing single media-loading bug on a compatible installed build. Then test actual picture, original/converted playback, pause, seek, captions and a working second sender. The Live TV attempt is not a second independently localized bug. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "lastTested": "Oct 24, 2026, about 8:20 PM Eastern (Last PASS: a streamed film on the Living Room TV, test build 42; later failures and blocks are listed separately)",
+      "leftToReach100": "Open known issues: 1; current score and cap retained (this update does not change the open-issue count). Recorded scope only: on Oct 24, 2026, in unpublished test builds, the cast controls were found dimmed and untappable, fixed, and then worked by finger on the real Living Room TV, and a streamed film cast with picture and sound on test build 42. The “no receiver media session” results of Oct 23 describe the older routes tried that day. A cast of a downloaded copy did not play on the TV. Still required: a published download that contains the cast fixes; an honest message for downloaded copies; the phone pass-through route (a fix for a likely cause is written and passes 16 new tests but is not merged); seeking by dragging; captions on the TV; and a working second sender. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 90,
-      "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-      "changeNote": "Final phone table: 3 PASS, 3 FAIL and 3 BLOCKED assessments in this row. The confirmed normal native Cast route still connected without a receiver media session after patient preparation. The distinct silent Live TV route also connected without TV media after about 94 seconds. Earlier connection, volume and Stop passes are carried. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly.",
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24 real-TV checks (test builds only): the on-screen cast controls, which had been dimmed and untappable, were fixed and worked by finger on the Living Room TV; a streamed film cast with picture and sound on test build 42. A cast of a downloaded copy showed “Casting” on the phone but did not play on the TV. The phone pass-through route, seeking by dragging, captions on the TV and a second sender are still unproven. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+          "changeNote": "Final phone table: 3 PASS, 3 FAIL and 3 BLOCKED assessments in this row. The confirmed normal native Cast route still connected without a receiver media session after patient preparation. The distinct silent Live TV route also connected without TV media after about 94 seconds. Earlier connection, volume and Stop passes are carried. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
+        },
         {
           "changedEastern": "Oct 24, 2026, 2:28 AM Eastern",
           "changeNote": "A later normal-route test confirmed one media-loading bug. Multiple failed load attempts describe the same open bug, not multiple issues. The existing issue cap lowers the score from 99% to 90%; no check is changed. The earlier round-four fixture/compatibility classification is retained as history and superseded by this narrower confirmed failure."
@@ -3299,20 +3369,25 @@
           "Code, Oct 12, 2026 (in the published Android 1.51-tester23): 12 new tests cover converted films and quality choices when casting (the full away-from-home decision table, playlist limits, redirect and key-line rules, the quality-change reload); a rule that let a stray \"METHOD=NONE\" text pass an encrypted-stream key line was fixed.",
           "Oct 19, 2026: checked, nothing to build. No public page claims the phone volume keys control the TV volume, and the what-we-offer page says plainly that they do not. Phone-volume control stays an idea, not a feature.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: No Chromecast operation was attempted: casting was excluded from Phone tests authorization. Existing dated casting evidence and ticks are retained; these phone checks add no cast pass. 0 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
-          "Oct 23, 2026, 10:27 PM Eastern: On tester36, connection, the Pixel volume keys (100% to 95% and back) and ordinary Stop returning the receiver to idle passed. Original and requested converted 480p media did not load from the isolated test server. A second phone connected, but working second-sender playback/control, pause, seek and TV captions were BLOCKED because there was no media session. The compatibility cause is unproven."
+          "Oct 23, 2026, 10:27 PM Eastern: On tester36, connection, the Pixel volume keys (100% to 95% and back) and ordinary Stop returning the receiver to idle passed. Original and requested converted 480p media did not load from the isolated test server. A second phone connected, but working second-sender playback/control, pause, seek and TV captions were BLOCKED because there was no media session. The compatibility cause is unproven.",
+          "Oct 24, 2026, about 1:00 to 2:40 PM Eastern, Galaxy S24 and the Living Room TV, with the owner watching the TV: the on-screen play, pause and skip controls were dimmed and could not be tapped while casting. Cause: a TV-volume row added on Oct 20 made the top bar taller and covered the buttons. A fix was written and reviewed and was merged into the main code line at about 3:45 PM Eastern; it is only in test builds (tester40 to tester42), not in a published download. On the real device the owner paused and played by finger, skipped, opened the quality menu and stopped casting.",
+          "Oct 24, 2026, about 8:20 PM Eastern, test build 42: a streamed film cast to the Living Room TV and played with picture and sound. Pause, play, a 15-second skip forward and stop casting worked, and the TV left cast mode.",
+          "FAILED, Oct 24, 2026: casting a downloaded copy showed “Casting” on the phone but the TV did not play (a TV cannot reach a file saved on the phone). An honest message instead of a silent failure is a small open item.",
+          "Oct 24, 2026: casting away from home on mobile data shows an honest “Casting needs Wi-Fi” message.",
+          "Still unproven after Oct 24: the phone pass-through route (needs the phone on a different network from the home computer), seeking by dragging, captions on the TV and a second sender."
         ],
         "remaining": [
           {
             "kind": "BLOCKED",
-            "text": "Away-from-home casting and broader receiver testing remain unverified on this build."
+            "text": "Away-from-home casting: on mobile data the app now says “Casting needs Wi-Fi”; casting itself away from home and broader receivers remain unverified."
           },
           {
             "kind": "CODE",
-            "text": "Repair the confirmed normal native Cast media-loading bug, then test a compatible installed build against a real receiver."
+            "text": "The cast control fixes are merged but only in test builds (tester40 to tester42): they need a published download. Still open: an honest message when a downloaded copy is cast, and the phone pass-through fix (written, 16 new tests, not merged)."
           },
           {
             "kind": "DEVICE",
-            "text": "Repair and retest the existing single media-loading bug on a compatible installed build. Then test actual picture, original/converted playback, pause, seek, captions and a working second sender. The Live TV attempt is not a second independently localized bug."
+            "text": "Test seeking by dragging, captions on the TV, a working second sender and the phone pass-through route on a real receiver. The Oct 23 media-session failures describe the older routes; the streamed-film cast worked on test build 42 on Oct 24."
           }
         ],
         "hist": [
@@ -3330,7 +3405,7 @@
           }
         ]
       },
-      "testedOn": "Final phone record: Pixel 3 tester36, S9+ tester36, Living Room TV receiver protocol. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. The confirmed normal native Cast route still connected without a receiver media session after patient preparation. The distinct silent Live TV route also connected without TV media after about 94 seconds. Earlier connection, volume and Stop passes are carried. Last PASS: Oct 23, 2026, 10:01:16 PM Eastern. Later native source changes are not installed or accepted by this record.",
+      "testedOn": "Oct 24, 2026: Galaxy S24 and the Living Room TV on unpublished test builds (tester40 to tester42), with the owner watching the TV. The Oct 23 no-media-session results describe the older routes tried that day. The earlier record follows. Final phone record: Pixel 3 tester36, S9+ tester36, Living Room TV receiver protocol. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. The confirmed normal native Cast route still connected without a receiver media session after patient preparation. The distinct silent Live TV route also connected without TV media after about 94 seconds. Earlier connection, volume and Stop passes are carried. Last PASS: Oct 23, 2026, 10:01:16 PM Eastern. Later native source changes are not installed or accepted by this record.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 67,
       "codeItemsLeft": 1,
@@ -3341,6 +3416,15 @@
         "Try a converted film, a different kind of TV or receiver, and casting from mobile data."
       ],
       "deviceTests": [
+        {
+          "tester": "AI tester (automated real-phone checks)",
+          "ticks": [],
+          "device": "Galaxy S24 and Living Room TV",
+          "build": "Unpublished Android test builds tester40 to tester42 (streamed-film cast on build 42)",
+          "date": "Oct 24, 2026, 8:20 PM Eastern",
+          "result": "PARTIAL",
+          "evidence": "Controls fix checked by finger on the real TV (about 1:00 to 2:40 PM Eastern). With test build 42 (about 8:20 PM) a streamed film cast with picture and sound; pause, play, 15-second skip and stop casting worked. FAILED: a cast of a downloaded copy did not play on the TV. NOT proven: the phone pass-through route, seeking by dragging, captions on the TV, a second sender."
+        },
         {
           "tester": "AI tester (automated real-phone checks)",
           "device": "S9+ and Living Room TV",
@@ -4566,11 +4650,15 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 2:16:25 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Recorded scope only: One owned synthetic photo uploaded from the native S9+ selected test album. The 47,304-byte PC copy independently matched the phone source hash; the original remained. Backup was turned off and album settings restored. Still required: The native map is still unavailable, so the earlier implementation-gap failure remains. Real map/location and pinch acceptance, restore, conflicts and broader backup behaviour are not proved. No original-file deletion was attempted. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Recorded scope only: One owned synthetic photo uploaded from the native S9+ selected test album. The 47,304-byte PC copy independently matched the phone source hash; the original remained. Backup was turned off and album settings restored. Still required: The native map is built in a test build only (not merged, not released, not yet seen on a phone with geotagged photos), so the earlier implementation-gap failure remains. Real map/location and pinch acceptance, restore, conflicts and broader backup behaviour are not proved. No original-file deletion was attempted. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 49,
-      "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-      "changeNote": "Final phone table: 9 PASS, 1 FAIL and 0 BLOCKED assessments in this row. One owned synthetic photo uploaded from the native S9+ selected test album. The 47,304-byte PC copy independently matched the phone source hash; the original remained. Backup was turned off and album settings restored. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly.",
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24: the Android photo map was decided as a build, privacy-first (opt-in, your own photos only, map tiles fetched through the home computer only). It is built in a branch with 27 automated tests and a test build exists; it is not merged, not released and not yet seen on a phone with geotagged photos. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+          "changeNote": "Final phone table: 9 PASS, 1 FAIL and 0 BLOCKED assessments in this row. One owned synthetic photo uploaded from the native S9+ selected test album. The 47,304-byte PC copy independently matched the phone source hash; the original remained. Backup was turned off and album settings restored. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
+        },
         {
           "changedEastern": "Oct 23, 2026, 1:35 PM Eastern",
           "changeNote": "Phone tests Round 1 evidence: 2 PASS, 0 FAIL, 1 BLOCKED. Existing device and real-world ticks are retained; no new whole-feature pass is asserted. Built, Automated tests and Ready are unchanged. Remaining coverage and the human look are named below."
@@ -4597,12 +4685,13 @@
           "Oct 12, 2026: three files were uploaded from a phone to a PC in the two-home test.",
           "One desktop access-check repair covers both child-profile thumbnails and full pictures; separate Android changes cover wording, month-language updates and chip layout. RETEST-1: the S9+ child saw real thumbnails and full pictures, swiped between pictures, saw empty Videos wording, immediate Spanish month headings and fitting chips at 1.3 text size. These narrow passes on tester35 with Windows 0.1.100 supersede the earlier blank-picture failure for that setup. Map, removal, real pinch, full folder, backup/privacy and other devices remain unverified; Real device stays false.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 loaded synthetic photo timeline/albums and displayed an orientation fixture. Backup correctly refused a test member without a backup grant and stayed off. No full backup folder, map/privacy, pinch or removal result exists. 2 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
-          "Oct 24, 2026, 2:16:25 AM Eastern: One owned synthetic photo uploaded from the native S9+ selected test album. The 47,304-byte PC copy independently matched the phone source hash; the original remained. Backup was turned off and album settings restored. Named subset only; no new whole-feature checkmark."
+          "Oct 24, 2026, 2:16:25 AM Eastern: One owned synthetic photo uploaded from the native S9+ selected test album. The 47,304-byte PC copy independently matched the phone source hash; the original remained. Backup was turned off and album settings restored. Named subset only; no new whole-feature checkmark.",
+          "Oct 24, 2026: the Android photo map was decided as a build, privacy-first: opt-in, your own photos only, with map tiles fetched through the home computer only. It is built in a branch with 27 automated tests and a test build exists. It is not merged, not released and not yet seen on a phone with geotagged photos."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "The native map is still unavailable, so the earlier implementation-gap failure remains. Real map/location and pinch acceptance, restore, conflicts and broader backup behaviour are not proved. No original-file deletion was attempted."
+            "text": "The native map is built in a test build only (not released, not yet seen on a phone with geotagged photos), so the earlier implementation-gap failure remains. Real map/location and pinch acceptance, restore, conflicts and broader backup behaviour are not proved. No original-file deletion was attempted."
           }
         ],
         "hist": [
@@ -4783,12 +4872,16 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 22, 2026 (0.1.98 to 0.1.99 on one PC); Oct 13, 2026 (update check only)",
-      "leftToReach100": "Install over an older version by a person, see the low-disk warning on a real PC, check uninstall removes the start-at-boot task, and get an update-safety review.",
-      "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
+      "lastTested": "Oct 24, 2026, 5:41 PM Eastern (0.1.99 to 0.1.102 on a second PC); Oct 22, 2026 (0.1.98 to 0.1.99 on one PC); Oct 13, 2026 (update check only)",
+      "leftToReach100": "Recorded Oct 24, 2026, 5:41 PM Eastern: a second Windows PC updated itself from 0.1.99 to 0.1.102 while idle (the download matched the feed, the installer’s signature checked as valid and it installed in about a minute) and then showed the new version and its notice. Still required: install over an older version by a person, see the low-disk warning on a real PC, check uninstall removes the start-at-boot task, and get an update-safety review.",
+      "previousPercent": 99,
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24: Windows 0.1.102 was published (Oct 24, 2026, 1:05 PM Eastern), and a second, older 4-core Windows PC updated itself to it at 5:41 PM Eastern. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply."
+        },
         {
           "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
           "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
@@ -4813,7 +4906,9 @@
           "Installer and updater tests pass.",
           "A 0.1.83 install check was done on Oct 9.",
           "Oct 13, 2026, dev PC: the update modes screen and Check for updates worked (no install).",
-          "Oct 22, 2026, 2:34 AM Eastern: a Windows test PC updated itself from 0.1.98 to 0.1.99 and the app started and ran normally afterwards."
+          "Oct 22, 2026, 2:34 AM Eastern: a Windows test PC updated itself from 0.1.98 to 0.1.99 and the app started and ran normally afterwards.",
+          "Oct 24, 2026, 1:05 PM Eastern: Windows 0.1.102 was published (Beebo Relay opt-in button, the away-from-home quality limit for the web player and phones, web player and Up next fixes, quieter logs).",
+          "Oct 24, 2026, 5:41 PM Eastern: a second, older 4-core Windows PC updated itself from 0.1.99 to 0.1.102 while idle. The download matched the feed, the installer’s signature checked as valid, it installed in about a minute, and the app then showed “Updated to Beebo 0.1.102”."
         ],
         "remaining": [
           {
@@ -4859,12 +4954,16 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 24, 2026, 2:32:02 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Recorded scope only: The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Still required: Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "lastTested": "Oct 24, 2026, about 8:25 PM Eastern (Last PASS: browser captions on a phone through Beebo Relay; earlier subsets carried; failures listed separately)",
+      "leftToReach100": "FAILED Oct 24, 2026 (fixes written, not merged): Space does not pause and F does not go full screen unless the video has focus; a show page has no poster and its Playlist, Play next and Add to queue buttons are dark text on dark (contrast 1.4 to 1; 4.5 is needed); Suggestions loads blank; Media requests shows a household member owner-only controls (the server side was not yet proven to refuse them). Recorded passes, Oct 24, 2026: Chrome on a PC passed playback, pause, Left and Right arrow (minus and plus 10 seconds), quality changes 480p, 720p, 480p, search, By Actor, By Release Date, Music, Audiobooks, Playlists and Watchlist with no Beebo console errors; a separate subtitle file drew three cues at the right times in the browser player on a phone over 5G through Beebo Relay. Recorded scope only: The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Still required: Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
-      "changeNote": "Final PC campaign: 10 PASS, 0 FAIL and 1 BLOCKED assessments for this row. The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Earlier execution times and all checkmarks, scores, availability labels and issue counts are retained. No installed-app or whole-feature clearance.",
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24 evening: Chrome on a PC passed playback, pause, arrow-key seeking, quality changes, search and the Music, Audiobooks, Playlists and Watchlist pages with no Beebo console errors, and the browser player drew a separate subtitle file on a phone over 5G through Beebo Relay. FAILED in the same pass: Space and F need the video to have focus, a show page had no poster and low-contrast buttons, Suggestions loaded blank, and a household member was shown owner-only controls on Media requests. Fixes are written, not merged. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
+          "changeNote": "Final PC campaign: 10 PASS, 0 FAIL and 1 BLOCKED assessments for this row. The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Earlier execution times and all checkmarks, scores, availability labels and issue counts are retained. No installed-app or whole-feature clearance."
+        },
         {
           "changedEastern": "Oct 24, 2026, 3:40 AM Eastern",
           "changeNote": "The new Pixel browser subset passed. This row now records 10 PASS, 0 FAIL and 1 blocked or pending assessments in the ongoing PC campaign. The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Existing checks, score, availability label and open issues are retained; no installed-app or whole-feature clearance."
@@ -4913,12 +5012,15 @@
           "Oct 21, 2026, Windows 0.1.98 test library: five folder types (photos, movies, TV, music, audiobooks) were found exactly as expected, scans finished in seconds; embedded English and Spanish subtitles switched, a sidecar English subtitle showed, three audio tracks were listed, chapters were listed and a jump to chapter 3 landed at 17 seconds (muted, so no sound heard).",
           "The browser repair has split delivery: the server portion is reported deployed at 6:49 AM Eastern on October 22, with a further TV-browser server repair at 7:24 AM; the desktop-player portion is in unpublished Windows 0.1.100. The affected PC and combined away-route repair still need retesting. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass. The reviewed web-player Next/Full screen work is not in public downloads. Pages that suppress referrer information and a modeled cross-tab edge case remain qualified. Android version-picker results do not verify the separate desktop version-heading issue.",
           "Oct 24, 2026, 12:59:51 AM Eastern: Chrome and the in-app PC browser decoded direct, remuxed and converted media in labelled disposable test clients. The S24 also completed the named direct, remux and 480p conversion playback, seek and pause subsets. These clients are separate from the shipped player controls. Scoped PC report only; no whole-feature acceptance.",
-          "Oct 24, 2026, 2:32:02 AM Eastern: The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Browser subset only; no whole-feature acceptance."
+          "Oct 24, 2026, 2:32:02 AM Eastern: The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Browser subset only; no whole-feature acceptance.",
+          "Oct 24, 2026 (time not recorded), Chrome on a PC against the home server: playback, pause, Left and Right arrow (minus and plus 10 seconds), quality change 480p to 720p and back to 480p, search, By Actor, By Release Date, Music, Audiobooks, Playlists and Watchlist passed with no Beebo errors in the browser console.",
+          "Oct 24, 2026, about 8:25 PM Eastern, browser player on a Galaxy S24 over 5G through Beebo Relay: a separate subtitle file was listed as “English (file)” and its three cues drew at the right times, also after seeking back. Not tested: burned-in captions on converted video and other subtitle formats.",
+          "FAILED, Oct 24, 2026 (all fixes written, none merged): Space does not pause and F does not go full screen unless the video has focus; a show page (for example a TV show) has no poster and its Playlist, Play next and Add to queue buttons are dark text on dark (contrast 1.4 to 1; 4.5 is needed); the Suggestions page loads blank (heading, text and button empty); Media requests shows a household member owner-only controls (the server side was not yet proven to refuse them). Two dark posters looked blank but load fine, so they are not a bug. An automated browser test now exists (10 checks); its first run passed 4 and failed 6, matching the hand findings."
         ],
         "remaining": [
           {
             "kind": "CODE",
-            "text": "Independent review of the final screens."
+            "text": "Independent review of the final screens. The browser failures found on Oct 24, 2026 (keyboard shortcuts need video focus, show-page poster and button contrast, blank Suggestions page, owner-only controls shown to a member) have fixes written but not merged."
           },
           {
             "kind": "DEVICE",
@@ -4947,6 +5049,15 @@
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "deviceTests": [
+        {
+          "tester": "AI tester (automated real-phone checks)",
+          "ticks": [],
+          "device": "Chrome on a PC; Galaxy S24 over 5G (browser player)",
+          "build": "Home-server Windows 0.1.102 web player",
+          "date": "Oct 24, 2026",
+          "result": "PARTIAL",
+          "evidence": "Passed with no Beebo console errors: playback, pause, arrow-key seeking, quality change 480p/720p/480p, search, By Actor, By Release Date, Music, Audiobooks, Playlists, Watchlist; separate subtitle file drew three cues on a phone over 5G through Beebo Relay. FAILED (fixes written, not merged): Space and F need video focus; show page had no poster and low-contrast buttons (1.4 to 1); Suggestions loaded blank; Media requests showed a member owner-only controls."
+        },
         {
           "tester": "AI tester (PC records matched to real phone browser observations)",
           "device": "Google Pixel 3 browser and real Windows PC",
@@ -4995,14 +5106,16 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 13, 2026 (screen and update check only)",
-      "leftToReach100": "Run all three update modes and Start with Windows through a real reboot.",
+      "lastTested": "Oct 22 to Oct 24, 2026 (Start with Windows: three automatic starts logged on a second PC); Oct 24, 2026, 5:41 PM Eastern (automatic update mode on that PC); Oct 13, 2026 (screen and update check only)",
+      "leftToReach100": "Recorded on a second 4-core Windows PC: with update mode “download and install automatically” it updated itself from 0.1.99 to 0.1.102 (Oct 24, 2026, 5:41 PM Eastern), and its log shows Start with Windows launching the app three times (Oct 22 to Oct 24, 2026). Still required: the other two update modes tried by a person, a deliberate restart watched by a person, and an independent review of the update-trust checks.",
       "roadTo100": {
         "means": "Each update mode behaves correctly and Start with Windows works after a real restart.",
         "done": [
           "Checks passed: Built, Automated tests.",
           "Settings and update-mode tests exist.",
-          "Oct 13, 2026, dev PC: the update-mode screen and Check for updates worked."
+          "Oct 13, 2026, dev PC: the update-mode screen and Check for updates worked.",
+          "Oct 24, 2026, 5:41 PM Eastern: a second 4-core Windows PC set to “download and install automatically” updated itself from 0.1.99 to 0.1.102 while idle (hash and signature checks passed).",
+          "Oct 22 to Oct 24, 2026: that PC’s log shows Start with Windows launching Beebo three times (hidden starts at sign-in). The exact times were not recorded here."
         ],
         "remaining": [
           {
@@ -5011,18 +5124,22 @@
           },
           {
             "kind": "DEVICE",
-            "text": "Restart a real Windows PC and confirm Start with Windows."
+            "text": "Start with Windows has three automatic starts logged on a second PC (Oct 22 to Oct 24, 2026); a deliberate restart watched by a person is still wanted."
           },
           {
             "kind": "DEVICE",
-            "text": "Try each of the three update modes and view the mode screen."
+            "text": "Automatic mode updated a second PC on Oct 24, 2026; the ask-first and download-only modes still need trying, and the mode screen needs a look on a real PC."
           }
         ]
       },
-      "previousPercent": 40,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run.",
+      "previousPercent": 49,
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24: a second 4-core Windows PC, set to “download and install automatically”, updated itself from 0.1.99 to 0.1.102 (5:41 PM Eastern), and its log shows Start with Windows launching the app three times (Oct 22 to Oct 24, 2026). The other two update modes and a restart watched by a person are not yet recorded. No check was ticked by this update; existing checks, score and status are retained.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 40% to 49%. No feature check or test evidence changed. No new feature test was run."
+        },
         {
           "changedEastern": "Oct 13, 2026, 2:00 PM Eastern",
           "changeNote": "Oct 13: the three update modes were shown on the dev PC and \"Check for updates\" worked, but no mode was exercised, no update was installed and Start with Windows was not tried. Percentage unchanged."
@@ -5052,14 +5169,15 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 23, 2026, 8:41:25 PM Eastern (Last PASS R2-PLAY-QUALITY-CAP; recorded scenario completion; named current scenario)",
-      "leftToReach100": "Passed scope only: Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. Still required: Repeat conversion on graphics cards from two makers and have Nick record the bundled-converter licensing decision. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
+      "leftToReach100": "Passed scope only: Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. FAILED Oct 24, 2026: a converted 720p quality failed twice on a second household’s old 4-core PC watched through Beebo Relay (the conversion session opened and stopped; the log did not say why), while the original file played. Still required: Repeat conversion on graphics cards from two makers and have Nick record the bundled-converter licensing decision. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
       "roadTo100": {
         "means": "Quality and speed settings convert correctly on at least two different graphics-card families, and the converter licence question is settled.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
           "Planner and settings tests pass.",
           "Tested with simulated converter runs.",
-          "Oct 23, 2026, 8:41:25 PM Eastern: Windows and web tests the recorded feature passed subset. Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. Windows source headless server, package 0.1.99. Last PASS source the recorded build. Current-source scenario; carried earlier scenarios keep the recorded build. Frozen tested source the recorded build; final fetched development source the recorded build has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only."
+          "Oct 23, 2026, 8:41:25 PM Eastern: Windows and web tests the recorded feature passed subset. Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. Windows source headless server, package 0.1.99. Last PASS source the recorded build. Current-source scenario; carried earlier scenarios keep the recorded build. Frozen tested source the recorded build; final fetched development source the recorded build has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only.",
+          "FAILED, Oct 24, 2026, about 7:50 to 8:05 PM Eastern: on a second household’s old 4-core PC (Windows 0.1.102), choosing a converted 720p quality from a Galaxy S24 on 5G through Beebo Relay failed twice (“Playback interrupted”; the conversion session opened and then stopped, and the log did not say why). The original file played on the same PC. A converted quality that works on that PC was not recorded."
         ],
         "remaining": [
           {
@@ -5077,14 +5195,18 @@
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
-      "changeNote": "Windows and web tests scoped evidence: 3 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged.",
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24: choosing a converted 720p quality failed twice on a second household’s old 4-core PC when watched from a phone on 5G through Beebo Relay (“Playback interrupted”; the conversion session opened and stopped, and the log did not say why). The original file played on the same PC. A converted quality that works on that PC has not been recorded. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
+          "changeNote": "Windows and web tests scoped evidence: 3 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -6004,19 +6126,20 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 13, 2026 (Shared with you screen only; the real share test was Oct 12)",
-      "leftToReach100": "Open known issues (they cap the score at 90%): the Oct 12 test found three problems (a guest dropped to a sign-in screen with no way back, a stopped share still looking active in the guest's list, a download button on a share with downloads off). They are fixed in the code but not yet re-tested. Re-test the fixes for three problems found in the test (a guest dropped to a sign-in screen with no way back, a stopped share still looking active in the guest's list, a download button on a share with downloads off; all fixed in the code, not yet in a published download), settle the sharing terms, and review readiness.",
+      "leftToReach100": "Open known issues (they cap the score at 90%): the Oct 12 test found three problems (a guest dropped to a sign-in screen with no way back, a stopped share still looking active in the guest's list, a download button on a share with downloads off). They are fixed in the code but not yet re-tested. Re-test the fixes for three problems found in the test (a guest dropped to a sign-in screen with no way back, a stopped share still looking active in the guest's list, a download button on a share with downloads off; all fixed in the code, not yet in a published download), settle the sharing terms, and review readiness. Oct 24, 2026: a review of the new share-code route found two high-severity problems (the account-wide password lock was skipped, and the attempt limiter could be filled so a real person could be locked out) plus smaller ones; a repair branch is pushed but not cleared, merged or deployed, and the route is off.",
       "roadTo100": {
         "means": "A real second household accepts an invite and watches shared titles under approved terms.",
         "done": [
           "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Sharing route and screen tests pass.",
           "Oct 12, 2026, two separate homes: an invite was sent and accepted, a shared title played, and \"stop sharing\" refused new playback within about 30 seconds.",
-          "Oct 13, 2026, S24 Ultra: the Shared with you screen opened and asked for a sign-in before opening a shared library (screens only)."
+          "Oct 13, 2026, S24 Ultra: the Shared with you screen opened and asked for a sign-in before opening a shared library (screens only).",
+          "Oct 24, 2026, about 12:25 to 12:40 PM Eastern: an independent review of the new share-code route (eight-character code, 100-person cap) found two high-severity limiter and lock problems, a code-storage weakness and two smaller issues. A repair branch has been pushed. It is not cleared by review, not merged and not deployed, and the share-code route is not switched on. No real-device share test was run for it."
         ],
         "remaining": [
           {
             "kind": "CODE",
-            "text": "Independent readiness review of the sharing rules."
+            "text": "Independent readiness review of the sharing rules. The Oct 24 share-code review found limiter, lock and code-storage problems; the repair is pushed but not cleared, merged or deployed."
           },
           {
             "kind": "DEVICE",
@@ -6038,10 +6161,14 @@
           }
         ]
       },
-      "previousPercent": 85,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 3 open known issues cap the score at 90%.",
+      "previousPercent": 90,
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24: a review of the new share-code route (an eight-character code with a 100-person cap) found two high-severity limiter and lock problems and several smaller ones. A repair branch has been pushed; it has not been reviewed and cleared, merged or deployed, and the route is not switched on. The earlier three open problems and the score cap are retained. This update adds dated evidence only: no percentage, checkmark or status label changed.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 85% to 90%. No feature check or test evidence changed. No new feature test was run. 3 open known issues cap the score at 90%."
+        },
         {
           "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
           "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 85%. No check was added or withdrawn. 3 open known issues cap it at 85%."
@@ -6807,8 +6934,8 @@
         "Real-world check": true,
         "Ready to call Available": false
       },
-      "lastTested": "Oct 14, 2026 (published tester23 forced through Beebo Relay on 5G); Oct 13, 2026 (test build); Oct 12, 2026 (friend's house, published Windows 0.1.87)",
-      "leftToReach100": "Retest through Beebo Relay without forcing it, on the published builds (Windows 0.1.88 and Android 1.51-tester23), with the home PC behind a router that cannot make a direct connection, to tick Ready to call Available (a forced Relay pass on those builds worked on Oct 14); Nick decides the price and entitlement rules, a customer-facing way to switch Relay on is merged and tested, and the fallback is proven with two people at once.",
+      "lastTested": "Oct 24, 2026, about 8:05 PM Eastern (second household’s PC, Windows 0.1.102, original file through Beebo Relay); Oct 14, 2026 (published tester23 forced through Beebo Relay on 5G); Oct 13, 2026 (test build); Oct 12, 2026 (friend’s house, published Windows 0.1.87)",
+      "leftToReach100": "Recorded Oct 24, 2026: on a second household’s PC (Windows 0.1.102, published) the new “Use Beebo Relay” button accepted the relay terms and its log moved from “relay beebo unavailable” to “relay beebo ready”; a Galaxy S24 on 5G (unpublished phone test build) then connected through Beebo Relay in about 2 seconds and played the original file of a film with picture and sound. Whether the phone’s “always use Beebo Relay” switch was on for that run is not recorded, so a natural fallback is not claimed. A converted 720p quality failed twice on that old PC. Still required: a natural-fallback run (not forced) on the published phone build; a converted quality through Relay; two people at once; recovery after a drop; and Nick decides the price and entitlement rules.",
       "roadTo100": {
         "means": "Relay carries video across two real networks, recovers after a drop, and its price is decided.",
         "done": [
@@ -6820,12 +6947,14 @@
           "Oct 13, 2026, S24 Ultra on 5G: a film played through Beebo Relay after the account switch was turned on; the usage counter moved with a delay.",
           "Oct 14, 2026, published tester23 on a Galaxy S24 Ultra on 5G with “Always use Beebo Relay” forced on, home computer on desktop 0.1.88: the route screen and app log showed Beebo Relay and a film played (30 MB). A forced test, not the natural fallback.",
           "Code, Oct 14, 2026 (in Windows 0.1.89, published Oct 18): the desktop Connection screen can switch on the one-month Beebo Relay trial for the owner's own account. It stays hidden until the server switch is turned on, which has not been done.",
-          "Code, Oct 19, 2026 (merged; ships in the next release; hidden until the server switch is turned on): Settings > Connection gets the owner's Beebo Relay switch card (Beta) with the first free month, the free tier after it and no purchase; after review it also shows the server's dates, retries and a running month is never shown as used; automated tests cover it."
+          "Code, Oct 19, 2026 (merged; ships in the next release; hidden until the server switch is turned on): Settings > Connection gets the owner's Beebo Relay switch card (Beta) with the first free month, the free tier after it and no purchase; after review it also shows the server's dates, retries and a running month is never shown as used; automated tests cover it.",
+          "Oct 24, 2026, Windows 0.1.102 (published 1:05 PM Eastern) on a second household’s PC: after the household owner pressed the new “Use Beebo Relay” button and accepted the relay terms, its log moved from “relay beebo unavailable” to “relay beebo ready” and the screen said Beebo Relay was enabled. (Before this button, that PC was refused by the server because the app never asked to be switched on.)",
+          "Oct 24, 2026, about 7:50 to 8:05 PM Eastern: a Galaxy S24 on 5G signed in through that household’s Beebo address and connected through Beebo Relay in about 2 seconds; the original file of a film played with picture and sound (clock 0:51 to 1:32 in 40 seconds). FAILED in the same session: a converted 720p quality failed twice on that old PC. Not tested: hand-over between Wi-Fi and mobile data, sessions over a few minutes, a direct route to that PC."
         ],
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "To tick Ready to call Available: retest through Beebo Relay without forcing it, on the currently published builds (Windows 0.1.88 and Android 1.51-tester23), on a real phone on mobile data, with the home PC behind a router that cannot make a direct connection, and record the result. (A forced Relay pass on those builds worked on Oct 14.)"
+            "text": "To tick Ready to call Available: retest through Beebo Relay without forcing it, on a real phone on mobile data, with the home PC behind a router that cannot make a direct connection (the second household’s PC is such a case), and record whether the phone’s always-use-Relay switch was off. (A forced Relay pass worked on Oct 14; a Relay pass at the second household on Oct 24 did not record that switch.)"
           },
           {
             "kind": "DEVICE",
@@ -6837,10 +6966,14 @@
           }
         ]
       },
-      "previousPercent": 90,
-      "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
-      "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply.",
+      "previousPercent": 99,
+      "changedEastern": "Oct 24, 2026, 9:15 PM Eastern",
+      "changeNote": "Oct 24: with Windows 0.1.102 on a second household’s PC, pressing the new “Use Beebo Relay” button (and accepting the relay terms) moved its log from “relay beebo unavailable” to “relay beebo ready”, and a Galaxy S24 on 5G then connected through Beebo Relay in about 2 seconds and played the original file of a film. A converted 720p quality failed twice on that old PC. Existing checks, score, cap and older independent issues are retained. This update adds dated evidence only: it changes no percentage, no checkmark and no status label.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
+          "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 90% to 99%. No feature check or test evidence changed. No new feature test was run. All four checks before Ready are recorded as passed, with no open known error. The dated evidence and remaining limits below still apply."
+        },
         {
           "changedEastern": "Oct 23, 2026, 9:21 AM Eastern",
           "changeNote": "New scoring rule: Real device and Real-world check now count 25 each, Ready to call Available counts 10. This feature moved from 80% to 90%. No check was added or withdrawn. All four checks before Ready have passed and no open known problem is recorded, so it is Built and fully tested, waiting for Nick."
@@ -7556,18 +7689,25 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 24, 2026, 3:40 AM Eastern",
+  "previousUpdatedEastern": "Oct 24, 2026, 4:32 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 23–24 phone, PC and browser test record",
-    "scope": "Final scoped phone/PC reports, seven open phone bugs and a rendered Memory Match repair",
-    "lastTested": "Oct 24, 2026, 4:09 AM Eastern",
-    "lastTestedIso": "2026-10-24T04:09:28-04:00",
-    "previousTested": "Oct 24, 2026, 2:32 AM Eastern",
+    "scope": "Final scoped phone/PC reports, seven open phone bugs, a rendered Memory Match repair and the Oct 24 afternoon and evening real-world checks",
+    "lastTested": "Oct 24, 2026, 9:15 PM Eastern",
+    "lastTestedIso": "2026-10-24T21:15:00-04:00",
+    "previousTested": "Oct 24, 2026, 4:09 AM Eastern",
     "broader": "Still required",
-    "newerText": "Final phone round five records 127 PASS, 15 FAIL and 16 BLOCKED assessments across 32 rows. It carries 110 earlier passes without rerunning them. The separate final PC campaign records 28 PASS, one FAIL and four BLOCKED scopes; its 27 earlier passes and the older 97-assessment Windows/web record remain history. Cross-device totals overlap and must not be added. The published Memory Match wording fix passed real hearts/spades and game-completion acceptance, resolving its sole issue cap and restoring the games checklist to 99%. No checkmark or Ready was added. Seven installed-phone bugs remain open, including native Cast media loading; the silent Live TV failure is the same unresolved Cast issue. Native tester36 checks cover26 of32 rows, including failures; they do not accept newer source. The installed Windows application was never launched. Actual retention expiry, low-space/first-visit work, installed/client fixtures, hearing and hardware gaps remain explicit."
+    "newerText": "Oct 24 afternoon and evening real-world checks: a Galaxy S24 on 5G reached the owner’s home server directly and through Beebo Relay and a real second household’s PC through Beebo Relay; the cast controls and a streamed film worked on the real TV in unpublished test builds; and the browser player drew separate subtitles. Failures were recorded alongside: a converted 720p quality failed twice on the second household’s old PC, casting a downloaded copy did not play, Watch Together did not connect for phones signed in only to the home server, Trip Journal video export stayed at 0%, and the web player had keyboard, show-page, blank Suggestions and owner-only-control problems. No percentage, checkmark or Ready changed. Final phone round five records 127 PASS, 15 FAIL and 16 BLOCKED assessments across 32 rows. It carries 110 earlier passes without rerunning them. The separate final PC campaign records 28 PASS, one FAIL and four BLOCKED scopes; its 27 earlier passes and the older 97-assessment Windows/web record remain history. Cross-device totals overlap and must not be added. The published Memory Match wording fix passed real hearts/spades and game-completion acceptance, resolving its sole issue cap and restoring the games checklist to 99%. No checkmark or Ready was added. Seven installed-phone bugs remain open, including native Cast media loading; the silent Live TV failure is the same unresolved Cast issue. Native tester36 checks cover26 of32 rows, including failures; they do not accept newer source. The installed Windows application was never launched. Actual retention expiry, low-space/first-visit work, installed/client fixtures, hearing and hardware gaps remain explicit."
   },
   "historyNew": [
+    {
+      "iso": "2026-10-24T21:15:00-04:00",
+      "date": "Oct 24, 2026, 9:15 PM Eastern",
+      "headline": "Real-world checks on Oct 24: a second household through Beebo Relay, Chromecast on the TV, browser captions, and honest failures",
+      "tested": "Real devices, Oct 24, 2026 (afternoon and evening, Eastern). A Galaxy S24 on 5G mobile data to the owner’s home server (direct about 1:30 PM, Beebo Relay about 3:40 PM) and to a second household’s old 4-core Windows PC running Windows 0.1.102 (about 7:50 to 8:05 PM). The S24 and the Living Room TV on unpublished Android test builds (controls fix about 1:00 to 2:40 PM; a streamed film on test build 42 about 8:20 PM). The browser player on the S24 over 5G through Beebo Relay (about 8:25 PM), Chrome on a PC, a Galaxy S9+ and the S24 for Campsite, and two phones for Watch Together.",
+      "happened": "Passed within the scope stated: direct and Beebo Relay playback from a phone on 5G; a real second household’s PC through Beebo Relay playing the original file (about 2 seconds to connect); the cast controls working by finger on the real TV and a streamed film cast with picture and sound on test build 42; three subtitle cues drawing in the browser player; a no-app Campsite guest joining from a phone browser; Chrome playback, pause, arrow keys and quality changes. FAILED or not working: a converted 720p quality failed twice on the second household’s old PC; casting a downloaded copy did not play on the TV; Watch Together did not connect for phones signed in only to the home server (test build 41 now says so honestly); Trip Journal “Save as a video” stayed at 0% on a Galaxy S9+; and the web player had keyboard-focus, show-page, blank Suggestions and owner-only-control failures (fixes written, not merged). Not tested: Wi-Fi to mobile-data hand-over, sessions over a few minutes, the phone pass-through cast route, seeking by dragging and captions on the TV, the Android app’s own captions, a guest game round or guest video in Campsite, the Android photo map on a phone, a second person on Relay. No percentage, checkmark or status label changed."
+    },
     {
       "iso": "2026-10-23T11:05:00-04:00",
       "date": "Oct 23, 2026, 11:05 AM Eastern",
@@ -8157,11 +8297,11 @@
     }
   ],
   "historyLatest": {
-    "iso": "2026-10-22",
-    "date": "Oct 22, 2026 (Eastern)",
-    "headline": "Unpublished tester35 and Windows 0.1.100: RETEST-1 reports 14 of 18 items passed; mixed Samsung browser observations; no tick added",
-    "tested": "RETEST-1 helper run, about 7:10 to 8:20 AM Eastern, using S9+, S25 and Pixel with tester35/build85 and Windows0.1.100 as server. Each result belongs to its named phone. Separately, Nick reported a Samsung built-in browser away from home; exact model/browser/served build and fixed-build retry are unconfirmed.",
-    "happened": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. At that time the public downloads were Windows 0.1.99 and Android tester34; Windows 0.1.102 was published later (Oct 24, 2026, 1:05 PM Eastern) and tester35 was not. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass."
+    "iso": "2026-10-24T21:15:00-04:00",
+    "date": "Oct 24, 2026, 9:15 PM Eastern",
+    "headline": "Real-world checks on Oct 24: a second household through Beebo Relay, Chromecast on the TV, browser captions, and honest failures",
+    "tested": "Real devices, Oct 24, 2026 (afternoon and evening, Eastern). A Galaxy S24 on 5G mobile data to the owner’s home server (direct about 1:30 PM, Beebo Relay about 3:40 PM) and to a second household’s old 4-core Windows PC running Windows 0.1.102 (about 7:50 to 8:05 PM). The S24 and the Living Room TV on unpublished Android test builds (controls fix about 1:00 to 2:40 PM; a streamed film on test build 42 about 8:20 PM). The browser player on the S24 over 5G through Beebo Relay (about 8:25 PM), Chrome on a PC, a Galaxy S9+ and the S24 for Campsite, and two phones for Watch Together.",
+    "happened": "Passed within the scope stated: direct and Beebo Relay playback from a phone on 5G; a real second household’s PC through Beebo Relay playing the original file (about 2 seconds to connect); the cast controls working by finger on the real TV and a streamed film cast with picture and sound on test build 42; three subtitle cues drawing in the browser player; a no-app Campsite guest joining from a phone browser; Chrome playback, pause, arrow keys and quality changes. FAILED or not working: a converted 720p quality failed twice on the second household’s old PC; casting a downloaded copy did not play on the TV; Watch Together did not connect for phones signed in only to the home server (test build 41 now says so honestly); Trip Journal “Save as a video” stayed at 0% on a Galaxy S9+; and the web player had keyboard-focus, show-page, blank Suggestions and owner-only-control failures (fixes written, not merged). Not tested: Wi-Fi to mobile-data hand-over, sessions over a few minutes, the phone pass-through cast route, seeking by dragging and captions on the TV, the Android app’s own captions, a guest game round or guest video in Campsite, the Android photo map on a phone, a second person on Relay. No percentage, checkmark or status label changed."
   },
   "scoring": {
     "weights": {
