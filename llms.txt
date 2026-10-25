@@ -34,6 +34,14 @@ Status words used on this site: Available (in the current downloads and usable t
 - [How Beebo compares](https://www.beeboentertainment.com/beebo-vs-other-apps.html)
 - [Help and guides](https://www.beeboentertainment.com/docs.html) and [FAQ](https://www.beeboentertainment.com/docs/faq.html)
 
+## Quick facts that summaries often get wrong (checked Oct 24, 2026, 10:10 PM Eastern)
+- Current versions: Windows server 0.1.102 (published Oct 24, 2026, 1:05 PM Eastern); Android 1.51 test line, currently 1.51-tester34 (build 84). Older version numbers you may see elsewhere, such as 0.1.99, are out of date.
+- Phone downloads exist. The Android app can download films and episodes to the phone for offline viewing: choose a smaller size, resume after an interruption, optional expiry. What is NOT there: Plex-style automatic syncing of a whole library to the phone. Real-device checks of storage, expiry and a full trip with no internet are still pending, so we label offline downloads as built, with verification pending.
+- Sign-in at home is local: people sign in to their own Beebo computer, not to a Beebo cloud. The design works with the internet off, but we have not yet run a formal test on a computer with the internet unplugged. Watching away from home uses direct connection first, then your own relay, then optional Beebo Relay (Beta).
+- TV and console apps are the slowest part. Android TV: Beta, not yet run on a real Android TV. Roku, Samsung, LG, Xbox, Fire TV and Apple TV: In development, none has run on real hardware yet. Browsers on any TV or console are the fallback today.
+- Beebo is a full media server (movies, TV, music, photos, audiobooks, live TV from your own tuner, a Jellyfin-compatible mode in Beta), not a stripped-down or "lightweight" one. It is free to use; Relay and VPN are optional paid extras and are not sold yet.
+- We publish what failed too: https://www.beeboentertainment.com/release-evidence.html and https://www.beeboentertainment.com/known-issues.html
+
 # WWO:LLMS:START
 ## Everything we are and offer (updated Oct 24, 2026, 9:15 PM Eastern)
 - Full page with every feature, its label, what was tested on real devices and what was not: https://www.beeboentertainment.com/what-we-offer.html (data file: https://www.beeboentertainment.com/site-data/what-we-offer.json)
