@@ -565,3 +565,15 @@ html[data-theme="light"] .tier-tag.tier-purple, html[data-aurora][data-theme="li
 .evidence-fold-chip::before { content: "Show"; }
 .evidence-fold[open] > summary .evidence-fold-chip::before { content: "Hide"; }
 .evidence-fold-body { padding: 4px 16px 16px; }
+
+/* Calm 99% / 100% marks (Nick, Oct 25 2026: the shine and glow were glaring and hard to read). No animation, no glow, high-contrast text, a plain coloured bar on the left of the row. Colour never replaces the words. */
+.evidence-table tr.feat.is-99, .evidence-table tr.feat.is-100 { animation: none; }
+.evidence-table tr.feat.is-99 { background: rgba(168,85,247,.10); box-shadow: inset 4px 0 0 #a855f7; }
+.evidence-table tr.feat.is-100 { background: rgba(250,204,21,.10); box-shadow: inset 4px 0 0 #facc15; }
+.evidence-table tr.feat.is-99 .bar i { background: #8b5cf6; }
+.evidence-table tr.feat.is-100 .bar i { background: #eab308; }
+.tier-tag.tier-purple, .tier-tag.tier-gold { animation: none; text-shadow: none; box-shadow: none; background-size: auto; }
+.tier-tag.tier-purple { background: #5b21b6; color: #ffffff; border-color: #c4b5fd; }
+.tier-tag.tier-gold { background: #fde047; color: #1c1300; border-color: #a16207; font-weight: 700; }
+html[data-theme="light"] .tier-tag.tier-purple, html[data-aurora][data-theme="light"] .tier-tag.tier-purple { background: #ede9fe; color: #3b0764; border-color: #6d28d9; box-shadow: none; }
+html[data-theme="light"] .tier-tag.tier-gold, html[data-aurora][data-theme="light"] .tier-tag.tier-gold { background: #fef08a; color: #1c1300; border-color: #a16207; box-shadow: none; }
