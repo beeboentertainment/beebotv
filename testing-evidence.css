@@ -529,3 +529,15 @@ html[data-aurora] .feature-progress-table .feature-notes > td { padding: 16px 22
   .feature-progress-table .feature-entry { break-inside: avoid; }
   .feature-progress-table .feat, .feature-progress-table .feature-notes { background: none; box-shadow: none; }
 }
+
+/* 99%: purple glow rows and a shiny purple tag (Nick, Oct 25 2026). Colour never replaces the words. */
+.evidence-table tr.feat.is-99 { background: linear-gradient(90deg, rgba(168,85,247,.34), rgba(168,85,247,.09) 70%, transparent); box-shadow: inset 5px 0 0 #a855f7, 0 0 0 1px rgba(168,85,247,.65), 0 0 16px rgba(168,85,247,.50); }
+.tier-tag.tier-purple { color: #f3e8ff; border-color: rgba(233,213,255,.95); background: linear-gradient(110deg, rgba(124,58,237,.78) 0%, rgba(217,70,239,.62) 35%, rgba(167,139,250,.85) 50%, rgba(217,70,239,.62) 65%, rgba(124,58,237,.78) 100%); background-size: 220% 100%; box-shadow: 0 0 10px rgba(168,85,247,.70), inset 0 0 6px rgba(255,255,255,.28); text-shadow: 0 0 6px rgba(255,255,255,.35); }
+html[data-theme="light"] .tier-tag.tier-purple, html[data-aurora][data-theme="light"] .tier-tag.tier-purple { color: #4c1d95; border-color: #7c3aed; background: linear-gradient(110deg, #ede9fe 0%, #f5d0fe 40%, #ddd6fe 55%, #f5d0fe 70%, #ede9fe 100%); background-size: 220% 100%; text-shadow: none; box-shadow: 0 0 8px rgba(124,58,237,.45); }
+@media (prefers-reduced-motion: no-preference) {
+  .tier-tag.tier-purple { animation: tierShine 3.6s linear infinite; }
+  .evidence-table tr.feat.is-99 { animation: row99Glow 3.2s ease-in-out infinite; }
+}
+@keyframes tierShine { from { background-position: 0% 0; } to { background-position: -220% 0; } }
+@keyframes row99Glow { 0%, 100% { box-shadow: inset 5px 0 0 #a855f7, 0 0 0 1px rgba(168,85,247,.55), 0 0 12px rgba(168,85,247,.38); } 50% { box-shadow: inset 5px 0 0 #c084fc, 0 0 0 1px rgba(192,132,252,.85), 0 0 22px rgba(192,132,252,.65); } }
+.evidence-table tr.feat.is-99 .bar i { background: linear-gradient(90deg, #7c3aed, #d946ef); }
