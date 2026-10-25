@@ -3784,7 +3784,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 23, 2026 (Phone tests phone run; report assembled at 12:19 PM Eastern; individual test times vary)",
-      "leftToReach100": "CODE GAP / Nick decision: the old PC-stream flow is retired. Nick must choose removal or a Remote Desktop replacement, then that chosen flow needs code, automated coverage and an authorized device run. Menu absence is not positive streaming evidence; human look and Ready remain.",
+      "leftToReach100": "RETIRED and folded into Remote Desktop (Nick decided on Oct 25, 2026, 6:34 AM Eastern). The old button stays removed. Seeing and controlling your PC from a phone is now tracked under Remote Desktop, which still needs its own code, tests and a real-PC test before anything is claimed. This retired row still counts at 0% for now.",
       "roadTo100": {
         "means": "Nick picks a replacement or removal, and the chosen version is built, tested and checked on a phone.",
         "done": [
@@ -3795,15 +3795,15 @@
         "remaining": [
           {
             "kind": "NICK",
-            "text": "Decide: replace it with Remote Desktop or remove it."
+            "text": "Decided Oct 25, 2026, 6:34 AM Eastern: fold it into Remote Desktop; no separate build."
           },
           {
             "kind": "BLOCKED",
-            "text": "No approved direction yet."
+            "text": "Nothing is waiting on this row any more; the phone viewer is tracked under Remote Desktop."
           },
           {
             "kind": "CODE",
-            "text": "Build and test the chosen path after the decision."
+            "text": "No separate build: the phone viewer is tracked under Remote Desktop."
           }
         ]
       },
