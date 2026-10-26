@@ -292,6 +292,16 @@ html = responsiveTables(html);
 html=html.replace(/<script>\(function\(\)\{try\{document\.querySelectorAll\('tr\.feat'\)[\s\S]*?<\/script>/g,'');
 if(!html.includes('src="/assets/evidence-tier-tabs.js"')) html=html.replace('</body>','<script src="/assets/evidence-tier-tabs.js" defer></script></body>');
 
+
+function sourceMerges(page) {
+ if (!J.sourceMerges?.length) return page;
+ const block='<!--SOURCE-MERGES--><section class="evidence-section" id="source-merges"><h2>Source work merged; device results remain separate</h2><p>Report timestamps are shown in Eastern. A source merge is not a public release, deployment or a new device tick. Failures in the tested builds stay open until a matching retest clears them.</p><ul>'+J.sourceMerges.map(r=>'<li><time datetime="'+esc(r.iso)+'">'+esc(r.date)+'</time> — '+esc(r.summary)+'</li>').join('')+'</ul></section><!--/SOURCE-MERGES-->';
+ const re=/<!--SOURCE-MERGES-->[\s\S]*?<!--\/SOURCE-MERGES-->/;
+ if(re.test(page))return page.replace(re,()=>block);
+ return page.replace('</main>',block+'</main>');
+}
+
+html = sourceMerges(html);
 const out = crlf ? html.replace(/\n/g, '\r\n') : html;
 if (process.argv.includes('--check')) {
   if (readFileSync(pagePath, 'utf8') !== out) { console.error('release-evidence.html is out of date: run node tools/build-status-page.mjs'); process.exit(1); }
@@ -306,6 +316,7 @@ for (const relatedName of ['whats-tested.html', 'platforms.html']) {
 const relatedPath = join(root, relatedName);
 const related = readFileSync(relatedPath, 'utf8');
 let relatedOut = responsiveTables(related);
+if (relatedName === 'whats-tested.html') relatedOut = sourceMerges(relatedOut);
 
 if (process.argv.includes('--check')) {
   if (related !== relatedOut) { console.error(`${relatedName} needs responsive labels: run node tools/build-status-page.mjs`); process.exit(1); }
