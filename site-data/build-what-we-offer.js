@@ -222,7 +222,8 @@ function whoBlock() {
 }
 
 function featureLine(f) {
-  return `<li>${esc(f.name)} ${chip(f.status)}${f.ts ? ` <span class="wwo-test">${tsInfo(f).split(' on the')[0]} tested</span>` : ''}</li>`;
+  const pct = f.ts ? tsByName.get(f.ts).percentComplete : null;
+  return `<li>${esc(f.name)} ${chip(f.status)}${f.ts ? (pct === 100 ? ' <span class="wwo-test">100% Ready (Nick confirmed; limits are on the full page)</span>' : ` <span class="wwo-test">${tsInfo(f).split(' on the')[0]} tested</span>`) : ''}</li>`;
 }
 
 function homeBody() {
