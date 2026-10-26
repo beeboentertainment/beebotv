@@ -1,7 +1,7 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 26, 2026, 11:24 AM Eastern",
+    "updatedEastern": "Oct 26, 2026, 1:21 PM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. The separate Device and real-world checks recorded figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
@@ -581,7 +581,7 @@
     "evidenceLimit": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. At that time the public downloads were Windows 0.1.99 and Android tester34; Windows 0.1.102 was published later (Oct 24, 2026, 1:05 PM Eastern) and tester35 was not. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 26, 2026, 11:24 AM Eastern",
+    "updatedEastern": "Oct 26, 2026, 1:21 PM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Device and real-world checks recorded is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
@@ -965,20 +965,19 @@
     "automatedTestTotals": [
       {
         "area": "Worker",
-        "count": 1675
+        "count": 1675,
+        "recordedEastern": "Oct 13, 2026, 4:14 AM Eastern (count recorded then and not refreshed since)"
       },
       {
         "area": "Service",
-        "count": 1103
-      },
-      {
-        "area": "Service",
-        "count": 1669
+        "count": 1669,
+        "recordedEastern": "Oct 13, 2026, 4:14 AM Eastern (count recorded then and not refreshed since)"
       },
       {
         "area": "Desktop",
         "count": 1303,
-        "unit": "test files"
+        "unit": "test files",
+        "recordedEastern": "Oct 13, 2026, 4:14 AM Eastern (count recorded then and not refreshed since)"
       },
       {
         "area": "Android web",
@@ -1009,10 +1008,10 @@
     "summary": "The downloads are Windows 0.1.102, published Oct 24, 2026, 1:05 PM Eastern; Android 1.51-tester34 (build 84), published Oct 21, 2026, 3:46 PM Eastern; Beebo Auto 1.20 (build 21), published Oct 21, 2026, 6:52 AM Eastern. Windows 0.1.102 adds a Beebo Relay opt-in button with an honest status (Beebo never turns Relay on by itself), the away-from-home quality limit applied to the web player and phones, missing-sequel hints hidden from limited viewers and photo thumbnails for restricted profiles that have \"See photos\", Live TV stream-cache clean-up, web player fixes for older TVs and browsers, movie version and Up next fixes, and quieter logs. Windows 0.1.99 and Android 1.51-tester34 added audiobook resume and description fixes, hidden files skipped in every library scan, sidebar counts that update when folders change, Live TV parental checks handled the same way everywhere, a libx264 converter fallback, Next and Previous on downloaded episodes, the screen-off switch in Quality & audio, genre names in the app language and more translations. The earlier Oct 21 builds added Picture frame and Family achievements (both In development, off until turned on), 12-hour guest passes with early renewal, Live TV confirmation of home-network playlist addresses, Movie Night and walkie-talkie fixes and Beebo Auto sign-in storage fixes. Those, and the parental-control fixes, guest video compatibility and download fixes, walkie-talkie host controls, Android layout pass and Beebo Auto hardening described below, are in these downloads and have not yet been tried on real devices.",
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. At that time the public downloads were Windows 0.1.99 and Android tester34; Windows 0.1.102 was published later (Oct 24, 2026, 1:05 PM Eastern) and tester35 was not. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-26T11:24:00-04:00",
-  "updatedEastern": "Oct 26, 2026, 11:24 AM Eastern",
+  "updated": "2026-10-26T13:21:00-04:00",
+  "updatedEastern": "Oct 26, 2026, 1:21 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
-  "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Only Nick records Ready, the final point to 100%. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
+  "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 66,
   "groupAveragePercent": {
     "Android phone app": 77,
@@ -2120,7 +2119,7 @@
           "device": "Galaxy S24 Ultra at a friend’s house, Android tester49, published Windows server 0.1.102",
           "did": "Confirmed the library-health list matched deliberately unmatched test films.",
           "result": "PASS",
-          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. Missing-episode checking was not exercised because this household had no shows. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick.",
+          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. Missing-episode checking was not exercised because this household had no shows. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick. Nick recorded Ready for this row later on Oct 26, 2026; see its Ready record.",
           "ticks": []
         }
       ],
@@ -2531,7 +2530,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 26, 2026, 11:10 AM Eastern (Nick heard a station and a podcast); earlier: Oct 24, 2026, 12:55:58 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issues (cap this row at 90%): the Radio screen failed on its first two opens on a Galaxy S9+ (Oct 25, 2026), and a paused podcast’s mini player cannot be closed. To be fixed; once fixed the row returns to 99% and then Nick and Claude confirm it together. Today’s check by Nick (Oct 26, 2026, 11:10 AM Eastern) worked on a Galaxy S24: a radio station and a podcast episode were heard, with Follow, skip, pause and Unfollow; it does not clear the S9+ failure (a different phone). Not tested: queue, sleep timer, speed, downloads, OPML import, notes.",
+      "leftToReach100": "Open known issues (cap this row at 90%): the Radio screen failed on its first two opens on a Galaxy S9+ (Oct 25, 2026), and a paused podcast’s mini player cannot be closed. To be fixed; once fixed the row returns to 99% and then Nick and Claude confirm it together. Today’s check by Nick (Oct 26, 2026, 11:10 AM Eastern) worked on a Galaxy S24: a radio station and a podcast episode were heard, with Follow, skip, pause and Unfollow; it does not clear the S9+ failure (a different phone). Not tested: queue, sleep timer, speed, downloads, OPML import, notes. Smaller points seen on Oct 26, 2026 (reported by about 11:55 AM Eastern; not counted as open known issues and no cap change): (1) the podcast sleep timer has no custom time; (2) the timer choices differ between podcasts (5, 10, 15, 30, 45, 60 minutes and End of episode) and music (15, 30, 45, 60 minutes and End of track); (3) the speed slider runs past its “2x” label (2.9x was reached); (4) tapping a spot on the speed slider did nothing in an adb test (a finger may behave differently).",
       "previousPercent": 74,
       "changedEastern": "Oct 26, 2026, 11:24 AM Eastern",
       "changeNote": "Real-world check ticked from Nick’s own listening today; the two open issues (S9+ radio first-open failure, mini player cannot be closed) cap the row at 90%. To be fixed, then 99%, then Nick and Claude confirm together.",
@@ -2609,7 +2608,8 @@
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ showed honest empty podcast lists and queue. A radio station reached Live/Pause and a playing MediaSession with the screen off, then stopped. A safe working podcast feed was absent, blocking Follow, episode copying and queue positives. Muted. 2 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Oct 23, 2026, 1:44:57 PM Eastern: Phone tests recorded the the recorded feature Last PASS. The synthetic podcast feed followed normally, listed two episodes, retained a queue entry, kept an actual copy on the test computer, and continued its playback state with the screen off. Radio reached Live and stopped. These tester35 passes are carried; the phones were muted. Future import/OPML duplicate and failure acceptance is outside this pass.",
           "Oct 24, 2026, 12:55:58 AM Eastern: A malformed podcast-import file produced a clear error without losing the episode list. Cancelling the picker was also observed. Earlier feed, queue, download, screen-off and radio controls are carried. Named subset only; no new whole-feature checkmark.",
-          "Oct 26, 2026, 11:10 AM Eastern: Nick heard a radio station and a podcast episode and used Follow, skip, pause and Unfollow. Real-world check ticked; the open radio and mini-player issues keep the row at 90%."
+          "Oct 26, 2026, 11:10 AM Eastern: Nick heard a radio station and a podcast episode and used Follow, skip, pause and Unfollow. Real-world check ticked; the open radio and mini-player issues keep the row at 90%.",
+          "Oct 26, 2026, reported by about 11:55 AM Eastern: follow, play, speed slider at 2.9x (34.9 seconds of audio in 12.0 seconds), a 5-minute sleep timer that paused near the due time, and unfollow worked on the Galaxy S24 Ultra. Bounded observation; no check or score changed."
         ],
         "remaining": [
           {
@@ -2650,6 +2650,14 @@
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [
+        {
+          "date": "Oct 26, 2026, 11:55 AM Eastern",
+          "device": "Galaxy S24 Ultra (native app, Android 1.51-tester49, unpublished test build) at a second household, with an old 4-core Windows PC (Intel Core i7 from 2014) running the published Beebo 0.1.102",
+          "did": "Followed a podcast, played it, and set the speed slider to 2.9x: Nick said the speech sped up, and a measurement showed 34.9 seconds of audio played in 12.0 seconds. A 5-minute sleep timer paused playback near the due time (Nick said it paused). Unfollow worked.",
+          "result": "PASS",
+          "notes": "Bounded observations. Four small findings, listed in this row’s “Left to reach 100%” text, are not registered as open known issues and change no cap. Not tested in this check: Night mode and the Volume leveler by ear, audiobook buttons, the Kids and Easy layouts on a real screen, and email sending. Reported by about 11:55 AM Eastern (receipt time); the exact observation time was not independently recorded.",
+          "ticks": []
+        },
         {
           "date": "Oct 26, 2026, 11:10 AM Eastern",
           "device": "Galaxy S24 Ultra (native app, Android 1.51-tester49, unpublished test build) at a second household, with an old 4-core Windows PC (Intel Core i7 from 2014) running the published Beebo 0.1.102",
@@ -4844,7 +4852,8 @@
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ browsed synthetic albums/tracks, played and paused, used Next/Previous and queue/radio controls, and retained a playing MediaSession with the screen off. End-of-track sleep paused the next track and cleared the timer. Muted synthetic tones; no listening claim. 3 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Oct 23, 2026, 11:05:34 AM Eastern: Phone tests recorded the the recorded feature Last PASS. S9+ browsed synthetic albums/tracks, used play/pause, Next/Previous and the queue/radio controls, retained a playing state with the screen off, and paused the next track with the end-of-track sleep timer. These muted tester35 control passes are carried; no listening or sound-quality result is claimed.",
           "Oct 24, 2026, 12:50:19 AM Eastern: The native album-radio control started a real test track, its progress and six recommendations, then stopped. Existing queue, sleep and screen-off controls are carried. Named subset only; no new whole-feature checkmark.",
-          "Oct 26, 2026, 11:10 AM Eastern: Nick heard a test tone play from the PC’s music on his phone. Oct 26, 2026, 11:37 AM Eastern: Nick confirmed this himself and the row is Ready."
+          "Oct 26, 2026, 11:10 AM Eastern: Nick heard a test tone play from the PC’s music on his phone. Oct 26, 2026, 11:37 AM Eastern: Nick confirmed this himself and the row is Ready.",
+          "Oct 26, 2026, reported by about 11:55 AM Eastern: the “End of track” sleep timer stopped playback at the end of the track and the next track loaded paused at 0:00 (phone muted, not listened to). Bounded observation; no check or score changed."
         ],
         "remaining": [
           {
@@ -4937,6 +4946,15 @@
       ],
       "deviceTests": [
         {
+          "tester": "AI helper on a real device; screen and state only (phone muted)",
+          "device": "Galaxy S24 Ultra (native app, Android 1.51-tester49, unpublished test build) at a second household, with the same old 4-core Windows PC running the published Beebo 0.1.102",
+          "build": "Unpublished Android 1.51-tester49; Windows 0.1.102",
+          "date": "Oct 26, 2026, 11:55 AM Eastern",
+          "result": "PASS",
+          "evidence": "The music sleep timer set to “End of track” stopped playback at the end of the track, and the next track loaded paused at 0:00. The phone was muted, so nobody listened for a blip at the changeover. The music timer choices are 15, 30, 45, 60 minutes and End of track, which differ from the podcast list. Not tested in this check: Night mode and the Volume leveler by ear. Reported by about 11:55 AM Eastern (receipt time); the exact observation time was not independently recorded. Bounded observation after Nick recorded Ready; no check or score changed.",
+          "ticks": []
+        },
+        {
           "tester": "AI helper on a real device; screen/state only unless stated",
           "device": "Pixel 3 and Galaxy S9+; real phones, muted, isolated QA server",
           "build": "Unpublished Android 1.51-tester50 (100); QA server 0.1.102 from main 1a3a77b5b",
@@ -5011,7 +5029,7 @@
           "evidence": "Album play, next, previous, shuffle, queue, 15-minute sleep timer, screen-off playback, shade controls, compilation and 24-bit FLAC all worked on the Pixel 3; lyrics, Opus and FLAC albums and gapless sampling worked on the S25. The phone was muted, so nobody heard sound. No crash."
         }
       ],
-      "scoreNote": "What was not tested today: the sound was three made-up test tones, not real music; gapless playback, crossfade (no such setting was found on Oct 25, 2026), the sleep timer, mixes, playlists and casting were not tested today. Earlier muted dated records (Oct 23 to 25, 2026) covered the queue and sleep-timer controls on older builds. Core part not covered: gapless and crossfade listening with real music."
+      "scoreNote": "What was not tested today: the sound was three made-up test tones, not real music; gapless playback, crossfade (no such setting was found on Oct 25, 2026), the sleep timer, mixes, playlists and casting were not tested today. Earlier muted dated records (Oct 23 to 25, 2026) covered the queue and sleep-timer controls on older builds. Core part not covered: gapless and crossfade listening with real music. Reported by about 11:55 AM Eastern, Oct 26, 2026: the “End of track” sleep timer stopped at the end of the track on the Galaxy S24 Ultra (muted; not listened to for a blip)."
     },
     {
       "group": "Android phone app",
@@ -5089,7 +5107,7 @@
           "device": "Galaxy S24 Ultra at a friend’s house, Android tester49, published Windows server 0.1.102",
           "did": "Confirmed Dashboard cards and a Camp Jobs spin, job tick and a star.",
           "result": "PASS",
-          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. Local test names only; no real-family duration or multi-phone acceptance. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick.",
+          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. Local test names only; no real-family duration or multi-phone acceptance. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick. Nick recorded Ready for this row later on Oct 26, 2026; see its Ready record.",
           "ticks": []
         }
       ],
@@ -5243,7 +5261,7 @@
           "device": "Galaxy S24 Ultra at a friend’s house, Android tester49, published Windows server 0.1.102",
           "did": "Added a test packing item and ticked it; Nick confirmed the local screen worked.",
           "result": "PASS",
-          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. Sharing between phones was not tested. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick.",
+          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. Sharing between phones was not tested. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick. Nick recorded Ready for this row later on Oct 26, 2026; see its Ready record.",
           "ticks": []
         }
       ],
@@ -5339,7 +5357,8 @@
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ validated an empty recipe, saved two disposable recipes, scaled 2 to 4 people, combined 6 cups flour and 1 tsp salt, ticked shopping items, and saved/reopened a renamed copy of a built-in recipe. Local/original-session context; no outgoing recipe-sharing result. 5 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Oct 23, 2026, 11:11:59 AM Eastern: Phone tests recorded the the recorded feature Last PASS. S9+ validated and created synthetic recipes, scaled amounts, duplicated a built-in recipe, and combined/ticked the multi-recipe shopping list on tester35. These passes are carried. They do not prove practical cooking quantities or outgoing recipe sharing.",
           "Oct 24, 2026, 12:42:46 AM Eastern: Cancelling native recipe creation returned without creating a recipe. Earlier synthetic validation, scaling, duplicate and shopping-total checks are carried. Named subset only; no new whole-feature checkmark.",
-          "Oct 26, 2026, 11:10 AM Eastern: Nick saw a test recipe scale from 4 to 6 servings on the shopping list. Oct 26, 2026, 11:37 AM Eastern: Nick confirmed this himself and the row is Ready."
+          "Oct 26, 2026, 11:10 AM Eastern: Nick saw a test recipe scale from 4 to 6 servings on the shopping list. Oct 26, 2026, 11:37 AM Eastern: Nick confirmed this himself and the row is Ready.",
+          "Oct 26, 2026, reported by about 11:55 AM Eastern: Nick watched Edit (title and serves 4 to 6, “Just me” kept) and Delete then Undo within a few seconds work on the Galaxy S24 Ultra. Bounded observation; no check or score changed."
         ],
         "remaining": [
           {
@@ -5368,6 +5387,14 @@
       "realWorldStatus": "confirmed-on-real-devices",
       "ownerTests": [
         {
+          "date": "Oct 26, 2026, 11:55 AM Eastern",
+          "device": "Galaxy S24 Ultra (native app, Android 1.51-tester49, unpublished test build) at a second household, with an old 4-core Windows PC (Intel Core i7 from 2014) running the published Beebo 0.1.102",
+          "did": "Edit: changed a test recipe’s title and its serves from 4 to 6, and “Just me” stayed set. Delete, then Undo within a few seconds, brought the recipe back.",
+          "result": "PASS",
+          "notes": "Bounded observations of Edit, “Just me” and Delete with Undo. Nick watched his own screen while an AI helper drove the steps. Share, Copy, a list across several recipes and cooking a real meal were not tested in this check. Reported by about 11:55 AM Eastern (receipt time); the exact observation time was not independently recorded. This record came in after Nick recorded Ready (Oct 26, 2026, 11:37 AM Eastern) and changes no check or score.",
+          "ticks": []
+        },
+        {
           "date": "Oct 26, 2026, 11:37 AM Eastern",
           "device": "Nick’s own decision in chat",
           "did": "Nick confirmed this himself on Oct 26, 2026, 11:37 AM Eastern: Family Recipes and the shopping list work (add a recipe, scale servings, tick items).",
@@ -5392,7 +5419,7 @@
           "device": "Galaxy S24 Ultra at a friend’s house, Android tester49, published Windows server 0.1.102",
           "did": "Confirmed a test recipe and shopping quantities scaling from four to six servings; a list tick and Untick all also worked.",
           "result": "PASS",
-          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. Edit, privacy, multi-recipe lists, Share, Copy and Undo were not tested. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick.",
+          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. Edit, privacy, multi-recipe lists, Share, Copy and Undo were not tested. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick. Nick recorded Ready for this row later on Oct 26, 2026; see its Ready record.",
           "ticks": []
         }
       ],
@@ -5462,7 +5489,7 @@
           ]
         }
       ],
-      "scoreNote": "What was not tested today: Edit, “Just me”, Share/Copy, Undo, a shopping list across several recipes, and cooking a real meal. An earlier dated record (Oct 23, 2026, S9+, older build) covered a combined multi-recipe list. Core part not covered: sharing a recipe with another person."
+      "scoreNote": "What was not tested when Ready was recorded: Edit, “Just me”, Share/Copy, Undo, a shopping list across several recipes, and cooking a real meal. An earlier dated record (Oct 23, 2026, S9+, older build) covered a combined multi-recipe list. Core part not covered: sharing a recipe with another person. Reported by about 11:55 AM Eastern the same day: Edit (title and serves 4 to 6, “Just me” kept) and Delete with Undo within a few seconds were watched working on the Galaxy S24 Ultra; Share/Copy and sharing a recipe with another person are still untested."
     },
     {
       "group": "Android phone app",
@@ -5580,7 +5607,7 @@
           "device": "Galaxy S24 Ultra at a friend’s house, Android tester49, published Windows server 0.1.102",
           "did": "Confirmed a collection list and a test title request changing from New to Declined.",
           "result": "PASS",
-          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. No full collection/request lifecycle acceptance. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick.",
+          "notes": "Nick was present, watched his own screen or the TV, typed sign-ins himself and confirmed what he saw or heard while an AI helper drove the steps. No full collection/request lifecycle acceptance. Receipt time shown; the exact observation time was not independently recorded. No full-feature acceptance or Ready tick. Nick recorded Ready for this row later on Oct 26, 2026; see its Ready record.",
           "ticks": []
         }
       ],
@@ -7037,7 +7064,8 @@
           "Oct 23, 2026, 9:00:14 PM Eastern: Windows and web tests the recorded feature passed subset. Carried normal/restricted movie lists, blocked playback, old Live TV link403 and active Movie Night refilter retain their earlier source record. Current real HTTP sequel-view fixture passed restricted/unrestricted neighbor filtering. Windows source headless server, package 0.1.99. Last PASS source the recorded build. Current-source scenario; carried earlier scenarios keep the recorded build. Frozen tested source the recorded build; final fetched development source the recorded build has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only.",
           "Oct 24, 2026, 1:15:29 AM Eastern: The S24 normal test member saw the synthetic title. The restricted member could not see it, and its direct watch link had no playable media. The PC matched the refusal. Scoped PC report only; no whole-feature acceptance.",
           "Oct 24, 2026, 2:32:42 AM Eastern: The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Browser subset only; no whole-feature acceptance.",
-          "Oct 25, 2026, 9:40 PM Eastern, desktop browser on the dev PC against the test server (main 4a4efbcba): a restricted test member saw only the one allowed film and was refused the others on every route tried. Installed-PC enforcement was not retested."
+          "Oct 25, 2026, 9:40 PM Eastern, desktop browser on the dev PC against the test server (main 4a4efbcba): a restricted test member saw only the one allowed film and was refused the others on every route tried. Installed-PC enforcement was not retested.",
+          "Oct 26, 2026, reported by about 11:55 AM Eastern, local API on the Windows 0.1.102 PC at a second household: a throwaway profile saved “Films up to G, TV up to TV-Y, unrated hidden”; no limits showed 24 films and 15 shows, Teens 17 and 15, Young children 0 and 0; asking directly for a hidden film returned not found with no media; the profile was deleted. Bounded observation; no check or score changed."
         ],
         "remaining": [
           {
@@ -7111,6 +7139,15 @@
         }
       ],
       "deviceTests": [
+        {
+          "tester": "AI helper on a real device, through the PC’s local API; no installed-app screens were driven",
+          "device": "Old 4-core Windows PC (Intel Core i7 from 2014) at a second household running the published Beebo 0.1.102",
+          "build": "Windows 0.1.102 (published)",
+          "date": "Oct 26, 2026, 11:55 AM Eastern",
+          "result": "PARTIAL",
+          "evidence": "A throwaway profile was saved with “Films up to G, TV up to TV-Y, unrated hidden”. Signed in as that profile through the local API: with no limits the library showed 24 films and 15 shows; the Teens setting showed 17 films and 15 shows; the Young children setting showed 0 films and 0 shows. Asking directly for a hidden film returned “not found” and gave no media. The throwaway profile was deleted afterwards. This covers the local API only: no Windows app screen, bedtime or daily limit, Live TV or Movie Night limit, or the child account screen was tested. Reported by about 11:55 AM Eastern (receipt time); the exact observation time was not independently recorded. No tick was added; Nick alone records Ready.",
+          "ticks": []
+        },
         {
           "tester": "Browser tests (AI tester; Claude in the desktop browser pane on the dev PC, test server)",
           "ticks": [],
@@ -9444,19 +9481,26 @@
     "In development",
     "Planned"
   ],
-  "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+  "honestyNote": "Seven features are recorded Ready by Nick, with their limits shown on each row. Nothing is described as 100% working without its listed limits. Untested paths are listed as not tested, not as passed. A failure caps a feature at 90%.",
+  "previousUpdatedEastern": "Oct 26, 2026, 11:24 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 25–26 phone, TV, browser and owner-observation record, with the late-morning second-household update",
     "scope": "Results from two real households (a Galaxy S24, a Samsung TV, a Chromecast and a 2014 PC), the Pixel 3 and Galaxy S9+ on tester50 and the Oct 25 phone and browser runs, plus the corrections to ticks listed in the latest history entry; then, at the second household, a phone backup and video upload, casting to a Samsung TV and a Chromecast TV with volume and captions, Chrome on a PC, offline downloads, alerts, and Nick’s own look at PC and phone screens",
-    "lastTested": "Oct 26, 2026, 11:10 AM Eastern",
-    "lastTestedIso": "2026-10-26T11:10:00-04:00",
-    "previousTested": "Oct 26, 2026, 9:20 AM Eastern",
+    "lastTested": "Oct 26, 2026, 11:55 AM Eastern",
+    "lastTestedIso": "2026-10-26T11:55:00-04:00",
+    "previousTested": "Oct 26, 2026, 11:10 AM Eastern",
     "broader": "Still required",
-    "newerText": "Evidence through Oct 26, 2026, 11:10 AM Eastern (receipt times). 7 features are now Ready (100%) because Nick confirmed them himself; each keeps its not-tested limits on its row. Three rows have the Real-world check but stay at 90% because of named open issues. New problems found today: the Samsung TV ignores the cast volume slider and Unmute, captions still do not show on the TV during a cast, 480p fails in Chrome on a PC while Original works, Camera backup and Add a video blank the photo or video location in the PC copy (Nick wants originals kept), and the PC Bell shows a blank entry for the phone’s Downloads-running-low alert. Email alerts are not tested (no sender is set up). Night mode and the Volume leveler are not confirmed. Rows with failures are marked to be fixed. Evidence through Oct 26, 2026, 9:20 AM Eastern. Nick’s own Samsung-TV viewing used his home server away from home: Original, Skip intro and next episode worked; 480p resume did not start, route unknown. Both cast TVs lacked captions and one cast stuck at the end. Wi-Fi to 5G switching failed in three of four browser runs; steady five-minute Relay playback and quality switches passed. Tester50 round 6 still found Home Resume restarting at zero, 200% subtitle clipping and false connection warnings. Kitchen announcements could not be enabled. Scoped passes and Nick’s in-room observations are recorded with limits; no score or Ready tick was raised. The corrected October 25 records remain below."
+    "newerText": "Evidence through Oct 26, 2026, 11:55 AM Eastern (receipt times): second-household observations of Family Recipes (Edit, Delete and Undo), podcast speed and sleep timer, the music “End of track” timer and a restricted profile through the local API were added as dated records; no score, tick, label or cap changed, and this update also tidied wording. Evidence through Oct 26, 2026, 11:10 AM Eastern (receipt times). 7 features are now Ready (100%) because Nick confirmed them himself; each keeps its not-tested limits on its row. Three rows have the Real-world check but stay at 90% because of named open issues. New problems found today: the Samsung TV ignores the cast volume slider and Unmute, captions still do not show on the TV during a cast, 480p fails in Chrome on a PC while Original works, Camera backup and Add a video blank the photo or video location in the PC copy (Nick wants originals kept), and the PC Bell shows a blank entry for the phone’s Downloads-running-low alert. Email alerts are not tested (no sender is set up). Night mode and the Volume leveler are not confirmed. Rows with failures are marked to be fixed. Evidence through Oct 26, 2026, 9:20 AM Eastern. Nick’s own Samsung-TV viewing used his home server away from home: Original, Skip intro and next episode worked; 480p resume did not start, route unknown. Both cast TVs lacked captions and one cast stuck at the end. Wi-Fi to 5G switching failed in three of four browser runs; steady five-minute Relay playback and quality switches passed. Tester50 round 6 still found Home Resume restarting at zero, 200% subtitle clipping and false connection warnings. Kitchen announcements could not be enabled. Scoped passes and Nick’s in-room observations are recorded with limits; no score or Ready tick was raised. The corrected October 25 records remain below."
   },
   "historyNew": [
+    {
+      "iso": "2026-10-26T13:21:00-04:00",
+      "date": "Oct 26, 2026, 1:21 PM Eastern",
+      "headline": "Oct 26, afternoon: wording and label tidy-up and the late-morning second-household observations recorded; no score, tick, tier or cap changed",
+      "tested": "Reports received by about 11:55 AM Eastern from the second household (Galaxy S24 Ultra, Android 1.51-tester49, and the old 4-core Windows PC running the published Beebo 0.1.102): Family Recipes Edit, “Just me” and Delete with Undo; a podcast followed, played at 2.9x with a 5-minute sleep timer, then unfollowed; the music “End of track” sleep timer; and a throwaway restricted profile checked through the PC’s local API. The phone was muted unless a note says Nick heard it. Not tested: Night mode and the Volume leveler by ear, audiobook buttons, the Kids and Easy layouts on a real screen, and email sending.",
+      "happened": "Recorded as bounded dated observations only. Four small findings are listed on the Podcasts and radio row without a new open issue: no custom sleep-timer time; different timer lists for podcasts and music; the speed slider runs past its “2x” label; tapping a spot on the slider did nothing in an adb test. Wording changes in this update: the how-to-read text no longer says a 99% feature is finished; it says the feature is tested within its recorded checks; the Ready and Real-world rules now read: realistic dated AI checks on real devices count toward the Real-world check and so toward 99%, only Nick records Ready (100%) after he and Claude confirm the feature together with no errors found, and any open failure caps a feature at 90% until fixed. Notes on the seven Ready rows now point to their Ready records. Every feature percentage and the overall 66% are unchanged."
+    },
     {
       "iso": "2026-10-26T11:24:00-04:00",
       "date": "Oct 26, 2026, 11:24 AM Eastern",
@@ -9569,11 +9613,11 @@
     "Built": "The code exists and works in the build.",
     "Automated tests": "The test suite for it passes.",
     "Real device": "We ran it on a real phone, PC or TV and it worked.",
-    "Real-world check": "A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Only Nick records Ready, the final point to 100%. Historical checks remain dated evidence, not certification of a newer build.",
-    "Ready to call Available": "Nick or a tester has looked with their own eyes and said Ready. Only Nick records this check. It is worth the last 1 point: a human look, not more building."
+    "Real-world check": "A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. Historical checks remain dated evidence, not certification of a newer build.",
+    "Ready to call Available": "Nick has looked with his own eyes, and he and Claude have confirmed the feature together with no errors found. Only Nick records this check. It is worth the last 1 point: a human look, not more building."
   },
   "ownerTestsNote": "Nick’s own observations are kept in ownerTests. When he watches, listens, types a sign-in himself and answers while a helper drives the phone, the record names his role and the untested limits. A mixed or partial result adds no tick; Ready is never inferred.",
-  "ownerTestsSchema": "features[].ownerTests is a list of {date, device, did, result (PASS or FAIL), notes, ticks}. Keep Nick’s own observations and their limits. A qualifying realistic PASS may support Real-world check; AI device evidence may also qualify under checkDefinitions. Only Nick records Ready to call Available. Empty ticks are bounded observations, not whole-feature acceptance.",
+  "ownerTestsSchema": "features[].ownerTests is a list of {date, device, did, result (PASS or FAIL), notes, ticks}. Keep Nick’s own observations and their limits. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. Empty ticks are bounded observations, not whole-feature acceptance.",
   "checksBaseline": {
     "asOf": "Oct 19, 2026",
     "features": {
@@ -10041,7 +10085,7 @@
       }
     }
   },
-  "deviceTestsSchema": "features[].deviceTests records {tester, device, build, date, result, evidence, ticks}. A Real device tick needs a dated PASS covering its listed acceptance. A realistic AI check on real devices may also support Real-world check when the evidence covers actual use. Muted or state-only checks cannot prove behavior they did not judge. Partial records do not become whole-feature passes. Only Nick records Ready.",
+  "deviceTestsSchema": "features[].deviceTests records {tester, device, build, date, result, evidence, ticks}. A Real device tick needs a dated PASS covering its listed acceptance. A realistic, dated AI check on real devices counts toward Real-world check, and so toward 99%, when the evidence covers actual use. Muted or state-only checks cannot prove behavior they did not judge. Partial records do not become whole-feature passes. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed.",
   "historicalReleaseChecksOct18": {
     "windows": "0.1.89",
     "android": "1.51-tester24",
@@ -10093,11 +10137,11 @@
     }
   ],
   "historyLatest": {
-    "iso": "2026-10-26T11:24:00-04:00",
-    "date": "Oct 26, 2026, 11:24 AM Eastern",
-    "headline": "Oct 26, late morning: second household round two; 7 features marked Ready by Nick, new problems found and held at 90% or below",
-    "tested": "Reports received between Oct 26, 2026, 9:48 AM Eastern and Oct 26, 2026, 11:10 AM Eastern. Phone backup of a new photo and two camera-clip uploads; PC screens and a solo card game; casting to a Samsung 70-inch TV and a Chromecast TV (volume, captions, pause, seek, hand-back); Chrome on the PC (resume, captions, 480p); offline downloads and the Downloads-running-low alert; an email test; and Nick’s own look at library health, packing list, collections and requests, browser games, surprise me and lists, podcasts and radio, music, family dashboard, recipes, large text and high contrast, and the update check. An old 4-core Windows PC (Intel Core i7 from 2014) ran the published Beebo 0.1.102; the phone was a Galaxy S24 Ultra on an unpublished test build (Android 1.51-tester49).",
-    "happened": "Nick confirmed Ready himself for seven rows: Library health; Packing List; Collections and Request a title; Website and browser games; Music on the phone; Family Dashboard, Camp Jobs and Star Chart; Family Recipes and shopping list. Each keeps its limits (for example, only Tic-Tac-Toe was played to its end, music was three test tones, sharing between phones was not retested today). Surprise me, Podcasts and radio and Accessibility gained the Real-world check but stay at 90% because of open issues. Held or lowered by new failures: Chromecast (volume slider and Unmute no audible effect, captions missing on the TV, short film will not cast), Library, player and web player (480p fails in Chrome on the PC), Photos and phone backups (location blanked in the backup copy and uploaded clips, a missing saved folder blocks adding folders) and Pack for a trip (blank Bell entry; email not tested). Not counted: Night mode and the Volume leveler (not confirmed) and email alerts (nothing was sent). Nick’s rule: a row that does not work is held at 90% and fixed, goes back to 99% once fixed, and becomes 100% when Nick and Claude both confirm it."
+    "iso": "2026-10-26T13:21:00-04:00",
+    "date": "Oct 26, 2026, 1:21 PM Eastern",
+    "headline": "Oct 26, afternoon: wording and label tidy-up and the late-morning second-household observations recorded; no score, tick, tier or cap changed",
+    "tested": "Reports received by about 11:55 AM Eastern from the second household (Galaxy S24 Ultra, Android 1.51-tester49, and the old 4-core Windows PC running the published Beebo 0.1.102): Family Recipes Edit, “Just me” and Delete with Undo; a podcast followed, played at 2.9x with a 5-minute sleep timer, then unfollowed; the music “End of track” sleep timer; and a throwaway restricted profile checked through the PC’s local API. The phone was muted unless a note says Nick heard it. Not tested: Night mode and the Volume leveler by ear, audiobook buttons, the Kids and Easy layouts on a real screen, and email sending.",
+    "happened": "Recorded as bounded dated observations only. Four small findings are listed on the Podcasts and radio row without a new open issue: no custom sleep-timer time; different timer lists for podcasts and music; the speed slider runs past its “2x” label; tapping a spot on the slider did nothing in an adb test. Wording changes in this update: the how-to-read text no longer says a 99% feature is finished; it says the feature is tested within its recorded checks; the Ready and Real-world rules now read: realistic dated AI checks on real devices count toward the Real-world check and so toward 99%, only Nick records Ready (100%) after he and Claude confirm the feature together with no errors found, and any open failure caps a feature at 90% until fixed. Notes on the seven Ready rows now point to their Ready records. Every feature percentage and the overall 66% are unchanged."
   },
   "scoring": {
     "weights": {
@@ -10151,7 +10195,7 @@
       }
     ],
     "rule": "percentComplete is worked out from features[].checks and features[].openIssues by site-data/progress-score.js: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready to call Available 1 (only Nick records it). The first four add up to 99. A feature reaches 99 only when all four are true and openIssues is 0 (omitted means 0). An open known error caps the score at 90. An optional percentCap, explained by scoreNote, is a further limit. Check with: node site-data/check-progress-score.js.",
-    "explanation": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Only Nick records Ready, the final point to 100%. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified."
+    "explanation": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified."
   },
   "sourceMerges": [
     {
