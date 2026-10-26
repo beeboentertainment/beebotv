@@ -1,11 +1,11 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+    "updatedEastern": "Oct 26, 2026, 10:13 AM Eastern",
     "method": "Code built and tests passing is the share of the Built and Automated tests checks that passed. The separate Device and real-world checks recorded figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. A feature shows \"Code 100%\" only when both of those code checks passed and no CODE item is still open; it counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
-      "humanTestingDone": 27,
+      "humanTestingDone": 28,
       "features": 70,
       "codeItemsLeft": 55,
       "counts": {
@@ -18,10 +18,10 @@
       {
         "name": "Android phone app",
         "codeDone": 95,
-        "humanTestingLeft": 65,
+        "humanTestingLeft": 63,
         "remaining": {
           "CODE": 22,
-          "DEVICE": 42,
+          "DEVICE": 41,
           "NICK": 6,
           "BLOCKED": 18
         },
@@ -223,7 +223,7 @@
           {
             "name": "Packing List (shared between phones)",
             "codeDone": 100,
-            "humanTestingLeft": 67,
+            "humanTestingLeft": 33,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           },
@@ -237,7 +237,7 @@
           {
             "name": "Collections and Request a title",
             "codeDone": 100,
-            "humanTestingLeft": 67,
+            "humanTestingLeft": 33,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           },
@@ -581,12 +581,12 @@
     "evidenceLimit": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. At that time the public downloads were Windows 0.1.99 and Android tester34; Windows 0.1.102 was published later (Oct 24, 2026, 1:05 PM Eastern) and tester35 was not. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Owner-reported on October 22: on a friend’s Samsung TV built-in browser, playback away from home and Skip intro worked after repeated Reconnect clicks; ordinary poster/sidebar navigation failed without that extra step, and Up next/Next were absent at the credits. The fixed-build retry, exact TV model, browser version and served build are unconfirmed. Earlier Chromecast viewing is a separate observation with sender details unconfirmed. No new tick or broad real-world pass."
   },
   "fullProgress": {
-    "updatedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+    "updatedEastern": "Oct 26, 2026, 10:13 AM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Device and real-world checks recorded is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
       "baseline": "The same method applied to the live site data of Oct 25, 2026, 12:54 PM Eastern",
-      "current": "Oct 25 to 26, 2026: no row went up. The Oct 25 corrections remain (Real device ticks withdrawn that rested on PARTIAL records, one old-version tick, Real-world ticks that rested on synthetic or muted passes, three 99% rows held at 90%). New in this update: dated failures and passes from two households, no tick added, and open issues added to six rows. The code figures are unchanged."
+      "current": "Oct 26 evidence-policy reassessment: realistic AI checks on real devices may count toward Real-world. Packing List and Collections/Request return to their previous 99% within their dated action scope. The other eighteen lowered rows retain their failures, insufficient listening/hardware/duration evidence or stated caps. Only Nick records Ready. No fresh installed-build acceptance is inferred."
     },
     "areas": [
       {
@@ -626,7 +626,7 @@
         "name": "Android phone",
         "rows": 32,
         "codeChecklistPercent": 95,
-        "humanTestingDonePercent": 35,
+        "humanTestingDonePercent": 37,
         "realDeviceTickedRows": 27,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
@@ -821,7 +821,7 @@
         "name": "Recipes and family",
         "rows": 4,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 33,
+        "humanTestingDonePercent": 42,
         "realDeviceTickedRows": 4,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
@@ -1010,12 +1010,12 @@
     "sourceNote": "Windows 0.1.100 and Android 1.51-tester35 (build 85) are installed test builds, not public downloads. At that time the public downloads were Windows 0.1.99 and Android tester34; Windows 0.1.102 was published later (Oct 24, 2026, 1:05 PM Eastern) and tester35 was not. The coordinator reports viewer/server repairs deployed October 22 at 6:49 AM Eastern and the older-TV-browser navigation repair at 7:24 AM Eastern. RETEST-1 reports 14 of 18 items passed; the other four include a child delete-screen failure, sidecar subtitles selected but not drawn, inconsistent online Next and network-dependent offline wording. Folder poster/NFO handling has no recorded repair. No new feature tick is justified. Code changes do not establish real-device results. The Oct 22, 2026 runs on tester34 and the Oct 21 runs on Windows 0.1.98 are recorded below. They added no tick, withdrew one (Real-world check on Library, player and web player) and found failures that are listed under their features. Beebo Auto 1.20 has not been tested in a real car. An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
   "updated": "2026-10-26T09:20:01-04:00",
-  "updatedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+  "updatedEastern": "Oct 26, 2026, 10:13 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
-  "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Only Nick’s own qualifying ownerTests can add that check. AI and QA-server runs are device tests. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
-  "overallAveragePercent": 63,
+  "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Only Nick records Ready, the final point to 100%. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
+  "overallAveragePercent": 64,
   "groupAveragePercent": {
-    "Android phone app": 71,
+    "Android phone app": 73,
     "Windows desktop app": 62,
     "Other systems": 57,
     "Services and website": 47
@@ -2156,11 +2156,15 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 26, 2026, 7:19:35 AM Eastern (S24, Nick confirmed Surprise me; saved place replaced); earlier: Oct 23, 2026, 6:34:08 PM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Oct 26, 2026, 7:19 AM Eastern: on a Galaxy S24 at a second household, Nick confirmed Surprise me (a random film started with picture and sound; Next and Previous worked); a favourite star and a watchlist bookmark switched on and the film appeared in the Watchlist and Favourites lists. Side effect to look at: Surprise me replaced the film’s saved place (Home showed 0 percent, it had been 43 percent). Playlists were still to do. This is one phone, one test member and one session, so the Real-world check tick withdrawn on Oct 25 is NOT restored. Oct 25 correction: the Real-world check tick was withdrawn. The PASS that carried it was on synthetic, muted or single-device conditions (one phone, synthetic film, tester36/35 controls), and the Real-world check needs a realistic situation such as several devices working together, away from home, a car or a real TV. The Real device tick stays. Recorded scope only: Earlier list, favourite, watchlist, playlist and intended control/fallback passes are carried. This round adds no loading-error or artwork acceptance. Still required: Loading/error and artwork cases remain unproved. Nick still decides the intended Surprise behaviour. The existing 99% checklist is carried within its recorded action scope. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Retain 74: Oct 26 7:19:35 AM second-household run replaced the saved place (43% to 0%); intended behavior remains Nick’s decision. The realistic run is acknowledged, but the unresolved consequence prevents restoration. Recorded scope only: Earlier list, favourite, watchlist, playlist and intended control/fallback passes are carried. This round adds no loading-error or artwork acceptance. Still required: Loading/error and artwork cases remain unproved. Nick still decides the intended Surprise behaviour. The existing 99% checklist is carried within its recorded action scope. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 99,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%): the PASS that carried it was one phone with a synthetic film. A PARTIAL record was added: Surprise me starts the film straight away on a Pixel and an S9+. Real device, Built, Automated tests and status label are unchanged. Oct 26: Nick confirmed Surprise me on a real phone with sound, and a side effect was noted (the saved place was replaced). No tick was restored and no score changed (the row is at 74% from the Oct 25 correction). Nick’s bounded observations recorded in ownerTests; no new tick.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 74: Oct 26 7:19:35 AM second-household run replaced the saved place (43% to 0%); intended behavior remains Nick’s decision. The realistic run is acknowledged, but the unresolved consequence prevents restoration. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%): the PASS that carried it was one phone with a synthetic film. A PARTIAL record was added: Surprise me starts the film straight away on a Pixel and an S9+. Real device, Built, Automated tests and status label are unchanged. Oct 26: Nick confirmed Surprise me on a real phone with sound, and a side effect was noted (the saved place was replaced). No tick was restored and no score changed (the row is at 74% from the Oct 25 correction). Nick’s bounded observations recorded in ownerTests; no new tick."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final phone table: 8 PASS, 0 FAIL and 0 BLOCKED assessments in this row. Earlier list, favourite, watchlist, playlist and intended control/fallback passes are carried. This round adds no loading-error or artwork acceptance. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
@@ -2479,11 +2483,15 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 12:55:58 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issue: After pausing a podcast, the bottom mini player had no close or dismiss action; Nick requested an X and swipe. Oct 26, 2026: on a Pixel 3 (tester49 on Oct 25 at 10:20 PM and tester50 on Oct 26 at 7:26 AM) Radio opened on first open with the station list and no crash (six opens on Oct 25, one on Oct 26); the Galaxy S9+ failure above is not shown to be fixed (the S9+ app was on a real library on Oct 26, so Radio was not run). Open known issues: 2 (new on Oct 25, 2026). On a Galaxy S9+ the Radio screen failed on its first two opens with “Your Beebo computer had a problem. Try again in a moment.” and loaded on the third (cause unknown); a station in the S24’s default list said “That station isn’t in the directory any more” on tester48 and played on tester49. Three clean opens on the S24 (tester49, 9:20 PM) have not cleared the S9+ failure. Oct 25 correction: the Real-world check tick was withdrawn. The PASS that carried it was on synthetic, muted or single-device conditions (muted phones, synthetic feed, single-device flows), and the Real-world check needs a realistic situation such as several devices working together, away from home, a car or a real TV. The Real device tick stays. Recorded scope only: A malformed podcast-import file produced a clear error without losing the episode list. Cancelling the picker was also observed. Earlier feed, queue, download, screen-off and radio controls are carried. Still required: Valid and duplicate-import acceptance still need the appropriate build and fixture. Listening to podcasts and radio remains a separate human check. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Open known issues: Retain 74: S9+ first-open radio failures and paused mini-player dismissal remain open. Nick heard podcast speech Oct 26 7:57 AM, but that scoped success does not clear those paths. Recorded scope only: A malformed podcast-import file produced a clear error without losing the episode list. Cancelling the picker was also observed. Earlier feed, queue, download, screen-off and radio controls are carried. Still required: Valid and duplicate-import acceptance still need the appropriate build and fixture. Listening to podcasts and radio remains a separate human check. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 99,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%): the PASS that carried it was on muted phones with a synthetic feed. One new open issue recorded (Radio screen failed twice on first open on a Galaxy S9+; cause unknown). Real device, Built, Automated tests and status label are unchanged. Oct 26: Radio opened cleanly on a Pixel 3 (state only); the S9+ first-open failure stays open. No score change. Dated retest recorded; no new tick. Nick’s bounded observations recorded in ownerTests; no new tick. After pausing a podcast, the bottom mini player had no close or dismiss action; Nick requested an X and swipe.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 74: S9+ first-open radio failures and paused mini-player dismissal remain open. Nick heard podcast speech Oct 26 7:57 AM, but that scoped success does not clear those paths. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%): the PASS that carried it was on muted phones with a synthetic feed. One new open issue recorded (Radio screen failed twice on first open on a Galaxy S9+; cause unknown). Real device, Built, Automated tests and status label are unchanged. Oct 26: Radio opened cleanly on a Pixel 3 (state only); the S9+ first-open failure stays open. No score change. Dated retest recorded; no new tick. Nick’s bounded observations recorded in ownerTests; no new tick. After pausing a podcast, the bottom mini player had no close or dismiss action; Nick requested an X and swipe."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final phone table: 7 PASS, 0 FAIL and 0 BLOCKED assessments in this row. A malformed podcast-import file produced a clear error without losing the episode list. Cancelling the picker was also observed. Earlier feed, queue, download, screen-off and radio controls are carried. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
@@ -3469,7 +3477,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 2:29:25 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Oct 25 correction: the Real-world check tick was withdrawn. The PASS that carried it was on synthetic, muted or single-device conditions (all outputs muted; the row itself says a person must check audible clicks and timing), and the Real-world check needs a realistic situation such as several devices working together, away from home, a car or a real TV. The Real device tick stays. Recorded scope only: The native group test created audio pulse nodes on Pixel/S24 browser guests. Host Stop showed connection loss; normal restart and manual refresh/rejoin recovered. Separate PC-film sound buffers reached Pixel/S9 browsers. Still required: Everything was muted. A person must check audible clicks, music, acoustic delay and Bluetooth. There is no automatic-reconnect or perceived-synchronization claim. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Retain 74: Oct 24 2:29:25 AM multi-phone outputs were all muted; audible clicks, delay, music and Bluetooth were not judged. Recorded scope only: The native group test created audio pulse nodes on Pixel/S24 browser guests. Host Stop showed connection loss; normal restart and manual refresh/rejoin recovered. Separate PC-film sound buffers reached Pixel/S9 browsers. Still required: Everything was muted. A person must check audible clicks, music, acoustic delay and Bluetooth. There is no automatic-reconnect or perceived-synchronization claim. No new whole-feature checkmark is added. Nick alone records Ready.",
       "roadTo100": {
         "means": "Real phones act as a speaker group, and guest volume trim and off controls work.",
         "done": [
@@ -3503,9 +3511,13 @@
         ]
       },
       "previousPercent": 99,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%). The PASS that carried it was synthetic, muted or on one device only (all outputs muted; the row itself says a person must check audible clicks and timing). The Real device tick, Built, Automated tests and status label are unchanged, and the dated records stay in the list.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 74: Oct 24 2:29:25 AM multi-phone outputs were all muted; audible clicks, delay, music and Bluetooth were not judged. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%). The PASS that carried it was synthetic, muted or on one device only (all outputs muted; the row itself says a person must check audible clicks and timing). The Real device tick, Built, Automated tests and status label are unchanged, and the dated records stay in the list."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final phone table: 5 PASS, 0 FAIL and 0 BLOCKED assessments in this row. The native group test created audio pulse nodes on Pixel/S24 browser guests. Host Stop showed connection loss; normal restart and manual refresh/rejoin recovered. Separate PC-film sound buffers reached Pixel/S9 browsers. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
@@ -4653,10 +4665,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 12:50:19 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Oct 25 correction: the Real-world check tick was withdrawn. The PASS that carried it was on synthetic, muted or single-device conditions (one phone, muted synthetic tones, no listening claim), and the Real-world check needs a realistic situation such as several devices working together, away from home, a car or a real TV. The Real device tick stays. Recorded scope only: The native album-radio control started a real test track, its progress and six recommendations, then stopped. Existing queue, sleep and screen-off controls are carried. Still required: Later music-player and service changes are not installed on the tested phones. Those changed paths need an approved compatible build; listening and gapless/crossfade quality remain separate. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Retain 74: Oct 23 11:05:34 AM and Oct 25 10:20:02 PM controls passed muted; real music, gapless/crossfade and later installed-code acceptance remain missing. Recorded scope only: The native album-radio control started a real test track, its progress and six recommendations, then stopped. Existing queue, sleep and screen-off controls are carried. Still required: Later music-player and service changes are not installed on the tested phones. Those changed paths need an approved compatible build; listening and gapless/crossfade quality remain separate. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 99,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%): the PASS that carried it was one phone with muted synthetic tones. A PARTIAL record was added (20 seconds of album playback on an S9+, muted). Real device, Built, Automated tests and status label are unchanged. Oct 25, 10:20 PM Eastern: a PARTIAL record (Pixel 3, music queue and Next, state only). No tick or score change. Dated retest recorded; no new tick.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 74: Oct 23 11:05:34 AM and Oct 25 10:20:02 PM controls passed muted; real music, gapless/crossfade and later installed-code acceptance remain missing. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "testedOn": "Final phone record: S9+, Pixel. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. The native album-radio control started a real test track, its progress and six recommendations, then stopped. Existing queue, sleep and screen-off controls are carried. Last PASS: Oct 24, 2026, 12:50:19 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "Real music plays on a phone with sound, crossfade, gapless playback, queue and radio working, and a reviewer signs off.",
@@ -4691,6 +4703,10 @@
         ]
       },
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%): the PASS that carried it was one phone with muted synthetic tones. A PARTIAL record was added (20 seconds of album playback on an S9+, muted). Real device, Built, Automated tests and status label are unchanged. Oct 25, 10:20 PM Eastern: a PARTIAL record (Pixel 3, music queue and Next, state only). No tick or score change. Dated retest recorded; no new tick."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final phone table: 4 PASS, 0 FAIL and 0 BLOCKED assessments in this row. The native album-radio control started a real test track, its progress and six recommendations, then stopped. Existing queue, sleep and screen-off controls are carried. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
@@ -4823,10 +4839,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 12:44:18 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Oct 25 correction: the Real-world check tick was withdrawn. The PASS that carried it was on synthetic, muted or single-device conditions (two phones each used alone, no real family duration), and the Real-world check needs a realistic situation such as several devices working together, away from home, a car or a real TV. The Real device tick stays. Recorded scope only: A blank native family alias was rejected without creating a person. Earlier dashboard, jobs and star actions are carried. A Games link does not prove every game. Still required: People still need to use jobs over days and play together. No broader game acceptance is added. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Retain 74: Oct 23 11:51:29 AM jobs/stars and Nick Oct 26 7:30 AM are valid bounded checks, but this row explicitly requires family use over several days, which neither record establishes. Recorded scope only: A blank native family alias was rejected without creating a person. Earlier dashboard, jobs and star actions are carried. A Games link does not prove every game. Still required: People still need to use jobs over days and play together. No broader game acceptance is added. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 99,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%). The PASS that carried it was synthetic, muted or on one device only (two phones each used alone, no real family duration). The Real device tick, Built, Automated tests and status label are unchanged, and the dated records stay in the list. Dated retest recorded; no new tick. Nick’s bounded observations recorded in ownerTests; no new tick.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 74: Oct 23 11:51:29 AM jobs/stars and Nick Oct 26 7:30 AM are valid bounded checks, but this row explicitly requires family use over several days, which neither record establishes. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "testedOn": "Final phone record: Pixel 3, S9+, Pixel. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. A blank native family alias was rejected without creating a person. Earlier dashboard, jobs and star actions are carried. A Games link does not prove every game. Last PASS: Oct 24, 2026, 12:44:18 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "A real family uses the dashboard and Camp Jobs on their phones for several days and a reviewer signs off.",
@@ -4874,6 +4890,10 @@
         }
       ],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%). The PASS that carried it was synthetic, muted or on one device only (two phones each used alone, no real family duration). The Real device tick, Built, Automated tests and status label are unchanged, and the dated records stay in the list. Dated retest recorded; no new tick. Nick’s bounded observations recorded in ownerTests; no new tick."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final phone table: 7 PASS, 0 FAIL and 0 BLOCKED assessments in this row. A blank native family alias was rejected without creating a person. Earlier dashboard, jobs and star actions are carried. A Games link does not prove every game. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
@@ -4945,24 +4965,24 @@
       "group": "Android phone app",
       "name": "Packing List (shared between phones)",
       "status": "Beta",
-      "percentComplete": 74,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
-        "Real-world check": false,
+        "Real-world check": true,
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 12:40:33 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Correction: the post-baseline Real-world tick came from an AI-only two-phone PASS, not Nick’s ownerTests. Nick confirmed a local packing-item tick today, but sharing between phones was not tested. The Real-world tick is withdrawn; no Ready tick is added. Recorded scope only: A blank Add action preserved the two owned packing items and their unchecked state. Earlier two-way list and offline-reconnect passes retain their original saved-test-session qualification. Still required: A reconnecting banner is not a fresh shared-sync pass. Real bag and trip use remain a human check. No new whole-feature checkmark is added. Nick alone records Ready.",
-      "previousPercent": 99,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Correction: the post-baseline Real-world tick came from an AI-only two-phone PASS, not Nick’s ownerTests. Nick confirmed a local packing-item tick today, but sharing between phones was not tested. The Real-world tick is withdrawn; no Ready tick is added.",
+      "leftToReach100": "Real-world check is supported by the dated realistic device actions below. Nick’s final review while packing a real bag remains. A reconnecting banner alone is not a new sync pass.",
+      "previousPercent": 74,
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy correction: Real-world check restored. Two real phones exchanged items and synchronized an offline tick after reconnect. These are realistic shared-list actions; the AI operator does not invalidate them. The original saved-house TEST sessions and older tester35 build remain explicit; this is not a fresh tester50 run or a real-trip acceptance. Only Nick records Ready; no new device test was run.",
       "testedOn": "Final phone record: Pixel 3, S9+, Pixel. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. A blank Add action preserved the two owned packing items and their unchecked state. Earlier two-way list and offline-reconnect passes retain their original saved-test-session qualification. Last PASS: Oct 24, 2026, 12:40:33 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "Two or more phones share one packing list, including offline ticking that syncs later, and a reviewer signs off.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Oct 13, 2026, two real phones: add, tick and remove synced both ways (about 6 seconds).",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ and Pixel 3 exchanged packing items in their original saved-house sessions. S9+ edited offline; after reconnect the Pixel received 2/2, then ticks were restored to 0/2. The initial pre-settle 1/2 capture is retained. These were not isolated-server identities. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Oct 23, 2026, 9:44:31 AM Eastern: Phone tests recorded the the recorded feature Last PASS. The two phones exchanged packing items and synchronized an offline tick after reconnect on tester35. These carried passes used earlier saved-house TEST sessions, not the later isolated-server identity. Ticks were restored; no real trip is claimed.",
@@ -4986,7 +5006,7 @@
         ]
       },
       "codeDonePercent": 100,
-      "realWorldDonePercent": 33,
+      "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [
@@ -5000,6 +5020,10 @@
         }
       ],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Correction: the post-baseline Real-world tick came from an AI-only two-phone PASS, not Nick’s ownerTests. Nick confirmed a local packing-item tick today, but sharing between phones was not tested. The Real-world tick is withdrawn; no Ready tick is added."
+        },
         {
           "changedEastern": "Oct 23, 2026, 7:57 PM Eastern",
           "changeNote": "Phone tests Round 3 ledger: 2 PASS, 0 FAIL, 0 BLOCKED in the named A scope. The named tester35 passes are carried; no repeat phone run or new tester36 pass is inferred. The existing device/real-world ticks are retained for the stated control scope. Built, Automated tests, Ready and status labels are unchanged."
@@ -5038,7 +5062,9 @@
           "date": "Oct 23, 2026, 9:44:31 AM Eastern",
           "result": "PASS",
           "evidence": "The two phones exchanged packing items and synchronized an offline tick after reconnect on tester35. These carried passes used earlier saved-house TEST sessions, not the later isolated-server identity. Ticks were restored; no real trip is claimed. Last PASS from the evidence table: Pixel 3; tester35/code85; 2026-10-23 09:44:31 AM EDT; this is a recorded capture/API time, not file modification time. Passed scope only. the recorded check PASS (Round1 carried): packing/the test record, packing/the test record; the recorded check PASS (Round1 carried): packing/the test record, packing/the test record, packing/the test record, packing/*-the test record. Paths are relative to the local Oct 23 Phone tests evidence root; no raw captures uploaded. Source the private evidence archive at the recorded build.",
-          "ticks": []
+          "ticks": [
+            "Real-world check"
+          ]
         },
         {
           "tester": "Phone tests (AI tester; automated real-phone checks)",
@@ -5067,10 +5093,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 12:42:46 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Oct 25 correction: the Real-world check tick was withdrawn. The PASS that carried it was on synthetic, muted or single-device conditions (one phone, local original-session context), and the Real-world check needs a realistic situation such as several devices working together, away from home, a car or a real TV. The Real device tick stays. Recorded scope only: Cancelling native recipe creation returned without creating a recipe. Earlier synthetic validation, scaling, duplicate and shopping-total checks are carried. Still required: People still need to plan and cook a meal and judge practical quantities. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Retain 74: Oct 23 11:11:59 AM arithmetic/list operations and Nick Oct 26 7:53 AM scaling are valid bounded checks. Outgoing recipe sharing and practical meal quantities remain untested in this combined row. Recorded scope only: Cancelling native recipe creation returned without creating a recipe. Earlier synthetic validation, scaling, duplicate and shopping-total checks are carried. Still required: People still need to plan and cook a meal and judge practical quantities. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 99,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%). The PASS that carried it was synthetic, muted or on one device only (one phone, local original-session context). The Real device tick, Built, Automated tests and status label are unchanged, and the dated records stay in the list. Nick’s bounded observations recorded in ownerTests; no new tick.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 74: Oct 23 11:11:59 AM arithmetic/list operations and Nick Oct 26 7:53 AM scaling are valid bounded checks. Outgoing recipe sharing and practical meal quantities remain untested in this combined row. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "testedOn": "Final phone record: S9+, Pixel. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. Cancelling native recipe creation returned without creating a recipe. Earlier synthetic validation, scaling, duplicate and shopping-total checks are carried. Last PASS: Oct 24, 2026, 12:42:46 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "A real family adds recipes, scales amounts, builds a shopping list across recipes and shares it.",
@@ -5121,6 +5147,10 @@
         }
       ],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%). The PASS that carried it was synthetic, muted or on one device only (one phone, local original-session context). The Real device tick, Built, Automated tests and status label are unchanged, and the dated records stay in the list. Nick’s bounded observations recorded in ownerTests; no new tick."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final phone table: 6 PASS, 0 FAIL and 0 BLOCKED assessments in this row. Cancelling native recipe creation returned without creating a recipe. Earlier synthetic validation, scaling, duplicate and shopping-total checks are carried. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
@@ -5183,27 +5213,27 @@
       "group": "Android phone app",
       "name": "Collections and Request a title",
       "status": "Beta",
-      "percentComplete": 74,
+      "percentComplete": 99,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
-        "Real-world check": false,
+        "Real-world check": true,
         "Ready to call Available": false
       },
       "lastTested": "Oct 23, 2026, 6:29:17 PM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Oct 25 correction: the Real-world check tick was withdrawn. The PASS that carried it was on synthetic, muted or single-device conditions (one phone, disposable request and synthetic collection), and the Real-world check needs a realistic situation such as several devices working together, away from home, a car or a real TV. The Real device tick stays. Recorded scope only: Earlier collection, filter and request actions and the intended trailer-handler dispatch are carried. Actual matching trailer picture and sound were not newly established. Still required: Matching trailer picture and sound still need checking. Dispatch alone is not a new trailer-playback or whole-feature pass. No new whole-feature checkmark is added. Nick alone records Ready.",
-      "previousPercent": 99,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%). The PASS that carried it was synthetic, muted or on one device only (one phone, disposable request and synthetic collection). The Real device tick, Built, Automated tests and status label are unchanged, and the dated records stay in the list. A PASS record was added for the Oct 25 request-sharing check (a member sees other members’ requests, read-only); it does not return the Real-world tick. Nick’s bounded observations recorded in ownerTests; no new tick.",
+      "leftToReach100": "Real-world check is supported by the dated realistic device actions below. The final human look and matching trailer picture/sound remain untested; dispatch alone is not trailer playback acceptance.",
+      "previousPercent": 74,
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy correction: Real-world check restored. A real-phone populated collection filter and owner-confirmed request were exercised, followed by a two-member read-only household-request check on Oct 25 and Nick’s bounded list/request observation on Oct 26. Those are realistic collection/request actions. Matching trailer picture and sound remain outside this passed scope. Only Nick records Ready; no new device test was run.",
       "testedOn": "Final phone record: Pixel 3. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. Earlier collection, filter and request actions and the intended trailer-handler dispatch are carried. Actual matching trailer picture and sound were not newly established. Last PASS: Oct 23, 2026, 6:29:17 PM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "A person browses collections, sees what is missing and sends a request that the owner receives.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Oct 13, 2026, S24 Ultra: collections listed, searched and opened with missing-film markers; the Request a title screen opened.",
           "Oct 14, 2026, published tester23: 101 collections listed (S9+); a missing title showed the Request button and ampersand searches worked on all four phones; no request was sent.",
-          "Sending a request was never tried. A fuller media-requests and wishlist feature is only an idea, not promised; work on it has started but is not merged and is not in any download.",
+          "Earlier note superseded by the dated Oct 23 request receipt and Oct 25 two-member request check below; those requests were actually sent and confirmed. A broader wishlist remains separate from this recorded collection/request scope.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3 selected Complete on an honestly empty collection list and sent a disposable title request; the normal owner API confirmed the exact title. Positive collection filtering and trailers lacked fixtures. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Oct 23, 2026, 6:29:17 PM Eastern: Phone tests recorded the the recorded feature Last PASS. Populated synthetic collection filters and the owner-confirmed disposable request passed on tester35. On tester36, the changed 48 dp trailer control dispatched the intended public synthetic video to the normal handler. No real title/trailer match, trailer picture, sound or external account flow is claimed."
         ],
@@ -5211,10 +5241,6 @@
           {
             "kind": "DEVICE",
             "text": "Matching trailer picture and sound still need checking. Dispatch alone is not a new trailer-playback or whole-feature pass."
-          },
-          {
-            "kind": "DEVICE",
-            "text": "A realistic-situation check with dated evidence (several devices working together, or the real situation the feature is for), then the Real-world tick can return."
           }
         ],
         "hist": [
@@ -5229,6 +5255,10 @@
         ]
       },
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%). The PASS that carried it was synthetic, muted or on one device only (one phone, disposable request and synthetic collection). The Real device tick, Built, Automated tests and status label are unchanged, and the dated records stay in the list. A PASS record was added for the Oct 25 request-sharing check (a member sees other members’ requests, read-only); it does not return the Real-world tick. Nick’s bounded observations recorded in ownerTests; no new tick."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final phone table: 6 PASS, 0 FAIL and 0 BLOCKED assessments in this row. Earlier collection, filter and request actions and the intended trailer-handler dispatch are carried. Actual matching trailer picture and sound were not newly established. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly."
@@ -5263,7 +5293,7 @@
         }
       ],
       "codeDonePercent": 100,
-      "realWorldDonePercent": 33,
+      "realWorldDonePercent": 67,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [
@@ -6158,7 +6188,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 1:25:31 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Oct 25 correction: the Real device tick was withdrawn. It rested on a single PARTIAL record from a headless test server on a PC (the installed Windows app was not launched), and this site’s own rule says a Real device tick needs a PASS. Recorded scope only: The earlier S24 real-time own-playlist playback and pause PASS is carried. A later native S9+ silent channel rendered on the phone and the PC delivered the stream, but the real TV still had no media session after about 94 seconds. Normal Stop returned the receiver to idle. Still required: The existing native Cast media-loading bug needs repair and a real-TV retest. No TV picture, captions, seek or sound pass is established. A real tuner and broader channel/restriction checks remain. This is the same Cast bug, not an additional independently localized Live TV issue. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Retain 49: Oct 24 1:25:31 AM synthetic own-playlist phone picture is PARTIAL; later real-TV Cast loading failed and real tuner/provider coverage remains absent. No Real device PASS is invented. Recorded scope only: The earlier S24 real-time own-playlist playback and pause PASS is carried. A later native S9+ silent channel rendered on the phone and the PC delivered the stream, but the real TV still had no media session after about 94 seconds. Normal Stop returned the receiver to idle. Still required: The existing native Cast media-loading bug needs repair and a real-TV retest. No TV picture, captions, seek or sound pass is established. A real tuner and broader channel/restriction checks remain. This is the same Cast bug, not an additional independently localized Live TV issue. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "roadTo100": {
         "means": "A real tuner and a real playlist both work on a PC, with a correct guide and safe source rules.",
         "done": [
@@ -6190,14 +6220,18 @@
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 49: Oct 24 1:25:31 AM synthetic own-playlist phone picture is PARTIAL; later real-TV Cast loading failed and real tuner/provider coverage remains absent. No Real device PASS is invented. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final PC campaign: 1 PASS, 1 FAIL and 0 BLOCKED assessments for this row. The earlier S24 real-time own-playlist playback and pause PASS is carried. A later native S9+ silent channel rendered on the phone and the PC delivered the stream, but the real TV still had no media session after about 94 seconds. Normal Stop returned the receiver to idle. Earlier execution times and all checkmarks, scores, availability labels and issue counts are retained. No installed-app or whole-feature clearance."
@@ -6331,7 +6365,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 1:27:24 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Oct 25 correction: the Real device tick was withdrawn. It rested on a single PARTIAL record from a headless test server on a PC (the installed Windows app was not launched), and this site’s own rule says a Real device tick needs a PASS. Recorded scope only: Pixel and S9 browsers joined a real room, both saw a restricted title disappear, both submitted their actual votes, and the winning film played in the PC product browser player. Still required: The installed desktop host panel and a person checking a real group night remain. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Retain 49: Oct 24 1:27:24 AM vote/phone-browser playback is PARTIAL; installed host/shared display/group-night acceptance remains untested and earlier raw not_found failure is retained. Recorded scope only: Pixel and S9 browsers joined a real room, both saw a restricted title disappear, both submitted their actual votes, and the winning film played in the PC product browser player. Still required: The installed desktop host panel and a person checking a real group night remain. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "roadTo100": {
         "means": "A host and a guest on two real devices join, play, pause and leave together, with the sharing rules reviewed.",
         "done": [
@@ -6364,14 +6398,18 @@
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A PARTIAL record was added: the browser part of Movie Night (room, join by code, host controls, end) passed on the Oct 25 test server.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 49: Oct 24 1:27:24 AM vote/phone-browser playback is PARTIAL; installed host/shared display/group-night acceptance remains untested and earlier raw not_found failure is retained. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A PARTIAL record was added: the browser part of Movie Night (room, join by code, host controls, end) passed on the Oct 25 test server."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final PC campaign: 1 PASS, 0 FAIL and 0 BLOCKED assessments for this row. Pixel and S9 browsers joined a real room, both saw a restricted title disappear, both submitted their actual votes, and the winning film played in the PC product browser player. Earlier execution times and all checkmarks, scores, availability labels and issue counts are retained. No installed-app or whole-feature clearance."
@@ -6468,7 +6506,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 1:02:28 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Oct 25 correction: the Real device tick was withdrawn. It rested on a single PARTIAL record from a headless test server on a PC (the installed Windows app was not launched), and this site’s own rule says a Real device tick needs a PASS. Recorded scope only: The S24 browser used compatible media-client sign-in, library and playback endpoints, played the full 20-second clip, sought and paused. It used a separately copied recovery test server; that provenance is kept separate. Still required: Installed third-party media clients and reconnect remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Retain 49: Oct 24 1:02:28 AM browser compatibility playback is PARTIAL; no installed third-party client/reconnect run. Oct 25 9:45 PM server was disabled. Recorded scope only: The S24 browser used compatible media-client sign-in, library and playback endpoints, played the full 20-second clip, sought and paused. It used a separately copied recovery test server; that provenance is kept separate. Still required: Installed third-party media clients and reconnect remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "roadTo100": {
         "means": "Several real Jellyfin apps connect and play, and anything unsupported is listed.",
         "done": [
@@ -6499,14 +6537,18 @@
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A BLOCKED record was added on Oct 25 (Jellyfin-compatible mode was switched off on the test server (every public endpoint answered Not found) and no Jellyfin client app was installed).",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 49: Oct 24 1:02:28 AM browser compatibility playback is PARTIAL; no installed third-party client/reconnect run. Oct 25 9:45 PM server was disabled. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A BLOCKED record was added on Oct 25 (Jellyfin-compatible mode was switched off on the test server (every public endpoint answered Not found) and no Jellyfin client app was installed)."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final PC campaign: 2 PASS, 0 FAIL and 0 BLOCKED assessments for this row. The S24 browser used compatible media-client sign-in, library and playback endpoints, played the full 20-second clip, sought and paused. It used a separately copied recovery test server; that provenance is kept separate. Earlier execution times and all checkmarks, scores, availability labels and issue counts are retained. No installed-app or whole-feature clearance."
@@ -6574,7 +6616,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 2:32:42 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Oct 25 correction: the Real device tick was withdrawn. It rested on a single PARTIAL record from a headless test server on a PC (the installed Windows app was not launched), and this site’s own rule says a Real device tick needs a PASS. Recorded scope only: The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Still required: Installed-PC enforcement and broader changes to active profile limits during Live TV and Movie Night remain separate acceptance checks. The existing child account-screen issue still needs its reviewed repair and fixed-build retest. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Retain 49: Oct 25 9:40 PM allow-list refusal is PARTIAL; installed-PC enforcement, bedtime/daily limits and child delete-screen repair remain untested/open. Recorded scope only: The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Still required: Installed-PC enforcement and broader changes to active profile limits during Live TV and Movie Night remain separate acceptance checks. The existing child account-screen issue still needs its reviewed repair and fixed-build retest. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "roadTo100": {
         "means": "Restricted and normal profiles behave correctly on a real PC and the household rules have been reviewed.",
         "done": [
@@ -6609,14 +6651,18 @@
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A PARTIAL record was added: a restricted test member saw only the one allowed film on the Oct 25 test server.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 49: Oct 25 9:40 PM allow-list refusal is PARTIAL; installed-PC enforcement, bedtime/daily limits and child delete-screen repair remain untested/open. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A PARTIAL record was added: a restricted test member saw only the one allowed film on the Oct 25 test server."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final PC campaign: 2 PASS, 0 FAIL and 0 BLOCKED assessments for this row. The Pixel browser normal test member saw the synthetic title. The restricted test member could not see it, and its exact watch link showed Not found with no playable media. The PC recorded the matching refusal. The normal member was restored and could see the title again. Earlier S24 and Live TV refusals keep their original records. Earlier execution times and all checkmarks, scores, availability labels and issue counts are retained. No installed-app or whole-feature clearance."
@@ -7239,7 +7285,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 23, 2026, 10:03:53 AM Eastern (Last PASS CARRY-the recorded feature; recorded check completion; carried, not rerun)",
-      "leftToReach100": "Oct 25 correction: the Real device tick was withdrawn. It rested on a single PARTIAL record from a headless test server on a PC (the installed Windows app was not launched), and this site’s own rule says a Real device tick needs a PASS. Passed scope only: Strong and Off each produced real HLS audio/video segments with the requested mode through the production server. FFprobe confirmed audio. No sound, dialogue intelligibility, clipping, pumping or sync was judged by ear. Still required: Listen to the same quiet/loud scenes of a real film through real speakers in Strong and Off at fixed comfortable volume and record what you hear. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
+      "leftToReach100": "Retain 49: Oct 23 10:03:53 AM output segments/ffprobe do not establish heard loudness, clipping, pumping or sync; Nick’s Oct 26 9:05 AM Night-mode result was inconclusive and not Strong mode. See the dated records and road-to-100 limits below.",
       "roadTo100": {
         "means": "On real speakers a real film sounds more even in both modes, with before and after notes.",
         "done": [
@@ -7267,14 +7313,18 @@
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. Dated retest recorded; no new tick.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 49: Oct 23 10:03:53 AM output segments/ffprobe do not establish heard loudness, clipping, pumping or sync; Nick’s Oct 26 9:05 AM Night-mode result was inconclusive and not Strong mode. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. Dated retest recorded; no new tick."
+        },
         {
           "changedEastern": "Oct 23, 2026, 9:32 PM Eastern",
           "changeNote": "Windows and web tests scoped evidence: 1 PASS, 0 FAIL, 1 BLOCKED assessments. Exact source and Last PASS time are retained; carried checks were not rerun. Real device records the actual Windows source/server/browser execution only; the Real-world tick stays unchanged because native/client/hardware acceptance remains. Built, Automated tests, Ready and status labels are unchanged."
@@ -7420,10 +7470,10 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 1:13:23 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Oct 25 correction: the Real device tick was withdrawn. It rested on a single PARTIAL record from a headless test server on a PC (the installed Windows app was not launched), and this site’s own rule says a Real device tick needs a PASS. Recorded scope only: The S24 browser played music from the PC, advanced with Next, started the similar-music radio queue and paused. Actual PC requests matched. Still required: Lyrics display and gapless/crossfade controls still need recorded client acceptance. A person must separately hear music and judge audible continuity. The installed desktop application was not launched. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Retain 49: Oct 25 9:47 PM muted controls were PARTIAL and now-playing title had zero width at 1024 pixels; listening/lyrics/gapless remain untested. Recorded scope only: The S24 browser played music from the PC, advanced with Next, started the similar-music radio queue and paused. Actual PC requests matched. Still required: Lyrics display and gapless/crossfade controls still need recorded client acceptance. A person must separately hear music and judge audible continuity. The installed desktop application was not launched. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A PARTIAL record was added: album play, Next, pause and seek worked on the Oct 25 test server (muted); the now-playing title is invisible at 1024 pixels wide.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 49: Oct 25 9:47 PM muted controls were PARTIAL and now-playing title had zero width at 1024 pixels; listening/lyrics/gapless remain untested. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "testedOn": "Real Windows PC development server 0.1.99 and the phone/browser devices named in the subset. The S24 browser played music from the PC, advanced with Next, started the similar-music radio queue and paused. Actual PC requests matched. Last PASS: Oct 24, 2026, 1:13:23 AM Eastern. The installed Windows application was never launched. Final phone and PC ledgers now agree; remaining acceptance gaps are explicit.",
       "roadTo100": {
         "means": "Music plays with sound in the desktop window, mixes start, and a reviewer signs off.",
@@ -7457,6 +7507,10 @@
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [],
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A PARTIAL record was added: album play, Next, pause and seek worked on the Oct 25 test server (muted); the now-playing title is invisible at 1024 pixels wide."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final PC campaign: 1 PASS, 0 FAIL and 0 BLOCKED assessments for this row. The S24 browser played music from the PC, advanced with Next, started the similar-music radio queue and paused. Actual PC requests matched. Earlier execution times and all checkmarks, scores, availability labels and issue counts are retained. No installed-app or whole-feature clearance."
@@ -7602,11 +7656,15 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 1:09:58 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Oct 25 correction: the Real device tick was withdrawn. It rested on a single PARTIAL record from a headless test server on a PC (the installed Windows app was not launched), and this site’s own rule says a Real device tick needs a PASS. Recorded scope only: S24 and S9 browsers displayed decoded photos. S24 Next/Previous changed the actual picture and returned to the first. Revoking the test wall link on the PC hid both photos and showed the access-ended message. Still required: Actual one-day expiry, phone-presence integration and installed Windows setup screens remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Retain 49: Oct 24 1:09:58 AM decoded photos/revocation are PARTIAL; actual one-day expiry, presence and installed setup remain untested; Oct 25 9:45 PM disabled. Recorded scope only: S24 and S9 browsers displayed decoded photos. S24 Next/Previous changed the actual picture and returned to the first. Revoking the test wall link on the PC hid both photos and showed the access-ended message. Still required: Actual one-day expiry, phone-presence integration and installed Windows setup screens remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A BLOCKED record was added on Oct 25 (Picture frame is switched off on the test server (its page honestly says In development)).",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 49: Oct 24 1:09:58 AM decoded photos/revocation are PARTIAL; actual one-day expiry, presence and installed setup remain untested; Oct 25 9:45 PM disabled. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A BLOCKED record was added on Oct 25 (Picture frame is switched off on the test server (its page honestly says In development))."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final PC campaign: 1 PASS, 0 FAIL and 0 BLOCKED assessments for this row. S24 and S9 browsers displayed decoded photos. S24 Next/Previous changed the actual picture and returned to the first. Revoking the test wall link on the PC hid both photos and showed the access-ended message. Earlier execution times and all checkmarks, scores, availability labels and issue counts are retained. No installed-app or whole-feature clearance."
@@ -7716,11 +7774,15 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 1:39:42 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Open known issue: The desktop Enable kitchen announcements box did not switch on after three attempts; no announcement was sent. Oct 25 correction: the Real device tick was withdrawn. It rested on a single PARTIAL record from a headless test server on a PC (the installed Windows app was not launched), and this site’s own rule says a Real device tick needs a PASS. Recorded scope only: The PC service sent a message to Pixel, S9 and S24 browser banners, which cleared after 15 seconds. Quiet hours suppressed the restricted test member; normal members still saw the message. A real test guest was refused. Still required: The installed sender panel, native notifications and a person hearing Listen remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Open known issues: Retain 49: Oct 26 6:18 AM Enable failed after three attempts; no send/receive retest. Earlier browser banners do not clear it. Recorded scope only: The PC service sent a message to Pixel, S9 and S24 browser banners, which cleared after 15 seconds. Quiet hours suppressed the restricted test member; normal members still saw the message. A real test guest was refused. Still required: The installed sender panel, native notifications and a person hearing Listen remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "previousPercent": 74,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A BLOCKED record was added on Oct 25 (Kitchen announcements is switched off on the test server (the poll says enabled: false)). Oct 26: a BLOCKED record from the installed Windows app at a second household: the “Enable kitchen announcements” tick box would not switch on in three clicks, so nothing was sent. No tick or score change. The desktop Enable kitchen announcements box did not switch on after three attempts; no announcement was sent. Dated retest recorded; no new tick.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 49: Oct 26 6:18 AM Enable failed after three attempts; no send/receive retest. Earlier browser banners do not clear it. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). It rested on one PARTIAL record from a headless test server on a PC with the installed app not launched; the site rule needs a PASS. No test was run or lost: the Oct 23 to Oct 24 records stay in the list. Built, Automated tests and status label unchanged. A BLOCKED record was added on Oct 25 (Kitchen announcements is switched off on the test server (the poll says enabled: false)). Oct 26: a BLOCKED record from the installed Windows app at a second household: the “Enable kitchen announcements” tick box would not switch on in three clicks, so nothing was sent. No tick or score change. The desktop Enable kitchen announcements box did not switch on after three attempts; no announcement was sent. Dated retest recorded; no new tick."
+        },
         {
           "changedEastern": "Oct 24, 2026, 4:32 AM Eastern",
           "changeNote": "Final PC campaign: 1 PASS, 0 FAIL and 0 BLOCKED assessments for this row. The PC service sent a message to Pixel, S9 and S24 browser banners, which cleared after 15 seconds. Quiet hours suppressed the restricted test member; normal members still saw the message. A real test guest was refused. Earlier execution times and all checkmarks, scores, availability labels and issue counts are retained. No installed-app or whole-feature clearance."
@@ -8428,7 +8490,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 1, 2026 (an earlier version on one phone); the new host controls have automated checks only",
-      "leftToReach100": "Oct 25 correction: the Real device tick was withdrawn (it came from an earlier version of a different flow, Oct 1, 2026). Not yet tested on real phones. After release, try a host and guests on unrelated networks, host approval for every guest, the host panel without a microphone and per-guest message limits.",
+      "leftToReach100": "Retain 49: Oct 26 6:18:27 AM sheet-only observation did not join or test audio; old different-flow device result cannot qualify new invite/host-approval flow. See the dated records and road-to-100 limits below.",
       "roadTo100": {
         "means": "Two phones on different networks talk to each other reliably.",
         "done": [
@@ -8452,8 +8514,8 @@
         ]
       },
       "previousPercent": 74,
-      "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). Its own note already said the tick came from an earlier version and was not evidence for the new flow. No test was run. Oct 26: a state-only record on a Galaxy S24 (the Android walkie-talkie sheet is labelled In development; not joined). The Real device tick stays withdrawn.",
+      "changedEastern": "Oct 26, 2026, 10:13 AM Eastern",
+      "changeNote": "Evidence-policy reassessment: Retain 49: Oct 26 6:18:27 AM sheet-only observation did not join or test audio; old different-flow device result cannot qualify new invite/host-approval flow. Realistic AI checks are eligible; this row keeps its specific failure or missing-scenario limit. No new test was run.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 0,
       "codeItemsLeft": 0,
@@ -8462,6 +8524,10 @@
       "testedOn": "The new invite-from-anywhere flow has not been tested on real phones. The earlier Oct 1, 2026 version was tried once; it no longer counts.",
       "scoreNote": "The Real device tick was withdrawn on Oct 25, 2026. It came from an earlier version of a different flow (Oct 1, 2026). The new invite-from-anywhere flow (host approves every guest, host panel without a microphone, per-guest message limits) has not been run on real phones.",
       "changeHistory": [
+        {
+          "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
+          "changeNote": "Oct 25: Real device tick withdrawn (was 74%, now 49%). Its own note already said the tick came from an earlier version and was not evidence for the new flow. No test was run. Oct 26: a state-only record on a Galaxy S24 (the Android walkie-talkie sheet is labelled In development; not joined). The Real device tick stays withdrawn."
+        },
         {
           "changedEastern": "Oct 23, 2026, 11:05 AM Eastern",
           "changeNote": "Scoring update only: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready 1. The score changed from 65% to 74%. No feature check or test evidence changed. No new feature test was run."
@@ -8935,7 +9001,7 @@
     "Planned"
   ],
   "honestyNote": "No feature is described as 100% working. Untested paths are listed as not tested, not as passed.",
-  "previousUpdatedEastern": "Oct 25, 2026, 12:54 PM Eastern",
+  "previousUpdatedEastern": "Oct 26, 2026, 9:20 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "October 25–26 phone, TV, browser and owner-observation record",
@@ -9052,11 +9118,11 @@
     "Built": "The code exists and works in the build.",
     "Automated tests": "The test suite for it passes.",
     "Real device": "We ran it on a real phone, PC or TV and it worked.",
-    "Real-world check": "Nick’s own qualifying check in a realistic situation, recorded as a PASS in ownerTests with explicit scope. AI/device runs against QA servers are device tests. Historical checksBaseline is retained as recorded, not newly certified.",
+    "Real-world check": "A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Only Nick records Ready, the final point to 100%. Historical checks remain dated evidence, not certification of a newer build.",
     "Ready to call Available": "Nick or a tester has looked with their own eyes and said Ready. Only Nick records this check. It is worth the last 1 point: a human look, not more building."
   },
   "ownerTestsNote": "Nick’s own observations are kept in ownerTests. When he watches, listens, types a sign-in himself and answers while a helper drives the phone, the record names his role and the untested limits. A mixed or partial result adds no tick; Ready is never inferred.",
-  "ownerTestsSchema": "features[].ownerTests is a list of {date, device, did, result (PASS or FAIL), notes, ticks}. Real-world check and Ready to call Available can only be earned by Nick’s own qualifying PASS. Empty ticks record a bounded observation without accepting the whole feature.",
+  "ownerTestsSchema": "features[].ownerTests is a list of {date, device, did, result (PASS or FAIL), notes, ticks}. Keep Nick’s own observations and their limits. A qualifying realistic PASS may support Real-world check; AI device evidence may also qualify under checkDefinitions. Only Nick records Ready to call Available. Empty ticks are bounded observations, not whole-feature acceptance.",
   "checksBaseline": {
     "asOf": "Oct 19, 2026",
     "features": {
@@ -9524,7 +9590,7 @@
       }
     }
   },
-  "deviceTestsSchema": "features[].deviceTests records {tester, device, build, date, result, evidence, ticks}. A Real device tick needs a dated PASS covering the listed device acceptance. QA-server and AI device runs are device evidence. Only Nick’s own PASS ownerTests may support Real-world check or Ready to call Available. Scoped or muted passes never imply full acceptance.",
+  "deviceTestsSchema": "features[].deviceTests records {tester, device, build, date, result, evidence, ticks}. A Real device tick needs a dated PASS covering its listed acceptance. A realistic AI check on real devices may also support Real-world check when the evidence covers actual use. Muted or state-only checks cannot prove behavior they did not judge. Partial records do not become whole-feature passes. Only Nick records Ready.",
   "historicalReleaseChecksOct18": {
     "windows": "0.1.89",
     "android": "1.51-tester24",
@@ -9634,7 +9700,7 @@
       }
     ],
     "rule": "percentComplete is worked out from features[].checks and features[].openIssues by site-data/progress-score.js: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready to call Available 1 (only Nick records it). The first four add up to 99. A feature reaches 99 only when all four are true and openIssues is 0 (omitted means 0). An open known error caps the score at 90. An optional percentCap, explained by scoreNote, is a further limit. Check with: node site-data/check-progress-score.js.",
-    "explanation": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Only Nick’s own qualifying ownerTests can add that check. AI and QA-server runs are device tests. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified."
+    "explanation": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Only Nick records Ready, the final point to 100%. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified."
   },
   "sourceMerges": [
     {

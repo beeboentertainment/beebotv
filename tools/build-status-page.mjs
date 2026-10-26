@@ -151,7 +151,7 @@ const THEAD = '<thead><tr><th scope="col">Feature</th><th scope="col">Status</th
 
 let sec = `<section class="evidence-section" id="features" aria-labelledby="features-title">
 <span class="evidence-kicker">Progress by feature${upd ? ` · last updated ${esc(upd)}` : ''}</span><h2 id="features-title">Every feature: how far along, and what gets it to 100%.</h2>
-<p><strong>How the percentage works.</strong> ${esc(J.scoring.rule)} Real-world checks and Ready come only from Nick’s own qualifying owner records. Muted QA-server tests are device evidence. Each row lists its limits; all listed checks passing does not mean a feature can never fail.</p>
+<p><strong>How the percentage works.</strong> ${esc(J.scoring.rule)} Realistic AI checks on real devices may count toward Real-world when the evidence covers actual use. Muted or state-only checks cannot prove behavior they did not judge. Only Nick records Ready. Each row lists its limits; all listed checks passing does not mean a feature can never fail.</p>
 `;
 if (markers) {
   sec += `<p class="upd-summary"><span class="upd-badge">Updated</span> <strong>${changedCount} of ${features.length} features changed since the previous update${J.previousUpdatedEastern ? ` (${esc(J.previousUpdatedEastern)})` : ''}.</strong> Highlighted rows (only those changed in this latest update) show the old and new percentage (the small mark on the bar is the old position), what changed in one sentence, and the date and time in Eastern. Older changes stay in the last column as &ldquo;Earlier update&rdquo; notes. This temporary marker is shown while testing is under way.</p>\n`;

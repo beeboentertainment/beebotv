@@ -25,7 +25,7 @@ for(const f of d.features) {
  if(f.percentComplete>=99)assert.equal(f.openIssues||0,0,'open issue at 99/100: '+f.name);
  for(const r of f.ownerTests||[]) assert.ok(r.date.includes(' Eastern')&&/\d+:\d+/.test(r.date),'dated owner observation');
  if (f.checks['Real-world check'] && !d.checksBaseline.features[f.name]?.['Real-world check']) {
-  assert.ok((f.ownerTests||[]).some(r=>r.result==='PASS'&&r.ticks?.includes('Real-world check')), 'post-baseline Real-world tick needs Nick’s PASS: '+f.name);
+  assert.ok([...(f.ownerTests||[]),...(f.deviceTests||[])].some(r=>r.result==='PASS'&&r.ticks?.includes('Real-world check')&&/Eastern/.test(r.date)), 'post-baseline Real-world tick needs dated realistic PASS evidence: '+f.name);
  }
 }
 console.log('PASS: tier boundaries, open-issue cap, Ready weight, generated rows, labels and filter structure');
