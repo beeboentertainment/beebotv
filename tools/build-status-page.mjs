@@ -242,6 +242,17 @@ if (html.includes('<!--STATUS-STAMP-->')) html = html.replace(/<!--STATUS-STAMP-
 else html = html.replace('<section class="evidence-hero"', () => `${stampHtml}\n    <section class="evidence-hero"`);
 
 
+// Gold banner at the very top: how many features are Ready (100%), generated from the data so it can never go stale.
+{
+  const ready = features.filter(f => f.percentComplete === 100 && f.checks && f.checks['Ready to call Available']);
+  const list = ready.map(f => `<li><a href="#${featureId(f)}">${esc(f.name)}</a></li>`).join('');
+  const bannerHtml = ready.length
+    ? `<!--READY-BANNER--><section class="ready-banner" aria-labelledby="ready-banner-title"><p class="ready-banner-star" aria-hidden="true">&#9733; &#9733; &#9733;</p><h2 id="ready-banner-title">${ready.length} feature${ready.length === 1 ? ' is' : 's are'} Ready: 100%</h2><p>Each one passed every check and Nick confirmed it himself. The row for each says what was not tested.</p><ul class="ready-banner-list">${list}</ul></section><!--/READY-BANNER-->`
+    : '<!--READY-BANNER--><!--/READY-BANNER-->';
+  if (html.includes('<!--READY-BANNER-->')) html = html.replace(/<!--READY-BANNER-->[\s\S]*?<!--\/READY-BANNER-->/, () => bannerHtml);
+  else html = html.replace('<section class="evidence-hero"', () => `${bannerHtml}\n    <section class="evidence-hero"`);
+}
+
 const csRe = /<!--CODE-STATUS-SUMMARY-->[\s\S]*?<!--\/CODE-STATUS-SUMMARY-->/;
 if (csRe.test(html)) {
  const o=J.codeVsHuman.overall;
