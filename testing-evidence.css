@@ -577,3 +577,27 @@ html[data-theme="light"] .tier-tag.tier-purple, html[data-aurora][data-theme="li
 .tier-tag.tier-gold { background: #fde047; color: #1c1300; border-color: #a16207; font-weight: 700; }
 html[data-theme="light"] .tier-tag.tier-purple, html[data-aurora][data-theme="light"] .tier-tag.tier-purple { background: #ede9fe; color: #3b0764; border-color: #6d28d9; box-shadow: none; }
 html[data-theme="light"] .tier-tag.tier-gold, html[data-aurora][data-theme="light"] .tier-tag.tier-gold { background: #fef08a; color: #1c1300; border-color: #a16207; box-shadow: none; }
+
+/* Shared progress tiers and keyboard filters. */
+html[data-aurora] .tier-tabs {display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;}
+html[data-aurora] .tier-tabs[hidden], html[data-aurora] #tier-results [hidden] {display:none!important;}
+html[data-aurora] .tier-tabs button {font:inherit;font-weight:650;min-height:44px;max-width:100%;padding:10px 14px;border-radius:8px;border:1px solid #8d98ab;background:#162235;color:#f5f7fc;cursor:pointer;white-space:normal;text-align:left;}
+html[data-aurora] .tier-tabs button[aria-selected="true"] {background:#dbe9ff;color:#14233a;border-color:#dbe9ff;}
+html[data-aurora] .tier-tabs button:focus-visible, html[data-aurora] #tier-results:focus-visible {outline:3px solid #6bbfff;outline-offset:3px;}
+html[data-aurora] .tier-tag.tier-teal {color:#a5efff;background:#123c49;border:1px solid #7ed9ed;}
+html[data-aurora] .tier-tag.tier-green {color:#b6f4c9;background:#173e2a;border:1px solid #81dba0;}
+html[data-aurora] .tier-tag.tier-purple {color:#f0e3ff;background:#40245f;border:1px solid #cda5ff;animation:none;text-shadow:none;box-shadow:none;}
+html[data-aurora] .tier-tag.tier-gold {color:#fff1b6;background:#493a13;border:1px solid #e9cd68;animation:none;text-shadow:none;box-shadow:none;}
+html[data-aurora] .tier-tag.tier-yellow {color:#ffeb9c;background:#453714;border:1px solid #e6cd75;}
+html[data-aurora] .tier-tag.tier-red {color:#ffd2d2;background:#4b2028;border:1px solid #f2acb7;}
+html[data-aurora] .evidence-table tr.feat.tier-teal .bar i {background:#57b6cb;}
+html[data-aurora][data-theme="light"] .tier-tabs button {color:#14233a;background:#fff;border-color:#536378;}
+html[data-aurora][data-theme="light"] .tier-tabs button[aria-selected="true"] {color:#fff;background:#23456f;border-color:#23456f;}
+html[data-aurora][data-theme="light"] .tier-tabs button:focus-visible, html[data-aurora][data-theme="light"] #tier-results:focus-visible {outline-color:#135a97;}
+html[data-aurora][data-theme="light"] .tier-tag.tier-teal {color:#07566a;background:#e2f4f7;border-color:#276978;}
+html[data-aurora][data-theme="light"] .tier-tag.tier-green {color:#145c31;background:#e3f4e9;border-color:#33754b;}
+html[data-aurora][data-theme="light"] .tier-tag.tier-purple {color:#512580;background:#f0e8fa;border-color:#8051ad;}
+html[data-aurora][data-theme="light"] .tier-tag.tier-gold {color:#624700;background:#fff3c7;border-color:#8b6813;}
+html[data-aurora][data-theme="light"] .tier-tag.tier-yellow {color:#694d00;background:#fff4d2;border-color:#886719;}
+html[data-aurora][data-theme="light"] .tier-tag.tier-red {color:#962834;background:#ffeaed;border-color:#ae4150;}
+html[data-aurora] .dated-record {overflow-wrap:anywhere;margin:8px 0;}

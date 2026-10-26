@@ -18,7 +18,7 @@
       {
         "name": "Android phone app",
         "codeDone": 95,
-        "humanTestingLeft": 64,
+        "humanTestingLeft": 65,
         "remaining": {
           "CODE": 22,
           "DEVICE": 42,
@@ -223,7 +223,7 @@
           {
             "name": "Packing List (shared between phones)",
             "codeDone": 100,
-            "humanTestingLeft": 33,
+            "humanTestingLeft": 67,
             "codeItemsLeft": 0,
             "realWorldStatus": "code-complete-needs-real-world-testing"
           },
@@ -626,7 +626,7 @@
         "name": "Android phone",
         "rows": 32,
         "codeChecklistPercent": 95,
-        "humanTestingDonePercent": 36,
+        "humanTestingDonePercent": 35,
         "realDeviceTickedRows": 27,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
@@ -821,7 +821,7 @@
         "name": "Recipes and family",
         "rows": 4,
         "codeChecklistPercent": 100,
-        "humanTestingDonePercent": 42,
+        "humanTestingDonePercent": 33,
         "realDeviceTickedRows": 4,
         "confirmedOnRealDevices": 0,
         "wasCodeChecklistPercent": 100,
@@ -1012,10 +1012,10 @@
   "updated": "2026-10-26T09:20:01-04:00",
   "updatedEastern": "Oct 26, 2026, 9:20 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
-  "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Our test process uses AI testers on real devices for that check. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
-  "overallAveragePercent": 64,
+  "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Only Nick’s own qualifying ownerTests can add that check. AI and QA-server runs are device tests. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
+  "overallAveragePercent": 63,
   "groupAveragePercent": {
-    "Android phone app": 72,
+    "Android phone app": 71,
     "Windows desktop app": 62,
     "Other systems": 57,
     "Services and website": 47
@@ -1248,7 +1248,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 26, 2026, 7:26:43 AM Eastern (Pixel 3 tester50: resume prompt, seek, subtitles, picture-in-picture passed; 200% landscape subtitle and resume-after-PiP failed); earlier: Oct 25, 2026, 5:17 PM Eastern (Pixel 3 tester48, sidecar subtitles and online Next); earlier: Oct 23, 2026, 10:28:19 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issue: On tester50, the S9+ Home Resume tile restarted from 0:00 and overwrote the saved position; detail-page Resume worked. Open known issues: 3 (two new on Oct 26, 2026, Pixel 3 on tester50); the score cap of 90% stays. (1) Online Next (below). (2) At 200% subtitle size in landscape the first line of a long three-line cue is cut off at the top and the third line is not visible. (3) After seeking back and a picture-in-picture round trip the Resume prompt offered an older, higher point (3:12) while Home said about 10 percent (a retest without picture-in-picture was right). Passed on Oct 26: the Android resume prompt, seek, the sidecar subtitle at 100% and 150%, picture-in-picture on the Pixel; and, with Nick in the room, a real film played about 5 minutes on Wi-Fi and 5 minutes on 5G through Beebo Relay with no stall, Audio only, and Keep playing with the screen off. Picture-in-picture was not confirmed on the S24. Recorded scope only: on Oct 25, 2026 a Pixel 3 on test build tester48 showed the separate English subtitle file in the Android app, with all three cues at the right times (about 5:15 to 5:17 PM Eastern); this is the first phone to show the sidecar fix, so that item is closed. A Galaxy S9+ title with no subtitle track could not repeat it. Online Next on the Pixel played S01E02 after “Up next” (8-second countdown) and S01E03, and Next was greyed on the last episode, but the earlier unexplained jump to the next season has not been reproduced or explained, so that item stays open. On a Galaxy S24 the Continue-watching resume prompt did not appear on tester48 (5:29 PM) and did on tester49 (8:45 PM). In the browser player on a Galaxy S9+ in portrait (phone Chrome, test server build 84b7a1c7c) the subtitle text was oversized, cut off at both edges and over the controls (5:04 PM, FAIL). After a fix, a re-test on server build 22940e726 (6:24 PM) fitted the picture at 50% and 100% size, but at 150% and 200% the second line still left the picture (FAIL); a further fix merged at 7:18 PM has not been re-tested. The Oct 24 browser statement (a Galaxy S24 over 5G through Beebo Relay drew its three cues at the right times) stays true for that phone and run only. Still required: retest online Next on a compatible installed build, a subtitle-file check on the S9+ app with a title that has a subtitle track, Picture-in-picture moving/resizing, and the Screen-off default (Nick). A person still needs to hear the sound. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Open known issue: On tester50, the S9+ Home Resume tile restarted from 0:00 and overwrote the saved position; detail-page Resume worked. Open known issues: 4 (two new on Oct 26, 2026, Pixel 3 on tester50); the score cap of 90% stays. (1) Online Next (below). (2) At 200% subtitle size in landscape the first line of a long three-line cue is cut off at the top and the third line is not visible. (3) After seeking back and a picture-in-picture round trip the Resume prompt offered an older, higher point (3:12) while Home said about 10 percent (a retest without picture-in-picture was right). Passed on Oct 26: the Android resume prompt, seek, the sidecar subtitle at 100% and 150%, picture-in-picture on the Pixel; and, with Nick in the room, a real film played about 5 minutes on Wi-Fi and 5 minutes on 5G through Beebo Relay with no stall, Audio only, and Keep playing with the screen off. Picture-in-picture was not confirmed on the S24. Recorded scope only: on Oct 25, 2026 a Pixel 3 on test build tester48 showed the separate English subtitle file in the Android app, with all three cues at the right times (about 5:15 to 5:17 PM Eastern); this is the first phone to show the sidecar fix, so that item is closed. A Galaxy S9+ title with no subtitle track could not repeat it. Online Next on the Pixel played S01E02 after “Up next” (8-second countdown) and S01E03, and Next was greyed on the last episode, but the earlier unexplained jump to the next season has not been reproduced or explained, so that item stays open. On a Galaxy S24 the Continue-watching resume prompt did not appear on tester48 (5:29 PM) and did on tester49 (8:45 PM). In the browser player on a Galaxy S9+ in portrait (phone Chrome, test server build 84b7a1c7c) the subtitle text was oversized, cut off at both edges and over the controls (5:04 PM, FAIL). After a fix, a re-test on server build 22940e726 (6:24 PM) fitted the picture at 50% and 100% size, but at 150% and 200% the second line still left the picture (FAIL); a further fix merged at 7:18 PM has not been re-tested. The Oct 24 browser statement (a Galaxy S24 over 5G through Beebo Relay drew its three cues at the right times) stays true for that phone and run only. Still required: retest online Next on a compatible installed build, a subtitle-file check on the S9+ app with a title that has a subtitle track, Picture-in-picture moving/resizing, and the Screen-off default (Nick). A person still needs to hear the sound. No new whole-feature checkmark is added. Nick alone records Ready.",
       "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
       "changeNote": "Oct 25: the Android sidecar-subtitle issue is closed (a Pixel 3 on tester48 drew all three cues at the right times), so open issues go from 2 to 1 (online Next remains). The score stays at 90% because of that cap. Wording added: the Oct 24 browser-subtitle statement is true for the Galaxy S24 only; on a Galaxy S9+ in portrait the browser subtitle was oversized (fixed at 50% and 100% size, not at 150% and 200%). No tick changed. Oct 26: tester50 on a Pixel 3 and tester49 on a Galaxy S24 (with Nick in the room): playback, resume, seek, subtitle file, picture-in-picture, a 5-minute film over Relay passed; two Pixel failures added (200% landscape subtitle clipping, resume point after picture-in-picture). Open issues go from 1 to 3. Score stays 90% (capped). Dated retest recorded; no new tick. On tester50, the S9+ Home Resume tile restarted from 0:00 and overwrote the saved position; detail-page Resume worked. Nick’s bounded observations recorded in ownerTests; no new tick.",
       "previousPercent": 90,
@@ -2479,7 +2479,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 12:55:58 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issue: After pausing a podcast, the bottom mini player had no close or dismiss action; Nick requested an X and swipe. Oct 26, 2026: on a Pixel 3 (tester49 on Oct 25 at 10:20 PM and tester50 on Oct 26 at 7:26 AM) Radio opened on first open with the station list and no crash (six opens on Oct 25, one on Oct 26); the Galaxy S9+ failure above is not shown to be fixed (the S9+ app was on a real library on Oct 26, so Radio was not run). Open known issue: 1 (new on Oct 25, 2026). On a Galaxy S9+ the Radio screen failed on its first two opens with “Your Beebo computer had a problem. Try again in a moment.” and loaded on the third (cause unknown); a station in the S24’s default list said “That station isn’t in the directory any more” on tester48 and played on tester49. Three clean opens on the S24 (tester49, 9:20 PM) have not cleared the S9+ failure. Oct 25 correction: the Real-world check tick was withdrawn. The PASS that carried it was on synthetic, muted or single-device conditions (muted phones, synthetic feed, single-device flows), and the Real-world check needs a realistic situation such as several devices working together, away from home, a car or a real TV. The Real device tick stays. Recorded scope only: A malformed podcast-import file produced a clear error without losing the episode list. Cancelling the picker was also observed. Earlier feed, queue, download, screen-off and radio controls are carried. Still required: Valid and duplicate-import acceptance still need the appropriate build and fixture. Listening to podcasts and radio remains a separate human check. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Open known issue: After pausing a podcast, the bottom mini player had no close or dismiss action; Nick requested an X and swipe. Oct 26, 2026: on a Pixel 3 (tester49 on Oct 25 at 10:20 PM and tester50 on Oct 26 at 7:26 AM) Radio opened on first open with the station list and no crash (six opens on Oct 25, one on Oct 26); the Galaxy S9+ failure above is not shown to be fixed (the S9+ app was on a real library on Oct 26, so Radio was not run). Open known issues: 2 (new on Oct 25, 2026). On a Galaxy S9+ the Radio screen failed on its first two opens with “Your Beebo computer had a problem. Try again in a moment.” and loaded on the third (cause unknown); a station in the S24’s default list said “That station isn’t in the directory any more” on tester48 and played on tester49. Three clean opens on the S24 (tester49, 9:20 PM) have not cleared the S9+ failure. Oct 25 correction: the Real-world check tick was withdrawn. The PASS that carried it was on synthetic, muted or single-device conditions (muted phones, synthetic feed, single-device flows), and the Real-world check needs a realistic situation such as several devices working together, away from home, a car or a real TV. The Real device tick stays. Recorded scope only: A malformed podcast-import file produced a clear error without losing the episode list. Cancelling the picker was also observed. Earlier feed, queue, download, screen-off and radio controls are carried. Still required: Valid and duplicate-import acceptance still need the appropriate build and fixture. Listening to podcasts and radio remains a separate human check. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 99,
       "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
       "changeNote": "Oct 25: Real-world check tick withdrawn (was 99%, now 74%): the PASS that carried it was on muted phones with a synthetic feed. One new open issue recorded (Radio screen failed twice on first open on a Galaxy S9+; cause unknown). Real device, Built, Automated tests and status label are unchanged. Oct 26: Radio opened cleanly on a Pixel 3 (state only); the S9+ first-open failure stays open. No score change. Dated retest recorded; no new tick. Nick’s bounded observations recorded in ownerTests; no new tick. After pausing a podcast, the bottom mini player had no close or dismiss action; Nick requested an X and swipe.",
@@ -2903,7 +2903,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 26, 2026, 7:26:43 AM Eastern (Pixel 3 tester50: estimate shown, PASS; two small mismatches); earlier: Oct 25, 2026, 9:25 PM Eastern (S24 tester49 Pack for a trip: no estimate, FAIL); earlier: Oct 24, 2026, 1:12:22 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Open known issue: 1 (changed on Oct 26, 2026). The Oct 25 failures (the results area collapsed on tester48; no size or time estimate on tester48 and tester49) were retested on a Pixel 3 on tester50: three films were added with no collapse and the card showed “Needs about 144.3 MB - fits in the space you have free” with the free space and what would be left, so that issue is closed. New and minor: the card’s total (144.3 MB) differs from 141.5 MB seen elsewhere for the same files, and the Trip Recap said “Furthest along: QA-Film-A (49%)”, more than was played; the planner also said “Download size: Original” for a film the server converted to 480p. The older home server on the Galaxy S24 may still show no estimate (not retested).  Recorded scope only: A smaller 720p download on the Pixel finished: the server copy changed from 35,062,092 to 5,598,915 bytes and the phone showed both items Ready. Earlier actual offline picture playback is carried. Still required: Low-space estimates, first-visit packing flow and independent final-copy measurement remain unproved. A safely limited spare device is needed; personal storage must not be filled. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Open known issues: 1 (changed on Oct 26, 2026). The Oct 25 failures (the results area collapsed on tester48; no size or time estimate on tester48 and tester49) were retested on a Pixel 3 on tester50: three films were added with no collapse and the card showed “Needs about 144.3 MB - fits in the space you have free” with the free space and what would be left, so that issue is closed. New and minor: the card’s total (144.3 MB) differs from 141.5 MB seen elsewhere for the same files, and the Trip Recap said “Furthest along: QA-Film-A (49%)”, more than was played; the planner also said “Download size: Original” for a film the server converted to 480p. The older home server on the Galaxy S24 may still show no estimate (not retested).  Recorded scope only: A smaller 720p download on the Pixel finished: the server copy changed from 35,062,092 to 5,598,915 bytes and the phone showed both items Ready. Earlier actual offline picture playback is carried. Still required: Low-space estimates, first-visit packing flow and independent final-copy measurement remain unproved. A safely limited spare device is needed; personal storage must not be filled. No new whole-feature checkmark is added. Nick alone records Ready.",
       "roadTo100": {
         "means": "The planner shows honest size and time estimates, offers smaller sizes that really work, and completes a real download when space is tight.",
         "done": [
@@ -3153,7 +3153,16 @@
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": [],
+      "ownerTests": [
+        {
+          "date": "Oct 26, 2026, 9:13 AM Eastern",
+          "device": "Galaxy S24 tester49 at a friend’s house",
+          "did": "Looked at the Trip Recap card and confirmed it matched the viewing shown.",
+          "result": "PASS",
+          "notes": "Nick was present and confirmed what he saw or heard while the helper drove the phone. Receipt timestamp shown; exact observation time is not independently recorded. Trip start, share and video export were not exercised; the export failure remains open.",
+          "ticks": []
+        }
+      ],
       "howTo": [
         "Start a trip, take a few photos and clips, then finish the trip (\"We're home\") and open the recap.",
         "Use Save as a video on an older phone (for example Android 10), then play the finished video from start to end."
@@ -3883,7 +3892,16 @@
       "realWorldDonePercent": 67,
       "codeItemsLeft": 3,
       "realWorldStatus": "code-still-being-finished",
-      "ownerTests": [],
+      "ownerTests": [
+        {
+          "date": "Oct 26, 2026, 6:18 AM Eastern",
+          "device": "Galaxy S24 tester49, two real TVs and the friend’s published Windows 0.1.102 server",
+          "did": "Casting had picture, sound and working controls on the Samsung TV and Chromecast, with quality switching and hand-back. Captions were missing on both TVs; a short-film cast then stuck.",
+          "result": "FAIL",
+          "notes": "Nick was present and confirmed what he saw or heard while the helper drove the phone. Receipt timestamp shown; exact observation time is not independently recorded. Nick also operated the Chromecast controls himself. These failures stay open; no complete casting acceptance or Ready.",
+          "ticks": []
+        }
+      ],
       "howTo": [
         "Cast a film from the phone to a real Chromecast TV and check picture and sound.",
         "Try a converted film, a different kind of TV or receiver, and casting from mobile data."
@@ -4927,19 +4945,19 @@
       "group": "Android phone app",
       "name": "Packing List (shared between phones)",
       "status": "Beta",
-      "percentComplete": 99,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
-        "Real-world check": true,
+        "Real-world check": false,
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 12:40:33 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Recorded scope only: A blank Add action preserved the two owned packing items and their unchecked state. Earlier two-way list and offline-reconnect passes retain their original saved-test-session qualification. Still required: A reconnecting banner is not a fresh shared-sync pass. Real bag and trip use remain a human check. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "leftToReach100": "Correction: the post-baseline Real-world tick came from an AI-only two-phone PASS, not Nick’s ownerTests. Nick confirmed a local packing-item tick today, but sharing between phones was not tested. The Real-world tick is withdrawn; no Ready tick is added. Recorded scope only: A blank Add action preserved the two owned packing items and their unchecked state. Earlier two-way list and offline-reconnect passes retain their original saved-test-session qualification. Still required: A reconnecting banner is not a fresh shared-sync pass. Real bag and trip use remain a human check. No new whole-feature checkmark is added. Nick alone records Ready.",
       "previousPercent": 99,
       "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
-      "changeNote": "Final phone table: 3 PASS, 0 FAIL and 0 BLOCKED assessments in this row. A blank Add action preserved the two owned packing items and their unchecked state. Earlier two-way list and offline-reconnect passes retain their original saved-test-session qualification. Existing checks, score, cap and older independent issues are retained. Last PASS is not refreshed by a failure or report assembly. Nick’s bounded observations recorded in ownerTests; no new tick.",
+      "changeNote": "Correction: the post-baseline Real-world tick came from an AI-only two-phone PASS, not Nick’s ownerTests. Nick confirmed a local packing-item tick today, but sharing between phones was not tested. The Real-world tick is withdrawn; no Ready tick is added.",
       "testedOn": "Final phone record: Pixel 3, S9+, Pixel. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. A blank Add action preserved the two owned packing items and their unchecked state. Earlier two-way list and offline-reconnect passes retain their original saved-test-session qualification. Last PASS: Oct 24, 2026, 12:40:33 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "Two or more phones share one packing list, including offline ticking that syncs later, and a reviewer signs off.",
@@ -4968,7 +4986,7 @@
         ]
       },
       "codeDonePercent": 100,
-      "realWorldDonePercent": 67,
+      "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
       "realWorldStatus": "code-complete-needs-real-world-testing",
       "ownerTests": [
@@ -5646,7 +5664,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 26, 2026, 7:08:56 AM Eastern (S9+ phone Chrome tester50 round: 18 PASS, 0 new FAIL); Samsung TV browser PASS (6:40:19 AM); sideways full screen without a seek bar (5:21:43 AM); earlier: Oct 25, 2026, 9:24 PM Eastern (desktop browser, test server main 4a4efbcba); earlier: Oct 25, 2026, 6:21 PM Eastern (S9+ phone Chrome round 3; test server); earlier: Oct 24, 2026, about 8:25 PM Eastern (Last PASS: browser captions on a phone through Beebo Relay; earlier subsets carried; failures listed separately)",
-      "leftToReach100": "Open known issue: The QA server’s get-app page showed stale Android and Auto version labels in Pixel Chrome; current build evidence does not repair that page. Correction recorded Oct 26, 2026, 7:44 AM Eastern: the failed House season 4 episode 5 480p resume was from Nick’s own six-core home server, viewed away from home in the Samsung TV browser at his friend’s house; route and exact observation time unknown. Original played, Skip intro worked and the next episode auto-played. This was not the friend’s four-core server. Open known issues: 3 (updated Oct 26, 2026): (1) the library lists many films twice as one-episode shows on the owner’s older home server (fix merged Oct 25 at 6:36 PM, not yet on that server); (2) new: when a phone in Chrome is turned sideways, Chrome opens its own full-screen video where the page’s seek bar, controls and subtitles are not shown (Galaxy S24 at a second household, Nick: “No bar at all”, and the Galaxy S9+); (3) new: at 125% to 150% Chrome zoom the player button rows cover the picture (Galaxy S9+, Oct 25, not retested). CLOSED on Oct 26 (7:08 AM): the browser subtitle leaving the picture at 150% and 200% size in portrait now fits on the Galaxy S9+ on the new server build (also Hebrew and Chinese at 200% and the landscape cue at 200%). Also seen on Oct 26: single taps at the left end of the web seek bar were ignored three times on the S9+ (a tap further right and drags worked), the last cue line sits on the seek bar in landscape while the controls show (cosmetic), and a new browser tab showed the sign-in form again on the S24 (the original tab stayed signed in; possibly per-tab sign-in). PASSED on a Samsung 70-inch TV’s own web browser (Oct 26, 6:40 AM, Nick using the remote): sign-in, picture and sound, seeking, captions (three at the right times, off and on), a direct connection and resuming a film started on the phone. At about 7:00 AM the same browser failed to play House season 4 episode 5 at 480p until Nick chose Original (see Converter and quality). Not the Samsung TV app; the TV’s software version was not read.  Recorded Oct 25 in phone Chrome, not the Android app: sign-in, search, details, playing, quality, audio-track selection (muted), seeking, language switch and the installed app version passed; Back after a failed sign-in no longer shows “Confirm Form Resubmission”; the film-info buttons now stack inside the card (the third button sits over the title row). The first tap on the seek bar is still ignored while the controls are hidden. A test film in an old format played at once and conversion was not shown to work. FAILED Oct 24, 2026 (fixes since merged into the main code, not yet re-tested): Space does not pause and F does not go full screen unless the video has focus; a show page has no poster and its Playlist, Play next and Add to queue buttons are dark text on dark (contrast 1.4 to 1; 4.5 is needed); Suggestions loads blank; Media requests shows a household member owner-only controls (the server side was not yet proven to refuse them). Recorded passes, Oct 24, 2026: Chrome on a PC passed playback, pause, Left and Right arrow (minus and plus 10 seconds), quality changes 480p, 720p, 480p, search, By Actor, By Release Date, Music, Audiobooks, Playlists and Watchlist with no Beebo console errors; a separate subtitle file drew three cues at the right times in the browser player on a phone over 5G through Beebo Relay. Recorded scope only: The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Still required: Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Open known issue: The QA server’s get-app page showed stale Android and Auto version labels in Pixel Chrome; current build evidence does not repair that page. Correction recorded Oct 26, 2026, 7:44 AM Eastern: the failed House season 4 episode 5 480p resume was from Nick’s own six-core home server, viewed away from home in the Samsung TV browser at his friend’s house; route and exact observation time unknown. Original played, Skip intro worked and the next episode auto-played. This was not the friend’s four-core server. Open known issues: 4 (updated Oct 26, 2026, 9:20 AM Eastern): (1) the library lists many films twice as one-episode shows on the owner’s older home server (fix merged Oct 25 at 6:36 PM, not yet on that server); (2) new: when a phone in Chrome is turned sideways, Chrome opens its own full-screen video where the page’s seek bar, controls and subtitles are not shown (Galaxy S24 at a second household, Nick: “No bar at all”, and the Galaxy S9+); (3) new: at 125% to 150% Chrome zoom the player button rows cover the picture (Galaxy S9+, Oct 25, not retested). CLOSED on Oct 26 (7:08 AM): the browser subtitle leaving the picture at 150% and 200% size in portrait now fits on the Galaxy S9+ on the new server build (also Hebrew and Chinese at 200% and the landscape cue at 200%). Also seen on Oct 26: single taps at the left end of the web seek bar were ignored three times on the S9+ (a tap further right and drags worked), the last cue line sits on the seek bar in landscape while the controls show (cosmetic), and a new browser tab showed the sign-in form again on the S24 (the original tab stayed signed in; possibly per-tab sign-in). PASSED on a Samsung 70-inch TV’s own web browser (Oct 26, 6:40 AM, Nick using the remote): sign-in, picture and sound, seeking, captions (three at the right times, off and on), a direct connection and resuming a film started on the phone. At about 7:00 AM the same browser failed to play House season 4 episode 5 at 480p until Nick chose Original (see Converter and quality). Not the Samsung TV app; the TV’s software version was not read.  Recorded Oct 25 in phone Chrome, not the Android app: sign-in, search, details, playing, quality, audio-track selection (muted), seeking, language switch and the installed app version passed; Back after a failed sign-in no longer shows “Confirm Form Resubmission”; the film-info buttons now stack inside the card (the third button sits over the title row). The first tap on the seek bar is still ignored while the controls are hidden. A test film in an old format played at once and conversion was not shown to work. FAILED Oct 24, 2026 (fixes since merged into the main code, not yet re-tested): Space does not pause and F does not go full screen unless the video has focus; a show page has no poster and its Playlist, Play next and Add to queue buttons are dark text on dark (contrast 1.4 to 1; 4.5 is needed); Suggestions loads blank; Media requests shows a household member owner-only controls (the server side was not yet proven to refuse them). Recorded passes, Oct 24, 2026: Chrome on a PC passed playback, pause, Left and Right arrow (minus and plus 10 seconds), quality changes 480p, 720p, 480p, search, By Actor, By Release Date, Music, Audiobooks, Playlists and Watchlist with no Beebo console errors; a separate subtitle file drew three cues at the right times in the browser player on a phone over 5G through Beebo Relay. Recorded scope only: The Pixel browser played the direct film at 1920 × 1080. Separate labelled decode clients played remuxed and 480p converted media at 854 × 480. The sampled picture advanced to about 20 seconds in each mode, sought to 2 seconds, resumed and paused, with no sampled media error. Actual PC requests matched each playback window. Earlier PC and S24 subsets keep their original records. Still required: Connected Edge and Firefox checks remain blocked. The remux and conversion samples do not prove the shipped player controls, subtitles, sound, TV or away playback. The affected installed-app and TV-browser navigation, Next, folder artwork and version-heading checks still need retesting. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "previousPercent": 74,
       "changedEastern": "Oct 26, 2026, 9:20 AM Eastern",
       "changeNote": "Oct 25: two new open issues recorded (the browser subtitle still leaves the picture at 150% and 200% size on a Galaxy S9+; the library lists many films twice on the owner’s older home server). Several Oct 24 browser fixes are now merged, and two were seen working on a phone (no “Confirm Form Resubmission”; subtitle fits at 50% and 100%). Score stays 74%; no tick changed. Oct 26: S9+ Chrome (18 PASS, 0 new FAIL, 9 blocked) and a Samsung TV’s own browser (PASS) were recorded; the portrait subtitle issue is closed, and two new problems were recorded (no seek bar in Chrome’s sideways full screen; player buttons covering the picture at zoom). Open issues stay at 3 in total (2 to 3). Score stays 74%; no tick changed. Nick’s bounded observations recorded in ownerTests; no new tick. Dated retest recorded; no new tick. The QA server’s get-app page showed stale Android and Auto version labels in Pixel Chrome; current build evidence does not repair that page.",
@@ -5761,6 +5779,14 @@
       "codeItemsLeft": 4,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [
+        {
+          "date": "Oct 26, 2026, 6:40 AM Eastern",
+          "device": "Samsung TV’s own browser, friend’s four-core server running Windows 0.1.102, direct Wi-Fi",
+          "did": "Used the Samsung TV remote to sign in and watch the friend’s server: picture, sound, seek, resume and all three subtitle cues worked; turning captions off and on worked.",
+          "result": "PASS",
+          "notes": "Nick was present and confirmed what he saw or heard while the helper drove the phone. Receipt timestamp shown; exact observation time is not independently recorded. One TV browser only. This does not accept a Samsung/Tizen app or clear casting subtitles or the separate home-server 480p failure.",
+          "ticks": []
+        },
         {
           "date": "Oct 26, 2026, 7:44 AM Eastern",
           "device": "Samsung TV browser at a friend’s house, Nick’s own six-core home server away from home",
@@ -5973,7 +5999,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 26, 2026, 7:06:04 AM Eastern (old 4-core PC: converted 720p and 480p started in under 1 s, no gap: PASS); the House 480p resume failure was reported at 7:03:43 AM; earlier: Oct 23, 2026, 8:41:25 PM Eastern (Last PASS R2-PLAY-QUALITY-CAP; recorded scenario completion; named current scenario)",
-      "leftToReach100": "Correction recorded Oct 26, 2026, 7:44 AM Eastern: the failed House season 4 episode 5 480p resume was from Nick’s own six-core home server, viewed away from home in the Samsung TV browser at his friend’s house; route and exact observation time unknown. Original played, Skip intro worked and the next episode auto-played. This was not the friend’s four-core server. Open known issue: 1 (new on Oct 26, 2026): resuming House season 4 episode 5 in a Samsung TV browser at a friend’s house, watching away from home from Nick’s own six-core home server (route unknown), Auto switched to 480p and the 480p picture never played; choosing Original (1080p, about 2 Mbps; 480p about 1.5 Mbps) played fine (Nick; cause not proven). A reproduction attempt on the fast dev PC did not show it (every conversion, including resume starts, gave a first picture in about 1 second) and ranked likely causes: a slow or failed conversion that starts mid-film on that PC, Auto choosing 480p when it saves only about a quarter of the bits, a busy conversion slot, and no automatic return to Original when the converted picture is late. Passed on Oct 26 on the same old PC (Intel HD 4600 graphics, Beebo 0.1.102): converted 720p and 480p started in under one second, also while a Galaxy S24 was on 5G through Beebo Relay and while casting, and switching quality mid-film left no gap Nick could see; so the Oct 24 failure of converted 720p on this PC did not repeat. Passed scope only: Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. FAILED Oct 24, 2026: a converted 720p quality failed twice on a second household’s old 4-core PC watched through Beebo Relay (the conversion session opened and stopped; the log did not say why), while the original file played. On Oct 25, 2026 (9:30 PM Eastern) a desktop browser on the dev PC converted a test film to 480p within about a second and played it (test server, not the installed app). Still required: Repeat conversion on graphics cards from two makers and have Nick record the bundled-converter licensing decision. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
+      "leftToReach100": "Correction recorded Oct 26, 2026, 7:44 AM Eastern: the failed House season 4 episode 5 480p resume was from Nick’s own six-core home server, viewed away from home in the Samsung TV browser at his friend’s house; route and exact observation time unknown. Original played, Skip intro worked and the next episode auto-played. This was not the friend’s four-core server. Open known issues: 1 (new on Oct 26, 2026): resuming House season 4 episode 5 in a Samsung TV browser at a friend’s house, watching away from home from Nick’s own six-core home server (route unknown), Auto switched to 480p and the 480p picture never played; choosing Original (1080p, about 2 Mbps; 480p about 1.5 Mbps) played fine (Nick; cause not proven). A reproduction attempt on the fast dev PC did not show it (every conversion, including resume starts, gave a first picture in about 1 second) and ranked likely causes: a slow or failed conversion that starts mid-film on that PC, Auto choosing 480p when it saves only about a quarter of the bits, a busy conversion slot, and no automatic return to Original when the converted picture is late. Passed on Oct 26 on the same old PC (Intel HD 4600 graphics, Beebo 0.1.102): converted 720p and 480p started in under one second, also while a Galaxy S24 was on 5G through Beebo Relay and while casting, and switching quality mid-film left no gap Nick could see; so the Oct 24 failure of converted 720p on this PC did not repeat. Passed scope only: Carried speed/quality, original-file preservation and background conversion retain0cf4497dd. Current: real480p Intel QSV HLS segment decoded/probed; three explicit-quality away-cap software assertions passed. FAILED Oct 24, 2026: a converted 720p quality failed twice on a second household’s old 4-core PC watched through Beebo Relay (the conversion session opened and stopped; the log did not say why), while the original file played. On Oct 25, 2026 (9:30 PM Eastern) a desktop browser on the dev PC converted a test film to 480p within about a second and played it (test server, not the installed app). Still required: Repeat conversion on graphics cards from two makers and have Nick record the bundled-converter licensing decision. Native installed-app acceptance is not established by the source/API/browser run. Nick alone records Ready.",
       "roadTo100": {
         "means": "Quality and speed settings convert correctly on at least two different graphics-card families, and the converter licence question is settled.",
         "done": [
@@ -6012,6 +6038,14 @@
       "codeItemsLeft": 1,
       "realWorldStatus": "code-still-being-finished",
       "ownerTests": [
+        {
+          "date": "Oct 26, 2026, 7:06 AM Eastern",
+          "device": "Galaxy S24 tester49, friend’s four-core server 0.1.102, 5G through Relay",
+          "did": "Watched quality switches to 720p and 480p during playback over 5G through Relay; Nick saw no gap.",
+          "result": "PASS",
+          "notes": "Nick was present and confirmed what he saw or heard while the helper drove the phone. Receipt timestamp shown; exact observation time is not independently recorded. Conversion-start timings were under a second; cold-start time to first picture and the failing home-server episode were not accepted.",
+          "ticks": []
+        },
         {
           "date": "Oct 26, 2026, 7:44 AM Eastern",
           "device": "Samsung TV browser at a friend’s house, Nick’s own six-core home server away from home",
@@ -6757,7 +6791,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 24, 2026, 1:19:13 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Open known issue: 1 (new on Oct 25, 2026). On a test server built from main 4a4efbcba, in Spanish, French, German, Portuguese (Brazil) and Italian, most of the Appearance page (115 of 120 lines), My API keys, Privacy, the Continue empty state, parts of Get the app, the player’s Pre-show button and the phone-speakers panel buttons stay in English. The library, player, requests, music, playlists, Movie Night join and security pages are translated. How natural the translations read needs a native reader. Recorded scope only: Five library/navigation languages were checked in a PC browser at 1265 pixels and S24 Chrome at 384 pixels, without page overflow. English was restored on the phone. Still required: Exact Pixel layouts, native-speaker review, large text, all dialogs, right-to-left previews and installed-app layouts remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Open known issues: 1 (new on Oct 25, 2026). On a test server built from main 4a4efbcba, in Spanish, French, German, Portuguese (Brazil) and Italian, most of the Appearance page (115 of 120 lines), My API keys, Privacy, the Continue empty state, parts of Get the app, the player’s Pre-show button and the phone-speakers panel buttons stay in English. The library, player, requests, music, playlists, Movie Night join and security pages are translated. How natural the translations read needs a native reader. Recorded scope only: Five library/navigation languages were checked in a PC browser at 1265 pixels and S24 Chrome at 384 pixels, without page overflow. English was restored on the phone. Still required: Exact Pixel layouts, native-speaker review, large text, all dialogs, right-to-left previews and installed-app layouts remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "roadTo100": {
         "means": "Native speakers have reviewed every language and long or right-to-left text fits on a real PC.",
         "done": [
@@ -8058,7 +8092,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 26, 2026, 6:57:53 AM Eastern (S24 on 5G through Relay, 5-minute film: PASS); earlier: Oct 24, 2026, about 8:05 PM Eastern (second household’s PC, Windows 0.1.102, original file through Beebo Relay); Oct 14, 2026 (published tester23 forced through Beebo Relay on 5G); Oct 13, 2026 (test build); Oct 12, 2026 (friend’s house, published Windows 0.1.87)",
-      "leftToReach100": "Open known issue: 1 (new on Oct 26, 2026; the score stays capped at 90%): on the second household’s PC the log said “relay beebo unavailable: error” at 5:42 AM and its Get Started screen said Beebo Relay was selected but not available for the account right now (on Oct 24 it said ready); at 6:27 AM the log said “relay beebo ready” again, and the phone still connected through Relay at 4:59 and 5:03 AM. The cause is not found. First structured PASS records, Oct 26, 2026 (6:57 and 7:06 AM reports, Nick present): on 5G a Galaxy S24 connected through Beebo Relay and played a real film for 5 minutes with no stall, and converted 720p and 480p through Relay started in under a second with no gap. Failed the same morning: switching Wi-Fi to 5G during play did not resume by itself for 68 to 95 seconds in 3 of 4 runs although Relay connected within about 5 to 12 seconds (see Away from home). Not shown: two people at once, and a natural fallback with “always use Beebo Relay” known to be off (the phone’s switch was not recorded). The Oct 25 hold at 90% for “no structured PASS record” is replaced by this open issue. Recorded Oct 24, 2026: on a second household’s PC (Windows 0.1.102, published) the new “Use Beebo Relay” button accepted the relay terms and its log moved from “relay beebo unavailable” to “relay beebo ready”; a Galaxy S24 on 5G (unpublished phone test build) then connected through Beebo Relay in about 2 seconds and played the original file of a film with picture and sound. Whether the phone’s “always use Beebo Relay” switch was on for that run is not recorded, so a natural fallback is not claimed. A converted 720p quality failed twice on that old PC. Still required: a natural-fallback run (not forced) on the published phone build; a converted quality through Relay; two people at once; recovery after a drop; and Nick decides the price and entitlement rules.",
+      "leftToReach100": "Open known issues: 1 (new on Oct 26, 2026; the score stays capped at 90%): on the second household’s PC the log said “relay beebo unavailable: error” at 5:42 AM and its Get Started screen said Beebo Relay was selected but not available for the account right now (on Oct 24 it said ready); at 6:27 AM the log said “relay beebo ready” again, and the phone still connected through Relay at 4:59 and 5:03 AM. The cause is not found. First structured PASS records, Oct 26, 2026 (6:57 and 7:06 AM reports, Nick present): on 5G a Galaxy S24 connected through Beebo Relay and played a real film for 5 minutes with no stall, and converted 720p and 480p through Relay started in under a second with no gap. Failed the same morning: switching Wi-Fi to 5G during play did not resume by itself for 68 to 95 seconds in 3 of 4 runs although Relay connected within about 5 to 12 seconds (see Away from home). Not shown: two people at once, and a natural fallback with “always use Beebo Relay” known to be off (the phone’s switch was not recorded). The Oct 25 hold at 90% for “no structured PASS record” is replaced by this open issue. Recorded Oct 24, 2026: on a second household’s PC (Windows 0.1.102, published) the new “Use Beebo Relay” button accepted the relay terms and its log moved from “relay beebo unavailable” to “relay beebo ready”; a Galaxy S24 on 5G (unpublished phone test build) then connected through Beebo Relay in about 2 seconds and played the original file of a film with picture and sound. Whether the phone’s “always use Beebo Relay” switch was on for that run is not recorded, so a natural fallback is not claimed. A converted 720p quality failed twice on that old PC. Still required: a natural-fallback run (not forced) on the published phone build; a converted quality through Relay; two people at once; recovery after a drop; and Nick decides the price and entitlement rules.",
       "roadTo100": {
         "means": "Relay carries video across two real networks, recovers after a drop, and its price is decided.",
         "done": [
@@ -9018,7 +9052,7 @@
     "Built": "The code exists and works in the build.",
     "Automated tests": "The test suite for it passes.",
     "Real device": "We ran it on a real phone, PC or TV and it worked.",
-    "Real-world check": "Our test process uses AI testers on real devices in a realistic situation, such as away from home, in a car, on a real TV or with several devices. The dated evidence in each row records what was actually tried.",
+    "Real-world check": "Nick’s own qualifying check in a realistic situation, recorded as a PASS in ownerTests with explicit scope. AI/device runs against QA servers are device tests. Historical checksBaseline is retained as recorded, not newly certified.",
     "Ready to call Available": "Nick or a tester has looked with their own eyes and said Ready. Only Nick records this check. It is worth the last 1 point: a human look, not more building."
   },
   "ownerTestsNote": "Nick’s own observations are kept in ownerTests. When he watches, listens, types a sign-in himself and answers while a helper drives the phone, the record names his role and the untested limits. A mixed or partial result adds no tick; Ready is never inferred.",
@@ -9507,17 +9541,18 @@
     {
       "date": "Oct 26, 2026, 6:01:42 AM Eastern (board time of the report)",
       "reportedBy": "Nick (owner), in the room at the second household",
-      "text": "Nick ran the Chromecast himself (pause, play, skip forward and back 20 minutes, loads quickly, “no issues found”) and saw no caption text on the TV when casting a film with subtitles from the Android app, on either the Samsung TV or the Chromecast. He confirmed Surprise me on the S24 (picture and sound). These were observed while the AI tester drove the phone; none is entered as Nick’s own test, so no tick or Ready was added.",
+      "text": "Nick observed the cast controls, picture and sound; captions failed on both TVs. His bounded observations are now recorded in ownerTests alongside the AI device records. No whole-feature tick or Ready was added.",
       "features": [
         "Chromecast",
         "Surprise me, playlists, watchlist, favourites"
       ]
     },
     {
-      "date": "Oct 26, 2026, 7:03:43 AM Eastern (board time of the report)",
-      "reportedBy": "Nick (owner), relayed by the AI tester at the second household; Nick was the observer",
-      "text": "On the Samsung 70-inch TV’s own web browser, resuming House season 4 episode 5 started, Auto switched to 480p and the 480p picture never played; choosing Original (1080p, shown as 2.0 Mbps; 480p shown as 1.5 Mbps) played fine. Server: the second household’s 4-core PC, Beebo 0.1.102. The cause is not proven, and a reproduction attempt on a fast PC did not show it. No tick or percentage was raised.",
+      "date": "Oct 26, 2026, 7:44:22 AM Eastern (correction receipt time)",
+      "reportedBy": "Nick (owner), relayed by the helper",
+      "text": "Correction to the earlier report: House season 4 episode 5 was viewed from Nick’s OWN six-core home server away from home in the Samsung TV browser at a friend’s house. The 480p resume did not start; Original, Skip intro and next-episode autoplay worked. Route and exact observation time unknown. The friend’s four-core PC did not serve this attempt. No score or tick was raised.",
       "features": [
+        "Away from home (direct, then relay)",
         "Converter and quality / speed settings",
         "Library, player and web player"
       ]
@@ -9562,10 +9597,28 @@
     "readyLabel": "Ready, a human confirmed",
     "tiers": [
       {
-        "min": 80,
+        "min": 100,
+        "id": "gold",
+        "label": "Gold: Ready, a human confirmed",
+        "range": "100%"
+      },
+      {
+        "min": 99,
+        "id": "purple",
+        "label": "Purple: Tested and working, waiting for a human look",
+        "range": "99%"
+      },
+      {
+        "min": 90,
         "id": "green",
-        "label": "Green: mostly proven",
-        "range": "80 to 100%"
+        "label": "Green: proven checks, open issue or record limit",
+        "range": "90 to 98%"
+      },
+      {
+        "min": 80,
+        "id": "teal",
+        "label": "Teal: nearly there",
+        "range": "80 to 89%"
       },
       {
         "min": 40,
@@ -9581,6 +9634,6 @@
       }
     ],
     "rule": "percentComplete is worked out from features[].checks and features[].openIssues by site-data/progress-score.js: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready to call Available 1 (only Nick records it). The first four add up to 99. A feature reaches 99 only when all four are true and openIssues is 0 (omitted means 0). An open known error caps the score at 90. An optional percentCap, explained by scoreNote, is a further limit. Check with: node site-data/check-progress-score.js.",
-    "explanation": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Our test process uses AI testers on real devices for that check. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified."
+    "explanation": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. Only Nick’s own qualifying ownerTests can add that check. AI and QA-server runs are device tests. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The feature is considered fully coded and working. The last 1% is a human look, not more building. Nick or a tester looks with their own eyes and says Ready. Only Nick records the Ready check. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified."
   }
 }

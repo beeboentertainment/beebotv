@@ -223,7 +223,7 @@
       "area": "windows",
       "name": "Kitchen announcements (messages to phones)",
       "status": "In development",
-      "evidence": "Last PASS Oct 24, 2026, 1:39:42 AM Eastern (carried without rerun). The PC service sent a message to Pixel, S9 and S24 browser banners, which cleared after 15 seconds. Quiet hours suppressed the restricted test member; normal members still saw the message. A real test guest was refused. The installed sender panel, native notifications and a person hearing Listen remain untested. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
+      "evidence": "FAIL recorded Oct 26, 2026, 6:18 AM Eastern: on a real household PC the Enable box did not switch on after three attempts, so nothing was sent. Last PASS Oct 24, 2026, 1:39:42 AM Eastern (carried without rerun). The PC service sent a message to Pixel, S9 and S24 browser banners, which cleared after 15 seconds. Quiet hours suppressed the restricted test member; normal members still saw the message. A real test guest was refused. The installed sender panel, native notifications and a person hearing Listen remain untested. Development server 0.1.99; installed Windows application never launched. Final ledgers reconciled, no new whole-feature checkmark.",
       "realTest": "no"
     },
     {
@@ -1394,17 +1394,8 @@
       "line": "A daily nudge to share a quick photo or clip into a private household feed on the home PC."
     },
     {
-      "title": "Kitchen announcements",
-      "line": "A short voice message that plays at once on chosen household phones or speakers. Included in release-2026-10-21c; remaining work is listed in the dated test record."
-    },
-    {
       "title": "Family tech help",
       "line": "The owner can see a family member's Beebo screen and talk them through a problem."
-    },
-    {
-      "title": "Media requests and wishlist",
-      "line": "Guests and limited profiles ask for a title and the owner is notified. Included in release-2026-10-21c; remaining work is listed in the dated test record.",
-      "partly": true
     },
     {
       "title": "Campsite emergency hub",
@@ -1493,10 +1484,6 @@
     {
       "title": "Ghost runner for indoor workouts",
       "line": "A virtual ghost on a TV races your past times on a treadmill or bike."
-    },
-    {
-      "title": "TV volume from the phone while casting",
-      "line": "The phone's volume keys and an on-screen slider turn the TV sound up and down. Included in release-2026-10-21c; remaining work is listed in the dated test record."
     },
     {
       "title": "Poster made from the video itself",

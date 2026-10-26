@@ -62,6 +62,9 @@
     if (total !== s.readyPercent) out.push(`scoring.weights add up to ${total}, not ${s.readyPercent}`);
     const withoutLast = total - (s.weights['Ready to call Available'] || 0);
     if (withoutLast !== s.waitingPercent) out.push(`the four checks before Ready add up to ${withoutLast}, not ${s.waitingPercent}`);
+    if (s.openIssuesCap !== 90) out.push('open issue cap must be 90');
+    const requiredTiers = [[100,'gold'],[99,'purple'],[90,'green'],[80,'teal'],[40,'yellow'],[0,'red']];
+    if (JSON.stringify((s.tiers || []).map(t => [t.min,t.id])) !== JSON.stringify(requiredTiers)) out.push('tiers must separate 100, 99, 90–98, 80–89, 40–79 and 0–39');
     if (s.openIssuesCap >= s.waitingPercent) out.push('scoring.openIssuesCap must stay below the waiting mark');
     data.features.forEach((f) => {
       if (f.openIssues !== undefined && !wholeNumber(f.openIssues)) out.push(`${f.name}: openIssues must be a whole number, 0 or more`);
