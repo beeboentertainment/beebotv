@@ -4820,19 +4820,19 @@
       "group": "Android phone app",
       "name": "Music on the phone (albums, songs, player, sleep timer)",
       "status": "Beta",
-      "percentComplete": 99,
+      "percentComplete": 100,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
         "Real-world check": true,
-        "Ready to call Available": false
+        "Ready to call Available": true
       },
       "lastTested": "Oct 26, 2026, 11:10 AM Eastern (Nick heard a test tone from the PC’s music); earlier: Oct 24, 2026, 12:50:19 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Only Nick can record Ready (100%). Nick checked this himself on Oct 26, 2026 and the second-household tester also saw it work, so it now waits for the joint full test he and Claude will run. What was not tested is stated in the record limit below.",
+      "leftToReach100": "Nothing is left to reach 100%. Nick confirmed this himself on Oct 26, 2026, 11:24 AM Eastern. Limits: see the record limit below.",
       "previousPercent": 74,
       "changedEastern": "Oct 26, 2026, 11:24 AM Eastern",
-      "changeNote": "Real-world check raised to 99%: Nick checked this himself on Oct 26, 2026 (reported by about 11:10 AM Eastern). Waiting for his Ready tick after the joint full test. Checked: PC music found and played on the phone with sound (test tones). Not tested: real music, gapless, crossfade, sleep timer, mixes, playlists, casting.",
+      "changeNote": "Checks raised (Real-world) and Ready (100%): Nick confirmed this himself on Oct 26, 2026, 11:24 AM Eastern. Checked: PC music found and played on the phone with sound (test tones). Not tested: real music, gapless, crossfade, sleep timer, mixes, playlists, casting.",
       "testedOn": "Final phone record: S9+, Pixel. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. The native album-radio control started a real test track, its progress and six recommendations, then stopped. Existing queue, sleep and screen-off controls are carried. Last PASS: Oct 24, 2026, 12:50:19 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "Real music plays on a phone with sound, crossfade, gapless playback, queue and radio working, and a reviewer signs off.",
@@ -4910,10 +4910,20 @@
         }
       ],
       "codeDonePercent": 100,
-      "realWorldDonePercent": 67,
+      "realWorldDonePercent": 100,
       "codeItemsLeft": 0,
       "realWorldStatus": "confirmed-on-real-devices",
       "ownerTests": [
+        {
+          "date": "Oct 26, 2026, 11:24 AM Eastern",
+          "device": "Nick’s own decision in chat",
+          "did": "Nick confirmed this himself on Oct 26, 2026, 11:24 AM Eastern: the phone finds and plays music from his PC and he heard the sound.",
+          "result": "PASS",
+          "notes": "Ready recorded on Nick’s own word in chat, because he looked or listened himself today and the second-household tester also reported that it worked. What was not tested is stated on this row as its limits; earlier dated records are named where they cover part of it.",
+          "ticks": [
+            "Ready to call Available"
+          ]
+        },
         {
           "date": "Oct 26, 2026, 11:10 AM Eastern",
           "device": "Galaxy S24 Ultra (native app, Android 1.51-tester49, unpublished test build) at a second household, with an old 4-core Windows PC (Intel Core i7 from 2014) running the published Beebo 0.1.102",
@@ -5007,19 +5017,19 @@
       "group": "Android phone app",
       "name": "Family Dashboard, Camp Jobs and Star Chart",
       "status": "Beta",
-      "percentComplete": 99,
+      "percentComplete": 100,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
         "Real-world check": true,
-        "Ready to call Available": false
+        "Ready to call Available": true
       },
       "lastTested": "Oct 26, 2026, 11:10 AM Eastern (Nick looked at his phone); earlier: Oct 24, 2026, 12:44:18 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Only Nick can record Ready (100%). Nick checked this himself on Oct 26, 2026 and the second-household tester also saw it work, so it now waits for the joint full test he and Claude will run. What was not tested is stated in the record limit below.",
+      "leftToReach100": "Nothing is left to reach 100%. Nick confirmed this himself on Oct 26, 2026, 11:24 AM Eastern. Limits: see the record limit below.",
       "previousPercent": 74,
       "changedEastern": "Oct 26, 2026, 11:24 AM Eastern",
-      "changeNote": "Real-world check raised to 99%: Nick checked this himself on Oct 26, 2026 (reported by about 11:10 AM Eastern). Waiting for his Ready tick after the joint full test. Checked: dashboard cards, spin the wheel, ticking a job, a star. Not tested: real family use over several days, several phones.",
+      "changeNote": "Checks raised (Real-world) and Ready (100%): Nick confirmed this himself on Oct 26, 2026, 11:24 AM Eastern. Checked: dashboard cards, spin the wheel, ticking a job, a star. Not tested: real family use over several days, several phones.",
       "testedOn": "Final phone record: Pixel 3, S9+, Pixel. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. A blank native family alias was rejected without creating a person. Earlier dashboard, jobs and star actions are carried. A Games link does not prove every game. Last PASS: Oct 24, 2026, 12:44:18 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "A real family uses the dashboard and Camp Jobs on their phones for several days and a reviewer signs off.",
@@ -5050,10 +5060,20 @@
         ]
       },
       "codeDonePercent": 100,
-      "realWorldDonePercent": 67,
+      "realWorldDonePercent": 100,
       "codeItemsLeft": 0,
       "realWorldStatus": "confirmed-on-real-devices",
       "ownerTests": [
+        {
+          "date": "Oct 26, 2026, 11:24 AM Eastern",
+          "device": "Nick’s own decision in chat",
+          "did": "Nick confirmed this himself on Oct 26, 2026, 11:24 AM Eastern: the Family Dashboard, Camp Jobs and Star Chart work (cards, spin the wheel, tick a job, star).",
+          "result": "PASS",
+          "notes": "Ready recorded on Nick’s own word in chat, because he looked or listened himself today and the second-household tester also reported that it worked. What was not tested is stated on this row as its limits; earlier dated records are named where they cover part of it.",
+          "ticks": [
+            "Ready to call Available"
+          ]
+        },
         {
           "date": "Oct 26, 2026, 11:10 AM Eastern",
           "device": "Galaxy S24 Ultra (native app, Android 1.51-tester49, unpublished test build) at a second household, with an old 4-core Windows PC (Intel Core i7 from 2014) running the published Beebo 0.1.102",
@@ -5297,19 +5317,19 @@
       "group": "Android phone app",
       "name": "Family Recipes and shopping list",
       "status": "Beta",
-      "percentComplete": 99,
+      "percentComplete": 100,
       "checks": {
         "Built": true,
         "Automated tests": true,
         "Real device": true,
         "Real-world check": true,
-        "Ready to call Available": false
+        "Ready to call Available": true
       },
       "lastTested": "Oct 26, 2026, 11:10 AM Eastern (Nick looked at his phone, twice); earlier: Oct 24, 2026, 12:42:46 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Only Nick can record Ready (100%). Nick checked this himself on Oct 26, 2026 and the second-household tester also saw it work, so it now waits for the joint full test he and Claude will run. What was not tested is stated in the record limit below.",
+      "leftToReach100": "Nothing is left to reach 100%. Nick confirmed this himself on Oct 26, 2026, 11:24 AM Eastern. Limits: see the record limit below.",
       "previousPercent": 74,
       "changedEastern": "Oct 26, 2026, 11:24 AM Eastern",
-      "changeNote": "Real-world check raised to 99%: Nick checked this himself on Oct 26, 2026 (reported by about 11:10 AM Eastern). Waiting for his Ready tick after the joint full test. Checked: add a recipe, scale servings, shopping list, ticks. Not tested: Edit, Just me, Share/Copy, Undo; outgoing sharing is untested.",
+      "changeNote": "Checks raised (Real-world) and Ready (100%): Nick confirmed this himself on Oct 26, 2026, 11:24 AM Eastern. Checked: add a recipe, scale servings, shopping list, ticks. Not tested: Edit, Just me, Share/Copy, Undo; outgoing sharing is untested.",
       "testedOn": "Final phone record: S9+, Pixel. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. Cancelling native recipe creation returned without creating a recipe. Earlier synthetic validation, scaling, duplicate and shopping-total checks are carried. Last PASS: Oct 24, 2026, 12:42:46 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "A real family adds recipes, scales amounts, builds a shopping list across recipes and shares it.",
@@ -5343,10 +5363,20 @@
         ]
       },
       "codeDonePercent": 100,
-      "realWorldDonePercent": 67,
+      "realWorldDonePercent": 100,
       "codeItemsLeft": 0,
       "realWorldStatus": "confirmed-on-real-devices",
       "ownerTests": [
+        {
+          "date": "Oct 26, 2026, 11:24 AM Eastern",
+          "device": "Nick’s own decision in chat",
+          "did": "Nick confirmed this himself on Oct 26, 2026, 11:24 AM Eastern: Family Recipes and the shopping list work (add a recipe, scale servings, tick items).",
+          "result": "PASS",
+          "notes": "Ready recorded on Nick’s own word in chat, because he looked or listened himself today and the second-household tester also reported that it worked. What was not tested is stated on this row as its limits; earlier dated records are named where they cover part of it.",
+          "ticks": [
+            "Ready to call Available"
+          ]
+        },
         {
           "date": "Oct 26, 2026, 11:10 AM Eastern",
           "device": "Galaxy S24 Ultra (native app, Android 1.51-tester49, unpublished test build) at a second household, with an old 4-core Windows PC (Intel Core i7 from 2014) running the published Beebo 0.1.102",
