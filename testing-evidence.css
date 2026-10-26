@@ -601,3 +601,80 @@ html[data-aurora][data-theme="light"] .tier-tag.tier-gold {color:#624700;backgro
 html[data-aurora][data-theme="light"] .tier-tag.tier-yellow {color:#694d00;background:#fff4d2;border-color:#886719;}
 html[data-aurora][data-theme="light"] .tier-tag.tier-red {color:#962834;background:#ffeaed;border-color:#ae4150;}
 html[data-aurora] .dated-record {overflow-wrap:anywhere;margin:8px 0;}
+
+/* 100% Ready rows: impossible to miss. Gold glow, thick gold edge, big gold percentage and a READY ribbon.
+   Colour is never the only signal: the words 100% and Ready stay in the row. */
+.evidence-table tr.feat.tier-gold {
+  background: linear-gradient(90deg, rgba(250,204,21,.42), rgba(250,204,21,.16) 55%, rgba(250,204,21,.06));
+  box-shadow: inset 10px 0 0 #facc15, 0 0 0 3px #facc15, 0 0 26px rgba(250,204,21,.55);
+  outline: 0;
+  position: relative;
+}
+.evidence-table tr.feat.tier-gold.is-updated { outline: 0; }
+.evidence-table tr.feat.tier-gold > th[scope="row"] {
+  box-shadow: none;
+  font-size: 1.12em;
+  font-weight: 800;
+  color: #fff3b0;
+  padding-left: 22px;
+}
+.evidence-table tr.feat.tier-gold > th[scope="row"]::before {
+  content: "\2605  READY \00B7 100%";
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #facc15;
+  color: #1c1300;
+  border: 2px solid #fff7c2;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  box-shadow: 0 0 14px rgba(250,204,21,.8);
+}
+.evidence-table tr.feat.tier-gold .done-cell strong {
+  font-size: 2.1rem;
+  line-height: 1.1;
+  font-weight: 900;
+  color: #ffe066;
+  text-shadow: 0 0 14px rgba(250,204,21,.65);
+}
+.evidence-table tr.feat.tier-gold .tier-tag.tier-gold {
+  background: #facc15;
+  color: #1c1300;
+  border: 2px solid #fff7c2;
+  font-size: .85em;
+  font-weight: 900;
+  box-shadow: 0 0 12px rgba(250,204,21,.7);
+}
+.evidence-table tr.feat.tier-gold .bar i { background: linear-gradient(90deg, #f59e0b, #fde047 60%, #fff7c2); }
+.evidence-table tr.feat.tier-gold .upd-delta { color: #ffe066; font-weight: 800; }
+.evidence-table tr.feat.tier-gold .chk.ok { border-color: #facc15; }
+@media (prefers-reduced-motion: no-preference) {
+  .evidence-table tr.feat.tier-gold { animation: readyGlow 3.6s ease-in-out infinite; }
+  @keyframes readyGlow {
+    0%, 100% { box-shadow: inset 10px 0 0 #facc15, 0 0 0 3px #facc15, 0 0 18px rgba(250,204,21,.40); }
+    50%      { box-shadow: inset 10px 0 0 #facc15, 0 0 0 3px #facc15, 0 0 34px rgba(250,204,21,.80); }
+  }
+}
+/* Light theme: dark text on a strong gold wash so contrast stays high. */
+html[data-theme="light"] .evidence-table tr.feat.tier-gold,
+html[data-aurora][data-theme="light"] .evidence-table tr.feat.tier-gold {
+  background: linear-gradient(90deg, rgba(250,204,21,.60), rgba(250,204,21,.30) 55%, rgba(250,204,21,.14));
+}
+html[data-theme="light"] .evidence-table tr.feat.tier-gold > th[scope="row"],
+html[data-aurora][data-theme="light"] .evidence-table tr.feat.tier-gold > th[scope="row"] { color: #3b2a00; }
+html[data-theme="light"] .evidence-table tr.feat.tier-gold .done-cell strong,
+html[data-aurora][data-theme="light"] .evidence-table tr.feat.tier-gold .done-cell strong { color: #5c4200; text-shadow: none; }
+html[data-theme="light"] .evidence-table tr.feat.tier-gold .upd-delta,
+html[data-aurora][data-theme="light"] .evidence-table tr.feat.tier-gold .upd-delta { color: #5c4200; }
+/* Small screens: keep the ribbon and number big. */
+@media (max-width: 720px) {
+  .evidence-table tr.feat.tier-gold { box-shadow: inset 8px 0 0 #facc15, 0 0 0 3px #facc15; animation: none; }
+  .evidence-table tr.feat.tier-gold .done-cell strong { font-size: 1.8rem; }
+}
+.evidence-table tr.feat.tier-gold > th[scope="row"] { background-color: rgba(250,204,21,.22); }
+.evidence-table tr.feat.tier-gold > td { background-color: transparent; }
+.evidence-table tr.feat.tier-gold > th[scope="row"] { background: rgba(250,204,21,.26) !important; }
