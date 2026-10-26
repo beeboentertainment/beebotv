@@ -159,3 +159,7 @@ Recorded Oct 26, 2026, 9:11:07 AM Eastern.
 - Existing progress-score, current-version, release-footer feed consistency, timestamp and browser-game-count checks: PASS. The existing evidence-page rebuild check FAILS because release-evidence.html is out of date. That page and all its data inputs are unchanged from the base; it remains with the evidence owner. No generator that writes evidence or feeds was run.
 - Existing ignored local check helpers were read from the existing checkout, with their root redirected to this fresh clone and check-only options used. The existing checkout was not edited.
 - Final release/publication remains with the reviewer after screenshot review.
+
+### Existing layout-check limitation
+
+The stock status-layout.cjs stops at its raw-byte JSON guard because this Windows checkout uses CRLF while the unchanged Git blob uses LF. A local check-only adaptation normalized that comparison and resolved the Windows root path; its browser assertions were unchanged. It completed all 56 combinations (four pages, seven widths, two themes): 54 passed. The two failures are updates.html at 375px in light and dark modes, with a 377px document width. This was reproduced on the exact base HTML: long source-commit text in the release-note body overflows by the same two pixels. That body is outside this shell lane. Both required widths (1280px and 390px) pass for every canonical page.
