@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Oct 26, 2026, 11:54 PM Eastern",
-    "updatedIso": "2026-10-26T23:54:00-04:00",
+    "updatedEastern": "Oct 27, 2026, 6:45 AM Eastern",
+    "updatedIso": "2026-10-27T06:45:00-04:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -151,7 +151,7 @@
       "area": "windows",
       "name": "Chapters, seek previews, skip intro and credits",
       "status": "Beta",
-      "evidence": "Oct 21 on Windows 0.1.98: the chapter list showed four chapters and a jump to chapter 3 landed at 17 seconds. Oct 22 on the Galaxy S25 phone app: chapter buttons, a chapter list and tick marks worked. Seek previews and skip intro and credits were not tried.",
+      "evidence": "Oct 21 on Windows 0.1.98: the chapter list showed four chapters and a jump to chapter 3 landed at 17 seconds. Oct 22 on the Galaxy S25 phone app: chapter buttons, a chapter list and tick marks worked. Seek previews and skip intro and credits were not tried then. Update Oct 27, 2026 (early morning): in the web player on a Galaxy S9+ in Chrome, Skip intros jumped exactly once from 3.98 to 20.00 seconds, did not skip again after a hand seek and did not skip on Resume (one phone, one made-up film, muted).",
       "realTest": "partly"
     },
     {
@@ -351,7 +351,7 @@
       "area": "android",
       "name": "Opening the app and the five tabs (Home, Browse, Library, Play, More)",
       "status": "Available",
-      "evidence": "Oct 22 test-build update: RETEST-1 reports no crash-log entries and retained sign-in on the three named phones using tester35 with Windows 0.1.100. This is not a new full five-tab or TalkBack pass. Historical ticks stay unchanged. Update Oct 26, 2026 (evening): the false “computer needs attention” card was not seen in 14 fresh starts on two test phones. The typed-address and paste-a-link retests were blocked on a signed-in phone, and the warm-pairing repair is not verified.",
+      "evidence": "Oct 22 test-build update: RETEST-1 reports no crash-log entries and retained sign-in on the three named phones using tester35 with Windows 0.1.100. This is not a new full five-tab or TalkBack pass. Historical ticks stay unchanged. Update Oct 26, 2026 (evening): the false “computer needs attention” card was not seen in 14 fresh starts on two test phones. The typed-address and paste-a-link retests were blocked on a signed-in phone, and the warm-pairing repair is not verified. Update Oct 27, 2026 (early morning): the More-page connection card stayed correct after font and language changes on two test phones (the earlier 30 to 45 second “could not be confirmed” did not reproduce and is closed as not reproduced, cause never found).",
       "realTest": "yes"
     },
     {
@@ -359,7 +359,7 @@
       "area": "android",
       "name": "Playing films: resume, seek, pause and the quality menu",
       "status": "Available",
-      "evidence": "Last PASS: Oct 23, 2026, 10:28:19 AM Eastern. The selected English sidecar cue was still absent on a second native phone while the picture time was inside the cue. Earlier seek and picture-in-picture passes are carried. Online Next remains a separate open problem. Verify sidecar captions on a phone running the new build (test build 42; the fix is merged and no phone has shown it yet; the browser player drew a separate subtitle file correctly on Oct 24) and retest online Next on a compatible installed build. A person still needs to hear the sound. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade. Update Oct 26, 2026 (evening): the 200% landscape subtitle clipping did not reproduce on two test phones. Update Oct 26, 2026, late evening: on tester54 the Home “Continue watching” list after Start over passed in 9 of 9 runs on a Pixel 3 and a Galaxy S9+ (it had failed on tester52 and tester53), but it is still sometimes empty after a short resumed session, even after a cold start; both phones shared one test account, so another phone’s write may be the cause (not proven). On a Samsung TV browser, Up next handled a missing next episode with a clear message (PASS by Nick).",
+      "evidence": "Last PASS: Oct 23, 2026, 10:28:19 AM Eastern. The selected English sidecar cue was still absent on a second native phone while the picture time was inside the cue. Earlier seek and picture-in-picture passes are carried. Online Next remains a separate open problem. Verify sidecar captions on a phone running the new build (test build 42; the fix is merged and no phone has shown it yet; the browser player drew a separate subtitle file correctly on Oct 24) and retest online Next on a compatible installed build. A person still needs to hear the sound. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade. Update Oct 26, 2026 (evening): the 200% landscape subtitle clipping did not reproduce on two test phones. Update Oct 26, 2026, late evening: on tester54 the Home “Continue watching” list after Start over passed in 9 of 9 runs on a Pixel 3 and a Galaxy S9+ (it had failed on tester52 and tester53), but it is still sometimes empty after a short resumed session, even after a cold start; both phones shared one test account, so another phone’s write may be the cause (not proven). On a Samsung TV browser, Up next handled a missing next episode with a clear message (PASS by Nick). Update Oct 27, 2026 (early morning, Galaxy S9+, muted): Home Resume after short resumed sessions passed 5 of 5 and the resume point after a back-seek passed, but one Start over right after a fresh sign-in left the Home list empty, so that issue stays open.",
       "realTest": "yes"
     },
     {
@@ -415,7 +415,7 @@
       "area": "android",
       "name": "Watchlist, favourites, playlists and Surprise me",
       "status": "Available",
-      "evidence": "Last PASS: Oct 23, 2026, 6:34:08 PM Eastern. Earlier list, favourite, watchlist, playlist and intended control/fallback passes are carried. This round adds no loading-error or artwork acceptance. Loading/error and artwork cases remain unproved. Nick still decides the intended Surprise behaviour. The existing 99% checklist is carried within its recorded action scope. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade. Update Oct 26, 2026 (evening): Nick watched a full playlist redo pass (create, add, reorder, play, shuffle, rename, delete). The saved-place problem with Surprise me is still open.",
+      "evidence": "Last PASS: Oct 23, 2026, 6:34:08 PM Eastern. Earlier list, favourite, watchlist, playlist and intended control/fallback passes are carried. This round adds no loading-error or artwork acceptance. Loading/error and artwork cases remain unproved. Nick still decides the intended Surprise behaviour. The existing 99% checklist is carried within its recorded action scope. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade. Update Oct 26, 2026 (evening): Nick watched a full playlist redo pass (create, add, reorder, play, shuffle, rename, delete). The saved-place problem with Surprise me was open then. Update Oct 27, 2026 (early morning): on a Pixel 3 on tester55 a film at 33% kept its place after two Surprise me runs, so the problem did not reproduce (one phone, a made-up test film, empty-library and error cases not tried; muted). The testing page returns this feature to 99%, waiting for a human look.",
       "realTest": "partly"
     },
     {
@@ -1063,7 +1063,7 @@
       "area": "music",
       "name": "Audiobooks: books, chapters, speed, sleep timer, bookmarks",
       "status": "Beta",
-      "evidence": "Last PASS: Oct 23, 2026, 2:12:28 PM Eastern. The paused chapter-position loss was reproduced on the Pixel as well as the S9+. A paused jump from about 1 second to the next chapter at 16 seconds returned to about 1 second after restart. Repair paused checkpoint saving and retest both devices. Played checkpoints and bookmarks remain separate earlier passes. Listening, speed and sleep checks still need a person. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade. Update Oct 26, 2026 (evening): the paused chapter-position loss did not reproduce on a Galaxy S9+ on two newer test builds, so that item is closed. At a second household, with Nick hearing it, a made-up three-chapter book played across chapters with speed, an end-of-chapter sleep timer, bookmarks and Mark as finished. One open issue: the speed showed 1.15x after a restart although 1x was set. A real recording, the fade, the timed sleep timer and Cast were not tested.",
+      "evidence": "Last PASS: Oct 23, 2026, 2:12:28 PM Eastern. The paused chapter-position loss was reproduced on the Pixel as well as the S9+. A paused jump from about 1 second to the next chapter at 16 seconds returned to about 1 second after restart. Repair paused checkpoint saving and retest both devices. Played checkpoints and bookmarks remain separate earlier passes. Listening, speed and sleep checks still need a person. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade. Update Oct 26, 2026 (evening): the paused chapter-position loss did not reproduce on a Galaxy S9+ on two newer test builds, so that item is closed. At a second household, with Nick hearing it, a made-up three-chapter book played across chapters with speed, an end-of-chapter sleep timer, bookmarks and Mark as finished. The speed showed 1.15x after a restart although 1x was set; on Oct 27, 2026 (early morning, Pixel 3, tester55) that did not reproduce, Reset to 1x works and a bookmark can be deleted with Undo. One open issue remains: an unexplained sign-out when a bookmark’s trash was tapped (not isolated). A real recording, the fade, the timed sleep timer and Cast were not tested.",
       "realTest": "partly"
     },
     {
