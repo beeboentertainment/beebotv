@@ -696,3 +696,169 @@ html[data-theme="light"] .ready-banner-star, html[data-aurora][data-theme="light
 .ready-banner .ready-banner-list a, .ready-banner .ready-banner-list a:visited { color: #1c1300 !important; background: #facc15 !important; text-decoration: none !important; }
 .ready-banner .ready-banner-list a:hover, .ready-banner .ready-banner-list a:focus-visible { background: #fff3b0 !important; }
 .ready-banner { background: linear-gradient(135deg, rgba(250,204,21,.70), rgba(253,224,71,.38) 55%, rgba(250,204,21,.60)); }
+
+/* ===== Colour key as buttons, tier list panel, and the 99% purple / 100% gold glitter (Oct 27, 2026) =====
+   Display only. Text always sits ABOVE the effect layers (z-index -1 inside an isolated stacking context) on a solid base,
+   sparkles live in the left and right padding, the sweep is a soft translucent band, nothing flashes (every period is 4 s or longer),
+   and reduced-motion visitors get a static glow. Colours were checked for AA contrast against the brightest colour the sweep reaches. */
+:root:root .tier-chip { font: inherit; font-size: .8rem; font-weight: 700; line-height: 1.3; text-align: left; padding: 9px 18px; min-height: 38px; cursor: pointer; border-radius: 999px; border-width: 1px; border-style: solid; margin: 0; }
+:root:root .status-legend:not(.is-interactive) .tier-chip { cursor: default; }
+:root:root .status-legend .legend-hint { display: none; }
+:root:root .status-legend.is-interactive .legend-hint { display: inline; }
+:root:root .tier-chip .chip-count { white-space: nowrap; }
+:root:root .status-legend.is-interactive .tier-chip .chip-count::after { content: " \25BE"; }
+:root:root .status-legend.is-interactive .tier-chip[aria-pressed="true"] .chip-count::after { content: " \25B4"; }
+:root:root .status-legend.is-interactive .tier-chip:hover { filter: brightness(1.12); }
+:root:root .tier-chip.tier-chip[aria-pressed="true"] { box-shadow: 0 0 0 2px #08131f, 0 0 0 4px #e8f0ff; }
+:root:root .tier-chip:focus-visible, :root:root .tier-key-close:focus-visible, :root:root .tier-key-items a:focus-visible { outline: 3px solid #6bbfff; outline-offset: 3px; }
+:root:root[data-theme="light"] .tier-chip.tier-chip[aria-pressed="true"] { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #14233a; }
+:root:root[data-theme="light"] .tier-chip:focus-visible, :root:root[data-theme="light"] .tier-key-close:focus-visible, :root:root[data-theme="light"] .tier-key-items a:focus-visible { outline-color: #135a97; }
+
+/* The list under the key. Empty (and invisible) until a chip is pressed. */
+:root:root .tier-key-panel:empty { display: block; margin: 0; padding: 0; border: 0; min-height: 0; }
+:root:root .tier-key-panel.is-open { margin: 10px 0 18px; padding: 14px 16px 16px; border-radius: 12px; border: 1px solid rgba(160,174,200,.5); border-left-width: 8px; background: #0e1b2b; color: #f4f0e8; }
+:root:root .tier-key-panel.tier-key-gold { border-color: #facc15; }
+:root:root .tier-key-panel.tier-key-purple { border-color: #a855f7; }
+:root:root .tier-key-panel.tier-key-green { border-color: #4ade80; }
+:root:root .tier-key-panel.tier-key-teal { border-color: #67e8f9; }
+:root:root .tier-key-panel.tier-key-yellow { border-color: #fbbf24; }
+:root:root .tier-key-panel.tier-key-red { border-color: #ff8a80; }
+:root:root .tier-key-head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; margin: 0 0 10px; }
+:root:root .tier-key-title { margin: 0; font-size: 1.05rem; line-height: 1.35; }
+:root:root .tier-key-close { font: inherit; font-size: .85rem; font-weight: 700; padding: 6px 14px; border-radius: 8px; border: 1px solid #8d98ab; background: #162235; color: #f5f7fc; cursor: pointer; }
+:root:root .tier-key-items { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 8px; }
+:root:root .tier-key-items li { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(160,174,200,.3); background: #132438; }
+:root:root .tier-key-items li a { flex: 1 1 100%; color: #bfe0ff; font-weight: 700; overflow-wrap: anywhere; }
+:root:root .tier-key-items li strong { font-size: 1.05rem; }
+:root:root .tier-key-items li .tki-pct { display: inline-flex; align-items: center; gap: 8px; }
+:root:root .tier-key-items li .tki-meta, :root:root .tier-key-items li .tki-line { flex: 1 1 100%; font-size: .84rem; line-height: 1.4; opacity: 1; }
+:root:root .tier-key-items li .tki-meta { font-weight: 600; }
+:root:root .tier-key-empty { margin: 0; }
+:root:root[data-theme="light"] .tier-key-panel.is-open { background: #f4f7fc; color: #14233a; }
+:root:root[data-theme="light"] .tier-key-panel.tier-key-gold { border-color: #a97a00; }
+:root:root[data-theme="light"] .tier-key-panel.tier-key-purple { border-color: #6d28d9; }
+:root:root[data-theme="light"] .tier-key-panel.tier-key-green { border-color: #33754b; }
+:root:root[data-theme="light"] .tier-key-panel.tier-key-teal { border-color: #276978; }
+:root:root[data-theme="light"] .tier-key-panel.tier-key-yellow { border-color: #886719; }
+:root:root[data-theme="light"] .tier-key-panel.tier-key-red { border-color: #ae4150; }
+:root:root[data-theme="light"] .tier-key-close { background: #fff; color: #14233a; border-color: #536378; }
+:root:root[data-theme="light"] .tier-key-items li { background: #fff; border-color: rgba(20,35,58,.25); }
+:root:root[data-theme="light"] .tier-key-panel .tier-key-items li a { color: #0b4a8a; }
+:root:root .evidence-table tr.feat { scroll-margin-top: 96px; }
+
+/* ---- Glitter hosts: the key chips and the ready banner animate on their own; row badges only while the row is hovered or focused ---- */
+:root:root .tier-chip.tier-gold, :root:root .tier-chip.tier-purple, :root:root .ready-banner, :root:root .tier-key-items .tier-tag.tier-gold, :root:root .tier-key-items .tier-tag.tier-purple, :root:root .evidence-table tr.feat .tier-tag.tier-gold, :root:root .evidence-table tr.feat .tier-tag.tier-purple, :root:root .evidence-table tr.feat.is-99 .done-cell strong, :root:root .evidence-table tr.feat.is-100 .done-cell strong { position: relative; isolation: isolate; overflow: hidden; }
+:root:root .tier-chip.tier-gold::before, :root:root .tier-chip.tier-purple::before, :root:root .ready-banner::before, :root:root .tier-key-items .tier-tag.tier-gold::before, :root:root .tier-key-items .tier-tag.tier-purple::before, :root:root .evidence-table tr.feat .tier-tag.tier-gold::before, :root:root .evidence-table tr.feat .tier-tag.tier-purple::before, :root:root .evidence-table tr.feat.is-99 .done-cell strong::before, :root:root .evidence-table tr.feat.is-100 .done-cell strong::before {
+  content: ""; position: absolute; z-index: -1; top: -25%; bottom: -25%; left: 0; width: 42%; pointer-events: none;
+  transform: translateX(-160%) skewX(-22deg); opacity: 0;
+}
+:root:root .tier-chip.tier-gold::after, :root:root .tier-chip.tier-purple::after, :root:root .ready-banner::after, :root:root .tier-key-items .tier-tag.tier-gold::after, :root:root .tier-key-items .tier-tag.tier-purple::after, :root:root .evidence-table tr.feat .tier-tag.tier-gold::after, :root:root .evidence-table tr.feat .tier-tag.tier-purple::after, :root:root .evidence-table tr.feat.is-99 .done-cell strong::after, :root:root .evidence-table tr.feat.is-100 .done-cell strong::after, :root:root .tier-chip > .glit, :root:root .ready-banner > .glit { content: ""; display: block; position: absolute; z-index: -1; inset: 0; pointer-events: none; opacity: .9; }
+/* sparkle colours (core and halo) per host */
+:root:root .tier-chip.tier-gold, :root:root .tier-key-items .tier-tag.tier-gold, :root:root .evidence-table tr.feat .tier-tag.tier-gold, :root:root .evidence-table tr.feat.is-100 .done-cell strong { --dc: #fff; --dh: rgba(170,100,0,.75); }
+:root:root .tier-chip.tier-purple, :root:root .tier-key-items .tier-tag.tier-purple, :root:root .evidence-table tr.feat .tier-tag.tier-purple, :root:root .evidence-table tr.feat.is-99 .done-cell strong { --dc: #fff; --dh: rgba(196,150,255,.8); }
+:root:root .ready-banner { --dc: #fff3b0; --dh: rgba(255,200,40,.55); }
+/* layer A: two dots in the side padding (the pseudo-element) */
+:root:root .tier-chip.tier-gold::after, :root:root .tier-key-items .tier-tag.tier-gold::after, :root:root .evidence-table tr.feat .tier-tag.tier-gold::after, :root:root .evidence-table tr.feat.is-100 .done-cell strong::after {
+  background-image:
+    radial-gradient(circle at 9px 32%, var(--dc) 0 1.3px, var(--dh) 1.9px 2.6px, transparent 3.2px),
+    radial-gradient(circle at calc(100% - 10px) 70%, var(--dc) 0 1.3px, var(--dh) 1.9px 2.6px, transparent 3.2px);
+}
+:root:root .tier-chip.tier-purple::after, :root:root .tier-key-items .tier-tag.tier-purple::after, :root:root .evidence-table tr.feat .tier-tag.tier-purple::after, :root:root .evidence-table tr.feat.is-99 .done-cell strong::after {
+  background-image:
+    radial-gradient(circle at 10px 68%, var(--dc) 0 1.3px, var(--dh) 1.9px 2.6px, transparent 3.2px),
+    radial-gradient(circle at calc(100% - 9px) 30%, var(--dc) 0 1.3px, var(--dh) 1.9px 2.6px, transparent 3.2px);
+}
+/* layer B: the <i class="glit"> element twinkles out of step with layer A */
+:root:root .tier-chip.tier-gold > .glit { background-image:
+    radial-gradient(circle at 14px 72%, var(--dc) 0 1px, var(--dh) 1.5px 2.1px, transparent 2.7px),
+    radial-gradient(circle at calc(100% - 15px) 26%, var(--dc) 0 1px, var(--dh) 1.5px 2.1px, transparent 2.7px); }
+:root:root .tier-chip.tier-purple > .glit { background-image:
+    radial-gradient(circle at 15px 28%, var(--dc) 0 1px, var(--dh) 1.5px 2.1px, transparent 2.7px),
+    radial-gradient(circle at calc(100% - 14px) 74%, var(--dc) 0 1px, var(--dh) 1.5px 2.1px, transparent 2.7px); }
+/* banner: sparkles run down both side margins (inside the side padding, never under the headline) */
+:root:root .ready-banner > .glit { background-image:
+    radial-gradient(circle at 9px 18%, var(--dc) 0 1.6px, var(--dh) 2.3px 3.2px, transparent 4px),
+    radial-gradient(circle at calc(100% - 11px) 44%, var(--dc) 0 1.6px, var(--dh) 2.3px 3.2px, transparent 4px),
+    radial-gradient(circle at 12px 80%, var(--dc) 0 1.6px, var(--dh) 2.3px 3.2px, transparent 4px),
+    radial-gradient(circle at calc(100% - 9px) 90%, var(--dc) 0 1.6px, var(--dh) 2.3px 3.2px, transparent 4px); }
+:root:root .ready-banner::after { background-image:
+    radial-gradient(circle at 11px 52%, var(--dc) 0 1.6px, var(--dh) 2.3px 3.2px, transparent 4px),
+    radial-gradient(circle at calc(100% - 9px) 14%, var(--dc) 0 1.6px, var(--dh) 2.3px 3.2px, transparent 4px),
+    radial-gradient(circle at calc(100% - 12px) 72%, var(--dc) 0 1.6px, var(--dh) 2.3px 3.2px, transparent 4px); }
+:root:root .ready-banner { padding-inline: 30px; }
+
+/* Row badge and the percentage badge: room for sparkles at the sides */
+:root:root .tier-key-items .tier-tag.tier-gold, :root:root .tier-key-items .tier-tag.tier-purple, :root:root .evidence-table tr.feat .tier-tag.tier-gold, :root:root .evidence-table tr.feat .tier-tag.tier-purple { padding: 2px 16px; }
+:root:root .evidence-table tr.feat.is-99 .done-cell strong, :root:root .evidence-table tr.feat.is-100 .done-cell strong { display: inline-block; padding: 0 .4em; border-radius: 12px; border: 2px solid; line-height: 1.25; text-shadow: none; }
+
+/* ---- Colours. Gold = warm, bright, dark text. Purple = cool, deep, white text. ---- */
+/* dark theme (default) */
+:root:root .tier-chip.tier-gold { background: linear-gradient(135deg, #f2bf12, #ffd84a 55%, #f2bf12); color: #1c1300; border-color: #fff2a8; box-shadow: 0 0 12px rgba(250,204,21,.55); }
+:root:root .tier-chip.tier-purple { background: linear-gradient(135deg, #2f1556, #4a2278 55%, #2f1556); color: #ffffff; border-color: #d4b3ff; box-shadow: 0 0 12px rgba(168,85,247,.6); }
+:root:root .tier-chip.tier-gold::before, :root:root .tier-key-items .tier-tag.tier-gold::before, :root:root .evidence-table tr.feat .tier-tag.tier-gold::before, :root:root .evidence-table tr.feat.is-100 .done-cell strong::before { background: linear-gradient(90deg, transparent, rgba(255,255,255,.75) 50%, transparent); }
+:root:root .tier-chip.tier-purple::before, :root:root .tier-key-items .tier-tag.tier-purple::before, :root:root .evidence-table tr.feat .tier-tag.tier-purple::before, :root:root .evidence-table tr.feat.is-99 .done-cell strong::before { background: linear-gradient(90deg, transparent, rgba(190,140,255,.30) 50%, transparent); }
+:root:root .evidence-table tr.feat.is-100 .done-cell strong::before { background: linear-gradient(90deg, transparent, rgba(255,224,102,.22) 50%, transparent); }
+:root:root .tier-key-items .tier-tag.tier-gold, :root:root .evidence-table tr.feat .tier-tag.tier-gold { background: linear-gradient(135deg, #f2bf12, #ffd84a 55%, #f2bf12); color: #1c1300; border: 2px solid #fff2a8; box-shadow: 0 0 10px rgba(250,204,21,.6); }
+:root:root .tier-key-items .tier-tag.tier-purple, :root:root .evidence-table tr.feat .tier-tag.tier-purple { background: linear-gradient(135deg, #2f1556, #4a2278 55%, #2f1556); color: #ffffff; border: 2px solid #d4b3ff; box-shadow: 0 0 10px rgba(168,85,247,.6); }
+:root:root .evidence-table tr.feat.is-100 .done-cell strong { background: #2b2000; color: #ffe066; border-color: #facc15; box-shadow: 0 0 12px rgba(250,204,21,.55); font-size: 2rem; }
+:root:root .evidence-table tr.feat.is-99 .done-cell strong { background: #2a1250; color: #f3e8ff; border-color: #a855f7; box-shadow: 0 0 12px rgba(168,85,247,.55); font-size: 1.5rem; }
+:root:root .evidence-table tr.feat.is-99 { background: linear-gradient(90deg, rgba(168,85,247,.30), rgba(168,85,247,.10) 60%, rgba(168,85,247,.04)); box-shadow: inset 8px 0 0 #a855f7, 0 0 0 2px rgba(168,85,247,.7), 0 0 22px rgba(168,85,247,.4); }
+:root:root .ready-banner { background: linear-gradient(135deg, #4a3700, #5e4600 50%, #4a3700); border-color: #facc15; }
+:root:root .ready-banner::before { background: linear-gradient(90deg, transparent, rgba(255,224,102,.14) 50%, transparent); }
+:root:root .ready-banner h2, :root:root .ready-banner p { color: #fff6c9; }
+/* light theme */
+:root:root[data-theme="light"] .tier-chip.tier-gold { background: linear-gradient(135deg, #ffe58a, #fcd34d 55%, #ffe58a); color: #2b1d00; border-color: #8b6813; box-shadow: 0 0 10px rgba(180,130,0,.4); --dh: rgba(150,90,0,.8); }
+:root:root[data-theme="light"] .tier-chip.tier-purple { background: linear-gradient(135deg, #efe5fb, #e0cdf7 55%, #efe5fb); color: #2e0b57; border-color: #6d28d9; box-shadow: 0 0 10px rgba(109,40,217,.4); --dc: #5b21b6; --dh: rgba(124,58,237,.35); }
+:root:root[data-theme="light"] .tier-key-items .tier-tag.tier-purple, :root:root[data-theme="light"] .evidence-table tr.feat .tier-tag.tier-purple, :root:root[data-theme="light"] .evidence-table tr.feat.is-99 .done-cell strong { --dc: #5b21b6; --dh: rgba(124,58,237,.35); }
+:root:root[data-theme="light"] .tier-key-items .tier-tag.tier-gold, :root:root[data-theme="light"] .evidence-table tr.feat .tier-tag.tier-gold, :root:root[data-theme="light"] .evidence-table tr.feat.is-100 .done-cell strong { --dh: rgba(150,90,0,.8); }
+:root:root[data-theme="light"] .tier-chip.tier-purple::before, :root:root[data-theme="light"] .tier-key-items .tier-tag.tier-purple::before, :root:root[data-theme="light"] .evidence-table tr.feat .tier-tag.tier-purple::before, :root:root[data-theme="light"] .evidence-table tr.feat.is-99 .done-cell strong::before { background: linear-gradient(90deg, transparent, rgba(255,255,255,.85) 50%, transparent); }
+:root:root[data-theme="light"] .evidence-table tr.feat.is-100 .done-cell strong::before { background: linear-gradient(90deg, transparent, rgba(255,255,255,.85) 50%, transparent); }
+:root:root[data-theme="light"] .tier-key-items .tier-tag.tier-gold, :root:root[data-theme="light"] .evidence-table tr.feat .tier-tag.tier-gold { background: linear-gradient(135deg, #ffe58a, #fcd34d 55%, #ffe58a); color: #2b1d00; border-color: #8b6813; box-shadow: 0 0 8px rgba(180,130,0,.4); }
+:root:root[data-theme="light"] .tier-key-items .tier-tag.tier-purple, :root:root[data-theme="light"] .evidence-table tr.feat .tier-tag.tier-purple { background: linear-gradient(135deg, #efe5fb, #e0cdf7 55%, #efe5fb); color: #2e0b57; border-color: #6d28d9; box-shadow: 0 0 8px rgba(109,40,217,.4); }
+:root:root[data-theme="light"] .evidence-table tr.feat.is-100 .done-cell strong { background: #fff3c2; color: #3b2a00; border-color: #a97a00; box-shadow: 0 0 10px rgba(180,130,0,.4); }
+:root:root[data-theme="light"] .evidence-table tr.feat.is-99 .done-cell strong { background: #f0e8fa; color: #2e0b57; border-color: #6d28d9; box-shadow: 0 0 10px rgba(109,40,217,.4); }
+:root:root[data-theme="light"] .evidence-table tr.feat.is-99 { background: linear-gradient(90deg, rgba(168,85,247,.20), rgba(168,85,247,.07) 60%, rgba(168,85,247,.02)); }
+:root:root[data-theme="light"] .ready-banner { background: linear-gradient(135deg, #ffe58a, #ffd34d 50%, #ffe58a); border-color: #c79200; --dc: #fff; --dh: rgba(150,90,0,.8); }
+:root:root[data-theme="light"] .ready-banner::before { background: linear-gradient(90deg, transparent, rgba(255,255,255,.8) 50%, transparent); }
+:root:root[data-theme="light"] .ready-banner h2, :root:root[data-theme="light"] .ready-banner p { color: #2b1d00; }
+
+/* READY ribbon (the pseudo-element of the row heading): sheen only while the row is hovered or focused */
+:root:root .evidence-table tr.feat.tier-gold > th[scope="row"]::before { background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,.8) 50%, transparent 62%) no-repeat -80% 0 / 60% 100%, linear-gradient(135deg, #f2bf12, #ffd84a 55%, #f2bf12); }
+:root:root .evidence-table tr.feat.tier-gold { box-shadow: inset 10px 0 0 #facc15, 0 0 0 3px #facc15, 0 0 26px rgba(250,204,21,.55); animation: none; }
+
+/* ---- Motion: only when the visitor has not asked for reduced motion ---- */
+@media (prefers-reduced-motion: no-preference) {
+  :root:root .tier-chip.tier-gold::before, :root:root .tier-chip.tier-purple::before, :root:root .ready-banner::before { will-change: transform, opacity; }
+  :root:root .tier-chip.tier-gold::before { animation: glitSweep 4.8s ease-in-out infinite; }
+  :root:root .tier-chip.tier-purple::before { animation: glitSweepBack 5.6s ease-in-out 1.4s infinite; }
+  :root:root .ready-banner::before { animation: glitSweep 7s ease-in-out infinite; }
+  :root:root .tier-chip.tier-gold::after { animation: glitTwinkle 4.4s ease-in-out infinite; }
+  :root:root .tier-chip.tier-gold > .glit { animation: glitTwinkle 4.4s ease-in-out -2.2s infinite; }
+  :root:root .tier-chip.tier-purple::after { animation: glitTwinkle 5.2s ease-in-out -.8s infinite; }
+  :root:root .tier-chip.tier-purple > .glit { animation: glitTwinkle 5.2s ease-in-out -3.4s infinite; }
+  :root:root .ready-banner::after { animation: glitTwinkle 5s ease-in-out infinite; }
+  :root:root .ready-banner > .glit { animation: glitTwinkle 5s ease-in-out -2.5s infinite; }
+  /* rows, panel items and badges: only while hovered or focused */
+  :root:root .evidence-table tr.feat:is(:hover, :focus-within) .tier-tag.tier-gold::before, :root:root .evidence-table tr.feat.is-100:is(:hover, :focus-within) .done-cell strong::before, :root:root .tier-key-items li:is(:hover, :focus-within) .tier-tag.tier-gold::before { animation: glitSweep 4.8s ease-in-out infinite; }
+  :root:root .evidence-table tr.feat:is(:hover, :focus-within) .tier-tag.tier-purple::before, :root:root .evidence-table tr.feat.is-99:is(:hover, :focus-within) .done-cell strong::before, :root:root .tier-key-items li:is(:hover, :focus-within) .tier-tag.tier-purple::before { animation: glitSweepBack 5.6s ease-in-out infinite; }
+  :root:root .evidence-table tr.feat.tier-gold:is(:hover, :focus-within) > th[scope="row"]::before { animation: ribbonSheen 4.8s ease-in-out infinite; }
+  :root:root .evidence-table tr.feat:is(:hover, :focus-within) .tier-tag.tier-gold::after, :root:root .evidence-table tr.feat.is-100:is(:hover, :focus-within) .done-cell strong::after, :root:root .tier-key-items li:is(:hover, :focus-within) .tier-tag.tier-gold::after { animation: glitTwinkle 4.4s ease-in-out infinite; }
+  :root:root .evidence-table tr.feat:is(:hover, :focus-within) .tier-tag.tier-purple::after, :root:root .evidence-table tr.feat.is-99:is(:hover, :focus-within) .done-cell strong::after, :root:root .tier-key-items li:is(:hover, :focus-within) .tier-tag.tier-purple::after { animation: glitTwinkle 5.2s ease-in-out infinite; }
+  :root:root .glit-paused, :root:root .glit-paused::before, :root:root .glit-paused::after, :root:root .glit-paused > .glit { animation-play-state: paused !important; }
+}
+@keyframes glitSweep { 0% { transform: translateX(-160%) skewX(-22deg); opacity: 0; } 6% { opacity: 1; } 34% { opacity: 1; } 42%, 100% { transform: translateX(340%) skewX(-22deg); opacity: 0; } }
+@keyframes glitSweepBack { 0% { transform: translateX(340%) skewX(-22deg); opacity: 0; } 6% { opacity: 1; } 34% { opacity: 1; } 42%, 100% { transform: translateX(-160%) skewX(-22deg); opacity: 0; } }
+@keyframes glitTwinkle { 0%, 100% { opacity: .15; } 50% { opacity: 1; } }
+@keyframes ribbonSheen { 0% { background-position: -80% 0, 0 0; } 40%, 100% { background-position: 190% 0, 0 0; } }
+@media (prefers-reduced-motion: reduce) {
+  :root:root .tier-chip.tier-gold::before, :root:root .tier-chip.tier-purple::before, :root:root .ready-banner::before, :root:root .tier-tag.tier-gold::before, :root:root .tier-tag.tier-purple::before, :root:root .done-cell strong::before { display: none; }
+}
+@media (max-width: 720px) {
+  :root:root .ready-banner { padding-inline: 26px; }
+  :root:root .evidence-table tr.feat.is-100 .done-cell strong { font-size: 1.7rem; }
+}
+@media print {
+  :root:root .tier-chip::before, :root:root .tier-chip::after, :root:root .tier-chip > .glit, :root:root .ready-banner::before, :root:root .ready-banner::after, :root:root .ready-banner > .glit, :root:root .tier-tag::before, :root:root .tier-tag::after, :root:root .done-cell strong::before, :root:root .done-cell strong::after { display: none !important; }
+  :root:root .tier-chip, :root:root .tier-chip.tier-gold, :root:root .tier-chip.tier-purple { box-shadow: none; }
+  :root:root .tier-key-panel, :root:root .tier-key-data { display: none !important; }
+}
