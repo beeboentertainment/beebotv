@@ -579,11 +579,7 @@ html[data-theme="light"] .tier-tag.tier-purple, html[data-aurora][data-theme="li
 html[data-theme="light"] .tier-tag.tier-gold, html[data-aurora][data-theme="light"] .tier-tag.tier-gold { background: #fef08a; color: #1c1300; border-color: #a16207; box-shadow: none; }
 
 /* Shared progress tiers and keyboard filters. */
-html[data-aurora] .tier-tabs {display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;}
-html[data-aurora] .tier-tabs[hidden], html[data-aurora] #tier-results [hidden] {display:none!important;}
-html[data-aurora] .tier-tabs button {font:inherit;font-weight:650;min-height:44px;max-width:100%;padding:10px 14px;border-radius:8px;border:1px solid #8d98ab;background:#162235;color:#f5f7fc;cursor:pointer;white-space:normal;text-align:left;}
-html[data-aurora] .tier-tabs button[aria-selected="true"] {background:#dbe9ff;color:#14233a;border-color:#dbe9ff;}
-html[data-aurora] .tier-tabs button:focus-visible, html[data-aurora] #tier-results:focus-visible {outline:3px solid #6bbfff;outline-offset:3px;}
+html[data-aurora] #tier-results [hidden] {display:none!important;}
 html[data-aurora] .tier-tag.tier-teal {color:#a5efff;background:#123c49;border:1px solid #7ed9ed;}
 html[data-aurora] .tier-tag.tier-green {color:#b6f4c9;background:#173e2a;border:1px solid #81dba0;}
 html[data-aurora] .tier-tag.tier-purple {color:#f0e3ff;background:#40245f;border:1px solid #cda5ff;animation:none;text-shadow:none;box-shadow:none;}
@@ -591,9 +587,6 @@ html[data-aurora] .tier-tag.tier-gold {color:#fff1b6;background:#493a13;border:1
 html[data-aurora] .tier-tag.tier-yellow {color:#ffeb9c;background:#453714;border:1px solid #e6cd75;}
 html[data-aurora] .tier-tag.tier-red {color:#ffd2d2;background:#4b2028;border:1px solid #f2acb7;}
 html[data-aurora] .evidence-table tr.feat.tier-teal .bar i {background:#57b6cb;}
-html[data-aurora][data-theme="light"] .tier-tabs button {color:#14233a;background:#fff;border-color:#536378;}
-html[data-aurora][data-theme="light"] .tier-tabs button[aria-selected="true"] {color:#fff;background:#23456f;border-color:#23456f;}
-html[data-aurora][data-theme="light"] .tier-tabs button:focus-visible, html[data-aurora][data-theme="light"] #tier-results:focus-visible {outline-color:#135a97;}
 html[data-aurora][data-theme="light"] .tier-tag.tier-teal {color:#07566a;background:#e2f4f7;border-color:#276978;}
 html[data-aurora][data-theme="light"] .tier-tag.tier-green {color:#145c31;background:#e3f4e9;border-color:#33754b;}
 html[data-aurora][data-theme="light"] .tier-tag.tier-purple {color:#512580;background:#f0e8fa;border-color:#8051ad;}
@@ -708,7 +701,7 @@ html[data-theme="light"] .ready-banner-star, html[data-aurora][data-theme="light
 :root:root .tier-chip .chip-count { white-space: nowrap; }
 :root:root .status-legend.is-interactive .tier-chip .chip-count::after { content: " \25BE"; }
 :root:root .status-legend.is-interactive .tier-chip[aria-pressed="true"] .chip-count::after { content: " \25B4"; }
-:root:root .status-legend.is-interactive .tier-chip:hover { filter: brightness(1.12); }
+:root:root .status-legend.is-interactive .tier-chip:hover:not(:disabled) { filter: brightness(1.12); }
 :root:root .tier-chip.tier-chip[aria-pressed="true"] { box-shadow: 0 0 0 2px #08131f, 0 0 0 4px #e8f0ff; }
 :root:root .tier-chip:focus-visible, :root:root .tier-key-close:focus-visible, :root:root .tier-key-items a:focus-visible { outline: 3px solid #6bbfff; outline-offset: 3px; }
 :root:root[data-theme="light"] .tier-chip.tier-chip[aria-pressed="true"] { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #14233a; }
@@ -862,6 +855,20 @@ html[data-theme="light"] .ready-banner-star, html[data-aurora][data-theme="light
   :root:root .tier-chip, :root:root .tier-chip.tier-gold, :root:root .tier-chip.tier-purple { box-shadow: none; }
   :root:root .tier-key-panel, :root:root .tier-key-data { display: none !important; }
 }
+
+/* ONE set of tier controls: an even grid of equal-size chips (All features first, then 100, 99, 90 to 98, 80 to 89, 40 to 79, 0 to 39),
+   2 columns on phones and 3 on wider screens; the long label wraps inside its chip. "All features" spans the full row so the six tiers line up in even rows. */
+:root:root .status-legend .tier-chips { flex: 1 1 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 2px 0 0; align-items: stretch; grid-template-rows: auto; grid-auto-rows: 1fr; }
+@media (min-width: 600px) { :root:root .status-legend .tier-chips { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+:root:root .tier-chips .tier-chip { display: block; width: 100%; min-width: 0; height: 100%; min-height: 56px; box-sizing: border-box; padding: 10px 16px; border-radius: 14px; font-size: .84rem; line-height: 1.35; text-align: left; overflow-wrap: break-word; }
+:root:root .tier-chips .tier-chip-all { grid-column: 1 / -1; min-height: 48px; font-size: .95rem; background: #162235; color: #f5f7fc; border-color: #8d98ab; }
+:root:root .tier-chips .tier-chip-all[aria-pressed="true"] { background: #dbe9ff; color: #14233a; border-color: #dbe9ff; }
+:root:root[data-theme="light"] .tier-chips .tier-chip-all { background: #fff; color: #14233a; border-color: #536378; }
+:root:root[data-theme="light"] .tier-chips .tier-chip-all[aria-pressed="true"] { background: #23456f; color: #fff; border-color: #23456f; }
+:root:root .status-legend.is-interactive .tier-chip-all .chip-count::after, :root:root .status-legend.is-interactive .tier-chip.is-empty .chip-count::after { content: none !important; }
+:root:root .tier-chip .chip-none { display: block; margin-top: 2px; font-weight: 600; font-style: italic; }
+:root:root .status-legend.is-interactive .tier-chip.is-empty { cursor: not-allowed; opacity: .75; border-style: dashed; box-shadow: none; }
+:root:root .status-legend .tier-result-count { flex: 1 1 100%; margin: 2px 0 0; font-weight: 650; }
 
 /* Compact feature rows: a short "Last tested" summary in the row, the full history and notes in a closed details row below it. */
 .lt-cell { font-size: .9rem; line-height: 1.45; }

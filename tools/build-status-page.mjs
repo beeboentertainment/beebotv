@@ -238,11 +238,14 @@ if (withRoad) {
 // Each key chip is a real button; its feature list is generated here with the same P.tierFor() as every row, so the numbers can never drift.
 const tierShort = t => String(t.label).split(':')[0];
 const tierMembers = t => features.filter(f => P.tierFor(f.percentComplete, J.scoring).id === t.id).sort((a, b) => b.percentComplete - a.percentComplete);
-const tierKey = J.scoring.tiers.map(t => {
+// ONE set of controls: an "All features" chip plus one chip per tier (same order as the key: 100, 99, 90 to 98, 80 to 89, 40 to 79, 0 to 39).
+// A tier chip opens that tier's list under the key AND filters the feature tables below to it. A tier with no features stays visible but disabled.
+const tierKey = '<button type="button" class="tier-chip tier-chip-all" data-tier-chip="all" disabled aria-pressed="false" aria-controls="tier-results">All features <span class="chip-count">('+features.length+')</span></button>' + J.scoring.tiers.map(t => {
   const n = tierMembers(t).length;
   const sparkle = (t.id === 'gold' || t.id === 'purple') ? '<i class="glit" aria-hidden="true"></i>' : '';
-  return '<button type="button" class="tier-tag tier-'+esc(t.id)+' tier-chip" data-tier-chip="'+esc(t.id)+'" disabled aria-pressed="false" aria-controls="tier-key-panel" data-heading="'+esc(t.range+' · '+t.label)+'">'+esc(t.range)+': '+esc(t.label)+' <span class="chip-count">('+n+')</span>'+sparkle+'</button>';
-}).join(' ');
+  const empty = n === 0;
+  return '<button type="button" class="tier-tag tier-'+esc(t.id)+' tier-chip'+(empty ? ' is-empty' : '')+'" data-tier-chip="'+esc(t.id)+'" disabled aria-pressed="false" aria-controls="tier-key-panel tier-results" data-heading="'+esc(t.range+' · '+t.label)+'">'+esc(t.range)+': '+esc(t.label)+' <span class="chip-count">('+n+')</span>'+(empty ? ' <span class="chip-none">none right now</span>' : '')+sparkle+'</button>';
+}).join('');
 const REMAIN_WORDS = { CODE: ['to build or fix', 'to build or fix'], DEVICE: ['real-device test', 'real-device tests'], NICK: ['for Nick', 'for Nick'], BLOCKED: ['blocked', 'blocked'] };
 // One short line of "what is left", built only from the roadTo100 data already shown in each feature's own row.
 function leftLine(f) {
@@ -261,9 +264,8 @@ const tierKeyData = '<div class="tier-key-data" hidden>' + J.scoring.tiers.map(t
   return '<ul class="tier-key-items" data-tier-list="'+esc(t.id)+'" data-count="'+m.length+'">' + m.map(f => '<li><a href="#'+esc(featureId(f))+'">'+esc(f.name)+'</a> <span class="tki-pct"><strong>'+f.percentComplete+'%</strong> <span class="tier-tag tier-'+esc(t.id)+'">'+esc(tierShort(t))+'</span></span><span class="tki-meta">'+esc(f.group)+(f.status ? ' · '+esc(f.status) : '')+'</span><span class="tki-line">'+esc(checksLine(f))+'</span><span class="tki-line">Left to reach 100%: '+esc(leftLine(f))+'</span></li>').join('') + '</ul>';
 }).join('') + '</div>';
 sec += '<aside class="meaning-box" aria-labelledby="meaning-score-title"><h3 id="meaning-score-title">What the tiers mean</h3><p>Green is reserved for 90–98%. At 90%, the listed runnable checks may have passed while an open issue caps the score at 90%; an explicit record limit can also hold it below 99. Teal 80–89% means nearly there. The percentage still follows the recorded checks, never a colour choice.</p><p>99% and 100% keep their existing meanings. An open issue always caps the score at 90%. Colour never replaces words.</p></aside>';
-sec += '<div class="status-legend" role="group" aria-label="Colour key"><strong>Colour key</strong> '+tierKey+'<span class="legend-note">Every feature says its percentage and tier name. A tick means passed; a dash means not yet.<span class="legend-hint"> Select a colour above to list the features in that tier; select it again (or &ldquo;Show all&rdquo;) to close the list.</span></span></div><div id="tier-key-panel" class="tier-key-panel" aria-live="polite"></div>'+tierKeyData;
-const buckets = [{id:'all',label:'All features',match:f=>true},{id:'green',label:'90–98% · Green',match:f=>f.percentComplete>=90&&f.percentComplete<99},{id:'purple',label:'99% · Purple',match:f=>f.percentComplete===99},{id:'gold',label:'100% · Gold',match:f=>f.percentComplete===100},{id:'teal',label:'80–89% · Teal: nearly there',match:f=>f.percentComplete>=80&&f.percentComplete<90},{id:'yellow',label:'40–79% · Yellow',match:f=>f.percentComplete>=40&&f.percentComplete<80},{id:'red',label:'0–39% · Red',match:f=>f.percentComplete<40}];
-sec += '<div class="tier-tabs" role="tablist" aria-label="Filter features by progress tier" hidden>'+buckets.map((b,i)=>'<button type="button" role="tab" id="tier-tab-'+b.id+'" aria-controls="tier-results" aria-selected="'+(i===0)+'" tabindex="'+(i===0?'0':'-1')+'" data-tier="'+b.id+'">'+esc(b.label)+' ('+features.filter(b.match).length+')</button>').join('')+'</div><div id="tier-results" role="tabpanel" aria-labelledby="tier-tab-all" tabindex="0"><p class="tier-result-count" aria-live="polite">Showing all '+features.length+' features.</p>';
+sec += '<div class="status-legend" role="group" aria-label="Colour key and filter"><strong>Colour key</strong><div class="tier-chips">'+tierKey+'</div><p class="tier-result-count" role="status" aria-live="polite">Showing all '+features.length+' features.</p><span class="legend-note">Every feature says its percentage and tier name. A tick means passed; a dash means not yet.<span class="legend-hint"> Select a colour to show only that tier in the tables below (its list opens under this key); select it again, &ldquo;All features&rdquo; or &ldquo;Show all (close list)&rdquo; to see every feature.</span></span></div><div id="tier-key-panel" class="tier-key-panel"></div>'+tierKeyData;
+sec += '<div id="tier-results">';
 for (const g of groups) {
   const list = features.filter(f => f.group === g);
   const gAvg = Number.isFinite(J.groupAveragePercent?.[g]) ? J.groupAveragePercent[g] : avg(list);
@@ -428,9 +430,9 @@ function responsiveTables(page) {
 }
 html = responsiveTables(html);
 html=html.replace(/<script>\(function\(\)\{try\{document\.querySelectorAll\('tr\.feat'\)[\s\S]*?<\/script>/g,'');
-html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261027notes');
-if(!html.includes('src="/assets/evidence-tier-tabs.js?v=')) html=html.replace(/<script src="\/assets\/evidence-tier-tabs\.js[^"]*" defer><\/script>/, '').replace('</body>','<script src="/assets/evidence-tier-tabs.js?v=20261027notes" defer></script></body>');
-else html=html.replace(/(evidence-tier-tabs\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261027notes');
+html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261027filter');
+if(!html.includes('src="/assets/evidence-tier-tabs.js?v=')) html=html.replace(/<script src="\/assets\/evidence-tier-tabs\.js[^"]*" defer><\/script>/, '').replace('</body>','<script src="/assets/evidence-tier-tabs.js?v=20261027filter" defer></script></body>');
+else html=html.replace(/(evidence-tier-tabs\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261027filter');
 
 
 function sourceMerges(page) {
