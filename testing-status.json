@@ -1020,6 +1020,83 @@
     "Services and website": 47
   },
   "featureCount": 70,
+  "windowsToAndroid": {
+    "title": "Does it work today? Windows PC to your Android phone",
+    "answer": "Yes. Playing your own films from your Windows PC to your Android phone works today, in the test app. It is a test download, not on Google Play yet.",
+    "testsUpToEastern": "Oct 27, 2026, 12:30 PM Eastern",
+    "scope": "Most of these tries used one phone (a Galaxy S24) and one second-household Windows PC (Windows 0.1.104, Android test build tester57), with Nick present. Some used other phones. Nothing here is a promise that it can never fail.",
+    "tried": [
+      {
+        "text": "Away from home, on 5G through Beebo Relay: a 6-minute run played 5 minutes 45 seconds with 0 stalls and 0 disconnects (Oct 27).",
+        "from": "Away from home (direct, then relay)",
+        "quote": "a 6-minute run played 5 minutes 45 seconds with 0 stalls and 0 disconnects"
+      },
+      {
+        "text": "Wi-Fi switched off and on during a real film: it resumed at the same place 8 of 8 times (Oct 27).",
+        "from": "Away from home (direct, then relay)",
+        "quote": "Wi-Fi off and on during a real film resumed at the same position 8 of 8 times"
+      },
+      {
+        "text": "On the same Wi-Fi as the PC: 5 of 5 launches connected directly (Oct 27).",
+        "from": "Away from home (direct, then relay)",
+        "quote": "5 of 5 direct in a baseline of 5 launches"
+      },
+      {
+        "text": "Seek bar, pause, 5 and 15 second skips and picture-in-picture worked instantly on 5G (Oct 27, Nick).",
+        "from": "Playing films, seeking, picture-in-picture",
+        "quote": "seek bar, pause, 5 and 15 second skips and picture-in-picture worked instantly"
+      },
+      {
+        "text": "Changing the quality to converted 480p during a film played from the same spot after about 3 seconds, with no real pause (Oct 27, Nick).",
+        "from": "Converter and quality / speed settings",
+        "quote": "converted 480p chosen during a film played from the same spot after about 3 seconds, Nick saw no real pause"
+      },
+      {
+        "text": "Subtitles on the phone passed, confirmed by an AI tester and by Nick (Oct 27). Not tested on a TV, other formats or a second language.",
+        "from": "Playing films, seeking, picture-in-picture",
+        "quote": "captions on the phone PASS, confirmed by an AI tester and Nick"
+      }
+    ],
+    "open": [
+      {
+        "text": "The first play over 5G after a phone app update once took about 70 seconds (about 2 seconds earlier the same morning). It is being re-tested and is not called a bug yet.",
+        "from": "Away from home (direct, then relay)",
+        "quote": "First play over 5G after a phone app update took about 70 seconds on Oct 27, 2026"
+      },
+      {
+        "text": "Leaving Wi-Fi shows 1.5 to 4.5 seconds of black or frozen picture.",
+        "from": "Away from home (direct, then relay)",
+        "quote": "leaving Wi-Fi shows 1.5 to 4.5 seconds of black or frozen picture"
+      },
+      {
+        "text": "On the same Wi-Fi, 5 of the PC’s last 30 logged connections went through Relay instead of directly. A fix is under review and not merged.",
+        "from": "Away from home (direct, then relay)",
+        "quote": "5 of the PC’s last 30 logged connections used Relay"
+      },
+      {
+        "text": "In Chrome on a phone, switching from Wi-Fi to 5G during play failed in 3 of 4 runs on Oct 26. The phone app passed on Oct 27; Chrome has not been retested.",
+        "from": "Away from home (direct, then relay)",
+        "quote": "it failed in 3 of 4 runs, 68 to 95 seconds without a picture"
+      },
+      {
+        "text": "Home “Continue watching” was sometimes empty after a short resumed session. A retest on a clean account is still to do.",
+        "from": "Playing films, seeking, picture-in-picture",
+        "quote": "was intermittently empty after a short resumed session"
+      },
+      {
+        "text": "Casting to a TV: captions do not show on the TV yet (a fix is merged, not yet seen on a TV), and after a film ends on the TV the seek bar does nothing.",
+        "from": "Chromecast",
+        "quote": "the seek bar after the end still does nothing"
+      },
+      {
+        "text": "Not tested yet: sessions much longer than 5 minutes, and two people on Beebo Relay at once.",
+        "from": "Away from home (direct, then relay)",
+        "quote": "Sessions much longer than 5 minutes and two people on Beebo Relay at once are still untested"
+      }
+    ],
+    "scoreLine": "Our scoreboard rates Playing films at {pct:Playing films, seeking, picture-in-picture}%, Away from home at {pct:Away from home (direct, then relay)}% and TV casting (Chromecast) at {pct:Chromecast}%, because items like the ones above are still open. A feature reaches 100% only when Nick and a tester both confirm it with nothing open.",
+    "statusLine": "Test app for sideloading: the scoreboard labels Playing films “{status:Playing films, seeking, picture-in-picture}” and Away from home “{status:Away from home (direct, then relay)}”. Google Play: {status:Google Play version}."
+  },
   "features": [
     {
       "group": "Android phone app",

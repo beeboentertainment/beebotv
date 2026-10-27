@@ -76,3 +76,18 @@
  const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('glit-paused',!e.isIntersecting)));
  hosts.forEach(h=>io.observe(h));
 })();
+
+/* "Show all notes" / "Hide all notes": one button above each feature table opens or closes every "Test history and notes" details in that table.
+   Without JavaScript the buttons stay hidden and each details still opens by itself (native details/summary). */
+(() => {
+ document.querySelectorAll('.feature-group').forEach(g=>{
+  const bar=g.querySelector('.notes-toolbar'), btn=bar&&bar.querySelector('.notes-toggle');
+  const ds=[...g.querySelectorAll('details.test-history')];
+  if(!btn||!ds.length)return;
+  const sync=()=>{const all=ds.every(d=>d.open);btn.setAttribute('aria-expanded',String(all));btn.textContent=all?'Hide all notes':'Show all notes';};
+  btn.addEventListener('click',()=>{const open=btn.getAttribute('aria-expanded')!=='true';ds.forEach(d=>{d.open=open;});sync();});
+  ds.forEach(d=>d.addEventListener('toggle',sync));
+  bar.hidden=false;
+  sync();
+ });
+})();

@@ -108,6 +108,80 @@ function road(f) {
   return h + '</div></div>';
 }
 
+// "Last tested" is stored as dated entries joined with "; earlier: ", newest first. The table cell shows only a short summary
+// derived from the first (newest) entry; the full, unshortened text is printed once in the notes row below (see testHistory()).
+const ENTRY_SEP = '; earlier: ';
+const WHEN_RE = /^[A-Z][a-z]{2} \d{1,2}(?:, \d{4}| to [A-Z][a-z]{2} \d{1,2}, \d{4})/;
+const DATE_AHEAD_RE = /^[A-Z][a-z]{2} \d{1,2}(?:,| to )/;
+const RESULT_RE = /\b(PASS|FAIL|PARTIAL|PARTLY|passed|failed)\b/;
+const HEADLINE_CAP = 140;
+// Split the stored text into its dated entries: at every "; earlier: ", and at "; " followed by a date when that "; " is not inside brackets.
+// Nothing is dropped or reworded: the entries joined back with their separators are the stored text.
+function splitHistory(s) {
+  s = String(s ?? '');
+  const out = []; let depth = 0, start = 0;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (c === '(') depth++;
+    else if (c === ')') depth = Math.max(0, depth - 1);
+    else if (c === ';' && s[i + 1] === ' ') {
+      const rest = s.slice(i + 2);
+      if (rest.startsWith(ENTRY_SEP.slice(2))) { out.push(s.slice(start, i)); start = i + ENTRY_SEP.length; i = start - 1; }
+      else if (depth === 0 && DATE_AHEAD_RE.test(rest)) { out.push(s.slice(start, i)); start = i + 2; i = start - 1; }
+    }
+  }
+  out.push(s.slice(start));
+  return out.map(x => x.trim()).filter(Boolean);
+}
+// If the text is wrapped in one pair of parentheses (optionally followed by a full stop), return the inside.
+function unwrapParens(t) {
+  if (t[0] !== '(') return t;
+  let depth = 0;
+  for (let i = 0; i < t.length; i++) {
+    if (t[i] === '(') depth++;
+    else if (t[i] === ')' && --depth === 0) return /^[.\s]*$/.test(t.slice(i + 1)) ? t.slice(1, i).trim() : t;
+  }
+  return t;
+}
+// Cut at a word boundary with an ellipsis. A clear result phrase (PASS, FAIL, passed, failed) is kept when it ends within 220 characters.
+function clipHeadline(s) {
+  if (s.length <= HEADLINE_CAP) return s;
+  const r = RESULT_RE.exec(s), rEnd = r ? r.index + r[0].length : 0;
+  let cut;
+  if (r && rEnd > HEADLINE_CAP && rEnd <= 220) cut = s.slice(0, rEnd);
+  else cut = s.slice(0, HEADLINE_CAP).replace(/\s+\S*$/, '');
+  cut = cut.replace(/[\s,;:.–—-]+$/, '');
+  if (cut[0] === '(' && !cut.includes(')')) cut = cut.slice(1); // a clipped opening bracket would be left unbalanced
+  return cut + '…';
+}
+function lastTestedCell(f) {
+  const entries = splitHistory(f.lastTested);
+  if (!entries.length) return '<td class="lt-cell"></td>';
+  const first = entries[0];
+  let when = '', head = first;
+  if (WHEN_RE.test(first)) {
+    const k = first.indexOf(' (');
+    if (k >= 0) { when = first.slice(0, k); head = first.slice(k + 1); } else { when = first; head = ''; }
+  }
+  head = clipHeadline(unwrapParens(head.trim()));
+  const dated = entries.filter(e => WHEN_RE.test(e)).length;
+  return '<td class="lt-cell">' + (when ? `<span class="lt-when">${esc(when)}</span>` : '') + (head ? `<span class="lt-head">${esc(head)}</span>` : '') +
+    (dated ? `<span class="lt-count">${dated} dated record${dated === 1 ? '' : 's'}</span>` : '') + '</td>';
+}
+// The full text of the row, once, below the row: every dated entry (newest first), then what is left, the record limit, open issues, and the
+// longer notes (what changed, what 100% means, owner observations, device test records).
+function testHistory(f, note) {
+  const entries = splitHistory(f.lastTested);
+  const n = Number(f.openIssues) || 0;
+  let h = '';
+  if (entries.length) h += `<div class="th-sec"><h4 class="th-h">Test history, newest first</h4><ol class="th-list">${entries.map(e => `<li>${esc(e)}</li>`).join('')}</ol></div>`;
+  if (f.leftToReach100) h += `<div class="th-sec feature-left"><h4 class="th-h">Left to reach 100%</h4><p>${esc(f.leftToReach100)}</p></div>`;
+  if (f.scoreNote) h += `<div class="th-sec score-note"><h4 class="th-h">Record limit</h4><p>${esc(f.scoreNote)}</p></div>`;
+  if (n > 0) h += `<div class="th-sec"><h4 class="th-h">Open issues recorded</h4><p>${n} open issue${n === 1 ? '' : 's'} recorded for this feature.</p></div>`;
+  if (note || f.roadTo100) h += `<div class="th-sec">${note}${road(f)}</div>`;
+  return `<details class="feature-details test-history"><summary>Test history and notes (${entries.length})</summary><div class="feature-details-body">${h}</div></details>`;
+}
+
 function featureId(f) {
   return f.id || 'feature-' + `${f.group}-${f.name}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
 }
@@ -135,8 +209,8 @@ function row(f) {
   return `<tr id="${id}" class="feat tier-${t}${f.percentComplete === 99 ? ' is-99' : f.percentComplete === 100 ? ' is-100' : ''}${ch ? ' is-updated' : ''}"><th id="${id}-name" scope="row">${esc(f.name)}${ch ? `<br>${badge}` : ''}</th><td>${esc(f.status)}</td>` +
     `<td class="done-cell"><strong>${f.percentComplete}%</strong> <span class="tier-tag tier-${t}">${label}</span>${delta ? `<br>${delta}` : ''}` +
     `<span class="bar" aria-hidden="true"><i style="width:${f.percentComplete}%"></i>${prevTick}</span></td>` +
-    `<td class="chk-cell" aria-label="${aria}">${chips}</td><td>${esc(f.lastTested)}</td></tr>` +
-    `<tr class="feature-notes"><td colspan="5" headers="${id}-name"><div class="feature-notes-content"><p class="feature-left"><strong>Left to reach 100%</strong> ${esc(f.leftToReach100)}</p>${f.scoreNote ? `<p class="score-note"><strong>Record limit:</strong> ${esc(f.scoreNote)}</p>` : ''}${note || f.roadTo100 ? `<details class="feature-details"><summary>What changed / what is left</summary><div class="feature-details-body">${note}${road(f)}</div></details>` : ''}</div></td></tr>`;
+    `<td class="chk-cell" aria-label="${aria}">${chips}</td>${lastTestedCell(f)}</tr>` +
+    `<tr class="feature-notes"><td colspan="5" headers="${id}-name"><div class="feature-notes-content"><p class="feature-left-short"><strong>Left to reach 100%:</strong> ${esc(leftLine(f))}</p>${testHistory(f, note)}</div></td></tr>`;
 }
 
 const features = J.features || [];
@@ -154,7 +228,7 @@ let sec = `<section class="evidence-section" id="features" aria-labelledby="feat
 <p><strong>How the percentage works.</strong> ${esc(J.scoring.rule)} Realistic AI checks on real devices may count toward Real-world when the evidence covers actual use. Muted or state-only checks cannot prove behavior they did not judge. Only Nick records Ready. Each row lists its limits; all listed checks passing does not mean a feature can never fail.</p>
 `;
 if (markers) {
-  sec += `<p class="upd-summary"><span class="upd-badge">Updated</span> <strong>${changedCount} of ${features.length} features changed since the previous update${J.previousUpdatedEastern ? ` (${esc(J.previousUpdatedEastern)})` : ''}.</strong> Highlighted rows (only those changed in this latest update) show the old and new percentage (the small mark on the bar is the old position), what changed in one sentence, and the date and time in Eastern. Older changes stay in the last column as &ldquo;Earlier update&rdquo; notes. This temporary marker is shown while testing is under way.</p>\n`;
+  sec += `<p class="upd-summary"><span class="upd-badge">Updated</span> <strong>${changedCount} of ${features.length} features changed since the previous update${J.previousUpdatedEastern ? ` (${esc(J.previousUpdatedEastern)})` : ''}.</strong> Highlighted rows (only those changed in this latest update) show the old and new percentage (the small mark on the bar is the old position), what changed in one sentence, and the date and time in Eastern. Older changes stay in each row&rsquo;s notes as &ldquo;Earlier update&rdquo; notes. This temporary marker is shown while testing is under way.</p>\n`;
 }
 if (withRoad) {
   const t = kindTotals;
@@ -193,7 +267,7 @@ sec += '<div class="tier-tabs" role="tablist" aria-label="Filter features by pro
 for (const g of groups) {
   const list = features.filter(f => f.group === g);
   const gAvg = Number.isFinite(J.groupAveragePercent?.[g]) ? J.groupAveragePercent[g] : avg(list);
-  sec += `<div class="feature-group"><h3>${esc(g)} · average ${gAvg}% across ${list.length} features</h3>\n<div class="evidence-table-wrap" role="region" aria-label="Progress for ${esc(g)}"><table class="evidence-table feature-progress-table">\n<caption>${esc(g)}: progress by feature</caption>\n${THEAD}\n${list.map(f => `<tbody class="feature-entry" data-tier="${P.tierFor(f.percentComplete,J.scoring).id}">${row(f)}</tbody>`).join('\n')}\n</table></div></div>\n`;
+  sec += `<div class="feature-group"><h3>${esc(g)} · average ${gAvg}% across ${list.length} features</h3>\n<div class="notes-toolbar" hidden><button type="button" class="notes-toggle" aria-expanded="false">Show all notes</button></div>\n<div class="evidence-table-wrap" role="region" aria-label="Progress for ${esc(g)}"><table class="evidence-table feature-progress-table">\n<caption>${esc(g)}: progress by feature</caption>\n${THEAD}\n${list.map(f => `<tbody class="feature-entry" data-tier="${P.tierFor(f.percentComplete,J.scoring).id}">${row(f)}</tbody>`).join('\n')}\n</table></div></div>\n`;
 }
 sec += '</div>';
 const top = features.filter(f => f.percentComplete >= 100).length;
@@ -206,7 +280,7 @@ html = html.replace(secRe, () => sec);
 
 function releaseChangesSection(data) {
   if (!data?.title || !data?.summary) return '';
-  return `<section class="evidence-section" id="release-changes" aria-labelledby="release-changes-title"><span class="evidence-kicker">Since the last release</span><h2 id="release-changes-title">${esc(data.title)}</h2><p>${esc(data.summary)}</p>${data.sourceNote ? `<p>${esc(data.sourceNote)}</p>` : ''}</section>`;
+  return `<section class="evidence-section" id="release-changes" aria-labelledby="release-changes-title"><span class="evidence-kicker">Since the last release</span><h2 id="release-changes-title">${esc(data.title)}</h2><p>${esc(data.summary)}</p>${data.sourceNote ? `<p>${esc(data.sourceNote)}</p>` : ''}</div>`;
 }
 const releaseChanges = releaseChangesSection(J.releaseChanges);
 const releaseChangesRe = /<!--RELEASE-CHANGES-->[\s\S]*?<!--\/RELEASE-CHANGES-->/;
@@ -278,6 +352,34 @@ else html = html.replace('<section class="evidence-hero"', () => `${stampHtml}\n
   else html = html.replace('<section class="evidence-hero"', () => `${bannerHtml}\n    <section class="evidence-hero"`);
 }
 
+// "Does it work today?" box near the top. All wording lives in testing-status.json ("windowsToAndroid"); percentages and labels are read
+// live from the feature rows ({pct:Feature name}, {status:Feature name}), and every listed fact must still appear in the named feature's
+// own record, so the box can never say more than the data does (it never claims a flat "100% working").
+function worksTodaySection(d) {
+  if (!d) return '';
+  const feat = n => { const f = features.find(x => x.name === n); if (!f) throw new Error(`windowsToAndroid: no feature named "${n}"`); return f; };
+  requireStamp('windowsToAndroid.testsUpToEastern', d.testsUpToEastern);
+  if (stampProblems.length) { console.error(stampProblems.join('\n')); process.exit(1); }
+  const fill = t => String(t).replace(/\{(pct|status):([^}]+)\}/g, (_m, kind, n) => kind === 'pct' ? String(feat(n).percentComplete) : String(feat(n).status));
+  const items = list => (list || []).map(x => {
+    if (!JSON.stringify(feat(x.from)).includes(x.quote)) throw new Error(`windowsToAndroid: "${x.quote}" is not in the record of "${x.from}"`);
+    return `<li>${esc(fill(x.text))}</li>`;
+  }).join('');
+  const t = iso(d.testsUpToEastern);
+  return `<!--WORKS-TODAY--><section class="works-today" id="works-today" aria-labelledby="works-today-title"><h2 id="works-today-title">${esc(d.title)}</h2>` +
+    `<p class="wt-answer"><strong>${esc(d.answer)}</strong></p>` +
+    `<p class="wt-stamp">Based on tests up to <time${t ? ` datetime="${t}"` : ''}>${esc(d.testsUpToEastern)}</time>. ${esc(d.scope)}</p>` +
+    `<h3>What real people have already tried</h3><ul class="wt-list wt-tried">${items(d.tried)}</ul>` +
+    `<h3>What is still open</h3><ul class="wt-list wt-open">${items(d.open)}</ul>` +
+    `<p class="wt-score">${esc(fill(d.scoreLine))}</p><p class="wt-status">${esc(fill(d.statusLine))}</p>` +
+    `<p class="wt-more"><a href="#features">See every feature, test record and open item below</a></p></section><!--/WORKS-TODAY-->`;
+}
+{
+  const box = worksTodaySection(J.windowsToAndroid);
+  if (html.includes('<!--WORKS-TODAY-->')) html = html.replace(/<!--WORKS-TODAY-->[\s\S]*?<!--\/WORKS-TODAY-->/, () => box);
+  else html = html.replace('<!--/READY-BANNER-->', () => `<!--/READY-BANNER-->\n    ${box}`);
+}
+
 const csRe = /<!--CODE-STATUS-SUMMARY-->[\s\S]*?<!--\/CODE-STATUS-SUMMARY-->/;
 if (csRe.test(html)) {
  const o=J.codeVsHuman.overall;
@@ -326,8 +428,9 @@ function responsiveTables(page) {
 }
 html = responsiveTables(html);
 html=html.replace(/<script>\(function\(\)\{try\{document\.querySelectorAll\('tr\.feat'\)[\s\S]*?<\/script>/g,'');
-html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261027tiers');
-if(!html.includes('src="/assets/evidence-tier-tabs.js?v=')) html=html.replace(/<script src="\/assets\/evidence-tier-tabs\.js[^"]*" defer><\/script>/, '').replace('</body>','<script src="/assets/evidence-tier-tabs.js?v=20261027tiers" defer></script></body>');
+html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261027notes');
+if(!html.includes('src="/assets/evidence-tier-tabs.js?v=')) html=html.replace(/<script src="\/assets\/evidence-tier-tabs\.js[^"]*" defer><\/script>/, '').replace('</body>','<script src="/assets/evidence-tier-tabs.js?v=20261027notes" defer></script></body>');
+else html=html.replace(/(evidence-tier-tabs\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261027notes');
 
 
 function sourceMerges(page) {

@@ -28,4 +28,12 @@ for(const f of d.features) {
   assert.ok([...(f.ownerTests||[]),...(f.deviceTests||[])].some(r=>r.result==='PASS'&&r.ticks?.includes('Real-world check')&&/Eastern/.test(r.date)), 'post-baseline Real-world tick needs dated realistic PASS evidence: '+f.name);
  }
 }
+if(d.windowsToAndroid){
+ assert.ok(html.includes('id="works-today"'),'the "Does it work today?" box is on the page');
+ for(const m of (d.windowsToAndroid.scoreLine+d.windowsToAndroid.statusLine).matchAll(/\{pct:([^}]+)\}/g)) {
+  const f=d.features.find(x=>x.name===m[1]); assert.ok(f,'works-today names a real feature: '+m[1]);
+  assert.ok(html.includes(m[1].split(' (')[0].split(',')[0]) && html.includes(f.percentComplete+'%'),'live percent for '+m[1]);
+ }
+ assert.ok(!/100% working/i.test(html),'no flat "100% working" claim');
+}
 console.log('PASS: tier boundaries, open-issue cap, Ready weight, generated rows, labels and filter structure');

@@ -469,11 +469,11 @@ html[data-aurora][data-theme="light"] .cs-pass { color: #1c7a3d; } html[data-aur
 
 /* Feature summary + full-width notes; data and scoring stay in the generator. */
 html[data-aurora] .feature-progress-table { table-layout: fixed; }
-.feature-progress-table thead th:nth-child(1) { width: 27%; }
-.feature-progress-table thead th:nth-child(2) { width: 15%; }
-.feature-progress-table thead th:nth-child(3) { width: 19%; }
-.feature-progress-table thead th:nth-child(4) { width: 24%; }
-.feature-progress-table thead th:nth-child(5) { width: 15%; }
+.feature-progress-table thead th:nth-child(1) { width: 24%; }
+.feature-progress-table thead th:nth-child(2) { width: 13%; }
+.feature-progress-table thead th:nth-child(3) { width: 18%; }
+.feature-progress-table thead th:nth-child(4) { width: 22%; }
+.feature-progress-table thead th:nth-child(5) { width: 23%; }
 .feature-check-legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 html[data-aurora] .feature-progress-table .feat > th[scope="row"] { color: var(--aurora-text); font-size: 1rem; line-height: 1.45; text-transform: none; letter-spacing: normal; }
 html[data-aurora] .feature-progress-table .feat > td { font-size: .9rem; line-height: 1.5; }
@@ -501,11 +501,11 @@ html[data-aurora] .feature-progress-table .feature-notes > td { padding: 16px 22
   html[data-aurora] .feature-progress-table thead { display: table-header-group; position: static; width: auto; height: auto; overflow: visible; clip-path: none; white-space: normal; }
   html[data-aurora] .feature-progress-table thead tr, html[data-aurora] .feature-progress-table tbody tr { display: table-row; }
   html[data-aurora] .feature-progress-table thead th { display: table-cell; height: auto; padding: 12px 10px; overflow: visible; }
-  html[data-aurora] .feature-progress-table thead th:nth-child(1) { width: 27%; }
-  html[data-aurora] .feature-progress-table thead th:nth-child(2) { width: 15%; }
-  html[data-aurora] .feature-progress-table thead th:nth-child(3) { width: 19%; }
-  html[data-aurora] .feature-progress-table thead th:nth-child(4) { width: 24%; }
-  html[data-aurora] .feature-progress-table thead th:nth-child(5) { width: 15%; }
+  html[data-aurora] .feature-progress-table thead th:nth-child(1) { width: 24%; }
+  html[data-aurora] .feature-progress-table thead th:nth-child(2) { width: 13%; }
+  html[data-aurora] .feature-progress-table thead th:nth-child(3) { width: 18%; }
+  html[data-aurora] .feature-progress-table thead th:nth-child(4) { width: 22%; }
+  html[data-aurora] .feature-progress-table thead th:nth-child(5) { width: 23%; }
   html[data-aurora] .feature-progress-table tbody th, html[data-aurora] .feature-progress-table tbody td { display: table-cell; padding: 12px 10px; }
   html[data-aurora] .feature-progress-table td[data-label]::before { display: none; }
 }
@@ -862,3 +862,51 @@ html[data-theme="light"] .ready-banner-star, html[data-aurora][data-theme="light
   :root:root .tier-chip, :root:root .tier-chip.tier-gold, :root:root .tier-chip.tier-purple { box-shadow: none; }
   :root:root .tier-key-panel, :root:root .tier-key-data { display: none !important; }
 }
+
+/* Compact feature rows: a short "Last tested" summary in the row, the full history and notes in a closed details row below it. */
+.lt-cell { font-size: .9rem; line-height: 1.45; }
+.lt-cell > span { display: block; overflow-wrap: anywhere; }
+.lt-when { font-weight: 700; }
+.lt-head { margin-top: 2px; }
+.lt-count { margin-top: 4px; font-size: .8rem; font-weight: 600; }
+html[data-aurora] .feature-progress-table .feature-notes > td { padding: 6px 22px 12px; }
+.feature-notes-content { max-width: none; }
+.feature-left-short { margin: 0 0 6px; font-size: .9rem; line-height: 1.5; }
+.feature-left-short > strong { color: var(--aurora-text); }
+.feature-details.test-history { margin-top: 0; }
+.test-history > summary { padding: 8px 14px; font-size: .95rem; }
+.test-history > .feature-details-body { max-width: 95ch; padding-top: 0; }
+.th-sec { margin: 12px 0 0; }
+.th-h { margin: 0 0 4px; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--aurora-text); }
+.th-sec > p { margin: 0; line-height: 1.65; }
+.th-list { margin: 0; padding-left: 1.4em; }
+.th-list li { margin: 0 0 8px; line-height: 1.6; overflow-wrap: anywhere; }
+.feature-notes-content .th-sec.score-note { margin-top: 12px; }
+.notes-toolbar { display: flex; justify-content: flex-end; margin: 6px 0; }
+.notes-toolbar[hidden] { display: none; }
+.notes-toggle { min-height: 36px; padding: 6px 14px; border: 1px solid var(--aurora-hairline, rgba(128,128,128,.5)); border-radius: 8px; background: transparent; color: var(--aurora-text, inherit); font: inherit; font-size: .85rem; font-weight: 700; cursor: pointer; }
+.notes-toggle:hover { background: rgba(128,128,128,.14); }
+.notes-toggle:focus-visible { outline: 3px solid var(--aurora-gold, #6e50dc); outline-offset: 2px; }
+@media (max-width: 680px) {
+  html[data-aurora] .feature-progress-table .feat > .lt-cell { padding-bottom: 10px; }
+  html[data-aurora] .feature-progress-table .feature-notes > td { padding: 8px 14px 12px; }
+  .notes-toolbar { justify-content: stretch; }
+  .notes-toggle { width: 100%; }
+}
+@media print {
+  .notes-toolbar { display: none !important; }
+  .test-history > .feature-details-body { max-width: none; }
+}
+
+/* "Does it work today?" box at the top of the page (generated from testing-status.json "windowsToAndroid"). */
+.works-today { margin: 18px 0; padding: 16px 18px; border: 1px solid rgba(128,128,128,.5); border-left: 6px solid #57b6cb; border-radius: 12px; background: rgba(128,128,128,.07); line-height: 1.6; overflow-wrap: anywhere; }
+.works-today h2 { margin: 0 0 8px; }
+.works-today h3 { margin: 16px 0 6px; font-size: 1.05rem; }
+.works-today p { margin: 8px 0; }
+.works-today .wt-answer { font-size: 1.1rem; }
+.works-today .wt-stamp { font-size: .92rem; }
+.works-today .wt-list { margin: 4px 0 0; padding-left: 1.3em; }
+.works-today .wt-list li { margin: 0 0 6px; }
+.works-today .wt-score, .works-today .wt-status { padding: 8px 12px; border-left: 3px solid #ffd166; background: rgba(230,168,20,.10); }
+.works-today a:focus-visible { outline: 3px solid #6e50dc; outline-offset: 2px; }
+@media (max-width: 580px) { .works-today { padding: 14px 14px; } }
