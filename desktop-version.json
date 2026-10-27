@@ -1,12 +1,12 @@
 {
-    "version": "0.1.103",
-    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.103/Beebo.Entertainment.Setup.0.1.103.exe",
-    "sha256": "e1c87c60721bb50d12df14f04540452694c7c022ccfc69cd13aa42c4397a2906",
-    "size": 258268584,
-    "notes": "What's new in 0.1.103:\r\n- Phone setup is one screen that shows what was really checked. Relay is only switched on by your own choice, and a renewed Relay licence reconnects with careful retries.\r\n- Web player: skip intros automatically (per viewer), better subtitles, Space and F anywhere, and phone and TV-browser layouts that fit.\r\n- Home: Customize layout and Layout Share carry more of your layout. Continue watching and Surprise me keep real positions.\r\n- Audiobooks: speed saved at once, Reset to 1x, bookmarks can be deleted with undo.\r\n- Library: a film is never also listed as a one-episode show, and moving or renaming your videos is tested not to replace a file.\r\n- Sharing (in development): 8-character guest codes and a guest-only browser. Household members see each other's requests.\r\n- A child profile whose limits cannot be read gets \"try again\" instead of being deleted.\r\n- Not fixed: the Samsung S9+ Trip export was still at 0% in the last test. Beebo Auto is not in this release.\r\n- Not yet checked: only automated tests and reviews. Not tried by a person on an installed app, a TV browser or a real phone.\r\n- Release source commit 618d0403c.\r\n- Built: Oct 27, 2026, 8:56 AM Eastern.\r\n- Published: Oct 27, 2026, 9:06 AM Eastern.",
-    "sourceSha": "618d0403c",
-    "builtAtUtc": "2026-10-27T12:56:00.000Z",
-    "builtAtEastern": "Oct 27, 2026, 8:56 AM Eastern",
-    "publishedAtUtc": "2026-10-27T13:06:00.000Z",
-    "publishedAtEastern": "Oct 27, 2026, 9:06 AM Eastern"
+    "version": "0.1.104",
+    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.104/Beebo.Entertainment.Setup.0.1.104.exe",
+    "sha256": "ec950016f486f9935387ee107b9e7822801f54fc85f5e285ae8a36301560ff37",
+    "size": 258268928,
+    "notes": "What's new in 0.1.104:\r\n- \"Check for updates\" now follows your update mode. With automatic downloads, a manual check downloads the update by itself, and the old countdown on the update prompt is gone. A version that failed to install, or an installer whose signature was refused, is still never retried by itself.\r\n- Right after an update, the start-up self-check tries again for about a minute before it shows a warning. This fixes a false \"Secure media server: FAIL\" while the app was still starting.\r\n- For the first two minutes after start-up, timing lines are written to the log. This only helps find the slow first minute after an update.\r\n- Not fixed: the slow first minute after an update is not fixed, only logged. Chromecast TV captions and Samsung TV items are still being tested. The phone app and Beebo Auto are not in this release.\r\n- Not yet checked: only automated tests and reviews. Not yet tried by a person on an in-app update.\r\n- Release source commit fc6e130d9.\r\n- Built: Oct 27, 2026, 11:11 AM Eastern.\r\n- Published: Oct 27, 2026, 11:20 AM Eastern.",
+    "sourceSha": "fc6e130d9",
+    "builtAtUtc": "2026-10-27T15:11:00.000Z",
+    "builtAtEastern": "Oct 27, 2026, 11:11 AM Eastern",
+    "publishedAtUtc": "2026-10-27T15:20:00.000Z",
+    "publishedAtEastern": "Oct 27, 2026, 11:20 AM Eastern"
 }
