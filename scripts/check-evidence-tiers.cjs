@@ -50,4 +50,37 @@ if(d.windowsToAndroid){
  }
  assert.ok(!/100% working/i.test(html),'no flat "100% working" claim');
 }
+// "Checks confirmed working": generated from testing-status.json checksConfirmed, so every entry must be on the page, point at a real feature row, and keep its limits.
+if(d.checksConfirmed){
+ const cc=d.checksConfirmed;
+ const start=html.indexOf('<!--CHECKS-CONFIRMED-->'), end=html.indexOf('<!--/CHECKS-CONFIRMED-->');
+ assert.ok(start>0&&end>start,'Checks confirmed working section is on the page');
+ const block=html.slice(start,end);
+ assert.ok(block.includes('id="checks-confirmed-title">'+cc.title+'</h3>'),'section heading');
+ assert.ok(/href="#checks-confirmed"/.test(html.slice(0,start)),'the section is linked from the page top (hero buttons and the works-today box)');
+ const total=cc.lists.reduce((a,l)=>a+l.entries.length,0);
+ assert.equal((block.match(/<li class="cc-item"/g)||[]).length,total,'one list item per entry');
+ assert.deepEqual(cc.lists.map(l=>l.id),['both','alone','phones'],'the three lists, in order');
+ const WHEN=/^[A-Z][a-z]{2} \d{1,2}, \d{4}, (about )?\d{1,2}:\d{2}( (AM|PM))?( to \d{1,2}:\d{2} (AM|PM))? Eastern( \([^)]*\))?$/;
+ const seen=new Set();
+ for(const l of cc.lists) {
+  assert.ok(block.includes('id="checks-'+l.id+'"')&&block.includes(l.title.replace(/&/g,'&amp;')),'list '+l.id);
+  for(const e of l.entries) {
+   assert.ok(!seen.has(e.id)&&/^[a-z0-9-]+$/.test(e.id),'unique slug '+e.id); seen.add(e.id);
+   const f=d.features.find(x=>x.name===e.feature); assert.ok(f,'entry names a real feature: '+e.id);
+   assert.match(e.when,WHEN,'date AND Eastern time on '+e.id);
+   for(const k of ['check','build','device','notCovered','sound']) assert.ok(String(e[k]||'').trim(),k+' on '+e.id);
+   const li=block.slice(block.indexOf('id="check-'+e.id+'"'));
+   const li1=li.slice(0,li.indexOf('</li>'));
+   assert.ok(li1.includes('Row score today: '+f.percentComplete+'%'),'live row score on '+e.id);
+   const m=/<dt>Feature row<\/dt><dd><a href="#([^"]+)">/.exec(li1); assert.ok(m&&html.includes('<tr id="'+m[1]+'" class="feat'),'link goes to the feature row: '+e.id);
+   for(const q of e.recordQuotes||[]) assert.ok(JSON.stringify(f).includes(JSON.stringify(q).slice(1,-1)),'record quote still present: '+e.id);
+  }
+ }
+ // public-safety scan of the section
+ assert.ok(!/(?:^|[^0-9])(?:10\.\d{1,3}|192\.168|172\.(?:1[6-9]|2\d|3[01]))\.\d{1,3}\.\d{1,3}/.test(block),'no private IP addresses');
+ assert.ok(!/[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/.test(block),'no e-mail addresses');
+ assert.ok(!/kid-safe|100% working|Google Play/i.test(block),'no forbidden wording');
+ assert.ok(!/\$\d|price/i.test(block),'no prices');
+}
 console.log('PASS: tier boundaries, open-issue cap, Ready weight, generated rows, labels and the single colour-key filter');

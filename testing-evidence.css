@@ -917,3 +917,29 @@ html[data-aurora] .feature-progress-table .feature-notes > td { padding: 6px 22p
 .works-today .wt-score, .works-today .wt-status { padding: 8px 12px; border-left: 3px solid #ffd166; background: rgba(230,168,20,.10); }
 .works-today a:focus-visible { outline: 3px solid #6e50dc; outline-offset: 2px; }
 @media (max-width: 580px) { .works-today { padding: 14px 14px; } }
+
+/* Checks confirmed working: individual passed checks, generated from testing-status.json (tools/build-status-page.mjs).
+   Colours inherit the page text colour and use translucent greys, so light and dark themes both keep the contrast. Meaning is in words, never colour alone. */
+.checks-confirmed { margin: 18px 0 22px; padding: 16px 16px 18px; border-radius: 12px; border: 1px solid rgba(128,128,128,.4); background: rgba(128,128,128,.07); min-width: 0; }
+.checks-confirmed h3 { margin: 4px 0 8px; }
+.checks-confirmed h4 { margin: 22px 0 6px; font-size: 1.05rem; line-height: 1.35; overflow-wrap: anywhere; }
+.checks-confirmed .cc-count { font-weight: 400; white-space: nowrap; }
+.checks-confirmed .cc-intro, .checks-confirmed .cc-rule { max-width: 75ch; margin: 6px 0; }
+.checks-confirmed .cc-jump ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0 0; padding: 0; }
+.checks-confirmed .cc-jump a { display: inline-block; padding: 4px 0; font-weight: 600; overflow-wrap: anywhere; }
+.checks-confirmed .cc-list { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 10px; }
+.checks-confirmed .cc-item { margin: 0; padding: 12px 14px; min-width: 0; border-radius: 10px; border: 1px solid rgba(128,128,128,.4); border-left: 6px solid rgba(128,128,128,.7); background: rgba(128,128,128,.06); }
+.checks-confirmed .cc-check { margin: 0 0 8px; font-weight: 700; line-height: 1.4; overflow-wrap: anywhere; }
+.checks-confirmed .cc-facts { margin: 0; display: grid; gap: 4px; font-size: .9rem; line-height: 1.4; }
+.checks-confirmed .cc-facts > div { display: grid; grid-template-columns: 7.2rem minmax(0, 1fr); gap: 8px; }
+.checks-confirmed .cc-facts dt { font-weight: 700; }
+.checks-confirmed .cc-facts dd { margin: 0; overflow-wrap: anywhere; }
+.checks-confirmed .cc-score { margin: 8px 0 0; padding-top: 8px; border-top: 1px dashed rgba(128,128,128,.5); font-size: .9rem; line-height: 1.4; overflow-wrap: anywhere; }
+.checks-confirmed a:focus-visible { outline: 3px solid #6bbfff; outline-offset: 2px; }
+:root[data-theme="light"] .checks-confirmed a:focus-visible { outline-color: #135a97; }
+.checks-confirmed .cc-item { scroll-margin-top: 96px; }
+@media (max-width: 520px) {
+  .checks-confirmed { padding: 12px 10px 14px; }
+  .checks-confirmed .cc-facts { font-size: .86rem; }
+  .checks-confirmed .cc-facts > div { grid-template-columns: 5.6rem minmax(0, 1fr); gap: 6px; }
+}

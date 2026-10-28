@@ -265,6 +265,57 @@ const tierKeyData = '<div class="tier-key-data" hidden>' + J.scoring.tiers.map(t
 }).join('') + '</div>';
 sec += '<aside class="meaning-box" aria-labelledby="meaning-score-title"><h3 id="meaning-score-title">What the tiers mean</h3><p>Green is reserved for 90–98%. At 90%, the listed runnable checks may have passed while an open issue caps the score at 90%; an explicit record limit can also hold it below 99. Teal 80–89% means nearly there. The percentage still follows the recorded checks, never a colour choice.</p><p>99% and 100% keep their existing meanings. An open issue always caps the score at 90%. Colour never replaces words.</p></aside>';
 sec += '<div class="status-legend" role="group" aria-label="Colour key and filter"><strong>Colour key</strong><div class="tier-chips">'+tierKey+'</div><p class="tier-result-count" role="status" aria-live="polite">Showing all '+features.length+' features.</p><span class="legend-note">Every feature says its percentage and tier name. A tick means passed; a dash means not yet.<span class="legend-hint"> Select a colour to show only that tier in the tables below (its list opens under this key); select it again, &ldquo;All features&rdquo; or &ldquo;Show all (close list)&rdquo; to see every feature.</span></span></div><div id="tier-key-panel" class="tier-key-panel"></div>'+tierKeyData;
+// "Checks confirmed working": individual passed checks (with build, date, device and limits), generated from J.checksConfirmed so the
+// list cannot drift from the feature tables. Each entry must name a real feature row (linked by its row id), carry a real Eastern
+// date AND time, and any recordQuotes it lists must still appear in that feature's own record. The "row score today" line is read
+// live from the feature (percentComplete and openIssues), never typed.
+const WHEN_CHECK_RE = /^([A-Z][a-z]{2} \d{1,2}, \d{4}), (?:about )?(\d{1,2}:\d{2})(?: (AM|PM))?(?: to (\d{1,2}:\d{2}) (AM|PM))? Eastern(?: \([^)]*\))?$/;
+function checksConfirmedBlock(d) {
+  if (!d?.lists?.length) return '';
+  const bad = [];
+  requireStamp('checksConfirmed.updatedEastern', d.updatedEastern);
+  requireStamp('checksConfirmed.countedUpToEastern', d.countedUpToEastern);
+  if (stampProblems.length) { console.error(stampProblems.join('\n')); process.exit(1); }
+  const seen = new Set();
+  let total = 0;
+  const scoreLine = f => {
+    const p = f.percentComplete, n = Number(f.openIssues) || 0;
+    if (p >= 100) return `Row is at 100% (Ready).`;
+    if (n > 0) return `Row stays at ${p}%: ${n} open issue${n === 1 ? '' : 's'} recorded for this feature, and this check does not clear ${n === 1 ? 'it' : 'them'}.`;
+    return `Row stays at ${p}%: other checks are still open (see its “Left to reach 100%”).`;
+  };
+  const item = e => {
+    const f = features.find(x => x.name === e.feature);
+    if (!f) { bad.push(`${e.id}: no feature named "${e.feature}"`); return ''; }
+    if (!/^[a-z0-9-]+$/.test(e.id || '') || seen.has(e.id)) bad.push(`${e.id}: id missing, not a slug, or duplicated`);
+    seen.add(e.id);
+    for (const k of ['check', 'build', 'when', 'device', 'notCovered', 'sound']) if (!String(e[k] || '').trim()) bad.push(`${e.id}: "${k}" is empty`);
+    const w = WHEN_CHECK_RE.exec(e.when || '');
+    if (!w) { bad.push(`${e.id}: "when" needs a date AND an Eastern time, like "Oct 27, 2026, 3:56 to 4:06 PM Eastern"`); return ''; }
+    const blob = JSON.stringify(f);
+    for (const q of e.recordQuotes || []) if (!blob.includes(JSON.stringify(q).slice(1, -1))) bad.push(`${e.id}: "${q}" is no longer in the record of "${f.name}"`);
+    total++;
+    if (!w[3] && !w[5]) { bad.push(`${e.id}: "when" needs AM or PM`); return ''; }
+    const dt = iso(`${w[1]}, ${w[2]} ${w[3] || w[5]}`);
+    return `<li class="cc-item" id="check-${esc(e.id)}"><p class="cc-check">${esc(e.check)}</p><dl class="cc-facts">` +
+      `<div><dt>Feature row</dt><dd><a href="#${esc(featureId(f))}">${esc(f.name)}</a></dd></div>` +
+      `<div><dt>Build</dt><dd>${esc(e.build)}</dd></div>` +
+      `<div><dt>When</dt><dd><time${dt ? ` datetime="${dt}"` : ''}>${esc(e.when)}</time></dd></div>` +
+      `<div><dt>Device</dt><dd>${esc(e.device)}</dd></div>` +
+      `<div><dt>Does not cover</dt><dd>${esc(e.notCovered)}</dd></div>` +
+      `<div><dt>Sound heard?</dt><dd>${esc(e.sound)}</dd></div>` +
+      `</dl><p class="cc-score"><strong>Row score today: ${f.percentComplete}%.</strong> ${esc(scoreLine(f))}${e.stays ? ' ' + esc(e.stays) : ''}</p></li>`;
+  };
+  const blocks = d.lists.map((l, i) => {
+    const items = l.entries.map(item).join('');
+    return `<section class="cc-list-block" id="checks-${esc(l.id)}" aria-labelledby="checks-${esc(l.id)}-title"><h4 id="checks-${esc(l.id)}-title"><span class="cc-num">${i + 1}.</span> ${esc(l.title)} <span class="cc-count">(${l.entries.length} ${l.entries.length === 1 ? 'check' : 'checks'})</span></h4><p class="cc-rule">${esc(l.rule)}</p><ul class="cc-list">${items}</ul></section>`;
+  }).join('');
+  if (bad.length) throw new Error('checksConfirmed problems:\n  ' + bad.join('\n  '));
+  const t = iso(d.countedUpToEastern);
+  const jump = d.lists.map((l, i) => `<li><a href="#checks-${esc(l.id)}">${i + 1}. ${esc(l.title.replace(/ \(.*\)$/, ''))} (${l.entries.length})</a></li>`).join('');
+  return `<!--CHECKS-CONFIRMED--><section class="checks-confirmed" id="checks-confirmed" aria-labelledby="checks-confirmed-title"><span class="evidence-kicker">Individual checks that passed · ${total} listed · counted up to <time${t ? ` datetime="${t}"` : ''}>${esc(d.countedUpToEastern)}</time> · section updated <time${iso(d.updatedEastern) ? ` datetime="${iso(d.updatedEastern)}"` : ''}>${esc(d.updatedEastern)}</time></span><h3 id="checks-confirmed-title">${esc(d.title)}</h3><p class="cc-intro">${esc(d.intro)}</p><nav class="cc-jump" aria-label="Lists of confirmed checks"><ul>${jump}</ul></nav>${blocks}</section><!--/CHECKS-CONFIRMED-->`;
+}
+sec += checksConfirmedBlock(J.checksConfirmed);
 sec += '<div id="tier-results">';
 for (const g of groups) {
   const list = features.filter(f => f.group === g);
@@ -276,7 +327,8 @@ const top = features.filter(f => f.percentComplete >= 100).length;
 sec += `<p><strong>Across all ${features.length} features the average is ${overall}%.</strong> That average mixes features that are well along with features that are only plans, so use the individual rows. ${top === 0 ? 'No feature is at 100% today, because none has yet passed a real-world check and a readiness review together.' : `${top} feature${top === 1 ? ' is' : 's are'} at 100%.`}</p>\n`;
 sec += '<p id="data-download">Machine-readable copy of this progress data: <a href="/testing-status.json">testing-status.json</a> (feature, status, percent, the five checks, last tested date, what is left and, while markers are on, what changed and when). Search engines and tools can read it.</p>\n    </section>';
 
-const secRe = /<section class="evidence-section" id="features"[\s\S]*?<\/section>/;
+// The features section now holds a nested <section> (Checks confirmed working), so match through its own tail (the data-download line), not the first </section>.
+const secRe = /<section class="evidence-section" id="features"[\s\S]*?<p id="data-download">[\s\S]*?<\/p>\s*<\/section>/;
 if (!secRe.test(html)) throw new Error('features section not found');
 html = html.replace(secRe, () => sec);
 
@@ -374,7 +426,7 @@ function worksTodaySection(d) {
     `<h3>What real people have already tried</h3><ul class="wt-list wt-tried">${items(d.tried)}</ul>` +
     `<h3>What is still open</h3><ul class="wt-list wt-open">${items(d.open)}</ul>` +
     `<p class="wt-score">${esc(fill(d.scoreLine))}</p><p class="wt-status">${esc(fill(d.statusLine))}</p>` +
-    `<p class="wt-more"><a href="#features">See every feature, test record and open item below</a></p></section><!--/WORKS-TODAY-->`;
+    `<p class="wt-more"><a href="#features">See every feature, test record and open item below</a>${J.checksConfirmed?.lists?.length ? ` · <a href="#checks-confirmed">${esc(J.checksConfirmed.title)}: individual passed checks, with dates and limits</a>` : ''}</p></section><!--/WORKS-TODAY-->`;
 }
 {
   const box = worksTodaySection(J.windowsToAndroid);
@@ -430,7 +482,7 @@ function responsiveTables(page) {
 }
 html = responsiveTables(html);
 html=html.replace(/<script>\(function\(\)\{try\{document\.querySelectorAll\('tr\.feat'\)[\s\S]*?<\/script>/g,'');
-html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261027filter');
+html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261027checks');
 if(!html.includes('src="/assets/evidence-tier-tabs.js?v=')) html=html.replace(/<script src="\/assets\/evidence-tier-tabs\.js[^"]*" defer><\/script>/, '').replace('</body>','<script src="/assets/evidence-tier-tabs.js?v=20261027filter" defer></script></body>');
 else html=html.replace(/(evidence-tier-tabs\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261027filter');
 

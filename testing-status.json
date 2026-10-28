@@ -12400,5 +12400,504 @@
       "iso": "2026-10-27T21:44:00-04:00",
       "summary": "Merged into the main code between about 4:09 PM and 8:50 PM Eastern on Oct 27, each with an independent review and test runs: the phone’s Camera backup tab shows where on the computer the backed-up photos are saved, with a Copy path button, for the owner only (about 4:09 PM, ordinary review); the web player returns keyboard focus to the video after Picture-in-Picture closes (about 5:00 PM, tests used a mock page and are not proven in real Chrome); radio Back returns to the station list and swiping or Previous and Next buttons change station (about 8:20 PM); podcasts can be opened from Find without following, which needs a new Windows build on the home computer, and the radio media panel and lock screen get Previous and Next station (about 8:50 PM). None is in a published download; they are in the source code and in a test build that is not published, and none has been tried on a phone by a person. Also merged at about 9:32 PM Eastern (independent review, simulated-browser tests only, not real Chrome): the web player’s Resume question now holds playback and progress saving, and Reconnect keeps the saved spot; it is in no build, not even the Windows 0.1.105 build in progress. Not merged: a fix for the clipped Corner radius label. No score or tick changes for any of these."
     }
-  ]
+  ],
+  "checksConfirmed": {
+    "title": "Checks confirmed working",
+    "updatedEastern": "Oct 27, 2026, 10:15 PM Eastern",
+    "countedUpToEastern": "Oct 27, 2026, 9:48 PM Eastern",
+    "intro": "A feature’s score in the tables below is one number for the whole feature, so a single passed check can get lost behind a score held down by other open items. This section lists individual checks that passed, each with its build, date, device and what it does not cover. A passed check listed here does not raise a score: scores still follow the five checks and any open issue, as explained under “How the percentage works”.",
+    "lists": [
+      {
+        "id": "both",
+        "title": "Seen working by Nick and a second tester together",
+        "rule": "Nick and a second tester (an AI tester) both watched the same build. This counts as confirmed for the exact thing described, not for the whole feature: a row reaches 100% only when nothing else is open and Nick says Ready.",
+        "entries": [
+          {
+            "id": "cast-seek-after-end-replay",
+            "feature": "Chromecast",
+            "check": "While casting a film to a TV, pressing the seek bar after the film had ended started it playing again, and Replay restarted the film from the beginning.",
+            "build": "Android 1.51-tester58 (build 108), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 3:56 to 4:06 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi, casting to a Samsung TV",
+            "notCovered": "The first cast right after the TV woke up did nothing (open). Captions on the TV, seeks to set points and the cast-icon pulse were not covered.",
+            "sound": "Yes. Nick watched the TV and heard the film’s sound.",
+            "recordQuotes": [
+              "PASS covers the two items under test, the seek bar after the end and Replay, on tester58"
+            ]
+          },
+          {
+            "id": "camera-backup-counter",
+            "feature": "Photos and phone backups (timeline, albums, viewer)",
+            "check": "With “Keep location in photo backups” turned on, a new photo was backed up within seconds and the phone’s counter (21 files) matched the PC’s backup folder, the desktop app and the Chrome Photos page. With the switch off, the photo was held back, as the screen explains.",
+            "build": "Android 1.51-tester58 (build 108), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 3:42 to 3:55 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi; Windows PC; Chrome browser",
+            "notCovered": "Videos, a byte-for-byte copy check, the first-time permission box and the “Select photos only” mode.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "PASS covers the counter and the location switch only"
+            ]
+          },
+          {
+            "id": "opening-the-app-three-starts",
+            "feature": "Opening the app and the five tabs",
+            "check": "Three fresh starts of the app (and a slow fourth) each opened straight to Home, all five tabs opened, and the connection card told the truth (direct connection on the same Wi-Fi) with no false “needs attention” message.",
+            "build": "Android 1.51-tester57 (build 107), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 3:01 to 3:05 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi",
+            "notCovered": "Starts on mobile data, with the PC off or asleep, or after a phone restart.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "The statements were true (the phone and PC were on the same Wi-Fi) and no false “needs attention” message appeared"
+            ]
+          },
+          {
+            "id": "posters-and-info-five-films",
+            "feature": "Posters and info (TMDB)",
+            "check": "Five different films each showed a real poster and an info page, and titles without a poster showed a plain “No poster” card with no broken picture.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 2:14 PM Eastern",
+            "device": "Windows PC (desktop app), read-only",
+            "notCovered": "Offline behaviour, TV show pages on this PC, and the paid-use TMDB licence, which is Nick’s decision.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "Opened five different films from the Movies list"
+            ]
+          },
+          {
+            "id": "surprise-me-playlists-tester57",
+            "feature": "Surprise me, playlists, watchlist, favourites",
+            "check": "Surprise me started a random film in about 1.5 seconds, Next and Previous each changed the film within about a second, seeks played again in 0.2 to 1.5 seconds, and Continue watching was unchanged afterwards. Watchlist, Favourites and a playlist (create, add, reorder, play, rename, delete) worked and Watchlist and Favourites survived a restart.",
+            "build": "Android 1.51-tester57 (build 107), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 2:14 to 2:44 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi",
+            "notCovered": "Empty-library and error cases, TV shows, Share and smart playlists. Two small oddities (a queue card left after deleting a playlist, playlist counts catching up late) are recorded as requests, not failures.",
+            "sound": "Yes. Nick held the phone and heard the sound.",
+            "recordQuotes": [
+              "Surprise me > Play a random film: “Connecting to your home computer…” about 1.5 seconds",
+              "Empty-library and error cases not tested"
+            ]
+          },
+          {
+            "id": "surprise-me-regression-tester58",
+            "feature": "Surprise me, playlists, watchlist, favourites",
+            "check": "On the newer build, Surprise me again started a random film in about 1.6 seconds, Next and Previous each changed the film, seeks on a 1 hour 42 minute film played again within 1.2 to 1.6 seconds, and Continue watching was unchanged.",
+            "build": "Android 1.51-tester58 (build 108), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 3:11 to 3:13 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi",
+            "notCovered": "Favourites, watchlist and playlists were not repeated on this build (only what changed is re-tested).",
+            "sound": "Yes. Nick heard sound and video.",
+            "recordQuotes": [
+              "Regression sweep on the new build after a fresh start"
+            ]
+          },
+          {
+            "id": "podcast-follow-reads-following",
+            "feature": "Podcasts and radio",
+            "check": "In Podcasts > Find, tapping Follow changed the button to “Following” within about 2 seconds with no reload, and Unfollow worked.",
+            "build": "Android 1.51-tester58 (build 108), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 3:14 to 3:17 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi",
+            "notCovered": "The episode queue, episode downloads, the sleep timer, and radio favourites and recording.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "This closes the one open issue on this row"
+            ]
+          },
+          {
+            "id": "largest-text-2-0",
+            "feature": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+            "check": "At the largest text size (2.0), the Library’s “Add a video from this phone” button wrapped onto two lines with every chip visible, and the player’s More list closed before “Playback finished” appeared.",
+            "build": "Android 1.51-tester58 (build 108), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 3:06 to 3:10 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi",
+            "notCovered": "TalkBack by ear, colour-blind modes and keyboard use on the phone.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "This verifies both open issues from tester57 as fixed"
+            ]
+          },
+          {
+            "id": "portrait-after-player-and-pip",
+            "feature": "Playing films, seeking, picture-in-picture",
+            "check": "With the phone’s auto-rotate switched off, the app came back upright after closing the player and after closing picture-in-picture.",
+            "build": "Android 1.51-tester58 (build 108), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 3:20 to 3:31 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi",
+            "notCovered": "One phone only. An earlier attempt where auto-rotate turned itself back on is unexplained. Continue watching after a short picture-in-picture is still open.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "This verifies the tester58 portrait-after-player-and-picture-in-picture fix on one phone with auto-rotate OFF"
+            ]
+          },
+          {
+            "id": "audiobook-speed-stays-1x",
+            "feature": "Audiobooks",
+            "check": "After “Reset to 1x”, the audiobook speed stayed at 1x after leaving the player, reopening it from the mini player, and tapping a bookmark.",
+            "build": "Android 1.51-tester58 (build 108), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 3:32 to 3:34 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi",
+            "notCovered": "A faster speed left set across a reopen, adding, deleting and undoing a bookmark, and the sleep timer. The unexplained sign-out is still open.",
+            "sound": "Yes. Nick heard the book.",
+            "recordQuotes": [
+              "Not tested in this step: setting a speed and leaving it set across a reopen"
+            ]
+          },
+          {
+            "id": "pack-for-a-trip-counts-agree",
+            "feature": "Pack for a trip (download planner)",
+            "check": "The Pack for a trip screen and the Downloads screen agreed: 2 of 2 films ready for offline, 139.8 MB (109.3 + 30.5), and 5 downloads totalling 160.5 MB.",
+            "build": "Android 1.51-tester58 (build 108), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 3:35 to 3:37 PM Eastern",
+            "device": "Galaxy S24 phone on home Wi-Fi",
+            "notCovered": "Building a new plan, packing to the end, playing a downloaded film offline in airplane mode, and Trip Recap.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "Counts part only"
+            ]
+          },
+          {
+            "id": "desktop-keyboard-settings-save",
+            "feature": "Keyboard and screen-reader support",
+            "check": "On the desktop app, Tab and Shift+Tab put a clear yellow outline on the Motion drop-down and the tick boxes, Space ticked and unticked them, and Enter on “Save appearance” saved.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 12:58 to 1:04 PM Eastern",
+            "device": "Windows PC (desktop app), keyboard only",
+            "notCovered": "TalkBack and a Windows screen reader were not tried. Save sits about 100 Tab presses after the tick box (an observation).",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "Desktop keyboard part only"
+            ]
+          },
+          {
+            "id": "web-player-play-seek-quality-captions",
+            "feature": "Library, player and web player",
+            "check": "In the browser player the film started by itself, clicking paused it, clicking the seek bar jumped to 1:48 in under 4 seconds with the matching caption, quality Auto and Original kept the place, and captions Off and English worked.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 1:20 PM Eastern",
+            "device": "Chrome browser on a Windows PC",
+            "notCovered": "Sound in the browser was not heard. The on-screen Full screen button was measured by the AI tester only.",
+            "sound": "No. The PC’s speakers could not be heard; the browser’s live captions showed the audio was present.",
+            "recordQuotes": [
+              "Not proven: sound in the browser"
+            ]
+          },
+          {
+            "id": "web-player-pip-and-keys",
+            "feature": "Library, player and web player",
+            "check": "Picture-in-picture from the browser player worked (Nick moved, resized and used its controls), and the keys Space, Right arrow, Up and Down, F and Esc worked.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 1:32 to 1:45 PM Eastern",
+            "device": "Chrome browser on a Windows PC",
+            "notCovered": "After picture-in-picture closes, the keys stop until the player is clicked (open, seen 3 of 3). M and C are not Beebo keys. Sound was not heard.",
+            "sound": "No. Sound was not heard on this PC.",
+            "recordQuotes": [
+              "picture-in-picture confirmed by Nick, keys Space, Right, Up, Down, F and Esc"
+            ]
+          },
+          {
+            "id": "web-library-search-views",
+            "feature": "Library, player and web player",
+            "check": "In the browser library, a search for a few letters found one title and clearing it brought back all 26; By Release Date, By Actor, All Movies, a letter jump and Sequels all worked.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 1:55 PM Eastern",
+            "device": "Chrome browser on a Windows PC",
+            "notCovered": "The letter jump was tried only on the last letter. The New tab and Filters were not tried. The 26-versus-28 count is explained (28 counts video files).",
+            "sound": "No. Silent test.",
+            "recordQuotes": [
+              "Not proven: the letter jump was tried only on W"
+            ]
+          },
+          {
+            "id": "desktop-tv-shows-screen",
+            "feature": "Library, player and web player",
+            "check": "The desktop TV Shows screen opened, its View menu offered seven views, the Table view showed its columns and Export CSV, and clicking the Total size header sorted biggest first.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 2:00 PM Eastern",
+            "device": "Windows PC (desktop app)",
+            "notCovered": "This PC has no real series, so show pages, seasons, episode lists and watched marks were not tried.",
+            "sound": "No. Silent test.",
+            "recordQuotes": [
+              "Not tested on this PC: a show page, seasons"
+            ]
+          },
+          {
+            "id": "away-6-minute-5g-run",
+            "feature": "Away from home (direct, then relay)",
+            "check": "A 6-minute run over 5G through Beebo Relay played for 5 minutes 45 seconds with no stalls and no disconnects; the seek bar, pause, 5 and 15 second skips and picture-in-picture all worked.",
+            "build": "Android 1.51-tester57 (build 107), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 11:50 AM to 12:00 PM Eastern",
+            "device": "Galaxy S24 phone on 5G, Wi-Fi off",
+            "notCovered": "The first play took about 70 seconds (recorded, not called a pass). One phone and one film; screen-off, cast and two viewers at once were not tried.",
+            "sound": "Not recorded for this run.",
+            "recordQuotes": [
+              "A 6-minute run: 5 minutes 45 seconds playing, 0 stalls, 0 disconnects"
+            ]
+          },
+          {
+            "id": "quality-480p-over-5g",
+            "feature": "Converter and quality / speed settings",
+            "check": "Choosing 480p during a film over 5G kept the same place after about 3 seconds of buffering; Nick saw no real pause.",
+            "build": "Android 1.51-tester57 (build 107), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 11:58 AM Eastern",
+            "device": "Galaxy S24 phone on 5G, Wi-Fi off",
+            "notCovered": "No 720p or 1080p step on the phone, and one kind of graphics chip only. Each quality change starts the converter once at the film’s start before the real place (open).",
+            "sound": "Yes. Nick said it sounded good.",
+            "recordQuotes": [
+              "480p chosen at 11:58:09"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "alone",
+        "title": "Passed by a second tester alone (Nick away; counts as 99 at most until Nick joins a test)",
+        "rule": "The AI tester ran these alone, so none has a human confirmation yet. They count as 99 at most until Nick joins a test, and any open issue on the row still holds its score at 90.",
+        "entries": [
+          {
+            "id": "cast-captions-off-on-no-reload",
+            "feature": "Chromecast",
+            "check": "While casting, switching captions Off and then English did not reload the film: the cast position carried on in real time (34 seconds in 34 seconds).",
+            "build": "Android 1.51-tester58 (build 108), Windows 0.1.104 on the PC",
+            "when": "Oct 27, 2026, 4:07 to 4:11 PM Eastern",
+            "device": "Galaxy S24 phone casting to a Samsung TV, the TV watched through the phone’s camera",
+            "notCovered": "Caption text was not seen on the TV in two camera frames (not confirmed either way, still open). The picture-stop time over three Off and On cycles was not measured.",
+            "sound": "No. The TV was watched only through a camera.",
+            "recordQuotes": [
+              "so the film was not reloaded"
+            ]
+          },
+          {
+            "id": "web-keys-left-right-space-up-down",
+            "feature": "Library, player and web player",
+            "check": "In the web player, Left and Right (10 seconds back and forward), Space (play and pause) and Up and Down (volume) all worked from the keyboard.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 4:20 PM Eastern",
+            "device": "Chrome browser on a Windows PC",
+            "notCovered": "After picture-in-picture closes the keys stop until the player is clicked (open, seen 3 of 3). M and C are not Beebo keys. Only one film was used.",
+            "sound": "No. Silent test.",
+            "recordQuotes": [
+              "Keys on a 3-minute test film: Left minus 10 seconds 3 of 3"
+            ]
+          },
+          {
+            "id": "search-and-sort-479-titles",
+            "feature": "Library, player and web player",
+            "check": "Five searches on a library of 479 titles gave sensible results (a nonsense word gave “No matching titles”), and By Release Date listed the newest films first.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 7:34 PM Eastern",
+            "device": "Chrome browser on a Windows PC, reading another PC’s library through the away-from-home address",
+            "notCovered": "There is no oldest-first button to test. Search matches pieces of words (by design). Only this one sort was tried.",
+            "sound": "No. Silent test.",
+            "recordQuotes": [
+              "By Release Date newest first (2026 to 1960, then Unknown year)"
+            ]
+          },
+          {
+            "id": "quality-steps-page-in-front",
+            "feature": "Converter and quality / speed settings",
+            "check": "With the browser page in front, quality Auto kept playing and 720p took 3.1 seconds and kept playing.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 8:57 PM Eastern",
+            "device": "Chrome browser on a Windows PC",
+            "notCovered": "No 1080p (the test file is 720p). Every quality change starts the converter at the film’s start before the real place (open). Earlier slow runs with the page in the background are not reliable.",
+            "sound": "No. Silent test.",
+            "recordQuotes": [
+              "Redo with the page in front: Auto works"
+            ]
+          },
+          {
+            "id": "away-soak-52-minutes",
+            "feature": "Away from home (direct, then relay)",
+            "check": "A film played for 52 minutes 36 seconds through the away-from-home address with the browser tab in front: five checks, no stall, no reconnecting banner and no quality drop.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 7:53 to 8:46 PM Eastern",
+            "device": "Chrome browser on a Windows PC, to another PC through the away address",
+            "notCovered": "Shorter than the 60 minutes planned. The page does not show direct or relay, so the route was not recorded. The link drops when the tab is in the background (reconnects in about 30 seconds).",
+            "sound": "No. Muted.",
+            "recordQuotes": [
+              "Silent soak with the tab in front"
+            ]
+          },
+          {
+            "id": "accessibility-desktop-large-text-contrast-buttons",
+            "feature": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+            "check": "On the desktop app, Large text (nothing cut off), High contrast (text still readable) and Large buttons and fields (no overlap) each took effect.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 7:43 to 9:21 PM Eastern",
+            "device": "Windows PC (desktop app)",
+            "notCovered": "Reduce motion was accepted but animations actually calming down is not proven. A clipped “Corner radius” label is a new open issue. No screen reader or colour-blind modes.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "Large buttons and fields ticked: controls visibly taller, no overlap"
+            ]
+          },
+          {
+            "id": "tab-key-focus-ring-web",
+            "feature": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+            "check": "On the web page, the Tab key showed a visible focus ring on about 30 controls in a row (Skip to content, the sidebar, the sort tab, Filters and the A to Z letters) and none were skipped.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 8:57 PM Eastern",
+            "device": "Chrome browser on a Windows PC",
+            "notCovered": "Mouse-only controls and a screen reader were not checked.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "Web page Tab key in Chrome: first Tab Skip to content"
+            ]
+          },
+          {
+            "id": "languages-desktop-preview",
+            "feature": "Languages (5 translated with machine help, 3 previews)",
+            "check": "On the desktop app, Deutsch, Français and Español changed Settings and the sidebar with nothing clipped (Deutsch also Home and Movies), the Japanese preview showed Japanese text, and English was put back.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, about 9:04 PM Eastern",
+            "device": "Windows PC (desktop app)",
+            "notCovered": "The “Online” status chip is not translated. The player, web pages, Italiano, Português, Korean, Chinese and any native-speaker review were not checked. Japanese is a partial preview.",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "Deutsch PASS (Settings, sidebar, Home, Movies tab"
+            ]
+          },
+          {
+            "id": "dashboard-numbers-match-disk",
+            "feature": "Library, player and web player",
+            "check": "The desktop Dashboard numbers for movies (26), storage (18 files, 29.1 GB), free disk space, missing posters and the converter count matched the PC’s own files and the other screens.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, about 9:35 PM Eastern",
+            "device": "Windows PC (desktop app), read-only",
+            "notCovered": "The TV Shows tile (2) disagrees with the sidebar (16), the Storage tile lists one folder twice, and the “peak today” figure was not confirmed. All three are on the fix list.",
+            "sound": "No sound involved."
+          },
+          {
+            "id": "check-for-updates-up-to-date",
+            "feature": "Installer and self-update",
+            "check": "Settings > Help & updates > Check for updates showed a clear “You’re up to date” message (Beebo 0.1.104 is the latest version) and installed nothing.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, about 9:47 PM Eastern",
+            "device": "Windows PC (desktop app)",
+            "notCovered": "Only the “already up to date” answer was seen, and the text on the page does not repeat it (only the pop-up does). What it says when an update exists, and the Ask me and Download automatically modes, were not tried.",
+            "sound": "No sound involved."
+          },
+          {
+            "id": "web-player-back-forward",
+            "feature": "Library, player and web player",
+            "check": "In the web player, Back stopped the film cleanly, and Forward brought back a paused player with the right “Resume from…?” box.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, about 9:48 PM Eastern",
+            "device": "Chrome browser on a Windows PC",
+            "notCovered": "The Resume box appearing over an already-playing film on a normal open from the library is open (3 of 3). Back during a conversion, in full screen or in picture-in-picture was not tried.",
+            "sound": "No. Silent test."
+          },
+          {
+            "id": "narrow-window-layout-500px",
+            "feature": "Library, player and web player",
+            "check": "In a window 500 pixels wide, the web player showed a clean phone layout (54 controls, none off the edge, no sideways scroll), and the Movies, TV Shows, Music, Photos, Discover and Continue pages had no sideways overflow.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, about 9:48 PM Eastern",
+            "device": "Chrome browser on a Windows PC, window narrowed to 500 pixels",
+            "notCovered": "Chrome cannot go below 500 pixels, so 400 pixels and a real phone were not tested. Escape did not close the More panel, and the quality box has a thin sideways scrollbar (cosmetic).",
+            "sound": "No. Silent test."
+          },
+          {
+            "id": "photos-page-25-of-25-thumbnails",
+            "feature": "Photos and phone backups (timeline, albums, viewer)",
+            "check": "Chrome’s Photos page loaded all 25 of 25 thumbnails (none broken, 3 videos) matching the 25 media files on disk, and opening one showed a viewer whose close button returned to the same place.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, 8:30 to 9:20 PM Eastern",
+            "device": "Chrome browser on a Windows PC",
+            "notCovered": "The browser Back button leaves the Photos page instead of closing the photo (possible issue). The Albums and Videos tabs, playing a video, the arrows, zoom and a phone browser were not tried.",
+            "sound": "No. Silent test.",
+            "recordQuotes": [
+              "25 of 25 thumbnails loaded, 0 broken"
+            ]
+          },
+          {
+            "id": "web-captions-off-on-while-playing",
+            "feature": "Library, player and web player",
+            "check": "In the web player, switching captions Off and English while the film played never restarted it, and the caption text appeared and disappeared correctly.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, about 9:18 PM Eastern",
+            "device": "Chrome browser on a Windows PC",
+            "notCovered": "A second caption track (none exists on the test film), the sync and style sliders, and picture-based subtitles.",
+            "sound": "No. Silent test.",
+            "recordQuotes": [
+              "Captions: Off, English (file), Search online; switching never restarted the film"
+            ]
+          },
+          {
+            "id": "desktop-library-views",
+            "feature": "Library, player and web player",
+            "check": "On the desktop app, all seven Movies view modes (Posters, Table, Detailed list, Shelves, Backdrops, Grouped, Folders) drew with content and no overlap, and the Filters panel opened.",
+            "build": "Windows 0.1.104",
+            "when": "Oct 27, 2026, about 9:19 PM Eastern",
+            "device": "Windows PC (desktop app)",
+            "notCovered": "No filter was applied and the other sort orders were not tried. The sidebar shows 28 movies and the page 26 (28 counts files; explained).",
+            "sound": "No sound involved.",
+            "recordQuotes": [
+              "Library views: seven desktop view modes drew"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phones",
+        "title": "Passed by an AI tester on real phones, silent, on an unpublished test build",
+        "rule": "These ran on Android tester59, a test build that is not available for download, with the phone volume at 0. Nick has not seen them. No score or tick changed because of them.",
+        "entries": [
+          {
+            "id": "radio-back-button",
+            "feature": "Podcasts and radio",
+            "check": "In Radio, the top-bar arrow and the system Back button both returned to the station list while the radio kept playing.",
+            "build": "Android 1.51-tester59 (build 109), an unpublished test build",
+            "when": "Oct 27, 2026, about 9:40 PM Eastern (report time)",
+            "device": "Pixel 3 phone and Galaxy S9+ phone",
+            "notCovered": "Home computer still on the older Windows app. Not in any download.",
+            "sound": "No. Phone volume was 0.",
+            "recordQuotes": [
+              "Radio Back: PASS on both"
+            ]
+          },
+          {
+            "id": "radio-swipe-previous-next",
+            "feature": "Podcasts and radio",
+            "check": "In Radio, swiping and the Previous and Next buttons changed station, and the first station greyed Previous with the message “This is the first station in your list.”",
+            "build": "Android 1.51-tester59 (build 109), an unpublished test build",
+            "when": "Oct 27, 2026, about 9:40 PM Eastern (report time)",
+            "device": "Pixel 3 phone and Galaxy S9+ phone",
+            "notCovered": "On the Pixel 3, Next did not move past one failing station (a finding). A long Earlier list was not scrolled.",
+            "sound": "No. Phone volume was 0.",
+            "recordQuotes": [
+              "Radio swipe and Previous and Next: PASS on both"
+            ]
+          },
+          {
+            "id": "radio-notification-and-lock-screen",
+            "feature": "Podcasts and radio",
+            "check": "The notification-shade card showed Previous, Pause and Next and they worked (Android 12 on the Pixel 3; Android 10 shows Pause and Next at the first station), and the lock-screen card worked on the Galaxy S9+.",
+            "build": "Android 1.51-tester59 (build 109), an unpublished test build",
+            "when": "Oct 27, 2026, about 9:40 PM Eastern (report time)",
+            "device": "Pixel 3 phone and Galaxy S9+ phone",
+            "notCovered": "The Pixel 3 has no lock screen, so that part was skipped.",
+            "sound": "No. Phone volume was 0.",
+            "recordQuotes": [
+              "Notification shade: Android 12 shows Previous and Next and both work"
+            ]
+          },
+          {
+            "id": "podcast-open-before-follow-message",
+            "feature": "Podcasts and radio",
+            "check": "Opening a podcast in Find before following it showed a plain message (update Beebo on your computer, or tap Follow) and Back kept the search results.",
+            "build": "Android 1.51-tester59 (build 109), an unpublished test build",
+            "when": "Oct 27, 2026, about 9:40 PM Eastern (report time)",
+            "device": "Pixel 3 phone and Galaxy S9+ phone",
+            "notCovered": "The home computer needs the next Windows version to show the show; nothing was followed or changed.",
+            "sound": "No. Phone volume was 0.",
+            "recordQuotes": [
+              "Podcast open without follow: PASS on both"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
