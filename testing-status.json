@@ -12902,7 +12902,7 @@
   },
   "platformProgress": {
     "title": "How close are Windows and Android to 100%?",
-    "updatedEastern": "Oct 28, 2026, 3:19 AM Eastern",
+    "updatedEastern": "Oct 27, 2026, 11:22 PM Eastern",
     "lead": "Here is the short answer for each app: how many features are fully confirmed, how many are almost there, how many are earlier on, and what still stands in the way. The counts are worked out from the feature table further down this page, so they always match it.",
     "explain": [
       "The percentage on a feature counts the checks it has passed: built, automated tests, tried on a real device, tried in real use, and confirmed by a person.",
@@ -13214,7 +13214,7 @@
   },
   "platformMatrix": {
     "title": "What works, platform by platform",
-    "updatedEastern": "Oct 28, 2026, 3:19 AM Eastern",
+    "updatedEastern": "Oct 27, 2026, 11:22 PM Eastern",
     "lead": "A tick means a person has confirmed it and nothing known is open for that use. Most things are not at that level yet, so many boxes say “Mostly works” and name the known problem. Select a box (or tap it on a phone) to see how it was tested, on which devices, and what is still open. The same details are listed in full under the table.",
     "quick": [
       {
@@ -13288,7 +13288,6 @@
       "text": "The owner also tried an old Samsung Galaxy S3 (released 2012). Beebo did not work on it, and other major websites did not work on it either, so we consider phones that old too old for any modern app. Beebo needs Android 7.0 or newer.",
       "label": "Owner’s own test; exact date not recorded.",
       "shortText": "Very old phones: the owner also tried an old Samsung Galaxy S3 (released 2012). Beebo did not work on it, and other major websites did not work on it either, so we consider phones that old too old for any modern app. Beebo needs Android 7.0 or newer.",
-      "dateNote_DATA_ONLY": "PLACEHOLDER: Nick will supply the date of the Galaxy S3 test. Never shown on the page.",
       "minimumAndroid": "Android 7.0 (API level 24), the app’s own minimum setting"
     },
     "columns": [
@@ -14985,9 +14984,9 @@
             "devices": [
               "pc4"
             ],
-            "tested": "The official Jellyfin Media Player 1.12.0 connected and signed in, but showed Beebo’s own web page, and opening a film said “This video format can’t play on this device”. Nick: connected but the film would not play. (The compatibility checks without that app passed.)",
-            "why": "The real Jellyfin desktop app connects but does not play films from Beebo today.",
-            "open": "The Jellyfin desktop app cannot play films, and the failed play flagged a large film for conversion.",
+            "tested": "In our last test of this (Oct 26, 2026, Windows 0.1.102; newer builds were not retested) the official Jellyfin Media Player 1.12.0 connected and signed in, but showed Beebo’s own web page, and opening a film said “This video format can’t play on this device”. Nick: connected but the film would not play. (The compatibility checks without that app passed.)",
+            "why": "It did not work in our last test (Oct 26, 2026, build 0.1.102): the real Jellyfin desktop app connected but did not play films from Beebo. Newer builds were not retested.",
+            "open": "The Jellyfin desktop app could not play films on that build, and the failed play flagged a large film for conversion. Not retested since.",
             "notCovered": "Other Jellyfin apps on phones and TVs.",
             "quotes": [
               {

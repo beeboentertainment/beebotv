@@ -153,7 +153,8 @@ if(d.checksConfirmed){
  assert.ok(mb.includes('The owner also tried an old Samsung Galaxy S3 (released 2012). Beebo did not work on it, and other major websites did not work on it either, so we consider phones that old too old for any modern app. Beebo needs Android 7.0 or newer.'),'Galaxy S3 note is shown exactly');
  assert.ok(mb.includes('Owner’s own test; exact date not recorded.'),'owner-test label');
  assert.ok(!/repeated|again tried|tested again/i.test(m.oldPhone.text),'the S3 test is not claimed to be repeated');
- assert.ok(typeof m.oldPhone.dateNote_DATA_ONLY==='string','date placeholder lives in the data');
+ assert.ok(!('dateNote_DATA_ONLY' in m.oldPhone)&&!/PLACEHOLDER|TODO/i.test(JSON.stringify([d.platformProgress,d.platformMatrix])),'no placeholder text in the public JSON');
+ assert.ok(mb.includes('did not work in our last test (Oct 26, 2026, build 0.1.102)')&&mb.includes('Newer builds were not retested'),'Jellyfin cross states its age');
  assert.ok(/id="pm-pop"/.test(mb)&&html.includes('/assets/platform-matrix.js'),'pop-up panel and its script');
  privacy(mb,'matrix section');
  for(const f of ['Samsung Galaxy S24 Ultra','Google Pixel 3','Samsung Galaxy S9+','i7-4790K','Core Ultra 7 270K Plus']) assert.ok(mb.includes(f),'device spec shown: '+f);
@@ -166,6 +167,18 @@ if(d.checksConfirmed){
  for(const c of R.platforms) assert.ok(cs.includes('<strong>'+c.name+':</strong> '+c.ready.length+' of '+c.stats.total+' features Ready (100%), '+c.almost.length+' almost there (90 to 98%), '+c.building.length+' earlier on (below 90%).'),'home callout counts: '+c.name);
  assert.ok(cs.includes('release-evidence.html#platform-progress'),'home callout links to the section');
  privacy(cs.replace(/Google Play/g,'GP'),'home callout');
+ // section stamps must be real Eastern times: not in the future, and not before the newest evidence stamp they count
+ {
+  const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const toMs=s=>{const x=/^([A-Z][a-z]{2}) (\d{1,2}), (\d{4}), (\d{1,2}):(\d{2}) (AM|PM) Eastern$/.exec(s); assert.ok(x,'stamp format: '+s);
+   const mo=MON.indexOf(x[1]), day=+x[2], dst=(mo>2&&mo<10)||(mo===2&&day>=8)||(mo===10&&day<=1);
+   return Date.UTC(+x[3],mo,day,(+x[4]%12)+(x[6]==='PM'?12:0),+x[5])+(dst?4:5)*3600000;};
+  const now=Date.now(), evidenceMs=toMs(d.updatedEastern);
+  for(const [label,s] of [['platformProgress',d.platformProgress.updatedEastern],['platformMatrix',d.platformMatrix.updatedEastern]]){
+   assert.ok(toMs(s)<=now+60000,label+' stamp is not in the future (real Eastern time): '+s);
+   assert.ok(toMs(s)>=evidenceMs,label+' stamp is not earlier than the evidence it counts ('+d.updatedEastern+'): '+s);
+  }
+ }
  // the page-wide stamp is untouched by this work
  assert.ok(/<strong>Site last updated:<\/strong> <time datetime="[^"]+">/.test(html),'page stamp present');
 }

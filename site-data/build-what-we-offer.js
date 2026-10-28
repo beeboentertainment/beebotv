@@ -219,7 +219,7 @@ function codeStatusBlock(tag) {
   return `<div class="wwo-code-status" role="group" aria-labelledby="wwo-code-status-title"><${tag} id="wwo-code-status-title">Where the code is at</${tag}><p>The code is about <strong>${c.code}%</strong> built and passing its automated tests, and about <strong>${c.human}%</strong> of our real-device and real-world checks have passed. Most of what is left is real-world testing. ${c.n} features: ${c.confirmed} confirmed working on real devices, ${c.waiting} code complete and waiting for real-world testing, ${c.building} code still being finished.</p>${meter('Code built and passing automated tests', c.code, '')}${meter('Device and real-world checks recorded', c.human, ' wwo-cs-bar2')}<p class="wwo-fine">These percentages measure our own checklist, not that nothing can go wrong. Updated ${esc(c.updated)}. <a href="release-evidence.html#code-status">See every feature and what is left to do</a>. <a href="progress-update.html">Read our full progress report</a>.</p></div>`;
 }
 
-/* "How close are Windows and Android to 100%?" callout (Oct 28, 2026): counted from testing-status.json by site-data/platform-progress.js,
+/* "How close are Windows and Android to 100%?" callout (Oct 2026): counted from testing-status.json by site-data/platform-progress.js,
    so it always matches the full section on the testing evidence page. */
 function platformCallout(tag) {
   if (!ppResult) return '';
