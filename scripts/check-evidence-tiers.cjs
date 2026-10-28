@@ -83,4 +83,90 @@ if(d.checksConfirmed){
  assert.ok(!/kid-safe|100% working|Google Play/i.test(block),'no forbidden wording');
  assert.ok(!/\$\d|price/i.test(block),'no prices');
 }
+// "How close are Windows and Android to 100%?" and "What works, platform by platform": generated from platformProgress / platformMatrix.
+{
+ const PP=require('../site-data/platform-progress.js'), PM=require('../site-data/platform-matrix.js');
+ const section=(a,b)=>{const s=html.indexOf(a),e=html.indexOf(b);assert.ok(s>0&&e>s,'section markers '+a);return html.slice(s,e);};
+ const featIdx=html.indexOf('id="features"'), keyIdx=html.indexOf('Colour key');
+ const privacy=(txt,label)=>{
+  assert.ok(!/(?:^|[^0-9])(?:10\.\d{1,3}|192\.168|172\.(?:1[6-9]|2\d|3[01]))\.\d{1,3}\.\d{1,3}/.test(txt),label+': no private IP addresses');
+  assert.ok(!/[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/.test(txt),label+': no e-mail addresses');
+  assert.ok(!/kid-safe|100% working|dlink|IMEI|serial number|\bS25\b|PLACEHOLDER|TODO|issue #|SITE-LINE|jsdom|\bgate\b/i.test(txt),label+': forbidden or internal wording');
+  assert.ok(!/\$\d|\bprice/i.test(txt),label+': no prices');
+  assert.ok(!/DESKTOP-[A-Z0-9]/.test(txt),label+': no PC host names');
+ };
+ const tierOf=p=>p>=100?'ready':p>=90?'almost':'building';
+ // ---- progress section
+ const pp=d.platformProgress;
+ assert.ok(pp,'platformProgress data');
+ const R=PP.compute(d); assert.deepEqual(R.problems,[],'platformProgress problems');
+ const pb=section('<!--PLATFORM-PROGRESS-->','<!--/PLATFORM-PROGRESS-->');
+ assert.ok(html.indexOf('<!--PLATFORM-PROGRESS-->')<keyIdx && html.indexOf('<!--PLATFORM-PROGRESS-->')<featIdx,'progress section sits before the colour key and the feature tables');
+ assert.ok(html.indexOf('<!--PLATFORM-PROGRESS-->')<html.indexOf('class="evidence-hero"')+1000000,'progress section present');
+ assert.ok(pb.includes('id="platform-progress-title">'+pp.title+'</h2>'),'progress heading');
+ assert.match(pp.updatedEastern,/^[A-Z][a-z]{2} \d{1,2}, \d{4}, \d{1,2}:\d{2} (AM|PM) Eastern$/,'progress stamp has date and Eastern time');
+ assert.ok(pb.includes(pp.updatedEastern),'progress stamp is shown');
+ assert.equal(pp.platforms.length,2);
+ for(const p of pp.platforms){
+  const list=d.features.filter(f=>f.group===p.group && !/^Retired/i.test(f.status||''));
+  const n={ready:0,almost:0,building:0}; for(const f of list) n[tierOf(f.percentComplete)]++;
+  const total=list.length, is=k=>k===1?'is':'are';
+  const sentence=p.name+': '+n.ready+' of '+total+' features '+is(n.ready)+' fully confirmed (Ready); '+n.almost+' more '+is(n.almost)+' almost there (90 to 98%); '+n.building+' '+is(n.building)+' earlier on (below 90%).';
+  assert.ok(pb.includes('<p class="pp-sentence"><strong>'+sentence+'</strong></p>'),'sentence counts equal the data for '+p.name+': '+sentence);
+  assert.ok(pb.includes('aria-label="'+p.name+': '+n.ready+' Ready, '+n.almost+' almost there, '+n.building+' earlier on, out of '+total+' features."'),'bar aria-label for '+p.name);
+  const card=pb.slice(pb.indexOf('id="platform-'+p.id+'"'));
+  const card1=card.slice(0,card.indexOf('</article>'));
+  // every feature of the group is listed exactly once, in its own tier list, and links to a real row
+  const links=[...card1.matchAll(/<li><a href="#([^"]+)">([^<]*)<\/a> <span class="pp-pct">(\d+)%<\/span>/g)];
+  assert.equal(links.length,total,'every counted feature is listed once for '+p.name);
+  for(const m of links){ const f=list.find(x=>x.name===m[2].replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'")); assert.ok(f,'listed feature exists: '+m[2]); assert.equal(Number(m[3]),f.percentComplete,'listed percent is live: '+f.name); assert.ok(html.includes('<tr id="'+m[1]+'" class="feat'),'link goes to the feature row: '+f.name); }
+  for(const f of list.filter(x=>tierOf(x.percentComplete)==='almost')) assert.ok(p.almostNeeds.some(x=>x.feature===f.name&&x.need.length<=PP.NEED_MAX),'plain line for '+f.name);
+  assert.ok(p.blockers.length>=3&&p.blockers.length<=5,'3 to 5 blockers for '+p.name);
+  const open=list.reduce((a,f)=>a+(Number(f.openIssues)||0),0);
+  assert.ok(card1.includes(open+' known problems are open across '+list.filter(f=>f.openIssues>0).length+' of the '+total),'open-problem count equals the data for '+p.name);
+ }
+ assert.ok(pb.includes('not on Google Play yet'),'the test-download note is shown');
+ privacy(pb.replace(/Google Play/g,'GP'),'progress section');
+ assert.ok(!/\b(tier|row|merged|jsdom|gate)\b/i.test(pb.replace(/<[^>]+>/g,' ').replace(/Home layouts and Customize layout[^<]*/g,'')),'no jargon words in the progress section');
+ // ---- matrix section
+ const m=d.platformMatrix; assert.ok(m,'platformMatrix data');
+ const M=PM.compute(d); assert.deepEqual(M.problems,[],'platformMatrix problems');
+ const mb=section('<!--PLATFORM-MATRIX-->','<!--/PLATFORM-MATRIX-->');
+ assert.ok(html.indexOf('<!--PLATFORM-MATRIX-->')>html.indexOf('<!--/PLATFORM-PROGRESS-->')&&html.indexOf('<!--PLATFORM-MATRIX-->')<keyIdx&&html.indexOf('<!--PLATFORM-MATRIX-->')<featIdx,'matrix follows the progress section, before the colour key');
+ assert.equal((mb.match(/class="pm-cell pm-s-/g)||[]).length,M.rows.length*M.columns.length,'one box per row and platform');
+ assert.equal(M.columns.length,6); assert.deepEqual(M.columns.map(c=>c.id),['win','and','tv','web','auto','ios']);
+ const cnt={works:0,mostly:0,fails:0,untested:0,na:0};
+ for(const r of m.rows) for(const c of M.columns){ const cell=r.cells[c.id]; cnt[cell.state]++;
+  const sym=PM.STATES[cell.state].symbol, word=cell.word||PM.STATES[cell.state].word;
+  assert.ok(mb.includes('data-pm="pm-d-'+r.id+'-'+c.id+'"'),'box exists '+r.id+'/'+c.id);
+  assert.ok(mb.includes('<span class="pm-sym" aria-hidden="true">'+sym+'</span><span class="pm-word">'+word+'</span>'),'symbol and word on '+r.id+'/'+c.id);
+  const li=mb.slice(mb.indexOf('id="pm-d-'+r.id+'-'+c.id+'"')); const li1=li.slice(0,li.indexOf('</li>'));
+  assert.ok(li1.length>50,'full detail listed under the table for '+r.id+'/'+c.id);
+  if(cell.state==='works'){ assert.ok(/Eastern/.test(li1)&&/\d{1,2}:\d{2}/.test(li1),'tick has a dated record: '+r.id+'/'+c.id);
+   for(const n of cell.rows) { const f=d.features.find(x=>x.name===n); assert.ok(f.percentComplete>=100&&!(f.openIssues>0),'tick maps only to Ready rows without open issues: '+r.id+'/'+c.id); } }
+  if(cell.state==='mostly'||cell.state==='fails'){ assert.ok(li1.includes('<dt>Still open</dt>')&&li1.includes('<dt>Result</dt>'),'reason and open problem named: '+r.id+'/'+c.id); assert.ok(/Eastern/.test(li1),'dated: '+r.id+'/'+c.id); }
+  if(cell.state==='untested'||cell.state==='na') assert.ok(li1.includes('<dt>Result</dt>'),'reason given: '+r.id+'/'+c.id);
+ }
+ assert.deepEqual(cnt,M.counts,'counts');
+ const applicable=cnt.works+cnt.mostly+cnt.fails+cnt.untested;
+ assert.ok(mb.includes(cnt.works+' of the '+applicable+' boxes that apply say Works, '+cnt.mostly+' say Mostly works, '+cnt.fails+' say Does not work and '+cnt.untested+' say Not tested yet. '+cnt.na+' boxes do not apply or are not available yet.'),'summary sentence matches the boxes');
+ assert.ok(mb.includes('The owner also tried an old Samsung Galaxy S3 (released 2012). Beebo did not work on it, and other major websites did not work on it either, so we consider phones that old too old for any modern app. Beebo needs Android 7.0 or newer.'),'Galaxy S3 note is shown exactly');
+ assert.ok(mb.includes('Owner’s own test; exact date not recorded.'),'owner-test label');
+ assert.ok(!/repeated|again tried|tested again/i.test(m.oldPhone.text),'the S3 test is not claimed to be repeated');
+ assert.ok(typeof m.oldPhone.dateNote_DATA_ONLY==='string','date placeholder lives in the data');
+ assert.ok(/id="pm-pop"/.test(mb)&&html.includes('/assets/platform-matrix.js'),'pop-up panel and its script');
+ privacy(mb,'matrix section');
+ for(const f of ['Samsung Galaxy S24 Ultra','Google Pixel 3','Samsung Galaxy S9+','i7-4790K','Core Ultra 7 270K Plus']) assert.ok(mb.includes(f),'device spec shown: '+f);
+ // links from the page top and the works-today box
+ const top=html.slice(0,html.indexOf('<!--PLATFORM-PROGRESS-->'));
+ assert.ok(/href="#platform-progress"/.test(top)&&/href="#platform-matrix"/.test(top),'both sections are linked from the page top');
+ // home page callout
+ const idx=fs.readFileSync(path.join(root,'index.html'),'utf8');
+ const cs=idx.slice(idx.indexOf('id="wwo-platforms-title"'),idx.indexOf('</aside>',idx.indexOf('id="wwo-platforms-title"')));
+ for(const c of R.platforms) assert.ok(cs.includes('<strong>'+c.name+':</strong> '+c.ready.length+' of '+c.stats.total+' features Ready (100%), '+c.almost.length+' almost there (90 to 98%), '+c.building.length+' earlier on (below 90%).'),'home callout counts: '+c.name);
+ assert.ok(cs.includes('release-evidence.html#platform-progress'),'home callout links to the section');
+ privacy(cs.replace(/Google Play/g,'GP'),'home callout');
+ // the page-wide stamp is untouched by this work
+ assert.ok(/<strong>Site last updated:<\/strong> <time datetime="[^"]+">/.test(html),'page stamp present');
+}
 console.log('PASS: tier boundaries, open-issue cap, Ready weight, generated rows, labels and the single colour-key filter');

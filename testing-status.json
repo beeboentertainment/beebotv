@@ -12899,5 +12899,2199 @@
         ]
       }
     ]
+  },
+  "platformProgress": {
+    "title": "How close are Windows and Android to 100%?",
+    "updatedEastern": "Oct 28, 2026, 3:19 AM Eastern",
+    "lead": "Here is the short answer for each app: how many features are fully confirmed, how many are almost there, how many are earlier on, and what still stands in the way. The counts are worked out from the feature table further down this page, so they always match it.",
+    "explain": [
+      "The percentage on a feature counts the checks it has passed: built, automated tests, tried on a real device, tried in real use, and confirmed by a person.",
+      "Any problem we know about and have not fixed keeps a feature at 90% at most, however many checks pass.",
+      "A feature is called Ready (100%) only when a person has looked at it and confirmed it, not just because a test passed."
+    ],
+    "note": "Both apps are still in testing. The Windows app can be downloaded today. The Android app is a test download that you install yourself; it is not on Google Play yet. Nothing here is a promise that a feature can never fail.",
+    "platforms": [
+      {
+        "id": "windows",
+        "name": "Windows app",
+        "group": "Windows desktop app",
+        "scope": "The Beebo server and player that run on your Windows PC.",
+        "almostNeeds": [
+          {
+            "feature": "Installer and self-update",
+            "need": "A start-up warning can still appear after an update. The fix is written but is not in a published download yet.",
+            "basis": [
+              "Secure media server: FAIL"
+            ]
+          },
+          {
+            "feature": "Library sharing with another household",
+            "need": "Never tried start to finish between two homes. Three known problems are open and the sharing terms are not final.",
+            "basis": [
+              "Decide the sharing terms"
+            ]
+          },
+          {
+            "feature": "Home layouts and Customize layout (desktop)",
+            "need": "Two layout problems have fixes written, but nobody has checked them in the installed Windows app yet.",
+            "basis": [
+              "awaiting an installed-app check"
+            ]
+          }
+        ],
+        "blockers": [
+          {
+            "id": "open-problems",
+            "title": "Known problems are still open",
+            "text": "{openIssues} known problems are open across {openFeatures} of the {total} Windows features. While a problem is open, that feature cannot go above 90%.",
+            "features": [],
+            "quotes": []
+          },
+          {
+            "id": "fixes-not-published",
+            "title": "Fixes written, not yet in a published download",
+            "text": "For several features the fix exists in our code but is not in the Windows download you can get today, or nobody has checked it on an installed app yet. Examples: Installer and self-update, Library sharing, Home layouts and the Picture frame.",
+            "features": [
+              "Installer and self-update",
+              "Library sharing with another household",
+              "Home layouts and Customize layout (desktop)",
+              "Picture frame (photo wall for a tablet or TV)"
+            ],
+            "quotes": [
+              {
+                "feature": "Installer and self-update",
+                "quote": "which is in no published build"
+              },
+              {
+                "feature": "Library sharing with another household",
+                "quote": "not yet in a published download"
+              },
+              {
+                "feature": "Home layouts and Customize layout (desktop)",
+                "quote": "awaiting an installed-app check"
+              },
+              {
+                "feature": "Picture frame (photo wall for a tablet or TV)",
+                "quote": "are in no published build, and no person has tried them"
+              }
+            ]
+          },
+          {
+            "id": "real-hardware",
+            "title": "Not yet tried on real hardware",
+            "text": "Remote Desktop has never run on a real PC. A real restart of the PC has not been tried for Start with Windows. Phone speakers were mostly checked with the sound muted, so a person still has to judge the timing by ear.",
+            "features": [
+              "Remote Desktop (see and control the PC)",
+              "Update modes and start with Windows",
+              "Phone speakers (phones play the film's sound)"
+            ],
+            "quotes": [
+              {
+                "feature": "Remote Desktop (see and control the PC)",
+                "quote": "never run on a real PC"
+              },
+              {
+                "feature": "Update modes and start with Windows",
+                "quote": "a real restart of the PC has NOT been done"
+              },
+              {
+                "feature": "Phone speakers (phones play the film's sound)",
+                "quote": "Everything was muted"
+              }
+            ]
+          },
+          {
+            "id": "still-being-built",
+            "title": "Many features are still being built",
+            "text": "{inDev} of the {total} Windows features are still labelled In development. Some, such as the Picture frame and Kitchen announcements, are switched off until you turn them on.",
+            "features": [
+              "Picture frame (photo wall for a tablet or TV)",
+              "Kitchen announcements (messages to phones)"
+            ],
+            "quotes": [
+              {
+                "feature": "Picture frame (photo wall for a tablet or TV)",
+                "quote": "off until turned on"
+              },
+              {
+                "feature": "Kitchen announcements (messages to phones)",
+                "quote": "off by default"
+              }
+            ]
+          },
+          {
+            "id": "more-real-use",
+            "title": "Needs more real-world use",
+            "text": "Only {realWorld} of the {total} Windows features have passed a real-world check (use like a real person, in real conditions), and {realDevice} have passed a real-device check. So far the testing has been done by Nick and our own testers. A person is still needed on every release.",
+            "features": [],
+            "quotes": []
+          }
+        ]
+      },
+      {
+        "id": "android",
+        "name": "Android app",
+        "group": "Android phone app",
+        "scope": "The phone and tablet app, including Beebo Auto (Android Auto), the Android TV and Fire TV screens and Link a TV.",
+        "almostNeeds": [
+          {
+            "feature": "Opening the app and the five tabs",
+            "need": "Two connection problems (pairing, and a typed address showing a warning). Fixes are written but not yet seen working on a phone.",
+            "basis": [
+              "The repairs are merged but not verified"
+            ]
+          },
+          {
+            "feature": "Playing films, seeking, picture-in-picture",
+            "need": "Three problems are open, for example Home’s “Continue watching” sometimes shows empty and the first “Next” jump needs a retest.",
+            "basis": [
+              "Continue watching",
+              "online Next"
+            ]
+          },
+          {
+            "feature": "Away from home (direct, then relay)",
+            "need": "Four problems open, mainly: Chrome did not recover after switching Wi-Fi to 5G, and some same-Wi-Fi connections went through Relay.",
+            "basis": [
+              "failed in 3 of 4 runs",
+              "5 of the PC’s last 30"
+            ]
+          },
+          {
+            "feature": "Campsite host start and stop",
+            "need": "Two problems open. Start and stop works on home Wi-Fi; hotspot and mobile-data cases and a guest with a SIM are untested.",
+            "basis": [
+              "A SIM-equipped guest still needs"
+            ]
+          },
+          {
+            "feature": "Audiobooks",
+            "need": "One open problem to recheck: a possible sign-out when deleting a bookmark, and one member's place carrying over to another.",
+            "basis": [
+              "bookmark’s trash tap"
+            ]
+          },
+          {
+            "feature": "Pack for a trip (download planner)",
+            "need": "One small problem open (a blank alert title). Running low on phone space and stopping halfway are not tested yet.",
+            "basis": [
+              "PC Bell shows a blank"
+            ]
+          },
+          {
+            "feature": "Campsite games",
+            "need": "Two game bugs have fixes written but not yet retried on two real phones. Several games were never played with a guest.",
+            "basis": [
+              "awaiting an installed-build check on two phones",
+              "Every other game has none"
+            ]
+          },
+          {
+            "feature": "Chromecast",
+            "need": "Six problems open, mainly: captions do not show on the TV yet, and the first cast right after switching a TV on can do nothing.",
+            "basis": [
+              "no caption text was seen on the TV",
+              "did nothing"
+            ]
+          },
+          {
+            "feature": "Beebo Auto (Android Auto)",
+            "need": "Only one real car so far. A fix for the settings screen is waiting, and steering-wheel buttons, video and a second car are untested.",
+            "basis": [
+              "One car is not enough to call it ready"
+            ]
+          },
+          {
+            "feature": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+            "need": "One small problem open: a settings label is cut off. A person still has to try the screen reader (TalkBack) by ear.",
+            "basis": [
+              "TalkBack by ear"
+            ]
+          }
+        ],
+        "blockers": [
+          {
+            "id": "open-problems",
+            "title": "Known problems are still open",
+            "text": "{openIssues} known problems are open across {openFeatures} of the {total} Android features. While a problem is open, that feature cannot go above 90%.",
+            "features": [],
+            "quotes": []
+          },
+          {
+            "id": "fixes-not-seen",
+            "title": "Fixes written, not yet seen working on a phone",
+            "text": "Several fixes exist in our code, but nobody has yet seen them work on a real phone or TV, or they are not in a published download. Examples: Campsite games, Chromecast captions, Beebo Auto's settings screen and the Trip Journal video export.",
+            "features": [
+              "Campsite games",
+              "Chromecast",
+              "Beebo Auto (Android Auto)",
+              "Trip Journal (trips, recap, video export)"
+            ],
+            "quotes": [
+              {
+                "feature": "Campsite games",
+                "quote": "awaiting an installed-build check on two phones"
+              },
+              {
+                "feature": "Chromecast",
+                "quote": "not yet seen on a TV"
+              },
+              {
+                "feature": "Beebo Auto (Android Auto)",
+                "quote": "not merged"
+              },
+              {
+                "feature": "Trip Journal (trips, recap, video export)",
+                "quote": "has not been tried by a person"
+              }
+            ]
+          },
+          {
+            "id": "real-car",
+            "title": "Needs more real-car tests",
+            "text": "Beebo Auto has been tried in one real car, and one car is not enough to call it ready. Car party has no real passing test recorded yet.",
+            "features": [
+              "Beebo Auto (Android Auto)",
+              "Car party (host and passengers)"
+            ],
+            "quotes": [
+              {
+                "feature": "Beebo Auto (Android Auto)",
+                "quote": "One car is not enough to call it ready"
+              },
+              {
+                "feature": "Car party (host and passengers)",
+                "quote": "No real Car Party pass is recorded here"
+              }
+            ]
+          },
+          {
+            "id": "real-tv",
+            "title": "Needs real TV tests",
+            "text": "No approved Android TV or Fire TV has been tested yet, and Link a TV has not yet paired with a real TV. Casting to a TV still has open problems, such as captions not showing.",
+            "features": [
+              "Android TV and Fire TV screens",
+              "Link a TV",
+              "Chromecast"
+            ],
+            "quotes": [
+              {
+                "feature": "Android TV and Fire TV screens",
+                "quote": "no approved real Android TV or Fire TV was supplied"
+              },
+              {
+                "feature": "Link a TV",
+                "quote": "successful Smart TV/Roku/Android TV pairing"
+              },
+              {
+                "feature": "Chromecast",
+                "quote": "no caption text was seen on the TV"
+              }
+            ]
+          },
+          {
+            "id": "equipment-listener",
+            "title": "Needs equipment, or a person listening",
+            "text": "Wake my PC needs a spare sleeping PC to test properly. Wireless speakers were tested with the sound muted, so a person still has to listen to judge clicks and timing.",
+            "features": [
+              "Wake my PC",
+              "Wireless speakers"
+            ],
+            "quotes": [
+              {
+                "feature": "Wake my PC",
+                "quote": "An approved spare sleeping PC is needed"
+              },
+              {
+                "feature": "Wireless speakers",
+                "quote": "A person must check audible"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "platformMatrix": {
+    "title": "What works, platform by platform",
+    "updatedEastern": "Oct 28, 2026, 3:19 AM Eastern",
+    "lead": "A tick means a person has confirmed it and nothing known is open for that use. Most things are not at that level yet, so many boxes say “Mostly works” and name the known problem. Select a box (or tap it on a phone) to see how it was tested, on which devices, and what is still open. The same details are listed in full under the table.",
+    "quick": [
+      {
+        "question": "Can my Android phone watch a film from away from home?",
+        "cell": [
+          "away-relay",
+          "and"
+        ]
+      },
+      {
+        "question": "Does casting to a TV work?",
+        "cell": [
+          "cast",
+          "and"
+        ]
+      },
+      {
+        "question": "Does Beebo work in a car with Android Auto?",
+        "cell": [
+          "auto-car",
+          "auto"
+        ]
+      }
+    ],
+    "devicesTitle": "Our test devices",
+    "devicesLead": "We test on older equipment as well as a new phone, so you can see what to expect on yours. These are the devices named in the records on this page.",
+    "devices": [
+      {
+        "id": "s24",
+        "name": "Samsung Galaxy S24 Ultra (phone)",
+        "specs": "Android 16. Released 2024. Our newest phone."
+      },
+      {
+        "id": "pixel3",
+        "name": "Google Pixel 3 (phone)",
+        "specs": "Android 12. Released 2018."
+      },
+      {
+        "id": "s9",
+        "name": "Samsung Galaxy S9+ (phone)",
+        "specs": "Android 10. Released 2018."
+      },
+      {
+        "id": "pc4",
+        "name": "Older 4-core Windows PC",
+        "specs": "Windows 10 Pro, Intel Core i7-4790K (released 2014, 4 cores and 8 threads), about 20 GB of memory, Intel HD 4600 graphics. Used for most Windows and browser tests."
+      },
+      {
+        "id": "pc24",
+        "name": "Newer 24-core Windows PC",
+        "specs": "Windows 11 Home, Intel Core Ultra 7 270K Plus (24 cores), about 31 GB of memory. Used as the test server for phone tests that were run on it."
+      },
+      {
+        "id": "tv",
+        "name": "Samsung 70-inch smart TV (2024)",
+        "specs": "Built-in Google Cast. Used for casting tests."
+      },
+      {
+        "id": "chromecast",
+        "name": "Chromecast on a second TV",
+        "specs": "Model not recorded."
+      },
+      {
+        "id": "car",
+        "name": "One real car with Android Auto",
+        "specs": "Make and model not recorded. Tried with the Galaxy S24 Ultra."
+      }
+    ],
+    "oldPhone": {
+      "title": "Very old phones",
+      "text": "The owner also tried an old Samsung Galaxy S3 (released 2012). Beebo did not work on it, and other major websites did not work on it either, so we consider phones that old too old for any modern app. Beebo needs Android 7.0 or newer.",
+      "label": "Owner’s own test; exact date not recorded.",
+      "shortText": "Very old phones: the owner also tried an old Samsung Galaxy S3 (released 2012). Beebo did not work on it, and other major websites did not work on it either, so we consider phones that old too old for any modern app. Beebo needs Android 7.0 or newer.",
+      "dateNote_DATA_ONLY": "PLACEHOLDER: Nick will supply the date of the Galaxy S3 test. Never shown on the page.",
+      "minimumAndroid": "Android 7.0 (API level 24), the app’s own minimum setting"
+    },
+    "columns": [
+      {
+        "id": "win",
+        "name": "Windows app",
+        "sub": "the PC server and player"
+      },
+      {
+        "id": "and",
+        "name": "Android phone app",
+        "sub": "phones and tablets",
+        "note": "Very old phones: the owner also tried an old Samsung Galaxy S3 (released 2012). Beebo did not work on it, and other major websites did not work on it either, so we consider phones that old too old for any modern app. Beebo needs Android 7.0 or newer. (Owner’s own test; exact date not recorded.)"
+      },
+      {
+        "id": "tv",
+        "name": "Android TV",
+        "sub": "and Fire TV screens"
+      },
+      {
+        "id": "web",
+        "name": "Web browser",
+        "sub": "Chrome on a PC"
+      },
+      {
+        "id": "auto",
+        "name": "Beebo Auto",
+        "sub": "Android Auto in a car"
+      },
+      {
+        "id": "ios",
+        "name": "iPhone / Apple TV",
+        "sub": "native apps"
+      }
+    ],
+    "rows": [
+      {
+        "id": "watch-home",
+        "question": "Watch a film at home (same Wi-Fi)",
+        "cells": {
+          "win": {
+            "state": "untested",
+            "why": "We tested the desktop app’s library screens, and films in the web player, but no test of a film playing inside the desktop app itself is listed on this page.",
+            "rows": [
+              "Library, player and web player"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "desktop-library-views"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "All seven Movies view modes in the desktop app drew correctly.",
+            "notCovered": "A film playing inside the desktop app itself."
+          },
+          "and": {
+            "state": "mostly",
+            "rows": [
+              "Playing films, seeking, picture-in-picture",
+              "Opening the app and the five tabs"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "portrait-after-player-and-pip"
+              },
+              {
+                "kind": "check",
+                "id": "surprise-me-playlists-tester57"
+              },
+              {
+                "kind": "check",
+                "id": "opening-the-app-three-starts"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "Three fresh starts opened straight to Home. Random films started in about 1.5 seconds, seeks played again in 0.2 to 1.5 seconds, and the app came back upright after the player and picture-in-picture closed.",
+            "why": "Films play and seek on the phone in our tests, but known problems are still open.",
+            "open": "Home’s “Continue watching” can show empty after a short session, and the first online “Next” jump needs a retest.",
+            "notCovered": "One phone only for these two checks. Sound by ear on other phones.",
+            "quotes": [
+              {
+                "feature": "Playing films, seeking, picture-in-picture",
+                "quote": "Continue watching"
+              },
+              {
+                "feature": "Playing films, seeking, picture-in-picture",
+                "quote": "online Next"
+              }
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "No approved real Android TV or Fire TV has been tested yet, so nothing is recorded for the TV screens.",
+            "rows": [
+              "Android TV and Fire TV screens"
+            ],
+            "quotes": [
+              {
+                "feature": "Android TV and Fire TV screens",
+                "quote": "no approved real Android TV or Fire TV was supplied"
+              }
+            ]
+          },
+          "web": {
+            "state": "mostly",
+            "rows": [
+              "Library, player and web player"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "web-player-play-seek-quality-captions"
+              },
+              {
+                "kind": "check",
+                "id": "web-player-pip-and-keys"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "In Chrome the film started by itself, paused, jumped to a new spot in under 4 seconds with the matching caption, kept its place when the quality changed, and played in a floating picture-in-picture window.",
+            "why": "The browser player works in our tests, with known problems open.",
+            "open": "A “Resume from…?” box can appear over a film that is already playing, and the keyboard keys stop after picture-in-picture closes until you click the player.",
+            "notCovered": "Sound in the browser was not heard on that PC.",
+            "quotes": [
+              {
+                "feature": "Library, player and web player",
+                "quote": "Resume from X?"
+              },
+              {
+                "feature": "Library, player and web player",
+                "quote": "stop working after Picture-in-Picture is closed"
+              }
+            ]
+          },
+          "auto": {
+            "state": "untested",
+            "why": "Video on the car screen has not been tested yet. Only the first screens and sound of one episode were seen in one car.",
+            "rows": [
+              "Beebo Auto (Android Auto)"
+            ],
+            "quotes": [
+              {
+                "feature": "Beebo Auto (Android Auto)",
+                "quote": "video on the car screen"
+              }
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "away-relay",
+        "question": "Watch a film away from home, through Beebo Relay",
+        "cells": {
+          "win": {
+            "state": "na",
+            "why": "The Windows PC is the computer that sends the film. Use the Android phone and web browser columns to see what it is like to watch."
+          },
+          "and": {
+            "state": "mostly",
+            "rows": [
+              "Away from home (direct, then relay)"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "away-6-minute-5g-run"
+              },
+              {
+                "kind": "owner",
+                "feature": "Away from home (direct, then relay)",
+                "date": "Oct 27, 2026, 12:30 PM Eastern"
+              },
+              {
+                "kind": "device",
+                "feature": "Away from home (direct, then relay)",
+                "date": "Oct 27, 2026, 11:50 AM to 12:30 PM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "On 5G with Wi-Fi off, a real film played through Beebo Relay for a 6-minute run with no stalls and no disconnects; seeking, pausing, skipping and picture-in-picture all worked, and switching Wi-Fi off and on resumed at the same place 8 of 8 times. Nick was present and said the video and sound worked well.",
+            "why": "It played well in our away-from-home tests, but four known problems are open.",
+            "open": "The first play after an app update once took about 70 seconds. Some connections on the home Wi-Fi went through Relay when they should have been direct (a fix is under review). Leaving Wi-Fi shows 1.5 to 4.5 seconds of black picture. Two people on Relay at once have not been tried.",
+            "notCovered": "One phone and one film. Sessions much longer than 5 minutes, screen-off, casting and two viewers at once.",
+            "quotes": [
+              {
+                "feature": "Away from home (direct, then relay)",
+                "quote": "First play over 5G after a phone app update took about 70 seconds"
+              },
+              {
+                "feature": "Away from home (direct, then relay)",
+                "quote": "5 of the PC’s last 30"
+              }
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "Away-from-home viewing on the Android TV app has not been tested. (A Samsung TV’s built-in browser was tried once and had problems.)",
+            "rows": [
+              "Android TV and Fire TV screens",
+              "Away from home (direct, then relay)"
+            ]
+          },
+          "web": {
+            "state": "mostly",
+            "rows": [
+              "Away from home (direct, then relay)"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "away-soak-52-minutes"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "A film played for 52 minutes 36 seconds through the away-from-home address in Chrome with the tab in front: five checks, no stall, no reconnecting banner and no quality drop.",
+            "why": "The browser played for nearly an hour away from home, with known problems open.",
+            "open": "The link drops when the browser tab is in the background (reconnecting takes about 30 seconds). In Chrome on a phone, switching from Wi-Fi to 5G during play failed in 3 of 4 runs on Oct 26 and has not been retested.",
+            "notCovered": "The route (direct or Relay) was not recorded. The sound was not heard. Nick was away for this test.",
+            "quotes": [
+              {
+                "feature": "Away from home (direct, then relay)",
+                "quote": "failed in 3 of 4 runs"
+              }
+            ]
+          },
+          "auto": {
+            "state": "untested",
+            "why": "Away-from-home viewing in the car has not been tested.",
+            "rows": [
+              "Beebo Auto (Android Auto)",
+              "Away from home (direct, then relay)"
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "away-direct",
+        "question": "Watch a film away from home, over a direct connection (no Relay)",
+        "cells": {
+          "win": {
+            "state": "na",
+            "why": "The Windows PC is the computer that sends the film. Use the Android phone and web browser columns to see what it is like to watch."
+          },
+          "and": {
+            "state": "untested",
+            "why": "Our away-from-home phone tests went through Beebo Relay. A direct route to the second household’s PC was not tested.",
+            "rows": [
+              "Away from home (direct, then relay)"
+            ],
+            "evidence": [
+              {
+                "kind": "device",
+                "feature": "Away from home (direct, then relay)",
+                "date": "Oct 24, 2026, 8:05 PM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "A partial record from Oct 24 tried a direct then a relay route on the owner’s own home server, and then Relay only on a second household’s PC.",
+            "notCovered": "A direct route to the second household’s PC.",
+            "quotes": [
+              {
+                "feature": "Away from home (direct, then relay)",
+                "quote": "a direct route to the second household’s PC was not tested"
+              }
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "Not tested on an Android TV.",
+            "rows": [
+              "Android TV and Fire TV screens"
+            ]
+          },
+          "web": {
+            "state": "untested",
+            "why": "The browser away-from-home test did not record whether the route was direct or through Relay.",
+            "rows": [
+              "Away from home (direct, then relay)"
+            ],
+            "quotes": [
+              {
+                "feature": "Away from home (direct, then relay)",
+                "quote": "the route was not recorded"
+              }
+            ]
+          },
+          "auto": {
+            "state": "untested",
+            "why": "Not tested in a car.",
+            "rows": [
+              "Beebo Auto (Android Auto)"
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "cast",
+        "question": "Cast a film to a TV (Chromecast)",
+        "cells": {
+          "win": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Chromecast"
+            ]
+          },
+          "and": {
+            "state": "mostly",
+            "rows": [
+              "Chromecast"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "cast-seek-after-end-replay"
+              },
+              {
+                "kind": "device",
+                "feature": "Chromecast",
+                "date": "Oct 27, 2026, 9:05 to 9:17 AM Eastern"
+              },
+              {
+                "kind": "owner",
+                "feature": "Chromecast",
+                "date": "Oct 26, 2026, 6:18 AM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "tv",
+              "chromecast",
+              "pc4"
+            ],
+            "tested": "A real film cast from the phone showed on the Samsung TV and a Chromecast TV with picture and sound; pause, resume, jumps and quality changes worked, stopping the cast handed back to the phone, and after a film ended the seek bar and Replay worked. Nick watched the TV and heard the sound.",
+            "why": "Casting plays with picture and sound in our tests, but six known problems are open.",
+            "open": "Captions do not show on the TV yet, the first cast right after switching a TV on can do nothing (no error shown), and the TV volume slider does nothing audible.",
+            "notCovered": "Only a Samsung TV and one Chromecast. Casting away from home.",
+            "quotes": [
+              {
+                "feature": "Chromecast",
+                "quote": "did nothing"
+              },
+              {
+                "feature": "Chromecast",
+                "quote": "no caption text was seen on the TV"
+              }
+            ]
+          },
+          "tv": {
+            "state": "na",
+            "why": "Casting goes from a phone to a TV, so it does not apply to the Android TV app."
+          },
+          "web": {
+            "state": "untested",
+            "why": "Casting from Chrome has not been tested.",
+            "rows": [
+              "Chromecast"
+            ]
+          },
+          "auto": {
+            "state": "na",
+            "why": "Beebo Auto runs on the car screen, so casting does not apply."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "cast-captions",
+        "question": "Show captions on the TV while casting",
+        "cells": {
+          "win": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Chromecast"
+            ]
+          },
+          "and": {
+            "state": "fails",
+            "rows": [
+              "Chromecast"
+            ],
+            "evidence": [
+              {
+                "kind": "device",
+                "feature": "Chromecast",
+                "date": "Oct 26, 2026, 6:18:27 AM Eastern"
+              },
+              {
+                "kind": "device",
+                "feature": "Chromecast",
+                "date": "Oct 26, 2026, 10:26 AM Eastern"
+              },
+              {
+                "kind": "device",
+                "feature": "Chromecast",
+                "date": "Oct 27, 2026, 9:38 to 9:50 AM Eastern"
+              },
+              {
+                "kind": "check",
+                "id": "cast-captions-off-on-no-reload"
+              }
+            ],
+            "devices": [
+              "s24",
+              "tv",
+              "chromecast",
+              "pc4"
+            ],
+            "tested": "Captions shown on the phone were missing on the TV in every recorded run: four runs on the Samsung TV and one on the Chromecast on Oct 26, and again on Oct 27. A fix was written but has not been seen working on a TV; the one check on the newest build was inconclusive.",
+            "why": "Captions have not appeared on the TV in our recorded runs, and the fix is not yet confirmed.",
+            "open": "Captions on the TV (open). Switching captions off and on during a cast does not restart the film, which does work.",
+            "notCovered": "Only the Samsung TV and one Chromecast, one phone.",
+            "quotes": [
+              {
+                "feature": "Chromecast",
+                "quote": "no caption text was seen on the TV"
+              }
+            ]
+          },
+          "tv": {
+            "state": "na",
+            "why": "Casting goes from a phone to a TV, so it does not apply to the Android TV app."
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Chromecast"
+            ]
+          },
+          "auto": {
+            "state": "na",
+            "why": "Beebo Auto runs on the car screen, so casting does not apply."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "cast-volume",
+        "question": "Change the TV volume from the phone while casting",
+        "cells": {
+          "win": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Chromecast"
+            ]
+          },
+          "and": {
+            "state": "fails",
+            "rows": [
+              "Chromecast"
+            ],
+            "evidence": [
+              {
+                "kind": "device",
+                "feature": "Chromecast",
+                "date": "Oct 26, 2026, 10:11 AM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "tv",
+              "pc4"
+            ],
+            "tested": "With Nick listening in the room, the phone’s volume slider and Unmute button made no audible difference on the Samsung TV (Mute worked).",
+            "why": "The volume slider did nothing audible on the Samsung TV in our test. A fix was written but has not been checked on the TV.",
+            "open": "TV volume from the phone (open).",
+            "notCovered": "Only the Samsung TV was tried; the Chromecast volume was not checked by ear.",
+            "quotes": [
+              {
+                "feature": "Chromecast",
+                "quote": "volume slider and Unmute do nothing audible"
+              }
+            ]
+          },
+          "tv": {
+            "state": "na",
+            "why": "Casting goes from a phone to a TV, so it does not apply to the Android TV app."
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Chromecast"
+            ]
+          },
+          "auto": {
+            "state": "na",
+            "why": "Beebo Auto runs on the car screen, so casting does not apply."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "download-offline",
+        "question": "Download a film or a trip pack to watch offline",
+        "cells": {
+          "win": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "tv": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "web": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "auto": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "and": {
+            "state": "mostly",
+            "rows": [
+              "Pack for a trip (download planner)"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "pack-for-a-trip-counts-agree"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "The Pack for a trip screen and the Downloads screen agreed: 2 of 2 films ready for offline, 139.8 MB, and 5 downloads totalling 160.5 MB, with Nick watching.",
+            "why": "The trip planner and downloads agree in our test, but one problem is open and several cases are untested.",
+            "open": "The PC notification bell shows a blank title for the “Downloads running low” alert.",
+            "notCovered": "Building a new plan, packing to the end, playing a downloaded film offline in airplane mode, running low on phone space and stopping halfway.",
+            "quotes": [
+              {
+                "feature": "Pack for a trip (download planner)",
+                "quote": "PC Bell shows a blank"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "music",
+        "question": "Play music",
+        "cells": {
+          "win": {
+            "state": "mostly",
+            "rows": [
+              "Music on the PC (library, mixes, desktop player)"
+            ],
+            "evidence": [
+              {
+                "kind": "device",
+                "feature": "Music on the PC (library, mixes, desktop player)",
+                "date": "Oct 26, 2026, 2:08 PM Eastern"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "With new songs added and a rescan, Recently added started, Next song moved on and Stop closed the player. This PC has no speakers.",
+            "why": "Mixes and the player worked in our test, with one problem open and no one hearing the sound.",
+            "open": "A mix pressed before a rescan can fail for 1 to 2 minutes with a vague message, and mix cards say Ready even when no song is long enough.",
+            "notCovered": "Sound was not heard on that PC.",
+            "quotes": [
+              {
+                "feature": "Music on the PC (library, mixes, desktop player)",
+                "quote": "That mix could not be started"
+              }
+            ]
+          },
+          "and": {
+            "state": "works",
+            "rows": [
+              "Music on the phone (albums, songs, player, sleep timer)"
+            ],
+            "evidence": [
+              {
+                "kind": "owner",
+                "feature": "Music on the phone (albums, songs, player, sleep timer)",
+                "date": "Oct 26, 2026, 11:10 AM Eastern"
+              },
+              {
+                "kind": "device",
+                "feature": "Music on the phone (albums, songs, player, sleep timer)",
+                "date": "Oct 26, 2026, 11:55 AM Eastern"
+              },
+              {
+                "kind": "owner",
+                "feature": "Music on the phone (albums, songs, player, sleep timer)",
+                "date": "Oct 26, 2026, 11:37 AM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "Albums, songs, the player and the sleep timer were checked on a real phone at a second household, and Nick confirmed the feature as Ready.",
+            "notCovered": "Per the feature’s own record, see its row for what was not tried."
+          },
+          "tv": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Android TV and Fire TV screens"
+            ]
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Music on the PC (library, mixes, desktop player)"
+            ]
+          },
+          "auto": {
+            "state": "untested",
+            "why": "The Movies and Music tabs on the car screen have not been tested yet.",
+            "rows": [
+              "Beebo Auto (Android Auto)"
+            ],
+            "quotes": [
+              {
+                "feature": "Beebo Auto (Android Auto)",
+                "quote": "the Movies and Music tabs"
+              }
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "audiobooks",
+        "question": "Listen to audiobooks",
+        "cells": {
+          "win": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Audiobooks"
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Audiobooks"
+            ]
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Audiobooks"
+            ]
+          },
+          "auto": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Audiobooks"
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "and": {
+            "state": "mostly",
+            "rows": [
+              "Audiobooks"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "audiobook-speed-stays-1x"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "After “Reset to 1x” the audiobook speed stayed at 1x after leaving the player, reopening it from the mini player and tapping a bookmark. Nick heard the book.",
+            "why": "Playback and the speed fix passed, with one problem open.",
+            "open": "A possible sign-out when deleting a bookmark, and one member’s place possibly carrying over to the next member, still need a recheck.",
+            "notCovered": "A faster speed kept across a reopen, adding and undoing bookmarks, the sleep timer and real recordings.",
+            "quotes": [
+              {
+                "feature": "Audiobooks",
+                "quote": "bookmark’s trash tap"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "podcasts-radio",
+        "question": "Listen to podcasts and radio",
+        "cells": {
+          "win": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Podcasts and radio"
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Podcasts and radio"
+            ]
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Podcasts and radio"
+            ]
+          },
+          "auto": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Podcasts and radio"
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "and": {
+            "state": "works",
+            "rows": [
+              "Podcasts and radio"
+            ],
+            "evidence": [
+              {
+                "kind": "owner",
+                "feature": "Podcasts and radio",
+                "date": "Oct 27, 2026, 3:14 to 3:17 PM Eastern"
+              },
+              {
+                "kind": "check",
+                "id": "podcast-follow-reads-following"
+              },
+              {
+                "kind": "owner",
+                "feature": "Podcasts and radio",
+                "date": "Oct 27, 2026, about 3:00 PM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "Following and unfollowing a podcast changed the button within about 2 seconds, and earlier checks covered finding, playing and radio. Nick confirmed the feature as Ready.",
+            "notCovered": "The episode queue, episode downloads, the sleep timer, and radio favourites and recording were not covered by the newest check; see the feature’s own row.",
+            "note": "A newer unpublished test build also saw one station on the Pixel 3 that Next did not move past (noticed, not yet part of this row’s open issues)."
+          }
+        }
+      },
+      {
+        "id": "photo-backup",
+        "question": "Back up phone photos to my PC",
+        "cells": {
+          "tv": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "web": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "auto": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "and": {
+            "state": "mostly",
+            "rows": [
+              "Photos and phone backups (timeline, albums, viewer)"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "camera-backup-counter"
+              },
+              {
+                "kind": "owner",
+                "feature": "Photos and phone backups (timeline, albums, viewer)",
+                "date": "Oct 26, 2026, 11:10 AM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "With the “Keep location in photo backups” switch on, a new photo was backed up within seconds and the phone’s counter (21 files) matched the PC’s backup folder, the desktop app and the Chrome Photos page.",
+            "why": "New photos back up correctly in our tests, but three known problems are open.",
+            "open": "The copy is not byte-for-byte identical (two direction markers in the location data are missing), videos sent from the phone lose their location, and a missing default folder blocks adding other folders on the PC.",
+            "notCovered": "Videos, a byte-for-byte copy check, the first-time permission box and the “Select photos only” mode.",
+            "quotes": [
+              {
+                "feature": "Photos and phone backups (timeline, albums, viewer)",
+                "quote": "two direction markers are missing"
+              }
+            ]
+          },
+          "win": {
+            "state": "mostly",
+            "rows": [
+              "Photos and phone backups (timeline, albums, viewer)"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "camera-backup-counter"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "The PC’s backup folder held the same 21 files as the phone’s counter, and the desktop app showed them.",
+            "why": "The PC received the photos correctly, with three known problems open for the feature.",
+            "open": "See the phone column: the copy is not yet byte-for-byte, and a missing default folder on the PC blocks adding folders.",
+            "notCovered": "Videos and a byte-for-byte check.",
+            "quotes": [
+              {
+                "feature": "Photos and phone backups (timeline, albums, viewer)",
+                "quote": "missing saved default folder"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "browse-photos",
+        "question": "Browse my photos",
+        "cells": {
+          "tv": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Photos and phone backups (timeline, albums, viewer)"
+            ]
+          },
+          "auto": {
+            "state": "na",
+            "why": "Photos are not part of Beebo Auto."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "win": {
+            "state": "mostly",
+            "rows": [
+              "Photos and phone backups (timeline, albums, viewer)"
+            ],
+            "evidence": [
+              {
+                "kind": "owner",
+                "feature": "Photos and phone backups (timeline, albums, viewer)",
+                "date": "Oct 26, 2026, 2:01 PM Eastern"
+              }
+            ],
+            "devices": [
+              "pc4",
+              "s24"
+            ],
+            "tested": "The PC Photos screens (Timeline, Videos, Albums, Folders & backup) were opened and a camera backup arrived.",
+            "why": "The PC Photos screens worked in a partial test, with known problems open for photos.",
+            "open": "See the open photo problems listed for backups; a missing default folder on the PC can block adding folders.",
+            "notCovered": "Only part of the screens were exercised; the record is marked partial.",
+            "quotes": [
+              {
+                "feature": "Photos and phone backups (timeline, albums, viewer)",
+                "quote": "missing saved default folder"
+              }
+            ]
+          },
+          "and": {
+            "state": "mostly",
+            "rows": [
+              "Photos and phone backups (timeline, albums, viewer)"
+            ],
+            "evidence": [
+              {
+                "kind": "owner",
+                "feature": "Photos and phone backups (timeline, albums, viewer)",
+                "date": "Oct 26, 2026, 11:10 AM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "A new photo that was backed up appeared in the phone’s Library timeline, and Nick saw it.",
+            "why": "The timeline shows backed-up photos in our test, with three photo problems still open.",
+            "open": "The same three photo problems as for backups.",
+            "notCovered": "Albums, the map, pinch to zoom on a real phone and a full phone folder.",
+            "quotes": [
+              {
+                "feature": "Photos and phone backups (timeline, albums, viewer)",
+                "quote": "Check map/privacy, real two-finger pinch"
+              }
+            ]
+          },
+          "web": {
+            "state": "mostly",
+            "rows": [
+              "Photos and phone backups (timeline, albums, viewer)"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "photos-page-25-of-25-thumbnails"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "Chrome’s Photos page loaded all 25 of 25 thumbnails (none broken, 3 videos) and opening one showed a viewer whose close button returned to the same place.",
+            "why": "The browser Photos page worked in our test (a tester alone, Nick away), with problems open for the feature.",
+            "open": "The browser Back button leaves the Photos page instead of closing the photo (a possible problem).",
+            "notCovered": "The Albums and Videos tabs, playing a video and the arrows."
+          }
+        }
+      },
+      {
+        "id": "campsite",
+        "question": "Play Campsite games with other phones, with no internet",
+        "cells": {
+          "win": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "tv": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "auto": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "and": {
+            "state": "mostly",
+            "rows": [
+              "Campsite games"
+            ],
+            "evidence": [
+              {
+                "kind": "owner",
+                "feature": "Campsite games",
+                "date": "Oct 26, 2026, 1:25 PM Eastern"
+              },
+              {
+                "kind": "device",
+                "feature": "Campsite games",
+                "date": "Oct 26, 2026, 4:48 PM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "s9",
+              "pixel3",
+              "pc24"
+            ],
+            "tested": "A game against the computer was played with no Wi-Fi (Nick present). On the same Wi-Fi with a second phone as a guest, Drop Four, Snakes and Ladders, Mancala and Dots and Boxes were played to the end.",
+            "why": "Games start and finish in our tests, but two bugs are open.",
+            "open": "In Snakes and Ladders a move onto square 100 by a ladder did not end the game at once, and a guest lost the winner’s name after the host left a finished room. Fixes are written but not yet retried on two real phones.",
+            "notCovered": "Several games have never been played with a guest, and nothing was tested over a hotspot.",
+            "quotes": [
+              {
+                "feature": "Campsite games",
+                "quote": "Every other game has none"
+              }
+            ]
+          },
+          "web": {
+            "state": "mostly",
+            "rows": [
+              "Campsite games"
+            ],
+            "evidence": [
+              {
+                "kind": "device",
+                "feature": "Campsite games",
+                "date": "Oct 26, 2026, 4:48 PM Eastern"
+              }
+            ],
+            "devices": [
+              "pixel3",
+              "s9",
+              "pc24"
+            ],
+            "tested": "A Pixel 3 joined from Chrome as a guest and played several games to the end against the host phone.",
+            "why": "Joining from a phone browser worked in our tests, with the same two game bugs open.",
+            "open": "The same two Campsite game bugs.",
+            "notCovered": "Other browsers and phones; the two phones were muted.",
+            "quotes": [
+              {
+                "feature": "Campsite games",
+                "quote": "Every other game has none"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "link-tv",
+        "question": "Link a TV to my account with a code",
+        "cells": {
+          "win": {
+            "state": "na",
+            "why": "The code is entered on the TV and approved on the phone."
+          },
+          "auto": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Link a TV"
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "and": {
+            "state": "untested",
+            "why": "Link a TV has not yet paired with a real TV in our tests; the code form alone is not a pass.",
+            "rows": [
+              "Link a TV"
+            ],
+            "quotes": [
+              {
+                "feature": "Link a TV",
+                "quote": "successful Smart TV/Roku/Android TV pairing"
+              }
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "Link a TV has not yet paired with a real Android TV in our tests.",
+            "rows": [
+              "Link a TV",
+              "Android TV and Fire TV screens"
+            ],
+            "quotes": [
+              {
+                "feature": "Link a TV",
+                "quote": "successful Smart TV/Roku/Android TV pairing"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "auto-car",
+        "question": "Use Beebo in a car with Android Auto",
+        "cells": {
+          "win": {
+            "state": "na",
+            "why": "Android Auto runs from an Android phone."
+          },
+          "and": {
+            "state": "na",
+            "why": "Android Auto runs on the car screen; see the Beebo Auto column."
+          },
+          "tv": {
+            "state": "na",
+            "why": "Android Auto is for cars."
+          },
+          "web": {
+            "state": "na",
+            "why": "Android Auto is for cars."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "auto": {
+            "state": "mostly",
+            "rows": [
+              "Beebo Auto (Android Auto)"
+            ],
+            "evidence": [
+              {
+                "kind": "owner",
+                "feature": "Beebo Auto (Android Auto)",
+                "date": "Oct 27, 2026, about 8:28 to 8:29 AM Eastern"
+              }
+            ],
+            "devices": [
+              "car",
+              "s24"
+            ],
+            "tested": "Parked, Nick opened Beebo Auto on the car screen: it appeared in the media apps with four tabs, Continue Watching showed real items with progress, TV Shows showed a poster grid, and he started an episode with sound through the car.",
+            "why": "A first look in one parked car went well, but this is far from a full test.",
+            "open": "Next, Previous, Pause, steering-wheel buttons, search, the Movies and Music tabs, resume, losing the phone connection, driving, passenger games and a second car are all untested. Three small defects on the phone-side settings screen have a fix waiting.",
+            "notCovered": "One car only; the connection type was not recorded.",
+            "quotes": [
+              {
+                "feature": "Beebo Auto (Android Auto)",
+                "quote": "One car is not enough to call it ready"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "self-update",
+        "question": "Update the app by itself",
+        "cells": {
+          "win": {
+            "state": "mostly",
+            "rows": [
+              "Installer and self-update"
+            ],
+            "evidence": [
+              {
+                "kind": "owner",
+                "feature": "Installer and self-update",
+                "date": "Oct 27, 2026, 10:19 AM Eastern"
+              },
+              {
+                "kind": "device",
+                "feature": "Installer and self-update",
+                "date": "Oct 27, 2026, 11:27 to 11:34 AM Eastern"
+              },
+              {
+                "kind": "check",
+                "id": "check-for-updates-up-to-date"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "The app updated itself twice on the older PC: 0.1.102 to 0.1.103 after pressing Download update, and 0.1.103 to 0.1.104 fully automatically, with the file’s checksum and signature checked and settings kept.",
+            "why": "Updates worked end to end in our tests, with one problem open.",
+            "open": "A start-up warning box can still appear after an update. The fix is written but is in no published download yet.",
+            "notCovered": "An update on a PC nobody is using, and a second PC type.",
+            "quotes": [
+              {
+                "feature": "Installer and self-update",
+                "quote": "Secure media server: FAIL"
+              }
+            ]
+          },
+          "and": {
+            "state": "untested",
+            "why": "Updating the Android app from inside the app has not been tested.",
+            "rows": [
+              "Installer and self-update"
+            ]
+          },
+          "tv": {
+            "state": "na",
+            "why": "Updating the TV app is not part of the tests listed here."
+          },
+          "web": {
+            "state": "na",
+            "why": "The browser always shows the current version from the PC."
+          },
+          "auto": {
+            "state": "na",
+            "why": "Beebo Auto is updated with the phone app."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "screen-reader",
+        "question": "Use a screen reader (TalkBack on Android, a Windows screen reader)",
+        "cells": {
+          "win": {
+            "state": "untested",
+            "why": "A Windows screen reader was not tried.",
+            "rows": [
+              "Keyboard and screen-reader support"
+            ],
+            "quotes": [
+              {
+                "feature": "Keyboard and screen-reader support",
+                "quote": "A screen reader was not tried"
+              }
+            ]
+          },
+          "and": {
+            "state": "untested",
+            "why": "A person still has to try TalkBack by ear.",
+            "rows": [
+              "Accessibility choices (large text, high contrast, reduced motion, TalkBack)"
+            ],
+            "quotes": [
+              {
+                "feature": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+                "quote": "TalkBack by ear"
+              }
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Android TV and Fire TV screens"
+            ]
+          },
+          "web": {
+            "state": "untested",
+            "why": "A screen reader was not tried in the browser.",
+            "rows": [
+              "Keyboard and screen-reader support"
+            ],
+            "quotes": [
+              {
+                "feature": "Keyboard and screen-reader support",
+                "quote": "A screen reader was not tried"
+              }
+            ]
+          },
+          "auto": {
+            "state": "na",
+            "why": "The car screen’s own accessibility is handled by Android Auto."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "keyboard",
+        "question": "Use it with the keyboard only",
+        "cells": {
+          "win": {
+            "state": "mostly",
+            "rows": [
+              "Keyboard and screen-reader support"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "desktop-keyboard-settings-save"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "In the desktop app, Tab and Shift+Tab put a clear yellow outline on the Motion drop-down and the tick boxes, Space ticked and unticked them, and Enter on “Save appearance” saved.",
+            "why": "The settings screens work from the keyboard in our test, with one problem open.",
+            "open": "Controls on a film card do not all show a focus ring, and crossing the sidebar needs many Tab presses.",
+            "notCovered": "A screen reader. Save sits about 100 Tab presses after the tick box.",
+            "quotes": [
+              {
+                "feature": "Keyboard and screen-reader support",
+                "quote": "visible focus ring"
+              }
+            ]
+          },
+          "web": {
+            "state": "mostly",
+            "rows": [
+              "Keyboard and screen-reader support",
+              "Library, player and web player"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "tab-key-focus-ring-web"
+              },
+              {
+                "kind": "check",
+                "id": "web-keys-left-right-space-up-down"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "On the web page the Tab key showed a visible focus ring on about 30 controls in a row, and in the web player Left, Right, Space, Up and Down worked from the keyboard (a tester alone, Nick away).",
+            "why": "Keyboard use works in our browser tests, with a known problem open.",
+            "open": "After picture-in-picture closes, the player keys stop until the player is clicked (a fix is written but in no published build).",
+            "notCovered": "Mouse-only controls and a screen reader.",
+            "quotes": [
+              {
+                "feature": "Library, player and web player",
+                "quote": "stop working after Picture-in-Picture is closed"
+              }
+            ]
+          },
+          "and": {
+            "state": "na",
+            "why": "A keyboard is not how phones are used; see the screen-reader and large-text rows."
+          },
+          "tv": {
+            "state": "na",
+            "why": "A TV is used with a remote."
+          },
+          "auto": {
+            "state": "na",
+            "why": "The car screen is used with touch and car controls."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "large-text",
+        "question": "Use large text",
+        "cells": {
+          "win": {
+            "state": "mostly",
+            "rows": [
+              "Accessibility choices (large text, high contrast, reduced motion, TalkBack)"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "accessibility-desktop-large-text-contrast-buttons"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "In the desktop app, Large text (nothing cut off), High contrast (text still readable) and Large buttons and fields (no overlap) each took effect (a tester alone, Nick away).",
+            "why": "Large text works in our test, with one small problem open.",
+            "open": "One settings label (under Corner radius) is cut off.",
+            "notCovered": "Reduce motion calming animations, and any screen reader.",
+            "quotes": [
+              {
+                "feature": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+                "quote": "Use the theme’s"
+              }
+            ]
+          },
+          "and": {
+            "state": "mostly",
+            "rows": [
+              "Accessibility choices (large text, high contrast, reduced motion, TalkBack)"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "largest-text-2-0"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "At the largest text size (2.0) the Library’s “Add a video from this phone” button wrapped onto two lines with every chip visible, and the player’s More list closed before “Playback finished” appeared.",
+            "why": "Large text works in our test, with small problems open.",
+            "open": "Some labels are squeezed or clip at extreme font and display sizes (for example the “Beebo” wordmark and the Next button on a Pixel 3).",
+            "notCovered": "TalkBack by ear, colour-blind modes and keyboard use on the phone.",
+            "quotes": [
+              {
+                "feature": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+                "quote": "wordmark clips"
+              }
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Android TV and Fire TV screens"
+            ]
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Accessibility choices (large text, high contrast, reduced motion, TalkBack)"
+            ]
+          },
+          "auto": {
+            "state": "na",
+            "why": "Text size in the car is set by Android Auto."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "posters",
+        "question": "See posters and film information",
+        "cells": {
+          "win": {
+            "state": "works",
+            "rows": [
+              "Posters and info (TMDB)"
+            ],
+            "evidence": [
+              {
+                "kind": "owner",
+                "feature": "Posters and info (TMDB)",
+                "date": "Oct 27, 2026, 2:14 PM Eastern"
+              },
+              {
+                "kind": "check",
+                "id": "posters-and-info-five-films"
+              },
+              {
+                "kind": "owner",
+                "feature": "Posters and info (TMDB)",
+                "date": "Oct 27, 2026, about 3:00 PM Eastern"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "Five different films each showed a real poster and an info page, and titles without a poster showed a plain “No poster” card with no broken picture. Nick confirmed the feature as Ready.",
+            "notCovered": "Offline behaviour, TV show pages on that PC, and the paid-use film-database licence, which is Nick’s decision."
+          },
+          "web": {
+            "state": "works",
+            "rows": [
+              "Posters and info (TMDB)"
+            ],
+            "evidence": [
+              {
+                "kind": "device",
+                "feature": "Posters and info (TMDB)",
+                "date": "Oct 27, 2026, about 1:40 to 2:00 PM Eastern"
+              },
+              {
+                "kind": "owner",
+                "feature": "Posters and info (TMDB)",
+                "date": "Oct 27, 2026, about 3:00 PM Eastern"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "In Chrome, looking at Nick’s own library through the away-from-home address, the TV Shows page listed about 164 shows with posters and a show page opened with its poster (Nick present and agreeing). Nick confirmed the feature as Ready.",
+            "notCovered": "Sound and other browsers."
+          },
+          "and": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Posters and info (TMDB)"
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Posters and info (TMDB)"
+            ]
+          },
+          "auto": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Posters and info (TMDB)"
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "family-tools",
+        "question": "Family tools: chores, packing list, recipes and collections",
+        "cells": {
+          "win": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "tv": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "web": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "auto": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "and": {
+            "state": "works",
+            "rows": [
+              "Family Dashboard, Camp Jobs and Star Chart",
+              "Packing List (shared between phones)",
+              "Family Recipes and shopping list",
+              "Collections and Request a title"
+            ],
+            "evidence": [
+              {
+                "kind": "owner",
+                "feature": "Family Dashboard, Camp Jobs and Star Chart",
+                "date": "Oct 26, 2026, 11:10 AM Eastern"
+              },
+              {
+                "kind": "owner",
+                "feature": "Packing List (shared between phones)",
+                "date": "Oct 26, 2026, 11:10 AM Eastern"
+              },
+              {
+                "kind": "owner",
+                "feature": "Family Recipes and shopping list",
+                "date": "Oct 26, 2026, 11:10 AM Eastern"
+              },
+              {
+                "kind": "owner",
+                "feature": "Collections and Request a title",
+                "date": "Oct 26, 2026, 11:10 AM Eastern"
+              },
+              {
+                "kind": "owner",
+                "feature": "Family Dashboard, Camp Jobs and Star Chart",
+                "date": "Oct 26, 2026, 11:37 AM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "Each of the four features was checked on a real phone at a second household (Nick present) and Nick confirmed each as Ready.",
+            "notCovered": "Each feature’s own row lists what was not tried."
+          }
+        }
+      },
+      {
+        "id": "surprise-me",
+        "question": "Surprise me, playlists, watchlist and favourites",
+        "cells": {
+          "win": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "tv": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "auto": {
+            "state": "na",
+            "why": "This is a feature of the Android phone app, so it does not apply here."
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Surprise me, playlists, watchlist, favourites"
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          },
+          "and": {
+            "state": "works",
+            "rows": [
+              "Surprise me, playlists, watchlist, favourites"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "surprise-me-playlists-tester57"
+              },
+              {
+                "kind": "check",
+                "id": "surprise-me-regression-tester58"
+              },
+              {
+                "kind": "owner",
+                "feature": "Surprise me, playlists, watchlist, favourites",
+                "date": "Oct 27, 2026, about 3:00 PM Eastern"
+              }
+            ],
+            "devices": [
+              "s24",
+              "pc4"
+            ],
+            "tested": "Surprise me started a random film in about 1.5 seconds, Next and Previous each changed the film within about a second, seeks played again in 0.2 to 1.5 seconds, and a repeat on the newer build passed. Nick heard the sound and confirmed the feature as Ready.",
+            "notCovered": "Empty-library and error cases, TV shows, Share and smart playlists."
+          }
+        }
+      },
+      {
+        "id": "jellyfin",
+        "question": "Use a Jellyfin app with Beebo",
+        "cells": {
+          "win": {
+            "state": "fails",
+            "rows": [
+              "Jellyfin-compatible mode"
+            ],
+            "evidence": [
+              {
+                "kind": "device",
+                "feature": "Jellyfin-compatible mode",
+                "date": "Oct 26, 2026, 3:11 PM Eastern"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "The official Jellyfin Media Player 1.12.0 connected and signed in, but showed Beebo’s own web page, and opening a film said “This video format can’t play on this device”. Nick: connected but the film would not play. (The compatibility checks without that app passed.)",
+            "why": "The real Jellyfin desktop app connects but does not play films from Beebo today.",
+            "open": "The Jellyfin desktop app cannot play films, and the failed play flagged a large film for conversion.",
+            "notCovered": "Other Jellyfin apps on phones and TVs.",
+            "quotes": [
+              {
+                "feature": "Jellyfin-compatible mode",
+                "quote": "connected but the film would not play"
+              }
+            ]
+          },
+          "and": {
+            "state": "untested",
+            "why": "Jellyfin phone apps have not been tested; only a phone browser used the compatible sign-in and playback.",
+            "rows": [
+              "Jellyfin-compatible mode"
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Jellyfin-compatible mode"
+            ]
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Jellyfin-compatible mode"
+            ]
+          },
+          "auto": {
+            "state": "na",
+            "why": "Not part of Beebo Auto."
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      },
+      {
+        "id": "language",
+        "question": "Show the app in another language",
+        "cells": {
+          "win": {
+            "state": "mostly",
+            "rows": [
+              "Languages (5 translated with machine help, 3 previews)"
+            ],
+            "evidence": [
+              {
+                "kind": "check",
+                "id": "languages-desktop-preview"
+              }
+            ],
+            "devices": [
+              "pc4"
+            ],
+            "tested": "Deutsch, Français and Español changed Settings and the sidebar with nothing clipped (Deutsch also Home and Movies), the Japanese preview showed Japanese text, and English was put back (a tester alone, Nick away).",
+            "why": "Five languages are translated with machine help and three are previews; the desktop screens worked in our test.",
+            "open": "Two problems are open (for example the “Online” status chip is not translated). No native speaker has reviewed the translations.",
+            "notCovered": "The player, web pages, Italiano, Português, Korean and Chinese.",
+            "quotes": [
+              {
+                "feature": "Languages (5 translated with machine help, 3 previews)",
+                "quote": "machine"
+              }
+            ]
+          },
+          "and": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Languages (5 translated with machine help, 3 previews)"
+            ]
+          },
+          "tv": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Languages (5 translated with machine help, 3 previews)"
+            ]
+          },
+          "web": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Languages (5 translated with machine help, 3 previews)"
+            ]
+          },
+          "auto": {
+            "state": "untested",
+            "why": "No test of this is recorded on this page yet.",
+            "rows": [
+              "Languages (5 translated with machine help, 3 previews)"
+            ]
+          },
+          "ios": {
+            "state": "na",
+            "why": "The native iPhone, iPad and Apple TV apps are in development, and the Safari home-screen version has not been tried on a real iPhone or iPad.",
+            "word": "Not available yet"
+          }
+        }
+      }
+    ]
   }
 }

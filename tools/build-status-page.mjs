@@ -17,6 +17,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const P = require('../site-data/progress-score.js');
+import { platformProgressHtml, platformMatrixHtml } from './platform-sections.mjs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -426,12 +427,24 @@ function worksTodaySection(d) {
     `<h3>What real people have already tried</h3><ul class="wt-list wt-tried">${items(d.tried)}</ul>` +
     `<h3>What is still open</h3><ul class="wt-list wt-open">${items(d.open)}</ul>` +
     `<p class="wt-score">${esc(fill(d.scoreLine))}</p><p class="wt-status">${esc(fill(d.statusLine))}</p>` +
-    `<p class="wt-more"><a href="#features">See every feature, test record and open item below</a>${J.checksConfirmed?.lists?.length ? ` · <a href="#checks-confirmed">${esc(J.checksConfirmed.title)}: individual passed checks, with dates and limits</a>` : ''}</p></section><!--/WORKS-TODAY-->`;
+    `<p class="wt-more">${J.platformProgress ? `<a href="#platform-progress">${esc(J.platformProgress.title)}</a> · ` : ''}${J.platformMatrix ? `<a href="#platform-matrix">${esc(J.platformMatrix.title)}: a check and cross chart</a> · ` : ''}<a href="#features">See every feature, test record and open item below</a>${J.checksConfirmed?.lists?.length ? ` · <a href="#checks-confirmed">${esc(J.checksConfirmed.title)}: individual passed checks, with dates and limits</a>` : ''}</p></section><!--/WORKS-TODAY-->`;
 }
 {
   const box = worksTodaySection(J.windowsToAndroid);
   if (html.includes('<!--WORKS-TODAY-->')) html = html.replace(/<!--WORKS-TODAY-->[\s\S]*?<!--\/WORKS-TODAY-->/, () => box);
   else html = html.replace('<!--/READY-BANNER-->', () => `<!--/READY-BANNER-->\n    ${box}`);
+}
+
+// "How close are Windows and Android to 100%?" and "What works, platform by platform": two plain-English sections right after the
+// "Does it work today?" box, generated from testing-status.json (platformProgress, platformMatrix) so they can never drift from the rows.
+{
+  const ctx = { esc, featureId, iso, requireStamp: (l, v) => { requireStamp(l, v); if (stampProblems.length) { console.error(stampProblems.join('\n')); process.exit(1); } } };
+  const pp = platformProgressHtml(J, ctx), pm = platformMatrixHtml(J, ctx);
+  html = html.replace(/\s*<!--PLATFORM-PROGRESS-->[\s\S]*?<!--\/PLATFORM-PROGRESS-->/, '').replace(/\s*<!--PLATFORM-MATRIX-->[\s\S]*?<!--\/PLATFORM-MATRIX-->/, '');
+  if (pp || pm) {
+    if (!html.includes('<!--/WORKS-TODAY-->')) throw new Error('WORKS-TODAY marker not found for the platform sections');
+    html = html.replace('<!--/WORKS-TODAY-->', () => `<!--/WORKS-TODAY-->\n    ${pp}\n    ${pm}`);
+  }
 }
 
 const csRe = /<!--CODE-STATUS-SUMMARY-->[\s\S]*?<!--\/CODE-STATUS-SUMMARY-->/;
@@ -482,7 +495,8 @@ function responsiveTables(page) {
 }
 html = responsiveTables(html);
 html=html.replace(/<script>\(function\(\)\{try\{document\.querySelectorAll\('tr\.feat'\)[\s\S]*?<\/script>/g,'');
-html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261027checks');
+html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261028platform');
+if(J.platformMatrix){ if(!html.includes('src="/assets/platform-matrix.js?v=')) html=html.replace('</body>','<script src="/assets/platform-matrix.js?v=20261028a" defer></script></body>'); else html=html.replace(/(platform-matrix\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261028a'); }
 if(!html.includes('src="/assets/evidence-tier-tabs.js?v=')) html=html.replace(/<script src="\/assets\/evidence-tier-tabs\.js[^"]*" defer><\/script>/, '').replace('</body>','<script src="/assets/evidence-tier-tabs.js?v=20261027filter" defer></script></body>');
 else html=html.replace(/(evidence-tier-tabs\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261027filter');
 

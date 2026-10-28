@@ -62,6 +62,9 @@ const tsByName = new Map(ts.features.map((f) => [f.name, f]));
 // One scoring rule (site-data/progress-score.js): stop if testing-status.json disagrees with it.
 const scoreProblems = require('./progress-score.js').problems(ts);
 if (scoreProblems.length) throw new Error('testing-status.json disagrees with the scoring rule:\n  ' + scoreProblems.join('\n  '));
+const PP = require('./platform-progress.js');
+const ppResult = PP.compute(ts);
+if (ppResult && ppResult.problems.length) throw new Error('testing-status.json platformProgress problems:\n  ' + ppResult.problems.join('\n  '));
 const WEIGHT_TEXT = Object.entries(ts.scoring.weights).map(([k, v]) => k + ' ' + v).join(', ');
 /* Mapping from our rows to the evidence page's features, and the label rule: if both pages have a label for the same
    feature, the stricter (less Available) one is shown, so the two pages cannot disagree. */
@@ -216,6 +219,14 @@ function codeStatusBlock(tag) {
   return `<div class="wwo-code-status" role="group" aria-labelledby="wwo-code-status-title"><${tag} id="wwo-code-status-title">Where the code is at</${tag}><p>The code is about <strong>${c.code}%</strong> built and passing its automated tests, and about <strong>${c.human}%</strong> of our real-device and real-world checks have passed. Most of what is left is real-world testing. ${c.n} features: ${c.confirmed} confirmed working on real devices, ${c.waiting} code complete and waiting for real-world testing, ${c.building} code still being finished.</p>${meter('Code built and passing automated tests', c.code, '')}${meter('Device and real-world checks recorded', c.human, ' wwo-cs-bar2')}<p class="wwo-fine">These percentages measure our own checklist, not that nothing can go wrong. Updated ${esc(c.updated)}. <a href="release-evidence.html#code-status">See every feature and what is left to do</a>. <a href="progress-update.html">Read our full progress report</a>.</p></div>`;
 }
 
+/* "How close are Windows and Android to 100%?" callout (Oct 28, 2026): counted from testing-status.json by site-data/platform-progress.js,
+   so it always matches the full section on the testing evidence page. */
+function platformCallout(tag) {
+  if (!ppResult) return '';
+  const items = ppResult.platforms.map((c) => `<li><strong>${esc(c.name)}:</strong> ${c.ready.length} of ${c.stats.total} features Ready (100%), ${c.almost.length} almost there (90 to 98%), ${c.building.length} earlier on (below 90%).</li>`).join('');
+  return `<aside class="wwo-platforms" aria-labelledby="wwo-platforms-title"><${tag} id="wwo-platforms-title">${esc(ts.platformProgress.title)}</${tag}><ul>${items}</ul><p>Both apps are still in testing, and the Android app is a test download that is not on Google Play yet. <a href="release-evidence.html#platform-progress">See, for each app, what is done and what is still needed</a>.</p></aside>`;
+}
+
 function whoBlock() {
   return `<p>Beebo Entertainment makes <strong>Beebo</strong>: a free, local-first media server with apps. It runs on your own Windows computer, holds the movies, shows, music, photos, audiobooks, podcasts and radio you already own, and streams them to your phone, tablet, TV, car or any web browser. Video goes straight from your computer to the viewer whenever it can. Beebo's own servers carry only small text, such as sign-in and connection set-up.</p>
 <p>Beebo is <strong>made by a family man, not a data company</strong>. The code is <strong>closed source</strong> (all rights reserved). Beebo includes no movies, shows, music or channels; you bring your own files, and Live TV means your own tuner or your own playlist. We use the four labels <em>Available</em>, <em>Beta</em>, <em>In development</em> and <em>Planned</em>, and we never write a flat "100% working". Optional extras such as Beebo Relay (Beta) and BeeboVPN (In development) are listed with their label; this page does not list prices.</p>`;
@@ -283,6 +294,7 @@ function homeBlock() {
 ${homeBody()}
 </div>
 </details>
+${platformCallout('h3')}
 <p class="wwo-home-link"><a href="what-we-offer.html">Read the full page: every feature, what was tested and what was not &#8599;</a></p>
 </section>`;
 }
