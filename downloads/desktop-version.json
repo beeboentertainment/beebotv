@@ -1,12 +1,12 @@
 {
-    "version": "0.1.106",
-    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.106/Beebo.Entertainment.Setup.0.1.106.exe",
-    "sha256": "b4957d2602b0db375ae01c6149da6c14abf4550339aba1e1cc27c35d3927aa98",
-    "size": 258300384,
-    "notes": "What's new in 0.1.106:\r\n- Privacy fix: a paired TV, a viewer link, or an administrator account that has its own parental limits no longer gets this computer's folder paths, the backup folder and PC name, the original photos, or photo locations and map pins. Only the owner's full sign-in gets those.\r\n- TV Shows: when your Movies and TV Shows share a folder, the sidebar TV Shows number and the TV Shows screen now count shows the way the Dashboard does, and Storage lists a shared folder once as \"Movies and TV shows\".\r\n- Library Health: counts read correctly for one item (\"1 file is waiting for your decision\") instead of \"1 files\".\r\n- Photos: the Back button (the browser's Back, or a remote's Back key) now closes the open photo instead of leaving Photos.\r\n- The \"Online\" / \"Offline\" chip and the router warning on the Direct connection card now follow the language you chose.\r\n- Settings, Appearance: the corner-radius tick-box label is the whole sentence and wraps instead of being cut off.\r\n- Settings, Updates: \"Check for updates\" now shows its result on the page (\"You're up to date\", \"A newer version is available\", or that the check could not run).\r\n- Phone browser: the film info (i) button is a 48 px tap target, and the film info card opens as a scrolling sheet at the bottom of the screen.\r\n- Podcasts: the preview request answers cleanly when a feed host replies \"not modified\", and the short preview copy no longer keeps show notes, transcripts or chapters.\r\n- Not fixed: changing video quality while a film plays can still restart the converter. A TV linked through a member sign-in can still get the owner's photo powers, and the wake-up information (a network address) can still be seen by a media-only session (both are follow-ups). Chromecast items are still being tested. The phone app and Beebo Auto are not in this release.\r\n- Not yet checked: none of these changes has been tried by a person. Automated tests and reviews only; not yet tried by a person on an in-app update.\r\n- Release source commit 94cb7f8a8.\r\n- Built: Oct 28, 2026, 1:15 AM Eastern.\r\n- Published: Oct 28, 2026, 1:26 AM Eastern.",
-    "sourceSha": "94cb7f8a8",
-    "builtAtUtc": "2026-10-28T05:15:00.000Z",
-    "builtAtEastern": "Oct 28, 2026, 1:15 AM Eastern",
-    "publishedAtUtc": "2026-10-28T05:26:00.000Z",
-    "publishedAtEastern": "Oct 28, 2026, 1:26 AM Eastern"
+    "version": "0.1.107",
+    "url": "https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.107/Beebo.Entertainment.Setup.0.1.107.exe",
+    "sha256": "e353c989bfea30f8e0cf81cf2cc744e0a2f35b9783e0dde14c355a64642c3a64",
+    "size": 258301704,
+    "notes": "What's new in 0.1.107:\r\n- Story Studio: the preview no longer shows a blank white picture. The fix applies only to the preview page (it keeps its one-time secret address); every other page keeps its protection.\r\n- Users, View stats and the Dashboard's \"watch time by member\" now count the time really watched: each session is cut to the window shown, overlapping streams count once, and a player left open is capped, so a day can no longer show \"61 hours today\". Display only; no stored history was changed.\r\n- Not fixed: changing video quality while a film plays can still restart the converter. A TV linked through a member sign-in can still get the owner's photo powers, and the wake-up information (a network address) can still be seen by a media-only session (both are follow-ups). Chromecast items are still being tested. In View stats, \"all time\" means the newest 300 kept sessions. Kitchen announcements have not been tested on a phone. The phone app and Beebo Auto are not in this release.\r\n- Not yet checked: neither change has been tried by a person. Automated tests and reviews only; 0.1.106 has been updated to and retested by one tester working alone, no person has used 0.1.107.\r\n- Release source commit edcb57edd.\r\n- Built: Oct 28, 2026, 2:58 AM Eastern.\r\n- Published: Jan 1, 2099, 12:00 AM Eastern.",
+    "sourceSha": "edcb57edd",
+    "builtAtUtc": "2026-10-28T06:58:00.000Z",
+    "builtAtEastern": "Oct 28, 2026, 2:58 AM Eastern",
+    "publishedAtUtc": "2099-01-01T05:00:00.000Z",
+    "publishedAtEastern": "Jan 1, 2099, 12:00 AM Eastern"
 }
