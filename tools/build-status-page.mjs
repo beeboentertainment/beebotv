@@ -18,11 +18,13 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const P = require('../site-data/progress-score.js');
 import { platformProgressHtml, platformMatrixHtml } from './platform-sections.mjs';
+import { renderCards, compactEvidenceLayout, codeEstimate, renderRecentEvidence } from './feature-work-snapshot.mjs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const J = JSON.parse(readFileSync(join(root, 'testing-status.json'), 'utf8'));
+const workSnapshot = JSON.parse(readFileSync(join(root, 'site-data/feature-work-snapshot.json'), 'utf8'));
 const problems = P.problems(J); if (problems.length) throw Error(problems.join('\n'));
 const pagePath = join(root, 'release-evidence.html');
 let html = readFileSync(pagePath, 'utf8');
@@ -174,7 +176,7 @@ function lastTestedCell(f) {
 function testHistory(f, note) {
   const entries = splitHistory(f.lastTested);
   const n = Number(f.openIssues) || 0;
-  let h = '';
+  let h = renderRecentEvidence(f, workSnapshot.features.find(r=>r.name===f.name)?.tests.automated);
   if (entries.length) h += `<div class="th-sec"><h4 class="th-h">Test history, newest first</h4><ol class="th-list">${entries.map(e => `<li>${esc(e)}</li>`).join('')}</ol></div>`;
   if (f.leftToReach100) h += `<div class="th-sec feature-left"><h4 class="th-h">Left to reach 100%</h4><p>${esc(f.leftToReach100)}</p></div>`;
   if (f.scoreNote) h += `<div class="th-sec score-note"><h4 class="th-h">Record limit</h4><p>${esc(f.scoreNote)}</p></div>`;
@@ -260,12 +262,9 @@ function checksLine(f) {
   const ok = CH.filter(k => c[k]).map(k => SHORT[k]), no = CH.filter(k => !c[k]).map(k => SHORT[k]);
   return 'Checks passed: ' + (ok.join(', ') || 'none yet') + (no.length ? '. Not yet: ' + no.join(', ') : '') + '.';
 }
-const tierKeyData = '<div class="tier-key-data" hidden>' + J.scoring.tiers.map(t => {
-  const m = tierMembers(t);
-  return '<ul class="tier-key-items" data-tier-list="'+esc(t.id)+'" data-count="'+m.length+'">' + m.map(f => '<li><a href="#'+esc(featureId(f))+'">'+esc(f.name)+'</a> <span class="tki-pct"><strong>'+f.percentComplete+'%</strong> <span class="tier-tag tier-'+esc(t.id)+'">'+esc(tierShort(t))+'</span></span><span class="tki-meta">'+esc(f.group)+(f.status ? ' · '+esc(f.status) : '')+'</span><span class="tki-line">'+esc(checksLine(f))+'</span><span class="tki-line">Left to reach 100%: '+esc(leftLine(f))+'</span></li>').join('') + '</ul>';
-}).join('') + '</div>';
+const workCards = renderCards(J, workSnapshot, { featureId, tierFor: P.tierFor, checksLine, leftLine });
 sec += '<aside class="meaning-box" aria-labelledby="meaning-score-title"><h3 id="meaning-score-title">What the tiers mean</h3><p>Green is reserved for 90–98%. At 90%, the listed runnable checks may have passed while an open issue caps the score at 90%; an explicit record limit can also hold it below 99. Teal 80–89% means nearly there. The percentage still follows the recorded checks, never a colour choice.</p><p>99% and 100% keep their existing meanings. An open issue always caps the score at 90%. Colour never replaces words.</p></aside>';
-sec += '<div class="status-legend" role="group" aria-label="Colour key and filter"><strong>Colour key</strong><div class="tier-chips">'+tierKey+'</div><p class="tier-result-count" role="status" aria-live="polite">Showing all '+features.length+' features.</p><span class="legend-note">Every feature says its percentage and tier name. A tick means passed; a dash means not yet.<span class="legend-hint"> Select a colour to show only that tier in the tables below (its list opens under this key); select it again, &ldquo;All features&rdquo; or &ldquo;Show all (close list)&rdquo; to see every feature.</span></span></div><div id="tier-key-panel" class="tier-key-panel"></div>'+tierKeyData;
+const workLegend = '<div class="status-legend" role="group" aria-label="Colour key and filter"><strong>Colour key</strong><div class="tier-chips">'+tierKey+'</div><p class="tier-result-count" role="status" aria-live="polite">Showing all '+features.length+' features.</p><span class="legend-note">Every feature keeps its percentage and recorded checks. Activity icons are separate from passed-check ticks.<span class="legend-hint"> Select a colour to filter the cards and detailed tables; select it again or choose &ldquo;All features&rdquo; to see every feature.</span></span></div>';
 // "Checks confirmed working": individual passed checks (with build, date, device and limits), generated from J.checksConfirmed so the
 // list cannot drift from the feature tables. Each entry must name a real feature row (linked by its row id), carry a real Eastern
 // date AND time, and any recordQuotes it lists must still appear in that feature's own record. The "row score today" line is read
@@ -327,6 +326,11 @@ sec += '</div>';
 const top = features.filter(f => f.percentComplete >= 100).length;
 sec += `<p><strong>Across all ${features.length} features the average is ${overall}%.</strong> That average mixes features that are well along with features that are only plans, so use the individual rows. ${top === 0 ? 'No feature is at 100% today, because none has yet passed a real-world check and a readiness review together.' : `${top} feature${top === 1 ? ' is' : 's are'} at 100%.`}</p>\n`;
 sec += '<p id="data-download">Machine-readable copy of this progress data: <a href="/testing-status.json">testing-status.json</a> (feature, status, percent, the five checks, last tested date, what is left and, while markers are on, what changed and when). Search engines and tools can read it.</p>\n    </section>';
+const workHeaderEnd = sec.indexOf('</h2>') + '</h2>'.length;
+const workFooterStart = sec.indexOf('<p id="data-download">');
+sec = sec.slice(0, workHeaderEnd) + workLegend + '<div id="tier-key-panel" class="tier-key-panel">' + workCards + '</div>' +
+  '<details class="feature-evidence" id="feature-evidence"><summary>Detailed checks, explanations and test history for all 70 features</summary>' +
+  sec.slice(workHeaderEnd, workFooterStart) + '</details>' + sec.slice(workFooterStart);
 
 // The features section now holds a nested <section> (Checks confirmed working), so match through its own tail (the data-download line), not the first </section>.
 const secRe = /<section class="evidence-section" id="features"[\s\S]*?<p id="data-download">[\s\S]*?<\/p>\s*<\/section>/;
@@ -335,7 +339,7 @@ html = html.replace(secRe, () => sec);
 
 function releaseChangesSection(data) {
   if (!data?.title || !data?.summary) return '';
-  return `<section class="evidence-section" id="release-changes" aria-labelledby="release-changes-title"><span class="evidence-kicker">Since the last release</span><h2 id="release-changes-title">${esc(data.title)}</h2><p>${esc(data.summary)}</p>${data.sourceNote ? `<p>${esc(data.sourceNote)}</p>` : ''}</div>`;
+  return `<section class="evidence-section" id="release-changes" aria-labelledby="release-changes-title"><span class="evidence-kicker">Since the last release</span><h2 id="release-changes-title">${esc(data.title)}</h2><p>${esc(data.summary)}</p>${data.sourceNote ? `<p>${esc(data.sourceNote)}</p>` : ''}</section>`;
 }
 const releaseChanges = releaseChangesSection(J.releaseChanges);
 const releaseChangesRe = /<!--RELEASE-CHANGES-->[\s\S]*?<!--\/RELEASE-CHANGES-->/;
@@ -350,18 +354,20 @@ function codeVsHumanSection(data) {
   const bar = (label, percent, extra = '') => `<div class="code-human-meter" role="img" aria-label="${esc(label)}: ${percent}%.${extra ? ` ${esc(extra)}` : ''}"><div class="code-human-meter-label"><strong>${esc(label)}</strong><span>${percent}%</span></div><span class="code-human-bar" aria-hidden="true"><i style="width:${percent}%"></i></span></div>`;
   const countText = counts => `${counts.CODE} code, ${counts.DEVICE} device, ${counts.NICK} Nick and ${counts.BLOCKED} blocked`;
   const featureRow = feature => {
-    const codeText = feature.codeItemsLeft
+    const original = features.find(f => f.name === feature.name);
+    const unverified = original && codeEstimate(original);
+    const codeText = unverified ? 'Legacy estimate: unverified; required work remains' : feature.codeItemsLeft
       ? `Code checks passed; ${feature.codeItemsLeft} code item${feature.codeItemsLeft === 1 ? '' : 's'} still listed`
       : `${feature.codeDone}%`;
-    const note = feature.codeItemsLeft
+    const note = unverified || (feature.codeItemsLeft
       ? `${feature.codeItemsLeft} code item${feature.codeItemsLeft === 1 ? '' : 's'} still listed.`
-      : 'No code item is still listed.';
+      : 'No code item is still listed.');
     return `<tr><th scope="row">${esc(feature.name)}</th><td data-label="Code built and tests passing">${esc(codeText)}</td><td data-label="Human testing left">${feature.humanTestingLeft}%</td><td data-label="What is left">${note}</td></tr>`;
   };
-  let out = `<section class="evidence-section code-vs-human" id="code-vs-human" aria-labelledby="code-vs-human-title"><span class="evidence-kicker">Checklist view · updated ${esc(data.updatedEastern || '')}</span><h2 id="code-vs-human-title">Code done vs human testing left</h2>${data.evidenceLimit ? `<p><strong>Evidence limit:</strong> ${esc(data.evidenceLimit)}</p>` : ''}<p>Numbers come from our own test list (last updated ${esc(J.updatedEastern || '')}) and were worked out on ${esc(data.updatedEastern || '')}. They show how much of our checklist has passed, not whether the app is bug-free. A high code number means the code is built and its automated tests pass. It does not mean nothing is left to build: the open code items are listed under each bar.</p><p>${esc(data.method || '')}</p><div class="code-vs-human-groups">`;
+  let out = `<section class="evidence-section code-vs-human" id="code-vs-human" aria-labelledby="code-vs-human-title"><span class="evidence-kicker">Checklist view · updated ${esc(data.updatedEastern || '')}</span><h2 id="code-vs-human-title">Legacy code estimates and device checks</h2>${data.evidenceLimit ? `<p><strong>Evidence limit:</strong> ${esc(data.evidenceLimit)}</p>` : ''}<p>Numbers come from our own test list (last updated ${esc(J.updatedEastern || '')}) and were worked out on ${esc(data.updatedEastern || '')}. They show how much of our checklist has passed, not whether the app is bug-free. The code bars retain legacy estimates. Required code items and open issues can contradict a 100% estimate, so it must not be read as proven code completion. The main feature scores and their issue caps remain the readiness measure.</p><p>${esc(data.method || '')}</p><div class="code-vs-human-groups">`;
   for (const group of data.groups) {
     const humanDone = 100 - group.humanTestingLeft;
-    out += `<article class="code-vs-human-group"><h3>${esc(group.name)}</h3>${bar('Code built and tests passing', group.codeDone, `${group.remaining.CODE} code item${group.remaining.CODE === 1 ? '' : 's'} still listed.`)}${bar('Human testing done', humanDone, `${group.humanTestingLeft}% left.`)}<p class="code-vs-human-left"><strong>What is left:</strong> ${esc(countText(group.remaining))}.</p><details><summary>See feature-by-feature numbers</summary><div class="evidence-table-wrap" role="region" aria-label="${esc(group.name)} code and human testing table"><table class="evidence-table code-vs-human-table"><caption>${esc(group.name)}: code done and human testing left</caption><thead><tr><th scope="col">Feature</th><th scope="col">Code built and tests passing</th><th scope="col">Human testing left</th><th scope="col">What is left</th></tr></thead><tbody>${group.features.map(featureRow).join('')}</tbody></table></div></details></article>`;
+    out += `<article class="code-vs-human-group"><h3>${esc(group.name)}</h3>${bar('Legacy code-check estimate', group.codeDone, `${group.remaining.CODE} code item${group.remaining.CODE === 1 ? '' : 's'} still listed.`)}${bar('Human testing done', humanDone, `${group.humanTestingLeft}% left.`)}<p class="code-vs-human-left"><strong>What is left:</strong> ${esc(countText(group.remaining))}.</p><details><summary>See feature-by-feature numbers</summary><div class="evidence-table-wrap" role="region" aria-label="${esc(group.name)} code and human testing table"><table class="evidence-table code-vs-human-table"><caption>${esc(group.name)}: code done and human testing left</caption><thead><tr><th scope="col">Feature</th><th scope="col">Code built and tests passing</th><th scope="col">Human testing left</th><th scope="col">What is left</th></tr></thead><tbody>${group.features.map(featureRow).join('')}</tbody></table></div></details></article>`;
   }
   return out + '</div></section>';
 }
@@ -451,7 +457,7 @@ const csRe = /<!--CODE-STATUS-SUMMARY-->[\s\S]*?<!--\/CODE-STATUS-SUMMARY-->/;
 if (csRe.test(html)) {
  const o=J.codeVsHuman.overall;
  const groups=Object.entries(J.realWorldStatusLabels).map(([key,label])=>'<details class="cs-list"><summary>'+esc(label)+' ('+o.counts[key]+')</summary><ul>'+features.filter(f=>f.realWorldStatus===key).map(f=>'<li>'+esc(f.name)+'</li>').join('')+'</ul></details>').join('');
- html=html.replace(csRe,()=>'<!--CODE-STATUS-SUMMARY--><section class="evidence-section code-status-summary" id="code-status" aria-labelledby="code-status-title"><p>Where Beebo stands · updated '+esc(upd)+'</p><h2 id="code-status-title">The code checklist is '+o.codeDone+'%; device and real-world checks recorded are '+o.humanTestingDone+'%.</h2><p>'+o.features+' features; '+o.codeItemsLeft+' code items remain. These are checklist totals, not a promise of complete reliability.</p>'+groups+'</section><!--/CODE-STATUS-SUMMARY-->');
+ html=html.replace(csRe,()=>'<!--CODE-STATUS-SUMMARY--><section class="evidence-section code-status-summary" id="code-status" aria-labelledby="code-status-title"><p>Where Beebo stands · updated '+esc(upd)+'</p><h2 id="code-status-title">The legacy code-check estimate is '+o.codeDone+'%; device and real-world checks recorded are '+o.humanTestingDone+'%.</h2><p>'+o.features+' features; '+o.codeItemsLeft+' code items remain. The code estimate is unverified where required work or an open issue remains; use the feature scores and evidence for readiness.</p>'+groups+'</section><!--/CODE-STATUS-SUMMARY-->');
 }
 
 // Description dates and JSON-LD.
@@ -495,10 +501,10 @@ function responsiveTables(page) {
 }
 html = responsiveTables(html);
 html=html.replace(/<script>\(function\(\)\{try\{document\.querySelectorAll\('tr\.feat'\)[\s\S]*?<\/script>/g,'');
-html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261028platform');
+html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261029work');
 if(J.platformMatrix){ if(!html.includes('src="/assets/platform-matrix.js?v=')) html=html.replace('</body>','<script src="/assets/platform-matrix.js?v=20261028a" defer></script></body>'); else html=html.replace(/(platform-matrix\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261028a'); }
-if(!html.includes('src="/assets/evidence-tier-tabs.js?v=')) html=html.replace(/<script src="\/assets\/evidence-tier-tabs\.js[^"]*" defer><\/script>/, '').replace('</body>','<script src="/assets/evidence-tier-tabs.js?v=20261027filter" defer></script></body>');
-else html=html.replace(/(evidence-tier-tabs\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261027filter');
+if(!html.includes('src="/assets/evidence-tier-tabs.js?v=')) html=html.replace(/<script src="\/assets\/evidence-tier-tabs\.js[^"]*" defer><\/script>/, '').replace('</body>','<script src="/assets/evidence-tier-tabs.js?v=20261029work" defer></script></body>');
+else html=html.replace(/(evidence-tier-tabs\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261029work');
 
 
 function sourceMerges(page) {
@@ -510,6 +516,7 @@ function sourceMerges(page) {
 }
 
 html = sourceMerges(html);
+html = compactEvidenceLayout(html);
 const out = crlf ? html.replace(/\n/g, '\r\n') : html;
 if (process.argv.includes('--check')) {
   if (readFileSync(pagePath, 'utf8') !== out) { console.error('release-evidence.html is out of date: run node tools/build-status-page.mjs'); process.exit(1); }

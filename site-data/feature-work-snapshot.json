@@ -1,0 +1,1685 @@
+{
+  "version": 1,
+  "capturedAt": "2026-10-29T15:47:16-04:00",
+  "expiresAt": "2026-10-29T16:47:16-04:00",
+  "displayTime": "Oct 29, 2026, 3:46:23–3:47:16 PM Eastern",
+  "recordsCutoff": "2026-10-29T20:12:00Z",
+  "features": [
+    {
+      "name": "Opening the app and the five tabs",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 26,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 17 valid cold starts /85 tab observations across 3 device-user contexts; one RAM-interrupted extra excluded"
+        }
+      }
+    },
+    {
+      "name": "Playing films, seeking, picture-in-picture",
+      "active": true,
+      "stage": "Implementation",
+      "reason": "Implementation work on playback and connection recovery was confirmed during this snapshot. The same work covers several features.",
+      "confirmedAt": "2026-10-29T15:47:16-04:00",
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 33,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 4 named native playback flows:3 scoped controls PASS,1 resource-interrupted Pixel flow; not4 whole-feature passes"
+        }
+      }
+    },
+    {
+      "name": "Away from home (direct, then relay)",
+      "active": true,
+      "stage": "Implementation",
+      "reason": "Implementation work on playback and connection recovery was confirmed during this snapshot. The same work covers several features.",
+      "confirmedAt": "2026-10-29T15:47:16-04:00",
+      "tests": {
+        "automated": {
+          "runs": 1,
+          "assertions": 9,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "unchanged main diagnostic",
+              "date": "2026-10-29",
+              "passed": 3,
+              "failed": 6,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 20,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 distinct HUMAN-reported phone-browser scenarios (1 transition/control/audio success,1 background-return UX finding); separate same-LAN connection failure"
+        }
+      }
+    },
+    {
+      "name": "Watch Together",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 6,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 5 original group reports across 107/108/109 (browser sync, desktop+guest,2guests,109web,109away-join failure); exact-step writeup/correction adds0"
+        }
+      }
+    },
+    {
+      "name": "Car party (host and passengers)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 2,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Library health",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 8,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 phone health-screen checks plus 1 desktop look-only group; no new repair/title-row acceptance"
+        }
+      }
+    },
+    {
+      "name": "Surprise me, playlists, watchlist, favourites",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 17,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 1 desktop playlist CRUD group; 2 desktop local-RSS groups; 2 radio groups with different scopes (muted stream once, favorites once)"
+        }
+      }
+    },
+    {
+      "name": "Campsite host start and stop",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 11,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 distinct host start/stop flows; second includes 1 two-phone lobby join/leave flow"
+        }
+      }
+    },
+    {
+      "name": "Podcasts and radio",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 26,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 1 desktop playlist CRUD group; 2 desktop local-RSS groups; 2 radio groups with different scopes (muted stream once, favorites once)"
+        }
+      }
+    },
+    {
+      "name": "Audiobooks",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 20,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 1 scoped desktop audiobook play/chapter/start-over group"
+        }
+      }
+    },
+    {
+      "name": "Pack for a trip (download planner)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 2,
+          "assertions": 48,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "historical portable actual source",
+              "date": "2026-10-29",
+              "passed": 24,
+              "failed": 0,
+              "skipped": 0
+            },
+            {
+              "label": "Automated source checks",
+              "stage": "baseline red",
+              "date": "2026-10-29",
+              "passed": 23,
+              "failed": 1,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 19,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 1 native landing-screen group for each; Photos also2 scoped desktop browse/view groups; no fresh download/backup run"
+        }
+      }
+    },
+    {
+      "name": "Trip Journal (trips, recap, video export)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 6,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Campsite games",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 9,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 distinct host start/stop flows; second includes 1 two-phone lobby join/leave flow"
+        }
+      }
+    },
+    {
+      "name": "Shared photos and videos",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 2,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Wireless speakers",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 3,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Share the app (QR over the hotspot)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 3,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Wake my PC",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 2,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Chromecast",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 1,
+          "assertions": 10884,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "App-wide integration cases",
+              "stage": "historical merged candidate",
+              "date": "2026-10-29",
+              "passed": 10884,
+              "failed": 0,
+              "skipped": 44
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 23,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 0 executed Cast comparisons in the explicitly BLOCKED comparison receipt; lifetime history UNKNOWN"
+        }
+      }
+    },
+    {
+      "name": "Beebo Auto (Android Auto)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 2,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Android TV and Fire TV screens",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 1,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Google Play version",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 1,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Phone Help (show your screen to another phone)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 1,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Stream from my PC (old button)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 1,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Link a TV",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 2,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 24,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Music on the phone (albums, songs, player, sleep timer)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 11,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Family Dashboard, Camp Jobs and Star Chart",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 7,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Packing List (shared between phones)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 6,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Family Recipes and shopping list",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 7,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Collections and Request a title",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 7,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Photos and phone backups (timeline, albums, viewer)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 1,
+          "assertions": 6,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "unchanged main diagnostic",
+              "date": "2026-10-29",
+              "passed": 4,
+              "failed": 2,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 23,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 1 native landing-screen group for each; Photos also2 scoped desktop browse/view groups; no fresh download/backup run"
+        }
+      }
+    },
+    {
+      "name": "Family achievements (opt-in milestones)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 4,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Installer and self-update",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 9,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 direct recorded Windows in-app update executions107→108 and108→109; 1 separate24C updater attempt blocked before install; earlier recorded handoffs not counted again"
+        }
+      }
+    },
+    {
+      "name": "Library, player and web player",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 4,
+          "assertions": 469,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "independent exact source",
+              "date": "2026-10-29",
+              "passed": 140,
+              "failed": 0,
+              "skipped": 0
+            },
+            {
+              "label": "Automated source checks",
+              "stage": "author exact source",
+              "date": "2026-10-29",
+              "passed": 42,
+              "failed": 0,
+              "skipped": 0
+            },
+            {
+              "label": "Automated source checks",
+              "stage": "historical author source",
+              "date": "2026-10-29",
+              "passed": 278,
+              "failed": 0,
+              "skipped": 0
+            },
+            {
+              "label": "Automated source checks",
+              "stage": "unchanged main diagnostic",
+              "date": "2026-10-29",
+              "passed": 3,
+              "failed": 6,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 46,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 distinct HUMAN-reported phone-browser scenarios (1 transition/control/audio success,1 background-return UX finding); separate same-LAN connection failure"
+        }
+      }
+    },
+    {
+      "name": "Update modes and start with Windows",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 3,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 direct recorded Windows in-app update executions107→108 and108→109; 1 separate24C updater attempt blocked before install; earlier recorded handoffs not counted again"
+        }
+      }
+    },
+    {
+      "name": "Converter and quality / speed settings",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 1,
+          "assertions": 313,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "historical merged candidate",
+              "date": "2026-10-29",
+              "passed": 313,
+              "failed": 0,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 14,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 dedicated desktop-quality groups+2 mixed soak groups; 4 phone-browser quality flows (2 original observations,2 refreshed-QA repeats); Repeated report adds0"
+        }
+      }
+    },
+    {
+      "name": "Live TV (tuner and own playlist)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 8,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 desktop synthetic-M3U tuning groups; current109 Reconnecting overlay NOT RUN"
+        }
+      }
+    },
+    {
+      "name": "Story Studio",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 1,
+          "assertions": 240,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "independent exact source",
+              "date": "2026-10-29",
+              "passed": 240,
+              "failed": 0,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 6,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 synthetic stories in1 desktop group; 1 exported10s MP4/frame inspected"
+        }
+      }
+    },
+    {
+      "name": "Movie Night",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 9,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: UNKNOWN distinct Movie Night device-run total in this bounded pass"
+        }
+      }
+    },
+    {
+      "name": "Jellyfin-compatible mode",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 6,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 four-core browser/API groups; 0 real Jellyfin-client executions established here; API-only helper reports excluded from DEVICE counts"
+        }
+      }
+    },
+    {
+      "name": "Parental controls and household profiles",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 14,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 actual timed109 limit cases (5min and29min); 1/2-minute failure on108 retained separately"
+        }
+      }
+    },
+    {
+      "name": "Keyboard and screen-reader support",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 1,
+          "assertions": 17,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "existing main evidence",
+              "date": "2026-10-29",
+              "passed": 17,
+              "failed": 0,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 8,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: Named keyboard/focus groups; whole-feature denominator UNKNOWN"
+        }
+      }
+    },
+    {
+      "name": "Languages (5 translated with machine help, 3 previews)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 2,
+          "assertions": 112,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "independent exact source",
+              "date": "2026-10-29",
+              "passed": 56,
+              "failed": 0,
+              "skipped": 0
+            },
+            {
+              "label": "Automated source checks",
+              "stage": "independent merged candidate",
+              "date": "2026-10-29",
+              "passed": 56,
+              "failed": 0,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 10,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 3 named desktop language UI inspection groups; later installed-table read is metadata-only, not another device/UI pass"
+        }
+      }
+    },
+    {
+      "name": "Posters and info (TMDB)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 10,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Remote Desktop (see and control the PC)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Space Saver",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 5,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Library sharing with another household",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 2,
+          "assertions": 10930,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "historical merged candidate",
+              "date": "2026-10-29",
+              "passed": 24,
+              "failed": 0,
+              "skipped": 0
+            },
+            {
+              "label": "App-wide integration cases",
+              "stage": "historical merged candidate",
+              "date": "2026-10-29",
+              "passed": 10906,
+              "failed": 0,
+              "skipped": 44
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Strong volume leveler",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 3,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Phone speakers (phones play the film's sound)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 2,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Music on the PC (library, mixes, desktop player)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 1,
+          "assertions": 22,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "unmerged candidate partial",
+              "date": "2026-10-29",
+              "passed": 22,
+              "failed": 0,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 7,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 scoped desktop/browser music groups; not audible/gapless acceptance"
+        }
+      }
+    },
+    {
+      "name": "Home layouts and Customize layout (desktop)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 1,
+          "assertions": 157,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "independent exact source",
+              "date": "2026-10-29",
+              "passed": 157,
+              "failed": 0,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 4,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 2 desktop layout groups plus 1 browser theme group"
+        }
+      }
+    },
+    {
+      "name": "Picture frame (photo wall for a tablet or TV)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": 1,
+          "assertions": 148,
+          "coverage": "partial",
+          "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
+          "executions": [
+            {
+              "label": "Automated source checks",
+              "stage": "historical merged candidate",
+              "date": "2026-10-29",
+              "passed": 148,
+              "failed": 0,
+              "skipped": 0
+            }
+          ]
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 10,
+          "coverage": "partial",
+          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
+          "summary": "Partial: 3 frame-wall groups across 107/108/109; latest109 group uses API-created frame; accidental unused API create not extra wall run"
+        }
+      }
+    },
+    {
+      "name": "Kitchen announcements (messages to phones)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 8,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Linux server (headless, Docker)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Linux desktop app",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "macOS desktop",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Our own servers and DNS",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 1,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Beebo Relay (fallback connection)",
+      "active": true,
+      "stage": "Implementation",
+      "reason": "Implementation work on playback and connection recovery was confirmed during this snapshot. The same work covers several features.",
+      "confirmedAt": "2026-10-29T15:47:16-04:00",
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 6,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Website and browser games",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 7,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Password reset and email verification",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Online games (play with others)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Walkie-talkie from anywhere",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 1,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Portrait Party (turn a photo into a card)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Trip Journal link away from home",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "BeeboVPN",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Rewards, ads and credit",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Beebo Play (hosted game servers)",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Managed hosting",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "3D characters and story videos",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    },
+    {
+      "name": "Google Assistant and Alexa",
+      "active": null,
+      "stage": "Unverified",
+      "reason": "Activity was not verified for this feature at the snapshot.",
+      "confirmedAt": null,
+      "tests": {
+        "automated": {
+          "runs": null,
+          "assertions": null,
+          "coverage": "unknown",
+          "note": "Automated execution history has not been fully tallied. Unknown does not mean zero."
+        },
+        "deviceWorld": {
+          "runs": null,
+          "datedRecords": 0,
+          "coverage": "unknown",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+        }
+      }
+    }
+  ],
+  "integrationNote": "A separate presentation-source integration passed 537 composed automated checks on Oct 29 at 4:12 PM Eastern. It covers navigation, desktop Users contrast and Story Studio together; it is not 537 device runs or 537 additional checks per feature. No installed-release acceptance is implied. The broader source and device reconciliations ended at 3:58 PM and 3:55 PM Eastern, respectively."
+}
