@@ -27,7 +27,7 @@ const html = [
   '<!--SCOREBOARD-->',
   '<section class="evidence-scoreboard" id="scoreboard" aria-labelledby="scoreboard-title" style="margin:18px 0;padding:16px 18px;border:1px solid currentColor;border-radius:10px">',
   '<h2 id="scoreboard-title" style="margin-top:0">Progress tier scoreboard</h2>',
-  `<p><strong>${top.length} of ${rows.length} features are at 99%</strong> (updated <time>${esc(stamp)}</time>). 99% means built, tested automatically, tested on a real device and checked in the real world. It is not 100%: Nick’s own final sound-and-picture check and the Ready tick come last.</p>`,
+  `<p><strong>${top.length} of ${rows.length} features are at 99%</strong> (score snapshot <time>${esc(stamp)}</time>; later dated update records below do not change these scores). 99% means built, tested automatically, tested on a real device and checked in the real world. It is not 100%: Nick’s own final sound-and-picture check and the Ready tick come last.</p>`,
   '<ul>',
   ...data.scoring.tiers.map(t => `<li><strong>${esc(t.range)} — ${esc(t.label)} (${rows.filter(f => P.tierFor(f.percentComplete,data.scoring).id === t.id).length})</strong></li>`),
   `<li><strong>At 100% (${ready.length}):</strong> ${ready.length ? names(ready) : 'No feature has the final Ready tick'}.</li>`,
