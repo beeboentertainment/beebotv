@@ -1,0 +1,12 @@
+{
+  "name": "beebo-evidence-page-tools",
+  "private": true,
+  "scripts": {
+    "test": "node --test scripts/feature-work-snapshot.test.mjs",
+    "check:evidence": "node tools/build-status-page.mjs --check && node scripts/check-evidence-tiers.cjs && node site-data/check-progress-score.js"
+  },
+  "devDependencies": {
+    "jsdom": "30.1.1",
+    "parse5": "8.0.1"
+  }
+}

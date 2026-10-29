@@ -5,16 +5,21 @@
    Without JavaScript the chips stay readable text (disabled) and every feature row is already visible lower on the page. */
 (() => {
  const legend=document.querySelector('.status-legend'), panel=document.getElementById('tier-key-panel'), results=document.getElementById('tier-results');
- const chips=[...document.querySelectorAll('[data-tier-chip]')], data=document.querySelector('.tier-key-data');
+ const chips=[...document.querySelectorAll('[data-tier-chip]')], data=document.getElementById('feature-work-groups');
  const status=legend&&legend.querySelector('.tier-result-count');
  if(!legend||!panel||!results||!chips.length||!data||!status)return;
  const allChip=chips.find(c=>c.dataset.tierChip==='all');
  const rows=[...results.querySelectorAll('tbody.feature-entry')];
+ const cards=[...data.querySelectorAll('.feature-work-card')];
+ const close_=document.createElement('button');close_.type='button';close_.className='tier-key-close';close_.textContent='Show all features';close_.hidden=true;
+ close_.addEventListener('click',()=>clear(true));panel.prepend(close_);
  let current=null;
  function setPressed(active){chips.forEach(c=>c.setAttribute('aria-pressed',String(active?c===active:c===allChip)));}
  function filterRows(id){
   let count=0;
   rows.forEach(r=>{r.hidden=id!=='all'&&r.dataset.tier!==id;if(!r.hidden)count++;});
+  cards.forEach(c=>{c.hidden=id!=='all'&&c.dataset.tier!==id;});
+  data.querySelectorAll('.feature-work-group').forEach(g=>{g.hidden=![...g.querySelectorAll('.feature-work-card')].some(c=>!c.hidden);});
   results.querySelectorAll('.feature-group').forEach(g=>{g.hidden=![...g.querySelectorAll('tbody.feature-entry')].some(r=>!r.hidden);});
   status.textContent=count?(id==='all'?'Showing all '+rows.length+' features.':'Showing '+count+' of '+rows.length+' features.'):'No features in this tier yet.';
  }
@@ -23,38 +28,28 @@
   current=null;
   setPressed(null);
   filterRows('all');
-  panel.textContent='';
   panel.className='tier-key-panel';
+  close_.hidden=true;
   if(focusChip&&was)was.focus();
  }
  function select(chip){
-  const id=chip.dataset.tierChip, src=data.querySelector('[data-tier-list="'+id+'"]');
-  if(!src)return;
+  const id=chip.dataset.tierChip;
   current=chip;
   setPressed(chip);
   filterRows(id);
-  const n=Number(src.dataset.count)||0;
-  panel.textContent='';
   panel.className='tier-key-panel is-open tier-key-'+id;
-  const head=document.createElement('div');head.className='tier-key-head';
-  const h=document.createElement('h3');h.className='tier-key-title';
-  h.textContent=chip.dataset.heading+': '+n+(n===1?' feature':' features');
-  const close_=document.createElement('button');close_.type='button';close_.className='tier-key-close';close_.textContent='Show all (close list)';
-  close_.addEventListener('click',()=>clear(true));
-  head.append(h,close_);
-  panel.append(head);
-  if(n){panel.append(src.cloneNode(true));}
-  else{const p=document.createElement('p');p.className='tier-key-empty';p.textContent='No features in this tier yet.';panel.append(p);}
+  close_.hidden=false;
  }
  chips.forEach(c=>c.addEventListener('click',()=>{if(c===allChip||current===c)clear(false);else select(c);}));
  panel.addEventListener('keydown',e=>{if(e.key==='Escape'&&current)clear(true);});
  legend.addEventListener('keydown',e=>{if(e.key==='Escape'&&current){e.preventDefault();clear(true);}});
  // A link to a feature row must land on a visible row: if the tier filter is hiding it, show every feature first.
  function revealTarget(hash){
-  if(!current||!hash||hash.length<2)return;
+  if(!hash||hash.length<2)return;
   let el=null;try{el=document.getElementById(decodeURIComponent(hash.slice(1)));}catch(_e){return;}
   const entry=el&&el.closest('tbody.feature-entry');
   if(entry&&entry.hidden)clear(false);
+  let parent=el;while(parent){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement;}
  }
  document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href^="#"]');if(a)revealTarget(a.getAttribute('href'));});
  window.addEventListener('hashchange',()=>revealTarget(location.hash));
@@ -62,6 +57,31 @@
  chips.forEach(c=>{c.disabled=c.classList.contains('is-empty');});
  setPressed(null);
  legend.classList.add('is-interactive');
+ revealTarget(location.hash);
+})();
+
+// A dated snapshot can expire without a new data fetch. Never leave a stale active icon looking current.
+(() => {
+ const entries=[...document.querySelectorAll('.feature-activity[data-expires]')];
+ function refresh(){
+  let stale=false;
+  entries.forEach(d=>{
+   const expiry=Date.parse(d.dataset.expires);
+   if(!Number.isFinite(expiry)||Date.now()<=expiry)return;
+   stale=true;d.dataset.activity='unknown';
+   const toggle=d.querySelector('.activity-toggle');
+   toggle.classList.remove('activity-active','activity-inactive');toggle.classList.add('activity-unknown');
+   d.querySelector('[data-activity-label]').textContent='Activity not verified';
+   toggle.title='This dated snapshot is stale. Current activity is not verified.';
+   const tip=d.querySelector('.activity-tooltip');if(tip)tip.textContent=toggle.title;
+   const note=d.querySelector('.activity-note');
+   if(note&&!note.dataset.stale){note.prepend(document.createTextNode('This snapshot is stale; current activity is not verified. '));note.dataset.stale='true';}
+  });
+  document.querySelectorAll('.activity-stale-note').forEach(n=>{n.hidden=!stale;});
+ }
+ refresh();
+ const next=Math.min(...entries.map(d=>Date.parse(d.dataset.expires)).filter(Number.isFinite));
+ if(Number.isFinite(next)&&next>=Date.now())setTimeout(refresh,Math.min(next-Date.now()+1000,2147483647));
 })();
 
 /* Pause the shine animation of the key chips and the Ready banner while they are off screen. */

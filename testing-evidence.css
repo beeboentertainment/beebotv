@@ -1055,3 +1055,46 @@ html[data-aurora] .feature-progress-table .feature-notes > td { padding: 6px 22p
   .pm-detail, .pm-rowdetail, .pp-card { break-inside: avoid; }
   .platform-progress, .platform-matrix { background: #fff; color: #000; border-color: #000; }
 }
+/* Dated activity stays separate from checklist scores. */
+.feature-work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.feature-work-card { min-width: 0; padding: 16px; border: 1px solid #53657b; border-radius: 12px; background: #121f30; color: #f4f7fc; overflow-wrap: anywhere; }
+.feature-work-card[hidden], .feature-work-group[hidden] { display: none !important; }
+.feature-work-heading { display: flex; align-items: start; gap: 12px; justify-content: space-between; }
+.feature-work-heading h4 { margin: 0; font-size: 1.05rem; line-height: 1.4; }
+.feature-work-link { color: #c6e7ff; text-decoration: underline; text-underline-offset: 3px; }
+.feature-work-percent { font-size: 1.35rem; white-space: nowrap; }
+.feature-work-status, .feature-work-risk, .feature-work-limit { font-size: .9rem; line-height: 1.5; }
+.feature-work-risk { font-weight: 650; }
+.feature-work-limit { border-inline-start: 3px solid #f6cb7a; padding-inline-start: 9px; }
+.feature-work-counts { display: grid; gap: 6px; font-size: .88rem; line-height: 1.5; }
+.feature-work-details summary, .feature-evidence > summary, .evidence-archive > summary { cursor: pointer; padding: 12px 0; font-weight: 650; }
+.feature-work-details p { font-size: .9rem; line-height: 1.55; }
+.feature-evidence, .evidence-archive { margin-block: 24px; border-block-start: 1px solid #53657b; }
+.feature-work-group { margin-block: 28px; }
+.feature-work-snapshot { padding-block: 12px; }
+.activity-legend { display: flex; flex-wrap: wrap; gap: 10px 26px; padding-inline-start: 20px; }
+.activity-active { color: #a6f4bd; }
+.activity-inactive { color: #ffadad; }
+.activity-unknown { color: #d7dfeb; }
+.feature-activity { margin-block: 12px; }
+.activity-toggle { display: flex; position: relative; align-items: center; flex-wrap: wrap; gap: 7px; min-height: 44px; width: fit-content; max-width: 100%; cursor: pointer; padding: 5px 8px; border: 1px solid currentColor; border-radius: 7px; font-weight: 650; }
+.activity-toggle:focus-visible, .feature-work-link:focus-visible, .feature-work-details summary:focus-visible, .feature-evidence > summary:focus-visible, .evidence-archive > summary:focus-visible { outline: 3px solid #fff2ac; outline-offset: 4px; }
+.work-robot { width: 29px; height: 29px; flex: 0 0 29px; --robot-eye: #101820; }
+.robot-eye { fill: var(--robot-eye); }
+.activity-at { font-size: .78rem; font-weight: 400; }
+.activity-note { margin: 12px 0; line-height: 1.5; font-size: .88rem; }
+.activity-tooltip { visibility: hidden; opacity: 0; position: absolute; z-index: 5; inset-inline-start: 0; bottom: calc(100% + 8px); width: min(32ch, calc(100vw - 72px)); padding: 10px; color: #fff; background: #08111d; border: 1px solid #97adc7; border-radius: 6px; font-size: .85rem; line-height: 1.5; pointer-events: none; }
+.activity-toggle:hover .activity-tooltip, .activity-toggle:focus-visible .activity-tooltip { visibility: visible; opacity: 1; }
+.activity-stale-note { border-inline-start: 3px solid #97adc7; padding: 10px 14px; }
+@media (max-width: 680px) {
+  .feature-work-grid { grid-template-columns: minmax(0, 1fr); }
+  .feature-work-card { padding: 14px; }
+  .feature-work-heading { gap: 8px; }
+  .feature-work-percent { font-size: 1.2rem; }
+  .feature-work-snapshot .activity-legend { display: grid; gap: 10px; }
+}
+@media (forced-colors: active) {
+  .activity-toggle { border: 2px solid ButtonText; }
+  .activity-toggle:focus-visible { outline-color: Highlight; }
+  .feature-work-card { border: 1px solid CanvasText; }
+}
