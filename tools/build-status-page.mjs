@@ -18,7 +18,7 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const P = require('../site-data/progress-score.js');
 import { platformProgressHtml, platformMatrixHtml } from './platform-sections.mjs';
-import { renderCards, compactEvidenceLayout, codeEstimate } from './feature-work-snapshot.mjs';
+import { renderCards, compactEvidenceLayout, codeEstimate, renderRecentEvidence } from './feature-work-snapshot.mjs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -176,7 +176,7 @@ function lastTestedCell(f) {
 function testHistory(f, note) {
   const entries = splitHistory(f.lastTested);
   const n = Number(f.openIssues) || 0;
-  let h = '';
+  let h = renderRecentEvidence(f, workSnapshot.features.find(r=>r.name===f.name)?.tests.automated);
   if (entries.length) h += `<div class="th-sec"><h4 class="th-h">Test history, newest first</h4><ol class="th-list">${entries.map(e => `<li>${esc(e)}</li>`).join('')}</ol></div>`;
   if (f.leftToReach100) h += `<div class="th-sec feature-left"><h4 class="th-h">Left to reach 100%</h4><p>${esc(f.leftToReach100)}</p></div>`;
   if (f.scoreNote) h += `<div class="th-sec score-note"><h4 class="th-h">Record limit</h4><p>${esc(f.scoreNote)}</p></div>`;
@@ -364,10 +364,10 @@ function codeVsHumanSection(data) {
       : 'No code item is still listed.');
     return `<tr><th scope="row">${esc(feature.name)}</th><td data-label="Code built and tests passing">${esc(codeText)}</td><td data-label="Human testing left">${feature.humanTestingLeft}%</td><td data-label="What is left">${note}</td></tr>`;
   };
-  let out = `<section class="evidence-section code-vs-human" id="code-vs-human" aria-labelledby="code-vs-human-title"><span class="evidence-kicker">Checklist view · updated ${esc(data.updatedEastern || '')}</span><h2 id="code-vs-human-title">Code done vs human testing left</h2>${data.evidenceLimit ? `<p><strong>Evidence limit:</strong> ${esc(data.evidenceLimit)}</p>` : ''}<p>Numbers come from our own test list (last updated ${esc(J.updatedEastern || '')}) and were worked out on ${esc(data.updatedEastern || '')}. They show how much of our checklist has passed, not whether the app is bug-free. A high code number means the code is built and its automated tests pass. It does not mean nothing is left to build: the open code items are listed under each bar.</p><p>${esc(data.method || '')}</p><div class="code-vs-human-groups">`;
+  let out = `<section class="evidence-section code-vs-human" id="code-vs-human" aria-labelledby="code-vs-human-title"><span class="evidence-kicker">Checklist view · updated ${esc(data.updatedEastern || '')}</span><h2 id="code-vs-human-title">Legacy code estimates and device checks</h2>${data.evidenceLimit ? `<p><strong>Evidence limit:</strong> ${esc(data.evidenceLimit)}</p>` : ''}<p>Numbers come from our own test list (last updated ${esc(J.updatedEastern || '')}) and were worked out on ${esc(data.updatedEastern || '')}. They show how much of our checklist has passed, not whether the app is bug-free. The code bars retain legacy estimates. Required code items and open issues can contradict a 100% estimate, so it must not be read as proven code completion. The main feature scores and their issue caps remain the readiness measure.</p><p>${esc(data.method || '')}</p><div class="code-vs-human-groups">`;
   for (const group of data.groups) {
     const humanDone = 100 - group.humanTestingLeft;
-    out += `<article class="code-vs-human-group"><h3>${esc(group.name)}</h3>${bar('Code built and tests passing', group.codeDone, `${group.remaining.CODE} code item${group.remaining.CODE === 1 ? '' : 's'} still listed.`)}${bar('Human testing done', humanDone, `${group.humanTestingLeft}% left.`)}<p class="code-vs-human-left"><strong>What is left:</strong> ${esc(countText(group.remaining))}.</p><details><summary>See feature-by-feature numbers</summary><div class="evidence-table-wrap" role="region" aria-label="${esc(group.name)} code and human testing table"><table class="evidence-table code-vs-human-table"><caption>${esc(group.name)}: code done and human testing left</caption><thead><tr><th scope="col">Feature</th><th scope="col">Code built and tests passing</th><th scope="col">Human testing left</th><th scope="col">What is left</th></tr></thead><tbody>${group.features.map(featureRow).join('')}</tbody></table></div></details></article>`;
+    out += `<article class="code-vs-human-group"><h3>${esc(group.name)}</h3>${bar('Legacy code-check estimate', group.codeDone, `${group.remaining.CODE} code item${group.remaining.CODE === 1 ? '' : 's'} still listed.`)}${bar('Human testing done', humanDone, `${group.humanTestingLeft}% left.`)}<p class="code-vs-human-left"><strong>What is left:</strong> ${esc(countText(group.remaining))}.</p><details><summary>See feature-by-feature numbers</summary><div class="evidence-table-wrap" role="region" aria-label="${esc(group.name)} code and human testing table"><table class="evidence-table code-vs-human-table"><caption>${esc(group.name)}: code done and human testing left</caption><thead><tr><th scope="col">Feature</th><th scope="col">Code built and tests passing</th><th scope="col">Human testing left</th><th scope="col">What is left</th></tr></thead><tbody>${group.features.map(featureRow).join('')}</tbody></table></div></details></article>`;
   }
   return out + '</div></section>';
 }
@@ -457,7 +457,7 @@ const csRe = /<!--CODE-STATUS-SUMMARY-->[\s\S]*?<!--\/CODE-STATUS-SUMMARY-->/;
 if (csRe.test(html)) {
  const o=J.codeVsHuman.overall;
  const groups=Object.entries(J.realWorldStatusLabels).map(([key,label])=>'<details class="cs-list"><summary>'+esc(label)+' ('+o.counts[key]+')</summary><ul>'+features.filter(f=>f.realWorldStatus===key).map(f=>'<li>'+esc(f.name)+'</li>').join('')+'</ul></details>').join('');
- html=html.replace(csRe,()=>'<!--CODE-STATUS-SUMMARY--><section class="evidence-section code-status-summary" id="code-status" aria-labelledby="code-status-title"><p>Where Beebo stands · updated '+esc(upd)+'</p><h2 id="code-status-title">The code checklist is '+o.codeDone+'%; device and real-world checks recorded are '+o.humanTestingDone+'%.</h2><p>'+o.features+' features; '+o.codeItemsLeft+' code items remain. These are checklist totals, not a promise of complete reliability.</p>'+groups+'</section><!--/CODE-STATUS-SUMMARY-->');
+ html=html.replace(csRe,()=>'<!--CODE-STATUS-SUMMARY--><section class="evidence-section code-status-summary" id="code-status" aria-labelledby="code-status-title"><p>Where Beebo stands · updated '+esc(upd)+'</p><h2 id="code-status-title">The legacy code-check estimate is '+o.codeDone+'%; device and real-world checks recorded are '+o.humanTestingDone+'%.</h2><p>'+o.features+' features; '+o.codeItemsLeft+' code items remain. The code estimate is unverified where required work or an open issue remains; use the feature scores and evidence for readiness.</p>'+groups+'</section><!--/CODE-STATUS-SUMMARY-->');
 }
 
 // Description dates and JSON-LD.
