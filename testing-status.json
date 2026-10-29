@@ -2,7 +2,7 @@
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
     "updatedEastern": "Oct 29, 2026, 4:42 PM Eastern",
-    "method": "Legacy code-check estimates and device/world checklist coverage use the existing calculation. Neither is a count of test runs. A 100% legacy code value is unverified wherever required code work or an open issue remains. Use each feature’s five-check score, known issues and evidence for readiness.",
+    "method": "The legacy code-check estimate is the share of the Built and Automated tests checks that passed. The separate Device and real-world checks recorded figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. Stored legacy code estimates may show 100% despite required code work or an open issue; those estimates are unverified. A feature counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
       "humanTestingDone": 40,

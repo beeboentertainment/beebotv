@@ -100,6 +100,8 @@ test('legacy 100% code estimates with outstanding required work are visibly qual
  assert.equal(contradicted.length,43);
  for(const f of contradicted){const card=cards.find(c=>c.includes(`data-feature-name="${escape(f.name)}"`));assert.ok(card.includes('Legacy code estimate is unverified'),f.name);}
  assert.match(page,/43 rows retain a 100% code estimate/);
+ const method=data.codeVsHuman.method;
+ for(const fact of ['Built and Automated tests checks','Real device, Real-world check and Ready to call Available','Group figures are the average of their features and are never rounded up to 100','Remaining counts are open road-to-100 items','All 70 features are counted, including those that are planned or on hold'])assert.ok(method.includes(fact),fact);
  const generator=readFileSync(new URL('../site-data/build-what-we-offer.js',import.meta.url),'utf8');
  assert.doesNotMatch(generator,/\$\{c\.waiting\} code complete/);
 });
@@ -126,6 +128,8 @@ test('counted source executions exclude skipped cases and retain failed diagnost
  for(const f of counted){const c=f.tests.automated;assert.equal(c.runs,c.executions.length);assert.equal(c.assertions,c.executions.reduce((n,r)=>n+r.passed+r.failed,0));assert.equal(c.coverage,'partial');}
  assert.equal(snapshot.features.find(f=>f.name==='Story Studio').tests.automated.assertions,240);
  assert.match(snapshot.integrationNote,/537/);assert.match(snapshot.integrationNote,/not 537 device runs/);
+ assert.ok(data.features.every(f=>!f.sourceUpdate || Date.parse(f.sourceUpdate.asOf)<=Date.parse(snapshot.recordsCutoff)),'latest included source evidence fits the stated cutoff');
+ assert.match(snapshot.integrationNote,/reconciliations ended at 3:58 PM and 3:55 PM/);
 });
 test('tier filtering, Escape and evidence links update the rendered DOM coherently',()=>{
  const dom=domAt();try{
