@@ -5,6 +5,7 @@ import { createRequire } from 'node:module';
 import { execFileSync } from 'node:child_process';
 import { JSDOM } from 'jsdom';
 import { validateSnapshot, activityState, codeEstimate, renderActivity } from '../tools/feature-work-snapshot.mjs';
+import { readinessAudit, validateReadinessAudit } from '../tools/readiness-audit.mjs';
 const require = createRequire(import.meta.url);
 const data = JSON.parse(readFileSync(new URL('../testing-status.json', import.meta.url), 'utf8'));
 const page = readFileSync(new URL('../release-evidence.html', import.meta.url), 'utf8');
@@ -88,12 +89,34 @@ test('public snapshot has exactly the public feature names and no private proven
   assert.doesNotMatch(text, /github\.com[^\s"]*\/issues|issuecomment|taskId|\/workspace\/|\b[a-f0-9]{40}\b/i);
   for (const f of snapshot.features) assert.ok([true, false, null].includes(f.active));
 });
-test('all 70 scores, checks, issue counts and installed-test dates preserve the reviewed baseline',()=>{
+test('all 70 scores, checks and issue counts preserve the baseline; only the audited Car Party date description changes',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
   const after=data.features.find(f=>f.name===before.name);
-  for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent'])assert.deepEqual(after[key],before[key],before.name+': '+key);
+  for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent']){
+   if(before.name==='Car party (host and passengers)' && ['lastTested','testedOn'].includes(key))continue;
+   assert.deepEqual(after[key],before[key],before.name+': '+key);
+  }
  }
+ const car=data.features.find(f=>f.name==='Car party (host and passengers)');
+ assert.equal(car.lastTested,'Oct 13, 2026: two-phone host/join/leave; no newer-build real-device PASS recorded');
+ const originalCar=baseline.features.find(f=>f.name===car.name);
+ assert.equal(car.testedOn,originalCar.testedOn.replace('No real Car Party pass is recorded here. Last PASS: No real-device PASS recorded.','No newer-build Car Party pass is recorded here. The existing device tick rests on the Oct 13, 2026 two-phone host/join/leave run.'));
+});
+
+test('the dated percentage audit accounts for all 70 rows and keeps evidence gaps explicit',()=>{
+ validateReadinessAudit(data);
+ assert.equal(readinessAudit.features.length,70);
+ assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
+ assert.ok(readinessAudit.features.every(f=>f.scoreBefore===f.scoreAfter));
+ assert.match(page,/id="percentage-audit"/);
+ for(const row of readinessAudit.features){
+  const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
+  assert.ok(detail.includes(escape(row.summary)),row.featureId);
+  assert.ok(detail.includes(readinessAudit.updatedEastern),row.featureId);
+ }
+ const missing=structuredClone(readinessAudit);missing.features.pop();assert.throws(()=>validateReadinessAudit(data,missing));
+ const wrong=structuredClone(readinessAudit);wrong.features[0].scoreAfter++;assert.throws(()=>validateReadinessAudit(data,wrong));
 });
 test('legacy 100% code estimates with outstanding required work are visibly qualified',()=>{
  const contradicted=data.features.filter(f=>codeEstimate(f));

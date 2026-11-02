@@ -1,0 +1,734 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-02T17:36:41.404Z",
+  "updatedEastern": "Nov 2, 2026, 12:36 PM Eastern",
+  "method": "All 70 dated feature records were examined under the existing scoring rubric. Existing scores are retained; evidence gaps are named rather than treated as fresh failures or passes. No activity entry grants readiness credit and no new owner acceptance is added.",
+  "features": [
+    {
+      "featureId": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–29, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Cold starts and five-tab observations support the historical device and real-world checks. Warm pairing and certificate issues remain. Newer existing-account launches do not clear those failures."
+    },
+    {
+      "featureId": "feature-android-phone-app-playing-films-seeking-picture-in-picture",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–27, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Real playback, picture-in-picture and owner-heard sound support the historical checks. Four newer bounded seek observations passed, but cancellation, multitouch, rotation, accessibility and ended-cast behavior remain untested; prior settings findings remain open."
+    },
+    {
+      "featureId": "feature-android-phone-app-away-from-home-direct-then-relay",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 19–27, 2026"
+      ],
+      "summary": "Real mobile-data playback and network switching support the historical real-world mark. Browser Auto/480p and reconnect limitations remain. Source repairs do not establish current route or playback acceptance."
+    },
+    {
+      "featureId": "feature-android-phone-app-watch-together",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–26, 2026"
+      ],
+      "summary": "Two-phone host/viewer playback, seek and pause support the device mark. Observed delays and the cloud-room join limitation remain; a later non-reproduction does not prove general closure or real-world acceptance."
+    },
+    {
+      "featureId": "feature-android-phone-app-car-party-host-and-passengers",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–14, 2026",
+        "Oct 23–24, 2026"
+      ],
+      "summary": "The historical two-phone host-code, QR, join and leave check supports the device mark. Later identity blockage prevented a newer-build pass. The current note is qualified so it does not erase the older test; real-world acceptance remains open."
+    },
+    {
+      "featureId": "feature-android-phone-app-library-health",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–26, 2026"
+      ],
+      "summary": "Retains Nick's Oct 26 feature-specific acceptance of the matching Library Health counts. Missing-episode fixtures, Fix/Open, recovery and subsequent Open implementation remain outside that scoped approval."
+    },
+    {
+      "featureId": "feature-android-phone-app-surprise-me-playlists-watchlist-favourites",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–27, 2026"
+      ],
+      "summary": "Retains the feature-specific Oct 27 owner/coordinator acceptance of random playback, controls, saved marks and playlist operations with heard sound. Empty/error, sharing, smart-list and TV-show cases remain outside scope."
+    },
+    {
+      "featureId": "feature-android-phone-app-campsite-host-start-and-stop",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 11–29, 2026"
+      ],
+      "summary": "Two-phone local hosting, downloaded playback and later lobby/join/leave/Stop checks support the retained score. Two issues and mobile-data, hotspot and unmatched-stop cases remain."
+    },
+    {
+      "featureId": "feature-android-phone-app-podcasts-and-radio",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–27, 2026"
+      ],
+      "summary": "Retains the scoped Oct 27 acceptance based on real listening and the Follow-label retest. Later desktop work does not extend Android acceptance; newer queue, download, recording and sleep cases remain separate."
+    },
+    {
+      "featureId": "feature-android-phone-app-audiobooks",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–26, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Chapter, speed, bookmark and owner-heard playback support historical checks. One newer book-to-film takeover was stable, but the earlier unexplained position jump remains inconclusive and unresolved. Audible overlap was not judged and the account/book-removal issue stays open."
+    },
+    {
+      "featureId": "feature-android-phone-app-pack-for-a-trip-download-planner",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–26, 2026"
+      ],
+      "summary": "Retry/estimate tests and real offline original/compressed playback support the historical checks. The blank notification entry and low-space, cancellation and process-durability limits remain. Source promotion tests add no device credit."
+    },
+    {
+      "featureId": "feature-android-phone-app-trip-journal-trips-recap-video-export",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 13–24, 2026"
+      ],
+      "summary": "Real-phone export completion supports the device mark. A second-phone timeout and photos-plus-clip failure remain. Finished-file playback and a real outing/privacy journey still lack acceptance."
+    },
+    {
+      "featureId": "feature-android-phone-app-campsite-games",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–26, 2026"
+      ],
+      "summary": "Game-rule tests and two-phone natural match finishes support the historical checks. Three issues remain; bounded later native-game observations do not establish acceptance for every game."
+    },
+    {
+      "featureId": "feature-android-phone-app-shared-photos-and-videos",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–24, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Two-phone photo navigation, a saved-video hash match and picture checks support the device mark. Newer video-policy tests add source evidence only. Audible playback and concurrency remain unproved."
+    },
+    {
+      "featureId": "feature-android-phone-app-wireless-speakers",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–24, 2026"
+      ],
+      "summary": "Real browser outputs and audio-node/stop/restart checks support device-level behavior. The checks were muted, so audible synchronization and timing remain unproved; no real-world mark is added."
+    },
+    {
+      "featureId": "feature-android-phone-app-share-the-app-qr-over-the-hotspot",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–24, 2026"
+      ],
+      "summary": "A second phone installed over its existing same-version app and APK identity checks passed. That supports the historical device mark. A fresh never-installed device and actual expiry remain untested; the old summary is narrowed accordingly."
+    },
+    {
+      "featureId": "feature-android-phone-app-wake-my-pc",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–23, 2026"
+      ],
+      "summary": "The real-phone button/result and screen observations support only the existing device UI mark. No demonstrated wake of a sleeping PC is recorded; real-world acceptance remains open."
+    },
+    {
+      "featureId": "feature-android-phone-app-chromecast",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–27, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Real TV picture, controls and owner-heard sound support the historical checks. Six issues and broader route/end/next/TV cases remain. The newest phone build's cast check was not run, so it adds no TV acceptance."
+    },
+    {
+      "featureId": "feature-android-phone-app-beebo-auto-android-auto",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 6–27, 2026"
+      ],
+      "summary": "Nick's own-car use, tabs, progress and heard episode audio support historical real-world credit. The explicit 90% cap remains for the thin car record, phone-settings issue and untested driving, passenger, resume and other-car cases."
+    },
+    {
+      "featureId": "feature-android-phone-app-android-tv-and-fire-tv-screens",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Nov 2, 2026"
+      ],
+      "summary": "Current navigation, directional-pad and focus unit suites passed. They support automated source coverage only; there is still no real Android TV or Fire TV acceptance."
+    },
+    {
+      "featureId": "feature-android-phone-app-google-play-version",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 13–23, 2026"
+      ],
+      "summary": "A sideloaded phone demo played its sample clips and exited. The device mark is limited to that demo, not Google Play distribution. Closed-test submission, distribution and real-world acceptance remain unproved."
+    },
+    {
+      "featureId": "feature-android-phone-app-phone-help-show-your-screen-to-another-phone",
+      "scoreBefore": 25,
+      "scoreAfter": 25,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Session, isolation and one-shot automated suites passed, while the feature remains gated and absent from the observed menus. Only automated credit is retained; no exposed end-to-end feature or receiver acceptance is recorded."
+    },
+    {
+      "featureId": "feature-android-phone-app-stream-from-my-pc-old-button",
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–25, 2026"
+      ],
+      "summary": "The old separate feature was absent from menus and retired into Remote Desktop. All checks remain false and the score remains 0%."
+    },
+    {
+      "featureId": "feature-android-phone-app-link-a-tv",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 19–28, 2026"
+      ],
+      "summary": "Link, renewal, revocation and retry source tests are recorded. A phone or scripted receiver is not real-TV acceptance, so device and real-world marks remain false."
+    },
+    {
+      "featureId": "feature-android-phone-app-accessibility-choices-large-text-high-contrast-reduced-motion-talkback",
+      "scoreBefore": 99,
+      "scoreAfter": 99,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12–28, 2026"
+      ],
+      "summary": "Owner-confirmed large text/contrast and later maximum-font fixes support the existing 99%. Complete accessibility workflows and TalkBack judged by ear remain open, and final acceptance stays false. Desktop-only fixes add no Android credit."
+    },
+    {
+      "featureId": "feature-android-phone-app-music-on-the-phone-albums-songs-player-sleep-timer",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–26, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Retains Nick's Oct 26 feature-specific acceptance of phone music playback with heard audio. Newer queue and timer suites are source evidence only. Gapless/crossfade, mixes and casting remain outside the accepted subset."
+    },
+    {
+      "featureId": "feature-android-phone-app-family-dashboard-camp-jobs-and-star-chart",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 18–26, 2026"
+      ],
+      "summary": "Retains Nick's Oct 26 scoped acceptance of the tested family jobs, stars and dashboard controls. This does not establish long-running family use or broader multi-phone behavior."
+    },
+    {
+      "featureId": "feature-android-phone-app-packing-list-shared-between-phones",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 13–26, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Retains Nick's Oct 26 scoped local add/tick/delete acceptance and the historical sync checks. Newer checklist tests do not establish a real trip, which remains untested."
+    },
+    {
+      "featureId": "feature-android-phone-app-family-recipes-and-shopping-list",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–26, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Retains Nick's Oct 26 scoped recipe scaling, editing, privacy and delete/undo acceptance. Newer recipe/shopping suites add source evidence only; outgoing Share/Copy remains outside the approved subset."
+    },
+    {
+      "featureId": "feature-android-phone-app-collections-and-request-a-title",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–26, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Retains Nick's Oct 26 scoped collections/request acceptance. A later same-day trailer picture/sound observation is already recorded and supersedes the old 'untried' note. Newer collection tests do not broaden final acceptance."
+    },
+    {
+      "featureId": "feature-android-phone-app-photos-and-phone-backups-timeline-albums-viewer",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 24–28, 2026"
+      ],
+      "summary": "Narrow backup, hash, counter and photo/video observations coexist with three recorded failures. Location, native-backup and missing-root gaps still prevent broad device and real-world marks. One file or counter increment does not close them."
+    },
+    {
+      "featureId": "feature-android-phone-app-family-achievements-opt-in-milestones",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 21–24, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Real milestone, duplicate/reopen/cancel and owner/member checks support the device mark; newer rules/store suites support automation. Actual retention intervals and sustained family use remain unproved."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-installer-and-self-update",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 28, 2026"
+      ],
+      "summary": "Installed download, integrity verification, update to Windows 0.1.109 and reopening support the existing device and real-world record. The explicit 90% cap remains; low disk, uninstall, active viewing and other PCs still need checks."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-library-player-and-web-player",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 27–29, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Installed library and player checks, a muted hour-long run and later source checks support the retained mark. Six recorded issues, sound, broader browsers and player journeys remain. A newer browser sign-in pass does not complete the player."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-update-modes-and-start-with-windows",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 22–28, 2026"
+      ],
+      "summary": "Automatic and Ask-me updates ran on the installed PC. Download-only, Tonight, active viewing and an observed real restart remain unproved; the real-world check stays open."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-converter-and-quality-speed-settings",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–29, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Real transcoding, quality switches and installed conversion checks support the device mark. More GPU families and formats, wasted starts and the recorded browser failure remain; newer bounded quality checks do not clear them."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-live-tv-tuner-and-own-playlist",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–28, 2026"
+      ],
+      "summary": "HTTP and restriction checks plus installed playback of a two-channel test playlist support the recorded checks. A real tuner/provider, guide, recording, Live TV casting and listening remain open."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-story-studio",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 28–29, 2026"
+      ],
+      "summary": "The installed painted preview, draft and short export passed. Later title and scene fixes have source checks but still need an installed retest. Voiced export, captions, saving and household-profile review remain."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-movie-night",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–28, 2026"
+      ],
+      "summary": "Room, vote and filtering checks and partial browser/desktop journeys support implementation and automated marks. The complete installed multi-device journey remains partial, with four open issues and no new device or real-world credit."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-jellyfin-compatible-mode",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–28, 2026"
+      ],
+      "summary": "Protocol, range, membership and logout checks passed. The actual third-party client failed playback and triggered unwanted conversion; successful API checks do not close either client acceptance gap."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-parental-controls-and-household-profiles",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–28, 2026"
+      ],
+      "summary": "Installed rating, profile and timed-cutoff checks support the device mark. Short-limit and mid-film restriction findings, phone/TV screens and broader household scenarios remain open. New source tests do not clear them."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-keyboard-and-screen-reader-support",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 27–29, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Installed keyboard and Settings checks support the device mark. A real Windows screen reader, forced colours and broader focus paths remain; the newer visual preview is not screen-reader acceptance."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-languages-5-translated-with-machine-help-3-previews",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 24–29, 2026"
+      ],
+      "summary": "Browser fit and installed language/table inspections support the device mark. English leftovers, fit problems, native-speaker review and right-to-left coverage remain. Build/report work does not establish translation quality."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-posters-and-info-tmdb",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 26–27, 2026"
+      ],
+      "summary": "Retains Nick's existing, feature-specific acceptance of desktop posters and information on Windows 0.1.104, including the five-title and missing-poster checks. This does not extend acceptance to other builds, offline behavior or TV artwork."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-remote-desktop-see-and-control-the-pc",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "evidence-gap",
+      "evidenceDates": [
+        "Oct 2, 2026"
+      ],
+      "summary": "Historical implementation and passing safety tests are recorded, but a detailed dated execution packet could not be located in this review. The existing 49% is retained with that provenance gap. Real-PC viewing, control, approval and revocation remain untested."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-space-saver",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–27, 2026"
+      ],
+      "summary": "Upload integrity, a real-phone backup and later photo transfer/scan checks support the device mark. The later copy-integrity difference remains open; full-folder removal, restore, conflicts, low space and NAS behavior are unproved."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-library-sharing-with-another-household",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 12, 2026",
+        "Oct 26–29, 2026"
+      ],
+      "summary": "The historical two-household invite, shared playback and revocation checks support the existing real-world mark. Three issues remain, and newer share-code repairs still need complete two-household acceptance. Source defaults are not live configuration proof."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-strong-volume-leveler",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 3–26, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Strong-mode media output has automated coverage, but no matching listening acceptance is recorded. Night and Basic mode checks do not test Strong. Device and real-world marks stay false pending sound, clipping, pumping and sync checks."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-phone-speakers-phones-play-the-film-s-sound",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 13–24, 2026"
+      ],
+      "summary": "The PC/two-phone record and later real browser-guest playback support the existing device mark. Recent checks were muted; acoustic alignment, calibration, surround, Bluetooth and physical output remain unproved."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-music-on-the-pc-library-mixes-desktop-player",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–28, 2026"
+      ],
+      "summary": "The installed music player and sleep timer ran in muted checks; later browser Repeat, Queue and Lyrics empty-state checks are recorded. Real lyrics, listening, gapless/crossfade and the mix-before-rescan issue remain. The obsolete 'desktop not launched' note is corrected."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-home-layouts-and-customize-layout-desktop",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 26–29, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Installed layout save, persistence, reset and row/pack checks support the retained real-world mark. Three recorded issues remain. Newer immediate pack saving is observed, with its intended behavior still unresolved."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-picture-frame-photo-wall-for-a-tablet-or-tv",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 21–29, 2026"
+      ],
+      "summary": "The Windows 0.1.109 wall, Last-used and open-page removal checks support the existing device mark. That frame was created through the API, not the Settings wizard; the record is corrected. Phone/tablet/TV, expiry, presence and current setup acceptance remain."
+    },
+    {
+      "featureId": "feature-windows-desktop-app-kitchen-announcements-messages-to-phones",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–28, 2026"
+      ],
+      "summary": "Browser banner checks and installed sender/history tests are recorded. Native-phone delivery failed and the earlier Enable issue is not conclusively closed. The obsolete 'sender untested' summary is corrected; receiver, limits and audible Listen acceptance remain."
+    },
+    {
+      "featureId": "feature-other-systems-linux-server-headless-docker",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 4, 2026"
+      ],
+      "summary": "Actual Docker execution on a Windows PC under WSL2 passed source and container smokes, transcoding and restart persistence. This supports the historical Docker-on-PC device mark, not native Linux desktop, ARM, NAS or hardware-accelerated container acceptance."
+    },
+    {
+      "featureId": "feature-other-systems-linux-desktop-app",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 3, 2026"
+      ],
+      "summary": "Linux packages built and launched in the recorded WSLg environment with special launch options. Native desktop use, normal launch, media, tray, GPU, package mounting and updates remain untested; no device or real-world credit is added."
+    },
+    {
+      "featureId": "feature-other-systems-macos-desktop",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "evidence-gap",
+      "evidenceDates": [
+        "Sep 21, 2026",
+        "Oct 8–9, 2026"
+      ],
+      "summary": "Source implementation and Windows-only platform checks are recorded. A claimed completed Mac package could not be substantiated: the located build stopped before packaging. The 49% is retained for source work with an evidence gap; no verified Mac artifact or native acceptance is claimed."
+    },
+    {
+      "featureId": "feature-services-and-website-our-own-servers-and-dns",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–27, 2026"
+      ],
+      "summary": "The public DNS, TLS and HTTP checks support the limited historical device and real-world marks. The explicit 90% cap remains for unfinished migration and whole-feature gaps; deployment identity and administrative completion are not established."
+    },
+    {
+      "featureId": "feature-services-and-website-beebo-relay-fallback-connection",
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 26–28, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Actual away playback, sound and reconnect records support historical device and real-world checks. Both open issues remain. New source work does not prove the installed repair, route selection, renewal or concurrent-user behavior."
+    },
+    {
+      "featureId": "feature-services-and-website-website-and-browser-games",
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 23–26, 2026"
+      ],
+      "summary": "Retains the existing feature-specific owner acceptance and its recorded coordinator disposition for the tested website/browser games. It does not cover every browser or game mode, newer native games, or the new feature-page publication checks."
+    },
+    {
+      "featureId": "feature-services-and-website-password-reset-and-email-verification",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "evidence-gap",
+      "evidenceDates": [
+        "Oct 19, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Historical source tests cover rate limits, expiry and link handling, but the original execution receipt was not recovered. The 49% is retained with that evidence gap. Actual email delivery and recovery, provider readiness and current deployment remain unproved."
+    },
+    {
+      "featureId": "feature-services-and-website-online-games-play-with-others",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "evidence-gap",
+      "evidenceDates": [
+        "Oct 20, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Engine and connection work has historical test claims, but the precise execution receipt was not recovered. The 49% is retained with that gap. Real players, reconnection, moderation and current runtime availability remain unproved; static browser games are separate."
+    },
+    {
+      "featureId": "feature-services-and-website-walkie-talkie-from-anywhere",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "evidence-gap",
+      "evidenceDates": [
+        "Oct 20–26, 2026"
+      ],
+      "summary": "The replacement calling flow has source/review history, but its original automated execution receipt was not independently recovered. Older device credit was withdrawn; opening the newer phone sheet did not join a call or prove audio. The existing 49% remains provisional."
+    },
+    {
+      "featureId": "feature-services-and-website-portrait-party-turn-a-photo-into-a-card",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "evidence-gap",
+      "evidenceDates": [
+        "Oct 28, 2026"
+      ],
+      "summary": "The dated record confirms source gates and default-disabled behavior, not an underlying executed test packet or live reachability. Retain Planned and the historical 49% with that evidence gap; device and real-world checks remain absent."
+    },
+    {
+      "featureId": "feature-services-and-website-trip-journal-link-away-from-home",
+      "scoreBefore": 74,
+      "scoreAfter": 74,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 13, 2026",
+        "Oct 28, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "A real phone opened the photo/clip link over mobile data in the historical tested build. That supports the device mark only. The current route, another person or iPhone, expiry, revocation and an offline host remain unproved."
+    },
+    {
+      "featureId": "feature-services-and-website-beebovpn",
+      "scoreBefore": 55,
+      "scoreAfter": 55,
+      "outcome": "evidence-gap",
+      "evidenceDates": [
+        "Oct 30, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "The owner corroborated earlier successful Windows use, but its original dated artifact receipt is missing. Retain the explicit 55% cap with that gap. The later away-access failure remains unresolved; newer server/source tests do not prove native tunnel, routes, DNS or recovery."
+    },
+    {
+      "featureId": "feature-services-and-website-rewards-ads-and-credit",
+      "scoreBefore": 49,
+      "scoreAfter": 49,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 19, 2026",
+        "Nov 2, 2026"
+      ],
+      "summary": "Fraud, ledger, wallet and callback source tests are recorded. Disabled source defaults do not prove current deployed configuration. No device, real-world, payment activation or availability credit is added."
+    },
+    {
+      "featureId": "feature-services-and-website-beebo-play-hosted-game-servers",
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 25, 2026"
+      ],
+      "summary": "Planning is recorded, without completed implementation, provisioning, backup, monitoring or operational acceptance. No evidence supports moving the score above 0%."
+    },
+    {
+      "featureId": "feature-services-and-website-managed-hosting",
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 25, 2026"
+      ],
+      "summary": "Planning is recorded, without an accepted hosting control, backup or incident workflow. No evidence supports moving the score above 0%."
+    },
+    {
+      "featureId": "feature-services-and-website-3d-characters-and-story-videos",
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 25, 2026"
+      ],
+      "summary": "The placeholder/framework and paused roadmap are not a finished integration or end-to-end result. No evidence supports moving the score above 0%."
+    },
+    {
+      "featureId": "feature-services-and-website-google-assistant-and-alexa",
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "outcome": "reviewed",
+      "evidenceDates": [
+        "Oct 9, 2026"
+      ],
+      "summary": "Roadmap and example home-automation setup are not a demonstrated Google Assistant or Alexa integration. No real setup or command acceptance supports moving above 0%."
+    }
+  ]
+}

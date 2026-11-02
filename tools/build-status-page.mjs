@@ -19,6 +19,7 @@ const require = createRequire(import.meta.url);
 const P = require('../site-data/progress-score.js');
 import { platformProgressHtml, platformMatrixHtml } from './platform-sections.mjs';
 import { featureId, activityDirectoryMarkup } from './feature-directory.mjs';
+import { readinessAuditMarkup, validateReadinessAudit } from './readiness-audit.mjs';
 import { renderCards, compactEvidenceLayout, codeEstimate, renderRecentEvidence } from './feature-work-snapshot.mjs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -27,6 +28,7 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const J = JSON.parse(readFileSync(join(root, 'testing-status.json'), 'utf8'));
 const workSnapshot = JSON.parse(readFileSync(join(root, 'site-data/feature-work-snapshot.json'), 'utf8'));
 const problems = P.problems(J); if (problems.length) throw Error(problems.join('\n'));
+validateReadinessAudit(J);
 const pagePath = join(root, 'release-evidence.html');
 let html = readFileSync(pagePath, 'utf8');
 const crlf = html.includes('\r\n');
@@ -515,6 +517,8 @@ function sourceMerges(page) {
 }
 
 html = sourceMerges(html);
+html = html.replace(/<!--READINESS-AUDIT-->[\s\S]*?<!--\/READINESS-AUDIT-->/g, '');
+html = html.replace('</main>', readinessAuditMarkup() + '</main>');
 html = html.replace(/<script id="feature-activity-ids" type="application\/json">[\s\S]*?<\/script>/g, '');
 html = html.replace(/<script src="\/assets\/feature-activity\.js" defer(?:="")?><\/script>/g, '');
 html = html.replace(/<link rel="stylesheet" href="\/assets\/feature-detail\.css">/g, '');

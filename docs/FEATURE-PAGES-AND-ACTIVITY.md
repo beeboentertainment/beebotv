@@ -99,3 +99,10 @@ markup of related evidence pages. Inspect the resulting file list before committ
 Generator tooling and tests are tracked explicitly despite their directory ignore
 rules; carry them with the branch. Browser layout, actual cache revalidation on the
 host and assistive-technology acceptance remain distinct from jsdom behavior tests.
+# Percentage audit
+
+`site-data/readiness-audit.json` records one outcome for every feature, separate from the activity feed. Its timestamp describes a review of dated evidence, not a new device test. Each outcome names the retained or revised mark, the evidence dates and the scope still unproved. Missing provenance is explicitly marked `evidence-gap`; it is not silently treated as a pass or a new failure.
+
+The November 2 review examined all 70 rows and retained their percentages and checkmarks. Seven provenance gaps remain named in the public record. Existing owner acceptances remain limited to their original feature and tested subset; the review adds no new 100% mark.
+
+When regenerating the evidence page, run `site-data/build-scoreboard.js` before the final `tools/build-status-page.mjs` pass. The latter normalizes the page's line endings. Run every publication checker afterward, including the footer checker from the maintained local tooling. A checker pass is separate from the required phone-width and desktop-width visual look.

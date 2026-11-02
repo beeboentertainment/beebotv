@@ -2,8 +2,10 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { featureDirectory, escape as esc, activityMarkup, activityDirectoryMarkup } from './feature-directory.mjs';
+import { featureAuditMarkup, validateReadinessAudit } from './readiness-audit.mjs';
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const data = JSON.parse(readFileSync(join(root, 'testing-status.json'), 'utf8'));
+validateReadinessAudit(data);
 const check = process.argv.includes('--check');
 const kinds = { CODE: 'Implementation or fixes', DEVICE: 'Device and real-world checks', NICK: 'Final owner acceptance', BLOCKED: 'Unresolved prerequisites' };
 const checks = { Built: 'Built', 'Automated tests': 'Automated checks', 'Real device': 'Real-device checks', 'Real-world check': 'Real-world checks', 'Ready to call Available': 'Final acceptance' };
@@ -19,6 +21,7 @@ export function renderFeature(f, entry) {
 <body class="feature-detail-page"><main class="feature-detail-wrap"><nav aria-label="Breadcrumb"><a href="../release-evidence.html#features">All features and progress</a> / <span>${esc(f.name)}</span></nav>
 <header><p class="eyebrow">${esc(f.group)} · ${esc(f.status)}</p><h1>${esc(f.name)}</h1><p class="feature-detail-intro">${esc(entry.purpose)}</p></header>
 <section class="feature-progress" aria-label="Recorded readiness"><div class="feature-progress-top"><span>Recorded readiness · ${esc(f.status)}</span><strong>${f.percentComplete}%</strong></div><progress value="${f.percentComplete}" max="100" aria-label="Recorded readiness">${f.percentComplete}%</progress><p>${f.openIssues ? `${f.openIssues} open known issue${f.openIssues === 1 ? '' : 's'} recorded.` : 'No open known issue recorded.'} This score is the same as the feature list. It is not a release date or a time estimate.</p><p>Evidence record updated: ${esc(f.changedEastern || data.updatedEastern)}. This is the record date, not a new device test.</p></section>
+${featureAuditMarkup(entry.id)}
 ${activityMarkup(entry.id)}<p>Activity comes from dated confirmations. A green dot only means a work step was recently confirmed running; it does not mean the feature has passed its checks.</p>
 <div class="feature-detail-grid"><div><section><h2>What works today</h2><p>${esc(entry.current || `The recorded status is ${f.status}. The checks below show which kinds of evidence have been recorded; they do not guarantee every device or scenario.`)}</p><ul>${Object.entries(checks).map(([key, label]) => `<li>${esc(label)}: <strong>${f.checks[key] ? 'recorded' : 'not yet recorded'}</strong></li>`).join('')}</ul></section>
 <section><h2>How to use it</h2>${steps}<p><a href="../${esc(entry.guide)}">${esc(entry.guideLabel)}</a></p></section>

@@ -1008,8 +1008,8 @@
     "summary": "The downloads are Windows 0.1.110, published Nov 1, 2026, 3:42 PM Eastern; Android 1.51-tester68 (build 118), published Nov 2, 2026, 9:22 AM Eastern; and Beebo Auto 1.21 (build 22), published Oct 27, 2026, 2:59 PM Eastern. Android tester68 (build 118, built Nov 2, 2026, 7:06 AM Eastern) is tester67 plus three phone-app changes: the film keeps its place when a cast never reaches the film and casting is stopped, the audiobook keeps its place when a song or a film takes over the player, and an empty Audiobooks player recovers. It has had automated tests on its source (reported 0 failures in all three build flavours) and device checks on a Galaxy S9+ and a Pixel 3: far jumps, stream switches, sound options, chapter jumps, the audiobook and one healthy cast and stop on one Chromecast TV. A cast to a stuck TV was not seen, 1 of 15 audiobook-then-film tries saved a place about 27 seconds ahead (cause not found), and the Galaxy S24, watching away from home and a real car were not tried. Known problem: tapping near the clock while the player controls show can jump the film (a fix is coming, not in this build). Its known problems are in the release history and on the known-issues page. Android tester67 (build 117, built Nov 2, 2026, 3:06 AM Eastern, published Nov 2, 2026, 3:47 AM Eastern) was the first public phone build since tester58. Its main change: sound settings (Night mode, Volume leveler, a delay, Stereo, dialogue focus) no longer drop the picture to 480p at home, so a 1080p film stays 1080p on home Wi-Fi and other direct connections; on slow or relayed links the picture may be lowered and the phone says so; there is a new Turn off sound settings row in Quality, audio & subtitles; and while casting, sound settings are not used and the sheet says so. It also adds radio Previous and Next, opening a podcast show without following it, a Camera backup folder card, and other small phone fixes listed in the release history. It had automated tests on its exact source in all three build flavours (0 failures) and device checks of the sound and casting change on a Pixel 3, a Galaxy S9+ and one Chromecast TV only; no other phone or TV was tried, and its five known problems are in the release history and on the known-issues page. Android tester58 (published Oct 27, 2026, 2:59 PM Eastern; built on tester57) adds a photo-backup counter that refreshes after Back up now, a new “Keep location in photo backups” switch (OFF by default; the default is still Nick’s decision), cast changes (captions on or off no longer reload the film when the TV accepts the change, Replay and the seek bar after a cast ends, the cast icon pulses for about 10 seconds when a TV appears), a return to portrait after the player and after picture-in-picture closes, the More list closing before Playback finished, podcasts showing Following at once, Library chips wrapping at the largest text, Trip export remembering phones that are slow to start, and clearer messages for a certificate code that does not match and for a real sign-out. Beebo Auto 1.21 adds an Invite passengers folder (OFF by default) with QR codes. Since publishing, a person has tried tester58 only for the install, Surprise me, the largest-text fixes, the podcast Follow label, the return to portrait after the player, the audiobook speed and the Pack for a trip counts (see those rows); the rest of it has had automated tests and reviews only, and Beebo Auto 1.21 has not been tried in a car. Windows 0.1.110 (built on 0.1.109; Windows only) repairs, in code, a same-network connection timeout seen with the personal address (a slow lookup of a .local network name from a connecting device no longer holds up the away-from-home helper; not yet proven on a real second device), adds a “Keep me signed in on this browser” box to the browser sign-in page (off by default; sign-in lengths are unchanged), makes unselected buttons on Users readable in the light themes, fixes small Story Studio, Connections setup, Home, Library Health, Trip link, Converted Videos and Create share-code problems, builds photo thumbnails from a checked copy of the photo, stops the Picture Frame sending a photo once its screen is off by schedule, and changes playback so that choosing a quality while paused keeps the film paused, a second click on Original is not lost, automatically restored subtitles no longer rewrite your saved choice, Resume follows the newest real viewing session and late, older conversion requests are refused, even after a restart; it has had automated tests and code reviews only, and nobody has tried its changes or its in-app update yet. Windows 0.1.109 (built on 0.1.108; Windows only) makes the Users and Dashboard totals and the session list agree for older or imported history rows (display only), makes the Live TV favourite star change only after the save succeeds, stops the dim Reconnecting overlay after a short network drop, gives up tuning a Live TV channel with a message instead of waiting forever, fixes the Movie Night paused reveal button label, keeps an unsent Kitchen announcements draft when sending fails, makes Edit info announce field errors and handle focus and Escape, stops a late older conversion closing a newer one when video quality starts or switches, limits the browser player’s own HLS code to desktop Chromium and Edge, adds Repeat and Queue to the browser music page, lets Settings search find more settings and link to more pages, and makes small Picture Frame, Library Health and Jellyfin-compatible fixes; it has had automated tests and reviews, and a single tester recorded the in-app update from 0.1.108 on one PC on Oct 28, 2026, about 9:30 to 9:35 PM Eastern (54 seconds closed, matching feed hash and valid installer signature), followed by a limited check of reopening, retained sign-in and settings, the library and Dashboard. The setup window text could not be inspected and no permission prompt appeared. Tonight, Don't wait, other PCs and an update during playback were not tested. Broader feature and receiver acceptance were not established; sound was not heard. Windows 0.1.108 (built on 0.1.107; Windows only) fixes the web player Up next countdown after seeking back, ignores the Movies and TV Shows A-Z letter keys in dropdowns, dialogs, text boxes and with Ctrl, Alt or the Windows key held, makes several Customize layout and Layout Share fixes (dropped files, Alt+Up/Down in a dropdown, keyboard moves, a failed save keeping hidden rows, a review before applying, a 64 KB plain-text limit, no hang on a special file on Mac and Linux), makes Users > View stats and the Dashboard count watch time the same way, packs 36 painted Story Studio art files that were left out of the installer, translates the hardware and connection-cost tables into German, Spanish, French, Italian and Portuguese, lets the Music list recover after a failed load and makes the Car Party guest page handle late or out-of-order updates; it has had automated tests and reviews, and a single tester recorded the in-app update from 0.1.107 on one PC on Oct 28, 2026, 9:55 to 10:03 AM Eastern (43 seconds closed, matching feed hash, valid installer signature and passing start-up self-test). Partial checks covered watch-time totals and basic Movies letter-key paths; one account still showed 0m for a 2m session, Story Studio was not opened and the other listed changes remained unrun. Broader feature and receiver acceptance were not established; sound was not heard. Windows 0.1.107 (built on 0.1.106; Windows only) fixes the blank Story Studio preview (the preview page was blocked by a response header; only that one-time-address page changes) and makes Users > View stats and the Dashboard “watch time by member” count real watched time (display only); it has had automated tests and reviews, and the 4-core AI tester alone has since updated a PC to it in the app (3 minutes 34 seconds, no start-up box, the installer’s hash matched the website feed) and retested both changes: the Story Studio preview now shows a painted picture and plays (basic path only; the log still shows 38 missing painted-file errors) and Users > View stats shows plausible totals (still about 46 minutes above the Dashboard’s watch time); no person has used it. Windows 0.1.106 (built on 0.1.105; Windows only) makes the Photos Back button close the open photo, fixes Library Health wording for one item, translates the “Online” chip and the router warning, completes the Corner radius label, shows the “Check for updates” result on the Settings page, shows the TV Shows count when Movies and TV Shows share a folder, stops giving folder paths, the backup folder, the PC name, original photos and photo locations to paired TVs, viewer links and administrator accounts with their own parental limits (a privacy fix), makes the film info button on a phone browser a larger tap target with a scrolling info card, and answers “not modified” cleanly in the podcast preview; it has had automated tests and reviews, and the 4-core AI tester alone has since updated a PC to it in the app (no start-up box) and retested its Photos Back, TV Shows count and Storage, Library Health wording, Online chip, router warning, Corner radius label and Check for updates result line; the folder-path privacy change and the phone-browser info button were not retested, and no person has used it. Windows 0.1.105 (built on 0.1.104; Windows only) fixes the start-up “Secure media server: FAIL” box (the check now asks the server’s health page), adds Picture frame choices (hide the clock or the note, a note that stays until “Got it”, past notes, a strip or corner layout, photo fit or fill, full screen), watches library folders for new films, shows your name in a chip with a My profile panel on the web pages, keeps the web player’s arrow keys working after Picture-in-Picture, makes the “Resume from” question hold the film, builds the Photos Map when its privacy option is turned on, and adds timing lines to the log; it has had automated tests and reviews, and the 4-core AI tester alone has since updated a PC to it in the app (no start-up box) and retested the Resume question, the arrow keys after Picture-in-Picture and the Photos Map; no person has used it. Windows 0.1.104 makes “Check for updates” follow your update mode (with automatic downloads a manual check downloads the update by itself and the countdown on the prompt is gone), retries the start-up self-check for about a minute before it shows a warning, and writes start-up timing lines to the log; it does not fix the slow first minute after an update (only logged) and the self-check box still appeared in the one real update tried, see the Installer and self-update row. Android tester57 makes Replay after a cast ends start the film by itself, hides the cast button when casting is impossible (it returns by itself when Wi-Fi returns) and removes the “Casting needs Wi-Fi” box; the seek bar after a cast ends was meant to work too, but it still did nothing when tried. Windows 0.1.103 and Android tester56 (published Oct 27, 2026, 9:06 AM Eastern) added a one-screen phone setup that shows what was really checked, a renewed Relay licence reconnecting with careful retries, skip intros in the web player, better subtitles, Customize layout and Layout Share carrying more of your layout, audiobook speed saved at once with Reset to 1x and bookmark delete with undo, a film never also listed as a one-episode show, a child profile whose limits cannot be read getting “try again” instead of being deleted, and 8-character guest codes (Sharing is in development). Windows 0.1.102 and earlier changes are listed in the release history. Windows 0.1.103 was installed over 0.1.102 and 0.1.104 over 0.1.103 on one real PC (each updated by itself); tester56, tester57 and tester58 were installed in place on one Galaxy S24; none of this is a broad beta.",
     "sourceNote": "Beebo Auto 1.20 had one first look in one car on Oct 27, 2026 (a few screens and an episode with sound; not a full real-car test); Beebo Auto 1.21 has not been tried in a car. Windows 0.1.100 and Android 1.51-tester35 (build 85) were installed test builds and not public downloads. Code changes do not establish real-device results: source work merged after tester58 was built and after Windows 0.1.104 is listed under “Source work merged” below; the Windows part is in Windows 0.1.105 and 0.1.106, and the phone part is in no published download. Not fixed in the published builds: the Samsung S9+ Trip export stall (the repair is in tester58 and has not been tried by a person), captions on the TV through Chromecast (not yet seen working on a TV) and the Windows Picture frame changes (they are in Windows 0.1.105, but nobody has tried them). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested for Beebo Auto. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-10-29T16:42:29-04:00",
-  "updatedEastern": "Oct 29, 2026, 4:42 PM Eastern",
+  "updated": "2026-11-02T12:36:41-05:00",
+  "updatedEastern": "Nov 2, 2026, 12:36 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 70,
@@ -1580,7 +1580,7 @@
           "counts": "17 valid cold starts /85 tab observations across 3 device-user contexts; one RAM-interrupted extra excluded"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -2073,7 +2073,7 @@
           "counts": "4 named native playback flows:3 scoped controls PASS,1 resource-interrupted Pixel flow; not4 whole-feature passes"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -2439,7 +2439,7 @@
           "counts": "2 distinct HUMAN-reported phone-browser scenarios (1 transition/control/audio success,1 background-return UX finding); separate same-LAN connection failure"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -2614,7 +2614,7 @@
           "counts": "5 original group reports across 107/108/109 (browser sync, desktop+guest,2guests,109web,109away-join failure); exact-step writeup/correction adds0"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -2628,7 +2628,7 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "No real-device PASS recorded",
+      "lastTested": "Oct 13, 2026: two-phone host/join/leave; no newer-build real-device PASS recorded",
       "leftToReach100": "Recorded scope only: The old local-member sign-in refusal was reclassified as a missing central test-identity fixture. It is blocked, not a proven Car Party defect. No real Car Party pass is recorded here. Still required: A normally provisioned central test household and a passenger topology without internet are needed. The family owner cannot substitute for that fixture. No new whole-feature checkmark is added. Nick alone records Ready.",
       "roadTo100": {
         "means": "A host phone and passengers play together in a real car and on camp Wi-Fi, and recover from a lost connection.",
@@ -2687,7 +2687,7 @@
           "changeNote": "Added a detailed roadmap to 100%: what 100% means, what is done, and what is still to do (build or fix, real-device test, needs Nick, blocked). The percentage did not change."
         }
       ],
-      "testedOn": "Final phone record: Pixel 3 earlier, S9+ Round3. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. The old local-member sign-in refusal was reclassified as a missing central test-identity fixture. It is blocked, not a proven Car Party defect. No real Car Party pass is recorded here. Last PASS: No real-device PASS recorded. Later native source changes are not installed or accepted by this record.",
+      "testedOn": "Final phone record: Pixel 3 earlier, S9+ Round3. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. The old local-member sign-in refusal was reclassified as a missing central test-identity fixture. It is blocked, not a proven Car Party defect. No newer-build Car Party pass is recorded here. The existing device tick rests on the Oct 13, 2026 two-phone host/join/leave run. Later native source changes are not installed or accepted by this record.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 0,
@@ -2737,7 +2737,7 @@
       "roadTo100": {
         "means": "Ready, missing-folder and recovery states all show clear wording on a real phone and pass tests and review.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Health-state tests pass.",
           "Checked on a real phone earlier.",
           "Oct 12, 2026: The screen opened on a real phone. Found: a misleading counter and a stale “cannot be reached” line; fixed in the code, not yet in a published download.",
@@ -2899,7 +2899,7 @@
           "counts": "2 phone health-screen checks plus 1 desktop look-only group; no new repair/title-row acceptance"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -2995,7 +2995,7 @@
       "roadTo100": {
         "means": "Surprise me, playlists, watchlist and favourites behave as intended on a real phone and pass tests and review.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Playlist and favourite logic is covered by automated tests.",
           "A change that shows the title before playing is waiting on review.",
           "Oct 12, 2026: Adding and removing favourites and watchlist titles, and playlists, worked on a real phone.",
@@ -3212,7 +3212,7 @@
           "counts": "1 desktop playlist CRUD group; 2 desktop local-RSS groups; 2 radio groups with different scopes (muted stream once, favorites once)"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -3451,7 +3451,7 @@
           "counts": "2 distinct host start/stop flows; second includes 1 two-phone lobby join/leave flow"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -3559,7 +3559,7 @@
       "roadTo100": {
         "means": "A real station and a real podcast play on a phone, keep playing with the screen off, and recover after a break.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Feed, player and background tests pass.",
           "Radio playlists with spaces or relative entries now play (automated tests only).",
           "Oct 12, 2026: The radio and podcast screens opened and could be browsed on a real phone. Playback was not checked in this run.",
@@ -3864,7 +3864,7 @@
           "counts": "1 desktop playlist CRUD group; 2 desktop local-RSS groups; 2 radio groups with different scopes (muted stream once, favorites once)"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -3883,7 +3883,7 @@
       "roadTo100": {
         "means": "A real audiobook plays on a phone, changes chapters, keeps bookmarks, and resumes after the app restarts.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Chapter, bookmark and resume tests exist and pass.",
           "Tried on a real phone earlier.",
           "Oct 13, 2026, S24 Ultra: test book listed, chapters and start times correct, chapter jump, speed 0.75x to 2x and automatic next chapter worked (sound not heard).",
@@ -4195,7 +4195,7 @@
           "counts": "1 scoped desktop audiobook play/chapter/start-over group"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -4214,7 +4214,7 @@
       "roadTo100": {
         "means": "The planner shows honest size and time estimates, offers smaller sizes that really work, and completes a real download when space is tight.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Planner, size and error tests pass.",
           "Tried on a real phone earlier.",
           "Code, Oct 12 and Oct 18, 2026 (Android 1.51-tester23 and tester26): the smaller-size choice now only offers a size that really shrinks a film (a 576p film asked for 720p used to come back bigger), keeps each film's own size when retried and restarts a failed zero-byte download at the newly chosen size; 25 new automated tests. Its controls keep a 48 dp touch target.",
@@ -4519,7 +4519,7 @@
           "counts": "1 native landing-screen group for each; Photos also2 scoped desktop browse/view groups; no fresh download/backup run"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -4703,7 +4703,7 @@
       "roadTo100": {
         "means": "Every shipped game has a basic test and has been played on phones with real guests.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Games are built and basic tests pass.",
           "Tic-Tac-Toe against the computer ran on the guest phone web page on Oct 11; this does not prove all Campsite games or human shared play.",
           "Oct 11, 2026, tester22 build 72: Tic-Tac-Toe against the computer opponent ran on the guest web page over the temporary Wi-Fi.",
@@ -4928,7 +4928,7 @@
           "counts": "2 distinct host start/stop flows; second includes 1 two-phone lobby join/leave flow"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -5181,7 +5181,7 @@
         "remaining": [
           {
             "kind": "BLOCKED",
-            "text": "No second-phone install is recorded."
+            "text": "No fresh-device install is recorded. The historical second-phone install was over an existing same-version app."
           },
           {
             "kind": "DEVICE",
@@ -5769,7 +5769,7 @@
           "counts": "0 executed Cast comparisons in the explicitly BLOCKED comparison receipt; lifetime history UNKNOWN"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -6106,7 +6106,7 @@
       "roadTo100": {
         "means": "Nick picks a replacement or removal, and the chosen version is built, tested and checked on a phone.",
         "done": [
-          "Checks passed: none yet.",
+          "Checks passed: .",
           "The old button is hidden.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: Pixel 3/S9+ inspected menus, settings and film controls. The retired Stream from my PC entry was absent on inspected surfaces. No positive PC-screen streaming or replacement flow was enabled. 1 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths."
         ],
@@ -6271,7 +6271,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 28, 2026, about 1:44 AM Eastern (Windows 0.1.106 desktop app on the 4-core PC, the 4-core AI tester alone: the tick-box under Corner radius reads “Use the theme’s corner radius” in full, also with the Large text preview on, where it wraps with nothing cut off; PASS; the open issue is closed); Oct 28, 2026, 12:25 to 12:40 AM Eastern (unpublished test build tester60 (build 110), Pixel 3 on a separate test user, the overnight AI phone tester, silent, state read from the screen: at the largest Android font and a larger display size Home, Browse, Library, Play, More, a film’s Resume dialog and the player controls showed no cut-off text or overlap, and every clickable on the five tabs has a text or content label and none is under 48 dp apart from one clipped scroll-row chip; PASS); Oct 27, 2026, about 10:24 PM Eastern (Windows 0.1.104 desktop app on the 4-core PC, the 4-core AI tester alone: Reduce motion measured with a screen recording; with it on, a poster’s hover change took one frame instead of four or five; page changes were near-instant either way; PASS, a small effect); Oct 27, 2026, 7:43 to 9:21 PM Eastern (Windows desktop app 0.1.104 Settings > Appearance & language and Chrome on the 4-core PC, 4-core AI tester alone, Nick away: Large text, Large buttons and fields and High contrast PASS and the Tab key focus ring on the web page PASS; one clipped label under Corner radius found, new open issue; Reduce motion accepted but not proven to calm animations); Oct 27, 2026, 3:06 to 3:10 PM Eastern (Galaxy S24 tester58, Nick and the 4-core AI tester agreeing: at the largest text the Library label wraps and every chip is visible, and the player’s MORE list closes before Playback finished, PASS); Oct 27, 2026, 1:20 PM Eastern (Pixel 3 tester57, AI tester: extreme font and display size folds into More, a clipped wordmark and an overlap of Next at that extreme only, high-contrast text and Español PASS); earlier: Oct 27, 2026, 11:44 to 11:49 AM Eastern (Galaxy S24 tester57, Nick and an AI tester agreeing on each result: text size 1.3 and 2.0 (largest) on Home, Library and More, the landscape video player at 2.0, and 150% text with high-contrast text; two small layout squeezes and a menu that stays open found); Oct 26, 2026, 11:26 PM Eastern (Galaxy S9+ tester54 and tester53, Pixel 3 tester53: landscape player control row folds into a More popup at 1.3 and 2.0 font, nothing clipped or lost); earlier: Oct 26, 2026, 5:47 PM Eastern (Galaxy S9+ and Pixel 3 on tester52: landscape player control row still clipped at 1.3 and 2.0 font; Watch Together and Caregiver card clipping not reproduced on tester51); earlier: Oct 26, 2026, 11:10 AM Eastern (Nick looked at 150% text and high contrast); earlier: Oct 24, 2026, 2:03:37 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Update Oct 28, 2026, 1:54 AM Eastern: Record only (stays 90%, the open issue stays): two new records. (1) Phone: the overnight AI phone tester (silent, state read from the screen tree, TalkBack not run) set a Pixel 3 (a separate test user) to the largest Android font step and a larger display size on the unpublished test build tester60, then put both back. Home, Browse, Library, Play and More, a film’s Resume dialog and the player controls wrapped onto more lines but nothing overlapped and no text was cut off inside a card; chip rows run off the right edge as scrolling rows; the Home header folds Campsite and Language into an overflow menu at that size (by design). Every clickable on the five tabs had visible text or a content description and none was smaller than 48 dp in its smaller side except one 17 dp clipped sliver at the screen edge. Not covered: TalkBack by ear, the 2.0 font steps, high contrast and reduced motion in Android. (2) Desktop Reduce motion: the 4-core AI tester alone recorded the screen at 20 to 30 frames a second on Windows 0.1.104 and compared “Follow my system setting” with “Reduce motion”: a poster’s hover-in changed over 4 frames (about 0.13 seconds) and hover-out over 5 frames (about 0.2 seconds) with it off, and in one frame each way with it on; page changes were near-instant in both. So the setting does remove the short hover animation; a person still has to look at the bigger movers (the Home screen, shelves, the player buttons). The unsaved choice was discarded afterwards. The clipped Corner radius label (the one open issue) was fixed in the main code on Oct 27, 2026 (11:33 PM Eastern) and is in the published Windows 0.1.106. It was retested there by the 4-core AI tester alone (about 1:44 AM Eastern, after the in-app update): the tick-box under Corner radius reads “Use the theme’s corner radius” in full, and with the Large text preview on (at least 125 percent, not saved) the box wraps and still reads in full with nothing cut off. The issue is therefore CLOSED (open known issues 1 to 0). With all four checks passed and no open issue, a second tester alone moves the row from 90% to 99%, “tested and working, waiting for a human look”; it is NOT Ready: Nick has not looked, a screen reader (TalkBack) was not tried by ear, and Android’s own high-contrast and reduced-motion modes and the 2.0 font steps were not tried. Open known issues: 0. Earlier record (kept): Update Oct 27, 2026, 9:44 PM Eastern: Cap back to 90%: the 4-core AI tester alone (Nick away) tested the desktop accessibility choices on Windows 0.1.104 and found one clipped label, recorded as a new open issue (open known issues rise from 0 to 1, so the row returns from 99% to 90% until it is fixed and retested; it is a small cosmetic fault, and the row follows the same rule as the two squeezed labels on tester57). Under Corner radius in Settings > Appearance & language > Appearance the tick-box label reads only “Use the theme’s” (the end of the sentence is missing); it was already clipped before anything was ticked, so large text did not cause it; the coordinator calls it a real small bug that will be fixed (a source fix merged at about 9:32 PM Eastern is in no build). What passed on the desktop (all choices put back and nothing saved): Large text (at least 125 percent) made the whole app visibly bigger and sidebar names such as Prepare Queue and Home Game Server wrap onto two lines with nothing cut off; High contrast (black and white with strong outlines) gave a black background, white outlines on buttons, fields and the sidebar and readable text; Large buttons and fields (at least 56 pixels) made every radio button, drop-down, button and sidebar footer button visibly taller with no overlap. Motion has three choices (Follow my system setting, Reduce motion, Allow motion) and “Reduce motion” was accepted, but whether animations really calm down could not be judged from still pictures, so that is NOT proven. In Chrome on the web page the Tab key showed a visible outline on every control tried in about 30 presses (Skip to content first, then each sidebar item, the sort tab, the Filters button and the A to Z letters), none skipped. Not tested: mouse-only checks, a screen reader, colour-blind modes, TalkBack by ear. Read It To Me: with the phone’s own voice a sentence was read aloud and Nick heard it (Oct 26); nicer computer voices need a “Story Voices” pack on the home computer, which was not installed on the test PC and has not been tried, so only the phone’s own voice has been heard reading, and the computer-voice samples were heard to sound different. Earlier Oct 27 phone results stand: the largest-text fixes were verified on tester58 by Nick and the 4-core AI tester. Earlier record (kept): Update Oct 27, 2026, 3:50 PM Eastern: Both open issues from tester57 are verified fixed on tester58 (Galaxy S24, Nick and the 4-core AI tester agreeing, 3:06 to 3:10 PM Eastern, largest text 2.0): the Library “Add a video from this phone” label wraps onto two lines with every chip visible, and the player’s MORE list closes before “Playback finished”. Open known issues: 0, so the cap lifts and the row returns from 90% to 99% (tested and working, waiting for a human look). It is NOT Ready: TalkBack (the screen reader) is part of this feature’s name and has not been tried by ear, colour-blind modes and keyboard use on the phone are untested, and a Pixel 3 AI tester saw cosmetic problems only at an extreme font-and-display-size setting (a clipped “Beebo” wordmark, Next overlapping the skip buttons), which are recorded as limits. Text size 1.3, 2.0, 150% text with high-contrast text and the landscape player at 2.0 had already read well on tester57 (11:44 to 11:49 AM Eastern). Earlier record (kept): Update Oct 27, 2026, 12:58 PM Eastern (reported by about 11:49 AM Eastern; Galaxy S24 on tester57 (build 107) with an AI tester driving and Nick present; a fresh screenshot was taken before every question and Nick clicked the same option the AI tester saw each time, so every line below is agreed by both; the phone’s settings were restored afterwards). PASS: (1) text size 1.3 on Home: bigger, wraps, bottom tabs fit, nothing cut off. (2) text size 2.0 (largest) on Home, Library and More: big and readable, bottom tabs fit, the top icon row folds some icons into a menu-dots icon. (3) the landscape video player at 2.0: controls big and readable, nothing clipped, a More button lists Picture in picture and Report bad quality. (4) 150% text with the phone’s high-contrast text setting: larger, darker text with a light pill behind every word (titles, percentages, bottom tabs), all readable, nothing cut off. Open known issues: 2 (new on Oct 27, 2026; any open known issue caps a row, so the score moves from 99% to 90% until they are fixed and retested): (1) at the largest text size the Library button reads “Add a video from this ph...” (cut with dots), the second chip, Favourites, is half hidden under the scroll arrow, and one more chip label is shortened; (2) in the landscape player, when the film ends the More menu stays open and the “Playback finished - Replay / Close” box is drawn on top of the text beside it (Nick pointed it out and the AI tester’s screenshot confirms it); the open menu should close when Playback finished appears. Not tested: TalkBack (screen reader), colour-blind modes, keyboard use on the phone. Earlier record (kept; its statement that no known error was open is superseded by this update): No known error is open on this row. The one open issue, the clipped landscape player control row at font scale 1.3 and 2.0, is verified fixed by the fold redo: the tool and transport rows now fold what does not fit into a “More” popup. Galaxy S9+ on tester53 (reported by about 7:38 PM Eastern; landscape): PASS at 1.0, 1.3 and 2.0. At 1.0 nothing folds and there is no More button. At 1.3 PIP and BAD QUALITY fold into More. At 2.0 AUTO, PIP and BAD QUALITY fold into More while Watch together, Prev and Next stay visible. The More entries open the same things as the real buttons (Report bad quality shows the same message, Picture in picture enters picture-in-picture with the position kept, the “Quality, audio and subtitles” entry opens its sheet), the popup stayed open for at least 7 seconds after the controls faded, no control was hidden without being in More, no More entry was dead, and nothing overlapped the centre transport. The earlier “swiping the row seeks the video” report did not reproduce, and the row no longer scrolls or clips. Pixel 3 on tester53 (reported by about 7:51 PM Eastern; landscape): PASS at 1.0, 1.3 and 2.0 (nothing clipped at 1.3 because the Pixel is wider; at 2.0 BAD QUALITY folds into More with one entry, Report bad quality; the popup stayed open after the controls hid). Galaxy S9+ on tester54 (reported by about 11:26 PM Eastern): PASS again at 1.3 (PIP and BAD QUALITY fold into More; font restored to 1.0). Limits and small points, none counted as open errors: the video player turns the screen to landscape while playing, so the portrait fit cannot be tested; at 1.3 and 2.0 the “Home = small window” label wraps to two or three lines and pushes the second row down; while the More popup is open it can overlap the Markers label and the system bar can appear at the right edge; a More tap while the controls are fading only brings the controls back; on the S9+ the Markers button never needed folding, so a Markers entry in More was not exercised; the “Quality, audio and subtitles” entry label is cut short at 2.0; in the same tester54 run, after a font-size change, the Home connection card said “The connection could not be confirmed” for about 30 to 45 seconds twice (recorded on the Opening the app row). Muted, state only; TalkBack by ear was not run. Closed earlier on Oct 26: the Watch Together Host and Join buttons and the Caregiver card description were fully visible on a Galaxy S9+ on tester51 at default and 1.3 font. Nick’s own check (Oct 26, 2026, 11:10 AM Eastern) and the second household’s check (reported by about 1:25 PM Eastern, Galaxy S24, text 150% and high contrast: easy to read, nothing cut off) worked. Not tested: TalkBack by ear, keyboard use, other text sizes, the subtitle style preview on a playing video (PARTIAL: Nick saw a big yellow preview at size 150%), and the Read It To Me voice picker with the home-computer voice (PARTIAL). At 99% every check passed within these records and nothing known is broken; the last 1% is Nick’s own human look, and only Nick records Ready. Earlier record (kept; the counts and items above replace its counts): Open known issue (caps this row at 90%): 1. On tester52 (Oct 26, 2026, reported by about 5:47 PM Eastern), at font scale 1.3 and 2.0 the landscape player’s top control row is still clipped. Galaxy S9+: at 1.3 the row is cut at the right edge, BAD QUALITY is a clipped icon, Markers is cut off, tapping did nothing and swiping the row sought the video; at 2.0 AUTO is clipped and PIP and BAD QUALITY are off screen. Pixel 3: the row scrolls only while the controls are visible (a swipe during the fade-out does nothing), BAD QUALITY is clipped at first and AUTO is cut at 2.0, and the Home toggle wraps. The row is a scroller with no visible hint, so it stays clipped until swiped. A wrap-or-collapse redo is being built; once fixed and retested the row returns to 99%. Closed on Oct 26: the two earlier open issues were not reproduced. The Watch Together Host and Join buttons were fully visible on a Galaxy S9+ on tester51 at default and 1.3 font, and the Caregiver card description was visible and not clipped at default and 1.3 font on the S9+ (about 1:34 to 1:37 PM Eastern; the Caregiver card was not found on tester52 and the More-page join card is absent on the older test server, so those two screens are covered on tester51 only). Nick’s own check (Oct 26, 2026, 11:10 AM Eastern) and the second household’s check (reported by about 1:25 PM Eastern, Galaxy S24, text 150% and high contrast: easy to read, nothing cut off) worked. Not tested: TalkBack by ear, keyboard use, other text sizes, the subtitle style preview on a playing video (PARTIAL: Nick saw a big yellow preview at size 150%), and the Read It To Me voice picker with the home-computer voice (PARTIAL: Nick heard the phone voice and two samples that sounded different). Earlier record (kept; the counts and items above replace its counts): Open known issues (cap this row at 90%): a Caregiver view card description is still clipped, and Watch Together buttons are clipped at ordinary display density on a Galaxy S9+. To be fixed; once fixed the row returns to 99% and then Nick and Claude confirm it together. Today’s check by Nick (Oct 26, 2026, 11:10 AM Eastern) worked: 150% text and high contrast were easy to read on Home and Library. Not tested: TalkBack by ear, keyboard use, other text sizes.",
+      "leftToReach100": "Percentage review Nov 2, 2026, 12:36 PM Eastern: stays 99%, with no new Ready tick. Desktop-only findings do not close Android acceptance; the earlier 90% wording below describes its historical update. Earlier record (kept): Update Oct 28, 2026, 1:54 AM Eastern: Record only (stays 90%, the open issue stays): two new records. (1) Phone: the overnight AI phone tester (silent, state read from the screen tree, TalkBack not run) set a Pixel 3 (a separate test user) to the largest Android font step and a larger display size on the unpublished test build tester60, then put both back. Home, Browse, Library, Play and More, a film’s Resume dialog and the player controls wrapped onto more lines but nothing overlapped and no text was cut off inside a card; chip rows run off the right edge as scrolling rows; the Home header folds Campsite and Language into an overflow menu at that size (by design). Every clickable on the five tabs had visible text or a content description and none was smaller than 48 dp in its smaller side except one 17 dp clipped sliver at the screen edge. Not covered: TalkBack by ear, the 2.0 font steps, high contrast and reduced motion in Android. (2) Desktop Reduce motion: the 4-core AI tester alone recorded the screen at 20 to 30 frames a second on Windows 0.1.104 and compared “Follow my system setting” with “Reduce motion”: a poster’s hover-in changed over 4 frames (about 0.13 seconds) and hover-out over 5 frames (about 0.2 seconds) with it off, and in one frame each way with it on; page changes were near-instant in both. So the setting does remove the short hover animation; a person still has to look at the bigger movers (the Home screen, shelves, the player buttons). The unsaved choice was discarded afterwards. The clipped Corner radius label (the one open issue) was fixed in the main code on Oct 27, 2026 (11:33 PM Eastern) and is in the published Windows 0.1.106. It was retested there by the 4-core AI tester alone (about 1:44 AM Eastern, after the in-app update): the tick-box under Corner radius reads “Use the theme’s corner radius” in full, and with the Large text preview on (at least 125 percent, not saved) the box wraps and still reads in full with nothing cut off. The issue is therefore CLOSED (open known issues 1 to 0). With all four checks passed and no open issue, a second tester alone moves the row from 90% to 99%, “tested and working, waiting for a human look”; it is NOT Ready: Nick has not looked, a screen reader (TalkBack) was not tried by ear, and Android’s own high-contrast and reduced-motion modes and the 2.0 font steps were not tried. Open known issues: 0. Earlier record (kept): Update Oct 27, 2026, 9:44 PM Eastern: Cap back to 90%: the 4-core AI tester alone (Nick away) tested the desktop accessibility choices on Windows 0.1.104 and found one clipped label, recorded as a new open issue (open known issues rise from 0 to 1, so the row returns from 99% to 90% until it is fixed and retested; it is a small cosmetic fault, and the row follows the same rule as the two squeezed labels on tester57). Under Corner radius in Settings > Appearance & language > Appearance the tick-box label reads only “Use the theme’s” (the end of the sentence is missing); it was already clipped before anything was ticked, so large text did not cause it; the coordinator calls it a real small bug that will be fixed (a source fix merged at about 9:32 PM Eastern is in no build). What passed on the desktop (all choices put back and nothing saved): Large text (at least 125 percent) made the whole app visibly bigger and sidebar names such as Prepare Queue and Home Game Server wrap onto two lines with nothing cut off; High contrast (black and white with strong outlines) gave a black background, white outlines on buttons, fields and the sidebar and readable text; Large buttons and fields (at least 56 pixels) made every radio button, drop-down, button and sidebar footer button visibly taller with no overlap. Motion has three choices (Follow my system setting, Reduce motion, Allow motion) and “Reduce motion” was accepted, but whether animations really calm down could not be judged from still pictures, so that is NOT proven. In Chrome on the web page the Tab key showed a visible outline on every control tried in about 30 presses (Skip to content first, then each sidebar item, the sort tab, the Filters button and the A to Z letters), none skipped. Not tested: mouse-only checks, a screen reader, colour-blind modes, TalkBack by ear. Read It To Me: with the phone’s own voice a sentence was read aloud and Nick heard it (Oct 26); nicer computer voices need a “Story Voices” pack on the home computer, which was not installed on the test PC and has not been tried, so only the phone’s own voice has been heard reading, and the computer-voice samples were heard to sound different. Earlier Oct 27 phone results stand: the largest-text fixes were verified on tester58 by Nick and the 4-core AI tester. Earlier record (kept): Update Oct 27, 2026, 3:50 PM Eastern: Both open issues from tester57 are verified fixed on tester58 (Galaxy S24, Nick and the 4-core AI tester agreeing, 3:06 to 3:10 PM Eastern, largest text 2.0): the Library “Add a video from this phone” label wraps onto two lines with every chip visible, and the player’s MORE list closes before “Playback finished”. Open known issues: 0, so the cap lifts and the row returns from 90% to 99% (tested and working, waiting for a human look). It is NOT Ready: TalkBack (the screen reader) is part of this feature’s name and has not been tried by ear, colour-blind modes and keyboard use on the phone are untested, and a Pixel 3 AI tester saw cosmetic problems only at an extreme font-and-display-size setting (a clipped “Beebo” wordmark, Next overlapping the skip buttons), which are recorded as limits. Text size 1.3, 2.0, 150% text with high-contrast text and the landscape player at 2.0 had already read well on tester57 (11:44 to 11:49 AM Eastern). Earlier record (kept): Update Oct 27, 2026, 12:58 PM Eastern (reported by about 11:49 AM Eastern; Galaxy S24 on tester57 (build 107) with an AI tester driving and Nick present; a fresh screenshot was taken before every question and Nick clicked the same option the AI tester saw each time, so every line below is agreed by both; the phone’s settings were restored afterwards). PASS: (1) text size 1.3 on Home: bigger, wraps, bottom tabs fit, nothing cut off. (2) text size 2.0 (largest) on Home, Library and More: big and readable, bottom tabs fit, the top icon row folds some icons into a menu-dots icon. (3) the landscape video player at 2.0: controls big and readable, nothing clipped, a More button lists Picture in picture and Report bad quality. (4) 150% text with the phone’s high-contrast text setting: larger, darker text with a light pill behind every word (titles, percentages, bottom tabs), all readable, nothing cut off. Open known issues: 2 (new on Oct 27, 2026; any open known issue caps a row, so the score moves from 99% to 90% until they are fixed and retested): (1) at the largest text size the Library button reads “Add a video from this ph...” (cut with dots), the second chip, Favourites, is half hidden under the scroll arrow, and one more chip label is shortened; (2) in the landscape player, when the film ends the More menu stays open and the “Playback finished - Replay / Close” box is drawn on top of the text beside it (Nick pointed it out and the AI tester’s screenshot confirms it); the open menu should close when Playback finished appears. Not tested: TalkBack (screen reader), colour-blind modes, keyboard use on the phone. Earlier record (kept; its statement that no known error was open is superseded by this update): No known error is open on this row. The one open issue, the clipped landscape player control row at font scale 1.3 and 2.0, is verified fixed by the fold redo: the tool and transport rows now fold what does not fit into a “More” popup. Galaxy S9+ on tester53 (reported by about 7:38 PM Eastern; landscape): PASS at 1.0, 1.3 and 2.0. At 1.0 nothing folds and there is no More button. At 1.3 PIP and BAD QUALITY fold into More. At 2.0 AUTO, PIP and BAD QUALITY fold into More while Watch together, Prev and Next stay visible. The More entries open the same things as the real buttons (Report bad quality shows the same message, Picture in picture enters picture-in-picture with the position kept, the “Quality, audio and subtitles” entry opens its sheet), the popup stayed open for at least 7 seconds after the controls faded, no control was hidden without being in More, no More entry was dead, and nothing overlapped the centre transport. The earlier “swiping the row seeks the video” report did not reproduce, and the row no longer scrolls or clips. Pixel 3 on tester53 (reported by about 7:51 PM Eastern; landscape): PASS at 1.0, 1.3 and 2.0 (nothing clipped at 1.3 because the Pixel is wider; at 2.0 BAD QUALITY folds into More with one entry, Report bad quality; the popup stayed open after the controls hid). Galaxy S9+ on tester54 (reported by about 11:26 PM Eastern): PASS again at 1.3 (PIP and BAD QUALITY fold into More; font restored to 1.0). Limits and small points, none counted as open errors: the video player turns the screen to landscape while playing, so the portrait fit cannot be tested; at 1.3 and 2.0 the “Home = small window” label wraps to two or three lines and pushes the second row down; while the More popup is open it can overlap the Markers label and the system bar can appear at the right edge; a More tap while the controls are fading only brings the controls back; on the S9+ the Markers button never needed folding, so a Markers entry in More was not exercised; the “Quality, audio and subtitles” entry label is cut short at 2.0; in the same tester54 run, after a font-size change, the Home connection card said “The connection could not be confirmed” for about 30 to 45 seconds twice (recorded on the Opening the app row). Muted, state only; TalkBack by ear was not run. Closed earlier on Oct 26: the Watch Together Host and Join buttons and the Caregiver card description were fully visible on a Galaxy S9+ on tester51 at default and 1.3 font. Nick’s own check (Oct 26, 2026, 11:10 AM Eastern) and the second household’s check (reported by about 1:25 PM Eastern, Galaxy S24, text 150% and high contrast: easy to read, nothing cut off) worked. Not tested: TalkBack by ear, keyboard use, other text sizes, the subtitle style preview on a playing video (PARTIAL: Nick saw a big yellow preview at size 150%), and the Read It To Me voice picker with the home-computer voice (PARTIAL). At 99% every check passed within these records and nothing known is broken; the last 1% is Nick’s own human look, and only Nick records Ready. Earlier record (kept; the counts and items above replace its counts): Open known issue (caps this row at 90%): 1. On tester52 (Oct 26, 2026, reported by about 5:47 PM Eastern), at font scale 1.3 and 2.0 the landscape player’s top control row is still clipped. Galaxy S9+: at 1.3 the row is cut at the right edge, BAD QUALITY is a clipped icon, Markers is cut off, tapping did nothing and swiping the row sought the video; at 2.0 AUTO is clipped and PIP and BAD QUALITY are off screen. Pixel 3: the row scrolls only while the controls are visible (a swipe during the fade-out does nothing), BAD QUALITY is clipped at first and AUTO is cut at 2.0, and the Home toggle wraps. The row is a scroller with no visible hint, so it stays clipped until swiped. A wrap-or-collapse redo is being built; once fixed and retested the row returns to 99%. Closed on Oct 26: the two earlier open issues were not reproduced. The Watch Together Host and Join buttons were fully visible on a Galaxy S9+ on tester51 at default and 1.3 font, and the Caregiver card description was visible and not clipped at default and 1.3 font on the S9+ (about 1:34 to 1:37 PM Eastern; the Caregiver card was not found on tester52 and the More-page join card is absent on the older test server, so those two screens are covered on tester51 only). Nick’s own check (Oct 26, 2026, 11:10 AM Eastern) and the second household’s check (reported by about 1:25 PM Eastern, Galaxy S24, text 150% and high contrast: easy to read, nothing cut off) worked. Not tested: TalkBack by ear, keyboard use, other text sizes, the subtitle style preview on a playing video (PARTIAL: Nick saw a big yellow preview at size 150%), and the Read It To Me voice picker with the home-computer voice (PARTIAL: Nick heard the phone voice and two samples that sounded different). Earlier record (kept; the counts and items above replace its counts): Open known issues (cap this row at 90%): a Caregiver view card description is still clipped, and Watch Together buttons are clipped at ordinary display density on a Galaxy S9+. To be fixed; once fixed the row returns to 99% and then Nick and Claude confirm it together. Today’s check by Nick (Oct 26, 2026, 11:10 AM Eastern) worked: 150% text and high contrast were easy to read on Home and Library. Not tested: TalkBack by ear, keyboard use, other text sizes.",
       "previousPercent": 90,
       "changedEastern": "Oct 28, 2026, 1:54 AM Eastern",
       "changeNote": "CLOSED the one open issue (90% to 99%, not Ready): the clipped Corner radius label is fixed in the published Windows 0.1.106 and retested there by the 4-core AI tester alone (full label, also at Large text). Large text and a larger display size on a Pixel 3 showed no cut-off or overlap on the unpublished test build tester60 (AI tester, silent); desktop Reduce motion was measured and removes the poster hover animation (4-core AI tester alone). A person has still not looked and TalkBack by ear is untried.",
@@ -6352,7 +6352,7 @@
       "roadTo100": {
         "means": "Large text, high contrast, reduced motion and TalkBack work across the main screens on the newest build, with a review.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Preference tests pass; some large-text checks were done on a phone.",
           "Oct 12, 2026: The accessibility switches were tried on and off on a real phone. Found: some text was clipped at 150% text size; fixed in the code, not yet in a published download. A screen reader (TalkBack) was not tried, so no check changes.",
           "Oct 13, 2026, S24 Ultra: 150% text, High contrast, Simple Mode, Reduce motion, Large playback controls, Prefer captions and Caregiver view (on and off) all switched without a crash; 150% text and High contrast looked right.",
@@ -6374,7 +6374,7 @@
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Oct 27, 2026: Reduce motion on the desktop is accepted but it is not proven that animations calm down (needs a person watching, or a video capture of a hover before and after); a screen reader and mouse-only checks were not tried; the “Story Voices” pack for nicer computer voices in Read It To Me is not installed on the test PC, so only the phone’s own voice has been heard reading."
+            "text": "Complete Android accessibility journeys still need acceptance, including a person traversing TalkBack by ear. Desktop-only motion, screen-reader, mouse and voice-pack observations do not close this Android row."
           },
           {
             "kind": "DEVICE",
@@ -6622,7 +6622,7 @@
         }
       ],
       "openIssues": 0,
-      "scoreNote": "Why this row is 99%: all four evidence checks are recorded and no issue is open. The clipped Corner radius label was fixed and retested on Windows 0.1.106 on Oct 28, 2026, about 1:44 AM Eastern. It is not Ready: TalkBack by ear, colour-blind modes and keyboard use on the phone were not tried by a person. The cosmetic findings at an extreme font and display-size setting (clipped wordmark, Next overlapping the skip buttons, Pixel 3, tester57) remain recorded as limits, not open issues."
+      "scoreNote": "Why this row is 99%: the four evidence checks are recorded and no Android issue is listed as open. Desktop-only hover and corner-radius checks do not establish Android acceptance. It is not Ready: TalkBack by ear, colour-blind modes and keyboard use on the phone were not tried by a person. Extreme font/display-size cosmetic findings remain recorded limits."
     },
     {
       "group": "Android phone app",
@@ -6645,7 +6645,7 @@
       "roadTo100": {
         "means": "Real music plays on a phone with sound, crossfade, gapless playback, queue and radio working, and a reviewer signs off.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Oct 13, 2026, S24 Ultra and S9+: sample album listed, play, next, previous, pause, full player, sleep timer and the quality choice worked (sound not heard).",
           "Oct 14, 2026, published tester23: the Music header overlap is gone on a Galaxy S9+, Pixel 3, Galaxy S24 Ultra and Galaxy S25; the sample album played and paused on the S9+ (sound not heard).",
           "RETEST-1: at 1.3 text size on the Pixel with tester35, the song title no longer overlapped the cover and Album radio stayed on one line. Layout only: no new sound, crossfade, gapless, queue or sleep-timer pass.",
@@ -6852,7 +6852,7 @@
       "roadTo100": {
         "means": "A real family uses the dashboard and Camp Jobs on their phones for several days and a reviewer signs off.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Oct 13, 2026, S24 Ultra: Family Dashboard cards matched the other screens; Camp Jobs add, spin, tick, star and remove all worked.",
           "Code, Oct 18, 2026 (Android 1.51-tester24 and tester25): the Camp Jobs screen now shrinks to the room above the keyboard so the Add button can be reached (a source-guard test, and the app asks Android to resize for the keyboard). Not yet re-checked on a phone.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ and Pixel 3 added disposable aliases with keyboard Enter while Add stayed reachable, spun jobs, and retained local assignments. Completing one S9+ job awarded one star. Dashboard links and Games together opened. No real family-duration claim. 6 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
@@ -7009,7 +7009,7 @@
       "roadTo100": {
         "means": "Two or more phones share one packing list, including offline ticking that syncs later, and a reviewer signs off.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Oct 13, 2026, two real phones: add, tick and remove synced both ways (about 6 seconds).",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ and Pixel 3 exchanged packing items in their original saved-house sessions. S9+ edited offline; after reconnect the Pixel received 2/2, then ticks were restored to 0/2. The initial pre-settle 1/2 capture is retained. These were not isolated-server identities. 2 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Oct 23, 2026, 9:44:31 AM Eastern: Phone tests recorded the the recorded feature Last PASS. The two phones exchanged packing items and synchronized an offline tick after reconnect on tester35. These carried passes used earlier saved-house TEST sessions, not the later isolated-server identity. Ticks were restored; no real trip is claimed.",
@@ -7152,7 +7152,7 @@
       "roadTo100": {
         "means": "A real family adds recipes, scales amounts, builds a shopping list across recipes and shares it.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Oct 13, 2026, S24 Ultra: starter recipes opened, the people counter reached the shopping list, and ticking worked.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ validated an empty recipe, saved two disposable recipes, scaled 2 to 4 people, combined 6 cups flour and 1 tsp salt, ticked shopping items, and saved/reopened a renamed copy of a built-in recipe. Local/original-session context; no outgoing recipe-sharing result. 5 PASS / 0 FAIL / 0 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Oct 23, 2026, 11:11:59 AM Eastern: Phone tests recorded the the recorded feature Last PASS. S9+ validated and created synthetic recipes, scaled amounts, duplicated a built-in recipe, and combined/ticked the multi-recipe shopping list on tester35. These passes are carried. They do not prove practical cooking quantities or outgoing recipe sharing.",
@@ -7312,7 +7312,7 @@
       "roadTo100": {
         "means": "A person browses collections, sees what is missing and sends a request that the owner receives.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Oct 13, 2026, S24 Ultra: collections listed, searched and opened with missing-film markers; the Request a title screen opened.",
           "Oct 14, 2026, published tester23: 101 collections listed (S9+); a missing title showed the Request button and ampersand searches worked on all four phones; no request was sent.",
           "Earlier note superseded by the dated Oct 23 request receipt and Oct 25 two-member request check below; those requests were actually sent and confirmed. A broader wishlist remains separate from this recorded collection/request scope.",
@@ -7809,7 +7809,7 @@
           "counts": "1 native landing-screen group for each; Photos also2 scoped desktop browse/view groups; no fresh download/backup run"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -7849,7 +7849,7 @@
       "roadTo100": {
         "means": "A host can turn achievements on, each person chooses to take part, milestones are kept only as described (no titles, photos or places), and clearing and the keep-for choice work, all on real phones.",
         "done": [
-          "Checks passed: Built, Automated tests.",
+          "Checks passed: Built, Automated tests, Real device.",
           "Oct 21, 2026, tester33 on a Pixel 3 (the owner's home server): at More > Tools > Family Dashboard > Achievements the per-person preview says only the kind of milestone and when you saved it are kept, and the two \"Remove milestones for everyone?\" dialogs say \"This cannot be undone\" and show no counts. The nickname line appears only when the host chooses to keep nicknames.",
           "Phone tests Round 1, report assembled Oct 23, 2026, 12:19 PM Eastern: S9+ Family Dashboard had no Achievements card. Local disposable-phone host enablement was absent; PC owner setup cannot substitute. No opt-in, milestone, retention or clearing operation ran. 0 PASS / 0 FAIL / 1 BLOCKED; see the dated device-test record for check IDs and evidence paths.",
           "Oct 23, 2026, 1:52:50 PM Eastern: Phone tests recorded the the recorded feature Last PASS. A disposable S9+ host enabled achievements and a test identity opted in on tester35. Synthetic time/jobs milestones, duplicate rejection, reopening, own Clear/Cancel, retention warning/Cancel, opt-out and host-off restoration passed. These passes are carried. No real family duration or elapsed retention expiry is proved.",
@@ -8135,7 +8135,7 @@
           "counts": "2 direct recorded Windows in-app update executions107→108 and108→109; 1 separate24C updater attempt blocked before install; earlier recorded handoffs not counted again"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -8768,7 +8768,7 @@
           "counts": "2 dedicated desktop-quality groups+2 mixed soak groups; 4 phone-browser quality flows (2 original observations,2 refreshed-QA repeats); Repeated report adds0"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -8787,7 +8787,7 @@
       "roadTo100": {
         "means": "Each update mode behaves correctly and Start with Windows works after a real restart.",
         "done": [
-          "Checks passed: Built, Automated tests.",
+          "Checks passed: Built, Automated tests, Real device.",
           "Settings and update-mode tests exist.",
           "Oct 13, 2026, dev PC: the update-mode screen and Check for updates worked.",
           "Oct 24, 2026, 5:41 PM Eastern: a second 4-core Windows PC set to “download and install automatically” updated itself from 0.1.99 to 0.1.102 while idle (hash and signature checks passed).",
@@ -8892,7 +8892,7 @@
           "counts": "2 direct recorded Windows in-app update executions107→108 and108→109; 1 separate24C updater attempt blocked before install; earlier recorded handoffs not counted again"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -9139,7 +9139,7 @@
           "counts": "2 dedicated desktop-quality groups+2 mixed soak groups; 4 phone-browser quality flows (2 original observations,2 refreshed-QA repeats); Repeated report adds0"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -9158,7 +9158,7 @@
       "roadTo100": {
         "means": "A real tuner and a real playlist both work on a PC, with a correct guide and safe source rules.",
         "done": [
-          "Checks passed: Built, Automated tests.",
+          "Checks passed: Built, Automated tests, Real device.",
           "Live TV planning tests pass.",
           "In development, in the Oct 21, 2026 release: a Live TV link stops working when its profile is restricted.",
           "Oct 23, 2026, 10:08:16 AM Eastern: Windows and web tests the recorded feature passed subset. Imported an explicitly confirmed, self-generated local HLS playlist into the real server. One channel, watch response and generated Live TV playlist passed; stopping worked. Tightening the test profile made its already-issued link return 403. This finite local fixture is not a tuner or real provider playlist. Windows source headless server, package 0.1.99. Last PASS source the recorded build. Carried earlier PASS; not rerun. Frozen tested source the recorded build; final fetched development source the recorded build has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only.",
@@ -9331,7 +9331,7 @@
           "counts": "2 desktop synthetic-M3U tuning groups; current109 Reconnecting overlay NOT RUN"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -9487,7 +9487,7 @@
           "counts": "2 synthetic stories in1 desktop group; 1 exported10s MP4/frame inspected"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -9711,7 +9711,7 @@
           "counts": "UNKNOWN distinct Movie Night device-run total in this bounded pass"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -9882,7 +9882,7 @@
           "counts": "2 four-core browser/API groups; 0 real Jellyfin-client executions established here; API-only helper reports excluded from DEVICE counts"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -9901,7 +9901,7 @@
       "roadTo100": {
         "means": "Restricted and normal profiles behave correctly on a real PC and the household rules have been reviewed.",
         "done": [
-          "Checks passed: Built, Automated tests.",
+          "Checks passed: Built, Automated tests, Real device.",
           "Parental-control tests pass.",
           "In development, in the Oct 21, 2026 release: restricted Live TV links stop and Movie Night rooms remove blocked titles when limits tighten. If a parental check itself fails, viewing continues; this is the owner’s choice.",
           "RETEST-1: on the S9+ child profile, Shared with you and Markers were absent, the four allowed films remained visible and allowed photos loaded. FAIL: Delete my account still led to the introduction/button without the ask-the-owner note. Actual deletion was not attempted; this does not show that server refusal failed. A further screen/session repair awaits protected review. No real-PC limit-change or complete household pass is established. If a parental/share check errors, viewing retains the owner’s fail-open decision.",
@@ -10172,7 +10172,7 @@
           "counts": "2 actual timed109 limit cases (5min and29min); 1/2-minute failure on108 retained separately"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -10191,7 +10191,7 @@
       "roadTo100": {
         "means": "The library, player and settings can be used with the keyboard and a screen reader in high-contrast mode.",
         "done": [
-          "Checks passed: Built, Automated tests.",
+          "Checks passed: Built, Automated tests, Real device.",
           "Keyboard and screen-reader tests pass.",
           "Oct 26, 2026, reported by about 2:13 PM Eastern (installed Windows app 0.1.102, old 4-core PC, keyboard only): PARTIAL. Skip link, sidebar focus outline, search outline and dialog focus passed; film-card controls have no visible focus outline (one reached a delete confirmation unseen). Narrator was not run.",
           "Code, Oct 28, 2026, 10:29 AM Eastern: the metadata editor’s field errors are now announced to a screen reader, and the artwork picker returns keyboard focus to the control that opened it; merged into the main code after Windows 0.1.108, so in no published build (it would ship in the next Windows build); automated tests and code review only; not tried on a device.",
@@ -10356,7 +10356,7 @@
           "counts": "Named keyboard/focus groups; whole-feature denominator UNKNOWN"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -10592,7 +10592,7 @@
           "counts": "3 named desktop language UI inspection groups; later installed-table read is metadata-only, not another device/UI pass"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -10611,7 +10611,7 @@
       "roadTo100": {
         "means": "Posters and info work, fail gracefully offline on a real PC, and our use of TMDB is properly licensed for any paid product.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Poster and info tests pass.",
           "Oct 25, 2026, 9:36 PM Eastern, desktop browser on the dev PC against the test server (main 4a4efbcba, no TMDB key): a folder poster and an NFO file were picked up within seconds. This retests the Oct 21 failure on a test server; the installed Windows app is still to be retested.",
           "Oct 26, 2026, reported by about 2:01 PM Eastern (installed Windows app 0.1.102, old 4-core PC): a film with a folder poster and an NFO file showed the NFO title, year, genre, plot and the folder poster after a rescan. Not tested with a real TMDB match.",
@@ -11083,7 +11083,7 @@
         "text": "Sharing repair is merged with desktop/app-integration checks. Stalled-flight durable-marker work remains design-only; physical households/revoke/download-policy acceptance remains.",
         "remaining": "Checked protocol design plus compatible-build household acceptance under approved terms."
       },
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -11305,7 +11305,7 @@
       "roadTo100": {
         "means": "Music plays with sound in the desktop window, mixes start, and a reviewer signs off.",
         "done": [
-          "Checks passed: Built, Automated tests.",
+          "Checks passed: Built, Automated tests, Real device.",
           "Oct 13, 2026, dev PC: library scan read titles, artist, album and track numbers; mixes became Ready.",
           "Oct 21, 2026, Windows 0.1.98: the \"Recently added\" mix played 23 songs in order and five file formats started (muted).",
           "Oct 23, 2026, 10:23:52 AM Eastern: Windows and web tests the recorded feature passed subset. Six FLACs were scanned with real tags; three 31-second tracks qualified for mixes and three 3-second intros were correctly excluded. Real Chrome used Recently added, Next and radio controls; audio time progressed while muted. Initial direct-URL assignment omitted a media token and was corrected by using the actual UI. Windows source headless server, package 0.1.99. Last PASS source the recorded build. Carried earlier PASS; not rerun. Frozen tested source the recorded build; final fetched development source the recorded build has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only.",
@@ -11317,7 +11317,7 @@
         "remaining": [
           {
             "kind": "DEVICE",
-            "text": "Lyrics display and gapless/crossfade controls still need recorded client acceptance. A person must separately hear music and judge audible continuity. The installed desktop application was not launched."
+            "text": "The installed desktop player ran in muted checks on Oct 28, 2026, on Windows 0.1.108. The Windows 0.1.109 browser Lyrics panel showed an empty-state message only. Real lyrics, gapless and crossfade still need recorded client acceptance, and a person must hear music and judge audible continuity."
           },
           {
             "kind": "DEVICE",
@@ -11472,7 +11472,7 @@
           "counts": "2 scoped desktop/browser music groups; not audible/gapless acceptance"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -11495,7 +11495,7 @@
       "roadTo100": {
         "means": "Every layout and customization option works on a real PC with a real library, with a reviewer sign-off.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check.",
           "Oct 13, 2026, dev PC: all five layouts opened; Customize layout cancel, save and reset worked.",
           "Code, Oct 18, 2026 (Windows 0.1.91): the Layout list now closes after a choice, on Escape and on an outside click, so it no longer covers the top picture, and keyboard focus stays put after choosing a layout; automated behaviour tests were added.",
           "Oct 26, 2026, reported by about 2:01 PM and 3:46 PM Eastern (installed Windows app 0.1.102, old 4-core PC, AI helper): all five layouts drew; Comfortable density and a moved row saved and persisted, Reset to default worked, drag, Undo and Cancel worked, Layout Share export and import preview worked and a malicious file was refused. Two fixes are needed (the share file lacks density and order; the arrow buttons did not move a row).",
@@ -11617,7 +11617,7 @@
           "counts": "2 desktop layout groups plus 1 browser theme group"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -11632,7 +11632,7 @@
         "Ready to call Available": false
       },
       "lastTested": "Oct 28, 2026, 10:23 to 10:25 PM Eastern (Windows 0.1.109, 4-core PC, frame opened in a second Chrome window on the same PC: photo, clock and note shown, “Last used” updated within seconds, remove-while-open ended the wall within about 5 seconds); Oct 28, 5:13 to 5:21 PM Eastern (Windows 0.1.108: the wall worked but “Last used” stayed “Not used yet” for about 3 minutes and the one-time link box sat above the scrolled view); earlier: Oct 28, 2026, 8:40 to 8:52 AM Eastern (Windows 0.1.107, the 4-core AI tester alone: a frame made from 2 generated photos and opened as a wall page in Chrome on the same Wi-Fi: photo with a blurred background, clock, date and household note; tapping showed Previous, Pause, Next, Past notes and Screen settings; Next, Previous, Pause and Screen settings worked; the page text showed no folder path or user name; the frame link was then removed (“Frame link removed.”) and the reloaded wall page showed no photos; PARTIAL: about 4 minutes after use Settings still said “Not used yet” for the frame (small issue, not rechecked later); a wall open at removal time, the weekly schedule, away mode, “only when someone is home”, link expiry and a real tablet or TV were not tried; sound not heard); Oct 27, 2026, about 10:56 to 10:57 PM Eastern (Settings > Sharing & integrations on the 4-core PC, the 4-core AI tester alone: the Picture frame block and its Edit panel open and list two saved frames; the frame’s own web page could not be opened because existing links are not shown; BLOCKED; no frame was created); Oct 27, 2026, 10:25 to 10:50 AM Eastern (installed Windows 0.1.103 and a Galaxy S24 in Chrome: the link and QR now use the PC’s real Wi-Fi address and the frame showed photo, clock and note; Nick found no full screen, the photo not filling the screen and the clock and note over the photo; PARTIAL); Oct 26, 2026, 3:28 PM Eastern (installed 0.1.102 and Galaxy S24 Chrome: frame works, QR and copied link use the wrong address; PARTIAL); earlier: Oct 24, 2026, 1:09:58 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Update Oct 29, 2026, 12:18 PM Eastern: Real device tick restored (49% to 74%, the four open issues stay): the Picture frame ran on a real PC on the published Windows 0.1.109 by the 4-core AI tester alone, Nick away (Oct 28, 2026, 10:23 to 10:25 PM Eastern). A frame made in Settings > Sharing and integrations > Picture frame (two test photos, the room check ticked) gave a one-time link; opened in a second Chrome window on the same PC it showed the photo, the clock and the household note and changed picture by itself; the Settings list’s “Last used” updated within seconds of the wall opening; Remove link while the wall was open turned the wall into the black “Frame access ended” screen within about 5 seconds. Earlier the same day on 0.1.108 (5:13 to 5:21 PM Eastern) the same wall worked but “Last used” stayed “Not used yet” for about 3 minutes and the list did not show a frame made another way, and the one-time link box sat at the top of the section while the page scrolled below it (easy to miss). The link now uses the PC’s Wi-Fi address, not a virtual adapter. Not tested: a phone, tablet or TV browser (the four open issues are about that screen and stay open), the QR scan, the “only when someone is home” mode, schedule and away modes, Edit, link expiry, and the exact seconds until a wall reacts to a removal on 0.1.108. The newer frame source changes merged on Oct 29, 2026 are in no build. Earlier record (kept): Update Oct 28, 2026, 10:29 AM Eastern: Record only (stays 49%, the four open issues stay): the 4-core AI tester alone, Nick away, tried the Picture frame on Windows 0.1.107 (Oct 28, 2026, 8:40 to 8:52 AM Eastern; Settings > Sharing and integrations > Picture frame, status In development). Two generated photos in a new album appeared in Photos by themselves (“2 items”). A frame was made from those photos (always on, shuffle, 1 minute, link never expires, room check ticked); the link was shown once with a QR code. The wall page in a separate Chrome tab on the home Wi-Fi showed the photo with a blurred background, the clock and date and the household note; tapping showed Previous, Pause, Next, Past notes and Screen settings; Next and Previous switched between the two photos, Pause changed to Play, and Screen settings (clock, note, photo fit, position) opened and closed. The page text had no folder path or user name (page text only; the network replies were not read). Small issue seen: about 4 minutes after the wall page showed photos, Settings still said “Not used yet” for the frame (whether it updates later was not checked). Only that frame was removed (“Remove this frame link?”, then “Frame link removed.”; two older frames untouched) and the reloaded wall page said to open the frame link from Beebo on the home PC and showed no photos. Not tried: a wall already open when its link was removed, the weekly schedule, away mode, “only when someone is home”, link expiry, a real tablet or TV. Sound not heard. Open known issues: 4. Earlier record (kept): Update Oct 28, 2026, 4:30 AM Eastern: Wording correction only (no new test; the score and the four open issues stay): the Picture frame changes written on Oct 27 (hide the clock or the note, a note that stays until “Got it” with a list of past notes, a strip or corner layout, photo fit or fill, full screen, and a picker that finds new photos by itself) SHIPPED in the published Windows 0.1.105 (Oct 28, 2026, 12:01 AM Eastern) and are in 0.1.106 and 0.1.107. Earlier records below that say they are “in no build” were true when written. Nobody has tried them on an installed app, a phone, a tablet or a frame screen: the photo wall page could not be opened on the 4-core PC because existing frame links are not shown, and no test frame has been made. Earlier record (kept): Update Oct 28, 2026, 1:54 AM Eastern: Record only (stays 49%, the four open issues stay): the 4-core AI tester alone (Nick away, Windows 0.1.104) opened Settings > Sharing & integrations > Picture frame (marked In development): the household note, two saved frames, “New frame” and “Show photos only when someone is home”; the Edit panel (name, up to 100 photos, schedule, away mode, clock, text size, contrast, burn-in care, dim at night, link expiry) opened and was cancelled with nothing saved. The panel does not show an existing frame’s web address (it is shown only when a frame is made), so the photo wall itself could not be opened in a browser. The tester did not make a new frame because that adds and then deletes a link. Windows 0.1.105 (published Oct 28, 2026, 12:01 AM Eastern) now carries the Picture frame changes written on Oct 27 (hide the clock or the note, a note that stays until “Got it” with a list of past notes, a strip or corner layout, photo fit or fill, full screen, and a picker that finds new photos by itself); nobody has tried them yet on an installed app or on a frame screen. No tick is added. Earlier record (kept): Update Oct 27, 2026, 3:50 PM Eastern: The Picture frame fixes for the three problems Nick confirmed (no full screen, the photo not filling the screen, the clock and note drawn over the photo) and for the new-photo flow are merged into the main code but are in no published build, and no person has tried them. The four open issues and the 49% score are unchanged. Earlier record (kept): Update Oct 27, 2026, 12:58 PM Eastern (reported by about 10:50 AM Eastern; installed Windows app 0.1.103 on the second household’s PC, which has three network adapters (two of them virtual), and a Galaxy S24 in Chrome on the home Wi-Fi, an AI tester driving and Nick present and answering): the ADDRESS FIX PASSED on the installed app. The frame link and the QR code now use the PC’s real Wi-Fi address (not a virtual-adapter address), the page answered, and on the S24 the photo, the clock with the date and the household note all showed (Nick: yes, photo, clock and note all show). Two new photos copied into the PC’s photo folder showed on the frame after Save, upright and not stretched (a little cropped), but each needed Refresh on the Photos screen and a switch of the picker’s Album menu before it appeared in the picker. Nick confirmed three problems with the frame on the S24 on its side: (1) the browser bar stays at the top (the page cannot run full screen: there is no full-screen button, and Chrome refuses to install the page as an app because the link is plain http), (2) the photo does not fill the screen (a 4:3 photo is fitted by height with black sides), (3) the clock and note are drawn on top of the photo. He also asked for switches to hide the clock and the note, a note mode that shows a new note until the viewer presses Got it, and a history of past notes. The code for these (hide switches, note only when new with a Got it button and a past-notes list, an edge strip for the clock and note, fit, blur or fill, a full-screen button, and the picker finding new photos) was merged into the main code at about 11:43 AM Eastern; it is NOT in any published build and has NOT been tried by a person. Not tested: a tablet, a second address, voice or messages, a weekly schedule or Away mode, link expiry. A plan to show photos to a family member at another address on an old tablet, with voice and messages, is design only (Planned); nothing is built. Open known issues: 4 (the Oct 26 address issue is closed; four new ones, listed above: no full screen, photo not filling the screen, clock and note over the photo, and the picker needing Refresh and an Album switch); the Real device tick is not restored (link expiry and the phone-presence option are untested). The score stays 49%. Earlier record (kept; the address issue below was closed on Oct 27, 2026): Update Oct 27, 2026: the Picture frame link fix (QR code and copied link using the PC’s Wi-Fi address instead of a virtual-adapter address) was merged into the main code on Oct 27, 2026 (reviewed, PC tests run). It is not yet checked on an installed build, so the open issue stays and the score stays 49%. Open known issue: 1 (Oct 26, 2026, reported by about 3:28 PM Eastern; installed Windows app 0.1.102, old 4-core PC, and a Galaxy S24 in Chrome): the frame link and its QR code use the PC’s virtual-adapter address instead of its Wi-Fi address (the same wrong address as Movie Night). Nick scanned the QR code on the S24 on the home Wi-Fi: Chrome stayed on a blank page with a stuck loading bar. The link fix has since been merged (Oct 27, 2026) but is not verified on an installed build. The frame itself WORKS: with the Wi-Fi address typed in place of the wrong one, the frame loaded full screen on the S24 (black background, a test picture centred, a big clock with the date), the second test photo appeared about a minute later (rotation works) and the household note typed on the PC (it saved; the box looks empty after Save, a small nit) showed on the frame (Nick sent two screenshots). Setup (Settings > Sharing & integrations > Picture frame, labelled In development, off by default): up to 100 still photos, schedule, Away mode, change photo every minute, clock and note ticks, link expiry (default Never; 1, 7, 30, 90 days), a required room-check tick and Create frame link; a one-day frame showed “Made … Stops working …” with Edit and Remove link. Also seen: the Frames list still said “Not used yet” after the phone used the frame, and the “Remove this frame link?” confirmation showed once and not on three later clicks. Not tested: a weekly schedule or Away mode, “Only when someone is home”, a link actually expiring, Remove link stopping a live screen, a TV browser. Result PARTIAL. No tick; the score stays 49%. Retain 49: Oct 24 1:09:58 AM decoded photos/revocation are PARTIAL; actual one-day expiry, presence and installed setup remain untested; Oct 25 9:45 PM disabled. Recorded scope only: S24 and S9 browsers displayed decoded photos. S24 Next/Previous changed the actual picture and returned to the first. Revoking the test wall link on the PC hid both photos and showed the access-ended message. Still required: Actual one-day expiry, phone-presence integration and installed Windows setup screens remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "leftToReach100": "Update Oct 29, 2026, 12:18 PM Eastern: Real device tick restored (49% to 74%, the four open issues stay): the Picture frame ran on a real PC on the published Windows 0.1.109 by the 4-core AI tester alone, Nick away (Oct 28, 2026, 10:23 to 10:25 PM Eastern). A test frame made through the server’s frame API with two test photos was opened in a second Chrome tab on the same PC; it showed a photo, the clock and the household note. The Settings creation wizard was not used; the Settings list’s “Last used” updated within seconds of the wall opening; Remove link while the wall was open turned the wall into the black “Frame access ended” screen within about 5 seconds. Earlier the same day on 0.1.108 (5:13 to 5:21 PM Eastern) the same wall worked but “Last used” stayed “Not used yet” for about 3 minutes and the list did not show a frame made another way, and the one-time link box sat at the top of the section while the page scrolled below it (easy to miss). The link now uses the PC’s Wi-Fi address, not a virtual adapter. Not tested: a phone, tablet or TV browser (the four open issues are about that screen and stay open), the QR scan, the “only when someone is home” mode, schedule and away modes, Edit, link expiry, and the exact seconds until a wall reacts to a removal on 0.1.108. The newer frame source changes merged on Oct 29, 2026 are in no build. Earlier record (kept): Update Oct 28, 2026, 10:29 AM Eastern: Record only (stays 49%, the four open issues stay): the 4-core AI tester alone, Nick away, tried the Picture frame on Windows 0.1.107 (Oct 28, 2026, 8:40 to 8:52 AM Eastern; Settings > Sharing and integrations > Picture frame, status In development). Two generated photos in a new album appeared in Photos by themselves (“2 items”). A frame was made from those photos (always on, shuffle, 1 minute, link never expires, room check ticked); the link was shown once with a QR code. The wall page in a separate Chrome tab on the home Wi-Fi showed the photo with a blurred background, the clock and date and the household note; tapping showed Previous, Pause, Next, Past notes and Screen settings; Next and Previous switched between the two photos, Pause changed to Play, and Screen settings (clock, note, photo fit, position) opened and closed. The page text had no folder path or user name (page text only; the network replies were not read). Small issue seen: about 4 minutes after the wall page showed photos, Settings still said “Not used yet” for the frame (whether it updates later was not checked). Only that frame was removed (“Remove this frame link?”, then “Frame link removed.”; two older frames untouched) and the reloaded wall page said to open the frame link from Beebo on the home PC and showed no photos. Not tried: a wall already open when its link was removed, the weekly schedule, away mode, “only when someone is home”, link expiry, a real tablet or TV. Sound not heard. Open known issues: 4. Earlier record (kept): Update Oct 28, 2026, 4:30 AM Eastern: Wording correction only (no new test; the score and the four open issues stay): the Picture frame changes written on Oct 27 (hide the clock or the note, a note that stays until “Got it” with a list of past notes, a strip or corner layout, photo fit or fill, full screen, and a picker that finds new photos by itself) SHIPPED in the published Windows 0.1.105 (Oct 28, 2026, 12:01 AM Eastern) and are in 0.1.106 and 0.1.107. Earlier records below that say they are “in no build” were true when written. Nobody has tried them on an installed app, a phone, a tablet or a frame screen: the photo wall page could not be opened on the 4-core PC because existing frame links are not shown, and no test frame has been made. Earlier record (kept): Update Oct 28, 2026, 1:54 AM Eastern: Record only (stays 49%, the four open issues stay): the 4-core AI tester alone (Nick away, Windows 0.1.104) opened Settings > Sharing & integrations > Picture frame (marked In development): the household note, two saved frames, “New frame” and “Show photos only when someone is home”; the Edit panel (name, up to 100 photos, schedule, away mode, clock, text size, contrast, burn-in care, dim at night, link expiry) opened and was cancelled with nothing saved. The panel does not show an existing frame’s web address (it is shown only when a frame is made), so the photo wall itself could not be opened in a browser. The tester did not make a new frame because that adds and then deletes a link. Windows 0.1.105 (published Oct 28, 2026, 12:01 AM Eastern) now carries the Picture frame changes written on Oct 27 (hide the clock or the note, a note that stays until “Got it” with a list of past notes, a strip or corner layout, photo fit or fill, full screen, and a picker that finds new photos by itself); nobody has tried them yet on an installed app or on a frame screen. No tick is added. Earlier record (kept): Update Oct 27, 2026, 3:50 PM Eastern: The Picture frame fixes for the three problems Nick confirmed (no full screen, the photo not filling the screen, the clock and note drawn over the photo) and for the new-photo flow are merged into the main code but are in no published build, and no person has tried them. The four open issues and the 49% score are unchanged. Earlier record (kept): Update Oct 27, 2026, 12:58 PM Eastern (reported by about 10:50 AM Eastern; installed Windows app 0.1.103 on the second household’s PC, which has three network adapters (two of them virtual), and a Galaxy S24 in Chrome on the home Wi-Fi, an AI tester driving and Nick present and answering): the ADDRESS FIX PASSED on the installed app. The frame link and the QR code now use the PC’s real Wi-Fi address (not a virtual-adapter address), the page answered, and on the S24 the photo, the clock with the date and the household note all showed (Nick: yes, photo, clock and note all show). Two new photos copied into the PC’s photo folder showed on the frame after Save, upright and not stretched (a little cropped), but each needed Refresh on the Photos screen and a switch of the picker’s Album menu before it appeared in the picker. Nick confirmed three problems with the frame on the S24 on its side: (1) the browser bar stays at the top (the page cannot run full screen: there is no full-screen button, and Chrome refuses to install the page as an app because the link is plain http), (2) the photo does not fill the screen (a 4:3 photo is fitted by height with black sides), (3) the clock and note are drawn on top of the photo. He also asked for switches to hide the clock and the note, a note mode that shows a new note until the viewer presses Got it, and a history of past notes. The code for these (hide switches, note only when new with a Got it button and a past-notes list, an edge strip for the clock and note, fit, blur or fill, a full-screen button, and the picker finding new photos) was merged into the main code at about 11:43 AM Eastern; it is NOT in any published build and has NOT been tried by a person. Not tested: a tablet, a second address, voice or messages, a weekly schedule or Away mode, link expiry. A plan to show photos to a family member at another address on an old tablet, with voice and messages, is design only (Planned); nothing is built. Open known issues: 4 (the Oct 26 address issue is closed; four new ones, listed above: no full screen, photo not filling the screen, clock and note over the photo, and the picker needing Refresh and an Album switch); the Real device tick is not restored (link expiry and the phone-presence option are untested). The score stays 49%. Earlier record (kept; the address issue below was closed on Oct 27, 2026): Update Oct 27, 2026: the Picture frame link fix (QR code and copied link using the PC’s Wi-Fi address instead of a virtual-adapter address) was merged into the main code on Oct 27, 2026 (reviewed, PC tests run). It is not yet checked on an installed build, so the open issue stays and the score stays 49%. Open known issue: 1 (Oct 26, 2026, reported by about 3:28 PM Eastern; installed Windows app 0.1.102, old 4-core PC, and a Galaxy S24 in Chrome): the frame link and its QR code use the PC’s virtual-adapter address instead of its Wi-Fi address (the same wrong address as Movie Night). Nick scanned the QR code on the S24 on the home Wi-Fi: Chrome stayed on a blank page with a stuck loading bar. The link fix has since been merged (Oct 27, 2026) but is not verified on an installed build. The frame itself WORKS: with the Wi-Fi address typed in place of the wrong one, the frame loaded full screen on the S24 (black background, a test picture centred, a big clock with the date), the second test photo appeared about a minute later (rotation works) and the household note typed on the PC (it saved; the box looks empty after Save, a small nit) showed on the frame (Nick sent two screenshots). Setup (Settings > Sharing & integrations > Picture frame, labelled In development, off by default): up to 100 still photos, schedule, Away mode, change photo every minute, clock and note ticks, link expiry (default Never; 1, 7, 30, 90 days), a required room-check tick and Create frame link; a one-day frame showed “Made … Stops working …” with Edit and Remove link. Also seen: the Frames list still said “Not used yet” after the phone used the frame, and the “Remove this frame link?” confirmation showed once and not on three later clicks. Not tested: a weekly schedule or Away mode, “Only when someone is home”, a link actually expiring, Remove link stopping a live screen, a TV browser. Result PARTIAL. No tick; the score stays 49%. Retain 49: Oct 24 1:09:58 AM decoded photos/revocation are PARTIAL; actual one-day expiry, presence and installed setup remain untested; Oct 25 9:45 PM disabled. Recorded scope only: S24 and S9 browsers displayed decoded photos. S24 Next/Previous changed the actual picture and returned to the first. Revoking the test wall link on the PC hid both photos and showed the access-ended message. Still required: Actual one-day expiry, phone-presence integration and installed Windows setup screens remain untested. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "previousPercent": 74,
       "changedEastern": "Oct 29, 2026, 4:42 PM Eastern",
       "changeNote": "Evidence refreshed without changing the checklist score. Verified-input photo-wall repair merged with 148 automated checks including encoded-pixel/HTTP boundaries; not physical-wall or installed-setup acceptance.",
@@ -11701,7 +11701,7 @@
       "roadTo100": {
         "means": "The owner makes a frame link once, a tablet or TV shows the photos, a note and a clock and nothing else, the schedule and pause work, and removing the link ends access, all on real devices.",
         "done": [
-          "Checks passed: Built, Automated tests.",
+          "Checks passed: Built, Automated tests, Real device.",
           "Oct 21, 2026, Windows 0.1.98 on a Windows PC, wall page in the PC's own browser: with two generated photos, the frame link was created and shown once with a QR code; the wall showed the photos and changed them every 10 seconds; it showed only the time, date and the owner's note; Pause and Play worked and a 105-second wait did not restart it; a weekly schedule turned the wall black within seconds and \"Always on\" brought it back; turning the feature off showed \"The picture frame is switched off\" and turning it back on restored the same frame; removing the link ended access within about 15 seconds; with no link the page shows only an instruction. 10 checks passed, 1 not run (link expiry).",
           "Oct 23, 2026, 10:20:16 AM Eastern: Windows and web tests the recorded feature passed subset. Real owner APIs scanned two JPEGs, created a wall and served photos. Chrome rendered clock/note/photos; Next, Previous and an 11-second paused interval passed. Always off refused photos; simulated here/away reporting changed display; 1.5-second API expiry returned 401 without changing any clock; revocation returned 401. Windows source headless server, package 0.1.99. Last PASS source the recorded build. Carried earlier PASS; not rerun. Frozen tested source the recorded build; final fetched development source the recorded build has byte-identical desktop/service/worker/site-pages trees. This is source equivalence only.",
           "Oct 24, 2026, 1:09:58 AM Eastern: S24 and S9 browsers displayed decoded photos. S24 Next/Previous changed the actual picture and returned to the first. Revoking the test wall link on the PC hid both photos and showed the access-ended message. Scoped PC report only; no whole-feature acceptance.",
@@ -11848,7 +11848,7 @@
           "counts": "3 frame-wall groups across 107/108/109; latest109 group uses API-created frame; accidental unused API create not extra wall run"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -11930,7 +11930,7 @@
           },
           {
             "kind": "DEVICE",
-            "text": "The installed sender panel, native notifications and a person hearing Listen remain untested."
+            "text": "The installed sender panel sent and recorded test messages on Oct 26 and 27, 2026, on Windows 0.1.102 and 0.1.104. Native-phone delivery remains an open failure. Quiet hours and limits on a matching installed sender-and-receiver pair, and Listen judged by ear, remain untested."
           },
           {
             "kind": "DEVICE",
@@ -12053,7 +12053,7 @@
         "means": "The Linux server runs on common hardware (including ARM and a real NAS) and converts video.",
         "done": [
           "Checks passed: Built, Automated tests, Real device.",
-          "Built and tests pass; a virtual run worked."
+          "Oct 4, 2026: Docker ran on the development PC under WSL2. The source and built-container smoke checks, real transcoding and restart persistence passed. Native Linux desktop, ARM, NAS and hardware-accelerated container use were not tested."
         ],
         "remaining": [
           {
@@ -12170,7 +12170,7 @@
         "means": "The Mac app is signed, opens without warnings and plays and converts on both Mac types.",
         "done": [
           "Checks passed: Built, Automated tests.",
-          "Built by the automatic builder only; unsigned."
+          "Source implementation and Windows-only platform checks are recorded. A completed Mac package is not verified: the located September 21, 2026 build stopped before packaging, and a later successful package receipt was not found in this review."
         ],
         "remaining": [
           {
@@ -12461,7 +12461,7 @@
         "text": "Selection-card issue and route-proven acceptance remain. Failure wording alone does not establish which route was attempted or Relay availability.",
         "remaining": "Reconcile reviewed display candidate/availability cause; retain natural fallback, renewal and multi-user requirements."
       },
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Services and website",
@@ -12480,7 +12480,7 @@
       "roadTo100": {
         "means": "The browser games work with touch, Safari and Firefox on real devices.",
         "done": [
-          "Checks passed: Built, Automated tests, Real device, Real-world check.",
+          "Checks passed: Built, Automated tests, Real device, Real-world check, Ready to call Available.",
           "Game logic tests pass; the games are live.",
           "Oct 23, 2026, 8:56:01 PM Eastern: Windows and web tests S03 passed subset. Chrome:17 games with real UI interactions, seven completed rounds;20 public pages and31 linked scripts HTTP200; one cosmetic Memory Match announcement defect. All modes and Firefox are not cleared. Public website bytes, identified by Windows and web tests HTTP SHA-256 snapshots; deployed website commit unverified. The private main SHA is not a website build.",
           "Windows and web tests Oct 23, 2026, 8:42:04 PM Eastern, the game check: Two players; legal placement flips the bracketed gold disc. Scope: AI-operated browser controls/mode, not real human opponents. Public deployment SHA unverified.",
@@ -13047,7 +13047,7 @@
       "roadTo100": {
         "means": "Hosted game servers run safely with backups, monitoring and abuse handling.",
         "done": [
-          "Checks passed: none yet.",
+          "Checks passed: .",
           "Planning notes only."
         ],
         "remaining": [
@@ -13101,7 +13101,7 @@
       "roadTo100": {
         "means": "Managed hosting runs with controls, backups and tested incident drills.",
         "done": [
-          "Checks passed: none yet.",
+          "Checks passed: .",
           "Planning notes only."
         ],
         "remaining": [
@@ -13155,7 +13155,7 @@
       "roadTo100": {
         "means": "Original 3D characters and story videos are in the app, tested for speed and accessibility.",
         "done": [
-          "Checks passed: none yet.",
+          "Checks passed: .",
           "Paused; nothing is wired into the app."
         ],
         "remaining": [
@@ -13205,7 +13205,7 @@
       "roadTo100": {
         "means": "Voice commands work through Google Assistant and Alexa with safe sign-in, tested on real speakers.",
         "done": [
-          "Checks passed: none yet.",
+          "Checks passed: .",
           "An example Home Assistant setup exists; nothing else."
         ],
         "remaining": [
@@ -13244,7 +13244,7 @@
     "Planned"
   ],
   "honestyNote": "Ten features are recorded Ready by Nick, with their limits shown on each row. Nothing is described as 100% working without its listed limits. Untested paths are listed as not tested, not as passed. A failure caps a feature at 90%.",
-  "previousUpdatedEastern": "Oct 29, 2026, 12:18 PM Eastern",
+  "previousUpdatedEastern": "Oct 29, 2026, 4:42 PM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "Oct 29 feature-score refresh (the 4-core PC on the published Windows 0.1.108 and then 0.1.109, two phones on the unpublished test build tester63, scripted checks on a test server with the 0.1.109 code, and one owner report, through Oct 29, 2026, 11:42 AM Eastern); earlier record: Oct 28 fourth overnight record (the 4-core PC on Windows 0.1.107 and then the published 0.1.108, and two phones on the unpublished test build tester63, through Oct 28, 2026, 10:24 AM Eastern); earlier record: Oct 28 third overnight record (smokes and one audiobook idle check, through Oct 28, 2026, 7:24 AM Eastern); earlier record: Oct 28 second overnight record: the 4-core AI tester alone on Windows 0.1.106 and then the published 0.1.107 (in-app update at 3:16 AM Eastern), and an AI tester on a Pixel 3 and a Galaxy S9+ running the unpublished test builds tester61 and tester62, through Oct 28, 2026, 4:28 AM Eastern; earlier record: Oct 27–28 overnight record: the 4-core AI tester alone on Windows 0.1.104 and then 0.1.105 (in-app update at 12:16 AM Eastern), and an AI tester on a Pixel 3 and a Galaxy S9+ running the unpublished test builds tester59 to tester61, through Oct 28, 2026, 1:46 AM Eastern; earlier record: October 25–27 phone, TV, browser and owner-observation record, through the Oct 27 test sessions at the second household up to 9:21 PM Eastern (Galaxy S24 on tester49, tester56, tester57 and tester58; the PC on Windows 0.1.102, 0.1.103 and 0.1.104; then the 4-core AI tester alone on the PC and in Chrome while Nick was away) and Nick’s first look at Beebo Auto 1.20 in a real car",
@@ -15831,7 +15831,7 @@
   },
   "platformProgress": {
     "title": "How close are Windows and Android to 100%?",
-    "updatedEastern": "Oct 29, 2026, 4:42 PM Eastern",
+    "updatedEastern": "Nov 2, 2026, 12:36 PM Eastern",
     "lead": "Here is the short answer for each app: how many features are fully confirmed, how many are almost there, how many are earlier on, and what still stands in the way. The counts are worked out from the feature table further down this page, so they always match it.",
     "explain": [
       "The percentage on a feature counts the checks it has passed: built, automated tests, tried on a real device, tried in real use, and confirmed by a person.",
@@ -16139,7 +16139,7 @@
   },
   "platformMatrix": {
     "title": "What works, platform by platform",
-    "updatedEastern": "Oct 29, 2026, 4:42 PM Eastern",
+    "updatedEastern": "Nov 2, 2026, 12:36 PM Eastern",
     "lead": "A tick means a person has confirmed it and nothing known is open for that use. Most things are not at that level yet, so many boxes say “Mostly works” and name the known problem. Select a box (or tap it on a phone) to see how it was tested, on which devices, and what is still open. The same details are listed in full under the table.",
     "quick": [
       {
