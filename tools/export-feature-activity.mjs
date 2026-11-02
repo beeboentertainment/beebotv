@@ -17,7 +17,7 @@ export function exportActivity(input, now = Date.now()) {
     // Public text is selected from fixed customer-safe enums, never copied from private prose.
     return Object.fromEntries(['featureId', 'revision', 'state', 'stage', 'scope', 'deviceClass', 'startedAt', 'updatedAt', 'expiresAt', 'nextAction'].map(k => [k, record[k]]));
   });
-  const output = { schemaVersion: 1, updatedAt: input.updatedAt, features };
+  const output = { schemaVersion: 1, revision: input.revision, updatedAt: input.updatedAt, features };
   if (!validateFeed(output, ids, now)) throw Error('Invalid public activity, chronology, expiry, or feature mapping.');
   return output;
 }

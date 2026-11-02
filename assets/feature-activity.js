@@ -15,7 +15,7 @@
   const own = (o, keys) => o && typeof o === 'object' && !Array.isArray(o) && Object.keys(o).length === keys.length && keys.every(k => Object.hasOwn(o, k));
   const time = s => typeof s === 'string' && ISO.test(s) && Number.isFinite(Date.parse(s));
   function validateFeed(feed, ids, now = Date.now()) {
-    if (!own(feed, ['schemaVersion', 'updatedAt', 'features']) || feed.schemaVersion !== 1 || !time(feed.updatedAt) || Date.parse(feed.updatedAt) > now || !Array.isArray(feed.features) || feed.features.length > ids.size) return false;
+    if (!own(feed, ['schemaVersion', 'revision', 'updatedAt', 'features']) || feed.schemaVersion !== 1 || !Number.isSafeInteger(feed.revision) || feed.revision < 1 || !time(feed.updatedAt) || Date.parse(feed.updatedAt) > now || !Array.isArray(feed.features) || feed.features.length > ids.size) return false;
     const seen = new Set();
     return feed.features.every(r => {
       if (!own(r, fields) || !ids.has(r.featureId) || seen.has(r.featureId) || !Number.isSafeInteger(r.revision) || r.revision < 1 || !STATES.includes(r.state) || !STAGES.includes(r.stage) || !DEVICES.includes(r.deviceClass) || !Object.hasOwn(NEXT, r.nextAction) || !Object.hasOwn(SCOPE, r.scope)) return false;
@@ -48,46 +48,61 @@
     if (!Array.isArray(declared) || declared.length > 500 || declared.some(id => typeof id !== 'string' || !/^feature-[a-z0-9-]+$/.test(id))) return null;
     const ids = new Set(declared);
     if (nodes.some(n => !ids.has(n.dataset.liveFeature))) return null;
-    const rows = new Map(), seen = new Map();
-    let latest = -Infinity, available = false, stopped = false, generation = 0, inflight = null, pollTimer, expiryTimer, failures = 0, lastAttempt = -Infinity;
+    const rows = new Map(), seen = new Map(), expired = new Map(), deadlines = new Map();
+    let latest = -Infinity, snapshotRevision = 0, snapshotKey = '', available = false, stopped = false, generation = 0, inflight = null, pollTimer, expiryTimer, failures = 0, eligibleAt = -Infinity;
     const now = () => w.Date.now();
+    const monotonic = () => w.performance.now();
+    const rowKey = r => JSON.stringify(fields.map(k => r[k]));
     function render() {
       w.clearTimeout(expiryTimer);
       let nextExpiry = Infinity;
       for (const node of nodes) {
         const r = rows.get(node.dataset.liveFeature);
-        const fresh = available && r && now() < Date.parse(r.expiresAt) && now() >= Date.parse(r.updatedAt);
+        if (r && (now() >= Date.parse(r.expiresAt) || monotonic() >= deadlines.get(r.featureId))) expired.set(r.featureId, r.revision);
+        const fresh = available && r && r.revision > (expired.get(r.featureId) || 0) && now() < Date.parse(r.expiresAt) && now() >= Date.parse(r.updatedAt);
         node.dataset.liveState = fresh ? r.state : 'unknown';
         node.querySelector('[data-live-label]').textContent = fresh ? label(r) : 'Activity not verified';
         node.querySelector('[data-live-scope]').textContent = fresh ? SCOPE[r.scope] : (r ? 'Last confirmation is stale or unavailable.' : 'No current confirmation.');
         node.querySelector('[data-live-next]').textContent = r ? NEXT[r.nextAction] : NEXT.waiting;
         node.querySelector('[data-live-time]').textContent = r ? 'Last confirmed: ' + eastern(r.updatedAt) : 'Last confirmed: not recorded.';
         node.querySelector('[data-live-start]').textContent = r && r.startedAt ? 'Work step started: ' + eastern(r.startedAt) : '';
-        if (fresh) nextExpiry = Math.min(nextExpiry, Date.parse(r.expiresAt));
+        if (fresh) nextExpiry = Math.min(nextExpiry, Date.parse(r.expiresAt) - now(), deadlines.get(r.featureId) - monotonic());
       }
-      if (!stopped && !w.document.hidden && Number.isFinite(nextExpiry)) expiryTimer = w.setTimeout(render, Math.max(1, nextExpiry - now()));
+      // The one-second ceiling also notices a wall-clock jump while the tab stays visible.
+      if (!stopped && !w.document.hidden && Number.isFinite(nextExpiry)) expiryTimer = w.setTimeout(render, Math.max(1, Math.min(1000, nextExpiry)));
     }
     function accept(feed) {
-      if (!validateFeed(feed, ids, now()) || Date.parse(feed.updatedAt) < latest) return false;
+      if (!validateFeed(feed, ids, now()) || Date.parse(feed.updatedAt) < latest || feed.revision < snapshotRevision) return false;
+      const key = JSON.stringify([feed.updatedAt, [...feed.features].sort((a,b) => a.featureId.localeCompare(b.featureId)).map(rowKey)]);
+      if (feed.revision === snapshotRevision && key !== snapshotKey) return false;
       // Validate the whole response before changing any visible record. Equal revisions are immutable.
       for (const r of feed.features) {
         const prior = seen.get(r.featureId);
-        if (prior && (r.revision < prior.revision || (r.revision === prior.revision && JSON.stringify(r) !== JSON.stringify(prior)))) return false;
+        if (prior && (r.revision < prior.revision || (r.revision === prior.revision && rowKey(r) !== rowKey(prior)))) return false;
       }
       latest = Date.parse(feed.updatedAt);
+      snapshotRevision = feed.revision; snapshotKey = key;
+      const present = new Set(feed.features.map(r => r.featureId));
+      for (const r of rows.values()) if (!present.has(r.featureId)) expired.set(r.featureId, r.revision);
       rows.clear();
-      for (const r of feed.features) { rows.set(r.featureId, r); seen.set(r.featureId, r); }
+      for (const r of feed.features) {
+        if (!seen.has(r.featureId) || seen.get(r.featureId).revision < r.revision) deadlines.set(r.featureId, monotonic() + Math.max(0, Date.parse(r.expiresAt) - now()));
+        rows.set(r.featureId, r); seen.set(r.featureId, r);
+      }
       available = true; render(); return true;
     }
     function schedule() {
       w.clearTimeout(pollTimer);
-      if (!stopped && !w.document.hidden) pollTimer = w.setTimeout(check, Math.min(1800000, 300000 * 2 ** failures));
+      if (!stopped && !w.document.hidden) pollTimer = w.setTimeout(check, Math.max(1, eligibleAt - monotonic()));
     }
     async function check() {
       if (stopped || w.document.hidden || inflight) return;
       const ticket = ++generation, controller = new w.AbortController();
-      inflight = controller; lastAttempt = now();
-      const timeout = w.setTimeout(() => controller.abort(), 10000);
+      inflight = controller; eligibleAt = monotonic() + 300000;
+      const timeout = w.setTimeout(() => {
+        controller.abort();
+        if (ticket === generation && !stopped) { ++generation; inflight = null; available = false; failures = Math.min(3, failures + 1); eligibleAt = monotonic() + Math.min(1800000, 300000 * 2 ** failures); render(); schedule(); }
+      }, 10000);
       try {
         const response = await w.fetch('/site-data/feature-activity.json', { cache: 'no-cache', credentials: 'omit', signal: controller.signal, headers: { Accept: 'application/json' } });
         if (!response.ok) throw Error('Activity unavailable');
@@ -99,7 +114,7 @@
         if (ticket === generation && !stopped) { available = false; failures = Math.min(3, failures + 1); render(); }
       } finally {
         w.clearTimeout(timeout);
-        if (ticket === generation) { inflight = null; schedule(); }
+        if (ticket === generation) { inflight = null; eligibleAt = monotonic() + Math.min(1800000, 300000 * 2 ** failures); schedule(); }
       }
     }
     function hide() { ++generation; if (inflight) inflight.abort(); inflight = null; w.clearTimeout(pollTimer); w.clearTimeout(expiryTimer); }
@@ -107,7 +122,7 @@
       if (w.document.hidden) { hide(); return; }
       render();
       // Rapid tab switches do not bypass the cache/backoff budget.
-      if (now() - lastAttempt >= 300000) check(); else schedule();
+      if (monotonic() >= eligibleAt) check(); else schedule();
     }
     function stop() { stopped = true; hide(); }
     w.document.addEventListener('visibilitychange', visibility);

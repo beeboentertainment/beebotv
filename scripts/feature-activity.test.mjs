@@ -12,16 +12,17 @@ const ids = new Set(featureDirectory.map(f => f.id));
 const start = Date.parse('2026-11-02T11:00:00-05:00');
 const iso = ms => new Date(ms).toISOString();
 function record(extra = {}) { return { featureId:first, revision:1, state:'running', stage:'coding', scope:'feature', deviceClass:'none', startedAt:iso(start), updatedAt:iso(start), expiresAt:iso(start+60000), nextAction:'review', ...extra }; }
-function feed(records = [record()], updatedAt = iso(start)) { return { schemaVersion:1, updatedAt, features:records }; }
+function feed(records = [record()], updatedAt = iso(start), revision = Math.max(1,...records.map(r=>r.revision))) { return { schemaVersion:1, revision, updatedAt, features:records }; }
 function privateInput(r = record(), source = {}) {
-  return { updatedAt:r.updatedAt, records:[{ ...r, privateText:'DO NOT EMIT private host or account', source:{ featureId:r.featureId, sha:'a'.repeat(40), taskId:'test-task', evidence:'https://github.com/beeboentertainment/beebo-app-private/issues/184#issuecomment-123', confirmedAt:r.updatedAt, verified:true, kind:'START', ...source } }] };
+  return { revision:1, updatedAt:r.updatedAt, records:[{ ...r, privateText:'DO NOT EMIT private host or account', source:{ featureId:r.featureId, sha:'a'.repeat(40), taskId:'test-task', evidence:'https://github.com/beeboentertainment/beebo-app-private/issues/184#issuecomment-123', confirmedAt:r.updatedAt, verified:true, kind:'START', ...source } }] };
 }
 const flush = () => new Promise(resolve => setImmediate(resolve));
 function harness(initial = feed(), displayed = [first,second]) {
   const dom = new JSDOM(activityDirectoryMarkup()+displayed.map(activityMarkup).join(''), { url:'https://example.test/features/detail.html', runScripts:'outside-only' });
-  let clock=start, hidden=false, fetchValue=initial, count=0, reject=false;
+  let clock=start, elapsed=0, hidden=false, fetchValue=initial, count=0, reject=false;
   const timers=new Map(); let serial=0;
   dom.window.Date.now=()=>clock;
+  dom.window.performance.now=()=>elapsed;
   Object.defineProperty(dom.window.document,'hidden',{get:()=>hidden});
   dom.window.setTimeout=(fn, delay)=>{ const id=++serial; timers.set(id,{fn,at:clock+delay,delay}); return id; };
   dom.window.clearTimeout=id=>timers.delete(id);
@@ -29,7 +30,7 @@ function harness(initial = feed(), displayed = [first,second]) {
   dom.window.fetch=async (url,options)=>{ count++;requests.push({url,options});if(reject)throw Error('offline');return {ok:true,text:async()=>JSON.stringify(fetchValue)}; };
   const client=mount(dom.window);
   const node=()=>dom.window.document.querySelector('[data-live-feature]');
-  return { dom,client,node,timers,requests,get count(){return count;},set value(v){fetchValue=v;},set reject(v){reject=v;},advance(ms){clock+=ms;},async runDue(){const due=[...timers].filter(([,t])=>t.at<=clock);for(const [id,t]of due){timers.delete(id);t.fn();}await flush();},visibility(v){hidden=v;dom.window.document.dispatchEvent(new dom.window.Event('visibilitychange'));},close(){client.stop();dom.window.close();} };
+  return { dom,client,node,timers,requests,get count(){return count;},set value(v){fetchValue=v;},set reject(v){reject=v;},advance(ms){clock+=ms;elapsed+=Math.max(0,ms);},async runDue(){const due=[...timers].filter(([,t])=>t.at<=clock);for(const [id,t]of due){timers.delete(id);t.fn();}await flush();},visibility(v){hidden=v;dom.window.document.dispatchEvent(new dom.window.Event('visibilitychange'));},close(){client.stop();dom.window.close();} };
 }
 test('exporter emits only pinned public fields and requires matching evidence',()=>{
   const out=exportActivity(privateInput(),start);
@@ -76,7 +77,7 @@ test('offline or invalid responses immediately neutralize active status and back
   h.reject=false;h.value={not:'a feed'};await h.client.check();assert.equal(h.node().dataset.liveState,'unknown');assert.ok([...h.timers.values()].some(t=>t.delay===1200000));h.close();
 });
 test('a newer snapshot missing a row clears that row; old whole snapshots stay rejected',async()=>{
-  const h=harness();await flush();h.advance(1000);assert.equal(h.client.accept(feed([],iso(start+1000))),true);assert.equal(h.node().dataset.liveState,'unknown');assert.equal(h.client.accept(feed()),false);h.close();
+  const h=harness();await flush();h.advance(1000);assert.equal(h.client.accept(feed([],iso(start+1000),2)),true);assert.equal(h.node().dataset.liveState,'unknown');assert.equal(h.client.accept(feed()),false);h.close();
 });
 test('detail page accepts the full catalogue feed while rendering one feature',async()=>{
   const h=harness(feed([record(),record({featureId:second})]),[first]);await flush();assert.equal(h.node().dataset.liveState,'running');h.close();
@@ -107,4 +108,18 @@ test('all detail pages keep source status/score, collapsed technicals, placehold
 });
 test('representative Campsite page preserves Beta, 90%, two issues and no current-build claim',()=>{
   const entry=featureDirectory.find(f=>f.name==='Campsite host start and stop');const html=readFileSync(new URL('../features/'+entry.id+'.html',import.meta.url),'utf8');assert.match(html,/Beta/);assert.match(html,/90%/);assert.match(html,/2 open known issues/);assert.match(html,/not proof that every route works in the current build/);assert.match(html,/Stop and confirm Stop/);
+});
+test('equal snapshot version cannot remove and then revive a running confirmation',async()=>{
+  const h=harness();await flush();assert.equal(h.client.accept(feed([])),false);h.close();
+});
+test('clock rewind cannot revive an expired revision',async()=>{
+  const h=harness();await flush();h.advance(60000);h.client.render();assert.equal(h.node().dataset.liveState,'unknown');h.advance(-30000);h.client.render();assert.equal(h.node().dataset.liveState,'unknown');h.close();
+});
+test('visibility honors the current failure backoff deadline',async()=>{
+  const h=harness();await flush();h.reject=true;await h.client.check();const attempts=h.count;h.visibility(true);h.advance(300000);h.visibility(false);await flush();assert.equal(h.count,attempts);h.close();
+});
+test('qualified unavailable and retired statuses do not offer current setup controls',()=>{
+  for(const name of ['Rewards, ads and credit','Stream from my PC (old button)']){
+    const entry=featureDirectory.find(f=>f.name===name);const html=readFileSync(new URL('../features/'+entry.id+'.html',import.meta.url),'utf8');assert.doesNotMatch(html,/Use the linked guide for the current setup and controls/);
+  }
 });
