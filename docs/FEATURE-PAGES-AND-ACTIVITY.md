@@ -1,8 +1,10 @@
 # Feature pages and activity checkpoints
 
 The feature list links to 70 customer pages under `features/`. Scores, status labels,
-checkmarks and issue counts come from the existing `testing-status.json`. This work
-does not change that file, its evidence dates, download feeds, pricing or legal pages.
+checkmarks and issue counts come from `testing-status.json`. Generating feature pages
+does not change those marks. The separate dated percentage audit corrects evidence
+wording and review timestamps while preserving every score and checkmark. Download
+feeds, pricing and legal wording are unchanged.
 The feature directory pins the existing evidence anchors, so future renaming needs
 an explicit directory update without changing an established ID.
 

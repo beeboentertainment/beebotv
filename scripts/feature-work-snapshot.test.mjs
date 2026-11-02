@@ -26,6 +26,9 @@ test('all 70 original feature rows remain unique and obey the existing rubric', 
   assert.equal(data.features.length, 70);
   assert.equal(new Set(data.features.map(f => f.name)).size, 70);
   assert.deepEqual(require('../site-data/progress-score.js').problems(data), []);
+  for (const feature of data.features.filter(f => !Object.values(f.checks).some(Boolean))) {
+    assert.ok(feature.roadTo100.done.includes('Checks passed: none yet.'), feature.name);
+  }
   assert.equal((page.match(/<tr id="[^"]+" class="feat tier-/g) || []).length, 70);
 });
 test('all 70 concise feature cards are visible in the initial generated page', () => {
