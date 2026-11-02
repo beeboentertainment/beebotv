@@ -92,7 +92,7 @@ test('public snapshot has exactly the public feature names and no private proven
   assert.doesNotMatch(text, /github\.com[^\s"]*\/issues|issuecomment|taskId|\/workspace\/|\b[a-f0-9]{40}\b/i);
   for (const f of snapshot.features) assert.ok([true, false, null].includes(f.active));
 });
-test('all 70 scores and checks preserve the baseline; dated issue additions and Car Party wording are explicit',()=>{
+test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
   const after=data.features.find(f=>f.name===before.name);
@@ -102,6 +102,10 @@ test('all 70 scores and checks preserve the baseline; dated issue additions and 
    }
    if(key==='openIssues' && before.name==='BeeboVPN'){
     assert.equal(before.openIssues,undefined);assert.equal(after.openIssues,2);continue;
+   }
+   if(key==='lastTested' && before.name==='Chromecast'){
+    const prefix='Nov 2, 2026, 3:14 to 3:15 PM Eastern (S9+ unpublished tester69/build 119: Cast FAILED/INCONCLUSIVE; receiver SDK error then missing media, actual TV progress/picture and sound unknown; seek check not run, normal Stop cleanup); earlier: ';
+    assert.equal(after.lastTested,prefix+before.lastTested);continue;
    }
    if(before.name==='Car party (host and passengers)' && ['lastTested','testedOn'].includes(key))continue;
    assert.deepEqual(after[key],before[key],before.name+': '+key);
