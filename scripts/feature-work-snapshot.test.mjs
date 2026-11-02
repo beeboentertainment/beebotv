@@ -92,11 +92,17 @@ test('public snapshot has exactly the public feature names and no private proven
   assert.doesNotMatch(text, /github\.com[^\s"]*\/issues|issuecomment|taskId|\/workspace\/|\b[a-f0-9]{40}\b/i);
   for (const f of snapshot.features) assert.ok([true, false, null].includes(f.active));
 });
-test('all 70 scores, checks and issue counts preserve the baseline; only the audited Car Party date description changes',()=>{
+test('all 70 scores and checks preserve the baseline; dated issue additions and Car Party wording are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
   const after=data.features.find(f=>f.name===before.name);
   for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent']){
+   if(key==='openIssues' && before.name==='Playing films, seeking, picture-in-picture'){
+    assert.equal(before.openIssues,4);assert.equal(after.openIssues,5);continue;
+   }
+   if(key==='openIssues' && before.name==='BeeboVPN'){
+    assert.equal(before.openIssues,undefined);assert.equal(after.openIssues,1);continue;
+   }
    if(before.name==='Car party (host and passengers)' && ['lastTested','testedOn'].includes(key))continue;
    assert.deepEqual(after[key],before[key],before.name+': '+key);
   }
