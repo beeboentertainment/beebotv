@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import { JSDOM } from 'jsdom';
 import { exportActivity } from '../tools/export-feature-activity.mjs';
@@ -11,10 +13,11 @@ const first = featureDirectory[0].id, second = featureDirectory[1].id;
 const ids = new Set(featureDirectory.map(f => f.id));
 const start = Date.parse('2026-11-02T11:00:00-05:00');
 const iso = ms => new Date(ms).toISOString();
+const evidencePrefix = 'https://github.com/example-coordinator/receipt-board/issues/';
 function record(extra = {}) { return { featureId:first, revision:1, state:'running', stage:'coding', scope:'feature', deviceClass:'none', startedAt:iso(start), updatedAt:iso(start), expiresAt:iso(start+60000), nextAction:'review', ...extra }; }
 function feed(records = [record()], updatedAt = iso(start), revision = Math.max(1,...records.map(r=>r.revision))) { return { schemaVersion:1, revision, updatedAt, features:records }; }
 function privateInput(r = record(), source = {}) {
-  return { revision:1, updatedAt:r.updatedAt, records:[{ ...r, privateText:'DO NOT EMIT private host or account', source:{ featureId:r.featureId, sha:'a'.repeat(40), taskId:'test-task', evidence:'https://github.com/beeboentertainment/beebo-app-private/issues/184#issuecomment-123', confirmedAt:r.updatedAt, verified:true, kind:'START', ...source } }] };
+  return { revision:1, updatedAt:r.updatedAt, records:[{ ...r, privateText:'DO NOT EMIT private host or account', source:{ featureId:r.featureId, sha:'a'.repeat(40), taskId:'test-task', evidence:evidencePrefix+'184#issuecomment-123', confirmedAt:r.updatedAt, verified:true, kind:'START', ...source } }] };
 }
 const flush = () => new Promise(resolve => setImmediate(resolve));
 function harness(initial = feed(), displayed = [first,second]) {
@@ -33,16 +36,35 @@ function harness(initial = feed(), displayed = [first,second]) {
   return { dom,client,node,timers,requests,get count(){return count;},set value(v){fetchValue=v;},set reject(v){reject=v;},advance(ms){clock+=ms;elapsed+=Math.max(0,ms);},async runDue(){const due=[...timers].filter(([,t])=>t.at<=clock);for(const [id,t]of due){timers.delete(id);t.fn();}await flush();},visibility(v){hidden=v;dom.window.document.dispatchEvent(new dom.window.Event('visibilitychange'));},close(){client.stop();dom.window.close();} };
 }
 test('exporter emits only pinned public fields and requires matching evidence',()=>{
-  const out=exportActivity(privateInput(),start);
+  const out=exportActivity(privateInput(),start,evidencePrefix);
   assert.equal(validateFeed(out,ids,start),true);
   assert.doesNotMatch(JSON.stringify(out),/privateText|test-task|DO NOT EMIT|issuecomment|aaaaaaa/);
-  for(const change of [{verified:false},{sha:'short'},{featureId:second},{confirmedAt:iso(start-1000)},{kind:'ASSIGNED'}]) assert.throws(()=>exportActivity(privateInput(record(),change),start));
+  for(const change of [{verified:false},{sha:'short'},{featureId:second},{confirmedAt:iso(start-1000)},{kind:'ASSIGNED'}]) assert.throws(()=>exportActivity(privateInput(record(),change),start,evidencePrefix));
+});
+test('exporter requires independently configured canonical evidence authority, even for empty input',()=>{
+  const forged={...privateInput(),expectedEvidencePrefix:evidencePrefix};
+  for(const input of [privateInput(),forged,{revision:1,updatedAt:iso(start),records:[]}]) assert.throws(()=>exportActivity(input,start),/canonical evidence repository prefix/);
+  for(const prefix of ['',null,42,'http://github.com/org/repo/issues/','https://github.com.evil.test/org/repo/issues/','https://user@github.com/org/repo/issues/','https://github.com:443/org/repo/issues/','https://github.com/org/repo/issues/?q=x','https://github.com/org/repo/issues/#x','https://github.com/org/repo/extra/issues/','https://github.com/org/repo%2Fother/issues/','https://github.com/org/../issues/','https://github.com/org/./issues/']) assert.throws(()=>exportActivity(privateInput(),start,prefix),/canonical evidence repository prefix/);
+});
+test('evidence receipts must match the configured prefix literally and have issue and comment IDs',()=>{
+  const suffix='184#issuecomment-123';
+  for(const evidence of ['https://github.com/other/receipt-board/issues/'+suffix,'https://github.com/example-coordinator/other/issues/'+suffix,'https://github.com.evil.test/example-coordinator/receipt-board/issues/'+suffix,evidencePrefix+'0#issuecomment-123',evidencePrefix+'184#issuecomment-0',evidencePrefix+'184',evidencePrefix+suffix+'?q=x',undefined]) assert.throws(()=>exportActivity(privateInput(record(),{evidence}),start,evidencePrefix));
+  const dotted='https://github.com/example-coordinator/receipt.board/issues/';
+  assert.equal(exportActivity(privateInput(record(),{evidence:dotted+suffix}),start,dotted).features.length,1);
+  assert.throws(()=>exportActivity(privateInput(record(),{evidence:dotted.replace('receipt.board','receiptXboard')+suffix}),start,dotted));
+});
+test('CLI uses operator environment configuration without emitting it',()=>{
+  const now=Date.now(),input=privateInput(record({startedAt:iso(now),updatedAt:iso(now),expiresAt:iso(now+60000)}));
+  const env={...process.env};delete env.BEEBO_ACTIVITY_EVIDENCE_PREFIX;
+  const run=env=>spawnSync(process.execPath,[fileURLToPath(new URL('../tools/export-feature-activity.mjs',import.meta.url))],{input:JSON.stringify(input),encoding:'utf8',env,windowsHide:true});
+  const missing=run(env);assert.equal(missing.status,1);assert.equal(missing.stdout,'');assert.match(missing.stderr,/canonical evidence repository prefix/);
+  const configured=run({...env,BEEBO_ACTIVITY_EVIDENCE_PREFIX:evidencePrefix});assert.equal(configured.status,0,configured.stderr);assert.equal(JSON.parse(configured.stdout).features.length,1);assert.equal(configured.stdout.includes(evidencePrefix),false);assert.equal(configured.stderr,'');
 });
 test('phone RUNNING requires actual testing start vouched by exclusive QA owner',()=>{
   const r=record({stage:'testing',deviceClass:'phone',scope:'phone-check'});
-  assert.throws(()=>exportActivity(privateInput(r),start));
-  assert.throws(()=>exportActivity(privateInput(r,{exclusiveQaOwnerConfirmed:true,qaOwner:'fixture',action:'installed'}),start));
-  assert.equal(exportActivity(privateInput(r,{exclusiveQaOwnerConfirmed:true,qaOwner:'fixture',action:'testing-started'}),start).features[0].deviceClass,'phone');
+  assert.throws(()=>exportActivity(privateInput(r),start,evidencePrefix));
+  assert.throws(()=>exportActivity(privateInput(r,{exclusiveQaOwnerConfirmed:true,qaOwner:'fixture',action:'installed'}),start,evidencePrefix));
+  assert.equal(exportActivity(privateInput(r,{exclusiveQaOwnerConfirmed:true,qaOwner:'fixture',action:'testing-started'}),start,evidencePrefix).features[0].deviceClass,'phone');
 });
 test('validation rejects malformed, duplicate, unknown, future and overlong activity',()=>{
   for(const bad of [null,{},feed([record(),record()]),feed([record({featureId:'feature-unknown'})]),feed([record({nextAction:'<img src=x onerror=alert(1)>'})]),feed([record({scope:'secret title'})]),feed([record({expiresAt:iso(start+3600001)})]),feed([record({updatedAt:iso(start+1)})]),feed([record({startedAt:null})]),feed([record({revision:0})]),feed([record({extra:'private'})])]) assert.equal(validateFeed(bad,ids,start),false);
