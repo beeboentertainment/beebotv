@@ -111,4 +111,4 @@ The same-day follow-up reconciles all 23 rows citing November 2. Seek failures a
 
 When regenerating the evidence page, run `site-data/build-scoreboard.js` before the final `tools/build-status-page.mjs` pass. The latter normalizes the page's line endings. Run every publication checker afterward, including the footer checker from the maintained local tooling. A checker pass is separate from the required phone-width and desktop-width visual look.
 
-The VPN renderer follow-up retains its original behavioral failures and the first repair result of 17 passes and one failure. Failed assertions are not counted as separate product issues. Both VPN families remain source-level findings without repaired installed-artifact or native-tunnel acceptance.
+The VPN renderer follow-up retains its original behavioral failures and the first repair result of 17 passes and one failure. A later narrow follow-up passed all 18 checks, while broader callback and connection-display review findings remain open. Failed assertions are not counted as separate product issues. Both VPN families remain source-level findings without repaired installed-artifact or native-tunnel acceptance.
