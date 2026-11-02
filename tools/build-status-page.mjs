@@ -18,6 +18,7 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const P = require('../site-data/progress-score.js');
 import { platformProgressHtml, platformMatrixHtml } from './platform-sections.mjs';
+import { featureId, activityDirectoryMarkup } from './feature-directory.mjs';
 import { renderCards, compactEvidenceLayout, codeEstimate, renderRecentEvidence } from './feature-work-snapshot.mjs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -185,9 +186,7 @@ function testHistory(f, note) {
   return `<details class="feature-details test-history"><summary>Test history and notes (${entries.length})</summary><div class="feature-details-body">${h}</div></details>`;
 }
 
-function featureId(f) {
-  return f.id || 'feature-' + `${f.group}-${f.name}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
-}
+
 function row(f) {
   const [t, label] = tier(f.percentComplete);
   const checks = f.checks || {};
@@ -516,6 +515,11 @@ function sourceMerges(page) {
 }
 
 html = sourceMerges(html);
+html = html.replace(/<script id="feature-activity-ids" type="application\/json">[\s\S]*?<\/script>/g, '');
+html = html.replace(/<script src="\/assets\/feature-activity\.js" defer(?:="")?><\/script>/g, '');
+html = html.replace(/<link rel="stylesheet" href="\/assets\/feature-detail\.css">/g, '');
+html = html.replace('</head>', '<link rel="stylesheet" href="/assets/feature-detail.css"></head>');
+html = html.replace('</body>', activityDirectoryMarkup() + '<script src="/assets/feature-activity.js" defer></script></body>');
 html = compactEvidenceLayout(html);
 const out = crlf ? html.replace(/\n/g, '\r\n') : html;
 if (process.argv.includes('--check')) {

@@ -89,7 +89,7 @@ test('public snapshot has exactly the public feature names and no private proven
   for (const f of snapshot.features) assert.ok([true, false, null].includes(f.active));
 });
 test('all 70 scores, checks, issue counts and installed-test dates preserve the reviewed baseline',()=>{
- const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024}));
+ const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
   const after=data.features.find(f=>f.name===before.name);
   for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent'])assert.deepEqual(after[key],before[key],before.name+': '+key);
@@ -161,8 +161,20 @@ test('stale snapshots become visibly neutral in the rendered DOM',()=>{
 });
 test('every newly displayed card link has a real destination and evidence survives relocation',()=>{
  const dom=domAt();try{const d=dom.window.document;
-  for(const a of d.querySelectorAll('.feature-work-card a'))assert.ok(d.getElementById(a.hash.slice(1)),a.textContent);
-  const baseline=new JSDOM(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:release-evidence.html'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024}));
+  const aboutLinks=[];
+  for(const a of d.querySelectorAll('.feature-work-card a')){
+   const href=a.getAttribute('href');
+   if(href.startsWith('#'))assert.ok(d.getElementById(a.hash.slice(1)),a.textContent);
+   else {
+    const id=a.closest('.feature-work-card').dataset.featureId;
+    assert.match(id,/^feature-[a-z0-9-]+$/);
+    assert.equal(href,`features/${id}.html`);
+    assert.ok(existsSync(new URL('../'+href,import.meta.url)),a.textContent);
+    aboutLinks.push(href);
+   }
+  }
+  assert.equal(aboutLinks.length,70);assert.equal(new Set(aboutLinks).size,70);
+  const baseline=new JSDOM(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:release-evidence.html'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
   try{
    for(const el of baseline.window.document.querySelectorAll('section[id]'))assert.ok(d.getElementById(el.id),'retained section '+el.id);
    const links=new Set([...d.querySelectorAll('a[href]')].map(a=>a.getAttribute('href')));

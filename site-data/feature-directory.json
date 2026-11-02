@@ -1,0 +1,580 @@
+{
+  "schemaVersion": 1,
+  "features": [
+    {
+      "id": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
+      "name": "Opening the app and the five tabs",
+      "purpose": "Find your way around Beebo on an Android phone, from the home screen to your library and playback controls.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-playing-films-seeking-picture-in-picture",
+      "name": "Playing films, seeking, picture-in-picture",
+      "purpose": "Watch films on your phone, move to another point in a video, or keep a small player visible while using another app.",
+      "guide": "quality-and-subtitles.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-away-from-home-direct-then-relay",
+      "name": "Away from home (direct, then relay)",
+      "purpose": "Connect to your home library while away. The connection route and its current limits matter as much as playback itself.",
+      "guide": "watch-away-from-home.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-watch-together",
+      "name": "Watch Together",
+      "purpose": "Watch with another person while keeping playback together.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-car-party-host-and-passengers",
+      "name": "Car party (host and passengers)",
+      "purpose": "Let passengers join a shared listening or viewing session. Setup and interaction belong in a safely parked vehicle.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-library-health",
+      "name": "Library health",
+      "purpose": "Understand whether your library is reachable and what needs attention when a folder or computer is unavailable.",
+      "guide": "media-hub.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-surprise-me-playlists-watchlist-favourites",
+      "name": "Surprise me, playlists, watchlist, favourites",
+      "purpose": "Choose something to watch, save favourites and organise titles into personal lists.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-campsite-host-start-and-stop",
+      "name": "Campsite host start and stop",
+      "purpose": "Use an Android phone as a nearby Campsite host so guests can join a local session from their browsers.",
+      "guide": "docs/campsite-mode.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": [],
+      "current": "The dated phone records confirm bounded host start, guest lobby join and leave, and host Stop checks. These are recorded scenarios on the named older test builds, not proof that every route works in the current build.",
+      "requirements": "An Android host with Beebo installed, and nearby guest devices with a browser on the same reachable local network. Download intended media before travel. Keep the host charged and awake; undownloaded media still needs its source computer reachable.",
+      "steps": [
+        "Open Campsite Mode from the tent icon, Play, or More → Campsite & Wi-Fi; wording can differ by build.",
+        "Choose Invite guests and the local Wi-Fi option suitable for your phones. Existing shared Wi-Fi is one supported setup route; check the known limits before relying on hotspot modes.",
+        "Have guests join the host’s local Wi-Fi, then open the theatre code or address shown by the host. They do not need a separate Beebo account for this guest flow.",
+        "Keep the host nearby, awake and powered while guests are connected.",
+        "When finished, choose Stop and confirm Stop on the host."
+      ],
+      "limits": [
+        "Two known issues remain open; this page keeps the reviewed 90% score.",
+        "Temporary-network use with a SIM-equipped guest, hotspot behavior and older stop failures still need matching checks.",
+        "Some shared networks prevent nearby devices from reaching each other. Hotspot options vary by phone.",
+        "The host’s own guest-video browser page can count as a guest. Host start and stop checks do not prove all game, sound or multi-guest behavior."
+      ]
+    },
+    {
+      "id": "feature-android-phone-app-podcasts-and-radio",
+      "name": "Podcasts and radio",
+      "purpose": "Listen to podcast episodes and radio stations in Beebo.",
+      "guide": "media-hub.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-audiobooks",
+      "name": "Audiobooks",
+      "purpose": "Listen to books with chapters, saved places and bookmarks.",
+      "guide": "media-hub.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-pack-for-a-trip-download-planner",
+      "name": "Pack for a trip (download planner)",
+      "purpose": "Plan which media to take with you and check the expected storage needed before downloading.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-trip-journal-trips-recap-video-export",
+      "name": "Trip Journal (trips, recap, video export)",
+      "purpose": "Keep a trip journal and turn selected memories into a recap or video.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-campsite-games",
+      "name": "Campsite games",
+      "purpose": "Play the Campsite games with nearby guests.",
+      "guide": "docs/campsite-mode.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-shared-photos-and-videos",
+      "name": "Shared photos and videos",
+      "purpose": "Present selected photos and videos to people in a shared session.",
+      "guide": "docs/campsite-mode.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-wireless-speakers",
+      "name": "Wireless speakers",
+      "purpose": "Use nearby phones as a speaker group for a shared session.",
+      "guide": "docs/campsite-mode.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-share-the-app-qr-over-the-hotspot",
+      "name": "Share the app (QR over the hotspot)",
+      "purpose": "Help a nearby guest get the app through the host phone’s sharing flow.",
+      "guide": "docs/campsite-mode.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-wake-my-pc",
+      "name": "Wake my PC",
+      "purpose": "Try to wake a sleeping home computer that has been configured to support remote waking.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-chromecast",
+      "name": "Chromecast",
+      "purpose": "Send video to a compatible Cast receiver and control the session from your phone.",
+      "guide": "cast-to-tv.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-beebo-auto-android-auto",
+      "name": "Beebo Auto (Android Auto)",
+      "purpose": "Access the Beebo Auto experience through Android Auto, subject to the remaining real-car checks.",
+      "guide": "car-companion.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-android-tv-and-fire-tv-screens",
+      "name": "Android TV and Fire TV screens",
+      "purpose": "Use Beebo’s television interface with an Android TV or Fire TV remote.",
+      "guide": "android-tv.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-google-play-version",
+      "name": "Google Play version",
+      "purpose": "Track the separate readiness and distribution requirements for the Google Play version.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-phone-help-show-your-screen-to-another-phone",
+      "name": "Phone Help (show your screen to another phone)",
+      "purpose": "Share a phone screen with a helper through an explicit consent flow.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-stream-from-my-pc-old-button",
+      "name": "Stream from my PC (old button)",
+      "purpose": "Track the older Stream from my PC entry and the decision about its replacement.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-link-a-tv",
+      "name": "Link a TV",
+      "purpose": "Connect a television through an approval flow on a phone.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-accessibility-choices-large-text-high-contrast-reduced-motion-talkback",
+      "name": "Accessibility choices (large text, high contrast, reduced motion, TalkBack)",
+      "purpose": "Adjust readability and motion and use supported assistive technology on the phone.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-music-on-the-phone-albums-songs-player-sleep-timer",
+      "name": "Music on the phone (albums, songs, player, sleep timer)",
+      "purpose": "Browse and listen to a music collection on a phone.",
+      "guide": "music.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-family-dashboard-camp-jobs-and-star-chart",
+      "name": "Family Dashboard, Camp Jobs and Star Chart",
+      "purpose": "Organise shared household activities through the dashboard and its related tools.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-packing-list-shared-between-phones",
+      "name": "Packing List (shared between phones)",
+      "purpose": "Coordinate packing items across phones with a shared list.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-family-recipes-and-shopping-list",
+      "name": "Family Recipes and shopping list",
+      "purpose": "Keep recipes and prepare a shopping list from them.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-collections-and-request-a-title",
+      "name": "Collections and Request a title",
+      "purpose": "Browse related titles and request a missing title from the library owner.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-photos-and-phone-backups-timeline-albums-viewer",
+      "name": "Photos and phone backups (timeline, albums, viewer)",
+      "purpose": "Browse photos and albums and track the phone-to-computer backup experience.",
+      "guide": "photos.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-android-phone-app-family-achievements-opt-in-milestones",
+      "name": "Family achievements (opt-in milestones)",
+      "purpose": "Track optional household milestones with the stated privacy and participation choices.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-installer-and-self-update",
+      "name": "Installer and self-update",
+      "purpose": "Install the Windows app and follow its update process.",
+      "guide": "windows.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-library-player-and-web-player",
+      "name": "Library, player and web player",
+      "purpose": "Browse a library and use the desktop or browser player.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-update-modes-and-start-with-windows",
+      "name": "Update modes and start with Windows",
+      "purpose": "Choose how updates and Windows startup should behave.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-converter-and-quality-speed-settings",
+      "name": "Converter and quality / speed settings",
+      "purpose": "Choose conversion quality and speed settings for compatible media and hardware.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-live-tv-tuner-and-own-playlist",
+      "name": "Live TV (tuner and own playlist)",
+      "purpose": "Use a supported tuner or your own playlist as a Live TV source.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-story-studio",
+      "name": "Story Studio",
+      "purpose": "Build a story using the desktop Story Studio tools.",
+      "guide": "story-writer.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-movie-night",
+      "name": "Movie Night",
+      "purpose": "Host a shared film session and invite a guest.",
+      "guide": "movie-night.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-jellyfin-compatible-mode",
+      "name": "Jellyfin-compatible mode",
+      "purpose": "Track compatibility with supported Jellyfin client applications.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-parental-controls-and-household-profiles",
+      "name": "Parental controls and household profiles",
+      "purpose": "Control household profiles and their permitted content.",
+      "guide": "parental-controls.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-keyboard-and-screen-reader-support",
+      "name": "Keyboard and screen-reader support",
+      "purpose": "Navigate the desktop experience with a keyboard and supported screen readers.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-languages-5-translated-with-machine-help-3-previews",
+      "name": "Languages (5 translated with machine help, 3 previews)",
+      "purpose": "Check the progress and remaining review of Beebo’s translated interfaces.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-posters-and-info-tmdb",
+      "name": "Posters and info (TMDB)",
+      "purpose": "Add poster artwork and information to library titles.",
+      "guide": "posters-and-info.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-remote-desktop-see-and-control-the-pc",
+      "name": "Remote Desktop (see and control the PC)",
+      "purpose": "View and control a permitted computer remotely through the approved connection flow.",
+      "guide": "remote-desktop-test.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-space-saver",
+      "name": "Space Saver",
+      "purpose": "Explore the backup-and-verification workflow intended to help reclaim storage.",
+      "guide": "beebo-space-saver.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-library-sharing-with-another-household",
+      "name": "Library sharing with another household",
+      "purpose": "Explore household library sharing and its remaining requirements.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-strong-volume-leveler",
+      "name": "Strong volume leveler",
+      "purpose": "Explore the stronger volume-leveling modes for more consistent listening.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-phone-speakers-phones-play-the-film-s-sound",
+      "name": "Phone speakers (phones play the film's sound)",
+      "purpose": "Play a film’s sound on participating phones, with alignment and device checks recorded separately.",
+      "guide": "phone-speakers.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-music-on-the-pc-library-mixes-desktop-player",
+      "name": "Music on the PC (library, mixes, desktop player)",
+      "purpose": "Browse a music collection and use mixes and playback controls on a computer.",
+      "guide": "music.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-home-layouts-and-customize-layout-desktop",
+      "name": "Home layouts and Customize layout (desktop)",
+      "purpose": "Choose and customise the desktop home layout.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-picture-frame-photo-wall-for-a-tablet-or-tv",
+      "name": "Picture frame (photo wall for a tablet or TV)",
+      "purpose": "Show a selected photo collection as a picture frame on a tablet or television.",
+      "guide": "photos.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-windows-desktop-app-kitchen-announcements-messages-to-phones",
+      "name": "Kitchen announcements (messages to phones)",
+      "purpose": "Send household announcements to participating phones and browsers.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-other-systems-linux-server-headless-docker",
+      "name": "Linux server (headless, Docker)",
+      "purpose": "Run the server without a desktop interface on supported Linux hardware.",
+      "guide": "linux.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-other-systems-linux-desktop-app",
+      "name": "Linux desktop app",
+      "purpose": "Track the Linux desktop application and its remaining installation and playback checks.",
+      "guide": "linux.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-other-systems-macos-desktop",
+      "name": "macOS desktop",
+      "purpose": "Track the macOS desktop application and its remaining compatibility checks.",
+      "guide": "apple.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-our-own-servers-and-dns",
+      "name": "Our own servers and DNS",
+      "purpose": "Track the infrastructure work supporting Beebo’s connections and services.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-beebo-relay-fallback-connection",
+      "name": "Beebo Relay (fallback connection)",
+      "purpose": "Use the fallback connection route only where its current service and availability conditions are met.",
+      "guide": "beebo-relay.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-website-and-browser-games",
+      "name": "Website and browser games",
+      "purpose": "Explore the Beebo website and its browser game catalogue.",
+      "guide": "games.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-password-reset-and-email-verification",
+      "name": "Password reset and email verification",
+      "purpose": "Recover account access and verify an email address using the supported account flows.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-online-games-play-with-others",
+      "name": "Online games (play with others)",
+      "purpose": "Explore online play with other participants and its remaining service checks.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-walkie-talkie-from-anywhere",
+      "name": "Walkie-talkie from anywhere",
+      "purpose": "Talk between participating phones on different networks where the feature is supported.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-portrait-party-turn-a-photo-into-a-card",
+      "name": "Portrait Party (turn a photo into a card)",
+      "purpose": "Turn a selected photo into a Portrait Party card where the current interface supports it.",
+      "guide": "portrait-party.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-trip-journal-link-away-from-home",
+      "name": "Trip Journal link away from home",
+      "purpose": "Open a shared trip journal from another network under the link’s access limits.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-beebovpn",
+      "name": "BeeboVPN",
+      "purpose": "Track the BeeboVPN application and the checks still required before relying on it.",
+      "guide": "beebovpn.html",
+      "guideLabel": "Read the related customer guide",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-rewards-ads-and-credit",
+      "name": "Rewards, ads and credit",
+      "purpose": "Track rewards and credit features separately from any approval to activate them.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-beebo-play-hosted-game-servers",
+      "name": "Beebo Play (hosted game servers)",
+      "purpose": "Track the hosted game-server offering and its operational readiness.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-managed-hosting",
+      "name": "Managed hosting",
+      "purpose": "Track managed hosting and its remaining operational requirements.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-3d-characters-and-story-videos",
+      "name": "3D characters and story videos",
+      "purpose": "Track the planned original character and story-video tools.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    },
+    {
+      "id": "feature-services-and-website-google-assistant-and-alexa",
+      "name": "Google Assistant and Alexa",
+      "purpose": "Track planned voice-assistant integration and its remaining compatibility work.",
+      "guide": "docs.html",
+      "guideLabel": "Browse Beebo help and setup guides",
+      "gallery": []
+    }
+  ]
+}
