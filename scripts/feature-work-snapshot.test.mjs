@@ -101,7 +101,7 @@ test('all 70 scores and checks preserve the baseline; dated issue additions and 
     assert.equal(before.openIssues,4);assert.equal(after.openIssues,5);continue;
    }
    if(key==='openIssues' && before.name==='BeeboVPN'){
-    assert.equal(before.openIssues,undefined);assert.equal(after.openIssues,1);continue;
+    assert.equal(before.openIssues,undefined);assert.equal(after.openIssues,2);continue;
    }
    if(before.name==='Car party (host and passengers)' && ['lastTested','testedOn'].includes(key))continue;
    assert.deepEqual(after[key],before[key],before.name+': '+key);
