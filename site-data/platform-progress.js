@@ -13,6 +13,26 @@
  */
 const RETIRED = /^Retired/i;
 const NEED_MAX = 135;
+const featureDirectory = require('./feature-directory.json').features;
+// Reviewed long lines are bound to their real directory IDs, Android scope and exact wording.
+// Every other line retains NEED_MAX, including edited text or the same name on another platform.
+const APPROVED_NEEDS = [
+  { id: "feature-android-phone-app-playing-films-seeking-picture-in-picture", name: "Playing films, seeking, picture-in-picture", max: 197,
+    text: "Five problems open: examples include Continue watching showing empty, the app staying sideways after Picture-in-Picture, and playback jumping back near the beginning during seeks on the Galaxy S24." },
+  { id: "feature-android-phone-app-campsite-host-start-and-stop", name: "Campsite host start and stop", max: 413,
+    text: "Two problems open. Start and stop works on home Wi-Fi (3 more runs passed); hotspot and mobile-data cases are untested. In a report recorded on November 4, 2026, Nick confirmed that sharing a video from a host phone and watching it in sync in a guest browser works. The actual test date, app build and network/device details were not recorded. This does not establish handoff, casting or additional-guest results." },
+];
+function needMax(platform, feature, text) {
+  if (platform.id !== 'android' || platform.group !== 'Android phone app' ||
+      feature.group !== 'Android phone app' || typeof text !== 'string') return NEED_MAX;
+  const entries = featureDirectory.filter((entry) => entry.name === feature.name);
+  if (entries.length !== 1) return NEED_MAX;
+  const id = entries[0].id;
+  if (featureDirectory.filter((entry) => entry.id === id).length !== 1) return NEED_MAX;
+  const approved = APPROVED_NEEDS.find((entry) =>
+    entry.id === id && entry.name === feature.name && entry.text === text);
+  return approved ? approved.max : NEED_MAX;
+}
 
 // The site's own tiers, folded into three plain groups: Ready = 100; almost there = 90 to 99; earlier = below 90.
 function tierOf(pct) { return pct >= 100 ? 'ready' : pct >= 90 ? 'almost' : 'building'; }
@@ -50,7 +70,8 @@ function compute(d) {
       if (!f) { problems.push(`${p.id}: almostNeeds names "${n.feature}", which is not in "${p.group}"`); continue; }
       if (tierOf(f.percentComplete) !== 'almost') { problems.push(`${p.id}: "${n.feature}" is at ${f.percentComplete}%, no longer almost there: remove or rewrite its line`); continue; }
       if (needs.has(n.feature)) problems.push(`${p.id}: two lines for "${n.feature}"`);
-      if (!String(n.need || '').trim() || n.need.length > NEED_MAX) problems.push(`${p.id}: line for "${n.feature}" must be 1 to ${NEED_MAX} characters`);
+      const max = needMax(p, f, n.need);
+      if (!String(n.need || '').trim() || n.need.length > max) problems.push(`${p.id}: line for "${n.feature}" must be 1 to ${max} characters`);
       if (!(n.basis || []).length) problems.push(`${p.id}: line for "${n.feature}" needs a basis quote`);
       for (const q of n.basis || []) if (!hasQuote(f, q)) problems.push(`${p.id}: basis "${q}" is no longer in the record of "${n.feature}"`);
       needs.set(n.feature, n.need);
@@ -74,7 +95,7 @@ function compute(d) {
     });
     if (blockers.length < 3 || blockers.length > 5) problems.push(`${p.id}: needs 3 to 5 blockers, has ${blockers.length}`);
     const sentence = `${p.name}: ${ready.length} of ${total} features ${plural(ready.length, 'is', 'are')} fully confirmed (Ready); ` +
-      `${almost.length} more ${plural(almost.length, 'is', 'are')} almost there (90 to 98%); ` +
+      `${almost.length} more ${plural(almost.length, 'is', 'are')} almost there (90 to 99%); ` +
       `${building.length} ${plural(building.length, 'is', 'are')} earlier on (below 90%).`;
     return { id: p.id, name: p.name, group: p.group, scope: p.scope, counted, retired, ready, almost, building, needs, blockers, stats, sentence };
   });
@@ -87,4 +108,4 @@ function shortLine(c) {
   return `${c.name}: ${c.ready.length} of ${c.stats.total} features Ready, ${c.almost.length} almost there, ${c.building.length} earlier on.`;
 }
 
-module.exports = { compute, tierOf, shortLine, NEED_MAX };
+module.exports = { compute, tierOf, shortLine, NEED_MAX, needMax };

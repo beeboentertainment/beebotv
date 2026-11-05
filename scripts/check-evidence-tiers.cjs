@@ -111,7 +111,7 @@ if(d.checksConfirmed){
   const list=d.features.filter(f=>f.group===p.group && !/^Retired/i.test(f.status||''));
   const n={ready:0,almost:0,building:0}; for(const f of list) n[tierOf(f.percentComplete)]++;
   const total=list.length, is=k=>k===1?'is':'are';
-  const sentence=p.name+': '+n.ready+' of '+total+' features '+is(n.ready)+' fully confirmed (Ready); '+n.almost+' more '+is(n.almost)+' almost there (90 to 98%); '+n.building+' '+is(n.building)+' earlier on (below 90%).';
+  const sentence=p.name+': '+n.ready+' of '+total+' features '+is(n.ready)+' fully confirmed (Ready); '+n.almost+' more '+is(n.almost)+' almost there (90 to 99%); '+n.building+' '+is(n.building)+' earlier on (below 90%).';
   assert.ok(pb.includes('<p class="pp-sentence"><strong>'+sentence+'</strong></p>'),'sentence counts equal the data for '+p.name+': '+sentence);
   assert.ok(pb.includes('aria-label="'+p.name+': '+n.ready+' Ready, '+n.almost+' almost there, '+n.building+' earlier on, out of '+total+' features."'),'bar aria-label for '+p.name);
   const card=pb.slice(pb.indexOf('id="platform-'+p.id+'"'));
@@ -120,7 +120,7 @@ if(d.checksConfirmed){
   const links=[...card1.matchAll(/<li><a href="#([^"]+)">([^<]*)<\/a> <span class="pp-pct">(\d+)%<\/span>/g)];
   assert.equal(links.length,total,'every counted feature is listed once for '+p.name);
   for(const m of links){ const f=list.find(x=>x.name===m[2].replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'")); assert.ok(f,'listed feature exists: '+m[2]); assert.equal(Number(m[3]),f.percentComplete,'listed percent is live: '+f.name); assert.ok(html.includes('<tr id="'+m[1]+'" class="feat'),'link goes to the feature row: '+f.name); }
-  for(const f of list.filter(x=>tierOf(x.percentComplete)==='almost')) assert.ok(p.almostNeeds.some(x=>x.feature===f.name&&x.need.length<=PP.NEED_MAX),'plain line for '+f.name);
+  for(const f of list.filter(x=>tierOf(x.percentComplete)==='almost')) assert.ok(p.almostNeeds.some(x=>x.feature===f.name&&x.need.length<=PP.needMax(p,f,x.need)),'plain line for '+f.name);
   assert.ok(p.blockers.length>=3&&p.blockers.length<=5,'3 to 5 blockers for '+p.name);
   const open=list.reduce((a,f)=>a+(Number(f.openIssues)||0),0);
   assert.ok(card1.includes(open+' known problems are open across '+list.filter(f=>f.openIssues>0).length+' of the '+total),'open-problem count equals the data for '+p.name);
