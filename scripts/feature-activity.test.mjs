@@ -1,9 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
+import { tmpdir } from 'node:os';
+import { dirname, isAbsolute, join } from 'node:path';
 import { JSDOM } from 'jsdom';
 import { exportActivity } from '../tools/export-feature-activity.mjs';
 import { activityMarkup, activityDirectoryMarkup, featureDirectory } from '../tools/feature-directory.mjs';
@@ -143,5 +146,108 @@ test('visibility honors the current failure backoff deadline',async()=>{
 test('qualified unavailable and retired statuses do not offer current setup controls',()=>{
   for(const name of ['Rewards, ads and credit','Stream from my PC (old button)']){
     const entry=featureDirectory.find(f=>f.name===name);const html=readFileSync(new URL('../features/'+entry.id+'.html',import.meta.url),'utf8');assert.doesNotMatch(html,/Use the linked guide for the current setup and controls/);
+  }
+});
+
+test('feature page CLI accepts paired line endings and rejects real drift', t => {
+  const sourceRoot = fileURLToPath(new URL('..', import.meta.url));
+  const fixtureParent = realpathSync(tmpdir());
+  const fixtureRoot = mkdtempSync(join(fixtureParent, 'fp-'));
+  assert.equal(dirname(fixtureRoot), fixtureParent);
+  t.after(() => rmSync(fixtureRoot, { recursive: true, force: true }));
+  const fixturePath = name => {
+    assert.equal(isAbsolute(name), false);
+    assert.ok(!name.split(/[\\/]/).includes('..'));
+    const path = join(fixtureRoot, name);
+    if (process.platform === 'win32') assert.ok(path.length < 240, 'Fixture path is too long');
+    return path;
+  };
+  const inputNames = [...new Set([
+    'tools/build-feature-pages.mjs', 'tools/feature-directory.mjs', 'tools/readiness-audit.mjs',
+    'testing-status.json', 'site-data/feature-directory.json', 'site-data/readiness-audit.json',
+    ...featureDirectory.map(entry => entry.guide),
+    ...featureDirectory.flatMap(entry => entry.gallery.map(image => image.image)),
+  ])];
+  for (const name of inputNames) {
+    const destination = fixturePath(name);
+    mkdirSync(dirname(destination), { recursive: true });
+    copyFileSync(join(sourceRoot, name), destination);
+  }
+  const pageNames = featureDirectory.map(entry => 'features/' + entry.id + '.html');
+  const snapshot = () => [...inputNames, ...pageNames].map(name => [
+    name, existsSync(fixturePath(name))
+      ? createHash('sha256').update(readFileSync(fixturePath(name))).digest('hex')
+      : null,
+  ]);
+  const run = args => spawnSync(process.execPath, [fixturePath('tools/build-feature-pages.mjs'), ...args], {
+    cwd: fixtureRoot, encoding: 'utf8', windowsHide: true, timeout: 30_000, maxBuffer: 1024 * 1024,
+  });
+  const assertExit = (result, expected, label) => {
+    assert.ifError(result.error);
+    assert.equal(result.signal, null, label);
+    assert.equal(result.status, expected, label + '\n' + result.stderr);
+  };
+  const generated = run([]);
+  assertExit(generated, 0, 'Generate LF fixture with the actual CLI');
+  assert.equal(generated.stderr, '');
+  assert.equal(generated.stdout.trim(), featureDirectory.length + ' feature pages built from the unchanged readiness source.');
+  assert.deepEqual(readdirSync(fixturePath('features')).sort(), pageNames.map(name => name.slice('features/'.length)).sort());
+  const lfPages = pageNames.map(name => {
+    const html = readFileSync(fixturePath(name), 'utf8');
+    assert.equal(html.includes('\r'), false, name);
+    assert.ok(html.endsWith('\n'), name);
+    return [name, html];
+  });
+  const setEndings = style => {
+    for (const [name, html] of lfPages) {
+      let line = 0;
+      const physical = style === 'lf' ? html : html.replace(/\n/g, () =>
+        style === 'crlf' || ++line % 2 ? '\r\n' : '\n');
+      assert.equal(physical.replace(/\r\n/g, '\n'), html, name);
+      writeFileSync(fixturePath(name), physical);
+    }
+  };
+  const check = (label, failingId) => {
+    const before = snapshot();
+    const result = run(['--check']);
+    assert.deepEqual(snapshot(), before, label + ': --check must not rewrite inputs or pages');
+    assertExit(result, failingId ? 1 : 0, label);
+    if (failingId) {
+      assert.equal(result.stdout, '', label);
+      assert.ok(result.stderr.includes('Error: Feature page is out of date: ' + failingId), label + '\n' + result.stderr);
+    } else {
+      assert.equal(result.stderr, '', label);
+      assert.equal(result.stdout.trim(), featureDirectory.length + ' feature pages match the unchanged readiness source.', label);
+    }
+  };
+  for (const style of ['lf', 'crlf', 'mixed']) {
+    setEndings(style);
+    check(style + ' unchanged content');
+  }
+  const lastId = featureDirectory.at(-1).id;
+  const lastPage = 'features/' + lastId + '.html';
+  const mutations = [
+    ['visible text', html => html.replace(/(<h1>)([^<])/, (_, tag, char) => tag + (char === 'X' ? 'Y' : 'X'))],
+    ['numeric value', html => html.replace(/(<progress value=")(\d+)/, (_, prefix, value) => prefix + (Number(value) + 1))],
+    ['markup', html => html.replace('<h1>', '<h2>')],
+    ['meaningful space', html => html.replace(/(<h1>[^<])/, '$1 ')],
+    ['final newline', html => html.replace(/\r?\n$/, '')],
+    ['bare CR', html => html.replace(/\r?\n/, '\r')],
+    ['doubled CR', html => html.replace(/\r?\n/, '\r\r\n')],
+  ];
+  for (const style of ['lf', 'crlf']) {
+    for (const [kind, mutate] of mutations) {
+      setEndings(style);
+      check(style + ' baseline before ' + kind);
+      const before = readFileSync(fixturePath(lastPage), 'utf8');
+      const changed = mutate(before);
+      assert.notEqual(changed, before, kind + ': fixture mutation must change bytes');
+      writeFileSync(fixturePath(lastPage), changed);
+      check(style + ' rejects ' + kind + ' on last page', lastId);
+    }
+    setEndings(style);
+    check(style + ' baseline before missing page');
+    rmSync(fixturePath(lastPage));
+    check(style + ' rejects missing last page', lastId);
   }
 });
