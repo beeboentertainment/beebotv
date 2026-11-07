@@ -15,7 +15,7 @@ table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border:1px soli
 <li><strong>"Passed of those that ran"</strong> = passed &divide; (passed + failed). It says how many of the checks we actually ran came out right. It is <strong>not</strong> how finished the app is.</li>
 <li><strong>"Not tested yet"</strong> is the number of checks that need real hardware, a real network, sound, Cast, a car, or a person, so we did not run them. They are not passes. About 30 of 73 checks fall here on tester71.</li>
 <li><strong>Many passes are screen-only:</strong> the screen opened and showed the right words, but the action behind it was not exercised.</li>
-<li><strong>Some failures are not confirmed app bugs.</strong> Several look like sample content missing on our test phones (for example a sample album and a sample audiobook). The cause is not yet confirmed.</li>
+<li><strong>Most failures are not confirmed app bugs.</strong> A first look (not yet confirmed) suggests many are mistakes in our own test script (it looked for the wrong words or the wrong screen) or sample content missing on a test phone (a sample album and a sample audiobook). One is a real, known gap: joining a Car party without signing in shows no result and no error. Fixing the script and the sample content comes next, then we rerun.</li>
 <li><strong>tester71 vs tester70:</strong> the phone scores are about the same; the two-phone check passed one more check (6 of 9 instead of 5 of 9). Differences this small do not show the app got better or worse.</li>
 <li><strong>Earlier runs today are not counted:</strong> some tester70 runs on the S9+ failed because of our own test-script mistakes (wrong screen size), not the app. We show only the latest clean run per phone.</li>
 </ul>
