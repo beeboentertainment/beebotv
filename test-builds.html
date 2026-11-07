@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Beebo test builds</title><style>:root{--bg:#fff;--fg:#1d2433;--mut:#5a6478;--line:#dde1ea;--ok:#2f855a;--bad:#c53030;--na:#8a6d1d}
+@media(prefers-color-scheme:dark){:root{--bg:#12151c;--fg:#e8ecf4;--mut:#9aa5b8;--line:#2a3140;--ok:#68d391;--bad:#fc8181;--na:#f6e05e}}
+body{margin:0;padding:16px;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,Segoe UI,sans-serif;max-width:1000px;margin:auto}
+h1{font-size:1.6rem}h2{font-size:1.2rem;margin-top:28px}.note,small{color:var(--mut)}.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.na{color:var(--na)}</style></head><body>
+<h1>Test builds: how each one scored</h1>
+<p><strong>Updated Nov 6, 2026, 9:08 PM Eastern.</strong> Real numbers from real phone checks, copied from each run's own result file. A TEST build is an early build we try on our own phones. It is <strong>not</strong> the public download.</p>
+<h2>The public build</h2>
+<p>The public Android download is <strong>1.51-tester68 (build 118)</strong>. No phone check has been run on that exact build yet, so there is no score for it here. When the next public build is published we run the same checks on it and add its row. The feature progress numbers on the <a href="release-evidence.html">testing status page</a> move only from public builds, never from test builds.</p>
+<h2>Test builds, latest run per phone</h2>
+<table><thead><tr><th>Build</th><th>Kind</th><th>Where</th><th>Run finished</th><th>Passed</th><th>Failed</th><th>Not tested yet</th><th>Passed of those that ran</th></tr></thead><tbody><tr><td>Android 1.51-tester71 (build 121)</td><td><strong>TEST</strong></td><td>Samsung S9+ (real phone)</td><td>Nov 6, 2026, 6:50 PM Eastern</td><td>11</td><td>7</td><td>14</td><td><strong>61%</strong></td></tr><tr><td>Android 1.51-tester71 (build 121)</td><td><strong>TEST</strong></td><td>Pixel 3 (real phone)</td><td>Nov 6, 2026, 7:22 PM Eastern</td><td>14</td><td>4</td><td>14</td><td><strong>78%</strong></td></tr><tr><td>Android 1.51-tester71 (build 121)</td><td><strong>TEST</strong></td><td>Two phones together (Pixel host, S9+ guest signed out)</td><td>Nov 6, 2026, 7:36 PM Eastern</td><td>6</td><td>1</td><td>2</td><td><strong>86%</strong></td></tr><tr><td>Android 1.51-tester70 (build 120)</td><td><strong>TEST</strong></td><td>Samsung S9+ (real phone)</td><td>Nov 6, 2026, 10:23 AM Eastern</td><td>11</td><td>7</td><td>14</td><td><strong>61%</strong></td></tr><tr><td>Android 1.51-tester70 (build 120)</td><td><strong>TEST</strong></td><td>Pixel 3 (real phone)</td><td>Nov 6, 2026, 7:54 AM Eastern</td><td>14</td><td>4</td><td>14</td><td><strong>78%</strong></td></tr><tr><td>Android 1.51-tester70 (build 120)</td><td><strong>TEST</strong></td><td>Two phones together (Pixel host, S9+ guest signed out)</td><td>Nov 6, 2026, 1:52 PM Eastern</td><td>5</td><td>2</td><td>2</td><td><strong>71%</strong></td></tr></tbody></table>
+<h2>How to read this (true, not flattering)</h2>
+<ul>
+<li><strong>"Passed of those that ran"</strong> = passed &divide; (passed + failed). It says how many of the checks we actually ran came out right. It is <strong>not</strong> how finished the app is.</li>
+<li><strong>"Not tested yet"</strong> is the number of checks that need real hardware, a real network, sound, Cast, a car, or a person, so we did not run them. They are not passes. About 30 of 73 checks fall here on tester71.</li>
+<li><strong>Many passes are screen-only:</strong> the screen opened and showed the right words, but the action behind it was not exercised.</li>
+<li><strong>Some failures are not confirmed app bugs.</strong> Several look like sample content missing on our test phones (for example a sample album and a sample audiobook). The cause is not yet confirmed.</li>
+<li><strong>tester71 vs tester70:</strong> the phone scores are about the same; the two-phone check passed one more check (6 of 9 instead of 5 of 9). Differences this small do not show the app got better or worse.</li>
+<li><strong>Earlier runs today are not counted:</strong> some tester70 runs on the S9+ failed because of our own test-script mistakes (wrong screen size), not the app. We show only the latest clean run per phone.</li>
+</ul>
+<p>Every individual check for tester71 (what it proves, what it does not test, and the receipt) is on the <a href="ai-test-results.html">full list of 73 checks</a>.</p>
+<p><em>Nothing on this page is a promise that a feature works for everyone. Only the owner marks a feature 100%, and no feature is at 100% on this page.</em></p>
+</body></html>
