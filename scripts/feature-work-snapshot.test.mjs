@@ -92,6 +92,15 @@ test('public snapshot has exactly the public feature names and no private proven
   assert.doesNotMatch(text, /github\.com[^\s"]*\/issues|issuecomment|taskId|\/workspace\/|\b[a-f0-9]{40}\b/i);
   for (const f of snapshot.features) assert.ok([true, false, null].includes(f.active));
 });
+const NOV7={
+ 'Opening the app and the five tabs':{lastTested:'Nov 7, 2026, about 9:45 to 10:05 AM Eastern (public Android 1.52 build 122, Galaxy S24 Ultra, Nick watching: reopen to Home in about 8 seconds, five tabs, 0 crash lines; PASS, marked 100% by Nick for that scope)'},
+ 'Campsite host start and stop':{lastTested:'Nov 7, 2026, about 8:40 to 8:55 AM Eastern (public Android 1.52 build 122, Galaxy S24 Ultra host, Chrome guest on the 4-core PC, home Wi-Fi, Nick watching: start with QR code and address, guest join, Stop with confirmation; PASS, marked 100% by Nick for that scope)'},
+ 'Pack for a trip (download planner)':{openIssues:[1,2],lastTested:'Nov 7, 2026, about 10:10 to 10:30 AM Eastern (public Android 1.52 build 122, Galaxy S24 Ultra, Nick watching and listening: packed 2 added test films, 4 of 4 ready, offline play with sound; PASS, marked 100% by Nick for that scope)'},
+ 'Library sharing with another household':{openIssues:[3,5],lastTested:'Nov 7, 2026, about 9:20 to 9:45 AM Eastern (Windows 0.1.113 host and public Android 1.52 build 122 guest on a Galaxy S24 Ultra, test films, home Wi-Fi, Nick watching: code, accept, watch with sound, download, offline play, stop sharing; PASS, marked 100% by Nick for that scope)'},
+ 'Library, player and web player':{openIssues:[6,7],lastTested:'Nov 7, 2026, about 9:50 to 10:05 AM Eastern (published Windows 0.1.113, 4-core PC, Nick watching: desktop library, Play in VLC, web player Resume and pause in Chrome; PASS, marked 100% by Nick for that scope, silent)'},
+ 'Home layouts and Customize layout (desktop)':{lastTested:'Nov 7, 2026, about 9:55 to 10:30 AM Eastern (published Windows 0.1.113, 4-core PC, Nick watching: all five layouts shown, layouts marked 100% by Nick for that scope; Customize layout hide and restore a row PASS)'},
+ 'Update modes and start with Windows':{lastTested:'Nov 7, 2026, about 9:50 to 10:05 AM Eastern (published Windows 0.1.113, 4-core PC, Nick watching: the three update modes chosen and saved; PASS, marked 100% by Nick for that choice only)'},
+};
 test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
@@ -108,6 +117,14 @@ test('all 70 scores and checks preserve the baseline; dated evidence additions a
     assert.equal(after.lastTested,prefix+before.lastTested);continue;
    }
    if(before.name==='Car party (host and passengers)' && ['lastTested','testedOn'].includes(key))continue;
+   // Nov 7, 2026 owner-watched record (public Android 1.52 build 122, Windows 0.1.113): explicit dated additions only.
+   const nov7=NOV7[before.name];
+   if(nov7 && key==='openIssues' && nov7.openIssues){
+    assert.equal(before.openIssues,nov7.openIssues[0]);assert.equal(after.openIssues,nov7.openIssues[1]);continue;
+   }
+   if(nov7 && key==='lastTested' && nov7.lastTested){
+    assert.equal(after.lastTested,nov7.lastTested+'; '+before.lastTested,before.name+': Nov 7 lastTested prefix');continue;
+   }
    assert.deepEqual(after[key],before[key],before.name+': '+key);
   }
  }
