@@ -102,11 +102,16 @@ const NOV7={
  'Update modes and start with Windows':{lastTested:'Nov 7, 2026, about 9:50 to 10:05 AM Eastern (published Windows 0.1.113, 4-core PC, Nick watching: the three update modes chosen and saved; PASS, marked 100% by Nick for that choice only)'},
 };
 const NOV8={
- 'Opening the app and the five tabs':{openIssues:[2,1],lastTestedStartsWith:'Nov 8, 2026, about 3:20 to 3:40 AM Eastern'},
- 'Campsite games':{openIssues:[3,5],lastTestedStartsWith:'Nov 8, 2026, about 4:00 to 4:21 AM Eastern'},
- 'Pack for a trip (download planner)':{openIssues:[1,2],lastTestedStartsWith:'Nov 8, 2026, 3:28 to 3:35 AM Eastern'},
- 'Library, player and web player':{openIssues:[6,8],lastTestedStartsWith:'Nov 7, 2026, 10:39 AM to 1:35 PM'},
+ 'Opening the app and the five tabs':{openIssues:[2,1],lastTestedStartsWith:'Nov 8, 2026, 9:48 to 9:50 AM Eastern'},
+ 'Campsite games':{openIssues:[3,5],lastTestedStartsWith:'Nov 8, 2026, 9:49 AM to 11:36 AM Eastern'},
+ 'Pack for a trip (download planner)':{openIssues:[1,1],lastTestedStartsWith:'Nov 8, 2026, 9:49 AM to 10:25 AM Eastern'},
+ 'Library, player and web player':{openIssues:[6,8],lastTestedStartsWith:'Nov 8, 2026, 5:58 to 6:02 AM Eastern'},
  'Home layouts and Customize layout (desktop)':{openIssues:[3,0],lastTestedStartsWith:'Nov 7, 2026, 11:05 AM to 5:48 PM Eastern'},
+ // Nov 8, 2026 second record (public Android 1.54 / 1.54.1, Windows 0.1.113): dated additions only, no score change.
+ 'Campsite host start and stop':{lastTestedStartsWith:'Nov 8, 2026, 10:02 to 10:05 AM Eastern'},
+ 'Keyboard and screen-reader support':{lastTestedStartsWith:'Nov 8, 2026, 5:40 to 5:44 AM Eastern'},
+ 'Jellyfin-compatible mode':{lastTestedStartsWith:'Nov 8, 2026, 7:19 AM Eastern'},
+ 'Photos and phone backups (timeline, albums, viewer)':{lastTestedStartsWith:'Nov 8, 2026, 6:34 to 6:37 AM Eastern'},
 };
 test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));

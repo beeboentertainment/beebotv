@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T09:42:00.000Z",
-  "updatedEastern": "Nov 8, 2026, 4:42 AM Eastern",
-  "method": "All 70 dated feature records were examined under the existing scoring rubric. Existing scores are retained; evidence gaps are named rather than treated as fresh failures or passes. No activity entry grants readiness credit and no new owner acceptance is added. On Nov 8, 2026 the test reports posted since were read against all 70 rows; one score moved on dated evidence (Home layouts and Customize layout, 90% to 99%: AI-tested, no errors found, waiting for the owner’s 100%) and the other 69 are unchanged.",
+  "updatedAt": "2026-11-08T17:02:00.000Z",
+  "updatedEastern": "Nov 8, 2026, 12:02 PM Eastern",
+  "method": "All 70 dated feature records were examined under the existing scoring rubric. Existing scores are retained; evidence gaps are named rather than treated as fresh failures or passes. No activity entry grants readiness credit and no new owner acceptance is added. On Nov 8, 2026 the test reports posted since were read against all 70 rows; one score moved on dated evidence (Home layouts and Customize layout, 90% to 99%: AI-tested, no errors found, waiting for the owner’s 100%) and the other 69 are unchanged. A second review on Nov 8, 2026 (Nov 8, 2026, 12:02 PM Eastern) read the receipts posted from Nov 8, 4:21 to 11:36 AM Eastern against the same rows: no score moved and no new owner acceptance is added; the eight rows with new dated results (Pack for a trip, Campsite games, Campsite host start and stop, Opening the app and the five tabs, Library, player and web player, Keyboard and screen-reader support, Jellyfin-compatible mode, Photos and phone backups) have updated summaries.",
   "features": [
     {
       "featureId": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
@@ -11,9 +11,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 12–29, 2026",
-        "Nov 2, 2026"
+        "Nov 2, 2026",
+        "Nov 8, 2026"
       ],
-      "summary": "Historical cold starts and five-tab observations support the existing device and real-world checks. On Nov 2, unpublished tester69 reopened existing signed-in accounts after two in-place updates. Those limited install/session checks do not clear warm-pairing or certificate issues, or establish acceptance of the public tester68 download."
+      "summary": "Historical cold starts and five-tab observations support the existing device and real-world checks. On Nov 8, 2026 the public 1.54 installed over 1.53 and opened signed out on a test emulator; an emulator adds no tick. Those limited checks do not clear warm-pairing or certificate issues, or establish acceptance of the newest public download."
     },
     {
       "featureId": "feature-android-phone-app-playing-films-seeking-picture-in-picture",
@@ -83,9 +84,10 @@
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 11–29, 2026"
+        "Oct 11–29, 2026",
+        "Nov 8, 2026"
       ],
-      "summary": "Two-phone local hosting, downloaded playback and later lobby/join/leave/Stop checks support the retained score. Two issues and mobile-data, hotspot and unmatched-stop cases remain."
+      "summary": "Two-phone local hosting, downloaded playback and later lobby/join/leave/Stop checks support the retained score. On Nov 8, 2026 a guest-places problem (a 49th guest refused) was found on 1.53 and its fix verified on 1.54; the 1.54.1 change to it was not retried. Two issues and mobile-data, hotspot and unmatched-stop cases remain."
     },
     {
       "featureId": "feature-android-phone-app-podcasts-and-radio",
@@ -114,9 +116,10 @@
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 12–26, 2026"
+        "Oct 12–26, 2026",
+        "Nov 8, 2026"
       ],
-      "summary": "Retry/estimate tests and real offline original/compressed playback support the historical checks. The blank notification entry and low-space, cancellation and process-durability limits remain. Source promotion tests add no device credit."
+      "summary": "On Nov 8, 2026 the cut-off estimate card was fixed and verified on the public Android 1.54.1 (Galaxy S9+ and Pixel 3), so open issues went from 2 to 1; the blank notification entry and low-space, cancellation and process-durability limits remain, so the row stays 90%. Landscape, split screen, TalkBack and actual downloading were not checked."
     },
     {
       "featureId": "feature-android-phone-app-trip-journal-trips-recap-video-export",
@@ -134,9 +137,10 @@
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 12–26, 2026"
+        "Oct 12–26, 2026",
+        "Nov 8, 2026"
       ],
-      "summary": "Game-rule tests and two-phone natural match finishes support the historical checks. Three issues remain; bounded later native-game observations do not establish acceptance for every game."
+      "summary": "Game-rule tests and two-phone match finishes support the historical checks. On Nov 8, 2026 Drop Four hole taps and the Sea Battle card picture were fixed and verified on the public 1.54; the dull boards in Samsung Internet are explained (the browser’s own dark filter) but not fixed, and boards drawn squashed on an older Android view (test emulator) are new. Five issues remain open, so the row stays 90%."
     },
     {
       "featureId": "feature-android-phone-app-shared-photos-and-videos",
@@ -321,9 +325,10 @@
       "scoreAfter": 49,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 24–28, 2026"
+        "Oct 24–28, 2026",
+        "Nov 8, 2026"
       ],
-      "summary": "Narrow backup, hash, counter and photo/video observations coexist with three recorded failures. Location, native-backup and missing-root gaps still prevent broad device and real-world marks. One file or counter increment does not close them."
+      "summary": "Narrow backup, hash, counter and photo/video observations coexist with three recorded failures. On Nov 8, 2026 a look at the timeline, albums and viewer on the public 1.53 passed. Location, native-backup and missing-root gaps still prevent broad device and real-world marks."
     },
     {
       "featureId": "feature-android-phone-app-family-achievements-opt-in-milestones",
@@ -353,9 +358,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 27–29, 2026",
-        "Nov 2, 2026"
+        "Nov 2, 2026",
+        "Nov 8, 2026"
       ],
-      "summary": "Installed library and player checks, a muted hour-long run and later source checks support the retained mark. Six recorded issues, sound, broader browsers and player journeys remain. A newer browser sign-in pass does not complete the player."
+      "summary": "Installed library and player checks, a muted hour-long run and later source checks support the retained mark. On Nov 8, 2026 the second-version watchlist problem was reproduced again on the published 0.1.113. Eight recorded issues, sound, broader browsers and player journeys remain."
     },
     {
       "featureId": "feature-windows-desktop-app-update-modes-and-start-with-windows",
@@ -414,9 +420,10 @@
       "scoreAfter": 49,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 23–28, 2026"
+        "Oct 23–28, 2026",
+        "Nov 8, 2026"
       ],
-      "summary": "Protocol, range, membership and logout checks passed. The actual third-party client failed playback and triggered unwanted conversion; successful API checks do not close either client acceptance gap."
+      "summary": "Protocol, range, membership and logout checks passed. On Nov 8, 2026 the Jellyfin-style addresses were confirmed closed while the setting is off. The actual third-party client failed playback and triggered unwanted conversion; successful API checks do not close either client acceptance gap."
     },
     {
       "featureId": "feature-windows-desktop-app-parental-controls-and-household-profiles",
@@ -435,9 +442,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 27–29, 2026",
-        "Nov 2, 2026"
+        "Nov 2, 2026",
+        "Nov 8, 2026"
       ],
-      "summary": "Installed keyboard and Settings checks support the device mark. A real Windows screen reader, forced colours and broader focus paths remain; the newer visual preview is not screen-reader acceptance."
+      "summary": "Installed keyboard and Settings checks support the device mark. On Nov 8, 2026 keyboard use on a film details page showed a focus ring on every stop and a reported missing ring near Subtitles was not reproduced there. A real Windows screen reader, forced colours and broader focus paths remain."
     },
     {
       "featureId": "feature-windows-desktop-app-languages-5-translated-with-machine-help-3-previews",
