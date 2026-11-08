@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T20:37:56.732Z",
-  "updatedEastern": "Nov 2, 2026, 3:37 PM Eastern",
-  "method": "All 70 dated feature records were examined under the existing scoring rubric. Existing scores are retained; evidence gaps are named rather than treated as fresh failures or passes. No activity entry grants readiness credit and no new owner acceptance is added.",
+  "updatedAt": "2026-11-08T09:42:00.000Z",
+  "updatedEastern": "Nov 8, 2026, 4:42 AM Eastern",
+  "method": "All 70 dated feature records were examined under the existing scoring rubric. Existing scores are retained; evidence gaps are named rather than treated as fresh failures or passes. No activity entry grants readiness credit and no new owner acceptance is added. On Nov 8, 2026 the test reports posted since were read against all 70 rows; one score moved on dated evidence (Home layouts and Customize layout, 90% to 99%: AI-tested, no errors found, waiting for the owner’s 100%) and the other 69 are unchanged.",
   "features": [
     {
       "featureId": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
@@ -524,13 +524,14 @@
     {
       "featureId": "feature-windows-desktop-app-home-layouts-and-customize-layout-desktop",
       "scoreBefore": 90,
-      "scoreAfter": 90,
+      "scoreAfter": 99,
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 26–29, 2026",
-        "Nov 2, 2026"
+        "Nov 2, 2026",
+        "Nov 7, 2026"
       ],
-      "summary": "Installed layout save, persistence, reset and row/pack checks support the retained real-world mark. Three recorded issues remain. Newer immediate pack saving is observed, with its intended behavior still unresolved."
+      "summary": "On Nov 8, 2026 the row moved from 90% to 99% (AI-tested, no errors found, waiting for the owner’s 100%). Its three recorded issues (layout share, arrow buttons and row-name click, Light colour pack button contrast) did not reproduce in 3 tries each on the published Windows 0.1.113 on Nov 7, 2026, and the fix commits are inside that build. One minor keyboard observation is listed to retest; the website and phone targets, a narrow window and another account were not checked."
     },
     {
       "featureId": "feature-windows-desktop-app-picture-frame-photo-wall-for-a-tablet-or-tv",

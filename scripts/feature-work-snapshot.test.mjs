@@ -101,11 +101,21 @@ const NOV7={
  'Home layouts and Customize layout (desktop)':{lastTested:'Nov 7, 2026, about 9:55 to 10:30 AM Eastern (published Windows 0.1.113, 4-core PC, Nick watching: all five layouts shown, layouts marked 100% by Nick for that scope; Customize layout hide and restore a row PASS)'},
  'Update modes and start with Windows':{lastTested:'Nov 7, 2026, about 9:50 to 10:05 AM Eastern (published Windows 0.1.113, 4-core PC, Nick watching: the three update modes chosen and saved; PASS, marked 100% by Nick for that choice only)'},
 };
+const NOV8={
+ 'Opening the app and the five tabs':{openIssues:[2,1],lastTestedStartsWith:'Nov 8, 2026, about 3:20 to 3:40 AM Eastern'},
+ 'Campsite games':{openIssues:[3,5],lastTestedStartsWith:'Nov 8, 2026, about 4:00 to 4:21 AM Eastern'},
+ 'Pack for a trip (download planner)':{openIssues:[1,2],lastTestedStartsWith:'Nov 8, 2026, 3:28 to 3:35 AM Eastern'},
+ 'Library, player and web player':{openIssues:[6,8],lastTestedStartsWith:'Nov 7, 2026, 10:39 AM to 1:35 PM'},
+ 'Home layouts and Customize layout (desktop)':{openIssues:[3,0],lastTestedStartsWith:'Nov 7, 2026, 11:05 AM to 5:48 PM Eastern'},
+};
 test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
   const after=data.features.find(f=>f.name===before.name);
   for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent']){
+   if(key==='percentComplete' && before.name==='Home layouts and Customize layout (desktop)'){
+    assert.equal(before.percentComplete,90);assert.equal(after.percentComplete,99);continue;
+   }
    if(key==='openIssues' && before.name==='Playing films, seeking, picture-in-picture'){
     assert.equal(before.openIssues,4);assert.equal(after.openIssues,5);continue;
    }
@@ -117,6 +127,16 @@ test('all 70 scores and checks preserve the baseline; dated evidence additions a
     assert.equal(after.lastTested,prefix+before.lastTested);continue;
    }
    if(before.name==='Car party (host and passengers)' && ['lastTested','testedOn'].includes(key))continue;
+   // Nov 8, 2026 4-core record (public Windows 0.1.113 and Android 1.53 build 123): explicit dated additions only.
+   const nov8=NOV8[before.name];
+   if(nov8 && key==='openIssues' && nov8.openIssues){
+    assert.equal(before.openIssues,nov8.openIssues[0],before.name+': baseline open issues');assert.equal(after.openIssues,nov8.openIssues[1],before.name+': Nov 8 open issues');continue;
+   }
+   if(nov8 && key==='lastTested' && nov8.lastTestedStartsWith){
+    const older=(NOV7[before.name]?NOV7[before.name].lastTested+'; ':'')+before.lastTested;
+    assert.ok(after.lastTested.startsWith(nov8.lastTestedStartsWith),before.name+': Nov 8 lastTested prefix');
+    assert.ok(after.lastTested.endsWith('; '+older),before.name+': earlier lastTested kept');continue;
+   }
    // Nov 7, 2026 owner-watched record (public Android 1.52 build 122, Windows 0.1.113): explicit dated additions only.
    const nov7=NOV7[before.name];
    if(nov7 && key==='openIssues' && nov7.openIssues){
@@ -138,7 +158,7 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  validateReadinessAudit(data);
  assert.equal(readinessAudit.features.length,70);
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
- assert.ok(readinessAudit.features.every(f=>f.scoreBefore===f.scoreAfter));
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId),['feature-windows-desktop-app-home-layouts-and-customize-layout-desktop']);
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
