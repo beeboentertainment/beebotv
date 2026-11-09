@@ -61,10 +61,10 @@
         if (r && (now() >= Date.parse(r.expiresAt) || monotonic() >= deadlines.get(r.featureId))) expired.set(r.featureId, r.revision);
         const fresh = available && r && r.revision > (expired.get(r.featureId) || 0) && now() < Date.parse(r.expiresAt) && now() >= Date.parse(r.updatedAt);
         node.dataset.liveState = fresh ? r.state : 'unknown';
-        node.querySelector('[data-live-label]').textContent = fresh ? label(r) : 'Activity not verified';
-        node.querySelector('[data-live-scope]').textContent = fresh ? SCOPE[r.scope] : (r ? 'Last confirmation is stale or unavailable.' : 'No current confirmation.');
-        node.querySelector('[data-live-next]').textContent = r ? NEXT[r.nextAction] : NEXT.waiting;
-        node.querySelector('[data-live-time]').textContent = r ? 'Last confirmed: ' + eastern(r.updatedAt) : 'Last confirmed: not recorded.';
+        node.querySelector('[data-live-label]').textContent = fresh ? label(r) : 'AI work activity: not verified';
+        node.querySelector('[data-live-scope]').textContent = fresh ? SCOPE[r.scope] : (r ? 'The last work confirmation is stale or unavailable. This says nothing about testing: the Latest check line is the test record.' : 'No live feed confirms AI work on this feature right now. This says nothing about testing: the Latest check line is the test record.');
+        node.querySelector('[data-live-next]').textContent = r ? NEXT[r.nextAction] : 'None confirmed.';
+        node.querySelector('[data-live-time]').textContent = r ? 'Last work confirmation: ' + eastern(r.updatedAt) : 'Last work confirmation: not recorded.';
         node.querySelector('[data-live-start]').textContent = r && r.startedAt ? 'Work step started: ' + eastern(r.startedAt) : '';
         if (fresh) nextExpiry = Math.min(nextExpiry, Date.parse(r.expiresAt) - now(), deadlines.get(r.featureId) - monotonic());
       }

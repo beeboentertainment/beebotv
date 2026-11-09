@@ -137,6 +137,8 @@ const NOV9={
  'Kitchen announcements (messages to phones)':{lastTestedStartsWith:'Nov 8, 2026, about 9:47 PM Eastern'},
  'Parental controls and household profiles':{lastTestedStartsWith:'Nov 8, 2026, about 9:47 PM Eastern'},
  'Photos and phone backups (timeline, albums, viewer)':{lastTestedStartsWith:'Nov 9, 2026, 4:36 to 4:40 AM Eastern'},
+ 'Music on the phone (albums, songs, player, sleep timer)':{lastTestedStartsWith:'Nov 9, 2026, 10:35 to 10:40 AM Eastern'},
+ 'Podcasts and radio':{lastTestedStartsWith:'Nov 9, 2026, 10:43 to 10:47 AM Eastern'},
 };test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
@@ -213,8 +215,8 @@ test('Checked today lists every receipt since Nov 8, 12:02 PM, with where it lan
  for(const id of ['6739703832','6740330602','6740490436','6740961540','6739366247','6741362989','6742969006','6731971385','6727088817','6726779418','6726485009'])assert.ok(section.includes(id),id);
  for(const word of ['Read It To Me','Wireless speakers','Drop Four','Tic-Tac-Toe','Reversi','ingerprint','F32','updated itself','installer']) assert.ok(section.includes(word),word);
  for(const it of data.checkedToday.items){assert.ok(/^(MOVED|RECORDED|LISTED|NOT SCORED|NOT COUNTED)/.test(it.landed),it.id+' landing');assert.ok(it.at&&it.what&&it.build&&it.device&&it.result,it.id);}
- assert.ok(!/beebo-app-private/.test(page));
- assert.ok(!/beebo-app-private/.test(JSON.stringify(data)));
+ const privateName=new RegExp('beebo-app-'+'private');assert.ok(!privateName.test(page));
+ assert.ok(!privateName.test(JSON.stringify(data)));assert.ok(!/issuecomment/.test(page+JSON.stringify(data)));
 });
 
 test('the dated percentage audit accounts for all 70 rows and keeps evidence gaps explicit',()=>{
