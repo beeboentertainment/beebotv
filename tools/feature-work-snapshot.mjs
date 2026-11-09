@@ -76,6 +76,32 @@ export function renderActivity(row, snapshot, id) {
   const reason = row.reason;
   return `<details class="feature-activity" data-activity="${state}" data-expires="${escapeHtml(snapshot.expiresAt)}"><summary class="activity-toggle activity-${state}" aria-describedby="${id}-activity-note" title="${escapeHtml(reason)}">${robot}<span data-activity-label>${label}</span><span class="activity-at">at snapshot</span><span class="activity-tooltip" aria-hidden="true">${escapeHtml(reason)}</span></summary><p id="${id}-activity-note" class="activity-note">${escapeHtml(reason)} <strong>Stage:</strong> ${escapeHtml(row.stage)}. Snapshot: <time datetime="${escapeHtml(snapshot.capturedAt)}">${escapeHtml(snapshot.displayTime)}</time>. This is not live activity. One worker may cover several features.</p></details>`;
 }
+
+// "Latest check" line on every card face: built from the row's latestCheck record (newest owner/device test or dated note).
+const MON_ = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function stampMs(s) {
+  const m = /^([A-Z][a-z]{2}) (\d{1,2}), (\d{4}), (\d{1,2}):(\d{2})(?::(\d{2}))? (AM|PM)/.exec(s || '');
+  if (!m) return null;
+  const mo = MON_.indexOf(m[1]); if (mo < 0) return null;
+  return Date.UTC(Number(m[3]), mo, Number(m[2]), Number(m[4]) % 12 + (m[7] === 'PM' ? 12 : 0), Number(m[5]), Number(m[6] || 0));
+}
+function publicBuildFor(f, data) {
+  const r = data.currentRelease || {};
+  if (f.group === 'Android phone app') {
+    if (/Beebo Auto/.test(f.name)) return r.autoPublishedAtEastern ? { label: 'Beebo Auto ' + r.auto + ' (build ' + r.autoBuild + ')', at: r.autoPublishedAtEastern } : null;
+    return r.androidPublishedAtEastern ? { label: 'Android ' + r.android + ' (build ' + r.androidBuild + ')', at: r.androidPublishedAtEastern } : null;
+  }
+  if (f.group === 'Windows desktop app') return r.windowsPublishedAtEastern ? { label: 'Windows ' + r.windows, at: r.windowsPublishedAtEastern } : null;
+  return null;
+}
+export function latestCheckLine(f, data) {
+  const lc = f.latestCheck;
+  if (!lc) return 'Latest check: Not checked yet (no dated device or owner test is recorded for this row).';
+  let s = 'Latest check: ' + [lc.at, lc.build, lc.device, lc.result, lc.who].filter(Boolean).join(' - ') + '.';
+  const pb = publicBuildFor(f, data), a = stampMs(lc.at), b = pb && stampMs(pb.at);
+  if (pb && a !== null && b !== null && a < b) s += ' Nothing newer than ' + lc.at + '; the public build is now ' + pb.label + ' (published ' + pb.at + ').';
+  return s;
+}
 export function renderCards(data, snapshot, { featureId, tierFor, checksLine, leftLine }) {
   const errors = validateSnapshot(snapshot, data.features);
   if (errors.length) throw new Error(errors.join('\n'));
@@ -84,7 +110,7 @@ export function renderCards(data, snapshot, { featureId, tierFor, checksLine, le
     const id = featureId(f), entry = byName.get(f.name), tier = tierFor(f.percentComplete, data.scoring);
     const risk = f.openIssues ? `${f.openIssues} open known issue${f.openIssues === 1 ? '' : 's'}.` : 'No open issue recorded.';
     const estimate = codeEstimate(f);
-    return `<article class="feature-work-card tier-${escapeHtml(tier.id)}" data-tier="${escapeHtml(tier.id)}" data-feature-id="${escapeHtml(id)}" data-feature-name="${escapeHtml(f.name)}"><div class="feature-work-heading"><h4><a class="feature-work-link" href="#${escapeHtml(id)}">${escapeHtml(f.name)}</a></h4><strong class="feature-work-percent">${f.percentComplete}%</strong></div><p class="feature-work-status">${escapeHtml(f.status)} · ${escapeHtml(f.group)}</p><p class="feature-work-risk">${escapeHtml(risk)}${f.scoreNote ? ' Scoped evidence; expand for tested coverage and limits.' : ''}</p><progress class="feature-card-progress" value="${f.percentComplete}" max="100" aria-label="Recorded readiness for ${escapeHtml(f.name)}">${f.percentComplete}%</progress><a class="feature-about-link" href="features/${escapeHtml(id)}.html">See how it works<span class="sr-only">: ${escapeHtml(f.name)}</span></a>${activityMarkup(id)}<details class="earlier-activity"><summary>Earlier activity snapshot</summary>${renderActivity(entry, snapshot, id)}</details><p class="feature-work-counts"><span class="recorded-checks"><strong>Automated checks:</strong> ${escapeHtml(countSummary(entry, 'automated'))}</span><span class="recorded-device-runs"><strong>Device/world runs:</strong> ${escapeHtml(countSummary(entry, 'deviceWorld'))}</span></p>${estimate ? `<p class="feature-work-limit">${escapeHtml(estimate)}</p>` : ''}<details class="feature-work-details"><summary>Why this score, test records and next step</summary><p>${escapeHtml(checksLine(f))}</p>${f.scoreNote ? `<p><strong>Coverage limits:</strong> ${escapeHtml(f.scoreNote)}</p>` : ''}<p><strong>Next step:</strong> ${escapeHtml(leftLine(f))}</p>${renderRecentEvidence(f, entry.tests.automated)}<p><strong>Latest recorded test:</strong> ${escapeHtml(f.lastTested || 'Not recorded.')}</p><p><strong>Count coverage:</strong> ${escapeHtml(entry.tests.automated.note)} ${escapeHtml(entry.tests.deviceWorld.note)} Counts are partial unless explicitly marked complete; assertions are not device runs. Cutoff: <time datetime="${escapeHtml(snapshot.recordsCutoff)}">${escapeHtml(snapshot.recordsCutoff)}</time>.</p><p><a href="#${escapeHtml(id)}">Full evidence and test history for ${escapeHtml(f.name)}</a></p></details></article>`;
+    return `<article class="feature-work-card tier-${escapeHtml(tier.id)}" data-tier="${escapeHtml(tier.id)}" data-feature-id="${escapeHtml(id)}" data-feature-name="${escapeHtml(f.name)}"><div class="feature-work-heading"><h4><a class="feature-work-link" href="#${escapeHtml(id)}">${escapeHtml(f.name)}</a></h4><strong class="feature-work-percent">${f.percentComplete}%</strong></div><p class="feature-work-status">${escapeHtml(f.status)} · ${escapeHtml(f.group)}</p><p class="feature-work-latest">${escapeHtml(latestCheckLine(f, data))}</p><p class="feature-work-risk">${escapeHtml(risk)}${f.scoreNote ? ' Scoped evidence; expand for tested coverage and limits.' : ''}</p><progress class="feature-card-progress" value="${f.percentComplete}" max="100" aria-label="Recorded readiness for ${escapeHtml(f.name)}">${f.percentComplete}%</progress><a class="feature-about-link" href="features/${escapeHtml(id)}.html">See how it works<span class="sr-only">: ${escapeHtml(f.name)}</span></a>${activityMarkup(id)}<details class="earlier-activity"><summary>Earlier activity snapshot</summary>${renderActivity(entry, snapshot, id)}</details><p class="feature-work-counts"><span class="recorded-checks"><strong>Automated checks:</strong> ${escapeHtml(countSummary(entry, 'automated'))}</span><span class="recorded-device-runs"><strong>Device/world runs:</strong> ${escapeHtml(countSummary(entry, 'deviceWorld'))}</span></p>${estimate ? `<p class="feature-work-limit">${escapeHtml(estimate)}</p>` : ''}<details class="feature-work-details"><summary>Why this score, test records and next step</summary><p>${escapeHtml(checksLine(f))}</p>${f.scoreNote ? `<p><strong>Coverage limits:</strong> ${escapeHtml(f.scoreNote)}</p>` : ''}<p><strong>Next step:</strong> ${escapeHtml(leftLine(f))}</p>${renderRecentEvidence(f, entry.tests.automated)}<p><strong>Latest recorded test:</strong> ${escapeHtml(f.lastTested || 'Not recorded.')}</p><p><strong>Count coverage:</strong> ${escapeHtml(entry.tests.automated.note)} ${escapeHtml(entry.tests.deviceWorld.note)} Counts are partial unless explicitly marked complete; assertions are not device runs. Cutoff: <time datetime="${escapeHtml(snapshot.recordsCutoff)}">${escapeHtml(snapshot.recordsCutoff)}</time>.</p><p><a href="#${escapeHtml(id)}">Full evidence and test history for ${escapeHtml(f.name)}</a></p></details></article>`;
   };
   const groups = [
     ['accepted', 'Accepted and awaiting final acceptance', f => f.percentComplete >= 99],

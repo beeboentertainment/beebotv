@@ -119,12 +119,12 @@ const ALL5={'Built':true,'Automated tests':true,'Real device':true,'Real-world c
 const NOV9={
  'Wireless speakers':{lastTestedStartsWith:'Nov 9, 2026, 7:10 to 7:42 AM Eastern',expect:{percentComplete:100,checks:ALL5,realWorldDonePercent:100}},
  'Accessibility choices (large text, high contrast, reduced motion, TalkBack)':{lastTestedStartsWith:'Nov 9, 2026, 7:02 to 7:09 AM Eastern',expect:{percentComplete:90,openIssues:1}},
- 'Playing films, seeking, picture-in-picture':{lastTestedStartsWith:'Nov 9, 2026, 5:55 to 6:51 AM Eastern',expect:{openIssues:6}},
+ 'Playing films, seeking, picture-in-picture':{lastTestedStartsWith:'Nov 9, 2026, 10:24 to 10:27 AM Eastern',expect:{openIssues:6}},
  'Away from home (direct, then relay)':{lastTestedStartsWith:'Nov 9, 2026, 5:55 to 6:51 AM Eastern'},
  'Opening the app and the five tabs':{lastTestedStartsWith:'Nov 9, 2026, 5:05 to 6:51 AM Eastern'},
- 'Campsite games':{lastTestedStartsWith:'Nov 9, 2026, 7:43 to 8:18 AM Eastern'},
+ 'Campsite games':{lastTestedStartsWith:'Nov 9, 2026, 9:55 to 10:01 AM Eastern',expect:{openIssues:6}},
  'Campsite host start and stop':{lastTestedStartsWith:'Nov 9, 2026, 12:50 to 12:56 AM Eastern'},
- 'Chromecast':{lastTestedStartsWith:'Nov 9, 2026, 8:51 to 9:47 AM Eastern'},
+ 'Chromecast':{lastTestedStartsWith:'Nov 9, 2026, 10:00 to 10:23 AM Eastern'},
  'Share the app (QR over the hotspot)':{lastTestedStartsWith:'Nov 8, 2026, 11:04 to 11:10 PM Eastern'},
  'Home layouts and Customize layout (desktop)':{lastTestedStartsWith:'Nov 8, 2026, 7:22 to 7:38 PM Eastern'},
  'Library, player and web player':{lastTestedStartsWith:'Nov 8, 2026, 4:02 to 4:06 PM Eastern'},
@@ -189,6 +189,32 @@ const NOV9={
  assert.equal(car.lastTested,'Oct 13, 2026: two-phone host/join/leave; no newer-build real-device PASS recorded');
  const originalCar=baseline.features.find(f=>f.name===car.name);
  assert.equal(car.testedOn,originalCar.testedOn.replace('No real Car Party pass is recorded here. Last PASS: No real-device PASS recorded.','No newer-build Car Party pass is recorded here. The existing device tick rests on the Oct 13, 2026 two-phone host/join/leave run.'));
+});
+
+test('every feature card face shows a Latest check line, with honesty when nothing is newer than the public build',()=>{
+ assert.equal((page.match(/class="feature-work-latest">Latest check: /g)||[]).length,70);
+ for(const f of data.features){
+  const card=cards.find(c=>c.includes(`data-feature-name="${escape(f.name)}"`));
+  assert.ok(card.includes('Latest check:'),f.name);
+  if(!f.latestCheck)assert.ok(card.includes('Not checked yet'),f.name);
+ }
+ const wireless=cards.find(c=>c.includes('data-feature-name="Wireless speakers"'));
+ assert.match(wireless,/Latest check: Nov 9, 2026, 7:42 AM Eastern - Android 1.55/);
+ assert.match(wireless,/Nothing newer than Nov 9, 2026, 7:42 AM Eastern; the public build is now Android 1\.56 \(build 128\)/);
+ const chromecast=cards.find(c=>c.includes('data-feature-name="Chromecast"'));
+ assert.doesNotMatch(chromecast,/Nothing newer than/);
+});
+test('Checked today lists every receipt since Nov 8, 12:02 PM, with where it landed, and publishes no private links',()=>{
+ assert.match(page,/id="checked-today"/);
+ const start=page.indexOf('id="checked-today"');
+ const section=page.slice(start,page.indexOf('</section>',start));
+ assert.ok(data.checkedToday.items.length>=70);
+ assert.equal((section.match(/<li>/g)||[]).length,data.checkedToday.items.length);
+ for(const id of ['6739703832','6740330602','6740490436','6740961540','6739366247','6741362989','6742969006','6731971385','6727088817','6726779418','6726485009'])assert.ok(section.includes(id),id);
+ for(const word of ['Read It To Me','Wireless speakers','Drop Four','Tic-Tac-Toe','Reversi','ingerprint','F32','updated itself','installer']) assert.ok(section.includes(word),word);
+ for(const it of data.checkedToday.items){assert.ok(/^(MOVED|RECORDED|LISTED|NOT SCORED|NOT COUNTED)/.test(it.landed),it.id+' landing');assert.ok(it.at&&it.what&&it.build&&it.device&&it.result,it.id);}
+ assert.ok(!/beebo-app-private/.test(page));
+ assert.ok(!/beebo-app-private/.test(JSON.stringify(data)));
 });
 
 test('the dated percentage audit accounts for all 70 rows and keeps evidence gaps explicit',()=>{

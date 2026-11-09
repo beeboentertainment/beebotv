@@ -342,11 +342,18 @@ function releaseChangesSection(data) {
   if (!data?.title || !data?.summary) return '';
   return `<section class="evidence-section" id="release-changes" aria-labelledby="release-changes-title"><span class="evidence-kicker">Since the last release</span><h2 id="release-changes-title">${esc(data.title)}</h2><p>${esc(data.summary)}</p>${data.sourceNote ? `<p>${esc(data.sourceNote)}</p>` : ''}</section>`;
 }
+function checkedTodaySection(d) {
+  if (!d?.items?.length) return '';
+  const li = x => `<li><time${iso(x.at) ? ` datetime="${iso(x.at)}"` : ''}>${esc(x.at)}</time> &mdash; <strong>${esc(x.what)}</strong>. Build: ${esc(x.build)}. Device: ${esc(x.device)}. Who: ${esc(x.who)}. Result: ${esc(x.result)}.${x.nick ? ` Nick: ${esc(x.nick)}.` : ''} <em>Where it landed:</em> ${esc(x.landed)} <span class="checked-ref">(test-channel receipt ${esc(x.id)})</span></li>`;
+  return `<section class="evidence-section" id="checked-today" aria-labelledby="checked-today-title"><span class="evidence-kicker">Checked since ${esc(d.sinceEastern)}</span><h2 id="checked-today-title">${esc(d.title)}</h2><p>${esc(d.intro)}</p><details open><summary>All ${d.items.length} results, oldest first</summary><ol class="checked-today-list">${d.items.map(li).join('')}</ol></details><p class="checked-legend">${esc(d.legend)}</p></section>`;
+}
+const checkedToday = checkedTodaySection(J.checkedToday);
+html = html.replace(/<!--CHECKED-TODAY-->[\s\S]*?<!--\/CHECKED-TODAY-->/, '');
 const releaseChanges = releaseChangesSection(J.releaseChanges);
 const releaseChangesRe = /<!--RELEASE-CHANGES-->[\s\S]*?<!--\/RELEASE-CHANGES-->/;
 html = html.replace(releaseChangesRe, '');
 if (!html.includes('<!--CODE-VS-HUMAN-->')) throw new Error('CODE-VS-HUMAN marker not found');
-html = html.replace('<!--CODE-VS-HUMAN-->', () => `<!--RELEASE-CHANGES-->${releaseChanges}<!--/RELEASE-CHANGES--><!--CODE-VS-HUMAN-->`);
+html = html.replace('<!--CODE-VS-HUMAN-->', () => `<!--CHECKED-TODAY-->${checkedToday}<!--/CHECKED-TODAY--><!--RELEASE-CHANGES-->${releaseChanges}<!--/RELEASE-CHANGES--><!--CODE-VS-HUMAN-->`);
 
 // This short comparison deliberately reads only the published JSON summary.  It
 // keeps the public wording simple while leaving the detailed evidence below.
@@ -502,7 +509,7 @@ function responsiveTables(page) {
 }
 html = responsiveTables(html);
 html=html.replace(/<script>\(function\(\)\{try\{document\.querySelectorAll\('tr\.feat'\)[\s\S]*?<\/script>/g,'');
-html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261029work');
+html=html.replace(/testing-evidence\.css\?v=[A-Za-z0-9]*/,'testing-evidence.css?v=20261109latest');
 if(J.platformMatrix){ if(!html.includes('src="/assets/platform-matrix.js?v=')) html=html.replace('</body>','<script src="/assets/platform-matrix.js?v=20261028a" defer></script></body>'); else html=html.replace(/(platform-matrix\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261028a'); }
 if(!html.includes('src="/assets/evidence-tier-tabs.js?v=')) html=html.replace(/<script src="\/assets\/evidence-tier-tabs\.js[^"]*" defer><\/script>/, '').replace('</body>','<script src="/assets/evidence-tier-tabs.js?v=20261029work" defer></script></body>');
 else html=html.replace(/(evidence-tier-tabs\.js\?v=)[A-Za-z0-9]*/,(_m,a)=>a+'20261029work');
