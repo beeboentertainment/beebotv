@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T17:02:00.000Z",
-  "updatedEastern": "Nov 8, 2026, 12:02 PM Eastern",
-  "method": "All 70 dated feature records were examined under the existing scoring rubric. Existing scores are retained; evidence gaps are named rather than treated as fresh failures or passes. No activity entry grants readiness credit and no new owner acceptance is added. On Nov 8, 2026 the test reports posted since were read against all 70 rows; one score moved on dated evidence (Home layouts and Customize layout, 90% to 99%: AI-tested, no errors found, waiting for the owner’s 100%) and the other 69 are unchanged. A second review on Nov 8, 2026 (Nov 8, 2026, 12:02 PM Eastern) read the receipts posted from Nov 8, 4:21 to 11:36 AM Eastern against the same rows: no score moved and no new owner acceptance is added; the eight rows with new dated results (Pack for a trip, Campsite games, Campsite host start and stop, Opening the app and the five tabs, Library, player and web player, Keyboard and screen-reader support, Jellyfin-compatible mode, Photos and phone backups) have updated summaries.",
+  "updatedAt": "2026-11-09T15:12:00.000Z",
+  "updatedEastern": "Nov 9, 2026, 10:12 AM Eastern",
+  "method": "All 70 dated feature records were examined under the existing scoring rubric. Existing scores are retained; evidence gaps are named rather than treated as fresh failures or passes. No activity entry grants readiness credit and no new owner acceptance is added. On Nov 8, 2026 the test reports posted since were read against all 70 rows; one score moved on dated evidence (Home layouts and Customize layout, 90% to 99%: AI-tested, no errors found, waiting for the owner’s 100%) and the other 69 are unchanged. A second review on Nov 8, 2026 (Nov 8, 2026, 12:02 PM Eastern) read the receipts posted from Nov 8, 4:21 to 11:36 AM Eastern against the same rows: no score moved and no new owner acceptance is added; the eight rows with new dated results (Pack for a trip, Campsite games, Campsite host start and stop, Opening the app and the five tabs, Library, player and web player, Keyboard and screen-reader support, Jellyfin-compatible mode, Photos and phone backups) have updated summaries. A third review (Nov 9, 2026, 10:12 AM Eastern) read the receipts posted from Nov 8, 12:02 PM to Nov 9, 2026, 9:47 AM Eastern against the same rows: Wireless speakers is 100% on Nick’s own recorded decision (Nov 9, 7:42 AM Eastern, a new owner acceptance recorded on the row); Accessibility choices moved from 99% to 90% because of a new open failure (Read It To Me Resume); the other rows with new dated records keep their scores.",
   "features": [
     {
       "featureId": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
@@ -12,9 +12,10 @@
       "evidenceDates": [
         "Oct 12–29, 2026",
         "Nov 2, 2026",
-        "Nov 8, 2026"
+        "Nov 8, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Historical cold starts and five-tab observations support the existing device and real-world checks. On Nov 8, 2026 the public 1.54 installed over 1.53 and opened signed out on a test emulator; an emulator adds no tick. Those limited checks do not clear warm-pairing or certificate issues, or establish acceptance of the newest public download."
+      "summary": "Historical cold starts and five-tab observations support the existing device and real-world checks. On Nov 8, 2026 the public 1.54 installed over 1.53 and opened signed out on a test emulator; an emulator adds no tick. Those limited checks do not clear warm-pairing or certificate issues, or establish acceptance of the newest public download. Nov 9 update: Browse, the film page and staying signed in passed with Nick on two phones and Nick set 100% for those steps; the row stays at 90% because its open issue stays."
     },
     {
       "featureId": "feature-android-phone-app-playing-films-seeking-picture-in-picture",
@@ -23,9 +24,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 12–27, 2026",
-        "Nov 2, 2026"
+        "Nov 2, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "On Nov 2, Galaxy S24 tester67 restarted near the beginning after five of five converted-stream jump/switch attempts. Later tests also failed two of three Original-quality far jumps, while three converted-720p jumps held; the cause remains unproven. On tester68, now the public download, nine S9+ far jumps passed on a test server; the S24 was not retried. Four bounded S9+ seek/reveal observations passed on unpublished tester69. Its touch guard is absent from the public tester68 build and does not prove the S24 failure fixed. A tester68 audio-delay attempt selected -250 ms instead of the intended -500 ms: inconclusive, with four remaining selections not run and sound not judged. The distinct snap-back failure raises known issues from four to five; the existing cap keeps this row at 90%."
+      "summary": "On Nov 2, Galaxy S24 tester67 restarted near the beginning after five of five converted-stream jump/switch attempts. Later tests also failed two of three Original-quality far jumps, while three converted-720p jumps held; the cause remains unproven. On tester68, now the public download, nine S9+ far jumps passed on a test server; the S24 was not retried. Four bounded S9+ seek/reveal observations passed on unpublished tester69. Its touch guard is absent from the public tester68 build and does not prove the S24 failure fixed. A tester68 audio-delay attempt selected -250 ms instead of the intended -500 ms: inconclusive, with four remaining selections not run and sound not judged. The distinct snap-back failure raises known issues from four to five; the existing cap keeps this row at 90%. Nov 9 update: a 2-minute film with sound, pause and skip and resume passed with Nick on two phones and Nick set 100% for those steps, but the row stays at 90%: a new open issue (Back leaves the film playing, 3 of 3) brings its open issues to 6."
     },
     {
       "featureId": "feature-android-phone-app-away-from-home-direct-then-relay",
@@ -33,9 +35,10 @@
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 19–27, 2026"
+        "Oct 19–27, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Real mobile-data playback and network switching support the historical real-world mark. Browser Auto/480p and reconnect limitations remain. Source repairs do not establish current route or playback acceptance."
+      "summary": "Real mobile-data playback and network switching support the historical real-world mark. Browser Auto/480p and reconnect limitations remain. Source repairs do not establish current route or playback acceptance. Nov 9 update: sign-in, the Connection route card, a 2-minute film, resume, staying signed in and the route change on going home passed with Nick on two phones; Nick set 100% for those steps; the row stays at 90% because its four open issues stay."
     },
     {
       "featureId": "feature-android-phone-app-watch-together",
@@ -85,9 +88,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 11–29, 2026",
-        "Nov 8, 2026"
+        "Nov 8, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Two-phone local hosting, downloaded playback and later lobby/join/leave/Stop checks support the retained score. On Nov 8, 2026 a guest-places problem (a 49th guest refused) was found on 1.53 and its fix verified on 1.54; the 1.54.1 change to it was not retried. Two issues and mobile-data, hotspot and unmatched-stop cases remain."
+      "summary": "Two-phone local hosting, downloaded playback and later lobby/join/leave/Stop checks support the retained score. On Nov 8, 2026 a guest-places problem (a 49th guest refused) was found on 1.53 and its fix verified on 1.54; the 1.54.1 change to it was not retried. Two issues and mobile-data, hotspot and unmatched-stop cases remain. Nov 9 update: a rejoining guest keeps one place on the public Android 1.55 (1 of 1); start and stop passed 3 of 3 on a test build; no score change."
     },
     {
       "featureId": "feature-android-phone-app-podcasts-and-radio",
@@ -138,9 +142,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 12–26, 2026",
-        "Nov 8, 2026"
+        "Nov 8, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Game-rule tests and two-phone match finishes support the historical checks. On Nov 8, 2026 Drop Four hole taps and the Sea Battle card picture were fixed and verified on the public 1.54; the dull boards in Samsung Internet are explained (the browser’s own dark filter) but not fixed, and boards drawn squashed on an older Android view (test emulator) are new. Five issues remain open, so the row stays 90%."
+      "summary": "Game-rule tests and two-phone match finishes support the historical checks. On Nov 8, 2026 Drop Four hole taps and the Sea Battle card picture were fixed and verified on the public 1.54; the dull boards in Samsung Internet are explained (the browser’s own dark filter) but not fixed, and boards drawn squashed on an older Android view (test emulator) are new. Five issues remain open, so the row stays 90%. Nov 9 update: Drop Four and Tic-Tac-Toe for a guest on a phone against the bot passed with Nick and he set 100% for those two games; the row stays at 90% because its five open issues stay."
     },
     {
       "featureId": "feature-android-phone-app-shared-photos-and-videos",
@@ -155,13 +160,14 @@
     },
     {
       "featureId": "feature-android-phone-app-wireless-speakers",
-      "scoreBefore": 74,
-      "scoreAfter": 74,
+      "scoreBefore": 100,
+      "scoreAfter": 100,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 12–24, 2026"
+        "Oct 12–24, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Real browser outputs and audio-node/stop/restart checks support device-level behavior. The checks were muted, so audible synchronization and timing remain unproved; no real-world mark is added."
+      "summary": "Real browser outputs and audio-node/stop/restart checks support device-level behavior. The checks were muted, so audible synchronization and timing remain unproved; no real-world mark is added. Nov 9 update: Nick recorded Ready himself (Nov 9, 2026, 7:42 AM Eastern) after listening on two phones on the public Android 1.55; the row moved from 74% to 100% on that decision. Limits kept: speaker positions, the on/off switch and timing nudge, two or more speakers, Bluetooth, the hotspot route and a long session were not tested; one drop was seen once and not reproduced."
     },
     {
       "featureId": "feature-android-phone-app-share-the-app-qr-over-the-hotspot",
@@ -169,9 +175,10 @@
       "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 12–24, 2026"
+        "Oct 12–24, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "A second phone installed over its existing same-version app and APK identity checks passed. That supports the historical device mark. A fresh never-installed device and actual expiry remain untested; the old summary is narrowed accordingly."
+      "summary": "A second phone installed over its existing same-version app and APK identity checks passed. That supports the historical device mark. A fresh never-installed device and actual expiry remain untested; the old summary is narrowed accordingly. Nov 8 update: the host handed out the exact public 1.55 file and stopped after Stop (1 of 1, assistant alone); no second phone installed it, so no real-world mark."
     },
     {
       "featureId": "feature-android-phone-app-wake-my-pc",
@@ -190,9 +197,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 12–27, 2026",
-        "Nov 2, 2026"
+        "Nov 2, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Evidence addendum Nov 2, 2026, 4:33 PM Eastern: Historical casting checks remain. On Nov 2, Nick confirmed picture, sound and controls on tester67. A later phone-position reset followed an uncertain tap; an app defect was not established. Tester68, now the public download, passed one short converted-cast hand-back check without sound judgment. The earlier cited unpublished tester69 receipt contains no cast test; the separate later attempt is recorded here. On Nov 2, 2026, 3:14 to 3:15 PM Eastern, one S9+ Cast attempt on unpublished tester69 (build 119) ended FAILED/INCONCLUSIVE. Later read-only diagnostics from that attempt showed the receiver SDK reporting idle/error, then no media. The phone kept showing 4:23 from a retained saved position; this was not measured TV progress. Six existing status requests were issued, but their completion was not recorded. The planned seek check was not run. Normal Stop returned playback to the phone. The cause, actual TV picture/progress and sound remain unknown; neither direct-stream acceptance nor a polling fix is proved. This does not establish a distinct new issue: six known issues and the 90% cap remain. Stuck, direct-stream, end, next-episode and broader TV cases remain open."
+      "summary": "Evidence addendum Nov 2, 2026, 4:33 PM Eastern: Historical casting checks remain. On Nov 2, Nick confirmed picture, sound and controls on tester67. A later phone-position reset followed an uncertain tap; an app defect was not established. Tester68, now the public download, passed one short converted-cast hand-back check without sound judgment. The earlier cited unpublished tester69 receipt contains no cast test; the separate later attempt is recorded here. On Nov 2, 2026, 3:14 to 3:15 PM Eastern, one S9+ Cast attempt on unpublished tester69 (build 119) ended FAILED/INCONCLUSIVE. Later read-only diagnostics from that attempt showed the receiver SDK reporting idle/error, then no media. The phone kept showing 4:23 from a retained saved position; this was not measured TV progress. Six existing status requests were issued, but their completion was not recorded. The planned seek check was not run. Normal Stop returned playback to the phone. The cause, actual TV picture/progress and sound remain unknown; neither direct-stream acceptance nor a polling fix is proved. This does not establish a distinct new issue: six known issues and the 90% cap remain. Stuck, direct-stream, end, next-episode and broader TV cases remain open. Nov 9 update: one cast to a Google TV passed on an unpublished test build (Android 1.56, picture seen, sound not checked); no score change, the open issues stay."
     },
     {
       "featureId": "feature-android-phone-app-beebo-auto-android-auto",
@@ -258,12 +266,13 @@
     {
       "featureId": "feature-android-phone-app-accessibility-choices-large-text-high-contrast-reduced-motion-talkback",
       "scoreBefore": 99,
-      "scoreAfter": 99,
+      "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 12–28, 2026"
+        "Oct 12–28, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Owner-confirmed large text/contrast and later maximum-font fixes support the existing 99%. Complete accessibility workflows and TalkBack judged by ear remain open, and final acceptance stays false. Desktop-only fixes add no Android credit."
+      "summary": "Owner-confirmed large text/contrast and later maximum-font fixes support the existing 99%. Complete accessibility workflows and TalkBack judged by ear remain open, and final acceptance stays false. Desktop-only fixes add no Android credit. Nov 9 update: 99% to 90%. In Read It To Me, Resume went back to the very start with Nick on the public Android 1.55; it is an open known issue and Nick said the feature stays below 100 until it is fixed. Other Read It To Me checks passed; TalkBack by ear is still untried."
     },
     {
       "featureId": "feature-android-phone-app-music-on-the-phone-albums-songs-player-sleep-timer",
@@ -326,9 +335,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 24–28, 2026",
-        "Nov 8, 2026"
+        "Nov 8, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Narrow backup, hash, counter and photo/video observations coexist with three recorded failures. On Nov 8, 2026 a look at the timeline, albums and viewer on the public 1.53 passed. Location, native-backup and missing-root gaps still prevent broad device and real-world marks."
+      "summary": "Narrow backup, hash, counter and photo/video observations coexist with three recorded failures. On Nov 8, 2026 a look at the timeline, albums and viewer on the public 1.53 passed. Location, native-backup and missing-root gaps still prevent broad device and real-world marks. Nov 9 update: the Photos & backups pages read sensibly on the public Android 1.55 (view only); one small wording mismatch; no score change."
     },
     {
       "featureId": "feature-android-phone-app-family-achievements-opt-in-milestones",
@@ -347,9 +357,10 @@
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 28, 2026"
+        "Oct 28, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Installed download, integrity verification, update to Windows 0.1.109 and reopening support the existing device and real-world record. The explicit 90% cap remains; low disk, uninstall, active viewing and other PCs still need checks."
+      "summary": "Installed download, integrity verification, update to Windows 0.1.109 and reopening support the existing device and real-world record. The explicit 90% cap remains; low disk, uninstall, active viewing and other PCs still need checks. Nov 8 update: the 0.1.114 installer matched the feed and was signed, and the app updated itself on the 4-core PC (1 of 1); no score change, the cap stays."
     },
     {
       "featureId": "feature-windows-desktop-app-library-player-and-web-player",
@@ -359,9 +370,10 @@
       "evidenceDates": [
         "Oct 27–29, 2026",
         "Nov 2, 2026",
-        "Nov 8, 2026"
+        "Nov 8, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Installed library and player checks, a muted hour-long run and later source checks support the retained mark. On Nov 8, 2026 the second-version watchlist problem was reproduced again on the published 0.1.113. Eight recorded issues, sound, broader browsers and player journeys remain."
+      "summary": "Installed library and player checks, a muted hour-long run and later source checks support the retained mark. On Nov 8, 2026 the second-version watchlist problem was reproduced again on the published 0.1.113. Eight recorded issues, sound, broader browsers and player journeys remain. Nov 8 update: the watchlist problem with two film versions still happens on the published Windows 0.1.114; open issues stay 8."
     },
     {
       "featureId": "feature-windows-desktop-app-update-modes-and-start-with-windows",
@@ -380,9 +392,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 23–29, 2026",
-        "Nov 2, 2026"
+        "Nov 2, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Historical transcoding and installed-PC checks support the retained device mark. On Nov 2, checks using Android tester67 with Windows 0.1.110 passed three converted-720p far jumps, but other sound-setting and Original-playback cases reset the position. The cause remains unproven. These mixed results do not clear the two existing converter issues: wasted starts and the recorded browser failure. Broader GPU and format checks remain."
+      "summary": "Historical transcoding and installed-PC checks support the retained device mark. On Nov 2, checks using Android tester67 with Windows 0.1.110 passed three converted-720p far jumps, but other sound-setting and Original-playback cases reset the position. The cause remains unproven. These mixed results do not clear the two existing converter issues: wasted starts and the recorded browser failure. Broader GPU and format checks remain. Nov 8 update: the Converted videos page and Library Health read consistently on Windows 0.1.114 (view only); no conversion run; no score change."
     },
     {
       "featureId": "feature-windows-desktop-app-live-tv-tuner-and-own-playlist",
@@ -390,9 +403,10 @@
       "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 23–28, 2026"
+        "Oct 23–28, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "HTTP and restriction checks plus installed playback of a two-channel test playlist support the recorded checks. A real tuner/provider, guide, recording, Live TV casting and listening remain open."
+      "summary": "HTTP and restriction checks plus installed playback of a two-channel test playlist support the recorded checks. A real tuner/provider, guide, recording, Live TV casting and listening remain open. Nov 8 update: the own-playlist panel keeps its buttons off until the rights box is ticked (view only); nothing loaded; no score change."
     },
     {
       "featureId": "feature-windows-desktop-app-story-studio",
@@ -400,9 +414,10 @@
       "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 28–29, 2026"
+        "Oct 28–29, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "The installed painted preview, draft and short export passed. Later title and scene fixes have source checks but still need an installed retest. Voiced export, captions, saving and household-profile review remain."
+      "summary": "The installed painted preview, draft and short export passed. Later title and scene fixes have source checks but still need an installed retest. Voiced export, captions, saving and household-profile review remain. Nov 8 update: the Story Studio screens read as “In development” with local-only wording (view only); nothing built; no score change."
     },
     {
       "featureId": "feature-windows-desktop-app-movie-night",
@@ -421,9 +436,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 23–28, 2026",
-        "Nov 8, 2026"
+        "Nov 8, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Protocol, range, membership and logout checks passed. On Nov 8, 2026 the Jellyfin-style addresses were confirmed closed while the setting is off. The actual third-party client failed playback and triggered unwanted conversion; successful API checks do not close either client acceptance gap."
+      "summary": "Protocol, range, membership and logout checks passed. On Nov 8, 2026 the Jellyfin-style addresses were confirmed closed while the setting is off. The actual third-party client failed playback and triggered unwanted conversion; successful API checks do not close either client acceptance gap. Nov 8 update: the Jellyfin-compatible setting is off and honestly worded (view only); no client connected; no score change."
     },
     {
       "featureId": "feature-windows-desktop-app-parental-controls-and-household-profiles",
@@ -431,9 +447,10 @@
       "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 23–28, 2026"
+        "Oct 23–28, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Installed rating, profile and timed-cutoff checks support the device mark. Short-limit and mid-film restriction findings, phone/TV screens and broader household scenarios remain open. New source tests do not clear them."
+      "summary": "Installed rating, profile and timed-cutoff checks support the device mark. Short-limit and mid-film restriction findings, phone/TV screens and broader household scenarios remain open. New source tests do not clear them. Nov 8 update: a sign-in notice named a phone just “Script” (seen once, not counted); no score change."
     },
     {
       "featureId": "feature-windows-desktop-app-keyboard-and-screen-reader-support",
@@ -443,9 +460,10 @@
       "evidenceDates": [
         "Oct 27–29, 2026",
         "Nov 2, 2026",
-        "Nov 8, 2026"
+        "Nov 8, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Installed keyboard and Settings checks support the device mark. On Nov 8, 2026 keyboard use on a film details page showed a focus ring on every stop and a reported missing ring near Subtitles was not reproduced there. A real Windows screen reader, forced colours and broader focus paths remain."
+      "summary": "Installed keyboard and Settings checks support the device mark. On Nov 8, 2026 keyboard use on a film details page showed a focus ring on every stop and a reported missing ring near Subtitles was not reproduced there. A real Windows screen reader, forced colours and broader focus paths remain. Nov 8 update: a poster card is a Tab stop with a ring and Enter opens its details page on Windows 0.1.114 (1 of 1); no score change."
     },
     {
       "featureId": "feature-windows-desktop-app-languages-5-translated-with-machine-help-3-previews",
@@ -537,9 +555,10 @@
       "evidenceDates": [
         "Oct 26–29, 2026",
         "Nov 2, 2026",
-        "Nov 7, 2026"
+        "Nov 7, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "On Nov 8, 2026 the row moved from 90% to 99% (AI-tested, no errors found, waiting for the owner’s 100%). Its three recorded issues (layout share, arrow buttons and row-name click, Light colour pack button contrast) did not reproduce in 3 tries each on the published Windows 0.1.113 on Nov 7, 2026, and the fix commits are inside that build. One minor keyboard observation is listed to retest; the website and phone targets, a narrow window and another account were not checked."
+      "summary": "On Nov 8, 2026 the row moved from 90% to 99% (AI-tested, no errors found, waiting for the owner’s 100%). Its three recorded issues (layout share, arrow buttons and row-name click, Light colour pack button contrast) did not reproduce in 3 tries each on the published Windows 0.1.113 on Nov 7, 2026, and the fix commits are inside that build. One minor keyboard observation is listed to retest; the website and phone targets, a narrow window and another account were not checked. Nov 8 update: Nick looked at all five layouts with the helper on Windows 0.1.114 and they passed; it stays 99% and Nick has not recorded Ready."
     },
     {
       "featureId": "feature-windows-desktop-app-picture-frame-photo-wall-for-a-tablet-or-tv",
@@ -557,9 +576,10 @@
       "scoreAfter": 49,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 23–28, 2026"
+        "Oct 23–28, 2026",
+        "Nov 8–9, 2026"
       ],
-      "summary": "Browser banner checks and installed sender/history tests are recorded. Native-phone delivery failed and the earlier Enable issue is not conclusively closed. The obsolete 'sender untested' summary is corrected; receiver, limits and audible Listen acceptance remain."
+      "summary": "Browser banner checks and installed sender/history tests are recorded. Native-phone delivery failed and the earlier Enable issue is not conclusively closed. The obsolete 'sender untested' summary is corrected; receiver, limits and audible Listen acceptance remain. Nov 8 update: the setting sits inside Notifications and a Settings search for “kitchen” misses it (view only); not enabled; no score change."
     },
     {
       "featureId": "feature-other-systems-linux-server-headless-docker",

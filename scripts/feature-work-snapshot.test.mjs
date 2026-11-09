@@ -113,12 +113,44 @@ const NOV8={
  'Jellyfin-compatible mode':{lastTestedStartsWith:'Nov 8, 2026, 7:19 AM Eastern'},
  'Photos and phone backups (timeline, albums, viewer)':{lastTestedStartsWith:'Nov 8, 2026, 6:34 to 6:37 AM Eastern'},
 };
-test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
+// Nov 9, 2026 record (Nick's decisions of Nov 9, public Android 1.55, Windows 0.1.114): explicit dated additions and the only score moves. PRIOR is the published file just before this update.
+const PRIOR=JSON.parse(execFileSync('git',['show','6a3d2812:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
+const ALL5={'Built':true,'Automated tests':true,'Real device':true,'Real-world check':true,'Ready to call Available':true};
+const NOV9={
+ 'Wireless speakers':{lastTestedStartsWith:'Nov 9, 2026, 7:10 to 7:42 AM Eastern',expect:{percentComplete:100,checks:ALL5,realWorldDonePercent:100}},
+ 'Accessibility choices (large text, high contrast, reduced motion, TalkBack)':{lastTestedStartsWith:'Nov 9, 2026, 7:02 to 7:09 AM Eastern',expect:{percentComplete:90,openIssues:1}},
+ 'Playing films, seeking, picture-in-picture':{lastTestedStartsWith:'Nov 9, 2026, 5:55 to 6:51 AM Eastern',expect:{openIssues:6}},
+ 'Away from home (direct, then relay)':{lastTestedStartsWith:'Nov 9, 2026, 5:55 to 6:51 AM Eastern'},
+ 'Opening the app and the five tabs':{lastTestedStartsWith:'Nov 9, 2026, 5:05 to 6:51 AM Eastern'},
+ 'Campsite games':{lastTestedStartsWith:'Nov 9, 2026, 7:43 to 8:18 AM Eastern'},
+ 'Campsite host start and stop':{lastTestedStartsWith:'Nov 9, 2026, 12:50 to 12:56 AM Eastern'},
+ 'Chromecast':{lastTestedStartsWith:'Nov 9, 2026, 8:51 to 9:47 AM Eastern'},
+ 'Share the app (QR over the hotspot)':{lastTestedStartsWith:'Nov 8, 2026, 11:04 to 11:10 PM Eastern'},
+ 'Home layouts and Customize layout (desktop)':{lastTestedStartsWith:'Nov 8, 2026, 7:22 to 7:38 PM Eastern'},
+ 'Library, player and web player':{lastTestedStartsWith:'Nov 8, 2026, 4:02 to 4:06 PM Eastern'},
+ 'Keyboard and screen-reader support':{lastTestedStartsWith:'Nov 8, 2026, 9:14 to 9:17 PM Eastern'},
+ 'Installer and self-update':{lastTestedStartsWith:'Nov 8, 2026, 3:12 to 3:36 PM Eastern'},
+ 'Converter and quality / speed settings':{lastTestedStartsWith:'Nov 8, 2026, 11:18 to 11:24 PM Eastern'},
+ 'Live TV (tuner and own playlist)':{lastTestedStartsWith:'Nov 8, 2026, 9:38 to 9:41 PM Eastern'},
+ 'Jellyfin-compatible mode':{lastTestedStartsWith:'Nov 8, 2026, 9:38 to 9:41 PM Eastern'},
+ 'Story Studio':{lastTestedStartsWith:'Nov 8, 2026, 11:50 to 11:55 PM Eastern'},
+ 'Kitchen announcements (messages to phones)':{lastTestedStartsWith:'Nov 8, 2026, about 9:47 PM Eastern'},
+ 'Parental controls and household profiles':{lastTestedStartsWith:'Nov 8, 2026, about 9:47 PM Eastern'},
+ 'Photos and phone backups (timeline, albums, viewer)':{lastTestedStartsWith:'Nov 9, 2026, 4:36 to 4:40 AM Eastern'},
+};test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
   const after=data.features.find(f=>f.name===before.name);
   for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent']){
-   if(key==='percentComplete' && before.name==='Home layouts and Customize layout (desktop)'){
+  const nov9=NOV9[before.name];
+   if(nov9 && key==='lastTested'){
+    const prior=PRIOR.features.find(f=>f.name===before.name);
+    assert.ok(after.lastTested.startsWith(nov9.lastTestedStartsWith),before.name+': Nov 9 lastTested prefix');
+    assert.ok(after.lastTested.endsWith('; '+prior.lastTested),before.name+': earlier lastTested kept');continue;
+   }
+   if(nov9 && nov9.expect && Object.prototype.hasOwnProperty.call(nov9.expect,key)){
+    assert.deepEqual(after[key],nov9.expect[key],before.name+': Nov 9 '+key);continue;
+   }   if(key==='percentComplete' && before.name==='Home layouts and Customize layout (desktop)'){
     assert.equal(before.percentComplete,90);assert.equal(after.percentComplete,99);continue;
    }
    if(key==='openIssues' && before.name==='Playing films, seeking, picture-in-picture'){
@@ -163,7 +195,7 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  validateReadinessAudit(data);
  assert.equal(readinessAudit.features.length,70);
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId),['feature-windows-desktop-app-home-layouts-and-customize-layout-desktop']);
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId),['feature-android-phone-app-accessibility-choices-large-text-high-contrast-reduced-motion-talkback','feature-windows-desktop-app-home-layouts-and-customize-layout-desktop']);
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
@@ -175,9 +207,9 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
 });
 test('legacy 100% code estimates with outstanding required work are visibly qualified',()=>{
  const contradicted=data.features.filter(f=>codeEstimate(f));
- assert.equal(contradicted.length,43);
+ assert.equal(contradicted.length,44);
  for(const f of contradicted){const card=cards.find(c=>c.includes(`data-feature-name="${escape(f.name)}"`));assert.ok(card.includes('Legacy code estimate is unverified'),f.name);}
- assert.match(page,/43 rows retain a 100% code estimate/);
+ assert.match(page,/44 rows retain a 100% code estimate/);
  const method=data.codeVsHuman.method;
  for(const fact of ['Built and Automated tests checks','Real device, Real-world check and Ready to call Available','Group figures are the average of their features and are never rounded up to 100','Remaining counts are open road-to-100 items','All 70 features are counted, including those that are planned or on hold'])assert.ok(method.includes(fact),fact);
  const generator=readFileSync(new URL('../site-data/build-what-we-offer.js',import.meta.url),'utf8');
