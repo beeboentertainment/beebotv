@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T15:54:00.000Z",
-  "updatedEastern": "Nov 9, 2026, 10:54 AM Eastern",
-  "method": "All 70 dated feature records were examined under the existing scoring rubric. Existing scores are retained; evidence gaps are named rather than treated as fresh failures or passes. No activity entry grants readiness credit and no new owner acceptance is added. On Nov 8, 2026 the test reports posted since were read against all 70 rows; one score moved on dated evidence (Home layouts and Customize layout, 90% to 99%: AI-tested, no errors found, waiting for the owner’s 100%) and the other 69 are unchanged. A second review on Nov 8, 2026 (Nov 8, 2026, 12:02 PM Eastern) read the receipts posted from Nov 8, 4:21 to 11:36 AM Eastern against the same rows: no score moved and no new owner acceptance is added; the eight rows with new dated results (Pack for a trip, Campsite games, Campsite host start and stop, Opening the app and the five tabs, Library, player and web player, Keyboard and screen-reader support, Jellyfin-compatible mode, Photos and phone backups) have updated summaries. A third review (Nov 9, 2026, 10:12 AM Eastern) read the receipts posted from Nov 8, 12:02 PM to Nov 9, 2026, 9:47 AM Eastern against the same rows: Wireless speakers is 100% on Nick’s own recorded decision (Nov 9, 7:42 AM Eastern, a new owner acceptance recorded on the row); Accessibility choices moved from 99% to 90% because of a new open failure (Read It To Me Resume); the other rows with new dated records keep their scores. A second edit (Nov 9, 2026, 10:36 AM Eastern) read the receipts through Nov 9, 10:30 AM Eastern: no score moved; Chromecast, Playing films and Campsite games carry new dated records. A third edit (Nov 9, 2026, 10:54 AM Eastern) read the receipts through Nov 9, 10:47 AM Eastern: no score moved; Music on the phone and Podcasts and radio carry new dated records on Nick’s existing 100%.",
+  "updatedAt": "2026-11-09T19:10:00.000Z",
+  "updatedEastern": "Nov 9, 2026, 2:10 PM Eastern",
+  "method": "All 70 dated feature records were examined under the existing scoring rubric. Existing scores are retained; evidence gaps are named rather than treated as fresh failures or passes. No activity entry grants readiness credit and no new owner acceptance is added. On Nov 8, 2026 the test reports posted since were read against all 70 rows; one score moved on dated evidence (Home layouts and Customize layout, 90% to 99%: AI-tested, no errors found, waiting for the owner’s 100%) and the other 69 are unchanged. A second review on Nov 8, 2026 (Nov 8, 2026, 12:02 PM Eastern) read the receipts posted from Nov 8, 4:21 to 11:36 AM Eastern against the same rows: no score moved and no new owner acceptance is added; the eight rows with new dated results (Pack for a trip, Campsite games, Campsite host start and stop, Opening the app and the five tabs, Library, player and web player, Keyboard and screen-reader support, Jellyfin-compatible mode, Photos and phone backups) have updated summaries. A third review (Nov 9, 2026, 10:12 AM Eastern) read the receipts posted from Nov 8, 12:02 PM to Nov 9, 2026, 9:47 AM Eastern against the same rows: Wireless speakers is 100% on Nick’s own recorded decision (Nov 9, 7:42 AM Eastern, a new owner acceptance recorded on the row); Accessibility choices moved from 99% to 90% because of a new open failure (Read It To Me Resume); the other rows with new dated records keep their scores. A second edit (Nov 9, 2026, 10:36 AM Eastern) read the receipts through Nov 9, 10:30 AM Eastern: no score moved; Chromecast, Playing films and Campsite games carry new dated records. A third edit (Nov 9, 2026, 10:54 AM Eastern) read the receipts through Nov 9, 10:47 AM Eastern: no score moved; Music on the phone and Podcasts and radio carry new dated records on Nick’s existing 100%. A fourth edit (Nov 9, 2026, 2:10 PM Eastern) read every result posted through Nov 9, 2:03 PM Eastern against all 70 rows: Photos and phone backups moved from 49% to 74% on a Real device PASS on Nick's own account; no row went down; Nick's 100s for parts of features are recorded and did not change a row to 100%.",
   "features": [
     {
       "featureId": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
@@ -13,9 +13,10 @@
         "Oct 12–29, 2026",
         "Nov 2, 2026",
         "Nov 8, 2026",
-        "Nov 8–9, 2026"
+        "Nov 8–9, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Historical cold starts and five-tab observations support the existing device and real-world checks. On Nov 8, 2026 the public 1.54 installed over 1.53 and opened signed out on a test emulator; an emulator adds no tick. Those limited checks do not clear warm-pairing or certificate issues, or establish acceptance of the newest public download. Nov 9 update: Browse, the film page and staying signed in passed with Nick on two phones and Nick set 100% for those steps; the row stays at 90% because its open issue stays."
+      "summary": "Historical cold starts and five-tab observations support the existing device and real-world checks. On Nov 8, 2026 the public 1.54 installed over 1.53 and opened signed out on a test emulator; an emulator adds no tick. Those limited checks do not clear warm-pairing or certificate issues, or establish acceptance of the newest public download. Nov 9 update: Browse, the film page and staying signed in passed with Nick on two phones and Nick set 100% for those steps; the row stays at 90% because its open issue stays. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, the open issue stays): public Android 1.56 passed journeys and sweeps on an emulator and a Pixel 3 (test member, no sound)."
     },
     {
       "featureId": "feature-android-phone-app-playing-films-seeking-picture-in-picture",
@@ -28,7 +29,7 @@
         "Nov 8–9, 2026",
         "Nov 9, 2026"
       ],
-      "summary": "On Nov 2, Galaxy S24 tester67 restarted near the beginning after five of five converted-stream jump/switch attempts. Later tests also failed two of three Original-quality far jumps, while three converted-720p jumps held; the cause remains unproven. On tester68, now the public download, nine S9+ far jumps passed on a test server; the S24 was not retried. Four bounded S9+ seek/reveal observations passed on unpublished tester69. Its touch guard is absent from the public tester68 build and does not prove the S24 failure fixed. A tester68 audio-delay attempt selected -250 ms instead of the intended -500 ms: inconclusive, with four remaining selections not run and sound not judged. The distinct snap-back failure raises known issues from four to five; the existing cap keeps this row at 90%. Nov 9 update: a 2-minute film with sound, pause and skip and resume passed with Nick on two phones and Nick set 100% for those steps, but the row stays at 90%: a new open issue (Back leaves the film playing, 3 of 3) brings its open issues to 6. Nov 9 second edit: Nick set 100% for the small window and the quality switch (test copy of Android 1.56); the row keeps its six open issues and stays at 90%."
+      "summary": "On Nov 2, Galaxy S24 tester67 restarted near the beginning after five of five converted-stream jump/switch attempts. Later tests also failed two of three Original-quality far jumps, while three converted-720p jumps held; the cause remains unproven. On tester68, now the public download, nine S9+ far jumps passed on a test server; the S24 was not retried. Four bounded S9+ seek/reveal observations passed on unpublished tester69. Its touch guard is absent from the public tester68 build and does not prove the S24 failure fixed. A tester68 audio-delay attempt selected -250 ms instead of the intended -500 ms: inconclusive, with four remaining selections not run and sound not judged. The distinct snap-back failure raises known issues from four to five; the existing cap keeps this row at 90%. Nov 9 update: a 2-minute film with sound, pause and skip and resume passed with Nick on two phones and Nick set 100% for those steps, but the row stays at 90%: a new open issue (Back leaves the film playing, 3 of 3) brings its open issues to 6. Nov 9 second edit: Nick set 100% for the small window and the quality switch (test copy of Android 1.56); the row keeps its six open issues and stays at 90%. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, open issues 6 to 7): Nick set 100% for TV-show playback on the Android 1.56 private test copy (show page, season list, Resume, Next, Prev, All Episodes, picture and sound) and for playing a downloaded film offline. New failure: one TV episode will not play and its message is wrong."
     },
     {
       "featureId": "feature-android-phone-app-away-from-home-direct-then-relay",
@@ -90,9 +91,10 @@
       "evidenceDates": [
         "Oct 11–29, 2026",
         "Nov 8, 2026",
-        "Nov 8–9, 2026"
+        "Nov 8–9, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Two-phone local hosting, downloaded playback and later lobby/join/leave/Stop checks support the retained score. On Nov 8, 2026 a guest-places problem (a 49th guest refused) was found on 1.53 and its fix verified on 1.54; the 1.54.1 change to it was not retried. Two issues and mobile-data, hotspot and unmatched-stop cases remain. Nov 9 update: a rejoining guest keeps one place on the public Android 1.55 (1 of 1); start and stop passed 3 of 3 on a test build; no score change."
+      "summary": "Two-phone local hosting, downloaded playback and later lobby/join/leave/Stop checks support the retained score. On Nov 8, 2026 a guest-places problem (a 49th guest refused) was found on 1.53 and its fix verified on 1.54; the 1.54.1 change to it was not retried. Two issues and mobile-data, hotspot and unmatched-stop cases remain. Nov 9 update: a rejoining guest keeps one place on the public Android 1.55 (1 of 1); start and stop passed 3 of 3 on a test build; no score change. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, open issues stay 2): Nick set 100% for the new guest first screen on the 1.57 test build; he said not yet for the host itself (hotspot not run)."
     },
     {
       "featureId": "feature-android-phone-app-podcasts-and-radio",
@@ -112,9 +114,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 12–26, 2026",
-        "Nov 2, 2026"
+        "Nov 2, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Historical chapter, speed, bookmark and owner-heard playback checks remain. On Nov 2, tester68, now the public download, held the saved place in 14 of 15 book-to-film attempts; one ended about 27 seconds ahead, with the cause unresolved (FAIL-INCONCLUSIVE). Two further tester68 checks and one on unpublished tester69 did not reproduce it, but do not clear that result. Sound was not judged in these newer checks. The existing account/book-removal issue also remains open."
+      "summary": "Historical chapter, speed, bookmark and owner-heard playback checks remain. On Nov 2, tester68, now the public download, held the saved place in 14 of 15 book-to-film attempts; one ended about 27 seconds ahead, with the cause unresolved (FAIL-INCONCLUSIVE). Two further tester68 checks and one on unpublished tester69 did not reproduce it, but do not clear that result. Sound was not judged in these newer checks. The existing account/book-removal issue also remains open. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, the open issue stays): Nick set 100% for the audiobook controls and a bookmark on Android 1.56; the sign-out on a bookmark trash tap did not happen, but the other half of that issue was not retested."
     },
     {
       "featureId": "feature-android-phone-app-pack-for-a-trip-download-planner",
@@ -123,9 +126,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 12–26, 2026",
-        "Nov 8, 2026"
+        "Nov 8, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "On Nov 8, 2026 the cut-off estimate card was fixed and verified on the public Android 1.54.1 (Galaxy S9+ and Pixel 3), so open issues went from 2 to 1; the blank notification entry and low-space, cancellation and process-durability limits remain, so the row stays 90%. Landscape, split screen, TalkBack and actual downloading were not checked."
+      "summary": "On Nov 8, 2026 the cut-off estimate card was fixed and verified on the public Android 1.54.1 (Galaxy S9+ and Pixel 3), so open issues went from 2 to 1; the blank notification entry and low-space, cancellation and process-durability limits remain, so the row stays 90%. Landscape, split screen, TalkBack and actual downloading were not checked. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, the open issue stays): Nick set 100% for offline playback and a download carrying on by itself; he said not yet for the planner itself (cancel midway and adding an episode not run)."
     },
     {
       "featureId": "feature-android-phone-app-trip-journal-trips-recap-video-export",
@@ -148,7 +152,7 @@
         "Nov 8–9, 2026",
         "Nov 9, 2026"
       ],
-      "summary": "Game-rule tests and two-phone match finishes support the historical checks. On Nov 8, 2026 Drop Four hole taps and the Sea Battle card picture were fixed and verified on the public 1.54; the dull boards in Samsung Internet are explained (the browser’s own dark filter) but not fixed, and boards drawn squashed on an older Android view (test emulator) are new. Five issues remain open, so the row stays 90%. Nov 9 update: Drop Four and Tic-Tac-Toe for a guest on a phone against the bot passed with Nick and he set 100% for those two games; the row stays at 90% because its five open issues stay. Nov 9 second edit: a sixth open issue was added (the Reversi board jumps on every turn change); a full Reversi game as a guest passed; the row stays at 90%."
+      "summary": "Game-rule tests and two-phone match finishes support the historical checks. On Nov 8, 2026 Drop Four hole taps and the Sea Battle card picture were fixed and verified on the public 1.54; the dull boards in Samsung Internet are explained (the browser’s own dark filter) but not fixed, and boards drawn squashed on an older Android view (test emulator) are new. Five issues remain open, so the row stays 90%. Nov 9 update: Drop Four and Tic-Tac-Toe for a guest on a phone against the bot passed with Nick and he set 100% for those two games; the row stays at 90% because its five open issues stay. Nov 9 second edit: a sixth open issue was added (the Reversi board jumps on every turn change); a full Reversi game as a guest passed; the row stays at 90%. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, open issues 6 to 8): new sideways failure (boards do not fit the screen) and one small word break. Nick's guest-standings 100% stands on the 1.57 test build only."
     },
     {
       "featureId": "feature-android-phone-app-shared-photos-and-videos",
@@ -204,7 +208,7 @@
         "Nov 8–9, 2026",
         "Nov 9, 2026"
       ],
-      "summary": "Evidence addendum Nov 2, 2026, 4:33 PM Eastern: Historical casting checks remain. On Nov 2, Nick confirmed picture, sound and controls on tester67. A later phone-position reset followed an uncertain tap; an app defect was not established. Tester68, now the public download, passed one short converted-cast hand-back check without sound judgment. The earlier cited unpublished tester69 receipt contains no cast test; the separate later attempt is recorded here. On Nov 2, 2026, 3:14 to 3:15 PM Eastern, one S9+ Cast attempt on unpublished tester69 (build 119) ended FAILED/INCONCLUSIVE. Later read-only diagnostics from that attempt showed the receiver SDK reporting idle/error, then no media. The phone kept showing 4:23 from a retained saved position; this was not measured TV progress. Six existing status requests were issued, but their completion was not recorded. The planned seek check was not run. Normal Stop returned playback to the phone. The cause, actual TV picture/progress and sound remain unknown; neither direct-stream acceptance nor a polling fix is proved. This does not establish a distinct new issue: six known issues and the 90% cap remain. Stuck, direct-stream, end, next-episode and broader TV cases remain open. Nov 9 update: one cast to a Google TV passed on an unpublished test build (Android 1.56, picture seen, sound not checked); no score change, the open issues stay. Nov 9 second edit: Nick set 100% for casting to a Google TV on the home network (test copy of Android 1.56); the row keeps its six open issues and stays at 90%."
+      "summary": "Evidence addendum Nov 2, 2026, 4:33 PM Eastern: Historical casting checks remain. On Nov 2, Nick confirmed picture, sound and controls on tester67. A later phone-position reset followed an uncertain tap; an app defect was not established. Tester68, now the public download, passed one short converted-cast hand-back check without sound judgment. The earlier cited unpublished tester69 receipt contains no cast test; the separate later attempt is recorded here. On Nov 2, 2026, 3:14 to 3:15 PM Eastern, one S9+ Cast attempt on unpublished tester69 (build 119) ended FAILED/INCONCLUSIVE. Later read-only diagnostics from that attempt showed the receiver SDK reporting idle/error, then no media. The phone kept showing 4:23 from a retained saved position; this was not measured TV progress. Six existing status requests were issued, but their completion was not recorded. The planned seek check was not run. Normal Stop returned playback to the phone. The cause, actual TV picture/progress and sound remain unknown; neither direct-stream acceptance nor a polling fix is proved. This does not establish a distinct new issue: six known issues and the 90% cap remain. Stuck, direct-stream, end, next-episode and broader TV cases remain open. Nov 9 update: one cast to a Google TV passed on an unpublished test build (Android 1.56, picture seen, sound not checked); no score change, the open issues stay. Nov 9 second edit: Nick set 100% for casting to a Google TV on the home network (test copy of Android 1.56); the row keeps its six open issues and stays at 90%. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, open issues stay 6): Nick set 100% for casting to a second TV on the public Android 1.56."
     },
     {
       "featureId": "feature-android-phone-app-beebo-auto-android-auto",
@@ -212,9 +216,10 @@
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 6–27, 2026"
+        "Oct 6–27, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Nick's own-car use, tabs, progress and heard episode audio support historical real-world credit. The explicit 90% cap remains for the thin car record, phone-settings issue and untested driving, passenger, resume and other-car cases."
+      "summary": "Nick's own-car use, tabs, progress and heard episode audio support historical real-world credit. The explicit 90% cap remains for the thin car record, phone-settings issue and untested driving, passenger, resume and other-car cases. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, held by its record limit; open issue 1 is now a new small one): the three phone-side settings screen defects are fixed on Auto 1.21; Nick set 100% for that screen."
     },
     {
       "featureId": "feature-android-phone-app-android-tv-and-fire-tv-screens",
@@ -274,9 +279,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 12–28, 2026",
-        "Nov 8–9, 2026"
+        "Nov 8–9, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Owner-confirmed large text/contrast and later maximum-font fixes support the existing 99%. Complete accessibility workflows and TalkBack judged by ear remain open, and final acceptance stays false. Desktop-only fixes add no Android credit. Nov 9 update: 99% to 90%. In Read It To Me, Resume went back to the very start with Nick on the public Android 1.55; it is an open known issue and Nick said the feature stays below 100 until it is fixed. Other Read It To Me checks passed; TalkBack by ear is still untried."
+      "summary": "Owner-confirmed large text/contrast and later maximum-font fixes support the existing 99%. Complete accessibility workflows and TalkBack judged by ear remain open, and final acceptance stays false. Desktop-only fixes add no Android credit. Nov 9 update: 99% to 90%. In Read It To Me, Resume went back to the very start with Nick on the public Android 1.55; it is an open known issue and Nick said the feature stays below 100 until it is fixed. Other Read It To Me checks passed; TalkBack by ear is still untried. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, the open issue stays): sweeps at 1.3 to 2.0 phone text size passed on public 1.56 and the 1.57 test build; Read It To Me Resume is still open."
     },
     {
       "featureId": "feature-android-phone-app-music-on-the-phone-albums-songs-player-sleep-timer",
@@ -288,7 +294,7 @@
         "Nov 2, 2026",
         "Nov 9, 2026"
       ],
-      "summary": "Retains Nick's Oct 26 feature-specific acceptance of phone music playback with heard audio. Newer queue and timer suites are source evidence only. Gapless/crossfade, mixes and casting remain outside the accepted subset. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Nov 9 third edit: Nick set 100% again for phone music playback (test copy of Android 1.56); a new finding (the mini player buttons move) is recorded but not counted; the row stays at 100%."
+      "summary": "Retains Nick's Oct 26 feature-specific acceptance of phone music playback with heard audio. Newer queue and timer suites are source evidence only. Gapless/crossfade, mixes and casting remain outside the accepted subset. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Nov 9 third edit: Nick set 100% again for phone music playback (test copy of Android 1.56); a new finding (the mini player buttons move) is recorded but not counted; the row stays at 100%. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 100%, Nick's Ready stays): the mini player buttons no longer move; fix proved on the 1.57 test build only. The public 1.56 still has the moving buttons until 1.57 is published."
     },
     {
       "featureId": "feature-android-phone-app-family-dashboard-camp-jobs-and-star-chart",
@@ -336,14 +342,15 @@
     {
       "featureId": "feature-android-phone-app-photos-and-phone-backups-timeline-albums-viewer",
       "scoreBefore": 49,
-      "scoreAfter": 49,
+      "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 24–28, 2026",
         "Nov 8, 2026",
-        "Nov 8–9, 2026"
+        "Nov 8–9, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Narrow backup, hash, counter and photo/video observations coexist with three recorded failures. On Nov 8, 2026 a look at the timeline, albums and viewer on the public 1.53 passed. Location, native-backup and missing-root gaps still prevent broad device and real-world marks. Nov 9 update: the Photos & backups pages read sensibly on the public Android 1.55 (view only); one small wording mismatch; no score change."
+      "summary": "Narrow backup, hash, counter and photo/video observations coexist with three recorded failures. On Nov 8, 2026 a look at the timeline, albums and viewer on the public 1.53 passed. Location, native-backup and missing-root gaps still prevent broad device and real-world marks. Nov 9 update: the Photos & backups pages read sensibly on the public Android 1.55 (view only); one small wording mismatch; no score change. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Moved 49% to 74%: Real device check passed on Nick's own account (Galaxy S24, Android 1.56 build 128, Nick watching). Open issues 3 to 6 (viewer not full screen, closing a photo returns the list to the top, both albums named only by month); Real-world check stays off (no real backup, map pins or video on this run)."
     },
     {
       "featureId": "feature-android-phone-app-family-achievements-opt-in-milestones",
@@ -363,9 +370,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 28, 2026",
-        "Nov 8–9, 2026"
+        "Nov 8–9, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Installed download, integrity verification, update to Windows 0.1.109 and reopening support the existing device and real-world record. The explicit 90% cap remains; low disk, uninstall, active viewing and other PCs still need checks. Nov 8 update: the 0.1.114 installer matched the feed and was signed, and the app updated itself on the 4-core PC (1 of 1); no score change, the cap stays."
+      "summary": "Installed download, integrity verification, update to Windows 0.1.109 and reopening support the existing device and real-world record. The explicit 90% cap remains; low disk, uninstall, active viewing and other PCs still need checks. Nov 8 update: the 0.1.114 installer matched the feed and was signed, and the app updated itself on the 4-core PC (1 of 1); no score change, the cap stays. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, held by its record limit): the in-app update from 0.1.114 to 0.1.115 worked on the 4-core PC."
     },
     {
       "featureId": "feature-windows-desktop-app-library-player-and-web-player",
@@ -376,9 +384,10 @@
         "Oct 27–29, 2026",
         "Nov 2, 2026",
         "Nov 8, 2026",
-        "Nov 8–9, 2026"
+        "Nov 8–9, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Installed library and player checks, a muted hour-long run and later source checks support the retained mark. On Nov 8, 2026 the second-version watchlist problem was reproduced again on the published 0.1.113. Eight recorded issues, sound, broader browsers and player journeys remain. Nov 8 update: the watchlist problem with two film versions still happens on the published Windows 0.1.114; open issues stay 8."
+      "summary": "Installed library and player checks, a muted hour-long run and later source checks support the retained mark. On Nov 8, 2026 the second-version watchlist problem was reproduced again on the published 0.1.113. Eight recorded issues, sound, broader browsers and player journeys remain. Nov 8 update: the watchlist problem with two film versions still happens on the published Windows 0.1.114; open issues stay 8. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 74%, open issues 8 to 7): the Watchlist bug with a two-version film is fixed on Windows 0.1.115 and Nick set 100% for it."
     },
     {
       "featureId": "feature-windows-desktop-app-update-modes-and-start-with-windows",
@@ -386,9 +395,10 @@
       "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 22–28, 2026"
+        "Oct 22–28, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Automatic and Ask-me updates ran on the installed PC. Download-only, Tonight, active viewing and an observed real restart remain unproved; the real-world check stays open."
+      "summary": "Automatic and Ask-me updates ran on the installed PC. Download-only, Tonight, active viewing and an observed real restart remain unproved; the real-world check stays open. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 74%): one more in-app update ran on the 4-core PC to Windows 0.1.115."
     },
     {
       "featureId": "feature-windows-desktop-app-converter-and-quality-speed-settings",
@@ -430,9 +440,10 @@
       "scoreAfter": 49,
       "outcome": "reviewed",
       "evidenceDates": [
-        "Oct 23–28, 2026"
+        "Oct 23–28, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Room, vote and filtering checks and partial browser/desktop journeys support implementation and automated marks. The complete installed multi-device journey remains partial, with four open issues and no new device or real-world credit."
+      "summary": "Room, vote and filtering checks and partial browser/desktop journeys support implementation and automated marks. The complete installed multi-device journey remains partial, with four open issues and no new device or real-world credit. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 49%, open issues 4 to 7): Nick said not yet. Remove worked, but the wrong \"has ended\" message and the TV page on an upright phone are new, and a code-review finding is open."
     },
     {
       "featureId": "feature-windows-desktop-app-jellyfin-compatible-mode",
@@ -453,9 +464,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 23–28, 2026",
-        "Nov 8–9, 2026"
+        "Nov 8–9, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Installed rating, profile and timed-cutoff checks support the device mark. Short-limit and mid-film restriction findings, phone/TV screens and broader household scenarios remain open. New source tests do not clear them. Nov 8 update: a sign-in notice named a phone just “Script” (seen once, not counted); no score change."
+      "summary": "Installed rating, profile and timed-cutoff checks support the device mark. Short-limit and mid-film restriction findings, phone/TV screens and broader household scenarios remain open. New source tests do not clear them. Nov 8 update: a sign-in notice named a phone just “Script” (seen once, not counted); no score change. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 74%, open issues 2 to 3): one code-review finding on what a second admin can do is open; details withheld until fixed."
     },
     {
       "featureId": "feature-windows-desktop-app-keyboard-and-screen-reader-support",
@@ -466,9 +478,10 @@
         "Oct 27–29, 2026",
         "Nov 2, 2026",
         "Nov 8, 2026",
-        "Nov 8–9, 2026"
+        "Nov 8–9, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "Installed keyboard and Settings checks support the device mark. On Nov 8, 2026 keyboard use on a film details page showed a focus ring on every stop and a reported missing ring near Subtitles was not reproduced there. A real Windows screen reader, forced colours and broader focus paths remain. Nov 8 update: a poster card is a Tab stop with a ring and Enter opens its details page on Windows 0.1.114 (1 of 1); no score change."
+      "summary": "Installed keyboard and Settings checks support the device mark. On Nov 8, 2026 keyboard use on a film details page showed a focus ring on every stop and a reported missing ring near Subtitles was not reproduced there. A real Windows screen reader, forced colours and broader focus paths remain. Nov 8 update: a poster card is a Tab stop with a ring and Enter opens its details page on Windows 0.1.114 (1 of 1); no score change. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 74%, the open issue stays): a keyboard walk on the 4-core PC, AI alone. A possible bug (poster grid) looks like the same spot as the existing open issue."
     },
     {
       "featureId": "feature-windows-desktop-app-languages-5-translated-with-machine-help-3-previews",
@@ -517,9 +530,10 @@
       "outcome": "reviewed",
       "evidenceDates": [
         "Oct 12, 2026",
-        "Oct 26–29, 2026"
+        "Oct 26–29, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "The historical two-household invite, shared playback and revocation checks support the existing real-world mark. Three issues remain, and newer share-code repairs still need complete two-household acceptance. Source defaults are not live configuration proof."
+      "summary": "The historical two-household invite, shared playback and revocation checks support the existing real-world mark. Three issues remain, and newer share-code repairs still need complete two-household acceptance. Source defaults are not live configuration proof. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, open issues 5 to 8): a shared film downloaded and played offline; three new bugs (Watch asks for the password again, 1 screens wording, Back to my home loses the sign-in). One possible bug noted and not counted."
     },
     {
       "featureId": "feature-windows-desktop-app-strong-volume-leveler",
@@ -561,9 +575,10 @@
         "Oct 26–29, 2026",
         "Nov 2, 2026",
         "Nov 7, 2026",
-        "Nov 8–9, 2026"
+        "Nov 8–9, 2026",
+        "Nov 9, 2026"
       ],
-      "summary": "On Nov 8, 2026 the row moved from 90% to 99% (AI-tested, no errors found, waiting for the owner’s 100%). Its three recorded issues (layout share, arrow buttons and row-name click, Light colour pack button contrast) did not reproduce in 3 tries each on the published Windows 0.1.113 on Nov 7, 2026, and the fix commits are inside that build. One minor keyboard observation is listed to retest; the website and phone targets, a narrow window and another account were not checked. Nov 8 update: Nick looked at all five layouts with the helper on Windows 0.1.114 and they passed; it stays 99% and Nick has not recorded Ready."
+      "summary": "On Nov 8, 2026 the row moved from 90% to 99% (AI-tested, no errors found, waiting for the owner’s 100%). Its three recorded issues (layout share, arrow buttons and row-name click, Light colour pack button contrast) did not reproduce in 3 tries each on the published Windows 0.1.113 on Nov 7, 2026, and the fix commits are inside that build. One minor keyboard observation is listed to retest; the website and phone targets, a narrow window and another account were not checked. Nov 8 update: Nick looked at all five layouts with the helper on Windows 0.1.114 and they passed; it stays 99% and Nick has not recorded Ready. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 99%): Nick set 100% for one Home layout and for opening Customize layout. That is part of the feature, so the row is not Ready: the other layouts, Save and drag were not run."
     },
     {
       "featureId": "feature-windows-desktop-app-picture-frame-photo-wall-for-a-tablet-or-tv",

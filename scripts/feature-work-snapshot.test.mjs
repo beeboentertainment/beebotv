@@ -118,27 +118,33 @@ const PRIOR=JSON.parse(execFileSync('git',['show','6a3d2812:testing-status.json'
 const ALL5={'Built':true,'Automated tests':true,'Real device':true,'Real-world check':true,'Ready to call Available':true};
 const NOV9={
  'Wireless speakers':{lastTestedStartsWith:'Nov 9, 2026, 7:10 to 7:42 AM Eastern',expect:{percentComplete:100,checks:ALL5,realWorldDonePercent:100}},
- 'Accessibility choices (large text, high contrast, reduced motion, TalkBack)':{lastTestedStartsWith:'Nov 9, 2026, 7:02 to 7:09 AM Eastern',expect:{percentComplete:90,openIssues:1}},
- 'Playing films, seeking, picture-in-picture':{lastTestedStartsWith:'Nov 9, 2026, 10:24 to 10:27 AM Eastern',expect:{openIssues:6}},
+ 'Accessibility choices (large text, high contrast, reduced motion, TalkBack)':{lastTestedStartsWith:'Nov 9, 2026, 11:22 AM to 1:47 PM Eastern',expect:{percentComplete:90,openIssues:1}},
+ 'Playing films, seeking, picture-in-picture':{lastTestedStartsWith:'Nov 9, 2026, 11:08 AM to 1:32 PM Eastern',expect:{openIssues:7}},
  'Away from home (direct, then relay)':{lastTestedStartsWith:'Nov 9, 2026, 5:55 to 6:51 AM Eastern'},
- 'Opening the app and the five tabs':{lastTestedStartsWith:'Nov 9, 2026, 5:05 to 6:51 AM Eastern'},
- 'Campsite games':{lastTestedStartsWith:'Nov 9, 2026, 9:55 to 10:01 AM Eastern',expect:{openIssues:6}},
- 'Campsite host start and stop':{lastTestedStartsWith:'Nov 9, 2026, 12:50 to 12:56 AM Eastern'},
- 'Chromecast':{lastTestedStartsWith:'Nov 9, 2026, 10:00 to 10:23 AM Eastern'},
+ 'Opening the app and the five tabs':{lastTestedStartsWith:'Nov 9, 2026, 11:08 to 11:47 AM Eastern'},
+ 'Campsite games':{lastTestedStartsWith:'Nov 9, 2026, 11:30 AM to 1:47 PM Eastern',expect:{openIssues:8}},
+ 'Campsite host start and stop':{lastTestedStartsWith:'Nov 9, 2026, 12:36 to 1:21 PM Eastern'},
+ 'Chromecast':{lastTestedStartsWith:'Nov 9, 2026, 12:54 PM Eastern'},
  'Share the app (QR over the hotspot)':{lastTestedStartsWith:'Nov 8, 2026, 11:04 to 11:10 PM Eastern'},
- 'Home layouts and Customize layout (desktop)':{lastTestedStartsWith:'Nov 8, 2026, 7:22 to 7:38 PM Eastern'},
- 'Library, player and web player':{lastTestedStartsWith:'Nov 8, 2026, 4:02 to 4:06 PM Eastern'},
- 'Keyboard and screen-reader support':{lastTestedStartsWith:'Nov 8, 2026, 9:14 to 9:17 PM Eastern'},
- 'Installer and self-update':{lastTestedStartsWith:'Nov 8, 2026, 3:12 to 3:36 PM Eastern'},
+ 'Home layouts and Customize layout (desktop)':{lastTestedStartsWith:'Nov 9, 2026, 1:26 PM Eastern'},
+ 'Library, player and web player':{lastTestedStartsWith:'Nov 9, 2026, 1:28 PM Eastern',expect:{openIssues:7}},
+ 'Keyboard and screen-reader support':{lastTestedStartsWith:'Nov 9, 2026, 1:55 PM Eastern'},
+ 'Installer and self-update':{lastTestedStartsWith:'Nov 9, 2026, 1:24 PM Eastern'},
  'Converter and quality / speed settings':{lastTestedStartsWith:'Nov 8, 2026, 11:18 to 11:24 PM Eastern'},
  'Live TV (tuner and own playlist)':{lastTestedStartsWith:'Nov 8, 2026, 9:38 to 9:41 PM Eastern'},
  'Jellyfin-compatible mode':{lastTestedStartsWith:'Nov 8, 2026, 9:38 to 9:41 PM Eastern'},
  'Story Studio':{lastTestedStartsWith:'Nov 8, 2026, 11:50 to 11:55 PM Eastern'},
  'Kitchen announcements (messages to phones)':{lastTestedStartsWith:'Nov 8, 2026, about 9:47 PM Eastern'},
- 'Parental controls and household profiles':{lastTestedStartsWith:'Nov 8, 2026, about 9:47 PM Eastern'},
- 'Photos and phone backups (timeline, albums, viewer)':{lastTestedStartsWith:'Nov 9, 2026, 4:36 to 4:40 AM Eastern'},
- 'Music on the phone (albums, songs, player, sleep timer)':{lastTestedStartsWith:'Nov 9, 2026, 10:35 to 10:40 AM Eastern'},
+ 'Parental controls and household profiles':{lastTestedStartsWith:'Nov 9, 2026, 12:14 PM Eastern',expect:{openIssues:3}},
+ 'Photos and phone backups (timeline, albums, viewer)':{lastTestedStartsWith:'Nov 9, 2026, 11:49 AM Eastern',expect:{percentComplete:74,openIssues:6,realWorldDonePercent:33,checks:{'Built':true,'Automated tests':true,'Real device':true,'Real-world check':false,'Ready to call Available':false}}},
+ 'Music on the phone (albums, songs, player, sleep timer)':{lastTestedStartsWith:'Nov 9, 2026, 1:28 to 1:47 PM Eastern'},
  'Podcasts and radio':{lastTestedStartsWith:'Nov 9, 2026, 10:43 to 10:47 AM Eastern'},
+ 'Audiobooks':{lastTestedStartsWith:'Nov 9, 2026, 11:18 AM to 1:13 PM Eastern'},
+ 'Pack for a trip (download planner)':{lastTestedStartsWith:'Nov 9, 2026, 11:08 AM to 1:32 PM Eastern'},
+ 'Beebo Auto (Android Auto)':{lastTestedStartsWith:'Nov 9, 2026, 1:07 PM Eastern'},
+ 'Update modes and start with Windows':{lastTestedStartsWith:'Nov 9, 2026, 1:24 PM Eastern'},
+ 'Movie Night':{lastTestedStartsWith:'Nov 9, 2026, 1:43 PM Eastern',expect:{openIssues:7}},
+ 'Library sharing with another household':{lastTestedStartsWith:'Nov 9, 2026, 11:49 AM to 1:31 PM Eastern',expect:{openIssues:8}},
 };test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
@@ -223,7 +229,7 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  validateReadinessAudit(data);
  assert.equal(readinessAudit.features.length,70);
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId),['feature-android-phone-app-accessibility-choices-large-text-high-contrast-reduced-motion-talkback','feature-windows-desktop-app-home-layouts-and-customize-layout-desktop']);
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId),['feature-android-phone-app-accessibility-choices-large-text-high-contrast-reduced-motion-talkback','feature-android-phone-app-photos-and-phone-backups-timeline-albums-viewer','feature-windows-desktop-app-home-layouts-and-customize-layout-desktop']);
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
