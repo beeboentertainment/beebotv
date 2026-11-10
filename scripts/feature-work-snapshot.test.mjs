@@ -150,6 +150,10 @@ const NOV9={
 // Windows 0.1.115 and Android 1.56): dated lastTested additions and new open issues only, no score move. PRIOR10 is the published file before it.
 const PRIOR10=JSON.parse(execFileSync('git',['show','51da7938:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
 const NOV10={
+ // Nick's own decision, Nov 10, 2026, 3:45 AM Eastern: "Drop them to 90".
+ "Posters and info (TMDB)":{openIssues:[0,3],percentComplete:[100,90]},
+ "Music on the phone (albums, songs, player, sleep timer)":{openIssues:[0,1],percentComplete:[100,90]},
+ "Podcasts and radio":{openIssues:[0,1],percentComplete:[100,90]},
  "Opening the app and the five tabs":{lastTestedStartsWith:"Nov 9, 2026, 2:13 to 2:49 PM Eastern",openIssues:[1,2]},
  "Playing films, seeking, picture-in-picture":{lastTestedStartsWith:"Nov 9, 2026, 3:07 PM Eastern"},
  "Campsite host start and stop":{lastTestedStartsWith:"Nov 9, 2026, 2:09 to 2:47 PM Eastern"},
@@ -181,6 +185,10 @@ test('all 70 scores and checks preserve the baseline; dated evidence additions a
     const prior10=PRIOR10.features.find(f=>f.name===before.name);
     assert.ok(after.lastTested.startsWith(nov10.lastTestedStartsWith),before.name+': Nov 10 lastTested prefix');
     assert.ok(after.lastTested.endsWith('; '+prior10.lastTested),before.name+': Nov 10 earlier lastTested kept');continue;
+   }
+   if(nov10 && key==='percentComplete' && nov10.percentComplete){
+    const prior10=PRIOR10.features.find(f=>f.name===before.name);
+    assert.equal(prior10.percentComplete,nov10.percentComplete[0],before.name+': percent before Nov 10');assert.equal(after.percentComplete,nov10.percentComplete[1],before.name+': Nov 10 percent (Nick\'s decision)');continue;
    }
    if(nov10 && key==='openIssues' && nov10.openIssues){
     const prior10=PRIOR10.features.find(f=>f.name===before.name);
@@ -264,8 +272,8 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  validateReadinessAudit(data);
  assert.equal(readinessAudit.features.length,70);
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
- // Nov 10, 2026 review: every row was checked again and no percentage moved.
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId),[]);
+ // Nov 10, 2026: the review moved no percentage; then Nick's own decision moved three Ready rows from 100% to 90%.
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),['feature-android-phone-app-music-on-the-phone-albums-songs-player-sleep-timer','feature-android-phone-app-podcasts-and-radio','feature-windows-desktop-app-posters-and-info-tmdb']);
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
@@ -277,9 +285,9 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
 });
 test('legacy 100% code estimates with outstanding required work are visibly qualified',()=>{
  const contradicted=data.features.filter(f=>codeEstimate(f));
- assert.equal(contradicted.length,45); // Nov 10, 2026: a row with a 100% code estimate gained an open issue
+ assert.equal(contradicted.length,48); // Nov 10, 2026: rows with a 100% code estimate gained open issues (one in the review, three by Nick's decision)
  for(const f of contradicted){const card=cards.find(c=>c.includes(`data-feature-name="${escape(f.name)}"`));assert.ok(card.includes('Legacy code estimate is unverified'),f.name);}
- assert.match(page,/45 rows retain a 100% code estimate/);
+ assert.match(page,/48 rows retain a 100% code estimate/);
  const method=data.codeVsHuman.method;
  for(const fact of ['Built and Automated tests checks','Real device, Real-world check and Ready to call Available','Group figures are the average of their features and are never rounded up to 100','Remaining counts are open road-to-100 items','All 70 features are counted, including those that are planned or on hold'])assert.ok(method.includes(fact),fact);
  const generator=readFileSync(new URL('../site-data/build-what-we-offer.js',import.meta.url),'utf8');

@@ -1,7 +1,7 @@
 {
   "title": "Beebo Entertainment: testing status by feature",
   "codeVsHuman": {
-    "updatedEastern": "Nov 10, 2026, 3:39 AM Eastern",
+    "updatedEastern": "Nov 10, 2026, 3:45 AM Eastern",
     "method": "The legacy code-check estimate is the share of the Built and Automated tests checks that passed. The separate Device and real-world checks recorded figure is the share of Real device, Real-world check and Ready to call Available that passed. It includes AI tests on real devices; it does not mean a person checked every feature. The final Ready check needs a human look, recorded by Nick. These separate figures keep their existing checklist method. Group figures are the average of their features and are never rounded up to 100. Stored legacy code estimates may show 100% despite required code work or an open issue; those estimates are unverified. A feature counts as \"Confirmed working on real devices\" only when all five checks passed. Remaining counts are open road-to-100 items. All 70 features are counted, including those that are planned or on hold.",
     "overall": {
       "codeDone": 92,
@@ -578,10 +578,10 @@
         ]
       }
     ],
-    "evidenceLimit": "Legacy code estimates are not proof of completion: 45 rows retain a 100% code estimate while a required CODE item or an open issue remains. These estimates are explicitly qualified; the main five-check score and open-issue cap are unchanged."
+    "evidenceLimit": "Legacy code estimates are not proof of completion: 48 rows retain a 100% code estimate while a required CODE item or an open issue remains. These estimates are explicitly qualified; the main five-check score and open-issue cap are unchanged."
   },
   "fullProgress": {
-    "updatedEastern": "Nov 10, 2026, 3:39 AM Eastern",
+    "updatedEastern": "Nov 10, 2026, 3:45 AM Eastern",
     "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
     "method": "Each area is the average of its feature rows in this file (listed by name in rowNames). Code checklist is the share of the Built and Automated tests checks that passed. Device and real-world checks recorded is the share of the Real device, Real-world check and Ready to call Available checks that passed. confirmedOnRealDevices counts rows with all five checks passed and no open code item. The same method is used on release-evidence.html. A percentage is evidence coverage, not a promise that every device, route or situation works.",
     "comparison": {
@@ -1018,13 +1018,13 @@
     "summary": "Update Nov 9, 2026, 1:24 PM Eastern: Windows 0.1.115 has now been installed by the in-app update on one 4-core PC (0.1.114 to 0.1.115, closed for 57 seconds; Nick started it and set 100% for Home layouts, Customize layout and Watchlist with a two-version film; Movie Night not yet). The downloads are Windows 0.1.115, published Nov 9, 2026, 10:25 AM Eastern; Android 1.56 (build 128), published Nov 9, 2026, 9:53 AM Eastern; and Beebo Auto 1.21 (build 22), published Oct 27, 2026, 2:59 PM Eastern. Windows 0.1.115 (built on 0.1.114; Windows only) is a fix release (Movie Night: a removed guest cannot come back, a fallback for a TV or phone that cannot keep the live connection, and a seat freed only when someone new needs it and never the host’s; the Watchlist for a film that has two versions; Jellyfin app display preferences and episode lookups; the full list is on the What’s new page); it has had automated tests and code reviews only, and nobody has installed it on a PC yet. Windows 0.1.114 (built on 0.1.113) was a fix release; it was published with automated tests and code reviews and has since been installed on one PC by its in-app update, where a few screens were looked at (the dated results are in the release evidence). Windows 0.1.113 (built on 0.1.110) was a fix release; it was published with automated tests and code reviews and has since been checked on one PC (the dated results are in the release evidence). Android tester68 (build 118, built Nov 2, 2026, 7:06 AM Eastern) is tester67 plus three phone-app changes: the film keeps its place when a cast never reaches the film and casting is stopped, the audiobook keeps its place when a song or a film takes over the player, and an empty Audiobooks player recovers. It has had automated tests on its source (reported 0 failures in all three build flavours) and device checks on a Galaxy S9+ and a Pixel 3: far jumps, stream switches, sound options, chapter jumps, the audiobook and one healthy cast and stop on one Chromecast TV. A cast to a stuck TV was not seen, 1 of 15 audiobook-then-film tries saved a place about 27 seconds ahead (cause not found), and the Galaxy S24, watching away from home and a real car were not tried. Known problem: tapping near the clock while the player controls show can jump the film (a fix is coming, not in this build). Its known problems are in the release history and on the known-issues page. Android tester67 (build 117, built Nov 2, 2026, 3:06 AM Eastern, published Nov 2, 2026, 3:47 AM Eastern) was the first public phone build since tester58. Its main change: sound settings (Night mode, Volume leveler, a delay, Stereo, dialogue focus) no longer drop the picture to 480p at home, so a 1080p film stays 1080p on home Wi-Fi and other direct connections; on slow or relayed links the picture may be lowered and the phone says so; there is a new Turn off sound settings row in Quality, audio & subtitles; and while casting, sound settings are not used and the sheet says so. It also adds radio Previous and Next, opening a podcast show without following it, a Camera backup folder card, and other small phone fixes listed in the release history. It had automated tests on its exact source in all three build flavours (0 failures) and device checks of the sound and casting change on a Pixel 3, a Galaxy S9+ and one Chromecast TV only; no other phone or TV was tried, and its five known problems are in the release history and on the known-issues page. Android tester58 (published Oct 27, 2026, 2:59 PM Eastern; built on tester57) adds a photo-backup counter that refreshes after Back up now, a new “Keep location in photo backups” switch (OFF by default; the default is still Nick’s decision), cast changes (captions on or off no longer reload the film when the TV accepts the change, Replay and the seek bar after a cast ends, the cast icon pulses for about 10 seconds when a TV appears), a return to portrait after the player and after picture-in-picture closes, the More list closing before Playback finished, podcasts showing Following at once, Library chips wrapping at the largest text, Trip export remembering phones that are slow to start, and clearer messages for a certificate code that does not match and for a real sign-out. Beebo Auto 1.21 adds an Invite passengers folder (OFF by default) with QR codes. Since publishing, a person has tried tester58 only for the install, Surprise me, the largest-text fixes, the podcast Follow label, the return to portrait after the player, the audiobook speed and the Pack for a trip counts (see those rows); the rest of it has had automated tests and reviews only, and Beebo Auto 1.21 has not been tried in a car. Windows 0.1.110 (built on 0.1.109; Windows only) repairs, in code, a same-network connection timeout seen with the personal address (a slow lookup of a .local network name from a connecting device no longer holds up the away-from-home helper; not yet proven on a real second device), adds a “Keep me signed in on this browser” box to the browser sign-in page (off by default; sign-in lengths are unchanged), makes unselected buttons on Users readable in the light themes, fixes small Story Studio, Connections setup, Home, Library Health, Trip link, Converted Videos and Create share-code problems, builds photo thumbnails from a checked copy of the photo, stops the Picture Frame sending a photo once its screen is off by schedule, and changes playback so that choosing a quality while paused keeps the film paused, a second click on Original is not lost, automatically restored subtitles no longer rewrite your saved choice, Resume follows the newest real viewing session and late, older conversion requests are refused, even after a restart; it has had automated tests and code reviews only, and nobody has tried its changes or its in-app update yet. Windows 0.1.109 (built on 0.1.108; Windows only) makes the Users and Dashboard totals and the session list agree for older or imported history rows (display only), makes the Live TV favourite star change only after the save succeeds, stops the dim Reconnecting overlay after a short network drop, gives up tuning a Live TV channel with a message instead of waiting forever, fixes the Movie Night paused reveal button label, keeps an unsent Kitchen announcements draft when sending fails, makes Edit info announce field errors and handle focus and Escape, stops a late older conversion closing a newer one when video quality starts or switches, limits the browser player’s own HLS code to desktop Chromium and Edge, adds Repeat and Queue to the browser music page, lets Settings search find more settings and link to more pages, and makes small Picture Frame, Library Health and Jellyfin-compatible fixes; it has had automated tests and reviews, and a single tester recorded the in-app update from 0.1.108 on one PC on Oct 28, 2026, about 9:30 to 9:35 PM Eastern (54 seconds closed, matching feed hash and valid installer signature), followed by a limited check of reopening, retained sign-in and settings, the library and Dashboard. The setup window text could not be inspected and no permission prompt appeared. Tonight, Don't wait, other PCs and an update during playback were not tested. Broader feature and receiver acceptance were not established; sound was not heard. Windows 0.1.108 (built on 0.1.107; Windows only) fixes the web player Up next countdown after seeking back, ignores the Movies and TV Shows A-Z letter keys in dropdowns, dialogs, text boxes and with Ctrl, Alt or the Windows key held, makes several Customize layout and Layout Share fixes (dropped files, Alt+Up/Down in a dropdown, keyboard moves, a failed save keeping hidden rows, a review before applying, a 64 KB plain-text limit, no hang on a special file on Mac and Linux), makes Users > View stats and the Dashboard count watch time the same way, packs 36 painted Story Studio art files that were left out of the installer, translates the hardware and connection-cost tables into German, Spanish, French, Italian and Portuguese, lets the Music list recover after a failed load and makes the Car Party guest page handle late or out-of-order updates; it has had automated tests and reviews, and a single tester recorded the in-app update from 0.1.107 on one PC on Oct 28, 2026, 9:55 to 10:03 AM Eastern (43 seconds closed, matching feed hash, valid installer signature and passing start-up self-test). Partial checks covered watch-time totals and basic Movies letter-key paths; one account still showed 0m for a 2m session, Story Studio was not opened and the other listed changes remained unrun. Broader feature and receiver acceptance were not established; sound was not heard. Windows 0.1.107 (built on 0.1.106; Windows only) fixes the blank Story Studio preview (the preview page was blocked by a response header; only that one-time-address page changes) and makes Users > View stats and the Dashboard “watch time by member” count real watched time (display only); it has had automated tests and reviews, and the 4-core AI tester alone has since updated a PC to it in the app (3 minutes 34 seconds, no start-up box, the installer’s hash matched the website feed) and retested both changes: the Story Studio preview now shows a painted picture and plays (basic path only; the log still shows 38 missing painted-file errors) and Users > View stats shows plausible totals (still about 46 minutes above the Dashboard’s watch time); no person has used it. Windows 0.1.106 (built on 0.1.105; Windows only) makes the Photos Back button close the open photo, fixes Library Health wording for one item, translates the “Online” chip and the router warning, completes the Corner radius label, shows the “Check for updates” result on the Settings page, shows the TV Shows count when Movies and TV Shows share a folder, stops giving folder paths, the backup folder, the PC name, original photos and photo locations to paired TVs, viewer links and administrator accounts with their own parental limits (a privacy fix), makes the film info button on a phone browser a larger tap target with a scrolling info card, and answers “not modified” cleanly in the podcast preview; it has had automated tests and reviews, and the 4-core AI tester alone has since updated a PC to it in the app (no start-up box) and retested its Photos Back, TV Shows count and Storage, Library Health wording, Online chip, router warning, Corner radius label and Check for updates result line; the folder-path privacy change and the phone-browser info button were not retested, and no person has used it. Windows 0.1.105 (built on 0.1.104; Windows only) fixes the start-up “Secure media server: FAIL” box (the check now asks the server’s health page), adds Picture frame choices (hide the clock or the note, a note that stays until “Got it”, past notes, a strip or corner layout, photo fit or fill, full screen), watches library folders for new films, shows your name in a chip with a My profile panel on the web pages, keeps the web player’s arrow keys working after Picture-in-Picture, makes the “Resume from” question hold the film, builds the Photos Map when its privacy option is turned on, and adds timing lines to the log; it has had automated tests and reviews, and the 4-core AI tester alone has since updated a PC to it in the app (no start-up box) and retested the Resume question, the arrow keys after Picture-in-Picture and the Photos Map; no person has used it. Windows 0.1.104 makes “Check for updates” follow your update mode (with automatic downloads a manual check downloads the update by itself and the countdown on the prompt is gone), retries the start-up self-check for about a minute before it shows a warning, and writes start-up timing lines to the log; it does not fix the slow first minute after an update (only logged) and the self-check box still appeared in the one real update tried, see the Installer and self-update row. Android tester57 makes Replay after a cast ends start the film by itself, hides the cast button when casting is impossible (it returns by itself when Wi-Fi returns) and removes the “Casting needs Wi-Fi” box; the seek bar after a cast ends was meant to work too, but it still did nothing when tried. Windows 0.1.103 and Android tester56 (published Oct 27, 2026, 9:06 AM Eastern) added a one-screen phone setup that shows what was really checked, a renewed Relay licence reconnecting with careful retries, skip intros in the web player, better subtitles, Customize layout and Layout Share carrying more of your layout, audiobook speed saved at once with Reset to 1x and bookmark delete with undo, a film never also listed as a one-episode show, a child profile whose limits cannot be read getting “try again” instead of being deleted, and 8-character guest codes (Sharing is in development). Windows 0.1.102 and earlier changes are listed in the release history. Windows 0.1.103 was installed over 0.1.102 and 0.1.104 over 0.1.103 on one real PC (each updated by itself); tester56, tester57 and tester58 were installed in place on one Galaxy S24; none of this is a broad beta.",
     "sourceNote": "Beebo Auto 1.20 had one first look in one car on Oct 27, 2026 (a few screens and an episode with sound; not a full real-car test); Beebo Auto 1.21 has not been tried in a car. Windows 0.1.100 and Android 1.51-tester35 (build 85) were installed test builds and not public downloads. Code changes do not establish real-device results: source work merged after tester58 was built and after Windows 0.1.104 is listed under “Source work merged” below; the Windows part is in Windows 0.1.105 and 0.1.106, and the phone part is in no published download. Not fixed in the published builds: the Samsung S9+ Trip export stall (the repair is in tester58 and has not been tried by a person), captions on the TV through Chromecast (not yet seen working on a TV) and the Windows Picture frame changes (they are in Windows 0.1.105, but nobody has tried them). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested for Beebo Auto. Walkie-talkie from anywhere still needs real phones, and Remote Desktop still needs a real PC session."
   },
-  "updated": "2026-11-10T03:39:00-05:00",
-  "updatedEastern": "Nov 10, 2026, 3:39 AM Eastern",
+  "updated": "2026-11-10T03:45:00-05:00",
+  "updatedEastern": "Nov 10, 2026, 3:45 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 70,
   "groupAveragePercent": {
-    "Android phone app": 81,
+    "Android phone app": 80,
     "Windows desktop app": 72,
     "Other systems": 57,
     "Services and website": 47
@@ -1660,8 +1660,7 @@
         "device": "Android 11 emulator and Pixel 3",
         "result": "PASS",
         "who": "AI alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
@@ -2257,8 +2256,7 @@
         "device": "Pixel 3",
         "result": "PASS for resume, seek and pause; BUG 8 still seen (3 of 3)",
         "who": "AI tester alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
@@ -2646,8 +2644,7 @@
         "device": "Galaxy S24 and S9+ away from both homes",
         "result": "PASS",
         "who": "Nick with the 4-core helper"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
@@ -3758,14 +3755,13 @@
         "device": "Pixel 3 host, phone and PC browser guests",
         "result": "PASS (same Wi-Fi only)",
         "who": "AI tester alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
       "name": "Podcasts and radio",
       "status": "Available (test download)",
-      "percentComplete": 100,
+      "percentComplete": 90,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -3774,11 +3770,15 @@
         "Ready to call Available": true
       },
       "lastTested": "Nov 9, 2026, 10:43 to 10:47 AM Eastern (Android 1.56 build 128, a private test copy of the published file, Galaxy S24, Nick listening: Internet Radio loaded its station list, Radio Paradise started within about 2 seconds, Pause, Play, Next station and Stop worked; Podcasts loaded its list, Continue listening resumed at the saved spot (about 20 minutes), Forward 30, Back 15, Pause and Play worked; PASS, marked 100% by Nick for those steps); Oct 27, 2026, 11:56 PM to Oct 28, 2026, 1:15 AM Eastern (unpublished test builds tester60 and tester61, Galaxy S9+ and Pixel 3, the overnight AI phone tester, silent: radio Next pressed 14 and 16 times and Previous 6 times across about 15 to 17 stations never stuck and kept playing, swipes and the notification-shade Previous and Next changed station; PASS; a station that will not start was not available, so skipping one is not proven; Ready unchanged); Oct 27, 2026, report received about 9:40 PM Eastern (unpublished test build tester59, build 109: Pixel 3 and Galaxy S9+, AI testers, silent and state only: radio Back, swipe, Previous and Next, notification-shade and lock-screen buttons and the podcast open-without-follow message PASS; Next did not move past one failing station; camera backup folder display BLOCKED); Oct 27, 2026, 3:14 to 3:17 PM Eastern (Galaxy S24 tester58, Nick present and agreeing: the Follow label reads Following about 2 seconds after the tap with no reload, PASS); Oct 27, 2026, 1:20 PM Eastern (Pixel 3 tester57, AI tester, muted: radio play and mini-player Close, podcast find, follow, play, +30 s, pause and unfollow, PASS); earlier: Oct 27, 2026, 9:47 to 9:54 AM Eastern (Galaxy S24 tester56, Nick listening and answering: podcast find, follow, play, pause and mini-player X; Radio list twice including after a force-stop, two stations played; Nick and an AI tester both passed it); earlier: Oct 26, 2026, 11:26 PM Eastern (Galaxy S9+ tester53 and tester54: radio first open 2 of 2 each; Pixel 3 tester53 and tester54: music mini-player Close verified); earlier: Oct 26, 2026, 5:52 PM Eastern (Galaxy S9+ tester52: podcast mini-player Close verified; radio first open 4 of 4; Pixel 3 music and S9+ audiobook Close verified at about 5:19 to 5:46 PM); earlier: Oct 26, 2026, 11:10 AM Eastern (Nick heard a station and a podcast); earlier: Oct 24, 2026, 12:55:58 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Update Nov 10, 2026, 3:39 AM Eastern: Record only (stays 100%, Nick's Ready; not counted here until Nick decides). Found Nov 10, 2026 by code review, not on a device; the code is the same in the published Windows 0.1.115: bedtime, the daily limit and Family viewing do not yet stop this kind of audio on a household profile. It is counted as an open known issue on the Parental controls and household profiles row. Fix designs are in review. Earlier record (kept): Update Nov 9, 2026, 10:54 AM Eastern: Record only (stays 100%, Nick’s Ready stays as he recorded it): Nov 9, 2026, Android 1.56 build 128 (a private test copy of the file published at 9:53 AM), Galaxy S24, Nick listening. Internet Radio (about 10:43 AM): the station list loads, Radio Paradise starts within about 2 seconds, Pause, Play, Next station (to Classic Vinyl HD) and stopping the station work; Nick heard each step and the screen and session state matched; Nick set 100% for those steps (test-channel receipt 6744277737). Not tested: favourites, My stations, search, Recent, background or lock-screen controls, a long listen. Podcasts (about 10:47 AM, home one): the list loads, Continue listening resumes at the saved spot (about 20 minutes), Forward 30 (+37 seconds including elapsed time), Back 15, Pause and Play; Nick heard it clearly and set 100% for those steps (test-channel receipt 6744373744). Not tested: search, OPML import, Following and Queue, the sleep timer, speed, downloads, lock-screen controls. Earlier record (kept): Update Oct 28, 2026, 1:54 AM Eastern: Record only (stays Ready, 100%): on the unpublished test builds tester60 (Galaxy S9+) and tester61 (Pixel 3) the overnight AI phone tester (silent, state only) pressed radio Next 14 times and Previous 6 times across about 15 stations (S9+) and Next 16 times across 17 stations (Pixel): the media state stayed playing after every press, Next never stuck and no “your computer had a problem” message showed; swiping on the artwork moved forward and back; the notification-shade Previous and Next changed station every time (3 of 3 and 1 of 1 on the S9+, 5 of 5 on the Pixel). A station that will not start was not available on either server, so the change that skips a failing station is NOT proven here (the one station that blocked Next on tester59 played normally this time); the lock-screen card was not tested again. These tests ran on unpublished builds, not on the published tester58. No tick or score change. Earlier record (kept): Update Oct 27, 2026, 9:44 PM Eastern: Record only (stays Ready, 100%): tester59 (build 109) is an unpublished test build: on Oct 27, 2026 (report received about 9:40 PM Eastern) AI tester checks on a Pixel 3 and a Galaxy S9+, silent and state only, found radio Back, radio swipe and Previous and Next, the radio notification and lock-screen buttons and the podcast open-without-follow message working; the camera backup folder display could not be checked (backup is off on both phones and the home computer needs Windows 0.1.105). The radio and podcast changes tested here are merged in the source code and in the test build tester59 only; they are in no published download, so they do not change what the Ready row covers. Findings, not counted as open issues on this row because they are in the unpublished test build: on the Pixel 3, pressing Next ten times in a row reached a station near the end of the list and Next from there never moved on (the message “Your Beebo computer had a problem. Try again in a moment.” showed and that station kept playing; Previous worked); it was not confirmed whether that one station’s stream is bad or the old home computer failed on it, but a bad next station blocks Next instead of being skipped. Radio Back returned to the station list with the radio still playing; swiping left and right changed station and the first station showed “This is the first station in your list.”; the Android 12 media card showed Previous and Next that worked, and on the Galaxy S9+ (Android 10) the shade and the lock screen showed Previous, Pause and Next that worked; the lock screen of the Pixel 3 could not be checked (it has none). Opening a podcast from Find without following showed a plain message (“Your computer can’t show a show before you follow it yet. Update Beebo on your computer, or go back and tap Follow.”) because the home computer still runs the old Windows app; the real preview needs Windows 0.1.105 or later. A real vertical scroll of a long Earlier list was not exercised. The sound was not heard (both phones were silent). Earlier record (kept): Update Oct 27, 2026, 3:50 PM Eastern: Nothing is left to reach 100%. The one open issue, the Follow button label that stayed “Follow” in the Find list, is verified fixed on tester58: Nick and the 4-core AI tester saw it read “Following” about 2 seconds after the tap with no reload (3:15 PM Eastern). Podcasts and radio had already passed with Nick listening on tester56 (9:47 to 9:54 AM) and passed on a Pixel 3 on tester57 (muted); a detailed dated record exists and no issue is open, so on Nick’s instruction of about 3:00 PM Eastern the row is Ready (100%). Limits kept: the podcast queue, episode downloads, radio favourites and recording were not tested on these builds; the 5-minute sleep timer was seen to pause on Oct 26 (tester49) but not on tester58; a reopened music track starts at about 0:00 (unclear whether by design, not an issue); one phone model, one household. Open known issues: 0. Earlier record (kept): Update Oct 27, 2026, 12:58 PM Eastern (second household, reported by about 9:54 AM Eastern; Galaxy S24 on tester56 (build 106) with an AI tester driving and Nick present and answering by tapping choices; the PC on published 0.1.102): PASS by Nick and the AI tester. Podcasts: searching for a show returned real results from the public directory; one show was followed (it appeared under Following with its episodes), opened, and the newest episode (34 minutes) played, the clock advanced and Nick heard clear voices; the player screen looked right (cover art, title, 30-second buttons, speed 1x, Sleep, Notes); Pause stopped the sound right away (Nick); the mini player (cover, title, play, skip and X) closed with X and the media session ended. Radio: the station list showed on the first open and again straight away after a force-stop and relaunch (Nick: the list showed both times); a station played with clear music (Nick) and a second station (jazz) played clearly too; stopping stopped the audio. Open known issues: 1 (new on Oct 27, 2026; any open known issue caps a row, so the score moves from 99% to 90%): the Follow button label does not change to “Following” in the Find list (it stayed “Follow” after three taps; only the Following tab showed the show was followed). The fix is written and is in no build yet; retest on the next phone build, and the row returns to 99%. Not tested: podcast queue, episode downloads, radio favourites and recording, the sleep timer. Limits: one phone, one PC, one session. Nick alone records Ready. Earlier record (kept; its statement that no known error is open is superseded by this update): Update (tester53 and tester54, muted): Radio first open after a force-stop passed 2 of 2 on the Galaxy S9+ on tester53 (reported by about 7:38 PM Eastern) and 2 of 2 on tester54 (reported by about 11:26 PM Eastern); the paused mini player Close (X) passed again on music on the Pixel 3 (tester53, reported by about 7:51 PM Eastern, and tester54, reported by about 11:26 PM Eastern): X shows only while paused, and the strip is gone and stays gone. Limit, not counted as an open issue: a reopened MUSIC track starts at about 0:00 rather than the saved place (about 0:25 on tester54) on tester52, tester53 and tester54; it is unclear whether that is by design. A podcast Close was verified only on tester52. The test server is still older than main. No known error is open on this row: both open issues were verified fixed on Oct 26, 2026. (1) The Radio screen failing on its first opens on a Galaxy S9+ did not reproduce: 3 of 3 force-stop-and-open runs on tester51 (about 1:24 to 1:25 PM) and 4 of 4 on tester52 (about 5:19 to 5:42 PM). (2) The paused mini player can now be closed: the Close (X) shows only while playback is paused, removes the strip, and the strip stays gone after leaving the screen and after a cold start. Verified on an audiobook (Galaxy S9+, tester52), on music (Pixel 3, tester52) and on a podcast (Galaxy S9+, tester52, about 5:48 to 5:52 PM: followed “Science Magazine Podcast” on the test account, played about 10 seconds, paused; X removed the strip; it stayed gone after leaving and after a cold start; reopening from Continue listening resumed at about 0:28, so the saved place was kept; the show was unfollowed afterwards: every step passed). Limits: the test phones were muted (sound was heard by Nick on his S24 earlier); the test server is older than main, so the server-side radio fix was not exercised; not tested: queue, offline downloads, OPML import, notes. Small points seen earlier are not errors counted here: no custom sleep-timer time, different timer lists for podcasts and music, the speed slider runs past its “2x” label, and a tap on a spot of the slider did nothing in an adb test. At 99% every check passed within these records and nothing known is broken; the last 1% is Nick’s own human look, and only Nick records Ready. Earlier record (kept; the counts and items above replace its counts): Open known issues (cap this row at 90%): the Radio screen failed on its first two opens on a Galaxy S9+ (Oct 25, 2026), and a paused podcast’s mini player cannot be closed. To be fixed; once fixed the row returns to 99% and then Nick and Claude confirm it together. Today’s check by Nick (Oct 26, 2026, 11:10 AM Eastern) worked on a Galaxy S24: a radio station and a podcast episode were heard, with Follow, skip, pause and Unfollow; it does not clear the S9+ failure (a different phone). Not tested: queue, sleep timer, speed, downloads, OPML import, notes. Smaller points seen on Oct 26, 2026 (reported by about 11:55 AM Eastern; not counted as open known issues and no cap change): (1) the podcast sleep timer has no custom time; (2) the timer choices differ between podcasts (5, 10, 15, 30, 45, 60 minutes and End of episode) and music (15, 30, 45, 60 minutes and End of track); (3) the speed slider runs past its “2x” label (2.9x was reached); (4) tapping a spot on the speed slider did nothing in an adb test (a finger may behave differently).",
+      "leftToReach100": "Update Nov 10, 2026, 3:45 AM Eastern: Moved 100% to 90% on Nick's own decision (\"Drop them to 90\", Nov 10, 2026, 3:45 AM Eastern). Open known issues 0 to 1: bedtime, the daily limit and Family viewing do not yet stop podcasts or radio on a household profile (found Nov 10, 2026 by code review in the published Windows 0.1.115; fix designs are in review). Nick's earlier Ready record stays written on the row. To return to 100: the fix merged, in a published build, retested, and Nick's word again. Earlier record (kept): Update Nov 10, 2026, 3:39 AM Eastern: Record only (stays 100%, Nick's Ready; not counted here until Nick decides). Found Nov 10, 2026 by code review, not on a device; the code is the same in the published Windows 0.1.115: bedtime, the daily limit and Family viewing do not yet stop this kind of audio on a household profile. It is counted as an open known issue on the Parental controls and household profiles row. Fix designs are in review. Earlier record (kept): Update Nov 9, 2026, 10:54 AM Eastern: Record only (stays 100%, Nick’s Ready stays as he recorded it): Nov 9, 2026, Android 1.56 build 128 (a private test copy of the file published at 9:53 AM), Galaxy S24, Nick listening. Internet Radio (about 10:43 AM): the station list loads, Radio Paradise starts within about 2 seconds, Pause, Play, Next station (to Classic Vinyl HD) and stopping the station work; Nick heard each step and the screen and session state matched; Nick set 100% for those steps (test-channel receipt 6744277737). Not tested: favourites, My stations, search, Recent, background or lock-screen controls, a long listen. Podcasts (about 10:47 AM, home one): the list loads, Continue listening resumes at the saved spot (about 20 minutes), Forward 30 (+37 seconds including elapsed time), Back 15, Pause and Play; Nick heard it clearly and set 100% for those steps (test-channel receipt 6744373744). Not tested: search, OPML import, Following and Queue, the sleep timer, speed, downloads, lock-screen controls. Earlier record (kept): Update Oct 28, 2026, 1:54 AM Eastern: Record only (stays Ready, 100%): on the unpublished test builds tester60 (Galaxy S9+) and tester61 (Pixel 3) the overnight AI phone tester (silent, state only) pressed radio Next 14 times and Previous 6 times across about 15 stations (S9+) and Next 16 times across 17 stations (Pixel): the media state stayed playing after every press, Next never stuck and no “your computer had a problem” message showed; swiping on the artwork moved forward and back; the notification-shade Previous and Next changed station every time (3 of 3 and 1 of 1 on the S9+, 5 of 5 on the Pixel). A station that will not start was not available on either server, so the change that skips a failing station is NOT proven here (the one station that blocked Next on tester59 played normally this time); the lock-screen card was not tested again. These tests ran on unpublished builds, not on the published tester58. No tick or score change. Earlier record (kept): Update Oct 27, 2026, 9:44 PM Eastern: Record only (stays Ready, 100%): tester59 (build 109) is an unpublished test build: on Oct 27, 2026 (report received about 9:40 PM Eastern) AI tester checks on a Pixel 3 and a Galaxy S9+, silent and state only, found radio Back, radio swipe and Previous and Next, the radio notification and lock-screen buttons and the podcast open-without-follow message working; the camera backup folder display could not be checked (backup is off on both phones and the home computer needs Windows 0.1.105). The radio and podcast changes tested here are merged in the source code and in the test build tester59 only; they are in no published download, so they do not change what the Ready row covers. Findings, not counted as open issues on this row because they are in the unpublished test build: on the Pixel 3, pressing Next ten times in a row reached a station near the end of the list and Next from there never moved on (the message “Your Beebo computer had a problem. Try again in a moment.” showed and that station kept playing; Previous worked); it was not confirmed whether that one station’s stream is bad or the old home computer failed on it, but a bad next station blocks Next instead of being skipped. Radio Back returned to the station list with the radio still playing; swiping left and right changed station and the first station showed “This is the first station in your list.”; the Android 12 media card showed Previous and Next that worked, and on the Galaxy S9+ (Android 10) the shade and the lock screen showed Previous, Pause and Next that worked; the lock screen of the Pixel 3 could not be checked (it has none). Opening a podcast from Find without following showed a plain message (“Your computer can’t show a show before you follow it yet. Update Beebo on your computer, or go back and tap Follow.”) because the home computer still runs the old Windows app; the real preview needs Windows 0.1.105 or later. A real vertical scroll of a long Earlier list was not exercised. The sound was not heard (both phones were silent). Earlier record (kept): Update Oct 27, 2026, 3:50 PM Eastern: Nothing is left to reach 100%. The one open issue, the Follow button label that stayed “Follow” in the Find list, is verified fixed on tester58: Nick and the 4-core AI tester saw it read “Following” about 2 seconds after the tap with no reload (3:15 PM Eastern). Podcasts and radio had already passed with Nick listening on tester56 (9:47 to 9:54 AM) and passed on a Pixel 3 on tester57 (muted); a detailed dated record exists and no issue is open, so on Nick’s instruction of about 3:00 PM Eastern the row is Ready (100%). Limits kept: the podcast queue, episode downloads, radio favourites and recording were not tested on these builds; the 5-minute sleep timer was seen to pause on Oct 26 (tester49) but not on tester58; a reopened music track starts at about 0:00 (unclear whether by design, not an issue); one phone model, one household. Open known issues: 0. Earlier record (kept): Update Oct 27, 2026, 12:58 PM Eastern (second household, reported by about 9:54 AM Eastern; Galaxy S24 on tester56 (build 106) with an AI tester driving and Nick present and answering by tapping choices; the PC on published 0.1.102): PASS by Nick and the AI tester. Podcasts: searching for a show returned real results from the public directory; one show was followed (it appeared under Following with its episodes), opened, and the newest episode (34 minutes) played, the clock advanced and Nick heard clear voices; the player screen looked right (cover art, title, 30-second buttons, speed 1x, Sleep, Notes); Pause stopped the sound right away (Nick); the mini player (cover, title, play, skip and X) closed with X and the media session ended. Radio: the station list showed on the first open and again straight away after a force-stop and relaunch (Nick: the list showed both times); a station played with clear music (Nick) and a second station (jazz) played clearly too; stopping stopped the audio. Open known issues: 1 (new on Oct 27, 2026; any open known issue caps a row, so the score moves from 99% to 90%): the Follow button label does not change to “Following” in the Find list (it stayed “Follow” after three taps; only the Following tab showed the show was followed). The fix is written and is in no build yet; retest on the next phone build, and the row returns to 99%. Not tested: podcast queue, episode downloads, radio favourites and recording, the sleep timer. Limits: one phone, one PC, one session. Nick alone records Ready. Earlier record (kept; its statement that no known error is open is superseded by this update): Update (tester53 and tester54, muted): Radio first open after a force-stop passed 2 of 2 on the Galaxy S9+ on tester53 (reported by about 7:38 PM Eastern) and 2 of 2 on tester54 (reported by about 11:26 PM Eastern); the paused mini player Close (X) passed again on music on the Pixel 3 (tester53, reported by about 7:51 PM Eastern, and tester54, reported by about 11:26 PM Eastern): X shows only while paused, and the strip is gone and stays gone. Limit, not counted as an open issue: a reopened MUSIC track starts at about 0:00 rather than the saved place (about 0:25 on tester54) on tester52, tester53 and tester54; it is unclear whether that is by design. A podcast Close was verified only on tester52. The test server is still older than main. No known error is open on this row: both open issues were verified fixed on Oct 26, 2026. (1) The Radio screen failing on its first opens on a Galaxy S9+ did not reproduce: 3 of 3 force-stop-and-open runs on tester51 (about 1:24 to 1:25 PM) and 4 of 4 on tester52 (about 5:19 to 5:42 PM). (2) The paused mini player can now be closed: the Close (X) shows only while playback is paused, removes the strip, and the strip stays gone after leaving the screen and after a cold start. Verified on an audiobook (Galaxy S9+, tester52), on music (Pixel 3, tester52) and on a podcast (Galaxy S9+, tester52, about 5:48 to 5:52 PM: followed “Science Magazine Podcast” on the test account, played about 10 seconds, paused; X removed the strip; it stayed gone after leaving and after a cold start; reopening from Continue listening resumed at about 0:28, so the saved place was kept; the show was unfollowed afterwards: every step passed). Limits: the test phones were muted (sound was heard by Nick on his S24 earlier); the test server is older than main, so the server-side radio fix was not exercised; not tested: queue, offline downloads, OPML import, notes. Small points seen earlier are not errors counted here: no custom sleep-timer time, different timer lists for podcasts and music, the speed slider runs past its “2x” label, and a tap on a spot of the slider did nothing in an adb test. At 99% every check passed within these records and nothing known is broken; the last 1% is Nick’s own human look, and only Nick records Ready. Earlier record (kept; the counts and items above replace its counts): Open known issues (cap this row at 90%): the Radio screen failed on its first two opens on a Galaxy S9+ (Oct 25, 2026), and a paused podcast’s mini player cannot be closed. To be fixed; once fixed the row returns to 99% and then Nick and Claude confirm it together. Today’s check by Nick (Oct 26, 2026, 11:10 AM Eastern) worked on a Galaxy S24: a radio station and a podcast episode were heard, with Follow, skip, pause and Unfollow; it does not clear the S9+ failure (a different phone). Not tested: queue, sleep timer, speed, downloads, OPML import, notes. Smaller points seen on Oct 26, 2026 (reported by about 11:55 AM Eastern; not counted as open known issues and no cap change): (1) the podcast sleep timer has no custom time; (2) the timer choices differ between podcasts (5, 10, 15, 30, 45, 60 minutes and End of episode) and music (15, 30, 45, 60 minutes and End of track); (3) the speed slider runs past its “2x” label (2.9x was reached); (4) tapping a spot on the speed slider did nothing in an adb test (a finger may behave differently).",
       "previousPercent": 100,
-      "changedEastern": "Nov 10, 2026, 3:39 AM Eastern",
-      "changeNote": "Record only (stays 100%, Nick's Ready): a code review on Nov 10 found that parental limits (bedtime, the daily limit and Family viewing) do not yet cover music, audiobooks, podcasts or radio in the published Windows 0.1.115. It is counted as an open issue on Parental controls and household profiles. On this Ready row it is written here and counted only when Nick decides.",
+      "changedEastern": "Nov 10, 2026, 3:45 AM Eastern",
+      "changeNote": "Moved 100% to 90% on Nick's own decision (Nov 10, 2026, 3:45 AM Eastern: \"Drop them to 90\"): parental limits (bedtime, the daily limit and Family viewing) do not yet cover podcasts or radio in the published Windows 0.1.115, and this now counts as an open issue here too (open known issues 0 to 1). Nick's earlier Ready record stays on the row.",
       "changeHistory": [
+        {
+          "changedEastern": "Nov 10, 2026, 3:39 AM Eastern",
+          "changeNote": "Record only (stays 100%, Nick's Ready): a code review on Nov 10 found that parental limits (bedtime, the daily limit and Family viewing) do not yet cover music, audiobooks, podcasts or radio in the published Windows 0.1.115. It is counted as an open issue on Parental controls and household profiles. On this Ready row it is written here and counted only when Nick decides."
+        },
         {
           "changedEastern": "Nov 9, 2026, 10:54 AM Eastern",
           "changeNote": "Record only (stays 100%, Nick’s own Ready): Nick set 100% for Internet Radio (Nov 9, 2026, about 10:43 AM Eastern, test-channel receipt 6744277737) and for Podcasts (about 10:47 AM Eastern, test-channel receipt 6744373744) on the Android 1.56 (build 128) test copy, Galaxy S24."
@@ -4191,7 +4191,7 @@
           "evidence": "Radio Back: PASS on both (top-bar arrow and system Back return to the station list, radio keeps playing). Radio swipe and Previous and Next: PASS on both; the first station greys Previous and a right swipe says it is the first station; Next did not move past one failing station on the Pixel 3 (finding). Notification shade: Android 12 shows Previous and Next and both work; Android 10 shows Pause and Next at the first station and all three elsewhere. Lock screen: Galaxy S9+ shows Previous, Pause and Next and Next works; the Pixel 3 has no lock screen (skipped). Podcast open without follow: PASS on both as a plain message because the home computer needs Windows 0.1.105. Camera backup folder display: BLOCKED on both (photo backup is off; turning it on would change a setting). Smoke: five tabs open and no crash in the log on both. Left as found: radio stopped, volume 0, nothing followed or changed. No sound heard; a real vertical scroll of a long Earlier list was not exercised. Not in a published download."
         }
       ],
-      "openIssues": 0,
+      "openIssues": 1,
       "scoreNote": "What Ready covers: podcast find, follow (label reads Following), play, pause, unfollow and the mini player, and radio (list after a force-stop, play, stop), heard by Nick on a Galaxy S24 (tester56) and checked again on tester58 for the Follow label, plus a Pixel 3 (muted). What it does not cover: the podcast queue, episode downloads, radio favourites and recording, the sleep timer on these builds, and other phones or households.",
       "recentDeviceEvidence": [
         {
@@ -5002,8 +5002,7 @@
         "device": "Galaxy S9+",
         "result": "PASS (estimate and remove at largest text)",
         "who": "4-core AI tester with Nick's go"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
@@ -5575,8 +5574,7 @@
         "device": "Galaxy S9+",
         "result": "PASS (Drop Four solo, dark mode)",
         "who": "4-core AI tester"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
@@ -6720,8 +6718,7 @@
         "device": "Android TV emulator (not a real device)",
         "result": "PASS for sign-in screen, remote focus and five screens; no video",
         "who": "AI emulator tester"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
@@ -7058,8 +7055,7 @@
         "device": "Pixel 3",
         "result": "PARTIAL",
         "who": "AI alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
@@ -7479,14 +7475,13 @@
         "device": "Galaxy S9+",
         "result": "PASS (no crash or overlap at 150% phone text)",
         "who": "4-core helper alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
       "name": "Music on the phone (albums, songs, player, sleep timer)",
       "status": "Beta",
-      "percentComplete": 100,
+      "percentComplete": 90,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -7495,10 +7490,10 @@
         "Ready to call Available": true
       },
       "lastTested": "Nov 9, 2026, 1:28 to 1:47 PM Eastern (TEST Android 1.57 build 129, Galaxy S24 and S9+); Nov 9, 2026, 10:35 to 10:40 AM Eastern (Android 1.56 build 128, a private test copy of the published file, Galaxy S24, Nick watching and listening, short 45-second test songs: Browse > Music > Songs started a song, Pause, Play and Next worked and the sound was clear; PASS, marked 100% by Nick for those steps; the mini player’s buttons move between playing and paused, 2 of 2 by position, found); Oct 26, 2026, 11:10 AM Eastern (Nick heard a test tone from the PC’s music); earlier: Oct 24, 2026, 12:50:19 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Update Nov 10, 2026, 3:39 AM Eastern: Record only (stays 100%, Nick's Ready; not counted here until Nick decides). Found Nov 10, 2026 by code review, not on a device; the code is the same in the published Windows 0.1.115: bedtime, the daily limit and Family viewing do not yet stop this kind of audio on a household profile. It is counted as an open known issue on the Parental controls and household profiles row. Fix designs are in review. Earlier record (kept): Update Nov 9, 2026, 2:15 PM Eastern: Nick's decision (Nov 9, 2026): the moving mini player buttons (BUG 11) do not count as an open issue on this row. The latest 100% stands on Android 1.56 build 128 (the public file and its private test copy are the same file). The fix is on the main code and in the private 1.57 test build, and is included in the 1.58 test build being prepared; it is in no public build yet. It counts again only if the fix fails on a phone. Same day, earlier record: Record only (stays 100%, Nick's Ready stays as he recorded it). BUG-FOUND 11 (the mini player buttons move) was fixed on the main code and in the private TEST Android 1.57 (build 129); on Nov 9, 2026 at 1:47 PM Eastern, Galaxy S24, Pause and then tapping the same spot resumed 3 of 3, Pause, Play and Next kept their places, Close only while paused, same at 1.5 text; Nick set 100% for it (sound was not listened to by the helper). A Galaxy S9+ gave the same result. The fix result stands on TEST 1.57 only; the public 1.56 still has the moving buttons until a build with the fix is published. Not checked: Close pressed on the S24, other songs. Earlier record (kept): Update Nov 9, 2026, 10:54 AM Eastern: Record only (stays 100%, Nick’s Ready stays as he recorded it): Nov 9, 2026, about 10:40 AM Eastern, Android 1.56 build 128 (a private test copy of the file published at 9:53 AM), Galaxy S24, Nick present, home one, short 45-second test songs. Nick set 100% himself for music playback from Browse > Music > Songs: a song starts, Pause, Play and Next song work, and he confirmed the sound is clear (test-channel receipt 6744183162). NEW finding (small to bad; Nick agreed it should be fixed), recorded here and NOT added to an open-issue count in this edit because no percentage may move without Nick: the mini player bar’s buttons move between playing and paused. Playing shows Pause and Next; paused adds an X, so Pause’s spot becomes Next’s spot and Next’s spot becomes Close. Pressing Pause and then the same place again skips to the next song instead of resuming, and a third press at Next’s old spot closes the player (2 of 2 by position). Suggested fix: keep Play/Pause and Next fixed and give the X its own spot. Also seen: sideways on the Music tab the song list sits below the fold with only a thin strip to scroll. Not tested: albums, the sleep timer, the full player screen, a long listen. If Nick decides the finding should count, this row would move from 100% to 90%. Receipt test-channel receipt 6744183162. Earlier record (kept): Nothing is left to reach 100%. Nick confirmed this himself on Oct 26, 2026, 11:37 AM Eastern. Limits: see the record limit below.",
+      "leftToReach100": "Update Nov 10, 2026, 3:45 AM Eastern: Moved 100% to 90% on Nick's own decision (\"Drop them to 90\", Nov 10, 2026, 3:45 AM Eastern). Open known issues 0 to 1: bedtime, the daily limit and Family viewing do not yet stop music on a household profile (found Nov 10, 2026 by code review in the published Windows 0.1.115; fix designs are in review). Nick's earlier Ready record stays written on the row. To return to 100: the fix merged, in a published build, retested, and Nick's word again. Earlier record (kept): Update Nov 10, 2026, 3:39 AM Eastern: Record only (stays 100%, Nick's Ready; not counted here until Nick decides). Found Nov 10, 2026 by code review, not on a device; the code is the same in the published Windows 0.1.115: bedtime, the daily limit and Family viewing do not yet stop this kind of audio on a household profile. It is counted as an open known issue on the Parental controls and household profiles row. Fix designs are in review. Earlier record (kept): Update Nov 9, 2026, 2:15 PM Eastern: Nick's decision (Nov 9, 2026): the moving mini player buttons (BUG 11) do not count as an open issue on this row. The latest 100% stands on Android 1.56 build 128 (the public file and its private test copy are the same file). The fix is on the main code and in the private 1.57 test build, and is included in the 1.58 test build being prepared; it is in no public build yet. It counts again only if the fix fails on a phone. Same day, earlier record: Record only (stays 100%, Nick's Ready stays as he recorded it). BUG-FOUND 11 (the mini player buttons move) was fixed on the main code and in the private TEST Android 1.57 (build 129); on Nov 9, 2026 at 1:47 PM Eastern, Galaxy S24, Pause and then tapping the same spot resumed 3 of 3, Pause, Play and Next kept their places, Close only while paused, same at 1.5 text; Nick set 100% for it (sound was not listened to by the helper). A Galaxy S9+ gave the same result. The fix result stands on TEST 1.57 only; the public 1.56 still has the moving buttons until a build with the fix is published. Not checked: Close pressed on the S24, other songs. Earlier record (kept): Update Nov 9, 2026, 10:54 AM Eastern: Record only (stays 100%, Nick’s Ready stays as he recorded it): Nov 9, 2026, about 10:40 AM Eastern, Android 1.56 build 128 (a private test copy of the file published at 9:53 AM), Galaxy S24, Nick present, home one, short 45-second test songs. Nick set 100% himself for music playback from Browse > Music > Songs: a song starts, Pause, Play and Next song work, and he confirmed the sound is clear (test-channel receipt 6744183162). NEW finding (small to bad; Nick agreed it should be fixed), recorded here and NOT added to an open-issue count in this edit because no percentage may move without Nick: the mini player bar’s buttons move between playing and paused. Playing shows Pause and Next; paused adds an X, so Pause’s spot becomes Next’s spot and Next’s spot becomes Close. Pressing Pause and then the same place again skips to the next song instead of resuming, and a third press at Next’s old spot closes the player (2 of 2 by position). Suggested fix: keep Play/Pause and Next fixed and give the X its own spot. Also seen: sideways on the Music tab the song list sits below the fold with only a thin strip to scroll. Not tested: albums, the sleep timer, the full player screen, a long listen. If Nick decides the finding should count, this row would move from 100% to 90%. Receipt test-channel receipt 6744183162. Earlier record (kept): Nothing is left to reach 100%. Nick confirmed this himself on Oct 26, 2026, 11:37 AM Eastern. Limits: see the record limit below.",
       "previousPercent": 100,
-      "changedEastern": "Nov 10, 2026, 3:39 AM Eastern",
-      "changeNote": "Record only (stays 100%, Nick's Ready): a code review on Nov 10 found that parental limits (bedtime, the daily limit and Family viewing) do not yet cover music, audiobooks, podcasts or radio in the published Windows 0.1.115. It is counted as an open issue on Parental controls and household profiles. On this Ready row it is written here and counted only when Nick decides.",
+      "changedEastern": "Nov 10, 2026, 3:45 AM Eastern",
+      "changeNote": "Moved 100% to 90% on Nick's own decision (Nov 10, 2026, 3:45 AM Eastern: \"Drop them to 90\"): parental limits (bedtime, the daily limit and Family viewing) do not yet cover music in the published Windows 0.1.115, and this now counts as an open issue here too (open known issues 0 to 1). Nick's earlier Ready record stays on the row.",
       "testedOn": "Final phone record: S9+, Pixel. Native checks belong to installed Android 1.51-tester36 (build 86) where named. Older tester35 (build 85) passes and browser guests retain their separate builds and dates. The native album-radio control started a real test track, its progress and six recommendations, then stopped. Existing queue, sleep and screen-off controls are carried. Last PASS: Oct 24, 2026, 12:50:19 AM Eastern. Later native source changes are not installed or accepted by this record.",
       "roadTo100": {
         "means": "Real music plays on a phone with sound, crossfade, gapless playback, queue and radio working, and a reviewer signs off.",
@@ -7531,6 +7526,10 @@
         ]
       },
       "changeHistory": [
+        {
+          "changedEastern": "Nov 10, 2026, 3:39 AM Eastern",
+          "changeNote": "Record only (stays 100%, Nick's Ready): a code review on Nov 10 found that parental limits (bedtime, the daily limit and Family viewing) do not yet cover music, audiobooks, podcasts or radio in the published Windows 0.1.115. It is counted as an open issue on Parental controls and household profiles. On this Ready row it is written here and counted only when Nick decides."
+        },
         {
           "changedEastern": "Nov 9, 2026, 2:15 PM Eastern",
           "changeNote": "Record only (stays 100%, Nick's Ready stays): by Nick's decision the moving mini player buttons are noted and not counted. The 100% stands on Android 1.56 build 128; the fix is on the main code and in the 1.57 test build, not in a public build yet."
@@ -7723,6 +7722,7 @@
         "result": "PASS (mini player fix; fix is on the TEST build only)",
         "who": "Nick with the 4-core helper"
       },
+      "openIssues": 1,
       "updatedThisRun": true
     },
     {
@@ -8791,8 +8791,7 @@
         "device": "Galaxy S24, Nick's own account",
         "result": "PASS (viewer and albums; three new bugs)",
         "who": "Nick with the 4-core helper"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Android phone app",
@@ -9164,8 +9163,7 @@
         "device": "4-core PC",
         "result": "PASS",
         "who": "Nick with the 4-core helper"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Windows desktop app",
@@ -9876,8 +9874,7 @@
         "device": "4-core PC",
         "result": "PASS (Watchlist two versions)",
         "who": "Nick with the 4-core helper"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Windows desktop app",
@@ -10310,8 +10307,7 @@
         "device": "4-core PC (looked only)",
         "result": "PARTIAL",
         "who": "4-core helper alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Windows desktop app",
@@ -10951,8 +10947,7 @@
         "device": "Pixel 3",
         "result": "FAIL (certificate message; Movie Night does not open in the phone app)",
         "who": "AI tester alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Windows desktop app",
@@ -11163,8 +11158,7 @@
         "device": "4-core PC (looked only)",
         "result": "PARTIAL",
         "who": "4-core helper alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Windows desktop app",
@@ -11485,8 +11479,7 @@
         "device": "4-core PC (looked only)",
         "result": "PARTIAL (a notice named a device “Script”)",
         "who": "4-core helper alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Windows desktop app",
@@ -11723,8 +11716,7 @@
         "device": "4-core PC",
         "result": "PARTIAL (no keyboard way into a film from the poster grid: possible)",
         "who": "4-core helper alone"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Windows desktop app",
@@ -11985,7 +11977,7 @@
       "group": "Windows desktop app",
       "name": "Posters and info (TMDB)",
       "status": "Beta",
-      "percentComplete": 100,
+      "percentComplete": 90,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -11994,7 +11986,7 @@
         "Ready to call Available": true
       },
       "lastTested": "Oct 27, 2026, about 9:19 PM Eastern (Discover on Chrome and the desktop app, 4-core PC, 4-core AI tester alone: 120 of 120 pictures loaded, real posters in the Trending and Popular rows; Ready unchanged); Oct 27, 2026, 2:14 PM Eastern (Windows 0.1.104, Nick and the 4-core AI tester: five films with real posters and info pages, 15 “No poster” fallback cards, no broken picture, PASS); Oct 27, 2026, about 1:40 PM Eastern (Nick’s real TV library on his 6-core PC: about 164 shows with real posters, PASS); earlier: Oct 27, 2026, about 10:20 to 10:30 AM Eastern (installed Windows 0.1.103 on the second household’s PC, Nick looking: the poster grid and a film’s info page with its TMDB details, PASS); Oct 26, 2026, 2:01 PM Eastern (installed 0.1.102: folder poster and NFO files used, PASS); earlier: Oct 21, 2026 (folders' own poster and NFO files not used: FAILED); Oct 1, 2026",
-      "leftToReach100": "Update Nov 10, 2026, 3:39 AM Eastern: Record only (stays 100%, Nick's Ready; not counted until Nick decides). Found Nov 10, 2026 by code review and focused tests, not on a real install; the code is the same in the published Windows 0.1.115: when you use your own movie-info (TMDB) key, a short internet outage, a service error or a refused key can mark films as \"no match\", so they stay without a poster until you act. A fix has two independent reviews and waits to be merged and released. Two smaller findings from automated bug-hunt tests in the same code: a poster that failed to save on a full disk is not tried again, and a remake with the year in its name can pick up the original show's episode details. Under this page's rule for rows Nick has set Ready, a new finding is written on the row and is counted only when Nick decides. Earlier record (kept): Update Oct 27, 2026, 9:44 PM Eastern: Record only (stays Ready, 100%): the 4-core AI tester alone (Nick away) opened Discover in Chrome (120 of 120 pictures loaded, no error banner, no blank section) and in the desktop app (the rows “Trending this week” and “Popular right now” showed real posters with titles and years); no Add to watchlist button was pressed. This needs the internet, and offline behaviour was not tested. The Ready record and its limits above are unchanged. Earlier record (kept): Update Oct 27, 2026, 3:50 PM Eastern: Nothing is left to reach 100%. Nick and the 4-core AI tester both saw posters and info pages work on Windows 0.1.104 (five different films with real posters, the missing-poster fallback with no broken picture) and the TV tabs on a real library, a detailed dated record exists, and no issue is open, so on Nick’s instruction of about 3:00 PM Eastern the row is Ready (100%). Limits kept: the licence for our use of TMDB in a paid product is still Nick’s own decision; offline behaviour was not tested; the desktop TV Shows screen could not be tried with real TV posters on the 4-core PC (its TV folder is its movie folder); one PC, one Windows build. Earlier record (kept): Update Oct 27, 2026, 12:58 PM Eastern (second household, reported at about 10:30 AM Eastern; installed Windows app 0.1.103 on the old 4-core PC, an AI tester driving and Nick looking at the screen): the main poster-and-info path passed. The Movies list showed posters for a real library (6 posters seen), and a film’s info page showed its poster, tagline, director, year, runtime, rating, quality, genre, a TMDB score with its vote count, the plot and the file details. Nick said it “looks great” and the AI tester saw the same. The Real-world check is now ticked and the row moves from 74% to 99%. Limits kept: only one info page was opened; five different shows and seasons and the missing-poster fallback were not tested; offline behaviour is not checked; and whether our use of TMDB is licensed for any paid product is still Nick’s open decision. The earlier note that the main TMDB path was not exercised is replaced by this record. Nick alone records Ready. Earlier record (kept): Update Oct 26, 2026 (second household, reported by about 2:01 PM Eastern; installed Windows app 0.1.102, old 4-core PC): a test film with a folder poster.jpg and a movie.nfo showed the NFO title, year, genre and plot and the folder poster (the same bytes) after a rescan, so the installed-app retest of the folder poster and NFO files passed (the Oct 21 failure did not repeat). Not tested with a film that also has a real TMDB match, offline behaviour, or a commercial TMDB licence decision. No Real-world tick: the main TMDB path was not exercised. The score stays 74%. Oct 25 update: the Oct 21 failure (a folder’s own poster and NFO ignored) did not repeat on a test server built from main 4a4efbcba (9:36 PM Eastern); the installed Windows app has not been retested. Nick decides about a commercial TMDB licence for a paid product, then offline behaviour is checked on a real PC.",
+      "leftToReach100": "Update Nov 10, 2026, 3:45 AM Eastern: Moved 100% to 90% on Nick's own decision (\"Drop them to 90\", Nov 10, 2026, 3:45 AM Eastern). Open known issues 0 to 3, the three Nov 10 findings written on this row earlier today: (1) with your own movie-info (TMDB) key, a short internet or service outage can leave some films without a poster until you act; (2) a poster that failed to save on a full disk is not tried again; (3) a remake with the year in its name can pick up the original show's episode details. Nick's earlier Ready record (Windows 0.1.104) stays written on the row. To return to 100: the fixes merged, in a published build, retested, and Nick's word again. Earlier record (kept): Update Nov 10, 2026, 3:39 AM Eastern: Record only (stays 100%, Nick's Ready; not counted until Nick decides). Found Nov 10, 2026 by code review and focused tests, not on a real install; the code is the same in the published Windows 0.1.115: when you use your own movie-info (TMDB) key, a short internet outage, a service error or a refused key can mark films as \"no match\", so they stay without a poster until you act. A fix has two independent reviews and waits to be merged and released. Two smaller findings from automated bug-hunt tests in the same code: a poster that failed to save on a full disk is not tried again, and a remake with the year in its name can pick up the original show's episode details. Under this page's rule for rows Nick has set Ready, a new finding is written on the row and is counted only when Nick decides. Earlier record (kept): Update Oct 27, 2026, 9:44 PM Eastern: Record only (stays Ready, 100%): the 4-core AI tester alone (Nick away) opened Discover in Chrome (120 of 120 pictures loaded, no error banner, no blank section) and in the desktop app (the rows “Trending this week” and “Popular right now” showed real posters with titles and years); no Add to watchlist button was pressed. This needs the internet, and offline behaviour was not tested. The Ready record and its limits above are unchanged. Earlier record (kept): Update Oct 27, 2026, 3:50 PM Eastern: Nothing is left to reach 100%. Nick and the 4-core AI tester both saw posters and info pages work on Windows 0.1.104 (five different films with real posters, the missing-poster fallback with no broken picture) and the TV tabs on a real library, a detailed dated record exists, and no issue is open, so on Nick’s instruction of about 3:00 PM Eastern the row is Ready (100%). Limits kept: the licence for our use of TMDB in a paid product is still Nick’s own decision; offline behaviour was not tested; the desktop TV Shows screen could not be tried with real TV posters on the 4-core PC (its TV folder is its movie folder); one PC, one Windows build. Earlier record (kept): Update Oct 27, 2026, 12:58 PM Eastern (second household, reported at about 10:30 AM Eastern; installed Windows app 0.1.103 on the old 4-core PC, an AI tester driving and Nick looking at the screen): the main poster-and-info path passed. The Movies list showed posters for a real library (6 posters seen), and a film’s info page showed its poster, tagline, director, year, runtime, rating, quality, genre, a TMDB score with its vote count, the plot and the file details. Nick said it “looks great” and the AI tester saw the same. The Real-world check is now ticked and the row moves from 74% to 99%. Limits kept: only one info page was opened; five different shows and seasons and the missing-poster fallback were not tested; offline behaviour is not checked; and whether our use of TMDB is licensed for any paid product is still Nick’s open decision. The earlier note that the main TMDB path was not exercised is replaced by this record. Nick alone records Ready. Earlier record (kept): Update Oct 26, 2026 (second household, reported by about 2:01 PM Eastern; installed Windows app 0.1.102, old 4-core PC): a test film with a folder poster.jpg and a movie.nfo showed the NFO title, year, genre and plot and the folder poster (the same bytes) after a rescan, so the installed-app retest of the folder poster and NFO files passed (the Oct 21 failure did not repeat). Not tested with a film that also has a real TMDB match, offline behaviour, or a commercial TMDB licence decision. No Real-world tick: the main TMDB path was not exercised. The score stays 74%. Oct 25 update: the Oct 21 failure (a folder’s own poster and NFO ignored) did not repeat on a test server built from main 4a4efbcba (9:36 PM Eastern); the installed Windows app has not been retested. Nick decides about a commercial TMDB licence for a paid product, then offline behaviour is checked on a real PC.",
       "roadTo100": {
         "means": "Posters and info work, fail gracefully offline on a real PC, and our use of TMDB is properly licensed for any paid product.",
         "done": [
@@ -12024,8 +12016,8 @@
         ]
       },
       "previousPercent": 100,
-      "changedEastern": "Nov 10, 2026, 3:39 AM Eastern",
-      "changeNote": "Record only (stays 100%, Nick's Ready): a code review on Nov 10 found that with your own movie-info key, a short internet or service outage can leave some films without a poster until you step in (same code in the published Windows 0.1.115). This row is Nick's Ready, so the finding is written here and is counted only when Nick decides. A reviewed fix waits to be merged and released.",
+      "changedEastern": "Nov 10, 2026, 3:45 AM Eastern",
+      "changeNote": "Moved 100% to 90% on Nick's own decision (Nov 10, 2026, 3:45 AM Eastern: \"Drop them to 90\"): the three findings from the Nov 10 code review and bug-hunt tests in the published Windows 0.1.115 now count as open issues (open known issues 0 to 3). Nick's earlier Ready record stays on the row; the open issues cap it at 90% until they are fixed and retested.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 100,
       "codeItemsLeft": 0,
@@ -12067,6 +12059,10 @@
         }
       ],
       "changeHistory": [
+        {
+          "changedEastern": "Nov 10, 2026, 3:39 AM Eastern",
+          "changeNote": "Record only (stays 100%, Nick's Ready): a code review on Nov 10 found that with your own movie-info key, a short internet or service outage can leave some films without a poster until you step in (same code in the published Windows 0.1.115). This row is Nick's Ready, so the finding is written here and is counted only when Nick decides. A reviewed fix waits to be merged and released."
+        },
         {
           "changedEastern": "Oct 27, 2026, 9:44 PM Eastern",
           "changeNote": "Record only (stays Ready, 100%): Discover loaded 120 of 120 pictures in Chrome and real posters in the desktop app (4-core AI tester alone); offline posters remain untested."
@@ -12169,6 +12165,7 @@
         "result": "PASS",
         "who": "Nick with a helper"
       },
+      "openIssues": 3,
       "updatedThisRun": true
     },
     {
@@ -12990,8 +12987,7 @@
         "device": "Windows desktop app and Chrome on the second household’s older 4-core…",
         "result": "PASS",
         "who": "Nick with a helper"
-      },
-      "updatedThisRun": true
+      }
     },
     {
       "group": "Windows desktop app",
@@ -13868,8 +13864,7 @@
         "result": "PARTIAL",
         "who": "AI alone"
       },
-      "openIssues": 1,
-      "updatedThisRun": true
+      "openIssues": 1
     },
     {
       "group": "Services and website",
@@ -14891,8 +14886,8 @@
     "In development",
     "Planned"
   ],
-  "honestyNote": "Eleven features are recorded Ready by Nick, with their limits shown on each row. Nothing is described as 100% working without its listed limits. Untested paths are listed as not tested, not as passed. A failure caps a feature at 90%.",
-  "previousUpdatedEastern": "Nov 9, 2026, 2:15 PM Eastern",
+  "honestyNote": "Eleven features are recorded Ready by Nick, with their limits shown on each row. Three of them (Posters and info, Music on the phone, Podcasts and radio) are held at 90% by open issues found on Nov 10, by Nick's own decision. Nothing is described as 100% working without its listed limits. Untested paths are listed as not tested, not as passed. A failure caps a feature at 90%.",
+  "previousUpdatedEastern": "Nov 10, 2026, 3:39 AM Eastern",
   "showChangeMarkers": true,
   "hero": {
     "recordName": "Nov 10 overnight record (AI testers on a Pixel 3, a Galaxy S9+ and an Android TV emulator with the private test builds 1.57 build 129 and 1.58 build 130, plus code reviews of the published Windows 0.1.115 and Android 1.56, through Nov 10, 2026, 3:15 AM Eastern); earlier record: Nov 9 afternoon record (Nick with the 4-core helper on Android 1.56 build 128, the private test build 1.57 build 129, Beebo Auto 1.21 and Windows 0.1.115, plus AI testers on a Pixel 3, a Galaxy S9+ and an Android 11 emulator, through Nov 9, 2026, 1:55 PM Eastern); earlier record: Nov 9 record (Nick with the 4-core helper on a Galaxy S24 and a Galaxy S9+, public Android 1.55 (build 127) and test builds 1.55-tester1 and 1.56, and the published Windows 0.1.114 on the 4-core PC, through Nov 9, 2026, 9:47 AM Eastern); earlier record: Nov 8 morning record (the 4-core, Pixel 3 and 6-core AI testers on the public Android 1.54 (build 124) and 1.54.1 (build 125) and the published Windows 0.1.113, through Nov 8, 2026, 11:36 AM Eastern); earlier record: Nov 7 to 8 4-core record (the 4-core AI tester on the published Windows 0.1.113 and the public Android 1.53, a Galaxy S9+ and a Galaxy S24 Ultra, through Nov 8, 2026, 4:21 AM Eastern); earlier record: Nov 7 owner-watched record (Nick with the 4-core helper: a Galaxy S24 Ultra on the public Android 1.52 (build 122) and the 4-core PC on the public Windows 0.1.113, test films, through Nov 7, 2026, 10:30 AM Eastern); earlier record: Oct 29 feature-score refresh (the 4-core PC on the published Windows 0.1.108 and then 0.1.109, two phones on the unpublished test build tester63, scripted checks on a test server with the 0.1.109 code, and one owner report, through Oct 29, 2026, 11:42 AM Eastern); earlier record: Oct 28 fourth overnight record (the 4-core PC on Windows 0.1.107 and then the published 0.1.108, and two phones on the unpublished test build tester63, through Oct 28, 2026, 10:24 AM Eastern); earlier record: Oct 28 third overnight record (smokes and one audiobook idle check, through Oct 28, 2026, 7:24 AM Eastern); earlier record: Oct 28 second overnight record: the 4-core AI tester alone on Windows 0.1.106 and then the published 0.1.107 (in-app update at 3:16 AM Eastern), and an AI tester on a Pixel 3 and a Galaxy S9+ running the unpublished test builds tester61 and tester62, through Oct 28, 2026, 4:28 AM Eastern; earlier record: Oct 27–28 overnight record: the 4-core AI tester alone on Windows 0.1.104 and then 0.1.105 (in-app update at 12:16 AM Eastern), and an AI tester on a Pixel 3 and a Galaxy S9+ running the unpublished test builds tester59 to tester61, through Oct 28, 2026, 1:46 AM Eastern; earlier record: October 25–27 phone, TV, browser and owner-observation record, through the Oct 27 test sessions at the second household up to 9:21 PM Eastern (Galaxy S24 on tester49, tester56, tester57 and tester58; the PC on Windows 0.1.102, 0.1.103 and 0.1.104; then the 4-core AI tester alone on the PC and in Chrome while Nick was away) and Nick’s first look at Beebo Auto 1.20 in a real car",
@@ -14904,6 +14899,13 @@
     "newerText": "Evidence through Nov 10, 2026, 3:15 AM Eastern (AI testers on a Pixel 3, a Galaxy S9+ and an Android TV emulator with private test builds; code reviews of the published builds; no percentage moved, open issues rose on 13 rows): Evidence through Nov 9, 2026, 1:55 PM Eastern (Nick with the 4-core helper on Android 1.56, the 1.57 test build, Beebo Auto 1.21 and Windows 0.1.115; AI testers on a Pixel 3, a Galaxy S9+ and an emulator; Photos moved 49% to 74%, nothing went down): Evidence through Nov 9, 2026, 10:47 AM Eastern (Nick with the 4-core helper: phone music, Internet Radio and Podcasts; no percentage moved in this edit): Evidence through Nov 9, 2026, 10:30 AM Eastern (Nick with the 4-core helper: casting to a Google TV, the small window and the quality switch, Reversi as a guest; no percentage moved in this edit): Evidence through Nov 9, 2026, 9:47 AM Eastern (Nick with the 4-core helper, two phones, the public Android 1.55 and test builds, and Windows 0.1.114; Wireless speakers moved to 100% on Nick’s word and Accessibility choices dropped to 90%): Evidence through Nov 8, 2026, 11:36 AM Eastern (the 4-core, Pixel 3 and 6-core AI testers on the public Android 1.54 and 1.54.1 and the published Windows 0.1.113; no percentage moved): Evidence through Nov 8, 2026, 4:21 AM Eastern (the 4-core AI tester on the published Windows 0.1.113 and the public Android 1.53; Home layouts moved to 99%): Evidence through Nov 7, 2026, 10:30 AM Eastern (Nick with the 4-core helper; a Galaxy S24 Ultra on the public Android 1.52 (build 122) and the 4-core PC on the public Windows 0.1.113): Record update (Nov 7, 2026, 12:52 PM Eastern): Nick marked these tests 100% for their scope only (one phone or one PC, one account, the public build, home Wi-Fi, test films): Pack for a trip (pack and play offline with sound), opening the app and the five tabs, Campsite host start and Stop, the whole library-sharing path with test films (Films only, downloads on, one phone as the other household), the Windows desktop library with Play in VLC and the web player, the five Home layouts, and the Windows update-mode choice. Each is recorded on its row. No row reaches 99 or 100: every one of those rows still has open known issues that these tests did not cover, and the scoring rule keeps a row with an open issue at 90% (Ready is recorded only with no open issue). New open issues: Pack for a trip (time-estimate sentence cut off, 1 to 2), Library sharing (desktop needs a restart to show share codes; shared library lists no downloads, 3 to 5), Library, player and web player (certificate warning for the local https address, 6 to 7). Customize layout passed but was not marked 100. Assistant-alone checks of the same day are on the What we checked page and move no score. Overall 70%, 10 rows at 100%, 1 at 99%, unchanged. Earlier: Evidence through Oct 29, 2026, 11:42 AM Eastern (receipt times and operator clocks; the 4-core PC, a Pixel 3, a Galaxy S9+, a test server on the 24-core PC and one owner report; Nick away): Feature-score refresh (Oct 29, 2026, 12:18 PM Eastern): all 70 rows were re-read against the dated evidence since the last update on Oct 28, 2026, 10:29 AM Eastern. Scores up: Update modes and start with Windows, Parental controls and household profiles, Keyboard and screen-reader support, Music on the PC, and Picture frame each restore the Real device tick (49% to 74%) on dated passes of the installed Windows 0.1.108 or 0.1.109 by the 4-core AI tester alone; none reaches 99 because the Real-world check (sound, a person, a phone or tablet screen) is still open. No score goes down and no Ready changes (Ready is Nick’s alone). New open issues recorded from dated failures: Parental controls (a 1- or 2-minute daily limit blocks the first play with “(1 minutes)”), Movie Night (three Watch together findings: a loopback invite link the away address refuses, no message to guests when the host leaves or the room ends, a second press hides the host window), Beebo Relay (the Settings connection card and relay choices disagree), Home layouts (low-contrast Users buttons in the Light colour pack), and Library, player and web player (Nick’s report that his phone browser’s More drawer has no Podcasts). Story Studio’s open issue swapped: the missing painted art is fixed and retested on 0.1.108; the motion proof ignoring the typed title is the new one. Installer and self-update records a fifth in-app update (0.1.108 to 0.1.109) and 14 passing hourly smokes on 0.1.109; it stays 90% by its record limit. Overall 70% (was 68%), 10 rows at 100% (unchanged), 1 at 99% (unchanged). Source merges on Oct 28 and 29 (Converter, Away, PC3 signing order, Player, Cast, Library sharing and metadata, Picture frame, tester64 version numbers) are listed under Source work merged; none is in a download and none moved a score."
   },
   "historyNew": [
+    {
+      "iso": "2026-11-10T03:45:00-05:00",
+      "date": "Nov 10, 2026, 3:45 AM Eastern",
+      "headline": "Nick's decision: three rows he had set Ready move from 100% to 90% until the problems found on Nov 10 are fixed",
+      "tested": "No new tests in this edit.",
+      "happened": "Nick decided (Nov 10, 2026, 3:45 AM Eastern, \"Drop them to 90\") that the findings written earlier today on Posters and info, Music on the phone, and Podcasts and radio count now. Each moved from 100% to 90% with its open issues listed. His earlier Ready records stay on the rows. No other row changed; the overall average is worked out again from the rows."
+    },
     {
       "iso": "2026-11-10T03:39:00-05:00",
       "date": "Nov 10, 2026, 3:39 AM Eastern",
@@ -17542,7 +17544,7 @@
   },
   "platformProgress": {
     "title": "How close are Windows and Android to 100%?",
-    "updatedEastern": "Nov 10, 2026, 3:39 AM Eastern",
+    "updatedEastern": "Nov 10, 2026, 3:45 AM Eastern",
     "lead": "Here is the short answer for each app: how many features are fully confirmed, how many are almost there, how many are earlier on, and what still stands in the way. The counts are worked out from the feature table further down this page, so they always match it.",
     "explain": [
       "The percentage on a feature counts the checks it has passed: built, automated tests, tried on a real device, tried in real use, and confirmed by a person.",
@@ -17576,6 +17578,13 @@
             "need": "AI-tested, no errors found: the three layout problems did not come back in retests. Waiting for the owner’s 100%.",
             "basis": [
               "no focus ring shows on opening"
+            ]
+          },
+          {
+            "feature": "Posters and info (TMDB)",
+            "need": "Nick moved it from 100% to 90% on Nov 10: three poster problems found that day must be fixed and checked again.",
+            "basis": [
+              "Drop them to 90"
             ]
           }
         ],
@@ -17737,6 +17746,20 @@
             "basis": [
               "TalkBack by ear"
             ]
+          },
+          {
+            "feature": "Music on the phone (albums, songs, player, sleep timer)",
+            "need": "Nick moved it from 100% to 90% on Nov 10: bedtime and daily limits do not yet stop music; that fix must be out and checked.",
+            "basis": [
+              "Drop them to 90"
+            ]
+          },
+          {
+            "feature": "Podcasts and radio",
+            "need": "Nick moved it from 100% to 90% on Nov 10: bedtime and daily limits do not yet stop podcasts or radio; that fix must be out and checked.",
+            "basis": [
+              "Drop them to 90"
+            ]
           }
         ],
         "blockers": [
@@ -17844,7 +17867,7 @@
   },
   "platformMatrix": {
     "title": "What works, platform by platform",
-    "updatedEastern": "Nov 10, 2026, 3:39 AM Eastern",
+    "updatedEastern": "Nov 10, 2026, 3:45 AM Eastern",
     "lead": "A tick means a person has confirmed it and nothing known is open for that use. Most things are not at that level yet, so many boxes say “Mostly works” and name the known problem. Select a box (or tap it on a phone) to see how it was tested, on which devices, and what is still open. The same details are listed in full under the table.",
     "quick": [
       {
@@ -18628,7 +18651,7 @@
             ]
           },
           "and": {
-            "state": "works",
+            "state": "mostly",
             "rows": [
               "Music on the phone (albums, songs, player, sleep timer)"
             ],
@@ -18654,7 +18677,9 @@
               "pc4"
             ],
             "tested": "Albums, songs, the player and the sleep timer were checked on a real phone at a second household, and Nick confirmed the feature as Ready.",
-            "notCovered": "Per the feature’s own record, see its row for what was not tried."
+            "notCovered": "Per the feature’s own record, see its row for what was not tried.",
+            "why": "Worked in Nick's own check, but parental limits do not yet cover music, so Nick moved it to 90% on Nov 10.",
+            "open": "Bedtime, the daily limit and Family viewing do not yet stop music on a household profile."
           },
           "tv": {
             "state": "untested",
@@ -18839,7 +18864,7 @@
             "word": "Not available yet"
           },
           "and": {
-            "state": "works",
+            "state": "mostly",
             "rows": [
               "Podcasts and radio"
             ],
@@ -18865,7 +18890,9 @@
             ],
             "tested": "Following and unfollowing a podcast changed the button within about 2 seconds, and earlier checks covered finding, playing and radio. Nick confirmed the feature as Ready.",
             "notCovered": "The episode queue, episode downloads, the sleep timer, and radio favourites and recording were not covered by the newest check; see the feature’s own row.",
-            "note": "Unpublished test builds tester59, tester60 and tester61 (Pixel 3 and Galaxy S9+, AI tester, silent): radio Next and Previous across about 15 stations, swipes and the notification buttons passed; one station that Next did not move past on tester59 played normally later, so skipping a failing station is not proven. Not in a published download, and the row’s open issues are unchanged."
+            "note": "Unpublished test builds tester59, tester60 and tester61 (Pixel 3 and Galaxy S9+, AI tester, silent): radio Next and Previous across about 15 stations, swipes and the notification buttons passed; one station that Next did not move past on tester59 played normally later, so skipping a failing station is not proven. Not in a published download, and the row’s open issues are unchanged.",
+            "why": "Worked in Nick's own check, but parental limits do not yet cover podcasts or radio, so Nick moved it to 90% on Nov 10.",
+            "open": "Bedtime, the daily limit and Family viewing do not yet stop podcasts or radio on a household profile."
           }
         }
       },
@@ -19614,7 +19641,7 @@
         "question": "See posters and film information",
         "cells": {
           "win": {
-            "state": "works",
+            "state": "mostly",
             "rows": [
               "Posters and info (TMDB)"
             ],
@@ -19638,10 +19665,12 @@
               "pc4"
             ],
             "tested": "Five different films each showed a real poster and an info page, and titles without a poster showed a plain “No poster” card with no broken picture. Nick confirmed the feature as Ready.",
-            "notCovered": "Offline behaviour, TV show pages on that PC, and the paid-use film-database licence, which is Nick’s decision."
+            "notCovered": "Offline behaviour, TV show pages on that PC, and the paid-use film-database licence, which is Nick’s decision.",
+            "why": "Worked in Nick's own check, but three problems found on Nov 10 are open, so Nick moved it to 90%.",
+            "open": "With your own movie-info key a short outage can leave some posters missing; a poster that failed to save on a full disk is not retried; a remake with a year can get the original show's details."
           },
           "web": {
-            "state": "works",
+            "state": "mostly",
             "rows": [
               "Posters and info (TMDB)"
             ],
@@ -19661,7 +19690,9 @@
               "pc4"
             ],
             "tested": "In Chrome, looking at Nick’s own library through the away-from-home address, the TV Shows page listed about 164 shows with posters and a show page opened with its poster (Nick present and agreeing). Nick confirmed the feature as Ready.",
-            "notCovered": "Sound and other browsers."
+            "notCovered": "Sound and other browsers.",
+            "why": "Worked in our check, but three problems found on Nov 10 are open, so Nick moved it to 90%.",
+            "open": "With your own movie-info key a short outage can leave some posters missing; a poster that failed to save on a full disk is not retried; a remake with a year can get the original show's details."
           },
           "and": {
             "state": "untested",
@@ -21939,6 +21970,17 @@
         "result": "FAIL (Discover not filtered)",
         "nick": "",
         "landed": "RECORDED on Parental controls."
+      },
+      {
+        "at": "Nov 10, 2026, 3:45 AM Eastern",
+        "id": "Nick, Nov 10",
+        "what": "Nick's decision on the three Ready rows with new findings",
+        "build": "Windows 0.1.115 (published)",
+        "device": "none (a decision, not a test)",
+        "who": "Nick",
+        "result": "Count the findings now",
+        "nick": "Nick: \"Drop them to 90\"",
+        "landed": "MOVED Posters and info, Music on the phone, and Podcasts and radio from 100% to 90%."
       }
     ]
   }
