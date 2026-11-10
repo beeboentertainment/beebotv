@@ -174,6 +174,16 @@ const NOV10={
  "Music on the PC (library, mixes, desktop player)":{openIssues:[1,3]},
  "Our own servers and DNS":{openIssues:[0,1]},
 };
+// Nov 10, 2026 early-morning record (Pixel 3 on the published Android 1.56 against a throwaway test home; automated bug-hunt tests of the published
+// Windows 0.1.115 source): dated lastTested additions and new open issues only, no score move. PRIOR10B is the published file before it.
+const PRIOR10B=JSON.parse(execFileSync('git',['show','09fba081a45a692d03502e2321a7f79914992f5f:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
+const NOV10B={
+ "Playing films, seeking, picture-in-picture":{lastTestedStartsWith:"Nov 10, 2026, 5:11 to 6:42 AM Eastern"},
+ "Live TV (tuner and own playlist)":{lastTestedStartsWith:"Nov 10, 2026, 5:58 to 6:42 AM Eastern"},
+ "Photos and phone backups (timeline, albums, viewer)":{openIssues:[9,10]},
+ "Converter and quality / speed settings":{openIssues:[5,10]},
+ "Library sharing with another household":{openIssues:[8,14]},
+};
 test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
@@ -181,6 +191,16 @@ test('all 70 scores and checks preserve the baseline; dated evidence additions a
   for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent']){
   const nov9=NOV9[before.name];
   const nov10=NOV10[before.name];
+  const nov10b=NOV10B[before.name];
+   if(nov10b && key==='lastTested' && nov10b.lastTestedStartsWith){
+    const prior10b=PRIOR10B.features.find(f=>f.name===before.name);
+    assert.ok(after.lastTested.startsWith(nov10b.lastTestedStartsWith),before.name+': Nov 10 early-morning lastTested prefix');
+    assert.ok(after.lastTested.endsWith('; '+prior10b.lastTested),before.name+': Nov 10 early-morning earlier lastTested kept');continue;
+   }
+   if(nov10b && key==='openIssues' && nov10b.openIssues){
+    const prior10b=PRIOR10B.features.find(f=>f.name===before.name);
+    assert.equal(prior10b.openIssues||0,nov10b.openIssues[0],before.name+': open issues before the Nov 10 early-morning record');assert.equal(after.openIssues||0,nov10b.openIssues[1],before.name+': Nov 10 early-morning open issues');continue;
+   }
    if(nov10 && key==='lastTested' && nov10.lastTestedStartsWith){
     const prior10=PRIOR10.features.find(f=>f.name===before.name);
     assert.ok(after.lastTested.startsWith(nov10.lastTestedStartsWith),before.name+': Nov 10 lastTested prefix');
@@ -273,7 +293,8 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  assert.equal(readinessAudit.features.length,70);
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
  // Nov 10, 2026: the review moved no percentage; then Nick's own decision moved three Ready rows from 100% to 90%.
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),['feature-android-phone-app-music-on-the-phone-albums-songs-player-sleep-timer','feature-android-phone-app-podcasts-and-radio','feature-windows-desktop-app-posters-and-info-tmdb']);
+ // Nov 10, 2026 early-morning record: the audit's before and after are for that run, which moved no percentage.
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),[]);
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
