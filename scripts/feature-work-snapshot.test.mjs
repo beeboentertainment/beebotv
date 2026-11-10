@@ -145,12 +145,47 @@ const NOV9={
  'Update modes and start with Windows':{lastTestedStartsWith:'Nov 9, 2026, 1:24 PM Eastern'},
  'Movie Night':{lastTestedStartsWith:'Nov 9, 2026, 1:43 PM Eastern',expect:{openIssues:7}},
  'Library sharing with another household':{lastTestedStartsWith:'Nov 9, 2026, 11:49 AM to 1:31 PM Eastern',expect:{openIssues:8}},
-};test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
+};
+// Nov 10, 2026 overnight record (private test builds 1.57/1.58 on a Pixel 3, a Galaxy S9+ and an Android TV emulator; code reviews of the published
+// Windows 0.1.115 and Android 1.56): dated lastTested additions and new open issues only, no score move. PRIOR10 is the published file before it.
+const PRIOR10=JSON.parse(execFileSync('git',['show','51da7938:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
+const NOV10={
+ "Opening the app and the five tabs":{lastTestedStartsWith:"Nov 9, 2026, 2:13 to 2:49 PM Eastern",openIssues:[1,2]},
+ "Playing films, seeking, picture-in-picture":{lastTestedStartsWith:"Nov 9, 2026, 3:07 PM Eastern"},
+ "Campsite host start and stop":{lastTestedStartsWith:"Nov 9, 2026, 2:09 to 2:47 PM Eastern"},
+ "Pack for a trip (download planner)":{lastTestedStartsWith:"Nov 9, 2026, 8:45 PM Eastern",openIssues:[1,2]},
+ "Campsite games":{lastTestedStartsWith:"Nov 9, 2026, 2:09 PM and 9:12 PM Eastern"},
+ "Android TV and Fire TV screens":{lastTestedStartsWith:"Nov 10, 2026, 2:34 AM Eastern"},
+ "Link a TV":{lastTestedStartsWith:"Nov 9, 2026, 3:04 and 9:14 PM Eastern"},
+ "Accessibility choices (large text, high contrast, reduced motion, TalkBack)":{lastTestedStartsWith:"Nov 9, 2026, 2:42 PM Eastern"},
+ "Movie Night":{lastTestedStartsWith:"Nov 9, 2026, 2:51 PM Eastern and Nov 10, 2026, 2:47 AM Eastern",openIssues:[7,8]},
+ "Away from home (direct, then relay)":{openIssues:[4,6]},
+ "Photos and phone backups (timeline, albums, viewer)":{openIssues:[6,9]},
+ "Installer and self-update":{openIssues:[0,1]},
+ "Library, player and web player":{openIssues:[7,14]},
+ "Converter and quality / speed settings":{openIssues:[2,5]},
+ "Jellyfin-compatible mode":{openIssues:[2,3]},
+ "Parental controls and household profiles":{openIssues:[3,7]},
+ "Keyboard and screen-reader support":{openIssues:[1,4]},
+ "Music on the PC (library, mixes, desktop player)":{openIssues:[1,3]},
+ "Our own servers and DNS":{openIssues:[0,1]},
+};
+test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
   const after=data.features.find(f=>f.name===before.name);
   for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent']){
   const nov9=NOV9[before.name];
+  const nov10=NOV10[before.name];
+   if(nov10 && key==='lastTested' && nov10.lastTestedStartsWith){
+    const prior10=PRIOR10.features.find(f=>f.name===before.name);
+    assert.ok(after.lastTested.startsWith(nov10.lastTestedStartsWith),before.name+': Nov 10 lastTested prefix');
+    assert.ok(after.lastTested.endsWith('; '+prior10.lastTested),before.name+': Nov 10 earlier lastTested kept');continue;
+   }
+   if(nov10 && key==='openIssues' && nov10.openIssues){
+    const prior10=PRIOR10.features.find(f=>f.name===before.name);
+    assert.equal(prior10.openIssues||0,nov10.openIssues[0],before.name+': open issues before Nov 10');assert.equal(after.openIssues||0,nov10.openIssues[1],before.name+': Nov 10 open issues');continue;
+   }
    if(nov9 && key==='lastTested'){
     const prior=PRIOR.features.find(f=>f.name===before.name);
     assert.ok(after.lastTested.startsWith(nov9.lastTestedStartsWith),before.name+': Nov 9 lastTested prefix');
@@ -229,7 +264,8 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  validateReadinessAudit(data);
  assert.equal(readinessAudit.features.length,70);
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId),['feature-android-phone-app-accessibility-choices-large-text-high-contrast-reduced-motion-talkback','feature-android-phone-app-photos-and-phone-backups-timeline-albums-viewer','feature-windows-desktop-app-home-layouts-and-customize-layout-desktop']);
+ // Nov 10, 2026 review: every row was checked again and no percentage moved.
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId),[]);
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
@@ -241,9 +277,9 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
 });
 test('legacy 100% code estimates with outstanding required work are visibly qualified',()=>{
  const contradicted=data.features.filter(f=>codeEstimate(f));
- assert.equal(contradicted.length,44);
+ assert.equal(contradicted.length,45); // Nov 10, 2026: a row with a 100% code estimate gained an open issue
  for(const f of contradicted){const card=cards.find(c=>c.includes(`data-feature-name="${escape(f.name)}"`));assert.ok(card.includes('Legacy code estimate is unverified'),f.name);}
- assert.match(page,/44 rows retain a 100% code estimate/);
+ assert.match(page,/45 rows retain a 100% code estimate/);
  const method=data.codeVsHuman.method;
  for(const fact of ['Built and Automated tests checks','Real device, Real-world check and Ready to call Available','Group figures are the average of their features and are never rounded up to 100','Remaining counts are open road-to-100 items','All 70 features are counted, including those that are planned or on hold'])assert.ok(method.includes(fact),fact);
  const generator=readFileSync(new URL('../site-data/build-what-we-offer.js',import.meta.url),'utf8');
