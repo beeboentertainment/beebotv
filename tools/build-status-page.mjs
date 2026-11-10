@@ -22,6 +22,7 @@ import { featureId, activityDirectoryMarkup } from './feature-directory.mjs';
 import { readinessAuditMarkup, validateReadinessAudit } from './readiness-audit.mjs';
 import { renderCards, compactEvidenceLayout, codeEstimate, renderRecentEvidence } from './feature-work-snapshot.mjs';
 import { join, dirname } from 'node:path';
+import { loadAiTested, validateAiTested, aiTestedBlock, needsDeviceSection } from './ai-tested.mjs';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -29,6 +30,8 @@ const J = JSON.parse(readFileSync(join(root, 'testing-status.json'), 'utf8'));
 const workSnapshot = JSON.parse(readFileSync(join(root, 'site-data/feature-work-snapshot.json'), 'utf8'));
 const problems = P.problems(J); if (problems.length) throw Error(problems.join('\n'));
 validateReadinessAudit(J);
+const AIT = loadAiTested(root);
+validateAiTested(J, AIT);
 const pagePath = join(root, 'release-evidence.html');
 let html = readFileSync(pagePath, 'utf8');
 const crlf = html.includes('\r\n');
@@ -263,7 +266,7 @@ function checksLine(f) {
   const ok = CH.filter(k => c[k]).map(k => SHORT[k]), no = CH.filter(k => !c[k]).map(k => SHORT[k]);
   return 'Checks passed: ' + (ok.join(', ') || 'none yet') + (no.length ? '. Not yet: ' + no.join(', ') : '') + '.';
 }
-const workCards = renderCards(J, workSnapshot, { featureId, tierFor: P.tierFor, checksLine, leftLine });
+const workCards = renderCards(J, workSnapshot, { featureId, tierFor: P.tierFor, checksLine, leftLine, cardExtra: f => aiTestedBlock(f, J, AIT) });
 sec += '<aside class="meaning-box" aria-labelledby="meaning-score-title"><h3 id="meaning-score-title">What the tiers mean</h3><p>Green is reserved for 90–98%. At 90%, the listed runnable checks may have passed while an open issue caps the score at 90%; an explicit record limit can also hold it below 99. Teal 80–89% means nearly there. The percentage still follows the recorded checks, never a colour choice.</p><p>99% and 100% keep their existing meanings. An open issue always caps the score at 90%. Colour never replaces words.</p></aside>';
 const workLegend = '<div class="status-legend" role="group" aria-label="Colour key and filter"><strong>Colour key</strong><div class="tier-chips">'+tierKey+'</div><p class="tier-result-count" role="status" aria-live="polite">Showing all '+features.length+' features.</p><span class="legend-note">Every feature keeps its percentage and recorded checks. Activity icons are separate from passed-check ticks.<span class="legend-hint"> Select a colour to filter the cards and detailed tables; select it again or choose &ldquo;All features&rdquo; to see every feature.</span></span></div>';
 // "Checks confirmed working": individual passed checks (with build, date, device and limits), generated from J.checksConfirmed so the
@@ -454,10 +457,13 @@ function worksTodaySection(d) {
 {
   const ctx = { esc, featureId, iso, requireStamp: (l, v) => { requireStamp(l, v); if (stampProblems.length) { console.error(stampProblems.join('\n')); process.exit(1); } } };
   const pp = platformProgressHtml(J, ctx), pm = platformMatrixHtml(J, ctx);
-  html = html.replace(/\s*<!--PLATFORM-PROGRESS-->[\s\S]*?<!--\/PLATFORM-PROGRESS-->/, '').replace(/\s*<!--PLATFORM-MATRIX-->[\s\S]*?<!--\/PLATFORM-MATRIX-->/, '');
-  if (pp || pm) {
+  html = html.replace(/\s*<!--PLATFORM-PROGRESS-->[\s\S]*?<!--\/PLATFORM-PROGRESS-->/, '').replace(/\s*<!--PLATFORM-MATRIX-->[\s\S]*?<!--\/PLATFORM-MATRIX-->/, '')
+    .replace(/\s*<!--NEEDS-DEVICE-->[\s\S]*?<!--\/NEEDS-DEVICE-->/, '');
+  // "Built, waiting for someone with the device" (site-data/ai-tested.json), right after the platform chart.
+  const nd = needsDeviceSection(J, AIT, { featureId });
+  if (pp || pm || nd) {
     if (!html.includes('<!--/WORKS-TODAY-->')) throw new Error('WORKS-TODAY marker not found for the platform sections');
-    html = html.replace('<!--/WORKS-TODAY-->', () => `<!--/WORKS-TODAY-->\n    ${pp}\n    ${pm}`);
+    html = html.replace('<!--/WORKS-TODAY-->', () => `<!--/WORKS-TODAY-->\n    ${pp}\n    ${pm}${nd ? `\n    ${nd}` : ''}`);
   }
 }
 
@@ -529,7 +535,8 @@ html = html.replace('</main>', readinessAuditMarkup() + '</main>');
 html = html.replace(/<script id="feature-activity-ids" type="application\/json">[\s\S]*?<\/script>/g, '');
 html = html.replace(/<script src="\/assets\/feature-activity\.js" defer(?:="")?><\/script>/g, '');
 html = html.replace(/<link rel="stylesheet" href="\/assets\/feature-detail\.css">/g, '');
-html = html.replace('</head>', '<link rel="stylesheet" href="/assets/feature-detail.css"></head>');
+html = html.replace(/<link rel="stylesheet" href="\/assets\/ai-tested\.css[^"]*">/g, '');
+html = html.replace('</head>', '<link rel="stylesheet" href="/assets/feature-detail.css"><link rel="stylesheet" href="/assets/ai-tested.css?v=20261110"></head>');
 html = html.replace('</body>', activityDirectoryMarkup() + '<script src="/assets/feature-activity.js" defer></script></body>');
 html = compactEvidenceLayout(html);
 const out = crlf ? html.replace(/\n/g, '\r\n') : html;

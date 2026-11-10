@@ -125,6 +125,8 @@ body .beebo-site-header a[aria-current="page"]{color:#e8cd99;text-decoration:und
 @media(max-width:420px){#beebo-shell-footer .beebo-shell-footer-grid{grid-template-columns:1fr}}
 `;
 export const assets = marker('ASSETS', `<link rel="stylesheet" href="/beebo-testers.css?v=${revision}">\n<link rel="stylesheet" href="/website-shell.css?v=${revision}">\n<script src="/website-shell.js?v=${revision}" defer></script>\n<script src="/polish.js?v=${revision}" defer></script>\n<style data-beebo-shell-styles>${shellStyles}${shellOverrides}</style>`);
+// The home page opens with what Beebo is, what it costs and who makes it; its tester call sits lower on the page.
+export const bannerFor = file => file === 'index.html' ? marker('BANNER', '') : banner;
 export const blockRE = name => new RegExp(`<!-- BEEBO-SHELL-${name}:START -->[\\s\\S]*?<!-- BEEBO-SHELL-${name}:END -->`, 'g');
 export function removeOldShell(source, file) {
   return source.replace(/[\t ]*<aside\b[^>]*class="beebo-tester-banner"[^>]*>[\s\S]*?<\/aside>/g, '')
@@ -138,7 +140,7 @@ export function render(source, file) {
   const finish = text => crlf ? text.replace(/\n/g, '\r\n') : text;
   let s = source.replace(/\r\n/g, '\n');
   if (['BANNER', 'HEADER', 'FOOTER', 'ASSETS'].every(name => blockRE(name).test(s))) {
-    for (const [name, value] of [['BANNER', banner], ['HEADER', header(file)], ['FOOTER', footer], ['ASSETS', assets]]) s = s.replace(blockRE(name), () => value);
+    for (const [name, value] of [['BANNER', bannerFor(file)], ['HEADER', header(file)], ['FOOTER', footer], ['ASSETS', assets]]) s = s.replace(blockRE(name), () => value);
     return finish(s);
   }
   for (const name of ['BANNER', 'HEADER', 'FOOTER', 'ASSETS']) s = s.replace(blockRE(name), '');
@@ -146,7 +148,7 @@ export function render(source, file) {
   // One cache key for shared body styles too; their contents and order stay intact.
   s = s.replace(/(<link\b[^>]*href=["'](?:\/|\.\.\/|\.\/)?(?:site|polish|refresh|example|corporate-home|corporate-supporting-dark|aurora-editorial|rectangular-buttons)\.css)(?:\?[^"']*)?(["'])/g, `$1?v=${revision}$2`);
   s = /<\/head>/i.test(s) ? s.replace(/<\/head>/i, assets + '\n</head>') : s.replace(/<body\b/i, assets + '\n<body');
-  s = s.replace(/(<body\b[^>]*>)/i, '$1\n' + banner + '\n' + header(file));
+  s = s.replace(/(<body\b[^>]*>)/i, '$1\n' + bannerFor(file) + '\n' + header(file));
   s = s.replace(/<\/body>/i, footer + '\n</body>');
   // Avoid accumulating whitespace at insertion points on subsequent runs.
   return finish(s.replace(/\n(?:[\t ]*\n)+(?=<!-- BEEBO-SHELL-|<\/head>|<\/body>)/g, '\n'));

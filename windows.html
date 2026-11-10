@@ -163,7 +163,6 @@ body .beebo-site-header a[aria-current="page"]{color:#e8cd99;text-decoration:und
   </ul>
 
   <h2 id="download">Download Beebo for Windows 0.1.115</h2>
-<aside class="catalog-note" data-release-notice="android1.56-auto-1.21-win-0.1.115"><p><strong>Current downloads:</strong> Windows 0.1.115, published Nov 9, 2026, 10:25 AM Eastern; Android 1.56 (build 128), published Nov 9, 2026, 9:53 AM Eastern; Beebo Auto 1.21 (build 22), published Oct 27, 2026, 2:59 PM Eastern.</p><p>Windows 0.1.115: automated tests and code reviews only; nobody has installed it on a PC yet. <a href="release-evidence.html#download-device-checks">See the full test record and limits</a>.</p></aside>
   <div class="rl-table-wrap">
     <table class="rl-table">
       <tbody>
@@ -174,8 +173,10 @@ body .beebo-site-header a[aria-current="page"]{color:#e8cd99;text-decoration:und
       </tbody>
     </table>
   </div>
+  <p class="download-test-line"><strong>Testing so far:</strong> automated tests and code reviews, then one in-app update to this version on one PC (Nov 9, 2026), where some of its changes were tried and others were not. <a href="release-evidence.html">See the test record</a>.</p>
   <p class="fineprint"><strong>The installer is now digitally signed.</strong> Windows 0.1.115 is signed (Authenticode), and Windows should show the publisher as Nicholas Will instead of &ldquo;Unknown publisher&rdquo;. Because the publisher name is new, Windows SmartScreen may still show a short warning the first time people install it. The <a href="server-setup.html">Windows setup guide</a> explains what to do. To check your download, compare its SHA-256 with the value above (in PowerShell: <code>Get-FileHash .\Beebo.Entertainment.Setup.0.1.115.exe</code>).</p>
   <p>New features are labelled <span class="tag beta">Beta</span> with the Windows version they arrived in. See <a href="updates.html">what is new in each release</a> and <a href="home-theater.html">Home theater and big screen</a> for what has and has not been tried on real equipment.</p>
+<aside class="catalog-note" data-release-notice="android1.56-auto-1.21-win-0.1.115"><p><strong>Current downloads:</strong> Windows 0.1.115, published Nov 9, 2026, 10:25 AM Eastern; Android 1.56 (build 128), published Nov 9, 2026, 9:53 AM Eastern; Beebo Auto 1.21 (build 22), published Oct 27, 2026, 2:59 PM Eastern.</p><p class="download-test-line">Windows 0.1.115: automated tests and code reviews, then installed on one PC by its own in-app update (Nov 9, 2026), where some of its changes were tried and others were not. <a href="release-evidence.html#download-device-checks">See the full test record and limits</a>.</p></aside>
 
   <h2 id="how">How it works</h2>
   <ol class="steps">
@@ -185,7 +186,8 @@ body .beebo-site-header a[aria-current="page"]{color:#e8cd99;text-decoration:und
     </li>
     <li>
       <h3>Create your account and choose your folders</h3>
-      <p>The first time Beebo opens, you choose a username and password and pick your movie and TV folders. Beebo builds your library and never moves or changes your files. The whole setup takes about ten minutes.</p>
+      <p>The first time Beebo opens, you choose a username and password and pick your movie and TV folders. Beebo builds your library from them. The whole setup takes about ten minutes.</p>
+      <p>Beebo plays your files where they are; adding and scanning a folder does not change them. Some tools add, move, rename, convert or delete files: Inbox (it sorts what lands in its own folder), the organizer and library tidy-up tools, the converter, delete buttons, uploads, backups and recordings, subtitle and info-file saving, and the phone app’s Space Saver. Inbox and the converter can work without a click and deleted files skip the Recycle Bin, so while these tools are still being tested, keep a backup and try them on copies first.</p>
     </li>
     <li>
       <h3>Watch at home</h3>

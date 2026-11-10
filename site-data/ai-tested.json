@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "updatedEastern": "Nov 10, 2026, 4:10 AM Eastern",
+  "about": "Feeds the AI tested bars on every feature card and the 'Waiting for someone with the device' section of release-evidence.html. Rendered by tools/ai-tested.mjs. A bar is filled only from one recorded run's own count (passed of total). Nothing here changes a feature's percentage.",
+  "unitTests": [
+    { "feature": "Library sharing with another household", "passed": 8, "total": 8, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the sharing tests against the app's source code with made-up households: sharing switched off, on and unknown, the invite and stop questions, refused replies, and the guest preview. Not checked: real households, a real invite, an installed app, or playing shared media." },
+    { "feature": "Parental controls and household profiles", "passed": 18, "total": 18, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the parental-control tests against the source code: the rating scale and presets, per-person Kids mode and layout locks, the PIN form and refusal handling, all with made-up data. Not checked: switching profiles in an installed app, real PIN enforcement, blocking playback, bedtime or daily limits." },
+    { "feature": "Picture frame (photo wall for a tablet or TV)", "passed": 30, "total": 30, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the picture frame tests against the source code: off by default, the photo picker with made-up photos, creating and removing a frame link, link expiry and the schedule rules. Not checked: an installed PC, a real tablet or TV, scanning the QR code, or real photos." },
+    { "feature": "Space Saver", "passed": 49, "total": 49, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the Space Saver tests against the source code with made-up files only. Not checked: a real phone, real photos, or freeing real space." },
+    { "feature": "Home layouts and Customize layout (desktop)", "passed": 61, "total": 61, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the home layout tests against the source code with made-up data only. Not checked here: the installed app (that is in the device records)." },
+    { "feature": "Music on the PC (library, mixes, desktop player)", "passed": 210, "total": 210, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the PC music tests against the source code with made-up music data only. Not checked: a real music library, the installed player, or sound." },
+    { "feature": "Password reset and email verification", "passed": 59, "total": 59, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the reset and verification tests against the server source code with made-up accounts and pretend e-mail: both stay off unless switched on, and the reset and verification steps work with test data. Not checked: real e-mail delivery, live settings or real accounts. The feature is switched off." },
+    { "feature": "Rewards, ads and credit", "passed": 44, "total": 44, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the rewards, credit and ad-callback tests against the server source code: each stays off unless switched on, no ad offers or rewards show by default, and a switched-off ad callback does nothing. Not checked: ads in an app, real purchases or live settings. The feature is switched off." },
+    { "feature": "Beebo Relay (fallback connection)", "passed": 20, "total": 20, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the relay tests against the server source code with made-up data: the relay routes, the fallback and who may use it. Not checked: a real relay connection, real video, or a phone away from home." },
+    { "feature": "Our own servers and DNS", "passed": 7, "total": 7, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran seven selected checks of the code that writes our name-server settings, with made-up input. Not checked: the live name servers or the live server." },
+    { "feature": "Watch Together", "passed": 29, "total": 29, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the Watch Together room tests for the PC side against the source code: handing over the host, buffering and rejoining, scheduled starts, host-only controls and clean-up. Not checked: the phone app, real phones, real playback in sync, or two homes." },
+    { "feature": "Link a TV", "passed": 15, "total": 15, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the PC-side Link a TV tests against the source code on a local test server: link expiry and removing a link. Not checked: the phone app, a real TV, pairing, or playback." },
+    { "feature": "Wake my PC", "passed": 9, "total": 9, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the PC-side wake tests against the source code with made-up network adapters. Not checked: the phone app, sending a real wake signal, or waking a real PC." },
+    { "feature": "Collections and Request a title", "passed": 64, "total": 65, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the PC-side collection, version and title-request tests against the source code. 64 passed. One check failed on purpose: it marks a known problem where a file name without a year can be read as a special edition. Not checked: the phone app or a real library." },
+    { "feature": "Library health", "passed": 8, "total": 8, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the PC-side library health tests against the source code with made-up files. Not checked: the phone app, the installed app or a real library." },
+    { "feature": "Photos and phone backups (timeline, albums, viewer)", "passed": 19, "total": 19, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran five Photos web tests on a local test server and 14 PC backup error tests against the source code: owner-only access, refusing requests that are not allowed, and handling backup failures. Not checked: a real phone upload, sync, or real backups." },
+    { "feature": "Podcasts and radio", "passed": 29, "total": 29, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the PC-side podcast and radio tests against the source code with saved sample feeds: reading feeds and chapters, and checking radio requests. Not checked: the phone app, live feeds or stations, or sound." },
+    { "feature": "Audiobooks", "passed": 11, "total": 11, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the PC-side audiobook chapter and naming tests against the source code. Not checked: the phone app, a real audiobook collection, or resuming on a device." },
+    { "feature": "Installer and self-update", "passed": 223, "total": 225, "skipped": 2, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran 16 update and installer test files against the source code: version and download checks, the allowed download address, the publisher check, staging, retries, and the update-mode settings. 223 passed and 2 failed; the 2 failures were a timing problem in the test itself and passed when run alone. 2 tests were skipped." },
+    { "feature": "Linux server (headless, Docker)", "passed": 47, "total": 47, "skipped": 2, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran seven test files against the source code: headless settings, local network addresses and packaging checks. 2 tests were skipped because they need Linux file permissions. Not checked: a real Linux or Docker system, an installed server, or real files." },
+    { "feature": "Linux desktop app", "passed": 13, "total": 13, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran two test files against the source code: Linux file names and packaging guards. Not checked: Linux itself, an installed app, or a package build." },
+    { "feature": "Trip Journal link away from home", "passed": 51, "total": 51, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran six test files against the source code with made-up data and a local test server: making a link, who owns it, limits and expiry. Not checked: a live link away from home, a signed-in account, or the installed app." },
+    { "feature": "macOS desktop", "passed": 39, "total": 39, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC, imitating the Mac-only parts", "how": "Ran four test files against the source code on Windows, with the Mac-only parts imitated: start at login, the Dock and menu bar icons, video acceleration choice through a pretend check, and packaging settings for Intel and Apple-chip Macs. Not checked: any real Mac or a Mac package." },
+    { "feature": "Story Studio", "passed": 3, "total": 3, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran one small test file for line timing only (silence and gaps stay silent, lines stay in bounds). Not checked: editing, real speech, preview or export." },
+    { "feature": "Jellyfin-compatible mode", "passed": 8, "total": 8, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the catalog test file against the source code: films and series shown the way Jellyfin apps expect, item ids, and the catalog cache. Not checked: a real Jellyfin app, sign-in, or playback." }
+  ],
+  "extraRuns": [
+    { "feature": "Android TV and Fire TV screens", "kind": "emulator", "device": "Android TV (Google TV) emulator, 1920x1080", "build": "Android 1.58 (build 130), private test build", "date": "Nov 10, 2026, 2:34 AM Eastern", "passed": 4, "total": 4, "how": "An AI tester ran the app on the emulator with no sign-in: the first screen showed the sign-in code and QR for a phone; the remote reached every control with a visible focus box, and the language picker opened and closed; in the sample mode Home, Browse, Library, Play and More opened and search listed the sample clips; no crash.", "notCovered": "playing a video (the emulator could not show it), typing in search, seeking, subtitles, a real library, Fire TV, and any real TV." }
+  ],
+  "tallies": [
+    { "feature": "Opening the app and the five tabs", "kind": "emulator", "recordDate": "Nov 9, 2026, 11:13 to 11:47 AM Eastern", "passed": 92, "total": 92, "quote": "47-screen sweep at font 1.0 and 45-screen sweep at 1.5: 0 error words, 0 crashes" },
+    { "feature": "Playing films, seeking, picture-in-picture", "kind": "aiDevice", "recordDate": "Nov 9, 2026, 11:19 to 11:22 AM Eastern", "passed": 0, "total": 3, "quote": "would not play and said the link had expired; 3 of 3" },
+    { "feature": "Campsite games", "kind": "emulator", "recordDate": "Nov 9, 2026, 11:34 to 11:40 AM Eastern", "passed": 0, "total": 4, "quote": "Sea Battle setup grid and the three board games still collapse" }
+  ],
+  "needsDevice": {
+    "title": "Waiting for someone with the device",
+    "updatedEastern": "Nov 10, 2026, 4:10 AM Eastern",
+    "intro": [
+      "Most of these devices are not in our home, so we cannot try them ourselves. The code is written and, where a line below says so, it passed our checks on an emulator. An emulator is a program on a computer that pretends to be the device. It is not the real thing.",
+      "If you own one of these, please try it and tell us whether it worked. A real person on a real device is the only thing that can move these forward."
+    ],
+    "rule": "Each line says what was run, on what, how many checks passed, and the date. “Not yet run” means exactly that. Nothing in this section raises a feature’s percentage. When a tester tells us they tried one, we add their result here with the date, whether it worked or not.",
+    "contactText": "Tell Nick on the Become a tester page (tester Discord or e-mail)",
+    "contactHref": "/become-a-tester.html",
+    "rows": [
+      {
+        "id": "android-tv",
+        "area": "Android TV and Google TV",
+        "status": "Beta",
+        "feature": "Android TV and Fire TV screens",
+        "deviceNeeded": "A TV or TV box running Android TV or Google TV, with its remote.",
+        "proven": "Built. On Nov 10, 2026, our AI tester ran the TV app on an Android TV (Google TV) emulator: 4 of 4 checks passed (the phone sign-in screen, moving around with the remote, the five main screens and search in the sample mode, and no crash). That run used a private test build (1.58, build 130), not the public download. Not yet tried on a real TV.",
+        "emulator": { "device": "Android TV (Google TV) emulator", "build": "private test build 1.58 (build 130)", "date": "Nov 10, 2026", "passed": 4, "total": 4 },
+        "notTried": "Playing a video, typing in search, seeking, subtitles, a real library, and any real TV or TV box.",
+        "canTry": "Yes. The TV app is inside the same Android test download as the phone app; you install it yourself.",
+        "guideHref": "/android-tv.html",
+        "guideText": "Android TV instructions",
+        "testerConfirmations": []
+      },
+      {
+        "id": "fire-tv",
+        "area": "Amazon Fire TV",
+        "status": "In development",
+        "feature": "Android TV and Fire TV screens",
+        "deviceNeeded": "A Fire TV stick, Fire TV cube or Fire TV television.",
+        "proven": "Built (a Fire TV version of the Android app). Not yet run on an emulator or a real device.",
+        "notTried": "Everything on a Fire TV: installing, signing in, the remote, and playing a video.",
+        "canTry": "Yes, as an in-development tester build.",
+        "guideHref": "/fire-tv-install.html",
+        "guideText": "Fire TV install guide",
+        "testerConfirmations": []
+      },
+      {
+        "id": "roku",
+        "area": "Roku",
+        "status": "In development",
+        "deviceNeeded": "A Roku player or Roku TV in developer mode (Roku’s own setting for installing test channels).",
+        "proven": "Built. Our automatic code checks for the Roku channel passed 499 of 499 on Oct 2, 2026, on a computer, not on a Roku. Our notes mention one earlier short run in a Roku simulator made by another company, but it has no recorded count or date, so we do not count it. Not yet tried on a real Roku.",
+        "emulatorNote": "An earlier simulator run has no recorded count or date, so it is not counted.",
+        "notTried": "Installing the channel on a real Roku, signing in, the remote, and playing a video.",
+        "canTry": "Yes, as an in-development tester channel.",
+        "guideHref": "/roku-install.html",
+        "guideText": "Roku install guide",
+        "testerConfirmations": []
+      },
+      {
+        "id": "lg-tv",
+        "area": "LG TV (webOS)",
+        "status": "In development",
+        "deviceNeeded": "An LG TV with webOS in Developer Mode (LG’s own setting for installing test apps).",
+        "proven": "Built. Our automatic code checks for the Samsung and LG TV app passed 252 of 252 on Oct 2, 2026, on a computer. The app has also been opened in a desktop Chrome browser. Not yet run on an emulator or a real device.",
+        "notTried": "Installing on a real LG TV, the remote, playing a video, and captions.",
+        "canTry": "Yes, as an in-development tester app, or you can try the TV’s own web browser.",
+        "guideHref": "/lg-install.html",
+        "guideText": "LG TV install guide",
+        "testerConfirmations": []
+      },
+      {
+        "id": "iphone-ipad",
+        "area": "iPhone and iPad (Beebo in Safari)",
+        "status": "In development (iPhone and iPad apps); the web player in Safari is not yet tested",
+        "deviceNeeded": "An iPhone or iPad with Safari, and a Windows PC running Beebo that you can reach.",
+        "proven": "The web player has been checked in Chrome on Windows and on Android phones, not in Safari. The iPhone and iPad apps are written but have never run. Not yet run on an emulator or a real device (an iPhone simulator needs a Mac).",
+        "notTried": "Watching a film in Safari on an iPhone or iPad, adding Beebo to the Home Screen, and AirPlay to an Apple TV.",
+        "canTry": "Yes for the web player: open your Beebo address in Safari. Not for the apps: there is nothing to download yet.",
+        "guideHref": "/apple.html",
+        "guideText": "iPhone, iPad and Mac page",
+        "testerConfirmations": []
+      },
+      {
+        "id": "mac",
+        "area": "Mac (the Beebo server app)",
+        "status": "In development",
+        "feature": "macOS desktop",
+        "deviceNeeded": "A Mac, with an Apple chip or an Intel chip.",
+        "proven": "Built. Our automatic code checks for the Mac parts passed 39 of 39 on Nov 8, 2026, on a Windows PC that imitates the Mac-only parts. Not yet run on an emulator or a real device.",
+        "notTried": "Installing, starting, scanning a library and playing a film on a real Mac.",
+        "canTry": "Not yet: there is no Mac download. If you have a Mac and would like to help once there is one, tell us.",
+        "guideHref": "/apple.html",
+        "guideText": "iPhone, iPad and Mac page",
+        "testerConfirmations": []
+      },
+      {
+        "id": "xbox",
+        "area": "Xbox",
+        "status": "In development",
+        "deviceNeeded": "An Xbox in Developer Mode (Microsoft’s own setting for installing test apps).",
+        "proven": "Written, not yet packaged. On Nov 10, 2026, 36 of 36 of our automatic code checks for the Xbox app passed on a Windows PC. The full Xbox package could not be built yet, because a build tool is missing on our PC. Not yet run on an emulator or a real device.",
+        "notTried": "Everything on a real Xbox.",
+        "canTry": "Not yet: there is no Xbox download. If you have an Xbox and would like to help once there is one, tell us.",
+        "testerConfirmations": []
+      }
+    ]
+  }
+}
