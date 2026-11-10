@@ -2,7 +2,7 @@
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { root, base, revision, htmlPages, exclusion, banner, header, footer, assets, blockRE, render, bodyContent } from './site-shell.mjs';
+import { root, base, revision, htmlPages, exclusion, bannerFor, header, footer, assets, blockRE, render, bodyContent } from './site-shell.mjs';
 
 const problems = [], pages = htmlPages();
 const normalize = text => text.replace(/\r\n/g, '\n');
@@ -18,7 +18,7 @@ for (const file of pages) {
     continue;
   }
   checked++;
-  for (const [name, expected] of [['BANNER', banner], ['HEADER', header(file)], ['FOOTER', footer], ['ASSETS', assets]]) {
+  for (const [name, expected] of [['BANNER', bannerFor(file)], ['HEADER', header(file)], ['FOOTER', footer], ['ASSETS', assets]]) {
     const matches = [...source.matchAll(blockRE(name))];
     requireValue(matches.length === 1 && matches[0][0] === expected, `${file}: ${name} missing, duplicated or noncanonical`);
   }
@@ -29,8 +29,8 @@ for (const file of pages) {
     requireValue(tag[2] === '?v=' + revision, `${file}: inconsistent cache key for ${tag[1]}.css`);
   }
   requireValue((source.match(/class="beebo-site-header"/g) || []).length === 1, `${file}: duplicate site header`);
-  requireValue((source.match(/class="beebo-tester-banner"/g) || []).length === 1, `${file}: duplicate tester banner`);
-  const shell = banner + header(file) + footer + assets;
+  requireValue((source.match(/class="beebo-tester-banner"/g) || []).length === (file === 'index.html' ? 0 : 1), `${file}: duplicate tester banner`);
+  const shell = bannerFor(file) + header(file) + footer + assets;
   for (const match of shell.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const raw = match[1].replace(/&amp;/g, '&');
     const url = new URL(raw, 'https://shell.invalid/' + file);
