@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updatedEastern": "Nov 10, 2026, 4:10 AM Eastern",
-  "about": "Feeds the AI tested bars on every feature card and the 'Built, waiting for someone with the device' section of release-evidence.html. Rendered by tools/ai-tested.mjs. A bar is filled only from one recorded run's own count (passed of total). Nothing here changes a feature's percentage.",
+  "about": "Feeds the AI tested bars on every feature card and the 'Waiting for someone with the device' section of release-evidence.html. Rendered by tools/ai-tested.mjs. A bar is filled only from one recorded run's own count (passed of total). Nothing here changes a feature's percentage.",
   "unitTests": [
     { "feature": "Library sharing with another household", "passed": 8, "total": 8, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the sharing tests against the app's source code with made-up households: sharing switched off, on and unknown, the invite and stop questions, refused replies, and the guest preview. Not checked: real households, a real invite, an installed app, or playing shared media." },
     { "feature": "Parental controls and household profiles", "passed": 18, "total": 18, "skipped": 0, "date": "Nov 8, 2026", "where": "our 6-core Windows test PC", "how": "Ran the parental-control tests against the source code: the rating scale and presets, per-person Kids mode and layout locks, the PIN form and refusal handling, all with made-up data. Not checked: switching profiles in an installed app, real PIN enforcement, blocking playback, bedtime or daily limits." },
@@ -38,11 +38,11 @@
     { "feature": "Campsite games", "kind": "emulator", "recordDate": "Nov 9, 2026, 11:34 to 11:40 AM Eastern", "passed": 0, "total": 4, "quote": "Sea Battle setup grid and the three board games still collapse" }
   ],
   "needsDevice": {
-    "title": "Built, waiting for someone with the device",
+    "title": "Waiting for someone with the device",
     "updatedEastern": "Nov 10, 2026, 4:10 AM Eastern",
     "intro": [
-      "I do not own most of these devices. The code is written and, where it says so below, it passed our checks on an emulator. An emulator is a program on a computer that pretends to be the device. It is not the real thing.",
-      "If you own one of these, please try it and tell me if it worked. A real person on a real device is the only thing that can move these forward. — Nick"
+      "Most of these devices are not in our home, so we cannot try them ourselves. The code is written and, where a line below says so, it passed our checks on an emulator. An emulator is a program on a computer that pretends to be the device. It is not the real thing.",
+      "If you own one of these, please try it and tell us whether it worked. A real person on a real device is the only thing that can move these forward."
     ],
     "rule": "Each line says what was run, on what, how many checks passed, and the date. “Not yet run” means exactly that. Nothing in this section raises a feature’s percentage. When a tester tells us they tried one, we add their result here with the date, whether it worked or not.",
     "contactText": "Tell Nick on the Become a tester page (tester Discord or e-mail)",
@@ -120,7 +120,7 @@
         "deviceNeeded": "A Mac, with an Apple chip or an Intel chip.",
         "proven": "Built. Our automatic code checks for the Mac parts passed 39 of 39 on Nov 8, 2026, on a Windows PC that imitates the Mac-only parts. Not yet run on an emulator or a real device.",
         "notTried": "Installing, starting, scanning a library and playing a film on a real Mac.",
-        "canTry": "Not yet: there is no Mac download. If you have a Mac and would like to help once there is one, tell me.",
+        "canTry": "Not yet: there is no Mac download. If you have a Mac and would like to help once there is one, tell us.",
         "guideHref": "/apple.html",
         "guideText": "iPhone, iPad and Mac page",
         "testerConfirmations": []
@@ -130,9 +130,9 @@
         "area": "Xbox",
         "status": "In development",
         "deviceNeeded": "An Xbox in Developer Mode (Microsoft’s own setting for installing test apps).",
-        "proven": "Built. On Nov 10, 2026, 36 of 36 of our automatic code checks for the Xbox app passed on a Windows PC. The full Xbox package could not be built yet, because a build tool is missing on our PC. Not yet run on an emulator or a real device.",
+        "proven": "Written, not yet packaged. On Nov 10, 2026, 36 of 36 of our automatic code checks for the Xbox app passed on a Windows PC. The full Xbox package could not be built yet, because a build tool is missing on our PC. Not yet run on an emulator or a real device.",
         "notTried": "Everything on a real Xbox.",
-        "canTry": "Not yet: there is no Xbox download. If you have an Xbox and would like to help once there is one, tell me.",
+        "canTry": "Not yet: there is no Xbox download. If you have an Xbox and would like to help once there is one, tell us.",
         "testerConfirmations": []
       }
     ]

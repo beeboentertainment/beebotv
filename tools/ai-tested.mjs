@@ -1,4 +1,4 @@
-// "AI tested" bars on every feature card, and the "Built, waiting for someone with the device" section.
+// "AI tested" bars on every feature card, and the "Waiting for someone with the device" section.
 // Data: site-data/ai-tested.json (hand-written, dated) plus the public records already in testing-status.json
 // (deviceTests and ownerTests). Nothing here changes a feature's main percent.
 //
