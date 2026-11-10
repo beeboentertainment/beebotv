@@ -1,0 +1,32 @@
+/* "AI tested" bars on each feature card, and the "Built, waiting for someone with the device" section.
+   Generated markup comes from tools/ai-tested.mjs. Colours use currentColor and translucent tints so the
+   blocks read in the page's light and dark themes. A bar's fill is one recorded run's passed / total only. */
+.ai-tested{margin:.75rem 0 .5rem;padding:.6rem .7rem;border:1px solid rgba(127,127,127,.35);border-radius:6px}
+.ait-title{margin:0 0 .4rem;font-weight:700;font-size:.95rem}
+.ait-sub{font-weight:400;font-size:.8rem;opacity:.8}
+.ait-bars{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.ait-bar{margin:0;padding:0}
+.ait-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.15rem .6rem;margin:0;font-size:.85rem;line-height:1.35}
+.ait-label{font-weight:600}
+.ait-tally{font-variant-numeric:tabular-nums}
+.ait-none .ait-tally,.ait-nocount .ait-tally{opacity:.85;font-style:italic}
+.ait-track{display:block;position:relative;height:.5rem;margin:.25rem 0;border-radius:3px;background:rgba(127,127,127,.25);overflow:hidden}
+.ait-track i{display:block;height:100%;background:#78c9ff}
+.ait-meta{margin:.1rem 0;font-size:.78rem;line-height:1.4;opacity:.9;overflow-wrap:anywhere}
+.ait-tag{display:inline-block;margin:.1rem .25rem 0 0;padding:0 .35rem;border:1px solid rgba(127,127,127,.5);border-radius:3px;font-size:.72rem;white-space:normal}
+.ait-how{font-size:.78rem}
+.ait-how summary{cursor:pointer}
+.ait-how p{margin:.25rem 0 0;line-height:1.45;overflow-wrap:anywhere}
+.needs-device .nd-rows{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr))}
+.nd-row{padding:.8rem .9rem;border:1px solid rgba(127,127,127,.35);border-radius:6px}
+.nd-row h3{margin:0 0 .5rem;font-size:1.05rem}
+.nd-status{display:inline-block;margin-left:.3rem;font-size:.75rem;font-weight:400;opacity:.85}
+.nd-facts{margin:0 0 .6rem}
+.nd-facts div{margin:0 0 .4rem}
+.nd-facts dt{font-weight:600;font-size:.85rem}
+.nd-facts dd{margin:0;font-size:.88rem;line-height:1.45;overflow-wrap:anywhere}
+.nd-emu,.nd-confirm{margin:.4rem 0}
+.nd-confirm ul{margin:.25rem 0 0;padding-left:1.1rem;font-size:.85rem}
+.nd-intro{max-width:60rem}
+.nd-rule{font-size:.88rem;opacity:.9;max-width:60rem}
+.nd-link{margin:.4rem 0 0;font-size:.85rem}
