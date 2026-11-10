@@ -156,7 +156,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const stClass = (s) => 'wwo-st wwo-st-' + s.toLowerCase().replace(/\s+/g, '-');
 const chip = (s) => `<span class="${stClass(s)}">${esc(s)}</span>`;
 const EVID = SITE + '/release-evidence.html#features';
-const evCell = (a) => (a.evidenceFeatures ? a.evidenceAvg + '% (' + a.evidenceFeatures + ' features)' : 'none matched');
+const evCell = (a) => (a.evidenceFeatures ? a.evidenceAvg + '% (' + a.evidenceFeatures + (a.evidenceFeatures === 1 ? ' feature)' : ' features)') : 'none matched');
 function tsInfo(f) {
   if (!f.ts) return '';
   const t = tsByName.get(f.ts);
@@ -216,7 +216,7 @@ function codeStatus() {
 function codeStatusBlock(tag) {
   const c = codeStatus();
   const meter = (label, p, cls) => `<div class="wwo-cs-meter" role="img" aria-label="${label}: ${p}%"><span class="wwo-cs-label"><strong>${label}</strong><span>${p}%</span></span><span class="wwo-cs-bar${cls}" aria-hidden="true"><i style="width:${p}%"></i></span></div>`;
-  return `<div class="wwo-code-status" role="group" aria-labelledby="wwo-code-status-title"><${tag} id="wwo-code-status-title">Where the code is at</${tag}><p>The legacy code-check estimate is <strong>${c.code}%</strong>; it is unverified where required code work or open issues remain. About <strong>${c.human}%</strong> of the device and real-world checklist is recorded. Use the linked feature scores and evidence for readiness. ${c.n} features: ${c.confirmed} confirmed working on real devices, ${c.waiting} in the legacy code-estimate category awaiting real-world testing, ${c.building} code still being finished.</p>${meter('Legacy code-check estimate', c.code, '')}${meter('Device and real-world checks recorded', c.human, ' wwo-cs-bar2')}<p class="wwo-fine">These percentages measure our own checklist, not that nothing can go wrong. Updated ${esc(c.updated)}. <a href="release-evidence.html#code-status">See every feature and what is left to do</a>. <a href="progress-update.html">Read our full progress report</a>.</p></div>`;
+  return `<div class="wwo-code-status" role="group" aria-labelledby="wwo-code-status-title"><${tag} id="wwo-code-status-title">Where the code is at</${tag}><p>The legacy code-check estimate is <strong>${c.code}%</strong>; it is unverified where required code work or open issues remain. About <strong>${c.human}%</strong> of the device and real-world checklist is recorded. Use the linked feature scores and evidence for readiness. ${c.n} features: ${c.confirmed} confirmed working on real devices, ${c.waiting} in the legacy code-estimate category awaiting real-world testing, ${c.building} code still being finished.</p>${meter('Legacy code-check estimate', c.code, '')}${meter('Device and real-world checks recorded', c.human, ' wwo-cs-bar2')}<p class="wwo-fine">These percentages measure our own checklist, not that nothing can go wrong. Testing figures updated ${esc(c.updated)}. <a href="release-evidence.html#code-status">See every feature and what is left to do</a>. <a href="progress-update.html">Read our full progress report</a>.</p></div>`;
 }
 
 /* "How close are Windows and Android to 100%?" callout (Oct 2026): counted from testing-status.json by site-data/platform-progress.js,
@@ -228,7 +228,7 @@ function platformCallout(tag) {
 }
 
 function whoBlock() {
-  return `<p>Beebo Entertainment makes <strong>Beebo</strong>: a free, local-first media server with apps. It runs on your own Windows computer, holds the movies, shows, music, photos, audiobooks, podcasts and radio you already own, and streams them to your phone, tablet, TV, car or any web browser. Video goes straight from your computer to the viewer whenever it can. Beebo's own servers carry only small text, such as sign-in and connection set-up.</p>
+  return `<p>Beebo Entertainment makes <strong>Beebo</strong>: a free, local-first media server with apps. It runs on your own Windows computer, holds the movies, shows, music, photos, audiobooks, podcasts and radio you already own, and streams them to your phone, tablet and web browser; the TV and car apps are still in testing. Video goes straight from your computer to the viewer whenever it can. Beebo's own servers carry only small text, such as sign-in and connection set-up.</p>
 <p>Beebo is <strong>made by a family man, not a data company</strong>. The code is <strong>closed source</strong> (all rights reserved). Beebo includes no movies, shows, music or channels; you bring your own files, and Live TV means your own tuner or your own playlist. We use the four labels <em>Available</em>, <em>Beta</em>, <em>In development</em> and <em>Planned</em>, and we never write a flat "100% working". Optional extras such as Beebo Relay (Beta) and BeeboVPN (In development) are listed with their label; this page does not list prices.</p>`;
 }
 
@@ -282,14 +282,14 @@ ${ideas}
 </ul>
 <h3>Common questions</h3>
 ${faq}
-<p class="wwo-fine">Last updated ${esc(updated)}. Real-device results are from our own phones, PCs and TV, not a broad beta. A test that was not run is unknown, not broken.</p>`;
+<p class="wwo-fine">Feature list last updated ${esc(updated)}. Real-device results are from our own phones, PCs and TV, not a broad beta. A test that was not run is unknown, not broken.</p>`;
 }
 
 function homeBlock() {
   const o = overall;
   return `<section class="wwo-home container" id="everything" aria-labelledby="wwo-home-title">
 <details class="wwo-details" id="wwo-details">
-<summary><h2 class="wwo-sum-title" id="wwo-home-title">Everything we are and offer</h2><span class="wwo-sum-meta">Updated ${esc(updated)} &middot; ${o.pctAvailable}% of ${o.listed} listed features Available &middot; open to read it all</span></summary>
+<summary><h2 class="wwo-sum-title" id="wwo-home-title">Everything we are and offer</h2><span class="wwo-sum-meta">Feature list updated ${esc(updated)} &middot; ${o.pctAvailable}% of ${o.listed} listed features Available &middot; open to read it all</span></summary>
 <div class="wwo-body">
 ${homeBody()}
 </div>
@@ -363,7 +363,7 @@ ${ideas}
 </ul></section>
 <section class="wwo-sec" id="faq"><h2>Common questions</h2>
 ${faq}</section>
-<p class="wwo-fine">Last updated ${esc(updated)}. Real-device results are from our own phones, PCs and TV, not a broad beta. A test that was not run is unknown, not broken. See also <a href="llms.txt">llms.txt</a> for a plain-text summary.</p>`;
+<p class="wwo-fine">Feature list last updated ${esc(updated)}. Real-device results are from our own phones, PCs and TV, not a broad beta. A test that was not run is unknown, not broken. See also <a href="llms.txt">llms.txt</a> for a plain-text summary.</p>`;
 }
 
 function ldBlock() {
