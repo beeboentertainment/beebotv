@@ -184,6 +184,14 @@ const NOV10B={
  "Converter and quality / speed settings":{openIssues:[5,10]},
  "Library sharing with another household":{openIssues:[8,14]},
 };
+// Nov 10, 2026 daytime record (automated tests and reviews of the published Android 1.56 and Windows 0.1.115 source, no device):
+// new open issues only, no score move. PRIOR10C is the published file before it.
+const PRIOR10C=JSON.parse(execFileSync('git',['show','05fcc6f:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
+const NOV10C={
+ "Photos and phone backups (timeline, albums, viewer)":{openIssues:[10,15]},
+ "Parental controls and household profiles":{openIssues:[7,9]},
+ "Android TV and Fire TV screens":{openIssues:[0,1]},
+};
 test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
@@ -192,6 +200,11 @@ test('all 70 scores and checks preserve the baseline; dated evidence additions a
   const nov9=NOV9[before.name];
   const nov10=NOV10[before.name];
   const nov10b=NOV10B[before.name];
+  const nov10c=NOV10C[before.name];
+   if(nov10c && key==='openIssues' && nov10c.openIssues){
+    const prior10c=PRIOR10C.features.find(f=>f.name===before.name);
+    assert.equal(prior10c.openIssues||0,nov10c.openIssues[0],before.name+': open issues before the Nov 10 daytime record');assert.equal(after.openIssues||0,nov10c.openIssues[1],before.name+': Nov 10 daytime open issues');continue;
+   }
    if(nov10b && key==='lastTested' && nov10b.lastTestedStartsWith){
     const prior10b=PRIOR10B.features.find(f=>f.name===before.name);
     assert.ok(after.lastTested.startsWith(nov10b.lastTestedStartsWith),before.name+': Nov 10 early-morning lastTested prefix');
@@ -306,9 +319,9 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
 });
 test('legacy 100% code estimates with outstanding required work are visibly qualified',()=>{
  const contradicted=data.features.filter(f=>codeEstimate(f));
- assert.equal(contradicted.length,48); // Nov 10, 2026: rows with a 100% code estimate gained open issues (one in the review, three by Nick's decision)
+ assert.equal(contradicted.length,49); // Nov 10, 2026: rows with a 100% code estimate gained open issues (one in the review, three by Nick's decision, one in the daytime record: Android TV and Fire TV screens)
  for(const f of contradicted){const card=cards.find(c=>c.includes(`data-feature-name="${escape(f.name)}"`));assert.ok(card.includes('Legacy code estimate is unverified'),f.name);}
- assert.match(page,/48 rows retain a 100% code estimate/);
+ assert.match(page,/49 rows retain a 100% code estimate/);
  const method=data.codeVsHuman.method;
  for(const fact of ['Built and Automated tests checks','Real device, Real-world check and Ready to call Available','Group figures are the average of their features and are never rounded up to 100','Remaining counts are open road-to-100 items','All 70 features are counted, including those that are planned or on hold'])assert.ok(method.includes(fact),fact);
  const generator=readFileSync(new URL('../site-data/build-what-we-offer.js',import.meta.url),'utf8');
