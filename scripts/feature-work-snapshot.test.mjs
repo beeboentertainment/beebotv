@@ -154,6 +154,9 @@ const NOV10={
  "Posters and info (TMDB)":{openIssues:[0,3],percentComplete:[100,90]},
  "Music on the phone (albums, songs, player, sleep timer)":{openIssues:[0,1],percentComplete:[100,90]},
  "Podcasts and radio":{openIssues:[0,1],percentComplete:[100,90]},
+ // Nick, Nov 10, 2026, 7:57 PM Eastern: drop a row when a feature is not working; found by automated tests of the source.
+ "Surprise me, playlists, watchlist, favourites":{openIssues:[0,2],percentComplete:[100,90]},
+ "Collections and Request a title":{openIssues:[0,2],percentComplete:[100,90]},
  "Opening the app and the five tabs":{lastTestedStartsWith:"Nov 9, 2026, 2:13 to 2:49 PM Eastern",openIssues:[1,2]},
  "Playing films, seeking, picture-in-picture":{lastTestedStartsWith:"Nov 9, 2026, 3:07 PM Eastern"},
  "Campsite host start and stop":{lastTestedStartsWith:"Nov 9, 2026, 2:09 to 2:47 PM Eastern"},
@@ -307,7 +310,7 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
  // Nov 10, 2026: the review moved no percentage; then Nick's own decision moved three Ready rows from 100% to 90%.
  // Nov 10, 2026 early-morning record: the audit's before and after are for that run, which moved no percentage.
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),[]);
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),['feature-android-phone-app-collections-and-request-a-title','feature-android-phone-app-surprise-me-playlists-watchlist-favourites']); // Nov 10, 8:06 PM Eastern: Nick's instruction moved these two Ready rows from 100% to 90%
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
@@ -319,9 +322,9 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
 });
 test('legacy 100% code estimates with outstanding required work are visibly qualified',()=>{
  const contradicted=data.features.filter(f=>codeEstimate(f));
- assert.equal(contradicted.length,49); // Nov 10, 2026: rows with a 100% code estimate gained open issues (one in the review, three by Nick's decision, one in the daytime record: Android TV and Fire TV screens)
+ assert.equal(contradicted.length,51); // Nov 10, 2026: rows with a 100% code estimate gained open issues (one in the review, three by Nick's decision, one in the daytime record: Android TV and Fire TV screens)
  for(const f of contradicted){const card=cards.find(c=>c.includes(`data-feature-name="${escape(f.name)}"`));assert.ok(card.includes('Legacy code estimate is unverified'),f.name);}
- assert.match(page,/49 rows retain a 100% code estimate/);
+ assert.match(page,/51 rows retain a 100% code estimate/);
  const method=data.codeVsHuman.method;
  for(const fact of ['Built and Automated tests checks','Real device, Real-world check and Ready to call Available','Group figures are the average of their features and are never rounded up to 100','Remaining counts are open road-to-100 items','All 70 features are counted, including those that are planned or on hold'])assert.ok(method.includes(fact),fact);
  const generator=readFileSync(new URL('../site-data/build-what-we-offer.js',import.meta.url),'utf8');
