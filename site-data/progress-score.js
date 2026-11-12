@@ -27,7 +27,7 @@
   // feature's own device or owner tests. A tick with no such record gets no new credit (it keeps what it had).
   function hasRealDevicePass(feature) {
     return [...(feature.ownerTests || []), ...(feature.deviceTests || [])]
-      .some((r) => r && r.result === 'PASS' && !/emulator|simulator/i.test(r.device || '') && /\b(public|published)\b/i.test(r.build || ''));
+      .some((r) => r && r.result === 'PASS' && !/emulator|simulator/i.test(r.device || '') && /\b(public|published)\b/i.test(r.build || '') && !/\bnot public\b|private test build|unpublished/i.test(r.build || ''));
   }
 
   function percentFor(feature, scoring) {
