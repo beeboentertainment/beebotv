@@ -197,6 +197,8 @@ const NOV10C={
 };
 // Nov 11, 2026 evening record (public Android 1.59 and 1.60 device tests; fixes now in published builds): PRIOR11 is the published file before it.
 const PRIOR11=JSON.parse(execFileSync('git',['show','76b9e71:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
+// Nov 12, 2026: [before, after]. Rows that already had a Real device tick and a dated real-device PASS reach the new 98 step (open known issues cap at 90). Nothing went down.
+const NOV12={"Watch Together":[74,90],"Trip Journal (trips, recap, video export)":[74,90],"Photos and phone backups (timeline, albums, viewer)":[74,90],"Family achievements (opt-in milestones)":[74,98],"Library, player and web player":[74,90],"Update modes and start with Windows":[74,98],"Converter and quality / speed settings":[74,90],"Live TV (tuner and own playlist)":[74,98],"Story Studio":[74,90],"Parental controls and household profiles":[74,90],"Keyboard and screen-reader support":[74,90],"Languages (5 translated with machine help, 3 previews)":[74,90],"Space Saver":[74,90],"Music on the PC (library, mixes, desktop player)":[74,90],"Picture frame (photo wall for a tablet or TV)":[74,90]};
 const NOV11={
  "Opening the app and the five tabs": {
   "openIssues": [
@@ -299,6 +301,7 @@ test('all 70 scores and checks preserve the baseline; dated evidence additions a
   const {Emulator:_emulator,...checksWithoutEmulator}=afterRaw.checks;
   const after={...afterRaw,checks:checksWithoutEmulator};
   for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent']){
+  if(key==='percentComplete'&&NOV12[before.name]){assert.equal(after.percentComplete,NOV12[before.name][1],before.name+': Nov 12 percent (Emulator step: a recorded real-device PASS also counts for 98)');assert.ok(after.percentComplete>NOV12[before.name][0],before.name+': Nov 12 score went up, not down');continue;}
   const nov9=NOV9[before.name];
   const nov10=NOV10[before.name];
   const nov10b=NOV10B[before.name];
@@ -427,7 +430,7 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
  // Nov 10, 2026: the review moved no percentage; then Nick's own decision moved three Ready rows from 100% to 90%.
  // Nov 10, 2026 early-morning record: the audit's before and after are for that run, which moved no percentage.
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),['feature-android-phone-app-share-the-app-qr-over-the-hotspot']); // Nov 11 evening run moved only Share the app (74 to 99); earlier: collections and surprise-me, Nov 10, 8:06 PM Eastern: Nick's instruction moved these two Ready rows from 100% to 90%
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),["feature-android-phone-app-family-achievements-opt-in-milestones","feature-android-phone-app-photos-and-phone-backups-timeline-albums-viewer","feature-android-phone-app-share-the-app-qr-over-the-hotspot","feature-android-phone-app-trip-journal-trips-recap-video-export","feature-android-phone-app-watch-together","feature-windows-desktop-app-converter-and-quality-speed-settings","feature-windows-desktop-app-keyboard-and-screen-reader-support","feature-windows-desktop-app-languages-5-translated-with-machine-help-3-previews","feature-windows-desktop-app-library-player-and-web-player","feature-windows-desktop-app-live-tv-tuner-and-own-playlist","feature-windows-desktop-app-music-on-the-pc-library-mixes-desktop-player","feature-windows-desktop-app-parental-controls-and-household-profiles","feature-windows-desktop-app-picture-frame-photo-wall-for-a-tablet-or-tv","feature-windows-desktop-app-space-saver","feature-windows-desktop-app-story-studio","feature-windows-desktop-app-update-modes-and-start-with-windows"]); // Nov 11 evening run moved only Share the app (74 to 99); earlier: collections and surprise-me, Nov 10, 8:06 PM Eastern: Nick's instruction moved these two Ready rows from 100% to 90%
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');

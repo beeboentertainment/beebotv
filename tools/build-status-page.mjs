@@ -77,7 +77,7 @@ function checkStamps(Jd) {
 }
 checkStamps(J);
 const shortDate = stamp => { const m = /^([A-Z][a-z]{2} \d{1,2}, \d{4})/.exec(stamp || ''); return m ? m[1] : ''; };
-const tier = p => { const t=P.tierFor(p,J.scoring); const l=P.labelFor(p,J.scoring); return [t.id, l && l.id === 'emulator' ? l.text : t.label]; };
+const tier = (p, f) => { const t=P.tierFor(p,J.scoring); const l=f ? P.stepLabel(f,J.scoring) : P.labelFor(p,J.scoring); return [t.id, l && (l.id === 'emulator' || l.id === 'real-device') ? l.text : t.label]; };
 const SCORED = Object.keys(J.scoring.weights);
 // A feature is "updated in this update" only when it changed after the page's previous update
 // (changedEastern later than previousUpdatedEastern), or when it carries "updatedThisRun": true.
@@ -194,7 +194,7 @@ function testHistory(f, note) {
 
 
 function row(f) {
-  const [t, label] = tier(f.percentComplete);
+  const [t, label] = tier(f.percentComplete, f);
   const checks = f.checks || {};
   const aria = CH.map(k => `${k} ${checks[k] ? 'passed' : 'not yet'}`).join(', ');
   const chips = CH.map(k => `<span class="chk ${checks[k] ? 'ok' : 'no'}" title="${k}: ${checks[k] ? 'passed' : 'not yet'}" aria-hidden="true"><b>${SHORT[k]}</b>${checks[k] ? '✓' : '–'}</span>`).join('');
