@@ -195,6 +195,96 @@ const NOV10C={
  "Parental controls and household profiles":{openIssues:[7,9]},
  "Android TV and Fire TV screens":{openIssues:[0,1]},
 };
+// Nov 11, 2026 evening record (public Android 1.59 and 1.60 device tests; fixes now in published builds): PRIOR11 is the published file before it.
+const PRIOR11=JSON.parse(execFileSync('git',['show','76b9e71:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
+const NOV11={
+ "Opening the app and the five tabs": {
+  "openIssues": [
+   2,
+   1
+  ],
+  "lastTestedStartsWith": "Nov 11, 2026, 8:45 AM to 10:33 AM Eastern (public Android 1."
+ },
+ "Playing films, seeking, picture-in-picture": {
+  "openIssues": [
+   7,
+   6
+  ],
+  "lastTestedStartsWith": "Nov 11, 2026, 8:43 to 10:27 AM Eastern (public Android 1.59 "
+ },
+ "Campsite games": {
+  "openIssues": [
+   8,
+   8
+  ],
+  "lastTestedStartsWith": "Nov 11, 2026, 9:35 AM to 11:09 AM Eastern (public Android 1."
+ },
+ "Share the app (QR over the hotspot)": {
+  "lastTestedStartsWith": "Nov 11, 2026, 8:18 to 8:21 AM Eastern (public Android 1.59 b",
+  "checks": true
+ },
+ "Chromecast": {
+  "openIssues": [
+   6,
+   7
+  ],
+  "lastTestedStartsWith": "Nov 11, 2026, 7:18 to 10:55 AM Eastern (Galaxy S9+ with a fr"
+ },
+ "Link a TV": {
+  "openIssues": [
+   0,
+   1
+  ]
+ },
+ "Photos and phone backups (timeline, albums, viewer)": {
+  "openIssues": [
+   15,
+   12
+  ]
+ },
+ "Library, player and web player": {
+  "openIssues": [
+   14,
+   11
+  ]
+ },
+ "Converter and quality / speed settings": {
+  "openIssues": [
+   10,
+   8
+  ]
+ },
+ "Movie Night": {
+  "openIssues": [
+   8,
+   6
+  ]
+ },
+ "Jellyfin-compatible mode": {
+  "openIssues": [
+   3,
+   2
+  ]
+ },
+ "Keyboard and screen-reader support": {
+  "openIssues": [
+   4,
+   3
+  ]
+ },
+ "Music on the PC (library, mixes, desktop player)": {
+  "openIssues": [
+   3,
+   1
+  ]
+ },
+ "Beebo Relay (fallback connection)": {
+  "openIssues": [
+   2,
+   1
+  ]
+ }
+};
 test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
@@ -204,6 +294,24 @@ test('all 70 scores and checks preserve the baseline; dated evidence additions a
   const nov10=NOV10[before.name];
   const nov10b=NOV10B[before.name];
   const nov10c=NOV10C[before.name];
+   const nov11=NOV11[before.name];
+   if(nov11 && key==='openIssues' && nov11.openIssues){
+    const p11=PRIOR11.features.find(f=>f.name===before.name);
+    assert.equal(p11.openIssues||0,nov11.openIssues[0],before.name+': open issues before Nov 11');assert.equal(after.openIssues||0,nov11.openIssues[1],before.name+': Nov 11 open issues');continue;
+   }
+   if(nov11 && key==='lastTested' && nov11.lastTestedStartsWith){
+    const p11=PRIOR11.features.find(f=>f.name===before.name);
+    assert.ok(after.lastTested.startsWith(nov11.lastTestedStartsWith),before.name+': Nov 11 lastTested prefix');
+    assert.ok(after.lastTested.endsWith('; '+p11.lastTested),before.name+': Nov 11 earlier lastTested kept');continue;
+   }
+   if(nov11 && nov11.checks && key==='checks'){
+    const p11=PRIOR11.features.find(f=>f.name===before.name);
+    assert.deepEqual(after.checks,{...p11.checks,'Real-world check':true},before.name+': Nov 11 checks');continue;
+   }
+   if(nov11 && nov11.checks && key==='percentComplete'){
+    const p11=PRIOR11.features.find(f=>f.name===before.name);
+    assert.equal(p11.percentComplete,74);assert.equal(after.percentComplete,99,before.name+': Nov 11 percent (Real-world check added)');continue;
+   }
    if(nov10c && key==='openIssues' && nov10c.openIssues){
     const prior10c=PRIOR10C.features.find(f=>f.name===before.name);
     assert.equal(prior10c.openIssues||0,nov10c.openIssues[0],before.name+': open issues before the Nov 10 daytime record');assert.equal(after.openIssues||0,nov10c.openIssues[1],before.name+': Nov 10 daytime open issues');continue;
@@ -287,7 +395,7 @@ test('every feature card face shows a Latest check line, with honesty when nothi
  }
  const wireless=cards.find(c=>c.includes('data-feature-name="Wireless speakers"'));
  assert.match(wireless,/Latest check: Nov 9, 2026, 7:42 AM Eastern - Android 1.55/);
- assert.match(wireless,/Nothing newer than Nov 9, 2026, 7:42 AM Eastern; the public build is now Android 1\.56 \(build 128\)/);
+ assert.match(wireless,/Nothing newer than Nov 9, 2026, 7:42 AM Eastern; the public build is now Android 1\.60 \(build 132\)/);
  const chromecast=cards.find(c=>c.includes('data-feature-name="Chromecast"'));
  assert.doesNotMatch(chromecast,/Nothing newer than/);
 });
@@ -310,7 +418,7 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
  // Nov 10, 2026: the review moved no percentage; then Nick's own decision moved three Ready rows from 100% to 90%.
  // Nov 10, 2026 early-morning record: the audit's before and after are for that run, which moved no percentage.
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),['feature-android-phone-app-collections-and-request-a-title','feature-android-phone-app-surprise-me-playlists-watchlist-favourites']); // Nov 10, 8:06 PM Eastern: Nick's instruction moved these two Ready rows from 100% to 90%
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),['feature-android-phone-app-share-the-app-qr-over-the-hotspot']); // Nov 11 evening run moved only Share the app (74 to 99); earlier: collections and surprise-me, Nov 10, 8:06 PM Eastern: Nick's instruction moved these two Ready rows from 100% to 90%
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
