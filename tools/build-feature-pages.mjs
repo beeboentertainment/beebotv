@@ -8,7 +8,7 @@ const data = JSON.parse(readFileSync(join(root, 'testing-status.json'), 'utf8'))
 validateReadinessAudit(data);
 const check = process.argv.includes('--check');
 const kinds = { CODE: 'Implementation or fixes', DEVICE: 'Device and real-world checks', NICK: 'Final owner acceptance', BLOCKED: 'Unresolved prerequisites' };
-const checks = { Built: 'Built', 'Automated tests': 'Automated checks', 'Real device': 'Real-device checks', 'Real-world check': 'Real-world checks', 'Ready to call Available': 'Final acceptance' };
+const checks = { Built: 'Built', 'Automated tests': 'Automated checks', Emulator: 'Emulator or test-PC checks', 'Real device': 'Real-device checks', 'Real-world check': 'Real-world checks', 'Ready to call Available': 'Final acceptance' };
 const ids = new Set(), names = new Set();
 export function renderFeature(f, entry) {
   const remaining = f.roadTo100?.remaining || [];

@@ -13,6 +13,27 @@ assert.equal(P.percentFor({checks,openIssues:1},d.scoring),90,'an open issue cap
 assert.equal(P.percentFor({checks,openIssues:0},d.scoring),100);
 checks['Ready to call Available']=false;
 assert.equal(P.percentFor({checks},d.scoring),99);
+// Emulator step (98) and the "Fixed in next update" tag.
+{
+ const sc=d.scoring, B={Built:true,'Automated tests':true};
+ assert.equal(P.percentFor({checks:{...B}},sc),49);
+ assert.equal(P.percentFor({checks:{...B,Emulator:true}},sc),98,'emulator step is 98');
+ assert.equal(P.percentFor({checks:{...B,Emulator:true},openIssues:1},sc),90,'open issue still caps at 90');
+ assert.equal(P.percentFor({checks:{...B,Emulator:true},percentCap:60},sc),60,'percentCap still applies');
+ assert.equal(P.percentFor({checks:{...B,'Real device':true}},sc),74,'real device alone keeps 74 (no score goes down)');
+ assert.equal(P.percentFor({checks:{...B,Emulator:true,'Real device':true,'Real-world check':true}},sc),99,'real device + real-world stays 99');
+ assert.equal(P.percentFor({checks:{Emulator:true,Built:true}},sc),24,'emulator needs Built and Automated tests');
+ assert.equal(P.labelFor(98,sc).text,'Emulator passed – phone test next');
+ assert.equal(P.tierFor(98,sc).id,'green');
+ const nu={emulatorPassed:true,date:'Nov 12, 2026, 1:00 PM Eastern',evidence:'x'};
+ assert.equal(P.nextUpdateTag({checks:{...B},nextUpdate:nu},sc),'Fixed in next update – emulator passed');
+ assert.equal(P.percentFor({checks:{...B},nextUpdate:nu},sc),49,'the tag never changes the percent');
+ assert.equal(P.nextUpdateTag({checks:{...B,Emulator:true},nextUpdate:nu},sc),null,'no tag when the public score is already 98 or more');
+ assert.equal(P.nextUpdateTag({checks:{...B},nextUpdate:{...nu,emulatorPassed:false}},sc),null);
+ const bad=JSON.parse(JSON.stringify(d)); bad.features[0].nextUpdate=nu; bad.features[0].checks.Emulator=true; bad.features[0].percentComplete=98; bad.features[0].openIssues=0;
+ assert.ok(P.problems(bad).some(x=>/must be cleared/.test(x)),'a stale tag at 98 or more is a problem');
+ for(const f of d.features) if(f.checks.Emulator) assert.ok(f.deviceTests.concat(f.recentDeviceEvidence||[]).some(r=>r.result==='PASS'&&/emulator|test PC/i.test(r.device)&&/public|published/i.test(r.build)),'Emulator tick needs a PASS on a public build: '+f.name);
+}
 const html=fs.readFileSync(path.join(root,'release-evidence.html'),'utf8');
 assert.ok(!/mostly proven|Green 80/.test(html),'superseded tier wording');
 assert.equal((html.match(/class="feature-entry" data-tier=/g)||[]).length,d.features.length);

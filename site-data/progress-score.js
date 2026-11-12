@@ -5,6 +5,8 @@
  * labels, the colour tiers) and, per feature, the five "checks" plus two optional numbers:
  *   openIssues   whole number, default 0. Known errors that are still open. Above 0 the score is capped
  *                (scoring.openIssuesCap, 90), so a feature with an open known error can never reach 99.
+ *   nextUpdate   optional { emulatorPassed, date, evidence }: newest main code passed on the emulator / test PC.
+ *                Shows a tag only; never changes the percent. Cleared on release day.
  *   percentCap   optional whole number. An explicit upper limit that is explained by the feature's scoreNote.
  *
  * Works in Node (require) and in a browser (window.BeeboProgress). No dependencies.
@@ -26,6 +28,11 @@
     const checks = feature.checks || {};
     let p = 0;
     for (const name of Object.keys(weights)) if (checks[name] === true) p += weights[name];
+    // Emulator step (added Nov 12, 2026): Built + Automated tests + a recorded emulator (Android) or test-PC
+    // (Windows / browser) pass of the PUBLIC build lifts the score to 98. It is a floor, never a deduction: a feature
+    // that already has Real device / Real-world check keeps what those give (74, 99), so no score goes down.
+    const em = scoring.emulator;
+    if (em && checks[em.check] === true && checks.Built === true && checks['Automated tests'] === true) p = Math.max(p, em.percent);
     if (wholeNumber(feature.openIssues) && feature.openIssues > 0) p = Math.min(p, scoring.openIssuesCap);
     if (wholeNumber(feature.percentCap)) p = Math.min(p, feature.percentCap);
     return p;
@@ -35,7 +42,19 @@
   function labelFor(percent, scoring) {
     if (percent >= scoring.readyPercent) return { id: 'ready', text: scoring.readyLabel };
     if (percent === scoring.waitingPercent) return { id: 'waiting', text: scoring.waitingLabel };
+    if (scoring.emulator && percent === scoring.emulator.percent) return { id: 'emulator', text: scoring.emulator.label };
     return null;
+  }
+
+  // Optional "Fixed in next update - emulator passed" tag. It NEVER changes the percent (the percent is the public
+  // build only). feature.nextUpdate = { emulatorPassed: true, date, evidence } is recorded when the newest main code,
+  // not yet public, passed on the emulator / test PC. Shown only while the public score is still below the emulator
+  // step; on release day the tag is cleared and the row moves to 98 from the public build.
+  function nextUpdateTag(feature, scoring) {
+    const n = feature.nextUpdate;
+    if (!n || n.emulatorPassed !== true || !scoring.emulator) return null;
+    if (percentFor(feature, scoring) >= scoring.emulator.percent) return null;
+    return scoring.emulator.nextUpdateLabel;
   }
 
   function tierFor(percent, scoring) {
@@ -65,8 +84,20 @@
     if (s.openIssuesCap !== 90) out.push('open issue cap must be 90');
     const requiredTiers = [[100,'gold'],[99,'purple'],[90,'green'],[80,'teal'],[40,'yellow'],[0,'red']];
     if (JSON.stringify((s.tiers || []).map(t => [t.min,t.id])) !== JSON.stringify(requiredTiers)) out.push('tiers must separate 100, 99, 90–98, 80–89, 40–79 and 0–39');
+    if (!s.emulator || s.emulator.check !== 'Emulator' || s.emulator.percent !== 98 || !s.emulator.label || !s.emulator.nextUpdateLabel) out.push('scoring.emulator must name the Emulator check, 98 percent, its label and the next-update tag label');
+    else if (!(s.emulator.percent > s.waitingPercent - 2 && s.emulator.percent < s.waitingPercent)) out.push('the emulator step must sit just below the waiting mark');
     if (s.openIssuesCap >= s.waitingPercent) out.push('scoring.openIssuesCap must stay below the waiting mark');
     data.features.forEach((f) => {
+      const c = f.checks || {};
+      if (c.Emulator !== undefined && typeof c.Emulator !== 'boolean') out.push(`${f.name}: checks.Emulator must be true or false`);
+      if (c.Emulator === true && !(c.Built === true && c['Automated tests'] === true)) out.push(`${f.name}: Emulator needs Built and Automated tests`);
+      if (c.Emulator === true && !/emulator|test pc|dev pc|24-core/i.test(JSON.stringify(f.deviceTests || []) + JSON.stringify(f.recentDeviceEvidence || []))) out.push(`${f.name}: Emulator is true but no emulator or test-PC run is recorded in its device tests`);
+      if (f.nextUpdate !== undefined) {
+        const n = f.nextUpdate;
+        if (!n || typeof n !== 'object' || typeof n.emulatorPassed !== 'boolean') out.push(`${f.name}: nextUpdate must be { emulatorPassed, date, evidence }`);
+        else if (n.emulatorPassed && (!/Eastern/.test(n.date || '') || !String(n.evidence || '').trim())) out.push(`${f.name}: nextUpdate.emulatorPassed needs a dated Eastern "date" and an "evidence" sentence`);
+        else if (n.emulatorPassed && s.emulator && percentFor(f, s) >= s.emulator.percent) out.push(`${f.name}: nextUpdate tag must be cleared once the public score is ${s.emulator.percent} or more (clear it on release day)`);
+      }
       if (f.openIssues !== undefined && !wholeNumber(f.openIssues)) out.push(`${f.name}: openIssues must be a whole number, 0 or more`);
       if (f.percentCap !== undefined && !wholeNumber(f.percentCap)) out.push(`${f.name}: percentCap must be a whole number, 0 or more`);
       if (f.percentCap !== undefined && !f.scoreNote) out.push(`${f.name}: percentCap needs a scoreNote that explains it`);
@@ -85,5 +116,5 @@
     return out;
   }
 
-  return { percentFor, labelFor, tierFor, average, recompute, problems };
+  return { percentFor, labelFor, nextUpdateTag, tierFor, average, recompute, problems };
 });

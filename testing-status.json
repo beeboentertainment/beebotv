@@ -1021,7 +1021,7 @@
   "updated": "2026-11-11T19:24:00-05:00",
   "updatedEastern": "Nov 11, 2026, 7:24 PM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
-  "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
+  "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25 (49%). Emulator step: when the PUBLIC build also passes on an Android emulator (phone features) or on our test PC (Windows and browser features), the score reaches 98 and the label beside the bar reads “Emulator passed – phone test next”. An emulator or test PC is not a real phone or a real home, so it never reaches 99 on its own: 99 still needs the real-device check and the real-world check on the public build. A feature that went straight to a real phone does not need a separate emulator tick and keeps its 74% or 99%; no score went down when this step was added. We only count an emulator or test-PC run that is recorded in the feature’s test history. Open known errors still cap a feature at 90%. The score counts the public build only. When the newest code, not yet public, has passed on the emulator or test PC, the row may carry a separate tag “Fixed in next update – emulator passed” beside the bar. The tag never changes the percentage, it needs a dated record, and it is removed on release day, when the public build is tested and the row moves to 98 (or higher) on its own evidence. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
   "overallAveragePercent": 70,
   "groupAveragePercent": {
     "Android phone app": 80,
@@ -1191,6 +1191,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": true,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -1675,6 +1676,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": true,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -2280,6 +2282,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -2668,6 +2671,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -2849,6 +2853,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -2960,6 +2965,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -3147,6 +3153,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -3475,6 +3482,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -3783,6 +3791,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -4238,6 +4247,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -4595,6 +4605,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -5033,6 +5044,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -5209,6 +5221,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -5610,6 +5623,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -5719,6 +5733,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -5861,6 +5876,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -5998,6 +6014,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -6090,6 +6107,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -6562,6 +6580,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -6693,6 +6712,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -6780,6 +6800,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -6860,6 +6881,7 @@
       "checks": {
         "Built": false,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -6930,6 +6952,7 @@
       "checks": {
         "Built": false,
         "Automated tests": false,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -7000,6 +7023,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -7123,6 +7147,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -7543,6 +7568,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -7790,6 +7816,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -7954,6 +7981,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -8104,6 +8132,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -8271,6 +8300,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -8448,6 +8478,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -8876,6 +8907,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -8990,6 +9022,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -9248,6 +9281,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -9964,6 +9998,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -10111,6 +10146,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -10406,6 +10442,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -10629,6 +10666,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -10795,6 +10833,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -11059,6 +11098,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -11275,6 +11315,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -11600,6 +11641,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -11842,6 +11884,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -12097,6 +12140,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -12291,6 +12335,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -12351,6 +12396,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -12512,6 +12558,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -12686,6 +12733,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -12797,6 +12845,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -12899,6 +12948,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -13121,6 +13171,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -13307,6 +13358,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -13544,6 +13596,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -13740,6 +13793,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -13795,6 +13849,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -13846,6 +13901,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -13905,6 +13961,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -13998,6 +14055,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -14194,6 +14252,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": true
@@ -14356,6 +14415,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -14404,6 +14464,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -14460,6 +14521,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -14547,6 +14609,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -14598,6 +14661,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": false,
         "Ready to call Available": false
@@ -14662,6 +14726,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": true,
         "Real-world check": true,
         "Ready to call Available": false
@@ -14754,6 +14819,7 @@
       "checks": {
         "Built": true,
         "Automated tests": true,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -14806,6 +14872,7 @@
       "checks": {
         "Built": false,
         "Automated tests": false,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -14861,6 +14928,7 @@
       "checks": {
         "Built": false,
         "Automated tests": false,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -14916,6 +14984,7 @@
       "checks": {
         "Built": false,
         "Automated tests": false,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -14967,6 +15036,7 @@
       "checks": {
         "Built": false,
         "Automated tests": false,
+        "Emulator": false,
         "Real device": false,
         "Real-world check": false,
         "Ready to call Available": false
@@ -15936,8 +16006,15 @@
         "range": "0 to 39%"
       }
     ],
-    "rule": "percentComplete is worked out from features[].checks and features[].openIssues by site-data/progress-score.js: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready to call Available 1 (only Nick records it). The first four add up to 99. A feature reaches 99 only when all four are true and openIssues is 0 (omitted means 0). An open known error caps the score at 90. An optional percentCap, explained by scoreNote, is a further limit. Check with: node site-data/check-progress-score.js.",
-    "explanation": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified."
+    "rule": "percentComplete is worked out from features[].checks and features[].openIssues by site-data/progress-score.js: Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready to call Available 1 (only Nick records it). The first four add up to 99. Emulator step (scoring.emulator): Built + Automated tests + checks.Emulator true (a recorded emulator or test-PC pass of the PUBLIC build) gives at least 98, never less than the other checks give. Optional nextUpdate {emulatorPassed, date, evidence} shows the tag “Fixed in next update – emulator passed” and never changes the percent; it is cleared on release day. A feature reaches 99 only when all four are true and openIssues is 0 (omitted means 0). An open known error caps the score at 90. An optional percentCap, explained by scoreNote, is a further limit. Check with: node site-data/check-progress-score.js.",
+    "explanation": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25 (49%). Emulator step: when the PUBLIC build also passes on an Android emulator (phone features) or on our test PC (Windows and browser features), the score reaches 98 and the label beside the bar reads “Emulator passed – phone test next”. An emulator or test PC is not a real phone or a real home, so it never reaches 99 on its own: 99 still needs the real-device check and the real-world check on the public build. A feature that went straight to a real phone does not need a separate emulator tick and keeps its 74% or 99%; no score went down when this step was added. We only count an emulator or test-PC run that is recorded in the feature’s test history. Open known errors still cap a feature at 90%. The score counts the public build only. When the newest code, not yet public, has passed on the emulator or test PC, the row may carry a separate tag “Fixed in next update – emulator passed” beside the bar. The tag never changes the percentage, it needs a dated record, and it is removed on release day, when the public build is tested and the row moves to 98 (or higher) on its own evidence. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified.",
+    "emulator": {
+      "check": "Emulator",
+      "percent": 98,
+      "label": "Emulator passed – phone test next",
+      "nextUpdateLabel": "Fixed in next update – emulator passed",
+      "note": "A floor, never a deduction. Built + Automated tests + a recorded emulator (Android) or test-PC (Windows and browser) pass of the PUBLIC build = 98. Real device + Real-world check still give 74 and 99 as before, so no feature went down when this step was added."
+    }
   },
   "sourceMerges": [
     {

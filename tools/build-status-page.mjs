@@ -39,8 +39,8 @@ html = html.replace(/\r\n/g, '\n');
 
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const markers = J.showChangeMarkers === true;
-const CH = ['Built', 'Automated tests', 'Real device', 'Real-world check', 'Ready to call Available'];
-const SHORT = { 'Built': 'Built', 'Automated tests': 'Tests', 'Real device': 'Device', 'Real-world check': 'Real-world', 'Ready to call Available': 'Ready' };
+const CH = ['Built', 'Automated tests', 'Emulator', 'Real device', 'Real-world check', 'Ready to call Available'];
+const SHORT = { 'Built': 'Built', 'Automated tests': 'Tests', 'Emulator': 'Emulator', 'Real device': 'Device', 'Real-world check': 'Real-world', 'Ready to call Available': 'Ready' };
 const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 // "Oct 6, 2026, 9:30 PM Eastern" -> ISO with an Eastern offset (approximate DST window; display text is the source).
@@ -77,7 +77,8 @@ function checkStamps(Jd) {
 }
 checkStamps(J);
 const shortDate = stamp => { const m = /^([A-Z][a-z]{2} \d{1,2}, \d{4})/.exec(stamp || ''); return m ? m[1] : ''; };
-const tier = p => { const t=P.tierFor(p,J.scoring); return [t.id,t.label]; };
+const tier = p => { const t=P.tierFor(p,J.scoring); const l=P.labelFor(p,J.scoring); return [t.id, l && l.id === 'emulator' ? l.text : t.label]; };
+const SCORED = Object.keys(J.scoring.weights);
 // A feature is "updated in this update" only when it changed after the page's previous update
 // (changedEastern later than previousUpdatedEastern), or when it carries "updatedThisRun": true.
 // Older changes keep their dated note as quiet history, without the tag or highlight.
@@ -214,7 +215,7 @@ function row(f) {
   }
   const id = esc(featureId(f));
   return `<tr id="${id}" class="feat tier-${t}${f.percentComplete === 99 ? ' is-99' : f.percentComplete === 100 ? ' is-100' : ''}${ch ? ' is-updated' : ''}"><th id="${id}-name" scope="row">${esc(f.name)}${ch ? `<br>${badge}` : ''}</th><td>${esc(f.status)}</td>` +
-    `<td class="done-cell"><strong>${f.percentComplete}%</strong> <span class="tier-tag tier-${t}">${label}</span>${delta ? `<br>${delta}` : ''}` +
+    `<td class="done-cell"><strong>${f.percentComplete}%</strong> <span class="tier-tag tier-${t}">${label}</span>${P.nextUpdateTag(f, J.scoring) ? ` <span class="tier-tag next-update-tag" title="${esc(f.nextUpdate.evidence)} (${esc(f.nextUpdate.date)}). This tag does not change the percentage.">${esc(P.nextUpdateTag(f, J.scoring))}</span>` : ''}${delta ? `<br>${delta}` : ''}` +
     `<span class="bar" aria-hidden="true"><i style="width:${f.percentComplete}%"></i>${prevTick}</span></td>` +
     `<td class="chk-cell" aria-label="${aria}">${chips}</td>${lastTestedCell(f)}</tr>` +
     `<tr class="feature-notes"><td colspan="5" headers="${id}-name"><div class="feature-notes-content"><p class="feature-left-short"><strong>Left to reach 100%:</strong> ${esc(leftLine(f))}</p>${testHistory(f, note)}</div></td></tr>`;
@@ -232,7 +233,7 @@ const THEAD = '<thead><tr><th scope="col">Feature</th><th scope="col">Status</th
 
 let sec = `<section class="evidence-section" id="features" aria-labelledby="features-title">
 <span class="evidence-kicker">Progress by feature${upd ? ` · last updated ${esc(upd)}` : ''}</span><h2 id="features-title">Every feature: how far along, and what gets it to 100%.</h2>
-<p><strong>How the percentage works.</strong> ${esc(J.scoring.rule)} Realistic AI checks on real devices may count toward Real-world when the evidence covers actual use. Muted or state-only checks cannot prove behavior they did not judge. Only Nick records Ready. Each row lists its limits; all listed checks passing does not mean a feature can never fail.</p>
+<p><strong>How the percentage works.</strong> ${esc(J.scoring.rule)} The Emulator step (98%) counts only a recorded emulator or test-PC run of the public build; the separate tag &ldquo;Fixed in next update &ndash; emulator passed&rdquo; is about newer, not yet public code and never changes the percentage. Realistic AI checks on real devices may count toward Real-world when the evidence covers actual use. Muted or state-only checks cannot prove behavior they did not judge. Only Nick records Ready. Each row lists its limits; all listed checks passing does not mean a feature can never fail.</p>
 `;
 if (markers) {
   sec += `<p class="upd-summary"><span class="upd-badge">Updated</span> <strong>${changedCount} of ${features.length} features changed since the previous update${J.previousUpdatedEastern ? ` (${esc(J.previousUpdatedEastern)})` : ''}.</strong> Highlighted rows (only those changed in this latest update) show the old and new percentage (the small mark on the bar is the old position), what changed in one sentence, and the date and time in Eastern. Older changes stay in each row&rsquo;s notes as &ldquo;Earlier update&rdquo; notes. This temporary marker is shown while testing is under way.</p>\n`;
@@ -267,7 +268,7 @@ function checksLine(f) {
   return 'Checks passed: ' + (ok.join(', ') || 'none yet') + (no.length ? '. Not yet: ' + no.join(', ') : '') + '.';
 }
 const workCards = renderCards(J, workSnapshot, { featureId, tierFor: P.tierFor, checksLine, leftLine, cardExtra: f => aiTestedBlock(f, J, AIT) });
-sec += '<aside class="meaning-box" aria-labelledby="meaning-score-title"><h3 id="meaning-score-title">What the tiers mean</h3><p>Green is reserved for 90–98%. At 90%, the listed runnable checks may have passed while an open issue caps the score at 90%; an explicit record limit can also hold it below 99. Teal 80–89% means nearly there. The percentage still follows the recorded checks, never a colour choice.</p><p>99% and 100% keep their existing meanings. An open issue always caps the score at 90%. Colour never replaces words.</p></aside>';
+sec += '<aside class="meaning-box" aria-labelledby="meaning-score-title"><h3 id="meaning-score-title">What the tiers mean</h3><p>Green is reserved for 90–98%. At 90%, the listed runnable checks may have passed while an open issue caps the score at 90%; an explicit record limit can also hold it below 99. Teal 80–89% means nearly there. The percentage still follows the recorded checks, never a colour choice.</p><p>98% means the public build also passed on an emulator or the test PC (&ldquo;Emulator passed &ndash; phone test next&rdquo;); a real phone is still to come. 99% and 100% keep their existing meanings. An open issue always caps the score at 90%. Colour never replaces words.</p></aside>';
 const workLegend = '<div class="status-legend" role="group" aria-label="Colour key and filter"><strong>Colour key</strong><div class="tier-chips">'+tierKey+'</div><p class="tier-result-count" role="status" aria-live="polite">Showing all '+features.length+' features.</p><span class="legend-note">Every feature keeps its percentage and recorded checks. Activity icons are separate from passed-check ticks.<span class="legend-hint"> Select a colour to filter the cards and detailed tables; select it again or choose &ldquo;All features&rdquo; to see every feature.</span></span></div>';
 // "Checks confirmed working": individual passed checks (with build, date, device and limits), generated from J.checksConfirmed so the
 // list cannot drift from the feature tables. Each entry must name a real feature row (linked by its row id), carry a real Eastern
@@ -329,7 +330,7 @@ for (const g of groups) {
 sec += '</div>';
 const top = features.filter(f => f.percentComplete >= 100).length;
 sec += `<p><strong>Across all ${features.length} features the average is ${overall}%.</strong> That average mixes features that are well along with features that are only plans, so use the individual rows. ${top === 0 ? 'No feature is at 100% today, because none has yet passed a real-world check and a readiness review together.' : `${top} feature${top === 1 ? ' is' : 's are'} at 100%.`}</p>\n`;
-sec += '<p id="data-download">Machine-readable copy of this progress data: <a href="/testing-status.json">testing-status.json</a> (feature, status, percent, the five checks, last tested date, what is left and, while markers are on, what changed and when). Search engines and tools can read it.</p>\n    </section>';
+sec += '<p id="data-download">Machine-readable copy of this progress data: <a href="/testing-status.json">testing-status.json</a> (feature, status, percent, the checks, last tested date, what is left and, while markers are on, what changed and when). Search engines and tools can read it.</p>\n    </section>';
 const workHeaderEnd = sec.indexOf('</h2>') + '</h2>'.length;
 const workFooterStart = sec.indexOf('<p id="data-download">');
 sec = sec.slice(0, workHeaderEnd) + workLegend + '<div id="tier-key-panel" class="tier-key-panel">' + workCards + '</div>' +
@@ -484,7 +485,7 @@ html = html.replace(/(<script type="application\/ld\+json" id="testing-ld">)([\s
   if (iso(upd)) ld.dateModified = iso(upd);
   ld.mainEntity.numberOfItems = features.length;
   ld.mainEntity.itemListElement = features.map((f, i) => {
-    const n = CH.filter(k => f.checks?.[k]).length;
+    const n = SCORED.filter(k => f.checks?.[k]).length;
     let d = `${f.group}. Status: ${f.status}. Progress: ${f.percentComplete}% (${n} of 5 checks recorded). Last tested: ${f.lastTested}. Left to reach 100%: ${f.leftToReach100}${f.scoreNote ? ' Record limit: ' + f.scoreNote : ''}`;
     if (isChanged(f)) d += ` Updated ${f.changedEastern}${Number.isFinite(f.previousPercent) && f.previousPercent !== f.percentComplete ? ` (was ${f.previousPercent}%)` : ''}.`;
     return { '@type': 'ListItem', position: i + 1, name: f.name, description: d };

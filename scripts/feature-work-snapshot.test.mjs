@@ -285,10 +285,19 @@ const NOV11={
   ]
  }
 };
+test('Emulator ticks are explicit: only rows with a recorded PASS on an emulator with the public build, and no score went down',()=>{
+ const EMU=['Opening the app and the five tabs','Playing films, seeking, picture-in-picture'];
+ assert.deepEqual(data.features.filter(f=>f.checks.Emulator).map(f=>f.name).sort(),[...EMU].sort());
+ assert.ok(data.features.every(f=>typeof f.checks.Emulator==='boolean'));
+ assert.ok(data.features.every(f=>!f.nextUpdate),'no next-update tag is set without recorded evidence');
+});
 test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
  for(const before of baseline.features){
-  const after=data.features.find(f=>f.name===before.name);
+  const afterRaw=data.features.find(f=>f.name===before.name);
+  // Nov 12, 2026: the Emulator step is a new, separate check (floor of 98, never a deduction). Compare the original five checks here; the Emulator ticks are pinned in their own test.
+  const {Emulator:_emulator,...checksWithoutEmulator}=afterRaw.checks;
+  const after={...afterRaw,checks:checksWithoutEmulator};
   for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent']){
   const nov9=NOV9[before.name];
   const nov10=NOV10[before.name];

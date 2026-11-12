@@ -160,7 +160,7 @@ const evCell = (a) => (a.evidenceFeatures ? a.evidenceAvg + '% (' + a.evidenceFe
 function tsInfo(f) {
   if (!f.ts) return '';
   const t = tsByName.get(f.ts);
-  const n = Object.values(t.checks || {}).filter(Boolean).length;
+  const n = Object.keys(ts.scoring.weights).filter(k => (t.checks || {})[k]).length;
   return t.percentComplete + '% on the testing evidence page (' + n + ' of 5 checks recorded' + (t.lastTested ? ', last tested ' + t.lastTested : '') + ')' + (t.scoreNote ? '. ' + t.scoreNote : '');
 }
 function testedOn(f) {
