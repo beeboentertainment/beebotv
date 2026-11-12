@@ -23,11 +23,11 @@
 
   function wholeNumber(v) { return typeof v === 'number' && Number.isInteger(v) && v >= 0; }
 
-  // The Real device tick only counts for the 98 step when a dated PASS on a real (non-emulator) device is recorded in the
+  // The Real device tick only counts for the 98 step when a dated PASS on a real (non-emulator) device with a PUBLIC (published) build is recorded in the
   // feature's own device or owner tests. A tick with no such record gets no new credit (it keeps what it had).
   function hasRealDevicePass(feature) {
     return [...(feature.ownerTests || []), ...(feature.deviceTests || [])]
-      .some((r) => r && r.result === 'PASS' && !/emulator|simulator/i.test(r.device || ''));
+      .some((r) => r && r.result === 'PASS' && !/emulator|simulator/i.test(r.device || '') && /\b(public|published)\b/i.test(r.build || ''));
   }
 
   function percentFor(feature, scoring) {

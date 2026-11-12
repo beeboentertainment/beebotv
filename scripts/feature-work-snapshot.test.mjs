@@ -198,7 +198,7 @@ const NOV10C={
 // Nov 11, 2026 evening record (public Android 1.59 and 1.60 device tests; fixes now in published builds): PRIOR11 is the published file before it.
 const PRIOR11=JSON.parse(execFileSync('git',['show','76b9e71:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
 // Nov 12, 2026: [before, after]. Rows that already had a Real device tick and a dated real-device PASS reach the new 98 step (only rows with no open known problem). Nothing went down.
-const NOV12={"Family achievements (opt-in milestones)":[74,98],"Update modes and start with Windows":[74,98],"Live TV (tuner and own playlist)":[74,98]};
+const NOV12={"Update modes and start with Windows":[74,98],"Live TV (tuner and own playlist)":[74,98]};
 const NOV11={
  "Opening the app and the five tabs": {
   "openIssues": [
@@ -430,7 +430,7 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
  // Nov 10, 2026: the review moved no percentage; then Nick's own decision moved three Ready rows from 100% to 90%.
  // Nov 10, 2026 early-morning record: the audit's before and after are for that run, which moved no percentage.
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),["feature-android-phone-app-family-achievements-opt-in-milestones","feature-android-phone-app-share-the-app-qr-over-the-hotspot","feature-windows-desktop-app-live-tv-tuner-and-own-playlist","feature-windows-desktop-app-update-modes-and-start-with-windows"]); // Nov 11 evening run moved only Share the app (74 to 99); earlier: collections and surprise-me, Nov 10, 8:06 PM Eastern: Nick's instruction moved these two Ready rows from 100% to 90%
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),["feature-android-phone-app-share-the-app-qr-over-the-hotspot","feature-windows-desktop-app-live-tv-tuner-and-own-playlist","feature-windows-desktop-app-update-modes-and-start-with-windows"]); // Nov 11 evening run moved only Share the app (74 to 99); earlier: collections and surprise-me, Nov 10, 8:06 PM Eastern: Nick's instruction moved these two Ready rows from 100% to 90%
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
