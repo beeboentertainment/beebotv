@@ -37,10 +37,12 @@
     for (const name of Object.keys(weights)) if (checks[name] === true) p += weights[name];
     // Emulator step (added Nov 12, 2026): Built + Automated tests + a recorded emulator (Android) or test-PC
     // (Windows / browser) pass of the PUBLIC build lifts the score to 98. A pass on a real phone (the existing Real device tick, rule
-    // unchanged, plus a recorded PASS on a real device) also counts for this step, so an emulator pass is never ranked above a real-device pass. It is a
+    // unchanged, plus a recorded PASS on a real device) also counts for this step. Only rows with no open known problem get the step;
+    // a row with openIssues above 0 keeps its plain added-up score (the 90 cap still applies), so an emulator pass is never ranked above a real-device pass. It is a
     // floor, never a deduction; Real-world check on top still gives 99.
     const em = scoring.emulator;
-    if (em && (checks[em.check] === true || (checks['Real device'] === true && hasRealDevicePass(feature))) && checks.Built === true && checks['Automated tests'] === true) p = Math.max(p, em.percent);
+    const noOpenIssues = !(wholeNumber(feature.openIssues) && feature.openIssues > 0);
+    if (em && noOpenIssues && (checks[em.check] === true || (checks['Real device'] === true && hasRealDevicePass(feature))) && checks.Built === true && checks['Automated tests'] === true) p = Math.max(p, em.percent);
     if (wholeNumber(feature.openIssues) && feature.openIssues > 0) p = Math.min(p, scoring.openIssuesCap);
     if (wholeNumber(feature.percentCap)) p = Math.min(p, feature.percentCap);
     return p;
