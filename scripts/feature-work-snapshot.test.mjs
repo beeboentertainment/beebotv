@@ -4,7 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { execFileSync } from 'node:child_process';
 import { JSDOM } from 'jsdom';
-import { validateSnapshot, activityState, codeEstimate, renderActivity } from '../tools/feature-work-snapshot.mjs';
+import { validateSnapshot, activityState, codeEstimate, renderActivity, latestCheckLine } from '../tools/feature-work-snapshot.mjs';
 import { readinessAudit, validateReadinessAudit } from '../tools/readiness-audit.mjs';
 const require = createRequire(import.meta.url);
 const data = JSON.parse(readFileSync(new URL('../testing-status.json', import.meta.url), 'utf8'));
@@ -407,9 +407,10 @@ test('every feature card face shows a Latest check line, with honesty when nothi
  }
  const wireless=cards.find(c=>c.includes('data-feature-name="Wireless speakers"'));
  assert.match(wireless,/Latest check: Nov 9, 2026, 7:42 AM Eastern - Android 1.55/);
- assert.match(wireless,/Nothing newer than Nov 9, 2026, 7:42 AM Eastern; the public build is now Android 1\.60 \(build 132\)/);
- const chromecast=cards.find(c=>c.includes('data-feature-name="Chromecast"'));
- assert.doesNotMatch(chromecast,/Nothing newer than/);
+ const androidBuild=JSON.parse(readFileSync(new URL('../downloads/app-build.json',import.meta.url),'utf8'));
+ assert.ok(wireless.includes(`Nothing newer than Nov 9, 2026, 7:42 AM Eastern; the public build is now Android ${androidBuild.versionName} (build ${androidBuild.versionCode})`));
+ const currentCheck={name:'Chromecast',group:'Android phone app',latestCheck:{at:androidBuild.publishedAtEastern}};
+ assert.doesNotMatch(latestCheckLine(currentCheck,data),/Nothing newer than/);
 });
 test('Checked today lists every receipt since Nov 8, 12:02 PM, with where it landed, and publishes no private links',()=>{
  assert.match(page,/id="checked-today"/);
