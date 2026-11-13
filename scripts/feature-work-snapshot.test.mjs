@@ -407,9 +407,11 @@ test('every feature card face shows a Latest check line, with honesty when nothi
  }
  const wireless=cards.find(c=>c.includes('data-feature-name="Wireless speakers"'));
  assert.match(wireless,/Latest check: Nov 9, 2026, 7:42 AM Eastern - Android 1.55/);
- assert.match(wireless,/Nothing newer than Nov 9, 2026, 7:42 AM Eastern; the public build is now Android 1\.60 \(build 132\)/);
+ const appBuild=require('../downloads/app-build.json');
+ assert.ok(wireless.includes(`Nothing newer than Nov 9, 2026, 7:42 AM Eastern; the public build is now Android ${appBuild.versionName} (build ${appBuild.versionCode})`));
  const chromecast=cards.find(c=>c.includes('data-feature-name="Chromecast"'));
- assert.doesNotMatch(chromecast,/Nothing newer than/);
+ const latestCast=data.features.find(f=>f.name==='Chromecast').latestCheck;
+ assert.ok(chromecast.includes(`Nothing newer than ${latestCast.at}; the public build is now Android ${appBuild.versionName} (build ${appBuild.versionCode})`));
 });
 test('Checked today lists every receipt since Nov 8, 12:02 PM, with where it landed, and publishes no private links',()=>{
  assert.match(page,/id="checked-today"/);
@@ -442,7 +444,7 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
 });
 test('legacy 100% code estimates with outstanding required work are visibly qualified',()=>{
  const contradicted=data.features.filter(f=>codeEstimate(f));
- assert.equal(contradicted.length,51); // Nov 10, 2026: rows with a 100% code estimate gained open issues (one in the review, three by Nick's decision, one in the daytime record: Android TV and Fire TV screens)
+ assert.equal(contradicted.length,51); // Nov 10, 2026: rows with a 100% code estimate gained open issues (one in the review, three by Nick's decision, one in the daytime record: Android TV and Fire TV screens; then row 7: Surprise me, playlists, watchlist, favourites, and row 30: Collections and Request a title)
  for(const f of contradicted){const card=cards.find(c=>c.includes(`data-feature-name="${escape(f.name)}"`));assert.ok(card.includes('Legacy code estimate is unverified'),f.name);}
  assert.match(page,/51 rows retain a 100% code estimate/);
  const method=data.codeVsHuman.method;
@@ -450,6 +452,40 @@ test('legacy 100% code estimates with outstanding required work are visibly qual
  const generator=readFileSync(new URL('../site-data/build-what-we-offer.js',import.meta.url),'utf8');
  assert.doesNotMatch(generator,/\$\{c\.waiting\} code complete/);
 });
+test('offer evidence qualifies earlier Ready records when current issues cap the score',()=>{
+ const offer=require('../site-data/what-we-offer.json');
+ const map=require('../site-data/evidence-map.json').map;
+ const ids=['w-posters','p-browse','p-lists','m-music','m-podcasts','m-radio'];
+ for(const id of ids){
+  const offerRow=offer.features.find(f=>f.id===id);
+  const row=data.features.find(f=>f.name===map[id]);
+  assert.equal(row.percentComplete,90,id);
+  assert.match(offerRow.evidence,/Nick.s earlier Ready record/,id);
+  assert.match(offerRow.evidence,/moved from 100% to 90% on Nov 10, 2026, (?:3:45 AM|8:06 PM) Eastern/,id);
+  assert.match(offerRow.evidence,/found by (?:automated tests|code review) of the source, not on an installed copy/,id);
+  assert.doesNotMatch(offerRow.evidence,/testing (?:evidence )?page (?:now )?(?:lists|records).*as Ready/,id);
+ }
+});
+
+test('web Watchlist matrix exposes the source findings while remaining untested',()=>{
+ const cells=data.platformMatrix.rows.find(r=>r.id==='surprise-me').cells;
+ assert.equal(cells.web.state,'untested');
+ assert.equal(cells.web.open,cells.and.open);
+ assert.ok(cells.web.open.includes('desktop and web Watchlist'));
+});
+
+test('five-check summary explicitly describes historical records rather than current readiness',()=>{
+ const key='confirmed-on-real-devices';
+ const list=data.features.filter(f=>f.realWorldStatus===key);
+ const required=['Built','Automated tests','Real device','Real-world check','Ready to call Available'];
+ assert.deepEqual(list.map(f=>f.name),data.features.filter(f=>required.every(k=>f.checks[k])).map(f=>f.name));
+ assert.equal(list.length,data.codeVsHuman.overall.counts[key]);
+ assert.ok(list.some(f=>f.percentComplete<100));
+ assert.match(data.realWorldStatusLabels[key],/All five checks recorded.*earlier Ready records/);
+ assert.ok(page.includes(escape(data.realWorldStatusLabels[key])+' ('+list.length+')'));
+ assert.match(data.codeVsHuman.method,/Open issues can cap the current score below 100%/);
+});
+
 test('activity validation rejects assignment, invalid timestamps and private provenance',()=>{
  assert.deepEqual(validateSnapshot(snapshot,data.features),[]);
  for(const modify of [s=>s.features[1].stage='Assigned',s=>s.features[1].confirmedAt='2027-01-01T00:00:00Z',s=>s.features[1].reason='https://github.com/private/issues/1',s=>s.recordsCutoff='unknown',s=>s.features.push(s.features[0])]){
