@@ -41,7 +41,7 @@ for (const entry of featureDirectory) {
     if (!/^assets\/[a-zA-Z0-9/_-]+\.(png|jpe?g|webp)$/.test(g.image) || !existsSync(join(root,g.image)) || !g.alt || !g.caption || !g.platform || !g.build || !Number.isFinite(Date.parse(g.capturedAt)) || !Number.isInteger(g.order)) throw Error('Gallery requires a real local image and capture metadata.');
   }
   const path = join(root, 'features', entry.id + '.html'), html = renderFeature(f, entry);
-  if (check) { if (!existsSync(path) || readFileSync(path,'utf8') !== html) throw Error('Feature page is out of date: ' + entry.id); }
+  if (check) { if (!existsSync(path) || readFileSync(path,'utf8').replace(/\r\n/g, '\n') !== html) throw Error('Feature page is out of date: ' + entry.id); }
   else { mkdirSync(dirname(path), { recursive:true }); writeFileSync(path, html); }
 }
 if (names.size !== data.features.length) throw Error('Feature directory must cover the complete evidence list.');
