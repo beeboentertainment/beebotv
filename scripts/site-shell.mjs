@@ -8,10 +8,12 @@ export const root = dirname(dirname(fileURLToPath(import.meta.url)));
 export const base = '489b21d2dd9769332d0f80590a2809583b9191b4';
 export const revision = '20261026-shell2';
 export function htmlPages(dir = root) {
-  return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.name === '.git' ? [] :
+  return readdirSync(dir, { withFileTypes: true }).flatMap(e => ['.git', 'node_modules', 'site-check'].includes(e.name) ? [] :
     e.isDirectory() ? htmlPages(join(dir, e.name)) : e.name.endsWith('.html') ? [relative(root, join(dir, e.name)).split(sep).join('/')] : []).sort();
 }
 export function exclusion(file) {
+  if (/^features\/feature-[a-z0-9-]+\.html$/.test(file)) return 'Standalone detail pages generated and checked by tools/build-feature-pages.mjs.';
+  if (['ai-test-results.html', 'test-builds.html', 'what-we-checked.html'].includes(file)) return 'Standalone evidence tables added after the shared-shell migration; retain their generated layout.';
   if (['release-evidence.html', 'whats-tested.html'].includes(file)) return 'Reserved for WEBSITE-EVIDENCE2; coordinate shell application after its content work.';
   if (file.startsWith('_scratch/')) return 'Template fragment, not a public page.';
   if (file.startsWith('domain-sites/')) return 'Separate-domain source, outside www.beeboentertainment.com.';

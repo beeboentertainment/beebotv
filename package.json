@@ -2,7 +2,7 @@
   "name": "beebo-evidence-page-tools",
   "private": true,
   "scripts": {
-    "test": "node --test --test-concurrency=1 scripts/feature-work-snapshot.test.mjs scripts/feature-activity.test.mjs",
+    "test": "node --test --test-concurrency=1 scripts/feature-work-snapshot.test.mjs scripts/feature-activity.test.mjs scripts/site-checks.test.mjs",
     "check:evidence": "node tools/build-status-page.mjs --check && node tools/build-feature-pages.mjs --check && node scripts/check-evidence-tiers.cjs && node site-data/check-progress-score.js"
   },
   "devDependencies": {
