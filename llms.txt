@@ -1,69 +1,42 @@
 # Beebo Entertainment
-> Free, local-first media server and apps: your own movies, TV, music, photos, audiobooks and live TV, streamed from your own computer to phones, TVs, cars and browsers, with camp and road-trip features. Beebo includes no movies or shows; you bring your own files. Video goes straight from your own computer to the viewer whenever possible; Beebo's servers carry only small text such as sign-in and connection set-up.
+> A free, local-first Windows media server with Android apps and a browser player. Made by a family man, not a data company. Beebo plays media the owner provides; it includes no movies or shows. For adults 18+.
 
-Status words used on this site: Available (in the current downloads and usable today), Beta (you can try it, still being tested on real equipment), In development (being built, not released), Planned (intended, no date). We never claim a flat "100% working".
+## Start here
+- [Home](https://www.beeboentertainment.com/): what Beebo is and where to start.
+- [Download](https://www.beeboentertainment.com/download.html): available installers, versions, file sizes, SHA-256 and publication times from the release feeds.
+- [Features](https://www.beeboentertainment.com/features.html): library, away viewing, Campsite Mode, Trip Journal and platform/service status.
+- [How it works](https://www.beeboentertainment.com/how-it-works.html): the home PC, direct connections and privacy.
+- [Testing and progress](https://www.beeboentertainment.com/testing.html): dated feature evidence, recorded counts, known limits and untested paths.
+- [Help](https://www.beeboentertainment.com/help.html): setup and frequently asked questions.
+- [About](https://www.beeboentertainment.com/about.html): the person and the rabbit behind Beebo.
 
-## Current downloads
-- Windows server 0.1.102: Available. Published Oct 24, 2026, 1:05 PM Eastern. Windows 10 and 11. Windows SmartScreen may show a warning the first time. https://www.beeboentertainment.com/windows.html
-- Android phone and tablet app 1.51-tester34 (build 84): Available as a test download. Published Oct 21, 2026, 3:46 PM Eastern. Not on Google Play. Android TV layout: Beta, no real-TV test. https://www.beeboentertainment.com/app-on-your-phone.html
-- Beebo Auto (Android Auto) 1.20 (build 21): Beta, a sideload test download. Published Oct 21, 2026, 6:52 AM Eastern. Not on Google Play. Beebo Auto 1.20 had one first look in one car on Oct 27, 2026 (the app appeared, four tabs and a TV episode with sound; next, previous, pause, steering-wheel buttons, search and any drive were not checked). An earlier build had one first check in one car on Oct 6, 2026 (sign-in, video list, sound, fast-forward). Video on the car screen, music, car-screen titles, away from home, passenger games, Car Party and other cars are not tested. Use only when parked. https://www.beeboentertainment.com/car-companion.html
-- Fire TV, Roku and LG TV tester builds: In development, install-it-yourself, not tested on a real TV yet. https://www.beeboentertainment.com/fire-tv-install.html, https://www.beeboentertainment.com/roku-install.html, https://www.beeboentertainment.com/lg-install.html
-- Any web browser: Available, served by your own Beebo computer. On iPhone and iPad, open your Beebo address in Safari and use Add to Home Screen to install it like an app (no App Store needed).
-- Machine-readable version files: https://www.beeboentertainment.com/desktop-version.json, https://www.beeboentertainment.com/downloads/app-build.json, https://www.beeboentertainment.com/downloads/auto-build.json
+## Releases listed in the feeds when this file was updated
+- Windows 0.1.120: Available. Published Nov 14, 2026, 5:44 AM Eastern (2026-11-14T10:44:00.000Z). 274209152 bytes. SHA-256 7f2027c216d5a1f587467e50177408c950a7d57e2b76c5978fd0a77ac750c64b. Installer: https://github.com/beeboentertainment/beebotv/releases/download/Beebo-0.1.120/Beebo.Entertainment.Setup.0.1.120.exe
+- Android 1.64 (build 136): Available as a sideload; not on Google Play. Published Nov 14, 2026, 12:44 PM Eastern (2026-11-14T17:44:10.000Z). 47468328 bytes. SHA-256 81b036a7c618908d774bf894fbcc0f0c4c7fa13f5b333e49b374a31ad8415d78. APK: https://www.beeboentertainment.com/downloads/BeeboEntertainment.apk
+- Beebo Auto 1.22 (build 23): Available as a sideload; not on Google Play. Published Nov 11, 2026, 11:07 PM Eastern (2026-11-12T04:07:00.000Z). 15527289 bytes. SHA-256 0077b65232b82bd886a24b709a3c93a83634af558c210cf00856ece9d924ce98. APK: https://www.beeboentertainment.com/downloads/BeeboAuto.apk
+- For current releases, read these feeds: https://www.beeboentertainment.com/desktop-version.json, https://www.beeboentertainment.com/downloads/app-build.json, https://www.beeboentertainment.com/downloads/auto-build.json.
+- These named Windows, Android and Auto releases have automated-test and review evidence, not matching real-device acceptance. Beebo Auto has never been tested in a real car.
 
-## Not downloadable right now, and why
-- Linux desktop (AppImage and .deb): Beta, version 0.1.82, older than the current Windows 0.1.102 download, downloadable from the Linux page. Built on a real Linux toolchain; starts and answers on its web address in an automated check (headless, under WSL); not yet run on a real Linux desktop by a person; not code-signed. The old 0.1.58 build was removed on October 4, 2026 because it was many versions behind. https://www.beeboentertainment.com/linux.html#download
-- Docker / NAS headless server (amd64 and arm64): Beta. The image was made private on October 4, 2026 for the same reason and will return with a newer build. https://www.beeboentertainment.com/docs/run-beebo-on-a-nas-or-linux-server.html
-- macOS: In development. Test builds are made automatically, but no person has run one on a real Mac yet, and it needs Apple signing. Watch on a Mac in any browser today.
-- Native iPhone, iPad and Apple TV apps: In development, not published, never tested on a real Apple device, need Apple's approval. Use Safari (and AirPlay to an Apple TV) today. https://www.beeboentertainment.com/apple.html
-- Samsung smart TVs and Xbox: In development, no install file yet. Try the TV's web browser or Edge on the Xbox.
-- Android on Google Play: In development, not submitted.
-- PlayStation: no app and none planned (Sony has no open app store for apps like Beebo, and the console browsers cannot run Beebo's player).
+## Current platform and service labels
+Use only Available, Beta, In development and Planned as status labels. Availability is not a claim that every feature or device has been tested.
+- Available: Windows desktop server; Android phone app (sideload); Beebo Auto (sideload); browser player.
+- Beta: Android TV; Link a TV; Linux (no download offered); Docker/NAS (no download offered); Jellyfin-compatible API; Beebo Relay.
+- In development: Google Play; Fire TV; macOS; native iPhone, iPad and Apple TV apps; Roku; Samsung/LG TV; Xbox; BeeboVPN; online games.
+- Planned: hosting; rewards; ads.
+- PlayStation support was dropped.
+- Beebo Relay, BeeboVPN, paid plans, hosting and rewards are not purchasable. There is no promise that any relay will remain free forever.
 
-## Services
-- Beebo Relay: Beta. A backup route for watching away from home when a direct connection cannot be made. Direct, automatic router set-up (UPnP) and your own relay are free and always tried first. Relay is not something you can buy yet. Planned prices are listed on one page only: https://www.beeboentertainment.com/subscribe.html . Relay details: https://www.beeboentertainment.com/beebo-relay.html
-- BeeboVPN: In development, invite-only test, not offered to the public. https://www.beeboentertainment.com/beebovpn.html
-- Your own address: every Beebo gets a free yourname.beebo.tv address for watching away from home.
-
-## What Beebo does (full list with a status for each feature)
-- [Everything Beebo can do](https://www.beeboentertainment.com/what-beebo-can-do.html): library, posters and details, versions, playlists, player, video conversion, subtitles, audio, downloads for offline viewing, music, audiobooks, podcasts, internet radio, photos and phone backups, profiles and parental limits, away-from-home viewing, Watch Together, Movie Night, phone speakers, Live TV with your own tuner, admin and backups, themes and layouts, Campsite Mode games and tools, Trip Journal, Beebo Auto.
-- [Campsite Mode](https://www.beeboentertainment.com/docs/campsite-mode.html): an offline local Wi-Fi group screen. Party games, karaoke, synced music across phones, stories and shared photos. Many games work solo or pass-and-play with no Wi-Fi at all.
-- [Browser games on this website](https://www.beeboentertainment.com/play-games/): free games you can play now against Hopping Beebo or a friend.
-- [Phone as mouse and keyboard for your PC (in development)](https://www.beeboentertainment.com/phone-remote-control.html): not a finished feature. A first version, Remote Desktop, is in Beebo for Windows, off by default, and not yet tested on a real phone. A touchpad-only mode is planned.
-- [Beebo on your devices](https://www.beeboentertainment.com/platforms.html): every platform, its status and how to get it.
-- [How Beebo compares](https://www.beeboentertainment.com/beebo-vs-other-apps.html)
-- [Help and guides](https://www.beeboentertainment.com/docs.html) and [FAQ](https://www.beeboentertainment.com/docs/faq.html)
-
-## Quick facts that summaries often get wrong (checked Oct 24, 2026, 10:10 PM Eastern)
-- Current versions: Windows server 0.1.115 (published Nov 9, 2026, 10:25 AM Eastern); Android 1.52 (build 122). Older version numbers you may see elsewhere, such as 0.1.99, are out of date.
-- Phone downloads exist. The Android app can download films and episodes to the phone for offline viewing: choose a smaller size, resume after an interruption, optional expiry. What is NOT there: automatic syncing of a whole library to the phone. Real-device checks of storage, expiry and a full trip with no internet are still pending, so we label offline downloads as built, with verification pending.
-- Sign-in at home is local: people sign in to their own Beebo computer, not to a Beebo cloud. The design works with the internet off, but we have not yet run a formal test on a computer with the internet unplugged. Watching away from home uses direct connection first, then your own relay, then optional Beebo Relay (Beta).
-- TV and console apps are the slowest part. Android TV: Beta, not yet run on a real Android TV. Roku, Samsung, LG, Xbox, Fire TV and Apple TV: In development, none has run on real hardware yet. Browsers on any TV or console are the fallback today.
-- Beebo is a full media server (movies, TV, music, photos, audiobooks, live TV from your own tuner, a Jellyfin-compatible mode in Beta), not a stripped-down or "lightweight" one. It is free to use; Relay and VPN are optional paid extras and are not sold yet.
-- We publish what failed too: https://www.beeboentertainment.com/release-evidence.html and https://www.beeboentertainment.com/known-issues.html
-
-# WWO:LLMS:START
-## Everything we are and offer (updated Nov 10, 2026, 3:37 AM Eastern)
-- Full page with every feature, its label, what was tested on real devices and what was not: https://www.beeboentertainment.com/what-we-offer.html (data file: https://www.beeboentertainment.com/site-data/what-we-offer.json)
-- Share-of-list counts, not a promise or an audit: 153 features listed; 19 Available (12%), 80 Beta, 50 In development, 4 Planned; 99 Available or Beta (65%); testing is measured on https://www.beeboentertainment.com/release-evidence.html#features (overall average 72% across 70 features; 5 checks scored Built 24, Automated tests 25, Real device 25, Real-world check 25, Ready to call Available 1; legacy code-check estimate 92% (unverified where required work or open issues remain); real-device and real-world checks passed about 43%; 5 features confirmed on real devices, 6 in the legacy code-estimate category awaiting real-world testing, 59 code still being finished; updated Nov 14, 2026, 4:04 AM Eastern; details at https://www.beeboentertainment.com/release-evidence.html#code-status).
-- How the feature score works: Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25 (49%). Emulator step: when the PUBLIC build also passes on an Android emulator (phone features) or on our test PC (Windows and browser features), the score reaches 98 and the label beside the bar reads “Emulator passed – phone test next”. An emulator or test PC is not a real phone or a real home, so it never reaches 99 on its own: 99 still needs the real-device check and the real-world check on the public build. A pass on a real phone also counts for this step: a feature with the Real device check passed (the same rule as before) and a dated PASS on a real device in its test history reaches 98 as well, so an emulator pass is never ranked above a real-phone pass. Its label then reads “Real device passed – real-world check next”. A Real device tick with no recorded real-device PASS gets no new credit and keeps its old score. Rows with an open known problem do not get this step until the problem is fixed. It reaches 99 only with the real-world check too, and no score went down when this step was added. We only count an emulator or test-PC run that is recorded in the feature’s test history. Open known errors still cap a feature at 90%. The score counts the public build only. When the newest code, not yet public, has passed on the emulator or test PC, the row may carry a separate tag “Fixed in next update – emulator passed” beside the bar. The tag never changes the percentage, it needs a dated record, and it is removed on release day, when the public build is tested and the row moves to 98 (or higher) on its own evidence. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is "Tested and working, waiting for a human look". At 100%, it is "Ready, a human confirmed". Each row says what was proven, when it was tested and what remains unverified.
-- Current versions (from our download feeds): Windows 0.1.120; Android 1.64 (build 136), a test download, not on Google Play; Beebo Auto 1.22 (build 23), a test download, not on Google Play.
-- Who we are: made by a family man, not a data company. Free, local-first media server. Closed source (all rights reserved). Beebo includes no movies, shows or channels.
-- Per area (Available of listed): Windows server 5/34; Android phone 6/23; Android TV and Beebo Auto 0/9; Other TV and Apple platforms 0/8; Computers, browsers and NAS 0/4; Campsite Mode 3/25; Trip Journal 0/5; Away from home 2/11; Music, audiobooks, podcasts and radio 0/10; Live TV 1/5; Parental controls and household 1/10; Online services 1/9.
-- Not counted: PlayStation (Dropped), the original separate-login hub (Retired), the old "Stream from my PC" button (Retired), and 33 ideas that are not promised.
-# WWO:LLMS:END
-
-## Testing and progress
-- [What's new and what's tested](https://www.beeboentertainment.com/whats-tested.html): what changed, platform and feature status, real-device results with dates and tallies, and what is not tested yet.
-- [Testing status by feature](https://www.beeboentertainment.com/release-evidence.html): checks passed out of checks planned for every feature.
-- [Machine-readable testing data (JSON)](https://www.beeboentertainment.com/testing-status.json)
-- [Known issues and fixes](https://www.beeboentertainment.com/known-issues.html)
-- [Feature status: available, beta, in development, planned](https://www.beeboentertainment.com/next-features.html)
-- [Reviewed tester results](https://www.beeboentertainment.com/tester-results.html)
-- [Release notes](https://www.beeboentertainment.com/updates.html)
+## How it works and testing limits
+The owner runs Beebo on their own Windows computer. The source media stays there. The computer must be on and running Beebo for live streaming from it. Away viewing tries a direct, end-to-end encrypted connection; connection signalling and sign-in use small text records. A relay can carry encrypted video when needed.
+Campsite Mode and Trip Journal are Beta. Prepared solo activities can work offline; sharing with nearby guests uses a local Wi-Fi connection or hotspot. Prepare downloads before leaving internet access. Do not infer group, device or real-world acceptance from an illustration, a source review or an automated test.
+Testing evidence remains in https://www.beeboentertainment.com/testing-status.json and the existing site-data files. Read the named build, date, counts and limitations for each feature. Older evidence does not establish the behavior of a newer download.
 
 ## Privacy in one line
-Your files stay on your own computer. Beebo keeps basic connection records, including IP addresses, for 7 days for abuse checks, and the amount of data used per account. Nothing is sold. Relay video is end-to-end encrypted and the relay cannot see it. https://www.beeboentertainment.com/movie-privacy.html
+video is end-to-end encrypted and the relay cannot see it; connection records (including IP addresses) are kept 7 days for abuse handling; nothing is sold.
 
-## Honesty note
-Percentages are checks passed out of checks planned. Untested paths are listed as not tested.
+## Legal
+- [Privacy policy](https://www.beeboentertainment.com/movie-privacy.html)
+- [Terms](https://www.beeboentertainment.com/terms.html)
+- [Delete account](https://www.beeboentertainment.com/delete-account.html)
+
+Older page URLs remain for existing links. The pages above form the new main site.
