@@ -13,22 +13,71 @@
   const finiteCount = value => Number.isInteger(value) && value >= 0;
   // The public evidence file also contains old technical history. The new
   // presentation deliberately selects fields and never serializes whole records.
-  const unsafe = /(?:[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\b(?:10\.[0-9]+\.[0-9]+\.[0-9]+|192\.168\.[0-9]+\.[0-9]+|172\.(?:1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+)\b|[A-Z]:\\|\.claude|private evidence|source ledger|sourceCommentIds|\b(?:main|commit|SHA)\s+[a-f0-9]{7,40}\b|\b[a-f0-9]{40,64}\b|kid-safe|\bPuck\b|100\s*%|\$\s*[0-9]|\b2099\b)/i;
-  const publicText = value => typeof value === 'string' && !unsafe.test(value) ? value.trim() : '';
+  const publicText = value => {
+    if (typeof value !== 'string') return '';
+    return value
+      .replace(/https?:\/\/\S+/gi, '[link omitted]')
+      .replace(/[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g, '[contact omitted]')
+      .replace(/\b(?:10\.[0-9]+\.[0-9]+\.[0-9]+|192\.168\.[0-9]+\.[0-9]+|172\.(?:1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+)\b/g, '[address omitted]')
+      .replace(/[A-Z]:\\[^\s,;]+/gi, '[path omitted]')
+      .replace(/(?:Source ledger:|paths:)[^.;]*(?:[.;]|$)/gi, '[internal references omitted].')
+      .replace(/\b(?:main|commit|SHA|source(?: commit)?)\s+[a-f0-9]{7,64}\b/gi, '[source identifier omitted]')
+      .replace(/\b[a-f0-9]{7,64}\b/gi, '[identifier omitted]')
+      .replace(/(?:\.claude[^\s,;]*|docs\/ops\/[^\s,;]+|private evidence(?: archive)?|sourceCommentIds)/gi, '[internal reference omitted]')
+      .replace(/\bPuck\b|kid-safe/gi, '[wording omitted]')
+      .replace(/100\s*%/g, 'full completion')
+      .replace(/\$\s*[0-9][0-9,.]*/g, '[amount omitted]')
+      .replace(/\b2099\b/g, '[date omitted]')
+      .replace(/Nick[’']s own decision in chat/gi, 'Owner-recorded check')
+      .trim();
+  };
+  const detailText = value => publicText(value)
+    .replace(/Decide the Relay price\./gi, 'Beebo Relay is not available to buy.')
+    .replace(/Note for Nick: the connection-cost table shows prices in the desktop app in every language\./gi, '')
+    .replace(/\b(?:keep|retain)\s*\d+%?[;:,]?/gi, '')
+    .replace(/add exact bounded evidence, not new whole-row device\/real-world ticks\.?/gi, '')
+    .replace(/(?:The )?(?:existing|historical|current)\s+\d+%? cap (?:stays|remains|is unchanged)\.?/gi, '')
+    .replace(/One100-case batch across12suites/g, 'One 100-case batch across 12 suites')
+    .replace(/\s+([,.;])/g, '$1').replace(/\s+/g, ' ').trim();
   const featureId = name => 'evidence-' + name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
 
   function validate(data, runs) {
-    if (!data || !Array.isArray(data.features) || !data.features.length || !publicText(data.updatedEastern) || !runs || !Array.isArray(runs.unitTests) || !Array.isArray(runs.tallies)) throw Error('Evidence format unavailable');
+    const publicLabel = value => typeof value === 'string' && !!publicText(value) && publicText(value) === value.trim();
+    if (!data || !Array.isArray(data.features) || !data.features.length || !publicLabel(data.updatedEastern) || !runs || !Array.isArray(runs.unitTests) || !Array.isArray(runs.tallies)) throw Error('Evidence format unavailable');
     const names = new Set();
     for (const feature of data.features) {
-      if (!publicText(feature.name) || !publicText(feature.group) || names.has(feature.name) || !feature.checks || (feature.openIssues !== undefined && !finiteCount(feature.openIssues))) throw Error('Feature record unavailable');
+      if (!publicLabel(feature.name) || !publicLabel(feature.group) || names.has(feature.name) || !feature.checks || (feature.openIssues !== undefined && !finiteCount(feature.openIssues))) throw Error('Feature record unavailable');
       names.add(feature.name);
     }
     return data;
   }
 
   function runFor(feature, date) {
-    return (feature.deviceTests || []).find(record => record.date === date);
+    const records = [...(feature.deviceTests || []), ...(feature.ownerTests || [])];
+    return records.find(record => record.date === date)
+      || records.find(record => typeof date === 'string' && typeof record.date === 'string' && record.date.startsWith(date + ' ('));
+  }
+
+  function recordDetail(record) {
+    if (!record) return '';
+    return [record.evidence, record.did, record.notes].filter(value => typeof value === 'string' && value.trim()).map(detailText).filter(Boolean).join(' ');
+  }
+
+  function recordDay(record) {
+    const match = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* (\d{1,2}), (\d{4})/.exec(record.date || '');
+    return match ? Date.UTC(Number(match[3]), ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'].indexOf(match[1]), Number(match[2])) : 0;
+  }
+
+  function allowedRecord(feature, record) {
+    // The owner's current status supersedes contradictory historical car claims.
+    return feature.name !== 'Beebo Auto (Android Auto)' || /emulator/i.test(record.device || '');
+  }
+
+  function knownLimits(feature) {
+    if (feature.name === 'Beebo Auto (Android Auto)') return '<h4>Known limits and remaining checks</h4><p>Beebo Auto has never been tested in a real car. Car controls, sound, head-unit behavior and driving conditions remain unverified.</p>';
+    const current = detailText((feature.leftToReach100 || '').split(/Earlier record \(kept\):/i)[0]);
+    const remaining = [...new Set((feature.roadTo100?.remaining || []).map(item => detailText(item.text)).filter(Boolean))];
+    return current || remaining.length ? `<h4>Known limits and remaining checks</h4>${current ? `<p>${esc(current)}</p>` : ''}${remaining.length ? `<ul>${remaining.map(text => `<li>${esc(text)}</li>`).join('')}</ul>` : ''}` : '<h4>Known limits and remaining checks</h4><p>No further description is recorded in these fields. This is not evidence that every path works.</p>';
   }
 
   function recordMarkup(record, dateKey = 'date') {
@@ -62,7 +111,7 @@
       if (!tally || !feature || !finiteCount(tally.passed) || !finiteCount(tally.total) || tally.passed > tally.total) return '';
       const record = runFor(feature, tally.recordDate);
       if (!record) return '';
-      const summary = publicText(record.evidence);
+      const summary = recordDetail(record);
       if (!summary) return '';
       return `<article class="panel"><p class="eyebrow">${kind === 'emulator' ? 'Emulator record' : 'Real-phone record'}</p><h3>${esc(title)}</h3><p class="evidence-example-count"><strong>${tally.passed}<span> / ${tally.total}</span></strong> checks recorded as passed</p><p class="small">${esc(tally.recordDate)}</p><p>${esc(summary)}</p><p class="small">${esc(publicText(record.build))} · ${esc(publicText(record.device))}</p><a href="#${featureId(name)}">See this feature’s record <span aria-hidden="true">↗</span></a></article>`;
     }).join('');
@@ -72,11 +121,13 @@
     const issues = feature.openIssues || 0;
     const latest = feature.latestCheck;
     const record = latest ? runFor(feature, latest.at) : undefined;
-    const summary = record && publicText(record.evidence);
+    const summary = recordDetail(record);
     const unitRuns = runs.unitTests.filter(run => run.feature === feature.name && finiteCount(run.passed) && finiteCount(run.total) && run.passed <= run.total);
-    const testCounts = unitRuns.map(run => `<div class="evidence-source-run"><h4>Automated source checks</h4><p><strong>${run.passed} of ${run.total}</strong> checks passed${finiteCount(run.skipped) && run.skipped ? `; ${run.skipped} skipped checks recorded` : ''}. ${esc(publicText(run.date))}.</p>${publicText(run.how) ? `<p>${esc(publicText(run.how))}</p>` : '<p>This is a code-test record. It does not establish a result in an installed app.</p>'}</div>`).join('');
-    const recent = latest && publicText(latest.at) ? `<h4>Latest structured record</h4>${recordMarkup(latest, 'at')}${summary ? `<p>${esc(summary)}</p>` : '<p>The outcome applies to the recorded check on the build and device shown. No broader result is implied.</p>'}` : '<h4>Recent test details</h4><p>No recent structured result is recorded for this feature. The historical checklist below remains part of the evidence.</p>';
-    return `<details class="evidence-feature" id="${featureId(feature.name)}" data-evidence-name="${esc(feature.name.toLowerCase())}" data-evidence-group="${esc(feature.group)}"><summary><span class="evidence-feature-name">${esc(feature.name)}</span><span class="evidence-issue-count">${issues ? `${issues} open issue${issues === 1 ? '' : 's'}` : 'No open issue listed'}</span></summary><div class="evidence-body"><p class="small">Record updated ${esc(publicText(feature.changedEastern) || data.updatedEastern)}. A record update is not a new test.</p>${recent}<h4>Recorded checklist</h4><dl class="evidence-checks">${checkLabels.map(([key, label]) => `<div><dt>${label}</dt><dd>${feature.checks[key] === true ? '<span aria-hidden="true">✓ </span>Recorded' : 'Not recorded'}</dd></div>`).join('')}</dl><p class="small">These checks can come from different dates and builds. Later failures remain open even when an earlier check was recorded. Owner acceptance applies only to its original scope.</p>${testCounts}</div></details>`;
+    const testCounts = unitRuns.map(run => `<div class="evidence-source-run"><h4>Automated source checks</h4><p><strong>${run.passed} of ${run.total}</strong> checks passed${finiteCount(run.skipped) && run.skipped ? `; ${run.skipped} skipped checks recorded` : ''}. ${esc(publicText(run.date))}.</p>${detailText(run.how) ? `<p>${esc(detailText(run.how))}</p>` : '<p>This is a code-test record. It does not establish a result in an installed app.</p>'}</div>`).join('');
+    const recent = latest && publicText(latest.at) && allowedRecord(feature, latest) ? `<h4>Recorded summary</h4><p class="small">This is the source file’s summary entry. Other dated checks below may be later; a pass applies only to the action described.</p>${recordMarkup(record ? {...latest, ...record, at: record.date} : latest, 'at')}${summary ? `<p>${esc(summary)}</p>` : '<p>The summary has no matching detailed test description. It does not establish which actions passed; no broader result is claimed.</p>'}` : '<h4>Recorded summary</h4><p>No compact test summary is available here. Read the dated checks and known limits below.</p>';
+    const additional = [...(feature.deviceTests || []), ...(feature.ownerTests || [])].filter(item => item !== record && allowedRecord(feature, item)).sort((a,b) => recordDay(b) - recordDay(a)).slice(0,3);
+    const history = additional.length ? `<h4>Other dated checks</h4><p class="small">Up to three additional records, ordered by calendar day. These can describe different actions, devices and builds. Internal references are omitted; test limits are retained.</p>${additional.map(item => `<div class="evidence-source-run">${recordMarkup(item)}<p>${esc(recordDetail(item) || 'No action description was recorded. No broader result is claimed.')}</p></div>`).join('')}` : '';
+    return `<details class="evidence-feature" id="${featureId(feature.name)}" data-evidence-name="${esc(feature.name.toLowerCase())}" data-evidence-group="${esc(feature.group)}"><summary><span class="evidence-feature-name">${esc(feature.name)}</span><span class="evidence-issue-count">${issues ? `${issues} open issue${issues === 1 ? '' : 's'}` : 'No open issue listed'}</span></summary><div class="evidence-body"><p class="small">Record updated ${esc(publicText(feature.changedEastern) || data.updatedEastern)}. A record update is not a new test.</p>${recent}${knownLimits(feature)}${history}<h4>Recorded checklist</h4><dl class="evidence-checks">${checkLabels.map(([key, label]) => `<div><dt>${label}</dt><dd>${feature.checks[key] === true ? '<span aria-hidden="true">✓ </span>Recorded' : 'Not recorded'}</dd></div>`).join('')}</dl><p class="small">These checks can come from different dates and builds. Later failures remain open even when an earlier check was recorded. Owner acceptance applies only to its original scope.</p>${testCounts}</div></details>`;
   }
 
   function render(data, runs) {
