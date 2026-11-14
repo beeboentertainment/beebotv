@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { JSDOM } from 'jsdom';
 import { validateSnapshot, activityState, codeEstimate, renderActivity, latestCheckLine } from '../tools/feature-work-snapshot.mjs';
 import { readinessAudit, validateReadinessAudit } from '../tools/readiness-audit.mjs';
+import { aiTestedBlock } from '../tools/ai-tested.mjs';
 const require = createRequire(import.meta.url);
 const data = JSON.parse(readFileSync(new URL('../testing-status.json', import.meta.url), 'utf8'));
 const page = readFileSync(new URL('../release-evidence.html', import.meta.url), 'utf8');
@@ -112,6 +113,28 @@ test('new evidence preserves availability and final acceptance while requiring r
  assert.equal(car.percentComplete,98);
  const tv=data.features.find(f=>f.name==='Android TV and Fire TV screens');
  assert.equal(tv.checks['Real device'],true);assert.equal(tv.checks['Real-world check'],false);
+});
+
+test('evidence updates preserve every previously published owner and device observation',()=>{
+ for(const old of PRIOR14.features){
+  const current=data.features.find(f=>f.name===old.name);
+  for(const key of ['ownerTests','deviceTests']){
+   const records=new Set((current[key]||[]).map(r=>JSON.stringify(r)));
+   for(const record of old[key]||[])assert.ok(records.has(JSON.stringify(record)),old.name+': preserve '+key+' dated '+record.date);
+  }
+ }
+});
+
+test('the newest same-day real-device failure stays visible ahead of an earlier pass',()=>{
+ const f={name:'Dated example',checks:{},deviceTests:[
+  {date:'Nov 14, 2026, 2:07 AM Eastern',reportedAt:'2026-11-14T07:07:00Z',device:'Real TV',build:'PUBLIC build',result:'PASS',evidence:'Earlier pairing passed'},
+  {date:'Nov 14, 2026, 3:38 AM Eastern',reportedAt:'2026-11-14T08:38:00Z',device:'Real TV',build:'PUBLIC build',result:'FAIL',evidence:'Later search failed'}
+ ]};
+ const html=aiTestedBlock(f,{},{});
+ assert.ok(html.includes('Later search failed'));
+ assert.ok(!html.includes('Earlier pairing passed'));
+ const legacy=structuredClone(f);for(const r of legacy.deviceTests)delete r.reportedAt;
+ assert.ok(aiTestedBlock(legacy,{},{}).includes('Later search failed'));
 });
 
 test('every feature card face shows a Latest check line, with honesty when nothing is newer than the public build',()=>{
