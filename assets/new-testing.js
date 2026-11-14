@@ -22,6 +22,7 @@
       .replace(/[A-Z]:\\[^\s,;]+/gi, '[path omitted]')
       .replace(/(?:Source ledger:|paths:)[^.;]*(?:[.;]|$)/gi, '[internal references omitted].')
       .replace(/\b(?:main|commit|SHA|source(?: commit)?)\s+[a-f0-9]{7,64}\b/gi, '[source identifier omitted]')
+      .replace(/[a-f0-9]{40,64}/gi, '[identifier omitted]')
       .replace(/\b[a-f0-9]{7,64}\b/gi, '[identifier omitted]')
       .replace(/(?:\.claude[^\s,;]*|docs\/ops\/[^\s,;]+|private evidence(?: archive)?|sourceCommentIds)/gi, '[internal reference omitted]')
       .replace(/\bPuck\b|kid-safe/gi, '[wording omitted]')
@@ -36,6 +37,7 @@
     .replace(/Note for Nick: the connection-cost table shows prices in the desktop app in every language\./gi, '')
     .replace(/\b(?:keep|retain)\s*\d+%?[;:,]?/gi, '')
     .replace(/add exact bounded evidence, not new whole-row device\/real-world ticks\.?/gi, '')
+    .replace(/If Nick wants the whole row at full completion he can say so\.?/gi, '')
     .replace(/(?:The )?(?:existing|historical|current)\s+\d+%? cap (?:stays|remains|is unchanged)\.?/gi, '')
     .replace(/One100-case batch across12suites/g, 'One 100-case batch across 12 suites')
     .replace(/\s+([,.;])/g, '$1').replace(/\s+/g, ' ').trim();
@@ -75,7 +77,7 @@
 
   function knownLimits(feature) {
     if (feature.name === 'Beebo Auto (Android Auto)') return '<h4>Known limits and remaining checks</h4><p>Beebo Auto has never been tested in a real car. Car controls, sound, head-unit behavior and driving conditions remain unverified.</p>';
-    const current = detailText((feature.leftToReach100 || '').split(/Earlier record \(kept\):/i)[0]);
+    const current = detailText((feature.leftToReach100 || '').split(/Earlier(?:\s+dated)?\s+record\s*\(\s*kept\s*\)\s*:/i)[0]);
     const remaining = [...new Set((feature.roadTo100?.remaining || []).map(item => detailText(item.text)).filter(Boolean))];
     return current || remaining.length ? `<h4>Known limits and remaining checks</h4>${current ? `<p>${esc(current)}</p>` : ''}${remaining.length ? `<ul>${remaining.map(text => `<li>${esc(text)}</li>`).join('')}</ul>` : ''}` : '<h4>Known limits and remaining checks</h4><p>No further description is recorded in these fields. This is not evidence that every path works.</p>';
   }
