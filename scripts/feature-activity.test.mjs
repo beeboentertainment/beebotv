@@ -14,6 +14,16 @@ const ids = new Set(featureDirectory.map(f => f.id));
 const start = Date.parse('2026-11-02T11:00:00-05:00');
 const iso = ms => new Date(ms).toISOString();
 const evidencePrefix = 'https://github.com/example-coordinator/receipt-board/issues/';
+test('website narration creates no controls and performs no audio or manifest work',()=>{
+  const dom=new JSDOM('<h1 data-listen="intro">Introduction</h1><div class="bb-listen">Old voice controls</div>',{runScripts:'outside-only'});
+  try{
+    dom.window.fetch=()=>{throw Error('Narration must not fetch speech');};
+    dom.window.Audio=function(){throw Error('Narration must not create audio');};
+    dom.window.eval(readFileSync(new URL('../assets/listen.js',import.meta.url),'utf8'));
+    assert.equal(dom.window.document.querySelectorAll('.bb-listen').length,0);
+    assert.equal(dom.window.document.querySelector('h1').textContent,'Introduction');
+  }finally{dom.window.close();}
+});
 function record(extra = {}) { return { featureId:first, revision:1, state:'running', stage:'coding', scope:'feature', deviceClass:'none', startedAt:iso(start), updatedAt:iso(start), expiresAt:iso(start+60000), nextAction:'review', ...extra }; }
 function feed(records = [record()], updatedAt = iso(start), revision = Math.max(1,...records.map(r=>r.revision))) { return { schemaVersion:1, revision, updatedAt, features:records }; }
 function privateInput(r = record(), source = {}) {
@@ -128,8 +138,8 @@ test('all detail pages keep source status/score, collapsed technicals, placehold
   for(const entry of featureDirectory){const f=data.features.find(f=>f.name===entry.name);const html=readFileSync(new URL('../features/'+entry.id+'.html',import.meta.url),'utf8');const dom=new JSDOM(html);const doc=dom.window.document;
     assert.equal(doc.querySelector('progress').value,f.percentComplete,entry.name);assert.equal(doc.querySelector('.eyebrow').textContent,`${f.group} · ${f.status}`);assert.equal(doc.querySelector('details').open,false);assert.match(doc.body.textContent,/Screenshots coming soon/);assert.ok(doc.querySelector('a[href="../release-evidence.html#features"]'));assert.equal(doc.querySelectorAll('img').length,0);assert.equal(doc.querySelector('[data-live-feature]').dataset.liveFeature,entry.id);dom.window.close();}
 });
-test('representative Campsite page preserves Beta, 90%, two issues and no current-build claim',()=>{
-  const entry=featureDirectory.find(f=>f.name==='Campsite host start and stop');const html=readFileSync(new URL('../features/'+entry.id+'.html',import.meta.url),'utf8');assert.match(html,/Beta/);assert.match(html,/90%/);assert.match(html,/2 open known issues/);assert.match(html,/not proof that every route works in the current build/);assert.match(html,/Stop and confirm Stop/);
+test('representative Campsite page preserves Beta, score and current open-issue count without promising a release',()=>{
+  const entry=featureDirectory.find(f=>f.name==='Campsite host start and stop');const source=JSON.parse(readFileSync(new URL('../testing-status.json',import.meta.url),'utf8')).features.find(f=>f.name===entry.name);const html=readFileSync(new URL('../features/'+entry.id+'.html',import.meta.url),'utf8');assert.match(html,/Beta/);assert.match(html,/90%/);assert.ok(html.includes(`${source.openIssues} open known issues`));assert.match(html,/not proof that every route works in the current build/);assert.match(html,/Stop and confirm Stop/);
 });
 test('equal snapshot version cannot remove and then revive a running confirmation',async()=>{
   const h=harness();await flush();assert.equal(h.client.accept(feed([])),false);h.close();

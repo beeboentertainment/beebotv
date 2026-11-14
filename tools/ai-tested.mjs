@@ -48,10 +48,22 @@ function buildTag(text) {
   return '';
 }
 
-// Newest record wins; on the same day the record listed first wins (the lists are kept newest first).
+// Newest report wins, including multiple reports on the same calendar day.
+// reportedAt is a report timestamp, not an assertion that the test ran then.
+function recordTime(r) {
+  if (r.reportedAt && Number.isFinite(Date.parse(r.reportedAt))) return Date.parse(r.reportedAt);
+  const d = DATE_RE.exec(r.date || ''), m = /\b(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)\b/.exec(r.date || '');
+  if (!d) return -1;
+  const month = MON.indexOf(d[1]), day = Number(d[2]), hour = m ? Number(m[1]) % 12 + (m[4] === 'PM' ? 12 : 0) : 0;
+  const utc = Date.UTC(Number(d[3]), month, day, hour, m ? Number(m[2]) : 0, m ? Number(m[3] || 0) : 0);
+  // Resolve the offset for this date through the named zone, including DST.
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', timeZoneName: 'shortOffset' }).formatToParts(new Date(utc + 5 * 3600000)).map(p => [p.type, p.value]));
+  const offset = /GMT([+-]\d+)/.exec(parts.timeZoneName)?.[1];
+  return utc - Number(offset || 0) * 3600000;
+}
 function latest(records) {
-  let best = null, bestDay = -2;
-  for (const r of records) { const d = dayValue(r.date); if (d > bestDay) { best = r; bestDay = d; } }
+  let best = null, bestTime = -2;
+  for (const r of records) { const t = recordTime(r); if (t > bestTime) { best = r; bestTime = t; } }
   return best;
 }
 
