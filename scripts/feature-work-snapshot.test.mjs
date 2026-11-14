@@ -287,11 +287,52 @@ const NOV11={
   ]
  }
 };
-test('Emulator ticks are explicit: only rows with a recorded PASS on an emulator with the public build, and no score went down',()=>{
- const EMU=['Opening the app and the five tabs','Playing films, seeking, picture-in-picture'];
+const PRIOR14=JSON.parse(execFileSync('git',['show','95ac8f2433c57dd9cf30a7d172609ddabab3c5d1:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
+const NOV14={
+ 'Playing films, seeking, picture-in-picture':{openIssues:[6,7]},
+ 'Campsite host start and stop':{openIssues:[2,4]},
+ 'Podcasts and radio':{openIssues:[1,4]},
+ 'Audiobooks':{openIssues:[1,5]},
+ 'Campsite games':{openIssues:[8,12]},
+ 'Wireless speakers':{openIssues:[0,1],percentComplete:[100,90]},
+ 'Music on the phone (albums, songs, player, sleep timer)':{openIssues:[1,3]},
+ 'Photos and phone backups (timeline, albums, viewer)':{openIssues:[12,13]},
+ 'Library, player and web player':{openIssues:[11,13]},
+ 'Converter and quality / speed settings':{openIssues:[8,9]},
+ 'Movie Night':{openIssues:[6,7]},
+ 'Parental controls and household profiles':{openIssues:[9,12]},
+ 'Keyboard and screen-reader support':{openIssues:[3,5]},
+ 'Languages (5 translated with machine help, 3 previews)':{openIssues:[3,5]},
+ 'Home layouts and Customize layout (desktop)':{openIssues:[0,1],percentComplete:[99,90]},
+ 'Car party (host and passengers)':{percentComplete:[74,99],realWorld:true,lastTested:'Nov 13, 2026, 3:00 AM Eastern'},
+ 'Family achievements (opt-in milestones)':{percentComplete:[74,98],emulator:true,lastTested:'Nov 13, 2026, 6:21 PM Eastern'}
+};
+test('Emulator ticks are explicit and require recorded public-build passes',()=>{
+ const EMU=['Opening the app and the five tabs','Playing films, seeking, picture-in-picture','Family achievements (opt-in milestones)'];
  assert.deepEqual(data.features.filter(f=>f.checks.Emulator).map(f=>f.name).sort(),[...EMU].sort());
  assert.ok(data.features.every(f=>typeof f.checks.Emulator==='boolean'));
  assert.ok(data.features.every(f=>!f.nextUpdate),'no next-update tag is set without recorded evidence');
+});
+
+test('Nov 14 public evidence changes only the named scores, issue counts and two qualifying checks',()=>{
+ for(const old of PRIOR14.features){
+  const current=data.features.find(f=>f.name===old.name),change=NOV14[old.name]||{};
+  assert.equal(current.percentComplete,change.percentComplete?.[1]??old.percentComplete,old.name+': score');
+  assert.equal(current.openIssues||0,change.openIssues?.[1]??(old.openIssues||0),old.name+': known problems');
+  assert.deepEqual(current.checks,{...old.checks,...(change.realWorld?{'Real-world check':true}:{}),...(change.emulator?{Emulator:true}:{})},old.name+': checks');
+  assert.equal(current.status,old.status,old.name+': availability');
+  assert.equal(current.checks['Ready to call Available'],old.checks['Ready to call Available'],old.name+': no new owner acceptance');
+ }
+ const problems=data.features.flatMap(f=>(f.roadTo100?.remaining||[]).filter(p=>p.problemId));
+ assert.equal(new Set(problems.map(p=>p.problemId)).size,18,'shared problems count once, even on several features');
+ assert.equal(readinessAudit.newKnownProblemCount,18);
+ assert.deepEqual([...new Set(problems.map(p=>p.problemId))].sort(),[...readinessAudit.newKnownProblemIds].sort());
+ const car=data.features.find(f=>f.name==='Car party (host and passengers)');
+ const carPass=car.deviceTests.find(r=>r.sourceCommentIds?.includes('6847465363'));
+ assert.equal(carPass.result,'PASS');assert.ok(carPass.ticks.includes('Real-world check'));assert.match(carPass.build,/PUBLIC Android 1\.62/);assert.match(carPass.evidence,/passenger video/);
+ const achievements=data.features.find(f=>f.name==='Family achievements (opt-in milestones)');
+ const emulatorPass=achievements.deviceTests.find(r=>r.sourceCommentIds?.includes('6867412400'));
+ assert.equal(emulatorPass.result,'PASS');assert.match(emulatorPass.device,/emulator/);assert.match(emulatorPass.evidence,/synthetic/);assert.equal(achievements.checks['Real-world check'],false);
 });
 test('all 70 scores and checks preserve the baseline; dated evidence additions are explicit',()=>{
  const baseline=JSON.parse(execFileSync('git',['show','debf65d2c47fb8900dbaa0d71994c3dba473e8aa:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
@@ -301,6 +342,20 @@ test('all 70 scores and checks preserve the baseline; dated evidence additions a
   const {Emulator:_emulator,...checksWithoutEmulator}=afterRaw.checks;
   const after={...afterRaw,checks:checksWithoutEmulator};
   for(const key of ['percentComplete','checks','status','openIssues','lastTested','testedOn','codeDonePercent','realWorldDonePercent']){
+   const nov14=NOV14[before.name],p14=PRIOR14.features.find(f=>f.name===before.name);
+   if(nov14?.[key]&&['percentComplete','openIssues'].includes(key)){
+    assert.equal(p14[key]||0,nov14[key][0],before.name+': before Nov 14');assert.equal(after[key],nov14[key][1],before.name+': Nov 14 '+key);continue;
+   }
+   if(nov14?.realWorld&&key==='checks'){
+    const {Emulator:_oldEmulator,...oldChecks}=p14.checks;
+    assert.deepEqual(after.checks,{...oldChecks,'Real-world check':true},before.name+': Nov 14 checks');continue;
+   }
+   if(nov14?.lastTested&&key==='lastTested'){
+    assert.ok(after.lastTested.startsWith(nov14.lastTested),before.name+': Nov 14 report date');assert.ok(after.lastTested.endsWith('; '+p14.lastTested),before.name+': older Last PASS retained');continue;
+   }
+   if(nov14?.lastTested&&key==='testedOn'){
+    assert.ok(after.testedOn.startsWith('Public Android 1.62 (134)'),before.name+': current tested build');assert.ok(after.testedOn.endsWith('Earlier record: '+p14.testedOn),before.name+': historical device record retained');continue;
+   }
   if(key==='percentComplete'&&NOV12[before.name]){assert.equal(after.percentComplete,NOV12[before.name][1],before.name+': Nov 12 percent (Emulator step: a recorded real-device PASS also counts for 98)');assert.ok(after.percentComplete>NOV12[before.name][0],before.name+': Nov 12 score went up, not down');continue;}
   const nov9=NOV9[before.name];
   const nov10=NOV10[before.name];
@@ -393,9 +448,9 @@ test('all 70 scores and checks preserve the baseline; dated evidence additions a
   }
  }
  const car=data.features.find(f=>f.name==='Car party (host and passengers)');
- assert.equal(car.lastTested,'Oct 13, 2026: two-phone host/join/leave; no newer-build real-device PASS recorded');
+ assert.ok(car.lastTested.endsWith('; Oct 13, 2026: two-phone host/join/leave; no newer-build real-device PASS recorded'));
  const originalCar=baseline.features.find(f=>f.name===car.name);
- assert.equal(car.testedOn,originalCar.testedOn.replace('No real Car Party pass is recorded here. Last PASS: No real-device PASS recorded.','No newer-build Car Party pass is recorded here. The existing device tick rests on the Oct 13, 2026 two-phone host/join/leave run.'));
+ assert.ok(car.testedOn.endsWith(originalCar.testedOn.replace('No real Car Party pass is recorded here. Last PASS: No real-device PASS recorded.','No newer-build Car Party pass is recorded here. The existing device tick rests on the Oct 13, 2026 two-phone host/join/leave run.')));
 });
 
 test('every feature card face shows a Latest check line, with honesty when nothing is newer than the public build',()=>{
@@ -406,9 +461,11 @@ test('every feature card face shows a Latest check line, with honesty when nothi
   if(!f.latestCheck)assert.ok(card.includes('Not checked yet'),f.name);
  }
  const wireless=cards.find(c=>c.includes('data-feature-name="Wireless speakers"'));
- assert.match(wireless,/Latest check: Nov 9, 2026, 7:42 AM Eastern - Android 1.55/);
+ assert.match(wireless,/Latest check: Nov 13, 2026, 4:08 PM Eastern - PUBLIC Android 1.62/);
  const androidBuild=JSON.parse(readFileSync(new URL('../downloads/app-build.json',import.meta.url),'utf8'));
- assert.ok(wireless.includes(`Nothing newer than Nov 9, 2026, 7:42 AM Eastern; the public build is now Android ${androidBuild.versionName} (build ${androidBuild.versionCode})`));
+ assert.doesNotMatch(wireless,/Nothing newer than/);
+ const oldCheck={name:'Chromecast',group:'Android phone app',latestCheck:{at:'Nov 9, 2026, 7:42 AM Eastern',build:'Android 1.55',device:'real phone',result:'PASS'}};
+ assert.ok(latestCheckLine(oldCheck,data).includes(`the public build is now Android ${androidBuild.versionName} (build ${androidBuild.versionCode})`));
  const currentCheck={name:'Chromecast',group:'Android phone app',latestCheck:{at:androidBuild.publishedAtEastern}};
  assert.doesNotMatch(latestCheckLine(currentCheck,data),/Nothing newer than/);
 });
@@ -431,7 +488,7 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
  // Nov 10, 2026: the review moved no percentage; then Nick's own decision moved three Ready rows from 100% to 90%.
  // Nov 10, 2026 early-morning record: the audit's before and after are for that run, which moved no percentage.
- assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),["feature-android-phone-app-share-the-app-qr-over-the-hotspot","feature-windows-desktop-app-live-tv-tuner-and-own-playlist","feature-windows-desktop-app-update-modes-and-start-with-windows"]); // Nov 11 evening run moved only Share the app (74 to 99); earlier: collections and surprise-me, Nov 10, 8:06 PM Eastern: Nick's instruction moved these two Ready rows from 100% to 90%
+ assert.deepEqual(readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>f.featureId).sort(),['feature-android-phone-app-car-party-host-and-passengers','feature-android-phone-app-family-achievements-opt-in-milestones','feature-android-phone-app-wireless-speakers','feature-windows-desktop-app-home-layouts-and-customize-layout-desktop']);
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
@@ -443,9 +500,9 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
 });
 test('legacy 100% code estimates with outstanding required work are visibly qualified',()=>{
  const contradicted=data.features.filter(f=>codeEstimate(f));
- assert.equal(contradicted.length,51); // Nov 10, 2026: rows with a 100% code estimate gained open issues (one in the review, three by Nick's decision, one in the daytime record: Android TV and Fire TV screens)
+ assert.equal(contradicted.length,52); // The new Wireless speakers problem also qualifies its legacy code estimate.
  for(const f of contradicted){const card=cards.find(c=>c.includes(`data-feature-name="${escape(f.name)}"`));assert.ok(card.includes('Legacy code estimate is unverified'),f.name);}
- assert.match(page,/51 rows retain a 100% code estimate/);
+ assert.match(page,/52 rows retain a 100% code estimate/);
  const method=data.codeVsHuman.method;
  for(const fact of ['Built and Automated tests checks','Real device, Real-world check and Ready to call Available','Group figures are the average of their features and are never rounded up to 100','Remaining counts are open road-to-100 items','All 70 features are counted, including those that are planned or on hold'])assert.ok(method.includes(fact),fact);
  const generator=readFileSync(new URL('../site-data/build-what-we-offer.js',import.meta.url),'utf8');

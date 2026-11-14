@@ -128,8 +128,8 @@ test('all detail pages keep source status/score, collapsed technicals, placehold
   for(const entry of featureDirectory){const f=data.features.find(f=>f.name===entry.name);const html=readFileSync(new URL('../features/'+entry.id+'.html',import.meta.url),'utf8');const dom=new JSDOM(html);const doc=dom.window.document;
     assert.equal(doc.querySelector('progress').value,f.percentComplete,entry.name);assert.equal(doc.querySelector('.eyebrow').textContent,`${f.group} · ${f.status}`);assert.equal(doc.querySelector('details').open,false);assert.match(doc.body.textContent,/Screenshots coming soon/);assert.ok(doc.querySelector('a[href="../release-evidence.html#features"]'));assert.equal(doc.querySelectorAll('img').length,0);assert.equal(doc.querySelector('[data-live-feature]').dataset.liveFeature,entry.id);dom.window.close();}
 });
-test('representative Campsite page preserves Beta, 90%, two issues and no current-build claim',()=>{
-  const entry=featureDirectory.find(f=>f.name==='Campsite host start and stop');const html=readFileSync(new URL('../features/'+entry.id+'.html',import.meta.url),'utf8');assert.match(html,/Beta/);assert.match(html,/90%/);assert.match(html,/2 open known issues/);assert.match(html,/not proof that every route works in the current build/);assert.match(html,/Stop and confirm Stop/);
+test('representative Campsite page preserves Beta, 90%, four issues and bounded current-build evidence',()=>{
+  const entry=featureDirectory.find(f=>f.name==='Campsite host start and stop');const html=readFileSync(new URL('../features/'+entry.id+'.html',import.meta.url),'utf8');assert.match(html,/Beta/);assert.match(html,/90%/);assert.match(html,/4 open known issues/);assert.match(html,/not proof that every route works in the current build/);assert.match(html,/Stop and confirm Stop/);
 });
 test('equal snapshot version cannot remove and then revive a running confirmation',async()=>{
   const h=harness();await flush();assert.equal(h.client.accept(feed([])),false);h.close();
