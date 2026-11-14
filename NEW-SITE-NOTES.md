@@ -47,58 +47,33 @@ The body text is unchanged, including legal contact links, the illustrative acco
 
 The available downloads are Windows **0.1.120**, Android **1.64 (build 136)** and Beebo Auto **1.22 (build 23)**, with their exact publication times kept in the feeds and download page. The testing snapshot was updated **Nov 14, 2026, 4:04 AM Eastern** and names Windows **0.1.119** and Android **1.62 (build 134)**. Its individual records can be older still. Newer downloads do not inherit old device acceptance.
 
-The owner's brief controls current availability labels. In particular, Beebo Auto is Available as a sideload and **has never been tested in a real car**. Some retained historical prose mentions an earlier parked look; it is not used to support a current car-test claim. Linux and Docker/NAS remain Beta with no download offered. Optional Relay, VPN, paid plans, hosting and rewards are not purchasable. Existing evidence values and records are not altered to fit the new presentation.
+The owner's brief controls current availability labels. Beebo Auto is Available as a sideload. Limited car checks were recorded on older builds on October 6 and October 27, 2026; **the current build (1.22) has not been tested in a real car**. The testing renderer retains the bounded October 27 record alongside the newer phone-emulator evidence. Earlier car observations do not establish current-build acceptance. Linux and Docker/NAS remain Beta with no download offered. Optional Relay, VPN, paid plans, hosting and rewards are not purchasable. Existing evidence values and records are not altered to fit the new presentation.
 
-## Legacy checks and validation
+## Fixback 1
 
-All five requested checks passed on the untouched base:
+The independent review of `07045ede179f31224ac50ece92f806461c295b49` found three P2 defects. This fixback restores generated content ownership, migrates canonical shell generation and validation, and corrects the absolute Auto car-testing claim.
 
-- `node tools/build-status-page.mjs --check`
-- `node site-data/check-progress-score.js`
-- `node scripts/check-evidence-tiers.cjs`
-- `node site-data/build-what-we-offer.js --check`
-- `node tools/build-feature-pages.mjs --check`
+Home and Testing feature-list status and all 33 known-problem entries are generated from the unchanged `site-data/what-we-offer.json`, with the existing stricter-label rule and dated evidence limits retained. Home structured data and the machine-readable summary are also generated. The retained legacy feature-list page and all evidence JSON remain unchanged.
 
-The existing check implementations remain unchanged. The old what-we-offer generator also owns presentation blocks in `index.html` and `llms.txt`. Those legacy markers were removed when replacing the two documents, so its old-presentation guard fails. The retained `what-we-offer.html` page and source data remain unchanged. Final command outcomes and verification boundaries follow.
+The shell generator uses an explicit redesigned profile for ten pages and preserves the old profile for retained pages. The checker covers 116 canonical pages and 99 unchanged exceptions, checks idempotence, and preserves legal/deletion content, feeds, old paths and Home fragments. New regression tests exercise missing shell markers, damaged new headers, legal changes and JSON-driven content updates.
 
-### Final verification
+The Auto copy consistently distinguishes earlier limited car checks on older builds from the absence of real-car testing on current build 1.22. No evidence JSON was edited. The renderer shows the earlier bounded owner observation and the newer 19 PASS / 0 FAIL / 6 NOT RUN emulator report with their separate limits.
 
-Source implementation: `d836e1ebb6c766c114a5294679b6ab425b368d3e`. Later commits add review documentation only.
+### Verification
 
-| Requested command | Result | Meaning |
-| --- | --- | --- |
-| `node tools/build-status-page.mjs --check` | PASS | Retained evidence presentation matches unchanged data. |
-| `node site-data/check-progress-score.js` | PASS | All 70 source records follow the existing scoring rule. |
-| `node scripts/check-evidence-tiers.cjs` | Legacy Home mismatch | Stops at `home callout counts: Windows app` (line 199). It requires the removed homepage percentage callout. Data and retained evidence pages were not edited. |
-| `node site-data/build-what-we-offer.js --check` | Legacy Home mismatch | `index.html: markers <!-- WWO:HOME:START --> / <!-- WWO:HOME:END --> not found`. The new Home and llms text intentionally replace that generator's old presentation. |
-| `node tools/build-feature-pages.mjs --check` | PASS | All 70 retained generated detail pages match unchanged source evidence. |
+- `npm test`: **71 passed, 0 failed**, including the six evidence-renderer checks, three offer-generator regressions and redesigned-shell coverage. The original generator/evidence failures, Auto history failure and mixed-line-ending regression were reproduced before their fixes.
+- All five legacy checks pass: `tools/build-status-page.mjs --check`, `site-data/check-progress-score.js`, `scripts/check-evidence-tiers.cjs`, `site-data/build-what-we-offer.js --check` and `tools/build-feature-pages.mjs --check`. The 70 evidence records and 70 legacy feature pages remain consistent.
+- `scripts/check-site-shell.mjs --base 8dce4c66` passes: **116 canonical pages, 99 unchanged exceptions, 215 HTML files**. Re-running shell generation changes zero files. Generated blocks are idempotent; manual edits are rejected by check mode.
+- Preservation checks pass: **210/210 old paths**, **205 unchanged old HTML blobs**, **21 unchanged protected files**, **30/30 original Home IDs**, all three download URLs, the exact required privacy sentence and 18+ wording. Legal raw markup, ten legal links, five deletion controls and the deletion script remain unchanged. `git diff --check` passes.
+- Final headless Chrome verification passes **40/40 page/viewport/theme combinations** (ten pages, 390/1280 pixels, light/dark), **155/155 local links/fragments**, and zero automated WCAG A/AA violations, overflows, broken images, page errors, missing resources or external requests. Keyboard navigation, theme persistence, mobile menu/Escape, FAQ, feed refresh, evidence search/filter and no-JavaScript fallbacks pass. Expanded Auto history and all 33 generated known problems are also checked. All forty page screenshots plus one expanded Testing screenshot are refreshed in `site-check/screens/`. The command-owned browser and server were closed.
+- Download feed fixtures pass **18/18 platform/scenario tests**, with multiple assertions per test: current feed, offline, malformed field, unexpected host, synthetic successor and retry recovery across Windows, Android and Auto. All fixture fetches were mocked.
+- Independent source review found no remaining P1/P2/P3 issues in the three fixes. Its mixed-line-ending finding was corrected and independently rechecked. These are source and local-browser results, not installed-app or real-car acceptance.
 
-`npm ci --ignore-scripts` completed before work because dependencies were absent. `npm test` completed with **54 passed, 2 failed**. Both failures are old-shell contract assertions in `scripts/site-checks.test.mjs` (lines 58 and 64): they require the previous banner/header/footer/assets and the fixed 210-page inventory. The replacement deliberately has a different shell and 215 HTML paths. Those tests and all generator/check implementations are left unchanged. There is no claim of a completely green legacy suite.
+### Review limits
 
-Browser verification used a temporary command-owned static server and **headless Chrome 157.0.8103.78**. The server and browser were closed after each run; no shared desktop or mouse was used. All ten redesigned pages were opened at **390 and 1280 pixels**, in **light and dark** appearance: **40 page/viewport/theme combinations passed**. After the final input-validation adjustment, the testing page was checked again in all four combinations. Results:
+This is a source-only review candidate, not a publication receipt. No deployment, GitHub comment, main update, app execution, device/car test or account-deletion submission was performed. Safari, Firefox, physical-phone layouts and a complete screen-reader audit were not run. Retained pages remain unchanged; the sitemap, old release history and legal wording are preserved.
 
-- No horizontal overflow, missing images, JavaScript page errors, failed resource requests or external network requests from these pages.
-- **154 local link and fragment checks passed**, including all new pages, legal destinations, downloads and evidence links. Each local target returned HTTP 200. No installer or APK was executed.
-- Automated WCAG A/AA checks reported **zero violations in all 40 combinations**, and zero in the four final testing-page checks. This is an automated accessibility result, not a complete manual assistive-technology audit.
-- Keyboard skip link, persistent light/dark switch, mobile menu and Escape, FAQ expansion, three feed refreshes, feature search/filter and no-JavaScript navigation/download/evidence fallback passed.
-- The account-deletion form was never submitted. No login, subscription, payment, app, phone, car or production-server action was performed.
-- Visual inspection covered Home, Download, Features, How it works, Testing, Help, About and all three legal pages. Two initial layout overflows were corrected. Lazy images were explicitly loaded for screenshot verification.
-
-Independent source review identified and corrected an outdated Auto no-emulator sentence, missing detailed test limits, and leaked internal scoring directions. The current page distinguishes the public Auto 1.22 (23) **Nov 13, 8:49 PM Eastern phone-emulator check: 19 passed, 0 failed, 6 not run**, from unverified real-car use. Trip Journal's narrow older pass is followed by its later partial export record, including the 1080p selection producing 720p and unverified final video/audio.
-
-Six meaningful evidence-renderer regression tests pass. The earlier implementation demonstrably failed the Trip Journal scope assertions. Download refresh/error validation passed **18 assertions** across current-feed, offline, malformed-value, unexpected-host and successor-feed cases. Additional probes reproduced and closed privacy and presentation gaps: the real data renders, while contact-like feature names, group names and evidence timestamps are rejected; source identifiers joined to surrounding text are omitted; and old editorial scoring instructions are excluded. Evidence prose is escaped and private references are omitted without discarding the whole explanation. The final testing page was rechecked in all four browser combinations after these corrections.
-
-Final fresh-copy scans found no `kid-safe`, `100%`, narration name, dollar amount, price wording, private network address, email address or `2099` in the seven main pages. The unchanged legal passages retain the exceptions described above. `git diff --check` passes. All 11 protected files and all testing/site-data source files remain unchanged against the base; all 210 original HTML paths and 30 original Home fragment IDs remain present.
-
-Two independent final source reviews cleared the corrected implementation at `d836e1ebb6c766c114a5294679b6ab425b368d3e`: one verified preservation and the editorial-text correction, and the other independently verified evidence scope, identifier redaction, safe labels and retained failures. Their clearance is limited to source/DOM review. They did not claim to have independently repeated the browser run or accepted an installed app or release.
-
-### Review limits and release-tool follow-up
-
-This branch is ready for design/source review, not a publication receipt. No PR was opened, no deployment was made, no GitHub settings were changed, and no push to main was made. Safari, Firefox, physical-phone layouts and a complete screen-reader audit were not run. Existing legacy pages were preserved rather than audited or rewritten; their old wording and old asset behavior remain outside the new visitor navigation.
-
-Before adopting the replacement for publication, the website owner should migrate the old Home/llms generators and canonical-shell contract to the new presentation. Running old writing generators can fail on removed markers or restore the old shell. This task keeps those checks intact rather than weakening them. The saved sitemap and old release-history pages also remain unchanged as requested. Legal inconsistencies, including the retained external-font statement and historical contact/billing text, were not rewritten.
-
-Local QA scripts, raw receipts and screenshots are in the ignored `site-check/` folder; they are not part of the public branch. These review notes record the results without publishing local tooling or private source history.
+Local QA scripts, raw receipts and refreshed screenshots remain in ignored `site-check/`. The generator, shell tooling and regression tests are tracked so their checks can be reproduced from the branch.
 
 ## Every old HTML path
 

@@ -3,6 +3,8 @@
 import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'node:fs';
 import { dirname, join, relative, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { redesignedPages, redesignedHeader, redesignedFooter, redesignedAssets, redesignedHeaderRE, redesignedFooterRE } from './new-site-shell.mjs';
+export { redesignedPages } from './new-site-shell.mjs';
 
 export const root = dirname(dirname(fileURLToPath(import.meta.url)));
 export const base = '489b21d2dd9769332d0f80590a2809583b9191b4';
@@ -137,12 +139,43 @@ export function removeOldShell(source, file) {
     .replace(/[\t ]*<footer\b[\s\S]*?<\/footer>/g, '');
 }
 const sharedTag = /[\t ]*<link\b[^>]*href=["'](?:\/|\.\.\/|\.\/)?(?:beebo-testers|website-shell)\.css(?:\?[^"']*)?["'][^>]*>|[\t ]*<script\b[^>]*src=["'](?:\/|\.\.\/|\.\/)?(?:website-shell|polish)\.js(?:\?[^"']*)?["'][^>]*>\s*<\/script>/g;
+export function shellBlocks(file) {
+  return redesignedPages.has(file)
+    ? [['BANNER', marker('BANNER', '')], ['HEADER', marker('HEADER', redesignedHeader(file))], ['FOOTER', marker('FOOTER', redesignedFooter)], ['ASSETS', marker('ASSETS', redesignedAssets)]]
+    : [['BANNER', bannerFor(file)], ['HEADER', header(file)], ['FOOTER', footer], ['ASSETS', assets]];
+}
 export function render(source, file) {
+  if (redesignedPages.has(file)) {
+    // Legal pages intentionally mix LF shell markup with CRLF policy text.
+    // Replace only owned blocks; never normalize bytes elsewhere in the page.
+    let s = source;
+    const eol = source.match(/\r?\n/)?.[0] || '\n';
+    if (['BANNER', 'HEADER', 'FOOTER', 'ASSETS'].every(name => blockRE(name).test(s))) {
+      for (const [name, value] of shellBlocks(file)) {
+        s = s.replace(blockRE(name), previous => value.replace(/\n/g, previous.match(/\r?\n/)?.[0] || eol));
+      }
+      return s;
+    }
+    // First migration wraps the existing design; never fall back to the old shell.
+    // Incomplete markers are rejected rather than risking a second header/footer.
+    if (['BANNER', 'HEADER', 'FOOTER', 'ASSETS'].some(name => s.includes(`BEEBO-SHELL-${name}:`))) {
+      throw Error(`${file}: incomplete redesigned shell markers`);
+    }
+    const blocks = Object.fromEntries(shellBlocks(file).map(([name, value]) => [name, value.replace(/\n/g, eol)]));
+    for (const [name, re] of [['HEADER', redesignedHeaderRE], ['FOOTER', redesignedFooterRE]]) {
+      if ([...s.matchAll(re)].length !== 1) throw Error(`${file}: expected one redesigned ${name}`);
+      s = s.replace(re, () => blocks[name]);
+    }
+    if (s.split(redesignedAssets).length !== 2) throw Error(`${file}: expected canonical redesigned assets before migration`);
+    s = s.replace(redesignedAssets, () => blocks.ASSETS);
+    s = s.replace(/(<body\b[^>]*>)/i, '$1' + blocks.BANNER);
+    return s;
+  }
   const crlf = (source.match(/\r\n/g) || []).length > (source.match(/\n/g) || []).length / 2;
   const finish = text => crlf ? text.replace(/\n/g, '\r\n') : text;
   let s = source.replace(/\r\n/g, '\n');
   if (['BANNER', 'HEADER', 'FOOTER', 'ASSETS'].every(name => blockRE(name).test(s))) {
-    for (const [name, value] of [['BANNER', bannerFor(file)], ['HEADER', header(file)], ['FOOTER', footer], ['ASSETS', assets]]) s = s.replace(blockRE(name), () => value);
+    for (const [name, value] of shellBlocks(file)) s = s.replace(blockRE(name), () => value);
     return finish(s);
   }
   for (const name of ['BANNER', 'HEADER', 'FOOTER', 'ASSETS']) s = s.replace(blockRE(name), '');
@@ -158,7 +191,7 @@ export function render(source, file) {
 export function bodyContent(source, file) {
   let s = source;
   for (const name of ['BANNER', 'HEADER', 'FOOTER', 'ASSETS']) s = s.replace(blockRE(name), '');
-  s = removeOldShell(s, file);
+  s = removeOldShell(s, file).replace(redesignedHeaderRE, '').replace(redesignedFooterRE, '');
   return (s.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '').replace(sharedTag, '').replace(/\r\n/g, '\n').replace(/>\s+</g, '><').trim();
 }
 function audit() {

@@ -15,7 +15,7 @@
 - Android 1.64 (build 136): Available as a sideload; not on Google Play. Published Nov 14, 2026, 12:44 PM Eastern (2026-11-14T17:44:10.000Z). 47468328 bytes. SHA-256 81b036a7c618908d774bf894fbcc0f0c4c7fa13f5b333e49b374a31ad8415d78. APK: https://www.beeboentertainment.com/downloads/BeeboEntertainment.apk
 - Beebo Auto 1.22 (build 23): Available as a sideload; not on Google Play. Published Nov 11, 2026, 11:07 PM Eastern (2026-11-12T04:07:00.000Z). 15527289 bytes. SHA-256 0077b65232b82bd886a24b709a3c93a83634af558c210cf00856ece9d924ce98. APK: https://www.beeboentertainment.com/downloads/BeeboAuto.apk
 - For current releases, read these feeds: https://www.beeboentertainment.com/desktop-version.json, https://www.beeboentertainment.com/downloads/app-build.json, https://www.beeboentertainment.com/downloads/auto-build.json.
-- These named Windows, Android and Auto releases have automated-test and review evidence, not matching real-device acceptance. Beebo Auto has never been tested in a real car.
+- These named Windows, Android and Auto releases have automated-test and review evidence, not matching real-device acceptance. Beebo Auto had limited car checks on older builds on Oct 6 and Oct 27, 2026. The current build (1.22) has not been tested in a real car.
 
 ## Current platform and service labels
 Use only Available, Beta, In development and Planned as status labels. Availability is not a claim that every feature or device has been tested.
@@ -30,6 +30,14 @@ Use only Available, Beta, In development and Planned as status labels. Availabil
 The owner runs Beebo on their own Windows computer. The source media stays there. The computer must be on and running Beebo for live streaming from it. Away viewing tries a direct, end-to-end encrypted connection; connection signalling and sign-in use small text records. A relay can carry encrypted video when needed.
 Campsite Mode and Trip Journal are Beta. Prepared solo activities can work offline; sharing with nearby guests uses a local Wi-Fi connection or hotspot. Prepare downloads before leaving internet access. Do not infer group, device or real-world acceptance from an illustration, a source review or an automated test.
 Testing evidence remains in https://www.beeboentertainment.com/testing-status.json and the existing site-data files. Read the named build, date, counts and limitations for each feature. Older evidence does not establish the behavior of a newer download.
+
+# WWO:LLMS:START
+## Recorded feature-list status (updated Nov 10, 2026, 3:37 AM Eastern)
+- 153 features listed: 19 Available, 80 Beta, 50 In development, 4 Planned.
+- These are feature-list labels, not current-build acceptance. When the feature list and testing record disagree, the stricter label is shown. Older checks do not establish the behavior of a newer download.
+- Status by area, 33 known problems and dated follow-ups: https://www.beeboentertainment.com/testing.html#known-problems
+- Source feature record: https://www.beeboentertainment.com/site-data/what-we-offer.json; testing record: https://www.beeboentertainment.com/testing-status.json.
+# WWO:LLMS:END
 
 ## Privacy in one line
 video is end-to-end encrypted and the relay cannot see it; connection records (including IP addresses) are kept 7 days for abuse handling; nothing is sold.

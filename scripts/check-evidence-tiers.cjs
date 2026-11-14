@@ -193,12 +193,50 @@ if(d.checksConfirmed){
  // links from the page top and the works-today box
  const top=html.slice(0,html.indexOf('<!--PLATFORM-PROGRESS-->'));
  assert.ok(/href="#platform-progress"/.test(top)&&/href="#platform-matrix"/.test(top),'both sections are linked from the page top');
- // home page callout
+ // Redesigned Home and Testing keep their generated feature-list counts and
+ // known problems. Recompute from the source, including the stricter-label rule.
  const idx=fs.readFileSync(path.join(root,'index.html'),'utf8');
- const cs=idx.slice(idx.indexOf('id="wwo-platforms-title"'),idx.indexOf('</aside>',idx.indexOf('id="wwo-platforms-title"')));
- for(const c of R.platforms) assert.ok(cs.includes('<strong>'+c.name+':</strong> '+c.ready.length+' of '+c.stats.total+' features Ready (100%), '+c.almost.length+' almost there (90 to 98%), '+c.building.length+' earlier on (below 90%).'),'home callout counts: '+c.name);
- assert.ok(cs.includes('release-evidence.html#platform-progress'),'home callout links to the section');
- privacy(cs.replace(/Google Play/g,'GP'),'home callout');
+ const testing=fs.readFileSync(path.join(root,'testing.html'),'utf8');
+ const generatedBlock=(text,name)=>{
+  const start='<!-- WWO:'+name+':START -->', end='<!-- WWO:'+name+':END -->';
+  assert.equal(text.split(start).length,2,'one generated start marker: '+name);
+  assert.equal(text.split(end).length,2,'one generated end marker: '+name);
+  assert.ok(text.indexOf(end)>text.indexOf(start),'ordered generated markers: '+name);
+  return text.slice(text.indexOf(start)+start.length,text.indexOf(end));
+ };
+ const home=generatedBlock(idx,'HOME'), status=generatedBlock(testing,'TESTING');
+ const offers=JSON.parse(fs.readFileSync(path.join(root,'site-data/what-we-offer.json'),'utf8'));
+ const mapping=JSON.parse(fs.readFileSync(path.join(root,'site-data/evidence-map.json'),'utf8')).map;
+ const labels=['Available','Beta','In development','Planned'];
+ const rows=offers.features.map(feature=>{
+  const evidence=d.features.find(item=>item.name===mapping[feature.id]);
+  const other=labels.find(label=>String(evidence?.status).startsWith(label));
+  return {...feature,status:labels[Math.max(labels.indexOf(feature.status),labels.indexOf(other))]};
+ });
+ const counts=features=>labels.map(label=>features.filter(feature=>feature.status===label).length+' '+label).join(', ')+'.';
+ const escape=text=>String(text).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+ for(const [name,block] of [['Home',home],['Testing',status]]) {
+  assert.ok(block.includes(rows.length+' features'),'feature-list total on '+name);
+  assert.ok(block.includes(counts(rows)),'live stricter-label counts on '+name);
+  assert.ok(block.includes(offers.meta.updatedEastern),'source stamp on '+name);
+  assert.ok(block.includes('the stricter label is shown'),'label disagreement caveat on '+name);
+  assert.ok(/not (a claim that every path or current download has been tested|acceptance of every current download)/.test(block),'no current-build acceptance from historical labels on '+name);
+  privacy(block,name+' generated feature summary');
+ }
+ assert.ok(home.includes('/testing.html#known-problems'),'Home links to generated status and known problems');
+ assert.equal((status.match(/data-offer-area=/g)||[]).length,offers.areas.length,'every feature-list area appears once');
+ for(const area of offers.areas) {
+  const areaRows=rows.filter(feature=>feature.area===area.id);
+  assert.ok(status.includes('<li data-offer-area="'+area.id+'"><strong>'+escape(area.name)+'</strong><p>'+areaRows.length+' listed: '+counts(areaRows)+'</p></li>'),'live area counts: '+area.id);
+ }
+ const problems=/<ul data-offer-problems>([^]*?)<\/ul>/.exec(status)?.[1];
+ assert.ok(problems,'generated known-problems list');
+ assert.equal((problems.match(/<li>/g)||[]).length,offers.knownProblems.length,'every known-problem record appears once');
+ for(const problem of offers.knownProblems) assert.ok(problems.includes('<li>'+escape(problem)+'</li>'),'known-problem text retained: '+problem.slice(0,60));
+ assert.ok(status.includes('without a matching retest')&&status.includes('not run is unknown, not broken'),'testing limits remain visible');
+ const llms=fs.readFileSync(path.join(root,'llms.txt'),'utf8');
+ assert.ok(llms.includes('# WWO:LLMS:START')&&llms.includes('# WWO:LLMS:END'),'machine-readable summary remains generated');
+ assert.ok(llms.includes(counts(rows))&&llms.includes('/testing.html#known-problems'),'machine-readable live counts and known-problem link');
  // section stamps must be real Eastern times: not in the future, and not before the newest evidence stamp they count
  {
   const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];

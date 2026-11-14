@@ -7,8 +7,9 @@
  *   node site-data/build-what-we-offer.js --check  exit 1 if any block is out of date
  *
  * Writes only between marker comments:
- *   index.html          <!-- WWO:HOME:START --> ... <!-- WWO:HOME:END -->   (collapsed home section)
+ *   index.html          <!-- WWO:HOME:START --> ... <!-- WWO:HOME:END -->   (feature-list status summary)
  *   index.html          <!-- WWO:LD:START -->   ... <!-- WWO:LD:END -->     (JSON-LD for the home page)
+ *   testing.html        <!-- WWO:TESTING:START --> ... <!-- WWO:TESTING:END --> (status and known problems)
  *   what-we-offer.html  <!-- WWO:PAGE:START -->  ... <!-- WWO:PAGE:END -->  (the full page)
  *   llms.txt            # WWO:LLMS:START ... # WWO:LLMS:END
  * and writes site-data/what-we-offer-summary.json (the computed counts).
@@ -286,16 +287,27 @@ ${faq}
 }
 
 function homeBlock() {
-  const o = overall;
-  return `<section class="wwo-home container" id="everything" aria-labelledby="wwo-home-title">
-<details class="wwo-details" id="wwo-details">
-<summary><h2 class="wwo-sum-title" id="wwo-home-title">Everything we are and offer</h2><span class="wwo-sum-meta">Feature list updated ${esc(updated)} &middot; ${o.pctAvailable}% of ${o.listed} listed features Available &middot; open to read it all</span></summary>
-<div class="wwo-body">
-${homeBody()}
-</div>
-</details>
-${platformCallout('h3')}
-<p class="wwo-home-link"><a href="what-we-offer.html">Read the full page: every feature, what was tested and what was not &#8599;</a></p>
+  return `<section class="shell section" aria-labelledby="offer-status-title">
+<div class="section-heading"><div><span class="eyebrow">A work in progress</span><h2 id="offer-status-title">The feature list,<br>with its limits.</h2></div></div>
+<p>${overall.listed} features in the recorded list. ${statusCounts(overall)}</p>
+<p class="small">Feature list updated ${esc(updated)}. These are feature-list labels, not a claim that every path or current download has been tested. When the feature list and testing record disagree, the stricter label is shown.</p>
+<a class="text-link" href="/testing.html#known-problems">Read the status details and known problems &#8594;</a>
+</section>`;
+}
+
+function statusCounts(counts) {
+  return STATUSES.map(status => `${counts.byStatus[status]} ${status}`).join(', ') + '.';
+}
+
+function testingBlock() {
+  const areas = perArea.map(area => `<li data-offer-area="${esc(area.id)}"><strong>${esc(area.name)}</strong><p>${area.listed} listed: ${statusCounts(area)}</p></li>`).join('\n');
+  const known = data.knownProblems.map(problem => `<li>${esc(problem)}</li>`).join('\n');
+  return `<section class="section" id="known-problems" aria-labelledby="offer-problems-title">
+<div class="section-heading"><div><p class="eyebrow">The recorded feature list</p><h2 id="offer-problems-title">Status, with the gaps left in.</h2></div></div>
+<p>${overall.listed} features listed. ${statusCounts(overall)}</p>
+<p class="small">Feature list updated ${esc(updated)}. These labels describe the recorded feature list, not acceptance of every current download. When the feature list and testing record disagree, the stricter label is shown. Older checks do not establish the behavior of a newer build.</p>
+<div class="faq-list"><details><summary>Feature status by area</summary><div><ul class="value-list">${areas}</ul></div></details>
+<details><summary>Known problems and dated follow-ups (${data.knownProblems.length})</summary><div><p>This list retains the dated problems and follow-ups in the feature record. A recorded repair does not clear an installed-device problem without a matching retest. A test that was not run is unknown, not broken.</p><ul data-offer-problems>${known}</ul></div></details></div>
 </section>`;
 }
 
@@ -368,7 +380,6 @@ ${faq}</section>
 
 function ldBlock() {
   const org = { '@id': SITE + '/#organization' };
-  const faqLd = data.faq.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.a } }));
   const graph = [
     {
       '@type': 'Organization',
@@ -395,7 +406,7 @@ function ldBlock() {
       isPartOf: { '@id': SITE + '/#website' },
       about: org,
       dateModified: data.meta.updatedIso,
-      description: 'What Beebo is, every feature with its honest status label, what was tested on real devices and what was not.',
+      description: 'What Beebo is, a summary of the recorded feature labels, and links to downloads and dated testing evidence.',
     },
     {
       '@type': 'SoftwareApplication',
@@ -408,7 +419,7 @@ function ldBlock() {
       downloadUrl: winFeed.url,
       isAccessibleForFree: true,
       publisher: org,
-      url: SITE + '/windows.html',
+      url: SITE + '/download.html#windows',
       description: 'The Beebo media server and desktop app for Windows. Holds your own library and streams it to your other screens. Beebo includes no movies or shows.',
     },
     {
@@ -422,29 +433,22 @@ function ldBlock() {
       downloadUrl: SITE + appFeed.url,
       isAccessibleForFree: true,
       publisher: org,
-      url: SITE + '/app-on-your-phone.html',
+      url: SITE + '/download.html#android',
       description: 'The Beebo phone and tablet app, a sideload test download from this website. Not on Google Play.',
     },
-    { '@type': 'FAQPage', '@id': SITE + '/#faq', mainEntity: faqLd },
   ];
   const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
   return `<script type="application/ld+json">${json.replace(/</g, '\\u003c')}</script>`;
 }
 
 function llmsBlock() {
-  const o = overall;
-  const lines = [];
-  lines.push('## Everything we are and offer (updated ' + updated + ')');
-  lines.push(
-    `- Full page with every feature, its label, what was tested on real devices and what was not: ${SITE}/what-we-offer.html (data file: ${SITE}/site-data/what-we-offer.json)`,
-    `- Share-of-list counts, not a promise or an audit: ${o.listed} features listed; ${o.byStatus.Available} Available (${o.pctAvailable}%), ${o.byStatus.Beta} Beta, ${o.byStatus['In development']} In development, ${o.byStatus.Planned} Planned; ${o.availableOrBeta} Available or Beta (${o.pctAvailableOrBeta}%); testing is measured on ${SITE}/release-evidence.html#features (overall average ${ts.overallAveragePercent}% across ${ts.featureCount} features; 5 checks scored ${WEIGHT_TEXT}; legacy code-check estimate ${codeStatus().code}% (unverified where required work or open issues remain); real-device and real-world checks passed about ${codeStatus().human}%; ${codeStatus().confirmed} features confirmed on real devices, ${codeStatus().waiting} in the legacy code-estimate category awaiting real-world testing, ${codeStatus().building} code still being finished; updated ${codeStatus().updated}; details at ${SITE}/release-evidence.html#code-status).`,
-    '- How the feature score works: ' + ts.scoring.explanation,
-    `- Current versions (from our download feeds): Windows ${winFeed.version}; Android ${appFeed.versionName} (build ${appFeed.versionCode}), a test download, not on Google Play; Beebo Auto ${autoFeed.versionName} (build ${autoFeed.versionCode}), a test download, not on Google Play.`,
-    '- Who we are: made by a family man, not a data company. Free, local-first media server. Closed source (all rights reserved). Beebo includes no movies, shows or channels.',
-    '- Per area (Available of listed): ' + perArea.map((a) => `${a.name} ${a.available}/${a.listed}`).join('; ') + '.',
-    '- Not counted: PlayStation (Dropped), the original separate-login hub (Retired), the old "Stream from my PC" button (Retired), and ' + data.ideas.length + ' ideas that are not promised.'
-  );
-  return lines.join('\n');
+  return [
+    '## Recorded feature-list status (updated ' + updated + ')',
+    `- ${overall.listed} features listed: ${statusCounts(overall)}`,
+    '- These are feature-list labels, not current-build acceptance. When the feature list and testing record disagree, the stricter label is shown. Older checks do not establish the behavior of a newer download.',
+    `- Status by area, ${data.knownProblems.length} known problems and dated follow-ups: ${SITE}/testing.html#known-problems`,
+    `- Source feature record: ${SITE}/site-data/what-we-offer.json; testing record: ${SITE}/testing-status.json.`,
+  ].join('\n');
 }
 
 /* ---------- writers ---------- */
@@ -472,6 +476,7 @@ function replaceBetween(file, startMarker, endMarker, content) {
 
 replaceBetween('index.html', '<!-- WWO:HOME:START -->', '<!-- WWO:HOME:END -->', homeBlock());
 replaceBetween('index.html', '<!-- WWO:LD:START -->', '<!-- WWO:LD:END -->', ldBlock());
+replaceBetween('testing.html', '<!-- WWO:TESTING:START -->', '<!-- WWO:TESTING:END -->', testingBlock());
 replaceBetween('what-we-offer.html', '<!-- WWO:PAGE:START -->', '<!-- WWO:PAGE:END -->', pageBlock());
 replaceBetween('llms.txt', '# WWO:LLMS:START', '# WWO:LLMS:END', llmsBlock());
 
@@ -480,7 +485,7 @@ const summaryText = JSON.stringify(summary, null, 2) + '\n';
 targets.push({ p: summaryPath, file: 'site-data/what-we-offer-summary.json', text: fs.existsSync(summaryPath) ? fs.readFileSync(summaryPath, 'utf8') : '', next: summaryText });
 
 /* final check of what we are about to publish */
-const generated = [homeBlock(), pageBlock(), ldBlock(), llmsBlock(), summaryText].join('\n');
+const generated = [homeBlock(), testingBlock(), pageBlock(), ldBlock(), llmsBlock(), summaryText].join('\n');
 for (const re of FORBIDDEN) if (re.test(generated)) { console.error('forbidden pattern in generated output: ' + re); process.exit(2); }
 try { JSON.parse(ldBlock().replace(/^<script[^>]*>/, '').replace(/<\/script>$/, '')); } catch (err) { console.error('JSON-LD does not parse: ' + err.message); process.exit(2); }
 

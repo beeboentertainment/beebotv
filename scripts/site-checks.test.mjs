@@ -4,6 +4,7 @@ import { execFileSync, spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, cpSync, rmSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { render, shellBlocks } from './site-shell.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 let fixture;
@@ -58,7 +59,7 @@ test('feature check still rejects a real content change', () => {
 test('shell check covers current canonical pages and explicit standalone exceptions', () => {
   const result = run('scripts/check-site-shell.mjs');
   assert.equal(result.code, 0, result.output);
-  assert.match(result.output, /111 canonical pages; 99 unchanged exceptions \(210 HTML files total\)/);
+  assert.match(result.output, /116 canonical pages; 99 unchanged exceptions \(215 HTML files total\)/);
 });
 
 test('dependencies and local check snapshots are outside the website inventory', () => {
@@ -68,7 +69,7 @@ test('dependencies and local check snapshots are outside the website inventory',
   }
   const result = run('scripts/check-site-shell.mjs');
   assert.equal(result.code, 0, result.output);
-  assert.match(result.output, /210 HTML files total/);
+  assert.match(result.output, /215 HTML files total/);
 });
 
 test('shell check rejects an edited page body against its base', () => {
@@ -117,4 +118,73 @@ test('an explicit historical base remains available and fails clearly for missin
   const result = run('scripts/check-site-shell.mjs', ['--base', 'missing-ref']);
   assert.notEqual(result.code, 0, result.output);
   assert.match(result.output, /missing-ref/);
+});
+
+
+test('redesigned shell generation preserves the new design and is idempotent', () => {
+  change('features.html', s => s.replace(/<!-- BEEBO-SHELL-(?:BANNER|HEADER|FOOTER|ASSETS):(?:START|END) -->/g, ''), () => {
+    const result = run('scripts/site-shell.mjs');
+    assert.equal(result.code, 0, result.output);
+    const once = readFileSync(join(fixture, 'features.html'), 'utf8');
+    assert.match(once, /BEEBO-SHELL-HEADER:START/);
+    assert.match(once, /<header class="site-header"/);
+    assert.doesNotMatch(once, /beebo-site-header|beebo-tester-banner|beebo-shell-footer|website-shell\.css/);
+    assert.equal((once.match(/<header\b/g) || []).length, 1);
+    const again = run('scripts/site-shell.mjs');
+    assert.equal(again.code, 0, again.output);
+    assert.match(again.output, /0 changed/);
+    assert.equal(readFileSync(join(fixture, 'features.html'), 'utf8'), once);
+    assert.deepEqual(git(['diff', '--name-only']).trim().split('\n').filter(Boolean), ['features.html']);
+  });
+});
+
+test('shell check rejects a damaged redesigned header', () => {
+  change('features.html', s => s.replace('aria-label="Beebo home"', 'aria-label="Invented brand"'), () => {
+    const result = run('scripts/check-site-shell.mjs');
+    assert.equal(result.code, 1, result.output);
+    assert.match(result.output, /features.html: HEADER missing, duplicated or noncanonical/);
+  });
+});
+
+test('shell check still protects redesigned page bodies', () => {
+  change('features.html', s => s.replace('</main>', '<p>Unreviewed claim</p></main>'), () => {
+    const result = run('scripts/check-site-shell.mjs');
+    assert.equal(result.code, 1, result.output);
+    assert.match(result.output, /features.html: page body changed outside the shell/);
+  });
+});
+
+test('shell check protects legal content on redesigned pages', () => {
+  change('terms.html', s => s.replace('Terms of Service</h1>', 'Invented terms</h1>'), () => {
+    const result = run('scripts/check-site-shell.mjs');
+    assert.equal(result.code, 1, result.output);
+    assert.match(result.output, /terms.html: protected legal content or deletion script changed/);
+  });
+});
+
+test('partial redesigned shell markers fail without inserting legacy chrome', () => {
+  change('features.html', s => s.replace('BEEBO-SHELL-HEADER:START', 'BROKEN-HEADER:START'), () => {
+    const before = readFileSync(join(fixture, 'features.html'), 'utf8');
+    const result = run('scripts/site-shell.mjs');
+    assert.equal(result.code, 1, result.output);
+    assert.match(result.output, /features.html: incomplete redesigned shell markers/);
+    assert.equal(readFileSync(join(fixture, 'features.html'), 'utf8'), before);
+  });
+});
+
+
+test('redesigned shell preserves mixed line endings outside generated blocks', () => {
+  const blocks = Object.fromEntries(shellBlocks('terms.html'));
+  const legal = '<main>\r\n' + '<p>Legal wording and controls stay byte-identical.</p>\r\n'.repeat(30) + '</main>';
+  const canonical = `<!doctype html>\n<html><head>${blocks.ASSETS}</head>\n<body>${blocks.BANNER}${blocks.HEADER}\n${legal}\n${blocks.FOOTER}</body></html>\n`;
+  // Updating a stale shell must not normalize the legal payload or outer page.
+  const stale = canonical.replace('aria-label="Beebo home"', 'aria-label="Stale shell"');
+  assert.equal(render(stale, 'terms.html'), canonical);
+  assert.equal(render(canonical, 'terms.html'), canonical);
+  // The first marker migration must likewise retain raw non-shell bytes.
+  const unmarked = canonical.replace(/<!-- BEEBO-SHELL-(?:BANNER|HEADER|FOOTER|ASSETS):(?:START|END) -->\n?/g, '');
+  const migrated = render(unmarked, 'terms.html');
+  assert.ok(migrated.includes(legal));
+  assert.doesNotMatch(migrated.replace(legal, ''), /\r/);
+  assert.equal(render(migrated, 'terms.html'), migrated);
 });
