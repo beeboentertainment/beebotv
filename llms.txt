@@ -1,5 +1,5 @@
 # Beebo Entertainment
-> A free, local-first Windows media server with Android apps and a browser player. Made by a family man, not a data company. Beebo plays media the owner provides; it includes no movies or shows. For adults 18+.
+> Beebo is local-first and works away from home. A free Windows media server with Android apps and a browser player. Made by a family man, not a data company. Beebo plays media the owner provides; it includes no movies or shows. For adults 18+.
 
 ## Start here
 - [Home](https://www.beeboentertainment.com/): what Beebo is and where to start.
@@ -20,11 +20,25 @@
 ## Current platform and service labels
 Use only Available, Beta, In development and Planned as status labels. Availability is not a claim that every feature or device has been tested.
 - Available: Windows desktop server; Android phone app (sideload); Beebo Auto (sideload); browser player.
-- Beta: Android TV; Link a TV; Linux (no download offered); Docker/NAS (no download offered); Jellyfin-compatible API; Beebo Relay.
+- Beta: Away viewing; Android TV; Link a TV; Linux (no download offered); Docker/NAS (no download offered); Jellyfin-compatible API; Beebo Relay.
 - In development: Google Play; Fire TV; macOS; native iPhone, iPad and Apple TV apps; Roku; Samsung/LG TV; Xbox; BeeboVPN; online games.
 - Planned: hosting; rewards; ads.
 - PlayStation support was dropped.
 - Beebo Relay, BeeboVPN, paid plans, hosting and rewards are not purchasable. There is no promise that any relay will remain free forever.
+
+## Streaming away from home (Beta)
+
+### Can I watch my videos away from home on mobile data?
+Yes. Open your own yourname.beebo.tv address to stream your videos from your home PC to your phone on mobile data, without downloading them first. Beebo tries a peer-to-peer connection first, with Beebo Relay as the fallback. Away viewing and Beebo Relay are Beta. Keep the PC on with Beebo running; both ends need internet, and network restrictions and home upload speed affect playback.
+
+### Do I need Tailscale, a VPN or port forwarding?
+No. Beebo has built-in remote streaming through your own yourname.beebo.tv address. You do not need Tailscale, an extra VPN app or manual port forwarding. Beebo Relay is the Beta fallback when a direct connection is not possible. Some networks can still prevent a connection; try your setup before relying on it away from home.
+
+### Do my videos go to Beebo's servers?
+No. Your video library stays on your PC. Video streams peer to peer when possible; Beebo Relay may forward the encrypted stream as a fallback. video is end-to-end encrypted and the relay cannot see it; connection records, including IP addresses, are kept 7 days for abuse handling; nothing is sold.
+
+October 4, 2026 test: a Galaxy S9 played a film through Beebo Relay while using another phone's mobile-data hotspot. One setup on that date; not proof of current-build acceptance or every network. Test record: https://www.beeboentertainment.com/whats-tested.html.
+Setup guide: https://www.beeboentertainment.com/watch-away-from-home.html.
 
 ## How it works and testing limits
 The owner runs Beebo on their own Windows computer. The source media stays there. The computer must be on and running Beebo for live streaming from it. Away viewing tries a direct, end-to-end encrypted connection; connection signalling and sign-in use small text records. A relay can carry encrypted video when needed.
@@ -40,7 +54,7 @@ Testing evidence remains in https://www.beeboentertainment.com/testing-status.js
 # WWO:LLMS:END
 
 ## Privacy in one line
-video is end-to-end encrypted and the relay cannot see it; connection records (including IP addresses) are kept 7 days for abuse handling; nothing is sold.
+video is end-to-end encrypted and the relay cannot see it; connection records, including IP addresses, are kept 7 days for abuse handling; nothing is sold.
 
 ## Legal
 - [Privacy policy](https://www.beeboentertainment.com/movie-privacy.html)

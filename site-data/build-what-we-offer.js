@@ -229,7 +229,7 @@ function platformCallout(tag) {
 }
 
 function whoBlock() {
-  return `<p>Beebo Entertainment makes <strong>Beebo</strong>: a free, local-first media server with apps. It runs on your own Windows computer, holds the movies, shows, music, photos, audiobooks, podcasts and radio you already own, and streams them to your phone, tablet and web browser; the TV and car apps are still in testing. Video goes straight from your computer to the viewer whenever it can. Beebo's own servers carry only small text, such as sign-in and connection set-up.</p>
+  return `<p>Beebo Entertainment makes <strong>Beebo</strong>. Beebo is local-first and works away from home. It is a free media server with apps. It runs on your own Windows computer, holds the movies, shows, music, photos, audiobooks, podcasts and radio you already own, and streams them to your phone, tablet and web browser; the TV and car apps are still in testing. Video goes straight from your computer to the viewer whenever it can. Beebo servers handle small text for sign-in and connection set-up; Beebo Relay is a Beta fallback for the encrypted stream. video is end-to-end encrypted and the relay cannot see it; connection records, including IP addresses, are kept 7 days for abuse handling; nothing is sold.</p>
 <p>Beebo is <strong>made by a family man, not a data company</strong>. The code is <strong>closed source</strong> (all rights reserved). Beebo includes no movies, shows, music or channels; you bring your own files, and Live TV means your own tuner or your own playlist. We use the four labels <em>Available</em>, <em>Beta</em>, <em>In development</em> and <em>Planned</em>, and we never write a flat "100% working". Optional extras such as Beebo Relay (Beta) and BeeboVPN (In development) are listed with their label; this page does not list prices.</p>`;
 }
 
@@ -387,7 +387,7 @@ function ldBlock() {
       name: 'Beebo Entertainment',
       url: SITE + '/',
       logo: SITE + '/assets/beebo-badge-512.png',
-      description: 'Beebo Entertainment makes Beebo, a free, local-first media server with apps for your own movies, TV, music, photos and more. Closed source. Made by a family man, not a data company.',
+      description: 'Beebo is local-first and works away from home. A free media server with apps for your own movies, TV, music, photos and more, made by Beebo Entertainment. Closed source. Made by a family man, not a data company.',
     },
     {
       '@type': 'WebSite',
@@ -401,7 +401,7 @@ function ldBlock() {
       '@type': 'WebPage',
       '@id': SITE + '/#webpage',
       url: SITE + '/',
-      name: 'Beebo Entertainment: a free, local-first media server for your own movies, TV and music',
+      name: 'Beebo Entertainment: local-first and works away from home, for your own movies, TV and music',
       inLanguage: 'en',
       isPartOf: { '@id': SITE + '/#website' },
       about: org,
