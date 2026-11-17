@@ -368,18 +368,16 @@ function codeVsHumanSection(data) {
   const featureRow = feature => {
     const original = features.find(f => f.name === feature.name);
     const unverified = original && codeEstimate(original);
-    const codeText = unverified ? 'Legacy estimate: unverified; required work remains' : feature.codeItemsLeft
-      ? `Code checks passed; ${feature.codeItemsLeft} code item${feature.codeItemsLeft === 1 ? '' : 's'} still listed`
-      : `${feature.codeDone}%`;
+    const codeText = `Built: ${original?.checks.Built ? 'recorded' : 'not recorded'}; automated tests: ${original?.checks['Automated tests'] ? 'recorded' : 'not recorded'}. Code completion: not yet verified.`;
     const note = unverified || (feature.codeItemsLeft
       ? `${feature.codeItemsLeft} code item${feature.codeItemsLeft === 1 ? '' : 's'} still listed.`
       : 'No code item is still listed.');
-    return `<tr><th scope="row">${esc(feature.name)}</th><td data-label="Code built and tests passing">${esc(codeText)}</td><td data-label="Human testing left">${feature.humanTestingLeft}%</td><td data-label="What is left">${note}</td></tr>`;
+    return `<tr><th scope="row">${esc(feature.name)}</th><td data-label="Build and automated-test records">${esc(codeText)}</td><td data-label="Device/world checklist left">${feature.humanTestingLeft}%</td><td data-label="What is left">${note}</td></tr>`;
   };
-  let out = `<section class="evidence-section code-vs-human" id="code-vs-human" aria-labelledby="code-vs-human-title"><span class="evidence-kicker">Checklist view · updated ${esc(data.updatedEastern || '')}</span><h2 id="code-vs-human-title">Legacy code estimates and device checks</h2>${data.evidenceLimit ? `<p><strong>Evidence limit:</strong> ${esc(data.evidenceLimit)}</p>` : ''}<p>Numbers come from our own test list (last updated ${esc(J.updatedEastern || '')}) and were worked out on ${esc(data.updatedEastern || '')}. They show how much of our checklist has passed, not whether the app is bug-free. The code bars retain legacy estimates. Required code items and open issues can contradict a 100% estimate, so it must not be read as proven code completion. The main feature scores and their issue caps remain the readiness measure.</p><p>${esc(data.method || '')}</p><div class="code-vs-human-groups">`;
+  let out = `<section class="evidence-section code-vs-human" id="code-vs-human" aria-labelledby="code-vs-human-title"><span class="evidence-kicker">Checklist view · updated ${esc(data.updatedEastern || '')}</span><h2 id="code-vs-human-title">Recorded checks and remaining work</h2>${data.evidenceLimit ? `<p><strong>Evidence limit:</strong> ${esc(data.evidenceLimit)}</p>` : ''}<p>Numbers come from our own test list (last updated ${esc(J.updatedEastern || '')}) and were worked out on ${esc(data.updatedEastern || '')}. They count recorded checks, not the share of code finished or the chance of trouble-free use. Code completion has not yet been verified, so it has no percentage bar. Historical code estimates remain in the dated records and data; they are not current completion figures. The main feature scores and their issue caps remain the readiness measure.</p><p>${esc(data.method || '')}</p><div class="code-vs-human-groups">`;
   for (const group of data.groups) {
     const humanDone = 100 - group.humanTestingLeft;
-    out += `<article class="code-vs-human-group"><h3>${esc(group.name)}</h3>${bar('Legacy code-check estimate', group.codeDone, `${group.remaining.CODE} code item${group.remaining.CODE === 1 ? '' : 's'} still listed.`)}${bar('Human testing done', humanDone, `${group.humanTestingLeft}% left.`)}<p class="code-vs-human-left"><strong>What is left:</strong> ${esc(countText(group.remaining))}.</p><details><summary>See feature-by-feature numbers</summary><div class="evidence-table-wrap" role="region" aria-label="${esc(group.name)} code and human testing table"><table class="evidence-table code-vs-human-table"><caption>${esc(group.name)}: code done and human testing left</caption><thead><tr><th scope="col">Feature</th><th scope="col">Code built and tests passing</th><th scope="col">Human testing left</th><th scope="col">What is left</th></tr></thead><tbody>${group.features.map(featureRow).join('')}</tbody></table></div></details></article>`;
+    out += `<article class="code-vs-human-group"><h3>${esc(group.name)}</h3><p><strong>Code completion:</strong> Not yet verified.</p>${bar('Device and real-world checks recorded', humanDone, `${group.humanTestingLeft}% of this checklist remains.`)}<p class="code-vs-human-left"><strong>What is left:</strong> ${esc(countText(group.remaining))}.</p><details><summary>See feature-by-feature numbers</summary><div class="evidence-table-wrap" role="region" aria-label="${esc(group.name)} recorded checks table"><table class="evidence-table code-vs-human-table"><caption>${esc(group.name)}: recorded checks and remaining work</caption><thead><tr><th scope="col">Feature</th><th scope="col">Build and automated-test records</th><th scope="col">Device/world checklist left</th><th scope="col">What is left</th></tr></thead><tbody>${group.features.map(featureRow).join('')}</tbody></table></div></details></article>`;
   }
   return out + '</div></section>';
 }
@@ -472,7 +470,7 @@ const csRe = /<!--CODE-STATUS-SUMMARY-->[\s\S]*?<!--\/CODE-STATUS-SUMMARY-->/;
 if (csRe.test(html)) {
  const o=J.codeVsHuman.overall;
  const groups=Object.entries(J.realWorldStatusLabels).map(([key,label])=>'<details class="cs-list"><summary>'+esc(label)+' ('+o.counts[key]+')</summary><ul>'+features.filter(f=>f.realWorldStatus===key).map(f=>'<li>'+esc(f.name)+'</li>').join('')+'</ul></details>').join('');
- html=html.replace(csRe,()=>'<!--CODE-STATUS-SUMMARY--><section class="evidence-section code-status-summary" id="code-status" aria-labelledby="code-status-title"><p>Where Beebo stands · updated '+esc(upd)+'</p><h2 id="code-status-title">The legacy code-check estimate is '+o.codeDone+'%; device and real-world checks recorded are '+o.humanTestingDone+'%.</h2><p>'+o.features+' features; '+o.codeItemsLeft+' code items remain. The code estimate is unverified where required work or an open issue remains; use the feature scores and evidence for readiness.</p>'+groups+'</section><!--/CODE-STATUS-SUMMARY-->');
+ html=html.replace(csRe,()=>'<!--CODE-STATUS-SUMMARY--><section class="evidence-section code-status-summary" id="code-status" aria-labelledby="code-status-title"><p>Where Beebo stands · updated '+esc(upd)+'</p><h2 id="code-status-title">Code completion: not yet verified. Device and real-world checks recorded: '+o.humanTestingDone+'%.</h2><p>'+o.features+' features; '+o.codeItemsLeft+' code items remain. The recorded-check percentage is not a code-completion estimate. Use the feature scores and evidence for readiness.</p>'+groups+'</section><!--/CODE-STATUS-SUMMARY-->');
 }
 
 // Description dates and JSON-LD.
@@ -560,3 +558,18 @@ if (process.argv.includes('--check')) {
   if (related !== relatedOut) { console.error(`${relatedName} needs responsive labels: run node tools/build-status-page.mjs`); process.exit(1); }
 } else if (related !== relatedOut) writeFileSync(relatedPath, relatedOut);
 }
+
+// Keep the linked dated report explicit about which numbers are current. Its
+// historical body is preserved; only this generated summary follows the data.
+const progressPath = join(root, 'progress-update.html');
+const progressBefore = readFileSync(progressPath, 'utf8');
+const waitingFeatures = features.filter(f => f.percentComplete === 99).length;
+const currentProgress = `<!--CURRENT-EVIDENCE--><aside class="progress-note" aria-label="Current evidence summary"><p><strong>Current record: ${esc(upd)}.</strong> The weighted score is ${J.overallAveragePercent}% across ${features.length} features. ${features.filter(f => f.percentComplete === 100).length} features retain the final Ready mark and ${waitingFeatures} ${waitingFeatures === 1 ? 'is' : 'are'} at 99%. Device and real-world checklist records: ${J.codeVsHuman.overall.humanTestingDone}%. Code completion: not yet verified. ${J.codeVsHuman.overall.codeItemsLeft} code items remain in the roadmap. These are recorded checks, not a claim that the app is bug-free. <a href="release-evidence.html#features">Read the current per-feature evidence</a>. The report below is dated history; its older numbers describe that earlier record.</p></aside><!--/CURRENT-EVIDENCE-->`;
+const progressOut = progressBefore.includes('<!--CURRENT-EVIDENCE-->')
+  ? progressBefore.replace(/<!--CURRENT-EVIDENCE-->[\s\S]*?<!--\/CURRENT-EVIDENCE-->/, () => currentProgress)
+  : progressBefore.replace(/(<main\b[^>]*>)/, (_, tag) => tag + '\n' + currentProgress);
+if (process.argv.includes('--check')) {
+  if (progressBefore.replace(/\r/g, '') !== progressOut.replace(/\r/g, '')) {
+    console.error('progress-update.html current summary is out of date'); process.exitCode = 1;
+  }
+} else if (progressBefore !== progressOut) writeFileSync(progressPath, progressOut);

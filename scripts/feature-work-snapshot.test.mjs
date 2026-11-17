@@ -192,6 +192,37 @@ test('legacy 100% code estimates with outstanding required work are visibly qual
  const generator=readFileSync(new URL('../site-data/build-what-we-offer.js',import.meta.url),'utf8');
  assert.doesNotMatch(generator,/\$\{c\.waiting\} code complete/);
 });
+
+test('all recorded device/world percentages and summary averages follow their actual checkmarks',()=>{
+ const average=values=>{const value=values.reduce((a,b)=>a+b,0)/values.length;return value===100?100:Math.min(99,Math.round(value));};
+ for(const feature of data.features){
+  const expected=Math.floor(100*['Real device','Real-world check','Ready to call Available'].filter(key=>feature.checks[key]).length/3);
+  assert.equal(feature.realWorldDonePercent,expected,feature.name);
+  assert.equal(feature.codeItemsLeft,feature.roadTo100.remaining.filter(item=>item.kind==='CODE').length,feature.name);
+ }
+ for(const group of data.codeVsHuman.groups){
+  const rows=data.features.filter(feature=>feature.group===group.name);
+  assert.equal(100-group.humanTestingLeft,average(rows.map(feature=>feature.realWorldDonePercent)),group.name);
+  for(const row of group.features)assert.equal(row.humanTestingLeft,100-data.features.find(feature=>feature.name===row.name).realWorldDonePercent,row.name);
+ }
+ assert.equal(data.codeVsHuman.overall.humanTestingDone,average(data.features.map(feature=>feature.realWorldDonePercent)));
+ assert.equal(data.codeVsHuman.overall.codeItemsLeft,data.features.reduce((total,feature)=>total+feature.codeItemsLeft,0));
+});
+
+test('current summaries show code completion as unknown and preserve the dated progress report',()=>{
+ const start=page.indexOf('id="code-status"'),end=page.indexOf('<!--/CODE-STATUS-SUMMARY-->');
+ assert.ok(start>0&&end>start);
+ assert.match(page.slice(start,end),/Code completion: not yet verified/);
+ const codeBlock=page.slice(page.indexOf('id="code-vs-human"'),page.indexOf('<!--/CODE-VS-HUMAN-->'));
+ assert.doesNotMatch(codeBlock,/Legacy code-check estimate<\/strong><span>\d+%/);
+ for(const feature of data.features)assert.equal(feature.codeCompletionPercent,null,feature.name);
+ const report=readFileSync(new URL('../progress-update.html',import.meta.url),'utf8');
+ assert.equal((report.match(/<!--CURRENT-EVIDENCE-->/g)||[]).length,1);
+ assert.ok(report.includes(`The weighted score is ${data.overallAveragePercent}% across ${data.features.length} features.`));
+ assert.ok(report.includes(`Device and real-world checklist records: ${data.codeVsHuman.overall.humanTestingDone}%.`));
+ assert.match(report,/The report below is dated history/);
+ assert.match(report,/October 23 and October 24/);
+});
 test('activity validation rejects assignment, invalid timestamps and private provenance',()=>{
  assert.deepEqual(validateSnapshot(snapshot,data.features),[]);
  for(const modify of [s=>s.features[1].stage='Assigned',s=>s.features[1].confirmedAt='2027-01-01T00:00:00Z',s=>s.features[1].reason='https://github.com/private/issues/1',s=>s.recordsCutoff='unknown',s=>s.features.push(s.features[0])]){

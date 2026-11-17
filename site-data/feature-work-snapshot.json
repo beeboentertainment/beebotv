@@ -3,7 +3,7 @@
   "capturedAt": "2026-10-29T15:47:16-04:00",
   "expiresAt": "2026-10-29T16:47:16-04:00",
   "displayTime": "Oct 29, 2026, 3:46:23–3:47:16 PM Eastern",
-  "recordsCutoff": "2026-10-29T20:12:00Z",
+  "recordsCutoff": "2026-11-17T05:48:41Z",
   "features": [
     {
       "name": "Opening the app and the five tabs",
@@ -20,10 +20,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 26,
+          "datedRecords": 34,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 17 valid cold starts /85 tab observations across 3 device-user contexts; one RAM-interrupted extra excluded"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 2 in-place upgrade observations passed; not a full sign-in lifecycle test; 1 narrow library retry passed; 1 failed language/session UI transition; the same failure is shared across two feature rows"
         }
       }
     },
@@ -42,10 +42,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 33,
+          "datedRecords": 44,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 4 named native playback flows:3 scoped controls PASS,1 resource-interrupted Pixel flow; not4 whole-feature passes"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 6 bounded native-player checks passed; sound and casting untested; 3 browse/metadata checks passed; native playback and seek remained incomplete"
         }
       }
     },
@@ -205,10 +205,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 26,
+          "datedRecords": 32,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 1 desktop playlist CRUD group; 2 desktop local-RSS groups; 2 radio groups with different scopes (muted stream once, favorites once)"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 3 native search-hint language checks passed"
         }
       }
     },
@@ -227,10 +227,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 20,
+          "datedRecords": 26,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 1 scoped desktop audiobook play/chapter/start-over group"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 2 scoped desktop book-list checks passed"
         }
       }
     },
@@ -426,10 +426,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 23,
+          "datedRecords": 29,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 0 executed Cast comparisons in the explicitly BLOCKED comparison receipt; lifetime history UNKNOWN"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 1 receiver-discovery check passed; 2 phone Cast-media checks incomplete; 1 receiver media/seek case incomplete"
         }
       }
     },
@@ -448,9 +448,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 2,
+          "datedRecords": 6,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 1 phone-settings feedback check passed; 1 media/projection case incomplete; 0 of 6 functional car-screen checks passed; all 6 remained incomplete; 3 setup observations passed separately"
         }
       }
     },
@@ -469,9 +470,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 1,
+          "datedRecords": 9,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 5 scoped TV checks passed, including 1 in-place upgrade observation; 1 D-pad search-exit check passed; 1 Music-selection focus check failed"
         }
       }
     },
@@ -553,9 +555,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 2,
+          "datedRecords": 4,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 1 fresh-pairing case incomplete"
         }
       }
     },
@@ -710,10 +713,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 23,
+          "datedRecords": 30,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 1 native landing-screen group for each; Photos also2 scoped desktop browse/view groups; no fresh download/backup run"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 5 scoped Windows photo-viewer and online-map checks passed"
         }
       }
     },
@@ -809,10 +812,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 46,
+          "datedRecords": 65,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 distinct HUMAN-reported phone-browser scenarios (1 transition/control/audio success,1 background-return UX finding); separate same-LAN connection failure"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 3 bounded native resume/seek checks passed; 1 installed-server login-page check passed; 1 authenticated player case incomplete"
         }
       }
     },
@@ -885,10 +888,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 8,
+          "datedRecords": 10,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 desktop synthetic-M3U tuning groups; current109 Reconnecting overlay NOT RUN"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 1 actual-channel playback case incomplete"
         }
       }
     },
@@ -1055,10 +1058,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 10,
+          "datedRecords": 28,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 3 named desktop language UI inspection groups; later installed-table read is metadata-only, not another device/UI pass"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 1 failed language/session UI transition; the same failure is shared across two feature rows; 4 bounded checks passed and 1 failed: 3 Podcasts languages, 1 language round trip, 1 shared privacy-copy failure; 1 preview-selector check passed; 3 preview privacy checks incomplete; 3 desktop Podcast search-hint language checks passed"
         }
       }
     },
@@ -1231,10 +1234,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 7,
+          "datedRecords": 10,
           "coverage": "partial",
-          "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 scoped desktop/browser music groups; not audible/gapless acceptance"
+          "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
+          "summary": "Latest bounded records: 1 queue previous/next case incomplete"
         }
       }
     },
