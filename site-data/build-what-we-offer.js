@@ -230,7 +230,7 @@ function platformCallout(tag) {
 
 function whoBlock() {
   return `<p>Beebo Entertainment makes <strong>Beebo</strong>: a free, local-first media server with apps. It runs on your own Windows computer, holds the movies, shows, music, photos, audiobooks, podcasts and radio you already own, and streams them to your phone, tablet and web browser; the TV and car apps are still in testing. Video goes straight from your computer to the viewer whenever it can. Beebo's own servers carry only small text, such as sign-in and connection set-up.</p>
-<p>Beebo is <strong>made by a family man, not a data company</strong>. The code is <strong>closed source</strong> (all rights reserved). Beebo includes no movies, shows, music or channels; you bring your own files, and Live TV means your own tuner or your own playlist. We use the four labels <em>Available</em>, <em>Beta</em>, <em>In development</em> and <em>Planned</em>, and we never write a flat "100% working". Optional extras such as Beebo Relay (Beta) and BeeboVPN (In development) are listed with their label; this page does not list prices.</p>`;
+<p>Beebo is <strong>made by a family man, not a data company</strong>. The code is <strong>closed source</strong> (all rights reserved). Beebo includes no movies, shows, music or channels; you bring your own files, and Live TV means your own tuner or your own playlist. We use the four labels <em>Available</em>, <em>Beta</em>, <em>In development</em> and <em>Planned</em>. Optional extras such as Beebo Relay (Beta) and BeeboVPN (In development) are listed with their label; this page does not list prices.</p>`;
 }
 
 function featureLine(f) {
