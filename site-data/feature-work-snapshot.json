@@ -3,7 +3,7 @@
   "capturedAt": "2026-10-29T15:47:16-04:00",
   "expiresAt": "2026-10-29T16:47:16-04:00",
   "displayTime": "Oct 29, 2026, 3:46:23–3:47:16 PM Eastern",
-  "recordsCutoff": "2026-11-17T05:48:41Z",
+  "recordsCutoff": "2026-11-17T19:46:00.000Z",
   "features": [
     {
       "name": "Opening the app and the five tabs",
@@ -20,10 +20,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 34,
+          "datedRecords": 40,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 2 in-place upgrade observations passed; not a full sign-in lifecycle test; 1 narrow library retry passed; 1 failed language/session UI transition; the same failure is shared across two feature rows"
+          "summary": "Latest report, Nov 17, 2026, 2:41 PM Eastern. Pixel 3, Android 1.77 (149) (tested just before publication on the same APK). The release-matching APK installed in place over 1.76 on Pixel 3. The phone opened signed in and loaded Home and Continue watching. No crash was recorded in this check. Still to test: a direct update from 1.75, a cold start, full tab navigation and the same check on a signed-in S9+."
         }
       }
     },
@@ -42,10 +42,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 44,
+          "datedRecords": 51,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 6 bounded native-player checks passed; sound and casting untested; 3 browse/metadata checks passed; native playback and seek remained incomplete"
+          "summary": "Latest report, Nov 17, 2026, 2:41 PM Eastern. Pixel 3, Android 1.77 (149) (tested just before publication on the same APK). A selected Continue watching item resumed and its playback clock advanced by 53 seconds. Still to test: audible output, seeking, cross-device resume and longer playback."
         }
       }
     },
@@ -74,10 +74,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 20,
+          "datedRecords": 22,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 distinct HUMAN-reported phone-browser scenarios (1 transition/control/audio success,1 background-return UX finding); separate same-LAN connection failure"
+          "summary": "Latest report, Nov 17, 2026, 1:50 PM Eastern. Galaxy S24, Android 1.74 (146) with Windows 0.1.127. With Wi-Fi off, the phone opened a film from the real library, played for 76 seconds and reopened paused at its saved position. Still to test: whether the route was direct or relayed, exact connection start time and audio on mobile data."
         }
       }
     },
@@ -96,10 +96,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 6,
+          "datedRecords": 13,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 5 original group reports across 107/108/109 (browser sync, desktop+guest,2guests,109web,109away-join failure); exact-step writeup/correction adds0"
+          "summary": "Latest report, Nov 17, 2026, 1:57 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). The signed-in Chrome player started a room and then confirmed it ended for everyone. Still to test: joining from another device, timing, chat and invites."
         }
       }
     },
@@ -118,9 +118,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 2,
+          "datedRecords": 4,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest report, Nov 17, 2026, 11:58 AM Eastern. Galaxy S24, Android 1.73 (145). The Car Party Start button was readable and fully visible on the initial landscape sheet. Still to test: starting Car Party, a passenger joining, no-internet use and an actual car session."
         }
       }
     },
@@ -205,10 +206,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 32,
+          "datedRecords": 38,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 3 native search-hint language checks passed"
+          "summary": "Latest report, Nov 17, 2026, 1:43 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). Episode rows exposed titles and show association. Richer episode details were not available from the controls inspected. Still to test: playback and a separate details path that exposes date, duration or description."
         }
       }
     },
@@ -227,10 +228,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 26,
+          "datedRecords": 29,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 2 scoped desktop book-list checks passed"
+          "summary": "Latest report, Nov 17, 2026, 1:43 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). Empty Series and Reading order views explained their empty states, and All books restored both titles. Still to test: populated series grouping and reading order, playback and bookmarks."
         }
       }
     },
@@ -426,10 +427,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 29,
+          "datedRecords": 31,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 1 receiver-discovery check passed; 2 phone Cast-media checks incomplete; 1 receiver media/seek case incomplete"
+          "summary": "Latest report, Nov 17, 2026, 1:50 PM Eastern. Galaxy S24 and Chromecast, Android 1.74 (146) with Windows 0.1.127. A film appeared on the TV. The phone paused it, sought forward and resumed playback. Stopping the cast returned to the paused picture on the phone. Still to test: tV captions, volume, control while the phone was locked and automatic episode changes on this build."
         }
       }
     },
@@ -598,9 +599,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 11,
+          "datedRecords": 20,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest report, Nov 17, 2026, 1:50 PM Eastern. Galaxy S24, Android 1.74 (146) with Windows 0.1.127. An album started, paused and skipped to the next track. The tester saw a media card on the locked phone. The person at the device confirmed audible music and lock-screen controls. Still to test: independent lock-screen input and sound verification by the tester, sleep timer and extended playback."
         }
       }
     },
@@ -682,9 +684,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 7,
+          "datedRecords": 8,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest report, Nov 17, 2026, 12:46 PM Eastern. Galaxy S24, Android 1.73 (145) with Windows 0.1.126. The phone returned the matching title when searched with its year and punctuation. Still to test: accented queries, collection navigation and submitting a request."
         }
       }
     },
@@ -713,10 +716,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 30,
+          "datedRecords": 31,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 5 scoped Windows photo-viewer and online-map checks passed"
+          "summary": "Latest report, Nov 17, 2026, 1:16 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). In Chrome, next and previous selected the expected synthetic photos in Timeline and Albums. Zoom in, zoom out and reset changed the view as expected. Close returned focus to the opening photo. The Videos filter listed files and Timeline restored the photo list. Still to test: video playback, personal photos, map behavior, native desktop controls and phone backup."
         }
       }
     },
@@ -756,10 +759,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 9,
+          "datedRecords": 14,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 direct recorded Windows in-app update executions107→108 and108→109; 1 separate24C updater attempt blocked before install; earlier recorded handoffs not counted again"
+          "summary": "Latest report, Nov 17, 2026, 12:59 PM Eastern. Four-core Windows PC, installed desktop app, Windows 0.1.126 to 0.1.127. The tester saw an in-app download in progress. The installed app then reopened on 0.1.127, reported the 0.1.126 upgrade and a 48-second closure, and showed the existing library without a sign-in prompt. Still to test: starting the download, the exact install action and intermediate signature verification, low disk space, uninstall and updating during playback."
         }
       }
     },
@@ -812,10 +815,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 65,
+          "datedRecords": 71,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 3 bounded native resume/seek checks passed; 1 installed-server login-page check passed; 1 authenticated player case incomplete"
+          "summary": "Latest report, Nov 17, 2026, 1:57 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). Discover returned the same film for accented, unaccented and punctuation-stripped searches. At a narrow 390-by-844 browser viewport, the library grid, horizontal controls and main player controls fit. Still to test: layout at other widths, keyboard or screen-reader traversal at that width and the underlying media index."
         }
       }
     },
@@ -866,10 +869,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 14,
+          "datedRecords": 20,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 dedicated desktop-quality groups+2 mixed soak groups; 4 phone-browser quality flows (2 original observations,2 refreshed-QA repeats); Repeated report adds0"
+          "summary": "Latest report, Nov 17, 2026, 1:57 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). The Chrome player quality menu and header showed Original, then 480p, then Original again. Still to test: delivered resolution, conversion output, sustained converted playback and the native player."
         }
       }
     },
@@ -888,10 +891,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 10,
+          "datedRecords": 12,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 1 actual-channel playback case incomplete"
+          "summary": "Latest report, Nov 17, 2026, 2:46 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127. Chrome opened Live TV, displayed channel names and links, and warned that no programme guide was loaded. Still to test: tuning a channel, heard sound, guide data, the device or playlist source and recording."
         }
       }
     },
@@ -942,10 +945,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 9,
+          "datedRecords": 13,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: UNKNOWN distinct Movie Night device-run total in this bounded pass"
+          "summary": "Latest report, Nov 17, 2026, 1:28 PM Eastern. Pixel 3, Android 1.74 (146). Opening Movie Night on home Wi-Fi showed instructions to use a browser. Try again left the same instructions on screen. Still to test: opening a room, joining from another phone or playing on a TV on this route."
         }
       }
     },
@@ -986,10 +989,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 14,
+          "datedRecords": 21,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 actual timed109 limit cases (5min and29min); 1/2-minute failure on108 retained separately"
+          "summary": "Latest report, Nov 17, 2026, 2:46 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127. The browser profile menu displayed a Household field. A management entry was not found in the inspected menu. Still to test: the browser management page, profile switching, separate progress and enforcement of household limits."
         }
       }
     },
@@ -1018,10 +1021,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 8,
+          "datedRecords": 22,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: Named keyboard/focus groups; whole-feature denominator UNKNOWN"
+          "summary": "Latest report, Nov 17, 2026, 1:52 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). Repeated F presses did not show a clear fullscreen transition. The screen button changed presentation, but the tester could not verify fullscreen. Still to test: a verified fullscreen transition, other browser configurations and native fullscreen shortcuts."
         }
       }
     },
@@ -1080,9 +1083,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 10,
+          "datedRecords": 14,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest report, Nov 17, 2026, 1:57 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). Discover search found the same film with accents, without accents and with punctuation removed. Still to test: a new match or rematch in the local library, poster recovery and behaviour with the metadata provider unavailable."
         }
       }
     },
@@ -1161,9 +1165,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 0,
-          "coverage": "unknown",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "datedRecords": 7,
+          "coverage": "partial",
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest report, Nov 17, 2026, 2:41 PM Eastern. Pixel 3, Android 1.77 (149) (tested just before publication on the same APK). The form showed only the invitation entry and Accept invite, without asking for account credentials. Still to test: submitting a real invitation, accepting a share between homes, viewing its library, and verifying matching Windows behavior end to end."
         }
       }
     },
@@ -1234,10 +1239,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 10,
+          "datedRecords": 15,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 1 queue previous/next case incomplete"
+          "summary": "Latest report, Nov 17, 2026, 1:52 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). Artist radio created a queue and showed the Pause button, but the track stayed at 0:00 on three 30-second attempts. Still to test: heard sound, the native player and the cause of the stall."
         }
       }
     },
@@ -1266,10 +1271,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 4,
+          "datedRecords": 11,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 desktop layout groups plus 1 browser theme group"
+          "summary": "Latest report, Nov 17, 2026, 1:16 PM Eastern. Four-core Windows PC, Chrome, Windows 0.1.127 (server version verified in the installed app, outside this browser check). Appearance showed the current theme, poster and accessibility settings, home rows and layout overrides. The values were still displayed on revisit. Still to test: saving changes, comparing against a historical baseline, layout import and native customization."
         }
       }
     },
@@ -1425,9 +1430,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 6,
+          "datedRecords": 9,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest report, Nov 17, 2026, 12:46 PM Eastern. Galaxy S24, Android 1.73 (145) with Windows 0.1.126. With Wi-Fi off, the phone displayed the Beebo Relay connection message. A film played over mobile data for more than a minute and reopened at the saved position. Still to test: independent confirmation of the network route, sound and longer playback."
         }
       }
     },
