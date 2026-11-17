@@ -68,11 +68,11 @@
         "Nov 14, 2026, 12:30 AM Eastern",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Nov 14, 2026, 12:30 AM Eastern: 74% to 74%; 1 open known issues (0 newly recorded on this feature). Two independent Chrome sessions on the installed server followed play/seek/pause, explicit host handoff and room end. A second room showed host-away notice and automatic promotion; the notice then cleared. Not tried: WAN interruption, phones, heard sound and all existing issues; the historical score cap remains. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern. Nov 17, 2026, 3:17 PM Eastern. On a Pixel 3 with Android 1.75, More offered only Join. Starting from the player put the invitation below the visible controls. The separate Wi-Fi host panel showed no invitation. The 1.77 check did not reach the server room."
+      "summary": "Nov 14, 2026, 12:30 AM Eastern: 74% to 74%; 1 open known issues (0 newly recorded on this feature). Two independent Chrome sessions on the installed server followed play/seek/pause, explicit host handoff and room end. A second room showed host-away notice and automatic promotion; the notice then cleared. Not tried: WAN interruption, phones, heard sound and all existing issues; the historical score cap remains. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern. Nov 17, 2026, 3:17 PM Eastern. On a Pixel 3 with Android 1.75, the host had to scroll down the player’s Controls sheet to see the room code and invitation link. The 1.77 check did not reach the server room. Two problems remain open: home-server-only members cannot join, and the invitation requires scrolling."
     },
     {
       "featureId": "feature-android-phone-app-car-party-host-and-passengers",
-      "scoreBefore": 74,
+      "scoreBefore": 98,
       "scoreAfter": 98,
       "outcome": "reviewed",
       "evidenceDates": [
@@ -136,7 +136,7 @@
         "Nov 14, 2026, 12:30 AM Eastern",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Nov 14, 2026, 12:30 AM Eastern: 90% to 90%; 4 open known issues (3 newly recorded on this feature). On the public APK in an emulator, tightening Family viewing left already active music, books, podcasts and radio playing; queued music and the book mini-player could still play. New restricted book/podcast/radio requests correctly refused. Some open refusals did not refresh after restrictions were relaxed. Not tried: physical phones, heard sound and a genuine browser-guest matrix; decoder/timeline observations do not prove acoustics. All four old audio players retained playback or titles after normal sign-out and authenticated sign-in as another member. A book also kept playing across a change of home. Measured server checkpoints stayed separate. Not tried: physical audio/headset behavior and the complete delayed-response matrix; the diagnostic shell media-button crash is excluded. The installed desktop Podcast browser-helper heading, instructions and controls appeared in German, then the original language was restored. Not tried: helper activation, importing feeds and the other translated pages. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern. Record update Nov 17, 2026, 3:10 AM Eastern: 3 native search-hint language checks passed. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 4. Nov 17, 2026, 3:17 PM Eastern. In Chrome on Windows 0.1.127, a search with no matching podcast title returned an unrelated show three times. The cause and behavior on the latest Windows download remain unverified."
+      "summary": "Nov 14, 2026, 12:30 AM Eastern: 90% to 90%; 4 open known issues (3 newly recorded on this feature). On the public APK in an emulator, tightening Family viewing left already active music, books, podcasts and radio playing; queued music and the book mini-player could still play. New restricted book/podcast/radio requests correctly refused. Some open refusals did not refresh after restrictions were relaxed. Not tried: physical phones, heard sound and a genuine browser-guest matrix; decoder/timeline observations do not prove acoustics. All four old audio players retained playback or titles after normal sign-out and authenticated sign-in as another member. A book also kept playing across a change of home. Measured server checkpoints stayed separate. Not tried: physical audio/headset behavior and the complete delayed-response matrix; the diagnostic shell media-button crash is excluded. The installed desktop Podcast browser-helper heading, instructions and controls appeared in German, then the original language was restored. Not tried: helper activation, importing feeds and the other translated pages. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern. Record update Nov 17, 2026, 3:10 AM Eastern: 3 native search-hint language checks passed. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 4. Nov 17, 2026, 3:17 PM Eastern. In Chrome (assigned server version Windows 0.1.127), a search with no matching podcast title returned an unrelated show three times. The cause and behavior on the latest Windows download remain unverified."
     },
     {
       "featureId": "feature-android-phone-app-audiobooks",
@@ -209,7 +209,7 @@
     },
     {
       "featureId": "feature-android-phone-app-wireless-speakers",
-      "scoreBefore": 100,
+      "scoreBefore": 90,
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
@@ -277,7 +277,7 @@
     },
     {
       "featureId": "feature-android-phone-app-android-tv-and-fire-tv-screens",
-      "scoreBefore": 49,
+      "scoreBefore": 74,
       "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
@@ -325,7 +325,7 @@
     },
     {
       "featureId": "feature-android-phone-app-link-a-tv",
-      "scoreBefore": 49,
+      "scoreBefore": 74,
       "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
@@ -435,7 +435,7 @@
     },
     {
       "featureId": "feature-android-phone-app-family-achievements-opt-in-milestones",
-      "scoreBefore": 74,
+      "scoreBefore": 98,
       "scoreAfter": 98,
       "outcome": "reviewed",
       "evidenceDates": [
@@ -485,7 +485,7 @@
     },
     {
       "featureId": "feature-windows-desktop-app-update-modes-and-start-with-windows",
-      "scoreBefore": 98,
+      "scoreBefore": 90,
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
@@ -709,11 +709,11 @@
         "Nov 11, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Music Mixes and Radio cards, descriptions and measuring status remain English in French/Spanish/Italian/Brazilian Portuguese. One shared desktop Music/Languages issue; phone smart-playlist wording is separate older evidence. Score on Nov 14, 2026: 74%; now 74%; open known issues: 2. Earlier dated limits remain unless explicitly closed by a matching public-build retest. Record update Nov 17, 2026, 3:10 AM Eastern: 1 queue previous/next case incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 2. Nov 17, 2026, 3:17 PM Eastern. In Chrome on Windows 0.1.127, a library album stayed at 0:00. Choosing another track produced a playback error and skipped tracks. The native player and the latest Windows download still need a check. In Chrome on Windows 0.1.127, Artist radio built a queue but the track stayed at 0:00 in three 30-second attempts. On the same Windows version, Album radio showed an active track in the in-chat browser, but playback stayed at 0:00 for several minutes. A shared cause for the library album, Artist radio and Album radio stalls remains unconfirmed. Sound and the latest Windows download still need a check."
+      "summary": "Music Mixes and Radio cards, descriptions and measuring status remain English in French/Spanish/Italian/Brazilian Portuguese. One shared desktop Music/Languages issue; phone smart-playlist wording is separate older evidence. Score on Nov 14, 2026: 74%; now 74%; open known issues: 2. Earlier dated limits remain unless explicitly closed by a matching public-build retest. Record update Nov 17, 2026, 3:10 AM Eastern: 1 queue previous/next case incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 2. Nov 17, 2026, 3:17 PM Eastern. In Chrome on Windows 0.1.127, a library album stayed at 0:00. Choosing another track produced a playback error and skipped tracks. The native player and the latest Windows download still need a check. In Chrome (assigned server version Windows 0.1.127), Artist radio built a queue but the track stayed at 0:00 in three 30-second attempts. In a separate Windows 0.1.127 check, Album radio showed an active track in the in-chat browser, but playback stayed at 0:00 for several minutes. A shared cause for the library album, Artist radio and Album radio stalls remains unconfirmed. Sound and the latest Windows download still need a check."
     },
     {
       "featureId": "feature-windows-desktop-app-home-layouts-and-customize-layout-desktop",
-      "scoreBefore": 99,
+      "scoreBefore": 90,
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
@@ -951,43 +951,102 @@
       "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Roadmap and example home-automation setup are not a demonstrated Google Assistant or Alexa integration. No real setup or command acceptance supports moving above 0%. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     }
   ],
-  "newKnownProblemCount": 36,
+  "newKnownProblemCount": 7,
   "newKnownProblemIds": [
-    "audio-after-sign-out",
-    "audio-refusal-refresh",
-    "audiobook-search-clipping",
-    "browser-back-search-filter",
-    "browser-mpeg4-direct-black-picture",
-    "browser-original-rewind-freeze",
-    "built-in-player-stall",
-    "campsite-refresh-paused",
-    "campsite-seek-follow",
-    "caption-seek-cue",
-    "cast-receiver-volume",
-    "catalog-case-distinct-ntfs",
-    "desktop-music-mix-localization",
-    "guest-board-focus",
-    "guest-round-start-focus",
-    "home-photo-previews",
-    "local-http-missing-page",
-    "movie-night-collapsed-controls",
-    "music-film-handoff",
-    "narrow-desktop-layout",
-    "notification-column-clipping",
-    "patience-compressed-board",
-    "planner-notification-stop",
-    "quiz-selected-answer",
-    "relay-untranslated-failure-copy",
-    "restricted-audio-continues",
-    "sea-battle-focus",
-    "settings-single-result-plural",
-    "songbook-contrast",
-    "spanish-desktop-catalog-gaps",
-    "tv-browse-clipping",
-    "tv-phone-wording",
-    "tv-search-activation",
-    "tv-season-focus",
-    "wake-virtual-adapter-targets",
-    "windows-speaker-sync-label"
+    "browser-album-skips-tracks",
+    "browser-artist-radio-clock",
+    "movie-night-home-browser-instructions",
+    "podcast-unrelated-search-result",
+    "s9-update-sign-in",
+    "signed-in-share-entry",
+    "watch-together-host-invitation"
+  ],
+  "previousScoreReviews": [
+    {
+      "updatedAt": "2026-11-14T03:58:19-05:00",
+      "updatedEastern": "Nov 14, 2026, 3:58 AM Eastern",
+      "newKnownProblemCount": 36,
+      "newKnownProblemIds": [
+        "audio-after-sign-out",
+        "audio-refusal-refresh",
+        "audiobook-search-clipping",
+        "browser-back-search-filter",
+        "browser-mpeg4-direct-black-picture",
+        "browser-original-rewind-freeze",
+        "built-in-player-stall",
+        "campsite-refresh-paused",
+        "campsite-seek-follow",
+        "caption-seek-cue",
+        "cast-receiver-volume",
+        "catalog-case-distinct-ntfs",
+        "desktop-music-mix-localization",
+        "guest-board-focus",
+        "guest-round-start-focus",
+        "home-photo-previews",
+        "local-http-missing-page",
+        "movie-night-collapsed-controls",
+        "music-film-handoff",
+        "narrow-desktop-layout",
+        "notification-column-clipping",
+        "patience-compressed-board",
+        "planner-notification-stop",
+        "quiz-selected-answer",
+        "relay-untranslated-failure-copy",
+        "restricted-audio-continues",
+        "sea-battle-focus",
+        "settings-single-result-plural",
+        "songbook-contrast",
+        "spanish-desktop-catalog-gaps",
+        "tv-browse-clipping",
+        "tv-phone-wording",
+        "tv-search-activation",
+        "tv-season-focus",
+        "wake-virtual-adapter-targets",
+        "windows-speaker-sync-label"
+      ],
+      "changes": [
+        {
+          "featureId": "feature-android-phone-app-car-party-host-and-passengers",
+          "scoreBefore": 74,
+          "scoreAfter": 98
+        },
+        {
+          "featureId": "feature-android-phone-app-wireless-speakers",
+          "scoreBefore": 100,
+          "scoreAfter": 90
+        },
+        {
+          "featureId": "feature-android-phone-app-android-tv-and-fire-tv-screens",
+          "scoreBefore": 49,
+          "scoreAfter": 74
+        },
+        {
+          "featureId": "feature-android-phone-app-link-a-tv",
+          "scoreBefore": 49,
+          "scoreAfter": 74
+        },
+        {
+          "featureId": "feature-android-phone-app-family-achievements-opt-in-milestones",
+          "scoreBefore": 74,
+          "scoreAfter": 98
+        },
+        {
+          "featureId": "feature-windows-desktop-app-home-layouts-and-customize-layout-desktop",
+          "scoreBefore": 99,
+          "scoreAfter": 90
+        }
+      ]
+    },
+    {
+      "updatedAt": "2026-11-16T08:00:08-05:00",
+      "updatedEastern": "Nov 16, 2026, 8:00 AM Eastern",
+      "changes": [
+        {
+          "featureId": "feature-windows-desktop-app-update-modes-and-start-with-windows",
+          "scoreBefore": 98,
+          "scoreAfter": 90
+        }
+      ]
+    }
   ]
 }

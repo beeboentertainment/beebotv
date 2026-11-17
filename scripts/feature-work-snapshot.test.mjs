@@ -168,11 +168,27 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  validateReadinessAudit(data);
  assert.equal(readinessAudit.features.length,70);
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
- // Nov 10, 2026: the review moved no percentage; then Nick's own decision moved three Ready rows from 100% to 90%.
- // Nov 10, 2026 early-morning record: the audit's before and after are for that run, which moved no percentage.
- const expected=PRIOR14.features.filter(old=>data.features.find(f=>f.name===old.name).percentComplete!==old.percentComplete).map(f=>f.name).sort();
- const actual=readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>data.features.find(x=>x.name===PRIOR14.features[readinessAudit.features.indexOf(f)].name).name).sort();
- assert.deepEqual(actual,expected,'every changed score is represented in the audit');
+ const published = (sha, file) => JSON.parse(execFileSync('git', ['show', sha + ':' + file], {
+  cwd: new URL('..', import.meta.url), encoding: 'utf8', maxBuffer: 10 * 1024 * 1024, windowsHide: true
+ }));
+ const before = published('3cdde87db095891c62f037bdd90e38dead82df53', 'testing-status.json');
+ const directory = require('../site-data/feature-directory.json').features;
+ for (const row of readinessAudit.features) {
+  const name = directory.find(entry => entry.id === row.featureId).name;
+  assert.equal(row.scoreBefore, before.features.find(f => f.name === name).percentComplete, name);
+ }
+ // Each earlier audit keeps only the score movements first recorded in that review.
+ const seen = new Set();
+ for (const sha of ['5e1ae85ebe86feffe6459587a7d580f9b76145eb', '99096e615fc5b0a572bb53594b5930070628ee01']) {
+  const original = published(sha, 'site-data/readiness-audit.json');
+  const changes = original.features.filter(f => f.scoreBefore !== f.scoreAfter && !seen.has(f.featureId))
+   .map(({featureId, scoreBefore, scoreAfter}) => ({featureId, scoreBefore, scoreAfter}));
+  const archived = readinessAudit.previousScoreReviews.find(review => review.updatedAt === original.updatedAt);
+  assert.equal(archived.updatedEastern, original.updatedEastern);
+  assert.deepEqual(archived.changes, changes);
+  for (const change of changes) seen.add(change.featureId);
+ }
+ assert.equal(seen.size, 7);
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');
