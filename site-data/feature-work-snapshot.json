@@ -20,10 +20,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 34,
+          "datedRecords": 37,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 2 in-place upgrade observations passed; not a full sign-in lifecycle test; 1 narrow library retry passed; 1 failed language/session UI transition; the same failure is shared across two feature rows"
+          "summary": "Latest dated scope: Keep me signed in card unavailable on 3 of 3 phones; Smoke passed on 2 of 2 phones; no crash or ANR reported; Latest update kept sign-in on 2 of 2 phones; Pixel total: 2 kept and 2 lost. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -42,10 +42,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 44,
+          "datedRecords": 46,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 6 bounded native-player checks passed; sound and casting untested; 3 browse/metadata checks passed; native playback and seek remained incomplete"
+          "summary": "Latest dated scope: Resume from search 3 of 3 phones; Continue watching 3 of 3 phones; checked show poster 3 of 3 phones; Smoke passed on 2 of 2 phones; no crash or ANR reported. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -74,10 +74,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 20,
+          "datedRecords": 22,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 distinct HUMAN-reported phone-browser scenarios (1 transition/control/audio success,1 background-return UX finding); separate same-LAN connection failure"
+          "summary": "Latest dated scope: Relay confirmation wording passed; no per-phone tally supplied. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -205,10 +205,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 32,
+          "datedRecords": 34,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 3 native search-hint language checks passed"
+          "summary": "Latest dated scope: Podcast playback: 2 episodes passed; Podcast playback: 1 episode passed on 1 phone. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -227,10 +227,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 26,
+          "datedRecords": 29,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 2 scoped desktop book-list checks passed"
+          "summary": "Latest dated scope: Audiobook title after Bookmark: 1 phone observation; Audiobook title after Bookmark: 1 further phone observation; Audiobook stop spot check passed; separate device tally not supplied. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -426,10 +426,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 29,
+          "datedRecords": 30,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 1 receiver-discovery check passed; 2 phone Cast-media checks incomplete; 1 receiver media/seek case incomplete"
+          "summary": "Latest dated scope: Cast script loading passed; availability wording failed. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -470,10 +470,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 9,
+          "datedRecords": 11,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 5 scoped TV checks passed, including 1 in-place upgrade observation; 1 D-pad search-exit check passed; 1 Music-selection focus check failed"
+          "summary": "Latest dated scope: Content focus passed on 3 of 6 tested screens; Mini-player buttons reachable; close succeeded in 1 of 2 rounds. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -598,9 +598,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 11,
+          "datedRecords": 17,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest dated scope: Smoke passed on 2 of 2 phones; no crash or ANR reported. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -682,9 +683,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 7,
+          "datedRecords": 10,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest dated scope: Library and Request a title chips passed; two text areas remained clipped; Smoke passed on 2 of 2 phones; no crash or ANR reported; Collections title full in 1 S9+ spot check. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -713,10 +715,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 30,
+          "datedRecords": 33,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 5 scoped Windows photo-viewer and online-map checks passed"
+          "summary": "Latest dated scope: Library and Request a title chips passed; two text areas remained clipped; Smoke passed on 2 of 2 phones; no crash or ANR reported; Photos screen smoke passed; Folders & cleanup remained clipped. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -735,9 +737,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 4,
+          "datedRecords": 6,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest dated scope: 1 consent-card visibility observation; milestone recording NOT RUN. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -812,10 +815,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 65,
+          "datedRecords": 67,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest bounded records: 3 bounded native resume/seek checks passed; 1 installed-server login-page check passed; 1 authenticated player case incomplete"
+          "summary": "Latest dated scope: Podcast playback: 2 episodes passed; Cast script loading passed; availability wording failed. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -834,10 +837,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 3,
+          "datedRecords": 7,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 direct recorded Windows in-app update executions107→108 and108→109; 1 separate24C updater attempt blocked before install; earlier recorded handoffs not counted again"
+          "summary": "Latest dated scope: Single-word settings searches improved; exact phrase still failed. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -1161,9 +1164,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 0,
+          "datedRecords": 8,
           "coverage": "unknown",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest dated scope: Shared with you account-label check failed on 3 of 3 phones; Share-QR entry point visible; scanning and creation NOT RUN; Smoke passed on 2 of 2 phones; no crash or ANR reported. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -1425,9 +1429,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 6,
+          "datedRecords": 9,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Latest dated scope: Relay confirmation wording passed; no per-phone tally supplied. Records may overlap; not an independent-run total."
         }
       }
     },
@@ -1684,5 +1689,6 @@
       }
     }
   ],
-  "integrationNote": "A separate presentation-source integration passed 537 composed automated checks on Oct 29 at 4:12 PM Eastern. It covers navigation, desktop Users contrast and Story Studio together; it is not 537 device runs or 537 additional checks per feature. No installed-release acceptance is implied. The broader source and device reconciliations ended at 3:58 PM and 3:55 PM Eastern, respectively."
+  "integrationNote": "A separate presentation-source integration passed 537 composed automated checks on Oct 29 at 4:12 PM Eastern. It covers navigation, desktop Users contrast and Story Studio together; it is not 537 device runs or 537 additional checks per feature. No installed-release acceptance is implied. The broader source and device reconciliations ended at 3:58 PM and 3:55 PM Eastern, respectively.",
+  "evidenceUpdatedAt": "2026-11-19T07:34:39.831Z"
 }
