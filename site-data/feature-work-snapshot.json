@@ -3,7 +3,7 @@
   "capturedAt": "2026-10-29T15:47:16-04:00",
   "expiresAt": "2026-10-29T16:47:16-04:00",
   "displayTime": "Oct 29, 2026, 3:46:23–3:47:16 PM Eastern",
-  "recordsCutoff": "2026-11-22T00:59:09-05:00",
+  "recordsCutoff": "2026-11-22T01:33:13-05:00",
   "features": [
     {
       "name": "Opening the app and the five tabs",
@@ -42,7 +42,7 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 49,
+          "datedRecords": 50,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
           "summary": "Private test build: Android 1.85-tester1 (157). Saved-position playback passed on 2 of 2 phones (100%). On the first Details visit, 1 of 2 (50%) showed Resume: the Galaxy S9+ showed Resume and the S24 Ultra showed Play. The Pixel 3 clip was too short to test."
@@ -775,11 +775,19 @@
       "confirmedAt": null,
       "tests": {
         "automated": {
-          "runs": 7,
-          "assertions": 483,
+          "runs": 8,
+          "assertions": 484,
           "coverage": "partial",
           "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
           "executions": [
+            {
+              "label": "Converted 480p playback after Skip all and seeking",
+              "stage": "Windows source test player, synthetic film",
+              "date": "Nov 22, 2026",
+              "passed": 1,
+              "failed": 0,
+              "skipped": 0
+            },
             {
               "label": "Chrome film-player volume and mute after reload",
               "stage": "source runtime, synthetic media and responses",
@@ -1029,11 +1037,19 @@
       "confirmedAt": null,
       "tests": {
         "automated": {
-          "runs": 1,
-          "assertions": 17,
+          "runs": 2,
+          "assertions": 21,
           "coverage": "partial",
           "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
           "executions": [
+            {
+              "label": "Keyboard focus, focus return and skip link",
+              "stage": "Isolated Chrome source checks, synthetic screens",
+              "date": "Nov 22, 2026",
+              "passed": 4,
+              "failed": 0,
+              "skipped": 0
+            },
             {
               "label": "Automated source checks",
               "stage": "existing main evidence",
@@ -1164,11 +1180,19 @@
       "confirmedAt": null,
       "tests": {
         "automated": {
-          "runs": 2,
-          "assertions": 10930,
+          "runs": 3,
+          "assertions": 10933,
           "coverage": "partial",
           "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
           "executions": [
+            {
+              "label": "Sharing card alignment and Stop sharing button layout",
+              "stage": "Isolated Chrome source checks, synthetic sharing records",
+              "date": "Nov 22, 2026",
+              "passed": 3,
+              "failed": 0,
+              "skipped": 0
+            },
             {
               "label": "Automated source checks",
               "stage": "historical merged candidate",
@@ -1715,5 +1739,5 @@
     }
   ],
   "integrationNote": "A separate presentation-source integration passed 537 composed automated checks on Oct 29 at 4:12 PM Eastern. It covers navigation, desktop Users contrast and Story Studio together; it is not 537 device runs or 537 additional checks per feature. No installed-release acceptance is implied. The broader source and device reconciliations ended at 3:58 PM and 3:55 PM Eastern, respectively.",
-  "evidenceUpdatedAt": "2026-11-22T00:59:09-05:00"
+  "evidenceUpdatedAt": "2026-11-22T01:38:26-05:00"
 }
