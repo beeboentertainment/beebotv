@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-22T00:31:42-05:00",
-  "updatedEastern": "Nov 22, 2026, 12:31 AM Eastern",
+  "updatedAt": "2026-11-22T00:41:34-05:00",
+  "updatedEastern": "Nov 22, 2026, 12:41 AM Eastern",
   "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain.",
   "features": [
     {
@@ -42,7 +42,7 @@
         "Nov 14, 2026, 12:30 AM Eastern",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "November evidence update. Private test build: Android 1.85-tester1 (157). 1 phone reproduced the stale picture. Neither phone completed a Film Details Resume check. 1 of 1 eligible phones completed the Film Details Resume journey. Earlier review: Nov 19 evidence update: Resume from search 3 of 3 phones; Continue watching 3 of 3 phones; checked show poster 3 of 3 phones; Smoke passed on 2 of 2 phones; no crash or ANR reported. Current score 90%; 9 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: One new open issue (stays 90%; 7 to 8): when the next episode is missing, the player stops with a \"Playback finished\" box instead of skipping to the next episode you have. Film resume and auto-next to an episode that exists passed on 1.69 and 1.70. Score on Nov 14, 2026: 90%; now 90%; open known issues: 8. Record update Nov 17, 2026, 3:10 AM Eastern: 6 bounded native-player checks passed; sound and casting untested; 3 browse/metadata checks passed; native playback and seek remained incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 8."
+      "summary": "November evidence update. Private Android 1.85-tester1 (157). Saved-position playback passed on 2 of 2 phones (100%). On the first Film Details visit, 1 of 2 phones (50%) showed Resume. The Galaxy S9+ showed Resume and passed a forward seek. The Galaxy S24 Ultra showed Play, then resumed at 56:24, held at 56:33 on pause and advanced to 56:35 after playback resumed. Details showed Resume on its second visit. The Pixel 3 clip was too short to test. An earlier offline switch on the S9+ showed the previous film’s picture. Earlier review: Nov 19 evidence update: Resume from search 3 of 3 phones; Continue watching 3 of 3 phones; checked show poster 3 of 3 phones; Smoke passed on 2 of 2 phones; no crash or ANR reported. Current score 90%; 9 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: One new open issue (stays 90%; 7 to 8): when the next episode is missing, the player stops with a \"Playback finished\" box instead of skipping to the next episode you have. Film resume and auto-next to an episode that exists passed on 1.69 and 1.70. Score on Nov 14, 2026: 90%; now 90%; open known issues: 8. Record update Nov 17, 2026, 3:10 AM Eastern: 6 bounded native-player checks passed; sound and casting untested; 3 browse/metadata checks passed; native playback and seek remained incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 8."
     },
     {
       "featureId": "feature-android-phone-app-away-from-home-direct-then-relay",
