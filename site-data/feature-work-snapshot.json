@@ -3,7 +3,7 @@
   "capturedAt": "2026-10-29T15:47:16-04:00",
   "expiresAt": "2026-10-29T16:47:16-04:00",
   "displayTime": "Oct 29, 2026, 3:46:23–3:47:16 PM Eastern",
-  "recordsCutoff": "2026-11-22T00:41:34-05:00",
+  "recordsCutoff": "2026-11-22T00:59:09-05:00",
   "features": [
     {
       "name": "Opening the app and the five tabs",
@@ -775,11 +775,19 @@
       "confirmedAt": null,
       "tests": {
         "automated": {
-          "runs": 6,
-          "assertions": 481,
+          "runs": 7,
+          "assertions": 483,
           "coverage": "partial",
           "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
           "executions": [
+            {
+              "label": "Chrome film-player volume and mute after reload",
+              "stage": "source runtime, synthetic media and responses",
+              "date": "Nov 22, 2026",
+              "passed": 0,
+              "failed": 2,
+              "skipped": 0
+            },
             {
               "label": "Offline Chrome source fixture",
               "stage": "source runtime, synthetic media and responses",
@@ -1707,5 +1715,5 @@
     }
   ],
   "integrationNote": "A separate presentation-source integration passed 537 composed automated checks on Oct 29 at 4:12 PM Eastern. It covers navigation, desktop Users contrast and Story Studio together; it is not 537 device runs or 537 additional checks per feature. No installed-release acceptance is implied. The broader source and device reconciliations ended at 3:58 PM and 3:55 PM Eastern, respectively.",
-  "evidenceUpdatedAt": "2026-11-22T00:41:34-05:00"
+  "evidenceUpdatedAt": "2026-11-22T00:59:09-05:00"
 }

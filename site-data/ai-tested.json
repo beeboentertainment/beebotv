@@ -1,8 +1,17 @@
 {
   "schemaVersion": 1,
-  "updatedEastern": "Nov 22, 2026, 12:41 AM Eastern",
+  "updatedEastern": "Nov 22, 2026, 12:59 AM Eastern",
   "about": "Feeds the AI tested bars on every feature card and the 'Waiting for someone with the device' section of release-evidence.html. Rendered by tools/ai-tested.mjs. A bar is filled only from one recorded run's own count (passed of total). Nothing here changes a feature's percentage.",
   "unitTests": [
+    {
+      "feature": "Library, player and web player",
+      "passed": 0,
+      "total": 2,
+      "skipped": 0,
+      "date": "Nov 22, 2026",
+      "where": "Windows PC, isolated Chrome profile",
+      "how": "After reloading the film player, the volume went from 80% to 100% and mute switched off. Neither setting was restored (0 of 2). The tests used a local film clip in Chrome. The installed Windows release and audible output still need a retest."
+    },
     {
       "feature": "Library, player and web player",
       "passed": 8,
