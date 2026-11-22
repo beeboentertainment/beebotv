@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedEastern": "Nov 22, 2026, 12:59 AM Eastern",
+  "updatedEastern": "Nov 22, 2026, 2:08 AM Eastern",
   "about": "Feeds the AI tested bars on every feature card and the 'Waiting for someone with the device' section of release-evidence.html. Rendered by tools/ai-tested.mjs. A bar is filled only from one recorded run's own count (passed of total). Nothing here changes a feature's percentage.",
   "unitTests": [
     {
@@ -257,6 +257,28 @@
     }
   ],
   "extraRuns": [
+    {
+      "feature": "Surprise me, playlists, watchlist, favourites",
+      "kind": "emulator",
+      "device": "Android 11 emulator",
+      "build": "Private Android phone app, debug build",
+      "date": "Nov 22, 2026, 2:06 AM Eastern",
+      "passed": 17,
+      "total": 17,
+      "how": "The playlist screen showed playback errors and allowed a retry. A late response could not start an old selection after a newer choice or a move to another screen. Sixteen playback checks passed. A seventeenth check verified that the test setup restored the original viewer and queue. In a separate Android 14 software simulation, 16 of 17 checks passed. Text entry while creating a playlist timed out there.",
+      "notCovered": "Physical phones with the playlist fix installed, playback of an entire film, favourites, the watchlist and Surprise me."
+    },
+    {
+      "feature": "Playing films, seeking, picture-in-picture",
+      "kind": "emulator",
+      "device": "Android 11 emulator",
+      "build": "Private Android phone app, debug build",
+      "date": "Nov 22, 2026, 1:50 AM Eastern",
+      "passed": 7,
+      "total": 7,
+      "how": "Film Details showed Resume for a saved position on the phone or server and Play for an untouched or finished film. A change of film or viewer kept the previous choice from appearing. A saved position on the phone remained available while offline.",
+      "notCovered": "First visit on a Galaxy S24 with the fix installed, picture-in-picture and the rest of the film player."
+    },
     {
       "feature": "Android TV and Fire TV screens",
       "kind": "emulator",
