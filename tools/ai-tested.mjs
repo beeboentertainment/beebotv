@@ -130,7 +130,7 @@ export function validateAiTested(J, data) {
 function barHtml(label, s) {
   // s: { state: 'count'|'nocount'|'none', passed, total, tally, meta, tags[], how }
   const pct = s.state === 'count' ? Math.floor((s.passed / s.total) * 100) : 0;
-  const tally = s.state === 'count' ? `${s.passed} of ${s.total} passed` : s.state === 'nocount' ? s.tally : 'Not run yet';
+  const tally = s.state === 'count' ? `${s.passed} of ${s.total} passed (${pct}% of the recorded total)` : s.state === 'nocount' ? s.tally : 'Not run yet';
   const aria = `${label}: ${tally}${s.meta ? '. ' + s.meta : ''}`;
   const tags = (s.tags || []).filter(Boolean).map(t => `<span class="ait-tag">${esc(t)}</span>`).join('');
   return `<li class="ait-bar ait-${s.state}"><div class="ait-head"><span class="ait-label">${esc(label)}</span><span class="ait-tally">${esc(tally)}</span></div>` +
@@ -149,7 +149,7 @@ function recordBar(kind, rec, tally, f) {
   const how = scrub([rec.did, rec.evidence, rec.notes].filter(Boolean).join(' '));
   if (tally) return { state: 'count', passed: tally.passed, total: tally.total, meta, tags, how };
   const result = /\b(PASS|FAIL|PARTIAL|BLOCKED|NOT RUN)\b/.exec(String(rec.result || ''))?.[1] || String(rec.result || '').trim() || 'recorded';
-  return { state: 'nocount', tally: `Result: ${result}. No count in the record`, meta, tags, how };
+  return { state: 'nocount', tally: `Result: ${result}. No single pass rate recorded`, meta, tags, how };
 }
 
 export function aiTestedBlock(f, J, data) {

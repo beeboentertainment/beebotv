@@ -33,7 +33,9 @@ test('Known failures and remaining work remain readable when no latestCheck exis
 test('Redaction preserves limits and rejects source references, private details and HTML execution', () => {
   const altered = structuredClone(data);
   const feature = altered.features.find(item => item.name === 'Trip Journal (trips, recap, video export)');
-  const record = feature.ownerTests.find(item => item.date === feature.latestCheck.at);
+  const record = feature.ownerTests.find(item => item.date === 'Oct 26, 2026, 9:13 AM Eastern');
+  assert.ok(record, 'the original owner observation is preserved');
+  feature.latestCheck = {at: record.date, result: record.result, who: 'Owner'};
   record.notes = 'Not verified: audio. Source ledger: private evidence archive. commit abcdef0123456789 and C:\\private\\test.json; 192.168.4.22; person@example.test. Keep49; add exact bounded evidence, not new whole-row device/real-world ticks. Still required: play the final video. <img src=x onerror=alert(1)>';
   const doc = documentFor(altered);
   const trip = row(doc, feature.name);

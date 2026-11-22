@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { JSDOM } from 'jsdom';
 import { validateSnapshot, activityState, codeEstimate, renderActivity, latestCheckLine } from '../tools/feature-work-snapshot.mjs';
 import { readinessAudit, validateReadinessAudit } from '../tools/readiness-audit.mjs';
+import { featureId } from '../tools/feature-directory.mjs';
 import { aiTestedBlock } from '../tools/ai-tested.mjs';
 const require = createRequire(import.meta.url);
 const data = JSON.parse(readFileSync(new URL('../testing-status.json', import.meta.url), 'utf8'));
@@ -168,11 +169,14 @@ test('the dated percentage audit accounts for all 70 rows and keeps evidence gap
  validateReadinessAudit(data);
  assert.equal(readinessAudit.features.length,70);
  assert.equal(readinessAudit.features.filter(f=>f.outcome==='evidence-gap').length,7);
- // Nov 10, 2026: the review moved no percentage; then Nick's own decision moved three Ready rows from 100% to 90%.
- // Nov 10, 2026 early-morning record: the audit's before and after are for that run, which moved no percentage.
- const expected=PRIOR14.features.filter(old=>data.features.find(f=>f.name===old.name).percentComplete!==old.percentComplete).map(f=>f.name).sort();
- const actual=readinessAudit.features.filter(f=>f.scoreBefore!==f.scoreAfter).map(f=>data.features.find(x=>x.name===PRIOR14.features[readinessAudit.features.indexOf(f)].name).name).sort();
- assert.deepEqual(actual,expected,'every changed score is represented in the audit');
+ // Each row compares against the immediately preceding published evidence update on November 19.
+ const prior=JSON.parse(execFileSync('git',['show','65f6473a7ecd2da355ba11d42c851571c9693b27:testing-status.json'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:10*1024*1024,windowsHide:true}));
+ for(const current of data.features){
+  const previous=prior.features.find(f=>f.name===current.name);
+  const row=readinessAudit.features.find(f=>f.featureId===featureId(current));
+  assert.equal(row.scoreBefore,previous.percentComplete,current.name+' before');
+  assert.equal(row.scoreAfter,current.percentComplete,current.name+' after');
+ }
  assert.match(page,/id="percentage-audit"/);
  for(const row of readinessAudit.features){
   const detail=readFileSync(new URL('../features/'+row.featureId+'.html',import.meta.url),'utf8');

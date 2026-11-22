@@ -65,7 +65,11 @@ export function renderRecentEvidence(feature, automated) {
   const source = feature.sourceUpdate;
   const sourceHtml = source ? `<div class="th-sec"><h4>Recent source evidence</h4><p><time datetime="${escapeHtml(source.asOf)}">Evidence as of ${escapeHtml(source.asOf)}</time> · ${escapeHtml(source.stage)}</p><p>${escapeHtml(source.text)}</p><p><strong>Remaining:</strong> ${escapeHtml(source.remaining)}</p></div>` : '';
   const executions = automated?.executions || [];
-  const checks = executions.length ? `<div class="th-sec"><h4>Recorded automated executions (partial)</h4><ul>${executions.map(r=>`<li>${escapeHtml(r.date)} · ${escapeHtml(r.label)} · ${escapeHtml(r.stage)}: ${r.passed} passed, ${r.failed} failed, ${r.skipped} skipped.</li>`).join('')}</ul><p>Failed baseline and diagnostic runs remain in this history. Skipped cases are not executed checks. App-wide cases are not feature-only tests.</p></div>` : '';
+  const checks = executions.length ? `<div class="th-sec"><h4>Recorded automated executions (partial)</h4><ul>${executions.map(r => {
+    const executed = r.passed + r.failed;
+    const rate = executed ? ` ${r.passed} of ${executed} executed checks passed (${Math.floor(100 * r.passed / executed)}%).` : '';
+    return `<li>${escapeHtml(r.date)} · ${escapeHtml(r.label)} · ${escapeHtml(r.stage)}: ${r.passed} passed, ${r.failed} failed, ${r.skipped} skipped.${rate}</li>`;
+  }).join('')}</ul><p>Failed baseline and diagnostic runs remain in this history. Skipped cases are not executed checks. App-wide cases are not feature-only tests.</p></div>` : '';
   const device = feature.recentDeviceEvidence || [];
   const deviceHtml = device.length ? `<div class="th-sec"><h4>Recent device and real-world records (partial)</h4><ul>${device.map(r=>`<li>${r.date ? `<time datetime="${escapeHtml(r.date)}">${escapeHtml(r.date)}</time>` : 'Exact action time not established'}: ${escapeHtml(r.summary)} <strong>Recorded scope:</strong> ${escapeHtml(r.counts)}</li>`).join('')}</ul><p>These bounded scenarios may overlap other features. They are not lifetime totals, and copied reports do not add executions.</p></div>` : '';
   return sourceHtml + checks + deviceHtml;

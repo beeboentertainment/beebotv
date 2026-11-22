@@ -1,8 +1,26 @@
 {
   "schemaVersion": 1,
-  "updatedEastern": "Nov 14, 2026, 4:04 AM Eastern",
+  "updatedEastern": "Nov 22, 2026, 12:27 AM Eastern",
   "about": "Feeds the AI tested bars on every feature card and the 'Waiting for someone with the device' section of release-evidence.html. Rendered by tools/ai-tested.mjs. A bar is filled only from one recorded run's own count (passed of total). Nothing here changes a feature's percentage.",
   "unitTests": [
+    {
+      "feature": "Library, player and web player",
+      "passed": 8,
+      "total": 8,
+      "skipped": 0,
+      "date": "Nov 22, 2026",
+      "where": "Windows PC, two headless Chrome profiles",
+      "how": "Native controls and the Beebo chapter control each played, sought forward, paused and resumed the test film. Captions appeared and could be turned off in both profiles. The test used a direct MP4. Installed service playback, HLS and audible sound remain unverified."
+    },
+    {
+      "feature": "Library, player and web player",
+      "passed": 4,
+      "total": 4,
+      "skipped": 0,
+      "date": "Nov 21, 2026",
+      "where": "Windows PC, headless Chrome",
+      "how": "A synthetic 40-second film played, sought forward by chapter, held during Pause and resumed in Chrome. The page used source code and a test clip. The installed Windows app and service were outside this run. Audio was muted."
+    },
     {
       "feature": "Library sharing with another household",
       "passed": 8,

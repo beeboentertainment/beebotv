@@ -3,7 +3,7 @@
   "capturedAt": "2026-10-29T15:47:16-04:00",
   "expiresAt": "2026-10-29T16:47:16-04:00",
   "displayTime": "Oct 29, 2026, 3:46:23–3:47:16 PM Eastern",
-  "recordsCutoff": "2026-11-17T05:48:41Z",
+  "recordsCutoff": "2026-11-22T00:27:26-05:00",
   "features": [
     {
       "name": "Opening the app and the five tabs",
@@ -20,10 +20,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 37,
+          "datedRecords": 38,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest dated scope: Keep me signed in card unavailable on 3 of 3 phones; Smoke passed on 2 of 2 phones; no crash or ANR reported; Latest update kept sign-in on 2 of 2 phones; Pixel total: 2 kept and 2 lost. Records may overlap; not an independent-run total."
+          "summary": "Private test build: Android 1.85-tester1 (157). 2 of 2 phones showed the unavailable message on both screens."
         }
       }
     },
@@ -42,10 +42,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 46,
+          "datedRecords": 47,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest dated scope: Resume from search 3 of 3 phones; Continue watching 3 of 3 phones; checked show poster 3 of 3 phones; Smoke passed on 2 of 2 phones; no crash or ANR reported. Records may overlap; not an independent-run total."
+          "summary": "Private test build: Android 1.85-tester1 (157). 1 phone reproduced the stale picture. Neither phone completed a Film Details Resume check."
         }
       }
     },
@@ -161,10 +161,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 17,
+          "datedRecords": 18,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 1 desktop playlist CRUD group; 2 desktop local-RSS groups; 2 radio groups with different scopes (muted stream once, favorites once)"
+          "summary": "Private test build: Android 1.85-tester1 (157). 2 phones opened an empty chooser. 1 phone showed counts on 2 library rows."
         }
       }
     },
@@ -205,10 +205,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 34,
+          "datedRecords": 36,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest dated scope: Podcast playback: 2 episodes passed; Podcast playback: 1 episode passed on 1 phone. Records may overlap; not an independent-run total."
+          "summary": "Private test build: Android 1.85-tester1 (157). 1 of 1 followed-show screens stayed usable after Refresh."
         }
       }
     },
@@ -289,9 +289,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 6,
+          "datedRecords": 7,
           "coverage": "partial",
-          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once."
+          "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
+          "summary": "Private test build: Android 1.85-tester1 (157). 1 active-trip screen checked on 1 phone."
         }
       }
     },
@@ -310,10 +311,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 9,
+          "datedRecords": 27,
           "coverage": "partial",
           "note": "The expanded evidence gives bounded scenario counts and limits. These are not lifetime totals; shared scenarios are not new executions per feature. Dated history records are not device-run totals.",
-          "summary": "Partial: 2 distinct host start/stop flows; second includes 1 two-phone lobby join/leave flow"
+          "summary": "Private test build: Android 1.85-tester1 (157). 4 titles displayed and 1 saved game opened on 1 phone."
         }
       }
     },
@@ -426,10 +427,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 30,
+          "datedRecords": 31,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest dated scope: Cast script loading passed; availability wording failed. Records may overlap; not an independent-run total."
+          "summary": "Private test build: Android 1.85-tester1 (157). 2 of 2 observed play/pause/resume runs on the same phone and TV."
         }
       }
     },
@@ -598,10 +599,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 17,
+          "datedRecords": 18,
           "coverage": "partial",
           "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
-          "summary": "Latest dated scope: Smoke passed on 2 of 2 phones; no crash or ANR reported. Records may overlap; not an independent-run total."
+          "summary": "Private test build: Android 1.85-tester1 (157). English mix names on 2 of 2 phones and German labels on 1 phone."
         }
       }
     },
@@ -715,10 +716,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 33,
+          "datedRecords": 34,
           "coverage": "partial",
           "note": "Dated record count only; records can group or overlap scenarios and are not a count of independent test runs.",
-          "summary": "Latest dated scope: Library and Request a title chips passed; two text areas remained clipped; Smoke passed on 2 of 2 phones; no crash or ANR reported; Photos screen smoke passed; Folders & cleanup remained clipped. Records may overlap; not an independent-run total."
+          "summary": "Private test build: Android 1.85-tester1 (157). 5 of 5 tab labels fit on each of 3 phones. 4 of 4 album labels were readable across 2 phones."
         }
       }
     },
@@ -774,11 +775,27 @@
       "confirmedAt": null,
       "tests": {
         "automated": {
-          "runs": 4,
-          "assertions": 469,
+          "runs": 6,
+          "assertions": 481,
           "coverage": "partial",
           "note": "Bounded recorded executions, not lifetime or unique coverage. Passed and failed cases count as executions; skipped cases are listed separately. App-wide integration cases are labelled and are not feature-only checks. The same run may inform several features; do not sum cards.",
           "executions": [
+            {
+              "label": "Offline Chrome source fixture",
+              "stage": "source runtime, synthetic media and responses",
+              "date": "Nov 22, 2026",
+              "passed": 8,
+              "failed": 0,
+              "skipped": 0
+            },
+            {
+              "label": "Offline Chrome source fixture",
+              "stage": "source runtime, synthetic media and responses",
+              "date": "Nov 21, 2026",
+              "passed": 4,
+              "failed": 0,
+              "skipped": 0
+            },
             {
               "label": "Automated source checks",
               "stage": "independent exact source",
@@ -1164,10 +1181,10 @@
         },
         "deviceWorld": {
           "runs": null,
-          "datedRecords": 8,
+          "datedRecords": 9,
           "coverage": "unknown",
           "note": "Dated records from the existing public history are a partial record count, not a total of unique device runs. A record can cover several attempts; copied identical records are counted once.",
-          "summary": "Latest dated scope: Shared with you account-label check failed on 3 of 3 phones; Share-QR entry point visible; scanning and creation NOT RUN; Smoke passed on 2 of 2 phones; no crash or ANR reported. Records may overlap; not an independent-run total."
+          "summary": "Private test build: Android 1.85-tester1 (157). 1 saved row on 1 phone and 1 empty state on a second phone."
         }
       }
     },
@@ -1690,5 +1707,5 @@
     }
   ],
   "integrationNote": "A separate presentation-source integration passed 537 composed automated checks on Oct 29 at 4:12 PM Eastern. It covers navigation, desktop Users contrast and Story Studio together; it is not 537 device runs or 537 additional checks per feature. No installed-release acceptance is implied. The broader source and device reconciliations ended at 3:58 PM and 3:55 PM Eastern, respectively.",
-  "evidenceUpdatedAt": "2026-11-19T07:34:39.831Z"
+  "evidenceUpdatedAt": "2026-11-22T00:27:26-05:00"
 }
