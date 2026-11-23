@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-22T00:59:09-05:00",
-  "updatedEastern": "Nov 22, 2026, 12:59 AM Eastern",
+  "updatedAt": "2026-11-23T08:15:00-05:00",
+  "updatedEastern": "Nov 23, 2026, 8:15 AM Eastern",
   "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain.",
   "features": [
     {
@@ -202,14 +202,15 @@
     {
       "featureId": "feature-android-phone-app-shared-photos-and-videos",
       "scoreBefore": 74,
-      "scoreAfter": 74,
+      "scoreAfter": 98,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 23, 2026, 7:09 to 7:53 AM Eastern real-phone records",
         "Oct 23–24, 2026",
         "Nov 2, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Two-phone photo navigation, a saved-video hash match and picture checks support the device mark. Newer video-policy tests add source evidence only. Audible playback and concurrency remain unproved. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
+      "summary": "Nov 23 real-phone record: on the public Android 1.89 (162) a Galaxy S9+ guest saved a shared photo and video with matching file hashes. Current score 98%; the real-world check (admission during an active transfer, audio listening) is still open. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Two-phone photo navigation, a saved-video hash match and picture checks support the device mark. Newer video-policy tests add source evidence only. Audible playback and concurrency remain unproved. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     },
     {
       "featureId": "feature-android-phone-app-wireless-speakers",
@@ -444,16 +445,17 @@
     {
       "featureId": "feature-android-phone-app-family-achievements-opt-in-milestones",
       "scoreBefore": 74,
-      "scoreAfter": 74,
+      "scoreAfter": 99,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 23, 2026, 7:09 to 7:53 AM Eastern real-phone records",
         "Nov 17–18, 2026 device records, reconciled Nov 19",
         "Oct 21–24, 2026",
         "Nov 2, 2026",
         "Nov 14, 2026, 12:30 AM Eastern",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Nov 19 evidence update: 1 consent-card visibility observation; milestone recording NOT RUN. Current score 74%; 1 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. The public-APK emulator retention, duplicate/save/reopen and refresh checks passed, with the actual one-hour guard waited. Synthetic 30/90-day ages do not prove months of family use or real-phone retention. Score on Nov 14, 2026: 74%; now 98%; open known issues: 0. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
+      "summary": "Nov 23 real-phone record: on the public Android 1.89 (162) a Pixel 3 showed the consent card above the host card (the open problem, retested and closed), a date-only milestone, clear mine, clear for everyone and host off. Current score 99%; no open known issue. Earlier dated review: Nov 19 evidence update: 1 consent-card visibility observation; milestone recording NOT RUN. Current score 74%; 1 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. The public-APK emulator retention, duplicate/save/reopen and refresh checks passed, with the actual one-hour guard waited. Synthetic 30/90-day ages do not prove months of family use or real-phone retention. Score on Nov 14, 2026: 74%; now 98%; open known issues: 0. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
     },
     {
       "featureId": "feature-windows-desktop-app-installer-and-self-update",
@@ -841,14 +843,15 @@
     {
       "featureId": "feature-services-and-website-online-games-play-with-others",
       "scoreBefore": 49,
-      "scoreAfter": 49,
+      "scoreAfter": 99,
       "outcome": "evidence-gap",
       "evidenceDates": [
+        "Nov 23, 2026, 7:09 to 7:53 AM Eastern real-phone records",
         "Oct 20, 2026",
         "Nov 2, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. HTTPS games page, private table creation and leaving own empty table passed. Second-player join, actual moves and opponent-left notice unrun; no stranger matching or multiplayer/sync acceptance. Keep49; add exact bounded evidence, not new whole-row device/real-world ticks. Score on Nov 14, 2026: 49%; now 49%; open known issues: 0. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
+      "summary": "Nov 23 real-phone record: two real phones played a private Tic-Tac-Toe table on play.beebo.tv (join by code, moves synced, opponent-left message). Current score 99%; no open known issue. Different networks, reconnect and moderation are not tested. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. HTTPS games page, private table creation and leaving own empty table passed. Second-player join, actual moves and opponent-left notice unrun; no stranger matching or multiplayer/sync acceptance. Keep49; add exact bounded evidence, not new whole-row device/real-world ticks. Score on Nov 14, 2026: 49%; now 49%; open known issues: 0. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
     },
     {
       "featureId": "feature-services-and-website-walkie-talkie-from-anywhere",

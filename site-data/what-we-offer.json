@@ -495,7 +495,7 @@
       "area": "android",
       "name": "Family achievements (opt-in milestones)",
       "status": "In development",
-      "evidence": "Last PASS: Oct 24, 2026, 2:38:54 AM Eastern. The native owner enabled achievements, a normal member saw only personal opt-in controls, and personal-off then owner-off restoration succeeded. Earlier synthetic milestone, duplicate, restart and clear/cancel checks are carried. Actual time-based retention expiry remains an automatable missing check, not a human look. Real family use also remains. The row stays at 74%; synthetic milestones are labelled test data. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
+      "evidence": "Nov 23, 2026, 7:23 AM Eastern, public Android 1.89 (build 162) on a Pixel 3 at the owner’s home: the consent card shows above the host card, a Time together milestone keeps only its date, clear mine and clear for everyone work, and turning it off stops saving; the row is at 99%. Not tested: a second member on their own phone, automatic expiry and months of family use. Earlier record (kept): Last PASS: Oct 24, 2026, 2:38:54 AM Eastern. The native owner enabled achievements, a normal member saw only personal opt-in controls, and personal-off then owner-off restoration succeeded. Earlier synthetic milestone, duplicate, restart and clear/cancel checks are carried. Actual time-based retention expiry remains an automatable missing check, not a human look. Real family use also remains. synthetic milestones are labelled test data. Native Android tester36 (build 86) applies only to named native actions; older passes and browser guests keep their original scope. No status or checkmark upgrade.",
       "realTest": "partly"
     },
     {
@@ -1231,8 +1231,8 @@
       "area": "online",
       "name": "Online games with people in other homes (private tables with a code)",
       "status": "In development",
-      "evidence": "Online browser-games page connection work is merged, off and unreleased. What is left: real players on different networks, reconnect and host controls. The separate games already on this website keep their own status.",
-      "realTest": "no"
+      "evidence": "Nov 23, 2026, 7:53 AM Eastern: two real phones (in Chrome) played a private Tic-Tac-Toe table on the live play.beebo.tv: join by code, moves synced on both, and the other player was told when one left. Stranger matching is off. Not tested: phones on different networks, reconnect, host controls and other games.",
+      "realTest": "partly"
     },
     {
       "id": "s-vpn",
