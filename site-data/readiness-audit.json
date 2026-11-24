@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-24T02:05:00-05:00",
-  "updatedEastern": "Nov 24, 2026, 2:05 AM Eastern",
-  "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain. Nov 24, 2026, 1:05 AM Eastern: Nov 23 night results on the published Windows 0.1.141 and Android 1.91 and 1.92 were added; two rows moved down for new open known issues, none moved up. Nov 24, 2026, 2:05 AM Eastern: Android 1.93 phone checks were added; Shared photos and videos returned to 98% after its known problem was fixed and checked.",
+  "updatedAt": "2026-11-24T08:20:00-05:00",
+  "updatedEastern": "Nov 24, 2026, 8:20 AM Eastern",
+  "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain. Nov 24, 2026, 1:05 AM Eastern: Nov 23 night results on the published Windows 0.1.141 and Android 1.91 and 1.92 were added; two rows moved down for new open known issues, none moved up. Nov 24, 2026, 2:05 AM Eastern: Android 1.93 phone checks were added; Shared photos and videos returned to 98% after its known problem was fixed and checked. Nov 24, 2026, 8:20 AM Eastern: Windows 0.1.142 and Android 1.94 device checks were added; Live TV returned to 98% after its known problem was fixed and checked; Campsite games and picture-in-picture records added, scores unchanged.",
   "features": [
     {
       "featureId": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
@@ -29,6 +29,7 @@
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026 S9+ picture-in-picture record",
         "Nov 21–22, 2026",
         "Nov 17–18, 2026 device records, reconciled Nov 19",
         "Nov 16–17, 2026 public-build records",
@@ -42,7 +43,7 @@
         "Nov 14, 2026, 12:30 AM Eastern",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "November evidence update. Private Android 1.85-tester1 (157). Saved-position playback passed on 2 of 2 phones (100%). On the first Film Details visit, 1 of 2 phones (50%) showed Resume. The Galaxy S9+ showed Resume and passed a forward seek. The Galaxy S24 Ultra showed Play, then resumed at 56:24, held at 56:33 on pause and advanced to 56:35 after playback resumed. Details showed Resume on its second visit. The Pixel 3 clip was too short to test. An earlier offline switch on the S9+ showed the previous film’s picture. Earlier review: Nov 19 evidence update: Resume from search 3 of 3 phones; Continue watching 3 of 3 phones; checked show poster 3 of 3 phones; Smoke passed on 2 of 2 phones; no crash or ANR reported. Current score 90%; 9 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: One new open issue (stays 90%; 7 to 8): when the next episode is missing, the player stops with a \"Playback finished\" box instead of skipping to the next episode you have. Film resume and auto-next to an episode that exists passed on 1.69 and 1.70. Score on Nov 14, 2026: 90%; now 90%; open known issues: 8. Record update Nov 17, 2026, 3:10 AM Eastern: 6 bounded native-player checks passed; sound and casting untested; 3 browse/metadata checks passed; native playback and seek remained incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 8."
+      "summary": "Nov 24 update: on the public Android 1.94 (S9+) the picture-in-picture Beebo icon return and X close passed; the small window’s expand icon failed (new known problem, fix in progress). Score stays 90%; now 10 open known issues. Earlier review: November evidence update. Private Android 1.85-tester1 (157). Saved-position playback passed on 2 of 2 phones (100%). On the first Film Details visit, 1 of 2 phones (50%) showed Resume. The Galaxy S9+ showed Resume and passed a forward seek. The Galaxy S24 Ultra showed Play, then resumed at 56:24, held at 56:33 on pause and advanced to 56:35 after playback resumed. Details showed Resume on its second visit. The Pixel 3 clip was too short to test. An earlier offline switch on the S9+ showed the previous film’s picture. Earlier review: Nov 19 evidence update: Resume from search 3 of 3 phones; Continue watching 3 of 3 phones; checked show poster 3 of 3 phones; Smoke passed on 2 of 2 phones; no crash or ANR reported. Current score 90%; 9 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: One new open issue (stays 90%; 7 to 8): when the next episode is missing, the player stops with a \"Playback finished\" box instead of skipping to the next episode you have. Film resume and auto-next to an episode that exists passed on 1.69 and 1.70. Score on Nov 14, 2026: 90%; now 90%; open known issues: 8. Record update Nov 17, 2026, 3:10 AM Eastern: 6 bounded native-player checks passed; sound and casting untested; 3 browse/metadata checks passed; native playback and seek remained incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 8."
     },
     {
       "featureId": "feature-android-phone-app-away-from-home-direct-then-relay",
@@ -188,6 +189,7 @@
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 8:07 to 8:16 AM Eastern Bingo record",
         "Nov 21, 2026",
         "Oct 12–26, 2026",
         "Nov 8, 2026",
@@ -197,7 +199,7 @@
         "Nov 14, 2026, 12:30 AM Eastern",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "November evidence update. Private test build: Android 1.85-tester1 (157). 4 titles displayed and 1 saved game opened on 1 phone. Earlier review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. The local Patience board occupied only 418 of 1080 pixels, with tiny cards and a wrapped Stats label. Three moves were possible; complete games and other sizes were not tested. The existing solo-game wording problem also appears in Crazy Eights, Pairs, Old Maid and Snap. Snap says “You turns the first card” on three phones. Repeated devices are corroboration; no common code cause or whole-game pass is asserted. Campfire Songbook search and result text is near-black on black in Campfire mode. Filtering worked. A prior Pause attempt was not verified; the observed automatic line advance remains valid. Roadside Quiz answer contrast remains poor and Stop is clipped at the tested size. This extends the existing quiz-feedback/layout limits; a completed quiz and audible prompts remain untested. Score on Nov 14, 2026: 90%; now 90%; open known issues: 14. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
+      "summary": "Nov 24 update: Bingo on the public Android 1.94 (S9+ host, Pixel 3 guest): penalty Off kept on Play again, round-1 carry-over cleared, Drop Four wording passed. Score stays 90%; the 14 open known issues were not retested. Earlier review: November evidence update. Private test build: Android 1.85-tester1 (157). 4 titles displayed and 1 saved game opened on 1 phone. Earlier review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. The local Patience board occupied only 418 of 1080 pixels, with tiny cards and a wrapped Stats label. Three moves were possible; complete games and other sizes were not tested. The existing solo-game wording problem also appears in Crazy Eights, Pairs, Old Maid and Snap. Snap says “You turns the first card” on three phones. Repeated devices are corroboration; no common code cause or whole-game pass is asserted. Campfire Songbook search and result text is near-black on black in Campfire mode. Filtering worked. A prior Pause attempt was not verified; the observed automatic line advance remains valid. Roadside Quiz answer contrast remains poor and Stop is clipped at the tested size. This extends the existing quiz-feedback/layout limits; a completed quiz and audible prompts remain untested. Score on Nov 14, 2026: 90%; now 90%; open known issues: 14. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
     },
     {
       "featureId": "feature-android-phone-app-shared-photos-and-videos",
@@ -529,9 +531,10 @@
     {
       "featureId": "feature-windows-desktop-app-live-tv-tuner-and-own-playlist",
       "scoreBefore": 98,
-      "scoreAfter": 74,
+      "scoreAfter": 98,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 7:43 to 7:45 AM Eastern PC record",
         "Nov 23, 2026, 10:33 to 10:34 PM Eastern PC and phone records",
         "Nov 16–17, 2026 public-build records",
         "Oct 23–28, 2026",
@@ -539,7 +542,7 @@
         "Nov 10, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Nov 24 update: a new open known issue on the published Windows 0.1.141 (no message when a channel stops; the phone on 1.92 does show it) removes the 98% real-device step, so the row shows 74% until the fix passes on a published build. A fix is written and is not in a published download yet. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. HTTP and restriction checks plus installed playback of a two-channel test playlist support the recorded checks. A real tuner/provider, guide, recording, Live TV casting and listening remain open. Nov 8 update: the own-playlist panel keeps its buttons off until the rights box is ticked (view only); nothing loaded; no score change. Nov 10, 2026, 7:18 AM Eastern: Stays 74%. Pixel 3 on the published Android 1.56 showed two test channels live; a possible no-sound problem on live channels is recorded and waits for a check by ear before it is counted. Nov 10, 2026, 7:29 PM Eastern: Stays 74%. 11 of 11 new automated Live TV tests passed; the possible no-sound problem still waits for a check by ear. Nov 12, 2026, 11:27 AM Eastern: 74% to 98% from the new Emulator step. The row already had a Real device tick and a dated PASS on a real device, which now also counts for the 98 step. No new test was run and nothing was ticked. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern. Record update Nov 17, 2026, 3:10 AM Eastern: 1 actual-channel playback case incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 0."
+      "summary": "Nov 24 update: the known problem on Windows 0.1.141 (no message when a channel stops) is fixed in Windows 0.1.142 and checked on the 6-core PC (the app shows “The channel stopped. Try again.” and Try again restarts the channel), so the row returns to 98% with no open known issue. 99 still needs the real-world check (a real tuner or provider playlist, sound heard by a person, Live TV casting). Earlier dated review: Nov 24 update: a new open known issue on the published Windows 0.1.141 (no message when a channel stops; the phone on 1.92 does show it) removes the 98% real-device step, so the row shows 74% until the fix passes on a published build. A fix is written and is not in a published download yet. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. HTTP and restriction checks plus installed playback of a two-channel test playlist support the recorded checks. A real tuner/provider, guide, recording, Live TV casting and listening remain open. Nov 8 update: the own-playlist panel keeps its buttons off until the rights box is ticked (view only); nothing loaded; no score change. Nov 10, 2026, 7:18 AM Eastern: Stays 74%. Pixel 3 on the published Android 1.56 showed two test channels live; a possible no-sound problem on live channels is recorded and waits for a check by ear before it is counted. Nov 10, 2026, 7:29 PM Eastern: Stays 74%. 11 of 11 new automated Live TV tests passed; the possible no-sound problem still waits for a check by ear. Nov 12, 2026, 11:27 AM Eastern: 74% to 98% from the new Emulator step. The row already had a Real device tick and a dated PASS on a real device, which now also counts for the 98 step. No new test was run and nothing was ticked. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern. Record update Nov 17, 2026, 3:10 AM Eastern: 1 actual-channel playback case incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 0."
     },
     {
       "featureId": "feature-windows-desktop-app-story-studio",
@@ -960,7 +963,7 @@
       "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Roadmap and example home-automation setup are not a demonstrated Google Assistant or Alexa integration. No real setup or command acceptance supports moving above 0%. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     }
   ],
-  "newKnownProblemCount": 38,
+  "newKnownProblemCount": 39,
   "newKnownProblemIds": [
     "audio-after-sign-out",
     "audio-refusal-refresh",
@@ -986,6 +989,7 @@
     "notification-column-clipping",
     "patience-compressed-board",
     "pc-live-tv-no-stopped-message",
+    "phone-pip-expand-icon-no-return",
     "planner-notification-stop",
     "quiz-selected-answer",
     "relay-untranslated-failure-copy",
