@@ -1118,10 +1118,10 @@
   "updatedEastern": "Nov 24, 2026, 1:05 AM Eastern",
   "pageUrl": "https://www.beeboentertainment.com/progress-update.html",
   "howToRead": "Each feature has five checks. Built is worth 24 points. Passing automated tests adds 25 (49%). Emulator step: when the PUBLIC build also passes on an Android emulator (phone features) or on our test PC (Windows and browser features), the score reaches 98 and the label beside the bar reads “Emulator passed – phone test next”. An emulator or test PC is not a real phone or a real home, so it never reaches 99 on its own: 99 still needs the real-device check and the real-world check on the public build. A pass on a real phone also counts for this step: a feature with the Real device check passed (the same rule as before) and a dated PASS on a real device in its test history reaches 98 as well, so an emulator pass is never ranked above a real-phone pass. Its label then reads “Real device passed – real-world check next”. A Real device tick with no recorded real-device PASS gets no new credit and keeps its old score. Rows with an open known problem do not get this step until the problem is fixed. It reaches 99 only with the real-world check too, and no score went down when this step was added. We only count an emulator or test-PC run that is recorded in the feature’s test history. Open known errors still cap a feature at 90%. The score counts the public build only. When the newest code, not yet public, has passed on the emulator or test PC, the row may carry a separate tag “Fixed in next update – emulator passed” beside the bar. The tag never changes the percentage, it needs a dated record, and it is removed on release day, when the public build is tested and the row moves to 98 (or higher) on its own evidence. Running on a real phone or PC adds 25. The real-world check adds 25. A dated realistic check can be performed by an AI tester on real devices, or by a person, when its evidence covers the feature’s actual use. A QA server or test fixture does not by itself disqualify that check. Muted or state-only evidence cannot prove sound, timing or another behavior it did not judge. Relevant open failures and stated record limits stay in force. Realistic, dated AI checks on real devices count toward the Real-world check, and so toward 99%. Only Nick records Ready (100%), after he and Claude confirm the feature together with no errors found. Any open failure caps a feature at 90% until it is fixed. At 99%, all four checks have passed and no known error is open. That means tested and confirmed working within the recorded checks. The last 1% is a human look, not more building. Nick looks with his own eyes, he and Claude confirm the feature together with no errors found, and only then does Nick record Ready. An open known error caps the score at 90%. Existing record limits can keep it lower. At 99%, the label is \"Tested and working, waiting for a human look\". At 100%, it is \"Ready, a human confirmed\". Each row says what was proven, when it was tested and what remains unverified. Each feature also has a road-to-100 list: what 100% means, what is done, and what remains, grouped as CODE (we can build or fix it), DEVICE (needs a real phone, PC, TV or car), NICK (his decision, account, money or legal) and BLOCKED.",
-  "overallAveragePercent": 73,
+  "overallAveragePercent": 72,
   "groupAveragePercent": {
-    "Android phone app": 84,
-    "Windows desktop app": 73,
+    "Android phone app": 83,
+    "Windows desktop app": 72,
     "Other systems": 57,
     "Services and website": 50
   },
@@ -4065,7 +4065,7 @@
         "who": "AI tester. 4 of 4 phone checks passed (Surprise me, watchlist, favourites, empty message)"
       },
       "codeCompletionPercent": null,
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -4460,7 +4460,7 @@
         "who": "AI tester. start, stop message, restart and rejoin passed on the same Wi-Fi"
       },
       "codeCompletionPercent": null,
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -5104,7 +5104,7 @@
         "result": "PASS",
         "who": "AI tester. podcast play, skip and resume plus one radio station passed"
       },
-      "updatedThisRun": true,
+      "updatedThisRun": false,
       "codeCompletionPercent": null
     },
     {
@@ -5637,7 +5637,7 @@
         "result": "PASS",
         "who": "AI tester. bookmark, end-of-chapter timer, resume and cross-device resume passed"
       },
-      "updatedThisRun": true,
+      "updatedThisRun": false,
       "codeCompletionPercent": null
     },
     {
@@ -6122,7 +6122,7 @@
         "who": "AI tester. 4 checks passed, 1 failed (notification Stop)"
       },
       "codeCompletionPercent": null,
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -6346,7 +6346,7 @@
           "counts": "2 checks passed, 1 not run (needs Nick), 2 not done as written, on 1 phone"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -6928,13 +6928,13 @@
         "who": "AI tester. one Sight Race round and its new-round note passed"
       },
       "codeCompletionPercent": null,
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
       "name": "Shared photos and videos",
       "status": "In development",
-      "percentComplete": 98,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -6943,8 +6943,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Nov 23, 2026, 7:42 AM Eastern (public Android 1.89 (162), Pixel 3 host and S9+ guest: a shared photo and video saved with matching file hashes, PASS); earlier: Oct 24, 2026, 2:25:08 AM Eastern (Last PASS; later failures and blocks are listed separately)",
-      "leftToReach100": "Update Nov 23, 2026, 8:15 AM Eastern: Moved 74% to 98% (real device passed on the public build): on the public Android 1.89 (162) a Galaxy S9+ guest saved a shared photo and video with matching file hashes. Still needed for 99: admission of another guest proven during an active transfer, and the audio listening checks. Earlier record (kept): Recorded scope only: A native S9+ shared photo was actually saved on the Pixel. The recorded 6,294,550-byte file hash matched the source. A generic browser filename did not mean corruption. The H264 picture rendered, while ALAC audio was unsupported. Still required: Concurrent admission during an active transfer was not proved by the short gesture gap. Another available guest and supported/unsupported audio listening checks remain. The saved-device hash is carried from its recorded capture; no new device access is claimed. No new whole-feature checkmark is added. Nick alone records Ready.",
+      "lastTested": "Nov 23, 2026, about 11:05 PM Eastern (public Android 1.91 Pixel 3 host and public 1.92 Galaxy S24 and S9+ guests: slides followed and saved photos matched, but a multi-file pick added nothing, PARTIAL); earlier: Nov 23, 2026, 7:42 AM Eastern (public Android 1.89 (162), Pixel 3 host and S9+ guest: a shared photo and video saved with matching file hashes, PASS); earlier: Oct 24, 2026, 2:25:08 AM Eastern (Last PASS; later failures and blocks are listed separately)",
+      "leftToReach100": "Update Nov 24, 2026, 1:05 AM Eastern: Moved 98% to 74%: 1 open known issue (an open known issue removes the 98% real-device step until it is fixed, so the row shows only its three passed checks). On Nov 23, 2026 at about 11:05 PM Eastern a Pixel 3 host on the public Android 1.91 presented 2 photos and 1 short test video to a Galaxy S24 and a Galaxy S9+ (both on the public 1.92). Both guests followed the slide changes and the saved photo copies matched the source (SHA-256). But choosing two or three files at once in the Android file picker added nothing, while adding the same files one at a time worked. A fix is written and reviewed but is not in a published download yet, so the problem stays open until a phone passes it on a published build. Still needed for 99 as well: a second guest admitted during an active transfer, the saved video copy checked, and the audio listening checks. Earlier record (kept): Update Nov 23, 2026, 8:15 AM Eastern: Moved 74% to 98% (real device passed on the public build): on the public Android 1.89 (162) a Galaxy S9+ guest saved a shared photo and video with matching file hashes. Still needed for 99: admission of another guest proven during an active transfer, and the audio listening checks. Earlier record (kept): Recorded scope only: A native S9+ shared photo was actually saved on the Pixel. The recorded 6,294,550-byte file hash matched the source. A generic browser filename did not mean corruption. The H264 picture rendered, while ALAC audio was unsupported. Still required: Concurrent admission during an active transfer was not proved by the short gesture gap. Another available guest and supported/unsupported audio listening checks remain. The saved-device hash is carried from its recorded capture; no new device access is claimed. No new whole-feature checkmark is added. Nick alone records Ready.",
       "roadTo100": {
         "means": "A host presents photos and videos to real guests on their phones, errors are handled, and privacy has been reviewed.",
         "done": [
@@ -6974,10 +6974,15 @@
           }
         ]
       },
-      "previousPercent": 74,
-      "changedEastern": "Nov 23, 2026, 8:15 AM Eastern",
-      "changeNote": "Real-phone record, Nov 23, 2026 (public Android 1.89, build 162): score 74% to 98%. photo and video saved with matching hashes on a second phone.",
+      "previousPercent": 98,
+      "changedEastern": "Nov 24, 2026, 1:05 AM Eastern",
+      "changeNote": "New open known issue on the published phone builds, Nov 23, 2026: picking two or three files at once in the Android file picker added nothing (one at a time worked). Score 98% to 74%: an open known issue removes the 98% real-device step until it is fixed.",
       "changeHistory": [
+        {
+          "changedEastern": "Nov 24, 2026, 1:05 AM Eastern",
+          "previousPercent": 98,
+          "changeNote": "New open known issue on the published phone builds, Nov 23, 2026: picking two or three files at once in the Android file picker added nothing (one at a time worked). Score 98% to 74%: an open known issue removes the 98% real-device step until it is fixed."
+        },
         {
           "changedEastern": "Nov 23, 2026, 8:15 AM Eastern",
           "changeNote": "Real-phone record, Nov 23, 2026 (public Android 1.89, build 162): score 74% to 98%. photo and video saved with matching hashes on a second phone."
@@ -7047,24 +7052,43 @@
           "sourceCommentIds": [
             "7101529011"
           ]
+        },
+        {
+          "tester": "AI tester",
+          "device": "Pixel 3 (host), Galaxy S24 and Galaxy S9+ (guests), Campsite on one network",
+          "build": "PUBLIC Android 1.91 (build 164; published Nov 23, 2026, 7:48 PM Eastern) on the Pixel 3 host; PUBLIC Android 1.92 (build 165; published Nov 23, 2026, 10:16 PM Eastern) on the Galaxy S24 and Galaxy S9+ guests",
+          "date": "Nov 23, 2026, 11:05 PM Eastern",
+          "result": "PARTIAL",
+          "evidence": "The Pixel 3 host presented 2 photos and 1 short test video to the Galaxy S24 and the Galaxy S9+. Both guests followed the slide changes. The saved copy of photo 1 on the S24 and of photo 2 on the S9+ had the same SHA-256 as the source. Problem found: in Add photos or videos, selecting 2 or 3 files at once in the Android file picker added nothing (the page still said 0 / 0 and No file chosen); the same files added one at a time worked. Not run: the hash of the saved video copy, and a second share admitted during an active transfer.",
+          "ticks": [],
+          "sourceCommentIds": [
+            "7121950158",
+            "7121951296"
+          ]
         }
       ],
       "latestCheck": {
-        "at": "Nov 23, 2026, 7:42 AM Eastern",
-        "build": "PUBLIC Android 1.89 (build 162), published Nov 23, 2026, 4:50 AM Eastern",
-        "device": "Pixel 3 (host) and Galaxy S9+ (guest), same home Wi-Fi, plus Pixel 3 Chrome as a second guest",
-        "result": "PASS",
-        "who": "AI tester. photo and video saved with matching hashes on a second phone"
+        "at": "Nov 23, 2026, 11:05 PM Eastern",
+        "build": "PUBLIC Android 1.91 (build 164; published Nov 23, 2026, 7:48 PM Eastern) on the Pixel 3 host; PUBLIC Android 1.92 (build 165; published Nov 23, 2026, 10:16 PM Eastern) on the Galaxy S24 and Galaxy S9+ guests",
+        "device": "Pixel 3 (host), Galaxy S24 and Galaxy S9+ (guests), Campsite on one network",
+        "result": "PARTIAL",
+        "who": "AI tester. slides followed and saved photos matched on two guests; picking several files at once added nothing"
       },
       "codeCompletionPercent": null,
       "recentDeviceEvidence": [
+        {
+          "date": null,
+          "summary": "Nov 23, 2026, 11:05 PM Eastern: The Pixel 3 host presented 2 photos and 1 short test video to the Galaxy S24 and the Galaxy S9+. Both guests followed the slide changes. The saved copy of photo 1 on the S24 and of photo 2 on the S9+ had the same SHA-256 as the source. Problem found: in Add photos or videos, selecting 2 or 3 files at once in the Android file picker added nothing (the page still said 0 / 0 and No file chosen); the same files added one at a time worked. Not run: the hash of the saved video copy, and a second share admitted during an active transfer.",
+          "counts": "2 photos and 1 video presented to 2 guests; 2 photo copies matched; 1 new problem"
+        },
         {
           "date": null,
           "summary": "Nov 23, 2026, 7:42 AM Eastern: On the owner's own home server (Windows 0.1.138), AI tester alone: the S9+ guest saved a shared photo and a shared video (472,938 bytes); both saved files had the same SHA-256 as the source. A second photo showed but was not saved. A third join (the Pixel's browser as Guest2) was admitted while the first transfer was in progress or just done, with no damage to it; that it was truly at the same time is not proven. The S9+ needed a plain “Download file?” confirmation. Test files were deleted afterwards. Not run: listening checks for supported and unsupported audio.",
           "counts": "1 photo and 1 video saved with matching hashes; 1 extra guest admitted"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": true,
+      "openIssues": 1
     },
     {
       "group": "Android phone app",
@@ -7525,7 +7549,7 @@
           "counts": "2 checks passed, 2 not run, on 1 phone"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Android phone app",
@@ -11303,7 +11327,7 @@
         }
       ],
       "openIssues": 0,
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Windows desktop app",
@@ -13202,7 +13226,7 @@
       "group": "Windows desktop app",
       "name": "Live TV (tuner and own playlist)",
       "status": "Beta",
-      "percentComplete": 98,
+      "percentComplete": 74,
       "checks": {
         "Built": true,
         "Automated tests": true,
@@ -13211,8 +13235,8 @@
         "Real-world check": false,
         "Ready to call Available": false
       },
-      "lastTested": "Nov 16, 2026, 6:47 PM Eastern (PARTIAL: 1 actual-channel playback case incomplete); earlier: Nov 10, 2026, 5:58 to 6:42 AM Eastern (published Android 1.56 build 128, Pixel 3, AI tester alone, throwaway test home with a two-channel test playlist: live picture on both channels; no sound seen in the phone's audio state, not confirmed by ear); Nov 8, 2026, 9:38 to 9:41 PM Eastern (published Windows 0.1.114, 4-core PC, viewed only: with the “my own playlist, allowed to use it” box unticked and the address empty, Load playlist and Choose playlist file stayed off and pressing Load did nothing; no playlist was loaded; PASS 1 of 1 for that gate); Oct 28, 2026, 7:31 PM Eastern (Windows 0.1.108, 4-core PC: own M3U playlist with two local test channels loaded after the safety question, one channel played with its controls, playlist removed; the earlier “Tuning…” finding did not show); earlier: Oct 28, 2026, 9:12 to 9:17 AM Eastern (Windows 0.1.107, the 4-core AI tester alone: a generated 2-channel own playlist (M3U) served from a tiny file server on the same PC and a playlist file; the app asked before allowing an address on this computer; “Playlist loaded: 2 channels”; the favourite star went on and off correctly every time, also with the playlist file renamed on disk, with the Favourites-only filter on, after leaving the screen and coming back, and after a failed “Refresh playlist” (red text “The playlist file was not found.”, channels kept); a channel with real transport-stream content played with Pause, Back 30 s, Forward 30 s and Go live; PASS; a channel whose stream failed said “Tuning...” for over 20 seconds with no error message (the test files were ordinary MP4 files, so this may be the test file); everything put back; sound not heard); Oct 26, 2026, 2:22 PM Eastern (installed Windows app 0.1.102, old 4-core PC: own playlist set up and a channel played with LIVE tag and controls); earlier: Oct 24, 2026, 1:25:31 AM Eastern (Last PASS; carried without rerun)",
-      "leftToReach100": "Record update Nov 17, 2026, 3:10 AM Eastern: 0 open known issues remain. The installed app reported that the tuner was not set up. No channel playback, recording, guide search or filter behavior was exercised; no tuner settings were changed. Earlier dated record: Score note (Nov 12, 2026, 11:37 AM Eastern) : 98% comes from the Emulator step (a Real device tick with a dated PASS on a public build, and no open known problem). It is not a clean pass: a possible no-sound problem seen on the Pixel 3 on Nov 10 is neither counted nor dismissed until a check by ear is done, and no real tuner or real provider playlist has been tried. The older notes below say \"stays 74%\"; that was the score at the time. Update Nov 10, 2026, 7:29 PM Eastern: Record only (stays 74%; no tick added; nothing counted). Nov 10, 2026, 12:23 PM Eastern: 11 new automated tests of the phone's Live TV code (the same code as the published Android 1.56) passed, 11 of 11, and found no fault. That does not settle the possible no-sound problem recorded this morning on the Pixel 3: a check by ear on a phone is still owed, and until then it is neither counted nor dismissed. Earlier record (kept): Update Nov 10, 2026, 7:18 AM Eastern: Record only (stays 74%; no tick added; nothing counted). Nov 10, 2026, 5:58 to 6:42 AM Eastern, Pixel 3, published Android 1.56 (build 128), AI tester alone, throwaway test home (a PC running the source of the published Windows 0.1.115, not the installer) with a made-up two-channel playlist: both channels opened with the LIVE badge; channel 1 showed a moving picture (two screenshots 4 seconds apart). Channel 2's picture did not change between screenshots, so motion there is not proven. POSSIBLE PROBLEM, not counted yet: while each live channel showed as playing, the phone's audio state showed no sound being played, while the phone did show the film's sound track playing, and the test home reported that channel 2 plays with audio. All of this was read from the phone and the test home, not heard by a person. It needs a check by ear on a phone before it is counted or dismissed. Still missing for the Real-world check: a real tuner or a real own playlist used on an installed PC; a run on the installed Windows 0.1.115 on our 4-core test PC is planned and has not reported yet. Earlier record (kept): Update Nov 9, 2026, 10:12 AM Eastern: Record only (stays 74%): Nov 8, 2026, 9:38 to 9:41 PM Eastern, published Windows 0.1.114, 4-core PC, viewed only. The Live TV page says it is not set up and Settings opens a full panel (tuners, “Your own playlist (M3U)” with a rights tick box, an address box, Load playlist, Choose playlist file, an honest note that the addresses are stored encrypted and recording is not available for playlist channels). With the rights box unticked and the address empty both buttons were off and pressing Load playlist did nothing (PASS 1 of 1 for that gate). The tester did not tick the rights box (a legal statement for the owner) and loaded no playlist, so the import, channel list, playback and the network host rules were not run. Receipt test-channel receipt 6730839259. Earlier record (kept): Update Oct 29, 2026, 12:18 PM Eastern: Record only (stays 74%, no open issue): the 4-core AI tester alone, Nick away, on the published Windows 0.1.108 (Oct 28, 2026, 7:31 PM Eastern): before setup the Live TV screen said it was not set up; in Settings > Playback and media > Live TV the “Your own playlist (M3U)” box needed the “this is my own playlist from my own provider” tick; loading a harmless local test playlist first asked “Are you sure? This playlist points at this computer or your own network … Allow these addresses?”, then said “Playlist loaded 2 channels”; the guide listed the two test channels and channel one played a green test picture with Pause, Back 30 s, Forward 30 s, Go live, LIVE and Stop; the earlier “Tuning…” finding did not show this time; Stop, Remove playlist (“Playlist removed”, “No playlist added”) and un-ticking the box put everything back. The published Windows 0.1.109 changes (the favourite star changes only after the save succeeds, tuning gives up with a message, a short network drop no longer leaves a dim Reconnecting overlay) have not been retested on any PC. Not tested: a real tuner, a real provider playlist, recording, sound. Earlier record (kept): Update Oct 28, 2026, 10:29 AM Eastern: Record only (stays 74%, the row has no open issue): the 4-core AI tester alone tried Live TV with a generated own playlist on Windows 0.1.107 (Oct 28, 2026, 9:12 to 9:17 AM Eastern). Setup: two generated test videos served from a tiny file server on the same PC (stopped again afterwards) and a 2-entry M3U file. Settings > Playback and media > Live TV and recording > Set up Live TV > Your own playlist: tick that it is the person’s own playlist and they may use it, then choose the file. The app asked “Are you sure? This playlist points at this computer or your own network… Allow these addresses?”; after OK it said “Playlist loaded: 2 channels” and both channels showed in Settings and on the Live TV screen. Favourite star: on and off right every time; right also with the playlist file renamed on disk (the app keeps its own copy); with channel 2 starred and Favourites only ticked only channel 2 was listed; after leaving the screen and coming back the filter and star were still set; star off with the filter on showed “No favourites yet. Click the star next to a channel.”; Refresh playlist with the file missing showed “The playlist file was not found.” and kept the 2 channels, after which the star still worked. Playing a channel: with ordinary MP4 test files the screen said “Tuning...” and never changed (the log showed the encoder failing twice and then “ended (encoder_failed)”), with no error message for over 20 seconds; this may be the test files, but the screen should still say it failed; with real MPEG-TS content behind the same addresses channel 1 played with Pause, Back 30 s, Forward 30 s, Go live and a “behind live” counter, and Stop worked. Clean-up: star off, filter off, “Remove playlist”, the allow tick unticked, file server stopped. Not tried: a real IPTV provider or tuner, a programme guide, recording (not available for playlist channels), phone or web watching, favourites for a second person. Sound not heard. Open known issues: 0. Code: Code, Oct 28, 2026, 10:29 AM Eastern: in Live TV the favourite star now changes only after the save has succeeded (it used to flip first); merged into the main code after Windows 0.1.108, so in no published build (it would ship in the next Windows build); automated tests and code review only; not tried on a device. Earlier record (kept): Real device check restored with a dated PASS of the installed Windows app (Oct 26, 2026, reported by about 2:22 PM Eastern; PASS with caveats). Settings > Playback & media > Live TV & recording > Set up Live TV > Your own playlist asked for a tick that this is the person’s own playlist and, for an address on the same PC, “Are you sure? This playlist points at this computer. Allow these addresses?” (good). Then “Playlist loaded: 1 channels” appeared with quality 720p and a 90-minute rewind buffer. On the Live TV screen, clicking the channel played within about 8 seconds with a LIVE tag and Pause, Back 30 s, Forward 30 s, Go live and Stop. Caveat: the test source was a 90-second file that ended every 4 seconds (the log shows the tuner ended and reconnected), so the clock jumps are the source’s and pause and rewind on a steady live feed are NOT proven. Not tested: captions, the programme guide, cast, a real tuner, and Nick seeing it (he was asked and did not answer). The test playlist was removed afterwards. Real-world stays unticked, so the score is 74%. The earlier native Cast media-loading bug is separate and still needs a real-TV retest. Earlier record (kept; the counts and items above replace its counts): Retain 49: Oct 24 1:25:31 AM synthetic own-playlist phone picture is PARTIAL; later real-TV Cast loading failed and real tuner/provider coverage remains absent. No Real device PASS is invented. Recorded scope only: The earlier S24 real-time own-playlist playback and pause PASS is carried. A later native S9+ silent channel rendered on the phone and the PC delivered the stream, but the real TV still had no media session after about 94 seconds. Normal Stop returned the receiver to idle. Still required: The existing native Cast media-loading bug needs repair and a real-TV retest. No TV picture, captions, seek or sound pass is established. A real tuner and broader channel/restriction checks remain. This is the same Cast bug, not an additional independently localized Live TV issue. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
+      "lastTested": "Nov 23, 2026, about 10:34 PM Eastern (public Windows 0.1.141, own test playlist: channel start and guide search passed, no message when the channel stopped, FAIL; public Android 1.92 on a Galaxy S9+: stopped-channel message and Try again, PASS); earlier: Nov 16, 2026, 6:47 PM Eastern (PARTIAL: 1 actual-channel playback case incomplete); earlier: Nov 10, 2026, 5:58 to 6:42 AM Eastern (published Android 1.56 build 128, Pixel 3, AI tester alone, throwaway test home with a two-channel test playlist: live picture on both channels; no sound seen in the phone's audio state, not confirmed by ear); Nov 8, 2026, 9:38 to 9:41 PM Eastern (published Windows 0.1.114, 4-core PC, viewed only: with the “my own playlist, allowed to use it” box unticked and the address empty, Load playlist and Choose playlist file stayed off and pressing Load did nothing; no playlist was loaded; PASS 1 of 1 for that gate); Oct 28, 2026, 7:31 PM Eastern (Windows 0.1.108, 4-core PC: own M3U playlist with two local test channels loaded after the safety question, one channel played with its controls, playlist removed; the earlier “Tuning…” finding did not show); earlier: Oct 28, 2026, 9:12 to 9:17 AM Eastern (Windows 0.1.107, the 4-core AI tester alone: a generated 2-channel own playlist (M3U) served from a tiny file server on the same PC and a playlist file; the app asked before allowing an address on this computer; “Playlist loaded: 2 channels”; the favourite star went on and off correctly every time, also with the playlist file renamed on disk, with the Favourites-only filter on, after leaving the screen and coming back, and after a failed “Refresh playlist” (red text “The playlist file was not found.”, channels kept); a channel with real transport-stream content played with Pause, Back 30 s, Forward 30 s and Go live; PASS; a channel whose stream failed said “Tuning...” for over 20 seconds with no error message (the test files were ordinary MP4 files, so this may be the test file); everything put back; sound not heard); Oct 26, 2026, 2:22 PM Eastern (installed Windows app 0.1.102, old 4-core PC: own playlist set up and a channel played with LIVE tag and controls); earlier: Oct 24, 2026, 1:25:31 AM Eastern (Last PASS; carried without rerun)",
+      "leftToReach100": "Update Nov 24, 2026, 1:05 AM Eastern: Moved 98% to 74%: 1 open known issue (an open known issue removes the 98% real-device step until it is fixed, so the row shows only its three passed checks). On Nov 23, 2026 at about 10:34 PM Eastern, on the public Windows 0.1.141 with an own test playlist, a test channel started in about 8 to 10 seconds and the guide search worked (“bravo” filtered, “zzzz” showed 0 channels). But when the 40-second test clip stopped, the PC player froze on the last picture with a Play button and a LIVE badge and, after more than 60 seconds, still gave no plain message that the channel had stopped. The same night a Galaxy S9+ on the public Android 1.92 did show “This channel has stopped sending.” with Try again, and Try again restarted the channel. A fix for the PC player is written and reviewed but is not in a published download yet, so the problem stays open until it passes on a published build. Still needed for 99 as well: a real tuner or real provider playlist, and sound heard by a person. Earlier record (kept): Record update Nov 17, 2026, 3:10 AM Eastern: 0 open known issues remain. The installed app reported that the tuner was not set up. No channel playback, recording, guide search or filter behavior was exercised; no tuner settings were changed. Earlier dated record: Score note (Nov 12, 2026, 11:37 AM Eastern) : 98% comes from the Emulator step (a Real device tick with a dated PASS on a public build, and no open known problem). It is not a clean pass: a possible no-sound problem seen on the Pixel 3 on Nov 10 is neither counted nor dismissed until a check by ear is done, and no real tuner or real provider playlist has been tried. The older notes below say \"stays 74%\"; that was the score at the time. Update Nov 10, 2026, 7:29 PM Eastern: Record only (stays 74%; no tick added; nothing counted). Nov 10, 2026, 12:23 PM Eastern: 11 new automated tests of the phone's Live TV code (the same code as the published Android 1.56) passed, 11 of 11, and found no fault. That does not settle the possible no-sound problem recorded this morning on the Pixel 3: a check by ear on a phone is still owed, and until then it is neither counted nor dismissed. Earlier record (kept): Update Nov 10, 2026, 7:18 AM Eastern: Record only (stays 74%; no tick added; nothing counted). Nov 10, 2026, 5:58 to 6:42 AM Eastern, Pixel 3, published Android 1.56 (build 128), AI tester alone, throwaway test home (a PC running the source of the published Windows 0.1.115, not the installer) with a made-up two-channel playlist: both channels opened with the LIVE badge; channel 1 showed a moving picture (two screenshots 4 seconds apart). Channel 2's picture did not change between screenshots, so motion there is not proven. POSSIBLE PROBLEM, not counted yet: while each live channel showed as playing, the phone's audio state showed no sound being played, while the phone did show the film's sound track playing, and the test home reported that channel 2 plays with audio. All of this was read from the phone and the test home, not heard by a person. It needs a check by ear on a phone before it is counted or dismissed. Still missing for the Real-world check: a real tuner or a real own playlist used on an installed PC; a run on the installed Windows 0.1.115 on our 4-core test PC is planned and has not reported yet. Earlier record (kept): Update Nov 9, 2026, 10:12 AM Eastern: Record only (stays 74%): Nov 8, 2026, 9:38 to 9:41 PM Eastern, published Windows 0.1.114, 4-core PC, viewed only. The Live TV page says it is not set up and Settings opens a full panel (tuners, “Your own playlist (M3U)” with a rights tick box, an address box, Load playlist, Choose playlist file, an honest note that the addresses are stored encrypted and recording is not available for playlist channels). With the rights box unticked and the address empty both buttons were off and pressing Load playlist did nothing (PASS 1 of 1 for that gate). The tester did not tick the rights box (a legal statement for the owner) and loaded no playlist, so the import, channel list, playback and the network host rules were not run. Receipt test-channel receipt 6730839259. Earlier record (kept): Update Oct 29, 2026, 12:18 PM Eastern: Record only (stays 74%, no open issue): the 4-core AI tester alone, Nick away, on the published Windows 0.1.108 (Oct 28, 2026, 7:31 PM Eastern): before setup the Live TV screen said it was not set up; in Settings > Playback and media > Live TV the “Your own playlist (M3U)” box needed the “this is my own playlist from my own provider” tick; loading a harmless local test playlist first asked “Are you sure? This playlist points at this computer or your own network … Allow these addresses?”, then said “Playlist loaded 2 channels”; the guide listed the two test channels and channel one played a green test picture with Pause, Back 30 s, Forward 30 s, Go live, LIVE and Stop; the earlier “Tuning…” finding did not show this time; Stop, Remove playlist (“Playlist removed”, “No playlist added”) and un-ticking the box put everything back. The published Windows 0.1.109 changes (the favourite star changes only after the save succeeds, tuning gives up with a message, a short network drop no longer leaves a dim Reconnecting overlay) have not been retested on any PC. Not tested: a real tuner, a real provider playlist, recording, sound. Earlier record (kept): Update Oct 28, 2026, 10:29 AM Eastern: Record only (stays 74%, the row has no open issue): the 4-core AI tester alone tried Live TV with a generated own playlist on Windows 0.1.107 (Oct 28, 2026, 9:12 to 9:17 AM Eastern). Setup: two generated test videos served from a tiny file server on the same PC (stopped again afterwards) and a 2-entry M3U file. Settings > Playback and media > Live TV and recording > Set up Live TV > Your own playlist: tick that it is the person’s own playlist and they may use it, then choose the file. The app asked “Are you sure? This playlist points at this computer or your own network… Allow these addresses?”; after OK it said “Playlist loaded: 2 channels” and both channels showed in Settings and on the Live TV screen. Favourite star: on and off right every time; right also with the playlist file renamed on disk (the app keeps its own copy); with channel 2 starred and Favourites only ticked only channel 2 was listed; after leaving the screen and coming back the filter and star were still set; star off with the filter on showed “No favourites yet. Click the star next to a channel.”; Refresh playlist with the file missing showed “The playlist file was not found.” and kept the 2 channels, after which the star still worked. Playing a channel: with ordinary MP4 test files the screen said “Tuning...” and never changed (the log showed the encoder failing twice and then “ended (encoder_failed)”), with no error message for over 20 seconds; this may be the test files, but the screen should still say it failed; with real MPEG-TS content behind the same addresses channel 1 played with Pause, Back 30 s, Forward 30 s, Go live and a “behind live” counter, and Stop worked. Clean-up: star off, filter off, “Remove playlist”, the allow tick unticked, file server stopped. Not tried: a real IPTV provider or tuner, a programme guide, recording (not available for playlist channels), phone or web watching, favourites for a second person. Sound not heard. Open known issues: 0. Code: Code, Oct 28, 2026, 10:29 AM Eastern: in Live TV the favourite star now changes only after the save has succeeded (it used to flip first); merged into the main code after Windows 0.1.108, so in no published build (it would ship in the next Windows build); automated tests and code review only; not tried on a device. Earlier record (kept): Real device check restored with a dated PASS of the installed Windows app (Oct 26, 2026, reported by about 2:22 PM Eastern; PASS with caveats). Settings > Playback & media > Live TV & recording > Set up Live TV > Your own playlist asked for a tick that this is the person’s own playlist and, for an address on the same PC, “Are you sure? This playlist points at this computer. Allow these addresses?” (good). Then “Playlist loaded: 1 channels” appeared with quality 720p and a 90-minute rewind buffer. On the Live TV screen, clicking the channel played within about 8 seconds with a LIVE tag and Pause, Back 30 s, Forward 30 s, Go live and Stop. Caveat: the test source was a 90-second file that ended every 4 seconds (the log shows the tuner ended and reconnected), so the clock jumps are the source’s and pause and rewind on a steady live feed are NOT proven. Not tested: captions, the programme guide, cast, a real tuner, and Nick seeing it (he was asked and did not answer). The test playlist was removed afterwards. Real-world stays unticked, so the score is 74%. The earlier native Cast media-loading bug is separate and still needs a real-TV retest. Earlier record (kept; the counts and items above replace its counts): Retain 49: Oct 24 1:25:31 AM synthetic own-playlist phone picture is PARTIAL; later real-TV Cast loading failed and real tuner/provider coverage remains absent. No Real device PASS is invented. Recorded scope only: The earlier S24 real-time own-playlist playback and pause PASS is carried. A later native S9+ silent channel rendered on the phone and the PC delivered the stream, but the real TV still had no media session after about 94 seconds. Normal Stop returned the receiver to idle. Still required: The existing native Cast media-loading bug needs repair and a real-TV retest. No TV picture, captions, seek or sound pass is established. A real tuner and broader channel/restriction checks remain. This is the same Cast bug, not an additional independently localized Live TV issue. The final ledgers are reconciled, but this does not finish the feature or add a checkmark. Nick alone records Ready.",
       "roadTo100": {
         "means": "A real tuner and a real playlist both work on a PC, with a correct guide and safe source rules.",
         "done": [
@@ -13244,8 +13268,8 @@
         ]
       },
       "previousPercent": 98,
-      "changedEastern": "Nov 17, 2026, 3:10 AM Eastern",
-      "changeNote": "Dated public-build records added; score stays 98%. 1 actual-channel playback case incomplete.",
+      "changedEastern": "Nov 24, 2026, 1:05 AM Eastern",
+      "changeNote": "New open known issue on the published Windows 0.1.141, Nov 23, 2026: when a test channel stopped, the PC player froze on the last picture with no message. The phone on Android 1.92 did show the message. Score 98% to 74%: an open known issue removes the 98% real-device step until it is fixed.",
       "codeDonePercent": 100,
       "realWorldDonePercent": 33,
       "codeItemsLeft": 1,
@@ -13261,6 +13285,11 @@
         }
       ],
       "changeHistory": [
+        {
+          "changedEastern": "Nov 24, 2026, 1:05 AM Eastern",
+          "previousPercent": 98,
+          "changeNote": "New open known issue on the published Windows 0.1.141, Nov 23, 2026: when a test channel stopped, the PC player froze on the last picture with no message. The phone on Android 1.92 did show the message. Score 98% to 74%: an open known issue removes the 98% real-device step until it is fixed."
+        },
         {
           "changedEastern": "Nov 14, 2026, 4:04 AM Eastern",
           "previousPercent": 98,
@@ -13419,10 +13448,40 @@
           "date": "Oct 21, 2026, 8:11 AM Eastern",
           "result": "PARTIAL",
           "evidence": "The address-safety question appeared and Cancel added nothing; a local file with one public test stream loaded, played for about 10 seconds and was removed. Not run: a real tuner, a public playlist address, the confirm-for-real path, restricted profiles."
+        },
+        {
+          "tester": "AI tester",
+          "device": "Windows PC (24 cores), installed Beebo app and Chrome",
+          "build": "PUBLIC Windows 0.1.141 (published Nov 23, 2026, 9:26 PM Eastern), installed on the 24-core test PC",
+          "date": "Nov 23, 2026, 10:34 PM Eastern",
+          "result": "FAIL",
+          "evidence": "Own test playlist with two test channels. G1: a channel opened cold and played in about 8 to 10 seconds (PASS). G3: guide search “bravo” filtered and “zzzz” showed 0 channels (PASS). G2: when a 40-second test clip stopped, the player froze on the last picture with a Play button and a LIVE badge, and after more than 60 seconds there was still no plain message that the channel had stopped (FAIL). No real tuner or provider playlist was used.",
+          "ticks": [],
+          "sourceCommentIds": [
+            "7121219788",
+            "7121220051"
+          ]
+        },
+        {
+          "tester": "AI tester",
+          "device": "Galaxy S9+ (Android 10), home Wi-Fi",
+          "build": "PUBLIC Android 1.92 (build 165; published Nov 23, 2026, 10:16 PM Eastern)",
+          "date": "Nov 23, 2026, 10:33 PM Eastern",
+          "result": "PASS",
+          "evidence": "After a 30-second test channel clip ended, the phone showed the red text “This channel has stopped sending.” with Try again instead of a frozen picture (H1), and Try again restarted the channel with its counter running (H2). Sound was not judged.",
+          "ticks": [],
+          "sourceCommentIds": [
+            "7121213712"
+          ]
         }
       ],
       "testedOn": "Real Windows PC development server 0.1.99 and the phone/browser devices named in the subset. The earlier S24 real-time own-playlist playback and pause PASS is carried. A later native S9+ silent channel rendered on the phone and the PC delivered the stream, but the real TV still had no media session after about 94 seconds. Normal Stop returned the receiver to idle. Last PASS: Oct 24, 2026, 1:25:31 AM Eastern. The installed Windows application was never launched. Final phone and PC ledgers now agree; remaining acceptance gaps are explicit.",
       "recentDeviceEvidence": [
+        {
+          "date": null,
+          "summary": "Nov 23, 2026, 10:34 PM Eastern: Own test playlist with two test channels. G1: a channel opened cold and played in about 8 to 10 seconds (PASS). G3: guide search “bravo” filtered and “zzzz” showed 0 channels (PASS). G2: when a 40-second test clip stopped, the player froze on the last picture with a Play button and a LIVE badge, and after more than 60 seconds there was still no plain message that the channel had stopped (FAIL). No real tuner or provider playlist was used.",
+          "counts": "2 of 3 PC checks passed; 2 of 2 phone checks passed; 1 new problem"
+        },
         {
           "date": null,
           "summary": "Nov 16, 2026, 6:47 PM Eastern: The installed app reported that the tuner was not set up. No channel playback, recording, guide search or filter behavior was exercised; no tuner settings were changed.",
@@ -13435,15 +13494,16 @@
         }
       ],
       "latestCheck": {
-        "at": "Nov 16, 2026, 6:47 PM Eastern",
-        "build": "PUBLIC Windows 0.1.123",
-        "device": "Windows PC, real installed Beebo app",
-        "result": "PARTIAL",
-        "who": "AI tester alone; dated record, not a new run"
+        "at": "Nov 23, 2026, 10:34 PM Eastern",
+        "build": "PUBLIC Windows 0.1.141 (published Nov 23, 2026, 9:26 PM Eastern), installed on the 24-core test PC",
+        "device": "Windows PC (24 cores), installed Beebo app and Chrome",
+        "result": "FAIL",
+        "who": "AI tester. channel start and guide search passed; no message when the channel stopped"
       },
-      "scoreNote": "Record limit: the possible no-sound problem on the Pixel 3 (Nov 10, 2026) is not counted and not dismissed. The 98% is the Emulator step, not a clean pass; sound has not been heard by a person.",
-      "updatedThisRun": false,
-      "codeCompletionPercent": null
+      "scoreNote": "Held at 74% by one open known issue since Nov 24, 2026, 1:05 AM Eastern: the PC player gives no message when a channel stops (fix written, not yet in a published download). Record limit (kept): the possible no-sound problem on the Pixel 3 (Nov 10, 2026) is not counted and not dismissed; sound has not been heard by a person, and no real tuner or real provider playlist has been tried.",
+      "updatedThisRun": true,
+      "codeCompletionPercent": null,
+      "openIssues": 1
     },
     {
       "group": "Windows desktop app",
@@ -18360,7 +18420,7 @@
           "counts": "5 of 5 card checks passed on 2 phones; same steps passed in 2 PC browser windows"
         }
       ],
-      "updatedThisRun": true
+      "updatedThisRun": false
     },
     {
       "group": "Services and website",
@@ -21717,13 +21777,6 @@
             "basis": [
               "Windows has switched this off for Beebo"
             ]
-          },
-          {
-            "feature": "Live TV (tuner and own playlist)",
-            "need": "A real-TV retest of the Cast bug, a real tuner and a review of the guide and source limits are still to do.",
-            "basis": [
-              "Independent review of the guide, path and source restrictions"
-            ]
           }
         ],
         "blockers": [
@@ -21934,13 +21987,6 @@
             "need": "Passed on a real phone at a real home (Nov 23). A second member’s own phone, automatic expiry and months of family use are untested.",
             "basis": [
               "months of family use"
-            ]
-          },
-          {
-            "feature": "Shared photos and videos",
-            "need": "A photo and video saved on a second phone with matching hashes (Nov 23). Joining during a transfer and audio listening remain.",
-            "basis": [
-              "audio listening checks"
             ]
           }
         ],

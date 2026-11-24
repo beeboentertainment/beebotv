@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-23T08:15:00-05:00",
-  "updatedEastern": "Nov 23, 2026, 8:15 AM Eastern",
-  "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain.",
+  "updatedAt": "2026-11-24T01:05:00-05:00",
+  "updatedEastern": "Nov 24, 2026, 1:05 AM Eastern",
+  "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain. Nov 24, 2026, 1:05 AM Eastern: Nov 23 night results on the published Windows 0.1.141 and Android 1.91 and 1.92 were added; two rows moved down for new open known issues, none moved up.",
   "features": [
     {
       "featureId": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
@@ -202,15 +202,16 @@
     {
       "featureId": "feature-android-phone-app-shared-photos-and-videos",
       "scoreBefore": 74,
-      "scoreAfter": 98,
+      "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 23, 2026, 11:05 PM Eastern real-phone record",
         "Nov 23, 2026, 7:09 to 7:53 AM Eastern real-phone records",
         "Oct 23–24, 2026",
         "Nov 2, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Nov 23 real-phone record: on the public Android 1.89 (162) a Galaxy S9+ guest saved a shared photo and video with matching file hashes. Current score 98%; the real-world check (admission during an active transfer, audio listening) is still open. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Two-phone photo navigation, a saved-video hash match and picture checks support the device mark. Newer video-policy tests add source evidence only. Audible playback and concurrency remain unproved. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
+      "summary": "Nov 24 update: a new open known issue on the published phone builds (a multi-file pick in Add photos or videos added nothing; one at a time worked) removes the 98% real-device step, so the row shows 74% until the fix passes on a published build. A fix is written and is not in a published download yet. Earlier dated review: Nov 23 real-phone record: on the public Android 1.89 (162) a Galaxy S9+ guest saved a shared photo and video with matching file hashes. Current score 98%; the real-world check (admission during an active transfer, audio listening) is still open. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Two-phone photo navigation, a saved-video hash match and picture checks support the device mark. Newer video-policy tests add source evidence only. Audible playback and concurrency remain unproved. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     },
     {
       "featureId": "feature-android-phone-app-wireless-speakers",
@@ -527,16 +528,17 @@
     {
       "featureId": "feature-windows-desktop-app-live-tv-tuner-and-own-playlist",
       "scoreBefore": 98,
-      "scoreAfter": 98,
+      "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 23, 2026, 10:33 to 10:34 PM Eastern PC and phone records",
         "Nov 16–17, 2026 public-build records",
         "Oct 23–28, 2026",
         "Nov 8–9, 2026",
         "Nov 10, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. HTTP and restriction checks plus installed playback of a two-channel test playlist support the recorded checks. A real tuner/provider, guide, recording, Live TV casting and listening remain open. Nov 8 update: the own-playlist panel keeps its buttons off until the rights box is ticked (view only); nothing loaded; no score change. Nov 10, 2026, 7:18 AM Eastern: Stays 74%. Pixel 3 on the published Android 1.56 showed two test channels live; a possible no-sound problem on live channels is recorded and waits for a check by ear before it is counted. Nov 10, 2026, 7:29 PM Eastern: Stays 74%. 11 of 11 new automated Live TV tests passed; the possible no-sound problem still waits for a check by ear. Nov 12, 2026, 11:27 AM Eastern: 74% to 98% from the new Emulator step. The row already had a Real device tick and a dated PASS on a real device, which now also counts for the 98 step. No new test was run and nothing was ticked. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern. Record update Nov 17, 2026, 3:10 AM Eastern: 1 actual-channel playback case incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 0."
+      "summary": "Nov 24 update: a new open known issue on the published Windows 0.1.141 (no message when a channel stops; the phone on 1.92 does show it) removes the 98% real-device step, so the row shows 74% until the fix passes on a published build. A fix is written and is not in a published download yet. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. HTTP and restriction checks plus installed playback of a two-channel test playlist support the recorded checks. A real tuner/provider, guide, recording, Live TV casting and listening remain open. Nov 8 update: the own-playlist panel keeps its buttons off until the rights box is ticked (view only); nothing loaded; no score change. Nov 10, 2026, 7:18 AM Eastern: Stays 74%. Pixel 3 on the published Android 1.56 showed two test channels live; a possible no-sound problem on live channels is recorded and waits for a check by ear before it is counted. Nov 10, 2026, 7:29 PM Eastern: Stays 74%. 11 of 11 new automated Live TV tests passed; the possible no-sound problem still waits for a check by ear. Nov 12, 2026, 11:27 AM Eastern: 74% to 98% from the new Emulator step. The row already had a Real device tick and a dated PASS on a real device, which now also counts for the 98 step. No new test was run and nothing was ticked. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern. Record update Nov 17, 2026, 3:10 AM Eastern: 1 actual-channel playback case incomplete. Existing score retained; no whole-feature check or final acceptance added. Current open known issues: 0."
     },
     {
       "featureId": "feature-windows-desktop-app-story-studio",
@@ -957,7 +959,7 @@
       "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Roadmap and example home-automation setup are not a demonstrated Google Assistant or Alexa integration. No real setup or command acceptance supports moving above 0%. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     }
   ],
-  "newKnownProblemCount": 36,
+  "newKnownProblemCount": 38,
   "newKnownProblemIds": [
     "audio-after-sign-out",
     "audio-refusal-refresh",
@@ -966,6 +968,7 @@
     "browser-mpeg4-direct-black-picture",
     "browser-original-rewind-freeze",
     "built-in-player-stall",
+    "campsite-multi-pick-adds-nothing",
     "campsite-refresh-paused",
     "campsite-seek-follow",
     "caption-seek-cue",
@@ -981,6 +984,7 @@
     "narrow-desktop-layout",
     "notification-column-clipping",
     "patience-compressed-board",
+    "pc-live-tv-no-stopped-message",
     "planner-notification-stop",
     "quiz-selected-answer",
     "relay-untranslated-failure-copy",
