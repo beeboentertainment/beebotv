@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-24T08:20:00-05:00",
-  "updatedEastern": "Nov 24, 2026, 8:20 AM Eastern",
-  "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain. Nov 24, 2026, 1:05 AM Eastern: Nov 23 night results on the published Windows 0.1.141 and Android 1.91 and 1.92 were added; two rows moved down for new open known issues, none moved up. Nov 24, 2026, 2:05 AM Eastern: Android 1.93 phone checks were added; Shared photos and videos returned to 98% after its known problem was fixed and checked. Nov 24, 2026, 8:20 AM Eastern: Windows 0.1.142 and Android 1.94 device checks were added; Live TV returned to 98% after its known problem was fixed and checked; Campsite games and picture-in-picture records added, scores unchanged.",
+  "updatedAt": "2026-11-24T09:35:00-05:00",
+  "updatedEastern": "Nov 24, 2026, 9:35 AM Eastern",
+  "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain. Nov 24, 2026, 1:05 AM Eastern: Nov 23 night results on the published Windows 0.1.141 and Android 1.91 and 1.92 were added; two rows moved down for new open known issues, none moved up. Nov 24, 2026, 2:05 AM Eastern: Android 1.93 phone checks were added; Shared photos and videos returned to 98% after its known problem was fixed and checked. Nov 24, 2026, 8:20 AM Eastern: Windows 0.1.142 and Android 1.94 device checks were added; Live TV returned to 98% after its known problem was fixed and checked; Campsite games and picture-in-picture records added, scores unchanged. Nov 24, 2026, 9:35 AM Eastern: Windows 0.1.142 and Android 1.94 results were added; eight rows moved up for closed known problems (seven to 99% or 98%, Surprise me with its Ready tick removed), none moved down, and one new known problem was recorded.",
   "features": [
     {
       "featureId": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
@@ -66,11 +66,12 @@
       "scoreAfter": 74,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 9:25 AM Eastern S9+ record",
         "Oct 12–26, 2026",
         "Nov 14, 2026, 12:30 AM Eastern",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Nov 14, 2026, 12:30 AM Eastern: 74% to 74%; 1 open known issues (0 newly recorded on this feature). Two independent Chrome sessions on the installed server followed play/seek/pause, explicit host handoff and room end. A second room showed host-away notice and automatic promotion; the notice then cleared. Not tried: WAN interruption, phones, heard sound and all existing issues; the historical score cap remains. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
+      "summary": "Nov 24 update: FAIL 3 of 3 on the public Android 1.94: a phone signed in to the home server still cannot host a room. This is the row’s existing open problem. Score stays 74%; 1 open known issue. Earlier review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Nov 14, 2026, 12:30 AM Eastern: 74% to 74%; 1 open known issues (0 newly recorded on this feature). Two independent Chrome sessions on the installed server followed play/seek/pause, explicit host handoff and room end. A second room showed host-away notice and automatic promotion; the notice then cleared. Not tried: WAN interruption, phones, heard sound and all existing issues; the historical score cap remains. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     },
     {
       "featureId": "feature-android-phone-app-car-party-host-and-passengers",
@@ -100,14 +101,15 @@
     {
       "featureId": "feature-android-phone-app-surprise-me-playlists-watchlist-favourites",
       "scoreBefore": 90,
-      "scoreAfter": 90,
+      "scoreAfter": 99,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 9:32 AM Eastern 6-core PC record",
         "Nov 21, 2026",
         "Oct 12–27, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "November evidence update. Private test build: Android 1.85-tester1 (157). 2 phones opened an empty chooser. 1 phone showed counts on 2 library rows. Earlier review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Retains the feature-specific Oct 27 owner/coordinator acceptance of random playback, controls, saved marks and playlist operations with heard sound. Empty/error, sharing, smart-list and TV-show cases remain outside scope. Nov 10, 2026, 8:06 PM Eastern: Moved 100% to 90% on Nick’s instruction (drop a feature that is not working). Two problems were found by automated tests of the Windows 0.1.115 source, not on an installed copy, in the Watchlist page of the desktop and web app (the Discover watchlist), which the phone app’s own watchlist does not use: (1) a failed watchlist read is treated as empty data, so a following add can overwrite that member’s saved entries, or every other member’s watchlist; (2) watchlist add and remove report success after the settings write has failed, leaving the saved list unchanged. Open known issues went from 0 to 2. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
+      "summary": "Nov 24 update: 90% to 99%, 0 open known issues. The two Watchlist failure-path problems are closed on record (fixed in code merged Nov 13, published in Windows 0.1.142; automated tests and two code reviews, not seen on an installed PC); add, list and remove passed 3 of 3. The Ready tick is removed for now; Nick’s Ready word is awaited. Earlier review: November evidence update. Private test build: Android 1.85-tester1 (157). 2 phones opened an empty chooser. 1 phone showed counts on 2 library rows. Earlier review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Retains the feature-specific Oct 27 owner/coordinator acceptance of random playback, controls, saved marks and playlist operations with heard sound. Empty/error, sharing, smart-list and TV-show cases remain outside scope. Nov 10, 2026, 8:06 PM Eastern: Moved 100% to 90% on Nick’s instruction (drop a feature that is not working). Two problems were found by automated tests of the Windows 0.1.115 source, not on an installed copy, in the Watchlist page of the desktop and web app (the Discover watchlist), which the phone app’s own watchlist does not use: (1) a failed watchlist read is treated as empty data, so a following add can overwrite that member’s saved entries, or every other member’s watchlist; (2) watchlist add and remove report success after the settings write has failed, leaving the saved list unchanged. Open known issues went from 0 to 2. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     },
     {
       "featureId": "feature-android-phone-app-campsite-host-start-and-stop",
@@ -351,15 +353,16 @@
     {
       "featureId": "feature-android-phone-app-accessibility-choices-large-text-high-contrast-reduced-motion-talkback",
       "scoreBefore": 90,
-      "scoreAfter": 90,
+      "scoreAfter": 99,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 9:25 AM Eastern S9+ record",
         "Oct 12–28, 2026",
         "Nov 8–9, 2026",
         "Nov 9, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Owner-confirmed large text/contrast and later maximum-font fixes support the existing 99%. Complete accessibility workflows and TalkBack judged by ear remain open, and final acceptance stays false. Desktop-only fixes add no Android credit. Nov 9 update: 99% to 90%. In Read It To Me, Resume went back to the very start with Nick on the public Android 1.55; it is an open known issue and Nick said the feature stays below 100 until it is fixed. Other Read It To Me checks passed; TalkBack by ear is still untried. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, the open issue stays): sweeps at 1.3 to 2.0 phone text size passed on public 1.56 and the 1.57 test build; Read It To Me Resume is still open. Nov 10, 2026, 3:39 AM Eastern: Stays 90%. Large text up to double size passed on two phones with the 1.57 test build; TalkBack, high contrast and reduced motion were not run. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
+      "summary": "Nov 24 update: 90% to 99%, 0 open known issues. Read It To Me Resume kept its place 3 of 3 on the public Android 1.94 (last part only, muted). TalkBack by ear is untried; Ready is not ticked. Earlier review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Owner-confirmed large text/contrast and later maximum-font fixes support the existing 99%. Complete accessibility workflows and TalkBack judged by ear remain open, and final acceptance stays false. Desktop-only fixes add no Android credit. Nov 9 update: 99% to 90%. In Read It To Me, Resume went back to the very start with Nick on the public Android 1.55; it is an open known issue and Nick said the feature stays below 100 until it is fixed. Other Read It To Me checks passed; TalkBack by ear is still untried. Nov 9 fourth edit (Nov 9, 2026, 2:10 PM Eastern): Record only (stays 90%, the open issue stays): sweeps at 1.3 to 2.0 phone text size passed on public 1.56 and the 1.57 test build; Read It To Me Resume is still open. Nov 10, 2026, 3:39 AM Eastern: Stays 90%. Large text up to double size passed on two phones with the 1.57 test build; TalkBack, high contrast and reduced motion were not run. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     },
     {
       "featureId": "feature-android-phone-app-music-on-the-phone-albums-songs-player-sleep-timer",
@@ -419,12 +422,13 @@
       "scoreAfter": 90,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 9:11 to 9:16 AM Eastern Pixel 3 and S9+ record",
         "Nov 17–18, 2026 device records, reconciled Nov 19",
         "Oct 23–26, 2026",
         "Nov 2, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Nov 19 evidence update: Library and Request a title chips passed; two text areas remained clipped; Smoke passed on 2 of 2 phones; no crash or ANR reported; Collections title full in 1 S9+ spot check. Current score 90%; 2 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Retains Nick's Oct 26 scoped collections/request acceptance. A later same-day trailer picture/sound observation is already recorded and supersedes the old 'untried' note. Newer collection tests do not broaden final acceptance. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Nov 10, 2026, 8:06 PM Eastern: Moved 100% to 90% on Nick’s instruction (drop a feature that is not working). Two problems were found by automated tests of the Windows 0.1.115 source, not on an installed copy, in the Request a title code: (1) matching a request to the library by name ignores conflicting title identities or TV years, so a request can be wrongly fulfilled or a missing title refused as already in the library; (2) name-only requests merge different years and can absorb later picks with different movie-info (TMDB) IDs. Open known issues went from 0 to 2. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
+      "summary": "Nov 24 update: three screens passed 4 of 4 each on the public Android 1.94 (Pixel 3 and S9+). One new known problem (the collection detail subtitle ends short; fixed in the code, not public). The request same-name, different-year check was NOT RUN. Score stays 90%; now 3 open known issues. Earlier review: Nov 19 evidence update: Library and Request a title chips passed; two text areas remained clipped; Smoke passed on 2 of 2 phones; no crash or ANR reported; Collections title full in 1 S9+ spot check. Current score 90%; 2 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Retains Nick's Oct 26 scoped collections/request acceptance. A later same-day trailer picture/sound observation is already recorded and supersedes the old 'untried' note. Newer collection tests do not broaden final acceptance. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Nov 10, 2026, 8:06 PM Eastern: Moved 100% to 90% on Nick’s instruction (drop a feature that is not working). Two problems were found by automated tests of the Windows 0.1.115 source, not on an installed copy, in the Request a title code: (1) matching a request to the library by name ignores conflicting title identities or TV years, so a request can be wrongly fulfilled or a missing title refused as already in the library; (2) name-only requests merge different years and can absorb later picks with different movie-info (TMDB) IDs. Open known issues went from 0 to 2. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     },
     {
       "featureId": "feature-android-phone-app-photos-and-phone-backups-timeline-albums-viewer",
@@ -501,16 +505,17 @@
     {
       "featureId": "feature-windows-desktop-app-update-modes-and-start-with-windows",
       "scoreBefore": 90,
-      "scoreAfter": 90,
+      "scoreAfter": 99,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 9:18 AM Eastern 6-core PC record",
         "Nov 17–18, 2026 device records, reconciled Nov 19",
         "Nov 15–16, 2026 device tests",
         "Oct 22–28, 2026",
         "Nov 9, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Earlier comparison with Nov 14: 98% to 90%. Nov 19 evidence update: Single-word settings searches improved; exact phrase still failed. Current score 90%; 2 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: Real update and restart passed on the 4-core test PC (Windows 0.1.120 to 0.1.121 to 0.1.122 by its own updater; after a Windows restart Beebo started by itself and stayed signed in), so the Real-world check is now ticked. One new open issue: the Start-with-Windows box wrongly says Windows has switched Beebo off. An open issue caps the row at 90%. Score on Nov 14, 2026: 98%; now 90%; open known issues: 1."
+      "summary": "Nov 24 update: 90% to 99%, 0 open known issues. On the public Windows 0.1.142 the searches “start with Windows” and “run at startup” find the setting and no “Windows has switched this off” warning shows. Ready is not ticked. Earlier review: Earlier comparison with Nov 14: 98% to 90%. Nov 19 evidence update: Single-word settings searches improved; exact phrase still failed. Current score 90%; 2 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: Real update and restart passed on the 4-core test PC (Windows 0.1.120 to 0.1.121 to 0.1.122 by its own updater; after a Windows restart Beebo started by itself and stayed signed in), so the Real-world check is now ticked. One new open issue: the Start-with-Windows box wrongly says Windows has switched Beebo off. An open issue caps the row at 90%. Score on Nov 14, 2026: 98%; now 90%; open known issues: 1."
     },
     {
       "featureId": "feature-windows-desktop-app-converter-and-quality-speed-settings",
@@ -547,14 +552,15 @@
     {
       "featureId": "feature-windows-desktop-app-story-studio",
       "scoreBefore": 74,
-      "scoreAfter": 74,
+      "scoreAfter": 98,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 9:29 AM Eastern 6-core PC record",
         "Oct 28–29, 2026",
         "Nov 8–9, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. One100-case batch across12suites. Shared cross-feature batch: do not credit100 independently to every feature or sum with reruns of overlapping suites. No live account/service/phone/update acceptance. Score on Nov 14, 2026: 74%; now 74%; open known issues: 1. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
+      "summary": "Nov 24 update: 74% to 98%, 0 open known issues. The typed title names the motion-proof video and the scene line has text (public Windows 0.1.142). No story with voices has been heard by a person. Earlier review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. One100-case batch across12suites. Shared cross-feature batch: do not credit100 independently to every feature or sum with reruns of overlapping suites. No live account/service/phone/update acceptance. Score on Nov 14, 2026: 74%; now 74%; open known issues: 1. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
     },
     {
       "featureId": "feature-windows-desktop-app-movie-night",
@@ -726,9 +732,10 @@
     {
       "featureId": "feature-windows-desktop-app-home-layouts-and-customize-layout-desktop",
       "scoreBefore": 90,
-      "scoreAfter": 90,
+      "scoreAfter": 99,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 9:28 AM Eastern 6-core PC record",
         "Nov 15–16, 2026 device tests",
         "Oct 26–29, 2026",
         "Nov 2, 2026",
@@ -738,7 +745,7 @@
         "Nov 14, 2026, 12:30 AM Eastern",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Earlier comparison with Nov 14: 99% to 90%. Record only (stays 90%): moving a Home row and saving, then putting it back, passed on Windows 0.1.121. Score on Nov 14, 2026: 90%; now 90%; open known issues: 1."
+      "summary": "Nov 24 update: 90% to 99%, 0 open known issues. Home photo previews pass on 4 of 4 layouts that show them (public Windows 0.1.142). Ready is not ticked. Earlier review: Earlier comparison with Nov 14: 99% to 90%. Record only (stays 90%): moving a Home row and saving, then putting it back, passed on Windows 0.1.121. Score on Nov 14, 2026: 90%; now 90%; open known issues: 1."
     },
     {
       "featureId": "feature-windows-desktop-app-picture-frame-photo-wall-for-a-tablet-or-tv",
@@ -812,16 +819,17 @@
     {
       "featureId": "feature-services-and-website-beebo-relay-fallback-connection",
       "scoreBefore": 90,
-      "scoreAfter": 90,
+      "scoreAfter": 99,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 9:16 to 9:18 AM Eastern PC log check",
         "Nov 17–18, 2026 device records, reconciled Nov 19",
         "Oct 26–28, 2026",
         "Nov 2, 2026",
         "Nov 11, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Nov 19 evidence update: Relay confirmation wording passed; no per-phone tally supplied. Current score 90%; 2 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Relay failure/retry notices remain hardcoded English in all five fully translated locales. One shared localization defect across Languages and Relay, not five new defects. Exact-release formatter/model checks; live service failures were not triggered. One100-case batch across12suites. Shared cross-feature batch: do not credit100 independently to every feature or sum with reruns of overlapping suites. No live account/service/phone/update acceptance. Score on Nov 14, 2026: 90%; now 90%; open known issues: 2. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
+      "summary": "Nov 24 update: 90% to 99%, 0 open known issues. The second household’s PC log shows 0 “relay beebo unavailable” lines since Windows 0.1.118 (public 0.1.142); the Relay failure and retry notices are translated in five languages (fixed and published in Windows 0.1.142 and Android 1.94; automated tests and review, not seen on an installed PC). Ready is not ticked. Earlier review: Nov 19 evidence update: Relay confirmation wording passed; no per-phone tally supplied. Current score 90%; 2 open known issues. Partial and pre-release observations add no whole-feature tick. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Relay failure/retry notices remain hardcoded English in all five fully translated locales. One shared localization defect across Languages and Relay, not five new defects. Exact-release formatter/model checks; live service failures were not triggered. One100-case batch across12suites. Shared cross-feature batch: do not credit100 independently to every feature or sum with reruns of overlapping suites. No live account/service/phone/update acceptance. Score on Nov 14, 2026: 90%; now 90%; open known issues: 2. Earlier dated limits remain unless explicitly closed by a matching public-build retest."
     },
     {
       "featureId": "feature-services-and-website-website-and-browser-games",
@@ -963,7 +971,7 @@
       "summary": "No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Roadmap and example home-automation setup are not a demonstrated Google Assistant or Alexa integration. No real setup or command acceptance supports moving above 0%. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     }
   ],
-  "newKnownProblemCount": 39,
+  "newKnownProblemCount": 40,
   "newKnownProblemIds": [
     "audio-after-sign-out",
     "audio-refusal-refresh",
@@ -978,6 +986,7 @@
     "caption-seek-cue",
     "cast-receiver-volume",
     "catalog-case-distinct-ntfs",
+    "collection-detail-subtitle-cut-short",
     "desktop-music-mix-localization",
     "guest-board-focus",
     "guest-round-start-focus",
