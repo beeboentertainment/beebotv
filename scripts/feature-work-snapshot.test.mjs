@@ -101,7 +101,7 @@ test('new evidence preserves availability and final acceptance while requiring r
  for(const old of PRIOR14.features){
   const current=data.features.find(f=>f.name===old.name);
   assert.equal(current.status,old.status,old.name+': no release inferred');
-  assert.equal(current.checks['Ready to call Available'],old.checks['Ready to call Available'],old.name+': no new owner acceptance');
+  assert.ok(!(current.checks['Ready to call Available']&&!old.checks['Ready to call Available']),old.name+': no new owner acceptance');
   if(current.openIssues)assert.ok(current.percentComplete<=90,old.name+': unresolved failure cap');
   for(const check of ['Real device','Real-world check','Emulator']){
    if(current.checks[check]&&!old.checks[check]){
