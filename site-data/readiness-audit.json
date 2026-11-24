@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-24T01:05:00-05:00",
-  "updatedEastern": "Nov 24, 2026, 1:05 AM Eastern",
-  "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain. Nov 24, 2026, 1:05 AM Eastern: Nov 23 night results on the published Windows 0.1.141 and Android 1.91 and 1.92 were added; two rows moved down for new open known issues, none moved up.",
+  "updatedAt": "2026-11-24T02:05:00-05:00",
+  "updatedEastern": "Nov 24, 2026, 2:05 AM Eastern",
+  "method": "Compared all 70 current score rows with the Nov 19 published record using the existing public-build rule. The private Android and source-fixture checks add dated observations. Seven earlier evidence gaps remain. Nov 24, 2026, 1:05 AM Eastern: Nov 23 night results on the published Windows 0.1.141 and Android 1.91 and 1.92 were added; two rows moved down for new open known issues, none moved up. Nov 24, 2026, 2:05 AM Eastern: Android 1.93 phone checks were added; Shared photos and videos returned to 98% after its known problem was fixed and checked.",
   "features": [
     {
       "featureId": "feature-android-phone-app-opening-the-app-and-the-five-tabs",
@@ -202,16 +202,17 @@
     {
       "featureId": "feature-android-phone-app-shared-photos-and-videos",
       "scoreBefore": 74,
-      "scoreAfter": 74,
+      "scoreAfter": 98,
       "outcome": "reviewed",
       "evidenceDates": [
+        "Nov 24, 2026, 1:38 to 2:03 AM Eastern real-phone records",
         "Nov 23, 2026, 11:05 PM Eastern real-phone record",
         "Nov 23, 2026, 7:09 to 7:53 AM Eastern real-phone records",
         "Oct 23–24, 2026",
         "Nov 2, 2026",
         "Nov 13–14, 2026 evidence audit"
       ],
-      "summary": "Nov 24 update: a new open known issue on the published phone builds (a multi-file pick in Add photos or videos added nothing; one at a time worked) removes the 98% real-device step, so the row shows 74% until the fix passes on a published build. A fix is written and is not in a published download yet. Earlier dated review: Nov 23 real-phone record: on the public Android 1.89 (162) a Galaxy S9+ guest saved a shared photo and video with matching file hashes. Earlier score (Nov 23): 98%; the real-world check (admission during an active transfer, audio listening) is still open. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Two-phone photo navigation, a saved-video hash match and picture checks support the device mark. Newer video-policy tests add source evidence only. Audible playback and concurrency remain unproved. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
+      "summary": "Nov 24 update (2:05 AM Eastern): the multi-file pick problem is fixed in Android 1.93 and passed on a Pixel 3 (public 1.93) and a Galaxy S9+ (1.93 release file); no open known issue, so the row is back at 98%. Joining during a transfer, the saved video copy and audio listening remain for 99. Earlier review (Nov 24, 1:05 AM): Nov 24 update: a new open known issue on the published phone builds (a multi-file pick in Add photos or videos added nothing; one at a time worked) removes the 98% real-device step, so the row shows 74% until the fix passes on a published build. A fix is written and is not in a published download yet. Earlier dated review: Nov 23 real-phone record: on the public Android 1.89 (162) a Galaxy S9+ guest saved a shared photo and video with matching file hashes. Earlier score (Nov 23): 98%; the real-world check (admission during an active transfer, audio listening) is still open. Earlier dated review: No new device record for this feature since Nov 14, 2026, 4:04 AM Eastern. Two-phone photo navigation, a saved-video hash match and picture checks support the device mark. Newer video-policy tests add source evidence only. Audible playback and concurrency remain unproved. The Nov 2 automated checks used unpublished tester69 source; they do not validate the public tester68 download. Latest audit: no new whole-feature readiness credit or issue closure established through Nov 14, 2026, 3:43 AM Eastern."
     },
     {
       "featureId": "feature-android-phone-app-wireless-speakers",
