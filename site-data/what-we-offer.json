@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedEastern": "Nov 24, 2026, 9:45 AM Eastern",
-    "updatedIso": "2026-11-24T09:45:00-05:00",
+    "updatedEastern": "Nov 26, 2026, 5:51 AM Eastern",
+    "updatedIso": "2026-11-26T05:51:00-05:00",
     "title": "Everything Beebo Entertainment is and offers",
     "how": "Each feature has an availability label and evidence limits. Testing percentages refer to the dated checks in testing-status.json; published download versions and times come from the release feeds.",
     "statusRules": {
@@ -1374,7 +1374,10 @@
     "Nov 23, Windows 0.1.141: in the PC app’s Live TV player, when a channel stopped sending, the picture froze on the last frame with a Play button and no message that the channel stopped. Fixed in Windows 0.1.142: on Nov 24, 2026, between 7:43 and 7:45 AM Eastern, the 6-core PC showed “The channel stopped. Try again.” and Try again restarted the channel (a real tuner and a real provider playlist are still untried).",
     "Nov 23, Android 1.91 (build 164): in Campsite Shared photos and videos, picking two or three files at once in the Android file picker added nothing; adding them one at a time worked. Fixed in Android 1.93 (build 166): on Nov 24, 2026 a Pixel 3 on the public 1.93 and a Galaxy S9+ on the 1.93 release file each picked 3 test images at once and all 3 were added.",
     "Nov 24, Android 1.94 (build 167), Galaxy S9+: in the small picture-in-picture window, tapping the expand icon did not bring the full player back (the Beebo icon returned the film and the X closed the window). Fixed in Android 1.95 for Samsung Android 8 to 10 (new Full screen button): on Nov 24, 2026, 9:30 to 9:35 AM Eastern a Galaxy S9+ on the 1.95 release file returned full screen from the button, still playing; Android 8 and 9 phones have not been tried.",
-    "Nov 24, Android 1.94 (build 167), Pixel 3 and Galaxy S9+: on a collection’s detail page the subtitle reads “1 of 5 in your library · 4 not”, a sentence that ends short. It is fixed in the code and is not in a published download yet."
+    "Nov 24, Android 1.94 (build 167), Pixel 3 and Galaxy S9+: on a collection’s detail page the subtitle reads “1 of 5 in your library · 4 not”, a sentence that ends short. It is fixed in the code and is not in a published download yet.",
+    "Nov 26, Android 1.98 (build 171): in a Spanish solo Classic Bingo game, the two-card count translated, but parts of the win-pattern wording in setup and play remained in English.",
+    "Nov 26, Android 1.97 (build 170) on a real Cast TV: four checks found a problem. The cast dialogs had no volume controls, a Wi-Fi drop left paused output, away music stayed on the phone, and reopening the episode controller left the TV playing when Pause was chosen. The audible mute and current Android retests remain open.",
+    "Nov 26, Windows 0.1.143: a fresh Chrome profile stopped at the home-server certificate warning before opening the page. In a signed-in profile, the separate missing-page test showed a readable 404 message and a working Back to library link."
   ],
   "ideas": [
     {
